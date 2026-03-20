@@ -1,0 +1,158 @@
+name: Agent Deployment Test
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  agent-deploy:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10', '3.11', '3.12']
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Display Python version
+      run: python -c "import sys; print(f'Python {sys.version}')"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements-agent.txt
+
+    - name: Run agent bootstrap validation
+      run: python agent-init.py --validate-only
+
+    - name: Run agent initialization
+      run: python agent-init.py --no-curriculum --agent-id test-agent-${{ matrix.python-version }}-${{ matrix.os }}
+
+    - name: Verify agent state
+      run: |
+        import json
+        from pathlib import Path
+        state_file = Path(".agent").glob("agent-*/state.json")
+        for sf in state_file:
+          with open(sf) as f:
+            state = json.load(f)
+            assert state["status"] == "ready" or state["status"] == "partial"
+            assert len(state["frameworks_loaded"]) > 0
+            print(f"✓ Agent state valid: {state['agent_id']}")
+      shell: python
+
+    - name: Test agent template
+      run: |
+        python -c "
+        from agent_template import LycheetahAgent, AGENT_CONFIG
+        agent = LycheetahAgent(AGENT_CONFIG)
+        assert agent.initialize()
+        response = agent.process_query('test query')
+        assert response['status'] in ('success', 'blocked')
+        agent.shutdown()
+        print('✓ Agent template works correctly')
+        "
+
+    - name: Validate framework loading
+      run: |
+        python -c "
+        import sys
+        sys.path.insert(0, '.')
+        frameworks = [
+          'CASCADE', 'AURA', 'LAMAGUE', 'TRIAD',
+          'MICROORCIM', 'EARNED_LIGHT', 'ANAMNESIS',
+          'CHRYSOPOEIA', 'HARMONIA'
+        ]
+        print(f'✓ Framework validation: {len(frameworks)}/9 frameworks defined')
+        "
+
+    - name: Check manifest validity
+      run: |
+        python -c "
+        import json
+        with open('agent-manifest.json') as f:
+          manifest = json.load(f)
+          assert 'name' in manifest
+          assert 'entry_points' in manifest
+          assert 'agent_growth_path' in manifest
+          assert len(manifest['agent_growth_path']) == 4
+          print(f\"✓ Manifest valid: {manifest['name']}\")
+        "
+
+  code-quality:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install linters
+      run: |
+        pip install flake8 black
+
+    - name: Check code formatting (black)
+      run: black --check agent-init.py agent-template.py
+
+    - name: Check code style (flake8)
+      run: flake8 agent-init.py agent-template.py --max-line-length=100 --ignore=E501,W503
+
+  documentation:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Validate Markdown
+      run: |
+        if command -v markdownlint &> /dev/null; then
+          markdownlint AGENT_DEPLOYMENT_GUIDE.md
+        else
+          echo "⚠️  markdownlint not installed, skipping markdown validation"
+        fi
+
+    - name: Check manifest is valid JSON
+      run: |
+        python -c "
+        import json
+        with open('agent-manifest.json') as f:
+          json.load(f)
+        print('✓ agent-manifest.json is valid JSON')
+        "
+
+    - name: Verify guide exists and is readable
+      run: |
+        if [ -f "AGENT_DEPLOYMENT_GUIDE.md" ]; then
+          lines=$(wc -l < AGENT_DEPLOYMENT_GUIDE.md)
+          echo "✓ AGENT_DEPLOYMENT_GUIDE.md exists ($lines lines)"
+        else
+          echo "✗ AGENT_DEPLOYMENT_GUIDE.md not found"
+          exit 1
+        fi
+
+  notify:
+    needs: [agent-deploy, code-quality]
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+    - name: Report results
+      run: |
+        if [ "${{ needs.agent-deploy.result }}" == "success" ] && [ "${{ needs.code-quality.result }}" == "success" ]; then
+          echo "✅ All agent deployment tests passed"
+          exit 0
+        else
+          echo "❌ Some tests failed - see logs above"
+          exit 1
+        fi

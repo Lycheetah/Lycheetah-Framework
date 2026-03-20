@@ -20,3 +20,4 @@ desktop.ini
 # Temp
 *.tmp
 *.log
+.agent_state/

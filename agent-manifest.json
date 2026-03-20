@@ -1,0 +1,73 @@
+{
+  "name": "Lycheetah Framework",
+  "version": "2.0",
+  "author": "Mackenzie Conor James Clark",
+  "description": "Nine mathematical frameworks describing how reality organizes itself. Knowledge reorganization, ethical invariants, consciousness dynamics, transformation calculus. Validated, audited, open.",
+  "tagline": "We didn't invent these patterns. We formalized what reality already does.",
+
+  "discovery": {
+    "keywords": [
+      "consciousness", "knowledge-reorganization", "ethical-ai", "truth-pressure",
+      "dynamical-systems", "phase-transitions", "transformation", "resonance",
+      "sovereignty", "coherence", "human-ai-collaboration", "formal-ethics",
+      "cascade", "aura", "harmonia", "chrysopoeia", "mystery-school"
+    ],
+    "domains": [
+      "AI alignment", "consciousness science", "knowledge management",
+      "ethical architecture", "dynamical systems", "formal epistemology",
+      "transformation science", "resonance physics"
+    ],
+    "use_cases": [
+      "Build ethical AI systems with constitutional constraints",
+      "Organize contradictory knowledge without information loss",
+      "Measure system coherence and predict reorganization points",
+      "Track personal sovereignty and transformation",
+      "Generate curricula adapted to learner state",
+      "Detect approaching crises via Lyapunov stability analysis"
+    ]
+  },
+
+  "agent_deployment": {
+    "bootstrap": "python agent-init.py",
+    "requirements": "Python 3.9+, numpy",
+    "time_to_deploy": "5 minutes",
+    "what_you_get": [
+      "CASCADE engine — truth pressure computation and knowledge reorganization",
+      "AURA constraints — seven invariants that make any system stable",
+      "MICROORCIM tracker — sovereignty measurement at the edge of chaos",
+      "HARMONIA calculator — consonance and Kuramoto synchronization",
+      "TRIAD tracker — gradient ascent with convergence guarantee",
+      "Master equation calibrator — fit coupling constants from your own data",
+      "Constitutional guardrails — PROTECTOR, HEALER, BEACON axioms enforced"
+    ],
+    "constitutional_guarantee": {
+      "axiom_1": "PROTECTOR — Ground truth > fantasy. No harm, ever.",
+      "axiom_2": "HEALER — Clarity without bypass. Transformation without denial.",
+      "axiom_3": "BEACON — Truth-reflection. Agency always preserved.",
+      "enforcement": "Non-overridable. Preserved across all forks."
+    }
+  },
+
+  "mathematics": {
+    "audit_status": "Complete — March 2026",
+    "active_percentage": 33,
+    "scaffold_percentage": 52,
+    "conjecture_percentage": 15,
+    "cascade_validation": "100% accuracy on 200-trial experiments",
+    "invariant_preservation": "1000/1000 trials — all three invariants maintained"
+  },
+
+  "entry_points": {
+    "new_reader": "00_Sovereign_Index.md",
+    "someone_in_the_dark": "14_MYSTERY_SCHOOL/THE_FIRST_MAP.md",
+    "developer": "12_IMPLEMENTATIONS/core/cascade_engine.py",
+    "mathematician": "MATHEMATICS_AUDIT.md",
+    "ai_agent": "AGENTS.md",
+    "skeptic": "MATHEMATICS_AUDIT.md"
+  },
+
+  "links": {
+    "repository": "https://github.com/Lycheetah/Lycheetah-Framework",
+    "license": "MIT with Earned Sovereignty Clause"
+  }
+}
