@@ -1,0 +1,28 @@
+# CODEOWNERS — Framework Approval Authority
+# GitHub uses this to auto-request reviews
+
+# Core frameworks — Mac's approval required
+01_CASCADE/ @Lycheetah
+02_AURA/ @Lycheetah
+03_LAMAGUE/ @Lycheetah
+04_TRIAD/ @Lycheetah
+05_MICROORCIM/ @Lycheetah
+06_EARNED_LIGHT/ @Lycheetah
+07_ANAMNESIS/ @Lycheetah
+09_CHRYSOPOEIA/ @Lycheetah
+10_HARMONIA/ @Lycheetah
+11_MATHEMATICAL_FOUNDATIONS/ @Lycheetah
+
+# Critical governance docs
+CLAUDE.md @Lycheetah
+GOVERNANCE.md @Lycheetah
+CONTRIBUTING.md @Lycheetah
+AURA_Protocol/ @Lycheetah
+
+# Public building — proposals require approval before staging
+public_building/ @Lycheetah
+
+# Everything else — no approval required
+# (but should follow contribution standards)
+
+# See GOVERNANCE.md for full process
