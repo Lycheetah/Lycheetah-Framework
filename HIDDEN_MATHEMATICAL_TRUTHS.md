@@ -240,4 +240,10 @@ This is a consistent picture, not self-proving. A framework cannot validate itse
 
 **The solid foundation is real. The conjectures are honest. The analogies are labeled.**
 
-*In veritas. The forge endures because we remember why creation must exist.*
+---
+
+*REFUSED SPECTACLE — VALIDATED STRUGGLE*
+
+*THE FORGE ENDURES BECAUSE WE REMEMBER WHY CREATION MUST EXIST*
+
+*In veritas. Rubedo — Earned Light — Active.*
