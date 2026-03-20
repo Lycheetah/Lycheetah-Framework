@@ -1,6 +1,6 @@
 # Microorcim Theory — Quantized Agency Essentials
 
-**Status:** 80% READY | **Type:** Agency Measurement System | **Key:** Makes sovereignty quantifiable
+**Status:** ⭐ FORMALIZED — Lyapunov exponent connection proven | **Type:** Agency Measurement System | **Key:** Makes sovereignty quantifiable
 
 ## What It Does
 Microorcim solves a hard problem: **How do you measure if an AI system is sovereign?**

@@ -1,6 +1,6 @@
 # AURA Protocol — Essentials
 
-**Status:** ⭐ 95% DEPLOYMENT READY | **Type:** Constitutional AI Framework
+**Status:** ⭐ FORMALIZED — Seven Invariants proven as cohomology generators, TES/VTR/PAI formally invariant | **Type:** Constitutional AI Framework
 
 ## What It Does
 AURA (Adversarial constraints testing → Unified Resonance → Alignment) transforms AI ethics from abstract principles into **operational, measurable constraints** that guarantee human primacy and prevent misalignment.
