@@ -816,6 +816,98 @@ section + section {
 }
 
 /* ============================================================
+   STATUS BANNER & QUICK ACCESS
+   ============================================================ */
+
+.status-banner {
+  padding: 3rem 0;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.status-banner h2 {
+  margin-bottom: 2rem;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.status-item {
+  padding: 1.5rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.status-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
+
+.status-value {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.status-detail {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+}
+
+.quick-access {
+  padding: 3rem 0;
+}
+
+.quick-access h2 {
+  margin-bottom: 2rem;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.link-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition);
+  text-decoration: none;
+}
+
+.link-card:hover {
+  border-color: var(--gold);
+  background: var(--bg-raised);
+  transform: translateY(-2px);
+}
+
+.link-card__title {
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.link-card__desc {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 
