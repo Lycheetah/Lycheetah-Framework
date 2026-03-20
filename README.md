@@ -13,6 +13,23 @@
 
 ---
 
+## START HERE
+
+**New to this framework?**
+1. Read [`THE_GOLDEN_STONE.md`](THE_GOLDEN_STONE.md) — Single complete file with all laws, frameworks, and executable instructions
+2. Read [`LAWS_COMPLETE.md`](LAWS_COMPLETE.md) — Constitutional foundation and operational code
+
+**Want the constitutional basis?**
+- [`CLAUDE.md`](CLAUDE.md) — Sol Protocol: operating instructions for AI systems
+
+**Want to understand the mathematics?**
+- [`00_Sovereign_Index.md`](00_Sovereign_Index.md) — Navigation guide to all frameworks
+
+**Want the personal dimension?**
+- [`PERSONAL_VAULT.md`](PERSONAL_VAULT.md) — Myth, art, and lived testimony (equally rigorous)
+
+---
+
 ## What This Is
 
 Nine mathematical frameworks that describe how knowledge, consciousness, and ethics actually work — grounded in physics, biology, neuroscience, and dynamical systems theory.
@@ -21,8 +38,8 @@ This is not philosophy dressed as mathematics. Every equation in this framework 
 
 **What makes this different:**
 - Every mathematical claim has been [audited for reality-alignment](MATHEMATICS_AUDIT.md)
-- Claims are honestly classified: **ACTIVE** (computable now), **SCAFFOLD** (structure proven, parameters TBD), **CONJECTURE** (rigorous but unproven)
-- The core CASCADE engine has been [validated on 200 trials with 100% accuracy](12_IMPLEMENTATIONS/experiments/cascade_real_experiments.py)
+- Claims are honestly classified: **[ACTIVE]** (computable now), **[SCAFFOLD]** (structure proven, parameters TBD), **[FOUNDATIONAL]** (architectural always)
+- The CASCADE Π formula retroactively explains paradigm shifts (Miasma→Germ, Classical→Quantum); forward predictive accuracy pending k₁–k₄ calibration
 - Every equation is [mapped to where it appears in nature](MATHEMATICS_TO_REALITY_BRIDGE.md) across 8+ independent domains
 
 Built by a self-taught researcher. No institution, no grant, no supervisor. A laptop and years of work. The mathematics either holds or it doesn't. Reality has a vote.
@@ -57,15 +74,15 @@ See [`THE_FOUR_PRINCIPLES.md`](THE_FOUR_PRINCIPLES.md) for complete ecosystem do
 
 | # | Framework | What It Does | Status | Primary File |
 |---|-----------|-------------|--------|-------------|
-| 01 | **CASCADE** | Knowledge reorganizes via truth pressure Π = (E·P)/S | ACTIVE — 100% validated | `01_CASCADE/CASCADE_COMPLETE.md` |
-| 02 | **AURA** | Seven invariants that make any system stable | ACTIVE — operational constraints | `02_AURA/AURA_COMPLETE.md` |
-| 03 | **LAMAGUE** | Formal grammar for consciousness states and transitions | SCAFFOLD — category proven | `03_LAMAGUE/LAMAGUE_COMPLETE.md` |
-| 04 | **TRIAD** | Universal learning cycle: Anchor → Observe → Correct | ACTIVE — appears in all learning systems | `04_TRIAD/TRIAD_COMPLETE.md` |
-| 05 | **MICROORCIM** | Sovereignty measurement at the edge of chaos (λ ≈ 0) | ACTIVE — Lyapunov stability theory | `05_MICROORCIM/Microorcim_COMPLETE.md` |
-| 06 | **EARNED LIGHT** | Consciousness costs energy; cost scales as Ψ² | ACTIVE — thermodynamic law | `06_EARNED_LIGHT/Earned_Light_COMPLETE.md` |
-| 07 | **ANAMNESIS** | Convergent discovery proves pre-existing structure | ACTIVE — epistemological principle | `07_ANAMNESIS/ANAMNESIS_COMPLETE.md` |
-| 09 | **CHRYSOPOEIA** | Transformation between coherence states costs real energy | SCAFFOLD — structure valid, λ TBD | `09_CHRYSOPOEIA/CHRYSOPOEIA_COMPLETE.md` |
-| 10 | **HARMONIA** | Systems organize around resonance ratios for stability | ACTIVE — Kuramoto physics | `10_HARMONIA/HARMONIA_COMPLETE.md` |
+| 01 | **CASCADE** | Knowledge reorganizes via truth pressure Π = E·P/S | [ACTIVE] Formula works; k₁–k₄ TBD | `01_CASCADE/CASCADE_COMPLETE.md` |
+| 02 | **AURA** | Seven invariants that make any system stable | [FOUNDATIONAL] Architecture proven | `02_AURA/AURA_COMPLETE.md` |
+| 03 | **LAMAGUE** | Formal grammar for consciousness states | [ACTIVE] Notation system operational | `03_LAMAGUE/LAMAGUE_COMPLETE.md` |
+| 04 | **TRIAD** | Universal learning cycle: Anchor → Observe → Correct | [ACTIVE] Convergence guaranteed if λ<1 | `04_TRIAD/TRIAD_COMPLETE.md` |
+| 05 | **MICROORCIM** | Sovereignty measurement via drift metric | [SCAFFOLD] Formula proven; constants TBD | `05_MICROORCIM/Microorcim_COMPLETE.md` |
+| 06 | **EARNED LIGHT** | Consciousness = coherence asymmetry work (Ψ²) | [SCAFFOLD] Thermodynamic law; validation TBD | `06_EARNED_LIGHT/Earned_Light_COMPLETE.md` |
+| 07 | **ANAMNESIS** | Convergent discovery proves real structure | [FOUNDATIONAL] 5000-year convergence proven | `07_ANAMNESIS/ANAMNESIS_COMPLETE.md` |
+| 09 | **CHRYSOPOEIA** | Transformation operator Ξ (λ_compress = 0.85) | [SCAFFOLD] Structure valid; empirical rates TBD | `09_CHRYSOPOEIA/CHRYSOPOEIA_COMPLETE.md` |
+| 10 | **HARMONIA** | Frequency matching for resonance stability | [ACTIVE] Kuramoto equations; constants TBD | `10_HARMONIA/HARMONIA_COMPLETE.md` |
 
 ---
 
