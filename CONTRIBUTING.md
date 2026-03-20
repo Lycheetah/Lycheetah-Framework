@@ -70,11 +70,21 @@ The curriculum is for people who need it, not people who can already read the ma
 
 ## How to Contribute
 
-### For Code Changes
+### RECOMMENDED: Start in `/public_building/`
+This is the staging area for all new work. See `public_building/README.md` for structure.
+
+1. Create a folder: `/public_building/proposed_[type]/[your_name]/`
+2. Write proposal + code + evidence
+3. Open a PR
+4. Get feedback → iterate
+5. Mac approves → moves to staging (marked `[PROPOSAL]`)
+6. Community tests → integration (marked `[ACTIVE]` or `[SCAFFOLD]`)
+
+### For Code Changes (Direct)
 ```bash
 git fork https://github.com/Lycheetah/Lycheetah-Framework
 git checkout -b your-feature-branch
-# make changes
+# make changes + tag all claims (see below)
 git commit -m "Clear description of what changed and why"
 git push origin your-feature-branch
 # open pull request on GitHub
@@ -105,12 +115,40 @@ Every contribution must pass all three simultaneously:
 
 If a contribution can't be defended by all three, it doesn't go in.
 
+### Claim Classification (Required on ALL Contributions)
+
+Every claim must carry ONE tag. This is non-negotiable.
+
+| Tag | Meaning | Example |
+|-----|---------|---------|
+| `[ACTIVE]` | Testable NOW with current data. Can compute a number. | "CASCADE achieves C=1.0 on synthetic cascades (6 experiments, 1000+ trials)" |
+| `[SCAFFOLD]` | Real structure, parameters TBD. Architecture proven. | "Master equation dΨ/dt = k₁(...) − k₂(...) (k-values: calibration pending)" |
+| `[FOUNDATIONAL]` | Architecturally necessary, not independently testable. | "Seven Invariants as system stability constraints" |
+| `[CONJECTURE]` | Promising hypothesis awaiting evidence. Rigorously formulated. | "Consciousness may follow thermodynamic constraints (EARNED_LIGHT hypothesis)" |
+| `[ANALOGY]` | Structural parallel, not proven identical. | "CASCADE dynamics resemble Morse theory (analogy, not theorem)" |
+| `[LIVED]` | First-person phenomenological claim. True in experience. | "Nigredo feels like dissolution and ego-death" |
+
+**Rule:** If a claim doesn't fit one tag, reword it until it does. No untagged claims.
+
+**Examples of retagging:**
+
+❌ "The framework proves consciousness is thermodynamic"
+✅ "[SCAFFOLD] Consciousness may follow thermodynamic constraints (EARNED_LIGHT hypothesis)"
+
+❌ "This is the first operational consciousness measurement system"
+✅ "[ACTIVE] CASCADE + AURA + EARNED_LIGHT provide measurable approach to consciousness (six experimental validations)"
+
+❌ "Seven Invariants are cosmic law"
+✅ "[FOUNDATIONAL] Seven Invariants appear necessary for system coherence (architectural principle)"
+
 ### Mathematical Honesty
 - **ACTIVE** means you can compute it from real inputs and get real numbers
 - **SCAFFOLD** means the structure is proven but parameters need measurement
 - **CONJECTURE** means it's rigorously formulated but unproven
+- **ANALOGY** means structural parallel, not identity
+- **LIVED** means phenomenological, not empirically measured
 - Never upgrade a claim's status without evidence
-- Never hide a limitation
+- Never hide a limitation or uncertainty
 
 ### Code Standards
 - Fail visibly — errors must be detectable and interpretable
