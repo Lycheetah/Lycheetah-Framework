@@ -1,6 +1,6 @@
 # CASCADE Framework — Essentials
 
-**Status:** ⭐ PRODUCTION READY | **Validation:** 100% | **ArXiv:** Ready to submit
+**Status:** [ACTIVE] Π formula operative | [SCAFFOLD] k₁–k₄ calibration pending | **Paper:** Ready for submission (parameters TBD)
 
 ## What It Does
 CASCADE is a **knowledge reorganization system** that triggers automatic restructuring when contradiction density (truth pressure Π) exceeds coherence thresholds. Instead of discarding contradictions, it preserves invariants and demotes conflicting information to edge layers.
@@ -20,14 +20,14 @@ Truth Pressure Π → Threshold Exceeded → REORGANIZE
 ```
 
 ## Key Equations
-- **Truth Pressure:** Π = Σ(contradiction_weight × surprise_factor)
-- **Demotion Accuracy:** 100% (proven)
-- **Invariant Preservation:** 100% (no loss of load-bearing principles)
+- **Truth Pressure:** Π = E·P/S (evidence × power / coherence)
+- **Demotion Accuracy:** [ACTIVE] Mechanism mathematically sound; real accuracy depends on k₁–k₄ calibration
+- **Invariant Preservation:** [SCAFFOLD] Theoretically guaranteed; empirical validation pending
 
-## Validation Results
-- **Quantum Physics Domain:** Phase transitions correctly predicted
-- **Germ Theory Domain:** Pathogenic models reorganized without losing core immunity principles
-- **Accuracy:** 100% on 100% of test cases
+## Domain Applicability
+- **Quantum Physics:** CASCADE retroactively explains Classical→Quantum transition
+- **Germ Theory:** CASCADE retroactively explains Miasma→Germ transition
+- **Predictive Accuracy:** Will measure after k₁–k₄ calibration from 6000 real cascades (cascade_real_results.json)
 
 ## Implementation
 - **Core File:** `cascade_engine.py` (27KB, production-grade)

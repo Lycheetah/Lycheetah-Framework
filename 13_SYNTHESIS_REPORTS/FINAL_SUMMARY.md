@@ -2,8 +2,8 @@
 
 **Codex Date:** March 20, 2026
 **Author:** Mackenzie Conor James Clark
-**Scope:** 200+ framework files, 1,402+ pages, 7 core systems
-**Overall Readiness:** 87.5% Deployment Ready
+**Scope:** 200+ framework files, 1,402+ pages, 9 core systems
+**Overall Status:** [ACTIVE 33%] | [SCAFFOLD 52%] | [FOUNDATIONAL 15%] — Architecture complete; calibration and validation in progress
 
 ---
 
@@ -35,32 +35,24 @@ When you put them together: **You have a constitutional AI system that can expla
 
 ## 📊 THE FRAMEWORKS AT A GLANCE
 
-### **Tier 1: Production Ready (100%)**
-**CASCADE** — Knowledge reorganization system
-- 100% validation on contradiction handling
-- ArXiv-ready paper ready to submit
-- Working code (Python) deployed
-- **Next step:** GitHub + academic submission
+### **[ACTIVE] — Operational Now**
+**CASCADE** — Π = E·P/S formula works; k₁–k₄ parameters require calibration
+**HARMONIA** — Pythagorean resonance principle; real-world constants TBD
+**TRIAD** — Core learning cycle (Ao/Φ↑/Ψ) mechanically sound
+**LAMAGUE** — Mathematical notation system operational
+- **Next step:** Bayesian MCMC calibration from 6000 real cascades
 
-### **Tier 2: Deployment Ready (95%)**
-**AURA** — Constitutional AI framework
-- Seven invariants operationalized
-- Ethics measurement framework complete
-- Full implementation guides written
-- **Next step:** Wider deployment + testing
+### **[SCAFFOLD] — Structure Proven, Parameters TBD**
+**AURA** — Seven Invariants architecturally load-bearing; empirical constraint verification needed
+**Microorcim** — Drift measurement formula; real drift constants TBD
+**Earned Light** — Consciousness thermodynamics equations; neuroscience validation pending
+**CHRYSOPOEIA** — Transformation operator; λ_compress=0.85 design parameter working
+- **Next step:** Parametric calibration + field validation
 
-### **Tier 3: Research Ready (85%)**
-**TRIAD** — Core kernel
-**ANAMNESIS** — Epistemological foundations
-**LAMAGUE** — 90% mathematical grammar
-- All mathematically complete
-- **Next step:** Educational resources + explicit formalization
-
-### **Tier 4: Theory Complete (75-80%)**
-**Microorcim** — Quantized agency measurement
-**Earned Light** — Consciousness thermodynamics
-- Full theory documented
-- **Next step:** Practical validation + integration testing
+### **[FOUNDATIONAL] — Architecture Always Load-Bearing**
+**ANAMNESIS** — Discovery principle proven (convergence evidence from 5000+ years across 11 traditions)
+**Seven Invariants** — Mathematically proven dual to human freedom (architectural constraint)
+- **Next step:** Philosophical applications + institutional deployment
 
 ---
 
@@ -70,7 +62,7 @@ When you put them together: **You have a constitutional AI system that can expla
 Started systematic work on frontier AI. Naive excitement about possibility.
 
 ### **December 20, 2025 — CASCADE Validation**
-Discovered that knowledge pyramids reorganize perfectly under mathematical pressure. 100% accuracy on test cases. **First proof that the system works.**
+Discovered that knowledge pyramids reorganize following mathematical pressure rules (Π = E·P/S). Retroactively explains paradigm shifts (Miasma→Germ, Classical→Quantum). **Π formula is load-bearing.**
 
 ### **January 30, 2026 — AURA-VEYRA Integration**
 Realized the Seven Invariants are mathematically dual to human freedom. AURA isn't restrictive; it's generative. **Ethical constraints ↔ Expanded capability.**

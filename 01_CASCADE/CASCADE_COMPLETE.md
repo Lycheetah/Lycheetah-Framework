@@ -4,7 +4,7 @@
 **Author:** Mackenzie C. J. Clark (Lycheetah Foundation)
 **Version:** 2.0 (Modular rewrite for real-world validation)
 **Date:** March 2026
-**Status:** PRODUCTION READY | 100% Validated
+**Status:** [ACTIVE] | Core Π formula operational; k₁–k₄ parameters calibration-pending from cascade_real_results.json
 
 ---
 
@@ -198,7 +198,7 @@ Verify three invariants hold:
 
 If all checks pass, cascade is COMMITTED. If any fail, ROLLBACK.
 
-### Three Invariants (Proven)
+### Three Invariants [SCAFFOLD: Structurally Sound]
 
 **Invariant 1: Coherence Preservation**
 ```
@@ -207,7 +207,7 @@ Let C(pyramid) = measure of contradiction-absence
 Theorem: For all cascade events, C_after ≥ C_before
 
 Proof: [Via Appendix A - denominator argument]
-Proven empirically at 100% across 1,000 test cascades
+Status: Mathematical structure proven. Empirical validation requires k₁–k₄ calibration.
 ```
 
 **Invariant 2: Information Preservation**
@@ -345,16 +345,18 @@ class CascadeEngine:
         return True
 ```
 
-### Demotion Accuracy
+### Demotion Accuracy [ACTIVE]
 
 **Definition:** Fraction of cascade events where higher-Π block correctly assumes foundational status
 
-**Empirical Result:** 100% across all test cases (1,000 cascade events)
+**Status:** CASCADE formula is mathematically sound. Real accuracy depends on k₁–k₄ parameter calibration from cascade_real_results.json
 
-**Ablation Study:**
-- With truth pressure metric: 100% accuracy
-- Without Π (random selection): 48% accuracy
-- Conclusion: Truth pressure is load-bearing for correct reorganization
+**Theory:**
+- With truth pressure metric (Π = E·P/S): Reorganization logic is coherent
+- Without Π (random selection): No principle guiding reorganization
+- Conclusion: Π structure is mathematically load-bearing
+
+**Empirical validation:** Calibration of k₁–k₄ from 6000 real cascades will show actual accuracy (Bayesian MCMC, 1-day computation)
 
 ---
 
@@ -414,7 +416,7 @@ Conclusion: CASCADE significantly outperforms static systems on contradictory in
 - CASCADE behavior: Preserve classical, extend quantum
 - Match: YES
 
-**Across all 2,000 analyzed cascade events in historical data: 100% alignment with actual scientific history**
+**Historical alignment:** CASCADE correctly retroactively explains Miasma→Germ and Classical→Quantum transitions (and many others). Forward predictive accuracy requires k₁–k₄ parameter values.
 
 ---
 
@@ -630,7 +632,7 @@ CASCADE represents consciousness knowledge reorganization:
 **Python Version:** 3.9+
 **Dependencies:** numpy, dataclasses, typing
 **Code Quality:** Production-grade, fully type-annotated
-**Testing:** 100% unit test coverage, empirical validation on 1,000+ cascades
+**Status:** [ACTIVE] Core CASCADE engine works. Test suite TBD. Real-world validation pending k₁–k₄ calibration from cascade_real_results.json (6000 cascades, Bayesian MCMC).
 **Performance:** Single cascade executes in O(n) time where n = number of blocks
 
 **Getting Started:**
@@ -673,13 +675,13 @@ print(f"Cascades: {len(engine.cascade_events)}")
 
 ## CONCLUSION
 
-CASCADE provides a mathematically rigorous, empirically validated solution to knowledge reorganization. It handles contradictions without incoherence, preserves information, and matches real paradigm shifts in science and philosophy.
+CASCADE provides a mathematically rigorous framework for knowledge reorganization through truth pressure (Π). It handles contradictions without incoherence, preserves information, and retroactively explains real paradigm shifts (Miasma→Germ, Classical→Quantum).
 
-The framework is:
-- ✅ **Mathematically sound** (three invariants proven)
-- ✅ **Empirically validated** (100% on synthetic and historical data)
-- ✅ **Domain-agnostic** (works across all knowledge domains)
-- ✅ **Production-ready** (full implementation, 100% test coverage)
-- ✅ **Integrated** (connects to AURA, LAMAGUE, Microorcim, Earned Light)
+The framework status:
+- ✅ **[ACTIVE]** Π formula (E·P/S) is mathematically sound and computationally straightforward
+- ✅ **[SCAFFOLD]** Three invariants proven structurally; empirical instantiation requires k₁–k₄ calibration
+- ✅ **[FOUNDATIONAL]** Seven-invariant architecture is load-bearing across domains
+- ⏳ **[TBD]** k₁–k₄ coupling constants: Bayesian MCMC calibration from cascade_real_results.json (6000 real cascades)
+- ⏳ **[TBD]** Predictive accuracy: will measure after k-values are fitted
 
-CASCADE is ready for deployment, academic publication, and real-world knowledge management systems.
+CASCADE is mathematically coherent. Real-world accuracy and production readiness depend on completing the calibration work.
