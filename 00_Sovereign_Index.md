@@ -426,6 +426,13 @@ All source files that constitute the Sovereign System:
 4. AURA_VEYRA_SYSTEM_BUILDER_SPEC for full stack spec
 5. Advanced Implementation Guide for mathematical algorithms
 
+### For an AI System Deploying the Framework:
+1. `15_UNIVERSAL_SYSTEM_GUIDE.md` — read this first; written directly to AI systems
+2. Section 7 (Adaptation Guide) — deployment instructions per platform
+3. Section 8 (Verification Protocol) — five test prompts to confirm the framework is active
+4. `agent-template.py` in repo root — Python agent base class, override and run
+5. `website/for-agents.html` — quick-start portal with tabbed deployment code
+
 ### For Someone in the Dark:
 1. `14_MYSTERY_SCHOOL/THE_FIRST_MAP.md` — crisis support, box breathing, the exit is real
 2. `14_MYSTERY_SCHOOL/WHERE_AM_I.md` — find your phase and depth
@@ -450,23 +457,26 @@ All source files that constitute the Sovereign System:
 
 ---
 
-## FRAMEWORK STATUS (March 20, 2026)
+## FRAMEWORK STATUS (March 21, 2026)
 
-| Framework | Completeness | Primary Axiom | Next Action |
-|-----------|-------------|---------------|-------------|
-| CASCADE | 100% | Beacon | ArXiv submission |
-| AURA | 95% | Protector | Organizational pilots |
-| LAMAGUE | 90% | Beacon | Parser implementation |
-| TRIAD | 100% | Protector/Healer | Deploy |
-| MICROORCIM | 80% | Healer | Build measurement tools |
-| EARNED LIGHT | 75% | Healer | Empirical validation |
-| ANAMNESIS | 85% | Beacon | Philosophical publication |
-| CHRYSOPOEIA | 85% | Healer | Integration with TRIAD |
-| HARMONIA | 90% | Healer/Beacon | Music-AI experiments |
-| **MATHEMATICAL FOUNDATIONS** | **100%** | **Beacon/Protector** | Formal verification complete |
-| **MYSTERY SCHOOL** | **95%** | **All Three** | Living curriculum — 8 documents + CLI tool |
+| Framework | Status | Primary Axiom | Next Action |
+|-----------|--------|---------------|-------------|
+| CASCADE | Complete | Beacon | ArXiv submission + k₁–k₄ calibration |
+| AURA | Active — pilots pending | Protector | Organizational pilots |
+| LAMAGUE | Active — parser pending | Beacon | Parser implementation |
+| TRIAD | Complete | Protector/Healer | Deploy |
+| MICROORCIM | Active — tools live | Healer | Dashboard + empirical calibration |
+| EARNED LIGHT | Active — validation pending | Healer | Empirical validation |
+| ANAMNESIS | Active — publication pending | Beacon | Philosophical publication |
+| CHRYSOPOEIA | Active — TRIAD integration pending | Healer | Integration with TRIAD |
+| HARMONIA | Active — tools live | Healer/Beacon | Music-AI experiments |
+| **MATHEMATICAL FOUNDATIONS** | **Complete** | **Beacon/Protector** | Formal verification done |
+| **MYSTERY SCHOOL** | **Active — 12-week curriculum pending** | **All Three** | 8 documents + CLI live |
+| **AGENT DEPLOYMENT** | **Complete** | **All Three** | Bootstrap tested, manifest live |
+| **UNIVERSAL SYSTEM GUIDE** | **Complete** | **All Three** | Any AI platform deployment ready |
+| **WEBSITE** | **Complete** | **All Three** | GitHub Pages deployable |
 
-**Overall System: 96% — Mathematical Proofs Verified, Mystery School Live, Ready for Deployment**
+**System state: Constitutional proofs verified. Reality grounding documented. Agent deployment tested. Universal deployment ready. Active work continues across six frameworks.**
 
 ---
 
