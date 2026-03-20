@@ -18,10 +18,15 @@ Date: March 2026
 """
 
 import numpy as np
+import sys
 from typing import Callable, Tuple, List, Dict, Optional
 from dataclasses import dataclass
 import json
 from pathlib import Path
+
+# Ensure UTF-8 output on Windows
+if sys.stdout.encoding.lower() not in ('utf-8', 'utf8'):
+    sys.stdout.reconfigure(encoding='utf-8')
 
 
 @dataclass
