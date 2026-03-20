@@ -1,6 +1,7 @@
 # FILE: unified_field.py
 """
 AURA Unified Field Theory - Integrates Physics, Consciousness, AI, Governance
+STATUS: DRAFT — contains placeholder stubs; do not use in production
 """
 
 import numpy as np

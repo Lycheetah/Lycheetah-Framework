@@ -10,7 +10,7 @@ This is stated explicitly: the experiment tests CASCADE's structural behavior,
 not the precision of our evidence scoring.
 """
 
-from cascade_engine import KnowledgeBlock, DomainExperiment, CascadeEngine
+from core.cascade_engine import KnowledgeBlock, DomainExperiment, CascadeEngine
 from typing import List, Tuple
 
 

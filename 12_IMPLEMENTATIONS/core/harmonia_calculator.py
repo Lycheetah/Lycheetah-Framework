@@ -103,7 +103,10 @@ class KuramotoOscillator:
 class HarmoniaCalculator:
     """Calculate consonance and Kuramoto synchronization."""
 
-    # Barlow dissonance weighting: w = 0.5
+    # Barlow dissonance weighting: w = 0.5 (Barlow-proxy approximation)
+    # NOTE: Specification formula: C(r) = 1/(1 + Σ aₖwᵏ) (continued fraction based)
+    #       Implementation: Barlow-proxy approximation — intentional simplification for computational tractability
+    #       The two produce correlated but non-identical values; implementation is the working approximation
     BARLOW_WEIGHT = 0.5
 
     def __init__(self):

@@ -15,7 +15,7 @@ Same caveat as germ theory: these are informed judgments, not measurements.
 The experiment tests CASCADE's structural behavior on real knowledge claims.
 """
 
-from cascade_engine import KnowledgeBlock, DomainExperiment, CascadeEngine
+from core.cascade_engine import KnowledgeBlock, DomainExperiment, CascadeEngine
 from typing import List, Tuple
 
 

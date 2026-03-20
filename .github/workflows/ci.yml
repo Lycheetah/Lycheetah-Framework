@@ -1,0 +1,43 @@
+name: Framework Health Check
+
+on:
+  push:
+    branches: [main, master, dev]
+  pull_request:
+    branches: [main, master, dev]
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    name: Alexandria Health & Drift Audit
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy scipy networkx
+
+      - name: Run Alexandria health check
+        run: python alexandria_agent.py health
+
+      - name: Run Alexandria drift audit
+        run: python alexandria_agent.py drift
+
+      - name: Run Alexandria gap report
+        run: python alexandria_agent.py gaps
+
+      - name: Report status
+        if: always()
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "CI WORKFLOW COMPLETE"
+          echo "Framework health monitored by Alexandria Agent"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"

@@ -1,6 +1,7 @@
 # FILE: knowledge_genome.py
 """
 Knowledge as Genetic Code with Mutation, Selection, Inheritance
+STATUS: EXPLORATORY DRAFT — formal analogy, not framework core; missing import at line 689
 """
 
 import numpy as np

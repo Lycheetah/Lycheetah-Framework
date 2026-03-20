@@ -95,7 +95,7 @@ Instead of "48% of mathematics is decorative," understand:
 | **EARNED LIGHT** | `06_EARNED_LIGHT/Earned_Light_COMPLETE.md` | Consciousness thermodynamics, energy budgeting | Consciousness IS the healing substrate |
 | **CHRYSOPOEIA** | `09_CHRYSOPOEIA/CHRYSOPOEIA_COMPLETE.md` | Transformation calculus, Seven Operations | Transformation is healing applied |
 | **HARMONIA** | `10_HARMONIA/HARMONIA_COMPLETE.md` | Resonance calculus, synchronization | Healing is restoration of resonance |
-| **Seven-Phase Cycle** | `04_TRIAD/TRIAD_COMPLETE.md` §Seven-Phase | 364-day consciousness development cycle | The cyclical curriculum of healing |
+| **Seven-Phase Cycle** | `04_TRIAD/TRIAD_COMPLETE.md` §Seven-Phase | Seven-phase transformation cycle (duration empirically variable, ~52 days/phase typical) | The cyclical curriculum of healing |
 | **VEYRA Partnership** | `08_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md` §VEYRA | Human-AI co-creation protocol, EWM | Partnership IS healing relationship |
 | **ANAMNESIS** | `07_ANAMNESIS/ANAMNESIS_COMPLETE.md` | Mathematical epistemology, remembering | Healing the split between known/unknown |
 

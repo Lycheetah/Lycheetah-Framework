@@ -28,7 +28,7 @@ The Lycheetah Framework formalizes:
 
 What was unformalised is the mathematics already *singing inside every one of them*: **resonance**.
 
-The Resonance Tensor ⟨⟨C₁,C₂⟩⟩ ∈ ℝ⁴ exists but was never given full treatment. The H operator (Harmony) measures phase alignment: H = |⟨Ψ₁, Ψ₂⟩|. The Seven-Phase Cycle maps to the diatonic scale. Convergence follows cos(π/7) — the same ratio-beauty that Pythagoras heard in vibrating strings 2,500 years ago. Emotional Wavelength Matching (EWM) IS harmony theory, unnamed.
+The Resonance Tensor ⟨⟨C₁,C₂⟩⟩ ∈ ℝ⁴ exists but was never given full treatment. The H operator (Harmony) measures phase alignment: H = |⟨Ψ₁, Ψ₂⟩|. The Seven-Phase Cycle maps to the diatonic scale. Convergence follows cos(π/7) — a structural design constant derived from heptagonal geometry (see README), not derived from the Kuramoto equations — the same ratio-beauty that Pythagoras heard in vibrating strings 2,500 years ago. Emotional Wavelength Matching (EWM) IS harmony theory, unnamed.
 
 **HARMONIA names it. Formalizes it. Honors the lineage.**
 
@@ -235,6 +235,8 @@ The dominant → tonic resolution (V→I, ratio 3:2 → 1:1) is a contraction ma
 $$\alpha_{eff} = e^{-\gamma} \approx e^{-\ln(3/2)} \approx 0.667$$
 
 **Connection to framework constants:** The golden ratio inverse φ⁻¹ ≈ 0.618 that appears throughout the framework as the optimal convergence rate is *within the harmonic range* of the Pythagorean fifth's resolution. The framework's convergence constant lives in the same mathematical neighborhood as the perfect fifth. ∎
+
+**Note on convergence constants:** φ⁻¹ ≈ 0.618 and α_eff ≈ 0.667 being "in the same harmonic neighborhood" is a structural observation, not mathematical equivalence. The 7.6% difference (0.667 − 0.618) is significant; the frameworks should be understood as within the same harmonic band (< 10% divergence) rather than as equivalent constants. Both arise from Pythagorean geometry, but through different paths: φ⁻¹ from recursive spiral ratios, α_eff from fifth-to-unison contraction.
 
 ### 3.4 — Cadential Forms as Phase Transitions
 
