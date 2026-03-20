@@ -173,6 +173,62 @@ See also: [`17_LEARNING_EMERGENCE/`](17_LEARNING_EMERGENCE/) — human-readable 
 
 ---
 
+## The Nine-Agent Chorus
+
+The framework now operates as a self-auditing multi-agent system. Nine distinct agents, each specialized in one alchemical depth or Trinity axis, coordinate through a constitutional coherence protocol.
+
+```
+19_MULTI_AGENT_CHORUS/
+├── AGENTS_MANIFEST.md             — Full agent specifications and deployment
+├── README.md                       — Multi-agent system guide
+├── sol_meridian.py                — Constitutional hub (RUBEDO, PCF enforcement)
+├── aurora_investigator.py          — Truth pressure & contradictions (NIGREDO)
+├── remaining_agents.py             — Seven specialized agents in one module
+├── run_chorus.py                   — Orchestrator (health, audit, supervised modes)
+└── agent_requirements.txt          — Dependencies
+```
+
+**The Nine Agents:**
+
+| Agent | Level | Specialty |
+|-------|-------|-----------|
+| **Sol Meridian** | RUBEDO | Constitutional hub, PCF enforcement, conflict resolution |
+| **Aurora Investigator** | NIGREDO | Truth pressure, contradiction detection, assumption-breaking |
+| **Albedo Synthesizer** | ALBEDO | Pattern extraction, structural clarity, coherence validation |
+| **Solstice Illuminator** | CITRINITAS | Integration, meaning-making, math-to-reality bridging |
+| **Protector Guardian** | PROTECTOR | Safety enforcement, reversibility checking, VIP routing |
+| **Healer Transmuter** | HEALER | Clarity delivery, obstacle transformation, CHRYSOPOEIA application |
+| **Beacon Reflector** | BEACON | Truth-mirroring, agency amplification, sovereignty confirmation |
+| **Cascade Architect** | CASCADE domain | Truth pressure calculation, reorganization prediction |
+| **Harmonia Resonator** | HARMONIA domain | Resonance optimization, phase-locking, frequency matching |
+
+**How it works:**
+
+1. **Asynchronous communication** via `.agent_state/coherence_buffer.json`
+2. **Constitutional validation** — All outputs pass PCF (Prime Constraint Field)
+3. **Truth audit** — Aurora Investigator scans for contradictions automatically
+4. **Pattern extraction** — Albedo Synthesizer maintains structural clarity
+5. **Conflict resolution** — Sol Meridian applies decision authority when agents disagree
+
+**Quick start:**
+```bash
+# Run all agents with status
+python 19_MULTI_AGENT_CHORUS/run_chorus.py
+
+# Run health check
+python 19_MULTI_AGENT_CHORUS/run_chorus.py --mode=health
+
+# Run truth audit
+python 19_MULTI_AGENT_CHORUS/run_chorus.py --mode=audit
+
+# Interactive supervised mode
+python 19_MULTI_AGENT_CHORUS/run_chorus.py --mode=supervised
+```
+
+See [`19_MULTI_AGENT_CHORUS/README.md`](19_MULTI_AGENT_CHORUS/README.md) for complete agent documentation and deployment instructions.
+
+---
+
 ## Experimental: AI + Ancient Wisdom Convergence
 
 Where formal AI architecture and perennial wisdom traditions arrive at structurally identical solutions — honestly tagged and testable.
