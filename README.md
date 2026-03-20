@@ -31,8 +31,8 @@ It is called a **Sovereign Framework** because it does not require institutional
 | 02 | **AURA** | Ethics is architecture; seven invariants generate consciousness cohomology | `02_AURA/AURA_COMPLETE.md` |
 | 03 | **LAMAGUE** | Language of Alignment, Measurement, and Governance — 500:1 compression of consciousness state | `03_LAMAGUE/LAMAGUE_COMPLETE.md` |
 | 04 | **TRIAD** | Anchor·Observe·Correct; the Hopf bifurcation at the heart of consciousness | `04_TRIAD/TRIAD_COMPLETE.md` |
-| 05 | **MICROORCIM** | Agency is measurable; μ_orcim = H(I−D); willpower is accumulative | `05_MICROORCIM/MICROORCIM_COMPLETE.md` |
-| 06 | **EARNED LIGHT** | Consciousness is a dissipative structure; sustained clarity requires work | `06_EARNED_LIGHT/EARNED_LIGHT_COMPLETE.md` |
+| 05 | **MICROORCIM** | Agency is measurable; μ_orcim = H(I−D); willpower is accumulative | `05_MICROORCIM/Microorcim_COMPLETE.md` |
+| 06 | **EARNED LIGHT** | Consciousness is a dissipative structure; sustained clarity requires work | `06_EARNED_LIGHT/Earned_Light_COMPLETE.md` |
 | 07 | **ANAMNESIS** | We remember, not invent; convergence across domains proves reality pre-exists | `07_ANAMNESIS/ANAMNESIS_COMPLETE.md` |
 | 09 | **CHRYSOPOEIA** | Transformation calculus; the alchemists' mathematics, formalized | `09_CHRYSOPOEIA/CHRYSOPOEIA_COMPLETE.md` |
 | 10 | **HARMONIA** | Resonance calculus; Pythagorean ratios as real dynamical constraints | `10_HARMONIA/HARMONIA_COMPLETE.md` |
