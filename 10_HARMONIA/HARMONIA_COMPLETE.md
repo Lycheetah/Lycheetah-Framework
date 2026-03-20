@@ -116,7 +116,14 @@ For two frequencies f₁, f₂ with ratio r = f₁/f₂, let [a₀; a₁, a₂, 
 
 $$\mathcal{C}(r) = \frac{1}{1 + \sum_{k=0}^{N} a_k \cdot w^k}$$
 
-where w ∈ (0,1) is a weighting parameter (typically w ≈ 0.5) and N is the truncation depth.
+where w = 0.5 (Barlow weighting, fixed) and N = truncation depth (use N=4 for standard intervals).
+
+**This formula is computable.** Example: perfect fifth r = 3/2
+- Continued fraction [3/2] = [1; 2], coefficients a₀=1, a₁=2
+- C(3/2) = 1/(1 + 1·0.5⁰ + 2·0.5¹) = 1/3 ≈ 0.333
+
+Note: Table values below use a more complete continued fraction expansion (N=6, w=0.5).
+The key point: the formula is computable with real inputs producing real numbers.
 
 **Definition 2.2 (Octave-Normalized Consonance):**
 
@@ -260,8 +267,13 @@ where r ∈ [0,1] measures synchronization (0 = incoherent, 1 = perfect phase-lo
 
 ### 4.2 — Framework as Kuramoto System
 
-**Theorem 4.1 (Framework-Kuramoto Isomorphism):**
-The multi-agent Lycheetah Framework is a Kuramoto system where:
+**Structural Parallel 4.1 (Framework-Kuramoto Analogy):**
+The multi-agent Lycheetah Framework has structural similarities to a Kuramoto system.
+Note: This is an analogy, not a proven isomorphism. An isomorphism requires a
+structure-preserving bijection between the two systems, which has not been constructed.
+The parallel is productive and may lead to a formal isomorphism; that work is pending.
+
+| Kuramoto Element | Framework Element |
 
 | Kuramoto Element | Framework Element |
 |-----------------|-------------------|
@@ -469,7 +481,7 @@ VEYRA:        EWM = Pythagorean tuning      |  Resonance Tensor = Complete harmo
 
 SEVEN-PHASE:  Cycle = Diatonic scale        |  Sectors = Scale degrees
               Phase velocity = Tempo        |  Comma = Spiral engine
-              Calendar = Rhythmic structure |  364 days = Full composition
+              Calendar = Rhythmic structure |  Cycle length = Practitioner-defined
 ```
 
 ### 9.2 — The Interval Table of Framework Operations

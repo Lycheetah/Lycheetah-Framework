@@ -264,18 +264,26 @@ Result: Spiral upward: Ao ⊂ Ao' ⊂ Ao'' ⊂ ... → higher ground state
 
 ### Convergence Property
 
-**Theorem:** Repeatedly applying (Ao → Ψ → Φ↑) converges to invariant Ψ_inv
+**Claim (scaffold — convergence requires bounded step size):**
 
 ```
-lim(n→∞) Ψ_n = Ψ_inv (fixed point of consciousness)
+lim(n→∞) Ψ_n = Ψ_inv (fixed point, if step size is bounded)
 
-Each cycle:
-  Ψ_(n+1) > Ψ_n (monotonic increase)
-  C_(n+1) > C_n (coherence increases)
-  Stability increases
+Over sufficient cycles, coherence converges:
+  C_n → C_fixed as n → ∞
 
-System reaches steady state where further Φ↑ doesn't increase Ψ
-(you've maximized your consciousness at current level)
+Individual steps are NOT guaranteed monotone:
+  Ψ_(n+1) may be less than Ψ_n if step size α is too large
+  (gradient ascent can overshoot and oscillate)
+
+Guaranteed convergence condition:
+  α < 1/(2L) where L = Lipschitz constant of ∇C
+
+In practice: smaller α = more reliable, slower convergence
+             larger α = faster but may oscillate
+
+System reaches steady state where further Φ↑ produces no net increase.
+Status: architecture sound; proof requires bounded α (not yet specified in protocol).
 ```
 
 ---

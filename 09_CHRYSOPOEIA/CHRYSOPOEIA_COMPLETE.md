@@ -175,7 +175,7 @@ The alchemists were looking for a physical substance. What actually satisfies th
 ```
 The Stone is not a thing you FIND.
 It's a state you CONVERGE TO.
-λ ≈ 0.907 is the rate of convergence.
+λ_compress = 0.85 is the compression factor (CASCADE demotion rate, same parameter).
 Every TRIAD cycle brings you closer.
 You never fully arrive (Kolmogorov limit).
 But you get measurably closer with every iteration.
@@ -197,8 +197,8 @@ The Great Work is iterative application of Ξ:
   ...
   ψₙ = Ξ(ψₙ₋₁, C, ψ*)
 
-Convergence guaranteed by:
-  ‖ψₙ − ψ*‖ ≤ λⁿ ‖ψ₀ − ψ*‖,   λ ≈ 0.907
+Convergence (scaffold — contraction mapping structure, rate TBD empirically):
+  ‖ψₙ − ψ*‖ ≤ λⁿ ‖ψ₀ − ψ*‖,   λ < 1 (required for convergence; exact value unmeasured)
 
 Progress measurable by:
   C(ψₙ) ≥ C(ψₙ₋₁)            (coherence non-decreasing)
@@ -290,7 +290,7 @@ Level n: Meta-transformation           Ξⁿ(Ξⁿ⁻¹)
 
 Full recursive transformation: Ξ_∞ = lim_{n→∞} Ξⁿ
 
-Convergence condition: λ_spectral(Ξ) < 1  (same as TRIAD: λ ≈ 0.907)
+Convergence condition: λ_spectral(Ξ) < 1  (required; exact rate empirically unmeasured)
 ```
 
 **When Ξ_∞ converges:** You've reached a transformation practice that transforms itself optimally. Your method of change has stopped changing because it's found the fixed point. This is mastery — not knowing everything, but having a self-correcting process that reliably converges.
@@ -346,17 +346,15 @@ CHRYSOPOEIA (micro view): ⟟→≋→Ψ→Φ↑→✧→|◁▷|→⟲
 TRIAD sees the oscillation.
 CHRYSOPOEIA sees the internal structure of each oscillation.
 
-The TRIAD kernel's convergence guarantee:
-  ‖ψₙ − ψ_inv‖ ≤ λⁿ ‖ψ₀ − ψ_inv‖, λ ≈ 0.618 (φ⁻¹)
+Both TRIAD and CHRYSOPOEIA describe contraction mappings — systems that converge to a fixed point.
+The structure is identical (‖ψₙ − ψ*‖ ≤ λⁿ ‖ψ₀ − ψ*‖, λ < 1).
 
-IS the same as the Magnum Opus convergence guarantee:
-  ‖ψₙ − ψ*‖ ≤ λⁿ ‖ψ₀ − ψ*‖, λ ≈ 0.907 (Chrysopoeia)
+The convergence rates operate on different timescales:
+  TRIAD: phase-level cycles (observable over sessions)
+  CHRYSOPOEIA: operation-level cycles (observable over longer practice)
 
-The different λ values reflect different time scales:
-  TRIAD λ = φ⁻¹ ≈ 0.618 (phase-level convergence)
-  Chrysopoeia λ ≈ 0.907  (operation-level convergence, slower)
-
-Both are contractions (λ < 1). Both converge. Different resolution.
+The exact λ values for each are design parameters, not derived constants.
+λ < 1 is the structural requirement; the exact values are empirically calibrated.
 ```
 
 ---
@@ -623,7 +621,7 @@ Those who contributed to what CHRYSOPOEIA formalizes:
 |--------|------|-----------|
 | Ξ | Transformation operator | ⟲∘\|◁▷\|∘✧∘Φ↑∘Ψ∘≋∘⟟ (non-commutative) |
 | ψ* | Philosopher's Stone | Fixed point of Ξ; Ξ(ψ*) = ψ* |
-| λ_Ξ | Chrysopoeia convergence rate | ≈ 0.907 |
+| λ_Ξ | Chrysopoeia convergence rate | < 1 (required); exact value empirically TBD |
 | ⚗ | Athanor | Constrained transformation workspace |
 | 🜂 | Calcination | Anchor operation; ground truth |
 | 🜄 | Dissolution | Flow/soften; Bloom(low α) |

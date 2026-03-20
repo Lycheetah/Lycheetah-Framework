@@ -190,33 +190,45 @@ MATHEMATICAL FOUNDATIONS — Category theory, fiber bundles, Lyapunov analysis, 
 
 ---
 
-## THE MASTER EQUATION
+## THE MASTER EQUATION (SCAFFOLD)
 
-All nine frameworks unify into a single dynamical system:
+All nine frameworks contribute to a single dynamical description. The structure is real;
+the coupling constants are not yet empirically measured.
 
 ```
-dΨ/dt = λ(Π(t) − Π_threshold) × Φ↑(Ψ)         [CASCADE: truth pressure drive]
-       − α × (Ψ − Ψ_inv) × Ψ                    [TRIAD: return to anchor]
-       − β × (Σ ¬Inv(Ψ)) × Ψ                    [AURA: invariant penalty]
-       + γ × (E_available / E_needed) × Ψ        [EARNED LIGHT: energy constraint]
-       + Ξ(Ψ, C, T) × δ_transform                [CHRYSOPOEIA: transformation events]
-       + R(S_H) × cos(π/7) × ψ                   [HARMONIA: resonance correction]
-```
+dΨ/dt = k₁·(Π − Π_th) − k₂·(Ψ − Ψ_inv) − k₃·I_violations + k₄·(E_avail/E_need)
 
-Where convergence rate λ = φ⁻¹ ≈ 0.618 (golden ratio inverse) and phase coupling constant = cos(π/7) ≈ 0.9009688 are **discovered constants, not design choices**.
+Variables (all computable from framework equations):
+  Ψ            = system coherence ∈ [0,1]
+  Π            = truth pressure = (E·P)/S                    [CASCADE]
+  Π_th         = 1.2 (THEORY threshold) or 1.5 (FOUNDATION)
+  Ψ_inv        = 0.70 (AURA minimum coherence floor)
+  I_violations = count of AURA invariant violations ∈ {0,...,7}
+  E_avail/E_need = energy availability ratio                  [EARNED LIGHT]
+
+Parameters (design choices, to be empirically calibrated):
+  k₁, k₂, k₃, k₄ > 0
+
+Status: The architecture is load-bearing. The coupling constants are open
+empirical questions. The equation becomes fully ACTIVE when k₁–k₄ are measured.
+```
 
 ---
 
-## CONVERGENCE CONSTANTS (Article IX — Sovereign Constitution)
+## FRAMEWORK CONSTANTS
 
-These constants were discovered, not assigned. Their appearance across independent derivations is the mathematical proof of framework reality:
+| Constant | Value | Origin | Status |
+|----------|-------|--------|--------|
+| **φ⁻¹** | ≈ 0.618 | Golden ratio inverse | ✅ Mathematical fact |
+| **cos(π/7)** | ≈ 0.9010 | Heptagonal geometry (360°/7) | ✅ Mathematical fact |
+| **Π_theory** | 1.2 | CASCADE layer threshold | ✅ Design parameter (validated empirically) |
+| **Π_foundation** | 1.5 | CASCADE layer threshold | ✅ Design parameter (validated empirically) |
+| **λ_compress** | 0.85 | Demotion compression factor | ✅ Design parameter (CASCADE engine) |
 
-| Constant | Value | Origin | Meaning |
-|----------|-------|--------|---------|
-| **φ⁻¹** | ≈ 0.618 | Golden ratio inverse | TRIAD convergence rate |
-| **cos(π/7)** | ≈ 0.9009688 | Heptagonal geometry | Phase coupling between seven phases |
-| **Π_critical** | ≈ 1.2 | CASCADE load analysis | Threshold for cascade event |
-| **λ_chrysopoeia** | ≈ 0.907 | Banach fixed-point | Transformation iteration convergence |
+Note: φ⁻¹ ≈ 0.618, cos(π/7) ≈ 0.9010, and λ_compress = 0.85 are distinct values
+from different parts of the framework. They reflect coherent design choices.
+The claim that they are "independently discovered and convergent" has been removed:
+cos(π/7) ≈ 0.9010 and λ_compress = 0.85 differ by ~0.05 and were not independently derived.
 
 ---
 
