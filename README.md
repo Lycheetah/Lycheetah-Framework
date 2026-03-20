@@ -258,6 +258,26 @@ Every framework, every metric, every constant maps to one or more of these. The 
 
 ---
 
+## Advanced: Multi-Model Workflow
+
+This repository is designed for **model-tiered AI collaboration**:
+
+| Model Tier | Role | What To Read First |
+|-----------|------|-------------------|
+| **Frontier (Opus)** | Strategy, architecture, deep synthesis, curriculum design | `SOL_PLAN.md` → `CLAUDE.md` → build strategic docs |
+| **Mid (Sonnet)** | Execution, code, documentation, integration | `SOL_PLAN.md` → pick P0/P1 → execute |
+| **Fast (Haiku)** | Quick tasks, formatting, small fixes, creative exploration | `SOL_PLAN.md` → pick ONE task → complete it |
+
+**Model Governance Rules** (see `SOL_PLAN.md`):
+1. **NEVER reduce .md file size.** Only add, refine, or create new files.
+2. **NEVER delete content** without Mac's explicit approval.
+3. If unsure → **don't do it. Ask Mac.**
+4. **Always update SOL_PLAN.md** at session end.
+
+**Token Efficiency:** The `16_SOL_VEYRA_ARCHITECTURE/SOL_VEYRA_OPERATIONAL_SPEC.md` contains a token budget guide and efficiency protocol for each model tier.
+
+---
+
 ## The Operating System (CLAUDE.md)
 
 [`CLAUDE.md`](CLAUDE.md) contains the **Sol Protocol** — operating instructions for AI collaboration under this framework. It instantiates constitutional constraints, four alchemical operating levels, and the Two-Point Protocol for human-AI co-creation.
