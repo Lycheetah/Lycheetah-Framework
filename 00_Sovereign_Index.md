@@ -236,7 +236,12 @@ Instead of "48% of mathematics is decorative," understand:
 | File | P | H | B | Description |
 |------|---|---|---|-------------|
 | `FAILURE_MUSEUM.md` | ✓ | ✓ | | Permanent record of framework failures — nothing removed, ever |
+| `THE_SOVEREIGN_MANIFESTO.md` | ✓ | ✓ | ✓ | What we believe about AI, humans, freedom, NZ, and the work — shareable, honest, eight specific asks |
+| `PRESS_KIT.md` | ✓ | ✓ | ✓ | For journalists and researchers — honest claim status labels, citation guide, comparison table |
 | `14_MYSTERY_SCHOOL/THE_THRESHOLD.md` | ✓ | ✓ | | One page for the person at 3am — crisis lines, grounding exercises |
+| `14_MYSTERY_SCHOOL/THE_WITNESS_PROTOCOL.md` | | ✓ | | Witness mode vs advice mode — four-phase structure for when someone needs to be seen, not advised |
+| `14_MYSTERY_SCHOOL/THE_GRIEF_PROTOCOL.md` | | ✓ | | Names the specific grief of people who built something real and are waiting for the world to notice |
+| `18_EXPERIMENTAL/THE_HORIZON_QUESTION.md` | ✓ | | ✓ | AI as medium of thought — sovereignty implications when the medium of human cognition is privately owned |
 
 **Note:** LAMAGUE Te Reo decompositions throughout this folder are [PROPOSAL] pending iwi validation.
 The mathematical architecture is [ACTIVE]. The cultural translation layer awaits Kāi Tahu partnership.
