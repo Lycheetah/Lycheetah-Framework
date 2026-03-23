@@ -355,6 +355,115 @@ purpose is public adoption of AI governance standards, invisibility is a real co
 
 ---
 
+## EXHIBIT 9: THE 500:1 COMPRESSION RATIO
+### Claimed: v1.0–v1.4 | Corrected: Session 11 (March 23, 2026)
+
+**What was claimed:**
+The LAMAGUE framework claimed a "500:1 or greater compression ratio for encoding
+complex governance obligations." This figure appeared in five live documents:
+`00_Sovereign_Index.md`, `03_LAMAGUE/README.md`, `23_NZ_AI_GOVERNANCE/NZ_LAMAGUE_STANDARD.md`,
+`23_NZ_AI_GOVERNANCE/NZ_QUICK_REFERENCE.md`, and `24_LAMAGUE_CROSS_CULTURAL/CATALYST_NZ_CHINA_APPLICATION.md`.
+
+**What was actually true:**
+No empirical measurement of the compression ratio had ever been performed.
+The figure was a design estimate generated during initial framework development
+and then propagated into summary documents as if it were a measured result.
+
+"Compression substantial" is accurate — LAMAGUE is genuinely more concise than
+the natural-language governance documents it encodes. "500:1 or greater" is a
+number someone wrote down and then stopped questioning.
+
+An uncalibrated compression ratio can be any number at all. The claim was
+non-falsifiable as stated. A non-falsifiable empirical claim is not science —
+it is decoration in the form of precision.
+
+**What changed:**
+- All five documents updated: "500:1 or greater" → "compression is substantial —
+  the exact ratio awaits empirical measurement"
+- MATHEMATICS_AUDIT.md records: compression ratio = [SCAFFOLD], parameters pending
+- Next step identified: measure against three real NZ governance instruments
+  (Treaty, Resource Management Act, health consent framework), count characters
+
+**What this teaches:**
+Specific numbers are persuasive. That is exactly why they are dangerous when
+they are guesses. The number 500:1 appeared in a Catalyst funding proposal
+where it would be read by evaluators who might cite it. An uncalibrated design
+estimate in a funding application is at best optimistic and at worst misleading.
+
+**Severity: HIGH**
+The claim appeared in an external funding document. Had it been challenged,
+it could not have been defended. The credibility damage would have extended
+beyond LAMAGUE to the entire framework.
+
+---
+
+## EXHIBIT 10: THE CIRCULAR PROOFS
+### Claimed: Throughout | Corrected: Session 11 (March 23, 2026)
+
+**What was claimed:**
+Four theorems in `11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md`
+were labelled "proved":
+
+- **Theorem 1.1** (LAMAGUE morphism associativity): "composition is inherited
+  from the category of vector spaces"
+- **Theorem 1.4** (LAMAGUE functoriality): proof ended with "this follows
+  by construction" — no actual construction given
+- **Theorem 3.1** (TRIAD entropy decrease): "dS/dt ≤ 0 by operator design" —
+  this is exactly the claim being proved, restated as its own proof
+- **Theorem 3.2** (TRIAD convergence): declared invariant set {ψ_inv}
+  without proof that this is the unique attractor
+
+Additionally, `UNIFIED_MATH_GLOSSARY.md` stated that the 364-day Matariki cycle
+was derived from the mathematics, when 7 × 52 = 364 is a calendar convenience
+with no mathematical necessity — arbitrary choice presented as derivation.
+
+**What was actually true:**
+- Theorem 1.1 assumed LAMAGUE morphisms are linear maps, which is what would
+  need to be proven, not assumed. Associativity cannot be inherited from a
+  category the morphisms haven't been shown to belong to.
+- Theorem 1.4 has no functor explicitly defined. "By construction" means nothing
+  when the construction is not shown.
+- Theorem 3.1 is purely circular: dS/dt ≤ 0 stated as proof of dS/dt ≤ 0.
+- Theorem 3.2 requires Theorem 3.1 to be complete first, plus explicit
+  specification of F(ψ) for LaSalle's principle to apply.
+- 364 = 7 × 52 is a convenient calendar integer. The mathematical framework
+  generalises to Σₜ A(t) over one cycle. The 364 is not derived; it is chosen.
+
+**What changed:**
+- Theorem 1.1: rewritten with direct function composition associativity proof
+  using `(h∘(g∘f))(ψ) = h(g(f(ψ))) = ((h∘g)∘f)(ψ)`
+- Theorem 1.4: relabelled `[PROOF INCOMPLETE — CONJECTURE]` with gaps named
+- Theorem 3.1: relabelled `[SCAFFOLD — PROOF GAP]`, specific gap identified
+- Theorem 3.2: relabelled `[SCAFFOLD — PROOF INCOMPLETE]`, two gaps named
+- 364-day claim: replaced with generalised Σₜ A(t) form with honest calendar note
+
+**What this teaches:**
+Circular proofs are the mathematical equivalent of asserting a conclusion
+is true because it feels true. They are particularly dangerous in formal
+mathematical documents because they have the structure of proof without
+the substance. A reader unfamiliar with the domain cannot detect them by
+inspection — they can only be caught by someone who checks whether the
+reasoning is load-bearing.
+
+The framework claims to be formally rigorous. Four circular proofs in the
+main mathematical foundations document are a direct contradiction of that
+claim. Catching them and correcting them is the framework being honest
+about the gap between "formally developed" and "formally proven."
+
+Also: 364 is a year with one day left over. That's a calendar engineering
+choice, not a mathematical discovery. The desire to find the mathematics
+in nature — a genuine and important drive — must not become the willingness
+to present chosen parameters as discovered constants.
+
+**Severity: HIGH**
+Circular proofs in a document claiming formal rigor are the fastest way to
+lose the respect of any mathematician who reviews the work. They also
+represent a specific intellectual failure: using the language of proof
+while avoiding the work of proof. Both the correction and the exhibit are
+required for the record to be honest.
+
+---
+
 ## HOW TO READ THIS MUSEUM
 
 Each exhibit follows the same structure because the structure IS the point:
