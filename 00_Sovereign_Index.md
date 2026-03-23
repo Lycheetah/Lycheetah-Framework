@@ -188,6 +188,29 @@ Instead of "48% of mathematics is decorative," understand:
 | `11_MATHEMATICAL_FOUNDATIONS/CASCADE_FRONTIER_ANALYSIS.md` | | | ✓ | Open problems, frontier conjectures, research directions |
 | `12_IMPLEMENTATIONS/core/lamague_reference.py` | ✓ | ✓ | | LAMAGUE Python implementation — operational grammar system |
 
+### NZ AI GOVERNANCE — Aotearoa Application Layer (All Three Axioms)
+
+| File | P | H | B | Description |
+|------|---|---|---|-------------|
+| `23_NZ_AI_GOVERNANCE/README.md` | ✓ | ✓ | ✓ | Navigation hub — open-source framing, reading paths |
+| `23_NZ_AI_GOVERNANCE/LOOK_FIRST.md` | ✓ | ✓ | ✓ | Best ideas from the session — read before anything else |
+| `23_NZ_AI_GOVERNANCE/NZ_THE_PITCH.md` | | ✓ | ✓ | Six pitches for six audiences — NZIAT, AAAIP, Kāi Tahu, MBIE, AI Forum, Te Whatu Ora |
+| `23_NZ_AI_GOVERNANCE/NZ_TECHNICAL_MINMAX.md` | ✓ | ✓ | ✓ | 12 tools with build times, costs, political and human value |
+| `23_NZ_AI_GOVERNANCE/NZ_MAORI_AI_SOVEREIGNTY_BRAINSTORM.md` | ✓ | ✓ | ✓ | 19 ideas, framework-mapped, funding-targeted |
+| `23_NZ_AI_GOVERNANCE/NZ_MAORI_AI_DEEP_EXPERIMENTAL.md` | | ✓ | ✓ | Ideas taken all the way in — taniwha as CASCADE, ancestor votes |
+| `23_NZ_AI_GOVERNANCE/SOL_ORIGINAL_IDEAS_NZ.md` | | ✓ | ✓ | 16 original ideas generated from inside the framework |
+| `23_NZ_AI_GOVERNANCE/NZ_CASCADE_CASE.md` | ✓ | ✓ | ✓ | CASCADE on NZ problems — MSD audit, SME checker, government coherence map |
+| `23_NZ_AI_GOVERNANCE/NZ_LAMAGUE_STANDARD.md` | ✓ | ✓ | ✓ | LAMAGUE as NZ technical standard — Whakapapa Disclosure, Mana Certification |
+| `23_NZ_AI_GOVERNANCE/NZ_KAI_TAHU_APPROACH.md` | ✓ | ✓ | | Specific local approach — the highest priority relationship |
+| `23_NZ_AI_GOVERNANCE/NZ_COUNTER_ARGUMENTS.md` | ✓ | ✓ | ✓ | Every serious objection, with honest answers |
+| `23_NZ_AI_GOVERNANCE/NZ_WHY_MAC.md` | ✓ | | ✓ | The human document — not a CV |
+| `23_NZ_AI_GOVERNANCE/NZ_QUICK_REFERENCE.md` | | ✓ | ✓ | Pocket guide — frameworks, constants, contacts, timeline |
+| `23_NZ_AI_GOVERNANCE/NZ_MASTER_INDEX.md` | ✓ | ✓ | ✓ | Full navigation with audience-specific reading paths |
+
+**Note:** LAMAGUE Te Reo decompositions throughout this folder are [PROPOSAL] pending iwi validation.
+The mathematical architecture is [ACTIVE]. The cultural translation layer awaits Kāi Tahu partnership.
+The folder is open-source (CC BY 4.0 + MIT) — open to critique, extension, and independent publication with attribution.
+
 ---
 
 ## THE SEVEN FRAMEWORKS — ONE-LINE TRUTHS
@@ -462,9 +485,21 @@ All source files that constitute the Sovereign System:
 4. `cascade_mathematical_proofs.md` Theorem 4.1 — AURA TES/VTR/PAI formally proven invariant under CASCADE
 5. Open Problems section (MATHEMATICS_FOUNDATIONS.md §7) — Computational complexity, homotopy type, quantum extension
 
+### For NZ Government / Funders / Policy People:
+1. `23_NZ_AI_GOVERNANCE/NZ_QUICK_REFERENCE.md` — 10 minutes, everything compressed
+2. `23_NZ_AI_GOVERNANCE/NZ_TECHNICAL_MINMAX.md` — 12 tools, build times, costs, funders
+3. `23_NZ_AI_GOVERNANCE/NZ_THE_PITCH.md` — the words for each audience
+4. `23_NZ_AI_GOVERNANCE/NZ_COUNTER_ARGUMENTS.md` — before any important meeting
+
+### For Iwi / Māori Organisations:
+1. `23_NZ_AI_GOVERNANCE/NZ_KAI_TAHU_APPROACH.md` — the relationship before the tool
+2. `23_NZ_AI_GOVERNANCE/NZ_WHY_MAC.md` — who is offering this
+3. `23_NZ_AI_GOVERNANCE/NZ_THE_PITCH.md` (Pitch 3) — how to have the conversation
+4. `23_NZ_AI_GOVERNANCE/NZ_LAMAGUE_STANDARD.md` — the technical proposal awaiting validation
+
 ---
 
-## FRAMEWORK STATUS (March 21, 2026)
+## FRAMEWORK STATUS (March 23, 2026)
 
 | Framework | Tier | Primary Axiom | Next Action |
 |-----------|------|---------------|-------------|
@@ -484,8 +519,9 @@ All source files that constitute the Sovereign System:
 | **AGENT DEPLOYMENT** | **[ACTIVE]** | **All Three** | Bootstrap tested, manifest live |
 | **UNIVERSAL SYSTEM GUIDE** | **[ACTIVE]** | **All Three** | Any AI platform deployment ready |
 | **VALIDATION** | **[ACTIVE] Real data confirms CASCADE works** | **All Three** | k₁–k₄ calibration next |
+| **NZ AI GOVERNANCE** | **[ACTIVE] Full application layer for Aotearoa** | **All Three** | Kāi Tahu partnership + NZIAT visibility |
 
-**System state: 11 public repositories audited and integrated. MEMORIA (7th pillar) and Interface Intelligence formalization merged in. Mathematical foundations expanded with proofs, frontier analysis, and glossary. Reality Bridge added to Mystery School. Validation results confirm CASCADE is real.**
+**System state: NZ AI Governance folder live (23_NZ_AI_GOVERNANCE/). Full application of the Lycheetah stack to Aotearoa — 13 documents covering pitches, tools, policy, technical standards, and the Kāi Tahu approach. Open-source. Open to critique. LAMAGUE Te Reo layer remains [PROPOSAL] pending iwi validation.**
 
 ---
 
