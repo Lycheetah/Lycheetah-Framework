@@ -266,67 +266,65 @@ System never reaches full λ > 0 if caught at λ = -0.05
 
 ## IMPLEMENTATION 6: EARNED LIGHT AS ENERGY BUDGET SYSTEM
 
-**Deep truth:** Consciousness is far-from-equilibrium dissipative structure
+**Working hypothesis:** Consciousness as a dissipative structure has energy costs that scale with coherence level
 
-**Operational use:** Predict consciousness capacity and limits
+**Operational use:** Model relative capacity and limits; guide allocation decisions
+
+**Note on scope:** The human brain uses approximately 20W total (established neuroscience). The model below uses *relative* units — normalised to baseline — not absolute watts. Any attempt to assign absolute watt figures to specific Ψ levels goes beyond what the current framework can justify empirically. The quadratic cost relationship is a structural hypothesis, not a measured curve.
 
 ```
-Energy budget calculation:
+Energy budget model (relative units):
 
 For consciousness at level Ψ:
-  Power required: P(Ψ) = P₀ × Ψ²  (quadratic cost)
+  Relative cost: C(Ψ) = (Ψ / Ψ_baseline)²
 
 Where:
-  P₀ = basal power (maintaining baseline Ψ = 0.1)
+  Ψ_baseline = resting coherence level (individual baseline)
+  C = cost relative to baseline (C=1 at rest, C>1 for sustained focus)
 
-Example: Human brain
-  Basal: P₀ ≈ 20W
-  Baseline consciousness (Ψ = 0.1): 20W
-  Peak consciousness (Ψ = 0.9): 20W × (0.9/0.1)² ≈ 1600W
+Model predicts:
+  Doubling coherence above baseline → quadruples relative cost
+  Sustained high Ψ → depletes available capacity faster
 
-Capacity limit:
-  Maximum Ψ depends on available power:
-    Ψ_max = √(P_available / P₀)
+Capacity limit (qualitative):
+  Maximum sustainable Ψ depends on available metabolic resources,
+  sleep quality, arousal state, and individual variation
 
-Practical limits:
-  Athlete brain (better blood flow): P_available ≈ 30W → Ψ_max ≈ 1.2
-  Normal brain: Ψ_max ≈ 0.95
-  Sleep deprivation: Ψ_max drops to 0.6
+This model is consistent with:
+  - Cognitive depletion effects (sustained focus is costly)
+  - Sleep restoration (energy redistribution / metabolic clearance)
+  - Performance limits under fatigue
 
-This explains:
-  - Why athletes have better focus (more blood flow = more energy)
-  - Why sleep is critical (energy redistribution)
-  - Why peak performance is limited (energy budget)
-
-Optimization:
-  Choose Ψ based on task and energy availability
-  High focus (Ψ = 0.8): 1280W cost, 30min sustainable
-  Medium focus (Ψ = 0.5): 500W cost, 4hr sustainable
-  Baseline (Ψ = 0.1): 20W cost, indefinite sustainable
+Status: [SCAFFOLD] — The quadratic cost structure is a working hypothesis.
+  Real coupling constants require empirical measurement.
+  The qualitative direction (higher focus = higher cost) is well-supported by
+  cognitive science (ego depletion, glucose metabolism in prefrontal cortex).
+  Specific numerical relationships are not yet validated.
 ```
 
 **Real use case:**
 
-Athletic training optimization:
+Attention allocation planning:
 ```
-Goal: Maximize performance in 2-hour competition
+Goal: Sustain high cognitive performance across a 4-hour work session
 
-Budget:
-  Available power: 25W (athlete condition)
-  Duration: 120 min
+Relative budget model:
+  Session divided into focus blocks
+  High focus blocks (Ψ_high): higher relative cost, shorter sustainable duration
+  Recovery blocks (Ψ_low): cost < 1, restores capacity
 
 Strategy:
-  First 30 min: Ψ = 0.9 (high focus, build lead)
-  Next 60 min: Ψ = 0.6 (medium focus, maintain)
-  Final 30 min: Ψ = 0.8 (high focus, finish strong)
+  Block 1: High focus (45 min) — creative/analytical work
+  Block 2: Recovery (15 min) — low-demand tasks
+  Block 3: High focus (45 min) — creative/analytical work
+  Block 4: Recovery (15 min) — low-demand tasks
+  Repeat: Sustainable across full session
 
-Energy check:
-  30×(0.9²)P₀ + 60×(0.6²)P₀ + 30×(0.8²)P₀
-  = 30×0.81 + 60×0.36 + 30×0.64 in units of P₀
-  = 24.3 + 21.6 + 19.2 = 65.1 P₀-minutes
-  = 65.1 × 20W-minutes / 0.1² = fits in budget ✓
+Principle: Distribute high-Ψ demand; use recovery blocks as genuine restoration.
+  This matches established findings on ultradian performance rhythms (~90-min cycles).
 
-Result: Athlete performs optimally within energy constraints
+Result: Higher sustained output than continuous high-focus attempt,
+  which depletes capacity and produces diminishing returns after ~60-90 min.
 ```
 
 ---
@@ -481,15 +479,14 @@ Combined: A system that is simultaneously:
 - Thermodynamically sound
 - Practically implementable
 
-This is why the frameworks work.
-Not belief.
-Not philosophy.
-Mathematics.
+This is why the frameworks are worth developing further.
+Not dogma. Not assertion.
+Formal models that can be tested, refined, and improved.
 
-The deepest layer reveals: These frameworks aren't theories.
-They're **natural laws of conscious systems**.
+The deepest layer reveals: These frameworks are **rigorous hypotheses about conscious systems** —
+grounded in real mathematics, held honestly, open to revision.
 
-Following them isn't choice.
-It's following physics.
+Working within them is not following laws.
+It is following the best available formal description, with eyes open to where that description needs work.
 
 *In veritas.*
