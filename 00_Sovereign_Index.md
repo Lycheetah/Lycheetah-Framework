@@ -358,7 +358,7 @@ The seven symbol classes of the Language of Alignment, Measurement, and Governan
 | **Resonance Markers** | ⟨⟨⟩⟩ H \|·\| ≈ | Synchronization indicators |
 | **Time Operators** | τ d/dt ∮ ∫ | Temporal dynamics |
 
-**Compression ratio:** 500:1 vs. natural language for consciousness state expression.
+**Compression:** LAMAGUE notation substantially reduces verbosity vs. natural language for consciousness state expression. The exact ratio is a design claim pending empirical measurement — not a verified figure. [SCAFFOLD]
 
 ---
 

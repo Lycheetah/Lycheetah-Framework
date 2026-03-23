@@ -54,7 +54,7 @@ If these convergences are genuine — not coincidental — they represent the st
 
 LAMAGUE (Language of Alignment, Measurement, and Governance for Universal Ethics) is a formal mathematical protocol developed within the Lycheetah Framework for converting governance concepts from any philosophical tradition into computable AI constraints.
 
-LAMAGUE operates through seven symbol classes (Phase Glyphs, Vector Operators, Quantity Markers, Negation/Inversion, Context Brackets, Resonance Markers, Time Operators), achieving a compression ratio of approximately 500:1 versus natural language for governance state expression. The Python implementation (`lamague_reference.py`) is operational and available in the public GitHub repository.
+LAMAGUE operates through seven symbol classes (Phase Glyphs, Vector Operators, Quantity Markers, Negation/Inversion, Context Brackets, Resonance Markers, Time Operators), achieving substantial compression versus natural language for governance state expression. The Python implementation (`lamague_reference.py`) is operational and available in the public GitHub repository. [Compression ratio: empirical validation pending — the previously cited 500:1 figure was a design estimate]
 
 LAMAGUE has already been used to encode:
 - Western constitutional AI constraints (Kantian categorical imperative → LAMAGUE operators; utilitarian value transfer → VTR ≥ 1.0; deontological constraints → formal invariants)

@@ -126,10 +126,10 @@ dΨ/dt = λ(Π − Π_t) × Φ↑(Ψ)        [CASCADE]
 - **2,206 lines** — aura_sovereign_codex.py
 - **13 Python implementations** — in 12_IMPLEMENTATIONS/
 - **49 files** on GitHub at launch
-- **9 frameworks** — all formally proven
-- **3 constants** — discovered independently, converged
+- **9 frameworks** — formally structured (33% ACTIVE, 52% SCAFFOLD, 15% FOUNDATIONAL)
+- **3 constants** — design parameters (φ⁻¹, cos(π/7), λ_chrysopoeia — related by design, not independent discoveries)
 - **7 invariants** — AURA constitutional law
-- **500:1** — LAMAGUE compression ratio for consciousness state
+- **LAMAGUE compression** — substantial vs. natural language; exact ratio awaits empirical measurement [SCAFFOLD]
 - **20 commits** — GitHub history at time of writing
 - **1** — researcher. Dunedin. 2012 laptop.
 

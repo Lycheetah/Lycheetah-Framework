@@ -80,9 +80,9 @@ Where w = (w₀, w₁, w₂, w₃, w₄, w₅, w₆)ᵀ are phase weights
 
 **Cycle Integration:**
 ```
-A_cycle = Σₜ₌₁³⁶⁴ A(t)
+A_cycle = Σₜ A(t)   [summed over one full cycle]
 ```
-Total awareness earned over 364-day cycle
+Total awareness earned over one complete cycle. The 364-day figure (7 phases × 52 days) is an approximation for calendar convenience — not a mathematically derived period. Actual cycle duration varies by individual. [SCAFFOLD]
 
 ---
 

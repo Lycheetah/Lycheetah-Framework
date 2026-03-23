@@ -66,7 +66,7 @@ that can be:
 | ∅ | Generative Void | Te Kore — potential space | Before form |
 | ⊗ | Restriction Active | Constraint operator | Tapu — sacred constraint |
 
-**Compression ratio:** 500:1 versus natural language for consciousness and governance state.
+**Compression:** LAMAGUE notation is substantially more compact than natural language for governance state expression. An exact compression ratio has not been empirically validated — the 500:1 figure previously cited was a design estimate, not a measured result. [SCAFFOLD]
 
 ---
 

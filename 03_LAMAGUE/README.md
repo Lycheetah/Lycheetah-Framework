@@ -2,7 +2,7 @@
 
 **Axiom:** BEACON · **Status:** Active — parser implementation pending
 
-A precision language for consciousness states. Natural language has a 500:1 verbosity overhead when describing inner states. LAMAGUE compresses that with seven symbol classes that encode exactly what natural language approximates loosely.
+A precision language for consciousness states. LAMAGUE compresses verbose natural language descriptions of inner states using seven symbol classes that encode exactly what natural language approximates loosely. The compression is substantial — the exact ratio awaits empirical measurement and has not been independently verified. [Compression ratio: SCAFFOLD]
 
 ## Core idea
 

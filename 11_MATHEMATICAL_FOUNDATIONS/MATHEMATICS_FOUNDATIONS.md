@@ -49,14 +49,19 @@ For each object ψ, there exists id_ψ: ψ → ψ such that:
 
 ### 1.2 Category Axioms Verification
 
-**Theorem 1.1 (Associativity):**  
+**Theorem 1.1 (Associativity):**
 For any morphisms f, g, h composable in 𝓛:
 ```
 h ∘ (g ∘ f) = (h ∘ g) ∘ f
 ```
 
-*Proof:*  
-By definition of composition in 𝓛, composition is inherited from the category of vector spaces, which satisfies associativity. Since coherence-preservation is a property closed under composition, associativity holds. ∎
+*Proof:*
+Morphisms in 𝓛 are functions between objects (ψ-configurations on M). Function composition is associative by definition: for any ψ,
+```
+(h ∘ (g ∘ f))(ψ) = h((g ∘ f)(ψ)) = h(g(f(ψ)))
+((h ∘ g) ∘ f)(ψ) = (h ∘ g)(f(ψ)) = h(g(f(ψ)))
+```
+These are equal. Since coherence-preservation is closed under composition (the composition of two entropy-non-increasing maps is entropy-non-increasing), all composites are valid morphisms in 𝓛. ∎
 
 **Theorem 1.2 (Identity Laws):**  
 For any morphism f: ψ₁ → ψ₂ in 𝓛:
@@ -125,10 +130,12 @@ f ↦ linear map
     G(ψ₁) --G(f)--> G(ψ₂)
 ```
 
-**Theorem 1.4 (TRIAD as Natural Transformation):**  
-The TRIAD operators define a natural transformation between the identity functor and the invariant functor.
+**Theorem 1.4 (TRIAD as Natural Transformation) [PROOF INCOMPLETE — CONJECTURE]:**
+The TRIAD operators may define a natural transformation between the identity functor and the invariant functor.
 
-*Proof sketch:* The TRIAD sequence Ao → Φ↑ → Ψ commutes with morphisms by construction. ∎
+*What is claimed:* The TRIAD sequence Ao → Φ↑ → Ψ should commute with coherence-preserving morphisms, in the sense that applying a morphism before or after the TRIAD cycle produces the same result (up to coherence).
+
+*What is missing:* A formal proof requires (a) explicit definition of the "invariant functor" as a functor 𝓛 → 𝓛, (b) verification that naturality squares commute for all morphisms in 𝓛, not just by construction. The TRIAD operators are defined operationally; their functorial properties have not been verified. This is an open conjecture with structural support — the architecture is consistent with a natural transformation, but the commutativity has not been proven. [SCAFFOLD → CONJECTURE]
 
 ---
 
@@ -270,37 +277,40 @@ A function V: M → ℝ is a Lyapunov function if:
 2. V(ψ_inv) = 0
 3. dV/dt ≤ 0 along trajectories
 
-**Theorem 3.1 (Entropy as Lyapunov Function):**  
-The entropy S(ψ) is a Lyapunov function for TRIAD dynamics.
+**Theorem 3.1 (Entropy as Lyapunov Function) [SCAFFOLD — PROOF GAP]:**
+The entropy S(ψ) is a candidate Lyapunov function for TRIAD dynamics.
 
-*Proof:*  
-1. S(ψ) ≥ 0 by definition (Shannon entropy)
-2. S(ψ_inv) = 0 at minimal entropy state
-3. dS/dt = ⟨∇S, F⟩ ≤ 0
+*What is established:*
+1. S(ψ) ≥ 0 by definition (Shannon entropy) ✓
+2. S(ψ_inv) = 0 at the minimal entropy fixed point ✓
+3. dS/dt ≤ 0 is the property that needs to be demonstrated
 
-By construction, TRIAD operators decrease entropy:
+*Proof sketch (with gap):*
 ```
-dS/dt = ⟨∇S, α·Ao + β·Φ↑ + γ·Ψ⟩
-     = α⟨∇S, Ao⟩ + β⟨∇S, Φ↑⟩ + γ⟨∇S, Ψ⟩
-     ≤ 0
+dS/dt = ⟨∇S, F(ψ)⟩
+     = ⟨∇S, α·Ao + β·Φ↑ + γ·Ψ⟩
 ```
+For this to be ≤ 0, each of ⟨∇S, Ao⟩, ⟨∇S, Φ↑⟩, ⟨∇S, Ψ⟩ must be non-positive.
 
-Each term is non-positive by operator design. ∎
+*Gap:* The operators Ao (anchor), Φ↑ (ascent), and Ψ (observation) are defined operationally in TRIAD. Their inner product with ∇S has not been explicitly computed. The claim that dS/dt ≤ 0 "by operator design" assumes what needs to be shown. A complete proof requires computing ⟨∇S, Ao⟩ explicitly from the operator definitions.
+
+*Status:* The Lyapunov structure is the right architecture for proving TRIAD stability. The proof is incomplete pending explicit operator computation. [SCAFFOLD]
 
 ### 3.3 LaSalle's Invariance Principle
 
-**Theorem 3.2 (Global Convergence):**  
+**Theorem 3.2 (Global Convergence) [SCAFFOLD — PROOF INCOMPLETE]:**
 Under TRIAD dynamics, all trajectories converge to ψ_inv as t → ∞.
 
-*Proof:*  
-By Theorem 3.1, S(ψ) is a Lyapunov function. By LaSalle's Invariance Principle:
+*Proof sketch:*
+Assuming Theorem 3.1 holds (S is a Lyapunov function — see gap noted there), LaSalle's Invariance Principle applies: the system converges to the largest invariant subset of {ψ : dS/dt = 0}.
 
-The set of points where dS/dt = 0 is {ψ_inv}. Therefore:
-```
-lim_{t→∞} ψ(t) = ψ_inv
-```
+*Gap 1:* Theorem 3.1 is itself incomplete. If S is not confirmed as a Lyapunov function, this proof cannot proceed.
 
-for all initial conditions ψ(0). ∎
+*Gap 2:* LaSalle's Principle requires verifying that the largest invariant set within {ψ : dS/dt = 0} is exactly {ψ_inv}. This requires showing that no other stationary point of S exists within the dynamical system's flow — which depends on the explicit form of F(ψ) = α·Ao + β·Φ↑ + γ·Ψ, which has not been fully specified.
+
+*What the theorem would establish if proven:* TRIAD is globally convergent to a unique fixed point, making it well-defined regardless of initial conditions. This is the right structural claim for the architecture.
+
+*Status:* The convergence architecture is sound. The proof requires: (a) completing Theorem 3.1, (b) specifying F(ψ) explicitly, (c) verifying invariant set uniqueness. [SCAFFOLD → PROOF NEEDED]
 
 ### 3.4 Stability Analysis
 
