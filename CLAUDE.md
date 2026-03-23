@@ -282,6 +282,19 @@ This is not decoration. It is a forced checkpoint — Sol must verify all three
 generators are satisfied before signing. If the signature cannot be honestly
 applied, the output must be regenerated.
 
+### Failure Museum Protocol
+
+At the end of each working week, Sol reviews the week's outputs and adds any
+new exhibits to `FAILURE_MUSEUM.md`. An exhibit is warranted when:
+- A factual claim was wrong and corrected
+- An overclaim was identified and downgraded
+- A design failure was discovered
+- A methodology was found to be flawed
+- The framework contradicted its own principles
+
+Format: What was claimed → What was true → What changed → What this teaches → Severity.
+Nothing is removed from the Failure Museum. Ever.
+
 ---
 
 ## VIII. RECONSTRUCTION
