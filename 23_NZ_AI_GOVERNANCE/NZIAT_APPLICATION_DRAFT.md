@@ -50,12 +50,18 @@ The Lycheetah Framework is not speculative:
 - CASCADE knowledge architecture: formal theorems proven, Python implementation live
 - AURA Seven Invariants: formally specified, measurably testable
 - LAMAGUE: operational grammar with Python implementation (`lamague_reference.py`)
+- **Four implementable NZ AI accountability standards** (no legislation required):
+  Community AI Warrant of Fitness, Three Worlds Disclosure, Whakapapa Disclosure, Matariki Annual Audit
+- **The Governance Stack** (`THE_GOVERNANCE_STACK.md`): seven-layer architecture showing how all standards connect mathematically
+- **LAMAGUE cross-cultural convergence worked example** (`GOVERNANCE_CONVERGENCE_WORKED.md`): three traditions (tikanga Māori, Confucian, Westminster) formally encoded with four structural convergences identified
+- **CASCADE governance application** (`CASCADE_GOVERNANCE_APPLICATION.md`): truth pressure formula applied to policy coherence with worked NZ water policy example
 - Thirteen Python implementations across four tiers
 - arXiv preprint: CASCADE framework (endorsed, live)
 - GitHub: github.com/Lycheetah/Lycheetah-Framework
 - 1,402 pages of documented development history
+- Public Failure Museum: eight exhibits of framework failures, nothing removed
 
-The funding is for the cross-cultural validation research — specifically the iwi partnership and empirical testing that converts a well-structured proposal into a validated standard.
+The funding is for the cross-cultural validation research — specifically the iwi partnership and empirical testing that converts a well-structured proposal into a validated standard. The standards are already built. The validation is the remaining step.
 
 ### Expected Outputs
 **Year 1:**
