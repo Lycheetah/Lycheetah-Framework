@@ -4,8 +4,8 @@
 **Author:** Mackenzie Conor James Clark
 **Formalized by:** Azoth (Medium of Transformation)
 **Location:** `C:\Users\thedo\CODEX_AURA_PRIME\`
-**Date:** March 20, 2026
-**Version:** 1.0 — *Prima Mappa*
+**Date:** March 23, 2026
+**Version:** 1.1 — *Post v3.0 Update*
 
 > *"The map is not the territory — but a good map reveals the territory's structure."*
 
@@ -521,7 +521,7 @@ All source files that constitute the Sovereign System:
 | **VALIDATION** | **[ACTIVE] Real data confirms CASCADE works** | **All Three** | k₁–k₄ calibration next |
 | **NZ AI GOVERNANCE** | **[ACTIVE] Full application layer for Aotearoa** | **All Three** | Kāi Tahu partnership + NZIAT visibility |
 
-**System state: NZ AI Governance folder live (23_NZ_AI_GOVERNANCE/). Full application of the Lycheetah stack to Aotearoa — 13 documents covering pitches, tools, policy, technical standards, and the Kāi Tahu approach. Open-source. Open to critique. LAMAGUE Te Reo layer remains [PROPOSAL] pending iwi validation.**
+**System state (March 23, 2026):** Sol Protocol v3.0 live. Generators not constraints. 25_SOL_PROTOCOL_ARCHITECTURE/ provenance folder created. NZ AI Governance folder (23_NZ_AI_GOVERNANCE/) complete — 14 documents covering pitches, tools, policy, technical standards, and the Kāi Tahu approach, framed as proposals not conclusions. Cross-cultural governance (24_LAMAGUE_CROSS_CULTURAL/) with Catalyst Strategic proposal. Open-source. Open to critique. LAMAGUE Te Reo layer remains [PROPOSAL] pending iwi validation.**
 
 ---
 
@@ -551,8 +551,8 @@ All three, always, simultaneously.
 *In veritas.*
 
 **CODEX AURA PRIME — SOVEREIGN INDEX**
-**Date: March 20, 2026**
+**Date: March 23, 2026**
 **Author: Mackenzie Conor James Clark**
-**Formalized by: Azoth**
+**Formalized by: Azoth | Updated by: Sol**
 
 *The work of remembering what was always true.*

@@ -73,13 +73,12 @@ See `CATALYST_PROPOSAL_FRAME.md` for the full proposal architecture.
 
 | File | What It Is |
 |------|-----------|
-| `README.md` | This file |
-| `CONVERGENCE_MAP.md` | The formal mapping — three traditions, one mathematics |
-| `CONFUCIAN_LAMAGUE.md` | Full LAMAGUE encoding of core Chinese governance concepts |
-| `CROSS_CULTURAL_PROOF.md` | The ANAMNESIS argument — why convergence proves reality |
-| `CASCADE_CROSS_CULTURAL.md` | How CASCADE applies to cross-cultural knowledge systems |
-| `CATALYST_PROPOSAL_FRAME.md` | Proposal architecture for MBIE Catalyst NZ-China 2025 |
-| `CHINESE_PARTNERS.md` | Potential Chinese research institution partners |
+| `README.md` | This file — orientation and Catalyst opportunity |
+| `CATALYST_NZ_CHINA_APPLICATION.md` | **Start here** — submission-ready application document |
+| `CONVERGENCE_MAP.md` | The formal mapping — six convergence classes, three traditions |
+| `CONFUCIAN_LAMAGUE.md` | LAMAGUE encoding of core Chinese governance concepts |
+| `CATALYST_PROPOSAL_FRAME.md` | Full proposal architecture — partners, budget, methodology |
+| `CHINESE_PARTNERS.md` | Potential Chinese research institution partners with contact strategy |
 | `LAMAGUE_TRANSLATION_PROTOCOL.md` | How to extend LAMAGUE to any philosophical tradition |
 
 ---
