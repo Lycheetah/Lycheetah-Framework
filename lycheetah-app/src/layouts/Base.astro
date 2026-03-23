@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 export interface Props {
   title?: string;
   description?: string;
@@ -22,11 +24,16 @@ const fullTitle = title === 'Lycheetah Framework' ? title : `${title} — Lychee
   <meta name="description" content={description} />
   <title>{fullTitle}</title>
 
-  <!-- KaTeX for math rendering -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <!-- KaTeX — served locally for offline use -->
+  <link rel="stylesheet" href="/katex/katex.min.css" />
 
-  <!-- Global styles -->
-  <link rel="stylesheet" href="/styles/global.css" />
+  <!-- System font stack — no external request needed -->
+  <style>
+    :root {
+      --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --font-mono: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
+    }
+  </style>
 
   <!-- Favicon inline SVG -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◎</text></svg>" />
