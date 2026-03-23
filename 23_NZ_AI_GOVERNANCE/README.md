@@ -6,11 +6,28 @@
 
 ## WHAT THIS FOLDER IS
 
-This is the complete body of work at the intersection of the Lycheetah Framework
-and Aotearoa New Zealand's AI governance moment.
+This is a collection of **ideas and proposals** — not conclusions — generated
+using the Lycheetah Framework as a thinking tool, applied to Aotearoa New Zealand's
+AI governance moment.
 
-It is open-source. It is open to critique. It is offered as a starting point,
-not a conclusion.
+**Some of these ideas may work. Some may not.** That is the point.
+
+The Lycheetah Framework (CASCADE, AURA, LAMAGUE, and the other formal components)
+was used to generate, structure, and stress-test these proposals. The framework
+gave us a way to think rigorously about AI governance — but rigorous thinking
+does not guarantee correct answers. These are hypotheses, not prescriptions.
+
+**What we're offering:**
+- A set of ideas for NZ AI governance that are formally structured and openly documented
+- The mathematical tools (LAMAGUE, CASCADE) used to generate them
+- Full transparency about what is tested, what is proposed, and what is speculative
+- Everything labelled honestly: [ACTIVE], [SCAFFOLD], or [CONJECTURE]
+
+**What we're NOT claiming:**
+- That these are the only good ideas
+- That the framework is the only valid approach
+- That any of this should be adopted without independent critique and testing
+- That LAMAGUE Te Reo decompositions are valid without iwi partnership
 
 Anyone reading this work is invited to:
 - **Argue against it** — challenge the ideas, the mathematics, the framing
@@ -23,18 +40,18 @@ how changes enter the codebase. This folder follows those same principles.
 
 ---
 
-## THE CORE CLAIM
+## THE CORE HYPOTHESIS
 
 NZ has a window — open now, closing as overseas AI systems become default
 infrastructure here — to build AI governance that is:
 
-1. **Formally proven** at the mathematical level (not aspirational guidelines)
+1. **Formally structured** at the mathematical level (not aspirational guidelines)
 2. **Tikanga-grounded** at the constitutional level (not cultural overlay)
 3. **Open-source** for all to use, critique, extend, and own
 4. **Built here** — in Dunedin, from the land, in relationship with Kāi Tahu
 
-The Lycheetah Framework is the technical foundation.
-This folder is the application layer.
+The Lycheetah Framework provides the formal tools to explore this hypothesis.
+This folder contains the ideas we've generated so far — offered for testing, not adoption.
 
 ---
 
