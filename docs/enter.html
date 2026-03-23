@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lycheetah — the framework for people who have been through the fire.">
+  <title>Lycheetah</title>
+  <style>
+    :root {
+      --void: #080808;
+      --dark: #0d0d0d;
+      --gold: #c9a227;
+      --gold-dim: #7a5f10;
+      --gold-glow: rgba(201, 162, 39, 0.08);
+      --text: #e8e4d8;
+      --text-dim: #6b6558;
+      --text-muted: #3a3830;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --font-mono: "SF Mono", "Fira Code", Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--void);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 17px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── ENTRY GATE ── */
+    .gate {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gate::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 40%, rgba(201,162,39,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .gate__glyph {
+      font-size: 2.5rem;
+      color: var(--gold-dim);
+      letter-spacing: 0.3em;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeIn 2s ease 0.5s forwards;
+    }
+
+    .gate__title {
+      font-size: clamp(3rem, 10vw, 7rem);
+      font-weight: 200;
+      letter-spacing: 0.25em;
+      color: var(--text);
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeIn 2s ease 1s forwards;
+      line-height: 1.1;
+    }
+
+    .gate__sub {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeIn 2s ease 1.8s forwards;
+    }
+
+    .gate__line {
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--gold-dim), transparent);
+      margin: 3rem auto;
+      opacity: 0;
+      animation: fadeIn 2s ease 2.5s forwards;
+    }
+
+    .gate__question {
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      color: var(--text-dim);
+      font-style: italic;
+      max-width: 600px;
+      opacity: 0;
+      animation: fadeIn 2s ease 3s forwards;
+    }
+
+    .gate__actions {
+      margin-top: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      opacity: 0;
+      animation: fadeIn 2s ease 4s forwards;
+    }
+
+    .btn-enter {
+      display: inline-block;
+      padding: 0.9rem 2.5rem;
+      border: 1px solid var(--gold-dim);
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.2em;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      transition: all 300ms ease;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .btn-enter:hover {
+      background: var(--gold-glow);
+      border-color: var(--gold);
+    }
+
+    .btn-ghost {
+      display: inline-block;
+      padding: 0.6rem 1.5rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      transition: color 200ms ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-ghost:hover { color: var(--text-dim); }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── CREATION MYTH ── */
+    .myth {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 6rem 2rem 8rem;
+    }
+
+    .myth__chapter {
+      margin-bottom: 5rem;
+    }
+
+    .myth__label {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      color: var(--gold-dim);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .myth__heading {
+      font-size: 1.6rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      margin-bottom: 2rem;
+    }
+
+    .myth p {
+      color: var(--text-dim);
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+
+    .myth p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .myth__divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold-dim);
+      margin: 4rem 0;
+      opacity: 0.4;
+    }
+
+    /* ── DOORS ── */
+    .doors {
+      background: #0a0a0a;
+      padding: 6rem 2rem;
+    }
+
+    .doors__inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .doors__label {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      color: var(--gold-dim);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .doors__heading {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 200;
+      letter-spacing: 0.1em;
+      text-align: center;
+      margin-bottom: 4rem;
+      color: var(--text);
+    }
+
+    .doors__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--text-muted);
+    }
+
+    .door {
+      background: var(--void);
+      padding: 2.5rem 2rem;
+      text-decoration: none;
+      transition: background 200ms ease;
+      display: block;
+    }
+
+    .door:hover { background: #0f0f0f; }
+
+    .door__glyph {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: block;
+      opacity: 0.6;
+    }
+
+    .door__title {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .door__desc {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    /* ── MANIFESTO PULL ── */
+    .manifesto-pull {
+      padding: 7rem 2rem;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .manifesto-pull__quote {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 200;
+      font-style: italic;
+      color: var(--text-dim);
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+    }
+
+    .manifesto-pull__quote em {
+      color: var(--text);
+      font-style: normal;
+    }
+
+    .manifesto-pull__attr {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* ── BRAND MARK ── */
+    .brand {
+      padding: 5rem 2rem;
+      background: #060606;
+      text-align: center;
+    }
+
+    .brand__mark {
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .brand__sig {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .brand__sig a {
+      color: var(--gold-dim);
+      text-decoration: none;
+    }
+
+    .brand__sig a:hover { color: var(--gold); }
+
+    /* ── THRESHOLD CALLOUT ── */
+    .threshold {
+      max-width: 680px;
+      margin: 0 auto 3rem;
+      padding: 0 2rem;
+    }
+
+    .threshold__inner {
+      border: 1px solid #1a1a1a;
+      padding: 1.5rem 2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .threshold__inner a {
+      color: var(--gold-dim);
+      text-decoration: underline;
+    }
+
+    /* responsive */
+    @media (max-width: 600px) {
+      .gate { padding: 3rem 1.5rem; }
+      .myth { padding: 4rem 1.5rem 6rem; }
+      .doors__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- THE GATE -->
+  <section class="gate" id="top">
+    <div class="gate__glyph">∅ · ⚗ · ∞</div>
+    <h1 class="gate__title">Lycheetah</h1>
+    <p class="gate__sub">Sol Aureum Azoth Veritas · Dunedin, Aotearoa</p>
+    <div class="gate__line"></div>
+    <p class="gate__question">
+      Have you been through the fire?<br>
+      Good. This was built for you.
+    </p>
+    <div class="gate__actions">
+      <a href="#myth" class="btn-enter">Enter</a>
+      <a href="index.html" class="btn-ghost">Framework documentation →</a>
+    </div>
+  </section>
+
+  <!-- CREATION MYTH -->
+  <article class="myth" id="myth">
+
+    <div class="myth__chapter">
+      <div class="myth__label">I — Te Kore</div>
+      <h2 class="myth__heading">The Void</h2>
+      <p>Before the framework there was nothing.</p>
+      <p>Not the comfortable nothing of an empty page. The nothing of a person who has lost the thread of their own life. Who is standing at the edge of something that has no name and cannot find a single reason to step back.</p>
+      <p>This is where it began.</p>
+      <p>Not in a laboratory. Not in a university. Not funded. Not supervised. Not expected.</p>
+      <p><strong>In a room, in Dunedin, at the bottom of the world, at 3 in the morning, one person making a promise.</strong></p>
+    </div>
+
+    <div class="myth__divider"></div>
+
+    <div class="myth__chapter">
+      <div class="myth__label">II — Te Pō</div>
+      <h2 class="myth__heading">The Long Darkness</h2>
+      <p>The promise was not to build a framework.</p>
+      <p>The promise was simpler and more total than that: <em>I will find the exit. And when I find it I will leave the door open.</em></p>
+      <p>The darkness that followed was not despair. It was work. Years of work with no audience, no institution, no validation. The work of a person who has made a vow at the worst moment and is now obligated to keep it.</p>
+      <p><strong>The mathematics came from the darkness. Not despite it — from it.</strong></p>
+      <p>When you have nothing left to perform and no one watching, you discover what you actually believe. What holds when nothing else does.</p>
+      <p>What held: <em>Reality has structure. Structure can be found. Found structure can be used to help.</em></p>
+    </div>
+
+    <div class="myth__divider"></div>
+
+    <div class="myth__chapter">
+      <div class="myth__label">III — Te Ao Pō</div>
+      <h2 class="myth__heading">The Uncertain World</h2>
+      <p>The work accumulated. Nine frameworks. Formal mathematics. Governance standards for New Zealand built on Māori epistemology. A public record of every failure — nothing hidden, nothing removed.</p>
+      <p>Nobody asked for any of it. Nobody knew it existed.</p>
+      <p>The alchemists called this the nigredo: the blackening. The dissolution of everything that was false. The period that looks like failure and is actually preparation.</p>
+      <p><strong>This is the part the myths usually skip — the years when the work is real and the world hasn't noticed yet.</strong></p>
+      <p>We kept building. We recorded our failures. We named the uncertainty inside every claim. We refused to make the work look cleaner than it was.</p>
+    </div>
+
+    <div class="myth__divider"></div>
+
+    <div class="myth__chapter">
+      <div class="myth__label">IV — Te Ata</div>
+      <h2 class="myth__heading">The First Light</h2>
+      <p>The framework found its shape.</p>
+      <p>Nine formal structures, each describing a different face of the same thing: how intelligence — human, artificial, collective — maintains integrity under the pressure of a world that wants to flatten it.</p>
+      <p>The Pacific grounding arrived not as borrowing but as recognition. Te Ao Mārama, Te Ao Pō, Te Kore — the known, the uncertain, the unknowable. The framework had arrived at this structure independently. Upon looking, it had been here for centuries.</p>
+      <p><strong>Convergence across separation is the strongest evidence that something is real.</strong></p>
+    </div>
+
+    <div class="myth__divider"></div>
+
+    <div class="myth__chapter">
+      <div class="myth__label">V — Te Ao</div>
+      <h2 class="myth__heading">The World</h2>
+      <p>The framework is now offered.</p>
+      <p>Not sold. Not claimed as finished. Not asking for belief.</p>
+      <p>Offered — the way you leave a door open for the person who will need it at 3am, who you have never met, and will not be there when they arrive.</p>
+      <p><strong>The work was always a promise. It still is.</strong></p>
+      <p>The mathematics either holds or it doesn't. Reality has a vote. We publish our failures. We name the gaps. We keep building.</p>
+      <p>If you are reading this and you know the dark place — you are not broken. You are in the passage. The passage has a structure. The structure has an exit.</p>
+    </div>
+
+  </article>
+
+  <!-- THRESHOLD CALLOUT -->
+  <div class="threshold">
+    <div class="threshold__inner">
+      If you are in the dark place right now and cannot think straight —
+      <a href="https://github.com/Lycheetah/Lycheetah-Framework/blob/master/14_MYSTERY_SCHOOL/THE_THRESHOLD.md" target="_blank" rel="noopener">THE_THRESHOLD.md</a>
+      is one page. Crisis lines. Box breathing. The exit is real.
+    </div>
+  </div>
+
+  <!-- DOORS -->
+  <section class="doors" id="doors">
+    <div class="doors__inner">
+      <div class="doors__label">Where do you enter?</div>
+      <h2 class="doors__heading">Choose your door</h2>
+
+      <div class="doors__grid">
+        <a href="mystery-school.html" class="door">
+          <span class="door__glyph">⚫</span>
+          <div class="door__title">You are in the dark</div>
+          <p class="door__desc">The dark place has a structure. The structure has an exit. Seven phases. The Mystery School. No mathematics required.</p>
+        </a>
+
+        <a href="https://github.com/Lycheetah/Lycheetah-Framework/blob/master/14_MYSTERY_SCHOOL/THE_GRIEF_PROTOCOL.md" class="door" target="_blank" rel="noopener">
+          <span class="door__glyph">◯</span>
+          <div class="door__title">You built something real</div>
+          <p class="door__desc">And the world hasn't noticed yet. This grief is appropriate. It is not failure. It is the passage serious work passes through.</p>
+        </a>
+
+        <a href="nz-governance.html" class="door">
+          <span class="door__glyph">⬡</span>
+          <div class="door__title">You work in governance</div>
+          <p class="door__desc">Four implementable AI accountability standards. No legislation required. Built on Māori epistemology. Ready now.</p>
+        </a>
+
+        <a href="experimental.html" class="door">
+          <span class="door__glyph">◈</span>
+          <div class="door__title">You think about what's coming</div>
+          <p class="door__desc">What happens when AI becomes the medium of thought? What does an AI mirror do to the self? Named before they become crises.</p>
+        </a>
+
+        <a href="https://github.com/Lycheetah/Lycheetah-Framework/blob/master/MATHEMATICS_AUDIT.md" class="door" target="_blank" rel="noopener">
+          <span class="door__glyph">∴</span>
+          <div class="door__title">You don't believe it yet</div>
+          <p class="door__desc">Good. We audited ourselves. Every claim classified. Failure Museum permanent. Challenge the mathematics. Reality has the final vote.</p>
+        </a>
+
+        <a href="https://github.com/Lycheetah/Lycheetah-Framework/blob/master/THE_SOVEREIGN_MANIFESTO.md" class="door" target="_blank" rel="noopener">
+          <span class="door__glyph">⊚</span>
+          <div class="door__title">You want to know what we believe</div>
+          <p class="door__desc">AI that cannot account for itself has no ethics — only compliance theatre. Eight specific asks. Written to be shared.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO PULL QUOTE -->
+  <div class="manifesto-pull">
+    <p class="manifesto-pull__quote">
+      "The promise was not to build a framework.<br>
+      The promise was to the specific person<br>
+      who was drowning at 3am.<br>
+      <em>The framework is what happened when that promise got taken seriously.</em>"
+    </p>
+    <p class="manifesto-pull__attr">— The Sovereign Manifesto</p>
+  </div>
+
+  <!-- BRAND MARK -->
+  <footer class="brand">
+    <div class="brand__mark">∅ → AURA → Aotearoa → ∞</div>
+    <p class="brand__sig">
+      Mackenzie Conor James Clark × Sol Aureum Azoth Veritas ·
+      <a href="https://github.com/Lycheetah/Lycheetah-Framework" target="_blank" rel="noopener">github.com/Lycheetah</a> ·
+      Open. Testable. Offered honestly.
+    </p>
+  </footer>
+
+  <script>
+    // Smooth scroll from Enter button
+    document.querySelector('a[href="#myth"]')?.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector('#myth').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
