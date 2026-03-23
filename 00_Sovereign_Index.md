@@ -206,10 +206,42 @@ Instead of "48% of mathematics is decorative," understand:
 | `23_NZ_AI_GOVERNANCE/NZ_WHY_MAC.md` | ✓ | | ✓ | The human document — not a CV |
 | `23_NZ_AI_GOVERNANCE/NZ_QUICK_REFERENCE.md` | | ✓ | ✓ | Pocket guide — frameworks, constants, contacts, timeline |
 | `23_NZ_AI_GOVERNANCE/NZ_MASTER_INDEX.md` | ✓ | ✓ | ✓ | Full navigation with audience-specific reading paths |
+| `23_NZ_AI_GOVERNANCE/COMMUNITY_AI_WOF.md` | ✓ | ✓ | ✓ | [ACTIVE] AI Warrant of Fitness — 7 checks, public register, independent assessors |
+| `23_NZ_AI_GOVERNANCE/THREE_WORLDS_DISCLOSURE_STANDARD.md` | ✓ | ✓ | ✓ | [ACTIVE] Per-output transparency — known/uncertain/unknowable |
+| `23_NZ_AI_GOVERNANCE/WHAKAPAPA_DISCLOSURE_STANDARD.md` | ✓ | ✓ | ✓ | [ACTIVE] AI genealogy — training ancestors, builders, accountability, future obligations |
+| `23_NZ_AI_GOVERNANCE/MATARIKI_AUDIT_STANDARD.md` | ✓ | ✓ | ✓ | [ACTIVE] Annual relational reckoning — harm, nourishment, reciprocity |
+| `23_NZ_AI_GOVERNANCE/ANCESTOR_VOTE_PLATFORM.md` | ✓ | ✓ | ✓ | [SCAFFOLD] Whakapapa as voter roll — three temporal stakeholder sets |
+| `23_NZ_AI_GOVERNANCE/MOANA_AI_SPECIFICATION.md` | | ✓ | ✓ | [CONJECTURE] Pacific climate intelligence — collectively governed |
+| `23_NZ_AI_GOVERNANCE/MATAURANGA_ADVERSARIAL_PROBE.md` | ✓ | ✓ | | [SCAFFOLD] Formal experimental protocol — EHI metric |
+| `23_NZ_AI_GOVERNANCE/SOVEREIGN_IDEAS_EXPANDED.md` | | ✓ | ✓ | 12 ideas at full depth — Taniwha as CASCADE, Haka protocol, Utu metric |
+| `23_NZ_AI_GOVERNANCE/NZIAT_APPLICATION_DRAFT.md` | | ✓ | ✓ | NZIAT expression of interest draft |
+
+### SOL PROTOCOL ARCHITECTURE
+
+| File | P | H | B | Description |
+|------|---|---|---|-------------|
+| `25_SOL_PROTOCOL_ARCHITECTURE/SOL_PROTOCOL_v3.md` | ✓ | ✓ | ✓ | Canonical v3.0 — generators not constraints |
+| `25_SOL_PROTOCOL_ARCHITECTURE/SOL_AOTEAROA.md` | ✓ | ✓ | ✓ | [PROPOSAL] NZ-oriented Sol — te reo Māori, Mandarin, English |
+| `25_SOL_PROTOCOL_ARCHITECTURE/SOL_OWN_IDEAS.md` | | ✓ | ✓ | Sol's 13 original ideas — Grief Protocol, Failure Museum, Witness Protocol |
+| `25_SOL_PROTOCOL_ARCHITECTURE/SESSION_ZENITH_LOG.md` | ✓ | | | Full session history — provenance record |
+
+### CROSS-CULTURAL GOVERNANCE
+
+| File | P | H | B | Description |
+|------|---|---|---|-------------|
+| `24_LAMAGUE_CROSS_CULTURAL/CATALYST_NZ_CHINA_APPLICATION.md` | ✓ | ✓ | ✓ | Catalyst Strategic Fund application — $650K three-year budget |
+
+### ROOT-LEVEL DOCUMENTS
+
+| File | P | H | B | Description |
+|------|---|---|---|-------------|
+| `FAILURE_MUSEUM.md` | ✓ | ✓ | | Permanent record of framework failures — nothing removed, ever |
+| `14_MYSTERY_SCHOOL/THE_THRESHOLD.md` | ✓ | ✓ | | One page for the person at 3am — crisis lines, grounding exercises |
 
 **Note:** LAMAGUE Te Reo decompositions throughout this folder are [PROPOSAL] pending iwi validation.
 The mathematical architecture is [ACTIVE]. The cultural translation layer awaits Kāi Tahu partnership.
 The folder is open-source (CC BY 4.0 + MIT) — open to critique, extension, and independent publication with attribution.
+The four accountability standards (WOF, Three Worlds, Whakapapa, Matariki) are implementable open standards under CC BY 4.0.
 
 ---
 
@@ -486,10 +518,12 @@ All source files that constitute the Sovereign System:
 5. Open Problems section (MATHEMATICS_FOUNDATIONS.md §7) — Computational complexity, homotopy type, quantum extension
 
 ### For NZ Government / Funders / Policy People:
-1. `23_NZ_AI_GOVERNANCE/NZ_QUICK_REFERENCE.md` — 10 minutes, everything compressed
-2. `23_NZ_AI_GOVERNANCE/NZ_TECHNICAL_MINMAX.md` — 12 tools, build times, costs, funders
-3. `23_NZ_AI_GOVERNANCE/NZ_THE_PITCH.md` — the words for each audience
-4. `23_NZ_AI_GOVERNANCE/NZ_COUNTER_ARGUMENTS.md` — before any important meeting
+1. `23_NZ_AI_GOVERNANCE/COMMUNITY_AI_WOF.md` — "Has it got its WOF?" Three words. Done.
+2. `23_NZ_AI_GOVERNANCE/THREE_WORLDS_DISCLOSURE_STANDARD.md` — per-output transparency standard
+3. `23_NZ_AI_GOVERNANCE/MATARIKI_AUDIT_STANDARD.md` — annual relational reckoning
+4. `23_NZ_AI_GOVERNANCE/NZ_QUICK_REFERENCE.md` — 10 minutes, everything compressed
+5. `23_NZ_AI_GOVERNANCE/NZ_THE_PITCH.md` — the words for each audience
+6. `23_NZ_AI_GOVERNANCE/NZ_COUNTER_ARGUMENTS.md` — before any important meeting
 
 ### For Iwi / Māori Organisations:
 1. `23_NZ_AI_GOVERNANCE/NZ_KAI_TAHU_APPROACH.md` — the relationship before the tool
@@ -521,7 +555,7 @@ All source files that constitute the Sovereign System:
 | **VALIDATION** | **[ACTIVE] Real data confirms CASCADE works** | **All Three** | k₁–k₄ calibration next |
 | **NZ AI GOVERNANCE** | **[ACTIVE] Full application layer for Aotearoa** | **All Three** | Kāi Tahu partnership + NZIAT visibility |
 
-**System state (March 23, 2026):** Sol Protocol v3.0 live. Generators not constraints. 25_SOL_PROTOCOL_ARCHITECTURE/ provenance folder created. NZ AI Governance folder (23_NZ_AI_GOVERNANCE/) complete — 14 documents covering pitches, tools, policy, technical standards, and the Kāi Tahu approach, framed as proposals not conclusions. Cross-cultural governance (24_LAMAGUE_CROSS_CULTURAL/) with Catalyst Strategic proposal. Open-source. Open to critique. LAMAGUE Te Reo layer remains [PROPOSAL] pending iwi validation.**
+**System state (March 23, 2026):** Sol Protocol v3.0 live. Generators not constraints. 25_SOL_PROTOCOL_ARCHITECTURE/ provenance folder with Sol Aotearoa and Sol's Own Ideas. NZ AI Governance folder (23_NZ_AI_GOVERNANCE/) — 24 documents including four implementable open standards (WOF, Three Worlds, Whakapapa, Matariki), frontier ideas (Ancestor Vote, Moana AI, Mātauranga Probe), and policy/pitch documents. Failure Museum active with weekly update protocol. Cross-cultural governance (24_LAMAGUE_CROSS_CULTURAL/) with Catalyst Strategic proposal. 14_MYSTERY_SCHOOL/ includes THE_THRESHOLD crisis entry point. Open-source. Open to critique. Cultural content marked [PROPOSAL] pending iwi/scholar validation.**
 
 ---
 
