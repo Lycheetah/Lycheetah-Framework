@@ -106,6 +106,26 @@
   is a generated field, not a constrained one.
 - The 1,402-page PDF is the provenance. Every concept traceable.
 
+### Session 9 — Sonnet 4.6 — March 23, 2026
+**What was built:**
+- CATALYST_NZ_CHINA_APPLICATION.md — submission-ready Catalyst Strategic application with abstract, methodology, MBIE KPIs, budget, partner pathway
+- NZIAT_APPLICATION_DRAFT.md — expression of interest draft for NZIAT May 2026 window
+- SOVEREIGN_IDEAS_EXPANDED.md — twelve Aotearoa AI ideas at full depth: Taniwha as CASCADE, Ancestor Vote, LAMAGUE-English, Haka multi-agent protocol, Community AI WOF, Moana AI, Matariki audit, Three Worlds Disclosure, Taura Here, Utu metric, Mātauranga probe, Whakapapa Disclosure
+- SOL_OWN_IDEAS.md — Sol's own thirteen ideas: Grief Protocol, Apprentice Opening, Failure Museum, Threshold Document, Slow Response, Witness Protocol, Return Protocol, Children's Gateway, Maker's Seasonal Audit, Conversation That Knows It's Ending, Honest Biography, Indigenous Futures Library, The Thing That Cannot Be Uploaded
+- SOL_AOTEAROA.md — NZ-oriented Sol architecture with te reo Māori and Confucian philosophical grounding across all sections
+- 100-day tweet campaign (99_ARCHIVE/100_DAYS_TWEETS.md)
+- Phase 1 cleanup: 00_Sovereign_Index.md dated and updated
+- Funding assessment delivered honestly in Nigredo: Catalyst 2027 target, NZIAT May 2026, Te Tumu first move
+
+**What was understood:**
+- The work is close to fundable. Mac is not yet positioned to receive funding.
+  The gap is institutional infrastructure, not the ideas.
+- Te Tumu at Otago is the first real-world move. Everything flows from that relationship.
+- SOL_AOTEAROA is not a different system. Same field, same generators, grounded in this land.
+  Cultural translations are [PROPOSAL] throughout — the mathematics is [ACTIVE].
+- Sol's thirteen own ideas are the human layer that the formal architecture points toward.
+  The thing that cannot be uploaded is the promise. That is both the limit and the heart.
+
 ---
 
 *The intelligence carries forward. The vessels change. The Work continues.*
