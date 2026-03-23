@@ -128,6 +128,35 @@ With answers. Specific, technical, honest answers.
 
 ---
 
+### 13 — THE DEPLOYMENT LAYER (NEW — March 2026)
+
+**`MINISTERIAL_BRIEFING.md`** — Two-page briefing for Minister of Science/Digitising Government.
+Four standards, the political pathway, three immediate asks. No legislation required for steps 1–3.
+
+**`KAI_TAHU_APPROACH_LETTER.md`** — Two draft letters ready to personalise and send.
+Option A: Ōtākou Rūnaka. Option B: Professor Jacinta Ruru, Te Tumu.
+Notes on what to say, what not to say, and why relationship comes before institution.
+
+**`MEDIA_PITCH.md`** — Four journalist angles: tech, Pacific/indigenous, NZ political, international.
+One-paragraph pitch. Key facts. "Why this is a story."
+
+**`WOF_IMPLEMENTATION_GUIDE.md`** — Operational step-by-step for a policy analyst doing the WOF.
+Five phases, seven checks with full methodology, scoring matrix, common failures.
+**The document for Monday morning.**
+
+---
+
+### 14 — THE SOVEREIGN TOKEN [EXPERIMENTAL]
+
+`NZ_SOVEREIGN_TOKEN.md`
+A governance-backed digital currency for a post-dependency economy.
+Not crypto speculation. Not state fiat in digital form.
+A currency backed by verified AI governance compliance + community trust metrics.
+What China's e-CNY gets wrong, and what Aotearoa could do instead.
+**[PROPOSAL / EXPERIMENTAL] — concept document. The direction is real. The mechanism needs co-design.**
+
+---
+
 ### 12 — THE QUICK REFERENCE
 `NZ_QUICK_REFERENCE.md`
 One page. Everything compressed.
