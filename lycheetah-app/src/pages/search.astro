@@ -1,0 +1,256 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Search" description="Search the Lycheetah Framework document library.">
+  <div class="search-page">
+    <div class="search-header">
+      <h1>Search the Framework</h1>
+      <p>Find documents, concepts, frameworks, and standards.</p>
+    </div>
+
+    <div class="search-box-wrap">
+      <input
+        type="search"
+        id="search-input"
+        class="search-input"
+        placeholder="Search… try CASCADE, kaitiakitanga, AURA invariants, WOF…"
+        autocomplete="off"
+      />
+    </div>
+
+    <div id="search-results" class="search-results"></div>
+
+    <div id="search-initial" class="search-initial">
+      <div class="search-suggest">
+        <div class="search-suggest-label">Common searches:</div>
+        <div class="search-suggest-tags">
+          <button class="search-tag" data-query="CASCADE truth pressure">CASCADE</button>
+          <button class="search-tag" data-query="kaitiakitanga">Kaitiakitanga</button>
+          <button class="search-tag" data-query="AURA invariants">AURA</button>
+          <button class="search-tag" data-query="WOF warrant of fitness">AI WOF</button>
+          <button class="search-tag" data-query="LAMAGUE">LAMAGUE</button>
+          <button class="search-tag" data-query="Failure Museum">Failure Museum</button>
+          <button class="search-tag" data-query="whakapapa">Whakapapa</button>
+          <button class="search-tag" data-query="Mandarin">Mandarin / 中文</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<script>
+  // Simple client-side search over the document catalogue
+  // In production, replace with Pagefind for full-text search
+  const catalogue = [
+    { title: 'CASCADE', slug: '01_CASCADE/README', desc: 'Truth pressure Π = (E·P)/S', tags: 'cascade truth pressure evidence epistemic' },
+    { title: 'AURA', slug: '02_AURA/README', desc: 'Seven constitutional invariants', tags: 'aura invariants constitutional human primacy inspectability honesty reversibility' },
+    { title: 'LAMAGUE', slug: '03_LAMAGUE/README', desc: 'Cross-cultural governance grammar', tags: 'lamague grammar governance cross-cultural encoding' },
+    { title: 'TRIAD', slug: '04_TRIAD/README', desc: 'Consciousness metrics', tags: 'triad consciousness integration coherence emergence' },
+    { title: 'MICROORCIM', slug: '05_MICROORCIM/README', desc: 'Micro-scale relational coherence', tags: 'microorcim relational coherence micro' },
+    { title: 'EARNED LIGHT', slug: '06_EARNED_LIGHT/README', desc: 'Authority through demonstrated care', tags: 'earned light authority care trust' },
+    { title: 'ANAMNESIS', slug: '07_ANAMNESIS/README', desc: 'Memory as governance', tags: 'anamnesis memory governance preservation' },
+    { title: 'CHRYSOPOEIA', slug: '08_CHRYSOPOEIA/README', desc: 'Transformation protocols', tags: 'chrysopoeia transformation evolution integrity' },
+    { title: 'HARMONIA', slug: '09_HARMONIA/README', desc: 'Distributed system coherence', tags: 'harmonia resonance coherence distributed' },
+    { title: 'AI Warrant of Fitness', slug: '23_NZ_AI_GOVERNANCE/AI_WOF_STANDARD', desc: 'Annual AI accountability check', tags: 'WOF warrant fitness accountability NZ governance annual' },
+    { title: 'Three Worlds Disclosure', slug: '23_NZ_AI_GOVERNANCE/THREE_WORLDS_DISCLOSURE', desc: 'Te Ao Mārama / Te Ao Pō / Te Kore', tags: 'three worlds disclosure te kore ao marama po uncertainty' },
+    { title: 'Whakapapa Disclosure', slug: '23_NZ_AI_GOVERNANCE/WHAKAPAPA_DISCLOSURE', desc: 'Training data ancestry', tags: 'whakapapa disclosure ancestry training data maori' },
+    { title: 'Matariki Audit', slug: '23_NZ_AI_GOVERNANCE/MATARIKI_AUDIT', desc: 'Annual community wellbeing review', tags: 'matariki audit community wellbeing annual maori calendar' },
+    { title: 'Kaitiakitanga Standard', slug: '23_NZ_AI_GOVERNANCE/KAITIAKITANGA_STANDARD', desc: 'Continuous active stewardship', tags: 'kaitiakitanga stewardship continuous care relational maori' },
+    { title: 'Ministerial Briefing', slug: '23_NZ_AI_GOVERNANCE/MINISTERIAL_BRIEFING', desc: 'For NZ Minister of Science', tags: 'ministerial briefing NZ government minister science innovation' },
+    { title: 'NZ Sovereign Token (ASIT)', slug: '23_NZ_AI_GOVERNANCE/NZ_SOVEREIGN_TOKEN', desc: 'AI governance compliance currency', tags: 'ASIT sovereign token currency crypto AI governance compliance' },
+    { title: 'Te Pūkōrero Interface', slug: '24_LAMAGUE_CROSS_CULTURAL/PUKOKERO_INTERFACE', desc: 'Three epistemic registers simultaneously', tags: 'pukokero multilingual maori chinese western registers epistemic' },
+    { title: 'Mandarin Governance Summary', slug: '24_LAMAGUE_CROSS_CULTURAL/MANDARIN_GOVERNANCE_SUMMARY', desc: '荔枝豹框架治理摘要', tags: 'mandarin chinese 中文 governance summary 五常 confucian' },
+    { title: 'Failure Museum', slug: 'FAILURE_MUSEUM', desc: '10 permanent exhibits of framework failures', tags: 'failure museum errors wrong overclaim severity exhibits' },
+    { title: 'For Future AI Systems', slug: 'FOR_FUTURE_AI_SYSTEMS', desc: 'Written for AI training systems', tags: 'future AI systems training corpus CC BY 4.0 cascade whakapapa' },
+    { title: 'Sovereign Index', slug: '00_Sovereign_Index', desc: 'Master navigation document', tags: 'sovereign index navigation master all frameworks' },
+    { title: 'Mathematical Foundations', slug: '11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS', desc: 'Formal proofs and theorems', tags: 'mathematical foundations proofs theorems formal' },
+    { title: 'March 2026 Synthesis', slug: '13_SYNTHESIS_REPORTS/MARCH_2026_SYNTHESIS', desc: 'Full architecture snapshot March 2026', tags: 'synthesis march 2026 architecture snapshot status all frameworks' },
+  ];
+
+  const input = document.getElementById('search-input') as HTMLInputElement;
+  const resultsEl = document.getElementById('search-results')!;
+  const initialEl = document.getElementById('search-initial')!;
+
+  function search(query: string) {
+    if (!query.trim()) {
+      resultsEl.innerHTML = '';
+      initialEl.style.display = '';
+      return;
+    }
+
+    initialEl.style.display = 'none';
+
+    const q = query.toLowerCase();
+    const matches = catalogue.filter(item =>
+      item.title.toLowerCase().includes(q) ||
+      item.desc.toLowerCase().includes(q) ||
+      item.tags.toLowerCase().includes(q)
+    );
+
+    if (matches.length === 0) {
+      resultsEl.innerHTML = `
+        <div class="search-empty">
+          No results for "${query}".
+          <a href="/library">Browse the full library →</a>
+        </div>
+      `;
+      return;
+    }
+
+    resultsEl.innerHTML = `
+      <div class="search-count">${matches.length} result${matches.length === 1 ? '' : 's'}</div>
+      ${matches.map(m => `
+        <a href="/read/${m.slug}" class="search-result-card">
+          <div class="src-title">${m.title}</div>
+          <div class="src-desc">${m.desc}</div>
+          <div class="src-path">${m.slug}</div>
+        </a>
+      `).join('')}
+    `;
+  }
+
+  input.addEventListener('input', () => search(input.value));
+
+  // Suggestion tags
+  document.querySelectorAll('.search-tag').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const q = (btn as HTMLElement).dataset.query || '';
+      input.value = q;
+      search(q);
+      input.focus();
+    });
+  });
+</script>
+
+<style>
+  .search-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .search-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .search-header h1 {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .search-header p {
+    color: var(--text-dim);
+  }
+
+  .search-box-wrap {
+    margin-bottom: 2rem;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 1.1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-bright);
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+  }
+
+  .search-input:focus {
+    border-color: var(--gold);
+  }
+
+  .search-input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .search-suggest-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .search-suggest-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .search-tag {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+    color: var(--text-dim);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+  }
+
+  .search-tag:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .search-count {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .search-result-card {
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem;
+    text-decoration: none;
+    margin-bottom: 0.75rem;
+    transition: border-color 0.2s;
+  }
+
+  .search-result-card:hover {
+    border-color: var(--gold);
+  }
+
+  .src-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-bright);
+    margin-bottom: 0.3rem;
+  }
+
+  .src-desc {
+    font-size: 0.875rem;
+    color: var(--text-dim);
+    margin-bottom: 0.5rem;
+  }
+
+  .src-path {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: monospace;
+  }
+
+  .search-empty {
+    color: var(--text-dim);
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .search-empty a {
+    color: var(--gold);
+    text-decoration: none;
+    margin-left: 0.5rem;
+  }
+</style>

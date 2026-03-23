@@ -1,0 +1,256 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('docs');
+  return docs.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await entry.render();
+
+// Derive title from first heading or filename
+const title = entry.data.title
+  || (headings.length > 0 ? headings[0].text : entry.slug.split('/').pop()?.replace(/_/g, ' ') || 'Document');
+
+// Breadcrumb from slug
+const parts = entry.slug.split('/');
+const breadcrumbs = parts.map((part, i) => ({
+  label: part.replace(/_/g, ' '),
+  href: i < parts.length - 1 ? `/library` : null,
+}));
+
+// Status from frontmatter or try to detect from content
+const status = entry.data.status;
+---
+
+<Base title={title} description={entry.data.description} mode="reader">
+  <div class="doc-layout">
+    <!-- Sidebar with headings -->
+    <aside class="doc-sidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-back">
+          <a href="/library" class="sidebar-back-link">← Library</a>
+        </div>
+
+        {headings.length > 0 && (
+          <nav class="toc">
+            <div class="toc-label">Contents</div>
+            <ul class="toc-list">
+              {headings.filter(h => h.depth <= 3).map(h => (
+                <li class={`toc-item toc-depth-${h.depth}`}>
+                  <a href={`#${h.slug}`} class="toc-link">{h.text}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+
+        {status && (
+          <div class="sidebar-status">
+            <span class={`status-badge status-${status}`}>{status.toUpperCase()}</span>
+          </div>
+        )}
+
+        <div class="sidebar-path">
+          <div class="sidebar-path-label">File</div>
+          <code class="sidebar-path-value">{entry.slug}.md</code>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="doc-main">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="/" class="bc-link">◎</a>
+        <span class="bc-sep">/</span>
+        <a href="/library" class="bc-link">Library</a>
+        {breadcrumbs.map((crumb, i) => (
+          <>
+            <span class="bc-sep">/</span>
+            <span class="bc-current">{crumb.label}</span>
+          </>
+        ))}
+      </nav>
+
+      <!-- Document content -->
+      <article class="prose">
+        <Content />
+      </article>
+
+      <!-- Footer nav -->
+      <div class="doc-footer-nav">
+        <a href="/library" class="btn btn-secondary">← Back to Library</a>
+        <a
+          href={`https://github.com/Lycheetah/Lycheetah-Framework/blob/main/${entry.slug}.md`}
+          class="btn btn-ghost"
+          target="_blank"
+          rel="noopener"
+        >
+          View on GitHub ↗
+        </a>
+      </div>
+    </main>
+  </div>
+</Base>
+
+<style>
+  .doc-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: calc(100vh - 60px - 60px);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .doc-sidebar {
+    border-right: 1px solid var(--border);
+    position: sticky;
+    top: 60px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+
+  .sidebar-inner {
+    padding: 1.5rem 1rem;
+  }
+
+  .sidebar-back {
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar-back-link {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.15s;
+  }
+
+  .sidebar-back-link:hover {
+    color: var(--gold);
+  }
+
+  .toc-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .toc-item {
+    margin-bottom: 0.25rem;
+  }
+
+  .toc-depth-2 { padding-left: 0; }
+  .toc-depth-3 { padding-left: 1rem; }
+
+  .toc-link {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    line-height: 1.4;
+    display: block;
+    padding: 0.2rem 0;
+    transition: color 0.15s;
+  }
+
+  .toc-link:hover {
+    color: var(--gold);
+  }
+
+  .sidebar-status {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .sidebar-path {
+    margin-top: 1rem;
+  }
+
+  .sidebar-path-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.3rem;
+  }
+
+  .sidebar-path-value {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    word-break: break-all;
+  }
+
+  .doc-main {
+    padding: 2rem 3rem;
+    max-width: 800px;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .bc-link {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .bc-link:hover { color: var(--gold); }
+
+  .bc-sep { color: var(--border); }
+
+  .bc-current { color: var(--text-dim); }
+
+  .doc-footer-nav {
+    display: flex;
+    gap: 1rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+  }
+
+  .btn-ghost:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
+  @media (max-width: 768px) {
+    .doc-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .doc-sidebar {
+      display: none;
+    }
+
+    .doc-main {
+      padding: 1.5rem;
+    }
+  }
+</style>

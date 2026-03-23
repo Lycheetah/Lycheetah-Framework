@@ -1,0 +1,28 @@
+{
+  "name": "lycheetah-library",
+  "version": "1.0.0",
+  "description": "The Lycheetah Framework — interactive library and reading system",
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/sync-content.js",
+    "dev": "npm run sync && astro dev",
+    "build": "npm run sync && astro build",
+    "preview": "astro preview",
+    "launch": "node launch.js",
+    "package": "npx pkg launch-server.cjs --targets node18-win-x64 --output release/Lycheetah-Library.exe --assets dist/**/*"
+  },
+  "dependencies": {
+    "astro": "^4.15.0",
+    "rehype-katex": "^7.0.0",
+    "remark-math": "^6.0.0"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  },
+  "pkg": {
+    "scripts": "launch-server.cjs",
+    "assets": ["dist/**/*"],
+    "targets": ["node18-win-x64"],
+    "outputPath": "release"
+  }
+}

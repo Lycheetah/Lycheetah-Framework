@@ -1,0 +1,322 @@
+---
+import Base from '../layouts/Base.astro';
+
+const standards = [
+  {
+    number: '01',
+    name: 'AI Warrant of Fitness',
+    abbr: 'AI WOF',
+    status: 'active',
+    desc: 'Annual pass/fail accountability check. Seven questions, public register, community-accessible.',
+    plain: 'Like a car\'s WOF — but for AI systems. Does it pass? Does it fail? Is the result public?',
+    link: '/read/23_NZ_AI_GOVERNANCE/AI_WOF_STANDARD',
+  },
+  {
+    number: '02',
+    name: 'Three Worlds Disclosure Standard',
+    abbr: 'Three Worlds',
+    status: 'active',
+    desc: 'AI must declare: Te Ao Mārama (high confidence) / Te Ao Pō (uncertain) / Te Kore (structurally unknowable).',
+    plain: 'AI must be honest about three things: what it knows, what it\'s unsure about, and what it fundamentally cannot know.',
+    link: '/read/23_NZ_AI_GOVERNANCE/THREE_WORLDS_DISCLOSURE',
+  },
+  {
+    number: '03',
+    name: 'Whakapapa Disclosure Standard',
+    abbr: 'Whakapapa',
+    status: 'proposal',
+    desc: 'AI must declare the ancestry of its training data — who contributed, what obligations arise.',
+    plain: 'Every AI learned from human knowledge. This standard says: show your ancestry. Who taught you? What do you owe them?',
+    link: '/read/23_NZ_AI_GOVERNANCE/WHAKAPAPA_DISCLOSURE',
+  },
+  {
+    number: '04',
+    name: 'Matariki Audit Standard',
+    abbr: 'Matariki',
+    status: 'proposal',
+    desc: 'Annual community-led wellbeing review aligned to the Matariki calendar — impacts on flourishing.',
+    plain: 'Once a year, the community reviews the AI: Did it help us flourish? Did it cause harm? Not a technical audit — a human one.',
+    link: '/read/23_NZ_AI_GOVERNANCE/MATARIKI_AUDIT',
+  },
+  {
+    number: '05',
+    name: 'Kaitiakitanga Standard',
+    abbr: 'Kaitiakitanga',
+    status: 'proposal',
+    desc: 'Continuous active stewardship — not periodic accountability but permanent relational obligation.',
+    plain: 'The most demanding standard. Not "did it pass a test?" but "is it actively caring for the community it serves, every day?"',
+    link: '/read/23_NZ_AI_GOVERNANCE/KAITIAKITANGA_STANDARD',
+  },
+];
+---
+
+<Base title="NZ AI Governance" description="Five AI accountability standards developed for Aotearoa New Zealand.">
+  <div class="gov-page">
+    <div class="gov-hero">
+      <div class="gov-hero-flag">🇳🇿</div>
+      <h1>NZ AI Governance Standards</h1>
+      <p>
+        Five accountability standards developed for Aotearoa New Zealand — grounded in
+        tikanga Māori, te Tiriti o Waitangi, and the Lycheetah Framework.
+      </p>
+      <p class="gov-plain">
+        <strong>Plain English:</strong> New Zealand is in a unique position — it has a founding
+        constitutional document (te Tiriti) that creates an obligation to Indigenous peoples unlike
+        most countries. These standards take that seriously and build AI accountability from it.
+      </p>
+    </div>
+
+    <div class="gov-standards">
+      {standards.map(s => (
+        <a href={s.link} class="gov-card">
+          <div class="gov-card-header">
+            <span class="gov-card-num">{s.number}</span>
+            <div class="gov-card-title-block">
+              <span class="gov-card-name">{s.name}</span>
+              <span class={`status-badge status-${s.status}`}>{s.status.toUpperCase()}</span>
+            </div>
+          </div>
+          <p class="gov-card-desc">{s.desc}</p>
+          <blockquote class="gov-card-plain">
+            <strong>Plain English:</strong> {s.plain}
+          </blockquote>
+          <div class="gov-card-cta">Read the standard →</div>
+        </a>
+      ))}
+    </div>
+
+    <div class="gov-deployment">
+      <h2>Deployment Documents</h2>
+      <p>Ready for government, media, and community engagement.</p>
+      <div class="gov-deploy-grid">
+        <a href="/read/23_NZ_AI_GOVERNANCE/MINISTERIAL_BRIEFING" class="gov-deploy-card">
+          <div class="gov-deploy-icon">📋</div>
+          <div class="gov-deploy-name">Ministerial Briefing</div>
+          <div class="gov-deploy-desc">For the NZ Minister of Science and Innovation</div>
+        </a>
+        <a href="/read/23_NZ_AI_GOVERNANCE/WOF_IMPLEMENTATION_GUIDE" class="gov-deploy-card">
+          <div class="gov-deploy-icon">📘</div>
+          <div class="gov-deploy-name">WOF Implementation Guide</div>
+          <div class="gov-deploy-desc">How to actually run the AI WOF</div>
+        </a>
+        <a href="/read/23_NZ_AI_GOVERNANCE/KAI_TAHU_APPROACH_LETTER" class="gov-deploy-card">
+          <div class="gov-deploy-icon">✉️</div>
+          <div class="gov-deploy-name">Kāi Tahu Approach Letter</div>
+          <div class="gov-deploy-desc">Seeking iwi partnership for the NZ layer</div>
+        </a>
+        <a href="/read/23_NZ_AI_GOVERNANCE/MEDIA_PITCH" class="gov-deploy-card">
+          <div class="gov-deploy-icon">📰</div>
+          <div class="gov-deploy-name">Media Pitch</div>
+          <div class="gov-deploy-desc">Journalist-ready explanation of the framework</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="gov-crosscultural">
+      <h2>Cross-Cultural Layer</h2>
+      <p>
+        The framework engages Chinese, Māori, and Western philosophical traditions simultaneously.
+        Not translation — register-holding.
+      </p>
+      <div class="gov-deploy-grid">
+        <a href="/read/24_LAMAGUE_CROSS_CULTURAL/PUKOKERO_INTERFACE" class="gov-deploy-card">
+          <div class="gov-deploy-icon">🌐</div>
+          <div class="gov-deploy-name">Te Pūkōrero Interface</div>
+          <div class="gov-deploy-desc">Three epistemic registers. One system. No translation required.</div>
+        </a>
+        <a href="/read/24_LAMAGUE_CROSS_CULTURAL/MANDARIN_GOVERNANCE_SUMMARY" class="gov-deploy-card">
+          <div class="gov-deploy-icon">🇨🇳</div>
+          <div class="gov-deploy-name">Mandarin Governance Summary</div>
+          <div class="gov-deploy-desc">框架概述 — 面向中国学者、政策制定者和AI研究者</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .gov-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .gov-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .gov-hero-flag {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .gov-hero h1 {
+    font-size: 2.2rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .gov-hero p {
+    color: var(--text-dim);
+    max-width: 600px;
+    margin: 0 auto 1rem;
+    line-height: 1.7;
+  }
+
+  .gov-plain {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    text-align: left;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+  }
+
+  .gov-standards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .gov-card {
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+
+  .gov-card:hover {
+    border-color: var(--gold);
+  }
+
+  .gov-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .gov-card-num {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    opacity: 0.5;
+    min-width: 2rem;
+  }
+
+  .gov-card-title-block {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .gov-card-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-bright);
+  }
+
+  .gov-card-desc {
+    color: var(--text-dim);
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .gov-card-plain {
+    background: rgba(201, 162, 39, 0.05);
+    border-left: 2px solid var(--gold);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: var(--text-dim);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .gov-card-cta {
+    font-size: 0.875rem;
+    color: var(--gold);
+    opacity: 0.7;
+  }
+
+  .gov-deployment,
+  .gov-crosscultural {
+    margin-bottom: 3rem;
+  }
+
+  .gov-deployment h2,
+  .gov-crosscultural h2 {
+    font-size: 1.4rem;
+    color: var(--text-bright);
+    margin-bottom: 0.5rem;
+  }
+
+  .gov-deployment > p,
+  .gov-crosscultural > p {
+    color: var(--text-dim);
+    margin-bottom: 1.25rem;
+  }
+
+  .gov-deploy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .gov-deploy-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+
+  .gov-deploy-card:hover {
+    border-color: var(--gold);
+  }
+
+  .gov-deploy-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .gov-deploy-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-bright);
+    margin-bottom: 0.4rem;
+  }
+
+  .gov-deploy-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .status-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .status-active { color: #2ecc71; }
+  .status-proposal { color: #9b59b6; }
+  .status-scaffold { color: #3498db; }
+  .status-foundational { color: #c9a227; }
+  .status-experimental { color: #e74c3c; }
+</style>

@@ -1,0 +1,365 @@
+---
+import Base from '../layouts/Base.astro';
+
+const frameworks = [
+  {
+    number: '01',
+    name: 'CASCADE',
+    status: 'active',
+    equation: 'Π = (E · P) / S',
+    desc: 'Truth pressure: how knowledge reorganises under evidence. E = evidence strength, P = explanatory power, S = declared uncertainty.',
+    plain: 'When you have strong evidence and a theory that explains a lot, and you\'re honest about what you don\'t know — that knowledge should persist. When you\'re just confident without evidence, it shouldn\'t. CASCADE makes this mathematically precise.',
+    link: '/read/01_CASCADE/README',
+    color: '#c9a227',
+  },
+  {
+    number: '02',
+    name: 'AURA',
+    status: 'foundational',
+    equation: 'Seven Invariants: I–VII',
+    desc: 'Constitutional architecture: seven properties any stable AI governance system must maintain. Human Primacy, Inspectability, Memory Continuity, Honesty, Reversibility, Non-Deception, Care as Structure.',
+    plain: 'Seven non-negotiable rules for any AI system. Not guidelines — architectural requirements. If any of these seven break, the system is not safe to operate.',
+    link: '/read/02_AURA/README',
+    color: '#e74c3c',
+  },
+  {
+    number: '03',
+    name: 'LAMAGUE',
+    status: 'active',
+    equation: 'ψ_register{concept}[portability]',
+    desc: 'Language for Alignment, Measurement, and Governance of Universal Ethics — formal grammar for encoding governance obligations across cultural traditions without erasing distinctiveness.',
+    plain: 'A way to write down ethics that works in Māori culture, Chinese culture, and Western culture simultaneously — without pretending they\'re all the same thing.',
+    link: '/read/03_LAMAGUE/README',
+    color: '#9b59b6',
+  },
+  {
+    number: '04',
+    name: 'TRIAD',
+    status: 'active',
+    equation: 'T = f(Φ, Γ, Ε)',
+    desc: 'Consciousness metrics: Integration (Φ), Coherence (Γ), Emergence (Ε). How to measure whether a system has something like conscious experience.',
+    plain: 'A mathematical attempt to measure consciousness — not just behaviour. Does the system integrate information in a unified way? Is it coherent? Does something new emerge from its parts?',
+    link: '/read/04_TRIAD/README',
+    color: '#3498db',
+  },
+  {
+    number: '05',
+    name: 'MICROORCIM',
+    status: 'scaffold',
+    equation: 'R = Σ(relational_coherence)',
+    desc: 'Micro-scale relational coherence in intelligent systems — the local dynamics that give rise to systemic properties.',
+    plain: 'Zooms in to the smallest scale: individual interactions between agents. How do these tiny moments of relationship add up to something trustworthy at scale?',
+    link: '/read/05_MICROORCIM/README',
+    color: '#2ecc71',
+  },
+  {
+    number: '06',
+    name: 'EARNED LIGHT',
+    status: 'scaffold',
+    equation: 'Φ(t) = Σ demonstrated_care / time',
+    desc: 'How authority and trust accumulate through demonstrated care over time — not through claim, but through record.',
+    plain: 'You don\'t deserve trust just because you say you\'re trustworthy. You earn it through consistent care over time. This framework measures and tracks that earning.',
+    link: '/read/06_EARNED_LIGHT/README',
+    color: '#f1c40f',
+  },
+  {
+    number: '07',
+    name: 'ANAMNESIS',
+    status: 'foundational',
+    equation: 'M = {what must not be forgotten}',
+    desc: 'Memory as governance — the Seventh Pillar. What a system must remember, how it must preserve causal history, why forgetting is a governance failure.',
+    plain: 'Forgetting is not neutral. An AI system that cannot remember what it did — or why — cannot be accountable. ANAMNESIS defines what must be preserved, always.',
+    link: '/read/07_ANAMNESIS/README',
+    color: '#e67e22',
+  },
+  {
+    number: '08',
+    name: 'CHRYSOPOEIA',
+    status: 'scaffold',
+    equation: 'S(t+1) = transform(S(t), Δ)',
+    desc: 'Transformation protocols — how systems evolve, update, and change without losing their fundamental integrity or betraying their obligations.',
+    plain: 'How does a system change without breaking what made it trustworthy? This framework describes the conditions under which transformation is legitimate and safe.',
+    link: '/read/08_CHRYSOPOEIA/README',
+    color: '#1abc9c',
+  },
+  {
+    number: '09',
+    name: 'HARMONIA',
+    status: 'active',
+    equation: 'H = coherence across distributed systems',
+    desc: 'Resonance and coherence across distributed intelligent systems — how multiple agents maintain alignment without centralised control.',
+    plain: 'When multiple AI systems work together, how do they stay aligned? HARMONIA is the framework for coherence without control — coordination without domination.',
+    link: '/read/09_HARMONIA/README',
+    color: '#95a5a6',
+  },
+];
+---
+
+<Base title="The Nine Frameworks" description="Nine formal mathematical structures forming the Lycheetah Framework.">
+  <div class="fw-page">
+    <div class="fw-hero">
+      <h1>The Nine Frameworks</h1>
+      <p>
+        Each framework is a complete formal structure. Together they form one system.
+        Read any one to understand the whole better.
+      </p>
+      <div class="fw-equation-master">
+        <code>Ψ = CASCADE · AURA · LAMAGUE · TRIAD · MICROORCIM · EARNED_LIGHT · ANAMNESIS · CHRYSOPOEIA · HARMONIA</code>
+      </div>
+    </div>
+
+    <div class="fw-list">
+      {frameworks.map(fw => (
+        <a href={fw.link} class="fw-card" style={`--fw-color: ${fw.color}`}>
+          <div class="fw-card-header">
+            <span class="fw-card-num">{fw.number}</span>
+            <div class="fw-card-title">
+              <span class="fw-card-name">{fw.name}</span>
+              <span class={`fw-status status-${fw.status}`}>{fw.status.toUpperCase()}</span>
+            </div>
+          </div>
+
+          <div class="fw-card-equation">
+            <code>{fw.equation}</code>
+          </div>
+
+          <p class="fw-card-desc">{fw.desc}</p>
+
+          <blockquote class="fw-card-plain">
+            <strong>Plain English:</strong> {fw.plain}
+          </blockquote>
+
+          <div class="fw-card-cta" style={`color: ${fw.color}`}>Read framework →</div>
+        </a>
+      ))}
+    </div>
+
+    <div class="fw-master-eq">
+      <h2>The Master Equation</h2>
+      <p>All nine frameworks contribute to a single formal description of aligned intelligence:</p>
+      <div class="fw-master-block">
+        <div class="fw-master-formula">
+          Ψ(knowledge, consciousness, ethics, governance) =
+        </div>
+        <div class="fw-master-terms">
+          <div class="fw-term"><span class="fw-term-name">CASCADE(E, P, S)</span> <span class="fw-term-desc">— epistemic pressure</span></div>
+          <div class="fw-term"><span class="fw-term-name">× AURA(I–VII)</span> <span class="fw-term-desc">— constitutional invariants</span></div>
+          <div class="fw-term"><span class="fw-term-name">× LAMAGUE(ψ, Ψ)</span> <span class="fw-term-desc">— cross-cultural encoding</span></div>
+          <div class="fw-term"><span class="fw-term-name">× TRIAD(Φ, Γ, Ε)</span> <span class="fw-term-desc">— consciousness metrics</span></div>
+        </div>
+        <div class="fw-master-status">
+          <span class="status-badge status-scaffold">SCAFFOLD</span>
+          <span>Full mathematical unification is in progress. Individual frameworks are [ACTIVE].</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .fw-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .fw-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .fw-hero h1 {
+    font-size: 2.2rem;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .fw-hero p {
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+  }
+
+  .fw-equation-master {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.5rem;
+    overflow-x: auto;
+    text-align: left;
+  }
+
+  .fw-equation-master code {
+    font-size: 0.8rem;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+
+  .fw-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 4rem;
+  }
+
+  .fw-card {
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--fw-color, var(--gold));
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .fw-card:hover {
+    background: var(--raised);
+    border-color: var(--fw-color, var(--gold));
+  }
+
+  .fw-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .fw-card-num {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--fw-color, var(--gold));
+    opacity: 0.6;
+    min-width: 2rem;
+  }
+
+  .fw-card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .fw-card-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-bright);
+  }
+
+  .fw-status {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .status-active { color: #2ecc71; }
+  .status-foundational { color: #c9a227; }
+  .status-scaffold { color: #3498db; }
+
+  .fw-card-equation {
+    margin-bottom: 0.75rem;
+  }
+
+  .fw-card-equation code {
+    font-size: 0.9rem;
+    color: var(--fw-color, var(--gold));
+    background: rgba(255,255,255,0.05);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+  }
+
+  .fw-card-desc {
+    color: var(--text-dim);
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .fw-card-plain {
+    background: rgba(201, 162, 39, 0.04);
+    border-left: 2px solid rgba(201, 162, 39, 0.3);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: var(--text-dim);
+    border-radius: 0 4px 4px 0;
+    font-style: italic;
+  }
+
+  .fw-card-plain strong {
+    font-style: normal;
+    color: var(--gold);
+    opacity: 0.8;
+  }
+
+  .fw-card-cta {
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+
+  .fw-master-eq {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+  }
+
+  .fw-master-eq h2 {
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .fw-master-eq > p {
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+  }
+
+  .fw-master-block {
+    font-family: monospace;
+  }
+
+  .fw-master-formula {
+    color: var(--text-bright);
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .fw-master-terms {
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+    border-left: 2px solid var(--border);
+  }
+
+  .fw-term {
+    margin-bottom: 0.4rem;
+    font-size: 0.875rem;
+  }
+
+  .fw-term-name {
+    color: var(--gold);
+  }
+
+  .fw-term-desc {
+    color: var(--text-dim);
+  }
+
+  .fw-master-status {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+  }
+
+  .status-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.05);
+    color: #3498db;
+  }
+</style>

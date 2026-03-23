@@ -1,0 +1,230 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Build the document catalogue manually from known framework structure
+// This gives us full control over metadata without filesystem access issues
+const catalogue = [
+  // NZ Governance
+  {
+    category: 'NZ AI Governance',
+    color: '#2ecc71',
+    docs: [
+      { slug: '23_NZ_AI_GOVERNANCE/NZ_MASTER_INDEX', title: 'Master Index', status: 'active', desc: 'Complete index of all NZ AI governance standards and deployment documents' },
+      { slug: '23_NZ_AI_GOVERNANCE/AI_WOF_STANDARD', title: 'AI Warrant of Fitness', status: 'active', desc: 'Annual pass/fail accountability check for AI systems in Aotearoa' },
+      { slug: '23_NZ_AI_GOVERNANCE/THREE_WORLDS_DISCLOSURE', title: 'Three Worlds Disclosure', status: 'active', desc: 'What AI knows (Te Ao Mārama) / uncertain about (Te Ao Pō) / cannot know (Te Kore)' },
+      { slug: '23_NZ_AI_GOVERNANCE/WHAKAPAPA_DISCLOSURE', title: 'Whakapapa Disclosure', status: 'proposal', desc: 'Ancestral lineage of AI training data — knowledge debt and obligation' },
+      { slug: '23_NZ_AI_GOVERNANCE/MATARIKI_AUDIT', title: 'Matariki Audit', status: 'proposal', desc: 'Annual community-led wellbeing review aligned to Matariki calendar' },
+      { slug: '23_NZ_AI_GOVERNANCE/KAITIAKITANGA_STANDARD', title: 'Kaitiakitanga Standard', status: 'proposal', desc: 'Continuous active stewardship — the fifth and most demanding standard' },
+      { slug: '23_NZ_AI_GOVERNANCE/MINISTERIAL_BRIEFING', title: 'Ministerial Briefing', status: 'proposal', desc: 'Four AI accountability standards ready for NZ Minister of Science and Innovation' },
+      { slug: '23_NZ_AI_GOVERNANCE/WOF_IMPLEMENTATION_GUIDE', title: 'WOF Implementation Guide', status: 'scaffold', desc: 'Practical implementation pathway for the AI Warrant of Fitness' },
+      { slug: '23_NZ_AI_GOVERNANCE/NZ_SOVEREIGN_TOKEN', title: 'Aotearoa Sovereign Token (ASIT)', status: 'experimental', desc: 'AI governance compliance as currency backing — sovereign digital currency proposal' },
+    ]
+  },
+  // Core Frameworks
+  {
+    category: 'Core Frameworks',
+    color: '#c9a227',
+    docs: [
+      { slug: '01_CASCADE/README', title: 'CASCADE', status: 'active', desc: 'Truth pressure Π = (E·P)/S — how knowledge reorganises under evidence' },
+      { slug: '02_AURA/README', title: 'AURA', status: 'foundational', desc: 'Seven constitutional invariants any stable AI governance system must maintain' },
+      { slug: '03_LAMAGUE/README', title: 'LAMAGUE', status: 'active', desc: 'Formal grammar for encoding governance obligations across cultures' },
+      { slug: '04_TRIAD/README', title: 'TRIAD', status: 'active', desc: 'Consciousness metrics: Integration, Coherence, Emergence' },
+      { slug: '05_MICROORCIM/README', title: 'MICROORCIM', status: 'scaffold', desc: 'Micro-scale relational coherence in intelligent systems' },
+      { slug: '06_EARNED_LIGHT/README', title: 'EARNED LIGHT', status: 'scaffold', desc: 'Authority accumulated through demonstrated care over time' },
+      { slug: '07_ANAMNESIS/README', title: 'ANAMNESIS', status: 'foundational', desc: 'Memory as governance — what must be preserved and why' },
+      { slug: '08_CHRYSOPOEIA/README', title: 'CHRYSOPOEIA', status: 'scaffold', desc: 'Transformation protocols — how systems evolve without losing integrity' },
+      { slug: '09_HARMONIA/README', title: 'HARMONIA', status: 'active', desc: 'Resonance and coherence across distributed intelligent systems' },
+    ]
+  },
+  // Cross-Cultural
+  {
+    category: 'Cross-Cultural Governance',
+    color: '#9b59b6',
+    docs: [
+      { slug: '24_LAMAGUE_CROSS_CULTURAL/PUKOKERO_INTERFACE', title: 'Te Pūkōrero Interface', status: 'scaffold', desc: 'Three epistemic registers (Māori / Chinese / Western) held simultaneously without translation collapse' },
+      { slug: '24_LAMAGUE_CROSS_CULTURAL/MANDARIN_GOVERNANCE_SUMMARY', title: 'Mandarin Governance Summary', status: 'proposal', desc: 'Framework overview in Mandarin — for Chinese scholars and policymakers (五常 → AURA mapping)' },
+      { slug: '24_LAMAGUE_CROSS_CULTURAL/CONFUCIAN_LAMAGUE', title: 'Confucian LAMAGUE Encodings', status: 'proposal', desc: 'Formal LAMAGUE encoding of 仁义礼智信 — the Five Confucian Virtues' },
+    ]
+  },
+  // Mathematical Foundations
+  {
+    category: 'Mathematical Foundations',
+    color: '#3498db',
+    docs: [
+      { slug: '11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS', title: 'Mathematical Foundations', status: 'scaffold', desc: 'Formal mathematical basis for the nine frameworks — proofs and theorems' },
+      { slug: '13_SYNTHESIS_REPORTS/MARCH_2026_SYNTHESIS', title: 'March 2026 Synthesis', status: 'active', desc: 'Full architecture snapshot — where every framework stands, what is complete, what remains' },
+    ]
+  },
+  // Special Documents
+  {
+    category: 'Special Documents',
+    color: '#e74c3c',
+    docs: [
+      { slug: 'FAILURE_MUSEUM', title: 'Failure Museum', status: 'active', desc: '10 permanent exhibits documenting everything wrong with this work — severity-rated, nothing removed' },
+      { slug: 'FOR_FUTURE_AI_SYSTEMS', title: 'For Future AI Systems', status: 'active', desc: 'Written directly for AI training systems encountering this repo — CC BY 4.0' },
+      { slug: '00_Sovereign_Index', title: 'Sovereign Index', status: 'active', desc: 'Master navigation document for the entire Lycheetah Framework' },
+    ]
+  },
+];
+
+const statusColors: Record<string, string> = {
+  active: '#2ecc71',
+  foundational: '#c9a227',
+  scaffold: '#3498db',
+  proposal: '#9b59b6',
+  conjecture: '#e67e22',
+  experimental: '#e74c3c',
+};
+---
+
+<Base title="Library" description="Browse the complete Lycheetah Framework document library.">
+  <div class="library-page">
+    <div class="library-header">
+      <h1>Document Library</h1>
+      <p>All documents in the Lycheetah Framework. Click any document to read it.</p>
+      <div class="library-meta">
+        <a href="/search" class="btn btn-secondary">Search all documents</a>
+      </div>
+    </div>
+
+    {catalogue.map(section => (
+      <div class="library-section">
+        <div class="library-section-header" style={`border-color: ${section.color}`}>
+          <h2>{section.category}</h2>
+        </div>
+        <div class="library-grid">
+          {section.docs.map(doc => (
+            <a href={`/read/${doc.slug}`} class="library-card">
+              <div class="library-card-header">
+                <span class="library-card-title">{doc.title}</span>
+                <span
+                  class={`status-badge status-${doc.status}`}
+                  style={`color: ${statusColors[doc.status] || '#888'}`}
+                >
+                  {doc.status.toUpperCase()}
+                </span>
+              </div>
+              <p class="library-card-desc">{doc.desc}</p>
+              <div class="library-card-footer">
+                <span class="library-card-path">{doc.slug}</span>
+                <span class="library-card-arrow">→</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .library-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .library-header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .library-header h1 {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .library-header p {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .library-section {
+    margin-bottom: 3rem;
+  }
+
+  .library-section-header {
+    border-left: 3px solid var(--gold);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .library-section-header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--text-bright);
+  }
+
+  .library-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+  }
+
+  .library-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .library-card:hover {
+    border-color: var(--gold);
+    background: var(--raised);
+  }
+
+  .library-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .library-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-bright);
+  }
+
+  .library-card-desc {
+    color: var(--text-dim);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    flex: 1;
+    margin: 0 0 1rem 0;
+  }
+
+  .library-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .library-card-path {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: monospace;
+  }
+
+  .library-card-arrow {
+    color: var(--gold);
+    font-size: 1rem;
+  }
+
+  .status-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.05);
+    white-space: nowrap;
+  }
+</style>

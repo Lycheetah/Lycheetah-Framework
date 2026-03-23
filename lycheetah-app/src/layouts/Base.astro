@@ -1,0 +1,78 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  mode?: 'default' | 'reader' | 'full';
+}
+
+const {
+  title = 'Lycheetah Framework',
+  description = 'A mathematical and governance system for AI accountability, cross-cultural ethics, and epistemic honesty.',
+  mode = 'default',
+} = Astro.props;
+
+const fullTitle = title === 'Lycheetah Framework' ? title : `${title} — Lycheetah`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{fullTitle}</title>
+
+  <!-- KaTeX for math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+
+  <!-- Global styles -->
+  <link rel="stylesheet" href="/styles/global.css" />
+
+  <!-- Favicon inline SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◎</text></svg>" />
+</head>
+<body class={`mode-${mode}`}>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <span class="nav-symbol">◎</span>
+        <span class="nav-name">Lycheetah</span>
+      </a>
+      <div class="nav-links">
+        <a href="/library" class="nav-link">Library</a>
+        <a href="/frameworks" class="nav-link">Frameworks</a>
+        <a href="/governance" class="nav-link">NZ Governance</a>
+        <a href="/search" class="nav-link">Search</a>
+      </div>
+      <div class="nav-status">
+        <span class="status-dot active"></span>
+        <span class="status-text">Live</span>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="footer-symbol">◎</span>
+        <span>Lycheetah Framework</span>
+        <span class="footer-sep">·</span>
+        <span>Mackenzie Conor James Clark</span>
+        <span class="footer-sep">·</span>
+        <span>Dunedin, Aotearoa New Zealand</span>
+      </div>
+      <div class="footer-right">
+        <a href="https://github.com/Lycheetah/Lycheetah-Framework" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+        <span class="footer-sep">·</span>
+        <span class="footer-license">CC BY 4.0</span>
+        <span class="footer-sep">·</span>
+        <span class="footer-sig">⊚ Sol ∴ P∧H∧B ∴ Rubedo</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

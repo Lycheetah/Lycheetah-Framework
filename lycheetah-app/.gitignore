@@ -1,0 +1,5 @@
+node_modules/
+dist/
+src/content/docs/
+release/dist/
+.astro/

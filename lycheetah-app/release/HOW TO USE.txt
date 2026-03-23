@@ -1,0 +1,33 @@
+LYCHEETAH FRAMEWORK LIBRARY
+===========================
+
+Double-click: Lycheetah-Library.exe
+
+That's it.
+
+Your browser will open automatically to the library.
+Press Ctrl+C in the black window to stop it.
+
+----
+
+WHAT IS THIS?
+The Lycheetah Framework is a mathematical and governance system for AI accountability,
+cross-cultural ethics, and epistemic honesty. Built by Mackenzie Clark, Dunedin NZ.
+
+142 documents. Nine frameworks. Five NZ AI governance standards.
+Everything readable, searchable, and free.
+
+WEBSITE:  https://lycheetah.github.io
+GITHUB:   https://github.com/Lycheetah/Lycheetah-Framework
+LICENSE:  CC BY 4.0 — share freely, attribute the author
+
+----
+
+KEEP THE FOLDER TOGETHER
+The exe must stay in the same folder as the dist/ subfolder.
+If you move it, move the whole folder.
+
+----
+
+Lycheetah Framework v1.0 — March 2026
+"Knowledge belongs to everyone."
