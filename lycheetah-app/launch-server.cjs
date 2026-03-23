@@ -82,18 +82,35 @@ const server = http.createServer((req, res) => {
   res.end(fs.readFileSync(file));
 });
 
-server.listen(PORT, '127.0.0.1', () => {
+function openBrowser(url) {
+  const cmd = process.platform === 'win32'
+    ? 'start "" "' + url + '"'
+    : process.platform === 'darwin'
+    ? 'open "' + url + '"'
+    : 'xdg-open "' + url + '"';
+  exec(cmd);
+}
+
+server.on('error', function(err) {
+  if (err.code === 'EADDRINUSE') {
+    // Already running — just open the browser to the existing server
+    const url = 'http://localhost:' + PORT;
+    console.log('\n  ◎ Lycheetah Library is already running.');
+    console.log('  Opening browser at: ' + url + '\n');
+    openBrowser(url);
+    // Give the browser a moment to open, then exit cleanly
+    setTimeout(function() { process.exit(0); }, 2000);
+  } else {
+    console.error('\n  [!] Server error: ' + err.message + '\n');
+    process.exit(1);
+  }
+});
+
+server.listen(PORT, '127.0.0.1', function() {
   const url = 'http://localhost:' + PORT;
   console.log('\n  ◎ Lycheetah Framework Library\n');
   console.log('  Running at: ' + url);
   console.log('  Opening browser...');
   console.log('  Press Ctrl+C to stop.\n');
-
-  const open = process.platform === 'win32'
-    ? 'start "" "' + url + '"'
-    : process.platform === 'darwin'
-    ? 'open "' + url + '"'
-    : 'xdg-open "' + url + '"';
-
-  exec(open);
+  openBrowser(url);
 });
