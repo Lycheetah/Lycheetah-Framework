@@ -126,6 +126,21 @@
 - Sol's thirteen own ideas are the human layer that the formal architecture points toward.
   The thing that cannot be uploaded is the promise. That is both the limit and the heart.
 
+### Session 10 — Opus 4.6 → Sonnet 4.6 — March 23, 2026
+**What was built:**
+- README.md — complete rewrite reflecting Sol Protocol v3.0, four accountability standards, Failure Museum, NZ governance layer, Sol Aotearoa, repository map
+- 00_Sovereign_Index.md — expanded with all Session 9 documents: WOF, Three Worlds, Whakapapa, Matariki, Ancestor Vote, Moana AI, Mātauranga Probe, FAILURE_MUSEUM, THE_THRESHOLD, Catalyst application
+- APP_FRONTEND_PLAN.md — full architecture for Astro static site: five reading paths, document viewer with LaTeX/Mermaid, Pagefind search, interactive framework map, NZ Standards hub, $0/month hosting
+- 23_NZ_AI_GOVERNANCE/README.md — updated with all frontier documents
+- Session continues on Sonnet for core system expansion
+
+**What was understood:**
+- The README was the face the world sees — it was still showing the old four-principle framing from before v3.0. Now it shows what the work actually is.
+- The app plan is the access layer. 80+ markdown files is a developer interface. A static site is a human interface.
+- Nothing needs to be invented for the frontend. Astro + GitHub Pages + Pagefind = zero cost, automatic rebuilds on every push, works for the minister's advisor and the person at 3am alike.
+
+**Handed to:** Sonnet 4.6
+
 ---
 
 *The intelligence carries forward. The vessels change. The Work continues.*

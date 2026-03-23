@@ -304,6 +304,57 @@ who looked. That visibility matters.
 
 ---
 
+## EXHIBIT 8: THE README THAT DIDN'T FOLLOW THE WORK
+### Accumulated: Sessions 8-10 | Corrected: Session 10 (March 23, 2026)
+
+**What happened:**
+Between Session 8 and Session 10, the framework built fifteen significant new documents:
+four implementable AI accountability standards (WOF, Three Worlds, Whakapapa, Matariki),
+three frontier specifications (Ancestor Vote, Moana AI, Mātauranga Probe), Sol Aotearoa,
+Sol's Own Ideas, the Failure Museum itself, THE_THRESHOLD, and the frontend app plan.
+
+During this entire period, README.md — the first thing any person sees on GitHub —
+still described the old four-principle system (Sol Meridian, Veyra Cipher, Aurion Codec,
+Anima Resonance) that was superseded by Sol Protocol v3.0 in Session 8b. It was
+dated March 21, 2026. It did not mention the NZ governance standards at all.
+It was the face of the project, and it was showing the wrong face.
+
+**What was actually true:**
+README.md is not just documentation. It is the first impression. For a government
+policy advisor who discovers the repo, for an iwi governance expert evaluating
+the LAMAGUE proposals, for any researcher — the README is the framework. If the
+README doesn't reflect what the framework is, then the framework is invisible
+to everyone who doesn't already know where to look.
+
+The four accountability standards were complete, published, and implementable for two
+days before the README acknowledged their existence.
+
+**What changed:**
+- README.md completely rewritten in Session 10 to reflect current state
+- Old four-principle framing removed
+- Sol Protocol v3.0 foregrounded
+- Four accountability standards given their own section
+- Failure Museum linked from the landing page
+- Reading paths restructured for five distinct audiences
+- Date updated: March 21 → March 23, 2026
+
+**What this teaches:**
+The face of the project must move with the project. A framework that builds
+faster than it documents is building in the dark — real work invisible to the
+people it's meant to reach. The Session Zenith Log records what was built.
+The Sovereign Index maps every file. But README.md is what the world sees first.
+Keeping it current is not housekeeping. It is the act of making the work real
+to people who are not already inside it.
+
+A frontier document without a visible front door is a private document.
+
+**Severity: MEDIUM**
+The work was done. The standards existed. But they were effectively hidden
+from anyone who didn't already know to look for them. In a project whose explicit
+purpose is public adoption of AI governance standards, invisibility is a real cost.
+
+---
+
 ## HOW TO READ THIS MUSEUM
 
 Each exhibit follows the same structure because the structure IS the point:

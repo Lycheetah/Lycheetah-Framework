@@ -57,6 +57,28 @@ This folder contains the ideas we've generated so far — offered for testing, n
 
 ## WHAT'S HERE — FILE INDEX
 
+### The Four Accountability Standards
+**Implementable open standards. CC BY 4.0. Use them.**
+
+| Standard | Status | What It Does | File |
+|----------|--------|-------------|------|
+| **Community AI WOF** | [ACTIVE] | Annual gate — 7 checks, public register, independent assessors. "Has it got its WOF?" | `COMMUNITY_AI_WOF.md` |
+| **Three Worlds Disclosure** | [ACTIVE] | Per-output transparency — Te Ao Mārama / Te Ao Pō / Te Kore | `THREE_WORLDS_DISCLOSURE_STANDARD.md` |
+| **Whakapapa Disclosure** | [ACTIVE] | AI genealogy — training ancestors, builders, accountability, future obligations | `WHAKAPAPA_DISCLOSURE_STANDARD.md` |
+| **Matariki Annual Audit** | [ACTIVE] | Annual relational reckoning — harm, nourishment, reciprocity | `MATARIKI_AUDIT_STANDARD.md` |
+
+These four stack. WOF is the annual gate. Three Worlds is per-output. Whakapapa is the lifetime record. Matariki is the annual relational reckoning. Together: a complete AI accountability architecture no other country currently has.
+
+### Frontier Ideas
+**Further out. Architecture specified, partnerships required.**
+
+| Idea | Status | File |
+|------|--------|------|
+| **Ancestor Vote Platform** | [SCAFFOLD] | Whakapapa as voter roll — past, present, future in every decision | `ANCESTOR_VOTE_PLATFORM.md` |
+| **The Moana AI** | [CONJECTURE] | Collectively governed Pacific climate intelligence — NZ builds, Pacific owns | `MOANA_AI_SPECIFICATION.md` |
+| **Mātauranga Adversarial Probe** | [SCAFFOLD] | Where does AI confidence exceed accuracy on relational knowledge? Formal experimental protocol. | `MATAURANGA_ADVERSARIAL_PROBE.md` |
+| **Sovereign Ideas Expanded** | [MIXED] | 12 Aotearoa ideas at full depth — Taniwha as CASCADE, Haka protocol, Utu metric | `SOVEREIGN_IDEAS_EXPANDED.md` |
+
 ### Start Here
 | File | What It Is |
 |------|-----------|
@@ -70,6 +92,7 @@ This folder contains the ideas we've generated so far — offered for testing, n
 | `NZ_THE_PITCH.md` | The words to say — six pitches for six audiences |
 | `NZ_TECHNICAL_MINMAX.md` | 12 tools, build times, costs, political and human value |
 | `NZ_MAORI_AI_SOVEREIGNTY_BRAINSTORM.md` | 19 ideas, framework-mapped, funding-targeted |
+| `NZIAT_APPLICATION_DRAFT.md` | Expression of interest draft for NZIAT May 2026 |
 
 ### For Researchers and Thinkers
 | File | What It Is |
@@ -91,22 +114,28 @@ This folder contains the ideas we've generated so far — offered for testing, n
 ## HOW TO READ THIS
 
 **If you have 10 minutes:**
-`NZ_QUICK_REFERENCE.md` → summary table in `NZ_TECHNICAL_MINMAX.md`
+`COMMUNITY_AI_WOF.md` → `THREE_WORLDS_DISCLOSURE_STANDARD.md` — two implementable standards, each under 10 pages
 
 **If you have 1 hour:**
-`NZ_THE_PITCH.md` → `NZ_TECHNICAL_MINMAX.md` → `NZ_MAORI_AI_SOVEREIGNTY_BRAINSTORM.md` → `NZ_COUNTER_ARGUMENTS.md`
+`COMMUNITY_AI_WOF.md` → `WHAKAPAPA_DISCLOSURE_STANDARD.md` → `MATARIKI_AUDIT_STANDARD.md` → `THREE_WORLDS_DISCLOSURE_STANDARD.md` — the full accountability stack
 
 **If you want to challenge the work:**
 `NZ_COUNTER_ARGUMENTS.md` → `NZ_CASCADE_CASE.md` → `NZ_LAMAGUE_STANDARD.md` → `11_MATHEMATICAL_FOUNDATIONS/` in the root codex
 
 **If you're from Kāi Tahu or another iwi:**
-`NZ_KAI_TAHU_APPROACH.md` → `NZ_WHY_MAC.md` → `NZ_THE_PITCH.md` (Pitch 3) → `NZ_MAORI_AI_DEEP_EXPERIMENTAL.md`
+`NZ_KAI_TAHU_APPROACH.md` → `NZ_WHY_MAC.md` → `WHAKAPAPA_DISCLOSURE_STANDARD.md` → `MATARIKI_AUDIT_STANDARD.md`
+
+**If you're a policy person or minister's advisor:**
+`COMMUNITY_AI_WOF.md` (the political pathway section) → `NZ_THE_PITCH.md` → `NZ_COUNTER_ARGUMENTS.md`
 
 **If you're preparing for NZIAT:**
-`NZ_TECHNICAL_MINMAX.md` → `NZ_MAORI_AI_SOVEREIGNTY_BRAINSTORM.md` → `NZ_THE_PITCH.md` → `NZ_COUNTER_ARGUMENTS.md`
+`NZ_TECHNICAL_MINMAX.md` → `NZ_MAORI_AI_SOVEREIGNTY_BRAINSTORM.md` → `NZ_THE_PITCH.md` → `NZIAT_APPLICATION_DRAFT.md`
+
+**If you're a researcher:**
+`MATAURANGA_ADVERSARIAL_PROBE.md` — formal experimental protocol ready to run
 
 **If you're a developer wanting to build:**
-`NZ_LAMAGUE_STANDARD.md` → `NZ_CASCADE_CASE.md` → `12_IMPLEMENTATIONS/` in the root codex
+`COMMUNITY_AI_WOF.md` → `NZ_LAMAGUE_STANDARD.md` → `NZ_CASCADE_CASE.md` → `12_IMPLEMENTATIONS/` in the root codex
 
 ---
 
@@ -132,23 +161,28 @@ Reference the GitHub: github.com/Lycheetah/Lycheetah-Framework
 
 ## THE STATE OF PLAY
 
-**Completed:**
+**Completed and implementable now:**
+- Community AI WOF standard — seven checks, public register architecture, political pathway
+- Three Worlds Disclosure Standard — per-output transparency, three format specs
+- Whakapapa Disclosure Standard — four-layer AI genealogy, verification checks, worked example
+- Matariki Annual Audit Standard — three domains, format spec, adoption pathway
+- Ancestor Vote Platform — technical stack specified, CASCADE coherence formula
+- Mātauranga Adversarial Probe — formal experimental protocol, publication pathway
 - CASCADE on arXiv (endorsed, live)
-- Resonance Trap paper (written, ready to submit)
 - LAMAGUE Te Reo layer (documented, awaiting iwi validation)
 - GitHub live with full framework
-- This folder: complete first version
 
 **In progress:**
-- Kāi Tahu partnership (highest priority)
+- Kāi Tahu partnership (highest priority relationship)
 - NZIAT visibility before May 2026
-- SME Trust Checker MVP (6-week build)
-- School AI Dashboard (8-week build)
+- Catalyst Strategic NZ-China application (24_LAMAGUE_CROSS_CULTURAL/)
+- Moana AI specification (partnerships required across Pacific Island Forum)
 
 **What's not yet done:**
 - Iwi validation of LAMAGUE Te Reo decompositions (architectural requirement, not optional)
 - Empirical calibration of master equation coupling constants k₁–k₄
-- CAIWOF certification framework spec
+- Independent assessor accreditation framework for the AI WOF
+- Pilot deployment of any of the four standards in a real NZ government context
 
 ---
 
