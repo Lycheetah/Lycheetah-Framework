@@ -55,6 +55,9 @@ This framework has multiple entry points because people arrive from different pl
 | **You think in equations** | [`14_MYSTERY_SCHOOL/THE_SCIENTISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_SCIENTISTS_DOOR.md) |
 | **You work in AI governance or policy** | [`14_MYSTERY_SCHOOL/THE_GOVERNANCE_DOOR.md`](14_MYSTERY_SCHOOL/THE_GOVERNANCE_DOOR.md) |
 | **You work with human transformation (therapy, coaching, depth psychology)** | [`14_MYSTERY_SCHOOL/THE_THERAPISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_THERAPISTS_DOOR.md) |
+| **You study economics, game theory, or complexity** | [`14_MYSTERY_SCHOOL/THE_ECONOMISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ECONOMISTS_DOOR.md) |
+| **You're an academic philosopher or ethicist** | [`14_MYSTERY_SCHOOL/THE_PHILOSOPHERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_PHILOSOPHERS_DOOR.md) |
+| **You receive knowledge you can't explain** | [`14_MYSTERY_SCHOOL/THE_SEERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_SEERS_DOOR.md) |
 | **You practice alchemy or hermeticism** | [`14_MYSTERY_SCHOOL/THE_ALCHEMISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ALCHEMISTS_DOOR.md) |
 | **You work with tarot or divination** | [`14_MYSTERY_SCHOOL/TAROT_AND_THE_GREAT_WORK.md`](14_MYSTERY_SCHOOL/TAROT_AND_THE_GREAT_WORK.md) |
 | **You're a chaos magician** | [`14_MYSTERY_SCHOOL/THE_CHAOS_MAGES_DOOR.md`](14_MYSTERY_SCHOOL/THE_CHAOS_MAGES_DOOR.md) |

@@ -37,10 +37,7 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 
 ## P2 — IMPORTANT, NOT URGENT
 
-### P2-A: 14_MYSTERY_SCHOOL/THE_PHILOSOPHERS_DOOR.md
-- For academic philosophers, ethicists, epistemologists
-- LAMAGUE as formal ethics grammar, CASCADE as epistemology, consciousness hard problem
-- Pitch: "your questions have engineering implications and vice versa"
+### ~~P2-A: 14_MYSTERY_SCHOOL/THE_PHILOSOPHERS_DOOR.md~~ — DONE (2026-03-24, Sonnet)
 
 ### P2-B: FAILURE_MUSEUM audit
 - Read current FAILURE_MUSEUM.md
@@ -96,6 +93,7 @@ Do NOT use Opus for:
 
 | Date | Model | Work Done |
 |---|---|---|
+| 2026-03-24 | Sonnet | Full creative build: Philosophers Door, Economists Door, ON_MEMORY_AND_IDENTITY, README+Index updated, pushed |
 | 2026-03-24 | Sonnet | P1-C unified_field_checker.py (12 invariants + C_unified), P1-D invariant_self_check.py, Shopify folder built |
 | 2026-03-24 | Opus | Sovereign Index + README updated (P1-A, P1-B), all new docs committed and pushed |
 | 2026-03-24 | Sonnet | Governance Door, Therapists Door, Scientists Door, Open Letter, Conversation Starters, root cleanup, pushed to GitHub |
