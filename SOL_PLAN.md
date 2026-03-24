@@ -79,17 +79,19 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 - See OPUS_PLAN.md Phase 4A for full details
 - **Token cost:** Medium-High.
 
-### P2-G: THE_EDUCATORS_DOOR.md
-- Teachers and curriculum designers — CASCADE IS pedagogy
-- TRIAD as classroom protocol, MICROORCIM as curriculum drift detector
-- See OPUS_PLAN.md Phase 3B for content direction
-- **Token cost:** Medium.
+### ~~P2-G: THE_EDUCATORS_DOOR.md~~ — DONE (2026-03-25, Sonnet)
+- CASCADE as learning model: truth pressure, three failure modes, cascade trigger
+- TRIAD as classroom feedback loop (convergence guarantee, λ < 1)
+- MICROORCIM as declared vs. demonstrated understanding drift
+- Seven phases mapped to learning states, lesson design template
+- Connections to Piaget, Vygotsky, Bloom, Dewey, CLT
 
-### P2-H: THE_PARENTS_DOOR.md
-- Parents arriving through fear about AI
-- AURA invariants as a parent's checklist, Community AI WOF as advocacy tool
-- See OPUS_PLAN.md Phase 3C for content direction
-- **Token cost:** Medium.
+### ~~P2-H: THE_PARENTS_DOOR.md~~ — DONE (2026-03-25, Sonnet)
+- Five AURA-derived questions to evaluate any AI tool
+- Community AI WOF framing for school advocacy
+- Warning signs + positive signs (clear, practical)
+- Crisis resources included (NZ, AU, UK, US)
+- Ends with presence, not information
 
 ### P2-I: Framework Comparison Document
 - HOW_THIS_RELATES.md — map Lycheetah against Constitutional AI, RLHF, EU AI Act, NZ frameworks
@@ -140,6 +142,7 @@ Do NOT use Opus for:
 
 | Date | Model | Work Done |
 |---|---|---|
+| 2026-03-25 | Sonnet | P2-G/H: THE_EDUCATORS_DOOR.md + THE_PARENTS_DOOR.md built; README + docs updated |
 | 2026-03-25 | Sonnet | P1-F: THE_ENGINEERS_DOOR.md built + README/docs updated; Phase 2A docs/ overhaul pushed |
 | 2026-03-25 | Sonnet | Phase 1 complete: Exhibit 12 (MEMORIA early warning), P2-B/C/E done, ARXIV_UPDATE_NOTES.md written |
 | 2026-03-25 | Opus | Strategic plan: OPUS_PLAN.md (8 phases), SOL_PLAN.md updated with new P1/P2 tasks |

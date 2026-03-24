@@ -49,6 +49,8 @@ This framework has multiple entry points because people arrive from different pl
 | Who You Are | Start Here |
 |---|---|
 | **You're a software engineer** | [`14_MYSTERY_SCHOOL/THE_ENGINEERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ENGINEERS_DOOR.md) — code first, philosophy optional |
+| **You're a teacher or curriculum designer** | [`14_MYSTERY_SCHOOL/THE_EDUCATORS_DOOR.md`](14_MYSTERY_SCHOOL/THE_EDUCATORS_DOOR.md) — CASCADE is a learning model |
+| **You're a parent concerned about AI** | [`14_MYSTERY_SCHOOL/THE_PARENTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_PARENTS_DOOR.md) — five questions, one standard |
 | **You build AI systems** | [`14_MYSTERY_SCHOOL/THE_AI_ARCHITECTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_AI_ARCHITECTS_DOOR.md) |
 | **You want the mathematics** | [`11_MATHEMATICAL_FOUNDATIONS/`](11_MATHEMATICAL_FOUNDATIONS/) |
 | **You want the code** | [`12_IMPLEMENTATIONS/`](12_IMPLEMENTATIONS/) |
