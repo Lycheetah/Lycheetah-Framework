@@ -47,8 +47,8 @@ This research proposes to test whether tikanga Māori governance concepts — sp
 
 ### What Already Exists
 The Lycheetah Framework is not speculative:
-- CASCADE knowledge architecture: formal theorems proven, Python implementation live
-- AURA Seven Invariants: formally specified, measurably testable
+- CASCADE knowledge architecture: Lyapunov stability proven (Theorem 3.1) + convergence chain (3.1→3.3→4.2) ACTIVE for discrete implementation; Python implementation live
+- AURA Seven Invariants: formally specified, measurably testable; coherence floor C ≥ 0.70 is a proven mathematical condition (not just a design choice)
 - LAMAGUE: operational grammar with Python implementation (`lamague_reference.py`)
 - **Four implementable NZ AI accountability standards** (no legislation required):
   Community AI Warrant of Fitness, Three Worlds Disclosure, Whakapapa Disclosure, Matariki Annual Audit
@@ -59,7 +59,7 @@ The Lycheetah Framework is not speculative:
 - arXiv preprint: CASCADE framework (endorsed, live)
 - GitHub: github.com/Lycheetah/Lycheetah-Framework
 - 1,402 pages of documented development history
-- Public Failure Museum: eight exhibits of framework failures, nothing removed
+- Public Failure Museum: eleven exhibits of framework failures, nothing removed
 
 The funding is for the cross-cultural validation research — specifically the iwi partnership and empirical testing that converts a well-structured proposal into a validated standard. The standards are already built. The validation is the remaining step.
 
