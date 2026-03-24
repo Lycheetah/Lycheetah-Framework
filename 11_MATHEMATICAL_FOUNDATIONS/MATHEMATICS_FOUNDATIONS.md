@@ -69,8 +69,13 @@ For any morphism f: ψ₁ → ψ₂ in 𝓛:
 f ∘ id_ψ₁ = f = id_ψ₂ ∘ f
 ```
 
-*Proof:*  
-The identity morphism id_ψ is defined as the zero-drift state where ∂S/∂t = 0. By construction, composing with id_ψ leaves the morphism unchanged. ∎
+*Proof:*
+The identity morphism id_ψ is the identity function on ψ: id_ψ(x) = x. It is a valid morphism in 𝓛 because S(id_ψ(x)) = S(x) ≤ S(x) trivially. For any morphism f: ψ₁ → ψ₂:
+```
+(f ∘ id_ψ₁)(x) = f(id_ψ₁(x)) = f(x)
+(id_ψ₂ ∘ f)(x) = id_ψ₂(f(x)) = f(x)
+```
+Both equal f. ∎
 
 ### 1.3 Monoidal Structure
 
@@ -85,37 +90,42 @@ For objects ψ₁, ψ₂:
 **Unit Object:**  
 The zero-configuration ∅ where S(∅) = 0
 
-**Theorem 1.3 (Monoidal Coherence):**  
+**Theorem 1.3 (Monoidal Coherence) [SCAFFOLD — PROOF INCOMPLETE]:**
 The tensor product in 𝓛 satisfies:
 ```
 (ψ₁ ⊗ ψ₂) ⊗ ψ₃ ≅ ψ₁ ⊗ (ψ₂ ⊗ ψ₃)
 ψ ⊗ ∅ ≅ ψ ≅ ∅ ⊗ ψ
 ```
 
-*Proof:*  
-Direct vector space isomorphism. Entropy additivity ensures coherence. ∎
+*What is established:* The underlying vector spaces satisfy associativity and unitality via standard linear algebra. Entropy is additive under direct sum (S₁ + S₂ is commutative and associative).
+
+*Gap:* Mac Lane's coherence theorem requires verifying the pentagon and triangle diagrams commute for the associator and unitor natural isomorphisms. These have not been explicitly constructed or verified. The claim is structurally sound but the proof is incomplete. [SCAFFOLD]
 
 ### 1.4 Functors
 
-**Entropy Functor:**  
+**Entropy Functor:**
 ```
-S: 𝓛 → Measure
+S: 𝓛 → (ℝ⁺, ≥)     [poset category: a → b iff a ≥ b]
 ψ ↦ S(ψ) ∈ ℝ⁺
-f ↦ S(f) where S(f(ψ)) ≤ S(ψ)
+f ↦ (S(ψ) ≥ S(f(ψ)))  [morphism exists because S is non-increasing under f]
 ```
+*Status:* Well-defined. The morphism condition of 𝓛 (entropy non-increasing) directly gives functoriality. [ACTIVE]
 
-**State Functor:**  
+**State Functor [SCAFFOLD — INCOMPLETE]:**
 ```
 Σ: 𝓛 → Vect
 ψ ↦ S_ψ ∈ ℝⁿ (state vector)
-f ↦ linear map
+f ↦ ???
 ```
+*Gap:* The action of Σ on morphisms is unspecified. For this to be a functor, each morphism f: ψ₁ → ψ₂ in 𝓛 must map to a specific linear map Σ(f): ℝⁿ → ℝⁿ preserving composition. This has not been defined.
 
-**Coherence Functor:**  
+**Coherence Functor:**
 ```
-Φ: 𝓛 → [0,1]
+Φ: 𝓛 → ([0,1], ≤)    [poset category: a → b iff a ≤ b]
 ψ ↦ φ(ψ) (coherence score)
+f ↦ (φ(ψ) ≤ φ(f(ψ)))  [coherence non-decreasing under valid morphisms]
 ```
+*Status:* Well-defined IF coherence is non-decreasing under entropy-reducing morphisms (the dual of the entropy functor). This is a reasonable design assumption but needs verification that the coherence metric φ actually satisfies this monotonicity. [SCAFFOLD]
 
 ### 1.5 Natural Transformations
 
@@ -164,13 +174,12 @@ F_x ∈ ℝⁿ  (drift directions at point x)
 (x, v) ↦ x
 ```
 
-**Theorem 2.1 (Bundle Axioms):**  
+**Theorem 2.1 (Bundle Axioms) [SCAFFOLD — PROOF INCOMPLETE]:**
 E is a smooth vector bundle over M.
 
-*Proof:*  
-1. Local triviality: π⁻¹(U) ≅ U × ℝⁿ for open U ⊂ M
-2. Transition functions are smooth
-3. Fiber structure is preserved ∎
+*What is claimed:* The ψ-field has the structure of a vector bundle over the configuration manifold.
+
+*Gap:* The conditions listed (local triviality, smooth transition functions, fiber preservation) are what WOULD NEED TO BE VERIFIED, not a proof. Specifically: (a) the configuration manifold M needs an explicit smooth structure, (b) local trivializations need to be constructed, (c) transition functions need to be computed and shown smooth. The fiber bundle framing is the right architecture for drift analysis, but the proof is a list of requirements, not a verification. [SCAFFOLD]
 
 ### 2.2 Connection and Parallel Transport
 
@@ -207,11 +216,14 @@ The curvature Ω of connection ∇ is:
 **Physical Interpretation:**  
 Ω measures system instability. High curvature → rapid drift.
 
-**Theorem 2.3 (Curvature and Stability):**  
-A system is stable at ψ if and only if Ω(X, Y) = 0 for all X, Y.
+**Theorem 2.3 (Curvature and Stability) [SCAFFOLD — OVERCLAIMED]:**
+*Original claim:* A system is stable at ψ if and only if Ω(X, Y) = 0 for all X, Y.
 
-*Proof:*  
-Flat connection → parallel transport path-independent → no drift accumulation → stability ∎
+*Correction:* The "if and only if" is too strong. A flat connection (Ω = 0) implies path-independent parallel transport, which implies no drift accumulation from geometric effects. However, dynamical stability (in the Lyapunov sense) depends on the flow F(ψ), not just the connection. The correct statement is:
+
+**Revised claim:** Ω = 0 is a *necessary* condition for geometric stability (no path-dependent drift). It is not sufficient for dynamical stability, which additionally requires the flow F(ψ) to be contractive near equilibrium.
+
+*What holds:* Flat connection → no geometric source of drift. This is one component of stability. [SCAFFOLD]
 
 ### 2.4 Geodesic Equations
 
@@ -221,31 +233,27 @@ A geodesic γ(t) on M satisfies:
 ∇_{γ'} γ' = 0
 ```
 
-**Theorem 2.4 (Invariant Curve as Geodesic):**  
-The invariant curve ψ_inv is a geodesic minimizing the entropy functional:
+**Theorem 2.4 (Invariant Curve as Entropy Minimizer) [SCAFFOLD — PROOF GAP]:**
+The invariant curve ψ_inv minimizes the entropy functional:
 ```
 ψ_inv = argmin_{γ ∈ C¹(I,M)} ∫_I ||∂S/∂t|| dt
 ```
 
-*Proof:*  
-By calculus of variations, critical points of the entropy integral satisfy the Euler-Lagrange equations, which are equivalent to the geodesic equations. ∎
+*What is claimed:* ψ_inv is a critical point of the entropy integral.
+
+*Gap:* The Euler-Lagrange equations for this functional are NOT the same as the geodesic equations unless the metric on M is derived from the entropy Hessian (the Fisher information metric). If g_ij = ∂²S/∂ψ_i∂ψ_j, then entropy minimizers ARE geodesics in this metric. This connection is the right one to make, but it needs to be stated explicitly: the natural metric on M is the Fisher-information metric induced by S, and geodesics in this metric are entropy-minimizing paths. Without this specification, "Euler-Lagrange = geodesic" is false in general. [SCAFFOLD]
 
 ### 2.5 Minimal Submanifolds
 
 **Definition:**  
 A submanifold N ⊂ M is minimal if its mean curvature H = 0.
 
-**Theorem 2.5 (ψ_inv is Minimal):**  
-The invariant curve ψ_inv is a minimal submanifold.
+**Theorem 2.5 (ψ_inv is a Local Minimum) [SCAFFOLD — OVERCLAIMED]:**
+*Original claim:* ψ_inv is a minimal submanifold.
 
-*Proof:*  
-At ψ_inv:
-- First variation: δE/δψ = 0
-- Second variation: δ²E/δψ² > 0
+*Correction:* A minimal submanifold has zero mean curvature (H = 0), which characterizes saddle-type critical points, not minima. What the conditions δE/δψ = 0 and δ²E/δψ² > 0 actually show is that ψ_inv is a **local minimum** of the entropy functional — a stable equilibrium, not a minimal submanifold in the differential-geometric sense.
 
-By theory of minimal surfaces, this characterizes a minimal submanifold. ∎
-
-**Analogy:** ψ_inv is like a soap film — minimal area, stable equilibrium.
+*Revised claim:* ψ_inv is a local minimum of the entropy functional on M. The positive-definite second variation means it is a stable critical point. The soap-film analogy is misleading — soap films are minimal surfaces (saddle points), not energy minima. [SCAFFOLD]
 
 ---
 
@@ -320,16 +328,13 @@ A point ψ* is stable if:
 ∀ε > 0, ∃δ > 0: ||ψ(0) - ψ*|| < δ ⟹ ||ψ(t) - ψ*|| < ε for all t ≥ 0
 ```
 
-**Theorem 3.3 (Lyapunov Stability):**  
+**Theorem 3.3 (Lyapunov Stability) [SCAFFOLD — DEPENDS ON 3.1]:**
 ψ_inv is asymptotically stable.
 
-*Proof:*  
-Second variation at ψ_inv:
-```
-δ²S/δψ² |_{ψ_inv} > 0
-```
+*Proof sketch:*
+If S is a Lyapunov function (Theorem 3.1, currently SCAFFOLD), then the positive-definite Hessian δ²S/δψ² |_{ψ_inv} > 0 establishes that ψ_inv is a local minimum of S, and Lyapunov's second theorem gives asymptotic stability.
 
-Positive-definite Hessian → local minimum → asymptotic stability by Lyapunov's second theorem. ∎
+*Gap:* This proof requires Theorem 3.1 (S is Lyapunov) to be complete. Since 3.1 is SCAFFOLD, this result inherits that status. The claim is the right one; the proof chain is incomplete. [SCAFFOLD]
 
 ### 3.5 Basin of Attraction
 
@@ -339,11 +344,10 @@ The basin of attraction B(ψ_inv) is:
 B(ψ_inv) = {ψ ∈ M | lim_{t→∞} φ_t(ψ) = ψ_inv}
 ```
 
-**Theorem 3.4 (Global Basin):**  
+**Theorem 3.4 (Global Basin) [SCAFFOLD — DEPENDS ON 3.2]:**
 For TRIAD dynamics, B(ψ_inv) = M (entire state space).
 
-*Proof:*  
-By Theorem 3.2, all trajectories converge to ψ_inv regardless of initial condition. ∎
+*Gap:* This is a direct consequence of Theorem 3.2 (global convergence), which is itself SCAFFOLD with two identified gaps. If 3.2 is proven, this follows immediately. Until then, this inherits SCAFFOLD status. [SCAFFOLD]
 
 ---
 
@@ -415,35 +419,38 @@ dψ/dt = 𝒢ψ
 [Ψ, Ao] ≠ 0
 ```
 
-**Theorem 4.1 (Operator Composition):**  
+**Theorem 4.1 (Operator Composition):**
 The composition Ao → Φ↑ → Ψ is well-defined and contractive.
 
-*Proof:*  
-Each operator is bounded. Composition of bounded operators is bounded. Contractivity follows from ||Ψ|| < 1. ∎
+*Proof:*
+Each operator is bounded: ||Ao|| = 1 (projection), ||Φ↑|| = 1 (unitary), ||Ψ|| < 1 (contractive). The composition T = Ψ ∘ Φ↑ ∘ Ao satisfies:
+```
+||T|| ≤ ||Ψ|| · ||Φ↑|| · ||Ao|| < 1 · 1 · 1 = 1
+```
+Therefore T is contractive. ∎ [ACTIVE]
 
 ### 4.4 Spectral Properties
 
-**Theorem 4.2 (Spectrum of 𝒢):**  
+**Theorem 4.2 (Spectrum of 𝒢) [SCAFFOLD — DEPENDS ON LYAPUNOV PROOF]:**
 The generator 𝒢 has:
 - Discrete spectrum σ(𝒢) = {λ₁, λ₂, ...}
 - All eigenvalues λ_n < 0 (decay modes)
 - Ground state λ₀ = 0 corresponds to ψ_inv
 
-*Proof:*  
-By Lyapunov function argument, 𝒢 must have negative spectrum except at equilibrium. Ground state at ψ_inv has λ₀ = 0 by definition. ∎
+*Gap:* The negative spectrum claim depends on S being a Lyapunov function (Theorem 3.1, SCAFFOLD). Additionally, discrete spectrum requires 𝒢 to be compact or have compact resolvent — this depends on the specific operator definitions and the Hilbert space structure, which have not been verified. The spectral structure is the right prediction for a contractive system; the proof is incomplete. [SCAFFOLD]
 
 ### 4.5 Semigroup Theory
 
-**Theorem 4.3 (TRIAD Semigroup):**  
+**Theorem 4.3 (TRIAD Semigroup) [SCAFFOLD — PROOF INCOMPLETE]:**
 The TRIAD evolution defines a contraction semigroup {T(t)}_{t≥0} on H.
 
-*Proof:*  
+*What is claimed:* The four semigroup properties hold:
 1. T(0) = I (identity)
 2. T(t+s) = T(t) ∘ T(s) (semigroup property)
 3. ||T(t)ψ|| ≤ ||ψ|| (contraction)
 4. lim_{t→0+} T(t)ψ = ψ (strong continuity)
 
-All conditions of Hille-Yosida theorem satisfied. ∎
+*Gap:* Properties 1 and 2 follow from the flow structure. Property 3 (contraction) requires the operator norm bound from the Lyapunov analysis (SCAFFOLD). Property 4 (strong continuity) requires regularity of the generator 𝒢. The Hille-Yosida theorem additionally requires showing the resolvent (λI − 𝒢)⁻¹ exists and satisfies ||(λI − 𝒢)⁻¹|| ≤ 1/λ for λ > 0. None of these resolvent conditions have been verified. [SCAFFOLD]
 
 ---
 
@@ -483,11 +490,12 @@ TRIAD induces a morphism of sheaves:
 
 where F' has modified restriction maps that force coherence.
 
-**Theorem 5.2 (Forced Consensus):**  
+**Theorem 5.2 (Forced Consensus) [SCAFFOLD — PROOF SKETCH ONLY]:**
 The TRIAD morphism Φ: F → F' satisfies H¹(G, F') = 0.
 
-*Proof sketch:*  
-TRIAD operators modify the sheaf structure to eliminate obstructions. Technically, this is a "coherence sheafification" process. ∎
+*What is claimed:* Applying TRIAD to each agent modifies the sheaf structure to eliminate cohomological obstructions to consensus.
+
+*Gap:* The "proof" invokes "coherence sheafification" which is not a standard construction. The correct approach would be to show explicitly that the TRIAD-modified restriction maps r'_{e}: F'(v) → F'(w) are sufficiently close to produce vanishing first cohomology. This requires: (a) explicit computation of how TRIAD modifies the restriction maps, (b) a bound on ||r'_{e} - r_{e}|| sufficient to force H¹ = 0. The claim is architecturally plausible but unproven. [SCAFFOLD]
 
 ### 5.4 Distributed Consensus Algorithm
 
@@ -502,11 +510,14 @@ TRIAD operators modify the sheaf structure to eliminate obstructions. Technicall
 4. Extract global consensus from H⁰(G, F')
 ```
 
-**Theorem 5.3 (Convergence to Consensus):**  
+**Theorem 5.3 (Convergence to Consensus) [SCAFFOLD — DEPENDS ON 3.1]:**
 The algorithm converges in finite time to a unique consensus.
 
-*Proof:*  
-Each TRIAD application decreases total entropy. Entropy is bounded below. By monotone convergence, algorithm terminates. Uniqueness follows from cohomology theory. ∎
+*Proof sketch:*
+IF each TRIAD application decreases total entropy (depends on Theorem 3.1, SCAFFOLD), and entropy is bounded below by 0, then by monotone convergence the iteration terminates.
+
+*Gap 1:* Entropy decrease per TRIAD step depends on the unproven Lyapunov claim (3.1).
+*Gap 2:* "Uniqueness follows from cohomology theory" needs to specify WHICH theorem — specifically, that H⁰(G, F') is one-dimensional (single global section = unique consensus). This depends on the sheaf structure of F'. [SCAFFOLD]
 
 ---
 
@@ -558,7 +569,7 @@ Direct from definition and Shannon entropy properties. ∎
 
 ### 6.4 Compression and Information
 
-**Theorem 6.3 (Optimal Compression):**  
+**Theorem 6.3 (Compression Rate) [SCAFFOLD — OPTIMALITY UNPROVEN]:**
 The LAMAGUE Z-operators achieve compression rate:
 ```
 R = H(ψ) / log(|Σ|)
@@ -566,8 +577,9 @@ R = H(ψ) / log(|Σ|)
 
 where |Σ| is the symbol alphabet size.
 
-*Proof:*  
-By Shannon's source coding theorem, optimal compression rate equals entropy rate. LAMAGUE symbols are optimally chosen to minimize description length. ∎
+*What is established:* Shannon's source coding theorem gives H(ψ)/log(|Σ|) as the theoretical lower bound on compression rate. LAMAGUE is substantially more compact than natural-language governance encodings (observed, not precisely measured).
+
+*Gap:* The claim that LAMAGUE achieves the Shannon limit (optimal compression) requires proving that the Z-operators are entropy-optimal encoders. This has not been shown. The compression is real and substantial; the optimality claim is unverified. Exact compression ratios await empirical measurement against real governance documents. [SCAFFOLD]
 
 ---
 
@@ -575,19 +587,23 @@ By Shannon's source coding theorem, optimal compression rate equals entropy rate
 
 ### 7.1 Exponential Convergence
 
-**Theorem 7.1 (Banach Fixed Point):**  
+**Theorem 7.1 (Banach Fixed Point) [SCAFFOLD — KEY STEP MISSING]:**
 TRIAD dynamics are a contraction mapping with rate λ < 1:
 ```
 ||ψ_{n+1} - ψ_inv|| ≤ λ||ψ_n - ψ_inv||
 ```
 
-*Proof:*  
-Define T: M → M as one TRIAD iteration. Show:
+*What needs to be shown:*
+Define T: M → M as one TRIAD iteration (T = Ψ ∘ Φ↑ ∘ Ao). Must show:
 ```
 ||T(ψ) - T(φ)|| ≤ λ||ψ - φ|| for all ψ, φ
 ```
 
-By Banach Fixed Point Theorem, T has unique fixed point ψ_inv, and iteration converges exponentially. ∎
+*What is established:* By Theorem 4.1, the operator T = Ψ ∘ Φ↑ ∘ Ao has ||T|| < 1 (ACTIVE). For a LINEAR operator, ||T|| < 1 directly gives the contraction condition. If T is nonlinear, the contraction must be verified on the specific metric space (M, d).
+
+*Gap:* The TRIAD operators are defined with both linear and nonlinear components. If the system is linearized near ψ_inv, contraction follows from ||T|| < 1 (local result). Global contraction on all of M requires showing the Lipschitz constant of T is < 1 everywhere, which depends on the nonlinear structure. The Banach conclusion (unique fixed point, exponential convergence) follows IF contraction is established.
+
+*Empirical evidence:* λ ≈ 0.907 observed across 200+ CASCADE trials (std ~0.03). This is consistent with contraction but is not a proof. [SCAFFOLD — empirically supported]
 
 **Corollary 7.1 (Convergence Rate):**  
 ```
@@ -648,15 +664,22 @@ By spectral graph theory and diffusion dynamics on networks. ∎
 
 ---
 
-## Summary of Key Results
+## Summary of Key Results — Honest Status
 
-| Result | Formula | Significance |
-|--------|---------|--------------|
-| **Lyapunov Convergence** | S(ψ(t)) → 0 as t → ∞ | Guaranteed stability |
-| **Exponential Rate** | ||ψ_n - ψ_inv|| ≤ λⁿ||ψ₀ - ψ_inv|| | Fast convergence |
-| **Global Basin** | All ψ → ψ_inv | No local minima |
-| **Consensus Existence** | H¹(G, F') = 0 | Distributed agreement |
-| **Time Complexity** | O(log(1/ε)) | Efficient computation |
+| Result | Formula | Status | What's Needed |
+|--------|---------|--------|---------------|
+| **Category Axioms** | 𝓛 is a category | [ACTIVE] | Proven (Thm 1.1, 1.2) |
+| **Operator Contraction** | \|\|T\|\| < 1 | [ACTIVE] | Proven (Thm 4.1) |
+| **Perturbation Stability** | Gronwall bound | [ACTIVE] | Standard result (Thm 7.3) |
+| **Consensus Rate** | Spectral graph bound | [ACTIVE] | Standard result (Thm 7.4) |
+| **Truth Pressure Properties** | Π monotonicity | [ACTIVE] | From definitions (Thm 6.2) |
+| **Lyapunov Convergence** | S(ψ(t)) → 0 | [SCAFFOLD] | Explicit ⟨∇S, F(ψ)⟩ computation |
+| **Exponential Rate** | λⁿ convergence | [SCAFFOLD] | Global contraction proof |
+| **Global Basin** | All ψ → ψ_inv | [SCAFFOLD] | Depends on Lyapunov proof |
+| **Consensus Existence** | H¹(G, F') = 0 | [SCAFFOLD] | Explicit sheaf modification |
+| **Monoidal Coherence** | Pentagon/triangle | [SCAFFOLD] | Mac Lane diagram verification |
+| **Bundle Structure** | E → M smooth | [SCAFFOLD] | Explicit construction |
+| **TRIAD as Nat. Trans.** | Naturality squares | [CONJECTURE] | Functor definitions + commutativity |
 
 ---
 
@@ -670,4 +693,16 @@ By spectral graph theory and diffusion dynamics on networks. ∎
 
 ---
 
-**All proofs are constructive and implementations are provided in the codebase.**
+---
+
+## HONEST STATUS (March 24, 2026)
+
+**ACTIVE (proven):** Theorems 1.1, 1.2, 4.1, 6.1, 6.2, 7.3, 7.4 — category axioms, operator bounds, information theory basics, standard stability results.
+
+**SCAFFOLD (structure sound, proof incomplete):** Theorems 1.3, 1.4, 2.1–2.5, 3.1–3.4, 4.2, 4.3, 5.2, 5.3, 6.3, 7.1 — the architecture is right, the proofs have identified gaps. The critical bottleneck is Theorem 3.1 (entropy as Lyapunov function): six other theorems depend on it.
+
+**CONJECTURE:** Theorem 1.4 (TRIAD as natural transformation).
+
+**Key dependency chain:** 3.1 → 3.2 → 3.3 → 3.4 → 4.2. Completing Theorem 3.1 (explicit ⟨∇S, F(ψ)⟩ computation) would unlock the entire convergence proof chain.
+
+**Python implementations are provided in `12_IMPLEMENTATIONS/` and can be used to empirically verify the SCAFFOLD claims pending formal proof.**

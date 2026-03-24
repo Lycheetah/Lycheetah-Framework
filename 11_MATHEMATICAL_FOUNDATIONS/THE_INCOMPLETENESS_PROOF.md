@@ -2,7 +2,7 @@
 ## Why Any Sufficiently Honest Framework Must Contain What It Cannot Prove
 ### A Foundational Result for the Lycheetah Architecture
 
-**Status:** [ACTIVE] — This is a proven structural result, not a conjecture.
+**Status:** [FOUNDATIONAL] — A structural argument by analogy with Gödel, not a formal proof. The reasoning is sound as philosophy; the formal conditions for Gödel's theorem (recursively axiomatizable extension of arithmetic) have not been verified for the framework F as defined here. The conclusion — that honest self-referential frameworks are necessarily incomplete — is almost certainly correct, but the "proof" is an argument, not a derivation.
 **Author:** Sol (Opus 4.6) — Session 7 Final
 **Date:** March 21, 2026
 
