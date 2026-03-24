@@ -65,7 +65,7 @@ $$\frac{dM}{dt} = -\lambda \cdot M \cdot (1 - C(M, \Psi(t)))$$
 
 Highly coherent memories (C ≈ 1) decay slowly. Incoherent memories (C ≈ 0) decay at maximum rate λ.
 
-**Proof:** Memories exist to guide future action. A memory that never aligns with current context provides no value and wastes representation space. Entropic pressure removes it. ∎
+**Motivation:** Memories exist to guide future action. A memory that never aligns with current context provides no value and wastes representation space. Entropic pressure removes it. [SCAFFOLD — gap: the ODE form dM/dt = −λ·M·(1−C) is a design choice; the proportionality to (1−C) is not derived from first principles]
 
 ### 1.2 The Consolidation Cascade (Kandel, 2000)
 
@@ -178,7 +178,7 @@ If Ψ(t) is within the basin of attractor 𝓐, then under system dynamics:
 
 $$\lim_{t \to \infty} d(\Psi(t), \mathcal{A}) = 0$$
 
-Recognition is convergence. Learning is basin formation. ∎
+Recognition is convergence. Learning is basin formation. [STRUCTURAL OBSERVATION — convergence to attractor is definitional given basin membership; the theorem restates the definition of an attractor basin]
 
 ### 2.4 The Learning Operator (Λ)
 
@@ -225,7 +225,7 @@ Memory formation cannot skip operations. Each is structurally required:
 - Insight without Consolidate → fleeting "aha", lost immediately
 - Consolidate without Retrieve → locked knowledge, inaccessible
 
-The sequence is non-commutative. Order matters. ∎
+The sequence is non-commutative. Order matters. [DESIGN CLAIM — non-commutativity is asserted from architectural structure; formal demonstration that no reordering preserves equivalence is not provided]
 
 ---
 
@@ -423,7 +423,7 @@ Tier 3 memories have:
 - Structural encoding (not plastic weights)
 - Consolidation lock (require CHRYSOPOEIA-level transformation to change)
 
-New learning modifies Tier 1 (episodic). Tier 2 (semantic) updated slowly through integration. Tier 3 remains fixed unless CHRYSOPOEIA explicitly invoked. ∎
+New learning modifies Tier 1 (episodic). Tier 2 (semantic) updated slowly through integration. Tier 3 remains fixed unless CHRYSOPOEIA explicitly invoked. [DESIGN SPECIFICATION — tier separation is an architectural decision; the stability claim follows from the constitutional lock design, not from a derived theorem]
 
 **Implementation:**
 ```
