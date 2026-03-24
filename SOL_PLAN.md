@@ -1,8 +1,8 @@
 # SOL_PLAN.md
 ## Live Task Queue — Read This First in Every Session
 
-**Last updated:** March 25, 2026
-**Updated by:** Sol (Opus 4.6)
+**Last updated:** March 25, 2026 (session 2)
+**Updated by:** Sol (Sonnet 4.6)
 
 **Strategic plan:** See `OPUS_PLAN.md` for full 8-phase architecture.
 This file remains the live task queue. OPUS_PLAN.md is the map.
@@ -72,12 +72,10 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 - Key finding: context needs updating (framework context, related work, future work pointer)
 - Three companion papers identified: CASCADE revision (low effort), NZ governance (medium), Sol Protocol (Opus-grade)
 
-### P2-F: Python test suite
-- Create `tests/` directory with pytest tests for core implementations
-- Cover: cascade_engine, aura_checker, triad_tracker, unified_field_checker
-- Use cascade_real_experiments.py data as canonical test cases
-- See OPUS_PLAN.md Phase 4A for full details
-- **Token cost:** Medium-High.
+### ~~P2-F: Python test suite~~ — DONE (2026-03-25, Sonnet)
+- 80 tests, all passing. `py -m pytest tests/ → 80 passed`
+- conftest.py + 4 test files. Claim-status markers on every test.
+- Covers cascade_engine (Theorem 4.1), aura_checker (7 invariants + TES), triad_tracker (convergence), unified_field_checker (C_unified).
 
 ### ~~P2-G: THE_EDUCATORS_DOOR.md~~ — DONE (2026-03-25, Sonnet)
 - CASCADE as learning model: truth pressure, three failure modes, cascade trigger
@@ -93,11 +91,15 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 - Crisis resources included (NZ, AU, UK, US)
 - Ends with presence, not information
 
-### P2-I: Framework Comparison Document
-- HOW_THIS_RELATES.md — map Lycheetah against Constitutional AI, RLHF, EU AI Act, NZ frameworks
-- Engineers and academics need to locate this relative to what they already know
-- See OPUS_PLAN.md Phase 6C for full details
-- **Token cost:** Medium.
+### ~~P2-I: Framework Comparison Document~~ — DONE (2026-03-25, Sonnet)
+- HOW_THIS_RELATES.md built: vs Constitutional AI, RLHF, AGM, EU AI Act, alignment research, NZ frameworks
+- Honest map: where strongest/weakest, where building toward. Pushed to GitHub.
+
+### P2-K: Archive integration — Lama-Cascade-Aura-main
+- Scan of older repo in Downloads complete (2026-03-25)
+- Pulled in: phi_bandit.py → 12_IMPLEMENTATIONS/, CASCADE_Academic_Paper.md → papers/, GEOMATRIA_COMPLETE_SPECIFICATION.md + TRI_LINGUISTIC_DEEP_DIVE.md → 03_LAMAGUE/, ANAMNESIS_FROM_ARCHIVE.md → 07_ANAMNESIS/
+- Remaining: CASCADE paper needs update to current framework version/context; phi_bandit should get a Mystery School entry or FOR_AI reference
+- **Token cost:** Done for now — Opus-grade for CASCADE paper update.
 
 ### P2-J: Lycheetah App content sync
 - Run `npm run sync` in lycheetah-app/
@@ -142,6 +144,8 @@ Do NOT use Opus for:
 
 | Date | Model | Work Done |
 |---|---|---|
+| 2026-03-25 | Sonnet | Archive integration: phi_bandit.py, CASCADE Academic Paper, GEOMATRIA, TRI_LINGUISTIC_DEEP_DIVE pulled from older repo |
+| 2026-03-25 | Sonnet | P2-F: 80-test pytest suite (tests/) — all passing; P2-I: HOW_THIS_RELATES.md committed |
 | 2026-03-25 | Sonnet | 26_FOR_AI/HOW_TO_TRANSLATE.md — AI translation protocol from Mac's X-post insight |
 | 2026-03-25 | Sonnet | P2-G/H: THE_EDUCATORS_DOOR.md + THE_PARENTS_DOOR.md built; README + docs updated |
 | 2026-03-25 | Sonnet | P1-F: THE_ENGINEERS_DOOR.md built + README/docs updated; Phase 2A docs/ overhaul pushed |
