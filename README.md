@@ -65,6 +65,8 @@ This framework has multiple entry points because people arrive from different pl
 | **You study consciousness** | [`06_EARNED_LIGHT/essentials.md`](06_EARNED_LIGHT/essentials.md) |
 | **You think in equations** | [`14_MYSTERY_SCHOOL/THE_SCIENTISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_SCIENTISTS_DOOR.md) |
 | **You work in AI governance or policy** | [`14_MYSTERY_SCHOOL/THE_GOVERNANCE_DOOR.md`](14_MYSTERY_SCHOOL/THE_GOVERNANCE_DOOR.md) |
+| **You're an elected official, minister, or political staff** | [`14_MYSTERY_SCHOOL/THE_POLITICIANS_DOOR.md`](14_MYSTERY_SCHOOL/THE_POLITICIANS_DOOR.md) — WOF language, select committee questions, what to do today |
+| **You're a journalist or writer** | [`14_MYSTERY_SCHOOL/THE_JOURNALISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_JOURNALISTS_DOOR.md) — the story, the verifiable facts, the angles |
 | **You work with human transformation (therapy, coaching, depth psychology)** | [`14_MYSTERY_SCHOOL/THE_THERAPISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_THERAPISTS_DOOR.md) |
 | **You study economics, game theory, or complexity** | [`14_MYSTERY_SCHOOL/THE_ECONOMISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ECONOMISTS_DOOR.md) |
 | **You're an academic philosopher or ethicist** | [`14_MYSTERY_SCHOOL/THE_PHILOSOPHERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_PHILOSOPHERS_DOOR.md) |
