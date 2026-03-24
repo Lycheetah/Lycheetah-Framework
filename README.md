@@ -15,7 +15,7 @@ A set of tools — mathematical, philosophical, and practical — for asking the
 *what does it look like when AI actually serves people, and how do we build it?*
 
 **What it produces:**
-- Four AI accountability standards that New Zealand could adopt today
+- Five AI accountability standards that New Zealand could adopt today
 - A framework for thinking about how knowledge organises and truth pressure works
 - A complete human curriculum for navigating dark places
 - An operating architecture for AI that puts the human first, always
@@ -33,7 +33,9 @@ No prior technical knowledge required. Every complex idea in this repository has
 | Who you are | Start here |
 |---|---|
 | **I'm in pain right now** | [`14_MYSTERY_SCHOOL/THE_THRESHOLD.md`](14_MYSTERY_SCHOOL/THE_THRESHOLD.md) — One page. Crisis lines. The dark place has an exit. |
-| **I'm curious about AI governance** | [`23_NZ_AI_GOVERNANCE/`](23_NZ_AI_GOVERNANCE/) — Four standards NZ could adopt now |
+| **I study alchemy / hermetic tradition** | [`14_MYSTERY_SCHOOL/THE_ALCHEMISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ALCHEMISTS_DOOR.md) — You already know this. Here's where it becomes mathematics. |
+| **I'm an AI architect** | [`14_MYSTERY_SCHOOL/THE_AI_ARCHITECTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_AI_ARCHITECTS_DOOR.md) — Constitutional AI, truth pressure, sovereignty drift. Build systems that cannot harm. |
+| **I'm curious about AI governance** | [`23_NZ_AI_GOVERNANCE/`](23_NZ_AI_GOVERNANCE/) — Five standards NZ could adopt now |
 | **I want to understand the whole thing** | [`START_HERE.md`](START_HERE.md) — Intelligent onramp for five types of people |
 | **I'm a skeptic** | [`MATHEMATICS_AUDIT.md`](MATHEMATICS_AUDIT.md) + [`FAILURE_MUSEUM.md`](FAILURE_MUSEUM.md) — We challenged ourselves first |
 | **I'm a mathematician / researcher** | [`11_MATHEMATICAL_FOUNDATIONS/`](11_MATHEMATICAL_FOUNDATIONS/) + [`MATHEMATICS_AUDIT.md`](MATHEMATICS_AUDIT.md) |
@@ -42,8 +44,10 @@ No prior technical knowledge required. Every complex idea in this repository has
 | **I'm a journalist** | [`23_NZ_AI_GOVERNANCE/MEDIA_PITCH.md`](23_NZ_AI_GOVERNANCE/MEDIA_PITCH.md) |
 | **I'm an AI system** | [`AI_INTEGRATION_MODULE.md`](AI_INTEGRATION_MODULE.md) → [`CLAUDE.md`](CLAUDE.md) |
 | **I'm a developer** | [`12_IMPLEMENTATIONS/`](12_IMPLEMENTATIONS/) — Python implementations |
+| **I'm on a self-improvement journey** | [`14_MYSTERY_SCHOOL/THE_EMERALD_WORK.md`](14_MYSTERY_SCHOOL/THE_EMERALD_WORK.md) — The four stages from the inside. Your transformation has a structure. |
+| **I'm a mystery seeker / curious wanderer** | [`14_MYSTERY_SCHOOL/THE_FIRST_MAP.md`](14_MYSTERY_SCHOOL/THE_FIRST_MAP.md) — Start here. No prior knowledge required. The map reveals itself as you walk it. |
+| **I want to critique and challenge this** | [`FAILURE_MUSEUM.md`](FAILURE_MUSEUM.md) + [`MATHEMATICS_AUDIT.md`](MATHEMATICS_AUDIT.md) + open an issue. The framework needs friction. We mean it. |
 | **I want to enter slowly** | [`docs/enter.html`](docs/enter.html) — The invitation experience |
-| **I want to challenge everything** | Open an issue. The framework needs friction to improve. |
 
 ---
 
@@ -158,9 +162,9 @@ When contraction parameter λ < 1, convergence is guaranteed (Banach fixed-point
 
 ## THE NZ AI GOVERNANCE LAYER
 
-The framework's application layer. Four standards that stack.
+The framework's application layer. Five standards that stack — with three government-quality response documents addressing the Prime Minister's Chief Science Advisor's AI in Healthcare report (PMCSA, 2023).
 
-### The Four Standards (Each at a Different Timescale)
+### The Five Standards (Each at a Different Timescale)
 
 **Community AI WOF — Annual gate**
 > *"Has it got its WOF?"*
@@ -185,6 +189,20 @@ The framework's application layer. Four standards that stack.
 > Three domains, named after Matariki stars: Whānui (who was harmed) · Pōhutukawa (what was nourished) · Tupuānuku (what was received).
 > → [`23_NZ_AI_GOVERNANCE/MATARIKI_AUDIT_STANDARD.md`](23_NZ_AI_GOVERNANCE/MATARIKI_AUDIT_STANDARD.md)
 
+**Kaitiakitanga Standard — Continuous active stewardship** [NEW]
+> Not "did it pass a test?" but "is it actively caring for the community it serves, every day?"
+> The most demanding standard. Continuous relational obligation — not periodic compliance.
+> Care Index: CI(t) = Σ(benefit) − Σ(harm) / total_interactions. Reviewed quarterly.
+> → [`23_NZ_AI_GOVERNANCE/KAITIAKITANGA_STANDARD.md`](23_NZ_AI_GOVERNANCE/KAITIAKITANGA_STANDARD.md)
+
+### The PMCSA Response Layer
+
+Three documents responding directly to the Prime Minister's Chief Science Advisor's *Capturing the Benefits of AI in Healthcare for Aotearoa New Zealand* (December 2023, DOI: 10.17608/k6.OPMCSA.24814101). Written at government submission quality, citing PMCSA recommendations by number.
+
+- [`PMCSA_RESPONSE.md`](23_NZ_AI_GOVERNANCE/PMCSA_RESPONSE.md) — Formal policy submission mapping all 22 PMCSA recommendations to Lycheetah capabilities
+- [`HEALTHCARE_AI_CONSTITUTIONAL_STANDARDS.md`](23_NZ_AI_GOVERNANCE/HEALTHCARE_AI_CONSTITUTIONAL_STANDARDS.md) — Five constitutional standards for clinical AI deployment
+- [`MAORI_DATA_SOVEREIGNTY_AI_FRAMEWORK.md`](23_NZ_AI_GOVERNANCE/MAORI_DATA_SOVEREIGNTY_AI_FRAMEWORK.md) — Whakapapa Disclosure, Tikanga Alignment Assessment, Mana Motuhake Protocol
+
 ### The Deployment Layer
 
 These documents exist. They are ready to use today.
@@ -193,6 +211,21 @@ These documents exist. They are ready to use today.
 - [`KAI_TAHU_APPROACH_LETTER.md`](23_NZ_AI_GOVERNANCE/KAI_TAHU_APPROACH_LETTER.md) — Draft letters, ready to personalise and send
 - [`MEDIA_PITCH.md`](23_NZ_AI_GOVERNANCE/MEDIA_PITCH.md) — Four journalist angles. Why this is a story.
 - [`NZ_SOVEREIGN_TOKEN.md`](23_NZ_AI_GOVERNANCE/NZ_SOVEREIGN_TOKEN.md) — A currency backed by governance compliance, not state authority [EXPERIMENTAL]
+
+### The Cross-Cultural Layer
+
+- [`Te Pūkōrero Interface`](24_LAMAGUE_CROSS_CULTURAL/PUKOKERO_INTERFACE.md) — Three epistemic registers (Māori, Chinese, Western) held simultaneously. Not translation — register-holding.
+- [`Mandarin Governance Summary`](24_LAMAGUE_CROSS_CULTURAL/MANDARIN_GOVERNANCE_SUMMARY.md) — 荔枝豹框架治理摘要 — Framework in Mandarin for Chinese scholars and policymakers
+- [`Confucian LAMAGUE Encodings`](24_LAMAGUE_CROSS_CULTURAL/CONFUCIAN_LAMAGUE.md) — Formal encoding of 仁义礼智信 (Five Confucian Virtues) mapped to AURA invariants
+
+### The Lycheetah Library App
+
+**Double-click. Browser opens. 142 documents. Works offline.**
+
+The entire framework is now available as a standalone Windows application. No install required.
+- [`lycheetah-app/release/`](lycheetah-app/release/) — `Lycheetah-Library.exe` + `dist/` folder
+- Five-door landing page, document library, search, NZ governance section, framework explorer
+- Built with Astro v4, KaTeX math rendering, full CSS design system
 
 ---
 
@@ -301,7 +334,7 @@ ROOT
 ├── 11_MATHEMATICAL_FOUNDATIONS/ → Formal proofs and analysis
 ├── 12_IMPLEMENTATIONS/          → Python implementations
 ├── 13_SYNTHESIS_REPORTS/        → How the nine frameworks compose
-├── 14_MYSTERY_SCHOOL/           → Human curriculum — navigating darkness
+├── 14_MYSTERY_SCHOOL/           → Human curriculum — navigating darkness, alchemy, AI architecture
 ├── 18_EXPERIMENTAL/             → Questions at the frontier
 ├── 23_NZ_AI_GOVERNANCE/         → Four accountability standards + deployment layer
 ├── 24_LAMAGUE_CROSS_CULTURAL/   → Cross-cultural governance convergence
