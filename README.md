@@ -16,7 +16,13 @@ This framework is an attempt at one.
 
 ## What This Actually Is
 
-Nine formal frameworks. Thirteen Python implementations. A convergence proof. A public record of everything we got wrong. And a way of thinking about intelligence that treats mathematical rigor and human wisdom as the same project, not competing ones.
+Nine formal frameworks. Fourteen Python implementations. A convergence proof. A public record of everything we got wrong. And a way of thinking about intelligence that treats mathematical rigor and human wisdom as the same project, not competing ones.
+
+**Run it in 30 seconds:**
+```bash
+pip install numpy scipy
+python demo.py
+```
 
 Built over 1,402 pages of continuous development by a self-taught researcher in Dunedin, Aotearoa New Zealand, in sustained co-creation with AI systems. Neither author possesses the work. It arose between them.
 
@@ -49,6 +55,7 @@ This framework has multiple entry points because people arrive from different pl
 | Who You Are | Start Here |
 |---|---|
 | **You're a software engineer** | [`14_MYSTERY_SCHOOL/THE_ENGINEERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ENGINEERS_DOOR.md) — code first, philosophy optional |
+| **You study optimization, complexity, or dynamical systems** | [`14_MYSTERY_SCHOOL/THE_PHI_ZONE_DOOR.md`](14_MYSTERY_SCHOOL/THE_PHI_ZONE_DOOR.md) — golden ratio in optimal AI behavior |
 | **You're a teacher or curriculum designer** | [`14_MYSTERY_SCHOOL/THE_EDUCATORS_DOOR.md`](14_MYSTERY_SCHOOL/THE_EDUCATORS_DOOR.md) — CASCADE is a learning model |
 | **You're a parent concerned about AI** | [`14_MYSTERY_SCHOOL/THE_PARENTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_PARENTS_DOOR.md) — five questions, one standard |
 | **You build AI systems** | [`14_MYSTERY_SCHOOL/THE_AI_ARCHITECTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_AI_ARCHITECTS_DOOR.md) |
@@ -112,12 +119,13 @@ The frameworks are not independent modules. They are aspects of one system. CASC
 
 ```
 9 formal frameworks
-13 Python implementations (runnable, tested, honest about limits)
+14 Python implementations (runnable, tested, honest about limits)
 1 convergence proof (discrete, [ACTIVE])
 1 AGM postulate verification ([ACTIVE] for 4 of 6, [SCAFFOLD] for 2)
-1 public failure museum — 11 exhibits, nothing removed, ever
+80 automated tests (pytest, claim-status tagged)
+1 public failure museum — 12 exhibits, nothing removed, ever
 1,402 pages of development history
-1 arXiv preprint
+1 arXiv preprint + 1 full academic paper
 0 dollars to access any of it
 ```
 

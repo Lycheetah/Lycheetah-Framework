@@ -30,6 +30,42 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 
 ## P1 — HIGH VALUE, DO NEXT
 
+### ~~P1-G: pyproject.toml + GitHub Actions CI~~ — DONE (2026-03-25, Sonnet)
+- pyproject.toml: pip-installable, Python 3.10/11/12, numpy+scipy deps
+- .github/workflows/test.yml: runs 80 tests on every push, 3 Python versions
+- pytest markers active/scaffold/conjecture in pyproject.toml
+
+### ~~P1-H: demo.py — Live Framework Showpiece~~ — DONE (2026-03-25, Sonnet)
+- Runs all four implementations live: CASCADE paradigm shift, AURA check, TRIAD convergence, φ-Zone comparison
+- `py demo.py` — full demo (~10s) | `py demo.py --quick` — 3s | `py demo.py --phi` — φ only
+- README updated with 30-second install + run instructions
+
+### ~~P1-I: THE_φ_ZONE_DOOR.md~~ — DONE (2026-03-25, Sonnet)
+- Entry for complexity scientists, mathematicians, optimization researchers
+- Full experimental results: t=70.29 p<0.001 chaotic, t=56.23 p<0.001 fast drift
+- Connections to HARMONIA (Kuramoto), CASCADE (update rates), TRIAD (α parameter)
+- Open research questions with contribution pathways
+
+### ~~P1-G: pyproject.toml + GitHub Actions CI~~
+- Make framework pip-installable: `pip install -e .`
+- CI pipeline: `.github/workflows/test.yml` — runs pytest on every push
+- Green badge on README: "tests passing"
+- See OPUS_PLAN Phase 4B/4C
+- **Token cost:** Low-Medium.
+
+### P1-H: demo.py — Live Framework Showpiece
+- Single runnable file at repo root
+- Shows CASCADE paradigm shift, AURA check, TRIAD convergence, φ-Zone comparison
+- Target: 30 seconds to run, beautiful terminal output, anyone understands immediately
+- **Token cost:** Medium.
+
+### P1-I: THE_φ_ZONE_DOOR.md — Mystery School entry for complexity/math/optimization
+- φ-Zone Hypothesis: golden ratio in optimal AI behavior
+- phi_bandit.py results: t=70.29, p<0.001 for chaotic environments
+- Connections to HARMONIA (Kuramoto coupling, φ resonance)
+- Entry for: mathematicians, complexity scientists, optimization researchers, physicists
+- **Token cost:** Medium.
+
 ### P1-E: docs/ Site Overhaul
 - The GitHub Pages site is stale — built before March 24 content explosion
 - Update all HTML pages: mystery-school.html, nz-governance.html, for-agents.html, index.html, failure-museum.html
@@ -144,6 +180,7 @@ Do NOT use Opus for:
 
 | Date | Model | Work Done |
 |---|---|---|
+| 2026-03-25 | Sonnet | P1-G/H/I: pyproject.toml, GitHub Actions CI, demo.py, THE_PHI_ZONE_DOOR.md |
 | 2026-03-25 | Sonnet | Archive integration: phi_bandit.py, CASCADE Academic Paper, GEOMATRIA, TRI_LINGUISTIC_DEEP_DIVE pulled from older repo |
 | 2026-03-25 | Sonnet | P2-F: 80-test pytest suite (tests/) — all passing; P2-I: HOW_THIS_RELATES.md committed |
 | 2026-03-25 | Sonnet | 26_FOR_AI/HOW_TO_TRANSLATE.md — AI translation protocol from Mac's X-post insight |
