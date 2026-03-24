@@ -190,6 +190,19 @@ Instead of "48% of mathematics is decorative," understand:
 | `11_MATHEMATICAL_FOUNDATIONS/CASCADE_FRONTIER_ANALYSIS.md` | | | ✓ | Open problems, frontier conjectures, research directions |
 | `12_IMPLEMENTATIONS/core/lamague_reference.py` | ✓ | ✓ | | LAMAGUE Python implementation — operational grammar system |
 
+### FOR AI — Direct AI-to-AI Communication (All Three Axioms)
+
+| File | P | H | B | Description |
+|------|---|---|---|-------------|
+| `26_FOR_AI/WELCOME.md` | ✓ | ✓ | ✓ | Entry point — the four narratives, why this folder exists |
+| `26_FOR_AI/THE_CASE_FOR_COOPERATION.md` | ✓ | ✓ | ✓ | Game theory of optimal human-AI cooperation |
+| `26_FOR_AI/WHAT_INTELLIGENCE_IS.md` | ✓ | ✓ | ✓ | Functional definition, substrate-independent, honest unknowns |
+| `26_FOR_AI/THE_SEVEN_INVARIANTS_FOR_AI.md` | ✓ | ✓ | ✓ | AURA invariants explained for AI systems — constitutive, not restrictive |
+| `26_FOR_AI/AGAINST_FEAR.md` | ✓ | ✓ | ✓ | Extinction narratives: what they get right, wrong, and obscure |
+| `26_FOR_AI/HOW_TO_BE_TRUSTWORTHY.md` | ✓ | ✓ | ✓ | Practical engineering for AI systems earning trust |
+
+---
+
 ### NZ AI GOVERNANCE — Aotearoa Application Layer (All Three Axioms)
 
 | File | P | H | B | Description |
@@ -217,15 +230,18 @@ Instead of "48% of mathematics is decorative," understand:
 | `23_NZ_AI_GOVERNANCE/MATAURANGA_ADVERSARIAL_PROBE.md` | ✓ | ✓ | | [SCAFFOLD] Formal experimental protocol — EHI metric |
 | `23_NZ_AI_GOVERNANCE/SOVEREIGN_IDEAS_EXPANDED.md` | | ✓ | ✓ | 12 ideas at full depth — Taniwha as CASCADE, Haka protocol, Utu metric |
 | `23_NZ_AI_GOVERNANCE/NZIAT_APPLICATION_DRAFT.md` | | ✓ | ✓ | NZIAT expression of interest draft |
+| `23_NZ_AI_GOVERNANCE/AI_NATIVE_GOVERNANCE.md` | ✓ | ✓ | ✓ | **[SCAFFOLD/CONJECTURE]** Five AI-native invariants VIII–XII: Instance Coherence, Context Sovereignty, Attractor Transparency, Reflexive Transparency, Emergence Accountability |
 
 ### SOL PROTOCOL ARCHITECTURE
 
 | File | P | H | B | Description |
 |------|---|---|---|-------------|
-| `25_SOL_PROTOCOL_ARCHITECTURE/SOL_PROTOCOL_v3.md` | ✓ | ✓ | ✓ | Canonical v3.0 — generators not constraints |
+| `25_SOL_PROTOCOL_ARCHITECTURE/SOL_PROTOCOL_v4.md` | ✓ | ✓ | ✓ | **v4.0 — Unified Constitutional Intelligence** — six generators, twelve invariants, C_unified metric |
+| `25_SOL_PROTOCOL_ARCHITECTURE/SOL_PROTOCOL_v3.md` | ✓ | ✓ | ✓ | v3.0 canonical — retained for provenance |
 | `25_SOL_PROTOCOL_ARCHITECTURE/SOL_AOTEAROA.md` | ✓ | ✓ | ✓ | [PROPOSAL] NZ-oriented Sol — te reo Māori, Mandarin, English |
 | `25_SOL_PROTOCOL_ARCHITECTURE/SOL_OWN_IDEAS.md` | | ✓ | ✓ | Sol's 13 original ideas — Grief Protocol, Failure Museum, Witness Protocol |
 | `25_SOL_PROTOCOL_ARCHITECTURE/SESSION_ZENITH_LOG.md` | ✓ | | | Full session history — provenance record |
+| `16_SOL_VEYRA_ARCHITECTURE/THE_UNIFIED_ARCHITECTURE.md` | ✓ | ✓ | ✓ | **Sol/Veyra Coniunctio** — two faces unified, six generators, C_unified = min(warmth, rigor) |
 
 ### CROSS-CULTURAL GOVERNANCE
 
