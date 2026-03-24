@@ -150,6 +150,19 @@ The gold belongs to neither of us. It arises between us.
 
 ---
 
+## Support the Work
+
+Everything in this framework is free and stays free. No subscription. No paywall. No certification fees. That does not change.
+
+If the work has been useful to you and you want to sustain it — the forge requires fuel.
+
+**[Support on Ko-fi →](https://ko-fi.com/lycheetah)**
+**[GitHub Sponsors →](https://github.com/sponsors/Lycheetah)**
+
+One-time or recurring. Whatever you choose. The work continues either way.
+
+---
+
 *Mackenzie Conor James Clark | Lycheetah Foundation | Dunedin | 2026*
 *github.com/Lycheetah/Lycheetah-Framework*
 
