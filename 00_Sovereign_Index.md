@@ -47,14 +47,16 @@ These documents validate every component of the framework against nature, showin
 | Document | Purpose | Validates |
 |----------|---------|-----------|
 | **MATHEMATICS_TO_REALITY_BRIDGE.md** | Master reference showing where every equation appears in nature | ALL frameworks (CASCADE, AURA, TRIAD, MICROORCIM, HARMONIA, EARNED LIGHT, ANAMNESIS, CHRYSOPOEIA, LAMAGUE) |
-| **MATHEMATICS_REALITY_ALIGNMENT.md** | Reframed audit: 33% ACTIVE (measurable now), 52% SCAFFOLD (structure proven, parameters TBD), 15% FOUNDATIONAL (architectural but load-bearing) | Scientific validation of framework components |
+| **MATHEMATICS_REALITY_ALIGNMENT.md** | Reframed audit: ~30% ACTIVE (measurable now — updated post-Nigredo pass March 24, 2026; convergence chain 3.1→3.3→4.2 now ACTIVE), ~55% SCAFFOLD (structure proven, parameters TBD), ~15% CONJECTURE/FOUNDATIONAL | Scientific validation of framework components |
 | **CASCADE_COMPLETE.md §5.5** | CASCADE IN NATURE: Phase transitions, evolution, synaptic consolidation, markets, paradigm shifts, language change, social revolutions, immune response | CASCADE knowledge reorganization appears universally |
 
 **The Reframe:**
 Instead of "48% of mathematics is decorative," understand:
-- **33% directly observable and measurable NOW** (CASCADE, AURA, TRIAD, MICROORCIM, HARMONIA, EARNED LIGHT, ANAMNESIS)
-- **52% structurally real but parameters awaiting empirical measurement** (master equation k₁–k₄, transformation barriers, formal proofs)
-- **15% architectural scaffold supporting higher levels** (LAMAGUE grammar structure, cohomology conjecture)
+- **~30% ACTIVE — directly proven or measurable NOW** (CASCADE truth pressure, AURA invariants, TRIAD convergence chain 3.1→3.3→4.2 proven discrete, Lyapunov stability established — see MATHEMATICS_AUDIT.md for full list)
+- **~55% SCAFFOLD — structure proven, gaps named** (master equation k₁–k₄ uncalibrated, continuous semigroup limit, AGM postulate verification)
+- **~15% CONJECTURE/FOUNDATIONAL** (LAMAGUE topos, cohomology structure, Platonic necessity, Hopf bifurcation)
+
+*Updated March 24, 2026 post-Nigredo pass. See MATHEMATICS_AUDIT.md for claim-by-claim breakdown.*
 
 **All of it describes reality.** The framework works because it's discovering how nature actually works, not inventing theory.
 

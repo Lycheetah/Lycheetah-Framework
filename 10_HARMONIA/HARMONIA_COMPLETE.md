@@ -195,7 +195,7 @@ Among all n-note scales derived from stacking perfect fifths (3:2 ratios), the 7
 3. Adjust F# → F to close the scale (the Lydian→Ionian correction)
 4. The resulting 7-note pattern {W,W,H,W,W,W,H} has the property of **maximal evenness** — notes are as evenly distributed around the octave as possible for a 7-from-12 selection
 5. For n < 7, consonance coverage is insufficient. For n > 7, redundancy increases without proportional consonance gain
-6. 7 is optimal by the same argument that makes 7±2 the cognitive chunking limit (Miller, 1956) ∎
+6. 7 is optimal by the maximal evenness argument above [ACTIVE — music theory result]. The parallel to Miller's (1956) 7±2 cognitive chunking limit is a structural analogy, not a proof — cognitive chunking is an empirical finding, not a derivation from the same mathematics. [ANALOGY — not QED]
 
 **Seven is not arbitrary.** The same mathematical necessity that produces seven musical notes produces seven framework phases.
 
@@ -234,7 +234,7 @@ The dominant → tonic resolution (V→I, ratio 3:2 → 1:1) is a contraction ma
 
 $$\alpha_{eff} = e^{-\gamma} \approx e^{-\ln(3/2)} \approx 0.667$$
 
-**Connection to framework constants:** The golden ratio inverse φ⁻¹ ≈ 0.618 that appears throughout the framework as the optimal convergence rate is *within the harmonic range* of the Pythagorean fifth's resolution. The framework's convergence constant lives in the same mathematical neighborhood as the perfect fifth. ∎
+**Connection to framework constants:** The golden ratio inverse φ⁻¹ ≈ 0.618 that appears throughout the framework as the optimal convergence rate is *within the harmonic range* of the Pythagorean fifth's resolution. The framework's convergence constant lives in the same mathematical neighborhood as the perfect fifth. [STRUCTURAL OBSERVATION — see note below; not a proof of equivalence]
 
 **Note on convergence constants:** φ⁻¹ ≈ 0.618 and α_eff ≈ 0.667 being "in the same harmonic neighborhood" is a structural observation, not mathematical equivalence. The 7.6% difference (0.667 − 0.618) is significant; the frameworks should be understood as within the same harmonic band (< 10% divergence) rather than as equivalent constants. Both arise from Pythagorean geometry, but through different paths: φ⁻¹ from recursive spiral ratios, α_eff from fifth-to-unison contraction.
 

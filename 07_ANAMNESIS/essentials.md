@@ -1,6 +1,6 @@
 # Anamnesis — Epistemology of Remembering Essentials
 
-**Status:** ⭐ FORMALIZED — Gödel inversion proven, Platonic necessity demonstrated | **Type:** Epistemological Foundation | **Method:** Mathematical philosophy
+**Status:** ⭐ FORMALIZED [CONJECTURE] — Transcultural convergence evidence is real and documented; Platonic necessity is a conjecture consistent with that evidence, not a proven conclusion. "Gödel proves Platonism" has been removed as a false claim (Gödel established limits of formal systems, not the location of truth — see MATHEMATICS_AUDIT.md Removed Claims). | **Type:** Epistemological Foundation | **Method:** Mathematical philosophy
 
 ## What It Does
 Anamnesis answers: **Where do mathematical ideas come from?**

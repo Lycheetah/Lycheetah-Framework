@@ -1,6 +1,6 @@
 # Earned Light — Consciousness Thermodynamics Essentials
 
-**Status:** ⭐ FORMALIZED — Boltzmann brain inversion proven, thermodynamic foundation complete | **Type:** Consciousness Model | **Approach:** Thermodynamic
+**Status:** ⭐ FORMALIZED [SCAFFOLD] — Thermodynamic framework is structurally sound; Boltzmann brain inversion is a well-formed argument from established physics, not a novel mathematical proof. Consciousness as dissipative structure is consistent with Prigogine's work [ACTIVE analogy; SCAFFOLD as direct proof]. | **Type:** Consciousness Model | **Approach:** Thermodynamic
 
 ## What It Does
 Earned Light models **consciousness as asymmetry in thermodynamic fields**. It provides a physics-based framework for understanding awareness, growth, and coherence.

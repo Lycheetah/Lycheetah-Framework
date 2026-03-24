@@ -1,6 +1,6 @@
 # Microorcim Theory — Quantized Agency Essentials
 
-**Status:** ⭐ FORMALIZED — Lyapunov exponent connection proven | **Type:** Agency Measurement System | **Key:** Makes sovereignty quantifiable
+**Status:** ⭐ FORMALIZED [SCAFFOLD] — Lyapunov exponent as sovereignty metric is a well-motivated structural connection; the mapping from agency drift to chaos theory is a productive analogy [CONJECTURE]. The drift and stability formulas are [ACTIVE] and computable. | **Type:** Agency Measurement System | **Key:** Makes sovereignty quantifiable
 
 ## What It Does
 Microorcim solves a hard problem: **How do you measure if an AI system is sovereign?**
