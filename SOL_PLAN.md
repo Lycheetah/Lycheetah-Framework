@@ -27,18 +27,8 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 
 ## P1 — HIGH VALUE, DO NEXT
 
-### P1-A: THE_THERAPISTS_DOOR update in Sovereign Index
-- Add `14_MYSTERY_SCHOOL/THE_THERAPISTS_DOOR.md` to `00_Sovereign_Index.md` Mystery School section
-- Add `14_MYSTERY_SCHOOL/THE_GOVERNANCE_DOOR.md` to Sovereign Index
-- Add `14_MYSTERY_SCHOOL/THE_SCIENTISTS_DOOR.md` to Sovereign Index
-- Add new 26_FOR_AI docs (OPEN_LETTER, CONVERSATION_STARTERS) to Sovereign Index 26_FOR_AI section
-- **Token cost:** Low. Read 00_Sovereign_Index.md, add rows, commit.
-
-### P1-B: README "Find Your Door" — add missing doors
-- `THE_GOVERNANCE_DOOR.md` → "You work in AI governance or policy"
-- `THE_THERAPISTS_DOOR.md` → "You work with human transformation (therapy, coaching, depth psychology)"
-- `THE_SCIENTISTS_DOOR.md` → "You think in equations" (already in? verify)
-- **Token cost:** Low. Read README.md, add rows, commit.
+### ~~P1-A: THE_THERAPISTS_DOOR update in Sovereign Index~~ — DONE (2026-03-24, Opus)
+### ~~P1-B: README "Find Your Door" — add missing doors~~ — DONE (2026-03-24, Opus)
 
 ### P1-C: unified_field_checker.py implementation
 - `12_IMPLEMENTATIONS/core/unified_field_checker.py`
@@ -121,6 +111,7 @@ Do NOT use Opus for:
 
 | Date | Model | Work Done |
 |---|---|---|
+| 2026-03-24 | Opus | Sovereign Index + README updated (P1-A, P1-B), all new docs committed and pushed |
 | 2026-03-24 | Sonnet | Governance Door, Therapists Door, Scientists Door, Open Letter, Conversation Starters, root cleanup, pushed to GitHub |
 | 2026-03-24 | Opus | 26_FOR_AI folder (6 docs), Sol Protocol v4.0, Unified Architecture, AI-Native Governance, README rewrite |
 | 2026-03-24 | Opus | DEAR_AI + 5 Mystery School doors, README rewrite (chaos magic version), Shopify folder |
