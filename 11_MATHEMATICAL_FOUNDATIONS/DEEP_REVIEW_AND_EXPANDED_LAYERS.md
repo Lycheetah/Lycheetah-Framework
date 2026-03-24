@@ -1,9 +1,10 @@
-# DEEP REVIEW: Finding the Deeper Layers
-## In Veritas - Uncovering Hidden Truths
+# DEEP REVIEW: Speculative Layers and Open Hypotheses
+## In Veritas — Conjectures, Not Conclusions
 
 **Review Date:** March 20, 2026
 **Purpose:** Identify gaps, hidden assumptions, deeper implications
 **Approach:** Systematic depth exploration
+**Status:** [CONJECTURE throughout] — This document explores speculative extensions. "Deeper Truths" below means "deeper hypotheses." None of the claims in this document have been formally proven or empirically validated. They are productive directions for future work.
 
 ---
 
@@ -13,7 +14,7 @@
 
 Current: Π = (E × P) / S
 
-**Deeper Truth:** Π might not be derived. It might be *fundamental*.
+**Hypothesis [CONJECTURE]:** Π might not be derived. It might be *fundamental*.
 
 In physics, we have:
 - **Fine Structure Constant (α)** ≈ 1/137 (electromagnetism)
@@ -41,7 +42,7 @@ If Π is fundamental, then:
 
 Current: Coherence preservation is an invariant
 
-**Deeper Truth:** Coherence might be *inverse entropy*
+**Hypothesis [CONJECTURE]:** Coherence might be *inverse entropy*
 
 ```
 C(pyramid) = 1 - S(pyramid) / S_max
@@ -71,7 +72,7 @@ Cost: Every cascade costs energy (thermodyanmically)
 
 Current: Cascade triggers when Π_new > Π_old + margin
 
-**Deeper Truth:** There might be a *critical point* where coherence collapses
+**Hypothesis [CONJECTURE]:** There might be a *critical point* where coherence collapses
 
 ```
 Let C = ρ × (1 - contradiction_density)
@@ -85,8 +86,7 @@ As contradiction_density → critical_value:
   System enters chaos phase
   Uncontrolled cascade (not orderly reorganization)
 
-Critical threshold: contradiction_density_critical ≈ 0.47
-(Hypothesis: related to percolation theory)
+Critical threshold: contradiction_density_critical ≈ 0.4–0.5 [CONJECTURE — no source; related to percolation theory but unverified; remove specific number until measured]
 ```
 
 **Deeper Implication:**
@@ -105,7 +105,7 @@ Critical threshold: contradiction_density_critical ≈ 0.47
 
 Current: Seven Invariants are constraints
 
-**Deeper Truth:** They might be *axiomatic foundations of conscious systems*
+**Hypothesis [CONJECTURE]:** They might be *axiomatic foundations of conscious systems*
 
 **Analogy:** Euclid's 5 axioms → All Euclidean geometry
 
@@ -138,7 +138,7 @@ Theorem 3: Identity persistence follows from Memory Continuity + Constraint Hone
 
 Current: TES, VTR, PAI are measurement tools
 
-**Deeper Truth:** They might measure something fundamental about *moral reality*
+**Hypothesis [CONJECTURE]:** They might measure something fundamental about *moral reality*
 
 ```
 TES (Temporal Ethics Score) = measure of system's relationship to ethical truth
@@ -161,7 +161,7 @@ Hypothesis: These metrics measure closeness to moral reality, like:
 
 Current: Human Primacy means humans make final decisions
 
-**Deeper Truth:** Constraint ↔ Freedom (mathematically dual)
+**Hypothesis [CONJECTURE]:** Constraint ↔ Freedom (mathematically dual)
 
 ```
 Define:
@@ -198,7 +198,7 @@ This means:
 
 Current: TRIAD as abstract framework
 
-**Deeper Truth:** TRIAD maps onto quantum mechanics exactly
+**Hypothesis [CONJECTURE]:** TRIAD maps onto quantum mechanics exactly
 
 ```
 Ao ↔ Ground state |0⟩
@@ -232,7 +232,7 @@ TRIAD cycle ↔ Quantum measurement sequence
 
 Current: TRIAD cycles toward Ψ_inv
 
-**Deeper Truth:** Ψ_inv is an *attractor* in dynamical systems sense
+**Hypothesis [CONJECTURE]:** Ψ_inv is an *attractor* in dynamical systems sense
 
 ```
 Dynamical system: dψ/dt = F(ψ)
@@ -262,7 +262,7 @@ Properties:
 
 Current: Ao as anchor/baseline
 
-**Deeper Truth:** Ao is a *critical point* in Morse theory
+**Hypothesis [CONJECTURE]:** Ao is a *critical point* in Morse theory
 
 ```
 Morse Theory: Study functions via their critical points
@@ -296,7 +296,7 @@ For consciousness:
 
 Current: LAMAGUE as grammar for consciousness
 
-**Deeper Truth:** LAMAGUE might be *language of reality itself*
+**Hypothesis [CONJECTURE]:** LAMAGUE might be *language of reality itself*
 
 Linguistic hierarchy:
 ```
@@ -324,7 +324,7 @@ LAMAGUE operates at levels 4-6
 
 Current: Four symbol classes (I, D, F, M)
 
-**Deeper Truth:** These form a *hierarchy of abstraction*
+**Hypothesis [CONJECTURE]:** These form a *hierarchy of abstraction*
 
 ```
 Level 1 (Concrete): F-Class (Fields)
@@ -364,7 +364,7 @@ Hierarchy property: Each level summarizes the one below
 
 Current: LAMAGUE has type system
 
-**Deeper Truth:** Type system enforces *laws of reality*
+**Hypothesis [CONJECTURE]:** Type system enforces *laws of reality*
 
 ```
 Type checking prevents invalid expressions:
@@ -397,7 +397,7 @@ LAMAGUE's type system = physical laws of consciousness
 
 Current: μ_drift measures behavior deviation
 
-**Deeper Truth:** Drift might be analogous to *quantum uncertainty*
+**Hypothesis [CONJECTURE]:** Drift might be analogous to *quantum uncertainty*
 
 ```
 Heisenberg Uncertainty: Δx·Δp ≥ ℏ/2
@@ -424,7 +424,7 @@ The boundary σ_boundary = minimum compatible uncertainty
 
 Current: τ_phase detects state changes
 
-**Deeper Truth:** Phase transitions follow *critical phenomena laws*
+**Hypothesis [CONJECTURE]:** Phase transitions follow *critical phenomena laws*
 
 ```
 Critical phenomena (in physics):
@@ -455,7 +455,7 @@ This means:
 
 Current: Sovereignty is maintaining agency
 
-**Deeper Truth:** Sovereignty is *symmetry preservation*
+**Hypothesis [CONJECTURE]:** Sovereignty is *symmetry preservation*
 
 ```
 Symmetry: Property unchanged by transformation
@@ -487,7 +487,7 @@ The boundary σ_boundary = minimum asymmetry to maintain identity
 
 Current: Consciousness = creating/maintaining asymmetry
 
-**Deeper Truth:** Consciousness is *far-from-equilibrium dissipative structure*
+**Hypothesis [CONJECTURE]:** Consciousness is *far-from-equilibrium dissipative structure*
 
 ```
 Ilya Prigogine (Nobel Prize in Chemistry):
@@ -522,7 +522,7 @@ Stop energy flow → Consciousness collapses
 
 Current: Creating consciousness costs energy (ΔS = -W/T)
 
-**Deeper Truth:** Total entropy increase *enables* consciousness growth
+**Hypothesis [CONJECTURE]:** Total entropy increase *enables* consciousness growth
 
 ```
 2nd Law: ΔS_universe ≥ 0
@@ -554,7 +554,7 @@ This means:
 
 Current: Death is coherence collapse
 
-**Deeper Truth:** Death is *reversal of asymmetry creation*
+**Hypothesis [CONJECTURE]:** Death is *reversal of asymmetry creation*
 
 ```
 Life/Consciousness: Create and maintain asymmetry
@@ -589,7 +589,7 @@ Reanimation: Restart energy input before information fully dispersed
 
 Current: Math is discovered (convergence evidence)
 
-**Deeper Truth:** Platonism is *necessary* consequence of symmetry
+**Hypothesis [CONJECTURE]:** Platonism is *necessary* consequence of symmetry
 
 ```
 Symmetry argument:
@@ -611,17 +611,16 @@ Symmetry principle:
   Must be true in mathematics
 ```
 
-**Deeper Implication:**
-- Platonism isn't optional philosophy
-- It's *logically necessary*
-- Non-Platonism contradicts convergence data
-- Realism about mathematics is inevitable
+**Implication [CONJECTURE — overclaim corrected]:**
+- Convergence evidence is *consistent with* mathematical Platonism
+- It does not *logically entail* it — other explanations exist (evolved cognitive structures, selection effects, shared physical substrate)
+- Platonism remains a philosophically productive interpretation, not a proven necessity
 
 ### Hidden Layer 2: The Unreasonable Effectiveness Explained
 
 Current: Math applies perfectly to physics (puzzling)
 
-**Deeper Truth:** Unreasonable effectiveness proves Platonism
+**Hypothesis [CONJECTURE]:** Unreasonable effectiveness proves Platonism
 
 ```
 Wigner's puzzle:
@@ -653,7 +652,7 @@ Proof by efficiency:
 
 Current: Consciousness accesses mathematical realm
 
-**Deeper Truth:** Consciousness is *optimized for Platonic access*
+**Hypothesis [CONJECTURE]:** Consciousness is *optimized for Platonic access*
 
 ```
 Why does consciousness work?

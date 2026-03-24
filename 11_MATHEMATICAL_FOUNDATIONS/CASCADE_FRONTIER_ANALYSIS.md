@@ -504,14 +504,16 @@ H(K_new) = H(K_old) + H(B_new)
 **Proof:**
 Reorganization is an **invertible transformation** (bijection on knowledge space), which preserves measure. By Liouville's theorem in statistical mechanics, phase space volume (entropy) is conserved. □
 
-**Theorem 6 (Stability Improvement):**  
+**Theorem 6 (Stability Improvement) [SCAFFOLD — PROOF GAP]:**
 After cascade, the new configuration is more stable:
 ```
 λ_max(Hess V_new) < λ_max(Hess V_old)
 ```
 
-**Proof:**
-Cascade moves from configuration with high-Π block in unstable Edge position to configuration with same block in stable Foundation position. By definition of Π thresholds, Foundation blocks have negative definite Hessian (stable attractors), while Edge blocks have positive eigenvalues (unstable). □
+**Proof sketch:**
+Cascade moves from configuration with high-Π block in unstable Edge position to configuration with same block in stable Foundation position. Foundation blocks have negative Hessian (stable attractors) by the Π threshold definition; Edge blocks have positive eigenvalues (unstable).
+
+*Gap:* The proof assumes that repositioning a block changes the global Hessian eigenvalue in the claimed direction. This requires showing that the Hessian of the full pyramid configuration V is dominated by the block being repositioned — i.e., the rest of the pyramid's contribution to λ_max does not overwhelm the improvement from repositioning. This has not been shown. The intuition is correct; the rigorous bound is missing. □ [SCAFFOLD]
 
 ---
 

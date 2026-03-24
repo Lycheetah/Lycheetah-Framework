@@ -79,11 +79,24 @@ Current estimate: k₄ ≈ 0.1 (guess)
 
 ## CALIBRATION DATA SOURCES
 
-### Real CASCADE Data (Ready to Use)
-**Location:** `.agent_state/cascade_real_results.json` (committed)
+### Algorithm Validation Data (Simulation Output — NOT Real-World Data)
+**Location:** `cascade_real_results.json` (at repo root)
+**Status: [MISLABELED — corrected March 24, 2026]**
 
+The file `cascade_real_results.json` was previously described here as "real CASCADE data" from real-world events (company pivots, market shocks, etc.). This was incorrect.
+
+**What the file actually contains:**
+- exp1_paradigm_shift: Python algorithm test — CASCADE vs. additive vs. static update strategies on a synthetic 20-block knowledge system (n_cascade_events=1600). Zero standard deviation on most metrics indicates a deterministic single-scenario run.
+- exp2_invariants: 1000 synthetic cascade operations verifying the three invariants (coherence preservation, information preservation, entropy non-decrease) are upheld by the algorithm design.
+- exp3_sequential: Monte Carlo simulation of sequential CASCADE events (has real variance: std ~0.005), testing coherence trajectory across 29 steps.
+
+**What this data shows:** The CASCADE algorithm, as implemented in Python, behaves as designed on synthetic test cases. All three invariants are upheld 100% in simulation.
+
+**What this data does NOT show:** Real-world calibration. The k₁–k₄ coupling constants are still uncalibrated. The "real-world scenarios" described below are a calibration roadmap for future empirical data collection — they have not yet been collected.
+
+**What real calibration data would look like:**
 ```
-6 experiments × 1000 cascades each = 6000 data points
+6 experiments × 1000 cascades each = 6000 real-world data points
 - Experiment 1: Organizational belief cascades (company pivots)
 - Experiment 2: Market price reorganizations (shock responses)
 - Experiment 3: Team decision cascades (group dynamics)
@@ -92,12 +105,14 @@ Current estimate: k₄ ≈ 0.1 (guess)
 - Experiment 6: Learning reorganizations (aha! moments)
 
 Each cascade records:
-  - Initial Ψ (coherence)
-  - Π measured (evidence, prior, strain)
-  - Time to reorganization
-  - Final Ψ (new coherence)
-  - Invariant violations observed
-  - Energy/resources available
+  - Initial Ψ (coherence) — measured from real system
+  - Π measured (evidence, prior, strain) — measured empirically
+  - Time to reorganization — observed
+  - Final Ψ (new coherence) — measured post-cascade
+  - Invariant violations observed — counted
+  - Energy/resources available — estimated
+
+STATUS: NOT YET COLLECTED. This is the calibration target.
 ```
 
 ### How to Extract k₁–k₄

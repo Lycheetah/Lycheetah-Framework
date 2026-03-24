@@ -59,8 +59,8 @@
 
 ### Document 1: Full Pyramid Cascade System
 
-**Core Insight:**  
-Knowledge has **gravitational weight**. Heavy truths sink to foundation, light theories float to edge.
+**Core Insight [analogy, not physical claim]:**
+Knowledge has **gravitational weight** as an analogy — higher Π-score claims tend toward foundational layers in the knowledge structure, lower Π-score claims toward the edge. This is a useful structural analogy; it does not imply knowledge literally has mass or obeys gravitational equations.
 
 **Mathematical Translation:**
 ```

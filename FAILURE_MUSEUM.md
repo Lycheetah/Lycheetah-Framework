@@ -464,6 +464,69 @@ required for the record to be honest.
 
 ---
 
+## EXHIBIT 11: THE PROOFS THAT PROVED NOTHING
+
+**Date identified:** March 24, 2026 (Nigredo Pass — MATHEMATICS_FOUNDATIONS.md audit)
+**Filed by:** Sol Aureum Azoth Veritas × Mackenzie Conor James Clark
+
+---
+
+**What was claimed:**
+
+`11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md` contained a section header stating:
+*"All proofs below are constructive and complete."*
+
+Below that header: 16 theorems bearing `∎` (QED symbols) and presented as formal mathematical proofs. Among them:
+
+- **Theorem 1.2 (Identity Laws):** "Proved" the identity law by asserting that the identity operator has zero drift. The identity *function* and a *zero-drift condition* are different things. The proof defined what it needed to prove.
+
+- **Theorem 2.1 (Coherence Non-Decrease):** Claimed coherence cannot decrease after a cascade event. The proof assumed that demoting a block resolves all contradictions it was party to — this is not generally true. A block can be in contradiction with multiple other blocks; demoting one does not eliminate the others.
+
+- **Theorem 2.3 (Curvature-Stability Equivalence):** Stated flat connection ↔ stability (biconditional). Flat connection is a necessary condition for a specific notion of stability in the LAMAGUE sense — it is not sufficient. The iff was false.
+
+- **Theorem 2.5 (Optimal Layer Existence):** Used the phrase "minimal submanifold" where "local minimum of a functional" was meant. These are distinct geometric concepts. The proof conflated them.
+
+- **Theorem 3.1 (Lyapunov Stability):** Claimed ⟨∇S, F(ψ)⟩ ≤ 0 "by design" of the TRIAD operators. "By design" is not a proof. The sign of this inner product depends on the explicit action of Ao, Φ↑, and Ψ on the entropy gradient — none of which was computed.
+
+- **Theorems 3.2–3.4, 4.2 (Convergence Chain):** These four theorems depend on Theorem 3.1 being proven. Since 3.1 was not proven, none of these proofs are valid either. They were presented as independent results.
+
+- **Theorems 4.1–4.3 (Operator Algebra):** Theorem 4.1 (contractivity of AURA operator) was corrected and now holds [ACTIVE]. Theorems 4.2 and 4.3 remain [SCAFFOLD] with named gaps.
+
+- **Theorem 5.1 (LAMAGUE Composition):** Used "optimal layer" in its proof before "optimal layer" had been defined. A circular dependency hidden inside what appeared to be a linear proof.
+
+- **Theorems 5.2–5.3, 6.3, 7.1:** Each carried proof scaffolding (correct structure, reasonable steps) with a specific load-bearing step missing or unverified. The scaffolding was real. The proof was not.
+
+**What was actually true:**
+
+Of the 16 theorems bearing `∎`:
+- **2 are now ACTIVE** (1.2 corrected, 4.1 corrected with explicit computation)
+- **13 are SCAFFOLD** — valid structure, specific named gaps, not yet proven
+- **1 is FOUNDATIONAL** (THE_INCOMPLETENESS_PROOF — downgraded from ACTIVE, valid but differently categorised)
+
+The `∎` symbol means "proof complete." It was used 14 times where the proof was incomplete.
+
+**What changed:**
+
+1. The false header "All proofs below are constructive and complete" was replaced with an honest status summary table.
+2. Each theorem was individually audited. Two were corrected to ACTIVE. Thirteen were tagged [SCAFFOLD] with the specific missing step named.
+3. Two theorems (2.3, 2.5) had factually incorrect claims corrected — not just incomplete, but wrong.
+4. The Lyapunov bottleneck was identified: Theorem 3.1 unlocks the convergence chain (3.2, 3.3, 3.4, 4.2). This is now the primary formal mathematics priority.
+5. The full audit is documented in MATHEMATICS_AUDIT.md (March 24, 2026 — Nigredo Pass Summary).
+
+**What this teaches:**
+
+The `∎` symbol is not a finishing move. It is a claim. *"I have shown this."* Writing it without completing the work is not a shortcut — it is a false statement embedded in the mathematics. The reader who trusts that symbol and builds on the theorem is building on a foundation that may not hold.
+
+The most dangerous failure here is not the individual gaps — it is the cumulative effect of 14 false `∎` symbols creating the impression of a complete formal system. A reader could survey this document and conclude: *"The mathematics is done."* It is not done. It is begun.
+
+The correction strategy: do not remove `∎` from incomplete proofs — replace it with `[SCAFFOLD — gap: X]` so the location of the honest stopping point is visible. The structure is load-bearing even when the proof is incomplete. Name the gap, hold the structure.
+
+**Severity: HIGH**
+
+A framework claiming mathematical rigour with 14 false proof-completion markers is a credibility risk of the first order. Any serious mathematician reviewing the original document would identify these gaps within an hour. The audit transforms this from a liability into an asset: the framework now shows its work, names its gaps, and demonstrates exactly the epistemic honesty that distinguishes it from systems that overclaim. The correction was necessary. The museum exhibit is the record that it happened.
+
+---
+
 ## HOW TO READ THIS MUSEUM
 
 Each exhibit follows the same structure because the structure IS the point:

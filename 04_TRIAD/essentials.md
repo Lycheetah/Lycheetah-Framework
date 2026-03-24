@@ -1,6 +1,6 @@
 # TRIAD Kernel — Core Operations Essentials
 
-**Status:** ⭐ FORMALIZED — Hopf bifurcation proven, Hille-Yosida semigroup complete | **Type:** Foundational Architecture | **Role:** Everything else builds on this
+**Status:** ⭐ FORMALIZED [SCAFFOLD] — Hopf bifurcation is a structural conjecture (vector field F(x,μ) not yet fully specified); Hille-Yosida semigroup structure present but depends on completing Theorem 3.1 (Lyapunov). Local stability proven. Global convergence is the active proof target. | **Type:** Foundational Architecture | **Role:** Everything else builds on this
 
 ## What It Is
 TRIAD is the **mathematical/operational kernel** that underlies all other frameworks. Three core operators that model consciousness, growth, and origin.

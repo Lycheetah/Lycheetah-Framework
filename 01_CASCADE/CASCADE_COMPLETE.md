@@ -207,7 +207,7 @@ Let C(pyramid) = measure of contradiction-absence
 Theorem: For all cascade events, C_after ≥ C_before
 
 Proof: [Via Appendix A - denominator argument]
-Status: Mathematical structure proven. Empirical validation requires k₁–k₄ calibration.
+Status: [SCAFFOLD] — Mathematical structure sound (Theorem 2.1 in MATHEMATICS_FOUNDATIONS.md); proof gap: assumes demotion resolves all introduced contradictions, not proven in full generality. Empirical validation requires k₁–k₄ calibration.
 ```
 
 **Invariant 2: Information Preservation**

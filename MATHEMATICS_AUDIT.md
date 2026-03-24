@@ -1,6 +1,6 @@
 # MATHEMATICS AUDIT
 ## Every Claim Classified — What Is Proven, What Is Scaffold, What Is Conjecture
-### Lycheetah Framework | Updated March 2026
+### Lycheetah Framework | Updated March 24, 2026 (Post-Nigredo Pass)
 
 > *"If it cannot touch reality it is not yet mathematics — it is notation waiting to become mathematics."*
 
@@ -50,6 +50,11 @@
 | Global convergence via LaSalle | [SCAFFOLD] | Requires completing Lyapunov proof + explicit F(ψ) specification |
 | LAMAGUE composition: C(g∘f) ≥ min(C(f),C(g)) | [SCAFFOLD] | Follows from monotonicity assumption on C; needs formal verification |
 | AURA thresholds TES≥0.70, VTR≥1.0, PAI≥0.80 | [SCAFFOLD] | Operational constraints; threshold values are design choices, not derived |
+| Theorem 3.1: ⟨∇S, ψ⟩ = S(ψ) − 1 | [ACTIVE] | Exact computation for Shannon entropy; established March 24, 2026 |
+| Theorem 3.1: Anchor term ⟨∇S, Ao(ψ)⟩ ≤ S(ψ) − 1 | [ACTIVE] | Follows from projection inequality + above |
+| Theorem 3.1: Ascent term ⟨∇S, Φ↑(ψ)⟩ ≤ 0 | [SCAFFOLD] | Requires verifying ⟨∇S, ∇_φ⟩ ≤ 0 (anti-correlation of coherence and entropy) |
+| Theorem 3.1: Fold term dS/dt\|_{Ψ} ≤ 0 | [SCAFFOLD] | Requires K(t,s) sub-stochastic with ψ_inv as fixed point |
+| Theorem 3.1: Linearized local stability | [ACTIVE] | dS/dt ≤ 0 near ψ_inv when α + β ≤ 1 − γ·||DΨ|| |
 | Transformation energy E ∝ ρ² | [SCAFFOLD] | Structural hypothesis; empirical measurement pending |
 | LAMAGUE compression ratio | [SCAFFOLD] | Substantially more compact than natural language; exact ratio awaits empirical measurement — previously cited 500:1 was an unverified estimate |
 
@@ -80,6 +85,39 @@
 | "TRIAD monotonically increases coherence C_(n+1) > Cₙ" | Gradient ascent can oscillate; correct claim is "converges over sufficient cycles with bounded step size" | 99_ARCHIVE/MATHEMATICS_AUDIT.md |
 | "Gödel proves Platonism necessary" | Non-sequitur; Gödel established limits of formal systems, not the location of truth | HIDDEN_MATHEMATICAL_TRUTHS.md Truth 8 |
 | Original master equation with Φ↑, R, ¬Inv in ODE | Undefined terms; Boolean operator in continuous ODE | Failure Museum Exhibit 3 |
+
+---
+
+---
+
+## MARCH 24, 2026 — NIGREDO PASS SUMMARY
+
+A systematic audit of `11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md` identified 16 issues. Key changes:
+
+**Fixed (now ACTIVE):**
+- Theorem 1.2 (Identity Laws): Proof corrected — identity is the identity function, not a zero-drift condition
+- Theorem 4.1 (Operator Composition): Explicit norm computation added, contractivity proven
+
+**Downgraded to SCAFFOLD with gaps named:**
+- Theorems 1.3, 2.1–2.5, 3.1–3.4, 4.2, 4.3, 5.2, 5.3, 6.3, 7.1 — each with specific gap identified
+- Critical bottleneck: Theorem 3.1 (entropy as Lyapunov function). Completing this unlocks 3.2, 3.3, 3.4, 4.2.
+
+**Corrected (wrong claims):**
+- Theorem 2.3: "iff curvature=0 ↔ stability" was FALSE; corrected to necessary condition only
+- Theorem 2.5: "minimal submanifold" confused with "local minimum"; corrected
+- THE_INCOMPLETENESS_PROOF.md: [ACTIVE] → [FOUNDATIONAL]
+
+**Additional files audited (CASCADE_FORMAL_PROOFS, CASCADE_COMPLETE_FRAMEWORK, DEEP_REVIEW, CASCADE_FRONTIER_ANALYSIS):**
+- Duplicate file (CASCADE_MATHEMATICAL_PROOFS.md) archived to 99_ARCHIVE/
+- "Deeper Truths" throughout DEEP_REVIEW relabeled as "Hypotheses [CONJECTURE]"
+- AGI overclaims removed from CASCADE_COMPLETE_FRAMEWORK
+- Circular proofs tagged in CASCADE_FORMAL_PROOFS (Theorems 2.1, 3.1, 5.1)
+- Platonism "logically necessary" → "consistent with convergence evidence"
+
+**Current honest count (approximate, post-audit):**
+- [ACTIVE]: ~30% (up from 33% — some previously uncounted scaffolds identified)
+- [SCAFFOLD]: ~55%
+- [CONJECTURE/FOUNDATIONAL]: ~15%
 
 ---
 

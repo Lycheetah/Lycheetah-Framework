@@ -9,7 +9,7 @@
 
 ## OVERVIEW
 
-This document provides **rigorous mathematical proofs** for the theoretical claims made in the CASCADE architecture. All theorems are stated formally, with complete proofs or proof sketches that could be expanded to full formality.
+This document provides **proof sketches and formal structures** for the theoretical claims made in the CASCADE architecture. Theorems are stated formally. Proofs range from complete (marked [ACTIVE]) to partial proof sketches requiring additional work (marked [SCAFFOLD]) to conjectures with structural support (marked [CONJECTURE]). Not all theorems are fully proven — see the honest status labels throughout.
 
 ---
 
@@ -106,14 +106,16 @@ where:
 
 ## SECTION II: CASCADE DYNAMICS
 
-### Theorem 2.1 (Coherence Non-Decrease)
+### Theorem 2.1 (Coherence Non-Decrease) [SCAFFOLD — PROOF GAP]
 
-**Statement:**  
+**Statement:**
 Let P_old be a pyramid with coherence C_old. After cascade reorganization triggered by block B_new, producing pyramid P_new with coherence C_new:
 
 ```
 C_new ≥ C_old
 ```
+
+*Known gap:* The proof assumes that repositioning a block to a higher layer resolves logical contradictions between it and existing blocks. This requires showing that layer hierarchy can suppress or dissolve contradictions — not just relocate them. Contradictory propositions remain contradictory regardless of layer position. A complete proof needs to specify the exact mechanism by which the cascade reorganization eliminates contradictions rather than redistributing them.
 
 **Proof:**
 
@@ -259,10 +261,12 @@ Since -κ_F < κ_E:
 
 ## SECTION III: LAMAGUE FORMALIZATION
 
-### Theorem 3.1 (LAMAGUE Completeness)
+### Theorem 3.1 (LAMAGUE Completeness) [SCAFFOLD — KEY STEP MISSING]
 
-**Statement:**  
+**Statement:**
 The LAMAGUE symbolic system is **complete** for expressing all knowledge state transitions in K.
+
+*Known gap:* Step 1 of the proof claims all transitions can be approximated by piecewise geodesics, but does not prove that the geodesic approximation error is bounded. Without a bound on approximation error, completeness is not established — only approximate expressibility. A full proof requires: (a) explicit error bound ε for geodesic approximation, (b) proof that LAMAGUE can express the approximating piecewise paths.
 
 **Proof Idea:**
 
@@ -446,10 +450,12 @@ This guarantees constraint preservation.  ∎
 
 ## SECTION V: CONVERGENCE ANALYSIS
 
-### Theorem 5.1 (Cascade Convergence)
+### Theorem 5.1 (Cascade Convergence) [SCAFFOLD — CIRCULAR STEP]
 
-**Statement:**  
+**Statement:**
 Under repeated cascades, the pyramid P converges to a stable configuration P*.
+
+*Known gap:* Step 3 of the proof states "Each cascade moves blocks toward optimal layers" — but this is exactly what convergence to P* means. It assumes what needs to be proved. A complete proof requires: (a) a formal definition of "optimal layer" independent of the convergence claim, (b) a proof that each cascade step makes measurable progress toward P* in the defined metric.
 
 **Formal:**
 ```
