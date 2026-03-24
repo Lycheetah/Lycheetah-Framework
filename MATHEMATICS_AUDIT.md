@@ -56,6 +56,9 @@
 | Theorem 3.1: Fold term S_(n+1) ≤ S_n (discrete) | [ACTIVE] | Proven: implemented TRIAD is gradient descent in S (α < 1/L guarantees decrease) |
 | Theorem 3.1: Continuous K(t,s) semigroup limit | [SCAFFOLD] | Semigroup limit of discrete proof; standard but non-trivial; operationally irrelevant |
 | Theorem 3.1: Linearized local stability | [ACTIVE] | dS/dt ≤ 0 near ψ_inv when α + β ≤ 1 − γ·||DΨ|| |
+| Theorem 3.2: CASCADE converges to a fixed point | [ACTIVE] | S decreasing, gradient → 0, converges to some C-maximiser |
+| Theorem 3.2: Fixed point is unique | [SCAFFOLD] | AGM belief revision theory: multiple maximal consistent subsets may exist; unique ψ_inv requires well-curated knowledge base |
+| Theorem 3.3: ψ_inv asymptotically stable (discrete) | [ACTIVE] | Lyapunov discrete stability theorem; proven from 3.1 |
 | Transformation energy E ∝ ρ² | [SCAFFOLD] | Structural hypothesis; empirical measurement pending |
 | LAMAGUE compression ratio | [SCAFFOLD] | Substantially more compact than natural language; exact ratio awaits empirical measurement — previously cited 500:1 was an unverified estimate |
 
@@ -68,6 +71,7 @@
 | LAMAGUE is a topos | Demonstrably a category; partial topos structure present | Verify subobject classifier exists for all sub-states |
 | Seven invariants generate cohomological structure | Seven is dimensionally suggestive; precedents in physics | Construct explicit cochain complex; verify independence + completeness |
 | TRIAD as Hopf bifurcation | Feedback + observation structure present | Specify vector field F(x,μ), find purely imaginary eigenvalues at μ=0 |
+| CASCADE as AGM belief revision | CASCADE convergence to maximal consistent subset matches AGM revision operators; both handle contradiction by selective demotion | Verify CASCADE satisfies AGM postulates (closure, success, inclusion, vacuity, extensionality, recovery) formally |
 | CASCADE as Morse theory | Gradient ascent in Π-space; directional character matches | Define smooth manifold on knowledge space; verify Morse conditions |
 | TRIAD as natural transformation | Architecture consistent with naturality | Prove commutativity of naturality squares for all morphisms in 𝓛 |
 | Lyapunov λ ≈ 0 at consciousness edge | Valid dynamical systems concept; mapping is productive | Define phase space for consciousness; compute actual Lyapunov exponent |

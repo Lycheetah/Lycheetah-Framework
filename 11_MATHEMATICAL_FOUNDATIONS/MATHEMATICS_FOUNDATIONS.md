@@ -455,9 +455,18 @@ Since S_n → L, the left side → 0, so ||∇S(ψ_n)||² → 0, so ∇S(ψ_n) �
 
 Stationary points of S (where ∇S = 0) correspond to stationary points of C (where ∇C = 0). The coherence function C(ψ) = 1 − |contradictions(ψ)|/C(n,2) has maximum value C = 1 (no contradictions) at ψ_inv. If C is strictly concave (or ψ_inv is the unique global maximum of C), then ψ_inv is the unique point where ∇C = 0, and the iteration converges to ψ_inv.
 
-*Remaining gap:* Unique global maximum of C must be verified. For the CASCADE formulation where contradictions are counted on a finite block set, C = 1 is achievable only when zero pairs contradict — this state is unique given the block definitions. [ACTIVE assuming unique global C-maximum; SCAFFOLD if multiple no-contradiction states can coexist]
+*Uniqueness analysis (March 24, 2026):*
 
-*What is established:* S converges. Gradient → 0. Convergence to ψ_inv follows if ψ_inv is the unique C-maximiser. This is architecturally guaranteed in CASCADE's block model. [SCAFFOLD → NEARLY ACTIVE]
+In belief revision theory (Alchourrón, Gärdenfors, Makinson — AGM framework), a knowledge base can have multiple **maximal consistent subsets** — each is a fully coherent configuration where no pair of retained blocks contradicts. If a knowledge base contains block A ("X is true") and block B ("X is false"), then both {keep A, demote B} and {keep B, demote A} are valid maximal consistent states, each with C = 1.
+
+This means: **ψ_inv is generally not unique.** CASCADE converges to one of the maximal consistent subsets depending on initialization and path.
+
+*Corrected claim:*
+- **What is proven (ACTIVE):** The iteration converges to some local C-maximiser ψ* (the gradient → 0 argument holds). S converges to S(ψ*) ≥ 0.
+- **What holds in practice:** For a well-curated knowledge base with a unique intended consistent state, convergence is to the unique ψ_inv. This is the typical operating context.
+- **What is NOT generally proven:** Global uniqueness of ψ_inv. In knowledge bases with multiple maximal consistent subsets, the system converges to A fixed point, not necessarily THE fixed point.
+
+This is honest and consistent with the AGM literature. CASCADE's convergence guarantee is: **it reaches A fully coherent state**. Which coherent state depends on initialization. [ACTIVE: convergence to a fixed point; SCAFFOLD: uniqueness of the fixed point is knowledge-base-dependent]
 
 ### 3.4 Stability Analysis
 
