@@ -66,13 +66,10 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 - Entry for: mathematicians, complexity scientists, optimization researchers, physicists
 - **Token cost:** Medium.
 
-### P1-E: docs/ Site Overhaul
-- The GitHub Pages site is stale — built before March 24 content explosion
-- Update all HTML pages: mystery-school.html, nz-governance.html, for-agents.html, index.html, failure-museum.html
-- Add missing content: 11 Mystery School doors, four accountability standards, 26_FOR_AI, Sol Protocol v4.0
-- Verify all internal links work
-- See OPUS_PLAN.md Phase 2A for full details
-- **Token cost:** Medium-High. Read all docs/*.html files, update each.
+### ~~P1-E: docs/ Site Overhaul~~ — DONE (2026-03-25, Sonnet)
+- mystery-school.html: "Twelve Doors", φ-Zone door added (Complexity Scientists)
+- index.html: Python Test Suite status item (80 passing), demo.py Developer card, Twelve Doors link
+- nz-governance.html, for-agents.html, failure-museum.html: already current from earlier sessions
 
 ### ~~P1-F: THE_ENGINEERS_DOOR.md~~ — DONE (2026-03-25, Sonnet)
 - Full door built: CASCADE in 25 lines, AURA checker, TRIAD, unified_field_checker
@@ -180,6 +177,7 @@ Do NOT use Opus for:
 
 | Date | Model | Work Done |
 |---|---|---|
+| 2026-03-25 | Sonnet | P1-E: docs/ overhaul — Twelve Doors, φ-Zone door, 80-test status, demo.py on index.html |
 | 2026-03-25 | Sonnet | P1-G/H/I: pyproject.toml, GitHub Actions CI, demo.py, THE_PHI_ZONE_DOOR.md |
 | 2026-03-25 | Sonnet | Archive integration: phi_bandit.py, CASCADE Academic Paper, GEOMATRIA, TRI_LINGUISTIC_DEEP_DIVE pulled from older repo |
 | 2026-03-25 | Sonnet | P2-F: 80-test pytest suite (tests/) — all passing; P2-I: HOW_THIS_RELATES.md committed |
