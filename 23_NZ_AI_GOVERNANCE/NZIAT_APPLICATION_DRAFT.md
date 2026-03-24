@@ -43,6 +43,15 @@ This research proposes to test whether tikanga Māori governance concepts — sp
 2. Do AI systems constrained by tikanga LAMAGUE encodings produce outputs that iwi assessors rate as more culturally appropriate?
 3. Does the formal encoding process surface misunderstandings of tikanga that require iwi correction — and if so, does that correction process produce a more accurate encoding?
 
+**The research methodology is already designed.** The Mātauranga Adversarial Probe (`MATAURANGA_ADVERSARIAL_PROBE.md`) is a complete experimental protocol with:
+- Testable hypothesis (H₁: AI epistemic horizon is lowest for relational/temporal knowledge)
+- Five levels of question specificity mapped to Te Ao Mārama / Te Ao Pō / Te Kore epistemological structure
+- Multi-model comparison (GPT-4, Claude Opus, Gemini, open-source baselines, Chinese LLMs)
+- Three-assessor scoring panel (tikanga practitioner + environmental scientist + AI researcher)
+- Inter-rater reliability protocol (Krippendorff's α ≥ 0.70 required)
+
+This provides quantitative data on where current AI systems fail relationally — which directly informs which tikanga concepts most urgently need LAMAGUE encoding and why.
+
 **The critical constraint:** LAMAGUE Te Reo encodings are [PROPOSAL] status. They cannot become validated standards without iwi partnership. This research programme is structured around that requirement — Kāi Tahu iwi partnership is an architectural requirement, not an optional component.
 
 ### What Already Exists
@@ -65,8 +74,9 @@ The funding is for the cross-cultural validation research — specifically the i
 
 ### Expected Outputs
 **Year 1:**
+- Mātauranga Adversarial Probe: baseline data on AI epistemic limits using five-level relational specificity framework (runnable without iwi presence; methodology already designed)
 - Kāi Tahu-reviewed LAMAGUE encodings of five core tikanga concepts (corrected, validated, attributed)
-- Empirical study: AI outputs rated by iwi assessors under tikanga-constrained vs. unconstrained conditions
+- Comparative study: AI outputs under tikanga-constrained vs. unconstrained conditions, scored by three-assessor panel (tikanga practitioner + domain expert + AI researcher)
 - Publication: "LAMAGUE as a cross-cultural AI governance protocol: Māori tikanga case study" (target: AI & Society or AI and Ethics, Springer)
 
 **Year 2:**
