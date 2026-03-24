@@ -53,7 +53,8 @@
 | Theorem 3.1: ⟨∇S, ψ⟩ = S(ψ) − 1 | [ACTIVE] | Exact computation for Shannon entropy; established March 24, 2026 |
 | Theorem 3.1: Anchor term ⟨∇S, Ao(ψ)⟩ ≤ S(ψ) − 1 | [ACTIVE] | Follows from projection inequality + above |
 | Theorem 3.1: Ascent term ⟨∇S, ∇_φ⟩ = log((1−C)/C)·||∇C||² < 0 | [ACTIVE] | Proven: binary entropy formula gives explicit negative value when C > 0.5; AURA floor C ≥ 0.70 ensures this always holds |
-| Theorem 3.1: Fold term dS/dt\|_{Ψ} ≤ 0 | [SCAFFOLD] | Requires K(t,s) sub-stochastic with ψ_inv as fixed point |
+| Theorem 3.1: Fold term S_(n+1) ≤ S_n (discrete) | [ACTIVE] | Proven: implemented TRIAD is gradient descent in S (α < 1/L guarantees decrease) |
+| Theorem 3.1: Continuous K(t,s) semigroup limit | [SCAFFOLD] | Semigroup limit of discrete proof; standard but non-trivial; operationally irrelevant |
 | Theorem 3.1: Linearized local stability | [ACTIVE] | dS/dt ≤ 0 near ψ_inv when α + β ≤ 1 − γ·||DΨ|| |
 | Transformation energy E ∝ ρ² | [SCAFFOLD] | Structural hypothesis; empirical measurement pending |
 | LAMAGUE compression ratio | [SCAFFOLD] | Substantially more compact than natural language; exact ratio awaits empirical measurement — previously cited 500:1 was an unverified estimate |
