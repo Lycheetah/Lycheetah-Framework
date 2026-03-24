@@ -142,6 +142,7 @@ Do NOT use Opus for:
 
 | Date | Model | Work Done |
 |---|---|---|
+| 2026-03-25 | Sonnet | 26_FOR_AI/HOW_TO_TRANSLATE.md — AI translation protocol from Mac's X-post insight |
 | 2026-03-25 | Sonnet | P2-G/H: THE_EDUCATORS_DOOR.md + THE_PARENTS_DOOR.md built; README + docs updated |
 | 2026-03-25 | Sonnet | P1-F: THE_ENGINEERS_DOOR.md built + README/docs updated; Phase 2A docs/ overhaul pushed |
 | 2026-03-25 | Sonnet | Phase 1 complete: Exhibit 12 (MEMORIA early warning), P2-B/C/E done, ARXIV_UPDATE_NOTES.md written |
