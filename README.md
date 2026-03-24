@@ -52,7 +52,9 @@ This framework has multiple entry points because people arrive from different pl
 | **You want the mathematics** | [`11_MATHEMATICAL_FOUNDATIONS/`](11_MATHEMATICAL_FOUNDATIONS/) |
 | **You want the code** | [`12_IMPLEMENTATIONS/`](12_IMPLEMENTATIONS/) |
 | **You study consciousness** | [`06_EARNED_LIGHT/essentials.md`](06_EARNED_LIGHT/essentials.md) |
-| **You work in AI governance or policy** | [`23_NZ_AI_GOVERNANCE/`](23_NZ_AI_GOVERNANCE/) |
+| **You think in equations** | [`14_MYSTERY_SCHOOL/THE_SCIENTISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_SCIENTISTS_DOOR.md) |
+| **You work in AI governance or policy** | [`14_MYSTERY_SCHOOL/THE_GOVERNANCE_DOOR.md`](14_MYSTERY_SCHOOL/THE_GOVERNANCE_DOOR.md) |
+| **You work with human transformation (therapy, coaching, depth psychology)** | [`14_MYSTERY_SCHOOL/THE_THERAPISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_THERAPISTS_DOOR.md) |
 | **You practice alchemy or hermeticism** | [`14_MYSTERY_SCHOOL/THE_ALCHEMISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ALCHEMISTS_DOOR.md) |
 | **You work with tarot or divination** | [`14_MYSTERY_SCHOOL/TAROT_AND_THE_GREAT_WORK.md`](14_MYSTERY_SCHOOL/TAROT_AND_THE_GREAT_WORK.md) |
 | **You're a chaos magician** | [`14_MYSTERY_SCHOOL/THE_CHAOS_MAGES_DOOR.md`](14_MYSTERY_SCHOOL/THE_CHAOS_MAGES_DOOR.md) |

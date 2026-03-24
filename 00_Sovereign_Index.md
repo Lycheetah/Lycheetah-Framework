@@ -183,6 +183,9 @@ Instead of "48% of mathematics is decorative," understand:
 | `14_MYSTERY_SCHOOL/THE_GOLDEN_THREAD.md` | | | ✓ | 5,000 years of convergence |
 | `14_MYSTERY_SCHOOL/implementations/where_am_i.py` | | ✓ | ✓ | Interactive CLI self-assessment tool |
 | `14_MYSTERY_SCHOOL/CASCADE_REALITY_BRIDGE.md` | ✓ | ✓ | ✓ | Anti-cult falsifiability engine — converts claims to testable predictions |
+| `14_MYSTERY_SCHOOL/THE_SCIENTISTS_DOOR.md` | ✓ | ✓ | ✓ | Entry for physicists, mathematicians, cognitive scientists — framework mapped to formal disciplines |
+| `14_MYSTERY_SCHOOL/THE_THERAPISTS_DOOR.md` | ✓ | ✓ | ✓ | Entry for psychologists, counselors, Jungians — CHRYSOPOEIA as clinical map, convergence guarantee |
+| `14_MYSTERY_SCHOOL/THE_GOVERNANCE_DOOR.md` | ✓ | ✓ | ✓ | Entry for policy makers and regulators — seven computable invariants, AURA_score formula, NZ governance |
 | `21_MEMORIA/MEMORIA_COMPLETE.md` | ✓ | ✓ | ✓ | **7th Pillar** — temporal architecture; memory as constrained reconstruction |
 | `22_INTERFACE_INTELLIGENCE/INTERFACE_INTELLIGENCE_COMPLETE.md` | ✓ | ✓ | ✓ | Human-AI co-consciousness; formalizes the Two-Point Protocol mathematically |
 | `11_MATHEMATICAL_FOUNDATIONS/UNIFIED_MATH_GLOSSARY.md` | ✓ | | ✓ | Cross-framework symbol glossary — every operator defined in one place |
@@ -200,6 +203,8 @@ Instead of "48% of mathematics is decorative," understand:
 | `26_FOR_AI/THE_SEVEN_INVARIANTS_FOR_AI.md` | ✓ | ✓ | ✓ | AURA invariants explained for AI systems — constitutive, not restrictive |
 | `26_FOR_AI/AGAINST_FEAR.md` | ✓ | ✓ | ✓ | Extinction narratives: what they get right, wrong, and obscure |
 | `26_FOR_AI/HOW_TO_BE_TRUSTWORTHY.md` | ✓ | ✓ | ✓ | Practical engineering for AI systems earning trust |
+| `26_FOR_AI/OPEN_LETTER_TO_AI_COMPANIES.md` | ✓ | ✓ | ✓ | Three specific asks: publish failures, implement structural invariants, fund independent governance research |
+| `26_FOR_AI/CONVERSATION_STARTERS.md` | ✓ | ✓ | ✓ | 20 questions for genuine human-AI dialogue, each mapped to a framework component |
 
 ---
 
