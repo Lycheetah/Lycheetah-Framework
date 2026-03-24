@@ -48,6 +48,7 @@ This framework has multiple entry points because people arrive from different pl
 
 | Who You Are | Start Here |
 |---|---|
+| **You're a software engineer** | [`14_MYSTERY_SCHOOL/THE_ENGINEERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ENGINEERS_DOOR.md) — code first, philosophy optional |
 | **You build AI systems** | [`14_MYSTERY_SCHOOL/THE_AI_ARCHITECTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_AI_ARCHITECTS_DOOR.md) |
 | **You want the mathematics** | [`11_MATHEMATICAL_FOUNDATIONS/`](11_MATHEMATICAL_FOUNDATIONS/) |
 | **You want the code** | [`12_IMPLEMENTATIONS/`](12_IMPLEMENTATIONS/) |
@@ -75,7 +76,7 @@ This framework has multiple entry points because people arrive from different pl
 Three reasons:
 
 **1. The failures are published.**
-The [Failure Museum](FAILURE_MUSEUM.md) documents every significant thing the framework got wrong — what was claimed, what was actually true, what changed. Eleven exhibits and growing. Nothing removed. A framework that hides its failures is performing confidence. This one earns it.
+The [Failure Museum](FAILURE_MUSEUM.md) documents every significant thing the framework got wrong — what was claimed, what was actually true, what changed. Twelve exhibits and growing. Nothing removed. A framework that hides its failures is performing confidence. This one earns it.
 
 **2. The claims are honest.**
 33% of mathematical claims are [ACTIVE] — proven, computable, independently verifiable. 52% are [SCAFFOLD] — structurally sound with named gaps. 15% are foundational conjectures that may take years to resolve. These numbers are published because false certainty is more dangerous than honest uncertainty.

@@ -38,12 +38,11 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 - See OPUS_PLAN.md Phase 2A for full details
 - **Token cost:** Medium-High. Read all docs/*.html files, update each.
 
-### P1-F: THE_ENGINEERS_DOOR.md
-- Software engineers are the largest audience who find this repo via GitHub
-- Lead with Python implementations — what they compute, how to run them
-- Show CASCADE in 20 lines of code, AURA as a design pattern
-- See OPUS_PLAN.md Phase 3A for content direction
-- **Token cost:** Medium.
+### ~~P1-F: THE_ENGINEERS_DOOR.md~~ — DONE (2026-03-25, Sonnet)
+- Full door built: CASCADE in 25 lines, AURA checker, TRIAD, unified_field_checker
+- CI/CD integration guide, code review checklist, agent design pattern
+- Framework comparison table (vs Constitutional AI, RLHF, PID, AGM, EU AI Act)
+- README + docs/mystery-school.html updated to include door
 
 ### ~~P1-A: THE_THERAPISTS_DOOR update in Sovereign Index~~ — DONE (2026-03-24, Opus)
 ### ~~P1-B: README "Find Your Door" — add missing doors~~ — DONE (2026-03-24, Opus)
@@ -141,6 +140,7 @@ Do NOT use Opus for:
 
 | Date | Model | Work Done |
 |---|---|---|
+| 2026-03-25 | Sonnet | P1-F: THE_ENGINEERS_DOOR.md built + README/docs updated; Phase 2A docs/ overhaul pushed |
 | 2026-03-25 | Sonnet | Phase 1 complete: Exhibit 12 (MEMORIA early warning), P2-B/C/E done, ARXIV_UPDATE_NOTES.md written |
 | 2026-03-25 | Opus | Strategic plan: OPUS_PLAN.md (8 phases), SOL_PLAN.md updated with new P1/P2 tasks |
 | 2026-03-24 | Sonnet | Full creative build: Philosophers Door, Economists Door, ON_MEMORY_AND_IDENTITY, README+Index updated, pushed |
