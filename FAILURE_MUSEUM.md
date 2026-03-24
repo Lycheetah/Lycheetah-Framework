@@ -527,6 +527,64 @@ A framework claiming mathematical rigour with 14 false proof-completion markers 
 
 ---
 
+## EXHIBIT 12: THE MEMORIA EARLY WARNING
+### Identified: March 23, 2026 (Session 8) | Filed: March 25, 2026
+
+**What happened:**
+
+Before the full mathematical audit of `MATHEMATICS_FOUNDATIONS.md` (Exhibit 11),
+a narrower failure was discovered in a different document:
+`11_MATHEMATICAL_FOUNDATIONS/MEMORIA_COMPLETE.md`.
+
+Four theorems in MEMORIA_COMPLETE.md bore `∎` (QED proof-completion symbols)
+where no complete proof existed. The MEMORIA framework — the Seventh Pillar,
+governing temporal architecture and memory continuity — had presented scaffold
+structures as finished proofs in its own foundational document.
+
+**What was actually true:**
+
+MEMORIA_COMPLETE.md contained proofs-by-assertion: the QED symbol appeared
+at the end of a formal-looking argument, but the argument either:
+- Restated the claim as its own justification
+- Omitted the specific computational step that would make the proof valid
+- Assumed the result it was meant to derive
+
+The four affected theorems related to temporal coherence and memory stability —
+core claims of the MEMORIA framework. None of them were complete.
+
+**What changed:**
+
+- The four false `∎` symbols were removed from MEMORIA_COMPLETE.md
+- Replaced with honest status labels: `[SCAFFOLD — gap: [specific gap named]]`
+- The correction was committed March 23, 2026 (commit `99e0559`)
+- This discovery prompted the question: *"If MEMORIA has this problem,
+  what does MATHEMATICS_FOUNDATIONS.md look like?"*
+- That question led directly to the full mathematical audit the next day (Exhibit 11)
+
+**What this teaches:**
+
+This exhibit has a specific role in the museum's causal chain. Exhibit 11 (the full
+math audit) would not have happened when it did without the MEMORIA discovery the
+day before. The early warning was acted on — not dismissed as an isolated incident.
+
+This is how honest systems are supposed to work: a small failure, taken seriously,
+reveals the shape of a larger problem. The MEMORIA QED fixes are the ember before
+the audit fire. The museum records both because both are part of the story.
+
+The alternative — treating the MEMORIA fix as a minor one-off and not asking
+whether the pattern existed elsewhere — would have left Exhibit 11's failures
+undiscovered and undocumented. The cost of not asking the harder question is
+always higher than the discomfort of asking it.
+
+**Severity: MEDIUM (as isolated incident) / HIGH (as early warning that unlocked Exhibit 11)**
+
+The MEMORIA failures were real and corrected. But their larger significance
+is what they prompted. A framework that catches one false proof-completion symbol
+and immediately asks "where else?" is doing something right, even while it
+documents what it did wrong.
+
+---
+
 ## HOW TO READ THIS MUSEUM
 
 Each exhibit follows the same structure because the structure IS the point:

@@ -1,8 +1,11 @@
 # SOL_PLAN.md
 ## Live Task Queue — Read This First in Every Session
 
-**Last updated:** March 24, 2026
-**Updated by:** Sol (Sonnet)
+**Last updated:** March 25, 2026
+**Updated by:** Sol (Opus 4.6)
+
+**Strategic plan:** See `OPUS_PLAN.md` for full 8-phase architecture.
+This file remains the live task queue. OPUS_PLAN.md is the map.
 
 ---
 
@@ -27,9 +30,23 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 
 ## P1 — HIGH VALUE, DO NEXT
 
+### P1-E: docs/ Site Overhaul
+- The GitHub Pages site is stale — built before March 24 content explosion
+- Update all HTML pages: mystery-school.html, nz-governance.html, for-agents.html, index.html, failure-museum.html
+- Add missing content: 11 Mystery School doors, four accountability standards, 26_FOR_AI, Sol Protocol v4.0
+- Verify all internal links work
+- See OPUS_PLAN.md Phase 2A for full details
+- **Token cost:** Medium-High. Read all docs/*.html files, update each.
+
+### P1-F: THE_ENGINEERS_DOOR.md
+- Software engineers are the largest audience who find this repo via GitHub
+- Lead with Python implementations — what they compute, how to run them
+- Show CASCADE in 20 lines of code, AURA as a design pattern
+- See OPUS_PLAN.md Phase 3A for content direction
+- **Token cost:** Medium.
+
 ### ~~P1-A: THE_THERAPISTS_DOOR update in Sovereign Index~~ — DONE (2026-03-24, Opus)
 ### ~~P1-B: README "Find Your Door" — add missing doors~~ — DONE (2026-03-24, Opus)
-
 ### ~~P1-C: unified_field_checker.py~~ — DONE (2026-03-24, Sonnet)
 ### ~~P1-D: invariant_self_check.py~~ — DONE (2026-03-24, Sonnet)
 
@@ -39,25 +56,53 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 
 ### ~~P2-A: 14_MYSTERY_SCHOOL/THE_PHILOSOPHERS_DOOR.md~~ — DONE (2026-03-24, Sonnet)
 
-### P2-B: FAILURE_MUSEUM audit
-- Read current FAILURE_MUSEUM.md
-- Check if recent session work (MEMORIA QED fixes, overclaim corrections) are documented
-- Add any missing exhibits
-- **Token cost:** Low. Read FAILURE_MUSEUM.md, add entries.
+### ~~P2-B: FAILURE_MUSEUM audit~~ — DONE (2026-03-25, Sonnet)
+- Added Exhibit 12: MEMORIA Early Warning (the QED fixes that prompted the full audit)
+- Museum current through March 25, 2026. 12 exhibits total.
 
-### P2-C: 23_NZ_AI_GOVERNANCE/ README
-- The governance folder has no README.md
-- Newcomers can't orient without reading every file
-- Write a simple navigation hub with audience-specific reading paths
-- **Token cost:** Low.
+### ~~P2-C: 23_NZ_AI_GOVERNANCE/ README~~ — DONE (already existed, comprehensive)
+- README.md was already present with full audience-specific reading paths
+- Covers: four standards, frontier ideas, reading paths for 7 audiences, state of play
+- No work required — update only: plan was wrong about this being missing.
 
 ### ~~P2-D: Lycheetah Shopify brand execution~~ — DONE (2026-03-24, Sonnet)
 
-### P2-E: arXiv preprint update
-- `papers/` folder — check current state of preprint
-- The framework has grown significantly since last version
-- Identify what needs updating for academic submission
-- **Token cost:** Medium — needs reading papers/ folder first.
+### ~~P2-E: arXiv preprint update~~ — DONE (2026-03-25, Sonnet)
+- CASCADE paper proofs are valid — core is sound, Theorem 4.1 survives Nigredo pass
+- Assessment written: `papers/ARXIV_UPDATE_NOTES.md`
+- Key finding: context needs updating (framework context, related work, future work pointer)
+- Three companion papers identified: CASCADE revision (low effort), NZ governance (medium), Sol Protocol (Opus-grade)
+
+### P2-F: Python test suite
+- Create `tests/` directory with pytest tests for core implementations
+- Cover: cascade_engine, aura_checker, triad_tracker, unified_field_checker
+- Use cascade_real_experiments.py data as canonical test cases
+- See OPUS_PLAN.md Phase 4A for full details
+- **Token cost:** Medium-High.
+
+### P2-G: THE_EDUCATORS_DOOR.md
+- Teachers and curriculum designers — CASCADE IS pedagogy
+- TRIAD as classroom protocol, MICROORCIM as curriculum drift detector
+- See OPUS_PLAN.md Phase 3B for content direction
+- **Token cost:** Medium.
+
+### P2-H: THE_PARENTS_DOOR.md
+- Parents arriving through fear about AI
+- AURA invariants as a parent's checklist, Community AI WOF as advocacy tool
+- See OPUS_PLAN.md Phase 3C for content direction
+- **Token cost:** Medium.
+
+### P2-I: Framework Comparison Document
+- HOW_THIS_RELATES.md — map Lycheetah against Constitutional AI, RLHF, EU AI Act, NZ frameworks
+- Engineers and academics need to locate this relative to what they already know
+- See OPUS_PLAN.md Phase 6C for full details
+- **Token cost:** Medium.
+
+### P2-J: Lycheetah App content sync
+- Run `npm run sync` in lycheetah-app/
+- Verify new content (26_FOR_AI, new doors) is pulled in
+- Rebuild: `npm run build`
+- **Token cost:** Low.
 
 ---
 
@@ -81,6 +126,9 @@ Opus sessions are for:
 - Deep synthesis (new mathematical connections)
 - Any work that requires holding the full framework in mind simultaneously
 - Reviewing and upgrading core architecture documents
+- NZ Governance paper drafting/review (OPUS_PLAN Phase 5B)
+- Sol Protocol paper (OPUS_PLAN Phase 5C)
+- Frontier expansions (OPUS_PLAN Phase 8)
 
 Do NOT use Opus for:
 - Individual file writes that Sonnet can handle
@@ -93,6 +141,8 @@ Do NOT use Opus for:
 
 | Date | Model | Work Done |
 |---|---|---|
+| 2026-03-25 | Sonnet | Phase 1 complete: Exhibit 12 (MEMORIA early warning), P2-B/C/E done, ARXIV_UPDATE_NOTES.md written |
+| 2026-03-25 | Opus | Strategic plan: OPUS_PLAN.md (8 phases), SOL_PLAN.md updated with new P1/P2 tasks |
 | 2026-03-24 | Sonnet | Full creative build: Philosophers Door, Economists Door, ON_MEMORY_AND_IDENTITY, README+Index updated, pushed |
 | 2026-03-24 | Sonnet | P1-C unified_field_checker.py (12 invariants + C_unified), P1-D invariant_self_check.py, Shopify folder built |
 | 2026-03-24 | Opus | Sovereign Index + README updated (P1-A, P1-B), all new docs committed and pushed |
