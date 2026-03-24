@@ -56,6 +56,7 @@ This framework has multiple entry points because people arrive from different pl
 |---|---|
 | **You're a software engineer** | [`14_MYSTERY_SCHOOL/THE_ENGINEERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ENGINEERS_DOOR.md) — code first, philosophy optional |
 | **You study optimization, complexity, or dynamical systems** | [`14_MYSTERY_SCHOOL/THE_PHI_ZONE_DOOR.md`](14_MYSTERY_SCHOOL/THE_PHI_ZONE_DOOR.md) — golden ratio in optimal AI behavior |
+| **You work in Chinese/Confucian scholarship or AI governance** | [`14_MYSTERY_SCHOOL/THE_CONFUCIAN_DOOR.md`](14_MYSTERY_SCHOOL/THE_CONFUCIAN_DOOR.md) — 儒学之门 — 道, 和谐, 五常 as formal mathematics |
 | **You're a teacher or curriculum designer** | [`14_MYSTERY_SCHOOL/THE_EDUCATORS_DOOR.md`](14_MYSTERY_SCHOOL/THE_EDUCATORS_DOOR.md) — CASCADE is a learning model |
 | **You're a parent concerned about AI** | [`14_MYSTERY_SCHOOL/THE_PARENTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_PARENTS_DOOR.md) — five questions, one standard |
 | **You build AI systems** | [`14_MYSTERY_SCHOOL/THE_AI_ARCHITECTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_AI_ARCHITECTS_DOOR.md) |

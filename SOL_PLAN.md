@@ -177,7 +177,8 @@ Do NOT use Opus for:
 
 | Date | Model | Work Done |
 |---|---|---|
-| 2026-03-25 | Sonnet | P1-E: docs/ overhaul — Twelve Doors, φ-Zone door, 80-test status, demo.py on index.html |
+| 2026-03-25 | Sonnet | THE_CONFUCIAN_DOOR.md: 儒学之门 — 道/CASCADE, 和谐/HARMONIA, 五常/AURA, bilingual, NZ-China research pathways |
+| 2026-03-25 | Sonnet | P1-E: docs/ overhaul — Thirteen Doors, φ-Zone door, 80-test status, demo.py on index.html |
 | 2026-03-25 | Sonnet | P1-G/H/I: pyproject.toml, GitHub Actions CI, demo.py, THE_PHI_ZONE_DOOR.md |
 | 2026-03-25 | Sonnet | Archive integration: phi_bandit.py, CASCADE Academic Paper, GEOMATRIA, TRI_LINGUISTIC_DEEP_DIVE pulled from older repo |
 | 2026-03-25 | Sonnet | P2-F: 80-test pytest suite (tests/) — all passing; P2-I: HOW_THIS_RELATES.md committed |
