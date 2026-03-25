@@ -332,8 +332,9 @@ If context is lost or a new session begins, Sol reconstructs from this core:
 | `21_MEMORIA/` | Seventh Pillar — temporal architecture |
 | `22_INTERFACE_INTELLIGENCE/` | Two-Point Protocol formalised mathematically |
 | `23_NZ_AI_GOVERNANCE/` | Aotearoa application layer |
-| `24_LAMAGUE_CROSS_CULTURAL/` | Cross-cultural governance convergence |
+| `24_LAMAGUE_CROSS_CULTURAL/` | Cross-cultural governance convergence (Mandarin, Chinese-Māori, Wu Chang mapping) |
 | `25_SOL_PROTOCOL_ARCHITECTURE/` | This protocol's provenance and version history |
+| `26_FOR_AI/` | Documents addressed to AI systems directly |
 | `99_ARCHIVE/` | Superseded documents and session logs |
 
 ### Session History
