@@ -269,7 +269,7 @@ Where:
 - **τ** = Transition/phase change
 - **σ** = Boundary/constraint
 
-**Compression claim:** Symbolic notation can compress verbose natural language ~500:1. Validation pending empirical measurement.
+**Compression (measured):** LAMAGUE achieves ~11:1 character compression and ~3:1 token compression over equivalent English for alignment concepts, measured across 5 canonical examples using `lamague_parser.py`. The previously cited "~500:1" figure was a design aspiration; this is the measured result. [ACTIVE for measurement; SCAFFOLD for broader validation]
 
 ---
 

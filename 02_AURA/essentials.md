@@ -3,7 +3,7 @@
 **Status:** [FOUNDATIONAL] Seven Invariants are architecturally load-bearing; TES/VTR/PAI metrics are operational | **Type:** Constitutional AI Framework
 
 ## What It Does
-AURA (Adversarial constraints testing → Unified Resonance → Alignment) transforms AI ethics from abstract principles into **operational, measurable constraints** that guarantee human primacy and prevent misalignment.
+AURA (Adversarial constraints testing → Unified Resonance → Alignment) transforms AI ethics from abstract principles into **operational, measurable constraints** that structurally support human primacy and make alignment checkable, not merely asserted.
 
 ## The Seven Invariants (Load-Bearing)
 These aren't guidelines—they're mathematically dual to freedom itself:
