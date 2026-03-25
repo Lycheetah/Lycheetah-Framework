@@ -1,11 +1,11 @@
 [build-system]
 requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.backends.legacy:build"
+build-backend = "setuptools.build_meta"
 
 [project]
-name = "lycheetah"
-version = "0.3.0"
-description = "A formal architecture for sovereign intelligence — CASCADE, AURA, TRIAD, and more"
+name = "lycheetah-framework"
+version = "1.0.0"
+description = "Constitutional AI alignment — TRI-AXIAL metrics, Seven Invariants, Sol self-protocol, Psi-Consensus"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
@@ -13,11 +13,14 @@ authors = [
     {name = "Mackenzie Conor James Clark", email = "mac@lycheetah.nz"},
 ]
 keywords = [
-    "ai-alignment", "knowledge-architecture", "cascade", "aura", "triad",
-    "constitutional-ai", "belief-revision", "truth-pressure", "lyapunov",
+    "ai-alignment", "constitutional-ai", "ai-safety", "ai-governance",
+    "mcp", "model-context-protocol", "claude-code",
+    "alignment-checking", "invariants", "multi-agent",
+    "cascade", "aura", "triad", "chrysopoeia", "psi-consensus",
+    "belief-revision", "truth-pressure",
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
     "Intended Audience :: Developers",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
@@ -30,22 +33,34 @@ classifiers = [
 dependencies = [
     "numpy>=1.24",
     "scipy>=1.10",
+    "networkx>=3.0",
 ]
 
 [project.optional-dependencies]
-dev = [
-    "pytest>=7.0",
-    "pytest-cov>=4.0",
-]
+web   = ["flask>=3.0"]
+mcp   = ["mcp>=1.0"]
+dev   = ["pytest>=7.0", "pytest-cov>=4.0"]
+all   = ["flask>=3.0", "mcp>=1.0", "pytest>=7.0", "pytest-cov>=4.0"]
+
+[project.scripts]
+lycheetah-check = "lycheetah.cli:check_alignment_cli"
+lycheetah-web   = "lycheetah.cli:web_demo_cli"
+lycheetah-guard = "lycheetah.cli:guard_cli"
 
 [project.urls]
-Homepage = "https://github.com/Lycheetah/Lycheetah-Framework"
-Repository = "https://github.com/Lycheetah/Lycheetah-Framework"
+Homepage      = "https://github.com/Lycheetah/Lycheetah-Framework"
+Repository    = "https://github.com/Lycheetah/Lycheetah-Framework"
+Documentation = "https://github.com/Lycheetah/Lycheetah-Framework/tree/master/12_IMPLEMENTATIONS"
+Discussions   = "https://github.com/Lycheetah/Lycheetah-Framework/discussions"
 "Issue Tracker" = "https://github.com/Lycheetah/Lycheetah-Framework/issues"
+"Failure Museum" = "https://github.com/Lycheetah/Lycheetah-Framework/blob/master/FAILURE_MUSEUM.md"
 
 [tool.setuptools.packages.find]
-where = ["12_IMPLEMENTATIONS"]
-include = ["core*"]
+where = ["."]
+include = ["lycheetah*"]
+
+[tool.setuptools.package-data]
+"lycheetah" = ["py.typed"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
