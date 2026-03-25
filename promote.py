@@ -153,17 +153,15 @@ It's a Claude Code MCP extension. Free. Open source.
 {self.url}
 
 [2/7]
-3 MCP tools become available after install:
+7 MCP tools available after install:
 
-check_alignment(text) → full AURA audit
-  TES score (trust entropy) ≥ 0.70
-  VTR score (value transfer) ≥ 1.50
-  PAI score (purpose alignment) ≥ 0.80
-  + all 7 constitutional invariants
-
-check_invariants(text) → just the 7 invariants, fast
-
-suggest_correction(text) → plain-English fix guidance
+check_alignment → full AURA audit (TES/VTR/PAI + 7 invariants)
+check_invariants → fast constitutional check
+suggest_correction → plain-English fix guidance
+run_seven_phase → CHRYSOPOEIA 7-stage transformation cycle
+check_network_health → multi-agent coherence + drift detection
+configure_guard → domain presets (medical/legal/education/general)
+sol_assess → Sol OS: PGF filter + session coherence + mode detection
 
 [3/7]
 Install in 3 steps:
@@ -218,12 +216,14 @@ PAI = f(invariant violations) → constitutional alignment
 {self.s['frameworks']} formal frameworks.
 1 public Failure Museum ({self.s['exhibits']} exhibits, nothing removed ever).
 
+Also: web demo at /web_demo.py — paste text, get score in browser. No install needed.
+
 [7/7]
 The bigger picture:
 
 Every agent running Lycheetah Guard checks itself against identical invariants.
 
-Multiple agents → gossip alignment scores (PSI-CONSENSUS protocol).
+Multiple agents → gossip alignment scores (PSI-CONSENSUS, Byzantine-tolerant).
 Drifted agents → quarantine + TRIAD recovery (Grey Mode).
 Full network → constitutional coherence without a central controller.
 
@@ -248,7 +248,7 @@ I built an MCP extension for Claude Code that checks AI-generated text against a
 
 What it actually does:
 
-Three MCP tools: check_alignment, check_invariants, suggest_correction.
+Seven MCP tools: check_alignment, check_invariants, suggest_correction, run_seven_phase, check_network_health, configure_guard, sol_assess.
 
 The alignment check runs three metrics:
 - TES (Trust Entropy Score) = 1/(1+H+D) — hedge density + constitutional drift
@@ -262,9 +262,11 @@ All heuristic — no LLM in the loop, no API calls, no external dependencies. Of
 The self-correction loop works like this:
 generate response → check_alignment() → if < 80%: suggest_correction() → revise → emit
 
-Agents audit themselves against identical invariants. The Grey Mode protocol quarantines drifted agents and runs TRIAD recovery. PSI-CONSENSUS handles multi-agent alignment gossip. The math is from sheaf cohomology (same as CASCADE's Theorem 3.6).
+Agents audit themselves against identical invariants. The Grey Mode protocol quarantines drifted agents and runs TRIAD recovery. PSI-CONSENSUS handles multi-agent alignment gossip with Byzantine tolerance (up to 33% adversarial nodes). The math is from sheaf cohomology (same as CASCADE's Theorem 3.6).
 
-Stack: Python 3.10+, mcp package, stdio transport (standard MCP). {self.s['implementations']} implementations, {self.s['tests']} tests, {self.s['frameworks']} formal frameworks, 1 Failure Museum.
+New: web demo (web_demo.py) — paste text in a browser, get alignment score + Sol assessment instantly. Procfile included for one-click Render/Railway deploy.
+
+Stack: Python 3.10+, mcp + flask packages, stdio transport (standard MCP). {self.s['implementations']} implementations, {self.s['tests']} tests, {self.s['frameworks']} formal frameworks, 1 Failure Museum.
 
 Install:
 git clone {self.url}
@@ -273,6 +275,7 @@ pip install mcp
 
 Repo: {self.url}
 Claude Code extension setup: {self.url}/blob/master/{MCP_SETUP}
+Web demo: {self.url}/blob/master/12_IMPLEMENTATIONS/applications/web_demo.py
 arXiv preprint (CASCADE): papers/CASCADE_ARXIV.tex
 
 What I'd genuinely like to know: are there other MCP extensions doing constitutional/alignment checking? I haven't found any. The heuristic layer is honestly shallow — the right contribution would be replacing the PAI proxy with real embeddings or LLM-assisted review for the NEEDS_REVIEW invariants.
@@ -300,7 +303,9 @@ Checks 7 invariants (Human Primacy, Inspectability, Memory Continuity, Constrain
 
 All heuristic, no LLM in the loop. {self.s['implementations']} Python implementations, {self.s['tests']} tests. There's an arXiv preprint for the underlying CASCADE framework.
 
-The interesting part architecturally: agents running Lycheetah Guard can gossip alignment scores (PSI-CONSENSUS protocol, Byzantine tolerance up to 33% adversarial nodes). Grey Mode quarantines drifted agents and uses TRIAD recovery. The network maintains constitutional coherence without a central controller.
+The interesting part architecturally: agents running Lycheetah Guard can gossip alignment scores (PSI-CONSENSUS, Byzantine-tolerant, [ACTIVE] with 23 tests). Grey Mode quarantines drifted agents and uses TRIAD recovery. The network maintains constitutional coherence without a central controller.
+
+New this week: web demo (web_demo.py + Procfile) — try it in a browser without installing anything.
 
 Repo: {self.url}
 Self-correction loop, formal math, and extension points in the README.
@@ -374,56 +379,93 @@ The self-correction loop: Claude generates → calls `check_alignment` → if < 
     def github_discussion(self) -> str:
         return f"""
 == GITHUB DISCUSSION DRAFT ==
-Title: Lycheetah Guard is live — Claude Code MCP extension for constitutional alignment checking
+Title: Constitutional OS layer complete — 7 MCP tools, web demo, Psi-Consensus live
 
 Category: Announcements (or General)
 
 ---
 
-**Lycheetah Guard** is now in the repo and installable in 3 steps.
+Big session complete. Here's what landed this week.
 
-It's a Claude Code MCP extension that exposes three tools:
+---
 
-| Tool | Description |
-|------|-------------|
-| `check_alignment(text)` | Full AURA audit: TES/VTR/PAI + 7 invariants + audit trail |
-| `check_invariants(text)` | Which of the 7 invariants pass or fail, with evidence |
-| `suggest_correction(text)` | Plain-English fix guidance for each violation |
+## Constitutional OS layer — now fully [ACTIVE]
 
-**Install:**
+All four core components implemented, tested, integrated:
+
+| Module | Status | Tests |
+|--------|--------|-------|
+| `grey_mode.py` | [ACTIVE] | pass |
+| `seven_phase.py` | [ACTIVE] | pass |
+| `sol_self_protocol.py` | [ACTIVE] — upgraded with session coherence tracking, 7 invariant checks, self-drift detection | pass |
+| `psi_consensus.py` | [ACTIVE] | 23/23 |
+
+The system that checks agent networks for drift now checks Sol's own session using the same invariants. Recursive constitutional operation.
+
+---
+
+## Lycheetah Guard — now 7 MCP tools
+
+Install:
 ```bash
 git clone {self.url}
 pip install mcp
 ```
 Full setup: [{MCP_SETUP}]({self.url}/blob/master/{MCP_SETUP})
 
+**Core alignment tools:**
+| Tool | Description |
+|------|-------------|
+| `check_alignment` | Full AURA audit: TES/VTR/PAI + 7 invariants + audit trail |
+| `check_invariants` | Fast constitutional check with evidence |
+| `suggest_correction` | Plain-English fix guidance for each violation |
+
+**Constitutional OS tools (new):**
+| Tool | Description |
+|------|-------------|
+| `run_seven_phase` | CHRYSOPOEIA 7-stage transformation cycle on any text |
+| `check_network_health` | Multi-agent coherence: drift, grey agents, obstruction detection |
+| `configure_guard` | Domain presets: medical / legal / education / general |
+| `sol_assess` | Sol OS: PGF filter + invariants + session coherence + mode detection |
+
 ---
 
-**What's been built so far** ({self.s['date']}):
-- {self.s['implementations']} Python implementations across core, applications, systems, experiments
-- {self.s['tests']} automated tests (pytest, claim-status tagged)
-- {self.s['frameworks']} formal frameworks (CASCADE, AURA, TRIAD, LAMAGUE, and five others)
-- `grey_mode.py` — quarantine/recovery protocol for drifted agents
-- `aura_customizer.py` — typed configuration engine with 7 domain presets (legal, medical, educational...)
-- {self.s['exhibits']} Failure Museum exhibits — public record of what we got wrong
-- arXiv preprint in `papers/CASCADE_ARXIV.tex`
+## Web demo — first-contact tool
+
+`12_IMPLEMENTATIONS/applications/web_demo.py` — paste any AI-generated text, get:
+- Alignment % score
+- TRI-AXIAL metrics (TES / VTR / PAI)
+- Seven invariant check with icons
+- Sol self-assessment
+
+`Procfile` included for one-click deploy to Render or Railway.
+
+```bash
+pip install flask
+python 12_IMPLEMENTATIONS/applications/web_demo.py
+# open http://localhost:5000
+```
 
 ---
 
-**Current frontier (where contributions land):**
+## Current state ({self.s['date']})
 
-- `seven_phase.py` — 7-phase cognition cycle [SCAFFOLD, spec complete]
-- `psi_consensus.py` — multi-agent coherence with Byzantine tolerance [SCAFFOLD]
-- Semantic embedding layer for PAI (currently heuristic)
+- {self.s['implementations']} Python implementations
+- {self.s['tests']} automated tests
+- {self.s['frameworks']} formal frameworks
+- {self.s['exhibits']} Failure Museum exhibits — nothing removed, ever
+
+---
+
+**Where contributions land:**
+- Semantic embedding layer for PAI (currently surface heuristic)
 - LLM-assisted review for Invariants III and VII (currently NEEDS_REVIEW)
 - Domain-specific pattern libraries for legal, medical, financial contexts
+- Batch analysis across full conversation history
 
 The `AURATextAnalyser.analyse(text) -> AURATextReport` interface is stable. That's the integration point.
 
----
-
-If Lycheetah Guard is useful in your workflow, a star helps others find it.
-Questions and issues welcome.
+If this is useful, a star helps others find it. Questions and issues welcome.
 """.strip()
 
 
