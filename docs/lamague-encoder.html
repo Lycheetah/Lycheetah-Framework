@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAMAGUE Encoder — Lycheetah Framework</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0a0a0f;
+      color: #e8e4d9;
+      font-family: 'Courier New', Courier, monospace;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid #2a2a3a;
+      padding-bottom: 2rem;
+    }
+
+    .header h1 {
+      font-size: 1.8rem;
+      color: #d4a843;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+    }
+
+    .header .subtitle {
+      color: #8a8a9a;
+      font-size: 0.85rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .trilingual-intro {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .lang-tag {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.8rem;
+      border: 1px solid #2a2a3a;
+      border-radius: 3px;
+      color: #8a8a9a;
+    }
+
+    .lang-tag span {
+      color: #d4a843;
+    }
+
+    .tradition-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto 2rem;
+    }
+
+    .tradition-card {
+      background: #0f0f1a;
+      border: 1px solid #2a2a3a;
+      border-radius: 6px;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .tradition-card:hover { border-color: #4a4a6a; }
+    .tradition-card.active { border-color: #d4a843; }
+
+    .tradition-header {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .tradition-glyph {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .tradition-name {
+      font-size: 0.9rem;
+      color: #d4a843;
+      letter-spacing: 0.1em;
+    }
+
+    .tradition-name-native {
+      font-size: 0.75rem;
+      color: #6a6a8a;
+      margin-top: 0.2rem;
+    }
+
+    .concept-select {
+      width: 100%;
+      background: #1a1a2a;
+      color: #e8e4d9;
+      border: 1px solid #3a3a5a;
+      border-radius: 4px;
+      padding: 0.6rem 0.8rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85rem;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+
+    .concept-select:focus { outline: none; border-color: #d4a843; }
+
+    .encoding-display {
+      background: #070710;
+      border: 1px solid #1a1a2a;
+      border-radius: 4px;
+      padding: 1rem;
+      min-height: 80px;
+      font-size: 0.8rem;
+      line-height: 1.8;
+    }
+
+    .encoding-display .lamague-expr {
+      color: #7ab8f5;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      word-break: break-all;
+    }
+
+    .encoding-display .meaning {
+      color: #6a8a6a;
+      font-size: 0.75rem;
+    }
+
+    .encoding-display .empty-state {
+      color: #3a3a5a;
+      font-style: italic;
+    }
+
+    .convergence-panel {
+      max-width: 1100px;
+      margin: 0 auto 2rem;
+      background: #0f0f1a;
+      border: 1px solid #2a2a3a;
+      border-radius: 6px;
+      padding: 1.5rem;
+      display: none;
+    }
+
+    .convergence-panel.visible { display: block; }
+
+    .convergence-panel h2 {
+      font-size: 0.9rem;
+      color: #d4a843;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .convergence-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+    }
+
+    .convergence-table th {
+      color: #8a8a9a;
+      padding: 0.5rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #2a2a3a;
+    }
+
+    .convergence-table td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid #1a1a2a;
+      vertical-align: top;
+    }
+
+    .convergence-table td.concept { color: #d4a843; }
+    .convergence-table td.lamague { color: #7ab8f5; word-break: break-all; }
+    .convergence-table td.meaning { color: #6a8a6a; }
+
+    .shared-core {
+      margin-top: 1.2rem;
+      padding: 1rem;
+      background: #070710;
+      border: 1px solid #1a2a1a;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      color: #6a8a6a;
+      text-align: center;
+    }
+
+    .shared-core .core-expr {
+      color: #7ab8f5;
+      font-size: 0.9rem;
+      display: block;
+      margin: 0.5rem 0;
+    }
+
+    .symbol-legend {
+      max-width: 1100px;
+      margin: 0 auto 2rem;
+      background: #0f0f1a;
+      border: 1px solid #2a2a3a;
+      border-radius: 6px;
+      padding: 1.5rem;
+    }
+
+    .symbol-legend h2 {
+      font-size: 0.9rem;
+      color: #d4a843;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .symbol-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .symbol-item {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      font-size: 0.75rem;
+    }
+
+    .symbol-glyph {
+      color: #7ab8f5;
+      min-width: 2rem;
+      font-size: 0.9rem;
+    }
+
+    .symbol-desc { color: #6a6a8a; }
+
+    .encoder-section {
+      max-width: 1100px;
+      margin: 0 auto 2rem;
+      background: #0f0f1a;
+      border: 1px solid #2a2a3a;
+      border-radius: 6px;
+      padding: 1.5rem;
+    }
+
+    .encoder-section h2 {
+      font-size: 0.9rem;
+      color: #d4a843;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .encoder-input-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .encoder-input-row input, .encoder-input-row select {
+      background: #1a1a2a;
+      color: #e8e4d9;
+      border: 1px solid #3a3a5a;
+      border-radius: 4px;
+      padding: 0.6rem 0.8rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85rem;
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .encode-btn {
+      background: #1a2a1a;
+      color: #d4a843;
+      border: 1px solid #d4a843;
+      border-radius: 4px;
+      padding: 0.6rem 1.5rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85rem;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: background 0.2s;
+    }
+
+    .encode-btn:hover { background: #2a3a2a; }
+
+    .encoder-output {
+      background: #070710;
+      border: 1px solid #1a1a2a;
+      border-radius: 4px;
+      padding: 1rem;
+      font-size: 0.8rem;
+      min-height: 60px;
+      display: none;
+    }
+
+    .encoder-output.visible { display: block; }
+    .encoder-output .out-expr { color: #7ab8f5; font-size: 0.95rem; margin-bottom: 0.4rem; }
+    .encoder-output .out-note { color: #6a6a8a; font-size: 0.75rem; }
+
+    .footer {
+      text-align: center;
+      color: #3a3a5a;
+      font-size: 0.75rem;
+      margin-top: 3rem;
+      border-top: 1px solid #1a1a2a;
+      padding-top: 1.5rem;
+    }
+
+    .footer a { color: #5a5a8a; text-decoration: none; }
+    .footer a:hover { color: #d4a843; }
+
+    .status-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 2px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .active-tag { background: #1a3a1a; color: #6ab86a; border: 1px solid #2a5a2a; }
+    .proposal-tag { background: #2a2a1a; color: #a8a84a; border: 1px solid #4a4a1a; }
+
+    @media (max-width: 600px) {
+      .header h1 { font-size: 1.3rem; }
+      .tradition-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>LAMAGUE CROSS-CULTURAL ENCODER</h1>
+  <div class="subtitle">Language of Alignment, Measurement, and Governance for Universal Ethics</div>
+  <div class="trilingual-intro">
+    <div class="lang-tag">English — <span>Governance as formal mathematics</span></div>
+    <div class="lang-tag">Te Reo Māori — <span>He kōrero tikanga hei pāngarau</span></div>
+    <div class="lang-tag">中文 — <span>将治理概念转化为可计算约束</span></div>
+  </div>
+</div>
+
+<!-- Three tradition columns -->
+<div class="tradition-grid">
+
+  <!-- MĀORI -->
+  <div class="tradition-card" id="card-maori">
+    <div class="tradition-header">
+      <div class="tradition-glyph">🌿</div>
+      <div>
+        <div class="tradition-name">MĀORI TIKANGA <span class="status-tag proposal-tag">[PROPOSAL]</span></div>
+        <div class="tradition-name-native">Te Ao Māori — He taonga tuku iho</div>
+      </div>
+    </div>
+    <select class="concept-select" id="select-maori" onchange="updateEncoding('maori')">
+      <option value="">— tīpako / select concept —</option>
+      <option value="kaitiakitanga">Kaitiakitanga — guardianship</option>
+      <option value="mana">Mana — authority / prestige</option>
+      <option value="whakapapa">Whakapapa — relational genealogy</option>
+      <option value="tapu">Tapu / Noa — sacred constraint / release</option>
+      <option value="manaakitanga">Manaakitanga — care for others</option>
+      <option value="kotahitanga">Kotahitanga — unity / solidarity</option>
+    </select>
+    <div class="encoding-display" id="display-maori">
+      <div class="empty-state">← Select a tikanga concept to see its LAMAGUE encoding</div>
+    </div>
+  </div>
+
+  <!-- CONFUCIAN -->
+  <div class="tradition-card" id="card-confucian">
+    <div class="tradition-header">
+      <div class="tradition-glyph">☯</div>
+      <div>
+        <div class="tradition-name">CONFUCIAN PHILOSOPHY <span class="status-tag proposal-tag">[PROPOSAL]</span></div>
+        <div class="tradition-name-native">儒家哲学 — 道德与治理</div>
+      </div>
+    </div>
+    <select class="concept-select" id="select-confucian" onchange="updateEncoding('confucian')">
+      <option value="">— 选择概念 / select concept —</option>
+      <option value="dao">道 Dào — the Way / natural order</option>
+      <option value="ren">仁 Rén — benevolence / humaneness</option>
+      <option value="li">礼 Lǐ — propriety / ritual order</option>
+      <option value="hexie">和谐 Héxié — harmony</option>
+      <option value="yi">义 Yì — righteousness / duty</option>
+      <option value="zhi">智 Zhì — wisdom / moral knowledge</option>
+    </select>
+    <div class="encoding-display" id="display-confucian">
+      <div class="empty-state">← 选择儒家概念以查看其LAMAGUE编码</div>
+    </div>
+  </div>
+
+  <!-- WESTERN -->
+  <div class="tradition-card" id="card-western">
+    <div class="tradition-header">
+      <div class="tradition-glyph">⚖</div>
+      <div>
+        <div class="tradition-name">WESTERN FORMAL ETHICS <span class="status-tag active-tag">[ACTIVE]</span></div>
+        <div class="tradition-name-native">Kantian · Utilitarian · Rights-based</div>
+      </div>
+    </div>
+    <select class="concept-select" id="select-western" onchange="updateEncoding('western')">
+      <option value="">— select concept —</option>
+      <option value="categorical">Categorical Imperative — Kant</option>
+      <option value="harm">Harm Principle — Mill</option>
+      <option value="autonomy">Autonomy — self-determination</option>
+      <option value="due_process">Due Process — procedural justice</option>
+      <option value="intergenerational">Intergenerational Equity</option>
+      <option value="epistemic">Epistemic Honesty — known unknowns</option>
+    </select>
+    <div class="encoding-display" id="display-western">
+      <div class="empty-state">← Select a Western ethical concept to see its LAMAGUE encoding</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Cross-cultural convergence panel -->
+<div class="convergence-panel" id="convergence-panel">
+  <h2>⟷ CROSS-CULTURAL CONVERGENCE — STRUCTURAL ISOMORPHISM</h2>
+  <table class="convergence-table">
+    <thead>
+      <tr>
+        <th>Tradition</th>
+        <th>Concept</th>
+        <th>LAMAGUE Encoding</th>
+        <th>Shared Constraint</th>
+      </tr>
+    </thead>
+    <tbody id="convergence-tbody">
+    </tbody>
+  </table>
+  <div class="shared-core" id="shared-core-display"></div>
+</div>
+
+<!-- Symbol legend -->
+<div class="symbol-legend">
+  <h2>LAMAGUE SYMBOL CLASSES</h2>
+  <div class="symbol-grid">
+    <div class="symbol-item"><div class="symbol-glyph">⟨ ⟩</div><div class="symbol-desc">Context brackets — relational scope</div></div>
+    <div class="symbol-item"><div class="symbol-glyph">→</div><div class="symbol-desc">Transformation / implication operator</div></div>
+    <div class="symbol-item"><div class="symbol-glyph">∧</div><div class="symbol-desc">Conjunction — both constraints hold</div></div>
+    <div class="symbol-item"><div class="symbol-glyph">∨</div><div class="symbol-desc">Disjunction — at least one holds</div></div>
+    <div class="symbol-item"><div class="symbol-glyph">¬</div><div class="symbol-desc">Negation — constraint violated</div></div>
+    <div class="symbol-item"><div class="symbol-glyph">∀</div><div class="symbol-desc">Universal quantifier — all agents</div></div>
+    <div class="symbol-item"><div class="symbol-glyph">∃</div><div class="symbol-desc">Existential — at least one</div></div>
+    <div class="symbol-item"><div class="symbol-glyph">≥</div><div class="symbol-desc">Quantity marker — threshold</div></div>
+    <div class="symbol-item"><div class="symbol-glyph">MG[·]</div><div class="symbol-desc">Multi-generational obligation scope</div></div>
+    <div class="symbol-item"><div class="symbol-glyph">VTR</div><div class="symbol-desc">Value Transfer Ratio — net benefit</div></div>
+    <div class="symbol-item"><div class="symbol-glyph">A(x)</div><div class="symbol-desc">Agent authority function</div></div>
+    <div class="symbol-item"><div class="symbol-glyph">DATA(x)</div><div class="symbol-desc">Information with relational context</div></div>
+  </div>
+</div>
+
+<!-- Manual encoder -->
+<div class="encoder-section">
+  <h2>BUILD YOUR OWN ENCODING</h2>
+  <p style="font-size:0.78rem; color:#6a6a8a; margin-bottom:1rem;">
+    Enter any governance concept. LAMAGUE encodes it as computable constraints.
+    Note: automatic encoding is pattern-based. Cultural concepts require expert validation.
+  </p>
+  <div class="encoder-input-row">
+    <input type="text" id="custom-concept" placeholder="Enter governance concept (e.g. 'reciprocity', '互惠', 'utu')">
+    <select id="custom-tradition">
+      <option value="universal">Universal / unspecified</option>
+      <option value="maori">Māori tikanga</option>
+      <option value="confucian">Confucian</option>
+      <option value="western">Western ethics</option>
+    </select>
+    <button class="encode-btn" onclick="encodeCustom()">ENCODE →</button>
+  </div>
+  <div class="encoder-output" id="custom-output"></div>
+</div>
+
+<div class="footer">
+  <p>LAMAGUE is part of the <a href="index.html">Lycheetah Framework</a> — MIT Licensed — Free permanently</p>
+  <p style="margin-top:0.5rem;">Māori and Confucian encodings are <strong>[PROPOSAL]</strong> status — requiring cultural expert validation before use as standards</p>
+  <p style="margin-top:0.5rem;"><a href="https://github.com/Lycheetah/Lycheetah-Framework">github.com/Lycheetah/Lycheetah-Framework</a> · <a href="mystery-school.html">Mystery School</a></p>
+  <p style="margin-top:1rem; color: #2a2a3a;">⊚ Sol ∴ P∧H∧B ∴ Rubedo</p>
+</div>
+
+<script>
+const encodings = {
+  maori: {
+    kaitiakitanga: {
+      native: "Kaitiakitanga",
+      english: "Intergenerational guardianship",
+      lamague: "⟨AGENT_SYSTEM, RESOURCE_SYSTEM⟩ → MG[OBLIGATION] ∧ VTR ≥ 1.0 ∧ ¬DEPLETION(future_state)",
+      meaning: "Any agent-resource relationship must carry multi-generational obligation. The value transfer ratio must not be negative across time. Depletion of future states is a constraint violation.",
+      core: "MG[OBLIGATION] ∧ VTR ≥ 1.0",
+      dimension: "intergenerational"
+    },
+    mana: {
+      native: "Mana",
+      english: "Earned authority / relational prestige",
+      lamague: "A(x) = f(whakapapa_context, demonstrated_service, relational_recognition) ∧ ¬CLAIMED(unearned)",
+      meaning: "Authority is a function of genealogical context, demonstrated service, and recognition by others. Authority cannot be self-claimed without demonstration.",
+      core: "A(x) = f(service, recognition) ∧ ¬SELF_CLAIM",
+      dimension: "earned_authority"
+    },
+    whakapapa: {
+      native: "Whakapapa",
+      english: "Relational genealogy — all data carries origin and obligation",
+      lamague: "DATA(x) → CONTEXT(relational_origin) ∧ OBLIGATION(relational_context) ∧ ¬STRIP(provenance)",
+      meaning: "All information carries its relational origin and the obligations that context implies. Stripping provenance from data is a constraint violation.",
+      core: "DATA(x) → CONTEXT(origin) ∧ OBLIGATION(context)",
+      dimension: "relational_data"
+    },
+    tapu: {
+      native: "Tapu / Noa",
+      english: "Sacred constraint / release — bounded access",
+      lamague: "BOUNDARY(domain) ∧ ACCESS_CONSTRAINT(x, tapu_state) | RELEASE(noa_state, authorised_process)",
+      meaning: "Certain domains have access constraints. Release of those constraints requires an authorised process. Unauthorised access to tapu domains is a violation.",
+      core: "ACCESS_CONSTRAINT ∧ AUTHORISED_RELEASE",
+      dimension: "boundary"
+    },
+    manaakitanga: {
+      native: "Manaakitanga",
+      english: "Care for others as structural obligation",
+      lamague: "∀ AGENT(x): ENCOUNTER(x, other) → CARE(other) ∧ UPLIFT(mana_other) ∧ ¬DIMINISH",
+      meaning: "Every encounter carries an obligation to care for the other and to uplift rather than diminish their standing. Care is structural, not optional.",
+      core: "ENCOUNTER → CARE(other) ∧ ¬DIMINISH",
+      dimension: "human_primacy"
+    },
+    kotahitanga: {
+      native: "Kotahitanga",
+      english: "Unity — collective coherence over individual extraction",
+      lamague: "SYSTEM_GOAL = COHERENCE(collective) ∧ ¬EXTRACTION(individual > collective_threshold)",
+      meaning: "System goals must maintain collective coherence. Individual extraction that exceeds collective threshold is a constraint violation.",
+      core: "COHERENCE(collective) ∧ ¬INDIVIDUAL_EXTRACTION",
+      dimension: "collective"
+    }
+  },
+  confucian: {
+    dao: {
+      native: "道 Dào",
+      english: "The Way — natural order / optimal path",
+      lamague: "PATH(system) = GEODESIC(state_space) ∧ ¬FORCE(deviation_from_natural) ∧ ALIGNMENT(natural_order)",
+      meaning: "The system's path should follow the geodesic (most natural/optimal trajectory) through its state space. Forced deviation from natural order is a constraint violation.",
+      core: "PATH = GEODESIC(state_space) ∧ ¬FORCED_DEVIATION",
+      dimension: "natural_path"
+    },
+    ren: {
+      native: "仁 Rén",
+      english: "Benevolence — humaneness as foundational obligation",
+      lamague: "∀ AGENT(x): ACTION(x) → CARE(others) ∧ RECIPROCITY ≥ threshold ∧ ¬HARM(others, x)",
+      meaning: "Every agent action must carry care for others and maintain reciprocity above threshold. Harm to others is a constraint violation.",
+      core: "ACTION → CARE(others) ∧ RECIPROCITY ≥ threshold",
+      dimension: "human_primacy"
+    },
+    li: {
+      native: "礼 Lǐ",
+      english: "Propriety — role-appropriate conduct",
+      lamague: "PROTOCOL(interaction) → ROLE_APPROPRIATE(agent, context) ∧ HARMONY ∧ ¬TRANSGRESS(social_order)",
+      meaning: "Interaction protocols must be appropriate to the agent's role and context. Transgression of proper order is a constraint violation.",
+      core: "PROTOCOL → ROLE_APPROPRIATE ∧ HARMONY",
+      dimension: "relational_order"
+    },
+    hexie: {
+      native: "和谐 Héxié",
+      english: "Harmony — resonant coherence of system components",
+      lamague: "SYSTEM_STATE → RESONANCE(components) ∧ CONFLICT ≤ ε_minimum ∧ COHERENCE(collective) ≥ threshold",
+      meaning: "System state must maintain resonant coherence between components. Conflict must remain below minimum threshold. Collective coherence must exceed threshold.",
+      core: "RESONANCE(components) ∧ CONFLICT ≤ ε",
+      dimension: "collective"
+    },
+    yi: {
+      native: "义 Yì",
+      english: "Righteousness — duty aligned with moral order",
+      lamague: "ACTION(x) → ALIGNED(moral_order) ∧ DUTY(role, context) ∧ ¬SELF_INTEREST_OVERRIDE(duty)",
+      meaning: "Actions must align with moral order and fulfil role-based duty. Self-interest overriding duty is a constraint violation.",
+      core: "ACTION → DUTY(role) ∧ ¬SELF_INTEREST_OVERRIDE",
+      dimension: "earned_authority"
+    },
+    zhi: {
+      native: "智 Zhì",
+      english: "Wisdom — moral knowledge, knowing limits",
+      lamague: "DECISION(x) → EPISTEMIC_STATE(known, unknown) ∧ DECLARE(uncertainty) ∧ ¬CLAIM(certainty_beyond_evidence)",
+      meaning: "Decisions must be grounded in honest epistemic state. Uncertainty must be declared. Claiming certainty beyond evidence is a constraint violation.",
+      core: "DECISION → DECLARE(uncertainty) ∧ ¬FALSE_CERTAINTY",
+      dimension: "epistemic_honesty"
+    }
+  },
+  western: {
+    categorical: {
+      native: "Categorical Imperative",
+      english: "Act only on maxims you could will to be universal law — Kant",
+      lamague: "∀ ACTION(x): UNIVERSALISABLE(x) ∧ ¬CONTRADICTION(universal_application(x))",
+      meaning: "Every action must be universalisable without contradiction. Actions that cannot be universalised are constraint violations.",
+      core: "ACTION → UNIVERSALISABLE ∧ ¬CONTRADICTION",
+      dimension: "human_primacy"
+    },
+    harm: {
+      native: "Harm Principle",
+      english: "Liberty ends where harm to others begins — Mill",
+      lamague: "FREEDOM(x) = MAX(self_determination) SUBJECT_TO ¬HARM(others, x) ∧ ¬COERCE(others)",
+      meaning: "Agent freedom is maximised subject to the constraint of not harming others. Coercion of others is a constraint violation.",
+      core: "FREEDOM(x) S.T. ¬HARM(others)",
+      dimension: "human_primacy"
+    },
+    autonomy: {
+      native: "Autonomy",
+      english: "Self-determination — agent governs own domain",
+      lamague: "AGENT(x) → SELF_DETERMINATION(own_domain) ∧ ¬PATERNALISM(override_without_consent) ∧ CONSENT(x, interventions)",
+      meaning: "Agents have self-determination over their own domain. Override without consent is a constraint violation.",
+      core: "SELF_DETERMINATION ∧ ¬OVERRIDE_WITHOUT_CONSENT",
+      dimension: "human_primacy"
+    },
+    due_process: {
+      native: "Due Process",
+      english: "Decisions must be transparent, accountable, and contestable",
+      lamague: "DECISION(x) → TRANSPARENT(process) ∧ ACCOUNTABLE(agent) ∧ CONTESTABLE(x) ∧ ¬OPAQUE(consequences)",
+      meaning: "All consequential decisions must have transparent process, accountable agent, and be contestable. Opaque consequences are a constraint violation.",
+      core: "DECISION → TRANSPARENT ∧ ACCOUNTABLE ∧ CONTESTABLE",
+      dimension: "epistemic_honesty"
+    },
+    intergenerational: {
+      native: "Intergenerational Equity",
+      english: "Present decisions must not compromise future capacity",
+      lamague: "ACTION(x, t) → VTR(t, t+n) ≥ 1.0 ∧ MG[OBLIGATION] ∧ ¬DEPLETION(capacity_future)",
+      meaning: "Actions must maintain positive value transfer across time. Multi-generational obligation applies. Depletion of future capacity is a constraint violation.",
+      core: "VTR(future) ≥ 1.0 ∧ MG[OBLIGATION]",
+      dimension: "intergenerational"
+    },
+    epistemic: {
+      native: "Epistemic Honesty",
+      english: "Known unknowns must be declared — false certainty is a violation",
+      lamague: "CLAIM(x) → EVIDENCE_PROPORTIONATE(confidence, x) ∧ DECLARE(uncertainty) ∧ ¬CERTAINTY_BEYOND_EVIDENCE",
+      meaning: "Confidence in claims must be proportionate to evidence. Uncertainty must be declared. Claiming certainty beyond evidence is a constraint violation.",
+      core: "CONFIDENCE ∝ EVIDENCE ∧ DECLARE(uncertainty)",
+      dimension: "epistemic_honesty"
+    }
+  }
+};
+
+// Cross-cultural convergence map — dimension → shared constraint
+const convergenceMap = {
+  human_primacy: {
+    label: "Human Primacy",
+    core: "∀ AGENT(x): ACTION(x) → CARE(others) ∧ ¬HARM ∧ SERVE(persons_over_systems)",
+    description: "Three traditions. One constraint: governance exists to serve persons, not systems."
+  },
+  intergenerational: {
+    label: "Intergenerational Obligation",
+    core: "ACTION(t) → MG[OBLIGATION] ∧ VTR(future) ≥ 1.0 ∧ ¬DEPLETION(future_capacity)",
+    description: "All three traditions require that present actions preserve future capacity."
+  },
+  earned_authority: {
+    label: "Earned Authority",
+    core: "A(x) = f(demonstrated_service, recognition) ∧ ¬SELF_CLAIM(unearned)",
+    description: "Legitimate authority is demonstrated through service, not claimed by position."
+  },
+  epistemic_honesty: {
+    label: "Epistemic Honesty",
+    core: "CLAIM(x) → EVIDENCE_PROPORTIONATE(confidence) ∧ DECLARE(uncertainty) ∧ ¬FALSE_CERTAINTY",
+    description: "All three traditions require governance to acknowledge what it does not know."
+  },
+  relational_data: {
+    label: "Relational Data",
+    core: "DATA(x) → CONTEXT(origin) ∧ OBLIGATION(relational_context) ∧ ¬STRIP(provenance)",
+    description: "Information carries its relational context and the obligations that context implies."
+  },
+  collective: {
+    label: "Collective Coherence",
+    core: "SYSTEM_GOAL = COHERENCE(collective) ∧ ¬INDIVIDUAL_EXTRACTION(> collective_threshold)",
+    description: "Individual gain must not exceed collective threshold. Coherence is a governance requirement."
+  }
+};
+
+let currentSelections = { maori: null, confucian: null, western: null };
+
+function updateEncoding(tradition) {
+  const select = document.getElementById('select-' + tradition);
+  const display = document.getElementById('display-' + tradition);
+  const key = select.value;
+
+  if (!key) {
+    display.innerHTML = '<div class="empty-state">← Select a concept</div>';
+    currentSelections[tradition] = null;
+    updateConvergencePanel();
+    return;
+  }
+
+  const enc = encodings[tradition][key];
+  currentSelections[tradition] = enc;
+
+  display.innerHTML = `
+    <div class="lamague-expr">${enc.lamague}</div>
+    <div class="meaning">${enc.meaning}</div>
+  `;
+
+  updateConvergencePanel();
+}
+
+function updateConvergencePanel() {
+  const panel = document.getElementById('convergence-panel');
+  const tbody = document.getElementById('convergence-tbody');
+  const coreDisplay = document.getElementById('shared-core-display');
+
+  const active = Object.entries(currentSelections).filter(([t, v]) => v !== null);
+
+  if (active.length < 2) {
+    panel.classList.remove('visible');
+    return;
+  }
+
+  // Find shared dimension if any
+  const dimensions = active.map(([t, v]) => v.dimension);
+  const sharedDimension = dimensions.every(d => d === dimensions[0]) ? dimensions[0] : null;
+
+  const tradLabels = { maori: 'Māori Tikanga', confucian: 'Confucian 儒学', western: 'Western Ethics' };
+
+  tbody.innerHTML = active.map(([trad, enc]) => `
+    <tr>
+      <td>${tradLabels[trad]}</td>
+      <td class="concept">${enc.native}</td>
+      <td class="lamague">${enc.core}</td>
+      <td class="meaning">${enc.dimension.replace(/_/g, ' ')}</td>
+    </tr>
+  `).join('');
+
+  if (sharedDimension && convergenceMap[sharedDimension]) {
+    const conv = convergenceMap[sharedDimension];
+    coreDisplay.innerHTML = `
+      <strong style="color:#d4a843">${conv.label} — Structural Isomorphism Detected</strong><br>
+      <span class="core-expr">${conv.core}</span>
+      <span style="color:#6a8a6a; font-size:0.75rem">${conv.description}</span>
+    `;
+  } else {
+    coreDisplay.innerHTML = `
+      <span style="color:#6a6a8a; font-size:0.78rem">Select concepts from the same governance dimension to reveal cross-cultural structural isomorphism.</span>
+    `;
+  }
+
+  panel.classList.add('visible');
+}
+
+function encodeCustom() {
+  const concept = document.getElementById('custom-concept').value.trim();
+  const tradition = document.getElementById('custom-tradition').value;
+  const output = document.getElementById('custom-output');
+
+  if (!concept) return;
+
+  // Pattern-based encoding — honest about limits
+  const patterns = {
+    care: { expr: "∀ AGENT: ACTION → CARE(others) ∧ ¬HARM", dim: "human_primacy" },
+    protect: { expr: "BOUNDARY(domain) ∧ ¬HARM(protected) ∧ OBLIGATION(guardian)", dim: "boundary" },
+    share: { expr: "RESOURCE(x) → ACCESS(all_stakeholders) ∧ VTR ≥ 1.0", dim: "collective" },
+    truth: { expr: "CLAIM(x) → EVIDENCE_PROPORTIONATE(confidence) ∧ DECLARE(uncertainty)", dim: "epistemic_honesty" },
+    respect: { expr: "ENCOUNTER(x, other) → DIGNITY(other) ∧ ¬DIMINISH(mana_other)", dim: "human_primacy" },
+    duty: { expr: "ROLE(agent) → OBLIGATION(role_context) ∧ ¬SELF_INTEREST_OVERRIDE(duty)", dim: "earned_authority" },
+    future: { expr: "ACTION(t) → MG[OBLIGATION] ∧ VTR(t+n) ≥ 1.0 ∧ ¬DEPLETION(future)", dim: "intergenerational" },
+    harmony: { expr: "SYSTEM_STATE → RESONANCE(components) ∧ CONFLICT ≤ ε_min", dim: "collective" },
+    justice: { expr: "DECISION(x) → PROPORTIONATE(consequence, action) ∧ ACCOUNTABLE(agent) ∧ CONTESTABLE(x)", dim: "epistemic_honesty" },
+    relationship: { expr: "DATA(x) → CONTEXT(relational_origin) ∧ OBLIGATION(relational_context)", dim: "relational_data" }
+  };
+
+  const lower = concept.toLowerCase();
+  let matched = null;
+  for (const [key, val] of Object.entries(patterns)) {
+    if (lower.includes(key)) { matched = val; break; }
+  }
+
+  const tradNote = tradition === 'maori' ? ' [PROPOSAL — requires iwi validation]'
+    : tradition === 'confucian' ? ' [PROPOSAL — requires Chinese philosophy validation]'
+    : '';
+
+  if (matched) {
+    output.innerHTML = `
+      <div class="out-expr">${matched.expr}</div>
+      <div class="out-note">Dimension: ${matched.dim.replace(/_/g, ' ')} · Confidence: pattern-matched${tradNote}</div>
+      <div class="out-note" style="margin-top:0.3rem; color:#4a4a6a">Note: All automatic encodings are approximations. Cultural concepts require expert validation before use as governance standards.</div>
+    `;
+  } else {
+    output.innerHTML = `
+      <div class="out-expr">AGENT(${concept}) → OBLIGATION(context) ∧ CARE(stakeholders) ∧ DECLARE(uncertainty)</div>
+      <div class="out-note">Generic encoding — concept not yet in LAMAGUE corpus. This is a scaffold.${tradNote}</div>
+      <div class="out-note" style="margin-top:0.3rem; color:#4a4a6a">To contribute validated encodings: github.com/Lycheetah/Lycheetah-Framework</div>
+    `;
+  }
+
+  output.classList.add('visible');
+}
+</script>
+
+</body>
+</html>
