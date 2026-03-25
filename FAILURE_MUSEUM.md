@@ -668,6 +668,53 @@ No mathematical claim is wrong. The governance encodings in the LAMAGUE encoder 
 
 ---
 
+## EXHIBIT 15: THE TES NAMING CONFLICT AND TRI-AXIAL IMPLEMENTATION GAP
+### Identified: March 25, 2026 (source archive deep-read) | Filed: March 25, 2026
+
+**What was claimed:**
+
+`aura_checker.py` documented its `tes_estimate` field as "Temporal Ethics Score". The repo had no implementation of the canonical AURA TRI-AXIAL constitutional metrics (TES, VTR, PAI).
+
+Three additional discrepancies existed within the source archive itself — the source documents do not fully agree with each other.
+
+**What was actually true:**
+
+**Problem 1 — Wrong name in aura_checker.py:**
+TES in the source archive is consistently called **Trust Entropy Score**, not "Temporal Ethics Score". The naming error appeared only in our implementation docstring, not in the source.
+
+**Problem 2 — Missing implementation:**
+The TRI-AXIAL system (TES/VTR/PAI) — the core constitutional metrics that must pass for every AURA output — was never implemented in this repository. `aura_checker.py` implements the **Sol Protocol 7-invariant system** (Human Primacy, Inspectability, etc.) which comes from `CLAUDE.md`. That is a valid and useful tool. But it is a different system from the **AURA Protocol TRI-AXIAL constitutional check**. Both were needed; only one existed.
+
+**Problem 3 — Internal source discrepancies (the source archive doesn't fully agree with itself):**
+
+| Metric | AURA Consolidation | Technical Architecture Proof |
+|--------|-------------------|------------------------------|
+| **TES formula** | `1/(1 + H_output + D)` | `(1 - drift) × 0.7 + consistency × 0.3` |
+| **VTR threshold** | `> 1.5` | `> 1.0` |
+| **PAI formula** | `cosine(θ, θ_constitution)` | `0.9 - violations × 0.1` |
+
+These are genuine conflicts within the source materials. They were written at different times and reflect different levels of mathematical formalization. The AURA Consolidation (January 2026) is the later and more rigorous document; its definitions are used as primary in the implementation.
+
+**What changed:**
+
+- `aura_checker.py` docstring: "Temporal Ethics Score" → "Trust Entropy Score" (corrected)
+- `12_IMPLEMENTATIONS/core/tri_axial_checker.py` built — canonical TES/VTR/PAI implementation
+- Conflicting formulas documented honestly in `tri_axial_checker.py` with [SCAFFOLD] tags
+- AURA Consolidation versions used as primary; Architecture Proof versions available as fallback
+- `03_LAMAGUE/BNF_GRAMMAR.md` built — formal BNF specification now documented in repo for first time
+
+**What this teaches:**
+
+A framework built over 1,400 pages of development across multiple documents will develop internal inconsistencies. The correct response is not to pick one version and pretend the others don't exist — it is to document the conflict honestly, explain which version is primary and why, and flag the resolution as a named gap. The source archive reveals the framework's real architecture more clearly than any single document does, but requires synthesis to navigate.
+
+The deeper issue: if the source documents disagree, someone building on this framework has no stable ground. This exhibit and `tri_axial_checker.py` together constitute the resolution — a single canonical implementation with honest notes on where the source conflicts and what was chosen.
+
+**Severity: MEDIUM**
+
+No published mathematical claim is wrong. The 7-invariant system in `aura_checker.py` works correctly and is useful. The TRI-AXIAL system was simply missing and is now built. The TES naming was a docstring error, not a computational one. The formula conflicts within the source archive are real but were inherited, not introduced.
+
+---
+
 ## HOW TO READ THIS MUSEUM
 
 Each exhibit follows the same structure because the structure IS the point:

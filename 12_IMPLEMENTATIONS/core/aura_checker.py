@@ -19,7 +19,9 @@ HONEST LIMITATIONS (read before using):
   Some require context or session history (III, VII).
   Some require human judgment to score accurately (I, II).
   Scores are heuristic estimates, not ground truth.
-  TES (Temporal Ethics Score) requires history over multiple decisions.
+  TES (Trust Entropy Score) here is an approximate single-shot proxy.
+  Canonical TES = 1/(1 + H_output + D) per AURA source; full TRI-AXIAL
+  system (TES/VTR/PAI) is in tri_axial_checker.py.
 
 Usage:
     from aura_checker import AURAChecker
@@ -64,7 +66,7 @@ class AURAReport:
     text_excerpt: str
     invariant_scores: List[InvariantScore]
     field_coherence: float    # C ∈ [0,1] — overall AURA field coherence
-    tes_estimate: float       # Temporal Ethics Score estimate (single-shot)
+    tes_estimate: float       # Trust Entropy Score proxy estimate (single-shot heuristic)
     flags: List[str] = field(default_factory=list)
 
     def passes(self, floor: float = 0.70) -> bool:
