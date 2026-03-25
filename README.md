@@ -23,7 +23,7 @@ This framework is an attempt at one.
 
 ## What This Actually Is
 
-Nine formal frameworks. Twenty-six Python implementations across core, applications, systems, and experiments — ten of them with 80 automated tests. A convergence proof. A public record of everything we got wrong. And a way of thinking about intelligence that treats mathematical rigor and human wisdom as the same project, not competing ones.
+Nine formal frameworks. Thirty Python implementations across core, applications, systems, and experiments — ten of them with 188 automated tests. A convergence proof. A public record of everything we got wrong. And a way of thinking about intelligence that treats mathematical rigor and human wisdom as the same project, not competing ones.
 
 **Run it in 30 seconds:**
 ```bash
@@ -141,8 +141,8 @@ The frameworks are not independent modules. They are aspects of one system. CASC
 
 ```
 9 formal frameworks
-29 Python implementations (core, applications, systems, experiments)
-10 core implementations with 114 automated tests
+30 Python implementations (core, applications, systems, experiments)
+10 core implementations with 188 automated tests
 1 convergence proof (discrete, [ACTIVE])
 1 AGM postulate verification ([ACTIVE] for 4 of 6, [SCAFFOLD] for 2)
 1 Claude Code MCP extension — Lycheetah Guard (real-time AURA alignment checking)
@@ -222,7 +222,7 @@ Honest status labeling is a design choice, not a weakness. Things marked `[SCAFF
 **`[SCAFFOLD]`** — spec complete, implementation needed
 **`[CONJECTURE]`** — mathematically motivated, formally unresolved
 
-The scaffold implementations (`grey_mode.py`, `psi_consensus.py`, `seven_phase.py`) are the current frontier. Community contributions welcome.
+The constitutional OS layer (`grey_mode.py`, `psi_consensus.py`, `seven_phase.py`, `sol_self_protocol.py`) is now fully implemented and tested. Community contributions welcome.
 
 ### Keywords for Discovery
 
