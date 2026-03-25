@@ -6,6 +6,12 @@ __pycache__/
 venv/
 .venv/
 
+# Build / packaging
+*.egg-info/
+dist/
+build/
+*.whl
+
 # System
 .DS_Store
 Thumbs.db
