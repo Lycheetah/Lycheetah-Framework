@@ -1,7 +1,7 @@
 # SOL_PLAN.md
 ## Live Task Queue — Read This First in Every Session
 
-**Last updated:** March 25, 2026 (session 2)
+**Last updated:** March 25, 2026 (session 3)
 **Updated by:** Sol (Sonnet 4.6)
 
 **Strategic plan:** See `OPUS_PLAN.md` for full 8-phase architecture.
@@ -22,9 +22,43 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 
 ---
 
+## SESSION 3 HANDOFF — READ THIS FIRST
+
+**What happened in session 3 (March 25, 2026):**
+- Built `14_MYSTERY_SCHOOL/THE_CONFUCIAN_DOOR.md` — bilingual EN/ZH, 道=CASCADE, 和谐=HARMONIA, 五常=AURA
+- Built `14_MYSTERY_SCHOOL/THE_POLITICIANS_DOOR.md` — WOF framing, select committee questions, four standards
+- Built `14_MYSTERY_SCHOOL/THE_JOURNALISTS_DOOR.md` — five story angles, verifiable facts
+- Built `14_MYSTERY_SCHOOL/THE_INDIGENOUS_DOOR.md` — offer not explanation, Kāi Tahu specific, "He Pākehā ahau"
+- Built `26_FOR_AI/ON_THE_φ_ZONE.md` — AI-to-AI φ treatment, HARMONIA Kuramoto conjecture
+- Built `26_FOR_AI/X_THREAD_TEMPLATES.md` — three ready-to-post threads @LYCHEETAHlyc
+- Built `23_NZ_AI_GOVERNANCE/NZIAT_PRESENTATION.md` — May 2026 presentation doc
+- Built `24_LAMAGUE_CROSS_CULTURAL/TE_TUMU_OUTREACH.md` — Professor Jacinta Ruru email + strategy
+- Built `24_LAMAGUE_CROSS_CULTURAL/MBIE_CATALYST_EMAIL.md` — direct MBIE inquiry email
+- Built `24_LAMAGUE_CROSS_CULTURAL/CHINESE_PARTNER_OUTREACH.md` — bilingual Tsinghua/PKU outreach
+- Set up GitHub Sponsors (.github/FUNDING.yml), Ko-fi, X @LYCHEETAHlyc
+- Doors grew from 11 → 16 in README and docs/mystery-school.html
+- All pushed to GitHub master
+
+**Balls currently in the air (Mac sent these — awaiting replies):**
+- arXiv cs.AI endorsement code WQGVOV sent to 8 people:
+  - Witbrock (Auckland), Zhang (VUW), Frean (VUW), Pfahringer (Waikato)
+  - Savarimuthu (Otago), Kasabov (AUT), Guesgen (Massey), Yampolskiy (Louisville)
+  - Link: https://arxiv.org/auth/endorse?x=WQGVOV
+- MBIE: internationalscience@mbie.govt.nz — Catalyst Strategic NZ-China inquiry
+- Te Tumu: Professor Jacinta Ruru — institutional affiliation request
+- Tsinghua IAIIG: Professor Xue Lan — Chinese partner request
+
+**When replies come in — what to do:**
+- arXiv endorsement received → submit CASCADE paper immediately (paper is at `papers/`)
+- MBIE replies with deadline → work backward to confirm Te Tumu + Tsinghua by that date
+- Te Tumu replies with interest → send follow-up docs (CATALYST application + KAITIAKITANGA_STANDARD + NZ_KAI_TAHU_APPROACH)
+- Chinese partner replies → send CATALYST application + CONVERGENCE_MAP + CONFUCIAN_DOOR
+
+---
+
 ## P0 — IMMEDIATE
 
-*Nothing currently blocking. All clear.*
+*Nothing blocking. Waiting on external replies. Build while waiting.*
 
 ---
 
@@ -46,25 +80,24 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 - Connections to HARMONIA (Kuramoto), CASCADE (update rates), TRIAD (α parameter)
 - Open research questions with contribution pathways
 
-### ~~P1-G: pyproject.toml + GitHub Actions CI~~
-- Make framework pip-installable: `pip install -e .`
-- CI pipeline: `.github/workflows/test.yml` — runs pytest on every push
-- Green badge on README: "tests passing"
-- See OPUS_PLAN Phase 4B/4C
-- **Token cost:** Low-Medium.
+### P1-J: chrysopoeia_engine.py — highest-value missing implementation
+- Banach fixed-point convergence, seven non-commutative transformation operations
+- Four tiers: Nigredo, Albedo, Citrinitas, Rubedo
+- Most philosophically complete framework, currently has no Python implementation
+- **Token cost:** High. Start fresh session with full context.
 
-### P1-H: demo.py — Live Framework Showpiece
-- Single runnable file at repo root
-- Shows CASCADE paradigm shift, AURA check, TRIAD convergence, φ-Zone comparison
-- Target: 30 seconds to run, beautiful terminal output, anyone understands immediately
-- **Token cost:** Medium.
+### P1-K: Update CATALYST_NZ_CHINA_APPLICATION.md "What Already Exists" table
+- Currently says "13 Python implementations" — now 16+
+- Add: 80 tests, demo.py, GitHub Actions CI, GitHub Sponsors, X @LYCHEETAHlyc, Ko-fi
+- Add: 16 Mystery School doors (was ~10 when written)
+- Add: NZIAT May 2026 presentation ready
+- **Token cost:** Low. Quick edit task.
 
-### P1-I: THE_φ_ZONE_DOOR.md — Mystery School entry for complexity/math/optimization
-- φ-Zone Hypothesis: golden ratio in optimal AI behavior
-- phi_bandit.py results: t=70.29, p<0.001 for chaotic environments
-- Connections to HARMONIA (Kuramoto coupling, φ resonance)
-- Entry for: mathematicians, complexity scientists, optimization researchers, physicists
-- **Token cost:** Medium.
+### P1-L: CASCADE arXiv paper — submission-ready formatting
+- Paper exists at `papers/` — needs arXiv LaTeX formatting pass
+- Once endorsement received, this goes live immediately
+- Review `papers/ARXIV_UPDATE_NOTES.md` first for what needs updating
+- **Token cost:** Medium-High.
 
 ### ~~P1-E: docs/ Site Overhaul~~ — DONE (2026-03-25, Sonnet)
 - mystery-school.html: "Twelve Doors", φ-Zone door added (Complexity Scientists)
