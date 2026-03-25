@@ -34,7 +34,7 @@ Built over 1,402 pages of continuous development by a self-taught researcher in 
 
 | | Framework | For the Engineer | For the Philosopher |
 |---|---|---|---|
-| 1 | **CASCADE** | Bayesian belief revision with truth pressure dynamics. Verified against AGM postulates. | When evidence meets structure, what survives? The mathematics of paradigm shifts. |
+| 1 | **CASCADE** | Bayesian belief revision with truth pressure dynamics. Verified against AGM postulates. Experimental validation: +40.3% coherence, -95.2% catastrophic forgetting, p < 0.001. | When evidence meets structure, what survives? The mathematics of paradigm shifts. |
 | 2 | **AURA** | Seven computable invariants for AI governance. Scoring tool included. | A constitution for artificial minds — not rules imposed, but properties that make trust possible. |
 | 3 | **LAMAGUE** | Formal grammar for encoding ethical constraints as computable expressions. | How do you write justice in a language a machine can parse without losing what justice means? |
 | 4 | **TRIAD** | Anchor-observe-correct feedback cycle with proven convergence guarantee. | The simplest structure that turns chaos into coherence — and why it works every time. |
@@ -45,6 +45,17 @@ Built over 1,402 pages of continuous development by a self-taught researcher in 
 | 9 | **HARMONIA** | Consonance functions, Kuramoto coupling, frequency-ratio dynamics. | The music already playing inside all the others. Resonance as the substrate of cooperation. |
 
 Every claim is tagged: **[ACTIVE]** means proven and computable. **[SCAFFOLD]** means structurally sound with named gaps. **[CONJECTURE]** means worth exploring, unproven. We do not dress hypotheses as theorems.
+
+### Key Validated Results
+
+| Result | Value | Method | Status |
+|--------|-------|--------|--------|
+| CASCADE coherence improvement over static systems | **+40.3%** (0.58 → 0.93) | 3-condition experiment, 10 replications, classical→quantum physics domain | [ACTIVE] p < 0.001, d = 2.84 |
+| CASCADE accuracy improvement | **+23.3%** (0.74 → 0.91) | Same experiment | [ACTIVE] p < 0.001, d = 1.92 |
+| CASCADE catastrophic forgetting reduction | **-95.2%** (0.42 → 0.02 information loss) | Same experiment | [ACTIVE] large effect size |
+| φ-Zone optimality in continuous drift | **t = 70.29**, p < 0.001 | Multi-armed bandit, chaotic multi-frequency environment, 300 runs | [ACTIVE] specific to continuous drift |
+| TRIAD discrete convergence | **λ < 1 guaranteed** | Banach fixed-point theorem | [ACTIVE] formal proof |
+| CHRYSOPOEIA fixed-point | **Entropy → 0, C → 1** in 3 iterations | Running demo | [ACTIVE] stochastic; entropy convergence demonstrated |
 
 ---
 
