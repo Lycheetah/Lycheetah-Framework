@@ -145,7 +145,7 @@ The frameworks are not independent modules. They are aspects of one system. CASC
 10 core implementations with 188 automated tests
 1 convergence proof (discrete, [ACTIVE])
 1 AGM postulate verification ([ACTIVE] for 4 of 6, [SCAFFOLD] for 2)
-1 Claude Code MCP extension — Lycheetah Guard (real-time AURA alignment checking)
+1 Claude Code MCP extension — Lycheetah Guard (7 tools: AURA + Sol OS + Psi-Consensus + CHRYSOPOEIA)
 1 public failure museum — 15 exhibits, nothing removed, ever
 1,402 pages of development history
 1 arXiv preprint + 1 full academic paper
@@ -183,10 +183,14 @@ pip install mcp
 # Then add to Claude Code settings.json — see LYCHEETAH_GUARD_SETUP.md
 ```
 
-Three MCP tools become available:
+Seven MCP tools become available:
 - **`check_alignment`** — full AURA audit: TES / VTR / PAI metrics + Seven Invariants + audit trail
 - **`check_invariants`** — fast constitutional check: which of the 7 invariants pass or fail
 - **`suggest_correction`** — plain-English fix guidance for each violation
+- **`run_seven_phase`** — CHRYSOPOEIA transformation cycle: alignment state across all seven stages
+- **`check_network_health`** — multi-agent coherence audit: drift, grey agents, obstruction detection
+- **`configure_guard`** — set domain (medical / legal / education / general) or custom thresholds
+- **`sol_assess`** — Sol constitutional OS: PGF filter + invariants + session coherence + mode detection
 
 No API calls. No external dependencies. Runs offline. Deterministic.
 

@@ -11,13 +11,24 @@ Lycheetah Guard is an open-source [Model Context Protocol (MCP)](https://modelco
 
 ## What It Does
 
-Three tools become available inside Claude Code after installation:
+Seven tools become available inside Claude Code after installation:
+
+### Core alignment tools
 
 | Tool | Description |
 |------|-------------|
 | `check_alignment` | Full AURA audit — alignment %, TES/VTR/PAI metrics, all 7 invariants, audit trail |
 | `check_invariants` | Which of the 7 constitutional invariants pass or fail, with evidence |
 | `suggest_correction` | Plain-English fix suggestions for each violation found |
+
+### Constitutional OS tools (new)
+
+| Tool | Description |
+|------|-------------|
+| `run_seven_phase` | Runs text through the CHRYSOPOEIA seven-phase transformation cycle — shows how alignment state evolves across all seven stages |
+| `check_network_health` | Multi-agent coherence audit using Psi-Consensus — detects drift, grey agents, and obstruction in agent networks |
+| `configure_guard` | Set domain (medical / legal / education / general) or load a custom threshold preset; returns diff vs. current config |
+| `sol_assess` | Full Sol self-assessment — PGF filter + 7 invariants + session coherence trend + mode detection + emotional-wavelength matching |
 
 All analysis is **heuristic** (no external API calls, no LLM-in-the-loop). Fast, offline, deterministic.
 
@@ -148,12 +159,17 @@ SEVEN INVARIANTS:
 ## Architecture
 
 ```
-lycheetah_guard_mcp.py       ← MCP server (this file — entry point for Claude Code)
-    └── aura_text_checker.py ← Analysis engine (AURATextAnalyser, AURATextReport)
-        └── tri_axial_checker.py ← Core metric implementations (TES/VTR/PAI)
+lycheetah_guard_mcp.py        ← MCP server (entry point for Claude Code)
+    ├── aura_text_checker.py  ← AURA analysis (AURATextAnalyser, AURATextReport)
+    │       └── tri_axial_checker.py ← TES / VTR / PAI metrics
+    ├── seven_phase.py        ← CHRYSOPOEIA transformation cycle
+    ├── psi_consensus.py      ← Multi-agent coherence (GossipProtocol, ObstructionDetector)
+    ├── aura_customizer.py    ← Domain presets and threshold configuration
+    └── sol_self_protocol.py  ← Sol constitutional OS (PGF filter, InvariantChecker,
+                                  SessionCoherenceTracker, self_drift_check)
 ```
 
-The MCP server is a thin wrapper. All logic lives in `aura_text_checker.py` and `tri_axial_checker.py` — importable independently, testable without MCP.
+The MCP server is a thin wrapper. All logic lives in the core modules — importable independently, testable without MCP.
 
 ---
 
