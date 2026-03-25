@@ -585,6 +585,42 @@ documents what it did wrong.
 
 ---
 
+## EXHIBIT 13: THE IMPLEMENTATION COUNT AND CONVERGENCE OVERCLAIMS
+### Identified: March 25, 2026 (Session 3 NRM pass) | Filed: March 25, 2026
+
+**What was claimed:**
+
+1. README.md stated "Fourteen Python implementations" — in the introductory paragraph and in the framework statistics table.
+2. `24_LAMAGUE_CROSS_CULTURAL/CONVERGENCE_MAP.md` stated: *"2026 LAMAGUE encodes all three. The convergence is formally visible for the first time."*
+3. CONVERGENCE_MAP stated: *"This is not coincidence. It is evidence."* — without acknowledging the existing comparative ethics literature.
+
+**What was actually true:**
+
+1. A direct file count of `12_IMPLEMENTATIONS/` returns 26 Python files across `core/`, `applications/`, `systems/`, `experiments/`, and root. The number "14" was either accurate at some earlier point and not updated, or was never accurate. Ten of the 26 have 80 automated tests. The correct description is "26 Python implementations, 10 with automated tests."
+
+2. "For the first time" is false. Comparative ethics scholars — Nussbaum (capabilities approach), Sen (development as freedom), MacIntyre (after virtue) — have documented cross-cultural ethical convergence qualitatively for decades. The LAMAGUE contribution is not the observation of convergence but its first formally computable encoding. The claim should be: "formally testable as computable structure for the first time" — not "formally visible for the first time."
+
+3. "This is not coincidence. It is evidence" is correct in substance but incomplete without acknowledging the alternative interpretation: convergence could reflect shared human social structures rather than universal governance laws. Both interpretations support the research hypothesis. The original phrasing implied the stronger interpretation without acknowledging the weaker one.
+
+**What changed:**
+
+- README: "Fourteen Python implementations" → "Twenty-six Python implementations across core, applications, systems, and experiments — ten of them with 80 automated tests"
+- README statistics table: "14 Python implementations" → "26 Python implementations (core, applications, systems, experiments) / 10 core implementations with 80 automated tests"
+- CONVERGENCE_MAP: "convergence is formally visible for the first time" → "structural isomorphism is formally testable for the first time — not merely described"
+- CONVERGENCE_MAP: Added explicit acknowledgment of comparative ethics literature (Nussbaum, Sen, MacIntyre) and the two-interpretation framing
+
+**What this teaches:**
+
+Specific numbers require maintenance. "Fourteen" was precise and therefore became wrong silently when the implementation count grew. "Many" would have remained true. The cost of precision is the obligation to keep it accurate.
+
+"For the first time" is one of the most dangerous phrases in academic writing. It almost always overstates the case. The comparative ethics community has been doing cross-cultural ethical analysis for generations. LAMAGUE's contribution is computational formalization — not the discovery of convergence. The distinction matters to anyone who works in comparative ethics, and those are exactly the scholars the framework needs to convince.
+
+**Severity: MEDIUM**
+
+Neither claim was as dangerous as the 1600W error or the circular proofs, but both would have been immediately caught by a comparative ethics reviewer or anyone who audited the implementation count. Corrected before external review.
+
+---
+
 ## HOW TO READ THIS MUSEUM
 
 Each exhibit follows the same structure because the structure IS the point:

@@ -13,14 +13,11 @@
 Three philosophical traditions developed independently, with no significant cross-pollination
 during their formative periods, and converged on structurally identical governance constraints.
 
-This is not coincidence. It is evidence.
+This is not coincidence. It is evidence — not proof, but evidence. Comparative ethics scholars (Nussbaum, Sen, MacIntyre) have noted cross-cultural ethical convergence for decades using qualitative analysis. What LAMAGUE contributes is not the discovery of convergence — it is the first formally computable encoding of it. The convergence can now be tested structurally, not just described philosophically.
 
-The governance constraints that matter — the ones that appear in Confucian China,
-in Māori Aotearoa, and in Western political philosophy — are real constraints.
-They are not cultural preferences. They are the formal requirements for any system
-of governance that sustains human flourishing over time.
+The governance constraints that appear in all three traditions are either: (a) independent discoveries of real universal requirements for human governance, or (b) convergent evolution from shared human social structures. Both interpretations support the research hypothesis. LAMAGUE makes the structural isomorphism precise and testable regardless of which interpretation holds.
 
-LAMAGUE makes this convergence precise and testable.
+The formal requirements for any system of governance that sustains human flourishing over time — if they exist — should appear in every major governance tradition that has sustained human flourishing over time. They do. LAMAGUE makes this visible as computable structure for the first time.
 
 ---
 
@@ -40,7 +37,8 @@ LAMAGUE makes this convergence precise and testable.
 ~1700-1900 CE  First sustained contact between all three traditions
                The convergent structures are already formed
 
-2026  LAMAGUE encodes all three. The convergence is formally visible for the first time.
+2026  LAMAGUE encodes all three as computable expressions. The structural isomorphism
+       is formally testable for the first time — not merely described.
 ```
 
 The critical window of independent development: approximately 1,200 years
