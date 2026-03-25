@@ -170,8 +170,15 @@ Each letter encodes a knowledge operation at three levels:
 Ao → Φ↑ → Ψ → Ψ_inv | C(Ψ_t) ≥ C(Ψ₀)
 ```
 
-Source claims compression ratio of approximately **500:1** for alignment concepts.
-[CONJECTURE] — ratio depends on context; not independently verified.
+**MEASURED compression ratios** (from `lamague_parser.py`, 5 canonical examples):
+- Token ratio: **~3:1** (LAMAGUE tokens vs English words)
+- Character ratio: **~11:1** (LAMAGUE characters vs English characters)
+
+The source archive claimed "~500:1". This is **not supported by measurement**.
+The honest claim: LAMAGUE achieves substantial compression (~11:1 by character count)
+for alignment concepts. The 500:1 figure was a design aspiration, not a measured result.
+See FAILURE_MUSEUM.md Exhibit 9 and Failure Museum Exhibit 15 for full history.
+[ACTIVE for measurement infrastructure; SCAFFOLD for compression claim pending wider validation]
 
 ### Algorithm Encoding
 
