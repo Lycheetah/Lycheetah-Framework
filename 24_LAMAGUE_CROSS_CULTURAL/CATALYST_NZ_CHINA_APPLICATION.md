@@ -244,8 +244,15 @@ The Lycheetah Framework is not speculative. The following is built and publicly 
 | AURA Seven Constitutional Invariants | [ACTIVE] — formally specified, measurably testable | `02_AURA/` |
 | LAMAGUE formal grammar + Python implementation | [ACTIVE] — `lamague_reference.py` operational | `03_LAMAGUE/` + `12_IMPLEMENTATIONS/` |
 | Mathematical foundations | [ACTIVE] — category theory, fiber bundles, Lyapunov proofs | `11_MATHEMATICAL_FOUNDATIONS/` |
-| 13 Python implementations | [ACTIVE] — 4 tiers, cascade engine, AURA codex, LAMAGUE reference | `12_IMPLEMENTATIONS/` |
-| arXiv preprint: CASCADE framework | [ACTIVE] — endorsed, live | arXiv (linked in `README.md`) |
+| 26 Python implementations | [ACTIVE] — core, applications, systems, experiments; 10 with 80 automated tests (pytest CI) | `12_IMPLEMENTATIONS/` |
+| chrysopoeia_engine.py — transformation operator | [ACTIVE] — seven-phase non-commutative operations, Banach fixed-point convergence | `12_IMPLEMENTATIONS/core/` |
+| Automated test suite (80 tests) | [ACTIVE] — pytest, GitHub Actions CI, 3 Python versions, claim-status markers | `tests/` + `.github/workflows/` |
+| Live framework demo (demo.py) | [ACTIVE] — CASCADE, AURA, TRIAD, φ-Zone live in ~10 seconds | Root of repository |
+| LAMAGUE Encoder web app | [ACTIVE] — trilingual interactive encoder (English/Te Reo/中文), 18 cross-cultural concepts | `docs/lamague-encoder.html` |
+| 16 Mystery School entry doors | [ACTIVE] — audience-specific entry points from engineers to indigenous communities | `14_MYSTERY_SCHOOL/` |
+| NZIAT May 2026 presentation | [ACTIVE] — ready for NZ AI governance audience | `23_NZ_AI_GOVERNANCE/` |
+| Ko-fi + GitHub Sponsors + X @LYCHEETAHlyc | [ACTIVE] — public presence and funding infrastructure live | External |
+| arXiv preprint: CASCADE framework | [ACTIVE] — submission-ready, awaiting cs.AI endorsement | arXiv (linked in `README.md`) |
 | LAMAGUE Māori encoding (5 concepts) | [PROPOSAL] — pending iwi validation | `23_NZ_AI_GOVERNANCE/NZ_LAMAGUE_STANDARD.md` |
 | LAMAGUE Confucian encoding (6 concepts) | [DRAFT] — pending Chinese philosopher review | `CONFUCIAN_LAMAGUE.md` |
 | Cross-cultural convergence map (6 classes) | [DRAFT] — preliminary analysis | `CONVERGENCE_MAP.md` |
