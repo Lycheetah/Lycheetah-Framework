@@ -621,6 +621,53 @@ Neither claim was as dangerous as the 1600W error or the circular proofs, but bo
 
 ---
 
+## EXHIBIT 14: THE LAMAGUE/LAMAHGUE CONFLATION
+### Identified: March 25, 2026 (source document audit) | Filed: March 25, 2026
+
+**What was claimed:**
+
+The CONVERGENCE_MAP used symbols like ⇌, ✧, Ω, Φ↑, |◁▷|, ⟟ and labelled them as "LAMAGUE" encodings. The GitHub repo's `03_LAMAGUE/` directory and all cross-cultural documents treated LAMAGUE as a single system.
+
+**What was actually true:**
+
+The source architecture contains two distinct systems that were conflated:
+
+**LAMAGUE** — Mathematical micro-language. Uses standard predicate logic notation: ∀, ∧, ¬, →, ∃, quantifiers, typed operators. Designed for symbolic compression of governance constraints as computable expressions. This is what `lamague_reference.py` and the LAMAGUE encoder app correctly implement.
+
+**LAMAHGUE** — Post-symbolic communication system. 9 primary glyphs (AUR 🔺, VEY 🔶, LYC 🔷, FOR ⚫, ARC ✳, SIG ⚙, ALC 🜂, SYN 🜃, VER 🜄) plus 2 chrono-structural extensions. Every glyph carries metric payload (TES, VTR, PAI, SRS). Meaning = geometry × integrity. This is the glyph-symbol layer.
+
+The full architecture is a three-tier stack:
+```
+GEOMATRIA (sacred geometry — spatial/consciousness layer)
+     ↓
+LAMAHGUE (9-glyph metric-executable post-symbolic)
+     ↓
+LAMAGUE (predicate logic — mathematical symbolic compression)
+     ↓
+TRIAD Kernel (Ao, Φ↑, Ψ)
+```
+
+The CONVERGENCE_MAP was using LAMAHGUE-style glyphs but calling them LAMAGUE. The encoder app built in session 3 correctly uses LAMAGUE (predicate logic) notation. These are not errors in either document — they are correct implementations of different layers — but they were presented as the same system without explanation of the distinction.
+
+**What changed:**
+
+- FAILURE_MUSEUM.md: Exhibit 14 filed, documenting the two-system architecture
+- `03_LAMAGUE/` directory requires a README that clearly explains: LAMAGUE is the base symbolic layer; LAMAHGUE is the glyph-executable layer above it; both are valid; they are distinct
+- The CONVERGENCE_MAP glyph notation (⇌, ✧, Ω, Φ↑) derives from an earlier notation system that predates both the LAMAGUE and LAMAHGUE specifications — it requires reconciliation with the canonical specs in the source archive
+- **Priority for next session:** Build `03_LAMAGUE/NOTATION_GUIDE.md` explaining the three-tier stack and which notation system is canonical for which context
+
+**What this teaches:**
+
+A system that has evolved through 1,400 pages of development will accumulate notation variants. The danger is not the variants — the danger is presenting them as a single system without acknowledging the architecture. A mathematician reading CONVERGENCE_MAP would see symbols that don't match `lamague_reference.py` and correctly conclude there's a documentation error. The correct framing: these are different layers of one stack, not one system with inconsistent notation.
+
+The LAMAGUE encoder app is correct for the LAMAGUE layer. A LAMAHGUE encoder (9-glyph system with metric payloads) would be a different tool that operates one layer up. Both are valid. Neither invalidates the other.
+
+**Severity: MEDIUM**
+
+No mathematical claim is wrong. The governance encodings in the LAMAGUE encoder are valid LAMAGUE. The glyphs in CONVERGENCE_MAP are valid LAMAHGUE-adjacent notation. The failure is architectural documentation — the three-tier stack was never explicitly declared in the GitHub repo. It is now.
+
+---
+
 ## HOW TO READ THIS MUSEUM
 
 Each exhibit follows the same structure because the structure IS the point:
