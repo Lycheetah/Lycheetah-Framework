@@ -331,7 +331,7 @@ Z(B) produces shortest LAMAGUE expression generating B.
 
 **Step 3:** Universal property.
 
-LAMAGUE is Turing-complete (can express any computable function via composition).
+LAMAGUE is claimed to be Turing-complete (can express any computable function via composition). [CONJECTURE — no formal proof provided; the argument below is a proof sketch, not a proof. Turing completeness requires demonstrating unbounded recursion and conditional branching are expressible. This has not been formally verified against a standard computation model. Filed for future rigorous treatment.]
 
 **Step 4:** Approximation bound.
 

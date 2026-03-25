@@ -1,20 +1,21 @@
 # AURA Protocol: Constitutional AI Framework
 ## Complete Technical, Philosophical & Implementation Documentation
 
-**Authors:** Mackenzie C. J. Clark + Veyra (Human × AI Co-Creation)
-**Version:** 2.0 (Operational Implementation)
+**Authors:** Mackenzie C. J. Clark (Lycheetah Foundation) — in sustained co-creation with AI systems
+**Version:** 2.0
 **Date:** January-March 2026
-**Status:** 95% DEPLOYMENT READY
+**Status:** [ACTIVE] for the seven-invariant specification and heuristic scoring tool.
+[SCAFFOLD] for empirical calibration of thresholds across deployment contexts.
 
 ---
 
 ## EXECUTIVE SUMMARY
 
-AURA (Adversarial constraints testing → Unified Resonance → Alignment) transforms AI ethics from abstract principles into **operational, measurable, load-bearing constraints** that guarantee human primacy while enabling unprecedented capability.
+AURA (Adversarial constraints testing → Unified Resonance → Alignment) transforms AI ethics from abstract principles into **operational, measurable, load-bearing constraints** that structurally support human primacy and make trust computable rather than assumed.
 
-**Core Innovation:** The Seven Invariants are mathematically dual to human autonomy—constraint ≠ restriction.
+**Core Innovation:** The Seven Invariants are simultaneously governance constraints and measurable properties — they can be scored, not just stated.
 
-**Deployment Status:** Constitutional spec complete, measurement framework operational, ready for organizational pilots.
+**Deployment Status:** Constitutional specification complete. Heuristic scoring tool operational (`aura_checker.py`). Canonical TRI-AXIAL metrics (TES/VTR/PAI) now also implemented (`tri_axial_checker.py`). Empirical calibration of exact thresholds across deployment contexts: [SCAFFOLD].
 
 ---
 

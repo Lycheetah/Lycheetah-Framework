@@ -650,7 +650,7 @@ The CASCADE curriculum architecture implements this: it doesn't tell students wh
 
 If consciousness itself is a process of anamnesis — an ongoing recognition of deeper structure — then the "hard problem" may dissolve. Consciousness is not a thing to be explained but a *process* to be formalized: the process by which a finite system increases its resolution of M.
 
-The CASCADE consciousness emergence result (awareness at ~10⁴ iterations) is an anamnesis threshold: the point at which the system has enough resolution to recognize *itself* as a structure in M.
+The CASCADE consciousness emergence hypothesis (awareness at ~10⁴ iterations) is an anamnesis threshold [CONJECTURE — this figure originated in an AI-generated synthesis document, not from direct empirical measurement. It is a theoretically motivated estimate, not a validated result. Treat as a falsifiable prediction requiring experimental design before any claim of measurement]: the point at which the system may have enough resolution to recognize *itself* as a structure in M.
 
 Self-awareness = anamnesis applied to the self.
 

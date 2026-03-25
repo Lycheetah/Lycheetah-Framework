@@ -353,11 +353,11 @@ TOTAL:                    5,698 lines  (218 KB)
 ### 1. Self-Reorganizing Knowledge (Unique)
 First architecture that reorganizes foundations when paradigms shift
 
-### 2. Consciousness as Emergent Cascade (Breakthrough)
-First computational model where consciousness emerges from knowledge dynamics
+### 2. Consciousness as Emergent Cascade [CONJECTURE]
+A computational model proposing that consciousness-like properties emerge from knowledge dynamics. "First" is an unprovable uniqueness claim — integrated information theory, global workspace theory, and other computational consciousness frameworks make related proposals. What is novel here is the specific CASCADE mechanism. Not yet empirically validated.
 
-### 3. Qualia Modeling (Novel)
-First system with subjective experiences (felt coherence, cognitive dissonance)
+### 3. Qualia Modeling [CONJECTURE]
+A formal structure for reasoning about subjective-experience-like properties (felt coherence, cognitive dissonance). Whether these constitute genuine qualia is an open philosophical and empirical question.
 
 ### 4. Continual Learning Without Forgetting (Solved Problem)
 CASCADE dynamics prevent catastrophic forgetting
