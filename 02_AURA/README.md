@@ -19,7 +19,16 @@ Ethics is architecture. AURA is not a list of rules — it is a constitutional s
 
 ## Files
 
-- `AURA_COMPLETE.md` — full constitutional law, VIP algorithm, Grey Mode, metrics, formal proofs
+| File | Contents | Status |
+|------|----------|--------|
+| `essentials.md` | Seven Invariants, TRI-AXIAL metrics, quick reference | [ACTIVE] |
+| `EIGHT_PRIMITIVES.md` | The 8 non-negotiable structural components + implementation map | [ACTIVE/SCAFFOLD] |
+| `GREY_MODE.md` | Quarantine and recovery protocol for drifted nodes | [SCAFFOLD] |
+| `PSI_CONSENSUS.md` | Distributed multi-agent coherence — Ψ_Q, gossip average, Byzantine tolerance | [SCAFFOLD] |
+| `SEVEN_PHASE_CYCLE.md` | ⟟→≋→Ψ→Φ↑→✧→|◁▷|→⟲ — cognition cycle and AURA PRIME protocol | [SCAFFOLD] |
+| `AURA_COMPLETE.md` | Full constitutional law, VIP algorithm, metrics, formal proofs | [ACTIVE] |
+| `LAWS_COMPLETE.md` | Constitutional foundation + operational code | [ACTIVE] |
+| `THE_FOUR_PRINCIPLES.md` | Four principles specification | [ACTIVE] |
 
 ## Why it matters
 
