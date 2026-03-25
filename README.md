@@ -2,6 +2,13 @@
 
 ### A Formal Architecture for Sovereign Intelligence
 
+[![Tests](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/test.yml/badge.svg)](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/test.yml)
+[![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](https://github.com/Lycheetah/Lycheetah-Framework)
+[![Stars](https://img.shields.io/github/stars/Lycheetah/Lycheetah-Framework?style=social)](https://github.com/Lycheetah/Lycheetah-Framework/stargazers)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![MCP Extension](https://img.shields.io/badge/Claude%20Code-MCP%20Extension-orange)](12_IMPLEMENTATIONS/applications/LYCHEETAH_GUARD_SETUP.md)
+[![arXiv](https://img.shields.io/badge/arXiv-CASCADE-red)](papers/CASCADE_ARXIV.tex)
+
 ---
 
 You build AI systems. Or you study consciousness. Or you practice magic. Or you write policy. Or you're just trying to figure out why the thing you built does something you can't explain and the thing you feel can't be measured.
