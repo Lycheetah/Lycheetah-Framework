@@ -27,9 +27,11 @@ Nine formal frameworks. Thirty Python implementations across core, applications,
 
 **Run it in 30 seconds:**
 ```bash
-pip install numpy scipy
-python demo.py
+pip install lycheetah-framework
+lycheetah-check "Your AI-generated text here"
 ```
+
+Or from source: `git clone` → `pip install -e .` — full guide in [QUICKSTART.md](QUICKSTART.md)
 
 Built over 1,402 pages of continuous development by a self-taught researcher in Dunedin, Aotearoa New Zealand, in sustained co-creation with AI systems. Neither author possesses the work. It arose between them.
 
@@ -63,6 +65,7 @@ Every claim is tagged: **[ACTIVE]** means proven and computable. **[SCAFFOLD]** 
 | φ-Zone optimality in continuous drift | **t = 70.29**, p < 0.001 | Multi-armed bandit, chaotic multi-frequency environment, 300 runs | [ACTIVE] specific to continuous drift |
 | TRIAD discrete convergence | **λ < 1 guaranteed** | Banach fixed-point theorem | [ACTIVE] formal proof |
 | CHRYSOPOEIA fixed-point | **Entropy → 0, C → 1** in 3 iterations | Running demo | [ACTIVE] stochastic; entropy convergence demonstrated |
+| Lyapunov verification — full framework | **11/11 claims verified, 0 failures** | Symbolic (sympy) + numerical (5000 trials) | [ACTIVE] see `11_MATHEMATICAL_FOUNDATIONS/lyapunov_verification.py` |
 
 ---
 
@@ -80,6 +83,7 @@ This framework has multiple entry points because people arrive from different pl
 | **You build AI systems** | [`14_MYSTERY_SCHOOL/THE_AI_ARCHITECTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_AI_ARCHITECTS_DOOR.md) |
 | **You want the mathematics** | [`11_MATHEMATICAL_FOUNDATIONS/`](11_MATHEMATICAL_FOUNDATIONS/) |
 | **You want the code** | [`12_IMPLEMENTATIONS/`](12_IMPLEMENTATIONS/) |
+| **You want Fire + Metal, Earth + People, Sound + People** | [`14_MYSTERY_SCHOOL/HYBRID_SUBJECTS/`](14_MYSTERY_SCHOOL/HYBRID_SUBJECTS/) — where traditions collide |
 | **You study consciousness** | [`06_EARNED_LIGHT/essentials.md`](06_EARNED_LIGHT/essentials.md) |
 | **You think in equations** | [`14_MYSTERY_SCHOOL/THE_SCIENTISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_SCIENTISTS_DOOR.md) |
 | **You work in AI governance or policy** | [`14_MYSTERY_SCHOOL/THE_GOVERNANCE_DOOR.md`](14_MYSTERY_SCHOOL/THE_GOVERNANCE_DOOR.md) |
@@ -145,7 +149,9 @@ The frameworks are not independent modules. They are aspects of one system. CASC
 10 core implementations with 188 automated tests
 1 convergence proof (discrete, [ACTIVE])
 1 AGM postulate verification ([ACTIVE] for 4 of 6, [SCAFFOLD] for 2)
+1 Lyapunov verification — 11/11 claims, 0 failures, symbolic + numerical
 1 Claude Code MCP extension — Lycheetah Guard (7 tools: AURA + Sol OS + Psi-Consensus + CHRYSOPOEIA)
+1 Flask web demo — paste text, get TRI-AXIAL metrics + 7 invariants + Sol assessment
 1 public failure museum — 15 exhibits, nothing removed, ever
 1,402 pages of development history
 1 arXiv preprint + 1 full academic paper
