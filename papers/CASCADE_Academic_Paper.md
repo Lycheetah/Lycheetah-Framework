@@ -1,9 +1,10 @@
 # CASCADE: A Mathematical Framework for Constitutional AI Through Self-Reorganizing Knowledge Architecture
 
-**Author:** Mackenzie C. Clark  
-**Affiliation:** LAMAGUE Foundation (Independent Research)  
-**Correspondence:** [To be added]  
-**Date:** January 2026  
+**Author:** Mackenzie C. Clark
+**Affiliation:** Lycheetah Foundation (Independent Research)
+**Correspondence:** mackenzie@lycheetahfoundation.org
+**Date:** March 2026
+**Repository:** https://github.com/Lycheetah/Lycheetah-Framework
 **Preprint:** [arXiv submission pending]
 
 ---

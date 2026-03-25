@@ -95,8 +95,12 @@ No existing computational knowledge system replicates this process. Neural netwo
 exhibit catastrophic forgetting when learning contradictory information~\citep{mccloskey1989catastrophic}.
 Continual learning methods---elastic weight consolidation~\citep{kirkpatrick2017overcoming},
 progressive neural networks~\citep{rusu2016progressive}, experience
-replay~\citep{chaudhry2019tiny}---mitigate forgetting by either protecting old parameters,
-adding new capacity, or rehearsing old examples. But all three assume knowledge is
+replay~\citep{chaudhry2019tiny}, prompt-based approaches~\citep{wang2022learning}---mitigate
+forgetting by either protecting old parameters, adding new capacity, rehearsing old
+examples, or freezing the backbone entirely. Recent knowledge editing
+methods~\citep{meng2022locating,meng2023memit,mitchell2022mend} can surgically modify
+individual facts in trained models, but do not address structural reorganization when
+an entire paradigm is superseded. All existing approaches assume knowledge is
 \emph{additive and immutable}: new information layers atop old without restructuring.
 When new knowledge fundamentally contradicts existing foundations, these methods either
 resist the update (preserving incoherence) or accept it (destroying old knowledge).
@@ -363,9 +367,11 @@ with the theoretical bound.
 % ═══════════════════════════════════════════════════════════
 \section{Experimental Validation}\label{sec:experiments}
 
-All experiments were run with the code in \texttt{cascade\_real\_experiments.py}
-(available in the repository). Every number below was computed, not estimated. Random
-seeds are fixed and reported for reproducibility.
+All synthetic experiments were run with
+\texttt{cascade\_real\_experiments.py} and historical validations with
+\texttt{run\_experiments.py}, both in \texttt{12\_IMPLEMENTATIONS/experiments/}
+in the repository. Every number below was computed, not estimated. Random seeds
+are fixed and reported for reproducibility.
 
 \paragraph{Contradiction detection.} In all experiments, two blocks $B_i, B_j$ are
 flagged as contradictory if they share the same domain label, both carry regime
@@ -685,7 +691,10 @@ single-source blocks as cascade triggers.
 SI~\citep{zenke2017continual} add quadratic penalties to protect important parameters.
 Progressive networks~\citep{rusu2016progressive} add capacity. PackNet~\citep{mallya2018packnet}
 prunes and packs. Replay methods~\citep{chaudhry2019tiny,shin2017continual} rehearse
-old data. All assume knowledge is additive; CASCADE reorganizes structure.
+old data. More recently, DER++~\citep{buzzega2020dark} combines knowledge distillation
+with replay, and prompt-based methods~\citep{wang2022learning,wang2022dualprompt}
+freeze the backbone entirely and learn task-specific prompts. All assume knowledge is
+additive; CASCADE reorganizes structure.
 
 \textbf{Belief revision.} The AGM framework~\citep{alchourron1985logic} defines
 expansion ($+$), contraction ($-$), and revision ($*$) operators. CASCADE's compression
@@ -706,6 +715,18 @@ withdrawn. CASCADE complements rather than replaces these systems: a TMS could s
 the contradiction oracle that CASCADE requires, while CASCADE provides the quantitative
 criterion for \emph{which} belief to retract and the layered structure for representing
 the outcome.
+
+\textbf{Knowledge editing in language models.}
+ROME~\citep{meng2022locating} and MEMIT~\citep{meng2023memit} locate and edit
+specific factual associations in transformer weights; MEND~\citep{mitchell2022mend}
+learns a hypernetwork to produce targeted weight updates;
+KnowledgeEditor~\citep{decao2021editing} uses a learned editor network.
+See~\citet{yao2023editing} for a recent survey. These methods modify individual
+facts within a trained model---the complementary problem to CASCADE, which
+reorganizes the \emph{structural hierarchy} among knowledge claims. A system
+that combines CASCADE's reorganization logic with neural knowledge editing
+(using $\tp$ to decide \emph{whether} to edit and \emph{how} to restructure
+dependent knowledge) is a natural future direction.
 
 \textbf{Non-monotonic and defeasible reasoning.} Default logic~\citep{reiter1980logic}
 and circumscription~\citep{mccarthy1980circumscription} handle defeasible inference,
@@ -739,16 +760,24 @@ adversarial falsification. The historical validations demonstrate that the mecha
 generalizes across domains and produces structural outcomes consistent with how science
 actually reorganizes knowledge.
 
-All code is open-source at \url{https://github.com/Lycheetah/cascade-framework}.
+CASCADE is one component of the broader Lycheetah Framework, which includes
+complementary modules for constitutional constraint checking (AURA), operator
+algebras for knowledge state evolution (TRIAD), and a formal notation for
+expressing alignment constraints (LAMAGUE). These extensions are documented in
+the repository but are outside the scope of this paper, which establishes the
+reorganization mechanism in isolation before composing it with other components.
+
+All code is open-source at \url{https://github.com/Lycheetah/Lycheetah-Framework}.
 
 % ═══════════════════════════════════════════════════════════
 \subsection*{Reproducibility}
 
-Every experimental number in this paper comes from \texttt{cascade\_real\_experiments.py}
-(synthetic experiments) and \texttt{run\_experiments.py} (historical validations),
-runnable with only NumPy and SciPy. The historical validation code consists of a
-domain-agnostic engine (\texttt{cascade\_engine.py}) and pluggable domain modules
-(\texttt{domain\_germ\_theory.py}, \texttt{domain\_quantum\_physics.py}).
+Synthetic experiments: \texttt{cascade\_real\_experiments.py}.
+Historical validations: \texttt{run\_experiments.py} (which calls pluggable domain
+modules \texttt{domain\_germ\_theory.py} and \texttt{domain\_quantum\_physics.py}).
+All under \texttt{12\_IMPLEMENTATIONS/experiments/}, with the CASCADE engine in
+\texttt{12\_IMPLEMENTATIONS/core/cascade\_engine.py}.
+Runnable with only NumPy and SciPy.
 Seeds are fixed. We encourage adversarial testing: if you can find a cascade event that
 violates any invariant, the theory is falsified.
 
@@ -848,6 +877,58 @@ R.~Trivedi, H.~Dai, Y.~Wang, and L.~Song.
 F.~Zenke, B.~Poole, and S.~Ganguli.
 \newblock Continual learning through synaptic intelligence.
 \newblock In \emph{ICML}, 2017.
+
+% === 2020--2025 additions ===
+
+\bibitem[Buzzega et~al.(2020)]{buzzega2020dark}
+P.~Buzzega, M.~Boschini, A.~Porrello, D.~Abati, and S.~Calderara.
+\newblock Dark experience for general continual learning: a strong, simple
+  baseline.
+\newblock In \emph{NeurIPS}, 2020.
+
+\bibitem[Wang et~al.(2022a)]{wang2022learning}
+Z.~Wang, Z.~Zhang, C.-Y.~Lee, H.~Zhang, R.~Sun, X.~Ren, G.~Su, V.~Perot,
+  J.~Dy, and T.~Pfister.
+\newblock Learning to prompt for continual learning.
+\newblock In \emph{CVPR}, 2022.
+
+\bibitem[Wang et~al.(2022b)]{wang2022dualprompt}
+Z.~Wang, Z.~Zhang, S.~Ebrahimi, R.~Sun, H.~Zhang, C.-Y.~Lee, X.~Ren, G.~Su,
+  V.~Perot, J.~Dy, and T.~Pfister.
+\newblock {DualPrompt}: Complementary prompting for rehearsal-free continual
+  learning.
+\newblock In \emph{ECCV}, 2022.
+
+\bibitem[Meng et~al.(2022)]{meng2022locating}
+K.~Meng, D.~Bau, A.~Andonian, and Y.~Belinkov.
+\newblock Locating and editing factual associations in {GPT}.
+\newblock In \emph{NeurIPS}, 2022.
+
+\bibitem[Meng et~al.(2023)]{meng2023memit}
+K.~Meng, A.~S.~Sharma, A.~Andonian, Y.~Belinkov, and D.~Bau.
+\newblock Mass-editing memory in a transformer.
+\newblock In \emph{ICLR}, 2023.
+
+\bibitem[Mitchell et~al.(2022)]{mitchell2022mend}
+E.~Mitchell, C.~Lin, A.~Bosselut, C.~Finn, and C.~D.~Manning.
+\newblock Fast model editing at scale.
+\newblock In \emph{ICLR}, 2022.
+
+\bibitem[De~Cao et~al.(2021)]{decao2021editing}
+N.~De~Cao, W.~Aziz, and I.~Titov.
+\newblock Editing factual knowledge in language models.
+\newblock In \emph{EMNLP}, 2021.
+
+\bibitem[Smith et~al.(2023)]{smith2023continual}
+J.~Smith, Y.-C.~Hsu, J.~Balloch, Y.~Shen, H.~Jin, and Z.~Kira.
+\newblock Continual diffusion: Continual customization of text-to-image
+  diffusion with {C-LoRA}.
+\newblock \emph{arXiv:2304.06027}, 2023.
+
+\bibitem[Yao et~al.(2023)]{yao2023editing}
+Y.~Yao, P.~Wang, B.~Tian, S.~Cheng, Z.~Li, S.~Deng, H.~Chen, and N.~Zhang.
+\newblock Editing large language models: Problems, methods, and opportunities.
+\newblock In \emph{EMNLP}, 2023.
 
 \end{thebibliography}
 
