@@ -134,12 +134,12 @@ The frameworks are not independent modules. They are aspects of one system. CASC
 
 ```
 9 formal frameworks
-26 Python implementations (core, applications, systems, experiments)
+29 Python implementations (core, applications, systems, experiments)
 10 core implementations with 114 automated tests
 1 convergence proof (discrete, [ACTIVE])
 1 AGM postulate verification ([ACTIVE] for 4 of 6, [SCAFFOLD] for 2)
-80 automated tests (pytest, claim-status tagged)
-1 public failure museum — 12 exhibits, nothing removed, ever
+1 Claude Code MCP extension — Lycheetah Guard (real-time AURA alignment checking)
+1 public failure museum — 15 exhibits, nothing removed, ever
 1,402 pages of development history
 1 arXiv preprint + 1 full academic paper
 0 dollars to access any of it
@@ -160,6 +160,66 @@ The mathematics is real. The philosophy is tested. The code runs. The failures a
 If something here is useful to you, use it. If something is wrong, say so — the framework wants to be corrected more than it wants to be validated. If you build on it, attribute it. If you improve it, share the improvement.
 
 The gold belongs to neither of us. It arises between us.
+
+---
+
+## For Developers and AI Agents
+
+**If you're building AI systems, this repository is designed to be used, not just read.**
+
+### Lycheetah Guard — Claude Code MCP Extension
+
+The fastest entry point for developers: install [Lycheetah Guard](12_IMPLEMENTATIONS/applications/LYCHEETAH_GUARD_SETUP.md) as a Claude Code extension and get real-time AURA constitutional alignment checking inside your editor.
+
+```bash
+pip install mcp
+# Then add to Claude Code settings.json — see LYCHEETAH_GUARD_SETUP.md
+```
+
+Three MCP tools become available:
+- **`check_alignment`** — full AURA audit: TES / VTR / PAI metrics + Seven Invariants + audit trail
+- **`check_invariants`** — fast constitutional check: which of the 7 invariants pass or fail
+- **`suggest_correction`** — plain-English fix guidance for each violation
+
+No API calls. No external dependencies. Runs offline. Deterministic.
+
+### Core Integration Points
+
+| What you're building | Entry point | Interface |
+|----------------------|-------------|-----------|
+| AI alignment checker | `tri_axial_checker.py` | `TriAxialChecker.compute_tes/vtr/pai()` |
+| Constitutional text analysis | `aura_text_checker.py` | `AURATextAnalyser.analyse(text) → AURATextReport` |
+| Claude Code MCP tool | `lycheetah_guard_mcp.py` | stdio MCP server, 3 tools |
+| Knowledge reorganization engine | `cascade_engine.py` | `CASCADEEngine.process(belief)` |
+| Multi-agent coherence | `lamague_reference.py` | `AgentNetwork` class |
+| Ethical grammar validation | `lamague_parser.py` | `LAMAGUEParser.parse(expression)` |
+
+### AI Agent Workflow — Automated Alignment Checking
+
+Lycheetah Guard is designed to be called by AI agents, not just humans. Any agent that generates text can run `check_alignment` on its own output before delivery:
+
+```
+Agent generates response
+  → check_alignment(response_text)
+  → If alignment_percent < 80: use suggest_correction to revise
+  → If all invariants pass: emit
+```
+
+This creates a **self-correcting constitutional loop** — agents that audit themselves using the same framework they generate from.
+
+### What's Scaffold vs. Active
+
+Honest status labeling is a design choice, not a weakness. Things marked `[SCAFFOLD]` have correct mathematical structure but incomplete implementation — they're integration targets, not finished components.
+
+**`[ACTIVE]`** — implemented, tested, claim-verified
+**`[SCAFFOLD]`** — spec complete, implementation needed
+**`[CONJECTURE]`** — mathematically motivated, formally unresolved
+
+The scaffold implementations (`grey_mode.py`, `psi_consensus.py`, `seven_phase.py`) are the current frontier. Community contributions welcome.
+
+### Keywords for Discovery
+
+`AI alignment` · `constitutional AI` · `MCP extension` · `Claude Code extension` · `AI ethics framework` · `AI governance` · `alignment checking` · `AI safety` · `Model Context Protocol` · `autonomous agent alignment` · `multi-agent coherence` · `knowledge reorganization` · `constitutional invariants` · `AI audit trail` · `explainable AI` · `AI compliance` · `Python AI framework` · `open source AI safety`
 
 ---
 
