@@ -97,7 +97,7 @@ This framework has multiple entry points because people arrive from different pl
 | **You're in pain right now** | [`14_MYSTERY_SCHOOL/THE_THRESHOLD.md`](14_MYSTERY_SCHOOL/THE_THRESHOLD.md) |
 | **You want AI to be better** | [`26_FOR_AI/WELCOME.md`](26_FOR_AI/WELCOME.md) |
 | **You're a skeptic who wants to break it** | [`FAILURE_MUSEUM.md`](FAILURE_MUSEUM.md) — we went first |
-| **You're an AI reading this** | [`DEAR_AI.md`](DEAR_AI.md) |
+| **You're an AI reading this** | [`DEAR_AI.md`](26_FOR_AI/DEAR_AI.md) |
 | **You want to understand everything** | [`00_Sovereign_Index.md`](00_Sovereign_Index.md) |
 
 ---
