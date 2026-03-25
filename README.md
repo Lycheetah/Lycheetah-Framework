@@ -100,7 +100,7 @@ This framework has multiple entry points because people arrive from different pl
 Three reasons:
 
 **1. The failures are published.**
-The [Failure Museum](FAILURE_MUSEUM.md) documents every significant thing the framework got wrong — what was claimed, what was actually true, what changed. Twelve exhibits and growing. Nothing removed. A framework that hides its failures is performing confidence. This one earns it.
+The [Failure Museum](FAILURE_MUSEUM.md) documents every significant thing the framework got wrong — what was claimed, what was actually true, what changed. Fifteen exhibits and growing. Nothing removed. A framework that hides its failures is performing confidence. This one earns it.
 
 **2. The claims are honest.**
 33% of mathematical claims are [ACTIVE] — proven, computable, independently verifiable. 52% are [SCAFFOLD] — structurally sound with named gaps. 15% are foundational conjectures that may take years to resolve. These numbers are published because false certainty is more dangerous than honest uncertainty.
@@ -135,7 +135,7 @@ The frameworks are not independent modules. They are aspects of one system. CASC
 ```
 9 formal frameworks
 26 Python implementations (core, applications, systems, experiments)
-10 core implementations with 80 automated tests
+10 core implementations with 114 automated tests
 1 convergence proof (discrete, [ACTIVE])
 1 AGM postulate verification ([ACTIVE] for 4 of 6, [SCAFFOLD] for 2)
 80 automated tests (pytest, claim-status tagged)
