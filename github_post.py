@@ -157,6 +157,28 @@ def list_discussions(token: str, count: int = 5) -> list[dict]:
     return data["repository"]["discussions"]["nodes"]
 
 
+def pin_discussion(token: str, discussion_number: int) -> bool:
+    """Pin a discussion to the top of the Discussions page."""
+    # Get discussion node ID
+    data = graphql(token, """
+        query($owner: String!, $name: String!, $num: Int!) {
+          repository(owner: $owner, name: $name) {
+            discussion(number: $num) { id }
+          }
+        }
+    """, {"owner": REPO_OWNER, "name": REPO_NAME, "num": discussion_number})
+    disc_id = data["repository"]["discussion"]["id"]
+
+    result = graphql(token, """
+        mutation PinDiscussion($id: ID!) {
+          pinDiscussion(input: { discussionId: $id }) {
+            pinnedDiscussion { pinnedAt }
+          }
+        }
+    """, {"id": disc_id})
+    return bool(result.get("pinDiscussion"))
+
+
 def create_issue(token: str, title: str, body: str,
                  labels: list[str] | None = None) -> dict:
     payload: dict = {"title": title, "body": body}
@@ -297,6 +319,10 @@ def main():
     iss.add_argument("--body-file", help="Read body from a file")
     iss.add_argument("--label", action="append", dest="labels", help="Label name(s)")
 
+    # --- pin ---
+    pin = sub.add_parser("pin", help="Pin a Discussion to the top of the Discussions page")
+    pin.add_argument("number", type=int, help="Discussion number to pin")
+
     # --- list-categories ---
     sub.add_parser("list-categories", help="List available Discussion categories")
 
@@ -313,6 +339,15 @@ def main():
     # Dry run and content generation don't need a token
     dry = getattr(args, "dry_run", False)
     token = get_token(args.token) if not dry else (args.token or os.environ.get("GITHUB_TOKEN", "dummy"))
+
+    # ---- pin ----
+    if args.command == "pin":
+        ok = pin_discussion(token, args.number)
+        if ok:
+            print(f"Discussion #{args.number} pinned.")
+        else:
+            print(f"Pin request sent for #{args.number} (check GitHub to confirm).")
+        return
 
     # ---- list-categories ----
     if args.command == "list-categories":
