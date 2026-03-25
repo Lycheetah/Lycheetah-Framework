@@ -80,6 +80,16 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 - Connections to HARMONIA (Kuramoto), CASCADE (update rates), TRIAD (α parameter)
 - Open research questions with contribution pathways
 
+### P1-M: SOURCE ARCHIVE INTEGRATION — read before building AURA or LAMAGUE content
+- Source docs at: `C:\Users\thedo\Downloads\New main file\Lama-Cascade-Aura-main\`
+- Key unread: `Aura Protocol/AURA_PROTOCOL_COMPLETE_CONSOLIDATION (2).md`
+- Key unread: `Lamague/LAMAGUE_CASCADE_MASTER_FILE_v2.0.docx` (full LAMAGUE spec)
+- Key unread: `1 doc system and public results/LYCHEETAH_TECHNICAL_ARCHITECTURE_PROOF.md`
+- Key unread: `System in full/AURA_FRONTIER_ANALYSIS.md`
+- Discovery this session: Three-tier language stack (GEOMATRIA→LAMAHGUE→LAMAGUE→TRIAD)
+  documented in `03_LAMAGUE/NOTATION_GUIDE.md` — Exhibit 14 filed
+- **Do NOT build more AURA or LAMAGUE content without reading source docs first**
+
 ### P1-J: chrysopoeia_engine.py — highest-value missing implementation
 - Banach fixed-point convergence, seven non-commutative transformation operations
 - Four tiers: Nigredo, Albedo, Citrinitas, Rubedo
