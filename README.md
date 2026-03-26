@@ -11,6 +11,10 @@
 
 ---
 
+> **Nearly 3,000 clones. 485 unique cloners.** If you've arrived here and found something worth keeping — [★ star the repository](https://github.com/Lycheetah/Lycheetah-Framework). It costs nothing. It's how the work becomes findable by people who need it.
+
+---
+
 You build AI systems. Or you study consciousness. Or you practice magic. Or you write policy. Or you're just trying to figure out why the thing you built does something you can't explain and the thing you feel can't be measured.
 
 You've arrived at the same problem from different directions.
@@ -245,7 +249,11 @@ The constitutional OS layer (`grey_mode.py`, `psi_consensus.py`, `seven_phase.py
 
 Everything in this framework is free and stays free. No subscription. No paywall. No certification fees. That does not change.
 
-If the work has been useful to you and you want to sustain it — the forge requires fuel.
+**The single most useful thing you can do costs nothing:**
+
+[★ Star on GitHub →](https://github.com/Lycheetah/Lycheetah-Framework) — GitHub's discovery algorithm is driven by stars. Nearly 3,000 clones and 485 unique cloners means this work is being used. Stars are what make it visible to the next person who needs it. One click if you have a GitHub account.
+
+If the work has been useful to you and you want to sustain it beyond that — the forge requires fuel.
 
 **[Support on Ko-fi →](https://ko-fi.com/lycheetah)**
 **[GitHub Sponsors →](https://github.com/sponsors/Lycheetah)**
