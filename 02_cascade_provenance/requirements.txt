@@ -1,0 +1,7 @@
+# CASCADE Provenance Checker dependencies
+# Core — required
+# (no external deps for basic operation — uses stdlib sqlite3, hashlib, json)
+
+# Optional — upgrades semantic similarity from token-Jaccard to full embeddings
+# Install for production use:
+sentence-transformers>=2.7.0
