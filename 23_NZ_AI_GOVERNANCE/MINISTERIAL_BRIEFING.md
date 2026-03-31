@@ -2,6 +2,7 @@
 ## AI Accountability for Aotearoa: Four Standards Ready for Adoption
 ### Prepared for: Minister of Science, Innovation and Technology / Minister for Digitising Government
 ### Format: Two-page ministerial briefing | March 2026
+### Status: [SCAFFOLD] — Standards are documented and open-source [ACTIVE]; political adoption pathway is proposed but untested
 
 ---
 
@@ -11,7 +12,7 @@ AI systems are making consequential decisions affecting New Zealand citizens —
 
 The EU AI Act categorises risk. It does not verify that AI systems actually know what they claim to know. It does not require AI systems to account for whose knowledge built them. It has no mechanism derived from Treaty obligations.
 
-**New Zealand can do better than the EU AI Act. The tools exist. No legislation is required.**
+**New Zealand can do better than the EU AI Act. The tools exist. No legislation is required.** [SCAFFOLD — ministerial directive pathway is proposed; has not been tested with a NZ minister]
 
 ---
 
@@ -20,25 +21,25 @@ The EU AI Act categorises risk. It does not verify that AI systems actually know
 Four AI accountability standards have been developed by an independent New Zealand researcher, open-sourced under CC BY 4.0, and are available for immediate adoption by ministerial directive.
 
 ### 1. Community AI Warrant of Fitness (WOF)
-**What it does:** Annual certification for AI systems operating in public-facing contexts. Seven checks. Pass/fail. Public register.
-**Political pathway:** Ministerial directive to government agencies — no legislation required.
+**What it does:** Annual certification for AI systems operating in public-facing contexts. Seven checks. Pass/fail. Public register. [ACTIVE — standard fully specified in COMMUNITY_AI_WOF.md]
+**Political pathway:** Ministerial directive to government agencies — no legislation required. [SCAFFOLD — legal pathway identified, not yet tested]
 **The question it answers:** *"Has it got its WOF?"*
-**Time to implement:** 90 days for pilot agency.
+**Time to implement:** 90 days for pilot agency. [SCAFFOLD — estimate based on analogous WOF infrastructure; no pilot has run]
 
 ### 2. Three Worlds Disclosure Standard
-**What it does:** Every AI output labelled by what the system actually knows (Te Ao Mārama), what it is uncertain about (Te Ao Pō), and what it structurally cannot know (Te Kore).
-**Grounded in:** Māori epistemology — not imposed Western categories.
+**What it does:** Every AI output labelled by what the system actually knows (Te Ao Mārama), what it is uncertain about (Te Ao Pō), and what it structurally cannot know (Te Kore). [ACTIVE — standard specified; tikanga framing is [PROPOSAL] pending iwi validation]
+**Grounded in:** Māori epistemology — not imposed Western categories. [PROPOSAL — use of tikanga epistemological framework requires Kāi Tahu and iwi partnership to validate]
 **The problem it solves:** Citizens currently cannot tell when an AI system is confident, uncertain, or operating outside its knowledge.
-**Time to implement:** Immediate for new system deployments; 6 months for existing.
+**Time to implement:** Immediate for new system deployments; 6 months for existing. [SCAFFOLD — estimate; no deployment has been piloted]
 
 ### 3. Whakapapa Disclosure Standard
-**What it does:** AI genealogy — where it came from, who built it, what it owes. Four layers: training data ancestry, builders, accountable parties, future obligations.
-**Goes further than:** EU AI Act model cards, which track technical specifications but not knowledge debt.
+**What it does:** AI genealogy — where it came from, who built it, what it owes. Four layers: training data ancestry, builders, accountable parties, future obligations. [ACTIVE — standard specified; Māori governance framing is [PROPOSAL] pending iwi validation]
+**Goes further than:** EU AI Act model cards, which track technical specifications but not knowledge debt. [ACTIVE — comparative analysis documented in CHINA_NZ_BRIDGE.md and PMCSA_RESPONSE.md]
 **The question it answers:** *"Whose knowledge built this system, and what does it owe them?"*
 
 ### 4. Matariki Annual Audit
-**What it does:** Annual accountability as national ritual, not just regulation. Three domains: harm prevented (Whānui), benefit delivered (Pōhutukawa), reciprocity honoured (Tupuānuku). Published at Matariki each year. Maximum 10 pages.
-**The insight:** "Regulation you can hire your way around. Ritual you are either part of or visibly absent from."
+**What it does:** Annual accountability as national ritual, not just regulation. Three domains: harm prevented (Whānui), benefit delivered (Pōhutukawa), reciprocity honoured (Tupuānuku). Published at Matariki each year. Maximum 10 pages. [ACTIVE — standard specified; Matariki framing is [PROPOSAL] pending iwi validation]
+**The insight:** "Regulation you can hire your way around. Ritual you are either part of or visibly absent from." [SCAFFOLD — this behavioural prediction is plausible but empirically untested]
 
 ---
 
@@ -62,7 +63,7 @@ Four AI accountability standards have been developed by an independent New Zeala
 3. Establish a public Community AI WOF Register — agencies publish annual WOF status.
 4. Commission formal engagement with Kāi Tahu and other iwi on the Whakapapa Disclosure Standard.
 
-**No legislation required for steps 1–3.** Ministerial directive is sufficient.
+**No legislation required for steps 1–3.** Ministerial directive is sufficient. [SCAFFOLD — legal analysis has not been formally reviewed; this is the researcher's assessment of the pathway]
 
 ---
 

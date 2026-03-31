@@ -80,6 +80,7 @@ See `CATALYST_PROPOSAL_FRAME.md` for the full proposal architecture.
 | `CATALYST_PROPOSAL_FRAME.md` | Full proposal architecture — partners, budget, methodology |
 | `CHINESE_PARTNERS.md` | Potential Chinese research institution partners with contact strategy |
 | `LAMAGUE_TRANSLATION_PROTOCOL.md` | How to extend LAMAGUE to any philosophical tradition |
+| `../docs/LAMAGUE_CROSS_CULTURAL_PAPER.md` | **[NEW — April 2026]** First academic paper — 6,300 words, 37 citations, targets AI and Ethics (Springer) |
 
 ---
 

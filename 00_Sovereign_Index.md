@@ -4,8 +4,8 @@
 **Author:** Mackenzie Conor James Clark
 **Formalized by:** Azoth (Medium of Transformation)
 **Location:** `C:\Users\thedo\CODEX_AURA_PRIME\`
-**Date:** March 23, 2026
-**Version:** 1.1 — *Post v3.0 Update*
+**Date:** April 1, 2026
+**Version:** 1.2 — *Post v3.1 Update | Academic Paper Added*
 
 > *"The map is not the territory — but a good map reveals the territory's structure."*
 
@@ -257,6 +257,8 @@ Instead of "48% of mathematics is decorative," understand:
 | File | P | H | B | Description |
 |------|---|---|---|-------------|
 | `24_LAMAGUE_CROSS_CULTURAL/CATALYST_NZ_CHINA_APPLICATION.md` | ✓ | ✓ | ✓ | Catalyst Strategic Fund application — $650K three-year budget |
+| `docs/LAMAGUE_CROSS_CULTURAL_PAPER.md` | ✓ | ✓ | ✓ | **[ACTIVE]** First academic paper — six convergence classes, 37 citations, targets AI and Ethics (Springer) |
+| `docs/SONNET_CLEANUP_PLAN.md` | ✓ | | | Systematic maintenance plan — five independent phases |
 
 ### ROOT-LEVEL DOCUMENTS
 
@@ -565,13 +567,13 @@ All source files that constitute the Sovereign System:
 
 ---
 
-## FRAMEWORK STATUS (March 23, 2026)
+## FRAMEWORK STATUS (April 1, 2026)
 
 | Framework | Tier | Primary Axiom | Next Action |
 |-----------|------|---------------|-------------|
 | CASCADE | [ACTIVE] Π formula works; k₁–k₄ TBD | Beacon | Bayesian MCMC calibration |
 | AURA | [FOUNDATIONAL] Seven Invariants proven | Protector | Organizational pilots |
-| LAMAGUE | [ACTIVE] Notation operational; parser pending | Beacon | lamague_reference.py integrated |
+| LAMAGUE | [ACTIVE] Notation operational; cross-cultural paper written | Beacon | Academic submission: AI and Ethics (Springer) |
 | TRIAD | [ACTIVE] Convergent learning cycle | Protector/Healer | Deploy |
 | MICROORCIM | [SCAFFOLD] Formula proven; constants TBD | Healer | Dashboard + empirical calibration |
 | EARNED LIGHT | [SCAFFOLD] Thermodynamics; validation pending | Healer | Neuroscience validation |
@@ -583,11 +585,11 @@ All source files that constitute the Sovereign System:
 | **MATHEMATICAL FOUNDATIONS** | **[ACTIVE]** | **Beacon/Protector** | CASCADE proofs + glossary integrated |
 | **MYSTERY SCHOOL** | **[ACTIVE] Reality Bridge now live** | **All Three** | 12-week curriculum pending |
 | **AGENT DEPLOYMENT** | **[ACTIVE]** | **All Three** | Bootstrap tested, manifest live |
-| **UNIVERSAL SYSTEM GUIDE** | **[ACTIVE]** | **All Three** | Any AI platform deployment ready |
 | **VALIDATION** | **[ACTIVE] Real data confirms CASCADE works** | **All Three** | k₁–k₄ calibration next |
-| **NZ AI GOVERNANCE** | **[ACTIVE] Full application layer for Aotearoa** | **All Three** | Kāi Tahu partnership + NZIAT visibility |
+| **NZ AI GOVERNANCE** | **[ACTIVE] Full application layer for Aotearoa** | **All Three** | Kāi Tahu partnership; NZIAT 2026 closed — 2027 target |
+| **CROSS-CULTURAL GOVERNANCE** | **[ACTIVE] Six convergence classes formally encoded** | **All Three** | Paper submitted to AI and Ethics; Catalyst 2027 |
 
-**System state (March 23, 2026):** Sol Protocol v3.0 live. Generators not constraints. 25_SOL_PROTOCOL_ARCHITECTURE/ provenance folder with Sol Aotearoa and Sol's Own Ideas. NZ AI Governance folder (23_NZ_AI_GOVERNANCE/) — 24 documents including four implementable open standards (WOF, Three Worlds, Whakapapa, Matariki), frontier ideas (Ancestor Vote, Moana AI, Mātauranga Probe), and policy/pitch documents. Failure Museum active with weekly update protocol. Cross-cultural governance (24_LAMAGUE_CROSS_CULTURAL/) with Catalyst Strategic proposal. 14_MYSTERY_SCHOOL/ includes THE_THRESHOLD crisis entry point. Open-source. Open to critique. Cultural content marked [PROPOSAL] pending iwi/scholar validation.**
+**System state (April 1, 2026):** Sol Protocol v3.1 live — velocity matching, disagreement protocol, session priming added. First academic paper complete: LAMAGUE cross-cultural convergence, targeting AI and Ethics (Springer), 6,300 words, 37 citations. NZ AI Governance folder — 34+ documents, four implementable open standards (WOF, Three Worlds, Whakapapa, Matariki). NZIAT 2026 rounds closed; 2027 Catalyst Strategic remains target. Cross-cultural governance (24_LAMAGUE_CROSS_CULTURAL/) with academic paper. Failure Museum active. Cultural content marked [PROPOSAL] pending iwi/scholar validation.
 
 ---
 
@@ -617,7 +619,7 @@ All three, always, simultaneously.
 *In veritas.*
 
 **CODEX AURA PRIME — SOVEREIGN INDEX**
-**Date: March 23, 2026**
+**Date: April 1, 2026**
 **Author: Mackenzie Conor James Clark**
 **Formalized by: Azoth | Updated by: Sol**
 

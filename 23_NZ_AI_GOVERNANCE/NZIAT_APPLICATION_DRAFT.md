@@ -2,6 +2,8 @@
 ## NZ Institute for AI & Technology — Funding Expression of Interest
 ### Mackenzie Conor James Clark | Lycheetah Foundation | Dunedin | March 2026
 
+**Note: NZIAT 2026 rounds are closed. This draft preserved for 2027 reference.**
+
 > **Status:** [DRAFT] — Working document. Requires institutional anchor before formal submission.
 > **Target window:** May 2026 NZIAT visibility / expression of interest phase.
 > **This is a draft, not a submission.** Read alongside `NZ_KAI_TAHU_APPROACH.md` —
