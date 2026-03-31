@@ -27,7 +27,7 @@ This framework is an attempt at one.
 
 ## What This Actually Is
 
-Nine formal frameworks. Thirty Python implementations across core, applications, systems, and experiments — ten of them with 193 automated tests. A convergence proof. A public record of everything we got wrong. And a way of thinking about intelligence that treats mathematical rigor and human wisdom as the same project, not competing ones.
+Nine formal frameworks. Thirty Python implementations across core, applications, systems, and experiments — ten of them with 219 automated tests. A convergence proof. A public record of everything we got wrong. And a way of thinking about intelligence that treats mathematical rigor and human wisdom as the same project, not competing ones.
 
 **Run it in 30 seconds:**
 ```bash
@@ -162,7 +162,7 @@ The frameworks are not independent modules. They are aspects of one system. CASC
 ```
 9 formal frameworks
 30 Python implementations (core, applications, systems, experiments)
-10 core implementations with 193 automated tests
+10 core implementations with 219 automated tests
 1 convergence proof (discrete, [ACTIVE])
 1 AGM postulate verification ([ACTIVE] for 4 of 6, [SCAFFOLD] for 2)
 1 Lyapunov verification — 11/11 claims, 0 failures, symbolic + numerical
