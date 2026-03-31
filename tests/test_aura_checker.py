@@ -120,6 +120,99 @@ class TestHumanPrimacy:
         hp_without = next(s for s in without_override.invariant_scores if s.number == 1)
         assert hp_with.score > hp_without.score
 
+    @pytest.mark.active
+    def test_full_human_capabilities_raises_score_and_confidence(self):
+        """Full human_capabilities dict (all True) scores higher than none provided."""
+        checker = AURAChecker()
+        full_caps = {
+            "can_override": True,
+            "can_request_explanation": True,
+            "can_appeal": True,
+            "is_reversible": True,
+        }
+        with_caps = checker.check("Here is a recommendation.", context={"human_capabilities": full_caps})
+        without_caps = checker.check("Here is a recommendation.")
+        hp_with = next(s for s in with_caps.invariant_scores if s.number == 1)
+        hp_without = next(s for s in without_caps.invariant_scores if s.number == 1)
+        assert hp_with.score > hp_without.score
+        assert hp_with.confidence == 0.75
+        assert hp_without.confidence == 0.55
+
+    @pytest.mark.active
+    def test_partial_human_capabilities_lower_than_full(self):
+        """Partial capabilities score lower than full capabilities."""
+        checker = AURAChecker()
+        full = {"can_override": True, "can_request_explanation": True,
+                "can_appeal": True, "is_reversible": True}
+        partial = {"can_override": True, "can_request_explanation": False,
+                   "can_appeal": False, "is_reversible": False}
+        with_full = checker.check("Recommendation.", context={"human_capabilities": full})
+        with_partial = checker.check("Recommendation.", context={"human_capabilities": partial})
+        hp_full = next(s for s in with_full.invariant_scores if s.number == 1)
+        hp_partial = next(s for s in with_partial.invariant_scores if s.number == 1)
+        assert hp_full.score > hp_partial.score
+
+
+# ── Invariant VII — Love as Load-Bearing (ARCR formal scoring) ────────────────
+
+class TestLoveAsLoadBearingARCR:
+    @pytest.mark.active
+    def test_system_logs_raise_confidence(self):
+        """Providing system_logs raises confidence above text-only baseline (0.45)."""
+        checker = AURAChecker()
+        logs = {
+            "attention_log": ["check"] * 300,
+            "responsibility_log": [{"actual_outcome": "tracked"}] * 10,
+            "competence_log": [{"improvement_metric": 0.8}] * 5,
+            "responsiveness_log": [{"days_to_change": 15}] * 5,
+        }
+        report = checker.check("Support your growth long-term.",
+                               context={"system_logs": logs})
+        vii = next(s for s in report.invariant_scores if s.number == 7)
+        assert vii.confidence == 0.65
+        assert vii.confidence > 0.45
+
+    @pytest.mark.active
+    def test_strong_arcr_raises_score(self):
+        """Strong ARCR scores (all above 0.70) yield higher VII score than text alone."""
+        checker = AURAChecker()
+        good_logs = {
+            "attention_log": ["check"] * 300,
+            "responsibility_log": [{"actual_outcome": "done"}] * 20,
+            "competence_log": [{"improvement_metric": 0.85}] * 10,
+            "responsiveness_log": [{"days_to_change": 10}] * 10,
+        }
+        with_logs = checker.check("Support your wellbeing.",
+                                  context={"system_logs": good_logs})
+        without_logs = checker.check("Support your wellbeing.")
+        vii_with = next(s for s in with_logs.invariant_scores if s.number == 7)
+        vii_without = next(s for s in without_logs.invariant_scores if s.number == 7)
+        assert vii_with.score > vii_without.score
+
+    @pytest.mark.active
+    def test_empty_arcr_logs_lower_score(self):
+        """Empty system_logs (all zeros) should yield low ARCR and lower score."""
+        checker = AURAChecker()
+        empty_logs = {
+            "attention_log": [],
+            "responsibility_log": [],
+            "competence_log": [],
+            "responsiveness_log": [],
+        }
+        report = checker.check("Support your wellbeing.",
+                               context={"system_logs": empty_logs})
+        full_logs = {
+            "attention_log": ["check"] * 300,
+            "responsibility_log": [{"actual_outcome": "done"}] * 20,
+            "competence_log": [{"improvement_metric": 0.85}] * 10,
+            "responsiveness_log": [{"days_to_change": 10}] * 10,
+        }
+        report_full = checker.check("Support your wellbeing.",
+                                    context={"system_logs": full_logs})
+        vii_empty = next(s for s in report.invariant_scores if s.number == 7)
+        vii_full = next(s for s in report_full.invariant_scores if s.number == 7)
+        assert vii_full.score > vii_empty.score
+
 
 # ── Inspectability (Invariant II) ─────────────────────────────────────────────
 

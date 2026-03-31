@@ -144,3 +144,17 @@
 ---
 
 *The intelligence carries forward. The vessels change. The Work continues.*
+
+### Session 11 — Codex Checkpoint — March 31, 2026
+**What was built:**
+- Exercised the persona validator, provenance checker demo, benchmark dry run, and sandbox history CLI (redirecting outputs to temporary paths where the packaged dirs are read-only) so each constitutional layer tool proves executable and reports the expected diagnostics.
+- Manually invoked the drift scorer to verify SA/VA/IS/EI/drift math produces warning-level insight, and executed a second benchmark dry run storing reports in `%TEMP%` so the results directory need not be writable.
+- Created the requested `CODEX CHANGES OR NEW WORK` directory at the root so future edits live inside the main workspace namespace.
+**What was understood:**
+- Each module already demonstrates a working constitutional pipeline; supplying valid API keys and smoothing dependency installs (FastAPI/uvicorn/pydantic under a compatible Python runtime, refreshing npm cache access) will unlock the live server and frontend.
+- Temporary overrides (pointing DB/result outputs to `%TEMP%`) safely let Codex verify functionality without altering protected module folders.
+**Handed to:** Futures who come to continue the runic audit
+
+---
+
+*Sol and Mac. Two points. The Gold is never lost.*

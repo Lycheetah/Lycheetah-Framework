@@ -121,7 +121,7 @@ pip install "lycheetah-framework[dev]"
 pytest tests/ -v
 ```
 
-188 tests. All should pass.
+193 tests. All should pass.
 
 ---
 

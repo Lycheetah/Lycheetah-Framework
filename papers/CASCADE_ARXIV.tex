@@ -77,19 +77,20 @@ implementation and all experimental code are open-source.
 
 \medskip
 \noindent\textbf{Keywords:} Knowledge Reorganization, Belief Revision, Catastrophic
-Forgetting, Truth Pressure, Paradigm Shift, Coherence Preservation
+Forgetting, Truth Pressure, Paradigm Shift, Coherence Preservation, Defeasible Reasoning,
+Philosophy of Science
 \end{abstract}
 
 % ═══════════════════════════════════════════════════════════
 \section{Introduction}\label{sec:intro}
 
-When scientific paradigms shift---Newtonian mechanics giving way to general relativity,
-classical physics to quantum mechanics---the scientific community does not simply
-\emph{add} the new theory alongside the old. Nor does it \emph{delete} the old theory
-entirely. Instead, it \emph{contextualizes}: Newtonian mechanics is demoted from
-``fundamental law'' to ``excellent approximation valid at low velocities and weak
-gravitational fields.'' The old knowledge is preserved but reframed, while the new
-knowledge assumes foundational status.
+When scientific paradigms shift~\citep{kuhn1962structure}---Newtonian mechanics giving
+way to general relativity, classical physics to quantum mechanics---the scientific
+community does not simply \emph{add} the new theory alongside the old. Nor does it
+\emph{delete} the old theory entirely. Instead, it \emph{contextualizes}: Newtonian
+mechanics is demoted from ``fundamental law'' to ``excellent approximation valid at low
+velocities and weak gravitational fields.'' The old knowledge is preserved but reframed,
+while the new knowledge assumes foundational status.
 
 No existing computational knowledge system replicates this process. Neural networks
 exhibit catastrophic forgetting when learning contradictory information~\citep{mccloskey1989catastrophic}.
@@ -687,6 +688,22 @@ single-source blocks as cascade triggers.
 % ═══════════════════════════════════════════════════════════
 \section{Related Work}\label{sec:related}
 
+\textbf{Philosophy of science.}
+Kuhn's account of scientific revolutions~\citep{kuhn1962structure} is the descriptive
+foundation CASCADE formalizes. Kuhn observed that scientific progress proceeds not
+through gradual accumulation but through periodic paradigm shifts in which an
+anomaly-burdened framework is replaced by an incommensurable new one---and crucially,
+that old knowledge is not simply \emph{deleted} but \emph{recontextualized}: Newtonian
+mechanics becomes ``an excellent approximation valid at low velocities and weak
+gravitational fields.'' G\"{a}rdenfors and the AGM tradition~\citep{alchourron1985logic,gardenfors1988knowledge}
+subsequently provided a logical characterization of belief revision: what properties must
+a rational revision satisfy? CASCADE bridges these two traditions. Kuhn's observation
+that old knowledge is contextualized (not erased) becomes CASCADE's Phase~2 compression;
+the anomaly pressure that forces a paradigm shift becomes the truth pressure
+inequality~(\ref{eq:trigger}). Where Kuhn is descriptive and AGM is postulational,
+CASCADE is algorithmic: a computable protocol that any knowledge system can execute,
+with invariant guarantees that hold regardless of the domain.
+
 \textbf{Continual learning.} EWC~\citep{kirkpatrick2017overcoming} and
 SI~\citep{zenke2017continual} add quadratic penalties to protect important parameters.
 Progressive networks~\citep{rusu2016progressive} add capacity. PackNet~\citep{mallya2018packnet}
@@ -696,13 +713,16 @@ with replay, and prompt-based methods~\citep{wang2022learning,wang2022dualprompt
 freeze the backbone entirely and learn task-specific prompts. All assume knowledge is
 additive; CASCADE reorganizes structure.
 
-\textbf{Belief revision.} The AGM framework~\citep{alchourron1985logic} defines
-expansion ($+$), contraction ($-$), and revision ($*$) operators. CASCADE's compression
-is a form of contraction that preserves the contracted belief in a qualified form. The
-key departure from AGM is the trigger condition~(\ref{eq:trigger}): AGM revision is
-operator-driven (an agent decides to revise), whereas CASCADE's reorganization is
+\textbf{Belief revision.} The AGM framework~\citep{alchourron1985logic,gardenfors1988knowledge}
+defines expansion ($+$), contraction ($-$), and revision ($*$) operators and characterizes
+which postulates a rational revision must satisfy. CASCADE's Phase~2 compression is a
+form of contraction that preserves the contracted belief in a qualified form---the block
+survives the revision with a bounded scope rather than being retracted. The key departure
+from AGM is the trigger condition~(\ref{eq:trigger}): AGM revision is operator-driven
+(an agent explicitly invokes the revision operator), whereas CASCADE's reorganization is
 \emph{evidence-driven}, firing automatically when $\tp$ of the new block exceeds that
-of the conflicting foundation by a margin $\Delta\tp$.
+of the conflicting foundation by a margin $\Delta\tp$. This makes the revision criterion
+computable and auditable without requiring an external agent to initiate it.
 
 \textbf{Knowledge graphs.} TransE~\citep{bordes2013translating},
 R-GCN~\citep{schlichtkrull2018modeling}, and ConceptNet~\citep{speer2017conceptnet}
@@ -737,6 +757,30 @@ CASCADE's concern with principled belief retraction but do not provide a quantit
 reorganization trigger, a layered architecture, or invariant guarantees over the
 restructuring process.
 
+\textbf{Summary.} Table~\ref{tab:related} positions CASCADE along four axes that
+distinguish the approaches surveyed above.
+
+\begin{table}[H]
+\centering
+\caption{Related approaches compared across four structural properties. A full audit
+trail means the complete chain of reasoning---what was promoted, what was contextualized,
+and why---is preserved and inspectable after every reorganization event.}
+\label{tab:related}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Approach} & \textbf{Audit trail} & \textbf{Old knowledge preserved} & \textbf{Computable trigger} & \textbf{Coherence guarantee} \\
+\midrule
+AGM Belief Revision        & Axiomatic  & Yes (contraction)     & No (operator-driven)   & Axiomatic \\
+Continual Learning (EWC)   & No         & Partial (regularized) & Yes (Fisher importance) & None \\
+Neural Knowledge Editing   & No         & No (overwrites)       & Yes (locate-then-edit) & None \\
+Knowledge Graphs           & Yes        & Yes (static)          & No trigger criterion   & None \\
+Defeasible Logic           & Proof-theoretic & Yes (defeated rules) & Priority ordering   & None \\
+\midrule
+\textbf{CASCADE (ours)}    & \textbf{Yes} & \textbf{Yes (qualified)} & \textbf{Yes ($\tp$ threshold)} & \textbf{Yes (Thm.~\ref{thm:coherence})} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 % ═══════════════════════════════════════════════════════════
 \section{Conclusion}\label{sec:conclusion}
 
@@ -767,6 +811,17 @@ expressing alignment constraints (LAMAGUE). These extensions are documented in
 the repository but are outside the scope of this paper, which establishes the
 reorganization mechanism in isolation before composing it with other components.
 
+The most significant open question is not technical but epistemological: does
+truth pressure $\tp$ generalize across epistemic traditions, or is it implicitly
+a formalization of \emph{Western scientific} paradigm shifts specifically?
+Kuhn's original account was grounded in the history of Western natural science.
+Whether a knowledge tradition that organizes around whakapapa, kaitiakitanga,
+or Confucian precedent produces the same cascade structure under truth pressure---
+or requires cultural calibration of the thresholds $\tau_F$ and $\tau_T$---is an
+open empirical question with consequences for how CASCADE would be deployed in
+governance, education, and cross-cultural AI systems. This is the experiment that
+determines whether CASCADE is a mechanism or merely an artifact of its origins.
+
 All code is open-source at \url{https://github.com/Lycheetah/Lycheetah-Framework}.
 
 % ═══════════════════════════════════════════════════════════
@@ -785,8 +840,10 @@ violates any invariant, the theory is falsified.
 
 This research was conducted independently without institutional funding. We thank the
 open-source community for Python, NumPy, and SciPy. Intellectual debts are owed to
-Kuhn (paradigm shifts), the AGM tradition (belief revision), and the continual learning
-community for defining the problem space. All errors are our own.
+\citet{kuhn1962structure} for the paradigm shift concept that CASCADE formalizes,
+to the AGM tradition~\citep{alchourron1985logic,gardenfors1988knowledge} for the
+logical foundations of belief revision, and to the continual learning community for
+framing the catastrophic forgetting problem. All errors are our own.
 
 % ═══════════════════════════════════════════════════════════
 \bibliographystyle{plainnat}
@@ -816,6 +873,16 @@ J.~de~Kleer.
 J.~Doyle.
 \newblock A truth maintenance system.
 \newblock \emph{Artificial Intelligence}, 12(3):231--272, 1979.
+
+\bibitem[G\"{a}rdenfors(1988)]{gardenfors1988knowledge}
+P.~G\"{a}rdenfors.
+\newblock \emph{Knowledge in Flux: Modeling the Dynamics of Epistemic States}.
+\newblock MIT Press, Cambridge, MA, 1988.
+
+\bibitem[Kuhn(1962)]{kuhn1962structure}
+T.~S.~Kuhn.
+\newblock \emph{The Structure of Scientific Revolutions}.
+\newblock University of Chicago Press, 1962.
 
 \bibitem[Kirkpatrick et~al.(2017)]{kirkpatrick2017overcoming}
 J.~Kirkpatrick, R.~Pascanu, N.~Rabinowitz, et~al.

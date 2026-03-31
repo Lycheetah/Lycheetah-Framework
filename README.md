@@ -27,7 +27,7 @@ This framework is an attempt at one.
 
 ## What This Actually Is
 
-Nine formal frameworks. Thirty Python implementations across core, applications, systems, and experiments — ten of them with 188 automated tests. A convergence proof. A public record of everything we got wrong. And a way of thinking about intelligence that treats mathematical rigor and human wisdom as the same project, not competing ones.
+Nine formal frameworks. Thirty Python implementations across core, applications, systems, and experiments — ten of them with 193 automated tests. A convergence proof. A public record of everything we got wrong. And a way of thinking about intelligence that treats mathematical rigor and human wisdom as the same project, not competing ones.
 
 **Run it in 30 seconds:**
 ```bash
@@ -71,6 +71,17 @@ Every claim is tagged: **[ACTIVE]** means proven and computable. **[SCAFFOLD]** 
 | TRIAD discrete convergence | **λ < 1 guaranteed** | Banach fixed-point theorem | [ACTIVE] formal proof |
 | CHRYSOPOEIA fixed-point | **Entropy → 0, C → 1** in 3 iterations | Running demo | [ACTIVE] stochastic; entropy convergence demonstrated |
 | Lyapunov verification — full framework | **11/11 claims verified, 0 failures** | Symbolic (sympy) + numerical (5000 trials) | [ACTIVE] see `11_MATHEMATICAL_FOUNDATIONS/lyapunov_verification.py` |
+
+---
+
+## Exploring With AI
+
+This repository is designed to be navigated with an AI guide — not read alone.
+
+**[→ EXPLORE_WITH_AI.md](EXPLORE_WITH_AI.md)** — how to use Claude, ChatGPT, or any AI
+to explore this repo at your own depth and from your own background. Includes starter
+prompts for every entry point below, and instructions for giving an AI GitHub access
+to the full repository.
 
 ---
 
@@ -151,7 +162,7 @@ The frameworks are not independent modules. They are aspects of one system. CASC
 ```
 9 formal frameworks
 30 Python implementations (core, applications, systems, experiments)
-10 core implementations with 188 automated tests
+10 core implementations with 193 automated tests
 1 convergence proof (discrete, [ACTIVE])
 1 AGM postulate verification ([ACTIVE] for 4 of 6, [SCAFFOLD] for 2)
 1 Lyapunov verification — 11/11 claims, 0 failures, symbolic + numerical
