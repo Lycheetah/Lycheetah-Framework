@@ -81,7 +81,7 @@ The EU AI Act (2024) — the world's first comprehensive AI regulation:
 
 **The pattern:** Both the EU AI Act and China's AI regulations, developed independently, by different political systems, with different stated values, map onto the same seven AURA invariants.
 
-This is not because someone designed them to align. It is because they are independently discovering the same constraints that any trustworthy AI governance framework must satisfy.
+This is not because someone designed them to align. It is because they are independently discovering the same constraints that any trustworthy AI governance framework must satisfy. [SCAFFOLD — mapping is documented; the causal claim ("independently discovering") is a theoretical interpretation, not empirically demonstrated]
 
 ---
 
@@ -103,7 +103,7 @@ Te Tiriti AURA I:   preserve collective agency of tangata whenua
 
 This extension of Invariant I is not a contradiction — it is a deepening. And it is one that neither Chinese nor Western frameworks currently address explicitly.
 
-**NZ's unique opportunity:** develop the world's first AI governance standard that satisfies all three simultaneously — EU standards, Chinese regulatory principles, AND indigenous data sovereignty. Not by compromise. By demonstrating they encode the same underlying constraints.
+**NZ's unique opportunity:** develop the world's first AI governance standard that satisfies all three simultaneously — EU standards, Chinese regulatory principles, AND indigenous data sovereignty. Not by compromise. By demonstrating they encode the same underlying constraints. [SCAFFOLD — the convergence mapping is documented; formal proof of equivalence is pending; iwi validation of the Te Tiriti layer is [PROPOSAL]]
 
 ---
 
@@ -153,10 +153,10 @@ New Zealand could establish an **AI Warrant of Fitness** standard — analogous 
 A system that passes the NZ AI WOF would be simultaneously:
 - EU AI Act compliant
 - China generative AI measures compliant
-- Te Tiriti compliant
+- Te Tiriti compliant [PROPOSAL — Te Tiriti compliance layer requires iwi co-design and validation]
 - AURA verified
 
-**This is the bridge position.** Not choosing between Western and Chinese AI governance. Demonstrating they're compatible — and adding something neither has.
+**This is the bridge position.** Not choosing between Western and Chinese AI governance. Demonstrating they're compatible — and adding something neither has. [SCAFFOLD — the cross-system compatibility is structurally argued; formal legal/regulatory analysis with NZ officials and Chinese regulatory authorities has not been conducted]
 
 ---
 

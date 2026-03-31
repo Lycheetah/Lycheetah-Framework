@@ -2,6 +2,7 @@
 ## Lycheetah Framework × Aotearoa AI Funding Strategy
 ### Mackenzie Conor James Clark | Lycheetah Foundation | March 2026
 ### Prepared for: NZIAT Phase 2 | AAAIP | AI Forum NZ
+### Status: Mixed brainstorm/pipeline document. Ideas marked inline where noted; all tikanga-grounded encodings are [PROPOSAL] pending iwi validation; funding pathway claims are [CONJECTURE] until confirmed with funders.
 
 > *"Te Reo Māori is not a language that needs to be accommodated by AI systems.*
 > *It is a language that already encodes the governance principles AI systems need to learn."*

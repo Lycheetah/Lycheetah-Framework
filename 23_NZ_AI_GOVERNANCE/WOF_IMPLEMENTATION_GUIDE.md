@@ -1,6 +1,7 @@
 # COMMUNITY AI WARRANT OF FITNESS — IMPLEMENTATION GUIDE
 ## How a NZ Government Agency Actually Does This
 ### Lycheetah Framework | March 2026
+### Status: [SCAFFOLD] — Operational guide for the WOF standard [ACTIVE]. Phase timelines and pass thresholds are proposed; no agency pilot has validated the process end-to-end.
 
 ---
 

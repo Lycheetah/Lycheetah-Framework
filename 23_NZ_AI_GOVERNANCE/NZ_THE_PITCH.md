@@ -1,6 +1,7 @@
 # THE PITCH
 ## The Words To Say — Every Context, Every Audience
 ### Mackenzie Conor James Clark | Lycheetah Foundation | March 2026
+### Status: [SCAFFOLD] — Pitch document. Claims about what the framework can do: [ACTIVE] where standards are specified; [SCAFFOLD] where adoption is proposed; [PROPOSAL] where tikanga framings await iwi validation.
 
 ---
 

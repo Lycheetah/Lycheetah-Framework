@@ -1,6 +1,7 @@
 # MEDIA PITCH
 ## For Journalists — NZ and International
 ### Lycheetah Framework | March 2026
+### Status: [SCAFFOLD] — Standards are documented [ACTIVE]; claims about adoption readiness and political pathways are [SCAFFOLD]; tikanga framings are [PROPOSAL]
 
 ---
 
@@ -18,7 +19,7 @@ A self-taught researcher in Dunedin has spent years building a mathematical fram
 
 The EU AI Act categorises risk. The Lycheetah Framework requires AI systems to account for whose knowledge built them and what they owe those people. One is a compliance checklist. The other is a constitutional architecture.
 
-The specific claim: a government ministry could adopt the Community AI Warrant of Fitness tomorrow, by ministerial directive, without any new legislation. No other country has an AI governance standard grounded in indigenous epistemology that is simultaneously a formal mathematical framework and immediately implementable.
+The specific claim: a government ministry could adopt the Community AI Warrant of Fitness tomorrow, by ministerial directive, without any new legislation. [SCAFFOLD — legal pathway proposed but not formally reviewed] No other country has an AI governance standard grounded in indigenous epistemology that is simultaneously a formal mathematical framework and immediately implementable. [SCAFFOLD — comparative claim based on available literature; may not account for unpublished work]
 
 The tension: the person who built it is an independent researcher in Dunedin with no institution, no grant, no supervisor. Working from a 2012 laptop. The framework has an arXiv preprint and a public Failure Museum. It has not been peer-reviewed by a university. It may be the most rigorous AI governance work in the Southern Hemisphere. It may have errors. Both of these things can be true.
 
@@ -26,7 +27,7 @@ The tension: the person who built it is an independent researcher in Dunedin wit
 
 **"AI built on Māori terms"**
 
-Tikanga Māori is not cultural decoration on a Western governance framework. The Lycheetah Framework proposes it as the constitutional ground from which AI governance for Aotearoa grows. The Three Worlds Disclosure Standard uses Māori cosmological structure — the known, the uncertain, the unknowable — as the epistemological architecture for AI transparency. The Whakapapa Disclosure requires AI systems to account for their ancestral knowledge debt the way a person accounts for whakapapa.
+Tikanga Māori is not cultural decoration on a Western governance framework. The Lycheetah Framework proposes it as the constitutional ground from which AI governance for Aotearoa grows. [SCAFFOLD — architectural claim is sound; constitutional status requires iwi validation] The Three Worlds Disclosure Standard uses Māori cosmological structure — the known, the uncertain, the unknowable — as the epistemological architecture for AI transparency. The Whakapapa Disclosure requires AI systems to account for their ancestral knowledge debt the way a person accounts for whakapapa.
 
 The framework is marked [PROPOSAL] on all te reo Māori encodings. They require iwi validation. The researcher is actively seeking that partnership. The honest admission that the work is incomplete without that relationship is part of the story.
 

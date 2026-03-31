@@ -2,6 +2,7 @@
 ## What Government Wants × What People Want × What the Stack Delivers
 ### Pure NZ Technical Language | Lycheetah Framework | March 2026
 ### Mackenzie Conor James Clark | Dunedin
+### Status: [SCAFFOLD] — Technical stacks specified; build times and political claims are estimates, not validated delivery commitments. Individual tools annotated inline.
 
 > Min-max: minimum friction to fund, maximum benefit to people.
 > Every idea here wins on both sides simultaneously or it's not in this document.
@@ -70,9 +71,9 @@ The Waitangi Tribunal gets: a formal audit trail.
 - AURA Invariant II (Inspectability) as the constitutional requirement
 - MICROORCIM to measure whether the decision preserved or reduced recipient agency
 
-**Build time:** 6 weeks.
-**Cost:** Under $50K NZD.
-**Political value for government:** Enormous. First agency to do this leads.
+**Build time:** 6 weeks. [SCAFFOLD — estimate; no equivalent has been built in NZ]
+**Cost:** Under $50K NZD. [SCAFFOLD — estimate]
+**Political value for government:** Enormous. First agency to do this leads. [CONJECTURE — political uptake is unpredictable]
 **Value for people:** They finally know why the machine said no.
 
 ---
@@ -348,9 +349,9 @@ Get back:
 - NZ regulatory constraint library (buildable from public legislation)
 - Three Worlds output: here's what it knows, here's what it's guessing, here's what it can't know
 
-**Build time:** 6 weeks for MVP.
-**Revenue model:** Free base → $19/month pro → MBIE pilot contract.
-**Political value:** MBIE can point to this as the tool they funded.
+**Build time:** 6 weeks for MVP. [SCAFFOLD — estimate; cascade_engine.py exists but a production UI wrapper has not been built]
+**Revenue model:** Free base → $19/month pro → MBIE pilot contract. [CONJECTURE — revenue pathway is proposed, not negotiated]
+**Political value:** MBIE can point to this as the tool they funded. [CONJECTURE]
 **Value for people:** The first tool that tells SMEs when not to trust AI.
 
 ---

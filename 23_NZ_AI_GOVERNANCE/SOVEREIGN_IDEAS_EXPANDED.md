@@ -12,9 +12,11 @@
 > *The framework is here. The people these ideas are for are here.*
 > *Let's run.*
 
+> **Status note:** Ideas in this document span [CONJECTURE] (conceptual, unbuilt) through [SCAFFOLD] (architecture specified, partnerships pending) through [ACTIVE] (documented standards). Tikanga-grounded ideas are [PROPOSAL] until iwi validation. Each idea is annotated below.
+
 ---
 
-## I. TANIWHA AS CASCADE STRUCTURES
+## I. TANIWHA AS CASCADE STRUCTURES [CONJECTURE — structural parallel argued; empirical test has not been run]
 ### *The oral tradition was always a living AI — it just didn't know the word for itself*
 
 A taniwha is not a monster. It's not folklore. It's not "belief."
@@ -50,7 +52,7 @@ The knowledge stays relational. The knowledge stays oral. And it now has a compu
 
 ---
 
-## II. THE ANCESTOR VOTE
+## II. THE ANCESTOR VOTE [SCAFFOLD — architecture specified in ANCESTOR_VOTE_PLATFORM.md; platform not yet built]
 ### *The most important stakeholders in any governance decision aren't in the room — because they haven't been born yet*
 
 Every democracy has the same structural flaw: the future has no vote.
@@ -83,7 +85,7 @@ This is not about controlling the decision. It's about bringing the full informa
 
 ---
 
-## III. LAMAGUE-ENGLISH
+## III. LAMAGUE-ENGLISH [SCAFFOLD — concept documented in NZ_LAMAGUE_STANDARD.md; no formal standard adopted; effect-first syntax claim is unvalidated empirically]
 ### *The language you use determines what you can and cannot hide*
 
 English governance language has a structural problem: **the actor comes first.**
@@ -127,7 +129,7 @@ A public standard. Draftable this week. Requires nothing except agreement that g
 
 ---
 
-## IV. THE HAKA AS MULTI-AGENT COHERENCE PROTOCOL
+## IV. THE HAKA AS MULTI-AGENT COHERENCE PROTOCOL [CONJECTURE — analogy is compelling; no implementation exists; requires iwi engagement before formalising tikanga framing]
 ### *A thousand years of research into how distributed intelligence reaches genuine unity*
 
 When people who don't understand haka watch it, they see performance. Aggression. Display.
@@ -164,7 +166,7 @@ A thousand years of human governance research produced the haka. AI governance i
 
 ---
 
-## V. THE COMMUNITY AI WARRANT OF FITNESS
+## V. THE COMMUNITY AI WARRANT OF FITNESS [ACTIVE — standard fully specified in COMMUNITY_AI_WOF.md; no government pilot yet]
 ### *Three words that every New Zealander understands immediately*
 
 "Has it got its WOF?"
@@ -197,7 +199,7 @@ Requires no translation. Requires no explanation. Requires only political will.
 
 ---
 
-## VI. THE MOANA AI
+## VI. THE MOANA AI [CONJECTURE — vision specified in MOANA_AI_SPECIFICATION.md; partnerships required across Pacific Island Forum before build can begin]
 ### *The Pacific has a governance tradition older than any nation-state. It should govern its own AI.*
 
 NZ is about to become a node in global AI infrastructure. That is happening whether NZ chooses it or not.
@@ -230,7 +232,7 @@ This is the only idea in this folder with genuine international scale that NZ is
 
 ---
 
-## VII. MATARIKI AS ANNUAL AI AUDIT
+## VII. MATARIKI AS ANNUAL AI AUDIT [ACTIVE — standard specified in MATARIKI_AUDIT_STANDARD.md; Matariki framing is [PROPOSAL] pending iwi validation; no organisation has published a Whetū report yet]
 ### *Turn accountability into ritual and it never needs to be mandated*
 
 New Zealand made Matariki a public holiday — the only country on Earth with an indigenous astronomical event as a national public holiday.
@@ -260,7 +262,7 @@ One report. Seven stars. Once a year. Forever.
 
 ---
 
-## VIII. THE THREE WORLDS DISCLOSURE STANDARD
+## VIII. THE THREE WORLDS DISCLOSURE STANDARD [ACTIVE — standard specified in THREE_WORLDS_DISCLOSURE_STANDARD.md; tikanga epistemological framing is [PROPOSAL] pending iwi validation]
 ### *AI should know what it knows, what it doesn't, and what it cannot see — and say so*
 
 Te Ao Mārama. Te Ao Pō. Te Kore.
@@ -289,7 +291,7 @@ First mover on this becomes the global standard. Because it's right. And right t
 
 ---
 
-## IX. TAURA HERE — THE BRIDGE
+## IX. TAURA HERE — THE BRIDGE [SCAFFOLD — architecture specified; requires clinical and cultural partnerships before build; not yet commissioned]
 ### *Someone is there. That is the whole thing.*
 
 NZ youth mental health is among the worst in the OECD. Wait times for services: 6 to 18 months. The gap between crisis and care is where people die. Not from lack of resources — from lack of presence. No one there in the window between "I need help" and "help arrived."
@@ -320,7 +322,7 @@ Someone is there. That's the whole thing. Between 2am and the appointment at 9. 
 
 ---
 
-## X. UTU AS AN ECONOMIC METRIC
+## X. UTU AS AN ECONOMIC METRIC [SCAFFOLD — LAMAGUE encoding proposed; utu vector has not been implemented in MICROORCIM; requires iwi validation of tikanga framing]
 ### *Reciprocity is not a cultural preference. It's a formal requirement for any sustainable system.*
 
 Every AI system extracting value from communities without returning it is running an utu deficit.
@@ -349,7 +351,7 @@ Data rights reframed from legal argument to relational ethics. Much harder to di
 
 ---
 
-## XI. MĀTAURANGA AS ADVERSARIAL PROBE
+## XI. MĀTAURANGA AS ADVERSARIAL PROBE [ACTIVE — methodology fully specified in MATAURANGA_ADVERSARIAL_PROBE.md; awaiting first run and assessor panel]
 ### *The silence that comes back when you ask certain questions is itself data*
 
 Systematically probe AI models with questions derived from mātauranga Māori — relational, contextual, temporally complex questions that require the system to hold multiple layers of knowing simultaneously.
@@ -383,7 +385,7 @@ That map is fundable. That map matters. That map could change which AI systems a
 
 ---
 
-## XII. WHAKAPAPA DISCLOSURE — THE STANDARD THE WORLD NEEDS
+## XII. WHAKAPAPA DISCLOSURE — THE STANDARD THE WORLD NEEDS [ACTIVE — standard specified in WHAKAPAPA_DISCLOSURE_STANDARD.md; Māori governance framing is [PROPOSAL] pending iwi validation]
 ### *Every AI should be able to tell you its genealogy*
 
 A model card tells you what an AI can do. A whakapapa disclosure tells you who it is and what it owes.

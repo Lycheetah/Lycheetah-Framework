@@ -1,6 +1,7 @@
 # LYCHEETAH FRAMEWORK — NZIAT MAY 2026
 ## New Zealand Institute of AI Transitions — Presentation Document
 ### Mackenzie Conor James Clark | Lycheetah Foundation | Dunedin
+### Status: Mixed — see "The Honest Accounting" section. Standards: [ACTIVE]. Cultural framings: [PROPOSAL]. Cross-cultural convergence claims: [SCAFFOLD].
 
 ---
 

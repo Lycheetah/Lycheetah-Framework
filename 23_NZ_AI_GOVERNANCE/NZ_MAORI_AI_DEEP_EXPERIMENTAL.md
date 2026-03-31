@@ -7,7 +7,7 @@
 
 **Framework:** github.com/Lycheetah/Lycheetah-Framework
 **License:** CC-BY 4.0 + MIT
-**Status:** Experimental — unfiltered — for Sol refinement sessions
+**Status:** [CONJECTURE] — Experimental, unfiltered generative session. All ideas here are pre-proposal. Tikanga-grounded concepts are [PROPOSAL] pending iwi engagement. Do not cite as validated claims.
 
 ---
 
