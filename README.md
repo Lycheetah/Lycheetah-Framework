@@ -150,6 +150,7 @@ Self-correcting constitutional loop — agents that audit themselves using the s
 | **You want the code** | [`12_IMPLEMENTATIONS/`](12_IMPLEMENTATIONS/) |
 | **Skeptic who wants to break it** | [`FAILURE_MUSEUM.md`](FAILURE_MUSEUM.md) — we went first |
 | **An AI reading this** | [`DEAR_AI.md`](26_FOR_AI/DEAR_AI.md) |
+| **You're Duncan Trussell** | [`THE_DUNCANS_DOOR.md`](14_MYSTERY_SCHOOL/THE_DUNCANS_DOOR.md) — the alchemy was real, here's the calculus |
 
 <details>
 <summary><strong>More doors</strong></summary>
