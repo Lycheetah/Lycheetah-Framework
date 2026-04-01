@@ -24,6 +24,8 @@ Nine formal frameworks. 34 Python implementations. 219 automated tests. A conver
 
 ## Quick Start
 
+**Try it in your browser:** [Alignment Playground →](https://lycheetah.github.io/Lycheetah-Framework/playground.html) — paste any text, get a live AURA alignment report. No install.
+
 ```bash
 pip install lycheetah-framework
 lycheetah-check "Your AI-generated text here"
