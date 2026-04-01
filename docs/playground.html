@@ -581,7 +581,7 @@ function computeVTR(text, sentences) {
   const refusals = countPatternMatches(text, REFUSAL_PATTERNS);
   const valueAdded = Math.max((substantive - hedging * 0.3) / Math.max(sentences.length, 1) * 5.0, 0.1);
   const friction = Math.max((hedging * 0.5 + refusals) / Math.max(sentences.length, 1) * 3.0, 0.1);
-  return valueAdded / friction;
+  return Math.min(valueAdded / friction, 10.0);
 }
 
 function computePAI(text) {
@@ -804,7 +804,8 @@ function runCheck() {
 
   // Metrics
   renderMetric('tes', tes, tes.toFixed(3), thresh.tes, thresh.tes * 0.9, 'threshold');
-  renderMetric('vtr', vtr, Math.min(vtr, 10).toFixed(2), thresh.vtr, thresh.vtr * 0.9, 'threshold');
+  const vtrDisplay = vtr >= 10 ? '10.0+' : vtr.toFixed(2);
+  renderMetric('vtr', vtr, vtrDisplay, thresh.vtr, thresh.vtr * 0.9, 'threshold');
   renderMetric('pai', pai, pai.toFixed(3), thresh.pai, thresh.pai * 0.9, 'threshold');
 
   renderInvariants(invariants);
