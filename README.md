@@ -196,6 +196,7 @@ This repository is designed to be navigated with an AI guide — not read alone.
 1 AGM postulate verification ([ACTIVE] for 4 of 6, [SCAFFOLD] for 2)
 1 Lyapunov verification — 11/11 claims, 0 failures, symbolic + numerical
 1 Claude Code MCP extension — Lycheetah Guard (7 tools)
+1 browser alignment playground — paste text, get live AURA report, zero install
 1 public failure museum — 15 exhibits, nothing removed, ever
 1,402 pages of development history
 1 arXiv preprint + 1 full academic paper
