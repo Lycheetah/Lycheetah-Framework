@@ -216,6 +216,102 @@
 
 .drop-sub { font-size: 10px; color: var(--gold-dim); letter-spacing: 0.08em; }
 
+/* Pipeline guide — shown when user needs direction */
+.pipeline-guide {
+  margin: 10px;
+  padding: 12px;
+  background: rgba(212,168,67,0.05);
+  border: 1px solid rgba(212,168,67,0.2);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pipeline-guide.compact {
+  background: rgba(96,165,250,0.05);
+  border-color: rgba(96,165,250,0.2);
+}
+
+.pg-step {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.pg-num {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gold-dim);
+  color: var(--bg-primary);
+  font-size: 10px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.pipeline-guide.compact .pg-num {
+  background: var(--layer-tension);
+}
+
+.pg-label {
+  font-size: 11px;
+  color: var(--text-primary);
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.pg-sub {
+  font-size: 10px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.pg-btn {
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(212,168,67,0.1);
+  border: 1px solid var(--gold-dim);
+  color: var(--gold);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.pg-btn:hover:not(:disabled) {
+  background: rgba(212,168,67,0.18);
+}
+
+.pg-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pipeline-guide.compact .pg-btn {
+  background: rgba(96,165,250,0.08);
+  border-color: var(--layer-tension);
+  color: var(--layer-tension);
+}
+
+.pipeline-guide.compact .pg-btn:hover:not(:disabled) {
+  background: rgba(96,165,250,0.15);
+}
+
+.pg-divider {
+  font-size: 9px;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
 /* Quick-add input — replaces inline form */
 .quick-add-wrap {
   padding: 8px 10px;

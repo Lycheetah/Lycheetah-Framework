@@ -596,13 +596,59 @@ export default function PyramidView({ pyramid, onBack }) {
           <div className="pv-blocks">
             <div className="col-header">
               <span>BLOCKS</span>
-              <div style={{ display: 'flex', gap: 4 }}>
-                {activeFile?.content && <button className="btn" onClick={handleSuggestBlocks} disabled={suggesting} title="AI suggest blocks from file">{suggesting ? '...' : '⊚ AI'}</button>}
-                {blocks.length > 0 && <button className="btn" onClick={handleReScoreAll} disabled={rescoring} title="Re-score all blocks">{rescoring ? '...' : '↻ All'}</button>}
-              </div>
+              {blocks.length > 0 && scoredBlocks.length < blocks.length && (
+                <button className="btn" onClick={handleReScoreAll} disabled={rescoring}>
+                  {rescoring ? '...' : '↻ Score all'}
+                </button>
+              )}
             </div>
 
-            {/* Quick-add block input — always visible when file selected */}
+            {/* STEP GUIDE — shown when file selected but no blocks yet */}
+            {activeFile && blocks.length === 0 && (
+              <div className="pipeline-guide">
+                {activeFile.content ? (
+                  <>
+                    <div className="pg-step">
+                      <span className="pg-num">1</span>
+                      <div>
+                        <div className="pg-label">Extract blocks from your file</div>
+                        <div className="pg-sub">AI reads the content and suggests knowledge blocks</div>
+                      </div>
+                    </div>
+                    <button className="pg-btn" onClick={handleSuggestBlocks} disabled={suggesting}>
+                      {suggesting ? '⊚ Reading file...' : '⊚ AI — Suggest blocks'}
+                    </button>
+                    <div className="pg-divider">or add manually below</div>
+                  </>
+                ) : (
+                  <div className="pg-step">
+                    <span className="pg-num">1</span>
+                    <div>
+                      <div className="pg-label">Add blocks manually</div>
+                      <div className="pg-sub">Type a title below and press Enter. For AI extraction, drag a .txt or .md file into the FILES column.</div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* SCORE CTA — blocks exist but none scored */}
+            {blocks.length > 0 && scoredBlocks.length === 0 && (
+              <div className="pipeline-guide compact">
+                <div className="pg-step">
+                  <span className="pg-num">2</span>
+                  <div>
+                    <div className="pg-label">Score your blocks</div>
+                    <div className="pg-sub">Select a block → use ⊚ AI Score in the panel, or score all at once</div>
+                  </div>
+                </div>
+                <button className="pg-btn" onClick={handleReScoreAll} disabled={rescoring}>
+                  {rescoring ? '⊚ Scoring...' : '↻ Score all blocks now'}
+                </button>
+              </div>
+            )}
+
+            {/* Quick-add block input */}
             {activeFile && (
               <div className="quick-add-wrap">
                 <input
