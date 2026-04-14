@@ -1,18 +1,18 @@
 :root {
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #111111;
-  --bg-card: #161616;
-  --bg-hover: #1e1e1e;
-  --border: #2a2a2a;
+  --bg-primary: #0d0d0d;
+  --bg-secondary: #141414;
+  --bg-card: #1a1a1a;
+  --bg-hover: #222222;
+  --border: #303030;
   --border-active: #3d3a2a;
 
   --gold: #d4a843;
   --gold-dim: #8a6e2a;
   --gold-bright: #f0c060;
 
-  --text-primary: #e5e5e5;
-  --text-secondary: #888;
-  --text-dim: #555;
+  --text-primary: #f0f0f0;
+  --text-secondary: #b8b8b8;
+  --text-dim: #777;
 
   --layer-axiom: #fb923c;
   --layer-foundation: #f97316;
@@ -50,7 +50,7 @@ input, textarea, button { font-family: inherit; }
 .btn {
   background: transparent;
   border: 1px solid var(--border);
-  color: var(--text-secondary);
+  color: var(--text-primary);
   padding: 5px 12px;
   border-radius: var(--radius);
   cursor: pointer;
