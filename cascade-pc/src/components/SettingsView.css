@@ -1,0 +1,86 @@
+.settings-view {
+  overflow-y: auto;
+  height: 100%;
+  padding: 40px 60px;
+  max-width: 600px;
+}
+
+.settings-header {
+  margin-bottom: 36px;
+}
+
+.settings-title {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+
+.settings-body {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.settings-section {}
+
+.settings-section-title {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--gold-dim);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.settings-p {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.key-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.key-field label {
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+}
+
+.key-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.key-input-row input {
+  flex: 1;
+}
+
+.key-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.key-status {
+  font-size: 10px;
+  color: var(--layer-resonance);
+  margin-right: auto;
+  letter-spacing: 0.05em;
+}
+
+.settings-note {
+  font-size: 11px;
+  color: var(--text-dim);
+  line-height: 1.6;
+  padding: 10px 14px;
+  border-left: 2px solid var(--border);
+  background: var(--bg-card);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}

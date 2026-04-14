@@ -1,0 +1,84 @@
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-card: #161616;
+  --bg-hover: #1e1e1e;
+  --border: #2a2a2a;
+  --border-active: #3d3a2a;
+
+  --gold: #d4a843;
+  --gold-dim: #8a6e2a;
+  --gold-bright: #f0c060;
+
+  --text-primary: #e5e5e5;
+  --text-secondary: #888;
+  --text-dim: #555;
+
+  --layer-axiom: #fb923c;
+  --layer-foundation: #f97316;
+  --layer-structure: #facc15;
+  --layer-coherence: #4ade80;
+  --layer-resonance: #34d399;
+  --layer-tension: #60a5fa;
+  --layer-contested: #818cf8;
+  --layer-speculative: #c084fc;
+  --layer-frontier: #e879f9;
+
+  --radius: 6px;
+  --radius-lg: 10px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow: hidden;
+  user-select: none;
+}
+
+input, textarea, button { font-family: inherit; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-dim); }
+
+.btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 5px 12px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  transition: all 0.15s;
+}
+.btn:hover { border-color: var(--gold-dim); color: var(--gold); }
+.btn.primary {
+  border-color: var(--gold-dim);
+  color: var(--gold);
+  background: rgba(212, 168, 67, 0.08);
+}
+.btn.primary:hover { background: rgba(212, 168, 67, 0.15); }
+.btn.danger:hover { border-color: #ef4444; color: #ef4444; }
+
+input[type="text"], input[type="number"], textarea {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 7px 10px;
+  border-radius: var(--radius);
+  outline: none;
+  width: 100%;
+  font-size: 12px;
+}
+input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
+  border-color: var(--gold-dim);
+}
+
+textarea { resize: vertical; min-height: 80px; }
