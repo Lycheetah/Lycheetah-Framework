@@ -92,23 +92,72 @@ export function checkLayerDependencies(layers, mode = 'framework') {
 
 /**
  * Compute block aggregate score from its onion layers.
- * AXIOM cap: block cannot score higher than axiom × 1.2
+ *
+ * Enforcement order:
+ *  1. AXIOM = 0 → block collapses to 0 (load-bearing claim missing)
+ *  2. Layer dependency caps applied before weighting:
+ *       FOUNDATION capped at AXIOM × 1.1
+ *       STRUCTURE  capped at FOUNDATION × 1.2
+ *  3. Weighted sum: inner layers carry more weight
+ *  4. COHERENCE field multiplier: low coherence compresses the aggregate
+ *       multiplier = coherence / 100, floored at 0.3 (some signal survives)
+ *  5. Hard cap: block cannot exceed AXIOM × 1.2 or 999
  */
 export function computeBlockScore(layers, mode = 'framework') {
   if (!layers || layers.length === 0) return 0
+
+  const axiomScore = getLayerScore(layers[0], mode)
+  if (!axiomScore || axiomScore === 0) return 0   // no axiom = no block
+
+  // Enforce dependency caps in computation (not just UI warnings)
+  const effectiveScores = layers.map((layer, i) => {
+    let s = getLayerScore(layer, mode)
+    if (i === 1 && axiomScore > 0) s = Math.min(s, Math.round(axiomScore * 1.1))   // FOUNDATION
+    if (i === 2) {
+      const foundationScore = Math.min(getLayerScore(layers[1], mode), Math.round(axiomScore * 1.1))
+      s = Math.min(s, Math.round(foundationScore * 1.2))  // STRUCTURE
+    }
+    return s
+  })
+
   const weights = [2.0, 1.8, 1.5, 1.3, 1.1, 0.9, 0.8, 0.7, 0.6]
   let weightedSum = 0
   let totalWeight = 0
-  layers.forEach((layer, i) => {
-    const score = getLayerScore(layer, mode)
+  effectiveScores.forEach((score, i) => {
     const w = weights[i] || 0.5
     weightedSum += score * w
     totalWeight += w
   })
   const raw = totalWeight > 0 ? weightedSum / totalWeight : 0
-  const axiomScore = getLayerScore(layers[0], mode)
-  const axiomCap = axiomScore > 0 ? axiomScore * 1.2 : Infinity
-  return Math.min(Math.round(raw), axiomCap, 999)
+
+  // Coherence as field multiplier — integrity of the block compresses all scores
+  const coherenceScore = effectiveScores[3] || 0
+  const coherenceMultiplier = coherenceScore > 0
+    ? Math.max(0.3, coherenceScore / 100)
+    : 1.0   // unscored coherence = neutral (don't penalise before AI runs)
+
+  const afterCoherence = raw * coherenceMultiplier
+
+  const axiomCap = axiomScore * 1.2
+  return Math.min(Math.round(afterCoherence), Math.round(axiomCap), 999)
+}
+
+/**
+ * Pyramid-level Π — aggregate truth pressure across all files.
+ * E = average file score (evidence density across the pyramid)
+ * P = highest file score (the load-bearing knowledge node)
+ * S = score spread (high variance = incoherent pyramid)
+ */
+export function computePyramidPi(files, mode = 'framework') {
+  if (!files || files.length < 2) return 0
+  const scores = files.map(f => f.score_aggregate || 0).filter(s => s > 0)
+  if (scores.length < 2) return 0
+  const E = scores.reduce((a, b) => a + b, 0) / scores.length
+  const P = Math.max(...scores)
+  const mean = E
+  const variance = scores.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / scores.length
+  const S = Math.max(Math.sqrt(variance), 1)
+  return Math.round((E * P) / S)
 }
 
 export function computeFileScore(blocks, mode = 'framework') {
@@ -220,8 +269,15 @@ export function runExperiment(blocksA, blocksB, mode) {
         const scoreA = a.score_aggregate || 0
         const scoreB = b.score_aggregate || 0
         if (scoreA > 0 && scoreB > 0) {
-          const synthesisScore = Math.round(Math.sqrt(scoreA * scoreB) * 1.15)
-          results.push({ type: 'synthesis', blockA: a, blockB: b, synthesisScore, gain: synthesisScore - Math.max(scoreA, scoreB) })
+          // Geometric mean — rewards two strong scores, penalises weak+strong pairing
+          const geometricMean = Math.sqrt(scoreA * scoreB)
+          // Resonance bonus: scores close together synthesise more powerfully
+          // delta=0 → 1.25 multiplier. delta=50 → 1.05 multiplier.
+          const delta = Math.abs(scoreA - scoreB)
+          const resonanceBonus = 1.25 - (delta / 200)
+          const synthesisScore = Math.min(Math.round(geometricMean * resonanceBonus), 999)
+          const gain = synthesisScore - Math.max(scoreA, scoreB)
+          results.push({ type: 'synthesis', blockA: a, blockB: b, synthesisScore, gain, delta })
         }
       })
     })
