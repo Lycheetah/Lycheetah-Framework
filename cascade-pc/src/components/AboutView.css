@@ -23,11 +23,72 @@
   margin-bottom: 6px;
 }
 
-.about-subtitle {
+.about-version {
   font-size: 11px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   color: var(--text-dim);
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+}
+
+.about-p em {
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+.layer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.layer-row {
+  display: flex;
+  gap: 16px;
+  font-size: 11px;
+}
+
+.layer-row span:first-child {
+  width: 90px;
+  flex-shrink: 0;
+  font-weight: bold;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.layer-row span:last-child { color: var(--text-secondary); }
+
+.fw-about-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fw-about-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+
+.fwac-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.fwac-name {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+}
+
+.fw-about-card p {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .about-tagline {
