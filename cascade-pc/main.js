@@ -115,11 +115,13 @@ ipcMain.handle('blocks:delete', (_, id) => {
   saveDB(); return { ok: true }
 })
 
-ipcMain.handle('blocks:updateScore', (_, { id, score, sovereignScore }) => {
+ipcMain.handle('blocks:updateScore', (_, { id, score, sovereignScore, scoredAt }) => {
   const b = db.blocks.find(x => x.id === id)
   if (b) {
     if (score !== undefined) b.score_aggregate = score
     if (sovereignScore !== undefined) b.sovereign_score_aggregate = sovereignScore
+    if (scoredAt !== undefined) b.scored_at = scoredAt
+    b.updated_at = now()
     saveDB()
   }
   return { ok: true }
@@ -129,6 +131,24 @@ ipcMain.handle('blocks:setFrameworkRefs', (_, { id, frameworkRefs }) => {
   const b = db.blocks.find(x => x.id === id)
   if (b) { b.framework_refs = frameworkRefs; saveDB() }
   return { ok: true }
+})
+
+ipcMain.handle('blocks:updateNotes', (_, { id, notes }) => {
+  const b = db.blocks.find(x => x.id === id)
+  if (b) { b.notes = notes || ''; b.updated_at = now(); saveDB() }
+  return { ok: true }
+})
+
+ipcMain.handle('blocks:duplicate', (_, id) => {
+  const src = db.blocks.find(x => x.id === id)
+  if (!src) return null
+  const newBlock = { ...src, id: uuidv4(), title: src.title + ' (copy)', score_aggregate: 0, sovereign_score_aggregate: 0, scored_at: null, created_at: now(), updated_at: now() }
+  db.blocks.push(newBlock)
+  const srcLayers = db.onion_layers.filter(l => l.block_id === id).sort((a, b) => a.layer_index - b.layer_index)
+  srcLayers.forEach(l => {
+    db.onion_layers.push({ ...l, id: uuidv4(), block_id: newBlock.id })
+  })
+  saveDB(); return newBlock
 })
 
 // ── Onion Layers ──────────────────────────────────────────────────────────────
@@ -142,6 +162,7 @@ ipcMain.handle('onion:updateFramework', (_, { id, framework_score, framework_rea
     l.framework_score = framework_score
     l.framework_reasoning = framework_reasoning || ''
     l.framework_refs = framework_refs || []
+    l.scored_at = now()
     saveDB()
   }
   return l

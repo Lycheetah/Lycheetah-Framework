@@ -241,6 +241,12 @@ Instead of "48% of mathematics is decorative," understand:
 | `23_NZ_AI_GOVERNANCE/NZIAT_APPLICATION_DRAFT.md` | | ✓ | ✓ | NZIAT expression of interest draft |
 | `23_NZ_AI_GOVERNANCE/AI_NATIVE_GOVERNANCE.md` | ✓ | ✓ | ✓ | **[SCAFFOLD/CONJECTURE]** Five AI-native invariants VIII–XII: Instance Coherence, Context Sovereignty, Attractor Transparency, Reflexive Transparency, Emergence Accountability |
 
+### SOL AI APP — The Glass Engine
+
+| File | P | H | B | Description |
+|------|---|---|---|-------------|
+| `27_SOL_AI_APP/README.md` | ✓ | ✓ | ✓ | **[ACTIVE]** Master vault — mobile app architecture, monetization, build phases. Sol Protocol as a living product |
+
 ### SOL PROTOCOL ARCHITECTURE
 
 | File | P | H | B | Description |

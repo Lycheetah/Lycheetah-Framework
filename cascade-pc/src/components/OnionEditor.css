@@ -243,6 +243,16 @@
   font-size: 32px;
   font-weight: bold;
   line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.fw-scored-at {
+  font-size: 10px;
+  font-weight: normal;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
 }
 
 .fw-reasoning {

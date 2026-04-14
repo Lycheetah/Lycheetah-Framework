@@ -4,6 +4,15 @@ import { scoreBlock } from '../scoring/ai'
 import { FRAMEWORK_LIST } from '../scoring/frameworks'
 import './OnionEditor.css'
 
+function fmtScoreTime(ts) {
+  if (!ts) return null
+  const diff = Math.floor(Date.now() / 1000) - ts
+  if (diff < 60) return 'just now'
+  if (diff < 3600) return `${Math.round(diff / 60)}m ago`
+  if (diff < 86400) return `${Math.round(diff / 3600)}h ago`
+  return new Date(ts * 1000).toLocaleDateString()
+}
+
 const LAYER_COLORS = [
   'var(--layer-axiom)', 'var(--layer-foundation)', 'var(--layer-structure)',
   'var(--layer-coherence)', 'var(--layer-resonance)', 'var(--layer-tension)',
@@ -41,6 +50,15 @@ export default function OnionEditor({ block, fileContent, onSaved }) {
 
   function selectLayer(i) {
     setActiveLayer(i)
+  }
+
+  function handleLayerKeyDown(e) {
+    if (e.key === 'Tab') {
+      e.preventDefault()
+      setActiveLayer(prev => e.shiftKey
+        ? (prev - 1 + ONION_LAYERS.length) % ONION_LAYERS.length
+        : (prev + 1) % ONION_LAYERS.length)
+    }
   }
 
   async function saveSovereign() {
@@ -200,6 +218,9 @@ export default function OnionEditor({ block, fileContent, onSaved }) {
                     <>
                       <div className="fw-score-display" style={{ color: LAYER_COLORS[activeLayer] }}>
                         {activeLayerData.framework_score || activeLayerData.score}
+                        {activeLayerData.scored_at && (
+                          <span className="fw-scored-at">{fmtScoreTime(activeLayerData.scored_at)}</span>
+                        )}
                       </div>
                       {activeLayerData.framework_reasoning && (
                         <div className="fw-reasoning">"{activeLayerData.framework_reasoning}"</div>
@@ -230,6 +251,7 @@ export default function OnionEditor({ block, fileContent, onSaved }) {
                       onChange={e => setSovereignDraft(d => ({ ...d, score: e.target.value }))}
                       className="sv-score-input"
                       placeholder="0"
+                      onKeyDown={handleLayerKeyDown}
                     />
                     <div className="sv-guide">
                       <span className="sv-range calibrated">1–100 calibrated</span>

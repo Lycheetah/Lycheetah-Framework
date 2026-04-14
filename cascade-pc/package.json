@@ -1,7 +1,7 @@
 {
-  "name": "cascade-pc",
+  "name": "cascade-cicada-tool",
   "version": "0.1.0",
-  "description": "CASCADE Knowledge Operating System — Personal Pyramid Tool",
+  "description": "CASCADE CICADA TOOL (TCCT) — Knowledge Operating System, Personal Pyramid Tool",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -24,8 +24,8 @@
     "wait-on": "^7.2.0"
   },
   "build": {
-    "appId": "com.lycheetah.cascade-pc",
-    "productName": "CASCADE",
+    "appId": "com.lycheetah.tcct",
+    "productName": "CASCADE CICADA TOOL",
     "directories": {
       "output": "dist-electron"
     },

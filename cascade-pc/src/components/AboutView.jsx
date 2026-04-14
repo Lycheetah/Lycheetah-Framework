@@ -15,8 +15,8 @@ export default function AboutView() {
     <div className="about-view">
       <div className="about-header">
         <div className="about-logo">⊚</div>
-        <div className="about-title">CASCADE</div>
-        <div className="about-subtitle">Knowledge Operating System · v0.1</div>
+        <div className="about-title">CASCADE CICADA TOOL</div>
+        <div className="about-subtitle">TCCT · Knowledge Operating System · v0.1</div>
         <div className="about-tagline">
           Built from the Lycheetah Framework by Mackenzie Conor James Clark
         </div>
@@ -99,8 +99,8 @@ export default function AboutView() {
               <span className="eco-desc">4 personas · full framework · BYOK</span>
             </div>
             <div className="eco-row active">
-              <span className="eco-name">CASCADE PC</span>
-              <span className="eco-desc">This tool — desktop knowledge OS</span>
+              <span className="eco-name">TCCT</span>
+              <span className="eco-desc">CASCADE CICADA TOOL — desktop knowledge OS</span>
             </div>
             <div className="eco-row">
               <span className="eco-name">CASCADE API</span>

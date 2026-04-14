@@ -19,6 +19,8 @@ contextBridge.exposeInMainWorld('cascade', {
     delete: (id) => ipcRenderer.invoke('blocks:delete', id),
     updateScore: (data) => ipcRenderer.invoke('blocks:updateScore', data),
     setFrameworkRefs: (data) => ipcRenderer.invoke('blocks:setFrameworkRefs', data),
+    updateNotes: (data) => ipcRenderer.invoke('blocks:updateNotes', data),
+    duplicate: (id) => ipcRenderer.invoke('blocks:duplicate', id),
   },
   onion: {
     list: (blockId) => ipcRenderer.invoke('onion:list', blockId),

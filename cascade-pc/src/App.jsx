@@ -4,10 +4,11 @@ import PyramidView from './components/PyramidView'
 import ExperimentView from './components/ExperimentView'
 import AboutView from './components/AboutView'
 import SettingsView from './components/SettingsView'
+import AuraTest from './components/AuraTest'
 import './styles/app.css'
 
 export default function App() {
-  const [view, setView] = useState('pyramids') // 'pyramids' | 'pyramid' | 'experiment'
+  const [view, setView] = useState('pyramids') // 'pyramids' | 'pyramid' | 'experiment' | 'aura' | 'about' | 'settings'
   const [activePyramid, setActivePyramid] = useState(null)
 
   function openPyramid(pyramid) {
@@ -39,6 +40,9 @@ export default function App() {
         {view === 'settings' && (
           <SettingsView />
         )}
+        {view === 'aura' && (
+          <AuraTest />
+        )}
       </main>
     </div>
   )
@@ -49,8 +53,8 @@ function Sidebar({ view, setView, backToList }) {
     <aside className="sidebar">
       <div className="sidebar-header">
         <div className="sidebar-logo">⊚</div>
-        <div className="sidebar-title">CASCADE</div>
-        <div className="sidebar-sub">Knowledge OS</div>
+        <div className="sidebar-title">TCCT</div>
+        <div className="sidebar-sub">CASCADE CICADA TOOL</div>
       </div>
       <nav className="sidebar-nav">
         <button
@@ -66,6 +70,13 @@ function Sidebar({ view, setView, backToList }) {
         >
           <span className="nav-icon">⊗</span>
           <span>Experiment</span>
+        </button>
+        <button
+          className={`nav-item ${view === 'aura' ? 'active' : ''}`}
+          onClick={() => setView('aura')}
+        >
+          <span className="nav-icon">◈</span>
+          <span>AURA Test</span>
         </button>
         <button
           className={`nav-item ${view === 'settings' ? 'active' : ''}`}
@@ -84,7 +95,7 @@ function Sidebar({ view, setView, backToList }) {
       </nav>
       <div className="sidebar-footer">
         <div className="footer-line">Lycheetah Framework</div>
-        <div className="footer-line dim">CASCADE v0.1 · <a href="https://github.com/Lycheetah/CODEX_AURA_PRIME" target="_blank" rel="noreferrer" style={{color:'inherit',textDecoration:'none'}}>GitHub</a></div>
+        <div className="footer-line dim">TCCT v0.1 · <a href="https://github.com/Lycheetah/CODEX_AURA_PRIME" target="_blank" rel="noreferrer" style={{color:'inherit',textDecoration:'none'}}>GitHub</a></div>
       </div>
     </aside>
   )
