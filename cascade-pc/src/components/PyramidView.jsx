@@ -380,10 +380,11 @@ export default function PyramidView({ pyramid, onBack }) {
             </span>
           )}
         </div>
-        <div className="mode-tabs">
+        <div className="mode-tabs" title="Switch score view: AI score / your score / average of both">
           {SCORE_MODES.map(m => (
-            <button key={m} className={`mode-tab ${scoreMode === m ? 'active' : ''}`} onClick={() => setMode(m)}>
-              {m}
+            <button key={m} className={`mode-tab ${scoreMode === m ? 'active' : ''}`} onClick={() => setMode(m)}
+              title={m === 'framework' ? 'AI score — locked, scored against Codex' : m === 'sovereign' ? 'Your score — free, 1–999' : 'Average of AI + your score'}>
+              {m === 'framework' ? 'AI Score' : m === 'sovereign' ? 'My Score' : 'Combined'}
             </button>
           ))}
         </div>

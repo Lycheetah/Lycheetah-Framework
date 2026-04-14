@@ -130,6 +130,167 @@
   color: var(--text-dim);
 }
 
+/* Welcome screen */
+.welcome-screen {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px 0 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  text-align: center;
+}
+
+.welcome-glyph {
+  font-size: 40px;
+  color: var(--gold);
+}
+
+.welcome-title {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  margin-top: -14px;
+}
+
+.welcome-sub {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: -16px;
+}
+
+.welcome-how {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  text-align: left;
+}
+
+.how-step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+
+.how-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--gold-dim);
+  color: var(--bg-primary);
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.how-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.how-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.welcome-frameworks {
+  width: 100%;
+}
+
+.fw-intro {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+  letter-spacing: 0.03em;
+}
+
+.fw-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  text-align: left;
+}
+
+.fw-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fw-glyph {
+  font-size: 18px;
+}
+
+.fw-name {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+}
+
+.fw-desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.welcome-cta {
+  padding: 13px 36px;
+  background: rgba(212,168,67,0.12);
+  border: 1px solid var(--gold-dim);
+  color: var(--gold);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-family: inherit;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.welcome-cta:hover {
+  background: rgba(212,168,67,0.22);
+}
+
+.welcome-note {
+  font-size: 10px;
+  color: var(--text-dim);
+  max-width: 480px;
+  line-height: 1.6;
+  margin-top: -10px;
+}
+
+.create-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.create-overlay .create-card {
+  width: 400px;
+  margin: 0;
+}
+
 .empty-state {
   text-align: center;
   padding: 80px 0;

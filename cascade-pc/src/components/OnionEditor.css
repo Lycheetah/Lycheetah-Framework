@@ -67,7 +67,14 @@
 .fw-chips {
   display: flex;
   gap: 6px;
+}
+
+.fw-hint {
+  font-size: 10px;
+  color: var(--text-dim);
+  font-style: italic;
   flex: 1;
+  align-self: center;
 }
 
 .fw-chip {

@@ -156,11 +156,15 @@ export default function OnionEditor({ block, fileContent, onSaved }) {
               className={`fw-chip ${frameworkRefs.includes(f.id) ? 'active' : ''}`}
               onClick={() => toggleFramework(f.id)}
               style={frameworkRefs.includes(f.id) ? { color: f.color, borderColor: f.color } : {}}
+              title={f.tagline}
             >
               {f.glyph} {f.name}
             </button>
           ))}
         </div>
+        <span className="fw-hint">
+          {FRAMEWORK_LIST.filter(f => frameworkRefs.includes(f.id)).map(f => f.tagline).join(' · ')}
+        </span>
         <button className="btn primary ai-score-btn" onClick={runAiScore} disabled={aiScoring}>
           {aiScoring ? '⊚ Scoring...' : '⊚ AI Score'}
         </button>
