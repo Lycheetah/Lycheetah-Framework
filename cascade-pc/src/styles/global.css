@@ -33,7 +33,7 @@
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   font-size: 13px;
   line-height: 1.5;
   overflow: hidden;
@@ -41,6 +41,9 @@ body {
 }
 
 input, textarea, button { font-family: inherit; }
+
+/* Keep monospace for scores, labels, codes */
+.mono { font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace; }
 
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-primary); }

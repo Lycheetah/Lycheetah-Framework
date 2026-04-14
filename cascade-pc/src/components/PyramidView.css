@@ -514,7 +514,7 @@
   line-height: 1.7;
   white-space: pre-wrap;
   word-wrap: break-word;
-  font-family: inherit;
+  font-family: 'Cascadia Code', 'Consolas', monospace;
 }
 
 /* ── New features ──────────────────────────────────────────────────────────── */
