@@ -41,10 +41,8 @@ export default function PyramidView({ pyramid, onBack }) {
   const [addingFile, setAddingFile] = useState(false)
   const [addingBlock, setAddingBlock] = useState(false)
   const [fileName, setFileName] = useState('')
-  const [fileContent, setFileContent] = useState('')
   const [blockTitle, setBlockTitle] = useState('')
-  const [blockContent, setBlockContent] = useState('')
-  const [blockFrameworks, setBlockFrameworks] = useState(['cascade'])
+  const [blockFrameworks] = useState(['cascade'])
   const [dragging, setDragging] = useState(false)
   const [suggesting, setSuggesting] = useState(false)
   const [rescoring, setRescoring] = useState(false)
@@ -119,8 +117,8 @@ export default function PyramidView({ pyramid, onBack }) {
 
   async function createFile() {
     if (!fileName.trim()) return
-    const file = await window.cascade.files.create({ pyramidId: pyramid.id, name: fileName.trim(), content: fileContent.trim() })
-    setFileName(''); setFileContent(''); setAddingFile(false)
+    const file = await window.cascade.files.create({ pyramidId: pyramid.id, name: fileName.trim(), content: '' })
+    setFileName('')
     flashSave()
     await loadFiles(); setActiveFile(file)
   }
@@ -158,7 +156,7 @@ export default function PyramidView({ pyramid, onBack }) {
       title: title.trim(), content: content?.trim() || '',
       position: blocks.length, frameworkRefs: fwRefs || blockFrameworks,
     })
-    setBlockTitle(''); setBlockContent(''); setAddingBlock(false)
+    setBlockTitle('')
     flashSave()
     await loadBlocks(activeFile.id)
     setActiveBlock(block)
@@ -303,7 +301,7 @@ export default function PyramidView({ pyramid, onBack }) {
     await window.cascade.pyramids.setDisplayMode({ id: pyramid.id, mode })
   }
 
-  // Export markdown
+  // Export markdown — save dialog
   async function exportMarkdown() {
     const lines = [`# ${pyramid.name}`, `> Score mode: ${scoreMode}`, '']
     for (const file of files) {
@@ -323,12 +321,15 @@ export default function PyramidView({ pyramid, onBack }) {
         lines.push('')
       }
     }
-    await navigator.clipboard.writeText(lines.join('\n'))
-    setExportMsg('Markdown copied!')
-    setTimeout(() => setExportMsg(''), 2000)
+    const result = await window.cascade.export.save({
+      content: lines.join('\n'),
+      defaultName: `${pyramid.name.replace(/\s+/g, '_')}.md`,
+      ext: 'md',
+    })
+    if (result.ok) { setExportMsg('Saved!'); setTimeout(() => setExportMsg(''), 2000) }
   }
 
-  // Export JSON
+  // Export JSON — save dialog
   async function exportJSON() {
     const data = { pyramid, files: [] }
     for (const file of files) {
@@ -338,9 +339,12 @@ export default function PyramidView({ pyramid, onBack }) {
       })))
       data.files.push({ ...file, blocks: blocksWithLayers })
     }
-    await navigator.clipboard.writeText(JSON.stringify(data, null, 2))
-    setExportMsg('JSON copied!')
-    setTimeout(() => setExportMsg(''), 2000)
+    const result = await window.cascade.export.save({
+      content: JSON.stringify(data, null, 2),
+      defaultName: `${pyramid.name.replace(/\s+/g, '_')}.json`,
+      ext: 'json',
+    })
+    if (result.ok) { setExportMsg('Saved!'); setTimeout(() => setExportMsg(''), 2000) }
   }
 
   // Summary stats
@@ -536,12 +540,25 @@ export default function PyramidView({ pyramid, onBack }) {
             onDragLeave={onDragLeave}
             onDrop={onDrop}
           >
-            <div className="col-header">
-              <span>FILES</span>
-              <button className="btn" onClick={() => setAddingFile(true)}>+</button>
+            <div className="col-header"><span>FILES</span></div>
+
+            {/* Quick-add file input — always visible */}
+            <div className="quick-add-wrap">
+              <input
+                type="text"
+                className="quick-add-input"
+                placeholder="New file name… Enter to add"
+                value={fileName}
+                onChange={e => setFileName(e.target.value)}
+                onKeyDown={e => {
+                  if (e.key === 'Enter') createFile()
+                  if (e.key === 'Escape') setFileName('')
+                }}
+              />
+              <span className="quick-add-hint">or drop .txt .md .json</span>
             </div>
 
-            {/* File-level score */}
+            {/* File-level score bar */}
             {activeFile && fileScore > 0 && (
               <div className="file-score-bar-wrap">
                 <div className="file-score-bar" style={{ width: `${Math.min(100, fileScore)}%`, background: fileBand.textColor }} />
@@ -555,36 +572,23 @@ export default function PyramidView({ pyramid, onBack }) {
                 <div className="drop-sub">.txt · .md · .json · max 500KB</div>
               </div>
             ) : (
-              <>
-                {addingFile && (
-                  <div className="inline-form">
-                    <input type="text" placeholder="File name..." value={fileName} onChange={e => setFileName(e.target.value)} autoFocus
-                      onKeyDown={e => { if (e.key === 'Enter') createFile(); if (e.key === 'Escape') { setAddingFile(false); setFileName('') }}} />
-                    <textarea placeholder="Paste content..." value={fileContent} onChange={e => setFileContent(e.target.value)} rows={3} />
-                    <div className="form-actions">
-                      <button className="btn" onClick={() => { setAddingFile(false); setFileName('') }}>Cancel</button>
-                      <button className="btn primary" onClick={createFile}>Add</button>
-                    </div>
-                  </div>
+              <div className="file-list">
+                {files.length === 0 && (
+                  <div className="col-empty">No files yet</div>
                 )}
-                {files.length === 0 && !addingFile && (
-                  <div className="col-empty drop-hint">Drop .txt/.md<br/>or press + to add</div>
-                )}
-                <div className="file-list">
-                  {files.map(f => {
-                    const band = getScoreBand(f.score_aggregate || 0)
-                    return (
-                      <div key={f.id} className={`file-item ${activeFile?.id === f.id ? 'active' : ''}`} onClick={() => setActiveFile(f)}>
-                        <div className="file-name">{f.name}</div>
-                        <div className="file-meta">
-                          {f.score_aggregate > 0 ? <span style={{ color: band.textColor }}>{f.score_aggregate}</span> : <span className="dim">—</span>}
-                          <button className="btn danger icon-btn" onClick={e => deleteFile(e, f.id)}>×</button>
-                        </div>
+                {files.map(f => {
+                  const band = getScoreBand(f.score_aggregate || 0)
+                  return (
+                    <div key={f.id} className={`file-item ${activeFile?.id === f.id ? 'active' : ''}`} onClick={() => setActiveFile(f)}>
+                      <div className="file-name">{f.name}</div>
+                      <div className="file-meta">
+                        {f.score_aggregate > 0 ? <span style={{ color: band.textColor }}>{f.score_aggregate}</span> : <span className="dim">—</span>}
+                        <button className="btn danger icon-btn" onClick={e => deleteFile(e, f.id)}>×</button>
                       </div>
-                    )
-                  })}
-                </div>
-              </>
+                    </div>
+                  )
+                })}
+              </div>
             )}
           </div>
 
@@ -592,52 +596,44 @@ export default function PyramidView({ pyramid, onBack }) {
           <div className="pv-blocks">
             <div className="col-header">
               <span>BLOCKS</span>
-              <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
-                {activeFile?.content && <button className="btn" onClick={handleSuggestBlocks} disabled={suggesting} title="AI suggest blocks">{suggesting ? '...' : '⊚ AI'}</button>}
+              <div style={{ display: 'flex', gap: 4 }}>
+                {activeFile?.content && <button className="btn" onClick={handleSuggestBlocks} disabled={suggesting} title="AI suggest blocks from file">{suggesting ? '...' : '⊚ AI'}</button>}
                 {blocks.length > 0 && <button className="btn" onClick={handleReScoreAll} disabled={rescoring} title="Re-score all blocks">{rescoring ? '...' : '↻ All'}</button>}
-                {activeFile && <button className="btn" onClick={() => setAddingBlock(true)}>+</button>}
               </div>
             </div>
+
+            {/* Quick-add block input — always visible when file selected */}
+            {activeFile && (
+              <div className="quick-add-wrap">
+                <input
+                  type="text"
+                  className="quick-add-input"
+                  placeholder="New block title… Enter to add"
+                  value={blockTitle}
+                  onChange={e => setBlockTitle(e.target.value)}
+                  onKeyDown={e => {
+                    if (e.key === 'Enter') createBlock(blockTitle, '', blockFrameworks)
+                    if (e.key === 'Escape') setBlockTitle('')
+                  }}
+                />
+              </div>
+            )}
 
             {/* Summary stats */}
             {scoredBlocks.length > 0 && (
               <div className="block-stats">
-                <span>{blocks.length} blocks · {scoredBlocks.length} scored</span>
+                <span>{blocks.length} · {scoredBlocks.length} scored</span>
                 {avgScore > 0 && <span style={{ color: getScoreBand(avgScore).textColor }}>avg {avgScore}</span>}
-                {strongest && <span className="stat-strongest" title="Strongest block">↑ {strongest.title.slice(0, 20)}</span>}
+                {strongest && <span className="stat-strongest">↑ {strongest.title.slice(0, 18)}</span>}
               </div>
             )}
 
             {/* Search */}
             {blocks.length > 2 && (
               <div className="block-search">
-                <input type="text" placeholder="Search blocks..." value={search}
+                <input type="text" placeholder="Search…" value={search}
                   onChange={e => setSearch(e.target.value)}
                   onKeyDown={e => e.key === 'Escape' && setSearch('')} />
-              </div>
-            )}
-
-            {/* New block form */}
-            {addingBlock && (
-              <div className="inline-form">
-                <input type="text" placeholder="Block title..." value={blockTitle} onChange={e => setBlockTitle(e.target.value)} autoFocus
-                  onKeyDown={e => { if (e.key === 'Enter') createBlock(blockTitle, blockContent, blockFrameworks); if (e.key === 'Escape') { setAddingBlock(false); setBlockTitle('') }}} />
-                <textarea placeholder="Block content..." value={blockContent} onChange={e => setBlockContent(e.target.value)} rows={2} />
-                <div className="fw-selector">
-                  <span className="fw-sel-label">Score against:</span>
-                  {FRAMEWORK_LIST.map(f => (
-                    <button key={f.id}
-                      className={`fw-chip-sm ${blockFrameworks.includes(f.id) ? 'active' : ''}`}
-                      onClick={() => setBlockFrameworks(prev => prev.includes(f.id) ? prev.filter(x => x !== f.id) || ['cascade'] : [...prev, f.id])}
-                      style={blockFrameworks.includes(f.id) ? { color: f.color, borderColor: f.color } : {}}>
-                      {f.glyph} {f.name}
-                    </button>
-                  ))}
-                </div>
-                <div className="form-actions">
-                  <button className="btn" onClick={() => { setAddingBlock(false); setBlockTitle('') }}>Cancel</button>
-                  <button className="btn primary" onClick={() => createBlock(blockTitle, blockContent, blockFrameworks)}>Add</button>
-                </div>
               </div>
             )}
 

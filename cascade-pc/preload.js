@@ -33,4 +33,7 @@ contextBridge.exposeInMainWorld('cascade', {
     create: (data) => ipcRenderer.invoke('experiments:create', data),
     saveResult: (data) => ipcRenderer.invoke('experiments:saveResult', data),
   },
+  export: {
+    save: (data) => ipcRenderer.invoke('export:save', data),
+  },
 })

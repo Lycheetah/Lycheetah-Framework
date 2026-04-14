@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow, ipcMain, dialog } = require('electron')
 const path = require('path')
 const fs = require('fs')
 const { v4: uuidv4 } = require('uuid')
@@ -199,6 +199,20 @@ ipcMain.handle('experiments:saveResult', (_, { id, resultData }) => {
   const e = db.experiments.find(x => x.id === id)
   if (e) { e.result_data = JSON.stringify(resultData); saveDB() }
   return { ok: true }
+})
+
+// ── File Export (save dialog) ─────────────────────────────────────────────────
+ipcMain.handle('export:save', async (_, { content, defaultName, ext }) => {
+  const win = BrowserWindow.getFocusedWindow()
+  const { canceled, filePath } = await dialog.showSaveDialog(win, {
+    defaultPath: defaultName,
+    filters: ext === 'json'
+      ? [{ name: 'JSON', extensions: ['json'] }]
+      : [{ name: 'Markdown', extensions: ['md'] }],
+  })
+  if (canceled || !filePath) return { ok: false }
+  fs.writeFileSync(filePath, content, 'utf8')
+  return { ok: true, filePath }
 })
 
 // ── Window ────────────────────────────────────────────────────────────────────

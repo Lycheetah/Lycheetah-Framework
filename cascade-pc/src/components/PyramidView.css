@@ -216,7 +216,43 @@
 
 .drop-sub { font-size: 10px; color: var(--gold-dim); letter-spacing: 0.08em; }
 
-/* Inline forms */
+/* Quick-add input — replaces inline form */
+.quick-add-wrap {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.quick-add-input {
+  width: 100%;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  padding: 7px 10px;
+  font-size: 12px;
+  transition: border-color 0.15s;
+}
+
+.quick-add-input:focus {
+  outline: none;
+  border-color: var(--gold-dim);
+  background: var(--bg-hover);
+}
+
+.quick-add-input::placeholder { color: var(--text-dim); }
+
+.quick-add-hint {
+  font-size: 9px;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  padding-left: 2px;
+}
+
+/* Legacy inline forms (kept for experiment view) */
 .inline-form {
   padding: 10px 12px;
   border-bottom: 1px solid var(--border);
