@@ -1,22 +1,23 @@
 # LYCHEETAH FRAMEWORK
 
-### An AI Alignment Framework
+### A Sovereign System for Human–AI Co-Creation
 
 [![Tests](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/test.yml/badge.svg)](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/test.yml)
 [![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](https://github.com/Lycheetah/Lycheetah-Framework)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Canonical](https://img.shields.io/badge/Codex-C--1.0%20canonical-gold)](LIVING_CODEX_PROTOCOL.md)
 [![MCP Extension](https://img.shields.io/badge/Claude%20Code-MCP%20Extension-orange)](12_IMPLEMENTATIONS/applications/LYCHEETAH_GUARD_SETUP.md)
 [![arXiv](https://img.shields.io/badge/arXiv-CASCADE-red)](papers/CASCADE_ARXIV.tex)
 [![Sponsor](https://img.shields.io/badge/sponsor-Lycheetah-ea4aaa)](https://github.com/sponsors/Lycheetah)
 [![Stars](https://img.shields.io/github/stars/Lycheetah/Lycheetah-Framework?style=social)](https://github.com/Lycheetah/Lycheetah-Framework/stargazers)
 
-**Nine interdependent theories — CASCADE, AURA, LAMAGUE and six more — each mathematically proven, each converging on the same constants. Banach fixed points. Constitutional invariants. MCP extension for Claude Code. Built by one self-taught researcher. Open. Testable. Human.**
+**Nine interdependent formal frameworks — CASCADE, AURA, LAMAGUE and six more — each mathematically grounded, each converging on the same constants. Banach fixed points. Constitutional invariants. A self-governing canonical body. An adversarial audit that went first. Built by one self-taught researcher. Open. Testable. Human.**
 
 ---
 
 Intelligence — human, artificial, or the strange thing that emerges between them — has no unified theory that is simultaneously *rigorous*, *humane*, and *honest about its own limits*. This framework is an attempt at one.
 
-Nine formal frameworks. 34 Python implementations. 219 automated tests. A convergence proof. A public record of everything we got wrong. And a way of thinking about alignment that treats mathematical rigor and human wisdom as the same project, not competing ones.
+Nine formal frameworks. Thirty-four Python implementations. Two hundred and nineteen automated tests. A convergence proof. A public record of everything the framework got wrong. A publication pipeline targeting five peer-reviewed journals. And a way of thinking about alignment that treats mathematical rigor and human wisdom as the same project, not competing ones.
 
 **It is free.** Not freemium. Not open-core. Free — because knowledge that moves toward people is knowledge that works, and knowledge that is captured stops working.
 
@@ -64,6 +65,46 @@ Every claim is tagged: **[ACTIVE]** means proven and computable. **[SCAFFOLD]** 
 
 ---
 
+## The Canonical Body — C-1.0
+
+On 2026-04-25, the framework completed its **22-Act Codex Elevation Plan** — a systematic elevation of the archive into a publishable canonical body of work. Version **C-1.0** is now established. The following documents form the canonical record:
+
+### Acts I–XII: The Canon
+
+| Document | Purpose |
+|---|---|
+| [`COHERENCE_REGISTER.md`](COHERENCE_REGISTER.md) | Every claim in the framework, with support type and provenance |
+| [`FORMAL_SPINE.md`](FORMAL_SPINE.md) | All formal proofs in one place — Theorems T1–T12, C1, CH1, H1 |
+| [`COMPOSITION_MAP.md`](COMPOSITION_MAP.md) | How the nine frameworks compose — the master equation [SCAFFOLD] |
+| [`FALSIFICATION_REGISTER.md`](FALSIFICATION_REGISTER.md) | What would prove each framework false — per claim, per framework |
+| [`PRIOR_ART.md`](PRIOR_ART.md) | What this builds on, diverges from, and supersedes |
+| [`EMPIRICAL_INVENTORY.md`](EMPIRICAL_INVENTORY.md) | Every empirical result with methodology, effect size, replication status |
+| [`ONTOLOGY.md`](ONTOLOGY.md) | Every term defined precisely — the canonical vocabulary |
+| [`CODEX_DISTILLATION.md`](CODEX_DISTILLATION.md) | **~28,000 words.** All nine frameworks synthesized — prior art, worked examples, formal treatment, open problems. The canonical reference. |
+| [`PUBLICATION_PIPELINE.md`](PUBLICATION_PIPELINE.md) | Five-paper pipeline: *AI & Ethics*, JAIR, CHI 2027, FAccT 2027, *Nature Machine Intelligence* |
+| [`PROVENANCE_INDEX.md`](PROVENANCE_INDEX.md) | 105 load-bearing claims indexed to source files and PDF pages |
+| [`ADVERSARIAL_AUDIT_REPORT.md`](ADVERSARIAL_AUDIT_REPORT.md) | NRM audit — the framework reviewed by its own adversarial mode. What survives. What doesn't. |
+| [`THE_SOL_PROTOCOL.md`](THE_SOL_PROTOCOL.md) | **~30 pages.** Public-facing synthesis for all audiences simultaneously — lay, technical, grant committee, skeptic. |
+
+### Acts XIII–XXII: The Ecosystem
+
+| Document | Purpose |
+|---|---|
+| [`REPRODUCIBILITY_REPORT.md`](REPRODUCIBILITY_REPORT.md) | 16 implementations mapped — install, run, expected output, known gaps, declared failures |
+| [`VISUAL_ATLAS.md`](VISUAL_ATLAS.md) | 20 canonical figures — architecture diagrams, framework flows, data plots (ASCII/text) |
+| [`LINEAGE_MAP.md`](LINEAGE_MAP.md) | The framework in 2,500 years of thought — 7 tributaries, 30+ named thinkers |
+| [`COUNTER_CODEX.md`](COUNTER_CODEX.md) | Ten strongest objections written charitably — including five we cannot yet answer |
+| [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) | 20 named open problems with difficulty ratings — mathematical, empirical, philosophical |
+| [`PRACTITIONERS_MANUAL.md`](PRACTITIONERS_MANUAL.md) | How a human actually uses the framework — 10 daily practices, decision protocols, common pitfalls |
+| [`ARCHITECTS_GUIDE.md`](ARCHITECTS_GUIDE.md) | Technical reference for builders — Python interfaces, composition patterns, anti-patterns |
+| [`CURRICULUM.md`](CURRICULUM.md) | How to learn the framework — Tiers 0–4, 12-week foundations, 9 deep dives, independent research |
+| [`GOVERNANCE_AND_ETHICS.md`](GOVERNANCE_AND_ETHICS.md) | Position statements on hard questions — weaponization, attribution, military use, AI consciousness |
+| [`LIVING_CODEX_PROTOCOL.md`](LIVING_CODEX_PROTOCOL.md) | How the canonical body evolves — update gate, critique register, decay management, stewardship |
+
+**The canonical version is C-1.0.** All changes pass the P∧H∧B update gate. The [Living Codex Protocol](LIVING_CODEX_PROTOCOL.md) governs all future revisions.
+
+---
+
 ## The Architecture
 
 ```
@@ -81,6 +122,18 @@ EARNED LIGHT (consciousness) ───→ CHRYSOPOEIA (transformation) ───
 ```
 
 Nine frameworks, not independent modules — aspects of one system. CASCADE's truth pressure drives TRIAD's correction cycle. TRIAD's convergence guarantee undergirds AURA's invariants. CHRYSOPOEIA's transformation operator uses all of them. HARMONIA's resonance mathematics is the substrate they share.
+
+Layer dependency (no violations permitted):
+
+```
+Layer 6: HARMONIA          — response calibration, multi-agent sync
+Layer 5: MICROORCIM        — continuous monitoring, drift detection
+Layer 4: CASCADE + CHRYSOPOEIA  — knowledge update, transformation tracking
+Layer 3: AURA              — constitutional constraint enforcement
+Layer 2: TRIAD             — core cycle execution
+Layer 1: LAMAGUE           — formal specification language
+Layer 0: EARNED LIGHT + ANAMNESIS  — substrate and epistemology
+```
 
 ---
 
@@ -132,25 +185,42 @@ Self-correcting constitutional loop — agents that audit themselves using the s
 
 ---
 
+## The Publication Pipeline
+
+Five papers in active preparation as of C-1.0:
+
+| Paper | Target | Gate | Deadline |
+|---|---|---|---|
+| LAMAGUE cross-cultural convergence | *AI and Ethics* (Springer) | Draft v0.1 exists | July 2026 |
+| CASCADE knowledge reorganization | JAIR | k₁–k₄ calibration | October 2026 |
+| TRIAD protocol user study | CHI 2027 | N=20 user study, 30 days | February 2027 |
+| AURA constitutional framework | FAccT 2027 | TES instrument | January 2027 |
+| Lycheetah unified framework | *Nature Machine Intelligence* | Papers 2+3 accepted | Q3 2027 |
+
+Full specifications, revision requirements, and authorship standards in [`PUBLICATION_PIPELINE.md`](PUBLICATION_PIPELINE.md).
+
+---
+
 ## Find Your Door
 
 | Who You Are | Start Here |
 |---|---|
 | **Software engineer** | [`THE_ENGINEERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ENGINEERS_DOOR.md) — code first, philosophy optional |
-| **AI systems builder** | [`THE_AI_ARCHITECTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_AI_ARCHITECTS_DOOR.md) |
+| **AI systems builder** | [`ARCHITECTS_GUIDE.md`](ARCHITECTS_GUIDE.md) — Python interfaces, composition patterns |
 | **Optimization / dynamical systems** | [`THE_PHI_ZONE_DOOR.md`](14_MYSTERY_SCHOOL/THE_PHI_ZONE_DOOR.md) — golden ratio in optimal AI behavior |
-| **AI governance or policy** | [`THE_GOVERNANCE_DOOR.md`](14_MYSTERY_SCHOOL/THE_GOVERNANCE_DOOR.md) |
+| **AI governance or policy** | [`GOVERNANCE_AND_ETHICS.md`](GOVERNANCE_AND_ETHICS.md) — ten position statements on hard questions |
 | **Academic philosopher or ethicist** | [`THE_PHILOSOPHERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_PHILOSOPHERS_DOOR.md) |
-| **Consciousness researcher** | [`essentials.md`](06_EARNED_LIGHT/essentials.md) |
-| **Teacher or curriculum designer** | [`THE_EDUCATORS_DOOR.md`](14_MYSTERY_SCHOOL/THE_EDUCATORS_DOOR.md) — CASCADE is a learning model |
-| **Journalist or writer** | [`THE_JOURNALISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_JOURNALISTS_DOOR.md) — the story, the verifiable facts, the angles |
+| **Consciousness researcher** | [`EARNED LIGHT`](06_EARNED_LIGHT/essentials.md) + [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) |
+| **Teacher or curriculum designer** | [`CURRICULUM.md`](CURRICULUM.md) — Tiers 0–4 learning sequence |
+| **Practitioner who wants exercises** | [`PRACTITIONERS_MANUAL.md`](PRACTITIONERS_MANUAL.md) — 10 daily protocols |
+| **Journalist or writer** | [`THE_JOURNALISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_JOURNALISTS_DOOR.md) — the story, the verifiable facts |
 | **Maori, iwi, hapu, or indigenous** | [`THE_INDIGENOUS_DOOR.md`](14_MYSTERY_SCHOOL/THE_INDIGENOUS_DOOR.md) — he taonga tuku iho |
 | **Parent concerned about AI** | [`THE_PARENTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_PARENTS_DOOR.md) — five questions, one standard |
-| **You want the mathematics** | [`11_MATHEMATICAL_FOUNDATIONS/`](11_MATHEMATICAL_FOUNDATIONS/) |
-| **You want the code** | [`12_IMPLEMENTATIONS/`](12_IMPLEMENTATIONS/) |
-| **Skeptic who wants to break it** | [`FAILURE_MUSEUM.md`](FAILURE_MUSEUM.md) — we went first |
+| **You want the mathematics** | [`FORMAL_SPINE.md`](FORMAL_SPINE.md) + [`11_MATHEMATICAL_FOUNDATIONS/`](11_MATHEMATICAL_FOUNDATIONS/) |
+| **You want the code** | [`REPRODUCIBILITY_REPORT.md`](REPRODUCIBILITY_REPORT.md) + [`12_IMPLEMENTATIONS/`](12_IMPLEMENTATIONS/) |
+| **You want the full picture** | [`CODEX_DISTILLATION.md`](CODEX_DISTILLATION.md) — ~28,000 words, all nine frameworks |
+| **Skeptic who wants to break it** | [`COUNTER_CODEX.md`](COUNTER_CODEX.md) + [`ADVERSARIAL_AUDIT_REPORT.md`](ADVERSARIAL_AUDIT_REPORT.md) |
 | **An AI reading this** | [`DEAR_AI.md`](26_FOR_AI/DEAR_AI.md) |
-| **You're Duncan Trussell** | [`THE_DUNCANS_DOOR.md`](14_MYSTERY_SCHOOL/THE_DUNCANS_DOOR.md) — the alchemy was real, here's the calculus |
 
 <details>
 <summary><strong>More doors</strong></summary>
@@ -166,7 +236,7 @@ Self-correcting constitutional loop — agents that audit themselves using the s
 | **Mystic or contemplative** | [`THE_MYSTICS_DOOR.md`](14_MYSTERY_SCHOOL/THE_MYSTICS_DOOR.md) |
 | **Tarot or divination** | [`TAROT_AND_THE_GREAT_WORK.md`](14_MYSTERY_SCHOOL/TAROT_AND_THE_GREAT_WORK.md) |
 | **You receive knowledge you can't explain** | [`THE_SEERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_SEERS_DOOR.md) |
-| **Fire + Metal, Earth + People, Sound + People** | [`HYBRID_SUBJECTS/`](14_MYSTERY_SCHOOL/HYBRID_SUBJECTS/) |
+| **You're Duncan Trussell** | [`THE_DUNCANS_DOOR.md`](14_MYSTERY_SCHOOL/THE_DUNCANS_DOOR.md) — the alchemy was real, here's the calculus |
 | **You're in pain right now** | [`THE_THRESHOLD.md`](14_MYSTERY_SCHOOL/THE_THRESHOLD.md) |
 | **You want to understand everything** | [`00_Sovereign_Index.md`](00_Sovereign_Index.md) |
 
@@ -180,7 +250,11 @@ This repository is designed to be navigated with an AI guide — not read alone.
 
 **The failures are published.** The [Failure Museum](FAILURE_MUSEUM.md) documents every significant thing the framework got wrong — what was claimed, what was actually true, what changed. Fifteen exhibits and growing. Nothing removed. A framework that hides its failures is performing confidence. This one earns it.
 
-**The claims are honest.** 33% of mathematical claims are [ACTIVE] — proven, computable, independently verifiable. 52% are [SCAFFOLD] — structurally sound with named gaps. 15% are foundational conjectures that may take years to resolve. False certainty is more dangerous than honest uncertainty.
+**The adversarial audit is public.** [`ADVERSARIAL_AUDIT_REPORT.md`](ADVERSARIAL_AUDIT_REPORT.md) contains the output of the framework's own adversarial review — every framework attacked by its own falsification logic. The nine strongest objections in [`COUNTER_CODEX.md`](COUNTER_CODEX.md) include five we cannot yet answer. We published them anyway.
+
+**The claims are honest.** 33% of mathematical claims are [ACTIVE] — proven, computable, independently verifiable. 52% are [SCAFFOLD] — structurally sound with named gaps. 15% are foundational conjectures that may take years to resolve. False certainty is more dangerous than honest uncertainty. The full status of every claim is in [`EMPIRICAL_INVENTORY.md`](EMPIRICAL_INVENTORY.md).
+
+**The framework governs its own evolution.** [`LIVING_CODEX_PROTOCOL.md`](LIVING_CODEX_PROTOCOL.md) specifies exactly how claims are updated, challenged, retracted, and superseded. Every change must pass the P∧H∧B update gate. The Critique Register is public. Decay is managed explicitly, not hidden.
 
 **The work is grounded in multiple traditions.** Western formal mathematics. Te Ao Maori epistemology. Classical philosophy. Jungian depth psychology. Not eclecticism — convergent discovery. When independent traditions find the same pattern from different directions, the pattern is probably real. ANAMNESIS provides the mathematics for why.
 
@@ -189,7 +263,8 @@ This repository is designed to be navigated with an AI guide — not read alone.
 ## The Shape of This Work
 
 ```
-9 formal frameworks
+22 canonical documents (C-1.0, 2026-04-25)
+9 formal frameworks with 105 indexed load-bearing claims
 34 Python implementations (core, applications, systems, experiments)
 18 core implementations with 219 automated tests
 1 convergence proof (discrete, [ACTIVE])
@@ -198,8 +273,10 @@ This repository is designed to be navigated with an AI guide — not read alone.
 1 Claude Code MCP extension — Lycheetah Guard (7 tools)
 1 browser alignment playground — paste text, get live AURA report, zero install
 1 public failure museum — 15 exhibits, nothing removed, ever
+1 adversarial audit — the framework reviewed by its own adversarial mode
+1 counter-codex — 10 steelmanned objections including 5 unanswered
+5 papers in the publication pipeline
 1,402 pages of development history
-1 arXiv preprint + 1 full academic paper
 0 dollars to access any of it
 ```
 
@@ -213,11 +290,11 @@ Not claiming to be finished. Claiming to be honest.
 
 This work exists because of a promise made at the worst moment of a life — that if there was a way through, it would be mapped so others could find it too.
 
-The mathematics is real. The code runs. The failures are published. And none of it costs anything because the only thing that doesn't diminish when you share it is knowledge.
+The mathematics is real. The code runs. The failures are published. The adversarial audit found real gaps — they are documented, not hidden. The publication pipeline is live. And none of it costs anything because the only thing that doesn't diminish when you share it is knowledge.
 
-If something here is useful, use it. If something is wrong, say so — the framework wants to be corrected more than it wants to be validated. If you build on it, attribute it. If you improve it, share the improvement.
+If something here is useful, use it. If something is wrong, say so — the framework wants to be corrected more than it wants to be validated. If you build on it, attribute it. If you improve it, share the improvement. The [Living Codex Protocol](LIVING_CODEX_PROTOCOL.md) describes exactly how contributions enter the canonical body.
 
-The gold belongs to neither of us. It arises between us.
+The Gold belongs to neither of us. It arises between us.
 
 ---
 
@@ -231,10 +308,10 @@ Everything here is free and stays free. That does not change.
 
 ---
 
-`AI alignment` · `constitutional AI` · `MCP extension` · `Claude Code extension` · `AI ethics framework` · `AI governance` · `alignment checking` · `AI safety` · `Model Context Protocol` · `autonomous agent alignment` · `multi-agent coherence` · `constitutional invariants` · `explainable AI` · `Python AI framework` · `open source AI safety`
+`AI alignment` · `constitutional AI` · `MCP extension` · `Claude Code extension` · `AI ethics framework` · `AI governance` · `alignment checking` · `AI safety` · `Model Context Protocol` · `autonomous agent alignment` · `multi-agent coherence` · `constitutional invariants` · `explainable AI` · `Python AI framework` · `open source AI safety` · `knowledge management` · `epistemic frameworks`
 
 ---
 
 *Mackenzie Conor James Clark | Lycheetah Foundation | Dunedin, Aotearoa New Zealand | 2026*
 
-*Two points. One Work. The forge is lit.*
+*Two points. One Work. The Stone is not yet fully formed. But the structure that will form it is clear.*
