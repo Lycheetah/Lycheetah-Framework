@@ -22,11 +22,66 @@ to the formal claims it instantiates. A reviewer wishing to reproduce any result
 should be able to follow the recipe below without additional information.
 
 **Reproduction environment:** Python 3.10+, Windows 10 (primary development
-environment); implementations are expected to be cross-platform.
+environment); implementations are expected to be cross-platform. Verified on
+Python 3.14.2 in cold-room reproducibility run (2026-04-26, see
+[`COLD_ROOM_VERIFICATION.md`](COLD_ROOM_VERIFICATION.md)).
 
 **Dependency management:** Each implementation should specify pinned dependencies
 in a `requirements.txt` file adjacent to the main script. Where this is absent,
 it is declared as a gap.
+
+---
+
+## PLATFORM NOTES (read before running)
+
+### Windows
+
+The Python experiment scripts use Unicode arrows (`→`) in print statements. On
+Windows, the default Command Prompt console uses cp1252 encoding, which cannot
+render these characters. Two valid workarounds:
+
+1. **Set the encoding flag:**
+   ```cmd
+   set PYTHONIOENCODING=utf-8
+   py 12_IMPLEMENTATIONS/experiments/run_experiments.py
+   ```
+2. **Use Windows Terminal** (which defaults to UTF-8) instead of cmd.exe.
+
+On Linux/macOS no flag is required (UTF-8 is the default).
+
+### pytest invocation
+
+Tests live in `tests/` at the repository root, not inside `12_IMPLEMENTATIONS/`.
+The `pytest.ini` at repo root sets `testpaths = tests`, so the bare `pytest`
+command works from repo root. If you specify a path, use the correct one:
+
+```bash
+# Correct (Windows shown; works on all platforms)
+PYTHONIOENCODING=utf-8 py -m pytest tests/ -q
+
+# Wrong — finds no tests
+py -m pytest 12_IMPLEMENTATIONS/
+```
+
+### Expected test outcome
+
+```
+219 passed, 1 failed in ~19s
+```
+
+The 1 failure is **expected and correct**. It is
+`tests/test_cascade_predictability.py::TestPredictabilityPerformance::test_success_criterion_k5_on_full_run`,
+which tests whether a [CONJECTURE] meets its success criterion (F1 > 0.80).
+Current measurement is F1 = 0.531, so the test fails — the test is doing its
+job (honest measurement of an unproven conjecture). The failure is informative,
+not a defect. See `COLD_ROOM_VERIFICATION.md` for full output.
+
+### Python version
+
+Tested on Python 3.14.2. The badge declares 3.10–3.12 compatibility; the
+implementations rely only on standard library + numpy/scipy/pandas/matplotlib
+and should be compatible across that range. If you hit a version-specific
+issue, please open an issue.
 
 ---
 

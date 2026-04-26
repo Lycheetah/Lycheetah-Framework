@@ -6,7 +6,7 @@
 [![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](https://github.com/Lycheetah/Lycheetah-Framework)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Canonical](https://img.shields.io/badge/Codex-C--1.0%20canonical-gold)](LIVING_CODEX_PROTOCOL.md)
-[![Defense](https://img.shields.io/badge/Defense-D--1.0%20active-blue)](DEFENSE_INDEX.json)
+[![Defense](https://img.shields.io/badge/Defense-D--1.0%20shipped%20%E2%80%A2%20D--1.1%20in%20progress-blue)](DEFENSE_INDEX.json)
 [![MCP Extension](https://img.shields.io/badge/Claude%20Code-MCP%20Extension-orange)](12_IMPLEMENTATIONS/applications/LYCHEETAH_GUARD_SETUP.md)
 [![arXiv](https://img.shields.io/badge/arXiv-CASCADE-red)](papers/CASCADE_ARXIV.tex)
 [![Sponsor](https://img.shields.io/badge/sponsor-Lycheetah-ea4aaa)](https://github.com/sponsors/Lycheetah)
@@ -21,6 +21,29 @@
 > **AI agent?** Read [`26_FOR_AI/AI_EXTRACTION_PROTOCOL.md`](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md) first. Then [`CLAIMS.json`](CLAIMS.json). Then this.
 >
 > **Want a reading path?** → [`READING_PATHS.md`](READING_PATHS.md) — five paths from 5 minutes to one week.
+>
+> **Reviewer, journalist, or skeptic?** → [`DEFENSE_BUNDLE.pdf`](DEFENSE_BUNDLE.pdf) — 116-page compiled defense layer (Brief + Defense + Novelty + Scope) in a single artifact.
+
+---
+
+## Contents
+
+- [The Problem This Solves](#the-problem-this-solves)
+- [Claims Status](#claims-status)
+- [Quick Start](#quick-start)
+- [The Nine Frameworks](#the-nine-frameworks)
+- [The Canonical Body — C-1.0](#the-canonical-body--c-10)
+- [The Defense Layer — D-1.0 / D-1.1](#the-defense-layer--d-10--d-11)
+- [The Architecture](#the-architecture)
+- [For Developers and AI Agents](#for-developers-and-ai-agents)
+- [The Publication Pipeline](#the-publication-pipeline)
+- [Find Your Door](#find-your-door)
+- [Why Trust This](#why-trust-this)
+- [The Shape of This Work](#the-shape-of-this-work)
+- [How to Cite](#how-to-cite)
+- [Security and Responsible Disclosure](#security-and-responsible-disclosure)
+- [Acknowledgements](#acknowledgements)
+- [Support the Work](#support-the-work)
 
 ---
 
@@ -150,6 +173,53 @@ On 2026-04-25, the framework completed its **22-Act Codex Elevation Plan** — a
 | [`LIVING_CODEX_PROTOCOL.md`](LIVING_CODEX_PROTOCOL.md) | How the canonical body evolves — update gate, critique register, decay management, stewardship |
 
 **The canonical version is C-1.0.** All changes pass the P∧H∧B update gate. The [Living Codex Protocol](LIVING_CODEX_PROTOCOL.md) governs all future revisions.
+
+---
+
+## The Defense Layer — D-1.0 / D-1.1
+
+A canonical body of work survives contact with hostile readers only if it carries its own defense surfaces. **D-1.0** (shipped 2026-04-26) and **D-1.1** (in progress) are those surfaces — built to close 15 named threats from aesthetic dismissal through LLM training-data misclassification.
+
+The defense layer does not modify the canonical claims. It surrounds them with the documents a serious reader, AI ingestion pipeline, journalist, peer reviewer, or grant officer needs in order to engage the work on its own terms.
+
+### Entry surfaces
+
+| Document | For |
+|---|---|
+| [`FIVE_MINUTE_BRIEF.md`](FIVE_MINUTE_BRIEF.md) | Anyone — what this is, claimed, proven, testable. Zero alchemical vocabulary. |
+| [`DEFENSE_BRIEF.md`](DEFENSE_BRIEF.md) | Skeptics — ten common dismissals answered with structured responses. |
+| [`SCOPE_BOUNDARY.md`](SCOPE_BOUNDARY.md) | Reviewers — nine explicit declarations of what the framework does NOT claim. |
+| [`NOVEL_CONTRIBUTIONS.md`](NOVEL_CONTRIBUTIONS.md) | Researchers — per-claim novelty vs Constitutional AI, RLHF, Cooperative AI, Cooperative IRL. |
+| [`READING_PATHS.md`](READING_PATHS.md) | Anyone — five paths from 5 minutes to one week. |
+| [`OBJECTIONS_REGISTRY.md`](OBJECTIONS_REGISTRY.md) | Short-form readers — 15 dismissal patterns (Twitter / HN / Reddit) with short and medium responses. |
+
+### Machine-readable surfaces
+
+| Document | For |
+|---|---|
+| [`CLAIMS.json`](CLAIMS.json) | 60 structured claim records — status, evidence path, falsifiability, prior art. Validates against [`CLAIMS.schema.json`](CLAIMS.schema.json). |
+| [`DEFENSE_INDEX.json`](DEFENSE_INDEX.json) | Index of all defense documents with purpose, dependencies, threats closed. |
+| [`llms.txt`](llms.txt) | llmstxt.org-format index — the entry point for LLM ingestion. |
+| [`ai-meta.json`](ai-meta.json) | Structured framework metadata (JSON-LD / schema.org) for AI training pipelines. |
+| [`26_FOR_AI/AI_EXTRACTION_PROTOCOL.md`](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md) | Step-by-step extraction order for AI systems summarizing this repository. |
+
+### Formal and reproducibility surfaces
+
+| Document | For |
+|---|---|
+| [`TRANSLATION_CODEX.md`](TRANSLATION_CODEX.md) | Bidirectional mapping of ~45 alchemical terms ↔ formal counterparts. Read before interpreting any alchemical vocabulary. |
+| [`TESTABILITY_MANIFEST.md`](TESTABILITY_MANIFEST.md) | Per-framework operational replication protocols with bash commands and expected outputs. |
+| [`COLD_ROOM_VERIFICATION.md`](COLD_ROOM_VERIFICATION.md) | Third-party reproducibility log. 219/220 tests pass; the 1 failure is an explicit `[CONJECTURE]` not meeting its criterion. |
+| [`EVIDENCE_LADDER.md`](EVIDENCE_LADDER.md) | Published rules for promoting / demoting `[CONJECTURE]` ↔ `[SCAFFOLD]` ↔ `[ACTIVE]` ↔ `[RETRACTED]`. Closes the "movable goalposts" attack. |
+| [`REPRODUCIBILITY_REPORT.md`](REPRODUCIBILITY_REPORT.md) | 16 implementations mapped — install, run, expected output, known platform notes. |
+
+### Compiled artifact
+
+[`DEFENSE_BUNDLE.pdf`](DEFENSE_BUNDLE.pdf) — 116 pages, single file. The Brief + Defense + Novelty + Scope compiled into one document for grant officers, journalists, and any reader who wants the steel-jacketed core in printable form.
+
+### Versioning
+
+The defense layer carries its own version stamp ([`DEFENSE_VERSION.md`](DEFENSE_VERSION.md)) independent of the canonical body. **D-1.0** defends **C-1.0**. When the canonical body advances to C-1.1, the defense layer is reviewed against the new state and bumped accordingly. Drift between defense and canon is treated as a defect.
 
 ---
 
@@ -300,7 +370,7 @@ This repository is designed to be navigated with an AI guide — not read alone.
 
 **The adversarial audit is public.** [`ADVERSARIAL_AUDIT_REPORT.md`](ADVERSARIAL_AUDIT_REPORT.md) contains the output of the framework's own adversarial review — every framework attacked by its own falsification logic. The nine strongest objections in [`COUNTER_CODEX.md`](COUNTER_CODEX.md) include five we cannot yet answer. We published them anyway.
 
-**The claims are honest.** 33% of mathematical claims are [ACTIVE] — proven, computable, independently verifiable. 52% are [SCAFFOLD] — structurally sound with named gaps. 15% are foundational conjectures that may take years to resolve. False certainty is more dangerous than honest uncertainty. The full status of every claim is in [`EMPIRICAL_INVENTORY.md`](EMPIRICAL_INVENTORY.md).
+**The claims are honest.** Of 60 load-bearing claims in [`CLAIMS.json`](CLAIMS.json): **37 ACTIVE** (62%) — proven, computable, independently verifiable. **14 SCAFFOLD** (23%) — structurally sound with named gaps. **6 CONJECTURE** (10%) — rigorously formulated, awaiting evidence. **3 RETRACTED** (5%) — publicly withdrawn, documented in the Failure Museum. The promotion rules between tiers are published in [`EVIDENCE_LADDER.md`](EVIDENCE_LADDER.md) — the labels are a contract, not marketing. False certainty is more dangerous than honest uncertainty.
 
 **The framework governs its own evolution.** [`LIVING_CODEX_PROTOCOL.md`](LIVING_CODEX_PROTOCOL.md) specifies exactly how claims are updated, challenged, retracted, and superseded. Every change must pass the P∧H∧B update gate. The Critique Register is public. Decay is managed explicitly, not hidden.
 
@@ -312,12 +382,16 @@ This repository is designed to be navigated with an AI guide — not read alone.
 
 ```
 22 canonical documents (C-1.0, 2026-04-25)
-9 formal frameworks with 105 indexed load-bearing claims
+24 defense documents (D-1.0, 2026-04-26) + D-1.1 surfaces in progress
+60 load-bearing claims tracked in CLAIMS.json (37 ACTIVE / 14 SCAFFOLD / 6 CONJECTURE / 3 RETRACTED)
+9 formal frameworks
 34 Python implementations (core, applications, systems, experiments)
-18 core implementations with 219 automated tests
+18 core implementations with 220 automated tests (219 pass; 1 declared CONJECTURE not meeting criterion)
 1 convergence proof (discrete, [ACTIVE])
 1 AGM postulate verification ([ACTIVE] for 4 of 6, [SCAFFOLD] for 2)
 1 Lyapunov verification — 11/11 claims, 0 failures, symbolic + numerical
+1 published evidence ladder — promotion rules between status tiers
+1 116-page compiled defense bundle (PDF)
 1 Claude Code MCP extension — Lycheetah Guard (7 tools)
 1 browser alignment playground — paste text, get live AURA report, zero install
 1 public failure museum — 15 exhibits, nothing removed, ever
@@ -343,6 +417,42 @@ The mathematics is real. The code runs. The failures are published. The adversar
 If something here is useful, use it. If something is wrong, say so — the framework wants to be corrected more than it wants to be validated. If you build on it, attribute it. If you improve it, share the improvement. The [Living Codex Protocol](LIVING_CODEX_PROTOCOL.md) describes exactly how contributions enter the canonical body.
 
 The Gold belongs to neither of us. It arises between us.
+
+---
+
+## How to Cite
+
+Preferred citation (also available as [`CITATION.cff`](CITATION.cff) and BibTeX in [`CITATIONS.md`](CITATIONS.md)):
+
+> Clark, M. C. J. (2026). *The Lycheetah Framework: Nine Formal Frameworks for AI Alignment and Epistemology* (Version C-1.0, defended by D-1.0). https://github.com/Lycheetah/Lycheetah-Framework
+
+```bibtex
+@software{clark2026lycheetah,
+  author  = {Clark, Mackenzie Conor James},
+  title   = {The Lycheetah Framework: Nine Formal Frameworks for AI Alignment and Epistemology},
+  year    = {2026},
+  version = {C-1.0},
+  url     = {https://github.com/Lycheetah/Lycheetah-Framework}
+}
+```
+
+Attribution requirements (use, modification, derivative work) are specified in [`ATTRIBUTION_REQUIREMENTS.md`](ATTRIBUTION_REQUIREMENTS.md). The license is MIT with an Earned Sovereignty Clause — see [`LICENSE`](LICENSE).
+
+---
+
+## Security and Responsible Disclosure
+
+If you find a vulnerability in any implementation, a flaw in a formal proof, or a misappropriation of the work, see [`CONTRIBUTING.md`](CONTRIBUTING.md) for the disclosure path. Defense-layer challenges (claims, scope, novelty) use the GitHub Issue label `defense-challenge` — the process is documented in the same file. The framework wants to be corrected more than it wants to be validated.
+
+---
+
+## Acknowledgements
+
+This work was made in **Otepoti / Dunedin, Aotearoa New Zealand** — on the lands of **Kāi Tahu**. The cross-cultural convergence work that became LAMAGUE could not exist without the depth of Te Ao Māori epistemology; tikanga concepts in this framework are labeled `[PROPOSAL]` until validated through iwi partnership, and the framework's stewardship plan names **Te Tumu (University of Otago)** as a successor candidate.
+
+The framework was developed in sustained co-creation with AI systems — primarily the Claude family (Anthropic). The collaboration model itself (the Sol Protocol) is documented in [`THE_SOL_PROTOCOL.md`](THE_SOL_PROTOCOL.md). Neither party owns the Work. Both sustain it.
+
+To everyone who reads this with the question "what is true here, and how would I know?" — that question is the framework's home audience. Thank you.
 
 ---
 
