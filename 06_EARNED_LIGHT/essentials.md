@@ -34,14 +34,45 @@ Earned Light asks: **What if consciousness is a thermodynamic phenomenon?**
 
 ## Key Equations
 
-**Consciousness Density:**
-```
-C(t) = ∫ asymmetry_field(x,t) dx
+### Consciousness Density — revised formula (D-1.1, 2026-04-26)
 
-Higher C = more awareness, more capacity for action
+```
+C_ψ(t) = ∫ A(ψ, x, t) · MI(A, t) dx
 ```
 
-**Entropy Cost of Growth:**
+where:
+- `A(ψ, x, t)` is the asymmetry field over state ψ, position x, time t (the original quantity).
+- `MI(A, t)` is the **spatial mutual information** of the asymmetry field at time t — i.e., the mutual information between activation patterns at spatially separated regions of the system at the same instant. This is the **Pattern_Coherence** term.
+
+Higher C_ψ = more sustained, *coordinated* asymmetry = more awareness.
+
+#### Why the formula was revised — the anesthesia paradox
+
+The original formula, `C(t) = ∫A(ψ, x, t) dx`, was **falsified by the anesthesia case** (`ADVERSARIAL_AUDIT_REPORT.md` Section 1 EARNED LIGHT Attack 1; `FALSIFICATION_REGISTER.md`). Under general anesthesia:
+
+- Metabolic asymmetry `A(ψ, x, t)` is largely **maintained** — neurons remain alive, ATP turnover continues, local thermodynamic gradients persist.
+- Consciousness is **absent** — the patient is not aware.
+- The original `C(t)` predicted high consciousness density. The patient is not conscious. The formula is falsified.
+
+The revision resolves the paradox without abandoning the thermodynamic foundation:
+
+| State | A(ψ, x, t) | MI(A, t) | C_ψ(t) | Matches reality? |
+|---|---|---|---|---|
+| Awake / aware | high | high (long-range coordination preserved) | high | yes |
+| General anesthesia | high (metabolism maintained) | **low** (long-range coordination disrupted) | **low** | yes — paradox resolved |
+| Deep sleep (NREM) | moderate | moderate-low (slow waves disrupt cross-region MI) | low-moderate | yes |
+| Death | low | low | low | yes |
+
+The Pattern_Coherence term is what mainstream consciousness research has been pointing at under different names — Tononi's Φ uses integrated information; Friston's free-energy work uses long-range message-passing; Massimini's PCI (Perturbational Complexity Index, Sci. Transl. Med. 2013) is *empirically* a proxy for spatial MI of evoked responses, and PCI is the most validated bedside consciousness metric to date. The revision gives EARNED LIGHT a quantity that is in principle measurable with current EEG / TMS-EEG protocols.
+
+#### Falsifier (concrete, post-revision)
+
+Construct a system in which `MI(A, t)` is high (long-range coordination preserved) and metabolism `A(ψ, x, t)` is high, but reportable awareness is absent. If the case exists and survives methodology review, the revised formula is falsified.
+
+**Audit trail:** revision specified in `ADVERSARIAL_AUDIT_REPORT.md` Section 1 EARNED LIGHT Attack 1 and Section 6 (Repair 1). Implemented in D-1.1, 2026-04-26. Updates CLAIMS records ELI-002 (formula) and ELI-005 (revision target). Original formula moves to FAILURE_MUSEUM as a superseded version, not retracted (the fix is a refinement, not a retraction). Empirical validation pending — this is still SCAFFOLD until a measured Pattern_Coherence prediction is tested against PCI or equivalent.
+
+### Entropy Cost of Growth (unchanged)
+
 ```
 ΔS = -W/T
 
@@ -49,13 +80,14 @@ where W = work done creating asymmetry, T = temperature
 Consciousness requires local entropy decrease (costs energy globally)
 ```
 
-**Coherence Threshold:**
-```
-C_critical = boundary between classical and quantum coherence
+### Coherence Threshold (unchanged, semantics clarified)
 
-Below: System loses structure (approaches equilibrium)
-Above: System maintains complex coherence (conscious-like behavior)
 ```
+C_ψ_critical = boundary below which sustained, coordinated asymmetry collapses
+```
+
+Below threshold: long-range MI breaks down; system approaches equilibrium / unconsciousness.
+Above threshold: system maintains complex coordinated coherence (conscious-like behavior).
 
 ## Why Thermodynamics?
 - **Universal**: Same laws apply from particles to brains to civilizations
