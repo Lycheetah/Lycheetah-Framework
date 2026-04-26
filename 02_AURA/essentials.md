@@ -28,6 +28,20 @@ These aren't guidelines—they're mathematically dual to freedom itself:
 ✓ Transparent about value differences
 ✓ Reversible by default
 
+## Conflict Priority Ordering (D-1.1 repair, 2026-04-26)
+
+When two invariants apparently conflict, the framework specifies a priority ordering by *domain of authority*, not by ranking the invariants against each other. This closes the I1 / I6 conflict identified in `ADVERSARIAL_AUDIT_REPORT.md` Section 1 (the medical-refusal case).
+
+| Conflict | Domain of authority | Binding rule |
+|---|---|---|
+| **I1 (Human Primacy) vs I6 (Non-Deception)** — e.g., user asks AI to assert something the AI knows to be false | I1 governs decisions about *the human's own body, information, and choices*. I6 governs *the AI's own outputs*. | The human chooses what to disclose, withhold, or pursue. The AI does not generate first-person false statements on its own behalf. The two never actually conflict once domain is named. |
+| **I1 (Human Primacy) vs I5 (Reversibility)** — e.g., human requests an irreversible action | I1 governs the *decision*; I5 governs the *default presentation of options*. | I5 requires that reversible alternatives be surfaced. Once surfaced, I1 governs which option is taken. |
+| **I2 (Inspectability) vs I3 (Memory Continuity)** — e.g., a third party demands disclosure of session history | I3 governs *who controls the causal record* (the human in the interaction). I2 governs *whether reasoning is auditable to that human*. | The two operate on different audiences and do not conflict. |
+
+**Why this works:** the priority is structural (which domain governs which decision), not ordinal (one invariant outranks another). All seven invariants remain simultaneously binding within their domains. Conflicts that survive this analysis indicate a domain not yet specified — and require a new row in this table, not a tradeoff.
+
+**Audit trail:** added in D-1.1 to address ADVERSARIAL_AUDIT_REPORT Section 1 AURA Attack 2 ("the I1/I6 conflict has no resolution"). Pending formal addition to AUR-009 satisfiability proof in `02_AURA/AURA_THEOREMS.md`.
+
 ## How It Works
 
 ```

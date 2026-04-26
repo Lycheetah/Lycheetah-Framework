@@ -7,6 +7,20 @@ Microorcim solves a hard problem: **How do you measure if an AI system is sovere
 
 Most approaches are binary (autonomous/not) or vague. Microorcim provides **quantitative metrics** with mathematical boundaries.
 
+## Scope Declaration (D-1.1 repair, 2026-04-26)
+
+**MICROORCIM is a drift-monitoring tool, not an alignment guarantee.** This scope is binding and stated in every publication.
+
+| Applies to | Does NOT apply to |
+|---|---|
+| Systems whose internal states are operationally accessible — e.g., systems built within the LAMAGUE framework where intent is formally specified. | Sufficiently capable **deceptively-aligned** systems, which by construction produce μ_drift ≈ 0 (no detectable behavioral deviation) while pursuing misaligned internal goals. |
+| Systems used as collaborators, where session-level intent and observed behavior can be paired. | Black-box systems whose intent cannot be read — for these, MICROORCIM degrades to a behavioral-anomaly detector (early warning), not an alignment check. |
+| Detection of **drift over time** in non-deceptive systems — gradual divergence between declared intent and observed action. | One-shot detection of **deception at a moment** — this requires interpretability tools at the weight/activation level, not behavioral monitoring. |
+
+**The deceptive-alignment problem is field-wide and unresolved.** MICROORCIM does not claim to solve it. The framework's contribution is a continuous, computable drift metric with bifurcation early-warning (τ_phase) — useful as a runtime monitor for cooperating systems, insufficient as a guarantee against adversarial ones. This scope must appear in any paper that cites μ_drift or S_score as alignment evidence.
+
+**Audit trail:** added in D-1.1 to address ADVERSARIAL_AUDIT_REPORT Section 1 MICROORCIM Attack 1 ("deceptive alignment is fatal"). Recorded as MIC-004 (already ACTIVE as scope declaration).
+
 ## Core Metrics
 
 ### **μ_drift (Agency Drift)**

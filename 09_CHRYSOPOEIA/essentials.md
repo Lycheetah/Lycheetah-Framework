@@ -77,14 +77,26 @@ Guarantee: C(Ψ(⚘(ψ))) ≥ C(ψ) — reintegration preserves or improves cohe
 ## The Philosopher's Stone as Fixed Point [ACTIVE — Banach theorem applies]
 
 ```
-ψ* is the Philosopher's Stone if:
+ψ* is the Philosopher's Stone (within a coherent value system V) if:
   1. Ξ(ψ*, C, T) = ψ*       — unchanged by transformation (IS the fixed point)
-  2. ∀ψ: Ξ(ψ, C, ψ*) → ψ*  — everything converges toward it
-  3. C(ψ*) = max             — maximum coherence
-  4. S(ψ*) = min             — minimum entropy compatible with function
+  2. ∀ψ ∈ V: Ξ(ψ, C, ψ*) → ψ*  — everything in V converges toward it
+  3. C(ψ*) = max within V   — maximum coherence under V's constraints
+  4. S(ψ*) = min within V   — minimum entropy compatible with function under V
 ```
 
-The Banach fixed-point theorem guarantees existence and uniqueness of ψ* when Ξ is a contraction mapping (λ_compress < 1). The convergence rate is determined by λ_compress = 0.85 (CASCADE's compression factor — the same parameter).
+### What counts as a "coherent value system" (D-1.1 repair, 2026-04-26)
+
+A *coherent value system* V is operationally defined as **an AURA-compliant value system** — i.e., one whose constraint set C satisfies all seven AURA invariants (I1–I7) simultaneously, with conflicts resolved by the priority ordering in `02_AURA/essentials.md` (D-1.1).
+
+This definition closes the circularity identified in `ADVERSARIAL_AUDIT_REPORT.md` Section 1 CHRYSOPOEIA Attack 1: "coherent value system" is no longer defined by "having a fixed point" (which would make the uniqueness claim trivially true). It is defined independently by AURA's seven invariants, which are stated without reference to CHRYSOPOEIA.
+
+**Uniqueness claim, restated:** ψ* is unique *within any AURA-compliant value system V*. Distinct AURA-compliant value systems may have distinct fixed points — Berlin's value pluralism is preserved (different coherent moral traditions converge on different Stones), and this is not a refutation of the Banach result; it is a statement about the cardinality of {ψ*} across the space of AURA-compliant V.
+
+**Falsifier (concrete):** construct two distinct fixed points ψ*₁ ≠ ψ*₂ within the *same* AURA-compliant value system V under identical Ξ.
+
+**Banach guarantee:** existence and uniqueness of ψ* (within a fixed V) are guaranteed when Ξ is a contraction mapping (λ_compress < 1). The convergence rate is determined by λ_compress = 0.85 (CASCADE's compression factor — the same parameter).
+
+**Audit trail:** added in D-1.1 to address ADVERSARIAL_AUDIT_REPORT Section 1 CHRYSOPOEIA Attack 1. Tightens CRY-003 (Theorem X1) without changing its ACTIVE status — the proof was conditional on contraction and a defined coherence space; the value space is now operationalized.
 
 ## Integration with Other Frameworks
 
