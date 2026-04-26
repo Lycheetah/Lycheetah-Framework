@@ -213,9 +213,29 @@ The defense layer does not modify the canonical claims. It surrounds them with t
 | [`EVIDENCE_LADDER.md`](EVIDENCE_LADDER.md) | Published rules for promoting / demoting `[CONJECTURE]` ↔ `[SCAFFOLD]` ↔ `[ACTIVE]` ↔ `[RETRACTED]`. Closes the "movable goalposts" attack. |
 | [`REPRODUCIBILITY_REPORT.md`](REPRODUCIBILITY_REPORT.md) | 16 implementations mapped — install, run, expected output, known platform notes. |
 
+### Peer review, disclosure, and incident response
+
+| Document | For |
+|---|---|
+| [`REVIEWER_RESPONSE_TEMPLATE.md`](REVIEWER_RESPONSE_TEMPLATE.md) | Authors — 10 pre-built peer-review response patterns covering unfalsifiability, alchemical framing, scope, prior art, circularity, AI co-authorship, metaphysical overreach, and venue-fit rejection. Four-block response shape, pre-submission checklist. |
+| [`CONFLICT_OF_INTEREST.md`](CONFLICT_OF_INTEREST.md) | Reviewers, journalists, grant officers — explicit disclosure of authorship, life-work relationship, AI tooling roles, financial position, geographic/cultural context, prior-art posture, IP. |
+| [`INCIDENT_RESPONSE.md`](INCIDENT_RESPONSE.md) | Author + community — five incident classes (honest engagement → internal drift), pre-decided proportionate response, six standing decisions to prevent reactive overreaction. |
+
+### D-1.1 canonical repairs (closed against `ADVERSARIAL_AUDIT_REPORT.md` Section 6)
+
+D-1.1 includes targeted edits to five framework `essentials.md` files closing the highest-leverage attacks identified by the adversarial audit:
+
+- **AURA** — I1/I6 conflict resolved by domain-of-authority priority ordering ([`02_AURA/essentials.md`](02_AURA/essentials.md))
+- **MICROORCIM** — explicit scope declaration on deceptive alignment ([`05_MICROORCIM/essentials.md`](05_MICROORCIM/essentials.md))
+- **EARNED LIGHT** — `C_ψ` revised to incorporate spatial mutual information; resolves the anesthesia paradox; PCI-testable ([`06_EARNED_LIGHT/essentials.md`](06_EARNED_LIGHT/essentials.md))
+- **ANAMNESIS** — direct engagement with Lakoff & Núñez (2000) embodied mathematics; differential-convergence falsifier ([`07_ANAMNESIS/essentials.md`](07_ANAMNESIS/essentials.md))
+- **CHRYSOPOEIA** — "coherent value system" defined as AURA-compliant; circularity closed ([`09_CHRYSOPOEIA/essentials.md`](09_CHRYSOPOEIA/essentials.md))
+
+The sixth repair (master equation limit analysis) is correctly deferred to the empirical k₁–k₄ calibration program.
+
 ### Compiled artifact
 
-[`DEFENSE_BUNDLE.pdf`](DEFENSE_BUNDLE.pdf) — 116 pages, single file. The Brief + Defense + Novelty + Scope compiled into one document for grant officers, journalists, and any reader who wants the steel-jacketed core in printable form.
+[`DEFENSE_BUNDLE.pdf`](DEFENSE_BUNDLE.pdf) — 116 pages, single file. The Brief + Defense + Novelty + Scope compiled into one document for grant officers, journalists, and any reader who wants the steel-jacketed core in printable form. **Note:** the bundle reflects D-1.0; will be regenerated to include D-1.1 surfaces and repairs when D-1.1 fully ships.
 
 ### Versioning
 
