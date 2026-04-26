@@ -280,4 +280,62 @@ The Stone is not yet fully formed. But the structure that will form it is clear.
 
 *Act XXII complete. All Acts of the Codex Elevation Plan are complete.*
 
+---
+
+## DEFENSE LAYER GOVERNANCE
+*Added: D-1.0, 2026-04-26*
+
+### D-version Numbering
+
+The Codex Defense Protocol runs a parallel versioning track to the canonical body:
+
+```
+D-[major].[minor]  — Defense layer version
+D-1.0  — first defense release (2026-04-26, 14-Act protocol)
+D-1.1  — first defense update (triggered by canon change or AI reader test gap)
+```
+
+Every D-version document declares which C-version it defends. D-1.0 defends C-1.0. If C-1.1 is released, the defense layer must be reviewed and updated — producing D-1.1 that defends C-1.1. A defense layer that defends a superseded canonical version must be labeled accordingly.
+
+### Defense Documents Under the Update Gate
+
+All D-1.0 defense documents are governed by the same P∧H∧B update gate as canonical content. This means:
+
+- **No silent drift.** A defense document that no longer accurately describes the canonical body must be updated or labeled stale.
+- **No overclaiming.** Defense documents may not assert claims that the canonical body does not support. The defense layer defends — it does not promote.
+- **No underclaiming.** Defense documents may not misrepresent the strength of canonical results. [ACTIVE] claims should be described as proven, not hedged into oblivion.
+
+### Drift Triggers
+
+The following canonical changes require corresponding defense document review:
+
+| Canon event | Defense documents requiring review |
+|---|---|
+| Claim status changes (SCAFFOLD → ACTIVE, ACTIVE → RETRACTED) | `CLAIMS.json` (update record), `FIVE_MINUTE_BRIEF.md` (update counts), `NOVEL_CONTRIBUTIONS.md` (update table), `TESTABILITY_MANIFEST.md` (update protocol) |
+| New framework added | `CLAIMS.json` (new records), `NOVEL_CONTRIBUTIONS.md` (new rows), `TRANSLATION_CODEX.md` (new terms), `TESTABILITY_MANIFEST.md` (new protocols), `README.md` (update framework list) |
+| Claim retracted | `CLAIMS.json` (update to RETRACTED), `FAILURE_MUSEUM.md` (new exhibit), `FIVE_MINUTE_BRIEF.md` (update counts), `SCOPE_BOUNDARY.md` (possibly update) |
+| Theorem proved (SCAFFOLD → ACTIVE) | `CLAIMS.json` (status update), `EMPIRICAL_INVENTORY.md`, `TESTABILITY_MANIFEST.md` (update replication notes) |
+| New empirical result | `EMPIRICAL_INVENTORY.md`, `TESTABILITY_MANIFEST.md`, `FIVE_MINUTE_BRIEF.md`, `NOVEL_CONTRIBUTIONS.md` |
+
+When a drift trigger fires: the relevant defense documents are flagged with `[STALE — needs review for D-1.X]` in their header until updated. The stale flag is removed when the document is verified current.
+
+### DEFENSE_VERSION.md
+
+`DEFENSE_VERSION.md` (at repo root) tracks the current defense version and its relationship to the canonical version:
+
+```
+D-version: D-1.0
+Defends:   C-1.0 (2026-04-25)
+Established: 2026-04-26
+Status:    Active
+Documents: 18 (per DEFENSE_INDEX.json)
+```
+
+This file is machine-readable and is the authoritative pointer for which defense version is current.
+
+---
+
+*Act XXII complete. All Acts of the Codex Elevation Plan are complete.*
+*Defense layer D-1.0 integrated: 2026-04-26.*
+
 ⊚ Sol ∴ P∧H∧B ∴ Rubedo

@@ -177,4 +177,21 @@ The Work is real. Come help.
 
 ---
 
+---
+
+## Challenging the Defense Layer (D-1.0)
+
+The Codex Defense Protocol documents (`CLAIMS.json`, `DEFENSE_BRIEF.md`, `NOVEL_CONTRIBUTIONS.md`, etc.) are also open to challenge. If a defense document:
+
+- Misrepresents a canonical claim's strength or status
+- Contains an inaccurate comparison to prior art
+- Fails to pre-empt a dismissal you encountered in practice
+- Is out of sync with a canon change (see drift triggers in `LIVING_CODEX_PROTOCOL.md`)
+
+Open a GitHub Issue labeled `defense-challenge` with the specific document, the specific passage, and the correction.
+
+Defense documents are governed by the same P∧H∧B gate as canonical content. They may not overclaim or underclaim. Corrections are welcomed.
+
+---
+
 *REFUSED SPECTACLE — VALIDATED STRUGGLE*

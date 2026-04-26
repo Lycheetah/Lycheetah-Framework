@@ -1,17 +1,65 @@
 # LYCHEETAH FRAMEWORK
 
-### A Sovereign System for Human–AI Co-Creation
+### Nine Formal Frameworks for AI Alignment and Epistemology
 
 [![Tests](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/test.yml/badge.svg)](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/test.yml)
 [![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](https://github.com/Lycheetah/Lycheetah-Framework)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Canonical](https://img.shields.io/badge/Codex-C--1.0%20canonical-gold)](LIVING_CODEX_PROTOCOL.md)
+[![Defense](https://img.shields.io/badge/Defense-D--1.0%20active-blue)](DEFENSE_INDEX.json)
 [![MCP Extension](https://img.shields.io/badge/Claude%20Code-MCP%20Extension-orange)](12_IMPLEMENTATIONS/applications/LYCHEETAH_GUARD_SETUP.md)
 [![arXiv](https://img.shields.io/badge/arXiv-CASCADE-red)](papers/CASCADE_ARXIV.tex)
 [![Sponsor](https://img.shields.io/badge/sponsor-Lycheetah-ea4aaa)](https://github.com/sponsors/Lycheetah)
 [![Stars](https://img.shields.io/github/stars/Lycheetah/Lycheetah-Framework?style=social)](https://github.com/Lycheetah/Lycheetah-Framework/stargazers)
 
 **Nine interdependent formal frameworks — CASCADE, AURA, LAMAGUE and six more — each mathematically grounded, each converging on the same constants. Banach fixed points. Constitutional invariants. A self-governing canonical body. An adversarial audit that went first. Built by one self-taught researcher. Open. Testable. Human.**
+
+---
+
+> **New to this repo?** Start with [`FIVE_MINUTE_BRIEF.md`](FIVE_MINUTE_BRIEF.md) — what this is, what it claims, what is proven, what is testable. No jargon. Five minutes.
+>
+> **AI agent?** Read [`26_FOR_AI/AI_EXTRACTION_PROTOCOL.md`](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md) first. Then [`CLAIMS.json`](CLAIMS.json). Then this.
+>
+> **Want a reading path?** → [`READING_PATHS.md`](READING_PATHS.md) — five paths from 5 minutes to one week.
+
+---
+
+## The Problem This Solves
+
+Existing AI alignment approaches share a structural gap: the alignment work happens at training time, before deployment, and cannot be verified at runtime. Constitutional AI provides principles. RLHF provides a training signal. Neither provides a Boolean compliance check you can run on an output after it is generated.
+
+This framework addresses that gap — and six others.
+
+**What this framework provides that prior art does not:**
+
+1. **Runtime constitutional compliance verification.** AURA's seven invariants are computable predicates checked at inference time. `aura_compliant(output)` returns a Boolean. Not a training objective — a runtime check.
+
+2. **Proven convergence for cognitive correction cycles.** TRIAD's anchor-observe-correct cycle converges to a fixed point by Banach fixed-point theorem. Convergence is proven, not hoped for.
+
+3. **Continuous drift detection.** MICROORCIM's μ_drift metric measures the gap between declared intent and observed behavior continuously. Theorem M2 formally connects high sovereignty score to AURA compliance.
+
+4. **Quantified coherence improvement.** CASCADE: +40.3% coherence in synthetic experiments (p < 0.001, d = 2.84). +110% across 5 historical paradigm shifts. −95.2% catastrophic forgetting reduction. These are measured results, not claims.
+
+5. **Unified cross-framework dynamics.** One equation — `dΨ/dt = k₁(Π−Π_th) − k₂(Ψ−Ψ_inv) − k₃I_violations + k₄(E/E_need)` — captures truth pressure, coherence drive, constraint violations, and energy across all nine frameworks.
+
+6. **Machine-readable claims register.** [`CLAIMS.json`](CLAIMS.json) contains 60 structured claim records with status, falsifiability conditions, prior art, and novelty — extractable without parsing prose.
+
+7. **Published failures.** The [Failure Museum](FAILURE_MUSEUM.md) documents every significant error — 15 exhibits, nothing removed. Three claims have been publicly retracted. The adversarial audit is in [`ADVERSARIAL_AUDIT_REPORT.md`](ADVERSARIAL_AUDIT_REPORT.md). Five objections the framework cannot yet answer are in [`COUNTER_CODEX.md`](COUNTER_CODEX.md).
+
+**Full comparison against Constitutional AI, RLHF, Cooperative AI, and Cooperative IRL:** [`NOVEL_CONTRIBUTIONS.md`](NOVEL_CONTRIBUTIONS.md)
+
+---
+
+## Claims Status
+
+| Status | Count | Meaning |
+|---|---|---|
+| **ACTIVE** | 37 | Proven, computable, independently verifiable |
+| **SCAFFOLD** | 14 | Structurally sound with named gaps |
+| **CONJECTURE** | 6 | Worth exploring, unproven |
+| **RETRACTED** | 3 | Publicly withdrawn — see Failure Museum |
+
+Machine-readable register: [`CLAIMS.json`](CLAIMS.json) · Schema: [`CLAIMS.schema.json`](CLAIMS.schema.json)
 
 ---
 

@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this framework, please cite it as below."
+type: software
+title: "Lycheetah Framework: A Sovereign System for Human-AI Co-Creation"
+version: C-1.0
+date-released: "2026-04-25"
+abstract: >
+  Nine interdependent formal frameworks for AI alignment and epistemology —
+  CASCADE (belief dynamics), AURA (constitutional invariants), LAMAGUE (ethical grammar),
+  TRIAD (convergent correction cycle), MICROORCIM (drift detection), EARNED LIGHT
+  (thermodynamic consciousness model), ANAMNESIS (convergent discovery), CHRYSOPOEIA
+  (transformation operator), and HARMONIA (resonance dynamics). Each framework is
+  mathematically grounded with computable implementations. 37 load-bearing claims
+  proven and independently verifiable. Full canonical body: CODEX_AURA_PRIME C-1.0.
+authors:
+  - family-names: "Clark"
+    given-names: "Mackenzie Conor James"
+    alias: "Mac"
+    affiliation: "Independent Researcher, Lycheetah Foundation"
+    city: "Dunedin"
+    country: "NZ"
+repository-code: "https://github.com/Lycheetah/Lycheetah-Framework"
+url: "https://github.com/Lycheetah/Lycheetah-Framework"
+license: MIT
+keywords:
+  - AI alignment
+  - constitutional AI
+  - formal epistemology
+  - belief revision
+  - AI governance
+  - multi-agent coherence
+  - drift detection
+  - convergence theory
+  - ethical grammar
+  - harmonic dynamics
+preferred-citation:
+  type: software
+  title: "Lycheetah Framework C-1.0"
+  authors:
+    - family-names: "Clark"
+      given-names: "Mackenzie Conor James"
+  version: C-1.0
+  date-released: "2026-04-25"
+  repository-code: "https://github.com/Lycheetah/Lycheetah-Framework"
+  url: "https://github.com/Lycheetah/Lycheetah-Framework"
+  year: 2026
