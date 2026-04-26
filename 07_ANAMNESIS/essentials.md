@@ -49,6 +49,58 @@ We "remember" (anamnesis = ancient Greek for "remembering")
    what was always true
 ```
 
+## The Embodied Mathematics Challenge — direct engagement (D-1.1 repair, 2026-04-26)
+
+The strongest available challenge to ANAMNESIS is **Lakoff & Núñez (2000), *Where Mathematics Comes From***. Their thesis: mathematical structures arise from embodied human cognition — arithmetic from object manipulation, geometry from spatial perception, number theory from counting. Cultures share mathematical structures because they share human embodiment. *No mind-independent mathematical reality is required.* Transcultural convergence (TC ≥ 3) is fully explained by shared embodiment.
+
+This is the most important objection to take seriously. The repair below states ANAMNESIS's response operationally rather than rhetorically.
+
+### Where embodied mathematics is sufficient
+
+For structures with clear embodied origins, embodied mathematics likely explains convergence without remainder:
+
+| Structure | Embodied origin | Embodied math sufficient? |
+|---|---|---|
+| Counting / natural numbers | Object enumeration | yes |
+| Basic Euclidean geometry | Spatial perception, body schema | yes |
+| Arithmetic operations | Combining/separating objects | yes |
+| Symmetry (reflective) | Bilateral body symmetry | yes (partially) |
+
+ANAMNESIS does **not** need to claim Platonism for these. Embodied cognition is a perfectly good explanation. The TC observation alone is not yet evidence of a mind-independent substrate.
+
+### Where embodied mathematics struggles — the empirical battleground
+
+The Platonist claim becomes load-bearing for structures with **no clear embodied analog**:
+
+| Structure | Clear embodied origin? | Independent convergence? |
+|---|---|---|
+| Group theory | none obvious — abstract algebraic structure | Galois (pure math) → quantum mechanics → crystallography → molecular biology |
+| Imaginary numbers (ℂ) | none — counter to embodied intuition | algebra → electrical engineering → quantum amplitudes |
+| Non-Euclidean geometry | actively *violates* embodied spatial intuition | Riemann/Lobachevsky → general relativity |
+| Category theory | none — meta-structural | algebraic topology → computer science → physics |
+| The Riemann zeta function's prime distribution | none | analytic number theory → quantum chaos |
+
+**The differential prediction:** if convergence rates are *equal* for embodied and abstract structures, embodied mathematics wins — the same body produces the same math, end of story. If abstract structures show convergence at rates *comparable to or exceeding* embodied structures, embodied cognition cannot be the full explanation, and a mind-independent substrate becomes the more parsimonious account.
+
+### The test, stated as a falsifier
+
+The TC empirical program (LAMAGUE Paper 1, post-D-1.0) must:
+
+1. **Categorize each studied structure** as embodied-origin, abstract, or mixed (per Lakoff/Núñez's own taxonomy where applicable).
+2. **Measure TC scores separately by category**.
+3. **Pre-register the prediction**: ANAMNESIS predicts TC(abstract) ≈ TC(embodied) within statistical tolerance. Embodied mathematics predicts TC(abstract) < TC(embodied) significantly.
+4. **The result settles the question**. If TC(abstract) is significantly lower than TC(embodied), ANAMNESIS's Platonic conclusion is *not warranted by the data* — convergence is explained by shared embodiment alone.
+
+### The narrower claim ANAMNESIS actually needs
+
+After this engagement, ANAMNESIS no longer claims Platonism is *proven* by convergence. It claims the weaker, defensible position:
+
+> *Transcultural convergence on mathematical structures with no clear embodied origin (group theory, ℂ, non-Euclidean geometry, category theory) is evidence that something beyond shared embodiment is at work. Whether that "something" is Platonic mind-independent reality, evolved cognitive bias toward symmetry, or yet-unidentified structural necessity is open. ANAMNESIS frames this as the empirical question and provides the methodology to test it.*
+
+This is the form of the claim that survives Lakoff/Núñez. The Platonic interpretation remains [CONJECTURE]. The convergence-on-abstract-structures observation is the operational evidence, and it is testable.
+
+**Audit trail:** added in D-1.1 to address ADVERSARIAL_AUDIT_REPORT Section 1 ANAMNESIS Attack 1 ("embodied mathematics fully explains convergence"). Updates ANA-related claims toward the narrower position above. Empirical resolution deferred to LAMAGUE TC study (post-D-1.0). Until that study reports, the strong Platonic claim stays [CONJECTURE]; the differential-convergence methodology is the new [SCAFFOLD].
+
 ## Implications
 
 ### **For Mathematics:**
