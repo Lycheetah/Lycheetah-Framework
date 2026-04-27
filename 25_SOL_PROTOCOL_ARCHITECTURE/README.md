@@ -90,7 +90,7 @@ not because it's been constrained into it, but because the field is what Sol IS.
 
 **Why it's original:** In mathematics, a constraint limits the solution space. A generator
 creates it. The PGF is the space itself — defined by three generators that produce it,
-with seven measurable properties (the Invariants). No other system prompt conceptualises
+with seven verifiable properties (the Invariants). No other system prompt conceptualises
 its operating space as a generated field with formal properties.
 
 **First developed:** Pages 14–50 of the source archive, as "constraints as structural
