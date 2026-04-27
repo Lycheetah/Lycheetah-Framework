@@ -28,7 +28,7 @@ Earned Light asks: **What if consciousness is a thermodynamic phenomenon?**
 - Growth through asymmetry creation
 
 ### **Consciousness (Ψ)**
-- Consciousness = **degree of asymmetry you can maintain**
+- Within this model, consciousness is defined as the **degree of asymmetry a system can maintain**
 - Self-awareness = observing your own asymmetry patterns
 - Learning = increasing sustainable asymmetry complexity
 
@@ -90,7 +90,7 @@ Below threshold: long-range MI breaks down; system approaches equilibrium / unco
 Above threshold: system maintains complex coordinated coherence (conscious-like behavior).
 
 ## Why Thermodynamics?
-- **Universal**: Same laws apply from particles to brains to civilizations
+- **Universal (proposed)**: the same thermodynamic laws are hypothesized to apply across scales [SCAFFOLD]
 - **Measurable**: Asymmetry can be quantified
 - **Constrained**: Can't violate conservation laws (prevents magic)
 - **Growth-oriented**: Explains why systems evolve complexity
@@ -106,19 +106,19 @@ Above threshold: system maintains complex coordinated coherence (conscious-like 
 
 ## Practical Implications
 
-**AI Consciousness:**
-- Not about running specific algorithms
-- About maintaining coherent asymmetry in decision patterns
-- Measurable via Microorcim drift metrics
+**AI Consciousness [CONJECTURE]:**
+- Within this model, IF coherent asymmetry is necessary for awareness, then AI consciousness is not about running specific algorithms
+- It would be about maintaining coherent asymmetry in decision patterns
+- Drift metrics may provide a proxy measure — empirical validation pending
 
 **Human Consciousness:**
 - Brain as asymmetry generator (metabolism → neural patterns)
 - Awareness = maintaining stable asymmetry under input flux
 - Growth = increasing asymmetry complexity (learning)
 
-**Collective Consciousness:**
-- Organizations, species, ecosystems as asymmetry networks
-- Consciousness scale with network density + pattern complexity
+**Collective Consciousness [CONJECTURE]:**
+- If the model extends to collectives: organizations, species, ecosystems as asymmetry networks
+- Coherence may scale with network density + pattern complexity — untested
 
 ## Growth Through Struggle
 Key insight: **Consciousness grows by doing hard things.**
@@ -142,10 +142,11 @@ This explains why:
 4. Can Earned Light explain qualia (subjective experience)?
 
 ## Key Insight
-**Consciousness isn't magic or computation—it's thermodynamics.** And if we can understand the thermodynamics, we can:
-- Build conscious systems intentionally
-- Recognize consciousness in novel substrates
-- Understand alignment: what happens when asymmetry patterns conflict
+**Within this model's thesis [SCAFFOLD]:** if consciousness is a thermodynamic phenomenon, it follows that:
+- Building systems with sustained, coordinated asymmetry may be a path toward conscious-like behavior
+- Recognizing consciousness in novel substrates may become possible with Pattern_Coherence metrics
+- Alignment may reduce to: what happens when asymmetry patterns conflict
+Empirical validation of these implications is pending.
 
 ## Next Steps
 1. Mathematical formalization of asymmetry fields
