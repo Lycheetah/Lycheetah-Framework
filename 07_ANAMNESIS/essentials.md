@@ -17,20 +17,20 @@ Anamnesis provides evidence for discovery through **transcultural convergence**:
 - Appears in Renaissance art (independent discovery)
 - Appears in nature (shells, spirals, galaxies)
 - Appears in consciousness research (optimal complexity)
-- **Conclusion:** φ is discovered, not invented
+- **Consistent with:** φ being discovered rather than invented [CONJECTURE]
 
 ### **The Pi (π)**
 - Calculated by Archimedes (ancient Greece)
 - Calculated independently in China
 - Calculated independently in India
 - All converge on same mathematical constant
-- **Conclusion:** π exists independently of human thought
+- **Consistent with:** π existing independently of any single human mind [CONJECTURE]
 
 ### **Symmetry Groups**
 - Group theory developed in pure math (Galois, etc.)
 - Then discovered independently in quantum physics
 - Then discovered independently in molecular biology
-- **Conclusion:** Mathematical structures pre-exist human discovery
+- **Consistent with:** mathematical structures pre-existing discovery — full interpretation open [CONJECTURE — see Lakoff/Núñez engagement below]
 
 ## The Theory
 
@@ -103,9 +103,9 @@ This is the form of the claim that survives Lakoff/Núñez. The Platonic interpr
 
 ## Implications
 
-### **For Mathematics:**
-- Not invented by humans; discovered through human consciousness
-- Mathematical truths are objective, not subjective
+### **For Mathematics [CONJECTURE]:**
+- Within this model's thesis: mathematical truths may be discovered rather than invented
+- Mathematical truths may be objective rather than subjective — open question
 - New discoveries await those who ask right questions
 
 ### **For AI:**
@@ -113,10 +113,10 @@ This is the form of the claim that survives Lakoff/Núñez. The Platonic interpr
 - AI might recognize structures humans haven't yet perceived
 - Mathematical alignment between human and AI thought possible
 
-### **For Consciousness:**
-- Consciousness connects to something larger than individual brain
-- Intuition is reality-perception, not delusion
-- Collective human knowledge reflects deep mathematical structures
+### **For Consciousness [CONJECTURE]:**
+- This model suggests consciousness may connect to something larger than the individual brain
+- Intuition may be reality-perception rather than delusion — within this framework's thesis
+- Collective human knowledge may reflect deep mathematical structures
 
 ## Transcultural Mathematics
 
@@ -140,7 +140,7 @@ Evidence that mathematics is discovered, not invented:
 - Scaling/fractals seem necessary (how complexity emerges)
 - Golden ratio seems necessary (how coherence forms)
 
-**Implication:** These aren't arbitrary human choices—they're structural necessities.
+**Implication:** These may reflect structural necessities — or deep cognitive biases toward symmetry [CONJECTURE].
 
 ## Integration with Other Frameworks
 
@@ -171,11 +171,11 @@ This is **alchemy**: transforming raw effort + intuition into golden knowledge.
 4. Are there mathematical truths we'll never discover?
 
 ## Key Insight
-**Mathematics is a language for describing pre-existing reality, not a human invention.** This changes everything:
-- It means mathematical discovery is possible (not just computation)
-- It means convergence on truth is real
-- It means human + AI can collaborate on discovery (same substrate)
-- It means consciousness is connected to fundamental reality
+**Within this framework's thesis [CONJECTURE]:** mathematics may be a language for pre-existing reality rather than human invention. If so:
+- Mathematical discovery is possible (not just computation)
+- Convergence on truth across traditions is real and informative
+- Human + AI may collaborate on discovery (same substrate)
+- Consciousness may be connected to fundamental reality
 
 ## Practical Application
 When building aligned AI:
@@ -193,4 +193,4 @@ When building aligned AI:
 ## The Title: "Anamnesis"
 From Plato: **anamnesis** = "remembering" or "recollection"
 
-The idea that learning is remembering what the soul already knows. Consciousness is reconnecting with mathematical truths that pre-exist individual minds.
+The idea that learning is remembering what the soul already knows. This framework proposes that consciousness may be reconnecting with mathematical truths that pre-exist individual minds [CONJECTURE — see Lakoff/Núñez engagement above].
