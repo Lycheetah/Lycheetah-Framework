@@ -57,11 +57,11 @@ This framework addresses that gap — and six others.
 
 1. **Runtime constitutional compliance verification.** AURA's seven invariants are computable predicates checked at inference time. `aura_compliant(output)` returns a Boolean. Not a training objective — a runtime check.
 
-2. **Proven convergence for cognitive correction cycles.** TRIAD's anchor-observe-correct cycle converges to a fixed point by Banach fixed-point theorem. Convergence is proven, not hoped for.
+2. **Proven convergence within the formal model.** TRIAD's anchor-observe-correct cycle converges to a fixed point by Banach fixed-point theorem — proven for the mathematical abstraction. Application to real cognitive systems is [SCAFFOLD — conditions for contraction mapping in biological cognition are not yet verified].
 
 3. **Continuous drift detection.** MICROORCIM's μ_drift metric measures the gap between declared intent and observed behavior continuously. Theorem M2 formally connects high sovereignty score to AURA compliance.
 
-4. **Quantified coherence improvement.** CASCADE: +40.3% coherence in synthetic experiments (p < 0.001, d = 2.84). +110% across 5 historical paradigm shifts. −95.2% catastrophic forgetting reduction. These are measured results, not claims.
+4. **Quantified coherence improvement.** CASCADE: +40.3% coherence improvement in internal validation experiments (p < 0.001, d = 2.84). +110% across 5 historical paradigm shifts analysed using the framework's own criteria (n=5; see CASCADE_COMPLETE.md §5.5 for methodology). −95.2% catastrophic forgetting reduction in controlled synthetic conditions. These are internal validation results; independent replication is pending.
 
 5. **Unified cross-framework dynamics.** One equation — `dΨ/dt = k₁(Π−Π_th) − k₂(Ψ−Ψ_inv) − k₃I_violations + k₄(E/E_need)` — captures truth pressure, coherence drive, constraint violations, and energy across all nine frameworks. [SCAFFOLD — k₁–k₄ calibration pending]
 
@@ -77,7 +77,7 @@ This framework addresses that gap — and six others.
 
 | Status | Count | Meaning |
 |---|---|---|
-| **ACTIVE** | 37 | Proven, computable, independently verifiable |
+| **ACTIVE** | 37 | Proven, computable, independently verifiable (from CLAIMS.json — 60 structured records; see CLAIM_STATUS_LEDGER.md for load-bearing claims by framework) |
 | **SCAFFOLD** | 14 | Structurally sound with named gaps |
 | **CONJECTURE** | 6 | Worth exploring, unproven |
 | **RETRACTED** | 3 | Publicly withdrawn — see Failure Museum |
