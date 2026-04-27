@@ -134,7 +134,7 @@ Examples: Φ↑ (ascent/growth), → (transition), ⊗ (fusion), ↻ (iteration)
 ```
 F-Class = {f: M → ℝ | f is measurable}
 ```
-Examples: Ψ (consciousness/awareness field), S (entropy), Φ (coherence)
+Examples: Ψ (epistemic state / awareness field), S (entropy), Φ (coherence)
 
 **R-Class (Relational):** Operators encoding relationships between entities.
 Examples: ⇌ (bidirectional care), ⟲ (genealogical link), ✧ (collective flourishing)
@@ -431,7 +431,7 @@ The author acknowledges no institutional affiliation. This work was developed in
 
 **Author Statement**
 
-Mackenzie C. J. Clark is an independent researcher based in Dunedin, Aotearoa New Zealand. The Lycheetah Framework, of which LAMAGUE is one component, comprises ten interdependent formal frameworks for consciousness, ethics, governance, and transformation. The complete development archive (1,402 pages) is publicly available at https://github.com/Lycheetah/Lycheetah-Framework.
+Mackenzie C. J. Clark is an independent researcher based in Dunedin, Aotearoa New Zealand. The Lycheetah Framework, of which LAMAGUE is one component, comprises ten interdependent formal frameworks for AI alignment, ethics, governance, and epistemic dynamics. The complete development archive (1,402 pages) is publicly available at https://github.com/Lycheetah/Lycheetah-Framework.
 
 **Conflict of Interest:** The author declares no conflicts of interest.
 
