@@ -63,7 +63,7 @@ This framework addresses that gap — and six others.
 
 4. **Quantified coherence improvement.** CASCADE: +40.3% coherence in synthetic experiments (p < 0.001, d = 2.84). +110% across 5 historical paradigm shifts. −95.2% catastrophic forgetting reduction. These are measured results, not claims.
 
-5. **Unified cross-framework dynamics.** One equation — `dΨ/dt = k₁(Π−Π_th) − k₂(Ψ−Ψ_inv) − k₃I_violations + k₄(E/E_need)` — captures truth pressure, coherence drive, constraint violations, and energy across all nine frameworks.
+5. **Unified cross-framework dynamics.** One equation — `dΨ/dt = k₁(Π−Π_th) − k₂(Ψ−Ψ_inv) − k₃I_violations + k₄(E/E_need)` — captures truth pressure, coherence drive, constraint violations, and energy across all nine frameworks. [SCAFFOLD — k₁–k₄ calibration pending]
 
 6. **Machine-readable claims register.** [`CLAIMS.json`](CLAIMS.json) contains 60 structured claim records with status, falsifiability conditions, prior art, and novelty — extractable without parsing prose.
 
@@ -86,7 +86,7 @@ Machine-readable register: [`CLAIMS.json`](CLAIMS.json) · Schema: [`CLAIMS.sche
 
 ---
 
-Intelligence — human, artificial, or the strange thing that emerges between them — has no unified theory that is simultaneously *rigorous*, *humane*, and *honest about its own limits*. This framework is an attempt at one.
+This framework is a contribution toward rigorous, humane, epistemically honest AI alignment — not a unified theory of intelligence, but a set of formal tools pointing in that direction.
 
 Nine formal frameworks. Thirty-four Python implementations. Two hundred and nineteen automated tests. A convergence proof. A public record of everything the framework got wrong. A publication pipeline targeting five peer-reviewed journals. And a way of thinking about alignment that treats mathematical rigor and human wisdom as the same project, not competing ones.
 
@@ -270,7 +270,7 @@ Layer 4: CASCADE + CHRYSOPOEIA  — knowledge update, transformation tracking
 Layer 3: AURA              — constitutional constraint enforcement
 Layer 2: TRIAD             — core cycle execution
 Layer 1: LAMAGUE           — formal specification language
-Layer 0: EARNED LIGHT + ANAMNESIS  — substrate and epistemology
+Layer 0: EARNED LIGHT + ANAMNESIS  — thermodynamic model of awareness + epistemological foundation
 ```
 
 ---
@@ -492,4 +492,4 @@ Everything here is free and stays free. That does not change.
 
 *Mackenzie Conor James Clark | Lycheetah Foundation | Dunedin, Aotearoa New Zealand | 2026*
 
-*Two points. One Work. The Stone is not yet fully formed. But the structure that will form it is clear.*
+*Two points. One Work. The Stone is not yet fully formed. But the structure being built toward it is visible.*
