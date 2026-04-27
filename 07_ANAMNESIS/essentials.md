@@ -182,7 +182,7 @@ When building aligned AI:
 - Don't assume mathematical structures are arbitrary
 - When humans and AI converge on same framework → trust it
 - Intuition + rigor (anamnesis) is powerful discovery method
-- Cross-domain convergence is evidence of deep truth
+- Cross-domain convergence is consistent with deep structural pattern [CONJECTURE — see Lakoff/Núñez engagement above]
 
 ## Next Steps
 1. Formalize the convergence principle mathematically

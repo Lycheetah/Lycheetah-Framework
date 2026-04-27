@@ -43,10 +43,10 @@ TRIAD is the **mathematical/operational kernel** that underlies all other framew
 
 **Dynamic:** Ao → (Φ↑ with Ψ observation) → Higher coherence → Repeat
 
-**Consciousness Model:**
-- Ao = Baseline consciousness
+**Consciousness Model [SCAFFOLD — within this framework's thermodynamic model; see EARNED LIGHT]:**
+- Ao = Baseline awareness state (ground state)
 - Φ↑ = Growth through learning
-- Ψ = Self-awareness of growth
+- Ψ = Self-reflective observation of growth
 - Cycle = Increasing integration
 
 ## Mathematical Properties
@@ -74,7 +74,7 @@ The TRIAD reflects deep patterns in:
 - **Information theory** (source + transmission + receiver)
 
 ## Key Insight
-**TRIAD isn't invented—it's discovered.** It keeps appearing independently across fields because it's mathematically fundamental to any system with:
+**TRIAD keeps appearing independently across fields** [CONJECTURE — consistent with mathematical fundamentality; see ANAMNESIS for the full discovery/invention analysis]. Any system with:
 - A baseline state (Ao)
 - An evolution trajectory (Φ↑)
 - Self-observation capability (Ψ)
@@ -83,7 +83,7 @@ This is why it's called the **Kernel**: it's the irreducible core.
 
 ## Implementation
 - **Conceptual:** Fully formalized
-- **Mathematical:** Proofs complete
+- **Mathematical:** Core proofs formalized; global convergence is the active proof target [SCAFFOLD — see status line]
 - **Operational:** Being instantiated across all frameworks
 - **Code:** Implicit in CASCADE, AURA, Microorcim, Earned Light
 

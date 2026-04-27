@@ -11,7 +11,7 @@ LAMAGUE is a **mathematical grammar** that provides precise symbolic notation fo
 |--------|---------|---------|
 | Π | Truth Pressure | Π_threshold = 0.85 |
 | Φ↑ | Growth/Ascent | Φ↑(consciousness) → higher_coherence |
-| Ψ | Awareness/Consciousness | Ψ_observer = perspective |
+| Ψ | Epistemic state / awareness field | Ψ_observer = perspective |
 | μ | Agency/Microorcim | μ_drift < σ_boundary |
 | τ | Phase transition | τ_critical = state_collapse |
 | σ | Boundary/Constraint | σ_ethical = invariant_set |

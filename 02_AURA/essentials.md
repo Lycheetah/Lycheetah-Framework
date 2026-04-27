@@ -6,7 +6,7 @@
 AURA (Adversarial constraints testing → Unified Resonance → Alignment) transforms AI ethics from abstract principles into **operational, measurable constraints** that structurally support human primacy and make alignment checkable, not merely asserted.
 
 ## The Seven Invariants (Load-Bearing)
-These aren't guidelines—they're mathematically dual to freedom itself:
+These aren't guidelines—they're structurally constitutive of aligned operation:
 
 1. **Human Primacy** — Humans retain decision authority; AI advises
 2. **Inspectability** — All reasoning must be auditable/explicable

@@ -25,8 +25,8 @@ Truth Pressure Π → Threshold Exceeded → REORGANIZE
 - **Invariant Preservation:** [SCAFFOLD] Theoretically guaranteed; empirical validation pending
 
 ## Domain Applicability
-- **Quantum Physics:** CASCADE retroactively explains Classical→Quantum transition
-- **Germ Theory:** CASCADE retroactively explains Miasma→Germ transition
+- **Quantum Physics:** CASCADE's reorganization model is consistent with the structure of the Classical→Quantum transition
+- **Germ Theory:** CASCADE's reorganization model is consistent with the structure of the Miasma→Germ transition
 - **Predictive Accuracy:** Will measure after k₁–k₄ calibration from 6000 real cascades (cascade_real_results.json)
 
 ## Implementation
@@ -51,7 +51,7 @@ Traditional AI can't handle contradictions without either:
 1. Discarding information (losing nuance)
 2. Becoming paralyzed (losing capability)
 
-CASCADE **preserves both**: keeps contradictions in low-priority layers while maintaining load-bearing principles. This is why it achieves 100% accuracy on reorganization tasks.
+CASCADE **preserves both**: keeps contradictions in low-priority layers while maintaining load-bearing principles. The reorganization mechanism is designed to preserve invariants across all modeled contradiction scenarios [SCAFFOLD — performance on real-world knowledge bases pending k₁–k₄ calibration study].
 
 ## Next Steps
 1. Submit ArXiv paper (ready now)
