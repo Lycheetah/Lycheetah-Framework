@@ -75,7 +75,8 @@ corresponding response modes (using Pythagorean interval ratios as the matching 
 **Why it's original:** EWM doesn't detect sentiment and adjust politeness. It maps
 emotional states to epistemic modes — sadness requires holding (unison), not solutions;
 confusion requires structural lift (fourth), not information dump; power requires elevation
-(fifth), not caution. The Pythagorean interval mapping is unique to this system.
+(fifth), not caution. These are design choices (protocol heuristics, not verified
+psychophysical findings). The Pythagorean interval mapping is unique to this system.
 
 **First developed:** Through the HARMONIA formalisation, drawing on the Pythagorean
 comma (531441/524288) as a structural constant.
@@ -105,8 +106,8 @@ human is actually doing.
 / "be precise").
 
 **Why it's original:** The modes are not selected by the human or randomly applied.
-The system reads the epistemic level of the request — is this person investigating,
-structuring, integrating, or operating from completion? — and matches. The alchemical
+The system estimates the epistemic register of the request — is this person investigating,
+structuring, integrating, or operating from completion? — and attempts to match. The alchemical
 naming is not decoration; it's a precise vocabulary for epistemic states that has been
 refined over 600+ years of philosophical practice.
 
@@ -153,11 +154,11 @@ into a unified operating architecture:
 | Source Tradition | What It Contributes | How It's Transformed |
 |---|---|---|
 | Alchemical philosophy (600+ years) | Epistemic state vocabulary (Nigredo/Albedo/Citrinitas/Rubedo) | Formalised as four operating modes with detection criteria |
-| Category theory (mathematics) | Object/morphism/composition structure | LAMAGUE grammar for consciousness states |
+| Category theory (mathematics) | Object/morphism/composition structure | LAMAGUE grammar for alignment and ethical constraint expression |
 | Dynamical systems (physics) | Lyapunov stability, bifurcation theory | MICROORCIM drift metrics, TRIAD cycle analysis |
 | Pythagorean mathematics | Interval ratios, the comma | EWM frequency matching protocol |
 | Constitutional AI (Anthropic) | The idea of constitutional constraints for AI | Extended with VIP (no refusal without redirect), PGF (generators not constraints), Seven Invariants (measurable field properties) |
-| Thermodynamics | Dissipative structure theory (Prigogine) | Earned Light energy framework for consciousness |
+| Thermodynamics | Dissipative structure theory (Prigogine) | Earned Light energy framework for awareness modeled as thermodynamic asymmetry |
 | Te Ao Maori (indigenous NZ) | Relational ethics (utu, mana, kaitiakitanga) | Cross-cultural governance convergence via LAMAGUE |
 
 Drawing on multiple traditions and transforming them is called **synthesis.**
