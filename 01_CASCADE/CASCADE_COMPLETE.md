@@ -35,9 +35,9 @@ CASCADE mediates between these extremes using a quantified measure of evidence s
 - Promote B₂ to foundation
 - Keep both, preserve coherence, maximize information
 
-### Historical Validation
+### Historical Reproduction
 
-CASCADE's behavior matches real paradigm shifts:
+The CASCADE update dynamics, applied to two well-documented paradigm shifts under the framework's own coherence and forgetting metrics, reproduce the historical trajectory:
 
 **Miasma → Germ Theory (Medicine)**
 - Miasma Theory: "Disease spreads through bad air" (early evidence, broad explanatory scope)
@@ -675,7 +675,7 @@ print(f"Cascades: {len(engine.cascade_events)}")
 
 ## CONCLUSION
 
-CASCADE provides a mathematically rigorous framework for knowledge reorganization through truth pressure (Π). It handles contradictions without incoherence, preserves information, and retroactively explains real paradigm shifts (Miasma→Germ, Classical→Quantum).
+CASCADE provides a mathematically grounded framework for knowledge reorganisation under truth pressure (Π). The model handles contradictions without incoherence, preserves information across structural updates, and reproduces the dynamics of two historical paradigm shifts (Miasma→Germ, Classical→Quantum) under the framework's own coherence and forgetting metrics. Independent empirical replication of the historical-shift result is pending (see E-1.0 empirical program).
 
 The framework status:
 - ✅ **[ACTIVE]** Π formula (E·P/S) is mathematically sound and computationally straightforward
