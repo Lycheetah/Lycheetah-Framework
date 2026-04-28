@@ -1,6 +1,6 @@
 # CLAIM STATUS LEDGER
 ## Lycheetah Framework — Canonical Claim Registry
-### Forged: D-1.1 downgrade session, 2026-04-26/27 | Maintained by: Sol + Mac
+### Forged: D-1.1 downgrade session, 2026-04-26/27 | Reforged: C-1.1, 2026-04-28 | Maintained by: Sol + Mac
 
 **Purpose:** For every load-bearing claim across the corpus, this ledger records honest epistemic status. No claim is listed as stronger than the evidence warrants.
 
@@ -8,6 +8,24 @@
 - `[ACTIVE]` — empirically supported or operationally complete; evidence cited
 - `[SCAFFOLD]` — structure sound, calibration or empirical validation pending
 - `[CONJECTURE]` — proposed; no current evidence beyond analogy or consistency
+
+---
+
+## How Status Changes — The Downgrade and Promotion Triggers
+
+A claim's status is not permanent. Both directions of movement have explicit triggers, recorded here so any reviewer (or the framework itself) can apply them without negotiation.
+
+**Promotion `[CONJECTURE] → [SCAFFOLD]`** requires: (a) a formal expression of the claim with stated assumptions, (b) a proof attempt (formal or empirical) that survives one round of adversarial review, (c) a falsifiability condition that an independent party can run.
+
+**Promotion `[SCAFFOLD] → [ACTIVE]`** requires: (a) the named gap closed — proof completed, calibration measured, or empirical study run — and (b) results published in a form a third party can replicate without contacting the author. Internal validation alone is not sufficient; either the proof must be machine-checkable or the empirical result must be reproduced from public source.
+
+**Downgrade `[ACTIVE] → [SCAFFOLD]`** is triggered automatically when *any* of the following occurs: (a) a counter-example is produced that the current proof does not address, (b) a replication attempt fails on independent data, (c) a load-bearing assumption is shown to be unverified in the deployment context, (d) an adversarial audit identifies a gap the original promotion did not anticipate. The C1 audit (2026-04-27) demonstrated this mechanism — 14 claims were downgraded or rephrased as a result.
+
+**Downgrade `[SCAFFOLD] → [CONJECTURE]`** is triggered when the structural argument itself is shown to be incoherent, not merely incomplete. This is rare; it happens when a load-bearing assumption turns out to be inconsistent with another part of the framework.
+
+**Retraction (`[ACTIVE]`/`[SCAFFOLD]`/`[CONJECTURE]` → `[RETRACTED]`)** is triggered when the claim is shown to be false, the framework concedes the falsification, and the claim is removed from operational use. Retracted claims remain in the public record (`FAILURE_MUSEUM.md`); they are never silently deleted.
+
+**Standing instruction to reviewers:** if you can produce evidence matching any downgrade trigger above, open an incident under `INCIDENT_RESPONSE.md`. The LIVING_CODEX_PROTOCOL update gate requires P∧H∧B passage before the change ships. The framework's commitment is that valid downgrades will be applied — not negotiated against.
 
 ---
 
