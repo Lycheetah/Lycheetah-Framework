@@ -95,7 +95,7 @@ that you can still act. Agency — even tiny agency — is the antidote to helpl
 
 In this framework, we call this **Microorcim**: the smallest measurable unit of
 agency. Even a sip of water is a choice. Choices accumulate. That's not poetry —
-it's mathematically proven (see `05_MICROORCIM/` when you're ready).
+it's mathematically proven (see `05_MICROORCIM_L5/` when you're ready).
 
 ---
 

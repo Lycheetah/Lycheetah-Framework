@@ -22,7 +22,7 @@ What do you want to know?
 Have you checked:
 - [ ] README.md
 - [ ] CONTRIBUTING.md
-- [ ] GOVERNANCE.md
+- [ ] 29_GOVERNANCE/GOVERNANCE.md
 - [ ] Specific framework documentation
 - [ ] /public_building/ examples
 

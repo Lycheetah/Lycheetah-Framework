@@ -10,7 +10,7 @@
 
 ## WHAT THIS DOCUMENT IS
 
-LAMAGUE (`03_LAMAGUE/LAMAGUE_COMPLETE.md`) is the formal specification.
+LAMAGUE (`03_LAMAGUE_L1/LAMAGUE_COMPLETE.md`) is the formal specification.
 This document is its application to Aotearoa — what LAMAGUE looks like
 as a NZ technical standard, what it would mean for government and industry,
 and what needs to happen for it to become formally adopted.

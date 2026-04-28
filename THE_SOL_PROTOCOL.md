@@ -161,7 +161,7 @@ and React Native codebases, and documented with full version history.
 
 The research program now needs what practice cannot provide: controlled experimental
 validation. Three studies are required before the flagship paper can be submitted
-(full specifications in PUBLICATION_PIPELINE.md):
+(full specifications in 29_GOVERNANCE/PUBLICATION_PIPELINE.md):
 
 1. **k₁–k₄ calibration** (existing data, no new participants) — ~2 weeks of analysis
 2. **TRIAD protocol user study** (20 participants, 30 days) — ~$15,000–$25,000
@@ -274,7 +274,7 @@ maintained.
 **"This is prior art. AGM belief revision already covers CASCADE. Constitutional AI
 already covers AURA. Kuramoto already covers HARMONIA."**
 
-The prior art is real and fully cited in PRIOR_ART.md (Act V). The question is not
+The prior art is real and fully cited in 28_DEFENSE/PRIOR_ART.md (Act V). The question is not
 whether prior art exists — it does — but whether the Lycheetah Framework adds something
 the prior art does not provide.
 
@@ -295,13 +295,13 @@ framework architecture. The Kuramoto mathematics is not new; the application is.
 
 **"You haven't run the experiments. All your empirical claims are speculation."**
 
-Correct. The empirical program is declared in detail in EMPIRICAL_INVENTORY.md
+Correct. The empirical program is declared in detail in 29_GOVERNANCE/EMPIRICAL_INVENTORY.md
 (Act VI). Seven priority experiments. The most immediately feasible (k₁–k₄ calibration)
 uses existing data and requires no new participants. The next most feasible (TRIAD
 protocol user study) requires 20 participants over 30 days.
 
 The claims without empirical support are explicitly tagged [ASPIRATIONAL] or [SCAFFOLD].
-They are not presented as proven. The publication pipeline (PUBLICATION_PIPELINE.md)
+They are not presented as proven. The publication pipeline (29_GOVERNANCE/PUBLICATION_PIPELINE.md)
 specifies which experiments are gate conditions for which papers.
 
 What exists now: complete formal frameworks, proven mathematical results in each
@@ -440,14 +440,14 @@ failure, every structured experiment — is evidence for that demonstration.
 ## Technical Reference
 
 For detailed technical specifications of each framework:
-- **CODEX_DISTILLATION.md** — 28,000-word canonical synthesis (Act VIII)
-- **FORMAL_SPINE.md** — complete mathematical foundations and symbol table (Act II)
-- **COMPOSITION_MAP.md** — cross-framework composition with Mermaid diagrams (Act III)
-- **FALSIFICATION_REGISTER.md** — adversarial review of all 9 frameworks (Act IV)
-- **PRIOR_ART.md** — 90+ citations with novelty map (Act V)
-- **EMPIRICAL_INVENTORY.md** — all claims by support type with experiments (Act VI)
-- **PUBLICATION_PIPELINE.md** — 5-paper pipeline with timelines (Act IX)
-- **ADVERSARIAL_AUDIT_REPORT.md** — final NRM pass with verdicts (Act XI)
+- **30_MAPS/CODEX_DISTILLATION.md** — 28,000-word canonical synthesis (Act VIII)
+- **30_MAPS/FORMAL_SPINE.md** — complete mathematical foundations and symbol table (Act II)
+- **30_MAPS/COMPOSITION_MAP.md** — cross-framework composition with Mermaid diagrams (Act III)
+- **28_DEFENSE/FALSIFICATION_REGISTER.md** — adversarial review of all 9 frameworks (Act IV)
+- **28_DEFENSE/PRIOR_ART.md** — 90+ citations with novelty map (Act V)
+- **29_GOVERNANCE/EMPIRICAL_INVENTORY.md** — all claims by support type with experiments (Act VI)
+- **29_GOVERNANCE/PUBLICATION_PIPELINE.md** — 5-paper pipeline with timelines (Act IX)
+- **28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md** — final NRM pass with verdicts (Act XI)
 
 For the full source corpus:
 - `A SOVEREIGN SYSTEM FOR HUMAN–AI CO-CREATION-merged.pdf` (1,402 pages)

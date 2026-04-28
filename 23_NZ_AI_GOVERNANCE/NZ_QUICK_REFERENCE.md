@@ -179,15 +179,15 @@ END 2026   → Three working tools + Kāi Tahu partnership formalised
 **github.com/Lycheetah/Lycheetah-Framework**
 
 ```
-01_CASCADE/          — Knowledge architecture
-02_AURA/             — Constitutional framework
-03_LAMAGUE/          — Translation protocol
-04_TRIAD/            — Anchor-observe-correct
-05_MICROORCIM/       — Agency measurement
-06_EARNED_LIGHT/     — Clarity requires work
-07_ANAMNESIS/        — We remember not invent
-09_CHRYSOPOEIA/      — Transformation calculus
-10_HARMONIA/         — Resonance calculus
+01_CASCADE_L4/          — Knowledge architecture
+02_AURA_L3/             — Constitutional framework
+03_LAMAGUE_L1/          — Translation protocol
+04_TRIAD_L2/            — Anchor-observe-correct
+05_MICROORCIM_L5/       — Agency measurement
+06_EARNED_LIGHT_L0/     — Clarity requires work
+07_ANAMNESIS_L0/        — We remember not invent
+09_CHRYSOPOEIA_L4/      — Transformation calculus
+10_HARMONIA_L6/         — Resonance calculus
 11_MATHEMATICAL_FOUNDATIONS/  — All proofs
 12_IMPLEMENTATIONS/  — 13 Python files
 14_MYSTERY_SCHOOL/   — Human entry point

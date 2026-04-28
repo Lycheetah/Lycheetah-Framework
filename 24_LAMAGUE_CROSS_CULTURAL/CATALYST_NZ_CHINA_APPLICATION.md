@@ -240,9 +240,9 @@ The Lycheetah Framework is not speculative. The following is built and publicly 
 
 | Component | Status | Location |
 |-----------|--------|----------|
-| CASCADE knowledge architecture | [ACTIVE] — formal theorems proven, Python implementation live | `01_CASCADE/` |
-| AURA Seven Constitutional Invariants | [ACTIVE] — formally specified, measurably testable | `02_AURA/` |
-| LAMAGUE formal grammar + Python implementation | [ACTIVE] — `lamague_reference.py` operational | `03_LAMAGUE/` + `12_IMPLEMENTATIONS/` |
+| CASCADE knowledge architecture | [ACTIVE] — formal theorems proven, Python implementation live | `01_CASCADE_L4/` |
+| AURA Seven Constitutional Invariants | [ACTIVE] — formally specified, measurably testable | `02_AURA_L3/` |
+| LAMAGUE formal grammar + Python implementation | [ACTIVE] — `lamague_reference.py` operational | `03_LAMAGUE_L1/` + `12_IMPLEMENTATIONS/` |
 | Mathematical foundations | [ACTIVE] — category theory, fiber bundles, Lyapunov proofs | `11_MATHEMATICAL_FOUNDATIONS/` |
 | 26 Python implementations | [ACTIVE] — core, applications, systems, experiments; 10 with 80 automated tests (pytest CI) | `12_IMPLEMENTATIONS/` |
 | chrysopoeia_engine.py — transformation operator | [ACTIVE] — seven-phase non-commutative operations, Banach fixed-point convergence | `12_IMPLEMENTATIONS/core/` |

@@ -40,7 +40,7 @@ What backs up your claims?
 
 ## Checklist
 
-- [ ] I've read GOVERNANCE.md
+- [ ] I've read 29_GOVERNANCE/GOVERNANCE.md
 - [ ] I've read CONTRIBUTING.md
 - [ ] All claims tagged with confidence level
 - [ ] No "proves" / "guarantees" / "always" without evidence
@@ -56,7 +56,7 @@ What backs up your claims?
 
 **This PR starts public review. Comments welcome.**
 
-See GOVERNANCE.md for:
+See 29_GOVERNANCE/GOVERNANCE.md for:
 - Review process
 - Approval criteria
 - Staging period timeline

@@ -49,7 +49,7 @@ GAP_CHECKLIST = {
     "ci_workflow": (".github/workflows/ci.yml", "GitHub Actions CI configured"),
     "12_week_curriculum": ("14_MYSTERY_SCHOOL/12_WEEK_*.md", "Curriculum exists"),
     "domain_experiments_2plus": ("12_IMPLEMENTATIONS/experiments/domain_*.py", "≥2 domain experiments"),
-    "lamague_duplication_resolved": ("03_LAMAGUE/LAMAGUE_COMPLETE.md", "No duplicate KnowledgeBlock refs"),
+    "lamague_duplication_resolved": ("03_LAMAGUE_L1/LAMAGUE_COMPLETE.md", "No duplicate KnowledgeBlock refs"),
     "mystery_school_cascade_resolved": ("14_MYSTERY_SCHOOL/*.py", "No duplicate cascade files"),
     "arxiv_contact_email": ("papers/CASCADE_ARXIV.tex", "Contact email set"),
 }

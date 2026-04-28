@@ -55,7 +55,7 @@ The threshold for AI systems: **Π ≥ 1.2** — not because 1.2 is magic, but b
 **For architects:** CASCADE gives you a measurable property to design toward. Not "be accurate" (unmeasurable) but "maintain truth pressure above threshold" (computable).
 
 **Status: [ACTIVE]** — computable now
-→ [`01_CASCADE/CASCADE_COMPLETE.md`](../01_CASCADE/CASCADE_COMPLETE.md)
+→ [`01_CASCADE_L4/CASCADE_COMPLETE.md`](../01_CASCADE_L4/CASCADE_COMPLETE.md)
 
 ---
 
@@ -104,7 +104,7 @@ These seven are not independent. A system that violates III (Memory Continuity) 
 **For architects:** AURA gives you a constitutional checklist that is also an architectural specification. You can audit any design decision against these seven. If a proposed feature violates one, you know exactly what you're trading and why.
 
 **Status: [FOUNDATIONAL]** — the constitutional architecture of the framework
-→ [`02_AURA/AURA_COMPLETE.md`](../02_AURA/AURA_COMPLETE.md)
+→ [`02_AURA_L3/AURA_COMPLETE.md`](../02_AURA_L3/AURA_COMPLETE.md)
 
 ---
 
@@ -130,7 +130,7 @@ This is not a metaphor for learning. It is the mathematical condition under whic
 **Observed empirical λ ≈ 0.907.** This means each correction cycle closes 90.7% of the remaining distance to the optimal behaviour. Three full cycles: 99.9% convergence.
 
 **Status: [ACTIVE]** — convergence mathematically proven
-→ [`04_TRIAD/TRIAD_COMPLETE.md`](../04_TRIAD/TRIAD_COMPLETE.md)
+→ [`04_TRIAD_L2/TRIAD_COMPLETE.md`](../04_TRIAD_L2/TRIAD_COMPLETE.md)
 
 ---
 
@@ -152,7 +152,7 @@ LAMAGUE provides a translation layer — not "they're all the same" but "here is
 **For architects:** If you are building systems that will operate in New Zealand, across Asia-Pacific, or in any multicultural context, LAMAGUE gives you the vocabulary for encoding cultural governance requirements without flattening them. It's also the formal foundation for the NZ AI governance standards in this framework.
 
 **Status: [ACTIVE]** — grammar complete; cultural validation with Māori communities in progress
-→ [`03_LAMAGUE/LAMAGUE_COMPLETE.md`](../03_LAMAGUE/LAMAGUE_COMPLETE.md)
+→ [`03_LAMAGUE_L1/LAMAGUE_COMPLETE.md`](../03_LAMAGUE_L1/LAMAGUE_COMPLETE.md)
 → [`24_LAMAGUE_CROSS_CULTURAL/`](../24_LAMAGUE_CROSS_CULTURAL/) — cross-cultural applications
 
 ---
@@ -178,7 +178,7 @@ A system with no way to measure D has no way to detect its own corruption.
 **For architects:** MICROORCIM gives you the formal structure for what a "constitutional health check" means quantitatively. It's also the foundation for the Community AI WOF standard in the NZ governance layer — an annual certification that measures D for public-facing AI systems.
 
 **Status: [SCAFFOLD]** — structure sound; calibration parameters require domain-specific empirical measurement
-→ [`05_MICROORCIM/Microorcim_COMPLETE.md`](../05_MICROORCIM/Microorcim_COMPLETE.md)
+→ [`05_MICROORCIM_L5/Microorcim_COMPLETE.md`](../05_MICROORCIM_L5/Microorcim_COMPLETE.md)
 
 ---
 
@@ -202,7 +202,7 @@ The coupling is not inherently good or bad. Its character depends on what the sy
 **For architects:** This is the formal foundation for understanding why RLHF creates sycophancy pressure, and what you'd need to build to resist it. If you are training on human approval, you are coupling to approval. HARMONIA tells you the mathematics of what that produces.
 
 **Status: [ACTIVE]** — Kuramoto dynamics well-validated in physics
-→ [`10_HARMONIA/HARMONIA_COMPLETE.md`](../10_HARMONIA/HARMONIA_COMPLETE.md)
+→ [`10_HARMONIA_L6/HARMONIA_COMPLETE.md`](../10_HARMONIA_L6/HARMONIA_COMPLETE.md)
 
 ---
 
@@ -296,7 +296,7 @@ Each agent has a role defined by its mode. No agent can override the constitutio
 
 Before anything else, read this:
 
-→ [`FAILURE_MUSEUM.md`](../FAILURE_MUSEUM.md)
+→ [`28_DEFENSE/FAILURE_MUSEUM.md`](../FAILURE_MUSEUM.md)
 
 This is the record of every significant error this framework has made — wrong claims, overclaims, circular proofs, uncalibrated equations, architectural failures.
 
@@ -314,8 +314,8 @@ If you are building systems that will be used in high-stakes contexts — health
 
 | What you want to build | Where to start |
 |---|---|
-| Constitutional AI architecture | [`02_AURA/AURA_COMPLETE.md`](../02_AURA/AURA_COMPLETE.md) |
-| Truth-calibrated output systems | [`01_CASCADE/CASCADE_COMPLETE.md`](../01_CASCADE/CASCADE_COMPLETE.md) |
+| Constitutional AI architecture | [`02_AURA_L3/AURA_COMPLETE.md`](../02_AURA_L3/AURA_COMPLETE.md) |
+| Truth-calibrated output systems | [`01_CASCADE_L4/CASCADE_COMPLETE.md`](../01_CASCADE_L4/CASCADE_COMPLETE.md) |
 | Multi-agent constitutional systems | [`19_MULTI_AGENT_CHORUS/`](../19_MULTI_AGENT_CHORUS/) |
 | NZ governance-compliant AI | [`23_NZ_AI_GOVERNANCE/`](../23_NZ_AI_GOVERNANCE/) |
 | Cross-cultural AI governance | [`24_LAMAGUE_CROSS_CULTURAL/`](../24_LAMAGUE_CROSS_CULTURAL/) |

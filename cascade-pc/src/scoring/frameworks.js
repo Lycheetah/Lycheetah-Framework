@@ -111,19 +111,71 @@ Frontier (101+): Requires new LAMAGUE symbols to express. Opens previously unspe
 
 export const FRAMEWORK_LIST = Object.values(FRAMEWORKS)
 
-export function getFramework(id) {
-  return Object.values(FRAMEWORKS).find(f => f.id === id)
+// ─── Custom frameworks (user-defined, stored in localStorage) ─────────────────
+
+export function getCustomFrameworks() {
+  try {
+    return JSON.parse(localStorage.getItem('cascade_custom_frameworks') || '[]')
+  } catch { return [] }
 }
+
+export function saveCustomFrameworks(list) {
+  localStorage.setItem('cascade_custom_frameworks', JSON.stringify(list))
+}
+
+export function getAllFrameworks() {
+  return [...FRAMEWORK_LIST, ...getCustomFrameworks()]
+}
+
+export function getFramework(id) {
+  return getAllFrameworks().find(f => f.id === id)
+}
+
+// ─── Naked Mode ───────────────────────────────────────────────────────────────
+// When enabled: no Codex references — AI scores purely on internal claim logic.
+
+export function isNakedMode() {
+  return localStorage.getItem('cascade_naked_mode') === 'true'
+}
+
+export function setNakedMode(val) {
+  localStorage.setItem('cascade_naked_mode', val ? 'true' : 'false')
+}
+
+// ─── Personal Content Filter ─────────────────────────────────────────────────
+// When enabled: AI is instructed to skip scoring personal/emotional content
+// and instead return a gentle redirect. Prevents the tool from becoming a
+// mirror that measures personal pain.
+
+export function isPersonalFilterOn() {
+  return localStorage.getItem('cascade_personal_filter') === 'true'
+}
+
+export function setPersonalFilter(val) {
+  localStorage.setItem('cascade_personal_filter', val ? 'true' : 'false')
+}
+
+export const PERSONAL_FILTER_NOTICE = `[PERSONAL CONTENT FILTER ACTIVE]
+If this block contains personal emotional content, intimate experience, grief, trauma, or vulnerable self-disclosure — DO NOT SCORE IT.
+Instead, set all layer scores to 0 and set framework_reasoning to: "Personal content — scoring suspended. This tool is for epistemic claims, not emotional truth."
+If the content IS an epistemic claim (even if emotionally charged), score it normally.`
 
 /**
  * Build the system prompt context from selected framework IDs.
+ * Returns empty string in Naked Mode so AI scores without Codex references.
  */
 export function buildFrameworkContext(frameworkIds = ['cascade']) {
-  const selected = frameworkIds
+  const filterNotice = isPersonalFilterOn() ? '\n\n' + PERSONAL_FILTER_NOTICE : ''
+
+  if (isNakedMode()) {
+    return `[NAKED MODE — no framework references. Score purely on the internal truth pressure of the claim: logical consistency, evidence quality, and epistemic honesty. No Codex, no external framework.]` + filterNotice
+  }
+
+  const selected = (frameworkIds || ['cascade'])
     .map(id => getFramework(id))
     .filter(Boolean)
 
-  if (selected.length === 0) return FRAMEWORKS.CASCADE.essentials
+  if (selected.length === 0) return FRAMEWORKS.CASCADE.essentials + filterNotice
 
-  return selected.map(f => f.essentials).join('\n\n---\n\n')
+  return selected.map(f => f.essentials).join('\n\n---\n\n') + filterNotice
 }

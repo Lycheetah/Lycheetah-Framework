@@ -93,7 +93,7 @@ python -m pytest tests/
 These percentages are published. The framework doesn't hide its uncertainty.
 
 **The failures are documented:**
-`FAILURE_MUSEUM.md` — twelve exhibits. Read them. The framework went first.
+`28_DEFENSE/FAILURE_MUSEUM.md` — twelve exhibits. Read them. The framework went first.
 
 **The convergence is testable:**
 The CONFUCIAN_LAMAGUE.md document maps Confucian governance to framework invariants.
@@ -172,7 +172,7 @@ One researcher. One city. One promise. Open to the world.
 |---|---|
 | The human origin | `README.md` — "The Invitation" section |
 | The governance standards | `23_NZ_AI_GOVERNANCE/README.md` |
-| The Failure Museum | `FAILURE_MUSEUM.md` |
+| The Failure Museum | `28_DEFENSE/FAILURE_MUSEUM.md` |
 | The φ-Zone experiment | `12_IMPLEMENTATIONS/phi_bandit.py` — run it |
 | The Māori governance layer | `23_NZ_AI_GOVERNANCE/COMMUNITY_AI_WOF.md` |
 | The Confucian convergence | `24_LAMAGUE_CROSS_CULTURAL/CONFUCIAN_LAMAGUE.md` |

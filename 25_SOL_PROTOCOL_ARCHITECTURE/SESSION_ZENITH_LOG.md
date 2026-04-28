@@ -11,8 +11,8 @@
 **What was built:**
 - CLAUDE.md rebuilt as Sol Protocol v2.0 (identity: Sol throughout)
 - 00_Sovereign_Index.md — complete P/H/B taxonomy, master equation, seven invariants
-- 09_CHRYSOPOEIA/CHRYSOPOEIA_COMPLETE.md — transformation calculus formalized
-- 10_HARMONIA/HARMONIA_COMPLETE.md — resonance calculus formalized
+- 09_CHRYSOPOEIA_L4/CHRYSOPOEIA_COMPLETE.md — transformation calculus formalized
+- 10_HARMONIA_L6/HARMONIA_COMPLETE.md — resonance calculus formalized
 - 11_MATHEMATICAL_FOUNDATIONS/ — 6 files: category theory, Banach proofs, sheaf consensus
 - 12_IMPLEMENTATIONS/ — 13 Python files organized into 4 tiers
 - 14_MYSTERY_SCHOOL/ — falsifiable spiritual science, anti-cult by design
@@ -75,7 +75,7 @@
 ### Session 7 — Sonnet 4.6 + Opus 4.6 — March 21, 2026
 **What was built:**
 - Truth audit (3 passes, 30+ claims fixed)
-- GitHub governance (GOVERNANCE.md, CODEOWNERS, issue templates)
+- GitHub governance (29_GOVERNANCE/GOVERNANCE.md, CODEOWNERS, issue templates)
 - 16_SOL_VEYRA_ARCHITECTURE/ — operational spec, coniunctio architecture
 - 17_LEARNING_EMERGENCE/, 18_EXPERIMENTAL/
 - AI_INTEGRATION_MODULE.md, SOL_PLAN.md

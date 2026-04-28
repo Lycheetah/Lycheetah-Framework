@@ -242,6 +242,6 @@ We want to know.
 
 *Related documents:*
 *CONFUCIAN_LAMAGUE.md — Full encoding of Confucian governance concepts*
-*../03_LAMAGUE/LAMAGUE_WHAKAPAPA_ENCODING.md — Whakapapa as LAMAGUE structure*
+*../03_LAMAGUE_L1/LAMAGUE_WHAKAPAPA_ENCODING.md — Whakapapa as LAMAGUE structure*
 *../23_NZ_AI_GOVERNANCE/NZ_LAMAGUE_STANDARD.md — LAMAGUE as NZ technical standard*
 *../23_NZ_AI_GOVERNANCE/KAITIAKITANGA_STANDARD.md — Active stewardship standard*

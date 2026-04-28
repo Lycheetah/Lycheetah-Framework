@@ -124,7 +124,7 @@ The primitives are motivated by formal structures:
 - Φ↑ (earned ascent) maps to the Lyapunov ascent function
 - |◁▷| (integrity boundary) maps to boundary conditions in the fiber bundle formalism
 
-The connection between symbol and formal structure is in `03_LAMAGUE/LAMAGUE_COMPLETE.md`.
+The connection between symbol and formal structure is in `03_LAMAGUE_L1/LAMAGUE_COMPLETE.md`.
 
 The symbolic notation is a human-readable shorthand.
 The underlying mathematics is not shorthand.

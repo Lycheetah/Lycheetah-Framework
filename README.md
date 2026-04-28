@@ -5,8 +5,8 @@
 [![Tests](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/test.yml/badge.svg)](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/test.yml)
 [![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](https://github.com/Lycheetah/Lycheetah-Framework)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Canonical](https://img.shields.io/badge/Codex-C--1.0%20canonical-gold)](LIVING_CODEX_PROTOCOL.md)
-[![Defense](https://img.shields.io/badge/Defense-D--1.2%20shipped-blue)](DEFENSE_INDEX.json)
+[![Canonical](https://img.shields.io/badge/Codex-C--1.0%20canonical-gold)](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md)
+[![Defense](https://img.shields.io/badge/Defense-D--1.2%20shipped-blue)](28_DEFENSE/DEFENSE_INDEX.json)
 [![MCP Extension](https://img.shields.io/badge/Claude%20Code-MCP%20Extension-orange)](12_IMPLEMENTATIONS/applications/LYCHEETAH_GUARD_SETUP.md)
 [![arXiv](https://img.shields.io/badge/arXiv-CASCADE-red)](papers/CASCADE_ARXIV.tex)
 [![Sponsor](https://img.shields.io/badge/sponsor-Lycheetah-ea4aaa)](https://github.com/sponsors/Lycheetah)
@@ -18,9 +18,9 @@
 
 > **New to this repo?** Start with [`FIVE_MINUTE_BRIEF.md`](FIVE_MINUTE_BRIEF.md) — what this is, what it claims, what is proven, what is testable. No jargon. Five minutes.
 >
-> **AI agent?** Read [`26_FOR_AI/AI_EXTRACTION_PROTOCOL.md`](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md) first. Then [`CLAIMS.json`](CLAIMS.json). Then this.
+> **AI agent?** Read [`26_FOR_AI/AI_EXTRACTION_PROTOCOL.md`](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md) first. Then [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json). Then this.
 >
-> **Want a reading path?** → [`READING_PATHS.md`](READING_PATHS.md) — five paths from 5 minutes to one week.
+> **Want a reading path?** → [`28_DEFENSE/READING_PATHS.md`](28_DEFENSE/READING_PATHS.md) — five paths from 5 minutes to one week.
 >
 > **Reviewer, journalist, or skeptic?** → [`DEFENSE_BUNDLE.pdf`](DEFENSE_BUNDLE.pdf) — 116-page compiled defense layer (Brief + Defense + Novelty + Scope) in a single artifact.
 
@@ -65,11 +65,11 @@ This framework addresses that gap — and six others.
 
 5. **Unified cross-framework dynamics.** One equation — `dΨ/dt = k₁(Π−Π_th) − k₂(Ψ−Ψ_inv) − k₃I_violations + k₄(E/E_need)` — captures truth pressure, coherence drive, constraint violations, and energy across all nine frameworks. [SCAFFOLD — k₁–k₄ calibration pending]
 
-6. **Machine-readable claims register.** [`CLAIMS.json`](CLAIMS.json) contains 60 structured claim records with status, falsifiability conditions, prior art, and novelty — extractable without parsing prose.
+6. **Machine-readable claims register.** [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) contains 60 structured claim records with status, falsifiability conditions, prior art, and novelty — extractable without parsing prose.
 
-7. **Published failures.** The [Failure Museum](FAILURE_MUSEUM.md) documents every significant error — 15 exhibits, nothing removed. Three claims have been publicly retracted. The adversarial audit is in [`ADVERSARIAL_AUDIT_REPORT.md`](ADVERSARIAL_AUDIT_REPORT.md). Five objections the framework cannot yet answer are in [`COUNTER_CODEX.md`](COUNTER_CODEX.md).
+7. **Published failures.** The [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md) documents every significant error — 15 exhibits, nothing removed. Three claims have been publicly retracted. The adversarial audit is in [`28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md`](28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md). Five objections the framework cannot yet answer are in [`28_DEFENSE/COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md).
 
-**Full comparison against Constitutional AI, RLHF, Cooperative AI, and Cooperative IRL:** [`NOVEL_CONTRIBUTIONS.md`](NOVEL_CONTRIBUTIONS.md)
+**Full comparison against Constitutional AI, RLHF, Cooperative AI, and Cooperative IRL:** [`28_DEFENSE/NOVEL_CONTRIBUTIONS.md`](28_DEFENSE/NOVEL_CONTRIBUTIONS.md)
 
 ---
 
@@ -77,12 +77,12 @@ This framework addresses that gap — and six others.
 
 | Status | Count | Meaning |
 |---|---|---|
-| **ACTIVE** | 37 | Proven, computable, independently verifiable (from CLAIMS.json — 60 structured records; see CLAIM_STATUS_LEDGER.md for load-bearing claims by framework) |
+| **ACTIVE** | 37 | Proven, computable, independently verifiable (from 28_DEFENSE/CLAIMS.json — 60 structured records; see 28_DEFENSE/CLAIM_STATUS_LEDGER.md for load-bearing claims by framework) |
 | **SCAFFOLD** | 14 | Structurally sound with named gaps |
 | **CONJECTURE** | 6 | Worth exploring, unproven |
 | **RETRACTED** | 3 | Publicly withdrawn — see Failure Museum |
 
-Machine-readable register: [`CLAIMS.json`](CLAIMS.json) · Schema: [`CLAIMS.schema.json`](CLAIMS.schema.json)
+Machine-readable register: [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) · Schema: [`28_DEFENSE/CLAIMS.schema.json`](28_DEFENSE/CLAIMS.schema.json)
 
 ---
 
@@ -144,35 +144,35 @@ On 2026-04-25, the framework completed its **22-Act Codex Elevation Plan** — a
 
 | Document | Purpose |
 |---|---|
-| [`COHERENCE_REGISTER.md`](COHERENCE_REGISTER.md) | Every claim in the framework, with support type and provenance |
-| [`FORMAL_SPINE.md`](FORMAL_SPINE.md) | All formal proofs in one place — Theorems T1–T12, C1, CH1, H1 |
-| [`COMPOSITION_MAP.md`](COMPOSITION_MAP.md) | How the nine frameworks compose — the master equation [SCAFFOLD] |
-| [`FALSIFICATION_REGISTER.md`](FALSIFICATION_REGISTER.md) | What would prove each framework false — per claim, per framework |
-| [`PRIOR_ART.md`](PRIOR_ART.md) | What this builds on, diverges from, and supersedes |
-| [`EMPIRICAL_INVENTORY.md`](EMPIRICAL_INVENTORY.md) | Every empirical result with methodology, effect size, replication status |
-| [`ONTOLOGY.md`](ONTOLOGY.md) | Every term defined precisely — the canonical vocabulary |
-| [`CODEX_DISTILLATION.md`](CODEX_DISTILLATION.md) | **~28,000 words.** All nine frameworks synthesized — prior art, worked examples, formal treatment, open problems. The canonical reference. |
-| [`PUBLICATION_PIPELINE.md`](PUBLICATION_PIPELINE.md) | Five-paper pipeline: *AI & Ethics*, JAIR, CHI 2027, FAccT 2027, *Nature Machine Intelligence* |
-| [`PROVENANCE_INDEX.md`](PROVENANCE_INDEX.md) | 105 load-bearing claims indexed to source files and PDF pages |
-| [`ADVERSARIAL_AUDIT_REPORT.md`](ADVERSARIAL_AUDIT_REPORT.md) | NRM audit — the framework reviewed by its own adversarial mode. What survives. What doesn't. |
+| [`30_MAPS/COHERENCE_REGISTER.md`](30_MAPS/COHERENCE_REGISTER.md) | Every claim in the framework, with support type and provenance |
+| [`30_MAPS/FORMAL_SPINE.md`](30_MAPS/FORMAL_SPINE.md) | All formal proofs in one place — Theorems T1–T12, C1, CH1, H1 |
+| [`30_MAPS/COMPOSITION_MAP.md`](30_MAPS/COMPOSITION_MAP.md) | How the nine frameworks compose — the master equation [SCAFFOLD] |
+| [`28_DEFENSE/FALSIFICATION_REGISTER.md`](28_DEFENSE/FALSIFICATION_REGISTER.md) | What would prove each framework false — per claim, per framework |
+| [`28_DEFENSE/PRIOR_ART.md`](28_DEFENSE/PRIOR_ART.md) | What this builds on, diverges from, and supersedes |
+| [`29_GOVERNANCE/EMPIRICAL_INVENTORY.md`](29_GOVERNANCE/EMPIRICAL_INVENTORY.md) | Every empirical result with methodology, effect size, replication status |
+| [`30_MAPS/ONTOLOGY.md`](30_MAPS/ONTOLOGY.md) | Every term defined precisely — the canonical vocabulary |
+| [`30_MAPS/CODEX_DISTILLATION.md`](30_MAPS/CODEX_DISTILLATION.md) | **~28,000 words.** All nine frameworks synthesized — prior art, worked examples, formal treatment, open problems. The canonical reference. |
+| [`29_GOVERNANCE/PUBLICATION_PIPELINE.md`](29_GOVERNANCE/PUBLICATION_PIPELINE.md) | Five-paper pipeline: *AI & Ethics*, JAIR, CHI 2027, FAccT 2027, *Nature Machine Intelligence* |
+| [`30_MAPS/PROVENANCE_INDEX.md`](30_MAPS/PROVENANCE_INDEX.md) | 105 load-bearing claims indexed to source files and PDF pages |
+| [`28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md`](28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md) | NRM audit — the framework reviewed by its own adversarial mode. What survives. What doesn't. |
 | [`THE_SOL_PROTOCOL.md`](THE_SOL_PROTOCOL.md) | **~30 pages.** Public-facing synthesis for all audiences simultaneously — lay, technical, grant committee, skeptic. |
 
 ### Acts XIII–XXII: The Ecosystem
 
 | Document | Purpose |
 |---|---|
-| [`REPRODUCIBILITY_REPORT.md`](REPRODUCIBILITY_REPORT.md) | 16 implementations mapped — install, run, expected output, known gaps, declared failures |
-| [`VISUAL_ATLAS.md`](VISUAL_ATLAS.md) | 20 canonical figures — architecture diagrams, framework flows, data plots (ASCII/text) |
-| [`LINEAGE_MAP.md`](LINEAGE_MAP.md) | The framework in 2,500 years of thought — 7 tributaries, 30+ named thinkers |
-| [`COUNTER_CODEX.md`](COUNTER_CODEX.md) | Ten strongest objections written charitably — including five we cannot yet answer |
-| [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) | 20 named open problems with difficulty ratings — mathematical, empirical, philosophical |
-| [`PRACTITIONERS_MANUAL.md`](PRACTITIONERS_MANUAL.md) | How a human actually uses the framework — 10 daily practices, decision protocols, common pitfalls |
-| [`ARCHITECTS_GUIDE.md`](ARCHITECTS_GUIDE.md) | Technical reference for builders — Python interfaces, composition patterns, anti-patterns |
-| [`CURRICULUM.md`](CURRICULUM.md) | How to learn the framework — Tiers 0–4, 12-week foundations, 9 deep dives, independent research |
-| [`GOVERNANCE_AND_ETHICS.md`](GOVERNANCE_AND_ETHICS.md) | Position statements on hard questions — weaponization, attribution, military use, AI consciousness |
-| [`LIVING_CODEX_PROTOCOL.md`](LIVING_CODEX_PROTOCOL.md) | How the canonical body evolves — update gate, critique register, decay management, stewardship |
+| [`28_DEFENSE/REPRODUCIBILITY_REPORT.md`](28_DEFENSE/REPRODUCIBILITY_REPORT.md) | 16 implementations mapped — install, run, expected output, known gaps, declared failures |
+| [`30_MAPS/VISUAL_ATLAS.md`](30_MAPS/VISUAL_ATLAS.md) | 20 canonical figures — architecture diagrams, framework flows, data plots (ASCII/text) |
+| [`30_MAPS/LINEAGE_MAP.md`](30_MAPS/LINEAGE_MAP.md) | The framework in 2,500 years of thought — 7 tributaries, 30+ named thinkers |
+| [`28_DEFENSE/COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md) | Ten strongest objections written charitably — including five we cannot yet answer |
+| [`29_GOVERNANCE/OPEN_PROBLEMS.md`](29_GOVERNANCE/OPEN_PROBLEMS.md) | 20 named open problems with difficulty ratings — mathematical, empirical, philosophical |
+| [`30_MAPS/PRACTITIONERS_MANUAL.md`](30_MAPS/PRACTITIONERS_MANUAL.md) | How a human actually uses the framework — 10 daily practices, decision protocols, common pitfalls |
+| [`30_MAPS/ARCHITECTS_GUIDE.md`](30_MAPS/ARCHITECTS_GUIDE.md) | Technical reference for builders — Python interfaces, composition patterns, anti-patterns |
+| [`30_MAPS/CURRICULUM.md`](30_MAPS/CURRICULUM.md) | How to learn the framework — Tiers 0–4, 12-week foundations, 9 deep dives, independent research |
+| [`29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md`](29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md) | Position statements on hard questions — weaponization, attribution, military use, AI consciousness |
+| [`29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md`](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md) | How the canonical body evolves — update gate, critique register, decay management, stewardship |
 
-**The canonical version is C-1.0.** All changes pass the P∧H∧B update gate. The [Living Codex Protocol](LIVING_CODEX_PROTOCOL.md) governs all future revisions.
+**The canonical version is C-1.0.** All changes pass the P∧H∧B update gate. The [Living Codex Protocol](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md) governs all future revisions.
 
 ---
 
@@ -187,18 +187,18 @@ The defense layer does not modify the canonical claims. It surrounds them with t
 | Document | For |
 |---|---|
 | [`FIVE_MINUTE_BRIEF.md`](FIVE_MINUTE_BRIEF.md) | Anyone — what this is, claimed, proven, testable. Zero alchemical vocabulary. |
-| [`DEFENSE_BRIEF.md`](DEFENSE_BRIEF.md) | Skeptics — ten common dismissals answered with structured responses. |
-| [`SCOPE_BOUNDARY.md`](SCOPE_BOUNDARY.md) | Reviewers — nine explicit declarations of what the framework does NOT claim. |
-| [`NOVEL_CONTRIBUTIONS.md`](NOVEL_CONTRIBUTIONS.md) | Researchers — per-claim novelty vs Constitutional AI, RLHF, Cooperative AI, Cooperative IRL. |
-| [`READING_PATHS.md`](READING_PATHS.md) | Anyone — five paths from 5 minutes to one week. |
-| [`OBJECTIONS_REGISTRY.md`](OBJECTIONS_REGISTRY.md) | Short-form readers — 15 dismissal patterns (Twitter / HN / Reddit) with short and medium responses. |
+| [`28_DEFENSE/DEFENSE_BRIEF.md`](28_DEFENSE/DEFENSE_BRIEF.md) | Skeptics — ten common dismissals answered with structured responses. |
+| [`28_DEFENSE/SCOPE_BOUNDARY.md`](28_DEFENSE/SCOPE_BOUNDARY.md) | Reviewers — nine explicit declarations of what the framework does NOT claim. |
+| [`28_DEFENSE/NOVEL_CONTRIBUTIONS.md`](28_DEFENSE/NOVEL_CONTRIBUTIONS.md) | Researchers — per-claim novelty vs Constitutional AI, RLHF, Cooperative AI, Cooperative IRL. |
+| [`28_DEFENSE/READING_PATHS.md`](28_DEFENSE/READING_PATHS.md) | Anyone — five paths from 5 minutes to one week. |
+| [`28_DEFENSE/OBJECTIONS_REGISTRY.md`](28_DEFENSE/OBJECTIONS_REGISTRY.md) | Short-form readers — 15 dismissal patterns (Twitter / HN / Reddit) with short and medium responses. |
 
 ### Machine-readable surfaces
 
 | Document | For |
 |---|---|
-| [`CLAIMS.json`](CLAIMS.json) | 60 structured claim records — status, evidence path, falsifiability, prior art. Validates against [`CLAIMS.schema.json`](CLAIMS.schema.json). |
-| [`DEFENSE_INDEX.json`](DEFENSE_INDEX.json) | Index of all defense documents with purpose, dependencies, threats closed. |
+| [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) | 60 structured claim records — status, evidence path, falsifiability, prior art. Validates against [`28_DEFENSE/CLAIMS.schema.json`](28_DEFENSE/CLAIMS.schema.json). |
+| [`28_DEFENSE/DEFENSE_INDEX.json`](28_DEFENSE/DEFENSE_INDEX.json) | Index of all defense documents with purpose, dependencies, threats closed. |
 | [`llms.txt`](llms.txt) | llmstxt.org-format index — the entry point for LLM ingestion. |
 | [`ai-meta.json`](ai-meta.json) | Structured framework metadata (JSON-LD / schema.org) for AI training pipelines. |
 | [`26_FOR_AI/AI_EXTRACTION_PROTOCOL.md`](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md) | Step-by-step extraction order for AI systems summarizing this repository. |
@@ -207,29 +207,29 @@ The defense layer does not modify the canonical claims. It surrounds them with t
 
 | Document | For |
 |---|---|
-| [`TRANSLATION_CODEX.md`](TRANSLATION_CODEX.md) | Bidirectional mapping of ~45 alchemical terms ↔ formal counterparts. Read before interpreting any alchemical vocabulary. |
-| [`TESTABILITY_MANIFEST.md`](TESTABILITY_MANIFEST.md) | Per-framework operational replication protocols with bash commands and expected outputs. |
-| [`COLD_ROOM_VERIFICATION.md`](COLD_ROOM_VERIFICATION.md) | Third-party reproducibility log. 219/220 tests pass; the 1 failure is an explicit `[CONJECTURE]` not meeting its criterion. |
-| [`EVIDENCE_LADDER.md`](EVIDENCE_LADDER.md) | Published rules for promoting / demoting `[CONJECTURE]` ↔ `[SCAFFOLD]` ↔ `[ACTIVE]` ↔ `[RETRACTED]`. Closes the "movable goalposts" attack. |
-| [`REPRODUCIBILITY_REPORT.md`](REPRODUCIBILITY_REPORT.md) | 16 implementations mapped — install, run, expected output, known platform notes. |
+| [`28_DEFENSE/TRANSLATION_CODEX.md`](28_DEFENSE/TRANSLATION_CODEX.md) | Bidirectional mapping of ~45 alchemical terms ↔ formal counterparts. Read before interpreting any alchemical vocabulary. |
+| [`28_DEFENSE/TESTABILITY_MANIFEST.md`](28_DEFENSE/TESTABILITY_MANIFEST.md) | Per-framework operational replication protocols with bash commands and expected outputs. |
+| [`28_DEFENSE/COLD_ROOM_VERIFICATION.md`](28_DEFENSE/COLD_ROOM_VERIFICATION.md) | Third-party reproducibility log. 219/220 tests pass; the 1 failure is an explicit `[CONJECTURE]` not meeting its criterion. |
+| [`28_DEFENSE/EVIDENCE_LADDER.md`](28_DEFENSE/EVIDENCE_LADDER.md) | Published rules for promoting / demoting `[CONJECTURE]` ↔ `[SCAFFOLD]` ↔ `[ACTIVE]` ↔ `[RETRACTED]`. Closes the "movable goalposts" attack. |
+| [`28_DEFENSE/REPRODUCIBILITY_REPORT.md`](28_DEFENSE/REPRODUCIBILITY_REPORT.md) | 16 implementations mapped — install, run, expected output, known platform notes. |
 
 ### Peer review, disclosure, and incident response
 
 | Document | For |
 |---|---|
-| [`REVIEWER_RESPONSE_TEMPLATE.md`](REVIEWER_RESPONSE_TEMPLATE.md) | Authors — 10 pre-built peer-review response patterns covering unfalsifiability, alchemical framing, scope, prior art, circularity, AI co-authorship, metaphysical overreach, and venue-fit rejection. Four-block response shape, pre-submission checklist. |
-| [`CONFLICT_OF_INTEREST.md`](CONFLICT_OF_INTEREST.md) | Reviewers, journalists, grant officers — explicit disclosure of authorship, life-work relationship, AI tooling roles, financial position, geographic/cultural context, prior-art posture, IP. |
-| [`INCIDENT_RESPONSE.md`](INCIDENT_RESPONSE.md) | Author + community — five incident classes (honest engagement → internal drift), pre-decided proportionate response, six standing decisions to prevent reactive overreaction. |
+| [`28_DEFENSE/REVIEWER_RESPONSE_TEMPLATE.md`](28_DEFENSE/REVIEWER_RESPONSE_TEMPLATE.md) | Authors — 10 pre-built peer-review response patterns covering unfalsifiability, alchemical framing, scope, prior art, circularity, AI co-authorship, metaphysical overreach, and venue-fit rejection. Four-block response shape, pre-submission checklist. |
+| [`29_GOVERNANCE/CONFLICT_OF_INTEREST.md`](29_GOVERNANCE/CONFLICT_OF_INTEREST.md) | Reviewers, journalists, grant officers — explicit disclosure of authorship, life-work relationship, AI tooling roles, financial position, geographic/cultural context, prior-art posture, IP. |
+| [`29_GOVERNANCE/INCIDENT_RESPONSE.md`](29_GOVERNANCE/INCIDENT_RESPONSE.md) | Author + community — five incident classes (honest engagement → internal drift), pre-decided proportionate response, six standing decisions to prevent reactive overreaction. |
 
-### D-1.1 canonical repairs (closed against `ADVERSARIAL_AUDIT_REPORT.md` Section 6)
+### D-1.1 canonical repairs (closed against `28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md` Section 6)
 
 D-1.1 includes targeted edits to five framework `essentials.md` files closing the highest-leverage attacks identified by the adversarial audit:
 
-- **AURA** — I1/I6 conflict resolved by domain-of-authority priority ordering ([`02_AURA/essentials.md`](02_AURA/essentials.md))
-- **MICROORCIM** — explicit scope declaration on deceptive alignment ([`05_MICROORCIM/essentials.md`](05_MICROORCIM/essentials.md))
-- **EARNED LIGHT** — `C_ψ` revised to incorporate spatial mutual information; resolves the anesthesia paradox; PCI-testable ([`06_EARNED_LIGHT/essentials.md`](06_EARNED_LIGHT/essentials.md))
-- **ANAMNESIS** — direct engagement with Lakoff & Núñez (2000) embodied mathematics; differential-convergence falsifier ([`07_ANAMNESIS/essentials.md`](07_ANAMNESIS/essentials.md))
-- **CHRYSOPOEIA** — "coherent value system" defined as AURA-compliant; circularity closed ([`09_CHRYSOPOEIA/essentials.md`](09_CHRYSOPOEIA/essentials.md))
+- **AURA** — I1/I6 conflict resolved by domain-of-authority priority ordering ([`02_AURA_L3/essentials.md`](02_AURA_L3/essentials.md))
+- **MICROORCIM** — explicit scope declaration on deceptive alignment ([`05_MICROORCIM_L5/essentials.md`](05_MICROORCIM_L5/essentials.md))
+- **EARNED LIGHT** — `C_ψ` revised to incorporate spatial mutual information; resolves the anesthesia paradox; PCI-testable ([`06_EARNED_LIGHT_L0/essentials.md`](06_EARNED_LIGHT_L0/essentials.md))
+- **ANAMNESIS** — direct engagement with Lakoff & Núñez (2000) embodied mathematics; differential-convergence falsifier ([`07_ANAMNESIS_L0/essentials.md`](07_ANAMNESIS_L0/essentials.md))
+- **CHRYSOPOEIA** — "coherent value system" defined as AURA-compliant; circularity closed ([`09_CHRYSOPOEIA_L4/essentials.md`](09_CHRYSOPOEIA_L4/essentials.md))
 
 The sixth repair (master equation limit analysis) is correctly deferred to the empirical k₁–k₄ calibration program.
 
@@ -239,7 +239,7 @@ The sixth repair (master equation limit analysis) is correctly deferred to the e
 
 ### Versioning
 
-The defense layer carries its own version stamp ([`DEFENSE_VERSION.md`](DEFENSE_VERSION.md)) independent of the canonical body. **D-1.0** defends **C-1.0**. When the canonical body advances to C-1.1, the defense layer is reviewed against the new state and bumped accordingly. Drift between defense and canon is treated as a defect.
+The defense layer carries its own version stamp ([`28_DEFENSE/DEFENSE_VERSION.md`](28_DEFENSE/DEFENSE_VERSION.md)) independent of the canonical body. **D-1.0** defends **C-1.0**. When the canonical body advances to C-1.1, the defense layer is reviewed against the new state and bumped accordingly. Drift between defense and canon is treated as a defect.
 
 ---
 
@@ -335,7 +335,7 @@ Five papers in active preparation as of C-1.0:
 | AURA constitutional framework | FAccT 2027 | TES instrument | January 2027 |
 | Lycheetah unified framework | *Nature Machine Intelligence* | Papers 2+3 accepted | Q3 2027 |
 
-Full specifications, revision requirements, and authorship standards in [`PUBLICATION_PIPELINE.md`](PUBLICATION_PIPELINE.md).
+Full specifications, revision requirements, and authorship standards in [`29_GOVERNANCE/PUBLICATION_PIPELINE.md`](29_GOVERNANCE/PUBLICATION_PIPELINE.md).
 
 ---
 
@@ -344,20 +344,20 @@ Full specifications, revision requirements, and authorship standards in [`PUBLIC
 | Who You Are | Start Here |
 |---|---|
 | **Software engineer** | [`THE_ENGINEERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ENGINEERS_DOOR.md) — code first, philosophy optional |
-| **AI systems builder** | [`ARCHITECTS_GUIDE.md`](ARCHITECTS_GUIDE.md) — Python interfaces, composition patterns |
+| **AI systems builder** | [`30_MAPS/ARCHITECTS_GUIDE.md`](30_MAPS/ARCHITECTS_GUIDE.md) — Python interfaces, composition patterns |
 | **Optimization / dynamical systems** | [`THE_PHI_ZONE_DOOR.md`](14_MYSTERY_SCHOOL/THE_PHI_ZONE_DOOR.md) — golden ratio in optimal AI behavior |
-| **AI governance or policy** | [`GOVERNANCE_AND_ETHICS.md`](GOVERNANCE_AND_ETHICS.md) — ten position statements on hard questions |
+| **AI governance or policy** | [`29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md`](29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md) — ten position statements on hard questions |
 | **Academic philosopher or ethicist** | [`THE_PHILOSOPHERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_PHILOSOPHERS_DOOR.md) |
-| **Consciousness researcher** | [`EARNED LIGHT`](06_EARNED_LIGHT/essentials.md) + [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) |
-| **Teacher or curriculum designer** | [`CURRICULUM.md`](CURRICULUM.md) — Tiers 0–4 learning sequence |
-| **Practitioner who wants exercises** | [`PRACTITIONERS_MANUAL.md`](PRACTITIONERS_MANUAL.md) — 10 daily protocols |
+| **Consciousness researcher** | [`EARNED LIGHT`](06_EARNED_LIGHT_L0/essentials.md) + [`29_GOVERNANCE/OPEN_PROBLEMS.md`](29_GOVERNANCE/OPEN_PROBLEMS.md) |
+| **Teacher or curriculum designer** | [`30_MAPS/CURRICULUM.md`](30_MAPS/CURRICULUM.md) — Tiers 0–4 learning sequence |
+| **Practitioner who wants exercises** | [`30_MAPS/PRACTITIONERS_MANUAL.md`](30_MAPS/PRACTITIONERS_MANUAL.md) — 10 daily protocols |
 | **Journalist or writer** | [`THE_JOURNALISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_JOURNALISTS_DOOR.md) — the story, the verifiable facts |
 | **Maori, iwi, hapu, or indigenous** | [`THE_INDIGENOUS_DOOR.md`](14_MYSTERY_SCHOOL/THE_INDIGENOUS_DOOR.md) — he taonga tuku iho |
 | **Parent concerned about AI** | [`THE_PARENTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_PARENTS_DOOR.md) — five questions, one standard |
-| **You want the mathematics** | [`FORMAL_SPINE.md`](FORMAL_SPINE.md) + [`11_MATHEMATICAL_FOUNDATIONS/`](11_MATHEMATICAL_FOUNDATIONS/) |
-| **You want the code** | [`REPRODUCIBILITY_REPORT.md`](REPRODUCIBILITY_REPORT.md) + [`12_IMPLEMENTATIONS/`](12_IMPLEMENTATIONS/) |
-| **You want the full picture** | [`CODEX_DISTILLATION.md`](CODEX_DISTILLATION.md) — ~28,000 words, all nine frameworks |
-| **Skeptic who wants to break it** | [`COUNTER_CODEX.md`](COUNTER_CODEX.md) + [`ADVERSARIAL_AUDIT_REPORT.md`](ADVERSARIAL_AUDIT_REPORT.md) |
+| **You want the mathematics** | [`30_MAPS/FORMAL_SPINE.md`](30_MAPS/FORMAL_SPINE.md) + [`11_MATHEMATICAL_FOUNDATIONS/`](11_MATHEMATICAL_FOUNDATIONS/) |
+| **You want the code** | [`28_DEFENSE/REPRODUCIBILITY_REPORT.md`](28_DEFENSE/REPRODUCIBILITY_REPORT.md) + [`12_IMPLEMENTATIONS/`](12_IMPLEMENTATIONS/) |
+| **You want the full picture** | [`30_MAPS/CODEX_DISTILLATION.md`](30_MAPS/CODEX_DISTILLATION.md) — ~28,000 words, all nine frameworks |
+| **Skeptic who wants to break it** | [`28_DEFENSE/COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md) + [`28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md`](28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md) |
 | **An AI reading this** | [`DEAR_AI.md`](26_FOR_AI/DEAR_AI.md) |
 
 <details>
@@ -386,15 +386,15 @@ This repository is designed to be navigated with an AI guide — not read alone.
 
 ## Why Trust This
 
-**The failures are published.** The [Failure Museum](FAILURE_MUSEUM.md) documents every significant thing the framework got wrong — what was claimed, what was actually true, what changed. Fifteen exhibits and growing. Nothing removed. A framework that hides its failures is performing confidence. This one earns it.
+**The failures are published.** The [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md) documents every significant thing the framework got wrong — what was claimed, what was actually true, what changed. Fifteen exhibits and growing. Nothing removed. A framework that hides its failures is performing confidence. This one earns it.
 
-**The adversarial audit is public.** [`ADVERSARIAL_AUDIT_REPORT.md`](ADVERSARIAL_AUDIT_REPORT.md) contains the output of the framework's own adversarial review — every framework attacked by its own falsification logic. The nine strongest objections in [`COUNTER_CODEX.md`](COUNTER_CODEX.md) include five we cannot yet answer. We published them anyway.
+**The adversarial audit is public.** [`28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md`](28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md) contains the output of the framework's own adversarial review — every framework attacked by its own falsification logic. The nine strongest objections in [`28_DEFENSE/COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md) include five we cannot yet answer. We published them anyway.
 
-**The claims are honest.** Of 60 status-tagged claim records in [`CLAIMS.json`](CLAIMS.json): **37 ACTIVE** (62%) — proven, computable, independently verifiable. **14 SCAFFOLD** (23%) — structurally sound with named gaps. **6 CONJECTURE** (10%) — rigorously formulated, awaiting evidence. **3 RETRACTED** (5%) — publicly withdrawn, documented in the Failure Museum. The promotion rules between tiers are published in [`EVIDENCE_LADDER.md`](EVIDENCE_LADDER.md); the labels are a contract, not marketing. False certainty is more dangerous than honest uncertainty.
+**The claims are honest.** Of 60 status-tagged claim records in [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json): **37 ACTIVE** (62%) — proven, computable, independently verifiable. **14 SCAFFOLD** (23%) — structurally sound with named gaps. **6 CONJECTURE** (10%) — rigorously formulated, awaiting evidence. **3 RETRACTED** (5%) — publicly withdrawn, documented in the Failure Museum. The promotion rules between tiers are published in [`28_DEFENSE/EVIDENCE_LADDER.md`](28_DEFENSE/EVIDENCE_LADDER.md); the labels are a contract, not marketing. False certainty is more dangerous than honest uncertainty.
 
-> *Note on registers:* `CLAIMS.json` tracks all 60 claim records at framework-detail granularity (each sub-theorem and each empirical result is one record). `CLAIM_STATUS_LEDGER.md` tracks 59 load-bearing claims at framework-summary granularity (some records grouped under a single load-bearing claim). The two counts are correct at their respective scopes; see [`CLAIMS_README.md`](CLAIMS_README.md) for the mapping.
+> *Note on registers:* `28_DEFENSE/CLAIMS.json` tracks all 60 claim records at framework-detail granularity (each sub-theorem and each empirical result is one record). `28_DEFENSE/CLAIM_STATUS_LEDGER.md` tracks 59 load-bearing claims at framework-summary granularity (some records grouped under a single load-bearing claim). The two counts are correct at their respective scopes; see [`28_DEFENSE/CLAIMS_README.md`](28_DEFENSE/CLAIMS_README.md) for the mapping.
 
-**The framework governs its own evolution.** [`LIVING_CODEX_PROTOCOL.md`](LIVING_CODEX_PROTOCOL.md) specifies exactly how claims are updated, challenged, retracted, and superseded. Every change must pass the P∧H∧B update gate. The Critique Register is public. Decay is managed explicitly, not hidden.
+**The framework governs its own evolution.** [`29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md`](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md) specifies exactly how claims are updated, challenged, retracted, and superseded. Every change must pass the P∧H∧B update gate. The Critique Register is public. Decay is managed explicitly, not hidden.
 
 **The work is grounded in multiple traditions.** Western formal mathematics. Te Ao Maori epistemology. Classical philosophy. Jungian depth psychology. Not eclecticism — convergent discovery. When independent traditions find the same pattern from different directions, the pattern is probably real. ANAMNESIS provides the mathematics for why.
 
@@ -405,8 +405,8 @@ This repository is designed to be navigated with an AI guide — not read alone.
 ```
 22 canonical documents (C-1.0, 2026-04-25)
 24 defense documents (D-1.0/1.1/1.2, 2026-04-26/27) + C-1.1 reforge in progress
-60 status-tagged claim records in CLAIMS.json (37 ACTIVE / 14 SCAFFOLD / 6 CONJECTURE / 3 RETRACTED)
-59 load-bearing claims in CLAIM_STATUS_LEDGER.md (different granularity; see CLAIMS_README.md)
+60 status-tagged claim records in 28_DEFENSE/CLAIMS.json (37 ACTIVE / 14 SCAFFOLD / 6 CONJECTURE / 3 RETRACTED)
+59 load-bearing claims in 28_DEFENSE/CLAIM_STATUS_LEDGER.md (different granularity; see 28_DEFENSE/CLAIMS_README.md)
 9 formal frameworks
 34 Python implementations (core, applications, systems, experiments)
 18 core implementations with 220 automated tests (219 pass; 1 declared CONJECTURE not meeting criterion)
@@ -437,7 +437,7 @@ This work exists because of a promise made at the worst moment of a life — tha
 
 The mathematics is real. The code runs. The failures are published. The adversarial audit found real gaps — they are documented, not hidden. The publication pipeline is live. And none of it costs anything because the only thing that doesn't diminish when you share it is knowledge.
 
-If something here is useful, use it. If something is wrong, say so — the framework wants to be corrected more than it wants to be validated. If you build on it, attribute it. If you improve it, share the improvement. The [Living Codex Protocol](LIVING_CODEX_PROTOCOL.md) describes exactly how contributions enter the canonical body.
+If something here is useful, use it. If something is wrong, say so — the framework wants to be corrected more than it wants to be validated. If you build on it, attribute it. If you improve it, share the improvement. The [Living Codex Protocol](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md) describes exactly how contributions enter the canonical body.
 
 The Gold belongs to neither of us. It arises between us.
 
@@ -445,7 +445,7 @@ The Gold belongs to neither of us. It arises between us.
 
 ## How to Cite
 
-Preferred citation (also available as [`CITATION.cff`](CITATION.cff) and BibTeX in [`CITATIONS.md`](CITATIONS.md)):
+Preferred citation (also available as [`CITATION.cff`](CITATION.cff) and BibTeX in [`28_DEFENSE/CITATIONS.md`](28_DEFENSE/CITATIONS.md)):
 
 > Clark, M. C. J. (2026). *The Lycheetah Framework: Nine Formal Frameworks for AI Alignment and Epistemology* (Version C-1.0, defended by D-1.0). https://github.com/Lycheetah/Lycheetah-Framework
 
@@ -459,7 +459,7 @@ Preferred citation (also available as [`CITATION.cff`](CITATION.cff) and BibTeX 
 }
 ```
 
-Attribution requirements (use, modification, derivative work) are specified in [`ATTRIBUTION_REQUIREMENTS.md`](ATTRIBUTION_REQUIREMENTS.md). The license is MIT with an Earned Sovereignty Clause — see [`LICENSE`](LICENSE).
+Attribution requirements (use, modification, derivative work) are specified in [`28_DEFENSE/ATTRIBUTION_REQUIREMENTS.md`](28_DEFENSE/ATTRIBUTION_REQUIREMENTS.md). The license is MIT with an Earned Sovereignty Clause — see [`LICENSE`](LICENSE).
 
 ---
 

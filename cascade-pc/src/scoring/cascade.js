@@ -51,22 +51,31 @@ function getLayerScore(layer, mode) {
 }
 
 /**
- * Π = E·P/S
- * E = evidence density (FOUNDATION + STRUCTURE average)
- * P = power (AXIOM score — the load-bearing claim)
- * S = coherence (COHERENCE score — internal consistency)
+ * Π = E·P/S  (CASCADE truth pressure formula)
+ *
+ * E = evidence density — FOUNDATION + STRUCTURE average
+ *     (how well the claim is evidenced and architecturally supported)
+ * P = power — AXIOM score, the load-bearing claim
+ * S = effective coherence — COHERENCE minus pressure from TENSION and CONTESTED
+ *     (outer tension compresses the coherence field, increasing pressure)
+ *
+ * High Π + high coherence = strong stable knowledge
+ * High Π + low coherence  = knowledge under pressure, restructuring imminent
  */
 export function computePi(layers, mode = 'framework') {
-  if (!layers || layers.length < 4) return 0
-  const axiom = getLayerScore(layers[0], mode)
+  if (!layers || layers.length < 6) return 0
+  const axiom     = getLayerScore(layers[0], mode)
   const foundation = getLayerScore(layers[1], mode)
-  const structure = getLayerScore(layers[2], mode)
-  const coherence = getLayerScore(layers[3], mode)
-  if (!axiom || !coherence) return 0
+  const structure  = getLayerScore(layers[2], mode)
+  const coherence  = getLayerScore(layers[3], mode)
+  const tension    = getLayerScore(layers[5], mode)
+  const contested  = layers[6] ? getLayerScore(layers[6], mode) : 0
+  if (!axiom) return 0
   const E = (foundation + structure) / 2
   const P = axiom
-  const S = Math.max(coherence, 1)
-  return Math.round((E * P) / S)
+  // Effective S: tension and contested reduce coherence field
+  const effectiveS = Math.max(coherence - (tension * 0.3) - (contested * 0.2), 1)
+  return Math.round((E * P) / effectiveS)
 }
 
 /**
@@ -91,55 +100,100 @@ export function checkLayerDependencies(layers, mode = 'framework') {
 }
 
 /**
- * Compute block aggregate score from its onion layers.
+ * Compute block aggregate score — full CASCADE mechanic.
  *
- * Enforcement order:
- *  1. AXIOM = 0 → block collapses to 0 (load-bearing claim missing)
- *  2. Layer dependency caps applied before weighting:
- *       FOUNDATION capped at AXIOM × 1.1
- *       STRUCTURE  capped at FOUNDATION × 1.2
- *  3. Weighted sum: inner layers carry more weight
- *  4. COHERENCE field multiplier: low coherence compresses the aggregate
- *       multiplier = coherence / 100, floored at 0.3 (some signal survives)
- *  5. Hard cap: block cannot exceed AXIOM × 1.2 or 999
+ * CASCADE THEORY: When truth pressure (Π) exceeds coherence thresholds,
+ * the knowledge structure reorganises. Inner layers (AXIOM, FOUNDATION,
+ * STRUCTURE) are protected invariants. Outer layers demote under pressure.
+ *
+ * Step 1 — AXIOM gate: no core claim = no block.
+ * Step 2 — Dependency caps: FOUNDATION ≤ AXIOM×1.1, STRUCTURE ≤ FOUNDATION×1.2
+ * Step 3 — Effective coherence: TENSION and CONTESTED push against the
+ *           coherence field (they ARE the pressure). High outer tension
+ *           compresses effective S.
+ *           effectiveS = COHERENCE - (TENSION×0.3) - (CONTESTED×0.2)
+ * Step 4 — Dynamic weights: when effectiveS < 50, inner layers dominate.
+ *           Under pressure, the block restructures inward — CASCADE behaviour.
+ * Step 5 — Coherence field multiplier on the raw weighted sum.
+ * Step 6 — RESONANCE amplifier: well-integrated knowledge gets a small bonus.
+ *           (max +8%) — connections to known truths make claims more load-bearing.
+ * Step 7 — AXIOM cap: block cannot exceed AXIOM×1.2 (or 999 for frontier).
  */
+export const FALSIFIABILITY_CAP = 70
+
+/**
+ * Check if the AXIOM layer is unfalsifiable — triggers the gate.
+ * Returns true if the block's AXIOM is marked unfalsifiable by the AI.
+ */
+export function isAxiomUnfalsifiable(layers) {
+  if (!layers || layers.length === 0) return false
+  return layers[0]?.falsifiable === false
+}
+
 export function computeBlockScore(layers, mode = 'framework') {
   if (!layers || layers.length === 0) return 0
 
-  const axiomScore = getLayerScore(layers[0], mode)
-  if (!axiomScore || axiomScore === 0) return 0   // no axiom = no block
+  let axiomScore = getLayerScore(layers[0], mode)
+  if (!axiomScore || axiomScore === 0) return 0  // no axiom = no block
 
-  // Enforce dependency caps in computation (not just UI warnings)
+  // Falsifiability Gate — AXIOM capped at 70 if unfalsifiable
+  if (isAxiomUnfalsifiable(layers)) {
+    axiomScore = Math.min(axiomScore, FALSIFIABILITY_CAP)
+  }
+
+  // Step 2 — Dependency caps
+  const foundationRaw = getLayerScore(layers[1], mode)
+  const structureRaw  = getLayerScore(layers[2], mode)
+  const foundationCap = Math.round(axiomScore * 1.1)
+  const effectiveFoundation = Math.min(foundationRaw, foundationCap)
+  const structureCap  = Math.round(effectiveFoundation * 1.2)
+
   const effectiveScores = layers.map((layer, i) => {
     let s = getLayerScore(layer, mode)
-    if (i === 1 && axiomScore > 0) s = Math.min(s, Math.round(axiomScore * 1.1))   // FOUNDATION
-    if (i === 2) {
-      const foundationScore = Math.min(getLayerScore(layers[1], mode), Math.round(axiomScore * 1.1))
-      s = Math.min(s, Math.round(foundationScore * 1.2))  // STRUCTURE
-    }
+    if (i === 1) s = Math.min(s, foundationCap)
+    if (i === 2) s = Math.min(s, structureCap)
     return s
   })
 
-  const weights = [2.0, 1.8, 1.5, 1.3, 1.1, 0.9, 0.8, 0.7, 0.6]
+  // Step 3 — Effective coherence: outer tension compresses the coherence field
+  const coherence  = effectiveScores[3] || 0
+  const tension    = effectiveScores[5] || 0
+  const contested  = effectiveScores[6] || 0
+  const effectiveS = Math.max(coherence - (tension * 0.3) - (contested * 0.2), 5)
+
+  // Step 4 — Dynamic weights: under pressure (effectiveS < 50), inner layers dominate
+  // At full coherence: [2.0, 1.8, 1.5, 1.3, 1.1, 0.9, 0.8, 0.7, 0.6]
+  // Under pressure:    [2.8, 2.2, 1.8, 1.4, 0.7, 0.4, 0.3, 0.3, 0.2]
+  const pressureRatio = coherence > 0 ? Math.max(0, Math.min(1, effectiveS / 80)) : 1.0
+  const baseW    = [2.0, 1.8, 1.5, 1.3, 1.1, 0.9, 0.8, 0.7, 0.6]
+  const pressureW = [2.8, 2.2, 1.8, 1.4, 0.7, 0.4, 0.3, 0.3, 0.2]
+  const weights = baseW.map((b, i) => b * pressureRatio + pressureW[i] * (1 - pressureRatio))
+
   let weightedSum = 0
   let totalWeight = 0
   effectiveScores.forEach((score, i) => {
-    const w = weights[i] || 0.5
+    const w = weights[i] || 0.4
     weightedSum += score * w
     totalWeight += w
   })
   const raw = totalWeight > 0 ? weightedSum / totalWeight : 0
 
-  // Coherence as field multiplier — integrity of the block compresses all scores
-  const coherenceScore = effectiveScores[3] || 0
-  const coherenceMultiplier = coherenceScore > 0
-    ? Math.max(0.3, coherenceScore / 100)
-    : 1.0   // unscored coherence = neutral (don't penalise before AI runs)
+  // Step 5 — Coherence field multiplier
+  const coherenceMultiplier = coherence > 0
+    ? Math.max(0.3, effectiveS / 100)
+    : 1.0  // unscored = neutral (don't penalise before AI runs)
 
   const afterCoherence = raw * coherenceMultiplier
 
+  // Step 6 — Resonance amplifier (connections to known truths = stronger signal)
+  const resonance = effectiveScores[4] || 0
+  const resonanceBonus = resonance > 0 ? 1 + (resonance / 100) * 0.08 : 1.0  // max +8%
+
+  const afterResonance = afterCoherence * resonanceBonus
+
+  // Step 7 — Hard caps
   const axiomCap = axiomScore * 1.2
-  return Math.min(Math.round(afterCoherence), Math.round(axiomCap), 999)
+  return Math.min(Math.round(afterResonance), Math.round(axiomCap), 999)
 }
 
 /**
@@ -174,6 +228,35 @@ export function computeFileScore(blocks, mode = 'framework') {
   }).filter(s => s > 0)
   if (scores.length === 0) return 0
   return Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
+}
+
+/**
+ * Confidence-weighted file score.
+ * Blocks that have been adversarially challenged receive a confidence weight
+ * based on CI stability: stable=1.0, uncertain=0.75, inflated=0.5.
+ * Blocks without CI data are treated as weight=0.85 (slight skepticism).
+ * Pinned blocks get a 1.1 weight bonus — user has explicitly endorsed them.
+ */
+export function computeConfidenceWeightedScore(blocks, adversarialData = {}) {
+  if (!blocks || blocks.length === 0) return 0
+  let weightedSum = 0
+  let totalWeight = 0
+  for (const b of blocks) {
+    const score = b.score_aggregate || 0
+    if (score === 0) continue
+    let weight = 0.85 // default: unverified
+    const ad = adversarialData[b.id]
+    if (ad) {
+      if (ad.stability === 'stable')    weight = 1.0
+      else if (ad.stability === 'uncertain') weight = 0.75
+      else if (ad.stability === 'inflated')  weight = 0.5
+    }
+    if (b.pinned) weight = Math.min(weight * 1.1, 1.2)
+    weightedSum += score * weight
+    totalWeight += weight
+  }
+  if (totalWeight === 0) return 0
+  return Math.round(weightedSum / totalWeight)
 }
 
 export function computePyramidScore(files, mode = 'framework') {

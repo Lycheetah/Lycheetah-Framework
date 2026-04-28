@@ -139,7 +139,7 @@ For the formal proof attempts (with honest gap notation):
 `11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md`
 
 For the summary of what's been fixed and why:
-`FAILURE_MUSEUM.md`
+`28_DEFENSE/FAILURE_MUSEUM.md`
 
 ---
 

@@ -285,7 +285,7 @@ class ConstitutionalAgent:
 
 ## OPEN QUESTIONS — WHERE YOU COULD CONTRIBUTE
 
-The Failure Museum (`FAILURE_MUSEUM.md`) documents 12 known failures. The open questions:
+The Failure Museum (`28_DEFENSE/FAILURE_MUSEUM.md`) documents 12 known failures. The open questions:
 
 1. **Master equation calibration** — k₁–k₄ in `dΨ/dt = k₁(Π − Π_th) − k₂(Ψ − Ψ_inv) − k₃·I + k₄(E/E_need)` are uncalibrated. Bayesian MCMC is the identified next step. Implementation is in `core/calibrate_master_equation.py`.
 
@@ -295,7 +295,7 @@ The Failure Museum (`FAILURE_MUSEUM.md`) documents 12 known failures. The open q
 
 4. **Test suite** — No pytest suite exists yet. If you write tests, they're welcome. Coverage target: cascade_engine, aura_checker, triad_tracker, unified_field_checker.
 
-Open an issue. Make a PR. The governance for contributions is in `GOVERNANCE.md`.
+Open an issue. Make a PR. The governance for contributions is in `29_GOVERNANCE/GOVERNANCE.md`.
 
 ---
 

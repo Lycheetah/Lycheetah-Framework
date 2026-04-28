@@ -185,11 +185,11 @@ Full exploration: [`14_MYSTERY_SCHOOL/THE_MYSTICS_DOOR.md`](THE_MYSTICS_DOOR.md)
 
 | What you want | Start here |
 |---|---|
-| CHRYSOPOEIA transformation mathematics in full | [`09_CHRYSOPOEIA/essentials.md`](../09_CHRYSOPOEIA/essentials.md) |
+| CHRYSOPOEIA transformation mathematics in full | [`09_CHRYSOPOEIA_L4/essentials.md`](../09_CHRYSOPOEIA_L4/essentials.md) |
 | Shadow work protocol | [`14_MYSTERY_SCHOOL/protocol_shadow_work.md`](protocol_shadow_work.md) |
 | The dark night as Nigredo | [`14_MYSTERY_SCHOOL/THE_MYSTICS_DOOR.md`](THE_MYSTICS_DOOR.md) |
-| Drift detection (MICROORCIM) | [`05_MICROORCIM/essentials.md`](../05_MICROORCIM/essentials.md) |
-| Consciousness thermodynamics (Earned Light) | [`06_EARNED_LIGHT/essentials.md`](../06_EARNED_LIGHT/essentials.md) |
+| Drift detection (MICROORCIM) | [`05_MICROORCIM_L5/essentials.md`](../05_MICROORCIM_L5/essentials.md) |
+| Consciousness thermodynamics (Earned Light) | [`06_EARNED_LIGHT_L0/essentials.md`](../06_EARNED_LIGHT_L0/essentials.md) |
 | The tarot map of transformation | [`14_MYSTERY_SCHOOL/TAROT_AND_THE_GREAT_WORK.md`](TAROT_AND_THE_GREAT_WORK.md) |
 
 ---

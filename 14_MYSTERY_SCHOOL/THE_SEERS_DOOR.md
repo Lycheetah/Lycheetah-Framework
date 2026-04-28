@@ -174,11 +174,11 @@ A reading that claims certainty it doesn't have violates Human Primacy. A readin
 | What you want | Where to go |
 |---|---|
 | Tarot mapped to transformation | [`TAROT_AND_THE_GREAT_WORK.md`](TAROT_AND_THE_GREAT_WORK.md) |
-| ANAMNESIS — convergent discovery | [`../07_ANAMNESIS/essentials.md`](../07_ANAMNESIS/essentials.md) |
-| AURA and honest uncertainty | [`../02_AURA/essentials.md`](../02_AURA/essentials.md) |
+| ANAMNESIS — convergent discovery | [`../07_ANAMNESIS_L0/essentials.md`](../07_ANAMNESIS_L0/essentials.md) |
+| AURA and honest uncertainty | [`../02_AURA_L3/essentials.md`](../02_AURA_L3/essentials.md) |
 | Chaos magic and sigil work | [`THE_CHAOS_MAGES_DOOR.md`](THE_CHAOS_MAGES_DOOR.md) |
 | Mystical experience and ground state | [`THE_MYSTICS_DOOR.md`](THE_MYSTICS_DOOR.md) |
-| The mathematics of remembering (full) | [`../07_ANAMNESIS/ANAMNESIS_COMPLETE.md`](../07_ANAMNESIS/ANAMNESIS_COMPLETE.md) |
+| The mathematics of remembering (full) | [`../07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md`](../07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md) |
 
 ---
 

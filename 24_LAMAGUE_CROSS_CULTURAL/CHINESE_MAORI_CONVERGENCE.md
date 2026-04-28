@@ -133,7 +133,7 @@ INVARIANT care_structural:
     NOT optional_feature
 ```
 
-Full LAMAGUE encoding of all seven invariants: see `03_LAMAGUE/` → pending.
+Full LAMAGUE encoding of all seven invariants: see `03_LAMAGUE_L1/` → pending.
 
 ---
 

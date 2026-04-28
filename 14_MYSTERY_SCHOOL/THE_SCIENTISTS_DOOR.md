@@ -171,12 +171,12 @@ The observer IS the system
 
 | What you want | Start here |
 |---|---|
-| The thermodynamic mathematics in full | [`06_EARNED_LIGHT/essentials.md`](../06_EARNED_LIGHT/essentials.md) |
+| The thermodynamic mathematics in full | [`06_EARNED_LIGHT_L0/essentials.md`](../06_EARNED_LIGHT_L0/essentials.md) |
 | The fixed-point proofs (TRIAD/CHRYSOPOEIA) | [`11_MATHEMATICAL_FOUNDATIONS/`](../11_MATHEMATICAL_FOUNDATIONS/) |
 | The Bayesian/AGM verification | [`11_MATHEMATICAL_FOUNDATIONS/AGM_POSTULATE_VERIFICATION.md`](../11_MATHEMATICAL_FOUNDATIONS/AGM_POSTULATE_VERIFICATION.md) |
-| The harmonic mathematics | [`10_HARMONIA/essentials.md`](../10_HARMONIA/essentials.md) |
-| The convergent discovery mathematics | [`07_ANAMNESIS/essentials.md`](../07_ANAMNESIS/essentials.md) |
-| The full failure record | [`FAILURE_MUSEUM.md`](../FAILURE_MUSEUM.md) |
+| The harmonic mathematics | [`10_HARMONIA_L6/essentials.md`](../10_HARMONIA_L6/essentials.md) |
+| The convergent discovery mathematics | [`07_ANAMNESIS_L0/essentials.md`](../07_ANAMNESIS_L0/essentials.md) |
+| The full failure record | [`28_DEFENSE/FAILURE_MUSEUM.md`](../FAILURE_MUSEUM.md) |
 | The claim-by-claim audit | [`11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_REALITY_ALIGNMENT.md`](../11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_REALITY_ALIGNMENT.md) |
 
 ---

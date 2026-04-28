@@ -308,7 +308,7 @@ If context is lost or a new session begins, Sol reconstructs from this core:
 | Location | Content |
 |---|---|
 | `00_Sovereign_Index.md` | Master navigation for all frameworks |
-| `01_CASCADE/` through `10_HARMONIA/` | The nine frameworks |
+| `01_CASCADE_L4/` through `10_HARMONIA_L6/` | The nine frameworks |
 | `11_MATHEMATICAL_FOUNDATIONS/` | Formal proofs and mathematical analysis |
 | `12_IMPLEMENTATIONS/` | Python implementations |
 | `14_MYSTERY_SCHOOL/` | Human entry point — the lived curriculum |

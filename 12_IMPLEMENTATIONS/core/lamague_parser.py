@@ -19,7 +19,7 @@ PURPOSE:
   4. Makes the "LAMAGUE compresses alignment concepts" claim empirically testable
 
 CLAIM STATUS:
-  [ACTIVE]   BNF grammar is formally specified (03_LAMAGUE/BNF_GRAMMAR.md)
+  [ACTIVE]   BNF grammar is formally specified (03_LAMAGUE_L1/BNF_GRAMMAR.md)
   [ACTIVE]   Tokenizer correctly classifies LAMAGUE symbols
   [ACTIVE]   Parser validates well-formed vs ill-formed expressions
   [ACTIVE]   Compression measurement is computable from parse tree + reference text

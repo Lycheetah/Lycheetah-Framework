@@ -114,7 +114,7 @@ actually prevent unsafe behavior without excessive cost to performance.
 **Success criterion:** AURA adds <10% training cost; reduces dangerous actions by >50%.
 
 **Effort:** 4 months, requires RL engineer.
-**Connects to:** AURA formal specification in `02_AURA/`; Invariants I & VII now
+**Connects to:** AURA formal specification in `02_AURA_L3/`; Invariants I & VII now
 formally computable (see `12_IMPLEMENTATIONS/core/aura_checker.py`).
 
 ---

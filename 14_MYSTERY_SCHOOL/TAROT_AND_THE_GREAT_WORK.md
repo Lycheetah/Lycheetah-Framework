@@ -171,10 +171,10 @@ Drawing a Page is never weakness — it is the beginning of a cycle. Drawing a K
 
 | What you want | Where to go |
 |---|---|
-| The transformation mathematics in full | [`../09_CHRYSOPOEIA/essentials.md`](../09_CHRYSOPOEIA/essentials.md) |
-| The TRIAD cycle formal | [`../04_TRIAD/essentials.md`](../04_TRIAD/essentials.md) |
-| Drift detection (MICROORCIM) | [`../05_MICROORCIM/essentials.md`](../05_MICROORCIM/essentials.md) |
-| CASCADE and paradigm shifts | [`../01_CASCADE/essentials.md`](../01_CASCADE/essentials.md) |
+| The transformation mathematics in full | [`../09_CHRYSOPOEIA_L4/essentials.md`](../09_CHRYSOPOEIA_L4/essentials.md) |
+| The TRIAD cycle formal | [`../04_TRIAD_L2/essentials.md`](../04_TRIAD_L2/essentials.md) |
+| Drift detection (MICROORCIM) | [`../05_MICROORCIM_L5/essentials.md`](../05_MICROORCIM_L5/essentials.md) |
+| CASCADE and paradigm shifts | [`../01_CASCADE_L4/essentials.md`](../01_CASCADE_L4/essentials.md) |
 | The full Mystery School curriculum | [`MYSTERY_SCHOOL_COMPLETE.md`](MYSTERY_SCHOOL_COMPLETE.md) |
 | The alchemist's tradition | [`THE_ALCHEMISTS_DOOR.md`](THE_ALCHEMISTS_DOOR.md) |
 

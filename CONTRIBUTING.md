@@ -181,12 +181,12 @@ The Work is real. Come help.
 
 ## Challenging the Defense Layer (D-1.0)
 
-The Codex Defense Protocol documents (`CLAIMS.json`, `DEFENSE_BRIEF.md`, `NOVEL_CONTRIBUTIONS.md`, etc.) are also open to challenge. If a defense document:
+The Codex Defense Protocol documents (`28_DEFENSE/CLAIMS.json`, `28_DEFENSE/DEFENSE_BRIEF.md`, `28_DEFENSE/NOVEL_CONTRIBUTIONS.md`, etc.) are also open to challenge. If a defense document:
 
 - Misrepresents a canonical claim's strength or status
 - Contains an inaccurate comparison to prior art
 - Fails to pre-empt a dismissal you encountered in practice
-- Is out of sync with a canon change (see drift triggers in `LIVING_CODEX_PROTOCOL.md`)
+- Is out of sync with a canon change (see drift triggers in `29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md`)
 
 Open a GitHub Issue labeled `defense-challenge` with the specific document, the specific passage, and the correction.
 

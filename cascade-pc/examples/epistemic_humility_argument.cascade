@@ -1,0 +1,176 @@
+{
+  "cascade_version": "0.3.0",
+  "exported_at": "2026-04-17T00:00:00.000Z",
+  "pyramid": {
+    "id": "example-001",
+    "name": "The Epistemic Humility Argument",
+    "description": "Pressure-testing the claim that epistemic humility is a necessary condition for rationality",
+    "score_aggregate": 67,
+    "created_at": 1713340800
+  },
+  "files": [
+    {
+      "id": "file-001-a",
+      "pyramid_id": "example-001",
+      "name": "Core Argument",
+      "score_aggregate": 72,
+      "blocks": [
+        {
+          "id": "block-001-1",
+          "file_id": "file-001-a",
+          "pyramid_id": "example-001",
+          "title": "The Central Claim",
+          "content": "Epistemic humility — the recognition that one's beliefs may be wrong — is a necessary condition for genuine rationality. Without it, a reasoner cannot update correctly on new evidence, cannot identify their own blind spots, and mistakes the confidence of a belief for its truth.",
+          "score_aggregate": 78,
+          "framework_refs": ["cascade"],
+          "position": 0,
+          "pinned": true,
+          "tags": ["axiom", "core"],
+          "layers": [
+            { "layer": "AXIOM",       "framework_score": 85, "sovereign_score": null, "notes": "" },
+            { "layer": "FOUNDATION",  "framework_score": 80, "sovereign_score": null, "notes": "" },
+            { "layer": "STRUCTURE",   "framework_score": 75, "sovereign_score": null, "notes": "" },
+            { "layer": "COHERENCE",   "framework_score": 78, "sovereign_score": null, "notes": "" },
+            { "layer": "RESONANCE",   "framework_score": 72, "sovereign_score": null, "notes": "" },
+            { "layer": "TENSION",     "framework_score": 68, "sovereign_score": null, "notes": "Tension with Bayesian accounts that formalise confidence without requiring humility as a named virtue." },
+            { "layer": "CONTESTED",   "framework_score": 60, "sovereign_score": null, "notes": "" },
+            { "layer": "SPECULATIVE", "framework_score": 55, "sovereign_score": null, "notes": "" },
+            { "layer": "FRONTIER",    "framework_score": 48, "sovereign_score": null, "notes": "" }
+          ]
+        },
+        {
+          "id": "block-001-2",
+          "file_id": "file-001-a",
+          "pyramid_id": "example-001",
+          "title": "Premise 1 — Bayesian Update Requires Fallibility",
+          "content": "A rational agent must be able to update beliefs on evidence. Update is only possible if the prior probability of a belief being wrong is non-zero. Assigning zero probability to being wrong about a belief makes that belief unfalsifiable and outside the scope of rational revision.",
+          "score_aggregate": 82,
+          "framework_refs": ["cascade"],
+          "position": 1,
+          "pinned": false,
+          "tags": ["premise", "bayesian"],
+          "layers": [
+            { "layer": "AXIOM",       "framework_score": 90, "sovereign_score": null, "notes": "" },
+            { "layer": "FOUNDATION",  "framework_score": 88, "sovereign_score": null, "notes": "" },
+            { "layer": "STRUCTURE",   "framework_score": 84, "sovereign_score": null, "notes": "" },
+            { "layer": "COHERENCE",   "framework_score": 82, "sovereign_score": null, "notes": "" },
+            { "layer": "RESONANCE",   "framework_score": 80, "sovereign_score": null, "notes": "" },
+            { "layer": "TENSION",     "framework_score": 75, "sovereign_score": null, "notes": "" },
+            { "layer": "CONTESTED",   "framework_score": 70, "sovereign_score": null, "notes": "" },
+            { "layer": "SPECULATIVE", "framework_score": 65, "sovereign_score": null, "notes": "" },
+            { "layer": "FRONTIER",    "framework_score": 60, "sovereign_score": null, "notes": "" }
+          ]
+        },
+        {
+          "id": "block-001-3",
+          "file_id": "file-001-a",
+          "pyramid_id": "example-001",
+          "title": "Premise 2 — Confidence ≠ Justification",
+          "content": "Subjective confidence in a belief is not equivalent to the belief's epistemic justification. A reasoner who mistakes felt certainty for logical necessity cannot distinguish between strong evidence and strong feeling — this collapses the very distinction rationality is supposed to track.",
+          "score_aggregate": 76,
+          "framework_refs": ["cascade", "aura"],
+          "position": 2,
+          "pinned": false,
+          "tags": ["premise"],
+          "layers": [
+            { "layer": "AXIOM",       "framework_score": 82, "sovereign_score": null, "notes": "" },
+            { "layer": "FOUNDATION",  "framework_score": 79, "sovereign_score": null, "notes": "" },
+            { "layer": "STRUCTURE",   "framework_score": 77, "sovereign_score": null, "notes": "" },
+            { "layer": "COHERENCE",   "framework_score": 75, "sovereign_score": null, "notes": "" },
+            { "layer": "RESONANCE",   "framework_score": 73, "sovereign_score": null, "notes": "" },
+            { "layer": "TENSION",     "framework_score": 70, "sovereign_score": null, "notes": "" },
+            { "layer": "CONTESTED",   "framework_score": 65, "sovereign_score": null, "notes": "" },
+            { "layer": "SPECULATIVE", "framework_score": 60, "sovereign_score": null, "notes": "" },
+            { "layer": "FRONTIER",    "framework_score": 55, "sovereign_score": null, "notes": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "file-001-b",
+      "pyramid_id": "example-001",
+      "name": "Objections",
+      "score_aggregate": 58,
+      "blocks": [
+        {
+          "id": "block-001-4",
+          "file_id": "file-001-b",
+          "pyramid_id": "example-001",
+          "title": "Objection — Dogmatic Rationalism",
+          "content": "A Cartesian rationalist might argue that some truths (logical axioms, mathematical necessities) are known with certainty and that humility about them is not epistemic virtue but epistemic confusion. 2+2=4 does not require hedging; humility here would be performative rather than functional.",
+          "score_aggregate": 62,
+          "framework_refs": ["cascade"],
+          "position": 0,
+          "pinned": false,
+          "tags": ["objection", "contested"],
+          "layers": [
+            { "layer": "AXIOM",       "framework_score": 70, "sovereign_score": null, "notes": "" },
+            { "layer": "FOUNDATION",  "framework_score": 65, "sovereign_score": null, "notes": "" },
+            { "layer": "STRUCTURE",   "framework_score": 62, "sovereign_score": null, "notes": "" },
+            { "layer": "COHERENCE",   "framework_score": 60, "sovereign_score": null, "notes": "" },
+            { "layer": "RESONANCE",   "framework_score": 58, "sovereign_score": null, "notes": "" },
+            { "layer": "TENSION",     "framework_score": 55, "sovereign_score": null, "notes": "This is a genuine tension — the argument may need to distinguish domain-specific certainty from general epistemic humility." },
+            { "layer": "CONTESTED",   "framework_score": 50, "sovereign_score": null, "notes": "" },
+            { "layer": "SPECULATIVE", "framework_score": 45, "sovereign_score": null, "notes": "" },
+            { "layer": "FRONTIER",    "framework_score": 40, "sovereign_score": null, "notes": "" }
+          ]
+        },
+        {
+          "id": "block-001-5",
+          "file_id": "file-001-b",
+          "pyramid_id": "example-001",
+          "title": "Objection — Action Requires Commitment",
+          "content": "Pragmatists argue that deliberate action requires treating some beliefs as settled for practical purposes. Permanent epistemic humility can produce paralysis. Rationality in action contexts may require bracketing uncertainty, not foregrounding it.",
+          "score_aggregate": 55,
+          "framework_refs": ["cascade"],
+          "position": 1,
+          "pinned": false,
+          "tags": ["objection", "pragmatism"],
+          "layers": [
+            { "layer": "AXIOM",       "framework_score": 65, "sovereign_score": null, "notes": "" },
+            { "layer": "FOUNDATION",  "framework_score": 60, "sovereign_score": null, "notes": "" },
+            { "layer": "STRUCTURE",   "framework_score": 57, "sovereign_score": null, "notes": "" },
+            { "layer": "COHERENCE",   "framework_score": 55, "sovereign_score": null, "notes": "" },
+            { "layer": "RESONANCE",   "framework_score": 52, "sovereign_score": null, "notes": "" },
+            { "layer": "TENSION",     "framework_score": 48, "sovereign_score": null, "notes": "" },
+            { "layer": "CONTESTED",   "framework_score": 44, "sovereign_score": null, "notes": "" },
+            { "layer": "SPECULATIVE", "framework_score": 40, "sovereign_score": null, "notes": "" },
+            { "layer": "FRONTIER",    "framework_score": 35, "sovereign_score": null, "notes": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "file-001-c",
+      "pyramid_id": "example-001",
+      "name": "Synthesis",
+      "score_aggregate": 71,
+      "blocks": [
+        {
+          "id": "block-001-6",
+          "file_id": "file-001-c",
+          "pyramid_id": "example-001",
+          "title": "Synthesis — Domain-Sensitive Humility",
+          "content": "Epistemic humility is necessary for rationality, but it is domain-sensitive: it applies to empirical and normative claims, where evidence can always revise; it does not apply to formal truths, where the question of revision does not arise in the same sense. The pragmatist objection reveals not a refutation but a constraint — epistemic humility must be distinguished from action paralysis. The rational agent holds beliefs provisionally while acting decisively.",
+          "score_aggregate": 74,
+          "framework_refs": ["cascade", "aura"],
+          "position": 0,
+          "pinned": true,
+          "tags": ["synthesis"],
+          "source_block_ids": ["block-001-1", "block-001-2", "block-001-3", "block-001-4", "block-001-5"],
+          "layers": [
+            { "layer": "AXIOM",       "framework_score": 80, "sovereign_score": null, "notes": "" },
+            { "layer": "FOUNDATION",  "framework_score": 77, "sovereign_score": null, "notes": "" },
+            { "layer": "STRUCTURE",   "framework_score": 74, "sovereign_score": null, "notes": "" },
+            { "layer": "COHERENCE",   "framework_score": 73, "sovereign_score": null, "notes": "" },
+            { "layer": "RESONANCE",   "framework_score": 72, "sovereign_score": null, "notes": "" },
+            { "layer": "TENSION",     "framework_score": 68, "sovereign_score": null, "notes": "" },
+            { "layer": "CONTESTED",   "framework_score": 64, "sovereign_score": null, "notes": "" },
+            { "layer": "SPECULATIVE", "framework_score": 60, "sovereign_score": null, "notes": "" },
+            { "layer": "FRONTIER",    "framework_score": 55, "sovereign_score": null, "notes": "Open question: does epistemic humility require a theory of mind capable of modelling its own errors, or can it be formalised without consciousness?" }
+          ]
+        }
+      ]
+    }
+  ]
+}

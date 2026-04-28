@@ -7,7 +7,7 @@ Consensus emerges from pairwise gossip gated by the Psi_Q operator, verified
 by H^1 obstruction detection, with Grey Mode quarantine for drifted nodes.
 
 SOURCE: AURA_PROTOCOL_COMPLETE_CONSOLIDATION (1).md
-        Spec: 02_AURA/PSI_CONSENSUS.md
+        Spec: 02_AURA_L3/PSI_CONSENSUS.md
 Status: [ACTIVE] -- fully implemented from spec
 
 FOUR MECHANISMS:

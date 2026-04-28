@@ -155,7 +155,7 @@ The implementations are in `12_IMPLEMENTATIONS/`.
 | LAMAGUE Te Reo encodings | `23_NZ_AI_GOVERNANCE/NZ_LAMAGUE_STANDARD.md` |
 | The Kāi Tahu partnership approach | `23_NZ_AI_GOVERNANCE/NZ_KAI_TAHU_APPROACH.md` |
 | Three-tradition convergence map | `24_LAMAGUE_CROSS_CULTURAL/CONVERGENCE_MAP.md` |
-| What the framework got wrong | `FAILURE_MUSEUM.md` — twelve exhibits, nothing removed |
+| What the framework got wrong | `28_DEFENSE/FAILURE_MUSEUM.md` — twelve exhibits, nothing removed |
 | Run the framework | `python demo.py` |
 
 ---

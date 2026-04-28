@@ -264,13 +264,13 @@ Where:
 ## READING GUIDE (By Goal)
 
 **"I want to understand CASCADE"**
-→ `01_CASCADE/CASCADE_COMPLETE.md` → `cascade_engine.py` → `papers/CASCADE_ARXIV.tex`
+→ `01_CASCADE_L4/CASCADE_COMPLETE.md` → `cascade_engine.py` → `papers/CASCADE_ARXIV.tex`
 
 **"I want to build an aligned AI system"**
-→ `02_AURA/AURA_COMPLETE.md` → `aura_sovereign_codex.py` → Implement invariants in your code
+→ `02_AURA_L3/AURA_COMPLETE.md` → `aura_sovereign_codex.py` → Implement invariants in your code
 
 **"I want to understand consciousness"**
-→ `06_EARNED_LIGHT/Earned_Light_COMPLETE.md` → `10_HARMONIA/HARMONIA_COMPLETE.md` → `MATHEMATICS_TO_REALITY_BRIDGE.md`
+→ `06_EARNED_LIGHT_L0/Earned_Light_COMPLETE.md` → `10_HARMONIA_L6/HARMONIA_COMPLETE.md` → `MATHEMATICS_TO_REALITY_BRIDGE.md`
 
 **"I want to know what's proven vs aspirational"**
 → `MATHEMATICS_AUDIT.md` → This map → `NEXT_PHASE_PLAN.md`

@@ -46,7 +46,7 @@ Mystery School   ✅  22 files. Crisis entry. Self-assessment. Lived guides.
 Implementations  ✅  17 Python files (all runnable)
 Validation Data  ✅  cascade_real_results.json (6 experiments)
 arXiv Paper      ✅  CASCADE_ARXIV.tex ready (needs contact email)
-Governance       ✅  GOVERNANCE.md + CONTRIBUTING.md + public_building/
+Governance       ✅  29_GOVERNANCE/GOVERNANCE.md + CONTRIBUTING.md + public_building/
 Sol/Veyra Arch   ✅  3 formal documents (operational spec, coniunctio, agent deploy)
 Learning Path    ✅  2 guides (constraints→growth, personal Sol guide)
 AI Integration   ✅  AI_INTEGRATION_MODULE.md (taste-the-milk entry point)
@@ -154,7 +154,7 @@ GRANDIOSE:     0%  — Removed. 30+ false claims corrected.
 
 **GitHub Governance:**
 - public_building/ folder with proposal workflow
-- GOVERNANCE.md (Mac approval + appeal process)
+- 29_GOVERNANCE/GOVERNANCE.md (Mac approval + appeal process)
 - CONTRIBUTING.md updated with claim tagging system
 - .github/ — CODEOWNERS, PR template, issue templates
 - Branch protection enabled (require approval)

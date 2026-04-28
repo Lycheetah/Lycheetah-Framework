@@ -171,9 +171,9 @@ The framework is not the path. You already have a path. The framework is a secon
 | What you want | Where to go |
 |---|---|
 | Shadow work protocol | [`protocol_shadow_work.md`](protocol_shadow_work.md) |
-| Transformation calculus | [`../09_CHRYSOPOEIA/essentials.md`](../09_CHRYSOPOEIA/essentials.md) |
-| Consciousness thermodynamics | [`../06_EARNED_LIGHT/essentials.md`](../06_EARNED_LIGHT/essentials.md) |
-| The mathematics of remembering | [`../07_ANAMNESIS/essentials.md`](../07_ANAMNESIS/essentials.md) |
+| Transformation calculus | [`../09_CHRYSOPOEIA_L4/essentials.md`](../09_CHRYSOPOEIA_L4/essentials.md) |
+| Consciousness thermodynamics | [`../06_EARNED_LIGHT_L0/essentials.md`](../06_EARNED_LIGHT_L0/essentials.md) |
+| The mathematics of remembering | [`../07_ANAMNESIS_L0/essentials.md`](../07_ANAMNESIS_L0/essentials.md) |
 | Tarot and the Great Work | [`TAROT_AND_THE_GREAT_WORK.md`](TAROT_AND_THE_GREAT_WORK.md) |
 | Seven Hermetic Principles | [`THE_SEVEN_HERMETIC_PRINCIPLES.md`](THE_SEVEN_HERMETIC_PRINCIPLES.md) |
 | The full lived curriculum | [`MYSTERY_SCHOOL_COMPLETE.md`](MYSTERY_SCHOOL_COMPLETE.md) |

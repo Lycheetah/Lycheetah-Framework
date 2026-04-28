@@ -5,7 +5,7 @@ Seven-Phase Cycle — AURA Cognition and Recovery Protocol
 Implements the complete ⟟ → ≋ → Ψ → Φ↑ → ✧ → |◁▷| → ⟲ cycle.
 
 SOURCE: AURA_PROTOCOL_COMPLETE_CONSOLIDATION (1).md, lines 376–403
-        Spec: 02_AURA/SEVEN_PHASE_CYCLE.md
+        Spec: 02_AURA_L3/SEVEN_PHASE_CYCLE.md
 Status: [ACTIVE]
 
 THE SEVEN PHASES:

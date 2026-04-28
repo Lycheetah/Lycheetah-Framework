@@ -146,12 +146,12 @@ The experiment is the beginning, not the conclusion.
 |---|---|
 | Run the φ-zone experiment | `py 12_IMPLEMENTATIONS/phi_bandit.py` |
 | See it live | `py demo.py --phi` |
-| Mathematical foundations | `10_HARMONIA/essentials.md` (Kuramoto coupling) |
+| Mathematical foundations | `10_HARMONIA_L6/essentials.md` (Kuramoto coupling) |
 | Convergence proof | `11_MATHEMATICAL_FOUNDATIONS/TRIAD_CONVERGENCE.md` |
-| Why independent structures converge | `07_ANAMNESIS/essentials.md` |
-| The full CASCADE mechanism | `01_CASCADE/essentials.md` |
+| Why independent structures converge | `07_ANAMNESIS_L0/essentials.md` |
+| The full CASCADE mechanism | `01_CASCADE_L4/essentials.md` |
 | All implementations | `12_IMPLEMENTATIONS/` |
-| What we got wrong | `FAILURE_MUSEUM.md` |
+| What we got wrong | `28_DEFENSE/FAILURE_MUSEUM.md` |
 
 ---
 

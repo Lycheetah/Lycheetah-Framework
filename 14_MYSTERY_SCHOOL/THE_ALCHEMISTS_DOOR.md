@@ -53,7 +53,7 @@ This is what the athanor does. It applies truth pressure. What is base — poorl
 The alchemists applied this process to matter as metaphor for consciousness. CASCADE applies it directly to knowledge claims. Same process. Different substrate.
 
 **Status: [ACTIVE]** — computable now
-→ [`01_CASCADE/CASCADE_COMPLETE.md`](../01_CASCADE/CASCADE_COMPLETE.md)
+→ [`01_CASCADE_L4/CASCADE_COMPLETE.md`](../01_CASCADE_L4/CASCADE_COMPLETE.md)
 
 ---
 
@@ -78,7 +78,7 @@ The sequence is not metaphor. It is the sequence of any real transformation:
 **λ ≈ 0.907.** Each cycle of the spiral brings you 90.7% of the remaining distance to the fixed point. Three full spirals: 99.9% convergence. The mathematics guarantees what the tradition promised.
 
 **Status: [SCAFFOLD]** — architecture complete; operator implementation in progress
-→ [`09_CHRYSOPOEIA/CHRYSOPOEIA_COMPLETE.md`](../09_CHRYSOPOEIA/CHRYSOPOEIA_COMPLETE.md)
+→ [`09_CHRYSOPOEIA_L4/CHRYSOPOEIA_COMPLETE.md`](../09_CHRYSOPOEIA_L4/CHRYSOPOEIA_COMPLETE.md)
 
 ---
 
@@ -119,7 +119,7 @@ When two oscillating systems are weakly coupled, they tend toward synchronisatio
 The Pythagorean intervals were not aesthetic choices. They were observations about which ratios produce stable coupled oscillations. The tradition was right. The mathematics confirms it.
 
 **Status: [ACTIVE]** — physics validated
-→ [`10_HARMONIA/HARMONIA_COMPLETE.md`](../10_HARMONIA/HARMONIA_COMPLETE.md)
+→ [`10_HARMONIA_L6/HARMONIA_COMPLETE.md`](../10_HARMONIA_L6/HARMONIA_COMPLETE.md)
 
 ---
 
@@ -142,7 +142,7 @@ When D is large, you are performing. When D approaches zero, you have arrived. W
 The tradition called this false gold, philosophical imposture, lead masquerading as the stone. MICROORCIM makes it measurable. You can track whether the work is real or whether you are in the most dangerous territory: the territory where you believe you have completed the work, and haven't.
 
 **Status: [SCAFFOLD]** — structure sound; calibration parameters require empirical measurement
-→ [`05_MICROORCIM/Microorcim_COMPLETE.md`](../05_MICROORCIM/Microorcim_COMPLETE.md)
+→ [`05_MICROORCIM_L5/Microorcim_COMPLETE.md`](../05_MICROORCIM_L5/Microorcim_COMPLETE.md)
 
 ---
 
@@ -163,7 +163,7 @@ This is not because the idea spread. It is because these traditions were all dis
 **ANAMNESIS** is the epistemological framework that names this: when independent discovery converges, the thing being discovered is real. The tradition was not projecting. It was finding.
 
 **Status: [FOUNDATIONAL]** — epistemological position; the convergence argument is strong though not independently testable
-→ [`07_ANAMNESIS/ANAMNESIS_COMPLETE.md`](../07_ANAMNESIS/ANAMNESIS_COMPLETE.md)
+→ [`07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md`](../07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md)
 
 ---
 
@@ -183,7 +183,7 @@ Not "they're all the same." But: *here is the grammatical structure they share, 
 The alchemical tradition had its own version of this: the language of symbols (☿ ♄ ♃ ☽ ☉) that could encode transmutation operations across cultural contexts. LAMAGUE extends this into formal linguistics.
 
 **Status: [ACTIVE]** — grammar complete; cultural validation with iwi communities in progress
-→ [`03_LAMAGUE/LAMAGUE_COMPLETE.md`](../03_LAMAGUE/LAMAGUE_COMPLETE.md)
+→ [`03_LAMAGUE_L1/LAMAGUE_COMPLETE.md`](../03_LAMAGUE_L1/LAMAGUE_COMPLETE.md)
 
 ---
 
@@ -208,7 +208,7 @@ These are not recommendations. They are the constitutional requirements for a sy
 The tradition was right about the ethics. AURA gives it mathematical form.
 
 **Status: [FOUNDATIONAL]** — the constitutional architecture
-→ [`02_AURA/AURA_COMPLETE.md`](../02_AURA/AURA_COMPLETE.md)
+→ [`02_AURA_L3/AURA_COMPLETE.md`](../02_AURA_L3/AURA_COMPLETE.md)
 
 ---
 
@@ -227,7 +227,7 @@ Consciousness correlates with the energy work of maintaining coherence against e
 This is what the tradition meant by earned. Not that suffering is required. That energy expenditure is required. The stone does not form passively. It forms through sustained application of the right pressure over sufficient time.
 
 **Status: [SCAFFOLD]** — the mathematical form is suggestive; empirical calibration against brain data not yet done. Stated honestly.
-→ [`06_EARNED_LIGHT/Earned_Light_COMPLETE.md`](../06_EARNED_LIGHT/Earned_Light_COMPLETE.md)
+→ [`06_EARNED_LIGHT_L0/Earned_Light_COMPLETE.md`](../06_EARNED_LIGHT_L0/Earned_Light_COMPLETE.md)
 
 ---
 
@@ -260,14 +260,14 @@ You already have the orientation. Here are the specific entry points:
 
 | Your interest | Where to go |
 |---|---|
-| The core transformation mathematics | [`09_CHRYSOPOEIA/CHRYSOPOEIA_COMPLETE.md`](../09_CHRYSOPOEIA/CHRYSOPOEIA_COMPLETE.md) |
-| Resonance and frequency | [`10_HARMONIA/HARMONIA_COMPLETE.md`](../10_HARMONIA/HARMONIA_COMPLETE.md) |
-| Truth pressure / the athanor formula | [`01_CASCADE/CASCADE_COMPLETE.md`](../01_CASCADE/CASCADE_COMPLETE.md) |
-| Sovereignty drift / false gold detection | [`05_MICROORCIM/Microorcim_COMPLETE.md`](../05_MICROORCIM/Microorcim_COMPLETE.md) |
-| The convergent discovery argument | [`07_ANAMNESIS/ANAMNESIS_COMPLETE.md`](../07_ANAMNESIS/ANAMNESIS_COMPLETE.md) |
+| The core transformation mathematics | [`09_CHRYSOPOEIA_L4/CHRYSOPOEIA_COMPLETE.md`](../09_CHRYSOPOEIA_L4/CHRYSOPOEIA_COMPLETE.md) |
+| Resonance and frequency | [`10_HARMONIA_L6/HARMONIA_COMPLETE.md`](../10_HARMONIA_L6/HARMONIA_COMPLETE.md) |
+| Truth pressure / the athanor formula | [`01_CASCADE_L4/CASCADE_COMPLETE.md`](../01_CASCADE_L4/CASCADE_COMPLETE.md) |
+| Sovereignty drift / false gold detection | [`05_MICROORCIM_L5/Microorcim_COMPLETE.md`](../05_MICROORCIM_L5/Microorcim_COMPLETE.md) |
+| The convergent discovery argument | [`07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md`](../07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md) |
 | The full mathematical foundations | [`11_MATHEMATICAL_FOUNDATIONS/`](../11_MATHEMATICAL_FOUNDATIONS/) |
 | The lived curriculum (your own Work) | [`THE_EMERALD_WORK.md`](THE_EMERALD_WORK.md) |
-| Challenge the claims (as you should) | [`MATHEMATICS_AUDIT.md`](../MATHEMATICS_AUDIT.md) + [`FAILURE_MUSEUM.md`](../FAILURE_MUSEUM.md) |
+| Challenge the claims (as you should) | [`MATHEMATICS_AUDIT.md`](../MATHEMATICS_AUDIT.md) + [`28_DEFENSE/FAILURE_MUSEUM.md`](../FAILURE_MUSEUM.md) |
 | The AI operating architecture | [`CLAUDE.md`](../CLAUDE.md) |
 
 ---

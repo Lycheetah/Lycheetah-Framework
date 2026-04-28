@@ -4,7 +4,7 @@ Earned Light Calculator — Consciousness Thermodynamics
 
 Implements the Earned Light model: consciousness as thermodynamic asymmetry.
 
-Core equations (from 06_EARNED_LIGHT/Earned_Light_COMPLETE.md):
+Core equations (from 06_EARNED_LIGHT_L0/Earned_Light_COMPLETE.md):
   C(t) = ∫ |ψ(x,t)|² dx          — consciousness density (asymmetry integral)
   dC/dt = Work_input/T − k·C      — growth/decay ODE
   C_steady = Work_input / (T · k) — steady-state consciousness

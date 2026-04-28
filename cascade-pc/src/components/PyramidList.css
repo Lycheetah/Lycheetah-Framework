@@ -312,3 +312,83 @@
 .empty-sub {
   font-size: 11px;
 }
+
+/* ── Pyramid templates ────────────────────────────────────────────────────── */
+.template-gallery {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  padding: 14px;
+}
+
+.tg-title {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--gold-dim);
+  margin-bottom: 10px;
+}
+
+.tg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.tg-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.tg-card:hover { border-color: var(--gold-dim); }
+.tg-card.selected { border-color: var(--gold); background: rgba(212,168,67,0.08); }
+
+.tg-glyph {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 4px;
+  color: var(--gold-dim);
+}
+
+.tg-name {
+  font-size: 11px;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.tg-desc {
+  font-size: 10px;
+  color: var(--text-dim);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.tg-files {
+  font-size: 9px;
+  color: var(--gold-dim);
+  letter-spacing: 0.04em;
+}
+
+.tg-confirm {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.tg-name-input {
+  flex: 1;
+  padding: 6px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-dim);
+  color: var(--text-primary);
+  border-radius: var(--radius);
+  font-size: 11px;
+  outline: none;
+}

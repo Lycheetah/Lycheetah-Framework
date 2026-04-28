@@ -210,7 +210,7 @@ That is new.
 - WOF backing mechanism: `COMMUNITY_AI_WOF.md`, `WOF_IMPLEMENTATION_GUIDE.md`
 - Matariki Annual Audit (CTI): `MATARIKI_AUDIT_STANDARD.md`
 - Whakapapa Disclosure (knowledge endowment): `WHAKAPAPA_DISCLOSURE_STANDARD.md`
-- AURA invariants (constitutional structure): `../02_AURA/`
+- AURA invariants (constitutional structure): `../02_AURA_L3/`
 - Ministerial pathway: `MINISTERIAL_BRIEFING.md`
 - Mathematical backing: `../MATHEMATICS_AUDIT.md` (SCAFFOLD classification applies here)
 

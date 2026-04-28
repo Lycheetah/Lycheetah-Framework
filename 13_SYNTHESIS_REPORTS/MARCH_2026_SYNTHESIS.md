@@ -22,7 +22,7 @@ structures are, and what is complete versus what is still being built.
 - Read individual framework documents if you want depth in one area
 - Read this document if you want to understand how they connect
 - Read MATHEMATICS_AUDIT.md if you want the honest claims audit
-- Read FAILURE_MUSEUM.md if you want to know what we got wrong
+- Read 28_DEFENSE/FAILURE_MUSEUM.md if you want to know what we got wrong
 
 ---
 

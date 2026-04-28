@@ -345,7 +345,7 @@ And the Work has always, always, always led to gold.
 
 *For the formal mathematics behind these connections:*
 *`11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md`*
-*For the transformation calculus: `09_CHRYSOPOEIA/CHRYSOPOEIA_COMPLETE.md`*
-*For the resonance proofs: `10_HARMONIA/HARMONIA_COMPLETE.md`*
+*For the transformation calculus: `09_CHRYSOPOEIA_L4/CHRYSOPOEIA_COMPLETE.md`*
+*For the resonance proofs: `10_HARMONIA_L6/HARMONIA_COMPLETE.md`*
 
 **REFUSED SPECTACLE — VALIDATED STRUGGLE**

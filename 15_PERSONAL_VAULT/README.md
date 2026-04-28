@@ -9,7 +9,7 @@
 
 The Personal Vault is the human-dimension archive of the Lycheetah Framework: artful prose, mythic naming, session notes, and the personal witness behind the formal work. It is *not* a private working space, despite the name. The folder is publicly tracked because the framework's provenance is part of its evidence — a reader who wants to verify that the work emerged from sustained human-AI co-creation can read what that looked like, in the author's voice, on the days it happened.
 
-**Distinct from the canonical body.** Documents in this folder are not subject to the evidence-ladder discipline of the canonical body (`EVIDENCE_LADDER.md`). Claims here are personal, mythic, or aesthetic; they do not appear in `CLAIMS.json` and are not defended by the D-layer defense documents. A reviewer evaluating the framework's *formal* claims should read the canonical body, not this folder.
+**Distinct from the canonical body.** Documents in this folder are not subject to the evidence-ladder discipline of the canonical body (`28_DEFENSE/EVIDENCE_LADDER.md`). Claims here are personal, mythic, or aesthetic; they do not appear in `28_DEFENSE/CLAIMS.json` and are not defended by the D-layer defense documents. A reviewer evaluating the framework's *formal* claims should read the canonical body, not this folder.
 
 **Distinct from the experimental folder.** `18_EXPERIMENTAL/` holds speculative *technical* extensions that might one day promote into the canonical body. This folder holds *human* content — art, witness, reflection — that is not on a promotion track. It exists for what it is.
 
@@ -37,7 +37,7 @@ The Personal Vault is the human-dimension archive of the Lycheetah Framework: ar
 
 ## Privacy Note
 
-If a reader believes a document in this folder should not be public — e.g., contains identifying information about third parties, or strategic content the author would not now publish — flag it via `INCIDENT_RESPONSE.md`. The folder's openness is a deliberate choice; it can be revised per-document if a specific concern is raised.
+If a reader believes a document in this folder should not be public — e.g., contains identifying information about third parties, or strategic content the author would not now publish — flag it via `29_GOVERNANCE/INCIDENT_RESPONSE.md`. The folder's openness is a deliberate choice; it can be revised per-document if a specific concern is raised.
 
 ## Reader Guidance
 

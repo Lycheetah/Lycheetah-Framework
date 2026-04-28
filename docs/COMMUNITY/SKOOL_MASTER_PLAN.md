@@ -448,7 +448,7 @@ Example: All te reo Māori encodings (awaiting iwi partnership).
 All Mandarin translations (awaiting scholar validation).
 
 Full Failure Museum (everything we got wrong, nothing removed):
-github.com/Lycheetah/Lycheetah-Framework → FAILURE_MUSEUM.md
+github.com/Lycheetah/Lycheetah-Framework → 28_DEFENSE/FAILURE_MUSEUM.md
 ```
 
 - [ ] Write both posts in THE FRAMEWORK

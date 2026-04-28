@@ -228,15 +228,15 @@ Whether this is achievable for AI systems — whether "structural virtue" is a c
 
 | What you want | Start here |
 |---|---|
-| CASCADE formal epistemology | [`01_CASCADE/CASCADE_COMPLETE.md`](../01_CASCADE/CASCADE_COMPLETE.md) |
+| CASCADE formal epistemology | [`01_CASCADE_L4/CASCADE_COMPLETE.md`](../01_CASCADE_L4/CASCADE_COMPLETE.md) |
 | AGM postulate verification | [`11_MATHEMATICAL_FOUNDATIONS/CASCADE_MATHEMATICAL_PROOFS.md`](../11_MATHEMATICAL_FOUNDATIONS/CASCADE_MATHEMATICAL_PROOFS.md) |
-| LAMAGUE formal ethics grammar | [`03_LAMAGUE/`](../03_LAMAGUE/) |
+| LAMAGUE formal ethics grammar | [`03_LAMAGUE_L1/`](../03_LAMAGUE_L1/) |
 | Cross-cultural ethics convergence | [`24_LAMAGUE_CROSS_CULTURAL/`](../24_LAMAGUE_CROSS_CULTURAL/) |
-| TRIAD observer problem | [`04_TRIAD/TRIAD_COMPLETE.md`](../04_TRIAD/TRIAD_COMPLETE.md) |
-| EARNED LIGHT consciousness | [`06_EARNED_LIGHT/Earned_Light_COMPLETE.md`](../06_EARNED_LIGHT/Earned_Light_COMPLETE.md) |
-| ANAMNESIS convergent discovery | [`07_ANAMNESIS/ANAMNESIS_COMPLETE.md`](../07_ANAMNESIS/ANAMNESIS_COMPLETE.md) |
+| TRIAD observer problem | [`04_TRIAD_L2/TRIAD_COMPLETE.md`](../04_TRIAD_L2/TRIAD_COMPLETE.md) |
+| EARNED LIGHT consciousness | [`06_EARNED_LIGHT_L0/Earned_Light_COMPLETE.md`](../06_EARNED_LIGHT_L0/Earned_Light_COMPLETE.md) |
+| ANAMNESIS convergent discovery | [`07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md`](../07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md) |
 | The mathematical foundations | [`11_MATHEMATICAL_FOUNDATIONS/`](../11_MATHEMATICAL_FOUNDATIONS/) |
-| The Failure Museum | [`FAILURE_MUSEUM.md`](../FAILURE_MUSEUM.md) — start here for honesty about limits |
+| The Failure Museum | [`28_DEFENSE/FAILURE_MUSEUM.md`](../FAILURE_MUSEUM.md) — start here for honesty about limits |
 
 ---
 

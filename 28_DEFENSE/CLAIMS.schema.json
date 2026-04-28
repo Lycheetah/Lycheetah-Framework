@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/Lycheetah/Lycheetah-Framework/blob/main/CLAIMS.schema.json",
+  "title": "Lycheetah Framework Claims Register",
+  "description": "Schema for the machine-readable canonical claims register (D-1.0). Every load-bearing claim in the Lycheetah Framework canonical body C-1.0.",
+  "type": "object",
+  "required": ["version", "defends", "generated", "claims"],
+  "properties": {
+    "@context": {
+      "type": "string",
+      "description": "JSON-LD context URI"
+    },
+    "version": {
+      "type": "string",
+      "description": "Defense protocol version this register belongs to"
+    },
+    "defends": {
+      "type": "string",
+      "description": "Canonical body version this register defends"
+    },
+    "generated": {
+      "type": "string",
+      "description": "ISO 8601 date this file was generated"
+    },
+    "total_claims": {
+      "type": "integer",
+      "description": "Total number of claim records (including retracted)"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Claim"
+      }
+    }
+  },
+  "definitions": {
+    "Claim": {
+      "type": "object",
+      "required": ["claim_id", "framework", "layer", "statement", "status", "status_normalized", "evidence_path", "load_bearing"],
+      "properties": {
+        "claim_id": {
+          "type": "string",
+          "description": "Unique identifier in format FRAMEWORK-NNN (e.g., CAS-001)"
+        },
+        "framework": {
+          "type": "string",
+          "enum": ["CASCADE", "AURA", "LAMAGUE", "TRIAD", "MICROORCIM", "EARNED_LIGHT", "ANAMNESIS", "CHRYSOPOEIA", "HARMONIA", "CROSS", "MATH", "RETRACTED"],
+          "description": "The framework this claim belongs to"
+        },
+        "layer": {
+          "type": ["integer", "string"],
+          "description": "Architecture layer (0=EARNED_LIGHT+ANAMNESIS, 1=LAMAGUE, 2=TRIAD, 3=AURA, 4=CASCADE+CHRYSOPOEIA, 5=MICROORCIM, 6=HARMONIA, 'cross'=cross-framework)"
+        },
+        "statement": {
+          "type": "string",
+          "description": "The claim in plain language"
+        },
+        "status": {
+          "type": "string",
+          "description": "Original status from PROVENANCE_INDEX (ACTIVE, SCAFFOLD, ASPIRATIONAL, OBSERVATIONAL, EMPIRICAL, FORMAL, REMOVED)"
+        },
+        "status_normalized": {
+          "type": "string",
+          "enum": ["ACTIVE", "SCAFFOLD", "CONJECTURE", "RETRACTED"],
+          "description": "Normalized three-tier status for machine querying. ACTIVE=proven+computable, SCAFFOLD=structurally sound with named gaps, CONJECTURE=unproven worth exploring, RETRACTED=withdrawn"
+        },
+        "load_bearing": {
+          "type": "boolean",
+          "description": "True if this is a primary load-bearing claim per PROVENANCE_INDEX. False for supporting/contextual claims."
+        },
+        "evidence_path": {
+          "type": "string",
+          "description": "Relative path(s) to source file(s) within CODEX_AURA_PRIME"
+        },
+        "pdf_page_est": {
+          "type": "string",
+          "description": "Estimated page range in A SOVEREIGN SYSTEM FOR HUMAN-AI CO-CREATION-merged.pdf"
+        },
+        "falsifiability": {
+          "type": "string",
+          "description": "Brief falsifiability statement. Full protocol in 28_DEFENSE/FALSIFICATION_REGISTER.md and 28_DEFENSE/TESTABILITY_MANIFEST.md"
+        },
+        "alchemical_name": {
+          "type": ["string", "null"],
+          "description": "Alchemical term that names this claim or its operational context, if applicable"
+        },
+        "formal_name": {
+          "type": "string",
+          "description": "Formal or technical name for this claim (theorem ID, formula name, etc.)"
+        },
+        "prior_art_supersedes": {
+          "type": "string",
+          "description": "Prior work this claim advances beyond. Full treatment in 28_DEFENSE/NOVEL_CONTRIBUTIONS.md"
+        },
+        "novelty": {
+          "type": "string",
+          "description": "What this claim provides that prior art does not. Full treatment in 28_DEFENSE/NOVEL_CONTRIBUTIONS.md"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "claim_ids this claim depends on"
+        }
+      }
+    }
+  }
+}

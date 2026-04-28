@@ -132,5 +132,5 @@ pytest tests/ -v
 | Full documentation | [12_IMPLEMENTATIONS/](12_IMPLEMENTATIONS/) |
 | Nine frameworks | [README.md](README.md) |
 | Mystery School curriculum | [14_MYSTERY_SCHOOL/](14_MYSTERY_SCHOOL/) |
-| What we got wrong | [FAILURE_MUSEUM.md](FAILURE_MUSEUM.md) |
+| What we got wrong | [28_DEFENSE/FAILURE_MUSEUM.md](28_DEFENSE/FAILURE_MUSEUM.md) |
 | Discussions | [GitHub Discussions](https://github.com/Lycheetah/Lycheetah-Framework/discussions) |

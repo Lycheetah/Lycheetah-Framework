@@ -85,3 +85,36 @@ input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
 }
 
 textarea { resize: vertical; min-height: 80px; }
+
+/* ── Theme overrides ──────────────────────────────────────────────────────── */
+html[data-theme="light"] {
+  --bg-primary:    #f5f5f0;
+  --bg-secondary:  #ebebE4;
+  --bg-card:       #e0e0d8;
+  --bg-hover:      #d8d8d0;
+  --bg-tertiary:   #dcdcd4;
+  --border:        #ccccc0;
+  --border-active: #b8a050;
+  --gold:          #b07820;
+  --gold-dim:      #806010;
+  --gold-bright:   #d09030;
+  --text-primary:  #1a1a18;
+  --text-secondary:#444440;
+  --text-dim:      #888880;
+}
+
+html[data-theme="high-contrast"] {
+  --bg-primary:    #000000;
+  --bg-secondary:  #0a0a0a;
+  --bg-card:       #111111;
+  --bg-hover:      #1a1a1a;
+  --bg-tertiary:   #0d0d0d;
+  --border:        #555555;
+  --border-active: #ffcc00;
+  --gold:          #ffcc00;
+  --gold-dim:      #ccaa00;
+  --gold-bright:   #ffee44;
+  --text-primary:  #ffffff;
+  --text-secondary:#dddddd;
+  --text-dim:      #999999;
+}

@@ -67,8 +67,8 @@ Which folder to download depends on what you want:
 | The Python code | `12_IMPLEMENTATIONS/` |
 | AI governance / NZ policy | `23_NZ_AI_GOVERNANCE/` |
 | Your specific door (see below) | `14_MYSTERY_SCHOOL/` |
-| The CASCADE knowledge engine | `01_CASCADE/` + `papers/` |
-| The AURA constitutional framework | `02_AURA/` |
+| The CASCADE knowledge engine | `01_CASCADE_L4/` + `papers/` |
+| The AURA constitutional framework | `02_AURA_L3/` |
 
 Then say: *"I've uploaded [folder]. Help me understand [specific thing]."*
 
@@ -173,7 +173,7 @@ Be direct about where the framework is making offers versus where it's making as
 ```
 I'm a philosopher. Start with 14_MYSTERY_SCHOOL/THE_PHILOSOPHERS_DOOR.md
 
-Then look at 01_CASCADE/ and help me understand:
+Then look at 01_CASCADE_L4/ and help me understand:
 - How does CASCADE's truth pressure Π relate to AGM belief revision theory?
 - What's the relationship to Kuhn's paradigm shifts? Is this a formalization?
 - Where does the framework's claim to "coherence preservation" fit against
@@ -263,7 +263,7 @@ When an AI is guiding you through this repo, it should be using these labels.
 If it presents everything as proven, push back. Ask: *"What's the claim status here?
 Is this [ACTIVE] or [SCAFFOLD]?"*
 
-The [Failure Museum](FAILURE_MUSEUM.md) documents every significant mistake
+The [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md) documents every significant mistake
 the framework made and what changed. Reading it is a good calibration exercise.
 A framework that hides its failures is performing confidence. This one earns it.
 

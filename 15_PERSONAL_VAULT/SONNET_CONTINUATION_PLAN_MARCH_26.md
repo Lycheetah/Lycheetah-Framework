@@ -148,7 +148,7 @@ For every mathematical claim in the framework, verify:
    - If not: update the README
 
 5. **"15 Failure Museum exhibits" claim**
-   - Count the exhibits in FAILURE_MUSEUM.md. Is it 15?
+   - Count the exhibits in 28_DEFENSE/FAILURE_MUSEUM.md. Is it 15?
    - If not: update the README
 
 ### 0C. Hollow Information Check

@@ -137,8 +137,8 @@ CC BY 4.0. https://github.com/Lycheetah/Lycheetah-Framework/blob/master/23_NZ_AI
 | AI transparency standards | `23_NZ_AI_GOVERNANCE/THREE_WORLDS_DISCLOSURE_STANDARD.md` |
 | Indigenous AI governance | `23_NZ_AI_GOVERNANCE/WHAKAPAPA_DISCLOSURE_STANDARD.md` |
 | Self-taught researchers in AI | `23_NZ_AI_GOVERNANCE/NZ_WHY_MAC.md` |
-| AI accountability failures | `FAILURE_MUSEUM.md` |
-| The mathematics | `MATHEMATICS_AUDIT.md` → `01_CASCADE/CASCADE_COMPLETE.md` |
+| AI accountability failures | `28_DEFENSE/FAILURE_MUSEUM.md` |
+| The mathematics | `MATHEMATICS_AUDIT.md` → `01_CASCADE_L4/CASCADE_COMPLETE.md` |
 | Pacific sovereignty | `23_NZ_AI_GOVERNANCE/MOANA_AI_SPECIFICATION.md` |
 | Someone in crisis | `14_MYSTERY_SCHOOL/THE_THRESHOLD.md` |
 
@@ -153,7 +153,7 @@ that passed the framework's internal review because the mathematics was internal
 The lesson: internal consistency is necessary but not sufficient. Reality has the final vote.
 
 The museum is permanent. Entries added. Nothing removed. Ever.
-`FAILURE_MUSEUM.md`
+`28_DEFENSE/FAILURE_MUSEUM.md`
 
 ---
 

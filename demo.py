@@ -365,7 +365,7 @@ def main():
     print()
     print("  Start here:")
     print("  - README.md           Find your door")
-    print("  - FAILURE_MUSEUM.md   What we got wrong (12 exhibits)")
+    print("  - 28_DEFENSE/FAILURE_MUSEUM.md   What we got wrong (12 exhibits)")
     print("  - tests/              pytest tests/ -- 80 tests, all passing")
     print("  - papers/             CASCADE academic paper, arXiv notes")
     print()

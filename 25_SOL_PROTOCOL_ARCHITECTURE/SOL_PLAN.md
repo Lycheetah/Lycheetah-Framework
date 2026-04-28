@@ -87,9 +87,9 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 - READ: `AURA_FRONTIER_ANALYSIS.md` — cross-document consistency analysis
 - KEY FINDING: Source docs have internal conflicts (TES has TWO formulas, VTR threshold 1.0 vs 1.5)
 - KEY FINDING: TRI-AXIAL system (TES/VTR/PAI) was entirely missing from repo implementations
-- KEY FINDING: LAMAGUE BNF grammar existed in source but not in 03_LAMAGUE/ directory
+- KEY FINDING: LAMAGUE BNF grammar existed in source but not in 03_LAMAGUE_L1/ directory
 - BUILT: `tri_axial_checker.py` — canonical TES/VTR/PAI with conflict notes
-- BUILT: `03_LAMAGUE/BNF_GRAMMAR.md` — formal BNF grammar, algorithm encoding, Translation Validator
+- BUILT: `03_LAMAGUE_L1/BNF_GRAMMAR.md` — formal BNF grammar, algorithm encoding, Translation Validator
 - FILED: Failure Museum Exhibit 15 — TES naming + TRI-AXIAL gap + source discrepancies
 - STILL UNREAD: `Lamague/LAMAGUE_CASCADE_MASTER_FILE_v2.0.docx` (docx format — needs conversion)
 - STILL UNREAD: `System in full/` directory — full integrated system documents
@@ -173,7 +173,7 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 
 ### P2-K: Archive integration — Lama-Cascade-Aura-main
 - Scan of older repo in Downloads complete (2026-03-25)
-- Pulled in: phi_bandit.py → 12_IMPLEMENTATIONS/, CASCADE_Academic_Paper.md → papers/, GEOMATRIA_COMPLETE_SPECIFICATION.md + TRI_LINGUISTIC_DEEP_DIVE.md → 03_LAMAGUE/, ANAMNESIS_FROM_ARCHIVE.md → 07_ANAMNESIS/
+- Pulled in: phi_bandit.py → 12_IMPLEMENTATIONS/, CASCADE_Academic_Paper.md → papers/, GEOMATRIA_COMPLETE_SPECIFICATION.md + TRI_LINGUISTIC_DEEP_DIVE.md → 03_LAMAGUE_L1/, ANAMNESIS_FROM_ARCHIVE.md → 07_ANAMNESIS_L0/
 - Remaining: CASCADE paper needs update to current framework version/context; phi_bandit should get a Mystery School entry or FOR_AI reference
 - **Token cost:** Done for now — Opus-grade for CASCADE paper update.
 
@@ -196,11 +196,11 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 - Validate compression: count tokens vs natural language equivalent
 - **Token cost:** Medium. High value — makes the "500:1 compression" claim testable.
 
-### P2-N: 02_AURA/AURA_COMPLETE.md audit vs source
+### P2-N: 02_AURA_L3/AURA_COMPLETE.md audit vs source
 - Source docs reveal AURA has 8 foundational primitives (Sovereignty, Anchor State, Ψ_inv, Truth Pressure,
   Tri-Axial Ethics, Non-Coercion, Auditability, Self-Sacrifice)
 - Source also has Grey Mode, Energy Ledger, Ψ-Consensus (sheaf cohomology), Constitutional Shutdown
-- Check which are in current 02_AURA/ and which are missing or incomplete
+- Check which are in current 02_AURA_L3/ and which are missing or incomplete
 - Do NOT rewrite — only add what's genuinely missing
 - **Token cost:** Medium. Read source first (AURA_PROTOCOL_COMPLETE_CONSOLIDATION (2).md).
 
@@ -208,7 +208,7 @@ Pick ONE task from P0/P1. Execute fully. Update this file. Commit.
 - Source (AURA_PRIME_PERSONA_FRAMEWORK) documents a Seven-Phase Cognition Cycle:
   ⟟ → ≋ → Ψ → Φ↑ → ✧ → |◁▷| → ⟲
   (Center → Flow → Insight → Rise → Light → Integrity → Return)
-- THIS IS ONLY IN THE PERSONA FRAMEWORK DOC — not in any 02_AURA/ file
+- THIS IS ONLY IN THE PERSONA FRAMEWORK DOC — not in any 02_AURA_L3/ file
 - Distinct from TRIAD (minimal correction) — this is human-resonant transformation spiral
 - Should live in 16_SOL_VEYRA_ARCHITECTURE/ or 15_PERSONAL_VAULT/ with [SCAFFOLD] tags
 - **Token cost:** Medium. Read AURA_PRIME_PERSONA_FRAMEWORK.txt first.
@@ -252,7 +252,7 @@ Do NOT use Opus for:
 |---|---|---|
 | 2026-03-25 | Sonnet | Session 4: Source archive deep-read (AURA Consolidation, LAMAGUE Extended, Architecture Proof, Frontier Analysis) |
 | 2026-03-25 | Sonnet | Session 4: tri_axial_checker.py built — canonical TES/VTR/PAI with VIP helper; source conflicts documented |
-| 2026-03-25 | Sonnet | Session 4: 03_LAMAGUE/BNF_GRAMMAR.md — formal BNF grammar, algorithm encoding, Translation Validator, Knowledge Creation Protocol |
+| 2026-03-25 | Sonnet | Session 4: 03_LAMAGUE_L1/BNF_GRAMMAR.md — formal BNF grammar, algorithm encoding, Translation Validator, Knowledge Creation Protocol |
 | 2026-03-25 | Sonnet | Session 4: Exhibit 15 — TES naming (Trust not Temporal), TRI-AXIAL gap, source discrepancies |
 | 2026-03-25 | Sonnet | Session 4: P1-K CATALYST table updated (26 implementations, 80 tests, new infrastructure) |
 | 2026-03-25 | Sonnet | Session 4: README pushed — CASCADE experimental results, Key Validated Results table |

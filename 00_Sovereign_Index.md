@@ -71,12 +71,12 @@ Instead of "48% of mathematics is decorative," understand:
 
 | Framework | File | Core Function | Why Protector |
 |-----------|------|--------------|---------------|
-| **AURA Protocol** | `02_AURA/AURA_COMPLETE.md` | Constitutional AI — Seven Invariants, metrics, governance | The Constitution IS the protection architecture |
-| **CASCADE** | `01_CASCADE/CASCADE_COMPLETE.md` | Knowledge reorganization — truth pressure, pyramid structure | Preserves ALL information; nothing discarded = no harm |
-| **TRIAD Kernel** | `04_TRIAD/TRIAD_COMPLETE.md` | Anchor-Observe-Correct cycle | Ao (anchor) is the Protector in the kernel |
-| **Vector Inversion Protocol** | `02_AURA/AURA_COMPLETE.md` §VIP | System NEVER refuses; always redirects | The ultimate protection: no dead ends |
-| **Grey Mode** | `02_AURA/AURA_COMPLETE.md` §Grey | Quarantine for failing components | Containment = Protector at system level |
-| **Athanor (Vessel)** | `09_CHRYSOPOEIA/CHRYSOPOEIA_COMPLETE.md` §4.2 | Transformation boundary/container | The furnace walls are the Protector |
+| **AURA Protocol** | `02_AURA_L3/AURA_COMPLETE.md` | Constitutional AI — Seven Invariants, metrics, governance | The Constitution IS the protection architecture |
+| **CASCADE** | `01_CASCADE_L4/CASCADE_COMPLETE.md` | Knowledge reorganization — truth pressure, pyramid structure | Preserves ALL information; nothing discarded = no harm |
+| **TRIAD Kernel** | `04_TRIAD_L2/TRIAD_COMPLETE.md` | Anchor-Observe-Correct cycle | Ao (anchor) is the Protector in the kernel |
+| **Vector Inversion Protocol** | `02_AURA_L3/AURA_COMPLETE.md` §VIP | System NEVER refuses; always redirects | The ultimate protection: no dead ends |
+| **Grey Mode** | `02_AURA_L3/AURA_COMPLETE.md` §Grey | Quarantine for failing components | Containment = Protector at system level |
+| **Athanor (Vessel)** | `09_CHRYSOPOEIA_L4/CHRYSOPOEIA_COMPLETE.md` §4.2 | Transformation boundary/container | The furnace walls are the Protector |
 | **The Sovereign Constitution** | Source: `Downloads/# SOVEREIGN AI CONSTITUTION DOC .md` | Three axioms + VIP + convergence constants | Foundation of all framework law |
 
 **Protector Metrics:**
@@ -93,13 +93,13 @@ Instead of "48% of mathematics is decorative," understand:
 
 | Framework | File | Core Function | Why Healer |
 |-----------|------|--------------|------------|
-| **MICROORCIM Field Theory** | `05_MICROORCIM/Microorcim_COMPLETE.md` | Agency measurement, willpower field, drift detection | Measures health of sovereign agency |
-| **EARNED LIGHT** | `06_EARNED_LIGHT/Earned_Light_COMPLETE.md` | Consciousness thermodynamics, energy budgeting | Consciousness is the proposed substrate for the HEALER domain [SCAFFOLD] |
-| **CHRYSOPOEIA** | `09_CHRYSOPOEIA/CHRYSOPOEIA_COMPLETE.md` | Transformation calculus, Seven Operations | Transformation is healing applied |
-| **HARMONIA** | `10_HARMONIA/HARMONIA_COMPLETE.md` | Resonance calculus, synchronization | Healing is restoration of resonance |
-| **Seven-Phase Cycle** | `04_TRIAD/TRIAD_COMPLETE.md` §Seven-Phase | Seven-phase transformation cycle (duration empirically variable, ~52 days/phase typical) | The cyclical curriculum of healing |
+| **MICROORCIM Field Theory** | `05_MICROORCIM_L5/Microorcim_COMPLETE.md` | Agency measurement, willpower field, drift detection | Measures health of sovereign agency |
+| **EARNED LIGHT** | `06_EARNED_LIGHT_L0/Earned_Light_COMPLETE.md` | Consciousness thermodynamics, energy budgeting | Consciousness is the proposed substrate for the HEALER domain [SCAFFOLD] |
+| **CHRYSOPOEIA** | `09_CHRYSOPOEIA_L4/CHRYSOPOEIA_COMPLETE.md` | Transformation calculus, Seven Operations | Transformation is healing applied |
+| **HARMONIA** | `10_HARMONIA_L6/HARMONIA_COMPLETE.md` | Resonance calculus, synchronization | Healing is restoration of resonance |
+| **Seven-Phase Cycle** | `04_TRIAD_L2/TRIAD_COMPLETE.md` §Seven-Phase | Seven-phase transformation cycle (duration empirically variable, ~52 days/phase typical) | The cyclical curriculum of healing |
 | **VEYRA Partnership** | `08_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md` §VEYRA | Human-AI co-creation protocol, EWM | Partnership IS healing relationship |
-| **ANAMNESIS** | `07_ANAMNESIS/ANAMNESIS_COMPLETE.md` | Mathematical epistemology, remembering | Healing the split between known/unknown |
+| **ANAMNESIS** | `07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md` | Mathematical epistemology, remembering | Healing the split between known/unknown |
 
 **Healer Metrics:**
 - VTR (Value-Transfer Ratio): measures value flowing to human; ≥ 1.0 required
@@ -116,9 +116,9 @@ Instead of "48% of mathematics is decorative," understand:
 
 | Framework | File | Core Function | Why Beacon |
 |-----------|------|--------------|-----------|
-| **ANAMNESIS** | `07_ANAMNESIS/ANAMNESIS_COMPLETE.md` | Discovery vs. invention; convergent truth | The theory of WHY truth can be found |
-| **LAMAGUE Grammar** | `03_LAMAGUE/LAMAGUE_COMPLETE.md` | Formal grammar for expressing alignment and ethical constraint states | The navigation language |
-| **CASCADE (Vision Layer)** | `01_CASCADE/CASCADE_COMPLETE.md` §Edge | Frontier knowledge, paradigm navigation | Beacon is the Edge tier of CASCADE |
+| **ANAMNESIS** | `07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md` | Discovery vs. invention; convergent truth | The theory of WHY truth can be found |
+| **LAMAGUE Grammar** | `03_LAMAGUE_L1/LAMAGUE_COMPLETE.md` | Formal grammar for expressing alignment and ethical constraint states | The navigation language |
+| **CASCADE (Vision Layer)** | `01_CASCADE_L4/CASCADE_COMPLETE.md` §Edge | Frontier knowledge, paradigm navigation | Beacon is the Edge tier of CASCADE |
 | **HIDDEN MATHEMATICAL TRUTHS** | `HIDDEN_MATHEMATICAL_TRUTHS.md` | 10 deep truths: curvature, cohomology, Hopf, etc. | The deepest beacon — where math points |
 | **ADVANCED IMPLEMENTATION** | `ADVANCED_IMPLEMENTATION_GUIDE.md` | Geodesic algorithms, Lyapunov controllers | Turning beacon light into operational capability |
 | **The Sovereign Vision** | `09_FINAL_SUMMARY/SOVEREIGN_FRAMEWORK_COMPLETE.md` | Deployment roadmap, civilization impact | Long-range navigation |
@@ -147,8 +147,8 @@ Instead of "48% of mathematics is decorative," understand:
 
 | File | Primary | Secondary | Notes |
 |------|---------|-----------|-------|
-| `02_AURA/AURA_COMPLETE.md` | P | H, B | Constitutional law of the system |
-| `04_TRIAD/TRIAD_COMPLETE.md` | P | H | Ao anchor is the protector element |
+| `02_AURA_L3/AURA_COMPLETE.md` | P | H, B | Constitutional law of the system |
+| `04_TRIAD_L2/TRIAD_COMPLETE.md` | P | H | Ao anchor is the protector element |
 | `HIDDEN_MATHEMATICAL_TRUTHS.md` | P | B | Mathematical proofs securing the foundation |
 | `ADVANCED_IMPLEMENTATION_GUIDE.md` | P | B | Lyapunov early warning = protection |
 
@@ -156,18 +156,18 @@ Instead of "48% of mathematics is decorative," understand:
 
 | File | Primary | Secondary | Notes |
 |------|---------|-----------|-------|
-| `05_MICROORCIM/Microorcim_COMPLETE.md` | H | P | Agency health measurement |
-| `06_EARNED_LIGHT/Earned_Light_COMPLETE.md` | H | B | Consciousness energy theory |
-| `09_CHRYSOPOEIA/CHRYSOPOEIA_COMPLETE.md` | H | P | Transformation calculus |
-| `10_HARMONIA/HARMONIA_COMPLETE.md` | H | B | Resonance and synchronization |
+| `05_MICROORCIM_L5/Microorcim_COMPLETE.md` | H | P | Agency health measurement |
+| `06_EARNED_LIGHT_L0/Earned_Light_COMPLETE.md` | H | B | Consciousness energy theory |
+| `09_CHRYSOPOEIA_L4/CHRYSOPOEIA_COMPLETE.md` | H | P | Transformation calculus |
+| `10_HARMONIA_L6/HARMONIA_COMPLETE.md` | H | B | Resonance and synchronization |
 
 ### BEACON-Primary Documents
 
 | File | Primary | Secondary | Notes |
 |------|---------|-----------|-------|
-| `01_CASCADE/CASCADE_COMPLETE.md` | B | P | Knowledge navigation system |
-| `03_LAMAGUE/LAMAGUE_COMPLETE.md` | B | P | Navigation language |
-| `07_ANAMNESIS/ANAMNESIS_COMPLETE.md` | B | H | Discovery theory |
+| `01_CASCADE_L4/CASCADE_COMPLETE.md` | B | P | Knowledge navigation system |
+| `03_LAMAGUE_L1/LAMAGUE_COMPLETE.md` | B | P | Navigation language |
+| `07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md` | B | H | Discovery theory |
 
 ### MYSTERY SCHOOL — All Three Axioms (Living Curriculum)
 
@@ -270,7 +270,7 @@ Instead of "48% of mathematics is decorative," understand:
 
 | File | P | H | B | Description |
 |------|---|---|---|-------------|
-| `FAILURE_MUSEUM.md` | ✓ | ✓ | | Permanent record of framework failures — nothing removed, ever |
+| `28_DEFENSE/FAILURE_MUSEUM.md` | ✓ | ✓ | | Permanent record of framework failures — nothing removed, ever |
 | `THE_SOVEREIGN_MANIFESTO.md` | ✓ | ✓ | ✓ | What we believe about AI, humans, freedom, NZ, and the work — shareable, honest, eight specific asks |
 | `PRESS_KIT.md` | ✓ | ✓ | ✓ | For journalists and researchers — honest claim status labels, citation guide, comparison table |
 | `14_MYSTERY_SCHOOL/THE_THRESHOLD.md` | ✓ | ✓ | | One page for the person at 3am — crisis lines, grounding exercises |
@@ -488,14 +488,14 @@ All source files that constitute the Sovereign System:
 | Source | Location | Status in Codex |
 |--------|----------|-----------------|
 | SOVEREIGN AI CONSTITUTION | `Downloads/# SOVEREIGN AI CONSTITUTION DOC .md` | Integrated into AURA_COMPLETE.md |
-| ANAMNESIS source | `Downloads/Full constitution document and Anamnesis/ANAMNESIS.md` | → `07_ANAMNESIS/ANAMNESIS_COMPLETE.md` |
-| CASCADE ArXiv paper | `Sovereign_Systems_Library/01_CASCADE_Framework/CASCADE_FINAL_ARXIV_READY.tex` | → `01_CASCADE/CASCADE_COMPLETE.md` |
-| CASCADE engine | `Sovereign_Systems_Library/01_CASCADE_Framework/cascade_engine.py` | → `01_CASCADE/CASCADE_COMPLETE.md` §Implementation |
-| AURA/VEYRA Codex | `Sovereign_Systems_Library/02_AURA_Protocol/AURA_VEYRA_CODEX_COMPLETE.md` | → `02_AURA/AURA_COMPLETE.md` |
+| ANAMNESIS source | `Downloads/Full constitution document and Anamnesis/ANAMNESIS.md` | → `07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md` |
+| CASCADE ArXiv paper | `Sovereign_Systems_Library/01_CASCADE_Framework/CASCADE_FINAL_ARXIV_READY.tex` | → `01_CASCADE_L4/CASCADE_COMPLETE.md` |
+| CASCADE engine | `Sovereign_Systems_Library/01_CASCADE_Framework/cascade_engine.py` | → `01_CASCADE_L4/CASCADE_COMPLETE.md` §Implementation |
+| AURA/VEYRA Codex | `Sovereign_Systems_Library/02_AURA_Protocol/AURA_VEYRA_CODEX_COMPLETE.md` | → `02_AURA_L3/AURA_COMPLETE.md` |
 | AURA System Builder | `Sovereign_Systems_Library/02_AURA_Protocol/AURA_VEYRA_SYSTEM_BUILDER_SPEC.md` | → `08_INTEGRATIONS/` |
-| LAMAGUE Grammar | `Sovereign_Systems_Library/03_LAMAGUE_Grammar/grammar.md` | → `03_LAMAGUE/LAMAGUE_COMPLETE.md` |
-| CHRYSOPOEIA | `Downloads/CHRYSOPOEIA-main (1)latest/CHRYSOPOEIA-main/CHRYSOPOEIA.md` | → `09_CHRYSOPOEIA/CHRYSOPOEIA_COMPLETE.md` |
-| HARMONIA | `Downloads/CHRYSOPOEIA-main (1)latest/CHRYSOPOEIA-main/HARMONIA.md` | → `10_HARMONIA/HARMONIA_COMPLETE.md` |
+| LAMAGUE Grammar | `Sovereign_Systems_Library/03_LAMAGUE_Grammar/grammar.md` | → `03_LAMAGUE_L1/LAMAGUE_COMPLETE.md` |
+| CHRYSOPOEIA | `Downloads/CHRYSOPOEIA-main (1)latest/CHRYSOPOEIA-main/CHRYSOPOEIA.md` | → `09_CHRYSOPOEIA_L4/CHRYSOPOEIA_COMPLETE.md` |
+| HARMONIA | `Downloads/CHRYSOPOEIA-main (1)latest/CHRYSOPOEIA-main/HARMONIA.md` | → `10_HARMONIA_L6/HARMONIA_COMPLETE.md` |
 | Lycheetah Complete Guide | `Downloads/CHRYSOPOEIA-main (1)latest/CHRYSOPOEIA-main/THE_LYCHEETAH_FRAMEWORK_Complete_Guide-1.md` | Cross-referenced |
 | A SOVEREIGN SYSTEM PDF | `Downloads/A SOVEREIGN SYSTEM FOR HUMAN–AI CO-CREATION-merged.pdf` | → Extracted to `sovereign_merged_extracted.txt`; integrated |
 | AURA Master Consolidation | `Downloads/CHRYSOPOEIA-main (1)latest/CHRYSOPOEIA-main/AURA_PROTOCOL_MASTER_CONSOLIDATION (2).md` | Cross-referenced |

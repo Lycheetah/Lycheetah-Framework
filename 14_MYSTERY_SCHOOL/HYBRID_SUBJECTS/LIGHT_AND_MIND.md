@@ -49,7 +49,7 @@ This is strange. Nobody fully understands it.
 
 This is one of the clearest cases of convergent discovery. Mystics doing introspective practice for centuries arrived at a description of the perceptual system that neuroscience is only now formalising. They didn't have the same vocabulary. They weren't wrong.
 
-**The Earned Light framework** (Lycheetah Framework, `06_EARNED_LIGHT/`) models consciousness as maintained thermodynamic asymmetry — the active work of maintaining a state of reduced entropy against the universe's tendency toward equilibrium. Awareness is not free. It costs energy to sustain. The framework models this with differential equations and validates the prediction that consciousness is metabolically expensive — which it is. The brain consumes 20% of the body's energy despite being 2% of its mass.
+**The Earned Light framework** (Lycheetah Framework, `06_EARNED_LIGHT_L0/`) models consciousness as maintained thermodynamic asymmetry — the active work of maintaining a state of reduced entropy against the universe's tendency toward equilibrium. Awareness is not free. It costs energy to sustain. The framework models this with differential equations and validates the prediction that consciousness is metabolically expensive — which it is. The brain consumes 20% of the body's energy despite being 2% of its mass.
 
 ---
 
@@ -113,7 +113,7 @@ Anil Seth's *Being You* (2021) — rigorous, current, accessible. His TED talk i
 Meister Eckhart for Christian mysticism — difficult but worth it. Ibn Arabi for Sufi illumination theory. The *Yoga Sutras of Patanjali* for the Indian tradition. All three describe the same phenomenology of changed perception with different metaphysical frameworks.
 
 **If you want the Earned Light framework:**
-`06_EARNED_LIGHT/essentials.md` — the formal model, the ODE solver, the validated predictions, and the honest statement of what remains [SCAFFOLD].
+`06_EARNED_LIGHT_L0/essentials.md` — the formal model, the ODE solver, the validated predictions, and the honest statement of what remains [SCAFFOLD].
 
 **If you want to do it:**
 In a dark room, light a single candle. Sit at a comfortable distance. Do not think about what you're doing. Let your visual system do its work without narrating it. After ten minutes, notice what you see versus what you expected to see. Notice the difference between the two.

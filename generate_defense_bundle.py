@@ -10,9 +10,9 @@ from fpdf import FPDF
 
 BUNDLE_FILES = [
     "FIVE_MINUTE_BRIEF.md",
-    "DEFENSE_BRIEF.md",
-    "NOVEL_CONTRIBUTIONS.md",
-    "SCOPE_BOUNDARY.md",
+    "28_DEFENSE/DEFENSE_BRIEF.md",
+    "28_DEFENSE/NOVEL_CONTRIBUTIONS.md",
+    "28_DEFENSE/SCOPE_BOUNDARY.md",
 ]
 
 FRONT_MATTER = [
@@ -48,9 +48,9 @@ FRONT_MATTER = [
 
 SECTION_TITLES = {
     "FIVE_MINUTE_BRIEF.md":    "I.  Five-Minute Brief",
-    "DEFENSE_BRIEF.md":        "II.  Defense Brief — Ten Common Dismissals",
-    "NOVEL_CONTRIBUTIONS.md":  "III. Novel Contributions",
-    "SCOPE_BOUNDARY.md":       "IV.  Scope Boundary",
+    "28_DEFENSE/DEFENSE_BRIEF.md":        "II.  Defense Brief — Ten Common Dismissals",
+    "28_DEFENSE/NOVEL_CONTRIBUTIONS.md":  "III. Novel Contributions",
+    "28_DEFENSE/SCOPE_BOUNDARY.md":       "IV.  Scope Boundary",
 }
 
 C_BLACK    = (20,  20,  20)

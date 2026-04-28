@@ -205,7 +205,7 @@ Use this as a fast first pass, not a certification. The audit trail is designed 
 
 Issues and PRs welcome at [Lycheetah-Framework](https://github.com/Lycheetah/Lycheetah-Framework).
 
-The AURA specification lives in `02_AURA/`. The full constitutional law is in `02_AURA/AURA_COMPLETE.md`.
+The AURA specification lives in `02_AURA_L3/`. The full constitutional law is in `02_AURA_L3/AURA_COMPLETE.md`.
 
 ---
 

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { ONION_LAYERS, computeBlockScore, getScoreBand } from '../scoring/cascade'
 import { scoreBlock } from '../scoring/ai'
-import { FRAMEWORK_LIST } from '../scoring/frameworks'
+import { getAllFrameworks } from '../scoring/frameworks'
+const FRAMEWORK_LIST = getAllFrameworks()
 import './OnionEditor.css'
 
 function fmtScoreTime(ts) {

@@ -191,9 +191,9 @@ If you have background in formal philosophy, governance theory, computational li
 | NZ-China cooperation framework | `24_LAMAGUE_CROSS_CULTURAL/CATALYST_NZ_CHINA_APPLICATION.md` |
 | Run CASCADE yourself | `python demo.py` or `python 12_IMPLEMENTATIONS/core/cascade_engine.py` |
 | φ-Zone experiment | `python 12_IMPLEMENTATIONS/phi_bandit.py` |
-| HARMONIA (和谐 mathematics) | `10_HARMONIA/essentials.md` |
-| ANAMNESIS (convergent discovery theory) | `07_ANAMNESIS/essentials.md` |
-| What we got wrong | `FAILURE_MUSEUM.md` — twelve exhibits, nothing removed |
+| HARMONIA (和谐 mathematics) | `10_HARMONIA_L6/essentials.md` |
+| ANAMNESIS (convergent discovery theory) | `07_ANAMNESIS_L0/essentials.md` |
+| What we got wrong | `28_DEFENSE/FAILURE_MUSEUM.md` — twelve exhibits, nothing removed |
 | Full mathematical foundations | `11_MATHEMATICAL_FOUNDATIONS/` |
 
 ---

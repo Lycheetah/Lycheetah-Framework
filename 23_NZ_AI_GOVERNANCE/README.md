@@ -35,7 +35,7 @@ Anyone reading this work is invited to:
 - **Remove from it** — if something is wrong, name that clearly
 - **Publish their own version** — with reference to this work as the origin
 
-The framework's governance document (`GOVERNANCE.md` in the root) explains
+The framework's governance document (`29_GOVERNANCE/GOVERNANCE.md` in the root) explains
 how changes enter the codebase. This folder follows those same principles.
 
 ---

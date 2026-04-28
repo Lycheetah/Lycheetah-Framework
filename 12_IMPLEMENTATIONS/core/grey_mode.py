@@ -6,7 +6,7 @@ Quarantine mechanism for nodes that have drifted outside constitutional bounds.
 Isolates without permanently excluding — the recovery path is always preserved.
 
 SOURCE: AURA_PROTOCOL_COMPLETE_CONSOLIDATION (1).md, lines 297–343
-        Spec: 02_AURA/GREY_MODE.md
+        Spec: 02_AURA_L3/GREY_MODE.md
 Status: [ACTIVE] — fully implemented from spec
 
 FOUR-PHASE PROTOCOL:

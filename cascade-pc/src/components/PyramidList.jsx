@@ -2,12 +2,80 @@ import React, { useState, useEffect } from 'react'
 import { getScoreBand } from '../scoring/cascade'
 import './PyramidList.css'
 
+const TEMPLATES = [
+  {
+    id: 'research-paper',
+    name: 'Research Paper Analysis',
+    description: 'Pressure-test an academic paper',
+    glyph: '∑',
+    files: [
+      { name: 'Core Claims', blocks: ['Main thesis', 'Primary evidence', 'Methodology', 'Conclusions'] },
+      { name: 'Tensions & Gaps', blocks: ['Unexamined assumptions', 'Counter-evidence', 'Scope limitations'] },
+      { name: 'Synthesis', blocks: [] },
+    ],
+  },
+  {
+    id: 'argument-map',
+    name: 'Argument Map',
+    description: 'Map and score a complex argument',
+    glyph: '⊗',
+    files: [
+      { name: 'Premises', blocks: ['Premise 1', 'Premise 2', 'Premise 3'] },
+      { name: 'Logical Chain', blocks: ['Inference step 1', 'Inference step 2', 'Conclusion'] },
+      { name: 'Objections', blocks: ['Primary objection', 'Counter-argument'] },
+    ],
+  },
+  {
+    id: 'belief-audit',
+    name: 'Belief Audit',
+    description: 'Audit a strongly-held belief for blind spots',
+    glyph: '◎',
+    files: [
+      { name: 'The Belief', blocks: ['Core belief statement', 'Origin story', 'Personal evidence'] },
+      { name: 'Challenge Layer', blocks: ['What would falsify this', 'Who disagrees and why', 'Cultural context'] },
+      { name: 'Integration', blocks: ['What survives the pressure', 'What needs revision'] },
+    ],
+  },
+  {
+    id: 'project-decision',
+    name: 'Project Decision',
+    description: 'Score the assumptions behind a key decision',
+    glyph: '△',
+    files: [
+      { name: 'The Decision', blocks: ['Decision statement', 'Why now', 'Success criteria'] },
+      { name: 'Assumptions', blocks: ['Market assumption', 'Technical assumption', 'Resource assumption'] },
+      { name: 'Risks', blocks: ['Highest risk', 'Unknown unknowns', 'Mitigation path'] },
+    ],
+  },
+  {
+    id: 'philosophy',
+    name: 'Philosophical Claim',
+    description: 'Score a philosophical position against the Codex',
+    glyph: '⬡',
+    files: [
+      { name: 'The Position', blocks: ['Axiom', 'Key definitions', 'Core argument'] },
+      { name: 'Tradition', blocks: ['Historical precedent', 'Strongest objection in tradition', 'Where it breaks'] },
+      { name: 'Frontier', blocks: ['What this position cannot account for', 'New territory it opens'] },
+    ],
+  },
+  {
+    id: 'blank',
+    name: 'Blank Pyramid',
+    description: 'Empty — start from scratch',
+    glyph: '○',
+    files: [],
+  },
+]
+
 export default function PyramidList({ onOpen }) {
   const [pyramids, setPyramids] = useState([])
   const [creating, setCreating] = useState(false)
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [loaded, setLoaded] = useState(false)
+  const [showTemplates, setShowTemplates] = useState(false)
+  const [templateName, setTemplateName] = useState('')
+  const [selectedTemplate, setSelectedTemplate] = useState(null)
 
   useEffect(() => { load() }, [])
 
@@ -21,6 +89,27 @@ export default function PyramidList({ onOpen }) {
     if (!name.trim()) return
     const p = await window.cascade.pyramids.create({ name: name.trim(), description: description.trim() })
     setName(''); setDescription(''); setCreating(false)
+    await load()
+    onOpen(p)
+  }
+
+  async function createFromTemplate() {
+    if (!templateName.trim() || !selectedTemplate) return
+    const tpl = TEMPLATES.find(t => t.id === selectedTemplate)
+    if (!tpl) return
+    const p = await window.cascade.pyramids.create({ name: templateName.trim(), description: tpl.description })
+    // Create files and blocks for the template
+    for (const fileDef of tpl.files) {
+      const file = await window.cascade.files.create({ pyramidId: p.id, name: fileDef.name, content: '' })
+      for (let i = 0; i < fileDef.blocks.length; i++) {
+        await window.cascade.blocks.create({
+          fileId: file.id, pyramidId: p.id,
+          title: fileDef.blocks[i], content: '',
+          position: i, frameworkRefs: ['cascade'],
+        })
+      }
+    }
+    setTemplateName(''); setSelectedTemplate(null); setShowTemplates(false)
     await load()
     onOpen(p)
   }
@@ -127,8 +216,33 @@ export default function PyramidList({ onOpen }) {
           <span className="list-icon">△</span>
           YOUR PYRAMIDS
         </div>
+        <button className="btn" onClick={() => setShowTemplates(v => !v)} title="Create pyramid from template">⬡ Templates</button>
         <button className="btn primary" onClick={() => setCreating(true)}>+ New Pyramid</button>
       </div>
+
+      {showTemplates && (
+        <div className="template-gallery">
+          <div className="tg-title">FROM TEMPLATE</div>
+          <div className="tg-grid">
+            {TEMPLATES.map(t => (
+              <div key={t.id} className={`tg-card ${selectedTemplate === t.id ? 'selected' : ''}`} onClick={() => setSelectedTemplate(t.id)}>
+                <span className="tg-glyph">{t.glyph}</span>
+                <div className="tg-name">{t.name}</div>
+                <div className="tg-desc">{t.description}</div>
+                {t.files.length > 0 && <div className="tg-files">{t.files.length} files · {t.files.reduce((a, f) => a + f.blocks.length, 0)} blocks</div>}
+              </div>
+            ))}
+          </div>
+          {selectedTemplate && (
+            <div className="tg-confirm">
+              <input type="text" placeholder="Pyramid name…" value={templateName} onChange={e => setTemplateName(e.target.value)}
+                onKeyDown={e => e.key === 'Enter' && createFromTemplate()} autoFocus className="tg-name-input" />
+              <button className="btn primary" onClick={createFromTemplate} disabled={!templateName.trim()}>Create from template</button>
+              <button className="btn" onClick={() => { setSelectedTemplate(null); setTemplateName('') }}>Cancel</button>
+            </div>
+          )}
+        </div>
+      )}
 
       {creating && (
         <div className="create-card">

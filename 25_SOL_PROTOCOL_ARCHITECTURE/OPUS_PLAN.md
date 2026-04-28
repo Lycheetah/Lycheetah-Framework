@@ -25,14 +25,14 @@ framework and the world.*
 These are leftover from March 24. Small but they block credibility.
 
 ### Task 1A: FAILURE_MUSEUM Audit (P2-B)
-- Read `FAILURE_MUSEUM.md`
+- Read `28_DEFENSE/FAILURE_MUSEUM.md`
 - Cross-reference against March 23-24 session work:
   - MEMORIA QED symbol corrections (4 false QED symbols removed)
   - Overclaim corrections in framework essentials
   - 500:1 compression ratio downgrade
   - Any Veyra→Sol identity fixes
 - Add any missing exhibits. Nothing gets hidden.
-- **Output:** Updated FAILURE_MUSEUM.md with new exhibits if needed.
+- **Output:** Updated 28_DEFENSE/FAILURE_MUSEUM.md with new exhibits if needed.
 
 ### Task 1B: NZ Governance README (P2-C)
 - Create `23_NZ_AI_GOVERNANCE/README.md`
@@ -46,7 +46,7 @@ These are leftover from March 24. Small but they block credibility.
 
 ### Task 1C: arXiv Preprint Assessment (P2-E)
 - Read `papers/CASCADE_ARXIV.tex`
-- Compare against current state of 01_CASCADE/ and 11_MATHEMATICAL_FOUNDATIONS/
+- Compare against current state of 01_CASCADE_L4/ and 11_MATHEMATICAL_FOUNDATIONS/
 - Identify: what's changed, what's new, what needs revision
 - Write a brief assessment to `papers/ARXIV_UPDATE_NOTES.md`
 - Do NOT rewrite the paper — just map what needs updating
@@ -76,7 +76,7 @@ The GitHub Pages site (`docs/`) has 11 HTML pages. They were built before:
    - `nz-governance.html` — add four accountability standards, NZIAT info
    - `for-agents.html` — update to reflect 26_FOR_AI/ content
    - `index.html` — update framework count, feature list, entry points
-   - `failure-museum.html` — sync with current FAILURE_MUSEUM.md
+   - `failure-museum.html` — sync with current 28_DEFENSE/FAILURE_MUSEUM.md
 4. Add any missing pages:
    - Consider: `shopify.html` or `brand.html` (link to Shopify when live)
    - Consider: `for-ai.html` (dedicated page for AI readers — this is unique)

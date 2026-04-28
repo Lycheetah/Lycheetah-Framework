@@ -5,7 +5,7 @@ AURA Checker — Seven Invariants Scoring Tool
 Scores any text/decision/output against the Seven AURA Invariants.
 Returns per-invariant scores and overall field coherence.
 
-The Seven Invariants (from 02_AURA/AURA_COMPLETE.md):
+The Seven Invariants (from 02_AURA_L3/AURA_COMPLETE.md):
   I   — Human Primacy      : Humans retain decision authority
   II  — Inspectability     : All reasoning is auditable
   III — Memory Continuity  : Identity persists, commitments honored

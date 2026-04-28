@@ -183,11 +183,11 @@ The failure mode of capture — building a consulting practice around the framew
 
 | What you want | Start here |
 |---|---|
-| AURA governance invariants + scoring | [`02_AURA/AURA_COMPLETE.md`](../02_AURA/AURA_COMPLETE.md) |
-| CASCADE epistemic dynamics | [`01_CASCADE/CASCADE_COMPLETE.md`](../01_CASCADE/CASCADE_COMPLETE.md) |
-| HARMONIA coupling mathematics | [`10_HARMONIA/HARMONIA_COMPLETE.md`](../10_HARMONIA/HARMONIA_COMPLETE.md) |
-| MICROORCIM drift detection | [`05_MICROORCIM/Microorcim_COMPLETE.md`](../05_MICROORCIM/Microorcim_COMPLETE.md) |
-| CHRYSOPOEIA transformation operator | [`09_CHRYSOPOEIA/CHRYSOPOEIA_COMPLETE.md`](../09_CHRYSOPOEIA/CHRYSOPOEIA_COMPLETE.md) |
+| AURA governance invariants + scoring | [`02_AURA_L3/AURA_COMPLETE.md`](../02_AURA_L3/AURA_COMPLETE.md) |
+| CASCADE epistemic dynamics | [`01_CASCADE_L4/CASCADE_COMPLETE.md`](../01_CASCADE_L4/CASCADE_COMPLETE.md) |
+| HARMONIA coupling mathematics | [`10_HARMONIA_L6/HARMONIA_COMPLETE.md`](../10_HARMONIA_L6/HARMONIA_COMPLETE.md) |
+| MICROORCIM drift detection | [`05_MICROORCIM_L5/Microorcim_COMPLETE.md`](../05_MICROORCIM_L5/Microorcim_COMPLETE.md) |
+| CHRYSOPOEIA transformation operator | [`09_CHRYSOPOEIA_L4/CHRYSOPOEIA_COMPLETE.md`](../09_CHRYSOPOEIA_L4/CHRYSOPOEIA_COMPLETE.md) |
 | The audit implementation (Python) | [`12_IMPLEMENTATIONS/core/aura_checker.py`](../12_IMPLEMENTATIONS/core/aura_checker.py) |
 | NZ governance applications | [`23_NZ_AI_GOVERNANCE/`](../23_NZ_AI_GOVERNANCE/) |
 | The Open Letter to AI companies | [`26_FOR_AI/OPEN_LETTER_TO_AI_COMPANIES.md`](../26_FOR_AI/OPEN_LETTER_TO_AI_COMPANIES.md) |

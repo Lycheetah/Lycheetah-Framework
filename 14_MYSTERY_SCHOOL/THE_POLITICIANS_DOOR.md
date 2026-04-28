@@ -157,7 +157,7 @@ The underlying mathematical framework is split:
 - 15% are foundational conjectures [CONJECTURE]
 
 This is published. In the Failure Museum — a public record of every significant
-error the framework has made, nothing removed. You can read it at `FAILURE_MUSEUM.md`.
+error the framework has made, nothing removed. You can read it at `28_DEFENSE/FAILURE_MUSEUM.md`.
 
 **The political value of the Failure Museum:** A framework that publishes its own
 failures cannot be credibly accused of hiding them. That's rare in AI governance.
@@ -271,7 +271,7 @@ when someone makes a promise and keeps it.
 | The Whakapapa standard | `23_NZ_AI_GOVERNANCE/WHAKAPAPA_DISCLOSURE_STANDARD.md` |
 | The Matariki Audit | `23_NZ_AI_GOVERNANCE/MATARIKI_AUDIT_STANDARD.md` |
 | Full governance layer | `23_NZ_AI_GOVERNANCE/README.md` |
-| What the framework got wrong | `FAILURE_MUSEUM.md` — read this before you quote us |
+| What the framework got wrong | `28_DEFENSE/FAILURE_MUSEUM.md` — read this before you quote us |
 | The mathematics (for advisors) | `11_MATHEMATICAL_FOUNDATIONS/` |
 | The full framework | `00_Sovereign_Index.md` |
 

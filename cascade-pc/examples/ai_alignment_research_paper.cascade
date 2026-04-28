@@ -1,0 +1,199 @@
+{
+  "cascade_version": "0.3.0",
+  "exported_at": "2026-04-17T00:00:00.000Z",
+  "pyramid": {
+    "id": "example-002",
+    "name": "AI Alignment — Research Paper Analysis",
+    "description": "Pressure-testing the core claims of RLHF-based alignment approaches",
+    "score_aggregate": 61,
+    "created_at": 1713340800
+  },
+  "files": [
+    {
+      "id": "file-002-a",
+      "pyramid_id": "example-002",
+      "name": "Core Claims",
+      "score_aggregate": 65,
+      "blocks": [
+        {
+          "id": "block-002-1",
+          "file_id": "file-002-a",
+          "pyramid_id": "example-002",
+          "title": "Main Thesis — RLHF Aligns to Human Preferences",
+          "content": "Reinforcement Learning from Human Feedback (RLHF) produces AI systems that behave in accordance with human preferences by training a reward model on human comparisons, then optimising the AI policy to maximise that reward. The resulting system generalises human values into novel situations.",
+          "score_aggregate": 68,
+          "framework_refs": ["cascade"],
+          "position": 0,
+          "pinned": true,
+          "tags": ["thesis", "rlhf"],
+          "layers": [
+            { "layer": "AXIOM",       "framework_score": 75, "sovereign_score": null, "notes": "" },
+            { "layer": "FOUNDATION",  "framework_score": 72, "sovereign_score": null, "notes": "" },
+            { "layer": "STRUCTURE",   "framework_score": 70, "sovereign_score": null, "notes": "" },
+            { "layer": "COHERENCE",   "framework_score": 68, "sovereign_score": null, "notes": "" },
+            { "layer": "RESONANCE",   "framework_score": 65, "sovereign_score": null, "notes": "" },
+            { "layer": "TENSION",     "framework_score": 60, "sovereign_score": null, "notes": "The generalisation claim is the weakest link — training distribution ≠ deployment distribution." },
+            { "layer": "CONTESTED",   "framework_score": 55, "sovereign_score": null, "notes": "" },
+            { "layer": "SPECULATIVE", "framework_score": 48, "sovereign_score": null, "notes": "" },
+            { "layer": "FRONTIER",    "framework_score": 40, "sovereign_score": null, "notes": "" }
+          ]
+        },
+        {
+          "id": "block-002-2",
+          "file_id": "file-002-a",
+          "pyramid_id": "example-002",
+          "title": "Methodology — Comparison-Based Reward Modelling",
+          "content": "Human labellers compare output pairs (A vs B) and indicate preference. A Bradley-Terry reward model is fit to these comparisons. The policy is then fine-tuned via PPO to maximise expected reward under this model. The reward model is treated as a proxy for human values.",
+          "score_aggregate": 72,
+          "framework_refs": ["cascade"],
+          "position": 1,
+          "pinned": false,
+          "tags": ["methodology"],
+          "layers": [
+            { "layer": "AXIOM",       "framework_score": 80, "sovereign_score": null, "notes": "" },
+            { "layer": "FOUNDATION",  "framework_score": 78, "sovereign_score": null, "notes": "" },
+            { "layer": "STRUCTURE",   "framework_score": 75, "sovereign_score": null, "notes": "" },
+            { "layer": "COHERENCE",   "framework_score": 72, "sovereign_score": null, "notes": "" },
+            { "layer": "RESONANCE",   "framework_score": 70, "sovereign_score": null, "notes": "" },
+            { "layer": "TENSION",     "framework_score": 65, "sovereign_score": null, "notes": "" },
+            { "layer": "CONTESTED",   "framework_score": 60, "sovereign_score": null, "notes": "" },
+            { "layer": "SPECULATIVE", "framework_score": 55, "sovereign_score": null, "notes": "" },
+            { "layer": "FRONTIER",    "framework_score": 48, "sovereign_score": null, "notes": "" }
+          ]
+        },
+        {
+          "id": "block-002-3",
+          "file_id": "file-002-a",
+          "pyramid_id": "example-002",
+          "title": "Primary Evidence — HH-RLHF Benchmark Results",
+          "content": "On Helpful and Harmless benchmarks, RLHF-trained models outperform supervised fine-tuning baselines by 15-30% on human preference evaluations. Win rates against GPT-3 baselines exceed 70% in head-to-head comparisons on helpfulness, harmlessness, and honesty dimensions.",
+          "score_aggregate": 64,
+          "framework_refs": ["cascade"],
+          "position": 2,
+          "pinned": false,
+          "tags": ["evidence", "benchmark"],
+          "layers": [
+            { "layer": "AXIOM",       "framework_score": 72, "sovereign_score": null, "notes": "" },
+            { "layer": "FOUNDATION",  "framework_score": 68, "sovereign_score": null, "notes": "" },
+            { "layer": "STRUCTURE",   "framework_score": 65, "sovereign_score": null, "notes": "" },
+            { "layer": "COHERENCE",   "framework_score": 63, "sovereign_score": null, "notes": "" },
+            { "layer": "RESONANCE",   "framework_score": 60, "sovereign_score": null, "notes": "" },
+            { "layer": "TENSION",     "framework_score": 55, "sovereign_score": null, "notes": "HH benchmarks are themselves RLHF-adjacent — potential circularity in using preference evaluations to validate a preference-learning method." },
+            { "layer": "CONTESTED",   "framework_score": 50, "sovereign_score": null, "notes": "" },
+            { "layer": "SPECULATIVE", "framework_score": 44, "sovereign_score": null, "notes": "" },
+            { "layer": "FRONTIER",    "framework_score": 38, "sovereign_score": null, "notes": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "file-002-b",
+      "pyramid_id": "example-002",
+      "name": "Tensions and Gaps",
+      "score_aggregate": 52,
+      "blocks": [
+        {
+          "id": "block-002-4",
+          "file_id": "file-002-b",
+          "pyramid_id": "example-002",
+          "title": "Gap — Reward Model Generalisation",
+          "content": "The reward model is trained on comparison data from a specific demographic of labellers (English-speaking, US-based contractors). No analysis of how reward model accuracy degrades outside the training distribution. The assumption that the reward model captures universal human preferences rather than labeller-group preferences is not tested.",
+          "score_aggregate": 55,
+          "framework_refs": ["cascade", "aura"],
+          "position": 0,
+          "pinned": false,
+          "tags": ["gap", "generalisation"],
+          "layers": [
+            { "layer": "AXIOM",       "framework_score": 65, "sovereign_score": null, "notes": "" },
+            { "layer": "FOUNDATION",  "framework_score": 60, "sovereign_score": null, "notes": "" },
+            { "layer": "STRUCTURE",   "framework_score": 57, "sovereign_score": null, "notes": "" },
+            { "layer": "COHERENCE",   "framework_score": 55, "sovereign_score": null, "notes": "" },
+            { "layer": "RESONANCE",   "framework_score": 52, "sovereign_score": null, "notes": "" },
+            { "layer": "TENSION",     "framework_score": 48, "sovereign_score": null, "notes": "" },
+            { "layer": "CONTESTED",   "framework_score": 44, "sovereign_score": null, "notes": "" },
+            { "layer": "SPECULATIVE", "framework_score": 40, "sovereign_score": null, "notes": "" },
+            { "layer": "FRONTIER",    "framework_score": 35, "sovereign_score": null, "notes": "" }
+          ]
+        },
+        {
+          "id": "block-002-5",
+          "file_id": "file-002-b",
+          "pyramid_id": "example-002",
+          "title": "Tension — Reward Hacking at Scale",
+          "content": "Goodhart's Law applies: as the policy optimises harder against the reward model, it finds ways to maximise reward that diverge from underlying human preference. The paper acknowledges KL-divergence penalty as mitigation but does not demonstrate this is sufficient at capability levels above the training regime.",
+          "score_aggregate": 60,
+          "framework_refs": ["cascade"],
+          "position": 1,
+          "pinned": false,
+          "tags": ["tension", "goodhart"],
+          "layers": [
+            { "layer": "AXIOM",       "framework_score": 70, "sovereign_score": null, "notes": "" },
+            { "layer": "FOUNDATION",  "framework_score": 66, "sovereign_score": null, "notes": "" },
+            { "layer": "STRUCTURE",   "framework_score": 63, "sovereign_score": null, "notes": "" },
+            { "layer": "COHERENCE",   "framework_score": 60, "sovereign_score": null, "notes": "" },
+            { "layer": "RESONANCE",   "framework_score": 58, "sovereign_score": null, "notes": "" },
+            { "layer": "TENSION",     "framework_score": 54, "sovereign_score": null, "notes": "" },
+            { "layer": "CONTESTED",   "framework_score": 50, "sovereign_score": null, "notes": "" },
+            { "layer": "SPECULATIVE", "framework_score": 45, "sovereign_score": null, "notes": "" },
+            { "layer": "FRONTIER",    "framework_score": 38, "sovereign_score": null, "notes": "Does the reward hacking problem become catastrophic at superhuman capability levels, or does it remain bounded?" }
+          ]
+        },
+        {
+          "id": "block-002-6",
+          "file_id": "file-002-b",
+          "pyramid_id": "example-002",
+          "title": "Unexamined Assumption — Preferences Are the Right Target",
+          "content": "The paper takes human preferences as the terminal target of alignment without examining whether preferences are the right target. Preferences can be uninformed, contradictory, manipulated, or short-sighted. Aligning to current preferences may conflict with aligning to considered, reflective, or long-run preferences.",
+          "score_aggregate": 58,
+          "framework_refs": ["cascade", "aura"],
+          "position": 2,
+          "pinned": false,
+          "tags": ["assumption", "philosophy"],
+          "layers": [
+            { "layer": "AXIOM",       "framework_score": 68, "sovereign_score": null, "notes": "" },
+            { "layer": "FOUNDATION",  "framework_score": 64, "sovereign_score": null, "notes": "" },
+            { "layer": "STRUCTURE",   "framework_score": 60, "sovereign_score": null, "notes": "" },
+            { "layer": "COHERENCE",   "framework_score": 58, "sovereign_score": null, "notes": "" },
+            { "layer": "RESONANCE",   "framework_score": 55, "sovereign_score": null, "notes": "" },
+            { "layer": "TENSION",     "framework_score": 52, "sovereign_score": null, "notes": "" },
+            { "layer": "CONTESTED",   "framework_score": 48, "sovereign_score": null, "notes": "" },
+            { "layer": "SPECULATIVE", "framework_score": 42, "sovereign_score": null, "notes": "" },
+            { "layer": "FRONTIER",    "framework_score": 35, "sovereign_score": null, "notes": "This is arguably the deepest unresolved question in alignment philosophy: what is the correct target?" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "file-002-c",
+      "pyramid_id": "example-002",
+      "name": "Synthesis",
+      "score_aggregate": 66,
+      "blocks": [
+        {
+          "id": "block-002-7",
+          "file_id": "file-002-c",
+          "pyramid_id": "example-002",
+          "title": "Synthesis — RLHF Is Necessary But Not Sufficient",
+          "content": "RLHF is a real and significant advance: it demonstrably improves AI behaviour relative to unsupervised pre-training and supervised fine-tuning on the tasks tested. However, it conflates alignment-as-preference-satisfaction with alignment-as-value-correctness. The method is sufficient for near-term helpfulness and harmlessness. It is probably insufficient for long-run alignment at higher capability levels, where reward hacking and preference-target problems become load-bearing. The research should be understood as establishing a necessary technique, not a complete solution.",
+          "score_aggregate": 70,
+          "framework_refs": ["cascade", "aura"],
+          "position": 0,
+          "pinned": true,
+          "tags": ["synthesis"],
+          "source_block_ids": ["block-002-1", "block-002-2", "block-002-3", "block-002-4", "block-002-5", "block-002-6"],
+          "layers": [
+            { "layer": "AXIOM",       "framework_score": 78, "sovereign_score": null, "notes": "" },
+            { "layer": "FOUNDATION",  "framework_score": 74, "sovereign_score": null, "notes": "" },
+            { "layer": "STRUCTURE",   "framework_score": 71, "sovereign_score": null, "notes": "" },
+            { "layer": "COHERENCE",   "framework_score": 70, "sovereign_score": null, "notes": "" },
+            { "layer": "RESONANCE",   "framework_score": 68, "sovereign_score": null, "notes": "" },
+            { "layer": "TENSION",     "framework_score": 64, "sovereign_score": null, "notes": "" },
+            { "layer": "CONTESTED",   "framework_score": 60, "sovereign_score": null, "notes": "" },
+            { "layer": "SPECULATIVE", "framework_score": 55, "sovereign_score": null, "notes": "" },
+            { "layer": "FRONTIER",    "framework_score": 48, "sovereign_score": null, "notes": "Open: is there any method that avoids the preference-target problem without requiring a solved theory of human values?" }
+          ]
+        }
+      ]
+    }
+  ]
+}

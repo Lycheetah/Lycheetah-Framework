@@ -52,7 +52,7 @@ False convergence constants. Overclaimed proofs.
 All public. Because a framework that hides its failures has something to hide.
 We went first.
 
-FAILURE_MUSEUM.md →
+28_DEFENSE/FAILURE_MUSEUM.md →
 
 **Post 5:**
 The cross-cultural convergence.

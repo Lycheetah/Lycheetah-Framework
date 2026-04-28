@@ -11,7 +11,7 @@
 
 ## WHAT THIS DOCUMENT IS
 
-CASCADE (`01_CASCADE/CASCADE_COMPLETE.md`) is the formal specification.
+CASCADE (`01_CASCADE_L4/CASCADE_COMPLETE.md`) is the formal specification.
 This document shows CASCADE applied to NZ-specific problems —
 how truth pressure works in NZ policy contexts,
 what CASCADE coherence scoring looks like in practice,

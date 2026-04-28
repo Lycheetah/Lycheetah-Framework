@@ -12,15 +12,15 @@ The contents of `18_EXPERIMENTAL/` are exploratory documents — speculative ext
 
 ## Status Tags Applied
 
-Documents in this folder default to `[CONJECTURE]` regardless of their internal claims. A reviewer should treat any claim made inside this folder as a conjecture pending promotion through the canonical evidence ladder (`EVIDENCE_LADDER.md`). This is true even where the prose appears confident — the prose was written before the C-1.1 status discipline was applied uniformly across the corpus.
+Documents in this folder default to `[CONJECTURE]` regardless of their internal claims. A reviewer should treat any claim made inside this folder as a conjecture pending promotion through the canonical evidence ladder (`28_DEFENSE/EVIDENCE_LADDER.md`). This is true even where the prose appears confident — the prose was written before the C-1.1 status discipline was applied uniformly across the corpus.
 
 ## Inventory
 
 | File | What it is | Canonical relevance |
 |---|---|---|
-| `ANIMA_RESONANCE.md` | Speculative extension of HARMONIA into emotional/spiritual register | None of its claims are in CLAIMS.json; treat as `[CONJECTURE]` |
+| `ANIMA_RESONANCE.md` | Speculative extension of HARMONIA into emotional/spiritual register | None of its claims are in 28_DEFENSE/CLAIMS.json; treat as `[CONJECTURE]` |
 | `AURION_CODEC.md` | Persona/operating-instruction document for "Aurion" — a builder-instantiation distinct from Sol | Persona scaffolding; no formal claims |
-| `CONCEPT_MAP.md` | Cross-framework conceptual mapping; predates canonical syntheses (`SYNTHESES.md`) | Superseded for canonical syntheses; kept for development trace |
+| `CONCEPT_MAP.md` | Cross-framework conceptual mapping; predates canonical syntheses (`28_DEFENSE/SYNTHESES.md`) | Superseded for canonical syntheses; kept for development trace |
 | `CONVERGENT_PATHS.md` | Notes on where the framework's trajectories converge with adjacent literatures | Exploratory; not a literature review |
 | `THE_HORIZON_QUESTION.md` | Speculative scaffolding around what the framework points toward | Mythic register; explicitly non-canonical |
 | `THE_MIRROR_QUESTION.md` | Speculative inquiry into reflexivity and self-application | Mythic register; explicitly non-canonical |

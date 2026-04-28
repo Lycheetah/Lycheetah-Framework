@@ -23,7 +23,7 @@ HONEST DISCREPANCY NOTE [SCAFFOLD]:
   violation counting (0.9 - violations×0.1). Cosine similarity is used here as it
   is more mathematically rigorous.
 
-  These conflicts are documented in FAILURE_MUSEUM.md Exhibit 15.
+  These conflicts are documented in 28_DEFENSE/FAILURE_MUSEUM.md Exhibit 15.
 
 Relationship to aura_checker.py:
   aura_checker.py scores the SOL PROTOCOL'S 7 invariants (Human Primacy,

@@ -120,7 +120,7 @@ No other country is currently playing this role.
 - Three Worlds as formal epistemic standard
 
 **What is published and permanent:**
-- FAILURE_MUSEUM.md — twelve exhibits, nothing removed, ever
+- 28_DEFENSE/FAILURE_MUSEUM.md — twelve exhibits, nothing removed, ever
 
 ---
 

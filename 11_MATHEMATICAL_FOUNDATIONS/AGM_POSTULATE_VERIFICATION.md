@@ -316,4 +316,4 @@ specific, named distances from the formal ideal.
 ---
 
 *Lycheetah Framework | `11_MATHEMATICAL_FOUNDATIONS/`*
-*Cross-reference: `MATHEMATICS_AUDIT.md` § AGM, `01_CASCADE/CASCADE_COMPLETE.md` § revision operator*
+*Cross-reference: `MATHEMATICS_AUDIT.md` § AGM, `01_CASCADE_L4/CASCADE_COMPLETE.md` § revision operator*

@@ -142,12 +142,12 @@ The AURA invariants are computable. The audit tool exists. The implementation is
 
 | What you need | Where to find it |
 |---|---|
-| The full AURA governance framework | [`02_AURA/AURA_COMPLETE.md`](../02_AURA/AURA_COMPLETE.md) |
+| The full AURA governance framework | [`02_AURA_L3/AURA_COMPLETE.md`](../02_AURA_L3/AURA_COMPLETE.md) |
 | The audit implementation (Python) | [`12_IMPLEMENTATIONS/core/aura_checker.py`](../12_IMPLEMENTATIONS/core/aura_checker.py) |
 | The NZ governance standards (WOF, Three Worlds, Whakapapa, Matariki) | [`23_NZ_AI_GOVERNANCE/`](../23_NZ_AI_GOVERNANCE/) |
 | AI-native governance properties (XII invariants) | [`23_NZ_AI_GOVERNANCE/AI_NATIVE_GOVERNANCE.md`](../23_NZ_AI_GOVERNANCE/AI_NATIVE_GOVERNANCE.md) |
 | The mathematical foundations | [`11_MATHEMATICAL_FOUNDATIONS/`](../11_MATHEMATICAL_FOUNDATIONS/) |
-| The failure record (honest about what doesn't work yet) | [`FAILURE_MUSEUM.md`](../FAILURE_MUSEUM.md) |
+| The failure record (honest about what doesn't work yet) | [`28_DEFENSE/FAILURE_MUSEUM.md`](../FAILURE_MUSEUM.md) |
 | The full framework index | [`00_Sovereign_Index.md`](../00_Sovereign_Index.md) |
 
 ---
