@@ -84,7 +84,7 @@ Status tags follow canonical definitions: **[ACTIVE]** = proven and computable. 
 | Claim | Prior Art | What Only This Framework Provides | Falsifiability | Status |
 |---|---|---|---|---|
 | Non-commutativity of transformation operations | Order-independent transformation models | Formal proof that the seven operations do not commute — stage order is mathematically load-bearing | Produce two CHRYSOPOEIA operations that commute | [ACTIVE] |
-| ψ* as Banach fixed point — Theorem X1 | Transformation models without fixed-point guarantee | Alchemical concept (Philosopher's Stone) formalised as a Banach fixed point with convergence guarantee | Show Ξ is not a contraction mapping under the stated norm | [ACTIVE] (conditional) |
+| ψ* as Banach fixed point — Theorem X1 | Transformation models without fixed-point guarantee | Alchemical concept (Philosopher's Stone) formalised as a Banach fixed point under stated contraction conditions | Show Ξ is not a contraction mapping under the stated norm; or that the conditions are never satisfied in practice | [SCAFFOLD] |
 | Structural parallel to Fourier transform | Informal alchemy/mathematics comparisons | Formal structural parallel enabling import of Fourier theory results into transformation operator theory | Show the parallel breaks down — that Solve/Coagula differ from Fourier decomp/synthesis in a structurally relevant way | [ACTIVE] |
 | CHRYSOPOEIA subsumes CASCADE — Lemma XF4 | Disconnected transformation and belief-revision frameworks | Formal subsumption: CASCADE is a special case of CHRYSOPOEIA — one framework, not two | Show CASCADE operations that fall outside CHRYSOPOEIA's seven stages | [ACTIVE] |
 
@@ -93,8 +93,8 @@ Status tags follow canonical definitions: **[ACTIVE]** = proven and computable. 
 | Claim | Prior Art | What Only This Framework Provides | Falsifiability | Status |
 |---|---|---|---|---|
 | Consonance function C(r) = 1/(1 + Σaₖ·(0.5)ᵏ) | Euler consonance (incomplete); Helmholtz roughness (non-computable scalar); Plomp-Levelt (psychoacoustic, not agent-applicable) | Computable consonance scalar applicable beyond music — to agent frequency dynamics, response calibration | Show C(r) does not correlate with empirical consonance judgments across listeners | [ACTIVE] |
-| EWM harmonic interval table for emotional-epistemic calibration | Tone-matching in conversational AI (ad hoc, no grounding); sentiment adjustment (no harmonic basis) | Harmonic-ratio grounding for response calibration — each state mapped to an interval with a structural reason | Show different interval mappings produce equivalent or better outcomes empirically | [ACTIVE] |
-| Pythagorean comma as engine of iterative improvement | Historical treatment of the comma as a tuning problem | The comma as a formal generative mechanism — the irreducible gap that drives spiral development | Show spiral development occurs without the comma, or under equal-tempered conditions that eliminate it | [ACTIVE] |
+| EWM harmonic interval table for emotional-epistemic calibration | Tone-matching in conversational AI (ad hoc, no grounding); sentiment adjustment (no harmonic basis) | Harmonic-ratio grounding for response calibration: each state mapped to an interval with a structural reason | Show different interval mappings produce equivalent or better outcomes empirically | [SCAFFOLD] — empirical calibration pending |
+| Pythagorean comma as engine of iterative improvement | Historical treatment of the comma as a tuning problem | The comma proposed as a formal generative mechanism: the irreducible gap that drives spiral development | Show spiral development occurs without the comma, or under equal-tempered conditions that eliminate it | [CONJECTURE] |
 
 ### Cross-Framework
 

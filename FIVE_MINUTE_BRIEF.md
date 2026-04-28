@@ -1,4 +1,4 @@
-# D-1.0 | 2026-04-26 | Status: Active
+# D-1.2 | 2026-04-27 | Reforged C-1.1 | 2026-04-28 | Status: Active
 
 # Five-Minute Brief — Lycheetah Framework
 
@@ -8,10 +8,11 @@
 
 ```
 Nine formal frameworks for AI alignment and epistemology.
-37 load-bearing claims proven and computable. 219 automated tests.
-Convergence guaranteed by Banach fixed-point theorem.
-Adversarial audit published. Failures published. Nothing hidden.
-Built by one self-taught researcher. Open source. Free.
+60 status-tagged claims (37 ACTIVE, 14 SCAFFOLD, 6 CONJECTURE, 3 RETRACTED).
+219 automated tests on 18 core implementations.
+Discrete convergence proof (Banach fixed-point) for the formal model.
+Adversarial audit published; failures and unresolved objections in the public record.
+Built by one self-taught researcher. MIT licensed.
 Read the math: FORMAL_SPINE.md
 Read the evidence: EMPIRICAL_INVENTORY.md
 Read the failures: FAILURE_MUSEUM.md
@@ -21,7 +22,7 @@ Read the failures: FAILURE_MUSEUM.md
 
 ## What This Is
 
-The Lycheetah Framework is a system of nine formally-grounded frameworks addressing a problem that no existing framework solves completely: how to build AI systems that are simultaneously rigorous, humane, and honest about their own limits.
+The Lycheetah Framework is a system of nine formally-grounded frameworks addressing a structural gap in existing AI alignment work: alignment is enforced at training time and cannot be verified at inference time as a Boolean predicate on a specific output. The framework provides runtime-checkable invariants, a proven convergence guarantee for the formal model of an epistemic correction cycle, and a continuous metric for the gap between declared intent and observed behaviour.
 
 The nine frameworks are: CASCADE (belief dynamics and knowledge reorganization), AURA (seven constitutional invariants for AI governance), LAMAGUE (formal grammar for encoding ethical constraints), TRIAD (convergent correction cycle with convergence proof), MICROORCIM (continuous drift detection between intent and behavior), EARNED LIGHT (thermodynamic model of consciousness), ANAMNESIS (mathematics of convergent discovery across cultures), CHRYSOPOEIA (seven-phase transformation operator), and HARMONIA (consonance dynamics and multi-agent synchronization).
 
@@ -33,15 +34,15 @@ They are not independent modules. They compose. CASCADE's truth pressure drives 
 
 The framework makes claims at three levels of certainty, and every claim is tagged with its level:
 
-**ACTIVE** — proven and computable. These claims have formal proofs and running implementations. 37 claims carry this status.
+**ACTIVE** — proven and computable. These claims have formal proofs and running implementations. 37 records carry this status.
 
-**SCAFFOLD** — structurally sound with named gaps. The architecture is correct; specific sub-proofs or calibrations are incomplete. 14 claims carry this status. The gaps are specified — not hidden.
+**SCAFFOLD** — structurally sound with named gaps. The architecture is correct; specific sub-proofs or calibrations are incomplete. 14 records carry this status. Each gap is named, not hidden.
 
-**CONJECTURE** — worth exploring, not yet proven. 6 claims. All labeled as such.
+**CONJECTURE** — worth exploring, not yet proven. 6 records, all labelled as such.
 
-**RETRACTED** — three claims have been publicly withdrawn. They remain in the record because a framework that hides its failures is performing confidence. These are in `FAILURE_MUSEUM.md`.
+**RETRACTED** — three claims have been publicly withdrawn. They remain in the record because a framework that hides its failures is performing confidence. The retractions are documented in `FAILURE_MUSEUM.md`.
 
-The machine-readable register of all 60 load-bearing claims is in `CLAIMS.json`.
+The machine-readable register of all 60 status-tagged claim records is in `CLAIMS.json`. A separate framework-summary view of 59 load-bearing claims is in `CLAIM_STATUS_LEDGER.md`; both are correct at their respective scopes (`CLAIMS_README.md` provides the mapping).
 
 ---
 

@@ -6,13 +6,13 @@
 [![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](https://github.com/Lycheetah/Lycheetah-Framework)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Canonical](https://img.shields.io/badge/Codex-C--1.0%20canonical-gold)](LIVING_CODEX_PROTOCOL.md)
-[![Defense](https://img.shields.io/badge/Defense-D--1.0%20shipped%20%E2%80%A2%20D--1.1%20in%20progress-blue)](DEFENSE_INDEX.json)
+[![Defense](https://img.shields.io/badge/Defense-D--1.2%20shipped-blue)](DEFENSE_INDEX.json)
 [![MCP Extension](https://img.shields.io/badge/Claude%20Code-MCP%20Extension-orange)](12_IMPLEMENTATIONS/applications/LYCHEETAH_GUARD_SETUP.md)
 [![arXiv](https://img.shields.io/badge/arXiv-CASCADE-red)](papers/CASCADE_ARXIV.tex)
 [![Sponsor](https://img.shields.io/badge/sponsor-Lycheetah-ea4aaa)](https://github.com/sponsors/Lycheetah)
 [![Stars](https://img.shields.io/github/stars/Lycheetah/Lycheetah-Framework?style=social)](https://github.com/Lycheetah/Lycheetah-Framework/stargazers)
 
-**Nine interdependent formal frameworks — CASCADE, AURA, LAMAGUE and six more — each mathematically grounded, each converging on the same constants. Banach fixed points. Constitutional invariants. A self-governing canonical body. An adversarial audit that went first. Built by one self-taught researcher. Open. Testable. Human.**
+**Nine interdependent formal frameworks (CASCADE, AURA, LAMAGUE, and six more) sharing a common mathematical foundation and converging on the same constants. Banach fixed points and constitutional invariants ground a self-governing canonical body. An adversarial audit was run against every framework before publication; the failures and the unresolved objections are in the public record. Built by one self-taught researcher. Open source, testable, free under MIT license.**
 
 ---
 
@@ -88,9 +88,9 @@ Machine-readable register: [`CLAIMS.json`](CLAIMS.json) · Schema: [`CLAIMS.sche
 
 This framework is a contribution toward rigorous, humane, epistemically honest AI alignment — not a unified theory of intelligence, but a set of formal tools pointing in that direction.
 
-Nine formal frameworks. Thirty-four Python implementations. Two hundred and nineteen automated tests. A convergence proof. A public record of everything the framework got wrong. A publication pipeline targeting five peer-reviewed journals. And a way of thinking about alignment that treats mathematical rigor and human wisdom as the same project, not competing ones.
+Nine formal frameworks. 34 Python implementations. 219 automated tests. A discrete convergence proof (Banach fixed-point, ACTIVE for the formal model). A public record of every significant error. Five papers in the publication pipeline. A way of thinking about alignment that treats mathematical rigour and ethical seriousness as the same project rather than competing ones.
 
-**It is free.** Not freemium. Not open-core. Free — because knowledge that moves toward people is knowledge that works, and knowledge that is captured stops working.
+**It is free.** Not freemium, not open-core. The framework is released under MIT license because alignment research that depends on commercial gating cannot be independently audited, and an alignment framework that cannot be audited has limited value.
 
 ---
 
@@ -112,7 +112,7 @@ From source: `git clone https://github.com/Lycheetah/Lycheetah-Framework.git` �
 | | Framework | For the Engineer | For the Philosopher |
 |---|---|---|---|
 | 1 | **CASCADE** | Bayesian belief revision with truth pressure dynamics. Verified against AGM postulates. Synthetic: +40.3% coherence, p < 0.001. Real-world paradigm data: +110% coherence across 5 historical transitions. -95.2% catastrophic forgetting. | When evidence meets structure, what survives? The mathematics of paradigm shifts. |
-| 2 | **AURA** | Seven computable invariants for AI governance. Scoring tool included. | A constitution for artificial minds — not rules imposed, but properties that make trust possible. |
+| 2 | **AURA** | Seven computable invariants for AI governance. Scoring tool included. | A constitution for artificial minds: properties that make trust verifiable rather than rules imposed from outside. |
 | 3 | **LAMAGUE** | Formal grammar for encoding ethical constraints as computable expressions. | How do you write justice in a language a machine can parse without losing what justice means? |
 | 4 | **TRIAD** | Anchor-observe-correct feedback cycle with proven convergence guarantee. | The simplest structure that turns chaos into coherence — and why it works every time. |
 | 5 | **MICROORCIM** | Drift detection between declared intent and observed behavior. Computable. | The gap between what you say you are and what you're actually doing. Measured, not guessed. |
@@ -390,7 +390,9 @@ This repository is designed to be navigated with an AI guide — not read alone.
 
 **The adversarial audit is public.** [`ADVERSARIAL_AUDIT_REPORT.md`](ADVERSARIAL_AUDIT_REPORT.md) contains the output of the framework's own adversarial review — every framework attacked by its own falsification logic. The nine strongest objections in [`COUNTER_CODEX.md`](COUNTER_CODEX.md) include five we cannot yet answer. We published them anyway.
 
-**The claims are honest.** Of 60 load-bearing claims in [`CLAIMS.json`](CLAIMS.json): **37 ACTIVE** (62%) — proven, computable, independently verifiable. **14 SCAFFOLD** (23%) — structurally sound with named gaps. **6 CONJECTURE** (10%) — rigorously formulated, awaiting evidence. **3 RETRACTED** (5%) — publicly withdrawn, documented in the Failure Museum. The promotion rules between tiers are published in [`EVIDENCE_LADDER.md`](EVIDENCE_LADDER.md) — the labels are a contract, not marketing. False certainty is more dangerous than honest uncertainty.
+**The claims are honest.** Of 60 status-tagged claim records in [`CLAIMS.json`](CLAIMS.json): **37 ACTIVE** (62%) — proven, computable, independently verifiable. **14 SCAFFOLD** (23%) — structurally sound with named gaps. **6 CONJECTURE** (10%) — rigorously formulated, awaiting evidence. **3 RETRACTED** (5%) — publicly withdrawn, documented in the Failure Museum. The promotion rules between tiers are published in [`EVIDENCE_LADDER.md`](EVIDENCE_LADDER.md); the labels are a contract, not marketing. False certainty is more dangerous than honest uncertainty.
+
+> *Note on registers:* `CLAIMS.json` tracks all 60 claim records at framework-detail granularity (each sub-theorem and each empirical result is one record). `CLAIM_STATUS_LEDGER.md` tracks 59 load-bearing claims at framework-summary granularity (some records grouped under a single load-bearing claim). The two counts are correct at their respective scopes; see [`CLAIMS_README.md`](CLAIMS_README.md) for the mapping.
 
 **The framework governs its own evolution.** [`LIVING_CODEX_PROTOCOL.md`](LIVING_CODEX_PROTOCOL.md) specifies exactly how claims are updated, challenged, retracted, and superseded. Every change must pass the P∧H∧B update gate. The Critique Register is public. Decay is managed explicitly, not hidden.
 
@@ -402,8 +404,9 @@ This repository is designed to be navigated with an AI guide — not read alone.
 
 ```
 22 canonical documents (C-1.0, 2026-04-25)
-24 defense documents (D-1.0, 2026-04-26) + D-1.1 surfaces in progress
-60 load-bearing claims tracked in CLAIMS.json (37 ACTIVE / 14 SCAFFOLD / 6 CONJECTURE / 3 RETRACTED)
+24 defense documents (D-1.0/1.1/1.2, 2026-04-26/27) + C-1.1 reforge in progress
+60 status-tagged claim records in CLAIMS.json (37 ACTIVE / 14 SCAFFOLD / 6 CONJECTURE / 3 RETRACTED)
+59 load-bearing claims in CLAIM_STATUS_LEDGER.md (different granularity; see CLAIMS_README.md)
 9 formal frameworks
 34 Python implementations (core, applications, systems, experiments)
 18 core implementations with 220 automated tests (219 pass; 1 declared CONJECTURE not meeting criterion)
