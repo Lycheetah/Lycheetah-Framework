@@ -174,3 +174,63 @@ After push:
 ---
 
 *This plan is the atomic unit. Execute as one operation.*
+
+---
+
+## C-1.1 ADDENDUM (2026-04-28)
+
+The C-1.1 Reforge pass added six new root-level files that were not in the original bucket lists. Bucketing decisions for these files, to be applied as part of the cleanup commit:
+
+**Keep at root** (entry/legal):
+```
+LICENSE
+```
+
+**Move to `28_DEFENSE/`** (defence-layer artefacts):
+```
+C1_REFORGE_RECON.md      ← Reforge reconnaissance, mirror of D1_DEFENSE_PROTOCOL_PLAN
+REFORGE_REGISTER.md      ← Per-edit log, mirror of DOWNGRADE_REGISTER
+SCOPE_DECLARATION.md     ← Negative-space declaration, defends scope
+SYNTHESES.md             ← Cross-framework syntheses, defensive connective tissue
+CLAIM_STATUS_LEDGER.md   ← (already on the original 28_DEFENSE list — confirm)
+```
+
+**Move to new `31_EMPIRICAL/`** (the third anchor — its own bucket):
+```
+E1_EMPIRICAL_PROGRAM.md
+```
+
+(`31_EMPIRICAL/` is created during this cleanup and reserved for E-1.x preregistrations, study results, and replication reports as they accumulate.)
+
+**Existing `28_DEFENSE/` list remains unchanged** — `CLAIM_STATUS_LEDGER` was already on it.
+
+**Phase 3 link rewrite addendum.** Add these rewrite rules:
+
+```
+LICENSE                        → LICENSE                        (stays at root)
+C1_REFORGE_RECON.md            → 28_DEFENSE/C1_REFORGE_RECON.md
+REFORGE_REGISTER.md            → 28_DEFENSE/REFORGE_REGISTER.md
+SCOPE_DECLARATION.md           → 28_DEFENSE/SCOPE_DECLARATION.md
+SYNTHESES.md                   → 28_DEFENSE/SYNTHESES.md
+E1_EMPIRICAL_PROGRAM.md        → 31_EMPIRICAL/E1_EMPIRICAL_PROGRAM.md
+```
+
+**Existing references that need updating after the move** (audit will catch any missed):
+
+- `DEFENSE_VERSION.md` — pointer to `REFORGE_REGISTER.md` updates to new path
+- `CLAIM_STATUS_LEDGER.md` (header) — pointer to `C1_REFORGE_RECON.md` updates
+- `REFORGE_REGISTER.md` (preamble) — pointer to `C1_REFORGE_RECON.md` updates
+- `SYNTHESES.md`, `SCOPE_DECLARATION.md` — internal links to canonical body docs may need updates if those docs move
+- `E1_EMPIRICAL_PROGRAM.md` — references to `SCOPE_DECLARATION.md`, `CLAIM_STATUS_LEDGER.md`, `FAILURE_MUSEUM.md` need path updates
+- `MEMORY.md` and project memory files outside the repo — informational only, not blockers
+
+**C-1.1 cross-repo verification (completed 2026-04-28):** lycheetah and lycheetah-mobile READMEs reference the Codex only via stable GitHub URLs (`https://github.com/Lycheetah/Lycheetah-Framework`), not internal paths. They are immune to folder renames and require no edits as part of this cleanup.
+
+---
+
+## EXECUTION READINESS — 2026-04-28
+
+This plan is now complete and executable. Recommended approach: a single focused session (Opus or Sonnet, atomic commit) following the plan exactly. Estimated complexity: ~15 folder/file operations, ~200 link rewrites, ~30 minutes of audit.
+
+Mac fires execution when ready.
+
