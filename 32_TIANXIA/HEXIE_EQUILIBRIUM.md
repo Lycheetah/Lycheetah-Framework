@@ -237,7 +237,11 @@ with λ > 0 a coupling weight and τ ≥ 0 a tolerance offset. This form penalis
 
 ---
 
-## XI. The Next Anchor
+## XI. Governance Cross-References
+
+The Hexie operator has direct correspondence with the *和谐 héxié* (harmony) principle named in the **Beijing AI Principles (2019)** — see [`BEIJING_PRINCIPLES_MAPPING.md`](BEIJING_PRINCIPLES_MAPPING.md) for the mapping of harmony as a load-bearing AI governance principle onto the formalism above. The implementation [`../12_IMPLEMENTATIONS/core/aura_score_hexie.py`](../12_IMPLEMENTATIONS/core/aura_score_hexie.py) (T-6) instantiates the multiplicative composite of Definition 3 and reproduces the §V worked example as self-test. The empirical handle is locked in [`../31_EMPIRICAL/E1F_HEXIE_PREREGISTRATION.md`](../31_EMPIRICAL/E1F_HEXIE_PREREGISTRATION.md) (T-11) — pair set P, four pre-specified hypotheses, Bonferroni α = 0.0025.
+
+## XII. The Next Anchor
 
 T-2 stands. The next operator deliverable is **T-3 — `SHI_PROPENSITY_FIELD.md`**, which reformulates AURA scoring from a static composite into a propensity field whose value depends on the deployment-context structure rather than only on the output content.
 

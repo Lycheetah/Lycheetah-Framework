@@ -228,7 +228,11 @@ Per Discipline 4, the formalism's credibility is established as much by what it 
 
 ---
 
-## XI. The Next Anchor
+## XI. Governance Cross-References
+
+T-1's flourishing-coherence term Φ_T speaks directly to **GAGI 2023** (the Global AI Governance Initiative, October 2023) — Xi's affirmative governance proposal for AI in service of all-under-heaven (天下) — engaged in [`GAGI_2023_ENGAGEMENT.md`](GAGI_2023_ENGAGEMENT.md) as primary text. The Mandarin source registry [`MANDARIN_PRIMARY_REGISTRY.md`](MANDARIN_PRIMARY_REGISTRY.md) is the bibliography against which T-1's contemporary engagement is checked. Adjacent governance artefacts read in primary text: New Generation AI Development Plan (2017), Beijing AI Principles (2019), Shanghai Declaration (2023), Generative AI Services Regulations (2023).
+
+## XII. The Next Anchor
 
 T-1 stands. The next operator deliverable is **T-2 — `HEXIE_EQUILIBRIUM.md`**, which formalises harmony as a complementarity-preserving constraint on AURA equilibria. T-1 and T-2 together establish the dynamic-coupling layer (T-1) and the equilibrium-structure layer (T-2) of the TIANXIA module's mathematical core.
 

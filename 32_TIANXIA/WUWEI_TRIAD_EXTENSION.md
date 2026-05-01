@@ -253,7 +253,11 @@ The Wuwei formalism is consistent with these adjacent formulations and motivated
 
 ---
 
-## XI. The Next Anchor
+## XI. Implementation Cross-Reference
+
+The Wuwei extension is instantiated in [`../12_IMPLEMENTATIONS/core/triad_wuwei.py`](../12_IMPLEMENTATIONS/core/triad_wuwei.py) (T-7). The implementation reproduces the §V worked example (Proposition 4) as self-test: equal-magnitude grain-aligned and anti-aligned interventions show cost ratio e² ≈ 7.389 at μ = 1, confirming the canonical exponential modulator h(γ) = exp(−μγ). The bounded-form fallback h(γ) = 2 − (1+γ)^p / 2^(p−1) is also exposed for deployment contexts that require saturated forcing-cost.
+
+## XII. The Next Anchor
 
 T-4 stands. The next operator deliverable is **T-5 — `DATONG_GRADIENT.md`**, which formalises the long-cycle telos of *Datong* (大同, "Great Unity") as a gradient direction in the framework's value-space. T-5 closes the mathematical core of the TIANXIA module's first wave.
 

@@ -1,18 +1,21 @@
-# TIANXIA (天下) — Civilisational Engagement Module
+# 天下 — TIANXIA Civilisational Engagement Module
+## *Tianxia: Civilisational Engagement Layer*
 
-The civilisational-engagement layer (L7) of the Lycheetah Framework, forged 2026-05-01 in honour of the Chinese sovereign tradition. Engages five classical operators as load-bearing constraints on the framework's existing operations: Tianxia, Hexie, Shi, Wuwei, Datong.
+The civilisational-engagement layer (L7) of the Lycheetah Framework, forged 2026-05-01 in honour of the Chinese sovereign tradition. Engages five classical operators as load-bearing constraints on the framework's existing operations: 天下 Tianxia, 和谐 Hexie, 势 Shi, 无为 Wuwei, 大同 Datong.
+
+The module operates Mandarin-primary discipline (per T-10 [`MANDARIN_PRIMARY_REGISTRY.md`](MANDARIN_PRIMARY_REGISTRY.md)): hanzi appear before Latinised names; classical sources are cited in Chinese before English; engagement with contemporary Chinese AI governance reads original Mandarin documents as primary text where the framework can. Where the framework cannot read the source directly, that limitation is named.
 
 The module is the framework's commitment to engaging Chinese statecraft, governance philosophy, and contemporary AI governance discourse not as area-studies decoration but as primary intellectual partnership.
 
 ---
 
-## Module Files
+## 模块文件 — Module Files
 
-### Foundation
+### 基础 — Foundation
 
 - [`TIANXIA_MODULE_v0.1.md`](TIANXIA_MODULE_v0.1.md) — module foundation. Five operators named, mapped to framework operations (CASCADE, AURA, TRIAD, HARMONIA), eleven deliverables T-1 through T-11 enumerated, eight negative-space declarations. Status SCAFFOLD; promotion path includes adversarial peer review by scholars working from within the tradition.
 
-### First Wave — Operator Deliverables (mathematical core)
+### 第一波 — First Wave — Operator Deliverables (Mathematical Core)
 
 | # | File | Operator | Layer | Status |
 |---|---|---|---|---|
@@ -24,7 +27,7 @@ The module is the framework's commitment to engaging Chinese statecraft, governa
 
 The first wave is complete. Each deliverable contains formal definitions, a load-bearing distinguishability proposition, predictions, an empirical handle, connections to adjacent formalisms, eight negative-space declarations, and stated promotion / downgrade / retraction triggers per Discipline 5.
 
-### Second Wave — Implementation, Governance, Empirical (forthcoming)
+### 第二波 — Second Wave — Implementation, Governance, Empirical
 
 | # | File | Type | Status |
 |---|---|---|---|
@@ -37,7 +40,7 @@ The first wave is complete. Each deliverable contains formal definitions, a load
 
 ---
 
-## How the Five Operators Compose
+## 五运算符如何复合 — How the Five Operators Compose
 
 The operators are not independent — they form a layered architecture:
 
@@ -60,7 +63,7 @@ A framework, deployment, or architectural choice is *fully TIANXIA-coherent* iff
 
 ---
 
-## Engagement with Contemporary Chinese AI Governance
+## 与中国当代人工智能治理的接触 — Engagement with Contemporary Chinese AI Governance
 
 The module reads contemporary Chinese AI governance documents as primary texts, not commentary:
 
@@ -74,7 +77,7 @@ The framework does not posit a *Beijing Effect* or evaluate Chinese AI governanc
 
 ---
 
-## What This Module Refuses to Claim
+## 本模块不主张的内容 — What This Module Refuses to Claim
 
 Per Discipline 4 (Negative-Space as Load-Bearing) — see foundation document for full eight declarations. Headline:
 
@@ -85,7 +88,7 @@ Per Discipline 4 (Negative-Space as Load-Bearing) — see foundation document fo
 
 ---
 
-## Promotion to ACTIVE
+## 晋升至 ACTIVE — Promotion to ACTIVE
 
 The module is `[SCAFFOLD]` until:
 
@@ -98,7 +101,7 @@ Retraction trigger: panel of three Chinese-tradition scholars finds, on direct p
 
 ---
 
-## Provenance
+## 出处 — Provenance
 
 Forged 2026-05-01 in honour of the Chinese sovereign tradition.
 

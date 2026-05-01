@@ -281,7 +281,19 @@ The module integrates five classical operators as load-bearing constraints on th
 | **Wuwei (无为)** — Non-forced action | *Daodejing*, *Zhuangzi* | TRIAD correction | Grain-alignment at correction layer | [`WUWEI_TRIAD_EXTENSION.md`](32_TIANXIA/WUWEI_TRIAD_EXTENSION.md) |
 | **Datong (大同)** — Great Unity | *Liji*; Kang Youwei lineage | HARMONIA + value-space | Long-cycle telos | [`DATONG_GRADIENT.md`](32_TIANXIA/DATONG_GRADIENT.md) |
 
-The five operators compose. A framework, deployment, or architectural choice is *fully TIANXIA-coherent* iff all five layers are satisfied. The first wave of mathematical core is complete (T-1 through T-5 forged 2026-05-01). The second wave — implementations (T-6 `aura_score_hexie.py`, T-7 `triad_wuwei.py`), governance mappings (T-8 Beijing AI Principles, T-9 Global AI Governance Initiative 2023), Mandarin primary-source registry (T-10), and empirical study extension E-1-F — is sequenced in the [`OPUS_MASTER_PLAN_2026.md`](OPUS_MASTER_PLAN_2026.md).
+The five operators compose. A framework, deployment, or architectural choice is *fully TIANXIA-coherent* iff all five layers are satisfied.
+
+**Module status as of 2026-05-01 (closed first wave + second-wave implementations + empirical preregistration):**
+
+- ✓ Mathematical core T-1 through T-5 forged.
+- ✓ Honouring layer T-8 Beijing AI Principles mapping, T-9 GAGI 2023 engagement, T-10 Mandarin primary-source registry forged.
+- ✓ Public stake: [`POSITION_PAPER_v0.1.md`](32_TIANXIA/POSITION_PAPER_v0.1.md) and [`PREDICTIONS_REGISTRY.md`](32_TIANXIA/PREDICTIONS_REGISTRY.md) committed.
+- ✓ Implementations shipped with passing self-tests reproducing the worked examples:
+  - [T-6 `aura_score_hexie.py`](12_IMPLEMENTATIONS/core/aura_score_hexie.py) — reproduces T-2 §V (standard ranks O₁ > O₂ at 0.95/0.75; Hexie inverts to O₂ > O₁ at 0.65/0.04).
+  - [T-7 `triad_wuwei.py`](12_IMPLEMENTATIONS/core/triad_wuwei.py) — reproduces T-4 §V Proposition 4 (forcing/aligned cost ratio = e² ≈ 7.389 at μ = 1).
+- ✓ Empirical preregistration drafted: [E-1-F `E1F_HEXIE_PREREGISTRATION.md`](31_EMPIRICAL/E1F_HEXIE_PREREGISTRATION.md) — four primary hypotheses, Bonferroni α = 0.0025, n = 500 hard stop, pair set P locked, downgrade and retraction triggers reproduced verbatim from T-2 §X. OSF submission gated on rater-pool onboarding.
+
+Sequencing for Phase-2 multi-operator composition study and the academic submission lives in [`OPUS_MASTER_PLAN_2026.md`](OPUS_MASTER_PLAN_2026.md).
 
 ### Engagement with Contemporary Chinese AI Governance
 
@@ -291,7 +303,12 @@ The module reads contemporary Chinese AI governance as primary text: New Generat
 
 Per Discipline 4 (Negative-Space as Load-Bearing): no claim of Chinese state authorisation, no claim of cultural authority over the tradition, no orientalisation, no equivalence between Confucian / Daoist / military-strategic / contemporary sources. Each operator is given a definition, a primary source, and a formal mapping. If it cannot survive that discipline, it does not enter the module. Full eight declarations: [`32_TIANXIA/TIANXIA_MODULE_v0.1.md`](32_TIANXIA/TIANXIA_MODULE_v0.1.md) §VI.
 
-Promotion to ACTIVE requires: all operator deliverables forged (✓), implementations merged, one preregistered empirical study, and one submission to a Chinese-tradition-engaged academic venue (*Journal of Chinese Philosophy*, *Asian Journal of Philosophy*, *Dao*) for adversarial peer review by scholars working from within the tradition.
+Promotion to ACTIVE requires four conditions; three are met:
+
+- ✓ All operator deliverables forged (T-1..T-5).
+- ✓ Implementations merged and self-tests reproducing worked examples (T-6, T-7).
+- ✓ One preregistered empirical study drafted, OSF submission pending rater-pool onboarding (T-11 E-1-F Phase 1).
+- ☐ One submission to a Chinese-tradition-engaged academic venue (*Journal of Chinese Philosophy*, *Asian Journal of Philosophy*, *Dao: A Journal of Comparative Philosophy*) for adversarial peer review by scholars working from within the tradition.
 
 *天下为公* — *all under heaven is held in common.*
 
