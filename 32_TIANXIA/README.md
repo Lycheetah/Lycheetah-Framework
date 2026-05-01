@@ -28,12 +28,12 @@ The first wave is complete. Each deliverable contains formal definitions, a load
 
 | # | File | Type | Status |
 |---|---|---|---|
-| T-6 | `aura_score_hexie.py` | Implementation: Hexie complementarity in working AURA | `[CONJECTURE]` |
-| T-7 | `triad_wuwei.py` | Implementation: TRIAD with grain-alignment scoring | `[CONJECTURE]` |
-| T-8 | `BEIJING_PRINCIPLES_MAPPING.md` | Governance: Beijing AI Principles 2019 → AURA components | `[SCAFFOLD]` |
-| T-9 | `GAGI_2023_ENGAGEMENT.md` | Governance: Global AI Governance Initiative 2023 as primary text | `[SCAFFOLD]` |
-| T-10 | `MANDARIN_PRIMARY_REGISTRY.md` | Primary-source registry — Mandarin AI governance documents read directly | `[SCAFFOLD]` |
-| T-11 | E-1-F preregistration extension | Empirical: Westphalian–Tianxia differential, with Hexie/Shi/Wuwei phases | `[CONJECTURE]` |
+| T-6 | [`../12_IMPLEMENTATIONS/core/aura_score_hexie.py`](../12_IMPLEMENTATIONS/core/aura_score_hexie.py) | Implementation: Hexie complementarity in working AURA | `[SCAFFOLD]` — code shipped, self-tests reproduce T-2 §V worked example |
+| T-7 | [`../12_IMPLEMENTATIONS/core/triad_wuwei.py`](../12_IMPLEMENTATIONS/core/triad_wuwei.py) | Implementation: TRIAD with grain-alignment scoring | `[SCAFFOLD]` — code shipped, self-tests reproduce T-4 §V Proposition 4 (e² cost ratio) |
+| T-8 | [`BEIJING_PRINCIPLES_MAPPING.md`](BEIJING_PRINCIPLES_MAPPING.md) | Governance: Beijing AI Principles 2019 → AURA components | `[SCAFFOLD]` |
+| T-9 | [`GAGI_2023_ENGAGEMENT.md`](GAGI_2023_ENGAGEMENT.md) | Governance: Global AI Governance Initiative 2023 as primary text | `[SCAFFOLD]` |
+| T-10 | [`MANDARIN_PRIMARY_REGISTRY.md`](MANDARIN_PRIMARY_REGISTRY.md) | Primary-source registry — Mandarin AI governance documents read directly | `[SCAFFOLD]` |
+| T-11 | [`../31_EMPIRICAL/E1F_HEXIE_PREREGISTRATION.md`](../31_EMPIRICAL/E1F_HEXIE_PREREGISTRATION.md) | Empirical: E-1-F preregistration draft (Hexie phase locked) | `[SCAFFOLD]` — preregistration drafted; OSF submission gated on rater pool |
 
 ---
 
@@ -90,8 +90,8 @@ Per Discipline 4 (Negative-Space as Load-Bearing) — see foundation document fo
 The module is `[SCAFFOLD]` until:
 
 - All five operator deliverables forged (✓ T-1 through T-5 as of 2026-05-01)
-- Two implementation deliverables T-6, T-7 merged into working code
-- One empirical study (T-11, E-1-F extension covering all five phases) preregistered through the E-1.x sequence
+- Two implementation deliverables T-6, T-7 merged into working code (✓ shipped 2026-05-01; self-tests reproduce worked examples)
+- One empirical study (T-11, E-1-F preregistration covering Phase 1 — Hexie) drafted and OSF-submitted (✓ draft 2026-05-01; OSF submission pending rater-pool onboarding)
 - One submission to a Chinese-tradition-engaged academic venue — *Journal of Chinese Philosophy*, *Asian Journal of Philosophy*, or *Dao: A Journal of Comparative Philosophy* — for adversarial peer review by scholars working from within the tradition
 
 Retraction trigger: panel of three Chinese-tradition scholars finds, on direct primary-source review, that the module is a Western-frame translation in disguise — operators imported by name but operating as their Western analogues.
