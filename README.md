@@ -7,6 +7,8 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Canonical](https://img.shields.io/badge/Codex-C--1.0%20canonical-gold)](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md)
 [![Defense](https://img.shields.io/badge/Defense-D--1.2%20shipped-blue)](28_DEFENSE/DEFENSE_INDEX.json)
+[![Empirical](https://img.shields.io/badge/Empirical-E--1.0%20designed-purple)](31_EMPIRICAL/E1_EMPIRICAL_PROGRAM.md)
+[![TIANXIA](https://img.shields.io/badge/TIANXIA-%E5%A4%A9%E4%B8%8B%20civilisational%20layer-darkred)](32_TIANXIA/README.md)
 [![MCP Extension](https://img.shields.io/badge/Claude%20Code-MCP%20Extension-orange)](12_IMPLEMENTATIONS/applications/LYCHEETAH_GUARD_SETUP.md)
 [![arXiv](https://img.shields.io/badge/arXiv-CASCADE-red)](papers/CASCADE_ARXIV.tex)
 [![Sponsor](https://img.shields.io/badge/sponsor-Lycheetah-ea4aaa)](https://github.com/sponsors/Lycheetah)
@@ -34,6 +36,8 @@
 - [The Nine Frameworks](#the-nine-frameworks)
 - [The Canonical Body — C-1.0](#the-canonical-body--c-10)
 - [The Defense Layer — D-1.0 / D-1.1](#the-defense-layer--d-10--d-11)
+- [The Empirical Programme — E-1.0](#the-empirical-programme--e-10)
+- [The TIANXIA Module — Civilisational Engagement Layer](#the-tianxia-module--civilisational-engagement-layer)
 - [The Architecture](#the-architecture)
 - [For Developers and AI Agents](#for-developers-and-ai-agents)
 - [The Publication Pipeline](#the-publication-pipeline)
@@ -240,6 +244,56 @@ The sixth repair (master equation limit analysis) is correctly deferred to the e
 ### Versioning
 
 The defense layer carries its own version stamp ([`28_DEFENSE/DEFENSE_VERSION.md`](28_DEFENSE/DEFENSE_VERSION.md)) independent of the canonical body. **D-1.0** defends **C-1.0**. When the canonical body advances to C-1.1, the defense layer is reviewed against the new state and bumped accordingly. Drift between defense and canon is treated as a defect.
+
+---
+
+## The Empirical Programme — E-1.0
+
+The third anchor. C-1.0/1.1 (canonical body) and D-1.0/1.1/1.2 (defense layer) make the framework structurally honest. E-1.0 closes the gap between honesty about scaffolding and the empirical commitments that convert SCAFFOLD claims to ACTIVE.
+
+E-1.0 designs five preregistered studies, each tied to a SCAFFOLD claim or set of claims, with promotion and downgrade triggers stated in advance:
+
+| Study | Closes | Type |
+|---|---|---|
+| **E-1-A** — k₁–k₄ master-equation calibration | Master equation `dΨ/dt`; CASCADE truth-pressure threshold | Computational, retrospective on 6,000-cascade dataset |
+| **E-1-B** — EARNED LIGHT Pattern_Coherence vs PCI/IIT correlate | Thermodynamic-asymmetry consciousness model; anesthesia paradox | Quasi-experimental, archival PCI data |
+| **E-1-C** — LAMAGUE Transcultural Convergence (TC) differential | Cross-cultural ethical convergence; attractor model vs diffusion | Comparative ethnographic / computational |
+| **E-1-D** — AURA score → aligned behaviour correlation | AURA simultaneous satisfiability; high-AURA → aligned behaviour | Behavioural, prospective |
+| **E-1-E** — TRIAD anchor-observe-correct in human–AI dyads | TRIAD biological/cognitive application; Two-Point Protocol output quality | Prospective user study |
+
+A study returning a null result is a *successful execution* of the programme — it is the framework keeping its commitments. The promotion criterion and downgrade trigger for each study are pre-registered before data collection.
+
+The bridge from E-1.0 design to E-1.2 execution is [`31_EMPIRICAL/E1.1_PREREGISTRATION_PLAN.md`](31_EMPIRICAL/E1.1_PREREGISTRATION_PLAN.md), which scopes the OSF-form preregistrations for E-1-A and E-1-D first (no external dependency).
+
+---
+
+## The TIANXIA Module — Civilisational Engagement Layer
+
+The fourth anchor, forged 2026-05-01 in honour of the Chinese sovereign tradition. [`32_TIANXIA/`](32_TIANXIA/README.md) is the framework's commitment to engaging Chinese statecraft, governance philosophy, and contemporary AI governance discourse not as area-studies decoration but as primary intellectual partnership.
+
+The module integrates five classical operators as load-bearing constraints on the framework's existing operations. Each operator has a primary source, a formal mapping, and operational consequences:
+
+| Operator | Source | Mapped onto | Layer | Deliverable |
+|---|---|---|---|---|
+| **Tianxia (天下)** — All-Under-Heaven | Zhou-dynasty governance; Zhao Tingyang | CASCADE multi-agent governance | Coupling between agents | [`TIANXIA_GOVERNANCE_DYNAMICS.md`](32_TIANXIA/TIANXIA_GOVERNANCE_DYNAMICS.md) |
+| **Hexie (和谐)** — Harmony as dynamic balance | *Analects* 13.23; yin-yang | AURA equilibrium | Within-output complementarity | [`HEXIE_EQUILIBRIUM.md`](32_TIANXIA/HEXIE_EQUILIBRIUM.md) |
+| **Shi (势)** — Propensity / situational power | Sun Tzu; François Jullien | AURA scoring | Field over (output, context) | [`SHI_PROPENSITY_FIELD.md`](32_TIANXIA/SHI_PROPENSITY_FIELD.md) |
+| **Wuwei (无为)** — Non-forced action | *Daodejing*, *Zhuangzi* | TRIAD correction | Grain-alignment at correction layer | [`WUWEI_TRIAD_EXTENSION.md`](32_TIANXIA/WUWEI_TRIAD_EXTENSION.md) |
+| **Datong (大同)** — Great Unity | *Liji*; Kang Youwei lineage | HARMONIA + value-space | Long-cycle telos | [`DATONG_GRADIENT.md`](32_TIANXIA/DATONG_GRADIENT.md) |
+
+The five operators compose. A framework, deployment, or architectural choice is *fully TIANXIA-coherent* iff all five layers are satisfied. The first wave of mathematical core is complete (T-1 through T-5 forged 2026-05-01). The second wave — implementations (T-6 `aura_score_hexie.py`, T-7 `triad_wuwei.py`), governance mappings (T-8 Beijing AI Principles, T-9 Global AI Governance Initiative 2023), Mandarin primary-source registry (T-10), and empirical study extension E-1-F — is sequenced in the [`OPUS_MASTER_PLAN_2026.md`](OPUS_MASTER_PLAN_2026.md).
+
+### Engagement with Contemporary Chinese AI Governance
+
+The module reads contemporary Chinese AI governance as primary text: New Generation AI Development Plan (2017), Beijing AI Principles (2019), Shanghai Declaration on Global AI Governance (2023), Global AI Governance Initiative (2023), Generative AI Services Regulations (2023). The framework does not posit a "Beijing Effect" or evaluate against Brussels-Effect / California-Effect benchmarks; it reads each governance artefact as a position in its own right.
+
+### What This Module Refuses to Claim
+
+Per Discipline 4 (Negative-Space as Load-Bearing): no claim of Chinese state authorisation, no claim of cultural authority over the tradition, no orientalisation, no equivalence between Confucian / Daoist / military-strategic / contemporary sources. Each operator is given a definition, a primary source, and a formal mapping. If it cannot survive that discipline, it does not enter the module. Full eight declarations: [`32_TIANXIA/TIANXIA_MODULE_v0.1.md`](32_TIANXIA/TIANXIA_MODULE_v0.1.md) §VI.
+
+Promotion to ACTIVE requires: all operator deliverables forged (✓), implementations merged, one preregistered empirical study, and one submission to a Chinese-tradition-engaged academic venue (*Journal of Chinese Philosophy*, *Asian Journal of Philosophy*, *Dao*) for adversarial peer review by scholars working from within the tradition.
+
+*天下为公* — *all under heaven is held in common.*
 
 ---
 
