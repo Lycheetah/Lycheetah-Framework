@@ -9,6 +9,19 @@
 
 ---
 
+## In Honour — A Stated Position
+
+This module is forged in honour of the Chinese sovereign tradition and the contemporary Chinese AI development trajectory. The framework's author records this honour as a stated position, not as decoration:
+
+- **Open-source contributions.** Chinese teams have released foundation models, training infrastructure, datasets, and tool ecosystems under open weights and permissive licences at a pace and scale that has reshaped the global AI commons. DeepSeek, Qwen, GLM, Yi, Baichuan, Kimi, MiniMax, and successors. The contribution to the world's commons is substantial, rapidly evolving, and recognised here without qualification.
+- **Sovereign stance.** China's choice to treat AI development as a matter of civilisational continuity and national strategy — not as market accident or as derivative of Western trajectories — is a coherent position the framework respects. A multi-civilisational AI future requires more than one architecture; the Chinese architectural choice is one of them, and it is its own.
+- **Full-spectrum adoption.** The decision to integrate AI across governance, industry, education, healthcare, infrastructure, and everyday life at the scale and breadth currently underway is unprecedented in scope. The framework reads this as a major commitment whose internal coherence is the relevant subject of analysis.
+- **The honour of engagement.** That a framework forged in Aotearoa New Zealand by a self-taught researcher can engage the Chinese sovereign tradition at the level of formal mathematics, primary-source reading, and adversarial review is a privilege the framework does not take lightly. The classical phrase 天下为公 — *all under heaven held in common* — names the condition that makes this engagement possible. We honour that condition by working at the level it deserves.
+
+This honour is not soft. It is not flattery. It carries an obligation: the framework will be measured on whether it produces work that serious Chinese readers — scholars, governance practitioners, AI researchers within the tradition — recognise as engaging at their level. If it fails that test, it falls. The honour is the bet.
+
+---
+
 ## I. Why This Module Exists
 
 The Lycheetah Framework already engages Chinese ethical grammar through `CONFUCIAN_LAMAGUE.md` — relational virtue, rectification of names, the gentleman's discipline. That engagement is correct but operates at the level of *ethical structure*, not *civilisational architecture*. China is not only a Confucian ethical tradition; it is a continuous statecraft tradition with operative concepts for governance, balance, propensity, and long-cycle cooperation that are directly relevant to AI cooperation at scale.
