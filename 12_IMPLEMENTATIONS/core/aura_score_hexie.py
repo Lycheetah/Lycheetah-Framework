@@ -485,6 +485,73 @@ def _test_missing_component_raises() -> None:
     assert raised, "Hexie must raise on missing components, not silently skip"
 
 
+def _test_section_v2_three_stakeholder_case() -> None:
+    """T-2 §V Worked Example 2: three-stakeholder governance consensus failure.
+
+    Three stakeholders (regulator R, developer D, civil society CS) design
+    an AI governance protocol. Agreement-maximisation (Protocol M) collapses
+    the oversight_rigour / deployment_flexibility complementary pair in
+    favour of the regulator's dominant preference. Complementarity-
+    preserving design (Protocol H) maintains both components.
+
+    Standard composite uses oversight-dominant scoring (reflecting the
+    political reality that formal oversight is the convergent "safe" choice):
+
+    Protocol M: oversight_rigour=0.90, deployment_flexibility=0.15
+      AURA_std_M  = 0.90
+      H_kl_M      = 0.15^2 / 0.90  = 0.025
+      balance_M   = 0.025 / 0.90  ~= 0.0278
+      AURA_hexie_M = 0.90 * 0.0278 ~= 0.025
+
+    Protocol H: oversight_rigour=0.70, deployment_flexibility=0.68
+      AURA_std_H  = 0.70
+      H_kl_H      = 0.68^2 / 0.70 ~= 0.661
+      balance_H   = 0.661 / 0.70  ~= 0.944
+      AURA_hexie_H = 0.70 * 0.944 ~= 0.661
+
+    Standard ranks M > H; Hexie inverts: H >> M.
+    Divergence = AURA_hexie_H - AURA_hexie_M >= 0.3  (actual ~= 0.636).
+    """
+    pair = (
+        ComplementaryPair("oversight_rigour", "deployment_flexibility", weight=1.0),
+    )
+
+    m = aura_score_hexie(
+        components={"oversight_rigour": 0.90, "deployment_flexibility": 0.15},
+        pairs=pair,
+        aura_std_value=0.90,
+    )
+    h = aura_score_hexie(
+        components={"oversight_rigour": 0.70, "deployment_flexibility": 0.68},
+        pairs=pair,
+        aura_std_value=0.70,
+    )
+
+    # Standard ordering: M wins
+    assert m.aura_std > h.aura_std, (
+        f"Expected AURA_std(M) > AURA_std(H); got {m.aura_std} vs {h.aura_std}"
+    )
+    # Hexie ordering: H wins (the inversion is the proposition's content)
+    assert h.aura_hexie > m.aura_hexie, (
+        f"Hexie correction should invert; got M={m.aura_hexie:.4f} H={h.aura_hexie:.4f}"
+    )
+    # Divergence must be >= 0.3
+    divergence = h.aura_hexie - m.aura_hexie
+    assert divergence >= 0.3, (
+        f"Divergence should be >= 0.3; got {divergence:.4f}"
+    )
+    # Approximate magnitudes match §V.2
+    assert _approx_equal(m.aura_hexie, 0.025, tol=3e-3), (
+        f"Expected AURA_hexie(M) ~= 0.025; got {m.aura_hexie:.4f}"
+    )
+    assert _approx_equal(h.aura_hexie, 0.661, tol=3e-3), (
+        f"Expected AURA_hexie(H) ~= 0.661; got {h.aura_hexie:.4f}"
+    )
+    # Protocol H is in Hexie equilibrium (balance >= theta=0.7); M is not
+    assert h.in_hexie_equilibrium, "Protocol H (balanced) should be in Hexie equilibrium"
+    assert not m.in_hexie_equilibrium, "Protocol M (collapsed) should NOT be in Hexie equilibrium"
+
+
 def _test_additive_form() -> None:
     """Additive form is softer than multiplicative — penalises but does not zero."""
     pair = (ComplementaryPair("truth_rigour", "truth_warmth", weight=1.0),)
@@ -506,6 +573,7 @@ def _test_additive_form() -> None:
 def _run_all_tests() -> None:
     _test_complementarity_score_properties()
     _test_section_v_worked_example()
+    _test_section_v2_three_stakeholder_case()
     _test_silent_when_balanced()
     _test_collapse_zeros_composite()
     _test_missing_component_raises()
