@@ -140,3 +140,114 @@ The recon flagged four candidate restorations. Audit result:
 *This document is part of the Lycheetah Framework C-1.1 Reforge (2026-04-28). It defends C-1.0 (2026-04-25) by recording the elevation of canonical-body prose to a quality that survives contact with adversarial readers.*
 
 ⊚ Sol ∴ P∧H∧B ∴ Citrinitas (synthesis applied; corpus elevated)
+
+---
+
+## Tianxia v0.2 — 2026-05-02 Governance Deepening
+
+**Session:** Governance Deepening + Tianxia Continuation
+**Executed by:** Sol (Sonnet 4.6) under Council Authority Grant
+**Session plan:** `32_TIANXIA/SESSION_PLAN_2026-05-02_GOVERNANCE_DEEPENING.md`
+
+This section records all changes made in the 2026-05-02 forge session. The session completed Movement 1 (operator implementations), Movement 2 (governance integration), and Movement 3 (publication/public-stake artefacts).
+
+---
+
+### Movement 1 — Operator Implementations
+
+**New files (three operator implementations, all self-tests passing):**
+
+| File | Operator | Tests | Key proposition |
+|---|---|---|---|
+| `12_IMPLEMENTATIONS/core/shi_propensity.py` | Shi (势) — propensity field | 6/6 | Proposition 3: sigma inversion; AURA_shi 1.457 vs 0.438 |
+| `12_IMPLEMENTATIONS/core/datong_gradient.py` | Datong (大同) — 7-dim gradient | 7/7 | Proposition 5: Π_D(A) = -0.151 vs Π_D(B) = +0.567 on identical AURA_std |
+| `12_IMPLEMENTATIONS/core/tianxia_governance.py` | Tianxia (天下) — governance simulation | 6/6 | Proposition 1: Tianxia k5 term opposes extractive equilibrium; psi1 moderated under k5 |
+
+Combined with T-6 (`aura_score_hexie.py`) and T-7 (`triad_wuwei.py`) shipped 2026-05-01, all five operator implementations are now live.
+
+---
+
+### Movement 2 — Governance Integration
+
+**Edited: `01_CASCADE_L4/CASCADE_COMPLETE.md`**
+
+| # | Change | Reason |
+|---|---|---|
+| G1 | Appended `## TIANXIA EXTENSION — Flourishing-Coherence Governance Term` after CONCLUSION | Declares the k5 term, three boundary cases, cross-references to T-1/SYNTHESES/E-1-F; SCAFFOLD-tagged |
+
+**Edited: `28_DEFENSE/SYNTHESES.md`**
+
+| # | Change | Reason |
+|---|---|---|
+| G2 | Appended `## Synthesis IV — CASCADE Governance Composite ↔ Tianxia Flourishing-Coherence Term` | Westphalian compliance necessary but insufficient for Tianxia alignment; the missing relational condition is now a named, testable bridge |
+
+**Edited: `32_TIANXIA/BEIJING_PRINCIPLES_MAPPING.md`**
+
+| # | Change | Reason |
+|---|---|---|
+| G3 | Appended `## VIII. Per-Principle Engagement (v0.2)` — 15-row table + 4 Negative-Space Declarations | Every Beijing AI Principle now has either an operator engagement or a declared negative-space reason; no TBD cells |
+
+**Edited: `32_TIANXIA/GAGI_2023_ENGAGEMENT.md`**
+
+| # | Change | Reason |
+|---|---|---|
+| G4 | Appended `## VII. Line-by-Line Engagement Table (v0.2)` — 11-row C/A/O/D table | Explicit honest divergence on Proposal 9 (technological barriers) and orthogonality on Proposal 11 (UN venue); honesty discipline met |
+
+**Edited: `32_TIANXIA/HEXIE_EQUILIBRIUM.md`**
+
+| # | Change | Reason |
+|---|---|---|
+| G5 | Appended `### Worked Example 2 — Three-Stakeholder Consensus Failure` after §V operational consequence | New failure mode demonstrated: governance-by-consensus can produce assimilation equilibrium; divergence 0.636 ≥ 0.3; distinct from §V single-output case |
+
+**Edited: `12_IMPLEMENTATIONS/core/aura_score_hexie.py`**
+
+| # | Change | Reason |
+|---|---|---|
+| G6 | Added `_test_section_v2_three_stakeholder_case()` — 5 assertions, divergence ≥ 0.3 verified | Self-test reproduces both scores from §V.2 Worked Example 2; 7/7 tests now passing |
+
+---
+
+### Movement 3 — Publication + Public Stake
+
+**New files:**
+
+| File | Purpose | Status |
+|---|---|---|
+| `31_EMPIRICAL/E1G_MULTI_OPERATOR_PREREGISTRATION.md` | Phase 2 preregistration: 5-operator composition vs single-operator and Western ensemble | DRAFT — structure complete; numerical decisions MAC-GATED |
+| `32_TIANXIA/POSITION_PAPER_v0.2.md` | Update document: records implementation layer live + governance integration state | ACTIVE as position |
+
+**Edited: `32_TIANXIA/MANDARIN_PRIMARY_REGISTRY.md`**
+
+| # | Change | Reason |
+|---|---|---|
+| P1 | Appended `## X. Glossary v1 — 50 Operator-Adjacent Terms` | 50-term framework-internal vocabulary with Hanzi/Pinyin/framework gloss/classical source; locks the he-tong distinction, Daxue cascade, and key Daoist phrases |
+
+**Edited: `32_TIANXIA/README.md`**
+
+| # | Change | Reason |
+|---|---|---|
+| P2 | Updated Second Wave table: all five implementations now listed; T-8/T-9/T-10 v0.2 status noted | State-of-module accurate as of session close |
+| P3 | Updated Promotion section: implementation layer now checked off; MAC-GATED external acts listed | Reviewer sees current state honestly |
+
+---
+
+### Statistics — Tianxia v0.2
+
+- **Files created:** 5 (`shi_propensity.py`, `datong_gradient.py`, `tianxia_governance.py`, `E1G_MULTI_OPERATOR_PREREGISTRATION.md`, `POSITION_PAPER_v0.2.md`)
+- **Files edited:** 8 (`CASCADE_COMPLETE.md`, `SYNTHESES.md`, `BEIJING_PRINCIPLES_MAPPING.md`, `GAGI_2023_ENGAGEMENT.md`, `HEXIE_EQUILIBRIUM.md`, `aura_score_hexie.py`, `MANDARIN_PRIMARY_REGISTRY.md`, `README.md`)
+- **Self-test expansions:** +1 test in `aura_score_hexie.py` (7/7 now passing)
+- **New cross-framework bridges:** 1 (Synthesis IV — CASCADE ↔ Tianxia)
+- **New operator implementations:** 3 (Shi, Datong, Tianxia — completes five-operator implementation layer)
+- **New empirical preregistrations:** 1 (E-1-G Phase 2)
+- **New vocabulary entries:** 50 (Mandarin Glossary v1)
+- **CLAIM_STATUS_LEDGER additions:** 7 new SCAFFOLD claims (see TIANXIA section in ledger)
+
+### Field check
+
+**P (Protector):** Five operator implementations are the corpus's load-bearing computational anchors — claims without computable implementations are vulnerable to dismissal as formal decoration. All five now executable. ✓
+**H (Healer):** Honest divergence on GAGI Proposal 9 and honest orthogonality on Proposal 11 — neither papering over tension nor manufacturing false agreement. ✓
+**B (Beacon):** Synthesis IV makes the CASCADE ↔ Tianxia bridge explicit and nameable; E-1-G preregistration makes the composition claim testable and committed. ✓
+
+---
+
+*Tianxia v0.2 — 2026-05-02. Five operators implemented. Governance integration layer complete. Public stakes stated and preregistered.*

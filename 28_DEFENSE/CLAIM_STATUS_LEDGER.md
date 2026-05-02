@@ -163,12 +163,30 @@ A claim's status is not permanent. Both directions of movement have explicit tri
 
 ---
 
+## TIANXIA
+
+*Added 2026-05-02 — five-operator implementation layer complete; all claims `[SCAFFOLD]` pending empirical promotion via E-1-F / E-1-G.*
+
+| Claim | Status | Evidence basis |
+|---|---|---|
+| Tianxia operator Phi_T = Σ C_ij measures multi-agent flourishing-coherence coupling as a computable scalar | `[SCAFFOLD]` | Implemented in `tianxia_governance.py`; 6/6 self-tests passing; Proposition 1 reproduced in quadratic-externality simulation |
+| Westphalian CASCADE compliance (k1–k4) is necessary but insufficient for network-level alignment under the Tianxia operator | `[SCAFFOLD]` | Synthesis IV formal claim; simulation confirms extractive equilibria satisfying all k1–k4 conditions while Phi_T < 0; k5_critical unfit empirically (E-1-F Phase 4 pending) |
+| Hexie complementarity correction (AURA_hexie) captures component-collapse failure modes invisible to AURA_std | `[SCAFFOLD]` | Implemented in `aura_score_hexie.py`; 7/7 self-tests passing; Propositions 2 (rank inversion) and 2a (three-stakeholder case, divergence 0.636) reproduced; E-1-F Phase 1 pending |
+| Shi propensity field modulates AURA scoring as a function of deployment-context alignment | `[SCAFFOLD]` | Implemented in `shi_propensity.py`; 6/6 self-tests passing; Proposition 3 (sigma inversion produces AURA_shi 1.457 vs 0.438) reproduced; empirical validation pending |
+| Wuwei grain-alignment scoring extends TRIAD with minimal-intervention cost accounting | `[SCAFFOLD]` | Implemented in `triad_wuwei.py`; self-tests passing; Proposition 4 (e² integrity-debt cost ratio under forcing vs grain-aligned correction) reproduced; calibration pending |
+| Datong 7-dim value-space gradient is a computable metric that produces meaningful policy distinctions from standard AURA | `[SCAFFOLD]` | Implemented in `datong_gradient.py`; 7/7 self-tests passing; Proposition 5 (Π_D distinguishes policies with identical AURA_std: −0.151 vs +0.567) reproduced; empirical correlates pending |
+| Five-operator composition (Tianxia+Hexie+Shi+Wuwei+Datong) produces governance-state classifications that single-operator evaluation misses | `[SCAFFOLD]` | E-1-G Phase 2 preregistered; formal prediction structure complete; empirical test pending (MAC-GATED: numerical decisions + rater pool) |
+
+---
+
 ## SUMMARY BY STATUS
+
+*Updated 2026-05-02 — TIANXIA section added (7 new SCAFFOLD claims).*
 
 | Status | Count | Domain |
 |---|---|---|
 | `[ACTIVE]` | 17 | Operational definitions, mathematical facts, implemented tools, one documented falsification |
-| `[SCAFFOLD]` | 26 | Structurally sound models with calibration or empirical validation pending |
+| `[SCAFFOLD]` | 33 | Structurally sound models with calibration or empirical validation pending (includes 7 new TIANXIA claims) |
 | `[CONJECTURE]` | 16 | Proposed claims; consistent with evidence but not yet supported beyond analogy |
 
 **What ACTIVE means here:** The claim can be verified by reading the definition, running the code, or checking the historical record. It does not mean externally peer-reviewed publication unless stated.
@@ -182,5 +200,6 @@ A claim's status is not permanent. Both directions of movement have explicit tri
 *Forged in D-1.1 downgrade session, 2026-04-26/27.*
 *NRM was the instrument. Veritas was the standard.*
 *The gold that remains is more real for having been tested.*
+*TIANXIA section added 2026-05-02 — five operators implemented and SCAFFOLD-registered.*
 
-*⊚ Sol ∴ P∧H∧B ∴ Nigredo → Albedo*
+*⊚ Sol ∴ P∧H∧B ∴ Nigredo → Albedo → Citrinitas*
