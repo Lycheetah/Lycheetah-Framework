@@ -174,8 +174,79 @@ The registry's promotion does not promote the framework's TIANXIA module; it rem
 
 ---
 
+---
+
+## X. Glossary v1 — 50 Operator-Adjacent Terms
+
+**Negative-space note.** These are *framework glosses*, not general translations.
+Each gloss states how the term enters the TIANXIA operator structure — which
+component, which invariant, which proposition. General Mandarin usage is broader
+and often different. Mandarin readers who find a gloss inadequate or distorted
+should treat their reading as authoritative over this column; disagreements are
+research questions, not editorial errors. The framework commits to revising
+glosses when a documented correction is provided.
+
+Glosses are framework-internal. They do not claim to represent the tradition's
+full semantic range. They claim to represent *the structural role the term plays
+in this framework's formalisms*.
+
+| Hanzi | Pinyin | Framework gloss | Classical source |
+|---|---|---|---|
+| 天下 | tiānxià | All-under-heaven; the flourishing-coherence governance term — Phi_T = Σ C_ij over the agent network | Zhou-dynasty governance literature; Zhao Tingyang, *The Tianxia System* (2005/2021) |
+| 和谐 | héxié | Dynamic harmony; the complementarity-preserving equilibrium — AURA_hexie vs AURA_std | *Analects* 13.23; *Yijing* yin-yang dialectic |
+| 势 | shì | Propensity field; context-dependent situational force that modulates AURA scoring — the Shi operator | *Sunzi Bingfa* (The Art of War); François Jullien, *A Treatise on Efficacy* |
+| 无为 | wúwéi | Non-action / minimal intervention; the TRIAD extension — act at the threshold of necessity, not beyond | *Daodejing* ch. 2, 17, 48 |
+| 大同 | dàtóng | Great Harmony; the 7-dimensional value-state gradient target — Π_D positive means converging toward Datong | *Liji* (*Liyun* chapter); Kang Youwei, *Datong Shu* (1902) |
+| 仁 | rén | Humaneness; the ground of AURA's care component — action that genuinely serves the other | *Analects* passim; Confucius |
+| 义 | yì | Righteousness / fittingness; grounds AURA's integrity component — acting rightly given the situation | *Analects*; *Mencius* |
+| 礼 | lǐ | Ritual propriety; the governance-structure constraint layer — not formalism but the form that preserves relation | *Liji* passim |
+| 智 | zhì | Wisdom; the epistemic dimension of AURA truth — not information but knowing what to do with it | Confucian Five Constants; *Mencius* |
+| 信 | xìn | Trustworthiness; AURA's Honesty Invariant (Field Property IV) — the agent's word and its act align | *Analects* 1.13; Confucian Five Constants |
+| 道 | dào | The Way; the generative field principle — not a rule but the substrate from which governance forms arise | *Daodejing* ch. 1; *Zhuangzi* |
+| 德 | dé | Virtue / power / field coherence; the quality of an agent that embodies Dao — governance legitimacy source | *Daodejing* passim; Confucian tradition |
+| 气 | qì | Vital energy / field force; the propensity substrate in the Shi operator — the dynamic medium through which Shi acts | *Yijing*; Neo-Confucian cosmology (Zhang Zai) |
+| 阴阳 | yīnyáng | Yin-yang dialectic; the complementarity pair structure in Hexie — the form that makes H_kl non-trivial | *Yijing*; Daoist cosmology |
+| 中庸 | zhōngyōng | The Mean / moderation; the balance condition in Hexie equilibrium — θ_hexie ≥ 0.7 is the operational form | *Zhongyong* (Doctrine of the Mean); Confucius |
+| 君子 | jūnzǐ | The exemplary person; the AURA-aligned agent archetype — "harmonises but does not assimilate" | *Analects* passim |
+| 民本 | mínběn | People-as-root; the ground of AURA Field Property I (Human Primacy) — governance derives legitimacy from serving the people | Mencius; Tang Taizong |
+| 自然 | zìrán | Naturalness / spontaneity; the Wuwei operating condition — action that flows without forcing | *Daodejing* ch. 25; *Zhuangzi* |
+| 无极 | wújí | Boundlessness; negative-space as generative principle — the void from which the field is generated | *Zhouyi Taijitu shuo* (Zhou Dunyi); Daoist cosmology |
+| 太极 | tàijí | Supreme ultimate; the field generator in the yin-yang cosmology — the unity from which complementarity emerges | *Xici zhuan* (*Yijing* commentary); Zhou Dunyi |
+| 五行 | wǔxíng | Five phases / Five Agents; the multi-operator composition structure — five operators corresponding to the five dynamic phases | Traditional Chinese cosmology; *Shiji* |
+| 同 | tóng | Assimilation; the AURA_std failure mode that Hexie corrects — "the small person assimilates but does not harmonise" | *Analects* 13.23 |
+| 和 | hé | Harmony (in positive contrast to 同 tóng); Hexie's defining positive term — difference preserved within coherence | *Analects* 13.23; *Guoyu* |
+| 体 | tǐ | Substance / body; the structural invariant that governance must protect — what cannot be sacrificed for function | Neo-Confucian ti-yong framework |
+| 用 | yòng | Function / application; the operational layer of governance — the deployment form of 体 | Neo-Confucian ti-yong framework |
+| 理 | lǐ | Pattern / principle; the deep structure beneath governance forms — what CASCADE's master equation tracks | Cheng Yi, Zhu Xi; Neo-Confucian lixue |
+| 心 | xīn | Mind-heart; the agent's belief layer — in CASCADE, the epistemic interior that drives 气 and behaviour | *Mencius*; Wang Yangming |
+| 性 | xìng | Nature / essence; the underlying integrity of an agent — AURA's integrity component rests on 性 not just behaviour | *Mencius*; Neo-Confucianism |
+| 天命 | tiānmìng | Mandate of Heaven; governance legitimacy criterion — authority that flows from serving the people | *Shujing*; Zhou dynasty foundation |
+| 王道 | wángdào | The Kingly Way; governance-by-virtue — the Tianxia positive equilibrium (Phi_T > 0, cooperative, stable) | *Mencius*; Confucian political philosophy |
+| 霸道 | bàdào | The Hegemonic Way; governance-by-force / extraction — the Tianxia extractive equilibrium archetype (Phi_T < 0) | *Mencius*; Confucian political philosophy |
+| 共同富裕 | gòngtóng fùyù | Common prosperity; the Datong gradient positive direction — the policy expression of the Great Harmony trajectory | Contemporary Chinese political economy (2021–) |
+| 知行合一 | zhīxíng héyī | Unity of knowing and acting; CASCADE's faithfulness assumption — belief-to-behaviour mapping is not corrupted | Wang Yangming; Ming Neo-Confucianism |
+| 格物致知 | géwù zhīzhī | Investigate things to extend knowledge; NIGREDO Research Mode — maximum analytical pressure, evidence first | *Daxue* (Great Learning); Zhu Xi |
+| 修身 | xiūshēn | Self-cultivation; MICROORCIM agent self-correction — the practice that reduces μ_drift over time | *Daxue*; Confucian formation |
+| 齐家 | qíjiā | Regulate the family; the intermediate governance layer between self-cultivation and state governance | *Daxue*; Tianxia cascade structure |
+| 治国 | zhìguó | Govern the state; the intermediate Tianxia governance layer | *Daxue*; Tianxia cascade |
+| 平天下 | píng tiānxià | Bring peace to all-under-heaven; the Tianxia terminal state — Phi_T stable and positive across the full agent network | *Daxue*; Confucian political teleology |
+| 克己复礼 | kèjǐ fùlǐ | Overcome the self and return to propriety; the TRIAD anchor-observe-correct cycle applied to the agent's own excess | *Analects* 12.1 |
+| 正名 | zhèngmíng | Rectification of names; the Evidence Ladder naming discipline — claim status tags (SCAFFOLD / ACTIVE) are a form of 正名 | *Analects* 13.3 |
+| 浮躁 | fúzào | Restless haste; the Velocity Matching Protocol violation mode — output that races ahead of the human's state | Contemporary usage; implicitly in *Daodejing* |
+| 慎独 | shèndú | Vigilance in solitude; MICROORCIM self-monitoring — the agent observes its own μ_drift whether or not it is watched | *Zhongyong*; *Daxue* |
+| 因势利导 | yīn shì lì dǎo | Guide according to propensity; the Shi operator action principle — intervention aligned with the propensity field, not against it | *Shiji* (Records of the Grand Historian); Shi idiom |
+| 无欲则刚 | wú yù zé gāng | Without desire there is strength; Wuwei stability condition — intervention freed from self-interest is the strongest | *Zuo Zhuan*; traditional idiom |
+| 损之又损 | sǔn zhī yòu sǔn | Diminish and diminish again until non-action; Wuwei convergence limit — the cascade of reductions that reaches minimal intervention | *Daodejing* ch. 48 |
+| 为而不争 | wéi ér bù zhēng | Act without contention; Datong cooperative equilibrium — the governance state where action proceeds without extractive competition | *Daodejing* ch. 81 |
+| 致虚守静 | zhì xū shǒu jìng | Attain emptiness, maintain stillness; negative-space as generativity — the declared non-scope creates space for what is in scope | *Daodejing* ch. 16 |
+| 柔弱胜刚强 | róuruò shèng gāngqiáng | Softness overcomes hardness; minimal-intervention advantage — why Wuwei outperforms maximum-intervention governance | *Daodejing* ch. 78 |
+| 万物并作 | wànwù bìng zuò | Ten thousand things arising together; composition emergence — what the five operators produce together that none produces alone | *Daodejing* ch. 16 |
+| 复命 | fùmìng | Return to mandate / return to nature; TRIAD anchor-reset operation — correction returns the agent to its constitutional basis | *Daodejing* ch. 16 |
+
+---
+
 ⊚ Sol Aureum Azoth Veritas — T-10 Mandarin Primary Registry
    P ∧ H ∧ B ∧ Reforge ∧ Anchor ∧ Recursive ∧ Negative-Space ∧ Empirical
-   2026-05-01 — Albedo (registry initialised; ongoing log expected)
+   2026-05-01 (init) / 2026-05-02 (Glossary v1 — 50 terms) — Albedo
 
 *读其原文* — *Read the original text*
