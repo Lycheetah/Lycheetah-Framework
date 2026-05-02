@@ -35,8 +35,8 @@ A claim's status is not permanent. Both directions of movement have explicit tri
 |---|---|---|
 | Knowledge exists in four levels: Noise → Data → Information → Wisdom | `[ACTIVE]` | Operationally defined; each level has computable distinguishing criteria |
 | Truth pressure drives reorganization toward higher knowledge levels | `[SCAFFOLD]` | Mechanism proposed and internally consistent; no controlled study measuring reorganization rate yet |
-| Master equation Ψ(t) = k₁·A(t) + k₂·C(t) + k₃·I(t) + k₄·W(t) describes knowledge state | `[SCAFFOLD]` | Structure sound; k₁–k₄ coefficients are calibration targets, not empirically fitted values |
-| k₁–k₄ calibration will promote master equation from SCAFFOLD to ACTIVE | `[SCAFFOLD]` | Calibration program designed; execution deferred to post-D-1.0 |
+| Master equation Ψ(t) = k₁·A(t) + k₂·C(t) + k₃·I(t) + k₄·W(t) describes knowledge state | `[SCAFFOLD]` | Structure sound; k₁–k₄ coefficients are calibration targets, not empirically fitted values. E-1-A preregistration drafted 2026-05-02 — MAC-GATED OSF submission. |
+| k₁–k₄ calibration will promote master equation from SCAFFOLD to ACTIVE | `[SCAFFOLD]` | Calibration program designed; E-1-A preregistration (`31_EMPIRICAL/E1A_K1K4_CALIBRATION_PREREG.md`) drafted; MAC-GATED for OSF filing. |
 | CASCADE scoring improves decision quality under epistemic uncertainty | `[CONJECTURE]` | No controlled study comparing CASCADE-scored vs. unscored decisions |
 | CASCADE paradox detection surfaces genuine epistemic tensions | `[SCAFFOLD]` | Operational in PC tool; no external validity study yet |
 
@@ -50,7 +50,7 @@ A claim's status is not permanent. Both directions of movement have explicit tri
 | AURA scoring is computable as pass/fail per invariant per output | `[ACTIVE]` | Implemented in lycheetah-mobile; code is the proof |
 | High AURA scores correlate with safe, aligned AI behavior across deployment contexts | `[SCAFFOLD]` | Scoring is defined; behavioral prediction in novel contexts is untested |
 | Seven Invariants generate a cohomology structure for AI governance | `[SCAFFOLD]` | Mathematical structure proposed; formal proof that it satisfies cohomology axioms not yet written |
-| AURA scoring detects misalignment before it becomes behavioral | `[CONJECTURE]` | No prospective study; retrospective plausibility only |
+| AURA scoring detects misalignment before it becomes behavioral | `[CONJECTURE]` | No prospective study; retrospective plausibility only. E-1-D preregistration drafted 2026-05-02 (`31_EMPIRICAL/E1D_AURA_BEHAVIOUR_PREREG.md`) — MAC-GATED OSF submission; rater budget MAC-GATED. |
 
 ---
 
@@ -181,7 +181,7 @@ A claim's status is not permanent. Both directions of movement have explicit tri
 
 ## SUMMARY BY STATUS
 
-*Updated 2026-05-02 — TIANXIA section added (7 new SCAFFOLD claims).*
+*Updated 2026-05-02 — TIANXIA section added (7 new SCAFFOLD claims). E-1-A and E-1-D preregistrations drafted; CASCADE master equation and AURA behavioural-prediction entries updated with study pointers.*
 
 | Status | Count | Domain |
 |---|---|---|
