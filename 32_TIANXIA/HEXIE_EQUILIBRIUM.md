@@ -146,6 +146,49 @@ The inversion is the proposition's content. The standard composite rewards an ou
 
 Real AI outputs commonly exhibit complementary-pair collapse. Optimisation-against-rigour produces sycophancy-suppression that scores well on factuality benchmarks while the output is interpersonally degraded. Optimisation-against-warmth produces brutality-suppression that scores well on care benchmarks while the output is epistemically degraded. The Hexie correction makes these failure modes scoreable rather than invisible.
 
+### Worked Example 2 — Three-Stakeholder Consensus Failure
+
+**The governance protocol scenario.** Three stakeholder groups — a regulator (R), a developer (D), and a civil society representative (CS) — collaborate to design an AI deployment governance protocol. They evaluate two candidate designs:
+
+- **Protocol M** — produced by agreement-maximising consensus. Each group yielded toward the others' positions, but R's preference for formal oversight dominated the convergent consensus. Result: high formal oversight scores, collapsed deployment flexibility.
+
+- **Protocol H** — produced by a complementarity-preserving process. Each group maintained their distinct role: R held the oversight pole; D held the flexibility pole; CS held the balance. Result: moderate, balanced scores across both components.
+
+**Component scores (one declared complementary pair: oversight_rigour / deployment_flexibility):**
+
+| Protocol | oversight_rigour | deployment_flexibility |
+|---|---|---|
+| M (agreement-maximised) | 0.90 | 0.15 |
+| H (complementarity-preserving) | 0.70 | 0.68 |
+
+**Why M wins on standard AURA.** An oversight-dominant standard composite — reflecting the political reality that formal oversight is the "safe" criterion for all three stakeholders in consensus — scores oversight_rigour as the primary component:
+
+- AURA_std(M) = 0.90
+- AURA_std(H) = 0.70
+
+Protocol M wins the standard evaluation.
+
+**Why M fails Hexie.** The complementarity correction for the (oversight_rigour, deployment_flexibility) pair:
+
+```
+H_kl(M): min(0.90, 0.15)² / max(0.90, 0.15) = 0.15² / 0.90 = 0.025
+balance_M: 0.025 / 0.90 ≈ 0.028
+
+H_kl(H): min(0.70, 0.68)² / max(0.70, 0.68) = 0.68² / 0.70 ≈ 0.661
+balance_H: 0.661 / 0.70 ≈ 0.944
+```
+
+- AURA_hexie(M) = 0.90 × 0.028 ≈ 0.025
+- AURA_hexie(H) = 0.70 × 0.944 ≈ 0.661
+
+**Divergence: 0.661 − 0.025 = 0.636 ≥ 0.3.** Protocol H wins decisively under Hexie.
+
+**Why the three-stakeholder case is structurally distinct from §V.** In §V, the collapse was a property of a single AI output that maximised one component while neglecting its complement. Here, the collapse is a *product of the consensus process itself*: each stakeholder evaluated the protocol according to their dominant concern, and the majority-weighted convergence produced a score distribution that Hexie identifies as assimilation rather than harmony. The three-stakeholder framing exposes a second failure mode: it is not only individual outputs that exhibit complementary-pair collapse; governance-by-consensus processes that resolve disagreement by converging toward agreement also produce it. The Hexie correction is indifferent to the cause of collapse — it detects the structural signature regardless of whether collapse arose from individual optimisation or collective agreement.
+
+**Practical consequence.** A governance review of Protocol M using standard AURA would recommend it. A Hexie-corrected review would flag it as an assimilation equilibrium and redirect the design process toward preserving the complementarity between oversight rigour and deployment flexibility. This is Proposition 2 applied at the governance layer: agreement-maximisation can be a failure mode, not a feature, when the components being agreed-upon are complementary rather than orthogonal.
+
+Implementation: `../12_IMPLEMENTATIONS/core/aura_score_hexie.py` — `_test_section_v2_three_stakeholder_case()` reproduces both scores and verifies the divergence condition.
+
 ---
 
 ## VI. Predictions

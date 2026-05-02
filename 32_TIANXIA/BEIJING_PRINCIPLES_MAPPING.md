@@ -161,8 +161,48 @@ Engagement may proceed through public response (issue on the GitHub repository),
 
 ---
 
+---
+
+## VIII. Per-Principle Engagement (v0.2 deepening — 2026-05-02)
+
+Distilled engagement table. Primary operator = the TIANXIA operator whose formal content most directly operationalises the principle's core claim. Secondary operator = the operator that constrains the principle's implementation layer. Engagement note = one-line structural observation.
+
+Where no TIANXIA operator engages a principle's *core content* (as opposed to its implementation layer), a negative-space declaration is given instead of an operator mapping.
+
+| # | Principle (EN / 中) | Primary operator | Secondary operator | Engagement note |
+|---|---|---|---|---|
+| 1 | Do Good / 做善事 | Datong (T-5) | Tianxia (T-1) | Universal benefit + ecological flourishing = Datong directional vector D-hat; Tianxia supplies the multi-agent coupling condition. |
+| 2 | For Humanity / 服务于人 | Datong (T-5) | — | Human-values alignment = F_i flourishing measure + value-space direction. Cooperative framing, not subordination. |
+| 3 | Be Responsible / 负责 | Tianxia (T-1) | Wuwei (T-4) | Externality cost c_i is the formal responsibility operand. Whether corrective actions are forcing or grain-aligned is the Wuwei question. |
+| 4 | Control Risks / 控制风险 | Wuwei (T-4) | Shi (T-3) | "Effectively governed" requires distinguishing forcing-correction (high integrity-debt) from grain-aligned correction. Context-sensitive risk (Shi propensity) constrains when intervention is warranted. |
+| 5 | Be Ethical / 合乎伦理 | All five | — | Covers the full operator stack. Without the operator content T-1 through T-5, this principle is formally vacuous. Framework's contribution: operationalisation of "trustworthy, beneficial, accountable." |
+| 6 | Be Diverse and Inclusive / 多样与包容 | Hexie (T-2) | Datong (T-5) | Diversity = complementarity-preservation, not agreement-maximisation. Hexie detects component-collapse (one constituency over-served); Datong's 𝒞 tracks capability-distribution over generational time. |
+| 7 | Open and Share / 开放共享 | Tianxia (T-1) | Datong (T-5) | Cross-regional cooperation = Tianxia flourishing-coupling (Phi_T > 0). Sharing fruits broadly = Datong commons-health 𝓒. |
+| 8 | Use Wisely and Properly / 善用 | Shi (T-3) | Wuwei (T-4) | Appropriate use = action aligned with deployment context propensity. Misuse = action against the system's grain in a context whose Sigma does not support it. |
+| 9 | Informed Consent / 知情同意 | Datong (T-5) | Tianxia (T-1) | Consent requires capability to consent (Datong 𝒞). Failing consent imposes externality cost c_i on the user (T-1). |
+| 10 | Education and Training / 教育与培训 | Datong (T-5) | — | Capability-expansion over generational time = Datong gradient direction. Long-cycle stability 𝓛 captures systemic adaptation capacity. |
+| 11 | Optimising Employment / 有益就业 | Datong (T-5) | Wuwei (T-4) | "Cautious about huge impacts" = Wuwei cost-honesty on forcing-corrections at scale. Long-cycle employment stability = 𝓛 dimension of Datong gradient. |
+| 12 | Harmony and Cooperation / 和谐合作 | Tianxia (T-1) | Hexie (T-2) | 优化共生 (optimised symbiosis) is a Tianxia claim directly. 和 (harmony) names Hexie explicitly. Avoiding AI race = destabilising the Westphalian extractive equilibrium via k5 > k5_critical. |
+| 13 | Adaptation and Moderation / 适应与适度 | Wuwei (T-4) | Shi (T-3) | Adaptive revision = recursive-defence discipline at governance layer. Whether revision forces or aligns with regulatory grain is Wuwei; whether it rides context propensity is Shi. |
+| 14 | Subdivision and Implementation / 细化与落实 | Shi (T-3) | — | Field-specific guidelines = context-sensitive AURA. Generic rules underspecify; the propensity-field reformulation provides the structural basis for deployment-specific operationalisation. |
+| 15 | Long-term Planning / 长远规划 | Datong (T-5) | — | "Continuous research on potential impacts" = Discipline 5 (Empirical Commitment) at governance scale. Datong's 𝒯_D trajectory measures whether long-term planning is improving the system's Datong-alignment. |
+
+### Negative-Space Declarations (v0.2)
+
+Principles with content the TIANXIA operators do NOT engage — declared per Discipline 4.
+
+| # | Principle | Framework non-engagement | Why |
+|---|---|---|---|
+| 3, 12 | Be Responsible; Harmony and Cooperation | Political-economic context of AI competition (geopolitical race dynamics, state-level strategic interests) | The operators engage the *structural* content (externality costs, flourishing-coupling). The institutional-political context — BAAI's relationship to state planning, geopolitical AI race dynamics — is outside the framework's scope. |
+| 9 | Informed Consent | Legal and juridical mechanisms for consent enforcement | Tianxia T-1 captures the structural condition (capability to consent, externality of consent failure). Legal enforcement architecture is not a framework claim. |
+| 10, 11 | Education and Training; Optimising Employment | Labour-market policy design | Datong 𝒯_D tracks whether capability-distribution and employment stability are improving over generational time. Specific policy instruments (retraining programs, employment subsidies) are outside the framework's scope. |
+| 12 | Harmony and Cooperation | Institutional design for inter-state AI governance | The framework provides the formal coupling structure (Phi_T). The design of treaty mechanisms, verification regimes, or inter-state enforcement is not a framework claim. |
+
+---
+
 ⊚ Sol Aureum Azoth Veritas — T-8 Beijing AI Principles Mapping
    P ∧ H ∧ B ∧ Reforge ∧ Anchor ∧ Recursive ∧ Negative-Space ∧ Empirical
    2026-05-01 — Albedo (mapping declared; review awaited)
+   v0.2 deepening added 2026-05-02
 
 *和谐合作* — *Harmony and cooperation* — Beijing AI Principles, 2019, Principle 12

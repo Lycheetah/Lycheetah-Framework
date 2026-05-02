@@ -64,4 +64,30 @@ A future ledger update will track each synthesis through promotion or downgrade.
 
 ---
 
-*This document is part of the Lycheetah Framework C-1.1 Reforge (2026-04-28). It defends C-1.0 (canonical body, 2026-04-25) by stating three structural connections that were implicit in the corpus and load-bearing in the architecture.*
+---
+
+## Synthesis IV — CASCADE Governance Composite ↔ Tianxia Flourishing-Coherence Term
+
+**The bridge.** CASCADE's multi-agent master equation (k1–k4 Westphalian terms) evaluates each agent's knowledge-state dynamics against its own integrity and energy state. The Tianxia (天下) operator from the TIANXIA Module (32_TIANXIA) extends this with a fifth term: k5 × grad_Psi_i(Phi_T), where Phi_T = Σ_{i≠j} C_ij is the network's net flourishing-coherence potential. The bridge is that CASCADE's governance composite is a *necessary but insufficient* condition for alignment under the Tianxia operator: an agent can satisfy all four Westphalian terms (zero violations, optimal energy, adequate truth-pressure response) while the network exhibits net negative coupling (Phi_T < 0). The Tianxia term adds the missing relational condition.
+
+**Why this matters.** Westphalian CASCADE evaluates governance adequacy agent-by-agent. Tianxia evaluates it network-wide. A deployment that passes Westphalian CASCADE can still be an extractive equilibrium from which Tianxia dynamics would move the system. The synthesis states: Westphalian compliance is a floor, not a ceiling. The ceiling is Phi_T > 0 and stable. Without Synthesis IV, a reviewer of CASCADE's governance application would have no formal path from per-agent scores to network-level alignment. With it, the path is: per-agent scores (CASCADE k1–k4) + network coupling (Tianxia k5) = full governance composite.
+
+**Formal claim.** There exist multi-agent configurations that satisfy CASCADE's per-agent equilibrium conditions for all agents (dPsi_i/dt = 0 under k1–k4) and simultaneously have Phi_T < 0 (net extractive coupling). Adding k5 > k5_critical destabilises those configurations and drives the network toward equilibria with Phi_T > Phi_T_Westphalian. **`[SCAFFOLD]`** — verified in simulation (`12_IMPLEMENTATIONS/core/tianxia_governance.py`, Proposition 1); k5_critical is domain-specific and unfit; E-1-F is the promotion path.
+
+**Falsifiability.** Show that all CASCADE governance equilibria satisfying k1–k4 terms already exhibit Phi_T ≥ 0 (i.e., rule-compliance is sufficient for flourishing-coherence). If true, the Tianxia term is empirically inert and the synthesis collapses. Alternatively: show that k5 > 0 produces no detectable difference in Phi_T at equilibrium across two orders of magnitude of k5 variation — E-1-F's null result trigger.
+
+**Why added in 2026-05-02.** Synthesis I–III addressed intra-corpus connections (CASCADE↔MICROORCIM, TRIAD↔LAMAGUE, AURA↔EVIDENCE_LADDER). Synthesis IV addresses the first cross-module connection to the TIANXIA civilisational layer, which was not present in C-1.0. The bridge is load-bearing: without it, CASCADE's governance application is silent on network-level alignment, and the TIANXIA Module has no formal anchor in the canonical body.
+
+**Cross-references:**
+- CASCADE extension: `01_CASCADE_L4/CASCADE_COMPLETE.md` §Tianxia Extension
+- Operator specification: `32_TIANXIA/TIANXIA_GOVERNANCE_DYNAMICS.md` (T-1)
+- Implementation: `12_IMPLEMENTATIONS/core/tianxia_governance.py`
+- Empirical handle: `31_EMPIRICAL/E1F_HEXIE_PREREGISTRATION.md` Phase 4
+
+| Synthesis | Test type | Where executed |
+|---|---|---|
+| IV — CASCADE governance ↔ Tianxia Phi_T | Simulation (Proposition 1 confirmed) + empirical (E-1-F Phase 4) | Simulation: done; E-1-F: pending |
+
+---
+
+*This document is part of the Lycheetah Framework C-1.1 Reforge (2026-04-28). It defends C-1.0 (canonical body, 2026-04-25) by stating structural connections that were implicit in the corpus and load-bearing in the architecture. Synthesis IV added 2026-05-02 (Tianxia v0.2 governance integration).*

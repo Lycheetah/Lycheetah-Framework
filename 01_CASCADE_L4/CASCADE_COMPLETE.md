@@ -685,3 +685,39 @@ The framework status:
 - ⏳ **[TBD]** Predictive accuracy: will measure after k-values are fitted
 
 CASCADE is mathematically coherent. Real-world accuracy and production readiness depend on completing the calibration work.
+
+---
+
+## TIANXIA EXTENSION — Flourishing-Coherence Governance Term
+
+`[SCAFFOLD — TIANXIA Module v0.1, promotion-gated on E-1-F execution]`
+
+The standard CASCADE master equation treats each agent's dynamics as a function of its own state only. The Tianxia (天下) operator extends this to a multi-agent governance equation by adding a flourishing-coherence coupling term:
+
+```
+dPsi_i/dt = [k1(Pi_i - Pi_th) - k2(Psi_i - Psi_inv) - k3*I_violations + k4*(E_i/E_need)]
+           + k5 * grad_Psi_i(Phi_T)
+```
+
+where:
+- **Phi_T** = sum_{i != j} C_ij — the system's net flourishing-coherence potential
+- **C_ij** = dF_i/dF_j — marginal effect of agent j's flourishing on agent i's capacity
+- **k5** — Tianxia coupling coefficient `[SCAFFOLD]`; calibration via E-1-F
+- **grad_Psi_i(Phi_T)** — gradient of net coupling with respect to agent i's knowledge state
+
+**What this adds:** The Westphalian terms (k1–k4) reward individual rule-compliance and energy efficiency. An agent can maximise all four terms while degrading others' capacities through externalities — Phi_T < 0, but no k1–k4 term detects it. The Tianxia term responds to the *network structure*: if increasing Psi_i deepens extractive coupling (grad < 0), the term opposes further rise. If it strengthens mutualistic coupling (grad > 0), the term amplifies it.
+
+**Boundary cases:**
+- k5 = 0: reduces exactly to Westphalian CASCADE
+- k5 > k5_critical: destabilises extractive equilibria; system moves toward coordinated optima that Westphalian dynamics cannot reach
+- k5 >> all other k: Tianxia term dominates; over-constrained (not advocated)
+
+**Load-bearing claim (Proposition 1, T-1 §V):** There exist initial conditions where a Westphalian-compliant equilibrium (all violations = 0, all k1–k4 terms satisfied) has Phi_T < 0. Adding k5 > 0 destabilises that equilibrium and drives the system toward a different fixed point with higher Phi_T. This is verified in simulation (`12_IMPLEMENTATIONS/core/tianxia_governance.py`) and is the subject of empirical study E-1-F.
+
+**Cross-references:**
+- Specification: `32_TIANXIA/TIANXIA_GOVERNANCE_DYNAMICS.md` (T-1)
+- Implementation: `12_IMPLEMENTATIONS/core/tianxia_governance.py` (self-tests pass, Proposition 1 confirmed)
+- Empirical handle: E-1-F preregistration (`31_EMPIRICAL/E1F_HEXIE_PREREGISTRATION.md`; Phase 4 covers T-1)
+- Synthesis entry: `28_DEFENSE/SYNTHESES.md` (CASCADE governance ↔ Tianxia flourishing-coherence)
+
+**Negative space:** does not claim k5 is universal, that Tianxia dynamics are always stable, or that the Westphalian terms should be weakened. Both layers compose. Rule-compliance remains necessary; flourishing-coherence is the additional condition.

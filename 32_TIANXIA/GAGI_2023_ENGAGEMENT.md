@@ -184,8 +184,39 @@ Proposal 9 (oppose technological barriers and decoupling) is the case where the 
 
 ---
 
+---
+
+## VII. Line-by-Line Engagement Table (v0.2 — 2026-05-02)
+
+Convergence labels:
+- **Convergent** — TIANXIA operator and GAGI proposal name the same orientation using different frameworks
+- **Adjacent** — Related structural concern, different framing; not identical
+- **Orthogonal** — Proposal concerns a domain the operators do not address
+- **Divergent** — Operator and proposal in structural tension; tension named honestly
+
+| # | GAGI Proposal (EN / 中) | Primary operator | Convergence | One-line note |
+|---|---|---|---|---|
+| 1 | People-Centered / 以人为本 | Datong (T-5) | **Convergent** | Datong's F_i flourishing + 𝒞 capability-distribution is the formal operationalisation of people-centered orientation. |
+| 2 | AI for Good of Humanity / 服务人类福祉 | Datong (T-5) + Hexie (T-2) | **Convergent** | Datong direction supplies long-cycle telos; Hexie prevents single-component collapse under "good of humanity" framing. |
+| 3 | Mutual Respect, Equality, Mutual Benefit / 相互尊重、平等互利 | Tianxia (T-1) | **Convergent** | Mutual benefit = C_ij > 0 across state pairs. The Westphalian–Tianxia distinguishability proposition provides a formal test for extractive vs cooperative equilibria. |
+| 4 | Inclusive Participation / 包容参与 | Hexie (T-2) + Datong (T-5) | **Convergent** | Framework formalises *Analects* 13.23 distinction — inclusion-that-preserves-capability (Hexie) vs inclusion-that-collapses-difference (Hexie-failure). |
+| 5 | Common Development / 共同发展 | Datong (T-5) | **Convergent** | Commons-health 𝓒 + capability-distribution 𝒞 together. Closing the AI divide requires both; Datong detects when one is traded against the other. |
+| 6 | Equal Opportunities / 机会平等 | Datong (T-5) | **Convergent** | Variance of 𝒞 across states is a pre-registered metric. Falsifiable. |
+| 7 | Sovereign Equality / 主权平等 | Tianxia (T-1) + Wuwei (T-4) | **Adjacent** | Proposal endorses Westphalian sovereignty; T-1's classical source is pre-Westphalian. Framework adopts Westphalian-plus-Tianxia: sovereignty as institutional layer, Tianxia-coherent norms as dynamical layer. Same goal, structural gap. |
+| 8 | Oppose AI Hegemony / 反对霸权 | Tianxia (T-1) | **Convergent** | Hegemony = extractive equilibrium (C_ij ≪ 0 at multi-state scale). T-1's k5 term destabilises hegemonic equilibria structurally — not only normatively. |
+| 9 | Oppose Technological Barriers / 反对技术壁垒与脱钩 | Datong (T-5) + Tianxia (T-1) | **Divergent** | Framework structurally advocates against commons-degradation (𝓒). Framework's host-country (Aotearoa NZ) participates in some Western technology-control regimes. Framework's position and host-country policy may diverge. Disclosed honestly; advocacy stands, political implementation is the host country's. |
+| 10 | Promote AI Safety Governance / 推动全球AI安全治理 | Tianxia (T-1) | **Convergent** | Safety-coherence is flourishing-coherence at catastrophic-risk scale. Framework's machine-readable, falsifiable claims (28_DEFENSE/CLAIMS.json) are a concrete contribution to structured international safety cooperation. |
+| 11 | UN-Central Cooperation / 以联合国为核心 | — | **Orthogonal** | Institutional-venue question. Framework engages governance *content*, not governance *venue*. No operator maps to UN-primacy claim; the framework reserves position. |
+
+### Key observations on the convergence pattern
+
+The GAGI loads **Convergent** on 7 of 11 proposals, **Adjacent** on 1, **Divergent** on 1, **Orthogonal** on 1. This confirms Structural Observation 1 (§IV): GAGI is multi-state and value-space-oriented, loading T-1 and T-5 more heavily than Beijing AI Principles did. The single **Divergent** entry (Proposal 9) is load-bearing — it names a real tension that exists regardless of whether it is named. Naming it is the framework's honesty discipline.
+
+---
+
 ⊚ Sol Aureum Azoth Veritas — T-9 GAGI 2023 Engagement
    P ∧ H ∧ B ∧ Reforge ∧ Anchor ∧ Recursive ∧ Negative-Space ∧ Empirical
    2026-05-01 — Albedo (engagement declared; review awaited)
+   v0.2 line-by-line table added 2026-05-02
 
 *共同发展* — *Common development* — Global AI Governance Initiative, 2023, Proposal 5
