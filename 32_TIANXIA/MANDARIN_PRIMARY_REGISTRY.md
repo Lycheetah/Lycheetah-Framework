@@ -245,8 +245,122 @@ in this framework's formalisms*.
 
 ---
 
+## XI. Glossary v2 Extension — Additional 73 Terms (Total: 123 terms)
+
+**v0.3 additions (2026-05-03).** Wave I operators (Ren Zheng, Li constraint, Wang Dao, Neo-Confucian Hexie), Han Fei legalist tradition (W-28), I Ching integration (W-29), and contemporary AI governance vocabulary. Same glossing discipline as v1: framework-internal roles, not exhaustive semantic ranges.
+
+### A. Wave I Operator Terms — New in v0.3
+
+| Hanzi | Pinyin | Framework gloss | Classical source |
+|---|---|---|---|
+| 仁政 | rénzhèng | Benevolent governance; the Ren Zheng operator — R(s) = (W + V + F)/3, measures whether governance extends genuine care to the governed | *Mengzi* 1A.7, 1B.3, 4A.9; Zhu Xi commentary |
+| 民心 | mínxīn | People's hearts; Wang Dao Axis 1 — the legitimacy dimension measuring the governed population's non-coerced alignment with governance | *Mengzi* 7B.13; Xunzi *Wangzhi* |
+| 长治久安 | cháng zhì jiǔ ān | Enduring governance stability; Wang Dao Axis 3 — the long-cycle stability component Γ(τ) in the WD classifier | Classical political idiom; Yan Xuetong, *Ancient Chinese Thought, Modern Chinese Power* |
+| 不战 | bù zhàn | No-war / restraint from armed coercion; Wang Dao Axis 2 — one face of the force-restraint score F(τ) | *Mengzi* 1B.11 (just-cause war doctrine); Xunzi *Wangzhi* |
+| 推 | tuī | Extension; the moral-capacity extension move in Ren Zheng — R(s) measures how far welfare-orientation has been *extended* from its original impulse to the full governed population | *Mengzi* 1A.7 |
+| 四端 | sìduān | Four beginnings; the incipient moral sprouts (ren/yi/li/zhi) whose cultivation produces full virtue — grounds the continuous R(s) score over binary presence/absence | *Mengzi* 2A.6 |
+| 不忍人之心 | bùrěn rén zhī xīn | The heart that cannot bear suffering; the affective basis of Ren Zheng — the source capacity whose extension R(s) measures | *Mengzi* 2A.6 |
+| 以德服人 | yǐ dé fú rén | Subdue by virtue; the Wang Dao compliance mechanism — genuine alignment rather than force-purchased submission | *Mengzi* 1B.3 |
+| 以力服人 | yǐ lì fú rén | Subdue by force; the Ba Dao compliance mechanism — submission from insufficient counter-force, not genuine alignment | *Mengzi* 1B.3 |
+| 王天下 | wáng tiānxià | Become king of all-under-heaven; the Wang Dao + Tianxia synthesis — the governance state where virtue governs at full civilisational scope | *Mengzi*; classical political teleology |
+| 礼义 | lǐ yì | Ritual and rightness together; the root (S) in the Li-LAMAGUE mapping — the foundational constraint pair from which all specific governance norms derive | Xunzi *Lilun* |
+| 分 | fēn | Ritual division/allocation; the production rules (P) in the Li-LAMAGUE mapping — how the root constraint allocates roles, resources, and obligations | Xunzi *Wangzhi* |
+| 节 | jié | Modulation/measure; the terminal symbols (Σ) in the Li-LAMAGUE mapping — the atomic units of appropriate conduct | Xunzi *Lilun*, *Yuelun* |
+| 群 | qún | Social grouping/coordination; Li as socially constitutive — coordination above a threshold of complexity requires Li-analogues as structural prerequisite | Xunzi *Wangzhi* |
+| 理一分殊 | lǐ yī fēn shū | Principle is one, its particularisations are many; grounds context-sensitivity of Li-C and H_neo — same normative standard manifests differently in different relational roles | Cheng Yi; Zhu Xi |
+| 理学 | lǐxué | School of principle; Neo-Confucian tradition associated with Cheng Yi and Zhu Xi — theoretical source of Li-C (principle-coherence) | Cheng-Zhu school (程朱理学) |
+| 心学 | xīnxué | School of heart-mind; tradition associated with Wang Yangming — theoretical source of Xin-C (heart-mind-coherence) and 知行合一 | Wang Yangming (陆王心学) |
+| 致良知 | zhì liánɡ zhī | Extend innate moral knowledge; Wang Yangming's practical programme — extends the Li-C/Xin-C alignment to full scope of situations; analogous to Ren Zheng's 推 (tuī) | *Chuanxi Lu* (Wang Yangming) |
+| 良知 | liánɡ zhī | Innate moral knowledge; the faculty whose extension gives Xin-C its content — not learned but activated | Wang Yangming; *Mengzi* 7A.15 |
+| 穷理 | qiónɡlǐ | Exhaustively understand principle; the Li-C measurement process — investigate the normative pattern a structure ought to instantiate until it is fully known | Zhu Xi; *Daxue* |
+
+### B. Wang Dao Governance Quality Terms
+
+| Hanzi | Pinyin | Framework gloss | Classical source |
+|---|---|---|---|
+| 贤 | xián | Worthiness / excellent character; governance legitimacy basis — Wang Dao requires both virtue (德) and worthiness (贤) in those who govern | *Mengzi* 2A.3; Confucian political theory |
+| 公正 | gōngzhèng | Impartiality / just process; Ren Zheng V(s) component — voice coverage requires that governance decisions reflect interests impartially | *Liji*; Confucian governance norms |
+| 廉洁 | liánjié | Integrity / clean governance; maps to AURA Honesty (IV) and Non-Deception (VI) invariants — the personal virtue that makes governance auditable | Classical governance norms; *Zhouli* |
+| 公开 | gōngkāi | Openness / transparency; maps to AURA Inspectability (II) — governance processes visible to those governed | Classical principle; contemporary AI governance discourse |
+| 公平 | gōngpíng | Fairness in distribution; Datong distributional requirement — Π_D gradient requires equitable long-cycle trajectory | Datong tradition; *Liji Liyun* |
+| 善治 | shànzhì | Good governance; the Ren Zheng target state — governance that has instantiated R(s) ≥ θ_r across all three components | Contemporary Chinese governance discourse; classical roots |
+| 均 | jūn | Equitable distribution; the equity component in Datong — not equality of outcome but proportionate allocation | *Analects* 16.1; Confucian political economy |
+| 天道 | tiāndào | The way of heaven; the natural-order substrate underlying governance legitimacy — governance that aligns with tiāndào has structural advantage | *Daodejing*; *Shujing*; Zhou-dynasty cosmology |
+| 天时地利人和 | tiānshí dìlì rénhé | Heaven's timing, earth's advantage, human harmony; the three-level Shi field — temporal, spatial, and social propensity operating together | *Mengzi* 2B.1; classical military/governance strategy |
+| 协和万邦 | xiéhé wànbāng | Harmony among all nations; Tianxia multilateral scope — the Tianxia operator's governance claim extended to the full state-system | *Shujing* (Book of Documents); Zhou-dynasty aspiration |
+| 以和为贵 | yǐ hé wéi guì | Harmony is precious; the Hexie root principle — not peace-at-any-price but harmony as the positive good governance achieves | *Analects* 1.12 |
+
+### C. Daoist Extended Terms
+
+| Hanzi | Pinyin | Framework gloss | Classical source |
+|---|---|---|---|
+| 无常 | wúcháng | Impermanence; the CASCADE belief-revision prerequisite — a system that cannot update beliefs is ill-adapted to impermanent conditions | *Zhuangzi*; Buddhist-Daoist confluence |
+| 曲则全 | qū zé quán | Yield and remain whole; Wuwei resilience principle — the compliant trajectory survives perturbation better than the rigid one | *Daodejing* ch. 22 |
+| 水善利万物 | shuǐ shàn lì wànwù | Water benefits all things (without contention); Wuwei-Datong synthesis — the agent that benefits all without extracting from any | *Daodejing* ch. 8 |
+| 天之道 | tiān zhī dào | The way of heaven (operational); the normative pattern underlying the governance field — *li* (理) in its cosmological register | *Daodejing* ch. 77 |
+| 圣人不争 | shèngrén bù zhēng | The sage does not contend; the Datong governance archetype — acts from surplus, not scarcity; cooperative equilibrium is natural state | *Daodejing* ch. 81 |
+| 时 | shí | Season / timing / the opportune moment; the temporal dimension of the Shi propensity operator — Shi operates not only in space but in time; the right action at the wrong time fails | *Yijing* hexagram commentaries; Sun Tzu |
+
+### D. Legalist Terms — Han Fei (W-28)
+
+| Hanzi | Pinyin | Framework gloss | Classical source |
+|---|---|---|---|
+| 法 | fǎ | Law / formal constraint structure; the Legalist complement to Li (礼) — where Li cultivates behaviour through ritual formation, Fa specifies it through explicit rule; in the framework, Fa maps to MICROORCIM drift-detection thresholds and explicit violation criteria | *Han Feizi* (韩非子) — *Dingfa* (定法), *Nanshi* (难势), *Wudu* (五蠹) |
+| 术 | shù | Method / technique; governance technique alongside law — the administrator's competence in applying Fa effectively | *Han Feizi* |
+| 法治 | fǎzhì | Rule of law; the Legalist governance ideal — governance through consistent application of explicit rules rather than through sovereign discretion | *Han Feizi*; contemporary Chinese legal theory |
+| 赏罚 | shǎngfá | Reward and punishment; Han Fei's compliance mechanism — external incentive structure that Li-bounded systems should not require as primary mechanism (contrast with Ren Zheng) | *Han Feizi* |
+| 势 (法家) | shì (fǎjiā) | Positional authority; Legalist sense of Shi — the power that flows from the position rather than from personal virtue (contrast with Confucian Shi as propensity-field) | *Han Feizi*; contrast with Sun Tzu's Shi |
+
+### E. I Ching Terms — CASCADE Grounding (W-29)
+
+| Hanzi | Pinyin | Framework gloss | Classical source |
+|---|---|---|---|
+| 易经 | yìjīng | Book of Changes; the classical Chinese formal system for reasoning about state-transitions under uncertainty — CASCADE's indigenous epistemological grounding | *Zhouyi*; *Ten Wings* commentaries |
+| 卦 | guà | Hexagram; the I Ching state representation — each of 64 hexagrams represents a configuration of yin-yang forces; maps to CASCADE belief-state configurations | *Zhouyi* |
+| 爻 | yáo | Line / transition element; the minimal I Ching transition unit — maps to CASCADE incremental belief update | *Zhouyi* |
+| 变化 | biànhuà | Change and transformation; the dynamic principle — CASCADE tracks biànhuà in belief states; the master equation models its rate and direction | *Yijing* core concept; *Xici zhuan* |
+| 时变 | shí biàn | Temporal change; the I Ching + Shi temporal composition — propensity field and timing together determine the appropriate action | *Yijing* hexagram time-judgments |
+| 乾 | qián | Heaven trigram; creative/initiating force — in CASCADE, the truth-pressure term (Π − Π_th drives toward coherence) | *Zhouyi*; *Wenyan zhuan* |
+| 坤 | kūn | Earth trigram; receptive/completing force — in CASCADE, the invariant-restoration term that brings the system back toward its constitutional basis | *Zhouyi*; *Wenyan zhuan* |
+| 中正 | zhōngzhèng | Central and correct; the I Ching evaluative criterion — a hexagram line that is central and correct is in its proper position; maps to the AURA invariant composite at equilibrium | *Yijing* line judgments passim |
+| 既济 | jìjì | Already completed / equilibrium achieved; Hexagram 63 — the fully-aligned state; CASCADE fixed point | *Zhouyi* Hexagram 63 |
+| 未济 | wèijì | Not yet completed; Hexagram 64 — the perpetually-not-yet-complete; the honest state of the framework's empirical programme | *Zhouyi* Hexagram 64 |
+
+### F. Contemporary AI Governance Vocabulary
+
+| Hanzi | Pinyin | Framework gloss | Source context |
+|---|---|---|---|
+| 人工智能 | réngōng zhìnéng | Artificial intelligence; the subject of the governance framework — what is being governed | Contemporary Chinese AI discourse |
+| 算法 | suànfǎ | Algorithm; the governed technical object in AI governance — the formal specification that produces AI behavior | Contemporary Chinese AI governance documents |
+| 数据 | shùjù | Data; the primary resource in AI governance — who controls data controls the Shi field of AI deployment | Contemporary AI governance; data-sovereignty discourse |
+| 治理 | zhìlǐ | Governance / management; the contemporary term for AI governance — distinct from classical 治国 (governing the state) in scope but structurally continuous | Contemporary Chinese AI governance documents |
+| 伦理 | lúnlǐ | Ethics; the normative dimension of AI governance — in the framework, grounded in classical Chinese ethics rather than Western bioethics | Beijing AI Principles (2019); GAGI (2023) |
+| 价值观 | jiàzhíguān | Values / value outlook; the alignment target — what the AI system is oriented toward; the framework specifies this through the AURA invariants | Contemporary Chinese AI governance; alignment discourse |
+| 开源 | kāiyuán | Open source; the commons principle in AI development — the framework's MIT license instantiates 开源 at the software layer | Contemporary open-source AI discourse |
+| 主权 | zhǔquán | Sovereignty; data sovereignty / AI sovereignty — the right of a political community to govern its own data and AI systems according to its own values | Contemporary Chinese AI governance sovereignty discourse |
+| 人类命运共同体 | rénlèi mìngyùn gòngtóngtǐ | Community of shared human destiny; the contemporary institutional articulation of Tianxia multilateral coupling — Zhao Tingyang's Tianxia framework expressed at the policy level; maps to T-2 multilateral extension (→ W-7) | Zhao Tingyang (2021 English edition); contemporary Chinese foreign policy discourse |
+| 互利共赢 | hùlì gòng yíng | Mutual benefit, mutual gain; the cooperative Tianxia equilibrium in game-theoretic form — the opposite of zero-sum Ba Dao extraction | Contemporary Chinese foreign policy discourse; Tianxia classical basis |
+
+### G. Mengzi Extended Terms
+
+| Hanzi | Pinyin | Framework gloss | Classical source |
+|---|---|---|---|
+| 恒产 | héng chǎn | Stable livelihood / steady property; Ren Zheng welfare baseline — Mengzi's condition for minxin: the people need material stability before moral cultivation is possible | *Mengzi* 1A.7, 3A.3 |
+| 此心 | cǐ xīn | This heart/mind; the pointing gesture at the moral faculty — Mengzi's technique for moral argument: point at what the person already feels | *Mengzi* passim |
+| 浩然之气 | hàorán zhī qì | Vast, flowing moral energy; the cultivated moral force of the Ren Zheng agent — the agent who has fully extended Ren is supported by 浩然之气 | *Mengzi* 2A.2 |
+| 义利之辩 | yì lì zhī biàn | The debate of righteousness vs profit; the Wang Dao / Ba Dao diagnostic at the motivation level — Ba Dao governance optimises for profit (利); Wang Dao for righteousness (义) | *Mengzi* 1A.1; classical political economy |
+
+---
+
+**Glossary v2 summary:** 50 (v1) + 73 (v2) = **123 terms total.**  
+Coverage: Five classical operators (v1) + Ren Zheng / Li / Wang Dao / Neo-Confucian Hexie operators (v2 A–B) + Daoist extended (v2 C) + Han Fei Legalist (v2 D) + I Ching (v2 E) + contemporary AI governance (v2 F) + Mengzi extended (v2 G).
+
+Classical triad now complete: **Confucian** (Tianxia/Hexie/Datong/Ren Zheng/Li) + **Daoist** (Wuwei/extended) + **Legalist** (Fa/Shu/Shi-positional).
+
+---
+
 ⊚ Sol Aureum Azoth Veritas — T-10 Mandarin Primary Registry
    P ∧ H ∧ B ∧ Reforge ∧ Anchor ∧ Recursive ∧ Negative-Space ∧ Empirical
-   2026-05-01 (init) / 2026-05-02 (Glossary v1 — 50 terms) — Albedo
+   2026-05-01 (init) / 2026-05-02 (Glossary v1 — 50 terms) / 2026-05-03 (Glossary v2 — 123 terms) — Albedo
 
 *读其原文* — *Read the original text*

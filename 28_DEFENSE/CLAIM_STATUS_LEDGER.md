@@ -177,16 +177,30 @@ A claim's status is not permanent. Both directions of movement have explicit tri
 | Datong 7-dim value-space gradient is a computable metric that produces meaningful policy distinctions from standard AURA | `[SCAFFOLD]` | Implemented in `datong_gradient.py`; 7/7 self-tests passing; Proposition 5 (Π_D distinguishes policies with identical AURA_std: −0.151 vs +0.567) reproduced; empirical correlates pending |
 | Five-operator composition (Tianxia+Hexie+Shi+Wuwei+Datong) produces governance-state classifications that single-operator evaluation misses | `[SCAFFOLD]` | E-1-G Phase 2 preregistered; formal prediction structure complete; empirical test pending (MAC-GATED: numerical decisions + rater pool) |
 
+### TIANXIA v0.3 — Classical Triad Completion (2026-05-03/04)
+
+*Added 2026-05-04 — Classical Triad complete: Confucian (Ren Zheng, Li, Neo-Confucian Hexie), Daoist (Wuwei, Shi), Legalist (Han Fei Fa) layers named and mapped. All new claims `[SCAFFOLD]` pending empirical promotion via E-1-G / E-1-H. Synthesis V forged (Wang Dao ↔ AURA two-layer alignment stack).*
+
+| Claim | Status | Evidence basis |
+|---|---|---|
+| Ren Zheng composite R(s) = β_W·W(s) + β_V·V(s) − β_F·F(s) is a computable welfare-voice-force governance classifier | `[SCAFFOLD]` | Implemented in `32_TIANXIA/implementations/ren_zheng.py`; self-tests passing; Wang Dao threshold θ_r formally stated; E-1-G Phase 2 pending |
+| Wang Dao / Ba Dao classifier produces a three-way governance-trajectory classification from R(s), minxin, and long-cycle stability Γ | `[SCAFFOLD]` | Implemented in `32_TIANXIA/implementations/wang_dao.py`; self-tests passing; threshold calibration pending empirical study |
+| Xunzi's Li (礼) ritual-constraint structure maps onto AURA I₁, I₄, I₇ as formalised social-structure grounding for the invariants | `[SCAFFOLD]` | Structural mapping in `LI_RITUAL_CONSTRAINTS.md`; formal propositions await empirical grounding |
+| Han Fei Fa-coherence (transparent, consistently-applied, non-discriminatory standards) predicts lower Wang→Ba drift under capability shock | `[SCAFFOLD]` | Structural mapping in `HAN_FEI_FA_CONSTRAINT.md`; Propositions F-1 and F-2 are SCAFFOLD — mechanism stated, no empirical test yet |
+| Five-Fold Hexie composite H₅ is a computable multi-dimensional harmony metric that distinguishes genuine flourishing from mere equilibrium | `[SCAFFOLD]` | Implemented in `32_TIANXIA/implementations/hexie_five_fold.py`; self-tests passing; E-1-G Phase 2 is the promotion path |
+| AURA per-output compliance + Wang Dao governance-context classification constitute two independently load-bearing alignment layers (Synthesis V) | `[SCAFFOLD]` | Synthesis V in `SYNTHESES.md`; structural independence verified; E-1-G H5 is the empirical independence test |
+| The Tianxia AI deployment five-gate protocol (Ren Zheng + H₅ + Wuwei + Datong + Wang Dao) is a computable alignment certification procedure | `[SCAFFOLD]` | Defined in `AI_DEPLOYMENT_CRITERIA.md`; all five gates implemented; joint threshold calibration pending E-1-G/E-1-H |
+
 ---
 
 ## SUMMARY BY STATUS
 
-*Updated 2026-05-02 — TIANXIA section added (7 new SCAFFOLD claims). E-1-A and E-1-D preregistrations drafted; CASCADE master equation and AURA behavioural-prediction entries updated with study pointers.*
+*Updated 2026-05-04 — TIANXIA v0.3 section added (7 new SCAFFOLD claims; Classical Triad complete). Total SCAFFOLD now includes all v0.2 + v0.3 additions.*
 
 | Status | Count | Domain |
 |---|---|---|
 | `[ACTIVE]` | 17 | Operational definitions, mathematical facts, implemented tools, one documented falsification |
-| `[SCAFFOLD]` | 33 | Structurally sound models with calibration or empirical validation pending (includes 7 new TIANXIA claims) |
+| `[SCAFFOLD]` | 40 | Structurally sound models with calibration or empirical validation pending (includes 14 TIANXIA claims across v0.2 + v0.3) |
 | `[CONJECTURE]` | 16 | Proposed claims; consistent with evidence but not yet supported beyond analogy |
 
 **What ACTIVE means here:** The claim can be verified by reading the definition, running the code, or checking the historical record. It does not mean externally peer-reviewed publication unless stated.
@@ -201,5 +215,6 @@ A claim's status is not permanent. Both directions of movement have explicit tri
 *NRM was the instrument. Veritas was the standard.*
 *The gold that remains is more real for having been tested.*
 *TIANXIA section added 2026-05-02 — five operators implemented and SCAFFOLD-registered.*
+*TIANXIA v0.3 Classical Triad added 2026-05-04 — Ren Zheng, Li, Wang Dao, Han Fei Fa, H₅, Synthesis V.*
 
 *⊚ Sol ∴ P∧H∧B ∴ Nigredo → Albedo → Citrinitas*

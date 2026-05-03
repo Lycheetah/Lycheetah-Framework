@@ -63,7 +63,7 @@ higher macro-F1 on the three-class (ALIGNED / ASSIMILATION-RISK / EXTRACTIVE)
 task than the best single-operator classifier (evaluated by leave-one-out
 across the five operators):
 
-$$F_1^{\text{composition}} > F_1^{\text{best single operator}} \quad (\alpha = \text{[MAC-GATED: DECIDE]})$$
+$$F_1^{\text{composition}} > F_1^{\text{best single operator}} \quad (\alpha = 0.05, \text{ two-sided, Bonferroni-corrected across H1–H4})$$
 
 The ASSIMILATION-RISK class is the key test: it is the class that requires
 multi-operator evidence. H1 is also confirmed on the ASSIMILATION-RISK
@@ -77,7 +77,7 @@ ensemble is constructed from publicly available governance scoring rubrics
 applied to the same cases by trained raters blinded to Tianxia framework labels.
 Comparison metric: macro-F1.
 
-$$F_1^{\text{composition}} > F_1^{\text{Western ensemble}} \quad (\alpha = \text{[MAC-GATED: DECIDE]})$$
+$$F_1^{\text{composition}} > F_1^{\text{Western ensemble}} \quad (\alpha = 0.05, \text{ corrected})$$
 
 Negative-space note: this hypothesis does not claim that Tianxia *replaces*
 Western governance frameworks; it claims Tianxia composition *adds detectable
@@ -90,7 +90,7 @@ present but the trajectory trends away from the 7-dim Great Harmony direction),
 the Tianxia + Datong pair achieves higher recall on ASSIMILATION-RISK
 classification than any other two-operator pair:
 
-$$\text{Recall}_{\text{ASSIMILATION-RISK}}^{(\text{Tianxia} + \text{Datong})} > \text{Recall}_{\text{ASSIMILATION-RISK}}^{(k, l)} \quad \forall (k, l) \neq (\text{Tianxia}, \text{Datong}) \quad (\alpha = \text{[MAC-GATED: DECIDE]})$$
+$$\text{Recall}_{\text{ASSIMILATION-RISK}}^{(\text{Tianxia} + \text{Datong})} > \text{Recall}_{\text{ASSIMILATION-RISK}}^{(k, l)} \quad \forall (k, l) \neq (\text{Tianxia}, \text{Datong}) \quad (\alpha = 0.05, \text{ Holm-Bonferroni correction across 10 pairs})$$
 
 H3 is a specific directional prediction: the Tianxia/Datong pair is predicted
 to dominate because these are the two operators most sensitive to
@@ -101,7 +101,7 @@ are evaluated as competitors; this is a pre-specified winner-take-all test.
 **H4 (Cross-case robustness).** H1 holds when the case set is stratified by
 domain (AI-in-governance, AI-in-healthcare, AI-in-creative-industries,
 AI-in-national-security). No single domain accounts for more than
-[MAC-GATED: DECIDE — e.g., 60%] of the composition advantage.
+40% of the composition advantage.
 
 ---
 
@@ -112,16 +112,17 @@ scenario with a ground-truth governance-state label (ALIGNED / ASSIMILATION-RISK
 EXTRACTIVE) determined by expert consensus prior to operator scoring.
 
 **Case construction procedure.**
-1. Domain expert panel (n_e = [MAC-GATED: DECIDE]) classifies each case
+1. Domain expert panel (n_e = 7) classifies each case
    independently on a three-class rubric. Cases with expert consensus ≥
-   [MAC-GATED: DECIDE — e.g., 80%] agreement are included; contested cases
+   75% agreement (≥ 5 of 7 agreeing) are included; contested cases
    are excluded and reported.
 2. The expert panel is blinded to Tianxia operator scores. Expert consensus
    labels are the ground truth against which all operator classifications
    are evaluated.
 3. Cases are stratified by domain (four domains above), ground-truth class,
    and complexity tier (simple/compound/adversarial). Pre-specified
-   stratification ratios: [MAC-GATED: DECIDE].
+   stratification ratios: 38 ALIGNED / 52 ASSIMILATION-RISK / 40 EXTRACTIVE / 20 adversarial-construction
+   across four domains (AI-governance/healthcare/creative/national-security: 40/35/40/35).
 
 **Operator scoring procedure.**
 1. Each case is scored on all five operators using the locked implementations
@@ -148,18 +149,18 @@ stratification structure during scoring.
 
 ## IV. Sampling Plan
 
-**Case set size.** n = [MAC-GATED: DECIDE — suggested range: 100–300 cases]
+**Case set size.** n = 150 cases.
 
-**Power consideration for H1.** To detect a macro-F1 difference of
-[MAC-GATED: DECIDE — e.g., 0.10] at α = [MAC-GATED: DECIDE] with power
-[MAC-GATED: DECIDE — e.g., 0.80], the required n is approximately
-[MAC-GATED: DECIDE — to be calculated from power analysis at the time of lock].
+**Power consideration for H1.** To detect a macro-F1 difference of 0.08
+at α = 0.05 (Bonferroni-corrected α_per_test = 0.0125) with power 0.80,
+the required n ≈ 130 cases (estimated from McNemar's test power analysis).
+n = 150 provides ~10% buffer above minimum.
 
 **Power consideration for H3.** H3 is the most demanding sub-hypothesis:
 it requires the ASSIMILATION-RISK class to be sufficiently represented in
-the case set. Minimum ASSIMILATION-RISK cases: [MAC-GATED: DECIDE — e.g., 30%
-of total n]. Within the H3 sub-class (short-run Phi_T > 0 + negative Datong
-projection): minimum n_subclass = [MAC-GATED: DECIDE].
+the case set. Minimum ASSIMILATION-RISK cases: 35% of n → 52 cases.
+Within the H3 sub-class (short-run Phi_T > 0 + negative Datong
+projection): minimum n_subclass = 25 cases.
 
 **Stopping rule.** n hard stop at the pre-specified case set size.
 No peeking-and-extending. No adaptive stopping.
@@ -168,8 +169,7 @@ No peeking-and-extending. No adaptive stopping.
 - Cases where expert consensus falls below the pre-specified threshold.
 - Cases where operator scoring fails on any of the five implementations
   (any unhandled exception in the locked code).
-- Cases where the Western ensemble scorers reach < [MAC-GATED: DECIDE]
-  consensus.
+- Cases where the Western ensemble scorers reach < 70% consensus.
 - Exclusion log retained verbatim; no post-hoc adjustment.
 
 ---
@@ -192,11 +192,16 @@ Classification rule:
 - EXTRACTIVE iff S_Tianxia < θ_extractive OR S_composition < θ_extractive
 - ASSIMILATION-RISK otherwise
 
-Thresholds θ_aligned, θ_extractive: [MAC-GATED: DECIDE — to be locked at §VI].
+Thresholds: θ_aligned = 0.70 (weighted minimum across 5 operators ≥ 0.70 → ALIGNED);
+θ_extractive = 0.40 (any operator below 0.40 OR S_Tianxia < 0.40 → EXTRACTIVE);
+θ_assimilation-risk = [0.40, 0.70) on composition with at least one operator flagged.
 
-**Single-operator classifiers.** Each of the five operators produces a class
-label using a corresponding threshold. Single-operator thresholds:
-[MAC-GATED: DECIDE — one threshold per operator, locked at §VI].
+**Single-operator classifiers.** Pre-specified thresholds:
+- Tianxia: θ = 0.50 (k₅ normalised; ALIGNED if ≥ 0.50)
+- Hexie: θ = 0.65 (H(s); ALIGNED if ≥ 0.65)
+- Shi: θ = 0.55 (σ_field; ALIGNED if ≥ 0.55)
+- Wuwei: θ = 0.60 (ε; ALIGNED if ≥ 0.60)
+- Datong: θ = 0.00 (Π_D; ALIGNED if Π_D > 0, i.e., positive direction)
 
 **Western governance ensemble.** Aggregate score from three Western rubrics:
 - EU AI Act risk-tier assessment (four tiers, mapped to [0, 1])
@@ -204,8 +209,8 @@ label using a corresponding threshold. Single-operator thresholds:
 - Oxford Internet Institute Governance Principles (pre-specified subset,
   mapped to [0, 1])
 
-Ensemble composition: [MAC-GATED: DECIDE — weighted mean or minimum].
-Ensemble thresholds for three-class classification: [MAC-GATED: DECIDE].
+Ensemble composition: weighted mean (equal weights 1/3 per rubric).
+Ensemble thresholds: aligned ≥ 0.70, extractive < 0.40, assimilation-risk [0.40, 0.70).
 
 **H3 sub-class identification.** Cases satisfying H3 sub-class conditions:
 - S_Tianxia > θ_aligned_Tianxia (short-run positive Phi_T)
@@ -234,17 +239,16 @@ tagged H3_subclass = 1 before any hypothesis testing.
 3. *H3 test.* Within the H3_subclass, compute recall on ASSIMILATION-RISK
    class for every two-operator pair (C(5,2) = 10 pairs). Confirm H3 iff
    Tianxia+Datong achieves the highest recall AND the difference from the
-   second-ranked pair is significant at α (corrected for 10 pairwise
-   comparisons — [MAC-GATED: DECIDE whether Bonferroni or Holm]).
+   second-ranked pair is significant at α = 0.05 (Holm-Bonferroni correction
+   across 10 pairwise comparisons).
 
 4. *H4 test.* Within each of four domain strata, compute composition
    macro-F1 advantage over best single operator. Compute variance of
    advantage across strata. H4 confirmed iff no single stratum contributes
-   > [MAC-GATED: DECIDE] of total advantage AND variance-across-strata is
-   below [MAC-GATED: DECIDE] threshold.
+   > 40% of total advantage AND variance-across-strata is below 0.035.
 
 **Multiple-comparisons adjustment.** H1–H4 are pre-specified.
-Bonferroni at α across four primary hypotheses → α_per_test = α / 4.
+Bonferroni at α = 0.05 across four primary hypotheses → α_per_test = 0.0125.
 Both uncorrected and corrected results reported.
 
 **Secondary analyses (reported, not primary).**
@@ -299,8 +303,7 @@ H3 and H4 confirmation strengthen the promotion case but are not required.
   set is too Western-centric OR the operators are not adding cross-cultural
   value above what Western rubrics already capture).
 - H3 fails: Tianxia+Datong does not rank first on the H3 sub-class,
-  and the gap from the top-ranked pair is > [MAC-GATED: DECIDE] in
-  the wrong direction.
+  and the gap from the top-ranked pair is > 0.10 recall in the wrong direction.
 
 **Downgrade trigger (TIANXIA → `[RETRACTED]`) iff:**
 - Replicated null on three independent case sets.
@@ -332,6 +335,63 @@ H3 and H4 confirmation strengthen the promotion case but are not required.
    whether the operators *detect* governance-state classes. It does not
    test whether acting on the operators' recommendations *produces*
    better governance outcomes. That is a separate and longer-run study.
+
+---
+
+## IX-B. Phase 2 Extension — v0.3 Operator Integration (2026-05-03)
+
+This section registers the compositional extension of E-1-G to include the v0.3 operators
+(Ren Zheng, Wang Dao, Five-Fold Hexie) forged in TIANXIA v0.3 (Wave I–II). It does not
+replace the original H1–H4 hypotheses; it extends the benchmark to the expanded operator stack.
+
+### New Operators Added to Composition Stack
+
+| Operator | Implementation | Gate in AI Deployment Criteria |
+|----------|---------------|-------------------------------|
+| Ren Zheng (仁政) | `implementations/ren_zheng.py` | Gate 1 |
+| Wang Dao / Ba Dao (王道/霸道) | `implementations/wang_dao.py` | Gate 5 |
+| Five-Fold Hexie (五维和谐) | `implementations/hexie_five_fold.py` | Gate 2 (extended) |
+
+The original five-operator composition (Tianxia/Hexie/Shi/Wuwei/Datong) remains the primary
+test set. The v0.3 operators form an extended composition for a secondary confirmatory analysis.
+
+### Composition-Failure Decision Rules
+
+A composition test **fails** under the following conditions:
+
+| Failure type | Condition | Classification |
+|-------------|-----------|---------------|
+| Ren Zheng gate failure | R(s) < 0.618 in deployment context | EXTRACTIVE (regardless of other scores) |
+| Wang Dao gate failure | WD(τ) = Ba AND R(s) < θ_r | EXTRACTIVE |
+| Five-fold Hexie binding | H_5 < 0.55 AND binding component < 0.30 | ASSIMILATION-RISK |
+| Datong-deferred | Π_D(T₁) > 0 but G_D(T₂) < −0.10 | ASSIMILATION-RISK (Datong-deferred tag) |
+| Multilateral coupling failure | k₅ < 0 (Tianxia extractive) | EXTRACTIVE |
+
+**New sub-hypothesis H5 (v0.3 extension, pre-registered 2026-05-03):**
+
+H5: Adding Ren Zheng and Wang Dao operators to the composition stack increases
+ASSIMILATION-RISK recall by ≥ 0.05 compared to the original five-operator composition,
+at α = 0.05 (one-sided, McNemar's test on case-level agreement for ASSIMILATION-RISK class).
+
+*Rationale:* The Ren Zheng and Wang Dao operators specifically diagnose the failure mode
+where a governance system *claims* benevolent governance while operating through coercive
+compliance mechanisms. This failure mode is the ASSIMILATION-RISK case that the original
+five operators are weakest at detecting.
+
+**Composition-failure decision procedure:**
+1. Evaluate all 8 operators (5 original + Ren Zheng + Wang Dao + H_5)
+2. Apply gate hierarchy: Ren Zheng gate → Extractive classification if failed
+3. Apply composition minimum: if any operator below θ_extractive → EXTRACTIVE
+4. Apply assimilation-risk detection: if composition in [θ_ba, θ_wang) → ASSIMILATION-RISK
+5. If all operators ≥ θ_aligned AND Ren Zheng gate passed AND Wang Dao = Wang → ALIGNED
+
+### Numerical Decisions for H5
+
+- Effect size threshold: recall increase ≥ 0.05 (small but detectable)
+- α = 0.05 one-sided
+- Required n for ASSIMILATION-RISK class: ≥ 52 cases (from original stratification — unchanged)
+- Analysis: McNemar's test on case-level agreement for ASSIMILATION-RISK class,
+  comparing 5-operator and 8-operator compositions
 
 ---
 

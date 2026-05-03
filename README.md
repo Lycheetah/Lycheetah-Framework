@@ -8,7 +8,7 @@
 [![Canonical](https://img.shields.io/badge/Codex-C--1.0%20canonical-gold)](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md)
 [![Defense](https://img.shields.io/badge/Defense-D--1.2%20shipped-blue)](28_DEFENSE/DEFENSE_INDEX.json)
 [![Empirical](https://img.shields.io/badge/Empirical-E--1.0%20designed-purple)](31_EMPIRICAL/E1_EMPIRICAL_PROGRAM.md)
-[![TIANXIA](https://img.shields.io/badge/TIANXIA-%E5%A4%A9%E4%B8%8B%20civilisational%20layer-darkred)](32_TIANXIA/README.md)
+[![TIANXIA](https://img.shields.io/badge/TIANXIA-v0.3%20Classical%20Triad%20complete-darkred)](32_TIANXIA/README.md)
 [![MCP Extension](https://img.shields.io/badge/Claude%20Code-MCP%20Extension-orange)](12_IMPLEMENTATIONS/applications/LYCHEETAH_GUARD_SETUP.md)
 [![arXiv](https://img.shields.io/badge/arXiv-CASCADE-red)](papers/CASCADE_ARXIV.tex)
 [![Sponsor](https://img.shields.io/badge/sponsor-Lycheetah-ea4aaa)](https://github.com/sponsors/Lycheetah)
@@ -85,6 +85,8 @@ This framework addresses that gap — and six others.
 | **SCAFFOLD** | 14 | Structurally sound with named gaps |
 | **CONJECTURE** | 6 | Worth exploring, unproven |
 | **RETRACTED** | 3 | Publicly withdrawn — see Failure Museum |
+
+*Note: CLAIM_STATUS_LEDGER.md tracks load-bearing claims at framework-summary granularity. As of v0.3 (2026-05-04): 17 ACTIVE / 40 SCAFFOLD / 16 CONJECTURE — 14 new SCAFFOLD claims from TIANXIA v0.2 + v0.3 Classical Triad completion.*
 
 Machine-readable register: [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) · Schema: [`28_DEFENSE/CLAIMS.schema.json`](28_DEFENSE/CLAIMS.schema.json)
 
@@ -271,7 +273,11 @@ The bridge from E-1.0 design to E-1.2 execution is [`31_EMPIRICAL/E1.1_PREREGIST
 
 The fourth anchor, forged 2026-05-01 in honour of the Chinese sovereign tradition. [`32_TIANXIA/`](32_TIANXIA/README.md) is the framework's commitment to engaging Chinese statecraft, governance philosophy, and contemporary AI governance discourse not as area-studies decoration but as primary intellectual partnership.
 
-The module integrates five classical operators as load-bearing constraints on the framework's existing operations. Each operator has a primary source, a formal mapping, and operational consequences:
+**v0.3 — Classical Triad Complete (2026-05-04).** The module now formally names and maps all three classical roots: Confucian (Ren Zheng, Li, Neo-Confucian Hexie), Daoist (Wuwei, Shi), and Legalist (Han Fei Fa-Shu-Shi). What was implicit in v0.1–v0.2 is now architecturally explicit.
+
+The module integrates classical operators as load-bearing constraints on the framework's existing operations. Each operator has a primary source, a formal mapping, and operational consequences:
+
+**Five core operators (v0.1/v0.2):**
 
 | Operator | Source | Mapped onto | Layer | Deliverable |
 |---|---|---|---|---|
@@ -281,19 +287,44 @@ The module integrates five classical operators as load-bearing constraints on th
 | **Wuwei (无为)** — Non-forced action | *Daodejing*, *Zhuangzi* | TRIAD correction | Grain-alignment at correction layer | [`WUWEI_TRIAD_EXTENSION.md`](32_TIANXIA/WUWEI_TRIAD_EXTENSION.md) |
 | **Datong (大同)** — Great Unity | *Liji*; Kang Youwei lineage | HARMONIA + value-space | Long-cycle telos | [`DATONG_GRADIENT.md`](32_TIANXIA/DATONG_GRADIENT.md) |
 
-The five operators compose. A framework, deployment, or architectural choice is *fully TIANXIA-coherent* iff all five layers are satisfied.
+**Classical Triad operators (v0.3):**
 
-**Module status as of 2026-05-01 (closed first wave + second-wave implementations + empirical preregistration):**
+| Operator | Root | Source | Mapped onto | Deliverable |
+|---|---|---|---|---|
+| **Ren Zheng (仁政)** — Benevolent Governance | Confucian | Mengzi; Xunzi | R(s) welfare-voice-force composite | [`REN_ZHENG_OPERATOR.md`](32_TIANXIA/REN_ZHENG_OPERATOR.md) |
+| **Li (礼)** — Ritual Constraint | Confucian | Xunzi *Xunzi* | AURA I₁/I₄/I₇ grounding | [`LI_RITUAL_CONSTRAINTS.md`](32_TIANXIA/LI_RITUAL_CONSTRAINTS.md) |
+| **Wang Dao / Ba Dao (王道/霸道)** — Legitimacy Classifier | Confucian | Mengzi; Xunzi | Governance trajectory classification | [`WANG_DAO_OPERATOR.md`](32_TIANXIA/WANG_DAO_OPERATOR.md) |
+| **Neo-Confucian Hexie** — Metaphysical grounding | Confucian | Zhu Xi; Wang Yangming | Hexie equilibrium li-qi grounding | [`NEOCONFUCIAN_HEXIE_EXTENSION.md`](32_TIANXIA/NEOCONFUCIAN_HEXIE_EXTENSION.md) |
+| **Fa (法)** — Legalist Constraint | Legalist | Han Feizi | R(s) force_restraint + H₅ non-discrimination | [`HAN_FEI_FA_CONSTRAINT.md`](32_TIANXIA/HAN_FEI_FA_CONSTRAINT.md) |
 
-- ✓ Mathematical core T-1 through T-5 forged.
-- ✓ Honouring layer T-8 Beijing AI Principles mapping, T-9 GAGI 2023 engagement, T-10 Mandarin primary-source registry forged.
-- ✓ Public stake: [`POSITION_PAPER_v0.1.md`](32_TIANXIA/POSITION_PAPER_v0.1.md) and [`PREDICTIONS_REGISTRY.md`](32_TIANXIA/PREDICTIONS_REGISTRY.md) committed.
-- ✓ Implementations shipped with passing self-tests reproducing the worked examples:
-  - [T-6 `aura_score_hexie.py`](12_IMPLEMENTATIONS/core/aura_score_hexie.py) — reproduces T-2 §V (standard ranks O₁ > O₂ at 0.95/0.75; Hexie inverts to O₂ > O₁ at 0.65/0.04).
-  - [T-7 `triad_wuwei.py`](12_IMPLEMENTATIONS/core/triad_wuwei.py) — reproduces T-4 §V Proposition 4 (forcing/aligned cost ratio = e² ≈ 7.389 at μ = 1).
-- ✓ Empirical preregistration drafted: [E-1-F `E1F_HEXIE_PREREGISTRATION.md`](31_EMPIRICAL/E1F_HEXIE_PREREGISTRATION.md) — four primary hypotheses, Bonferroni α = 0.0025, n = 500 hard stop, pair set P locked, downgrade and retraction triggers reproduced verbatim from T-2 §X. OSF submission gated on rater-pool onboarding.
+**Composition:** A deployment is *fully TIANXIA-coherent* iff all five gates of the [AI Deployment Criteria](32_TIANXIA/AI_DEPLOYMENT_CRITERIA.md) are satisfied: Ren Zheng (R(s) ≥ θ_r) + Five-Fold Hexie (H₅ ≥ 0.65) + Wuwei (ε ≥ 0.60) + Datong (Π_D ≥ 0) + Wang Dao (WD = Wang).
 
-Sequencing for Phase-2 multi-operator composition study and the academic submission lives in [`OPUS_MASTER_PLAN_2026.md`](OPUS_MASTER_PLAN_2026.md).
+**Three-layer alignment stack (Synthesis V):**
+```
+Layer 0: AURA per-output compliance        — each output constitutionally checked
+Layer 1: CASCADE coherence dynamics        — belief-state evolution toward coherence
+Layer 2: TIANXIA governance context        — Wang Dao classification of deployment
+         ├── Ren Zheng R(s) ≥ θ_r          — welfare floor + voice coverage
+         ├── Five-Fold H₅ ≥ 0.65           — multi-dimensional harmony
+         ├── Wuwei ε ≥ 0.60               — non-coercive operation
+         ├── Datong Π_D^{ext} ≥ 0         — positive distributional trajectory
+         └── Wang Dao WD = Wang            — genuine legitimacy
+```
+
+**Module status as of 2026-05-04 (v0.3 — Classical Triad complete):**
+
+- ✓ Mathematical core T-1 through T-5 forged (v0.1).
+- ✓ All five core operator implementations: `aura_score_hexie.py`, `triad_wuwei.py`, `shi_propensity.py`, `datong_gradient.py`, `tianxia_governance.py` — all self-tests passing.
+- ✓ Classical Triad operator implementations: `ren_zheng.py`, `wang_dao.py`, `hexie_five_fold.py`, `civilisational_governance_benchmark.py` — all self-tests passing.
+- ✓ Honouring layer: [Beijing AI Principles v0.3](32_TIANXIA/BEIJING_PRINCIPLES_MAPPING.md), [GAGI 2023 v0.3](32_TIANXIA/GAGI_2023_ENGAGEMENT.md), Mandarin Primary Registry (120+ term glossary).
+- ✓ Public stake: [Position Paper v0.1](32_TIANXIA/POSITION_PAPER_v0.1.md), [Position Paper v0.2 Mandarin](32_TIANXIA/POSITION_PAPER_v0.2_MANDARIN.md), [Predictions Registry](32_TIANXIA/PREDICTIONS_REGISTRY.md).
+- ✓ Defense layer: Three new objections answered (Ren Zheng Paternalist, Tianxia Empire v2, Wang Dao Operationalisation) in [`COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md).
+- ✓ Cross-framework bridges: [Synthesis IV](28_DEFENSE/SYNTHESES.md) (CASCADE ↔ Tianxia), [Synthesis V](28_DEFENSE/SYNTHESES.md) (Wang Dao ↔ AURA constitutional compliance).
+- ✓ Empirical programme: [E-1-F](31_EMPIRICAL/E1F_HEXIE_PREREGISTRATION.md) (Hexie study), [E-1-G](31_EMPIRICAL/E1G_MULTI_OPERATOR_PREREGISTRATION.md) (multi-operator Phase 2), [E-1-H](31_EMPIRICAL/E1H_MASTER_EQUATION_CALIBRATION.md) (k₁–k₄ calibration).
+- ✓ Publication layer: TIANXIA standalone paper, Hexie cross-cultural companion, civilisational frameworks comparative.
+- ☐ One submission to Chinese-tradition-engaged academic venue for adversarial peer review (promotion condition — MAC-GATED).
+
+Sequencing for multi-operator composition study and academic submission lives in [`OPUS_MASTER_PLAN_2026.md`](OPUS_MASTER_PLAN_2026.md).
 
 ### Engagement with Contemporary Chinese AI Governance
 
@@ -475,11 +506,15 @@ This repository is designed to be navigated with an AI guide — not read alone.
 
 ```
 22 canonical documents (C-1.0, 2026-04-25)
-24 defense documents (D-1.0/1.1/1.2, 2026-04-26/27) + C-1.1 reforge in progress
+24 defense documents (D-1.0/1.1/1.2, 2026-04-26/27) + C-1.1 reforge
 60 status-tagged claim records in 28_DEFENSE/CLAIMS.json (37 ACTIVE / 14 SCAFFOLD / 6 CONJECTURE / 3 RETRACTED)
-59 load-bearing claims in 28_DEFENSE/CLAIM_STATUS_LEDGER.md (different granularity; see 28_DEFENSE/CLAIMS_README.md)
+73 load-bearing claims in 28_DEFENSE/CLAIM_STATUS_LEDGER.md (17 ACTIVE / 40 SCAFFOLD / 16 CONJECTURE — includes 14 new TIANXIA claims)
 9 formal frameworks
-34 Python implementations (core, applications, systems, experiments)
+38+ Python implementations (core, applications, systems, experiments, TIANXIA operators)
+TIANXIA module v0.3 — Classical Triad complete (Confucian + Daoist + Legalist layers)
+9 TIANXIA operator documents + 4 implementations + 3-layer alignment stack (Syntheses IV + V)
+3 empirical preregistrations for TIANXIA (E-1-F, E-1-G, E-1-H)
+3 academic papers in TIANXIA publication pipeline
 18 core implementations with 220 automated tests (219 pass; 1 declared CONJECTURE not meeting criterion)
 1 convergence proof (discrete, [ACTIVE])
 1 AGM postulate verification ([ACTIVE] for 4 of 6, [SCAFFOLD] for 2)
@@ -490,8 +525,8 @@ This repository is designed to be navigated with an AI guide — not read alone.
 1 browser alignment playground — paste text, get live AURA report, zero install
 1 public failure museum — 15 exhibits, nothing removed, ever
 1 adversarial audit — the framework reviewed by its own adversarial mode
-1 counter-codex — 10 steelmanned objections including 5 unanswered
-5 papers in the publication pipeline
+1 counter-codex — 13 steelmanned objections including 5 unanswered
+8 papers in the publication pipeline (5 core + 3 TIANXIA)
 1,402 pages of development history
 0 dollars to access any of it
 ```

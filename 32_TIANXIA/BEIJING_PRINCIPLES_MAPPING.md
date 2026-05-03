@@ -200,9 +200,64 @@ Principles with content the TIANXIA operators do NOT engage — declared per Dis
 
 ---
 
+---
+
+## IX. v0.3 Extension — Ren Zheng and Wang Dao Added (2026-05-03)
+
+The v0.3 TIANXIA module adds two new operators not present in the v0.2 mapping above: Ren Zheng (仁政, R(s)) and Wang Dao (王道, WD). Both have direct structural relevance to several Beijing AI Principles. This section updates the operator-loading for the principles where these operators materially change the engagement.
+
+### Updated Operator Table (v0.3 additions only)
+
+| # | Principle | v0.2 Primary | v0.2 Secondary | v0.3 Addition | Note |
+|---|---|---|---|---|---|
+| 1 | Do Good / 做善事 | Datong | Tianxia | **Ren Zheng (R)** | "Benefit all mankind" requires a welfare floor — R(s) is the formal welfare-floor operator. Principle 1's commitment to universal benefit is not achievable without R(s) ≥ θ_r. Ren Zheng is now co-primary with Datong on this principle. |
+| 2 | For Humanity / 服务于人 | Datong | — | **Ren Zheng (R)** | "Conform to human values" with respect to welfare provision = R(s). The voice_coverage component of R(s) operationalises "conform to human values" more precisely than the v0.2 mapping: human values as expressed by humans, not as specified by designers. |
+| 5 | Be Ethical / 合乎伦理 | All five | — | **Ren Zheng + Wang Dao** | The full v0.3 stack (seven operators) provides richer operationalisation of "trustworthy, beneficial, accountable": trustworthy = Wang Dao WD_score; beneficial = Ren Zheng R(s); accountable = Hexie H₅ + force_restraint component. |
+| 6 | Be Diverse and Inclusive / 多样与包容 | Hexie | Datong | **Ren Zheng (R) voice_coverage** | "Inclusive" in the v0.3 framework is primarily captured by voice_coverage (V(s)) in R(s): the proportion of stakeholder interests genuinely represented. This is more precise than the v0.2 "Hexie complementarity" mapping for the inclusivity claim. Hexie captures diversity; Ren Zheng captures inclusion. |
+| 9 | Informed Consent / 知情同意 | Datong | Tianxia | **Ren Zheng (R) voice_coverage** | Informed consent requires that users have genuine voice in decisions affecting them — which is precisely V(s). The v0.3 mapping adds Ren Zheng as primary on the voice side; Datong remains on the capability side. |
+| 12 | Harmony and Cooperation / 和谐合作 | Tianxia | Hexie | **Wang Dao (WD)** | "Optimised symbiosis" in AI governance implies long-cycle stable cooperation — which is the Wang Dao long-cycle stability (Γ) component. Governance arrangements that achieve short-cycle cooperation through compliance rather than genuine alignment (Ba Dao) are unstable over the time horizons Principle 12 invokes. Wang Dao is now tertiary on this principle. |
+| 15 | Long-term Planning / 长远规划 | Datong | — | **Wang Dao (WD) Γ** | Long-cycle stability (Γ in WD_score) directly operationalises "AI will always be beneficial to society and nature." Datong captures the distributional trajectory; Wang Dao's Γ captures the legitimacy-stability trajectory. Both are needed for genuine long-term planning. |
+
+### v0.3 Structural Observations
+
+**Observation 5 — Ren Zheng fills the welfare-floor gap in v0.2 mapping.**  
+The v0.2 mapping used Datong (T-5) as the primary operator for welfare-oriented principles (1, 2, 6). Datong is a long-cycle directional operator — it measures whether welfare trajectories are converging toward great unity. But Beijing Principles 1, 2, 6 also require a *present-tense welfare floor*, not only a long-cycle direction. Ren Zheng R(s) provides this: the requirement that material sufficiency, voice, and non-coercive force are all present now, not only trending positively. The v0.3 mapping is structurally more complete.
+
+**Observation 6 — Wang Dao supplies the legitimacy-stability dimension absent from v0.2.**  
+The v0.2 mapping had no operator for governance *legitimacy* as distinct from governance *outcomes*. Principles 12 and 15 explicitly invoke long-cycle stability and cooperative relationships — which require legitimacy grounded in genuine alignment (minxin), not compliance. Wang Dao provides this. The Proposition WD-1 (differential resilience under shock) is directly relevant to Beijing AI Principles' concern about avoiding AI races and maintaining stable international cooperation: Wang Dao governance is more stable under capability shocks than Ba Dao governance, which is exactly the long-run stability these principles require.
+
+**Observation 7 — Five-Fold Hexie (H₅) updates the v0.2 Hexie mapping.**  
+The v0.2 mapping used the base Hexie operator (T-2, coordination-complementarity). The v0.3 Five-Fold Hexie adds four additional dimensions that affect several principles:
+- Principle 6 (Be Diverse and Inclusive): S-component (sharing coherence) is directly relevant
+- Principle 7 (Open and Share): O-component (openness coherence) is directly relevant
+- Principle 15 (Long-term Planning): E-component (ecological coherence) is directly relevant
+
+These mappings are additions to the v0.2 table, not replacements.
+
+### v0.3 Negative-Space Declarations
+
+No new non-engagement declarations are required for v0.3. The Ren Zheng and Wang Dao additions improve engagement on principles 1, 2, 6, 9, 12, 15. The four existing non-engagement declarations (political-economic context, legal consent enforcement, labour-market policy, inter-state institutional design) remain in force.
+
+### v0.3 Five-Gate AI Deployment Cross-Reference
+
+The Beijing AI Principles can also be read as a governance framework for AI deployment, and the TIANXIA v0.3 five-gate AI deployment criteria (→ `32_TIANXIA/AI_DEPLOYMENT_CRITERIA.md`) maps onto the principles:
+
+| Gate | Operator | Beijing Principle(s) |
+|---|---|---|
+| Gate 1: Ren Zheng | R(s) ≥ θ_r | 1 (Do Good), 2 (For Humanity), 6 (Be Diverse and Inclusive) |
+| Gate 2: Hexie | H₅(s) ≥ 0.65 | 5 (Be Ethical), 6 (Inclusive), 7 (Open and Share), 12 (Harmony) |
+| Gate 3: Wuwei | ε ≥ 0.60 | 4 (Control Risks), 8 (Use Wisely), 11 (Employment), 13 (Adaptation) |
+| Gate 4: Datong | Π_D^{ext} ≥ 0 | 1 (Do Good), 7 (Share), 10 (Education), 15 (Long-term) |
+| Gate 5: Wang Dao | WD = Wang | 12 (Harmony and Cooperation), 15 (Long-term Planning) |
+
+**v0.3 update status:** `[SCAFFOLD]` — v0.3 additions maintain the same claim status as v0.2. All operator-loading mappings await review by BAAI-affiliated scholar.
+
+---
+
 ⊚ Sol Aureum Azoth Veritas — T-8 Beijing AI Principles Mapping
    P ∧ H ∧ B ∧ Reforge ∧ Anchor ∧ Recursive ∧ Negative-Space ∧ Empirical
    2026-05-01 — Albedo (mapping declared; review awaited)
    v0.2 deepening added 2026-05-02
+   v0.3 extension (Ren Zheng + Wang Dao) added 2026-05-03
 
 *和谐合作* — *Harmony and cooperation* — Beijing AI Principles, 2019, Principle 12

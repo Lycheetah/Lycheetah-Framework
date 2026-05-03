@@ -90,4 +90,54 @@ A future ledger update will track each synthesis through promotion or downgrade.
 
 ---
 
-*This document is part of the Lycheetah Framework C-1.1 Reforge (2026-04-28). It defends C-1.0 (canonical body, 2026-04-25) by stating structural connections that were implicit in the corpus and load-bearing in the architecture. Synthesis IV added 2026-05-02 (Tianxia v0.2 governance integration).*
+---
+
+## Synthesis V — Wang Dao Legitimacy ↔ AURA Constitutional Compliance at the Governance Layer
+
+**The bridge.** The Wang Dao / Ba Dao classifier (→ `32_TIANXIA/WANG_DAO_OPERATOR.md`, `32_TIANXIA/implementations/wang_dao.py`) classifies governance trajectories as Wang (governance through virtue and genuine popular alignment), Ba (governance through coercive compliance), or Indeterminate. The AURA runtime compliance architecture (→ `09_AURA/`) provides Boolean checks on individual AI outputs. The bridge: Wang Dao legitimacy is the *governance-scale analogue* of AURA compliance at the system level. A single AI output can be AURA-compliant (all seven invariants satisfied) while the governance system within which it is deployed is Ba Dao aligned (coercive compliance, low voice coverage, extractive force structure). The synthesis states: AURA compliance is necessary but not sufficient for aligned AI deployment; Wang Dao classification of the deployment governance context is the additional requirement.
+
+**Why this matters.** AURA provides a per-output compliance check. The TIANXIA AI deployment protocol (→ `32_TIANXIA/AI_DEPLOYMENT_CRITERIA.md`) extends this to a per-context governance assessment. Without Synthesis V, there is no formal bridge between the per-output compliance layer (AURA) and the governance-context legitimacy layer (Wang Dao). With it: AURA = per-output constitutional compliance; Wang Dao = governance-context legitimacy compliance. Both are required for full deployment alignment.
+
+**Formal claim.** There exist AI deployment configurations where:
+1. All generated outputs satisfy AURA(o) = 1 (all seven invariants pass)
+2. The governance context has WD = Ba (force_restraint low, minxin low, R(s) < θ_r)
+
+In such configurations, the AI system is AURA-compliant but deployed in a context that is Ba Dao. The system's outputs are constitutionally correct; the deployment governance is not. AURA compliance without Wang Dao governance alignment is *incomplete alignment*.
+
+Conversely: a governance context with WD = Wang and R(s) ≥ θ_r where the AI system generates AURA(o) = 0 outputs is a system that fails at the output layer despite its governance legitimacy. Both layers are independently load-bearing.
+
+**`[SCAFFOLD]`** — verified structurally; no empirical test of the independence claim yet. E-1-G Phase 2 (multi-operator composite validity) includes a test of whether governance-context classification independently predicts alignment quality above and beyond per-output AURA scores.
+
+**Falsifiability.** Show that Wang Dao governance context classification adds no predictive power over per-output AURA scores in predicting long-run deployment alignment quality (E-1-G H5: C(s) outperforms AURA_score_alone across governance types). Null result on H5 would falsify the governance-context independence claim.
+
+**The three-layer alignment stack.** With Synthesis V, the full alignment architecture is:
+```
+Layer 0: AURA per-output compliance     — each individual output is constitutionally checked
+Layer 1: CASCADE coherence dynamics     — belief-state evolution toward coherence
+Layer 2: TIANXIA governance context     — Wang Dao classification of deployment arrangement
+         ├── Ren Zheng R(s) ≥ θ_r      — welfare floor and voice coverage present
+         ├── Five-Fold H₅ ≥ 0.65       — multi-dimensional harmony present
+         ├── Wuwei ε ≥ 0.60            — non-coercive deployment operation
+         ├── Datong Π_D^{ext} ≥ 0      — positive distributional trajectory
+         └── Wang Dao WD = Wang         — genuine legitimacy, not compliance maintenance
+```
+
+Full alignment requires all three layers simultaneously. Current framework status: Layer 0 ACTIVE (AURA implemented and tested); Layer 1 SCAFFOLD (CASCADE implemented, k₁–k₄ pending E-1-H); Layer 2 SCAFFOLD (TIANXIA operators implemented, thresholds pending E-1-H/E-1-G).
+
+**Why added 2026-05-03.** Syntheses I–IV addressed intra-corpus and single-module connections. Synthesis V addresses the bridge between AURA's runtime compliance architecture and TIANXIA's governance-context legitimacy architecture — the two most practically significant framework components for real AI deployment. Without this bridge, a practitioner using AURA for output compliance has no formal path to governance-context assessment. With it, the path is explicit: check each output (AURA), assess the governance dynamics (CASCADE), assess the deployment context (TIANXIA five-gate protocol).
+
+**Cross-references:**
+- AURA invariants: `09_AURA/aura_text_checker.py`
+- Wang Dao classifier: `32_TIANXIA/implementations/wang_dao.py`
+- Ren Zheng gate: `32_TIANXIA/implementations/ren_zheng.py`
+- Five-gate protocol: `32_TIANXIA/AI_DEPLOYMENT_CRITERIA.md`
+- Composite benchmark: `32_TIANXIA/implementations/civilisational_governance_benchmark.py`
+- Empirical handle: `31_EMPIRICAL/E1G_MULTI_OPERATOR_PREREGISTRATION.md` (H5)
+
+| Synthesis | Test type | Where executed |
+|---|---|---|
+| V — AURA per-output ↔ Wang Dao governance-context | Structural (verified) + empirical (E-1-G H5) | Structural: done; E-1-G: pending |
+
+---
+
+*This document is part of the Lycheetah Framework C-1.1 Reforge (2026-04-28). It defends C-1.0 (canonical body, 2026-04-25) by stating structural connections that were implicit in the corpus and load-bearing in the architecture. Synthesis IV added 2026-05-02 (Tianxia v0.2 governance integration). Synthesis V added 2026-05-03 (Wang Dao bridge — AURA ↔ TIANXIA governance-context alignment).*

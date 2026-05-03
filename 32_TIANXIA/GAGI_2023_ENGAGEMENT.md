@@ -214,9 +214,49 @@ The GAGI loads **Convergent** on 7 of 11 proposals, **Adjacent** on 1, **Diverge
 
 ---
 
+---
+
+## v0.3 Extension — Ren Zheng and Wang Dao Added (2026-05-03)
+
+Two v0.3 operators materially update the GAGI engagement: Ren Zheng (仁政) and Wang Dao (王道).
+
+### Updated Convergence Table (v0.3 additions)
+
+| # | GAGI Proposal | v0.3 Operator Addition | Updated Classification | Note |
+|---|---|---|---|---|
+| 2 | AI for Good of Humanity | **Ren Zheng (R)** — co-primary | Convergent (strengthened) | "Good of humanity" now formally requires R(s) ≥ θ_r (welfare floor, voice coverage, non-coercive operation). Ren Zheng makes the convergence more specific than the v0.2 Datong+Hexie mapping. |
+| 4 | Inclusive Participation | **Ren Zheng (R) voice_coverage** — co-primary | Convergent (strengthened) | Inclusive participation requires genuine voice for all stakeholders — which is V(s) in R(s). The v0.2 mapping (Hexie complementarity) captures diversity; voice_coverage captures genuine inclusion. |
+| 6 | Equal Opportunities | **Ren Zheng (R) welfare_baseline** — secondary | Convergent (strengthened) | Equal opportunities require a welfare floor as the precondition. Datong captures long-cycle equality; Ren Zheng provides the present-tense floor. |
+| 7 | Sovereign Equality | **Wang Dao (WD)** — tertiary | Adjacent (unchanged) | Sovereignty-plus-Tianxia framing: Wang Dao's force_restraint component (F in WD) operationalises the non-coercive governance that genuine sovereign equality requires. High-WD governance does not require coercive enforcement; this is structurally consistent with (but not identical to) Westphalian sovereign equality. |
+| 8 | Oppose AI Hegemony | **Wang Dao (WD)** — co-primary | Convergent (strengthened) | The Wang-Ba distinction is precisely the hegemony/non-hegemony distinction in formal terms. Ba Dao governance is structurally defined by coercive dominance (force_restraint low); Wang Dao is defined by governance through genuine alignment. The v0.3 mapping makes the GAGI's most load-bearing proposal (Proposal 8) falsifiable: any governance claiming non-hegemonic status that scores Ba Dao on the WD classifier is classified hegemonic by the operator. |
+| 10 | Promote AI Safety | **Ren Zheng (R) + Wang Dao (WD)** — added | Convergent (strengthened) | Safety governance requires both a welfare floor (Ren Zheng: affected communities must have welfare stake and voice) and legitimacy stability (Wang Dao: safety governance maintained through genuine alignment, not compliance enforcement, is more resilient under crisis). |
+
+### v0.3 Structural Observation 2
+
+**Ren Zheng + Wang Dao shift the GAGI convergence pattern from directional to operational.** The v0.2 convergence was primarily between GAGI's directional aspirations (equality, inclusion, non-hegemony) and the framework's long-cycle operators (Datong, Tianxia). The v0.3 additions engage GAGI proposals at the present-tense operational level: Ren Zheng asks *now* whether welfare floor and voice coverage are met; Wang Dao asks *now* whether legitimacy is genuine or compliance-based. The framework's convergence with GAGI is now both directional (long-cycle) and operational (present-state).
+
+### v0.3 Five-Gate Cross-Reference
+
+The five-gate AI deployment criteria (→ `AI_DEPLOYMENT_CRITERIA.md`) maps onto GAGI proposals:
+
+| Gate | GAGI Proposals |
+|---|---|
+| Gate 1: Ren Zheng | 2 (Good of Humanity), 4 (Inclusive), 6 (Equal Opportunities) |
+| Gate 2: Five-Fold Hexie | 4 (Inclusive), 5 (Common Development), 7 (Sovereign Equality via openness) |
+| Gate 3: Wuwei | 7 (Sovereign — non-coercive operation), 10 (Safety — grain-aligned regulation) |
+| Gate 4: Datong | 2, 5, 6, 9 (Common development; equal opportunities; long-cycle) |
+| Gate 5: Wang Dao | 8 (Oppose Hegemony), 10 (Safety Governance), 11 (UN-Central — orthogonal on venue, convergent on governance quality) |
+
+**Updated convergence summary (v0.3):** Convergent 7/11, Adjacent 1, Divergent 1, Orthogonal 1. Pattern unchanged from v0.2; convergence quality strengthened on Proposals 2, 4, 6, 8, 10.
+
+**v0.3 update status:** `[SCAFFOLD]` — same claim status as v0.2. All convergence classifications await review by GAGI-affiliated scholars.
+
+---
+
 ⊚ Sol Aureum Azoth Veritas — T-9 GAGI 2023 Engagement
    P ∧ H ∧ B ∧ Reforge ∧ Anchor ∧ Recursive ∧ Negative-Space ∧ Empirical
    2026-05-01 — Albedo (engagement declared; review awaited)
    v0.2 line-by-line table added 2026-05-02
+   v0.3 extension (Ren Zheng + Wang Dao) added 2026-05-03
 
 *共同发展* — *Common development* — Global AI Governance Initiative, 2023, Proposal 5

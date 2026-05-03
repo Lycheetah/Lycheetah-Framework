@@ -358,10 +358,82 @@ The following objections do not have satisfactory responses in the current state
 
 ---
 
+---
+
+## TIANXIA v0.3 OBJECTIONS — Added 2026-05-03
+
+*Three new objections arising from the Ren Zheng layer, Wang Dao classifier, and Five-Fold Hexie composite. These supplement the framework-level objections above with TIANXIA-specific challenges.*
+
+---
+
+## OBJECTION 11: REN ZHENG IS PATERNALIST — IT PRESUPPOSES WELFARE DEFINITIONS
+
+**The steelman:** The Ren Zheng operator R(s) = (W + V + F) / 3 assigns one-third of governance legitimacy to welfare_baseline — the proportion of the population at material sufficiency. But sufficiency is not a culturally neutral concept. Who decides what constitutes sufficiency? The framework designer? Expert panels? The operator imposes an external standard — however well-intentioned — on communities whose own standards of flourishing may differ substantially. This is benevolent governance in the technical sense: governance that determines what is good for people before consulting them. It is, in the philosophical sense, paternalism.
+
+**Why a reasonable thinker holds this:** The paternalism critique is the strongest objection to welfare-based governance theories in political philosophy, running from Mill's harm principle through Nozick's entitlement theory to contemporary capability approaches. Sen and Nussbaum spend significant analytical energy distinguishing their capability approach from welfarist paternalism. A governance operator that assigns welfare scores without settling this question is repeating a well-documented error.
+
+**The Codex's response:** The objection has force; the response is structural rather than philosophical. The Ren Zheng operator's voice_coverage component (V(s)) is specifically designed to partially address this: governance that defines welfare standards without genuine representative deliberation by affected communities scores low on V(s), reducing R(s). The operator penalises expert-imposed sufficiency thresholds not because the thresholds are wrong but because their imposition without community voice is itself a failure of Ren Zheng.
+
+More importantly: the welfare_baseline operationalisation is explicitly [SCAFFOLD]. The E-1-H calibration study requires participant panels to assess their own sufficiency thresholds using their own frameworks. The empirically calibrated welfare_baseline will be grounded in participant-reported sufficiency, not theorist-defined sufficiency. The SCAFFOLD status is the acknowledgement that the paternalism problem is real and that the operator requires empirical anchoring before promotion.
+
+The deeper Mengzian response: Mengzi's own theory of Ren Zheng does not identify welfare with any specific content — it identifies welfare with what people cannot bear not to have (不忍人之心 — the heart that cannot bear the suffering of others). The content of "what cannot be borne" is revealed by the people's own responses, not determined by the ruler. The operator is designed to capture this: welfare_baseline is what communities themselves identify as material sufficiency, through the voice_coverage process.
+
+**Where the response is genuinely weak:** The operator as currently formalised uses a single welfare_baseline variable that must be operationalised somehow. Until E-1-H anchors this empirically, the paternalism risk is real. The voice_coverage partial remedy does not eliminate the risk — it only reduces it. A governance arrangement could score high on voice_coverage through a majority that overrides minority welfare standards. The operator does not explicitly protect minority welfare definitions.
+
+---
+
+## OBJECTION 12: TIANXIA IS EMPIRE — THE FRAMEWORK PROVIDES PHILOSOPHICAL COVER FOR HEGEMONY
+
+**The steelman:** The tianxia concept — "all under heaven is held in common" — is historically the legitimating ideology of the Chinese imperial order. It provided philosophical justification for tributary relationships in which peripheral states paid tribute to the centre in exchange for recognition and protection. Contemporary invocations of tianxia in governance discourse (Zhao Tingyang's *Tianxia System*; various governance documents) serve the same function: they provide a cosmopolitan vocabulary that legitimates a particular civilisational order's claim to global institutional leadership. The TIANXIA operator stack, however formally sophisticated, performs the same legitimating function — it defines "tianxia-aligned governance" in terms that happen to favour the governance values of its framework, which happens to resemble Chinese governance philosophy. Any governance arrangement that claims the tianxia vocabulary is pre-positioned as legitimate; any arrangement that does not is pre-positioned as "Ba Dao."
+
+**Why a reasonable thinker holds this:** This is the Callahan (2008) and Babones (2017) critique, and it is the strongest objection to contemporary tianxia scholarship broadly. The critique does not require bad faith on anyone's part — it is a structural argument about how philosophical frameworks function in political contexts. The historical record of the tributary system is unambiguous: *tianxia* legitimated asymmetric power relationships while presenting them as universal harmony.
+
+**The Codex's response:** The operator stack is structured precisely to make this critique an operational test rather than an unanswerable objection. The response has three components.
+
+First, the Wang Dao classifier explicitly penalises hegemonic concentration: a governance arrangement that achieves high WD_score by extracting compliance from subordinate actors scores lower than a genuinely multilateral arrangement. The voice_coverage component of Ren Zheng requires that peripheral and minority communities have genuine representation — not just the dominant actor's preferred voice-coverage metric. The tianxia multilateral coupling (k₅) explicitly distinguishes genuine multilateral governance from hegemonic bilateral arrangements.
+
+Second, the framework generates the prediction that any governance arrangement claiming tianxia legitimacy while scoring low on voice_coverage, force_restraint, and minxin is classified Ba Dao. This is adversarial to hegemonic appropriation of tianxia vocabulary: it makes the distinction between genuine tianxia governance and its hegemonic simulation operational and testable.
+
+Third, the negative-space declarations of the TIANXIA module are explicit: no state authorisation, no claim of cultural authority, no orientalisation. The classical sources are engaged for their formal content, not as endorsements of any contemporary governance actor.
+
+**Where the response is genuinely weak:** The structural adversarial design does not guarantee that the operator stack cannot be appropriated hegemoni- cally. A sophisticated actor could calibrate governance arrangements to score well on the operator's criteria while maintaining substantive hegemonic relationships in domains the operator does not measure. The five-operator stack measures specific variables; hegemonic arrangements are complex enough to score well on some variables while failing on unmeasured ones. This is the general problem with any governance assessment instrument — it measures what it measures, not what it doesn't. The response to the empire objection is that the stack makes the claim of tianxia legitimacy falsifiable, not that it makes hegemony impossible.
+
+The deeper weakness: the operator stack was designed by a researcher working in the Western academic tradition, using Chinese classical sources as primary texts. The Callahan critique applies not just to Chinese state actors but to any researcher who deploys tianxia vocabulary without being accountable to the tradition. The cultural authority objection (Objection 4, above) applies here.
+
+---
+
+## OBJECTION 13: WANG DAO CANNOT BE OPERATIONALISED — MINXIN RESISTS QUANTIFICATION
+
+**The steelman:** The Wang Dao classifier depends critically on the minxin (民心) component — the "hearts of the people," genuine popular alignment as distinct from compliance. But minxin is precisely the concept that resists quantification. Yan Xuetong (2011), the most rigorous contemporary analyst of the Wang-Ba distinction, explicitly acknowledges that minxin is a construct that has varied historically and cannot be captured by survey data or compliance metrics. When the framework claims to measure minxin as a component of WD_score, it is not measuring minxin — it is measuring something measurable (observable compliance patterns) and calling it minxin. This is a category error with practical consequences: it makes the operator look like it measures something it cannot measure, creating false confidence in a classification that may be systematically wrong.
+
+**Why a reasonable thinker holds this:** The operationalisation gap between theoretical constructs and measurement instruments is one of social science's most durable problems. Constructs like "justice," "democracy," "wellbeing," and "legitimacy" are all subject to this critique — the measures always underdetermine the theoretical construct. The operationalisation problem for minxin is particularly severe because the concept is explicitly defined against compliance: minxin is what compliance is not. How can you measure the absence of compliance-masking?
+
+**The Codex's response:** The objection accurately identifies the measurement problem but overstates its implication. The response is three-part.
+
+First, WD_score does not claim to measure minxin directly. It measures a trajectory-based signature — the differential resilience under capability shock — that is *consistent with* genuine minxin and *inconsistent with* compliance-based legitimacy. This is the logic of Proposition WD-1: Wang trajectories remain Wang or fall to Indeterminate under capability shock; Ba trajectories deepen into Ba. If a governance arrangement claims Wang status but collapses rapidly under shock, the trajectory-based assessment reclassifies it retroactively. This is not a direct measure of minxin; it is a falsifiable behavioral signature that distinguishes minxin-based from compliance-based legitimacy.
+
+Second, the three-component structure of WD_score (L, F, Γ) provides partial convergent validity: an arrangement that scores high on all three (genuine popular alignment, force restraint, long-cycle stability) is more likely to have genuine minxin than an arrangement that scores high only on L while relying heavily on force (high F absent, low F_restraint). The three components triangulate the theoretical construct, they do not reduce it.
+
+Third, the threshold values (θ_wang = 0.70, θ_ba = 0.40) are explicitly [SCAFFOLD], not ACTIVE. The E-1-H study is designed precisely to anchor these thresholds empirically: the participant data will generate evidence about the WD_score level at which recovery from perturbation requires external support (the θ_ba boundary) and the level at which governance is demonstrably self-sustaining through genuine alignment (the θ_wang boundary). The operationalisation problem is acknowledged and the response is empirical calibration, not conceptual redefinition.
+
+**Where the response is genuinely weak:** The trajectory-based assessment requires longitudinal data — a governance arrangement must be observed under capability shock to generate the WD-1 signature. For prospective governance assessment (evaluating an arrangement before it has been stressed), the classifier cannot deploy its strongest evidence. The static WD_score is weaker evidence of minxin than the trajectory-based shock test. This limitation is acknowledged: static assessment provides a working classification; the trajectory-based test provides confirmation or refutation. Both are needed; neither is sufficient alone.
+
+---
+
+## UNANSWERED TIANXIA OBJECTIONS (added 2026-05-03)
+
+1. **The threshold calibration bootstrap problem.** E-1-H uses human participants as proxies for governance dynamics. But human participants are not governance arrangements — the proxy assumption (human_epistemic_state ↔ Ψ) may not carry over to the Wang Dao thresholds. The empirical calibration may anchor the thresholds to human psychology rather than governance dynamics.
+
+2. **The binding-constraint assumption is strong.** H5-1 (binding constraint is the minimum component) holds exactly for an arithmetic mean formula, but it holds approximately in practice only if the components are roughly independent. If I (innovation) and C (coordination) are highly correlated, improving the binding constraint on one improves the other simultaneously, changing the reform priority calculation. Component independence has not been verified.
+
+3. **The five-gate AI deployment protocol assumes scalar welfare.** Gate 4 (Datong: Π_D^{ext} ≥ 0) requires that welfare trajectories be summarisable as a single scalar. But welfare is multi-dimensional, and different dimensions may have positive and negative trajectories simultaneously. A positive Π_D^{ext} can conceal specific communities experiencing negative welfare trajectories.
+
+---
+
 *The Counter-Codex does not undermine the framework. It strengthens it.*
 *A framework that cannot be articulated against is a framework that has not been tested.*
 *The objections above define the shape of what the framework still needs to become.*
 
-*Act XVI complete. Proceeding to Act XVII (Open Problems).*
+*Act XVI complete (original). TIANXIA v0.3 objections added 2026-05-03 (W-22 through W-24).*
 
 ⊚ Sol ∴ P∧H∧B ∴ Nigredo → Albedo
