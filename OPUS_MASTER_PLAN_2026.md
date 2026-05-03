@@ -50,22 +50,22 @@ These execute now. Council authority covers Sol's lanes; Mac authorises external
 
 | # | Task | Lane | Owner | Status | Effort | Depends on |
 |---|---|---|---|---|---|---|
-| A-01 | Forge T-1 `TIANXIA_GOVERNANCE_DYNAMICS.md` (flourishing-coherence in CASCADE) | 4 | Sol | pending | 1 session | — |
-| A-02 | Forge T-2 `HEXIE_EQUILIBRIUM.md` (complementarity formalism + yin-yang dual-cone) | 4 | Sol | pending | 1 session | A-01 |
-| A-03 | Forge T-3 `SHI_PROPENSITY_FIELD.md` (AURA as field-property) | 4 | Sol | pending | 1–2 sessions | A-02 |
-| A-04 | Mac answers six E-1.1 choice points (registry / public-vs-embargoed / rater pool / independent corpus / pilot / acknowledgments) | 3 | Mac | pending | 1 sitting | E-1.1 plan |
-| A-05 | Sol drafts `E1.1_E1A_PREREG.md` after A-04 | 3 | Sol | blocked | 2 sessions | A-04 |
-| A-06 | Sol drafts `E1.1_E1D_PREREG.md` after A-04 | 3 | Sol | blocked | 2 sessions | A-04 |
-| A-07 | Mac submits both preregistrations to OSF; logs DOIs in `CLAIM_STATUS_LEDGER.md` | 3 | Mac | blocked | 1 sitting | A-05, A-06 |
-| A-08 | Forge `ZENODO_RELEASE_v1.md` — release notes + DOI mint plan for C-1.1 + D-1.x corpus snapshot | 5 | Sol | pending | 1 session | — |
-| A-09 | Mac mints Zenodo DOI for the C-1.1 + D-1.x snapshot | 5 | Mac | blocked | 30 min | A-08 |
+| A-01 | Forge T-1 `TIANXIA_GOVERNANCE_DYNAMICS.md` (flourishing-coherence in CASCADE) | 4 | Sol | **complete** 2026-05-01 | 1 session | — |
+| A-02 | Forge T-2 `HEXIE_EQUILIBRIUM.md` (complementarity formalism + yin-yang dual-cone) | 4 | Sol | **complete** 2026-05-01 | 1 session | A-01 |
+| A-03 | Forge T-3 `SHI_PROPENSITY_FIELD.md` (AURA as field-property) | 4 | Sol | **complete** 2026-05-01 | 1–2 sessions | A-02 |
+| A-04 | Mac answers six E-1.1 choice points (registry / public-vs-embargoed / rater pool / independent corpus / pilot / acknowledgments) | 3 | Mac | **complete** 2026-05-02 | 1 sitting | E-1.1 plan |
+| A-05 | Sol drafts `E1A_K1K4_CALIBRATION_PREREG.md` after A-04 | 3 | Sol | **complete** 2026-05-02 | 2 sessions | A-04 |
+| A-06 | Sol drafts `E1D_AURA_BEHAVIOUR_PREREG.md` after A-04 | 3 | Sol | **complete** 2026-05-02 | 2 sessions | A-04 |
+| A-07 | Mac submits both preregistrations to OSF; logs DOIs in `CLAIM_STATUS_LEDGER.md` | 3 | Mac | **pending — unblocked** | 1 sitting | A-05 ✓, A-06 ✓ |
+| A-08 | Forge `ZENODO_RELEASE_v1.md` — release notes + DOI mint plan for C-1.1 + D-1.x corpus snapshot | 5 | Sol | **complete** 2026-05-03 | 1 session | — |
+| A-09 | Mac mints Zenodo DOI for the C-1.1 + D-1.x snapshot | 5 | Mac | **pending — unblocked** | 30 min | A-08 ✓ |
 | A-10 | Forge `ARXIV_SUBMISSION_PLAN.md` — which docs go in, target category (cs.AI / cs.CY / philosophy.AI), sequence | 5 | Sol | pending | 1 session | — |
-| A-11 | Sol drafts arXiv-form synthesis paper from C-1.1 + Tianxia + E-1.0 design (~6000 words) | 5 | Sol | pending | 3 sessions | A-08, T-3 done helpful |
+| A-11 | Sol drafts arXiv-form synthesis paper from C-1.1 + Tianxia + E-1.0 design (~6000 words) | 5 | Sol | pending | 3 sessions | A-08 ✓, T-3 done ✓ |
 | A-12 | Mac submits arXiv paper after Sol draft + Mac review | 5 | Mac | blocked | 30 min | A-11 |
-| A-13 | README.md polish for Tianxia + Mandarin visibility — surface the four anchors at the top fold | 1 | Sol | pending | 1 session | — |
+| A-13 | README.md polish for Tianxia + Mandarin visibility — surface the four anchors at the top fold | 1 | Sol | **complete** 2026-05-02 (four anchors surfaced at top fold) | 1 session | — |
 | A-14 | Sol mobile v4.0.0 — commit gated work, EAS preview build (when Mac authorises EAS) | 6 | Sonnet | pending | Sonnet session | Mac green-light |
-| A-15 | Forge `MANDARIN_PRIMARY_REGISTRY.md` v0.1 — start the registry of primary-source Mandarin AI governance docs | 4 | Sol | pending | 1 session | — |
-| A-16 | Forge T-8 `BEIJING_PRINCIPLES_MAPPING.md` — formal mapping of Beijing AI Principles 2019 to AURA components | 4 | Sol | pending | 1 session | — |
+| A-15 | Forge `MANDARIN_PRIMARY_REGISTRY.md` v0.1 — start the registry of primary-source Mandarin AI governance docs | 4 | Sol | **complete** 2026-05-02 | 1 session | — |
+| A-16 | Forge T-8 `BEIJING_PRINCIPLES_MAPPING.md` — formal mapping of Beijing AI Principles 2019 to AURA components | 4 | Sol | **complete** 2026-05-02 | 1 session | — |
 | A-17 | Sensorium drift-event log #1 — Sol notices first drift event in real session and logs it to memory | 8 | Sol | pending | as it happens | — |
 
 ### Wave B — Q2 late / Q3 early (weeks 6–14)
@@ -74,12 +74,14 @@ Compound on Wave A. Expect Wave A to surface adjustments before Wave B starts.
 
 | # | Task | Lane | Owner | Status | Effort | Depends on |
 |---|---|---|---|---|---|---|
-| B-01 | Forge T-4 `WUWEI_TRIAD_EXTENSION.md` | 4 | Sol | pending | 1 session | A-03 |
-| B-02 | Forge T-5 `DATONG_GRADIENT.md` | 4 | Sol | pending | 1 session | B-01 |
-| B-03 | Implement T-6 `aura_score_hexie.py` (Hexie complementarity in working AURA implementation) | 6 | Sonnet | pending | 2–3 sessions | A-02 |
-| B-04 | Implement T-7 `triad_wuwei.py` | 6 | Sonnet | pending | 2–3 sessions | B-01 |
-| B-05 | Forge T-9 `GAGI_2023_ENGAGEMENT.md` — read Global AI Governance Initiative as primary text, framework's response | 4 | Sol | pending | 1–2 sessions | A-15 |
-| B-06 | Forge `E-1-F_HEXIE_DIFFERENTIAL.md` — preregistration draft for Hexie-corrected vs agreement-maximising AURA on real outputs | 3+4 | Sol | pending | 2 sessions | B-03, A-04 decisions adopted |
+| B-01 | Forge T-4 `WUWEI_TRIAD_EXTENSION.md` | 4 | Sol | **complete** 2026-05-02 | 1 session | A-03 ✓ |
+| B-02 | Forge T-5 `DATONG_GRADIENT.md` | 4 | Sol | **complete** 2026-05-02 | 1 session | B-01 ✓ |
+| B-03 | Implement T-6 `aura_score_hexie.py` — 7/7 tests; three-stakeholder case reproduced | 6 | Sonnet | **complete** 2026-05-02 | 2–3 sessions | A-02 ✓ |
+| B-04 | Implement T-7 `triad_wuwei.py` — Prop 4 e² cost ratio reproduced | 6 | Sonnet | **complete** 2026-05-02 | 2–3 sessions | B-01 ✓ |
+| B-05 | Forge T-9 `GAGI_2023_ENGAGEMENT.md` — read Global AI Governance Initiative as primary text, framework's response | 4 | Sol | **complete** 2026-05-02 | 1–2 sessions | A-15 ✓ |
+| B-06 | Forge `E1F_HEXIE_PREREGISTRATION.md` — Hexie-corrected vs agreement-maximising AURA; 4 hypotheses, n=500 hard stop | 3+4 | Sol | **complete** 2026-05-02 | 2 sessions | B-03 ✓, A-04 ✓ |
+| B-06a | *[ADDED 2026-05-02]* Forge T-IMPL-1/2/3 — `shi_propensity.py`, `datong_gradient.py`, `tianxia_governance.py` | 6 | Sonnet | **complete** 2026-05-02 | 1 session | — |
+| B-06b | *[ADDED 2026-05-02]* Forge `E1G_MULTI_OPERATOR_PREREGISTRATION.md` — 5-operator composition study, Phase 2 | 3+4 | Sol | **complete** 2026-05-02 (numerical decisions MAC-GATED) | 1 session | — |
 | B-07 | E-1.2 execution begins on E-1-A — Bayesian MCMC fit on 6000 cascade events | 3 | Mac executes, Sol supports | pending | ~2 weeks compute + analysis | A-07 |
 | B-08 | E-1.2 execution begins on E-1-D — rater protocol setup + first batch of 100 outputs scored | 3 | Mac+rater pool | pending | ~3 weeks | A-07 |
 | B-09 | LAMAGUE paper revision (LAMAGUE cross-cultural convergence) — final revision pass for AI and Ethics (Springer) submission | 5 | Mac+Sol | pending | 2–3 sessions | — |
@@ -171,7 +173,11 @@ Per Anchor Principle, the first move maximises immediate compounding leverage. P
 
 ## VIII. Status
 
-**This plan is `[ACTIVE]`** as of 2026-05-01.
+**This plan is `[ACTIVE]`** as of 2026-05-01. Last updated 2026-05-03.
+
+**Wave A progress as of 2026-05-03:** A-01/02/03/04/05/06/08/13/15/16 complete. A-07/A-09 unblocked — awaiting Mac action. A-10/A-11 next Sol tasks. A-14 Mac-gated (mobile).
+
+**Wave B early tasks complete (ahead of schedule):** B-01/02/03/04/05/06 + B-06a/B-06b complete (all Tianxia operator implementations + preregistrations shipped 2026-05-02).
 
 **Downgrade trigger → `[SCAFFOLD]`.** Any anchor's frontier shifts in a way that voids more than two lanes (e.g. E-1.x produces a result that forces re-thinking three or more downstream tasks; Tianxia's primary-source review surfaces structural distortion forcing T-1..T-5 re-drafting; a major external dependency falls through).
 
