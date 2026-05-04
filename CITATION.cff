@@ -1,22 +1,24 @@
 cff-version: 1.2.0
 message: "If you use this framework, please cite it as below."
 type: software
-title: "Lycheetah Framework: A Sovereign System for Human-AI Co-Creation"
-version: C-1.0
-date-released: "2026-04-25"
+title: "The Lycheetah Framework: Nine Formal Frameworks for AI Alignment and Epistemology"
+version: C-1.1
+date-released: "2026-05-04"
+doi: "10.5281/zenodo.20020828"
 abstract: >
   Nine interdependent formal frameworks for AI alignment and epistemology —
   CASCADE (belief dynamics), AURA (constitutional invariants), LAMAGUE (ethical grammar),
   TRIAD (convergent correction cycle), MICROORCIM (drift detection), EARNED LIGHT
   (thermodynamic consciousness model), ANAMNESIS (convergent discovery), CHRYSOPOEIA
-  (transformation operator), and HARMONIA (resonance dynamics). Each framework is
-  mathematically grounded with computable implementations. 37 load-bearing claims
-  proven and independently verifiable. Full canonical body: CODEX_AURA_PRIME C-1.0.
+  (transformation operator), and HARMONIA (resonance dynamics). Includes the TIANXIA
+  civilisational engagement module v0.3 (Classical Triad complete). Each framework is
+  mathematically grounded with computable implementations. 38 Python implementations,
+  219+ automated tests. CLAIM_STATUS_LEDGER: 17 ACTIVE / 40 SCAFFOLD / 16 CONJECTURE.
 authors:
   - family-names: "Clark"
     given-names: "Mackenzie Conor James"
     alias: "Mac"
-    affiliation: "Independent Researcher, Lycheetah Foundation"
+    affiliation: "Independent Researcher, Dunedin, Aotearoa New Zealand"
     city: "Dunedin"
     country: "NZ"
 repository-code: "https://github.com/Lycheetah/Lycheetah-Framework"
@@ -33,14 +35,18 @@ keywords:
   - convergence theory
   - ethical grammar
   - harmonic dynamics
+  - Chinese AI governance
+  - Tianxia
+  - computational ethics
 preferred-citation:
   type: software
-  title: "Lycheetah Framework C-1.0"
+  title: "The Lycheetah Framework: Nine Formal Frameworks for AI Alignment and Epistemology"
   authors:
     - family-names: "Clark"
       given-names: "Mackenzie Conor James"
-  version: C-1.0
-  date-released: "2026-04-25"
+  version: C-1.1
+  date-released: "2026-05-04"
+  doi: "10.5281/zenodo.20020828"
   repository-code: "https://github.com/Lycheetah/Lycheetah-Framework"
   url: "https://github.com/Lycheetah/Lycheetah-Framework"
   year: 2026

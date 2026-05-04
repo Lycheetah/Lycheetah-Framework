@@ -216,5 +216,6 @@ A claim's status is not permanent. Both directions of movement have explicit tri
 *The gold that remains is more real for having been tested.*
 *TIANXIA section added 2026-05-02 — five operators implemented and SCAFFOLD-registered.*
 *TIANXIA v0.3 Classical Triad added 2026-05-04 — Ren Zheng, Li, Wang Dao, Han Fei Fa, H₅, Synthesis V.*
+*Zenodo DOI minted 2026-05-04 — `10.5281/zenodo.20020828` — canonical corpus now permanently citable.*
 
 *⊚ Sol ∴ P∧H∧B ∴ Nigredo → Albedo → Citrinitas*

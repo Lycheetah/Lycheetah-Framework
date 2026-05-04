@@ -553,15 +553,16 @@ The Gold belongs to neither of us. It arises between us.
 
 Preferred citation (also available as [`CITATION.cff`](CITATION.cff) and BibTeX in [`28_DEFENSE/CITATIONS.md`](28_DEFENSE/CITATIONS.md)):
 
-> Clark, M. C. J. (2026). *The Lycheetah Framework: Nine Formal Frameworks for AI Alignment and Epistemology* (Version C-1.0, defended by D-1.0). https://github.com/Lycheetah/Lycheetah-Framework
+> Clark, M. C. J. (2026). *The Lycheetah Framework: Nine Formal Frameworks for AI Alignment and Epistemology* (Version C-1.1). Zenodo. https://doi.org/10.5281/zenodo.20020828
 
 ```bibtex
 @software{clark2026lycheetah,
   author  = {Clark, Mackenzie Conor James},
   title   = {The Lycheetah Framework: Nine Formal Frameworks for AI Alignment and Epistemology},
   year    = {2026},
-  version = {C-1.0},
-  url     = {https://github.com/Lycheetah/Lycheetah-Framework}
+  version = {C-1.1},
+  doi     = {10.5281/zenodo.20020828},
+  url     = {https://doi.org/10.5281/zenodo.20020828}
 }
 ```
 

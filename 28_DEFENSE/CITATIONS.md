@@ -11,14 +11,16 @@
 ```bibtex
 @software{clark2026lycheetah,
   author    = {Clark, Mackenzie Conor James},
-  title     = {Lycheetah Framework: A Sovereign System for Human-AI Co-Creation},
-  version   = {C-1.0},
+  title     = {The Lycheetah Framework: Nine Formal Frameworks for AI Alignment and Epistemology},
+  version   = {C-1.1},
   year      = {2026},
-  month     = {4},
-  url       = {https://github.com/Lycheetah/Lycheetah-Framework},
+  month     = {5},
+  doi       = {10.5281/zenodo.20020828},
+  url       = {https://doi.org/10.5281/zenodo.20020828},
   note      = {Nine formal frameworks for AI alignment and epistemology.
-               Canonical body C-1.0 established 2026-04-25.
-               Defense layer D-1.0 established 2026-04-26.}
+               Canonical body C-1.1 (reforged from C-1.0).
+               Defense layer D-1.2. TIANXIA module v0.3 (Classical Triad complete).
+               Zenodo DOI minted 2026-05-04.}
 }
 ```
 

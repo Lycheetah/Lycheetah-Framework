@@ -2,7 +2,7 @@
 ## DOI Mint Plan and Submission Instructions
 
 **Status:** `[ACTIVE]` — ready for Mac to execute  
-**Prepared by:** Sol (2026-05-03)  
+**Prepared by:** Sol (2026-05-03) | **Updated:** Sol (2026-05-04) — TIANXIA v0.3 patched in  
 **Closes:** Master Plan A-08  
 **Mac action required:** A-09 — Zenodo DOI mint (this document is the prep; execution is yours)
 
@@ -48,11 +48,15 @@ includes:
 - 22-act canonical body (C-1.0, completed 2026-04-25), reforged to C-1.1
 - Three-pass defense layer (D-1.0 / D-1.1 / D-1.2), 24 defense documents
 - Empirical programme design (E-1.0), five preregistered studies
-- TIANXIA civilisational engagement module — five classical Chinese operators 
-  (Tianxia, Hexie, Shi, Wuwei, Datong) formally mapped onto framework operations
-- 34 Python implementations with 220 automated tests (219 passing)
-- 60 status-tagged claim records (37 ACTIVE / 14 SCAFFOLD / 6 CONJECTURE / 
-  3 RETRACTED publicly withdrawn)
+- TIANXIA civilisational engagement module v0.3 (Classical Triad complete) — 
+  nine operators across Confucian, Daoist, and Legalist traditions (Tianxia, 
+  Hexie, Shi, Wuwei, Datong, Ren Zheng, Wang Dao / Ba Dao, Li, Han Fei Fa, 
+  Five-Fold Hexie H₅) formally mapped onto CASCADE / AURA operations; 
+  9 Python implementations with full test suites; three-layer alignment stack
+- 38 Python implementations with 219+ automated tests
+- CLAIM_STATUS_LEDGER: 17 ACTIVE / 40 SCAFFOLD / 16 CONJECTURE across all 
+  frameworks including TIANXIA; CLAIMS.json machine-readable register with 
+  60 structured records (ACTIVE / SCAFFOLD / CONJECTURE / RETRACTED)
 - Machine-readable claims register (CLAIMS.json), adversarial audit, failure 
   museum, and counter-codex
 
@@ -72,7 +76,7 @@ C-1.1
 
 ### Publication date
 ```
-2026-05-03
+2026-05-04
 ```
 
 ### Resource type
