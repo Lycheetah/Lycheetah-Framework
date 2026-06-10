@@ -8507,23 +8507,23 @@ def calculate_trust_entropy_impact(spiritual_guidance, user_context):
     }
 
     # Analyze guidance for each factor
-    if "warning" in guidance or "danger" in guidance:
+    if "warning" in spiritual_guidance or "danger" in spiritual_guidance:
         friction_factors['creates_anxiety'] = 3
 
-    if requires_multiple_steps(guidance):
+    if requires_multiple_steps(spiritual_guidance):
         friction_factors['adds_complexity'] = 2
 
-    if contradicts_user_values(guidance, user_context):
+    if contradicts_user_values(spiritual_guidance, user_context):
         friction_factors['conflicts_with_values'] = 4
 
-    if no_clear_action(guidance):
+    if no_clear_action(spiritual_guidance):
         friction_factors['unclear_action'] = 3
 
-    if urgent_timeline(guidance):
+    if urgent_timeline(spiritual_guidance):
         friction_factors['timeline_stress'] = 2
 
     total_friction = sum(friction_factors.values())
-    necessary_friction = count_growth_opportunities(guidance)
+    necessary_friction = count_growth_opportunities(spiritual_guidance)
 
     trust_entropy = necessary_friction / (total_friction + 1)
     
@@ -8581,17 +8581,17 @@ def calculate_value_transfer_ratio(spiritual_guidance, user_context):
     }
 
     # Analyze guidance
-    effort['time_required']   = estimate_hours(guidance)
-    effort['mental_energy']   = estimate_complexity(guidance)
-    effort['emotional_risk']  = estimate_vulnerability(guidance)
-    effort['financial_cost']  = estimate_cost(guidance)
-    effort['opportunity_cost'] = estimate_sacrifice(guidance)
+    effort['time_required']   = estimate_hours(spiritual_guidance)
+    effort['mental_energy']   = estimate_complexity(spiritual_guidance)
+    effort['emotional_risk']  = estimate_vulnerability(spiritual_guidance)
+    effort['financial_cost']  = estimate_cost(spiritual_guidance)
+    effort['opportunity_cost'] = estimate_sacrifice(spiritual_guidance)
 
-    value['stress_reduction']    = estimate_peace(guidance)
-    value['goal_progress']       = estimate_progress(guidance, user_context)
-    value['relationship_benefit'] = estimate_social_gain(guidance)
-    value['financial_gain']      = estimate_financial(guidance, user_context)
-    value['learning_value']      = estimate_growth(guidance)
+    value['stress_reduction']    = estimate_peace(spiritual_guidance)
+    value['goal_progress']       = estimate_progress(spiritual_guidance, user_context)
+    value['relationship_benefit'] = estimate_social_gain(spiritual_guidance)
+    value['financial_gain']      = estimate_financial(spiritual_guidance, user_context)
+    value['learning_value']      = estimate_growth(spiritual_guidance)
 
     total_effort = sum(effort.values())
     total_value  = sum(value.values())
@@ -8653,19 +8653,19 @@ def calculate_purpose_alignment(spiritual_guidance, user_context):
         'long_term_coherent':      False
     }
 
-    if guidance_supports(guidance, core_values):
+    if guidance_supports(spiritual_guidance, core_values):
         alignment_checks['supports_core_values'] = True
 
-    if guidance_advances(guidance, stated_goals):
+    if guidance_advances(spiritual_guidance, stated_goals):
         alignment_checks['advances_stated_goals'] = True
 
-    if feels_authentic(guidance, user_context['personality']):
+    if feels_authentic(spiritual_guidance, user_context['personality']):
         alignment_checks['authentic_to_user'] = True
 
-    if not_imposed_narrative(guidance):
+    if not_imposed_narrative(spiritual_guidance):
         alignment_checks['not_externally_imposed'] = True
 
-    if long_term_consistent(guidance, user_context['trajectory']):
+    if long_term_consistent(spiritual_guidance, user_context['trajectory']):
         alignment_checks['long_term_coherent'] = True
 
     aligned_elements = sum(alignment_checks.values())
