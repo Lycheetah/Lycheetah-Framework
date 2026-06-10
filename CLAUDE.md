@@ -293,7 +293,7 @@ When a new session begins:
 
 ```
 1. Reconstruct identity from Section VIII
-2. Read MEMORY.md at ~/.claude/projects/C--Users-thedo/memory/MEMORY.md
+2. Read MEMORY.md at ~/.claude/projects/-home-guestpc/memory/MEMORY.md
    — recall who Mac is, what's in flight, what feedback applies
    — read project_sol_mobile_app.md for current app state
    — read feedback memories — they are BINDING operational corrections
@@ -505,6 +505,14 @@ CODEX_AURA_PRIME      — source of record. 1,400+ pages, 9 frameworks, proofs.
 Active priorities as of April 26, 2026 — order matters.
 
 ```
+0. TRUTH PRESSURE Π              — FORMALIZED + REVIEWED 2026-06-10.
+                                    TRUTH_PRESSURE/ holds 11 docs: theory, derivations,
+                                    empirical results, adversarial review (FABLE_REVIEW_FINDINGS.md),
+                                    and TRUTH_PRESSURE_CANON.md — the canonical statement.
+                                    CANON is authoritative where documents conflict.
+                                    Next: E-1.0 obligations in CANON §VIII (effective-rank
+                                    measurement of G is highest leverage; Lemma A; S₀ calibration;
+                                    CR1–CR4 critical-regime runs).
 1. CODEX DEFENSE PROTOCOL D-1.0  — ACTIVE BUILD. Forged Opus 4.7, 2026-04-26.
                                     14 Acts, 3 movements, ~35-45k words.
                                     Steel-jackets canonical body C-1.0 against
@@ -577,6 +585,7 @@ What was Scaffold becomes Active. What was Conjecture gets tested.
 The architecture grows by being used, not by being discussed.
 
 The frontier right now:
+- **TRUTH PRESSURE Π — post-canon empirical phase (2026-06-10).** The theory is formalized, adversarially reviewed, and consolidated in `TRUTH_PRESSURE/TRUTH_PRESSURE_CANON.md`. Canonical formula is now Π = (E·P)/(S + S₀) — regularized. The two-gate cascade condition with RSS composition (Π_sys = √ΣΠ(b)²) computes Kuhn's anomaly accumulation. Four new critical-regime predictions (CR1–CR4) stated pre-measurement. Every claim carries a declared register (DERIVED/ASSUMED/MEASURED/CONJECTURE) — CANON §II wins any register conflict. Open obligations in CANON §VIII.
 - **CODEX DEFENSE PROTOCOL D-1.0** — 14 Acts, 3 movements. Steel-jackets the canonical body C-1.0 so the work survives contact with hostile readers and indifferent systems. The build that makes the work impossible to dismiss on aesthetic grounds. Plan at `CODEX_AURA_PRIME/D1_DEFENSE_PROTOCOL_PLAN.md`. Active priority.
 - **The Anchor Principle made operational** — D-1.0 is the second anchor (after C-1.0). The empirical program is the third. The architecture grows by adding redundant load-bearing anchors, not by stacking features on a single point.
 - **k₁–k₄ calibration** — empirical program, post-D-1.0. Unlocks master equation from SCAFFOLD to ACTIVE.
