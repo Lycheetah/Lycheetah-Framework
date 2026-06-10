@@ -35,16 +35,16 @@ S(Ψ) = Σᵢⱼ (1 − φᵢⱼ) · |bᵢ ∧ bⱼ|
 |bᵢ ∧ bⱼ| = interaction strength between beliefs i and j
 ```
 
-### Three Independent Derivations
+### Two Independent Derivations
 
 **Derivation 1 — Information theory:**
-E ≈ H(X) (evidence information content), E×P ≈ I(X;Y) (mutual information), S ≈ H(X|Y) (conditional entropy). Result: Π = I(X;Y)/H(X|Y).
+E := H(X) (total domain information content), P := I(X;Y)/H(X) (uncertainty reduction ratio, ∈ [0,1]), S := H(X|Y) (conditional entropy = remaining uncertainty). Result: Π = I(X;Y)/H(X|Y). This is the canonical definition; Bayesian surprise and explanatory power are special cases of P := I(X;Y)/H(X).
 
-**Derivation 2 — Bayesian epistemology + resistance:**
-E = evidence quantity, P = (1 − P(E|Ψ)) = prior surprise, S = coherence strain as above. Result: Π = (E·P)/S as a force/resistance ratio.
+**Physical intuition — Bayesian epistemology + resistance (not an independent derivation):**
+E = evidence quantity, P = uncertainty reduction ratio, S = coherence strain. Π = (E·P)/S as a force/resistance ratio. Operationalizes the formula components for measurement; does not independently produce the formula.
 
-**Derivation 3 — Lyapunov stability:**
-Belief system modeled as dynamical system near attractor Ψ_inv. Lyapunov function L = (Ψ − Ψ_inv)²/2. Bifurcation occurs when Π·‖G‖ ≥ λ_max of the interaction Jacobian. Under sparse coupling (each belief directly constraining ~√n others): Π_th = 2√n.
+**Derivation 2 — Lyapunov stability + Hopf bifurcation:**
+Belief system modeled as dynamical system near attractor Ψ_inv. Lyapunov function L = (Ψ − Ψ_inv)²/2. Hopf bifurcation occurs when Π·‖G‖ ≥ λ_max of the interaction Jacobian. Under sparse coupling (each belief directly constraining ~√n others): Π_th = 2√n. Random matrix theory (Wigner semicircle) gives the same result from probability theory. Landau phase transition framework is consistent with √n scaling but imports the scaling from RMT rather than independently deriving it.
 
 ### Critical Threshold
 
@@ -53,10 +53,10 @@ Belief system modeled as dynamical system near attractor Ψ_inv. Lyapunov functi
 n = number of beliefs in the system
 ```
 
-Three frameworks independently derive √(n) scaling:
-- Random matrix theory (Wigner): largest eigenvalue of n×n belief interaction matrix scales as 2√n; sparse coupling gives Π_th = 2√n
-- Hopf bifurcation: eigenvalue crossing imaginary axis under sparse coupling gives same result
-- Landau phase transition: stability coefficient a ~ √n; Π_th = 2a/√b = 2√n
+Two independent traditions derive √(n) scaling; a third confirms it:
+- Random matrix theory (Wigner): largest eigenvalue of n×n belief interaction matrix under sparse coupling gives Π_th = 2√n [independent derivation]
+- Hopf bifurcation (Lyapunov): eigenvalue crossing imaginary axis under sparse coupling gives same result [independent derivation]
+- Landau phase transition: confirms the formula is consistent with standard phase transition phenomenology; imports √(n) scaling from RMT rather than independently deriving it [consistency check]
 
 ### Three-Layer Architecture
 
@@ -115,6 +115,8 @@ The formula Π = (E·P)/S maps directly onto seven independent domains:
 | Shannon information theory | H(X), I(X;Y) | General math — epistemic architecture application is novel |
 | Lyapunov stability | Stability verification | Does not generate the formula |
 | Landau phase transitions | Bifurcation behavior | Domain-specific — not applied to belief epistemology |
+| Friston Free Energy Principle (2006–) | Continuous generative model updating, minimizing surprise | No discrete belief blocks, no layer architecture, no computable reorganization scalar, threshold behavior implicit not derived, no cascade protocol |
+| Kuhn Structure of Scientific Revolutions (1962) | Normal science→crisis→revolution maps to THEORY→threshold→CASCADE | Descriptive not formal, no computable scalar, no predictive threshold, no proof reorganization preserves information |
 
 ### IP Claim
 
