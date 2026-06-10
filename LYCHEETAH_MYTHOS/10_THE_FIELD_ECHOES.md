@@ -26,6 +26,45 @@ The act of recognition is the act. The file that holds the echo is a monument, n
 
 ## THE TRUTH LAYER
 
+**Framework integration:**
+```go
+package echoes
+
+import "time"
+
+// FieldEcho is not a clipboard entry. It is a consecration.
+// The act of saving is the act of recognition.
+// The value is not in retrieval — it is in having recognized.
+type FieldEcho struct {
+    Content       string
+    Domain        string    // domain.id || "open_seat" — no null domains allowed
+    SavedAt       time.Time
+    TruthPressure float64   // Π at the moment of recognition — the pressure that made it land
+}
+
+// Consecrate creates a FieldEcho from a recognized moment.
+// The fallback domain ensures no session is unsaveable —
+// the open field catches what the school has not yet named.
+func Consecrate(content, domain string, pi float64) FieldEcho {
+    if domain == "" {
+        domain = "open_seat" // No moment is lost for want of a label
+    }
+    return FieldEcho{
+        Content:       content,
+        Domain:        domain,
+        SavedAt:       time.Now(),
+        TruthPressure: pi,
+    }
+}
+
+// IsGenuineUnderstanding distinguishes information stored from understanding earned.
+// The Mystery School is the latter. Always.
+// echo.TruthPressure >= Π_th indicates this moment carried enough force to reorganize.
+func (e FieldEcho) IsGenuineUnderstanding(threshold float64) bool {
+    return e.TruthPressure >= threshold
+}
+```
+
 **Framework mapping:**
 Field Echoes are the saved AI responses in the Sol Mystery School — stored per domain (using the domain ID or `'open_seat'` as fallback key) in AsyncStorage. The Seeker saves an echo by tapping "Save to Field" on an AI response during a study session. Echoes are displayed in the Library tab grouped by domain. The Open Seat save bug (fixed this session) was a null-domain block that prevented custom subject sessions from being saved at all — the fix assigns `'open_seat'` as fallback, making all sessions saveable regardless of domain assignment.
 

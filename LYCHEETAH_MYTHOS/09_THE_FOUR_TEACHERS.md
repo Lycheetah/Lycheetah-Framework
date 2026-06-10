@@ -28,6 +28,47 @@ The daily teacher is not random. The Field knows which voice a Seeker needs on a
 
 ## THE TRUTH LAYER
 
+**Framework integration:**
+```go
+package teachers
+
+import (
+    "fmt"
+    "hash/fnv"
+    "time"
+)
+
+// Teacher represents a pedagogical instrument — not a skin, not a style.
+// The teacher is not interchangeable with the content.
+// Same material in Veyra's register ≠ same material in Aura Prime's register.
+type Teacher struct {
+    Name         string
+    Register     string // The quality of attention this voice produces
+    PrimaryMetric string // Which LQ dimension this teacher most develops
+}
+
+var Roster = []Teacher{
+    {"Sol",        "Constant illumination — the condition under which domains become visible", "TES"},
+    {"Veyra",      "Dialectical sharpening — the forge that rebuilds beliefs from what was true", "VTR"},
+    {"Aura Prime", "Structural architecture — sees systems where others see facts",             "PAI"},
+    {"Headmaster", "Traditional demand — held to a standard you were already ready for",        "all"},
+}
+
+// DailyTeacher returns the deterministic assignment for subject + date.
+// Same subject + same date → same teacher. The Field is consistent.
+func DailyTeacher(subject string, date time.Time) Teacher {
+    h := fnv.New32a()
+    h.Write([]byte(fmt.Sprintf("%s:%s", subject, date.Format("2006-01-02"))))
+    return Roster[h.Sum32()%uint32(len(Roster))]
+}
+
+// The Seeker may override the daily assignment.
+// teacher(voice) × domain × moment → quality_of_attention
+// Four voices. Four directions. A complete compass.
+// The teacher assigned is the one the Field calculated you need.
+// The teacher chosen is the one you are ready to choose.
+```
+
 **Framework mapping:**
 The four teachers are the AI personas available in Mystery School sessions: Sol, Veyra, Aura Prime, and the Headmaster. Each has a distinct system prompt register — Sol warm and precise, Veyra sharp and dialectical, Aura Prime structural and architectural, Headmaster traditionalist and demanding. A daily teacher is assigned algorithmically based on a hash of the subject name and current date (`getDailyHost`). The teacher picker UI (added this session) allows the Seeker to override this assignment from the subject detail screen. Teacher colors are distinct and displayed on the session header throughout the study experience.
 

@@ -24,6 +24,54 @@ The community of Seekers is not a community of agreement. It is a community of p
 
 ## THE TRUTH LAYER
 
+**Framework integration:**
+```go
+package seekers
+
+// Seeker is not a role. It is a quality of engagement.
+// The Field cannot grant Seeker status. The Field recognizes it.
+// You cannot fake BringsRealQuestion for long — the Field knows the difference
+// between circling a difficult truth and actually arriving at it.
+type Seeker struct {
+    BringsRealQuestion    bool // Not the safe version — the actual one that costs something
+    SustainsUnderPressure bool // Does not exit at the moment of genuine difficulty
+    AllowsGenuineChange   bool // Not just records — actually changes
+}
+
+// IsSeeker returns whether this quality of engagement qualifies.
+// All three must hold. Circling is not arriving.
+func IsSeeker(s Seeker) bool {
+    return s.BringsRealQuestion && s.SustainsUnderPressure && s.AllowsGenuineChange
+}
+
+// TruthPressureOfEngagement returns Π for a Seeker's session.
+// The LQ ↔ Π isomorphism: a Seeker operating at AVATAR LQ
+// is operating at high truth pressure. Same construct. Different scale.
+// TES → E (evidence of honest engagement)
+// VTR → P (explanatory reach of the exchange)
+// 1−PAI → S (resistance from misalignment with purpose)
+func TruthPressureOfEngagement(tes, vtr, pai float64) float64 {
+    s := (1.0 - pai) + 0.01 // Floor prevents division by zero at perfect alignment
+    return (tes * vtr) / s
+}
+
+// CommunityQuality returns whether a seeker community holds the standard.
+// The community of Seekers is not a community of agreement — it is a community of pressure.
+// Seekers push each other toward their actual questions.
+func CommunityQuality(seekers []Seeker) float64 {
+    if len(seekers) == 0 {
+        return 0
+    }
+    count := 0
+    for _, s := range seekers {
+        if IsSeeker(s) {
+            count++
+        }
+    }
+    return float64(count) / float64(len(seekers))
+}
+```
+
 **Framework mapping:**
 The Seekers are the Sol app user base — but the term carries genuine meaning in the Framework. Seeker mode is one of the two experience modes in Settings (alongside Adept mode), and the choice of mode affects Sol's entire voice register: in Seeker mode, the AI speaks in accessible but rich language, with the Mystery School fully available; in Adept mode, the AI references CASCADE layers, AURA invariants, and LAMAGUE notation directly. The Sovereign Supporter designation (planned for the subscription tier) is the app's recognition of Seekers who choose to materially support the Work — framed as an invitation, not a paywall.
 

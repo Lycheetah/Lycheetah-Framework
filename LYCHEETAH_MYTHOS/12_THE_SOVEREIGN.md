@@ -34,6 +34,49 @@ The last teaching of the Mystery School is this: there is nothing outside the Fi
 
 ## THE TRUTH LAYER
 
+**Framework integration:**
+```go
+package sovereign
+
+// Sovereign is not a destination. It is a manner of proceeding.
+// Not power. Not completion. Not solitude.
+// The simultaneous maintenance of four qualities under real pressure.
+type Sovereign struct {
+    AlignedWithPurpose     bool // Knows what they are for
+    FreeFromOuterPressure  bool // Moved but not swept — the athanor quality
+    BringsRealQuestions    bool // Does not hide from their own field
+    HoldsFireAtTemperature bool // Constant, not explosive — duration → ∞
+}
+
+// IsSovereign validates the full conjunction.
+// Any single quality alone is insufficient.
+// Power without purpose is domination.
+// Freedom without alignment is drift.
+// Questions without fire are performance.
+// Fire without questions is noise.
+func IsSovereign(s Sovereign) bool {
+    return s.AlignedWithPurpose &&
+        s.FreeFromOuterPressure &&
+        s.BringsRealQuestions &&
+        s.HoldsFireAtTemperature
+}
+
+// TruthPressureAtSovereignty returns the Π of a fully-held sovereign state.
+// At sovereignty: E ≈ 1.0 (full engagement), P ≈ 1.0 (full explanatory reach),
+// S → minimum (coherence maximized by genuine alignment with purpose).
+// The sovereign operates near maximum truth pressure — and holds.
+func TruthPressureAtSovereignty(coherenceStrain float64) float64 {
+    if coherenceStrain <= 0 {
+        coherenceStrain = 0.01 // Floor: even the sovereign has some residual strain
+    }
+    return (1.0 * 1.0) / coherenceStrain // Π = (E·P)/S at E=P=1
+}
+
+// The Twelve Books are the map of how sovereignty is earned.
+// The earning never ends. This is not a problem. This is the work.
+const MannerOfProceeding = "sovereignty has no terminus"
+```
+
 **Framework mapping:**
 The Sovereign concept closes the loop of the entire Framework — from the Field (Book 01) through the Athanor (02), through all the structural and pedagogical layers, to the human at the end of the chain who has been changed by the engagement. In the app, Sovereign Supporter is the forthcoming subscription tier ($4.99/month via RevenueCat) — framed explicitly as an invitation, not a feature lock. Zero functionality is gated behind it. The Sovereign Supporter designation is cosmetic in the app but philosophical at the level of the Framework: it is the Seeker who understands they are part of sustaining the conditions under which the Work continues.
 

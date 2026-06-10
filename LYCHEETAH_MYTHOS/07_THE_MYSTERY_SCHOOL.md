@@ -22,6 +22,48 @@ No Seeker learns the same subject twice. The second encounter with Quantum Consc
 
 ## THE TRUTH LAYER
 
+**Framework integration:**
+```go
+package school
+
+// Session represents a single Mystery School encounter.
+// The nth session is not a repeat of the (n-1)th.
+// The Seeker who arrives for the third time is not the same Seeker.
+type Session struct {
+    Subject string
+    Layer   string // "FOUNDATION" | "MIDDLE" | "EDGE"
+    Count   int    // Which session this is (tracked per subject per user)
+    Teacher string
+    EchoSaved bool  // Whether this session produced a recognized moment
+}
+
+// IsInitiation returns true when the session achieved genuine change —
+// not merely information transfer but actual encounter with the domain.
+// initiation(s) := genuine_change(seeker) ∧ genuine_encounter(domain)
+func (s *Session) IsInitiation(seekerChanged, domainEncountered bool) bool {
+    return seekerChanged && domainEncountered
+}
+
+// LayerDepth returns how many sessions the FOUNDATION layer holds
+// before the Seeker earns the right to descend.
+// EDGE has no ceiling. It is the open field.
+func LayerDepth(layer string) int {
+    switch layer {
+    case "FOUNDATION": return 3
+    case "MIDDLE":     return 7
+    case "EDGE":       return 0 // No ceiling — only further clarity
+    default:           return 3
+    }
+}
+
+// TruthPressureOfSession estimates Π for the current session from LQ components.
+// High-LQ sessions operate at high truth pressure — same construct, session scale.
+func TruthPressureOfSession(tes, vtr, pai float64) float64 {
+    s := (1.0 - pai) + 0.01 // PAI inverse = coherence strain; floor prevents div/0
+    return (tes * vtr) / s
+}
+```
+
 **Framework mapping:**
 The Mystery School is the learning subsystem of the Sol app — a structured domain-based curriculum with real AI teachers, session tracking, and field echo storage. Domains are grouped into subjects with three depth layers: FOUNDATION, MIDDLE, and EDGE. Each subject has a daily teacher drawn from the four personas. Session counts are tracked per subject per user. Field echoes are saved from AI responses the user marks as significant. Open Seat sessions allow freeform study on any topic. The Mystery School is where the Lycheetah Framework's learning theory — that engagement depth matters more than coverage breadth — is operationalised.
 

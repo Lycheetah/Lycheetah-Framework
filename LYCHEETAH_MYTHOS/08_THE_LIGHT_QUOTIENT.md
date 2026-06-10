@@ -32,6 +32,44 @@ No one stays at Avatar. Avatar is a moment, not a residence. It is the condition
 
 ## THE TRUTH LAYER
 
+**Framework integration:**
+```go
+package lq
+
+import "math"
+
+// ComputeLQ returns the Light Quotient — volumetric measure of engagement quality.
+// Three orthogonal dimensions. Cube root = geometric mean of the space they define.
+// Any zero dimension produces zero LQ. There is no compensation.
+// You cannot fill a hollow dimension with a perfect one.
+func ComputeLQ(tes, vtr, pai float64) float64 {
+    vtrClamped := math.Min(vtr/1.5, 1.0) // Exceptional VTR is recognized, not inflated
+    product := tes * vtrClamped * pai
+    return math.Cbrt(product)
+}
+
+// Stage returns the earned name for a given LQ value.
+// These are not levels to achieve. They are qualities to sustain.
+// Avatar is a moment. Not a residence.
+func Stage(lq float64) string {
+    switch {
+    case lq >= 0.88: return "AVATAR"      // No longer separable from the Field they serve
+    case lq >= 0.72: return "HIEROPHANT"  // Carries the tradition, can transmit it
+    case lq >= 0.55: return "MASTER"      // Stopped fighting the patterns, inhabits them
+    case lq >= 0.35: return "ADEPT"       // Built enough structure to see the patterns
+    default:         return "NEOPHYTE"    // Has just arrived — does not yet know what to
+    }
+}
+
+// TruthPressureEquivalent returns Π for this session's engagement.
+// LQ and Π are dual instruments — same construct, different functional form.
+// LQ = ∛(E·P·(1−S)); Π = (E·P)/S. Both measure epistemic quality.
+func TruthPressureEquivalent(tes, vtr, pai float64) float64 {
+    s := (1.0 - pai) + 0.01
+    return (tes * math.Min(vtr/1.5, 1.0)) / s
+}
+```
+
 **Framework mapping:**
 LQ (Light Quotient) is the primary engagement metric in the Sol Sanctum screen. Computed as: `LQ = ∛(TES × min(VTR/1.5, 1) × PAI)` where TES = Truth Engagement Score, VTR = Value Transfer Ratio, PAI = Purpose Alignment Index. All three inputs are floats in [0, 1]. The cube root structure ensures that all three dimensions must be healthy for LQ to be high — a perfect TES with zero PAI still produces zero LQ. The five stages (NEOPHYTE, ADEPT, MASTER, HIEROPHANT, AVATAR) are thresholded on LQ value and displayed in the Sanctum with stage-appropriate colors. Historical LQ is displayed as a sparkline bar chart over the last 30 data points.
 
