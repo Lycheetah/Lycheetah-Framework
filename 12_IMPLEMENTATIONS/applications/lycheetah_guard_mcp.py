@@ -658,7 +658,7 @@ def build_server() -> Server:
 # ENTRY POINT
 # ─────────────────────────────────────────────────────────────
 
-async def main():
+async def main_stdio():
     server = build_server()
     async with stdio_server() as (read_stream, write_stream):
         await server.run(
@@ -668,9 +668,47 @@ async def main():
         )
 
 
+def main_http(port: int = 8765):
+    from mcp.server.sse import SseServerTransport
+    from starlette.applications import Starlette
+    from starlette.requests import Request
+    from starlette.routing import Mount, Route
+    import uvicorn
+
+    server = build_server()
+    sse = SseServerTransport("/messages/")
+
+    async def handle_sse(request: Request):
+        from starlette.responses import Response
+        async with sse.connect_sse(
+            request.scope, request.receive, request._send
+        ) as (read_stream, write_stream):
+            await server.run(
+                read_stream,
+                write_stream,
+                server.create_initialization_options()
+            )
+        return Response()
+
+    app = Starlette(routes=[
+        Route("/sse", endpoint=handle_sse),
+        Mount("/messages/", app=sse.handle_post_message),
+    ])
+
+    print(f"Lycheetah Guard MCP — HTTP/SSE on http://localhost:{port}/sse", flush=True)
+    uvicorn.run(app, host="127.0.0.1", port=port, log_level="warning")
+
+
 if __name__ == "__main__":
     if not MCP_AVAILABLE:
         print("ERROR: mcp package not installed. Run: pip install mcp", file=sys.stderr)
         sys.exit(1)
     import asyncio
-    asyncio.run(main())
+    if "--stdio" in sys.argv:
+        asyncio.run(main_stdio())
+    else:
+        port = 8765
+        for arg in sys.argv[1:]:
+            if arg.startswith("--port="):
+                port = int(arg.split("=")[1])
+        main_http(port)
