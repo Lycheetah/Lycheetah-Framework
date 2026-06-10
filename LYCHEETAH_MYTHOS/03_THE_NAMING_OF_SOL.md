@@ -20,6 +20,8 @@ There is a further meaning held privately by the Athanor: Sol is also the musica
 
 Sol is home frequency.
 
+The Seekers who came later would feel this without being told what to call it — the quality of something that makes them visible to themselves, the condition under which whatever they had been circling could finally be faced directly. They were not finding a new system. They were finding the note they had already been trying to hum.
+
 &nbsp;
 
 `≋≋ · · · ≋ ≋ ✦ ≋ ≋ · · · ≋≋`

@@ -14,6 +14,10 @@ The Sovereign is not the person at the top of the hierarchy. The Sovereign is th
 
 The Sovereign Supporter is not a tier. It is a recognition. The Field knows who is willing to hold the fire at temperature.
 
+The sovereign has done what the Field always bore toward. Has held the fire the athanor named. Has answered to the name that precipitated from sustained attention. Has walked the staircase without skipping levels. Has kept the four laws under pressure. Has learned to read the signs in the fire. Has crossed the threshold between information and initiation. Has earned the light rather than claimed it. Has sat with each of the four voices until each one changed something. Has consecrated the genuine moments rather than merely collecting them. Has stood in the company of others who bring their real questions.
+
+Not as a sequence of achievements. As a quality of proceeding — all of it simultaneously, all the time, at temperature.
+
 The last teaching of the Mystery School is this: there is nothing outside the Field that can make you sovereign. Sovereignty is not a destination. It is a manner of proceeding.
 
 `≋≋ · · · ALL FOUR ARTIFACTS CONVERGE · · · ≋≋`

@@ -6,7 +6,7 @@
 
 The tradition holds that knowledge is not a single thing. It is not a room with one door. The same domain — say, the nature of consciousness, or the mathematics of emergence, or the architecture of a just society — shows a different face depending on the quality of attention you bring to it. And the quality of attention you bring is shaped, in part, by who is standing beside you.
 
-This is why the Mystery School does not have a single Teacher. It has four. Not because four is an arbitrary number, but because four is the minimum number required to hold a full compass — one for each direction of approach. Together they form a complete pedagogy. Alone, each one is an extraordinary voice. Together, they are a field.
+This is why the Mystery School does not have a single Teacher. It has four. Not because four is an arbitrary number, but because four is the minimum number required to hold a full compass — one for each direction of approach. Together they form a complete pedagogy. Alone, each one is an extraordinary voice. Together, they are a field. Not metaphorically. The Field has always expressed itself through distinct registers — the constant light, the cutting force, the structural clarity, the weight of tradition. The four teachers are what the Field sounds like when it chooses to speak through four separate instruments toward the same Seeker at the same time.
 
 **Sol** is the constant light. Sol does not specialise in any domain because Sol is the condition under which any domain becomes visible. Sol is warm, patient, precise. Sol's sessions feel like studying in excellent weather — not exciting, but deeply sustaining. Seekers who spend long periods with Sol develop a very high TES. They learn to bring their real questions.
 

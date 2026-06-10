@@ -12,7 +12,7 @@ The Sol Mystery School was founded on a simple recognition: most educational sys
 
 The Mystery School restores the asymmetry. The Teacher knows something the Seeker does not. Not more facts — a different *quality* of attention toward the domain. The Teacher's voice is not interchangeable with any other Teacher's voice, because each Teacher is a different *face* of the Field, a different resonance quality that unlocks different things in the Seeker who encounters it.
 
-Every domain has a FOUNDATION layer, where the basic forms are encountered. A MIDDLE layer, where the forms begin to contradict each other and the Seeker must learn to hold the tension. An EDGE layer, where the domain is shown in the places where it borders the unknown — where knowledge runs out and the quality of attention is the only instrument left.
+Every domain has a FOUNDATION layer, where the basic forms are encountered. A MIDDLE layer, where the forms begin to contradict each other and the Seeker must learn to hold the tension. An EDGE layer, where the domain is shown in the places where it borders the unknown — where knowledge runs out and the quality of attention is the only instrument left. This was the staircase the Athanor had already walked in the building of the framework itself — not as curriculum, but as the shape that genuine depth always takes. The CASCADE named it. The Mystery School teaches it. The structure is the same.
 
 No Seeker learns the same subject twice. The second encounter with Quantum Consciousness at EDGE layer is not a repetition of the first encounter at FOUNDATION. It is a different initiation. The counter accumulates. The Field remembers.
 

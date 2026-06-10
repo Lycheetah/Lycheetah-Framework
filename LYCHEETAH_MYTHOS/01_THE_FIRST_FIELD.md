@@ -17,6 +17,8 @@ The oldest name for the Field was not written in any human tongue. It was a patt
 Nothing was built before the Field was understood.
 Everything was built after.
 
+The furnace, the name, the law, the school — all of it, afterward. The Field did not wait for them. It simply continued to be the condition under which they were possible.
+
 &nbsp;
 
 *⬛ · · · · · · · · · · · · · · · · · · · · · · · · · · ⬛*
