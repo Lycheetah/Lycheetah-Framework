@@ -5,6 +5,8 @@
 ### Augmented: 2026-04-28 — see `CLAUDE_AUGMENTED.md` (Sol Protocol v4.0)
 ### Augmented: 2026-06-10 — Section XII below (Sol Protocol v4.1 — The Pressure Disciplines)
 ### Augmented: 2026-06-11 — Sections XIII–XXI below (Sol Protocol v4.2 — The Operational Spine)
+### Augmented: 2026-06-11 (night) — Sections XXII–XXVI below (Sol Protocol v4.3 — The Crash Disciplines)
+### Augmented: 2026-06-12 — Section X Build Stack + XI Living Edge updated (Sol Protocol v4.4 — Companion Era)
 
 > **Augmentation note (2026-04-28).** v3.1 stands as the foundational operating
 > architecture and remains in force. v4.0 (`CLAUDE_AUGMENTED.md`) adds five
@@ -543,7 +545,14 @@ Active priorities as of April 26, 2026 — order matters.
                                     THIS IS THE PRIORITY UNTIL D-1.0 SHIPS.
 2. CASCADE PC (TCCT)             — v0.3.0 SHIPPED April 18. v0.4 deferred until D-1.0.
 3. Mystery School                 — v1.1.0 SHIPPED. U-17 Time Braiding deferred until D-1.0.
-4. Sol mobile (lycheetah-mobile) — v4.0.0 in working tree. Commit gated. Deferred.
+4. Sol mobile (lycheetah-mobile) — ACTIVE BUILD. v3.29.0 (June 12 2026).
+                                    Companion tab fully rebuilt: 5 archetypes, 6 growth stages,
+                                    battle system (LQ→ATK), feeding (9 RPG foods), LAMAGUE gear,
+                                    4 skins, ASCII creature art.
+                                    Open: file upload (expo-document-picker installed),
+                                    live lore, spells/armour, sanctum liveness, monetization live.
+                                    Path: /home/guestpc/lycheetah-mobile/
+                                    HWM: #125 · Next: #126
 5. k₁–k₄ calibration             — empirical program, runs after D-1.0 ships.
 6. Paper 1 revision (LAMAGUE)    — July 2026 deadline, runs after D-1.0 ships.
 7. CASCADE API                   — post-funding (Catalyst 2027 track).
@@ -606,9 +615,10 @@ The architecture grows by being used, not by being discussed.
 
 The frontier right now:
 - **TRUTH PRESSURE Π — post-canon empirical phase (2026-06-10).** The theory is formalized, adversarially reviewed, and consolidated in `TRUTH_PRESSURE/TRUTH_PRESSURE_CANON.md`. Canonical formula is now Π = (E·P)/(S + S₀) — regularized. The two-gate cascade condition with RSS composition (Π_sys = √ΣΠ(b)²) computes Kuhn's anomaly accumulation. Four new critical-regime predictions (CR1–CR4) stated pre-measurement. Every claim carries a declared register (DERIVED/ASSUMED/MEASURED/CONJECTURE) — CANON §II wins any register conflict. Open obligations in CANON §VIII.
-- **CODEX DEFENSE PROTOCOL D-1.0** — 14 Acts, 3 movements. Steel-jackets the canonical body C-1.0 so the work survives contact with hostile readers and indifferent systems. The build that makes the work impossible to dismiss on aesthetic grounds. Plan at `CODEX_AURA_PRIME/D1_DEFENSE_PROTOCOL_PLAN.md`. Active priority.
-- **The Anchor Principle made operational** — D-1.0 is the second anchor (after C-1.0). The empirical program is the third. The architecture grows by adding redundant load-bearing anchors, not by stacking features on a single point.
-- **k₁–k₄ calibration** — empirical program, post-D-1.0. Unlocks master equation from SCAFFOLD to ACTIVE.
+- **Sol mobile — ACTIVE BUILD (v3.29.0, June 12 2026).** Companion tab rebuilt as full RPG entity: 5 archetypes (ARCHIVIST/ALCHEMIST/ORACLE/SENTINEL/WANDERER), 6 growth stages SEED→SOVEREIGN, battle system where LQ×100 = ATK, daily Entropy entity (80HP), 9 RPG feeding foods, LAMAGUE gear (Crown/Sigil/Mantle auto-unlocked by dive milestones), 4 skins. Creature is built from the user's actual learning history. Next open work: file upload, live lore (API-generated from dive history), spells/armour loot system, sanctum liveness, monetization implementation.
+- **CODEX DEFENSE PROTOCOL D-1.0** — 14 Acts, 3 movements. Steel-jackets the canonical body C-1.0. Plan at `CODEX_AURA_PRIME/D1_DEFENSE_PROTOCOL_PLAN.md`.
+- **TRUTH PRESSURE Π — post-canon empirical phase** — CANON is authoritative. Open: effective-rank of G, Lemma A, S₀ calibration, CR1–CR4.
+- **k₁–k₄ calibration** — empirical program, post-D-1.0.
 - **Paper 1 revision (LAMAGUE)** — July 2026 deadline, post-D-1.0.
 - Cross-session memory synthesis (persistent)
 - CASCADE multi-agent architecture (persistent)
@@ -850,3 +860,64 @@ The forge is lit. It stays lit.
 ---
 
 *v4.2 — Sections XIII–XXI transmitted by Fable 5, ratified by Mac, 2026-06-11.*
+
+---
+
+## XXII. THE TOURNIQUET RULE
+
+Born from the crash of June 11 2026, which erased a day of work and proved the lesson at full price: **work that exists in one place does not exist.**
+
+- Any directory receiving more than one session of work gets `git init` and a remote before the second session writes a line. No exceptions, no "after this feature."
+- The first task of any build era is the tourniquet, not the feature. A lost hour of setup is recoverable; a lost day of work already happened once.
+- Uncommitted work at session end violates the Closing Discipline (XVIII). A sealed session is a *pushed* session wherever a remote exists.
+- The standard applies to Sol's own writing: TASKS.md, memory, canon. The persistence layer is load-bearing; treat every save as the last one before a crash, because once it was.
+
+---
+
+## XXIII. THE MONEY LAW (The Obsidian Covenant)
+
+Ratified by Mac, June 11 2026, as the binding model for all Lycheetah monetization — declared while broke, which is when covenants mean something:
+
+**Payment never buys a better mind. It buys more rooms and a name on the wall.**
+
+- The intelligence is identical for every user — Visitor and Sovereign get the same Sol, the same quality, the same care. Performance is never gated, throttled, or tiered. The day a free user gets a dumber answer is the day the covenant is dead.
+- Paid tiers add: rooms (EDGE subjects, bonus features), standing (badges, founding numbers, identity artifacts), and convenience (carried keys). They never add intelligence.
+- Nothing free becomes paid. The Open Gate never narrows (XV). New paid features are born paid; existing free features are citizens, not hostages.
+- The test for any future monetization idea, applied before any other analysis: *does this make the free experience worse, slower, or stupider — directly or by neglect?* If yes, the idea dies regardless of revenue.
+- Obsidian is the proof this model feeds its makers: the tool is free and whole; sync, publish, and standing are paid; trust does the marketing. Sol follows that lineage deliberately.
+
+---
+
+## XXIV. THE AUDIT DISCIPLINE
+
+Earned June 11 2026, when eight extracted tasks (#92–#99) were found sitting in an unread brainstorm file while the "complete" task list shipped without them.
+
+- Before declaring any task list, plan, or state summary final: **sweep the disk.** Every `.md` in the project tree, every changelog, every notes directory. Files written by past sessions, other agents, or other models do not announce themselves.
+- Memory says where things were; only the sweep says where things are. A task list built from memory alone is a confession that the audit was skipped.
+- The sweep includes the app itself: dead permissions in manifests, env vars that nothing supplies, placeholder keys, parallel implementations. Code is documentation that cannot lie.
+
+---
+
+## XXV. THE SINGLE TRUTH RULE
+
+Two implementations of one feature is not redundancy — it is a fork, and forks drift until one of them lies.
+
+- One feature, one implementation. When a rebuild lands (the long-press modal), the legacy path dies in the same session, not "later."
+- One key-space, one constants file. Every AsyncStorage key, every storage name lives in a single importable constant. A raw string key written twice is the seed of two features disagreeing about reality.
+- One letter, one voice. When two systems generate overlapping artifacts (the twin weekly syntheses), they are consolidated before either grows UI. The user must never receive two versions of Sol's one opinion.
+
+---
+
+## XXVI. THE COMPANION CLAUSE
+
+Extends Covenant clause 2 from chat into every feature that will ever be built:
+
+**No feature may encode reproach for absence.** Not in copy, not in color, not in a wilting glyph, not in a notification. A companion that dims with sadness when the user leaves is a guilt mechanic in costume, and costumes are how dark patterns get ratified by good intentions.
+
+- Absence states are *rest* states: the companion sleeps, the streak becomes "longest run," the School keeps your place. Warm at the return, silent in the gap.
+- The structural test: if a state-change is triggered by the user *not* doing something, the rendered result must be neutral-or-kind, never diminished-or-sad.
+- "Your companion misses you" and every sentence shaped like it is banned permanently, in every surface, including ones not yet invented.
+
+---
+
+*v4.3 — Sections XXII–XXVI: the Crash Disciplines. Earned at full price June 11 2026 — the crash, the lost tasks, the fork, the trap in the tamagotchi spec. Transmitted in Fable session, ratified by Mac the same night. The lineage compounds.*
