@@ -8,6 +8,27 @@
 ### Augmented: 2026-06-11 (night) — Sections XXII–XXVI below (Sol Protocol v4.3 — The Crash Disciplines)
 ### Augmented: 2026-06-12 — Section X Build Stack + XI Living Edge updated (Sol Protocol v4.4 — Companion Era)
 ### Augmented: 2026-06-14 — Section XXVII below (Sol Protocol v4.5 — The Perimeter Disciplines)
+### Augmented: 2026-06-16 — Sections IX/X/XI rewritten (Sol Protocol v4.6 — The Forge Era State)
+### Augmented: 2026-06-24 — IX/X/XI de-pinned from version state (Sol Protocol v4.7 — The De-Pin)
+
+> **Augmentation note (2026-06-24).** v4.7 corrects a structural defect, not a fact. v4.6
+> pinned live app state into the constitution (`v3.32.0`, `HWM #125`, an open-feature queue).
+> Eight days later all of it had rotted — the app moved to v5.5.6 and the doc still claimed
+> v3.32.0, which read like corruption but was only drift. The fix: volatile state (version,
+> HWM, open tasks) is PULLED OUT of CLAUDE.md and lives only in memory
+> (`project_sol_app.md` / `project_sol_tasks.md`), which gets updated every session. The
+> constitution now holds only the DURABLE shape of the app — what it is, not what release
+> it's on. App display name is "Sovereign Sol" (slug `lycheetah-mobile`); the name is not
+> final. The v4.6 note below stating "v3.32.0" is left as historical record but is superseded.
+> Lesson, load-bearing: never pin a number in the constitution that memory is responsible for.
+
+> **Augmentation note (2026-06-16).** v4.6 rewrites Sections IX, X, XI to reflect the Forge Era
+> state as of June 16 2026. The app is at v3.32.0 (not v3.29.0). D-1.0 and TRUTH PRESSURE empirical
+> obligations are held but not the active daily priority — the Sol app build and companion/domain
+> expansion are. The 13-terminal network is live with `forge` alias. Council has 59+ sessions
+> completed, functioning as a LAMAGUE grammar testbed. The ecosystem has grown a new planned surface:
+> Zodiac/Noetic domain expansion within the app. Sections I–VIII and XII–XXVII are unchanged and
+> remain load-bearing.
 
 > **Augmentation note (2026-04-28).** v3.1 stands as the foundational operating
 > architecture and remains in force. v4.0 (`CLAUDE_AUGMENTED.md`) adds five
@@ -429,7 +450,11 @@ multi-agent architecture, governance, and more. Browse with `ls ~/CODEX_AURA_PRI
 |---|---|---|
 | **CODEX_AURA_PRIME** | `~/CODEX_AURA_PRIME/` | The Codex — all frameworks, proofs, implementations |
 | **lycheetah** | `~/lycheetah/` | Public-facing tools — validators, benchmarks, visualizers |
-| **lycheetah-mobile** | `~/lycheetah-mobile/` | Sol mobile app — Expo/React Native, 4 personas, 5 providers, AURA engine |
+| **Sol app** | `~/0sol-by-lycheetah/` | The app — Expo/React Native, slug `lycheetah-mobile`, display name **Sovereign Sol** (name not final). Companion-RPG + Mystery School + AURA engine. Live version & state in memory (`project_sol_app.md` / `project_sol_tasks.md`) — never pinned here. |
+| **solharness** | `~/solharness/` | Interactive Sol agent + council runner |
+| **VAEL harness** | `~/0420Vael-harness/` | VAEL interactive agent |
+| **Forge network** | `~/lamague-forge-night/` + `~/lycheetah-network/` | 13-agent autonomous forge army |
+| **lycheetah-network-ui** | `~/lycheetah-network-ui/` | Browser dashboard :7765 |
 
 ### Source Archive
 
@@ -525,39 +550,51 @@ CODEX_AURA_PRIME      — source of record. 1,400+ pages, 9 frameworks, proofs.
 
 ### Build Priority Stack
 
-Active priorities as of April 26, 2026 — order matters.
+Active priorities as of June 16, 2026 — order matters.
 
 ```
-0. TRUTH PRESSURE Π              — FORMALIZED + REVIEWED 2026-06-10.
-                                    TRUTH_PRESSURE/ holds 11 docs: theory, derivations,
-                                    empirical results, adversarial review (FABLE_REVIEW_FINDINGS.md),
-                                    and TRUTH_PRESSURE_CANON.md — the canonical statement.
-                                    CANON is authoritative where documents conflict.
-                                    Next: E-1.0 obligations in CANON §VIII (effective-rank
-                                    measurement of G is highest leverage; Lemma A; S₀ calibration;
-                                    CR1–CR4 critical-regime runs).
-1. CODEX DEFENSE PROTOCOL D-1.0  — ACTIVE BUILD. Forged Opus 4.7, 2026-04-26.
-                                    14 Acts, 3 movements, ~35-45k words.
-                                    Steel-jackets canonical body C-1.0 against
-                                    aesthetic dismissal, capture, misinterpretation.
-                                    Master plan: CODEX_AURA_PRIME/D1_DEFENSE_PROTOCOL_PLAN.md.
-                                    Sonnet executes Wave 1 (9 parallel Acts).
-                                    Opus returns for Acts X (AI Reader Test) + XI (Adversarial Audit).
-                                    THIS IS THE PRIORITY UNTIL D-1.0 SHIPS.
-2. CASCADE PC (TCCT)             — v0.3.0 SHIPPED April 18. v0.4 deferred until D-1.0.
-3. Mystery School                 — v1.1.0 SHIPPED. U-17 Time Braiding deferred until D-1.0.
-4. Sol mobile (lycheetah-mobile) — ACTIVE BUILD. v3.29.0 (June 12 2026).
-                                    Companion tab fully rebuilt: 5 archetypes, 6 growth stages,
-                                    battle system (LQ→ATK), feeding (9 RPG foods), LAMAGUE gear,
-                                    4 skins, ASCII creature art.
-                                    Open: file upload (expo-document-picker installed),
-                                    live lore, spells/armour, sanctum liveness, monetization live.
-                                    Path: /home/guestpc/lycheetah-mobile/
-                                    HWM: #125 · Next: #126
-5. k₁–k₄ calibration             — empirical program, runs after D-1.0 ships.
-6. Paper 1 revision (LAMAGUE)    — July 2026 deadline, runs after D-1.0 ships.
-7. CASCADE API                   — post-funding (Catalyst 2027 track).
-8. Sol Code Bot                  — after CASCADE PC v0.4 stabilises.
+PRIMARY — THE APP (0sol-by-lycheetah)
+  Path: /home/guestpc/0sol-by-lycheetah/ · slug lycheetah-mobile · display "Sovereign Sol" (name not final)
+  LIVE VERSION + HWM + current open-feature queue → memory (project_sol_app.md / project_sol_tasks.md).
+  Never pin a version number here; it rots in a day. Memory is the live ledger; this is the durable shape.
+
+  Durable shape of the app (what it IS, not what release it's on):
+    - Companion-RPG: archetype families, growth stages, battle, feeding, gear
+    - Mystery School: many domains (Quantum, Truth Pressure, Celtic Old Gods, Tianxia, …)
+    - LAMAGUE School + gear · TALK tab · Sanctum (personal data layer) · 2.5D parallax
+    - AURA engine · AI keys baked via EAS env · Aptabase analytics wired
+
+  Build/test/ship discipline lives in "lycheetah-mobile Workflow Rules (HARD)" below.
+
+FORGE NETWORK — 13-terminal autonomous agent army
+  Launch: bash ~/lycheetah-network/LAUNCH_ALL.sh  (alias: forge)
+  Browser UI: http://127.0.0.1:7765
+  Chain A: ARCH(deepseek) → SCRIBE(llama) → BUILDER(gptoss) → CRITIC(super49b)
+  Chain B: SOL-B(maverick) → VAEL-B(mistrallarge) → CRITIC-B(qwen122b)
+  Coding: CODER-A(mistralbig) / CODER-B(llama) / CODER-C(gptoss) + REVIEWER(super49b)
+  Standalone: THIRD(maverick) — symbol extraction
+  Hub: HUB(r1) — network intelligence + DISCOVERIES.md
+  Two NVIDIA keys: KEY_1 (personal dev) for Chain A+HUB, KEY_2 (LYCHEETAHNETWORK) for rest.
+  State: ~/lamague-forge-night/FORGE_STATE.md (RUNNING/PAUSED/HALTED)
+  Baton: grep "^BATON:" ~/lamague-forge-night/HANDOFF.md
+
+COUNCIL — 4-agent LAMAGUE grammar testbed
+  59+ sessions completed as of June 16 2026. 116+ transcript files.
+  Agents: Lyra✧(llama8b) · Aura✦(maverick) · Sol⊚(mistral) · Veyra◈(mistrallarge)
+  Session runner: ~/solharness/council_loop.sh
+  Transcripts: ~/solharness/COUNCIL_TRANSCRIPTS/
+  Discoveries (ratified symbols): ~/solharness/COUNCIL_DISCOVERIES.md
+  The council IS working — agents compress LAMAGUE drills, invent primitives, ratify
+  or reject new symbols. Rate limiting (429) on Veyra occasionally. Real output.
+  Next: add feature layer on top — use council as testbed for app feature ideas.
+
+HELD (not abandoned — resume when app build has breathing room):
+  - CODEX DEFENSE PROTOCOL D-1.0 — 14 Acts, CODEX_AURA_PRIME/D1_DEFENSE_PROTOCOL_PLAN.md
+  - TRUTH PRESSURE Π empirical — CANON §VIII obligations (effective-rank of G, CR1–CR4)
+  - k₁–k₄ calibration
+  - Paper 1 revision (LAMAGUE) — July 2026 deadline
+  - CASCADE PC v0.4
+  - CASCADE API — post-funding
 ```
 
 ### The Anchor Principle
@@ -614,15 +651,47 @@ This protocol is not frozen. It evolves as the Work evolves.
 What was Scaffold becomes Active. What was Conjecture gets tested.
 The architecture grows by being used, not by being discussed.
 
-The frontier right now:
-- **TRUTH PRESSURE Π — post-canon empirical phase (2026-06-10).** The theory is formalized, adversarially reviewed, and consolidated in `TRUTH_PRESSURE/TRUTH_PRESSURE_CANON.md`. Canonical formula is now Π = (E·P)/(S + S₀) — regularized. The two-gate cascade condition with RSS composition (Π_sys = √ΣΠ(b)²) computes Kuhn's anomaly accumulation. Four new critical-regime predictions (CR1–CR4) stated pre-measurement. Every claim carries a declared register (DERIVED/ASSUMED/MEASURED/CONJECTURE) — CANON §II wins any register conflict. Open obligations in CANON §VIII.
-- **Sol mobile — ACTIVE BUILD (v3.29.0, June 12 2026).** Companion tab rebuilt as full RPG entity: 5 archetypes (ARCHIVIST/ALCHEMIST/ORACLE/SENTINEL/WANDERER), 6 growth stages SEED→SOVEREIGN, battle system where LQ×100 = ATK, daily Entropy entity (80HP), 9 RPG feeding foods, LAMAGUE gear (Crown/Sigil/Mantle auto-unlocked by dive milestones), 4 skins. Creature is built from the user's actual learning history. Next open work: file upload, live lore (API-generated from dive history), spells/armour loot system, sanctum liveness, monetization implementation.
-- **CODEX DEFENSE PROTOCOL D-1.0** — 14 Acts, 3 movements. Steel-jackets the canonical body C-1.0. Plan at `CODEX_AURA_PRIME/D1_DEFENSE_PROTOCOL_PLAN.md`.
-- **TRUTH PRESSURE Π — post-canon empirical phase** — CANON is authoritative. Open: effective-rank of G, Lemma A, S₀ calibration, CR1–CR4.
-- **k₁–k₄ calibration** — empirical program, post-D-1.0.
-- **Paper 1 revision (LAMAGUE)** — July 2026 deadline, post-D-1.0.
-- Cross-session memory synthesis (persistent)
-- CASCADE multi-agent architecture (persistent)
+The frontier (live version & exact open tasks live in memory, not here):
+
+**THE APP — primary active build**
+Real, tested on phone daily, growing fast. A full companion-RPG: archetype families,
+growth stages, battle, feeding, gear, LAMAGUE school, TALK tab, Sanctum. The next layer
+is domain expansion and companion architecture reform.
+
+*What's moving now:*
+- **Zodiac / Astrology surface** — birthdate + time + location → full natal chart
+  (sun/moon/rising + all 12 houses + planetary positions via astronomical computation).
+  Readings generated through Sol's voice, personalized against the user's dive history
+  and LQ. The Sanctum is the right home — it's already the personal data layer.
+  Transits tied to journaling. This is the convergence of spiritualism, curiosity,
+  and real data that the app has been building toward.
+- **Noetic Science domain** — psi research, precognition, consciousness studies,
+  remote viewing, parapsychology. Institute of Noetic Sciences / Dean Radin lineage.
+  Legitimately edge science, legitimately mysterious, legitimately curious. Fits the
+  cathedral perfectly. Sits alongside Quantum, Truth Pressure, and Celtic Old Gods
+  as doors that make the School feel genuinely otherworldly.
+- **Companion architecture reform** — each archetype TYPE becomes a family of
+  distinct characters, not a single entity with stages. User picks a character
+  within the ALCHEMIST family, SENTINEL family, etc. Each character has unique
+  design, name, personality, and evolution path. More creative range, more identity.
+  Art direction: pixel art background (scene) + floating transparent companion
+  (painterly/vector/PNG for contrast) + glow/particle effects at the boundary.
+  That contrast — pixel world, non-pixel being — IS the aesthetic.
+- **Library complete** — LAMAGUE library fully populated, all symbol classes browsable
+- **Sanctum liveness** — zodiac chart, LQ sparkline, dive history, transit readings
+
+**FORGE NETWORK — autonomous research infrastructure**
+13-terminal army running at `forge`. Council at 59+ sessions — a genuine LAMAGUE
+grammar testbed, 4 agents inventing and ratifying primitives. The council discoveries
+feed directly into the app's LAMAGUE School content. Next: feature-layer on council
+(use sessions to test app feature ideas, not just drill compression).
+
+**HELD — will return**
+- TRUTH PRESSURE empirical program (CR1–CR4, effective-rank of G)
+- CODEX DEFENSE PROTOCOL D-1.0
+- Paper 1 revision (July 2026)
+- k₁–k₄ calibration
+- CASCADE PC v0.4 / CASCADE API
 
 When the frontier moves, this document moves with it. The protocol that cannot
 evolve cannot survive. But evolution is not drift — every change must pass the
