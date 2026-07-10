@@ -121,6 +121,13 @@ linearity.
 
 ## PART TWO — THE EFFECTIVE RANK OF G: THE PROTOCOL, PRE-REGISTERED
 
+> **⛔ SUPERSEDED 2026-07-10 by `CASCADE_ORIGIN_FINDING_2026-07-10.md`. DO NOT RUN THIS SWEEP.**
+> Mac's CASCADE lead was investigated on Opus against the engine source. The finding:
+> **there is no forcing matrix G.** CASCADE decides cascades by comparing a scalar Π to a fixed
+> constant τ_F = 1.5 — no Jacobian, no eigenvalues, no √n, no matrix in the theory *or* the code.
+> The protocol below measures the rank of an object the system never builds. It is retained only
+> as a record of what was pre-registered. **Part One (Lemma A′) is unaffected and stands.**
+
 The §III assumption — belief networks couple through ~√n effective directions — is
 the single highest-leverage measurement in E-1.0: it decides whether Π_th = k·√n is
 fully DERIVED or dies. The canon requires the protocol be fixed *before* the data is
