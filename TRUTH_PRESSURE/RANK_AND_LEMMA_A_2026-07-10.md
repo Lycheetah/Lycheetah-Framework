@@ -180,6 +180,26 @@ with engineered-δ KBs.
 
 ---
 
+## ⚑ MAC'S LEAD (2026-07-10) — TP ORIGINATED INSIDE CASCADE. INVESTIGATE ON OPUS FIRST.
+
+Mac, same day: *"truth pressure was an aspect of cascade, that's probably why it doesn't
+work."* Pointers: `~/CODEX_AURA_PRIME/01_CASCADE_L4/` and `~/CODEX_AURA_PRIME/TRUTH_PRESSURE/`.
+
+This is not a footnote — it may **collapse the whole rank question.** §2.1 above *assumed* the
+interaction matrix M is "an accessible proxy for G's column space." If Truth Pressure was
+carved out of CASCADE, then G is not a model *of* an independent belief network at all — **G
+may simply be the CASCADE interaction matrix by construction.** That is §2.4's circularity trap,
+but worse than the "does the engine sparsify M" version: it would mean the √n assumption was
+never a claim about how minds couple; it was a claim about how one specific engine builds one
+specific matrix, and the "measurement" would only ever recover the engine's own design.
+
+**Before running the rank sweep, the Opus session must first read `01_CASCADE_L4/` and answer
+one question: is G an independent object, or is it CASCADE's own matrix wearing a theory's name?**
+If the latter, the honest move is not to measure the rank — it is to rewrite §III of the canon to
+say the threshold's √n scaling inherits CASCADE's construction and was never an empirical claim.
+That is a bigger correction than Lemma A, and it is Mac's to direct. **Do not run the sweep until
+this is resolved.** Registered here so the lead is not lost between a Fable session and an Opus one.
+
 ## OBLIGATIONS LEDGER (what this document owes)
 
 | Obligation | Owed to |
