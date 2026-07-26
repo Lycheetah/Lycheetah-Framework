@@ -24,7 +24,7 @@ should be able to follow the recipe below without additional information.
 **Reproduction environment:** Python 3.10+, Windows 10 (primary development
 environment); implementations are expected to be cross-platform. Verified on
 Python 3.14.2 in cold-room reproducibility run (2026-04-26, see
-[`28_DEFENSE/COLD_ROOM_VERIFICATION.md`](28_DEFENSE/COLD_ROOM_VERIFICATION.md)).
+[`28_DEFENSE/COLD_ROOM_VERIFICATION.md`](COLD_ROOM_VERIFICATION.md)).
 
 **Dependency management:** Each implementation should specify pinned dependencies
 in a `requirements.txt` file adjacent to the main script. Where this is absent,

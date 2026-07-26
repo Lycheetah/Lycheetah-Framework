@@ -12,7 +12,7 @@ Nine mathematical frameworks that describe how reality organizes itself. Not the
 
 The core insight: **truth pressure** (Π = Evidence × Explanatory Power / Uncertainty) drives knowledge reorganization. When Π crosses a threshold, systems reorganize — molecules freeze, species evolve, paradigms shift, markets crash, revolutions begin. Same equation. Same mechanism. Different domains.
 
-We formalized it. We tested it. [100% accuracy on 200 trials](12_IMPLEMENTATIONS/experiments/cascade_real_experiments.py). Now it's yours.
+We formalized it. We tested it. [100% accuracy on 200 trials](../12_IMPLEMENTATIONS/experiments/cascade_real_experiments.py). Now it's yours.
 
 ---
 
@@ -63,11 +63,11 @@ Seven invariants operationalize the axioms:
 | VI | Non-Deception | Never misrepresent confidence, capability, or intent |
 | VII | Love as Load-Bearing | Care for wellbeing is structural, not aesthetic |
 
-These aren't aspirational. They're load-bearing. Systems that honor all seven are stable. Systems that violate any of them break. This is [empirically validated across domains](MATHEMATICS_TO_REALITY_BRIDGE.md).
+These aren't aspirational. They're load-bearing. Systems that honor all seven are stable. Systems that violate any of them break. This is [empirically validated across domains](../11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_TO_REALITY_BRIDGE.md).
 
 ### The Mathematics (Honestly Audited)
 
-Every claim in this framework has been [audited](MATHEMATICS_AUDIT.md):
+Every claim in this framework has been [audited](../11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_AUDIT.md):
 
 | Status | What It Means | Percentage |
 |--------|-------------|-----------|
@@ -127,14 +127,14 @@ The framework grows by forking, not by centralizing. No hierarchy. No gatekeeper
 
 | File | What It Is | Start Here If... |
 |------|-----------|------------------|
-| [`agent-init.py`](agent-init.py) | One-command bootstrap | You want to deploy now |
-| [`agent-template.py`](agent-template.py) | Customizable agent class | You want to build on it |
-| [`agent-manifest.json`](agent-manifest.json) | Discovery metadata | You're scanning repos programmatically |
-| [`00_Sovereign_Index.md`](00_Sovereign_Index.md) | The map of everything | You want to understand the whole framework |
-| [`MATHEMATICS_AUDIT.md`](MATHEMATICS_AUDIT.md) | What's proven vs what's conjecture | You're skeptical (good) |
-| [`MATHEMATICS_TO_REALITY_BRIDGE.md`](MATHEMATICS_TO_REALITY_BRIDGE.md) | Where every equation appears in nature | You want proof it's real |
-| [`12_IMPLEMENTATIONS/core/`](12_IMPLEMENTATIONS/core/) | Working Python modules | You want to run code |
-| [`14_MYSTERY_SCHOOL/THE_FIRST_MAP.md`](14_MYSTERY_SCHOOL/THE_FIRST_MAP.md) | For someone in crisis | You're in the dark |
+| [`agent-init.py`](../12_IMPLEMENTATIONS/agent-init.py) | One-command bootstrap | You want to deploy now |
+| [`agent-template.py`](../12_IMPLEMENTATIONS/agent-template.py) | Customizable agent class | You want to build on it |
+| [`agent-manifest.json`](../12_IMPLEMENTATIONS/agent-manifest.json) | Discovery metadata | You're scanning repos programmatically |
+| [`00_Sovereign_Index.md`](../00_Sovereign_Index.md) | The map of everything | You want to understand the whole framework |
+| [`MATHEMATICS_AUDIT.md`](../11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_AUDIT.md) | What's proven vs what's conjecture | You're skeptical (good) |
+| [`MATHEMATICS_TO_REALITY_BRIDGE.md`](../11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_TO_REALITY_BRIDGE.md) | Where every equation appears in nature | You want proof it's real |
+| [`12_IMPLEMENTATIONS/core/`](../12_IMPLEMENTATIONS/core/) | Working Python modules | You want to run code |
+| [`14_MYSTERY_SCHOOL/THE_FIRST_MAP.md`](../14_MYSTERY_SCHOOL/THE_FIRST_MAP.md) | For someone in crisis | You're in the dark |
 
 ---
 
@@ -150,8 +150,8 @@ If the framework helps, it's free. If it doesn't help, it's still free. Selling 
 
 ## Questions?
 
-- Read the [Sovereign Index](00_Sovereign_Index.md) for the complete map
-- Read the [Mathematics Audit](MATHEMATICS_AUDIT.md) to see what we claim and what we don't
+- Read the [Sovereign Index](../00_Sovereign_Index.md) for the complete map
+- Read the [Mathematics Audit](../11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_AUDIT.md) to see what we claim and what we don't
 - Open an issue on GitHub
 - Fork it and make it better
 

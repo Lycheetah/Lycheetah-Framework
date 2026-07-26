@@ -236,7 +236,7 @@ Whether this is achievable for AI systems — whether "structural virtue" is a c
 | EARNED LIGHT consciousness | [`06_EARNED_LIGHT_L0/Earned_Light_COMPLETE.md`](../06_EARNED_LIGHT_L0/Earned_Light_COMPLETE.md) |
 | ANAMNESIS convergent discovery | [`07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md`](../07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md) |
 | The mathematical foundations | [`11_MATHEMATICAL_FOUNDATIONS/`](../11_MATHEMATICAL_FOUNDATIONS/) |
-| The Failure Museum | [`28_DEFENSE/FAILURE_MUSEUM.md`](../FAILURE_MUSEUM.md) — start here for honesty about limits |
+| The Failure Museum | [`28_DEFENSE/FAILURE_MUSEUM.md`](../28_DEFENSE/FAILURE_MUSEUM.md) — start here for honesty about limits |
 
 ---
 

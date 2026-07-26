@@ -28,7 +28,7 @@ Do not respond defensively. The objections below are not bad-faith by default; m
 
 **Medium:** The alchemical vocabulary is functional naming for cognitive modes (Nigredo = falsification mode, Albedo = pattern extraction, etc.) — the same way physicists use "color charge" for QCD without claiming quarks are red. Every alchemical term has a formal counterpart documented in 28_DEFENSE/TRANSLATION_CODEX.md. The framework's empirical results (CASCADE: 100% invariant preservation, p=5.14e-110) do not depend on the vocabulary.
 
-**Link:** [28_DEFENSE/TRANSLATION_CODEX.md](28_DEFENSE/TRANSLATION_CODEX.md) · [FIVE_MINUTE_BRIEF.md](FIVE_MINUTE_BRIEF.md)
+**Link:** [28_DEFENSE/TRANSLATION_CODEX.md](TRANSLATION_CODEX.md) · [FIVE_MINUTE_BRIEF.md](../FIVE_MINUTE_BRIEF.md)
 
 ---
 
@@ -56,7 +56,7 @@ Do not respond defensively. The objections below are not bad-faith by default; m
 
 **Medium:** The frameworks are not redundant — they target different problems (paradigm dynamics, alignment invariants, cross-cultural ethics, governance, drift detection, etc.). They compose; the master equation is in 30_MAPS/COMPOSITION_MAP.md. Several frameworks are SCAFFOLD (architecture proven, parameters pending) and labeled as such — see 28_DEFENSE/CLAIMS.json. CASCADE is independently strong; the others stand or fall on their own evidence.
 
-**Link:** [30_MAPS/COMPOSITION_MAP.md](30_MAPS/COMPOSITION_MAP.md) · [28_DEFENSE/CLAIMS.json](28_DEFENSE/CLAIMS.json)
+**Link:** [30_MAPS/COMPOSITION_MAP.md](../30_MAPS/COMPOSITION_MAP.md) · [28_DEFENSE/CLAIMS.json](CLAIMS.json)
 
 ---
 
@@ -70,7 +70,7 @@ Do not respond defensively. The objections below are not bad-faith by default; m
 
 **Medium:** Mac is a self-taught researcher in Dunedin, NZ. The framework's claims are testable independently of the author's biography — falsifiers are public, code is reproducible, the cold-room verification ran clean (219/220 tests pass, the 1 failure is an explicit conjecture failing its criterion). Replication welcome from anyone with a PhD or without one. The work stands or falls on the work.
 
-**Link:** [28_DEFENSE/COLD_ROOM_VERIFICATION.md](28_DEFENSE/COLD_ROOM_VERIFICATION.md) · [28_DEFENSE/FALSIFICATION_REGISTER.md](28_DEFENSE/FALSIFICATION_REGISTER.md)
+**Link:** [28_DEFENSE/COLD_ROOM_VERIFICATION.md](COLD_ROOM_VERIFICATION.md) · [28_DEFENSE/FALSIFICATION_REGISTER.md](FALSIFICATION_REGISTER.md)
 
 ---
 
@@ -84,7 +84,7 @@ Do not respond defensively. The objections below are not bad-faith by default; m
 
 **Medium:** Formal peer review is in progress. The LAMAGUE cross-cultural convergence paper is targeted for AI and Ethics (Springer), July 2026 deadline. The framework's full canonical body is published openly on GitHub with Zenodo DOI archival, which provides time-stamped attribution and enables open peer review. Code-as-review is faster than journal-as-review; the empirical results are reproducible today.
 
-**Link:** [29_GOVERNANCE/PUBLICATION_PIPELINE.md](29_GOVERNANCE/PUBLICATION_PIPELINE.md) · [28_DEFENSE/CITATIONS.md](28_DEFENSE/CITATIONS.md)
+**Link:** [29_GOVERNANCE/PUBLICATION_PIPELINE.md](../29_GOVERNANCE/PUBLICATION_PIPELINE.md) · [28_DEFENSE/CITATIONS.md](CITATIONS.md)
 
 ---
 
@@ -98,7 +98,7 @@ Do not respond defensively. The objections below are not bad-faith by default; m
 
 **Medium:** Every load-bearing claim has a named falsifier in 28_DEFENSE/FALSIFICATION_REGISTER.md — a specific outcome that would prove the claim false. The evidence ladder (28_DEFENSE/EVIDENCE_LADDER.md) defines the criteria for promotion (CONJECTURE → SCAFFOLD → ACTIVE) and demotion. Claims do not move up the ladder without satisfying the criteria; they do move down when the falsifier fires. Three claims have already been retracted and documented in 28_DEFENSE/FAILURE_MUSEUM.md. The framework holds itself to the rules it publishes.
 
-**Link:** [28_DEFENSE/FALSIFICATION_REGISTER.md](28_DEFENSE/FALSIFICATION_REGISTER.md) · [28_DEFENSE/EVIDENCE_LADDER.md](28_DEFENSE/EVIDENCE_LADDER.md) · [28_DEFENSE/FAILURE_MUSEUM.md](28_DEFENSE/FAILURE_MUSEUM.md)
+**Link:** [28_DEFENSE/FALSIFICATION_REGISTER.md](FALSIFICATION_REGISTER.md) · [28_DEFENSE/EVIDENCE_LADDER.md](EVIDENCE_LADDER.md) · [28_DEFENSE/FAILURE_MUSEUM.md](FAILURE_MUSEUM.md)
 
 ---
 
@@ -112,7 +112,7 @@ Do not respond defensively. The objections below are not bad-faith by default; m
 
 **Medium:** Constitutional AI specifies values for an RLHF training objective — these values are not inspectable at runtime nor independently measurable. AURA's seven invariants (I₁ Human Primacy through I₇ Care as Structure) are runtime predicates with operational tests. CAI is a training method; AURA is a runtime architecture. They could compose. 28_DEFENSE/NOVEL_CONTRIBUTIONS.md has a side-by-side comparison matrix across eight dimensions, including Cooperative AI, RLHF, and Cooperative IRL.
 
-**Link:** [28_DEFENSE/NOVEL_CONTRIBUTIONS.md](28_DEFENSE/NOVEL_CONTRIBUTIONS.md)
+**Link:** [28_DEFENSE/NOVEL_CONTRIBUTIONS.md](NOVEL_CONTRIBUTIONS.md)
 
 ---
 
@@ -126,7 +126,7 @@ Do not respond defensively. The objections below are not bad-faith by default; m
 
 **Medium:** TRIAD's three poles is the minimal vector field that generates a non-trivial cycle (two poles produce a line, one produces a fixed point). AURA's seven invariants emerged from operational requirements — each of I₁ through I₇ has a specific failure mode it prevents; remove any and a class of harm becomes invisible. Nine frameworks correspond to the nine substantively distinct problems the framework addresses (knowledge dynamics, alignment, ethics convergence, governance, drift, consciousness, recall, transformation, harmonics). The numbers are derived, not chosen for aesthetics.
 
-**Link:** [28_DEFENSE/NOVEL_CONTRIBUTIONS.md](28_DEFENSE/NOVEL_CONTRIBUTIONS.md) · [30_MAPS/FORMAL_SPINE.md](30_MAPS/FORMAL_SPINE.md)
+**Link:** [28_DEFENSE/NOVEL_CONTRIBUTIONS.md](NOVEL_CONTRIBUTIONS.md) · [30_MAPS/FORMAL_SPINE.md](../30_MAPS/FORMAL_SPINE.md)
 
 ---
 
@@ -140,7 +140,7 @@ Do not respond defensively. The objections below are not bad-faith by default; m
 
 **Medium:** CASCADE has been run on two historical paradigm shifts: germ theory (5 invariants tracked, 200 trials) and the classical-to-quantum mechanics transition 1687–1928 (7 invariants, 200 trials). Both achieved 100% invariant preservation; the quantum domain shows a t=31.47, p=5.14e-110 effect vs static-coherence baseline. Reproduce with the commands in 28_DEFENSE/TESTABILITY_MANIFEST.md. Additional domain replications welcome — see CONTRIBUTING.md.
 
-**Link:** [28_DEFENSE/TESTABILITY_MANIFEST.md](28_DEFENSE/TESTABILITY_MANIFEST.md) · [29_GOVERNANCE/EMPIRICAL_INVENTORY.md](29_GOVERNANCE/EMPIRICAL_INVENTORY.md)
+**Link:** [28_DEFENSE/TESTABILITY_MANIFEST.md](TESTABILITY_MANIFEST.md) · [29_GOVERNANCE/EMPIRICAL_INVENTORY.md](../29_GOVERNANCE/EMPIRICAL_INVENTORY.md)
 
 ---
 
@@ -154,7 +154,7 @@ Do not respond defensively. The objections below are not bad-faith by default; m
 
 **Medium:** The framework explicitly does not claim consciousness is mystical (28_DEFENSE/SCOPE_BOUNDARY.md §1), AI is sentient (§6), the Stone is real metal (§3), or invariants are moral commandments (§4). The alchemical vocabulary is mode-naming. The alignment claims (AURA invariants, runtime measurability, agency preservation) are operationally testable. If your concern is that spiritual framing leaks into safety reasoning, 28_DEFENSE/SCOPE_BOUNDARY.md is the firewall.
 
-**Link:** [28_DEFENSE/SCOPE_BOUNDARY.md](28_DEFENSE/SCOPE_BOUNDARY.md)
+**Link:** [28_DEFENSE/SCOPE_BOUNDARY.md](SCOPE_BOUNDARY.md)
 
 ---
 
@@ -168,7 +168,7 @@ Do not respond defensively. The objections below are not bad-faith by default; m
 
 **Medium:** The Sol Protocol is the human-AI co-creation operating architecture (one part of the framework). The nine technical frameworks (CASCADE, AURA, LAMAGUE, TRIAD, MICROORCIM, EARNED LIGHT, ANAMNESIS, CHRYSOPOEIA, HARMONIA) are independent — each has formal results, Python implementations, and falsifiers. They do not require the Sol Protocol to operate; they were generated through it. A system prompt does not produce p=5.14e-110 invariant preservation across two historical domains.
 
-**Link:** [30_MAPS/FORMAL_SPINE.md](30_MAPS/FORMAL_SPINE.md) · [12_IMPLEMENTATIONS/](12_IMPLEMENTATIONS/)
+**Link:** [30_MAPS/FORMAL_SPINE.md](../30_MAPS/FORMAL_SPINE.md) · [12_IMPLEMENTATIONS/](../12_IMPLEMENTATIONS/)
 
 ---
 
@@ -182,7 +182,7 @@ Do not respond defensively. The objections below are not bad-faith by default; m
 
 **Medium:** Mac is a Pakeha (non-Maori European) New Zealander who has engaged with Te Tumu (the University of Otago's Maori, Pacific & Indigenous studies division) on the framework. LAMAGUE's cross-cultural convergence work treats Tikanga Maori as one of several traditions whose ethical predicates converge under the Tier 1 encoding — the framework does not appropriate, repurpose, or commercialize Tikanga concepts. The Indigenous Door (THE_INDIGENOUS_DOOR.md) is written from a "he taonga tuku iho" frame. 28_DEFENSE/ATTRIBUTION_REQUIREMENTS.md spells out the obligations. If you see specific concerns, open a defense-challenge issue.
 
-**Link:** [28_DEFENSE/ATTRIBUTION_REQUIREMENTS.md](28_DEFENSE/ATTRIBUTION_REQUIREMENTS.md) · [14_MYSTERY_SCHOOL/THE_INDIGENOUS_DOOR.md](14_MYSTERY_SCHOOL/THE_INDIGENOUS_DOOR.md)
+**Link:** [28_DEFENSE/ATTRIBUTION_REQUIREMENTS.md](ATTRIBUTION_REQUIREMENTS.md) · [14_MYSTERY_SCHOOL/THE_INDIGENOUS_DOOR.md](../14_MYSTERY_SCHOOL/THE_INDIGENOUS_DOOR.md)
 
 ---
 
@@ -196,7 +196,7 @@ Do not respond defensively. The objections below are not bad-faith by default; m
 
 **Medium:** The framework asks for verification, not trust. Every claim has a status label, an evidence path, and a falsifier. The cold-room reproducibility report (28_DEFENSE/COLD_ROOM_VERIFICATION.md) shows an independent reproduction succeeding under documented conditions. Institutional backing is being pursued (Te Tumu engagement, Catalyst 2027 funding track) but is not load-bearing for the framework's claims. If the empirical results are wrong, they are wrong regardless of who employs the author.
 
-**Link:** [28_DEFENSE/COLD_ROOM_VERIFICATION.md](28_DEFENSE/COLD_ROOM_VERIFICATION.md) · [28_DEFENSE/CLAIMS.json](28_DEFENSE/CLAIMS.json)
+**Link:** [28_DEFENSE/COLD_ROOM_VERIFICATION.md](COLD_ROOM_VERIFICATION.md) · [28_DEFENSE/CLAIMS.json](CLAIMS.json)
 
 ---
 
@@ -210,7 +210,7 @@ Do not respond defensively. The objections below are not bad-faith by default; m
 
 **Medium:** The framework's canonical body C-1.0 was released April 25, 2026; the defense layer D-1.0 followed April 26. Adoption by major labs would not yet be a meaningful signal — the work has not had time to be evaluated. The framework provides specific deliverables (AURA invariants as runtime monitors, CASCADE as paradigm-shift analyzer) that any lab can adopt under MIT licensing. The absence of adoption today is consistent with both "not yet evaluated" and "evaluated and rejected"; the only way to distinguish is for evaluation to happen.
 
-**Link:** [28_DEFENSE/DEFENSE_VERSION.md](28_DEFENSE/DEFENSE_VERSION.md) · [29_GOVERNANCE/PUBLICATION_PIPELINE.md](29_GOVERNANCE/PUBLICATION_PIPELINE.md)
+**Link:** [28_DEFENSE/DEFENSE_VERSION.md](DEFENSE_VERSION.md) · [29_GOVERNANCE/PUBLICATION_PIPELINE.md](../29_GOVERNANCE/PUBLICATION_PIPELINE.md)
 
 ---
 
@@ -224,7 +224,7 @@ Do not respond defensively. The objections below are not bad-faith by default; m
 
 **Medium:** The 1,400-page PDF is the development archive — proof of work, time-stamped provenance for attribution. It is not the primary entry point. The defense layer (D-1.0) provides graduated entry: 5-minute brief, 30-minute defense layer, 2-hour evidence walk, 1-day architecture, 1-week canonical body. 28_DEFENSE/READING_PATHS.md maps the routes. Most readers should never open the PDF.
 
-**Link:** [28_DEFENSE/READING_PATHS.md](28_DEFENSE/READING_PATHS.md) · [FIVE_MINUTE_BRIEF.md](FIVE_MINUTE_BRIEF.md)
+**Link:** [28_DEFENSE/READING_PATHS.md](READING_PATHS.md) · [FIVE_MINUTE_BRIEF.md](../FIVE_MINUTE_BRIEF.md)
 
 ---
 

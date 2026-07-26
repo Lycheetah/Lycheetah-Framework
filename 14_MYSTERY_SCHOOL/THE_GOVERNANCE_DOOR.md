@@ -147,7 +147,7 @@ The AURA invariants are computable. The audit tool exists. The implementation is
 | The NZ governance standards (WOF, Three Worlds, Whakapapa, Matariki) | [`23_NZ_AI_GOVERNANCE/`](../23_NZ_AI_GOVERNANCE/) |
 | AI-native governance properties (XII invariants) | [`23_NZ_AI_GOVERNANCE/AI_NATIVE_GOVERNANCE.md`](../23_NZ_AI_GOVERNANCE/AI_NATIVE_GOVERNANCE.md) |
 | The mathematical foundations | [`11_MATHEMATICAL_FOUNDATIONS/`](../11_MATHEMATICAL_FOUNDATIONS/) |
-| The failure record (honest about what doesn't work yet) | [`28_DEFENSE/FAILURE_MUSEUM.md`](../FAILURE_MUSEUM.md) |
+| The failure record (honest about what doesn't work yet) | [`28_DEFENSE/FAILURE_MUSEUM.md`](../28_DEFENSE/FAILURE_MUSEUM.md) |
 | The full framework index | [`00_Sovereign_Index.md`](../00_Sovereign_Index.md) |
 
 ---

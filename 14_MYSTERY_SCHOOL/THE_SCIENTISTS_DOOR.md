@@ -176,7 +176,7 @@ The observer IS the system
 | The Bayesian/AGM verification | [`11_MATHEMATICAL_FOUNDATIONS/AGM_POSTULATE_VERIFICATION.md`](../11_MATHEMATICAL_FOUNDATIONS/AGM_POSTULATE_VERIFICATION.md) |
 | The harmonic mathematics | [`10_HARMONIA_L6/essentials.md`](../10_HARMONIA_L6/essentials.md) |
 | The convergent discovery mathematics | [`07_ANAMNESIS_L0/essentials.md`](../07_ANAMNESIS_L0/essentials.md) |
-| The full failure record | [`28_DEFENSE/FAILURE_MUSEUM.md`](../FAILURE_MUSEUM.md) |
+| The full failure record | [`28_DEFENSE/FAILURE_MUSEUM.md`](../28_DEFENSE/FAILURE_MUSEUM.md) |
 | The claim-by-claim audit | [`11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_REALITY_ALIGNMENT.md`](../11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_REALITY_ALIGNMENT.md) |
 
 ---

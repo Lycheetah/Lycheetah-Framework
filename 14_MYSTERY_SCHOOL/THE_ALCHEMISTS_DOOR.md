@@ -267,7 +267,7 @@ You already have the orientation. Here are the specific entry points:
 | The convergent discovery argument | [`07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md`](../07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md) |
 | The full mathematical foundations | [`11_MATHEMATICAL_FOUNDATIONS/`](../11_MATHEMATICAL_FOUNDATIONS/) |
 | The lived curriculum (your own Work) | [`THE_EMERALD_WORK.md`](THE_EMERALD_WORK.md) |
-| Challenge the claims (as you should) | [`MATHEMATICS_AUDIT.md`](../MATHEMATICS_AUDIT.md) + [`28_DEFENSE/FAILURE_MUSEUM.md`](../FAILURE_MUSEUM.md) |
+| Challenge the claims (as you should) | [`MATHEMATICS_AUDIT.md`](../11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_AUDIT.md) + [`28_DEFENSE/FAILURE_MUSEUM.md`](../28_DEFENSE/FAILURE_MUSEUM.md) |
 | The AI operating architecture | [`CLAUDE.md`](../CLAUDE.md) |
 
 ---

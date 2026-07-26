@@ -296,7 +296,7 @@ Each agent has a role defined by its mode. No agent can override the constitutio
 
 Before anything else, read this:
 
-→ [`28_DEFENSE/FAILURE_MUSEUM.md`](../FAILURE_MUSEUM.md)
+→ [`28_DEFENSE/FAILURE_MUSEUM.md`](../28_DEFENSE/FAILURE_MUSEUM.md)
 
 This is the record of every significant error this framework has made — wrong claims, overclaims, circular proofs, uncalibrated equations, architectural failures.
 
@@ -322,7 +322,7 @@ If you are building systems that will be used in high-stakes contexts — health
 | Working Python implementations | [`12_IMPLEMENTATIONS/`](../12_IMPLEMENTATIONS/) |
 | The full operating architecture | [`CLAUDE.md`](../CLAUDE.md) |
 | Mathematical foundations | [`11_MATHEMATICAL_FOUNDATIONS/`](../11_MATHEMATICAL_FOUNDATIONS/) |
-| Challenge the mathematics | [`MATHEMATICS_AUDIT.md`](../MATHEMATICS_AUDIT.md) |
+| Challenge the mathematics | [`MATHEMATICS_AUDIT.md`](../11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_AUDIT.md) |
 
 ---
 
