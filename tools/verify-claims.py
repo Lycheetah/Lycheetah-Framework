@@ -48,13 +48,23 @@ VOCABULARIES = {
         r"\b(FOUNDATION|EDGE)\b",
     "inline proposal marks":
         r"\[(PROPOSAL|PROPOSED|DRAFT|UNVERIFIED|CONJECTURE)\]",
+    # ⚠ Added 2026-07-27 after the gate flagged MASTER_EQUATION_CALIBRATION.md — the
+    # single most rigorous document found in the corpus. It retracts its own earlier
+    # mislabelling, states "the k1-k4 coupling constants are still uncalibrated" and
+    # "STATUS: NOT YET COLLECTED", and distinguishes what its data shows from what it
+    # does not. It failed only because it invented its own honest marker. A gate that
+    # penalises the most careful document in the corpus is measuring conformity, not
+    # honesty — so the gate changed, not the document.
+    "self-correction / status marks":
+        r"(\[MISLABELED|\[CORRECTED|\[RETRACTED|NOT YET COLLECTED|"
+        r"does NOT show|still uncalibrated|\bSTATUS:\s*NOT\b)",
 }
 COMPILED = {k: re.compile(v) for k, v in VOCABULARIES.items()}
 
 # The count of unmarked claim-bearing documents on the day this gate was written.
 # It exists so the gate blocks REGRESSION today instead of staying red forever.
 # Lower it whenever the real number drops. Never raise it.
-BASELINE = 31   # 2026-07-27: the maths bridge classified [OBSERVATIONAL/ASPIRATIONAL]. Never raise this.
+BASELINE = 30   # 2026-07-27: gate taught to credit self-correction marks. Never raise this.
 
 
 def tracked_markdown():

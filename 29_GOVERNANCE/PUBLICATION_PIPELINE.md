@@ -136,24 +136,58 @@ prestigious for a formal systems paper
 
 ### What This Paper Contributes
 
+> ## 🔴 CORRECTION PROPAGATED HERE 2026-07-27 — READ BEFORE SUBMITTING ANYTHING
+>
+> **`cascade_real_data_results.json` is NOT empirical data. It is simulation output.**
+>
+> This was established and corrected in
+> `11_MATHEMATICAL_FOUNDATIONS/MASTER_EQUATION_CALIBRATION.md` on **2026-03-24**, which
+> states plainly: *"This file was previously described as 'real CASCADE data' from
+> real-world events. This was incorrect… What this data does NOT show: real-world
+> calibration. The k₁–k₄ coupling constants are still uncalibrated… **STATUS: NOT YET
+> COLLECTED.**"*
+>
+> **That correction never reached this document, and this is the document that decides
+> what gets submitted.** Below, the same file was still described as *"empirical
+> material"* and *"Existing empirical data"*, and the paper was rated *"most immediately
+> publishable"* partly on that basis. Both descriptions are now corrected in place.
+>
+> The file contains: an algorithm test on a synthetic 20-block knowledge system, 1,000
+> synthetic operations verifying invariants hold by design, and a Monte Carlo run. It
+> demonstrates **the implementation behaves as specified**. It demonstrates nothing about
+> the world.
+>
+> ⚠ **The filenames still say `real`** — `cascade_real_data.py`,
+> `cascade_real_data_results.json`, `cascade_real_results.json`. The prose was corrected;
+> the artefacts were not. Anyone who greps this repository for evidence lands on a file
+> called *real results* holding synthetic output. **Rename them, or a reviewer will find
+> the name before they find the correction.**
+
 CASCADE's formal contribution is among the strongest in the Codex: Theorems C1 and
 C3 are complete proofs; the connection to AGM belief revision theory provides formal
-grounding; the truth pressure metric Π provides a computable quantity; and the
-existing dataset (`cascade_real_data_results.json`) provides empirical material.
+grounding; and the truth pressure metric Π provides a computable quantity.
+`cascade_real_data_results.json` provides **[SIMULATION] validation that the algorithm
+behaves as designed** — not empirical material. No real-world dataset exists yet.
 
-This paper is the Codex's most immediately publishable technical paper because it has:
-- Complete formal proofs (C1, C3)
-- Existing empirical data (cascade_real_data_results.json)
-- Clear prior art relationship (Kuhn, AGM, Bayesian epistemology)
-- Defined falsification conditions
+This paper is the Codex's strongest formal contribution, but it is **not** immediately
+publishable, because it has:
+- Complete formal proofs (C1, C3) — **[FORMAL]**
+- Clear prior art relationship (Kuhn, AGM, Bayesian epistemology) — **[FORMAL]**
+- Defined falsification conditions — **[FORMAL]**
+- Algorithm validation on synthetic cases — **[SIMULATION]**, *not* empirical data
+- 🔴 **No empirical dataset. k₁–k₄ uncalibrated. STATUS: NOT YET COLLECTED.**
 
 ### Gate Condition: k₁–k₄ Calibration
 
-**This paper cannot be submitted without running the k₁–k₄ calibration.**
+**This paper cannot be submitted without running the k₁–k₄ calibration** — and the
+calibration cannot be run, because **the data it requires does not exist yet.** The
+procedure below is a roadmap against real-world data still to be collected (see the
+six-experiment collection plan in `MASTER_EQUATION_CALIBRATION.md`), not a script that
+can be run today against the file named below.
 
-The calibration procedure:
+The calibration procedure (once real data exists):
 1. Open `cascade_real_data.py` in the lycheetah repository
-2. Load `cascade_real_data_results.json`
+2. Load `cascade_real_data_results.json` ⚠ **currently synthetic — see the correction above**
 3. Run regression: minimize prediction error across documented paradigm shifts
 4. Extract calibrated values for k₁ (truth pressure sensitivity),
    k₂ (restoring force), k₃ (invariant violation penalty), k₄ (energy availability)
