@@ -9,7 +9,8 @@
 ```
 Nine formal frameworks for AI alignment and epistemology.
 60 status-tagged claims (37 ACTIVE, 14 SCAFFOLD, 6 CONJECTURE, 3 RETRACTED).
-219 automated tests on 18 core implementations.
+220 automated tests on 18 core implementations: 219 pass, 1 fails — a predictive
+conjecture (F1 = 0.53 against a stated criterion of > 0.80), left failing on purpose.
 Discrete convergence proof (Banach fixed-point) for the formal model.
 Adversarial audit published; failures and unresolved objections in the public record.
 Built by one self-taught researcher. MIT licensed.
