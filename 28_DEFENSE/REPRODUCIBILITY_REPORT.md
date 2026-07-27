@@ -76,6 +76,47 @@ Current measurement is F1 = 0.531, so the test fails — the test is doing its
 job (honest measurement of an unproven conjecture). The failure is informative,
 not a defect. See `28_DEFENSE/COLD_ROOM_VERIFICATION.md` for full output.
 
+#### Why it fails — [MEASURED] 2026-07-27
+
+The failure had never been diagnosed, only reported. Running `run_experiment5`
+(500 trials, seed 42) and reading every lookahead:
+
+| k | F1 | baseline F1 | AUC | precision | recall | positives |
+|---|-----|-------------|-----|-----------|--------|-----------|
+| 1 | 0.230 | 0.018 | 0.921 | 0.190 | 0.292 | 1.8% |
+| 3 | 0.404 | 0.054 | 0.926 | 0.318 | 0.554 | 5.4% |
+| 5 | **0.531** | 0.088 | **0.921** | 0.425 | 0.706 | 8.8% |
+
+Three facts settle what kind of failure this is:
+
+1. **AUC = 0.921 at every k.** Given one pre-cascade step and one ordinary step,
+   the Π-gap ranks them correctly 92% of the time. The signal is not weak.
+2. **No overfitting.** Train F1 = 0.519 against test F1 = 0.531 — the gap is
+   *negative*. The threshold is not mis-tuned, and the predictor is a single
+   thresholded feature, so there is nothing to overfit beyond that one number.
+3. **The ceiling is 0.548.** Sweeping every possible threshold on the test set —
+   an oracle allowed to cheat by optimising on the test data itself — the maximum
+   attainable F1 at k=5 is **0.548** (k=3: 0.437, k=1: 0.243). The achieved 0.531
+   is within **0.017** of a bound no threshold choice can cross.
+
+[DERIVED] **F1 > 0.80 is unreachable by construction, not missed by a weak
+predictor.** At an 8.8% base rate, 878 positives sit among 9,122 negatives, so
+even a 9% false-positive rate caps precision near 0.43 at the recall the criterion
+needs. Reaching F1 > 0.80 would require separation around AUC ≈ 0.99, not 0.92.
+The criterion was stated without accounting for base rate — it measures class
+imbalance more than it measures prediction.
+
+⚠ **This does not upgrade the claim.** These are synthetic sequences from
+`make_gradual_sequence`, so the strong AUC is a property of the simulation, not
+evidence about real knowledge systems. Nothing here moves from [ASPIRATIONAL] to
+[EMPIRICAL]; that still waits on a collected dataset. What is now settled is
+narrower and worth stating plainly: *the predictor performs at 97% of its
+mathematical ceiling, and the bar it is being held to was never attainable.*
+
+Choosing a replacement criterion (AUC, average precision, or precision at fixed
+recall) changes a stated publishable claim and is deliberately **left open** —
+that is an author's decision, not a repair.
+
 ### Python version
 
 Tested on Python 3.14.2. The badge declares 3.10–3.12 compatibility; the
