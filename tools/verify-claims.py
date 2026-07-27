@@ -54,7 +54,7 @@ COMPILED = {k: re.compile(v) for k, v in VOCABULARIES.items()}
 # The count of unmarked claim-bearing documents on the day this gate was written.
 # It exists so the gate blocks REGRESSION today instead of staying red forever.
 # Lower it whenever the real number drops. Never raise it.
-BASELINE = 32   # measured 2026-07-27: 131 of 163 argued documents marked (80%)
+BASELINE = 31   # 2026-07-27: the maths bridge classified [OBSERVATIONAL/ASPIRATIONAL]. Never raise this.
 
 
 def tracked_markdown():

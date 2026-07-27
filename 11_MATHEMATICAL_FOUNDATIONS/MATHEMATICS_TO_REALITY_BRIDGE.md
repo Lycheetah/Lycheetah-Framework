@@ -1,11 +1,77 @@
 # MATHEMATICS TO REALITY BRIDGE
 ## Every Equation Appears in Nature
 
+> ## ⊚ SUPPORT TYPE: **[OBSERVATIONAL / ASPIRATIONAL]** — classified 2026-07-27
+>
+> Per `29_GOVERNANCE/EMPIRICAL_INVENTORY.md`, which defines
+> `[EMPIRICAL] · [FORMAL] · [OBSERVATIONAL] · [ASPIRATIONAL] · [REMOVED]`.
+> **This document was the largest arguing document in the corpus carrying no support
+> type at all.** Its argument is unchanged below. Only its footing is now declared.
+>
+> **What this document does:** it takes each formalism and *assigns* its variables to
+> quantities in physics, evolution, markets, neuroscience, language, sociology and
+> immunology, then observes that the resulting dynamics rhyme. That is **cross-domain
+> re-description** — a real and generative intellectual tradition (cybernetics, Bateson,
+> complexity science), and genuinely useful for teaching and for generating hypotheses.
+>
+> **What it is not:** it is **not `[EMPIRICAL]`** — no dataset, no fit, no calibration,
+> no prediction tested against held-out data. It is **not `[FORMAL]`** — no derivation
+> runs from any domain's own governing equations to Π. No immunologist writes
+> Π = (E·P)/S; the mapping is applied here, not found there.
+>
+> ### 🔴 The weakest joint, named in permanent ink
+>
+> **Line 7–9 is the load-bearing claim of the entire document** — *"When the same
+> equation appears independently in multiple domains… we're not inventing these
+> equations, we're discovering them."* The equations do not appear independently. **They
+> are assigned here.** And because E, P and S may be re-interpreted freely per domain,
+> the formula can be made to fit almost anything — which means that, as written, **it
+> forbids no observation.** A claim that cannot fail cannot be evidence for itself. This
+> is the first thing a hostile reviewer will find, and they will be right.
+>
+> ### 🔴 The document contradicts itself, seventeen lines apart
+>
+> - **Line 911:** *"This is not theory that might be wrong."*
+> - **Line 928:** *"The mathematics is sound. The reality connection is proven."*
+> - **Lines 915–925**, immediately between them, list the work still to be done:
+>   *measure k₁–k₄ coupling constants · measure λ_compress · measure threshold Π values
+>   across domains · test all Seven Invariants against data.*
+>
+> **A connection whose constants have never been calibrated is not proven.** Both
+> statements are on the same page. The honest one is the second list.
+>
+> ⚠ **Line 911 also contradicts the corpus.** `28_DEFENSE/FALSIFICATION_REGISTER.md` is
+> 56 KB and 82 rows of what would falsify this work. A document declaring itself unable
+> to be wrong is not a stronger claim than that register — it is a weaker one, and it
+> undercuts the register's credibility by existing beside it.
+>
+> ### ⚠ One specific factual claim to check or cut
+>
+> **Line 23** — *"Mathematical identity: Ehrenfest classification uses (E·P)/S scaling."*
+> Ehrenfest classifies phase transitions by the order of the discontinuous derivative of
+> the free energy; it involves no `(E·P)/S` scaling. **Verify this against a source or
+> remove it.** Unlike the interpretive material, this is a hard, checkable claim about
+> someone else's field, and it is the kind of error that costs a reader's trust in
+> everything around it. Same for **line 423**, *"Not metaphor—mechanical law."*
+>
+> ### What would move this to `[EMPIRICAL]`
+>
+> Pick **one** domain — markets and neuroscience have the best public data — state the
+> Π-threshold **in advance**, and test it on held-out events. One domain honestly
+> measured is worth more than nine mapped. `32_TIANXIA/PREDICTIONS_REGISTRY.md` already
+> shows the corpus knows how to make a dated, falsifiable prediction; this document
+> should borrow that instrument.
+>
+> **None of this asks for the document to be smaller.** The mapping is worth keeping and
+> worth teaching. It asks only that it say what it is, so that the parts of the framework
+> that *are* `[FORMAL]` are not doubted by association with the parts that are not.
+
 This document shows where each mathematical component of the Lycheetah Framework
 appears in real systems across physics, biology, neuroscience, economics, sociology, and linguistics.
 
-**Core principle:** When the same equation appears independently in multiple domains,
-it's describing something fundamental about how reality organizes itself.
+**Core principle** *(register: `[ASPIRATIONAL]` — this is the document's central
+hypothesis, not an established result)*: When the same equation appears independently in
+multiple domains, it's describing something fundamental about how reality organizes itself.
 We're not inventing these equations—we're discovering them.
 
 ---
