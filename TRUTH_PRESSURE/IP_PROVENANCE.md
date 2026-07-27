@@ -83,6 +83,50 @@ This is a factual statement: prior to this framework, no published work in epist
 - The cross-domain validation (7 domains) was performed after the formula was established, not to construct it — the domains were checked as verification, not used to generate the formula
 - The √(n) threshold scaling was first observed empirically (in CASCADE simulations) and subsequently derived analytically — the empirical discovery preceded the formal derivation
 
+### 4.1 Origination and development — who did what `[MEASURED 2026-07-27]`
+
+This document previously named a single author and said nothing about how the corpus was
+produced. That silence was not in the author's favour. The git record is public and any
+sceptic reads it first, so it is stated here plainly, and it strengthens the priority
+claim rather than weakening it.
+
+**The origination is documented and dated.** On **2026-06-09**, Mackenzie Clark uploaded
+a 1,404-page source text to this repository (`Add files via upload`, commits `937113a`
+and `bcc2022`). It was extracted the following day into `000_1404RawSourceTranslate/` —
+**42 files, 18,538 lines**, the largest body of material in the corpus outside the
+archive. The AURA Protocol, Vector Inversion, CASCADE knowledge architecture, Constraint
+Algebra of Resonance, and LAMAGUE are all **named and described in that source text**,
+which pre-dates every derivation document built on them. The repository's first commit is
+earlier still: `91256f6`, **2026-03-20**. Both are ancestors of the public archive, so the
+public record reaches back to March 2026.
+
+**The development was collaborative, and the collaborators are named in the commits.**
+Across 328 commits, work was drafted in sessions with Claude models, each recorded in a
+`Co-Authored-By` trailer: Sonnet 4.6 (142 commits), Opus 4.6 (41), Haiku 4.5 (16),
+Opus 5 (13), Opus 4.7 (10), Opus 4.8 (8), Fable 5 (7), and Sol-named sessions (14).
+77 commits carry no trailer. Fable 5's contribution is notable for what it is: the
+**independent adversarial review** of this theory (`FABLE_REVIEW_PROMPT.md`,
+`FABLE_REVIEW_FINDINGS.md`, `2026-06-10`) which returned 7 weaknesses, 6 gaps, and an
+IP assessment — after which `TRUTH_PRESSURE_CANON.md` was rewritten.
+
+**On what those numbers do and do not measure.** Line counts attribute *typing*, not
+*origination*. The largest single body of "lines added" under a model trailer is the
+transcription and structuring of the author's own 1,404-page source: a session that
+reformats existing material into 42 documents is credited with ~18,500 added lines while
+originating nothing. Any authorship inference drawn from commit statistics alone will be
+wrong in this specific and measurable way.
+
+**The line this document draws:**
+
+| | |
+|---|---|
+| **Originated by Mackenzie Conor James Clark** | The framework's concepts and their names; the 1,404-page source; the invention claim in §1 and the eight properties in §3.1; every ratification decision |
+| **Developed collaboratively** | Formalisation, derivation, cross-domain checking, implementation, structuring, adversarial review, and the prose of most documents in this repository |
+
+Priority is a claim about **when**, not about who held the pen. The dated raw source is
+the strongest evidence in this repository for §1 and §4, and nothing else in this document
+previously pointed at it.
+
 ---
 
 ## 5. Provisional IP Protections and Disclosure Record
