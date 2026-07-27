@@ -9,6 +9,29 @@
 
 ---
 
+> ## 🔴 DATA CORRECTION — 2026-07-27, BEFORE THIS IS FILED
+>
+> **The 6,000-cascade dataset described in this document does not exist.**
+>
+> `cascade_real_results.json` / `cascade_real_data_results.json` contain **simulation
+> output**, not real-world events. This was established in
+> `11_MATHEMATICAL_FOUNDATIONS/MASTER_EQUATION_CALIBRATION.md` on **2026-03-24**, which
+> states: *"What this data does NOT show: real-world calibration. The k₁–k₄ coupling
+> constants are still uncalibrated… **STATUS: NOT YET COLLECTED.**"* The correction was
+> written there and never propagated here.
+>
+> What the file holds: an algorithm test on a synthetic 20-block knowledge system, 1,000
+> synthetic invariant checks, and a Monte Carlo run. It shows **the implementation
+> behaves as designed**. It says nothing about the world.
+>
+> ⚠ The filenames still contain the word `real`. The prose was corrected; the artefacts
+> were not.
+>
+> **This document remains a valid study DESIGN.** What it is not is a study that can be
+> run today — the data collection is the prerequisite, not a formality. The six-experiment
+> collection plan is in `MASTER_EQUATION_CALIBRATION.md`. **Do not file this with OSF
+> until the sampling section describes data that exists.**
+
 ## I. Why E-1.0
 
 The Lycheetah Framework rests on three architectural anchors:
@@ -31,7 +54,7 @@ This document is the design. The next deliverable (E-1.1) is the OSF preregistra
 
 | Study | Closes claim(s) | Type | Approximate scale |
 |---|---|---|---|
-| **E-1-A** — k₁–k₄ master-equation calibration | Master equation `dΨ/dt` (currently SCAFFOLD); CASCADE truth-pressure threshold; cross-framework dynamics | Computational, retrospective | ~6,000 cascade events from internal corpus; replication on independent corpus |
+| **E-1-A** — k₁–k₄ master-equation calibration | Master equation `dΨ/dt` (currently SCAFFOLD); CASCADE truth-pressure threshold; cross-framework dynamics | Computational, retrospective | ⚠ **CORRECTED 2026-07-27:** ~6,000 cascade events **to be collected** — the internal corpus is simulation output, not real events; then replication on an independent corpus |
 | **E-1-B** — EARNED LIGHT Pattern_Coherence vs PCI/IIT correlate | EARNED LIGHT thermodynamic-asymmetry consciousness model (SCAFFOLD); anesthesia paradox resolution (SCAFFOLD) | Quasi-experimental, archival | Existing PCI datasets + computational re-analysis |
 | **E-1-C** — LAMAGUE Transcultural Convergence (TC) differential | Cross-cultural ethical convergence (SCAFFOLD); attractor model vs diffusion model (SCAFFOLD) | Comparative ethnographic / computational | ~50 documented cross-cultural ethical structures |
 | **E-1-D** — AURA score → aligned behaviour correlation | AURA simultaneous satisfiability (SCAFFOLD); high-AURA → aligned behaviour (CONJECTURE) | Behavioural, prospective | ~500 AI-system outputs across 5 deployment contexts |
@@ -54,7 +77,7 @@ E-1-A and E-1-D can begin immediately — both rely on existing data the framewo
 **Hypothesis (preregistered).** A single set of coefficients `(k₁, k₂, k₃, k₄)` exists such that the master equation predicts observed `dΨ/dt` across cascade events with adjusted R² ≥ 0.6 on held-out data, *and* the same coefficients (within 95% CI) generalise across all nine frameworks.
 
 **Method.**
-1. Fit `(k₁, k₂, k₃, k₄)` via Bayesian MCMC on the existing 6,000-cascade dataset (cascade_real_results.json), 80/20 train/test split.
+1. Fit `(k₁, k₂, k₃, k₄)` via Bayesian MCMC on the cascade corpus, 80/20 train/test split. ⚠ **CORRECTED 2026-07-27:** there is no *existing* 6,000-cascade dataset — `cascade_real_results.json` is simulation output and the real corpus is **NOT YET COLLECTED**. Step 0 is collection.
 2. Cross-validate: leave-one-framework-out — fit on eight frameworks, predict the ninth.
 3. Independent replication: collect ≥ 1,000 cascade events from a new corpus (separate codebase) and re-fit. Compare CIs.
 

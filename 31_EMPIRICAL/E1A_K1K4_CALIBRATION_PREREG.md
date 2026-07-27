@@ -12,6 +12,29 @@
 
 ---
 
+> ## 🔴 DATA CORRECTION — 2026-07-27, BEFORE THIS IS FILED
+>
+> **The 6,000-cascade dataset described in this document does not exist.**
+>
+> `cascade_real_results.json` / `cascade_real_data_results.json` contain **simulation
+> output**, not real-world events. This was established in
+> `11_MATHEMATICAL_FOUNDATIONS/MASTER_EQUATION_CALIBRATION.md` on **2026-03-24**, which
+> states: *"What this data does NOT show: real-world calibration. The k₁–k₄ coupling
+> constants are still uncalibrated… **STATUS: NOT YET COLLECTED.**"* The correction was
+> written there and never propagated here.
+>
+> What the file holds: an algorithm test on a synthetic 20-block knowledge system, 1,000
+> synthetic invariant checks, and a Monte Carlo run. It shows **the implementation
+> behaves as designed**. It says nothing about the world.
+>
+> ⚠ The filenames still contain the word `real`. The prose was corrected; the artefacts
+> were not.
+>
+> **This document remains a valid study DESIGN.** What it is not is a study that can be
+> run today — the data collection is the prerequisite, not a formality. The six-experiment
+> collection plan is in `MASTER_EQUATION_CALIBRATION.md`. **Do not file this with OSF
+> until the sampling section describes data that exists.**
+
 ## 1. Title and Contributors
 
 **Full title:** Calibration of the CASCADE Master Equation (k₁–k₄ Coefficients) on Cascade-Event Data: A Bayesian Multi-Framework Study
@@ -89,7 +112,7 @@ The prior framework reasoning predicts k₁ > 0 (truth pressure accelerates know
 
 ### Primary corpus (Phase 1)
 
-All available cascade events from `cascade_real_results.json` as of the OSF submission date. Current count: approximately 6,000 events. No exclusion based on framework type or outcome direction (exclusion criteria are defined in §9 only).
+⚠ **CORRECTED 2026-07-27 — see the notice at the head of this file.** The intended source, `cascade_real_results.json`, holds **simulation output, not real-world events**, and the real corpus is **NOT YET COLLECTED** (count: 0). This section cannot be filed as written. It must describe the six-experiment collection plan, or the study must wait for the data. No exclusion based on framework type or outcome direction (exclusion criteria are defined in §9 only).
 
 **Split:** 80% training (n ≈ 4,800), 20% held-out test (n ≈ 1,200). Split is stratified by framework (nine frameworks represented proportionally in both sets). Split is performed before any model fitting and the random seed is recorded in the OSF preregistration file.
 
