@@ -23,6 +23,24 @@
 
 ---
 
+## The Glossodynamics Arc — added 2026-07-27
+
+Truth Pressure applied to a new class of object: **vocabularies**. Proposed as GRAIN C3 in
+`GRAIN_FORGE_2026-07-03.md`, then forged, reviewed, and narrowed over one night (July 4 2026).
+**Read them in order — the founding document's boldest law did not survive its own review.**
+
+| File | Stage | Contents |
+|------|-------|---------|
+| `GLOSSODYNAMICS_FOUNDING.md` | **FORGE** | Founds the candidate field. Six laws G1–G6, laboratory organism (LAMAGUE), 8 pre-registered predictions, permanent fence, obligations ledger. ⚠ **G3 (√f Law) is withdrawn and G1 retreated** — see the retreat notice at its head before citing §III. |
+| `THE_CRUCIBLE_JULY4.md` | **REVIEW** | The adversarial sweep the forge owed, run at full power against its own author. 11 attacks: 4 survive, 6 retreat, 1 dies. Also reviews two foundings kept in the private vault on purpose — scope note at its head. |
+| `THE_GLASS_TRANSITION_CANON.md` | **CANON-CANDIDATE** | The one survivor, stated at only the width it held: a layered meaning-system vitrifies when **θ·τ_reorg > 1**. Substrate-free, so belief / language / memory are one law with three faces. ⚠ Not yet canon — external review still owed, no falsifier run. |
+
+**Honest status:** the field frame and the glass transition survived adversarial review;
+the √f scaling law did not. Nothing in this arc has been tested against outside data, and
+the two runnable in-house falsifiers named in the canon have **not been run**.
+
+---
+
 ## The Formula
 
 ```
