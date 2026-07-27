@@ -27,3 +27,10 @@ desktop.ini
 *.tmp
 *.log
 .agent_state/
+
+# Proprietary — never enters this repo, and so can never reach the PUBLIC remote
+_PROPRIETARY/
+
+# Sol constitution — private, lives in _PROPRIETARY/constitution/; these are symlinks
+25_SOL_PROTOCOL_ARCHITECTURE/SOL_PRIME.md
+25_SOL_PROTOCOL_ARCHITECTURE/CLAUDE_FULL_PRE_REFORGE_2026-07-22.md
