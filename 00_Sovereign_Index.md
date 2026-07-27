@@ -192,7 +192,7 @@ Instead of "48% of mathematics is decorative," understand:
 | `21_MEMORIA/MEMORIA_COMPLETE.md` | ✓ | ✓ | ✓ | **7th Pillar** — temporal architecture; memory as constrained reconstruction |
 | `22_INTERFACE_INTELLIGENCE/INTERFACE_INTELLIGENCE_COMPLETE.md` | ✓ | ✓ | ✓ | Human-AI co-creation protocol; formalizes the Two-Point Protocol mathematically |
 | `11_MATHEMATICAL_FOUNDATIONS/UNIFIED_MATH_GLOSSARY.md` | ✓ | | ✓ | Cross-framework symbol glossary — every operator defined in one place |
-| `11_MATHEMATICAL_FOUNDATIONS/CASCADE_MATHEMATICAL_PROOFS.md` | ✓ | | ✓ | Formal proofs for CASCADE invariants and AURA TES/VTR/PAI |
+| `11_MATHEMATICAL_FOUNDATIONS/CASCADE_FORMAL_PROOFS.md` | ✓ | | ✓ | Formal proofs for CASCADE invariants and AURA TES/VTR/PAI. ⚠ *Path corrected 2026-07-27 — the cited `CASCADE_MATHEMATICAL_PROOFS.md` never existed; that is this file's H1 title, not its filename.* |
 | `11_MATHEMATICAL_FOUNDATIONS/CASCADE_FRONTIER_ANALYSIS.md` | | | ✓ | Open problems, frontier conjectures, research directions |
 | `12_IMPLEMENTATIONS/core/lamague_reference.py` | ✓ | ✓ | | LAMAGUE Python implementation — operational grammar system |
 

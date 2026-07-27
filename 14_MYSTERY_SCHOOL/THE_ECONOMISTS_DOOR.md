@@ -50,7 +50,7 @@ The failure modes are identical:
 
 This last failure mode — the AI governance equivalent of a coordination problem — is exactly what the Open Letter to AI Companies addresses: each company individually has insufficient incentive to publish failure records. Collectively, their doing so would move the whole field.
 
-**Verified against AGM:** The CASCADE revision postulates are formally verified against the Alchourrón-Gärdenfors-Makinson (AGM) rational belief revision axioms — the economics of knowledge, rigorously. See [`11_MATHEMATICAL_FOUNDATIONS/CASCADE_MATHEMATICAL_PROOFS.md`](../11_MATHEMATICAL_FOUNDATIONS/CASCADE_MATHEMATICAL_PROOFS.md).
+**AGM — NOT YET VERIFIED** ⚠ *(corrected 2026-07-27)*: this previously read "the CASCADE revision postulates **are** formally verified against the Alchourrón-Gärdenfors-Makinson axioms." They are not. `29_GOVERNANCE/EMPIRICAL_INVENTORY.md` classifies *CASCADE as AGM belief revision* as **`[ASPIRATIONAL]` (Conjecture C5)**, with "formally verify all six AGM postulates" listed as the **next experiment**, and AGM appears nowhere in the proofs document. The correspondence is a **conjecture worth proving**, not a result. See [`11_MATHEMATICAL_FOUNDATIONS/CASCADE_FORMAL_PROOFS.md`](../11_MATHEMATICAL_FOUNDATIONS/CASCADE_FORMAL_PROOFS.md).
 
 ---
 

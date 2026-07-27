@@ -263,7 +263,8 @@ The scoring tool is a wrapper on formally proven mathematics.
 ### How To Engage With The Mathematics
 
 **For sceptics:** The proofs are in `11_MATHEMATICAL_FOUNDATIONS/`.
-Specifically: `CASCADE_MATHEMATICAL_PROOFS.md` — six formal theorems with complete proofs.
+Specifically: `11_MATHEMATICAL_FOUNDATIONS/CASCADE_FORMAL_PROOFS.md` — **ten** theorems, of which some carry complete proofs and others are explicitly marked `[SCAFFOLD — PROOF GAP]` or given as proof sketches. The document says so of itself in its own overview.
+⚠ *Corrected 2026-07-27. This previously read "`CASCADE_MATHEMATICAL_PROOFS.md` — six formal theorems with complete proofs", which was wrong three ways: the filename does not exist, the count is ten, and the proofs are not all complete. Inviting sceptics to "try to break them" while overstating what is there is the fastest way to lose the sceptic worth convincing. The honest invitation is stronger: the gaps are marked, and the marked gaps are where help is actually wanted.*
 Try to break them. If you find errors, report them through the public issue tracker.
 That's the point. Reality has a vote.
 

@@ -229,7 +229,7 @@ Whether this is achievable for AI systems — whether "structural virtue" is a c
 | What you want | Start here |
 |---|---|
 | CASCADE formal epistemology | [`01_CASCADE_L4/CASCADE_COMPLETE.md`](../01_CASCADE_L4/CASCADE_COMPLETE.md) |
-| AGM postulate verification | [`11_MATHEMATICAL_FOUNDATIONS/CASCADE_MATHEMATICAL_PROOFS.md`](../11_MATHEMATICAL_FOUNDATIONS/CASCADE_MATHEMATICAL_PROOFS.md) |
+| AGM postulate verification ⚠ **[ASPIRATIONAL — not yet done]** | [`11_MATHEMATICAL_FOUNDATIONS/CASCADE_FORMAL_PROOFS.md`](../11_MATHEMATICAL_FOUNDATIONS/CASCADE_FORMAL_PROOFS.md) — *contains no AGM section; see EMPIRICAL_INVENTORY Conjecture C5* |
 | LAMAGUE formal ethics grammar | [`03_LAMAGUE_L1/`](../03_LAMAGUE_L1/) |
 | Cross-cultural ethics convergence | [`24_LAMAGUE_CROSS_CULTURAL/`](../24_LAMAGUE_CROSS_CULTURAL/) |
 | TRIAD observer problem | [`04_TRIAD_L2/TRIAD_COMPLETE.md`](../04_TRIAD_L2/TRIAD_COMPLETE.md) |
