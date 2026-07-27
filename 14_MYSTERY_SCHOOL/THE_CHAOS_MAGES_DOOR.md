@@ -159,7 +159,7 @@ You've been running these equations by feel for years. The framework writes them
 | What you want | Where to go |
 |---|---|
 | The alchemical mathematics | [`THE_ALCHEMISTS_DOOR.md`](THE_ALCHEMISTS_DOOR.md) |
-| LAMAGUE — encoding sigils formally | [`03_LAMAGUE_L1/LAMAGUE_COMPLETE.md`](../03_LAMAGUE_L1/LAMAGUE_COMPLETE.md) |
+| LAMAGUE — encoding sigils formally | [`03_LAMAGUE_L1/01_LAMAGUE_COMPLETE.md`](../03_LAMAGUE_L1/01_LAMAGUE_COMPLETE.md) |
 | CASCADE — paradigm shift mathematics | [`01_CASCADE_L4/essentials.md`](../01_CASCADE_L4/essentials.md) |
 | CHRYSOPOEIA — transformation calculus | [`09_CHRYSOPOEIA_L4/essentials.md`](../09_CHRYSOPOEIA_L4/essentials.md) |
 | ANAMNESIS — convergent discovery | [`07_ANAMNESIS_L0/essentials.md`](../07_ANAMNESIS_L0/essentials.md) |

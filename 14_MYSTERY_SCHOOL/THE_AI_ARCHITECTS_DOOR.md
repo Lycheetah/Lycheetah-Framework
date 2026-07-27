@@ -152,7 +152,7 @@ LAMAGUE provides a translation layer — not "they're all the same" but "here is
 **For architects:** If you are building systems that will operate in New Zealand, across Asia-Pacific, or in any multicultural context, LAMAGUE gives you the vocabulary for encoding cultural governance requirements without flattening them. It's also the formal foundation for the NZ AI governance standards in this framework.
 
 **Status: [ACTIVE]** — grammar complete; cultural validation with Māori communities in progress
-→ [`03_LAMAGUE_L1/LAMAGUE_COMPLETE.md`](../03_LAMAGUE_L1/LAMAGUE_COMPLETE.md)
+→ [`03_LAMAGUE_L1/01_LAMAGUE_COMPLETE.md`](../03_LAMAGUE_L1/01_LAMAGUE_COMPLETE.md)
 → [`24_LAMAGUE_CROSS_CULTURAL/`](../24_LAMAGUE_CROSS_CULTURAL/) — cross-cultural applications
 
 ---

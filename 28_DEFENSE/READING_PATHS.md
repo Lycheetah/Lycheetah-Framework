@@ -92,7 +92,7 @@ After this path: you have the full canonical body C-1.0 and can engage as a rese
 
 **For developers:** [`QUICKSTART.md`](../QUICKSTART.md) → [`28_DEFENSE/REPRODUCIBILITY_REPORT.md`](REPRODUCIBILITY_REPORT.md) → [`30_MAPS/ARCHITECTS_GUIDE.md`](../30_MAPS/ARCHITECTS_GUIDE.md) → [`12_IMPLEMENTATIONS/`](../12_IMPLEMENTATIONS/)
 
-**For your door by subject:** see the full door list in [`README.md`](README.md#find-your-door)
+**For your door by subject:** see the full door list in [`README.md`](../README.md#find-your-door)
 
 ---
 

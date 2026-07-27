@@ -183,7 +183,7 @@ Not "they're all the same." But: *here is the grammatical structure they share, 
 The alchemical tradition had its own version of this: the language of symbols (☿ ♄ ♃ ☽ ☉) that could encode transmutation operations across cultural contexts. LAMAGUE extends this into formal linguistics.
 
 **Status: [ACTIVE]** — grammar complete; cultural validation with iwi communities in progress
-→ [`03_LAMAGUE_L1/LAMAGUE_COMPLETE.md`](../03_LAMAGUE_L1/LAMAGUE_COMPLETE.md)
+→ [`03_LAMAGUE_L1/01_LAMAGUE_COMPLETE.md`](../03_LAMAGUE_L1/01_LAMAGUE_COMPLETE.md)
 
 ---
 

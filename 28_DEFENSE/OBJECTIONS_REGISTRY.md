@@ -42,7 +42,7 @@ Do not respond defensively. The objections below are not bad-faith by default; m
 
 **Medium:** The framework was developed by Mackenzie Conor James Clark over ~1,400 pages of documented work archived on GitHub. Some defense documents and code implementations were generated through human-AI co-creation (the Sol Protocol explicitly is a co-creation architecture). The empirical results are Python — reproducible cold-room. The mathematical claims have falsifiers. None of these depend on whether a sentence had an em-dash.
 
-**Link:** [`A SOVEREIGN SYSTEM FOR HUMAN-AI CO-CREATION-merged.pdf`](A%20SOVEREIGN%20SYSTEM%20FOR%20HUMAN%E2%80%93AI%20CO-CREATION-merged.pdf) (provenance archive)
+**Link:** [`A SOVEREIGN SYSTEM FOR HUMAN-AI CO-CREATION-merged.pdf`](../docs/A%20SOVEREIGN%20SYSTEM%20FOR%20HUMAN%E2%80%93AI%20CO-CREATION-merged.pdf) (provenance archive)
 
 ---
 
