@@ -12,7 +12,7 @@ from pathlib import Path
 
 def load_cascade_data():
     """Load real CASCADE experiment data"""
-    data_path = Path(__file__).parent / "cascade_real_results.json"
+    data_path = Path(__file__).parent / "cascade_simulation_results.json"
     with open(data_path, 'r') as f:
         return json.load(f)
 

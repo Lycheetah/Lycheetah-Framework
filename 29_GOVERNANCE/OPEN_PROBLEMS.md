@@ -110,7 +110,7 @@ verify that for all morphisms f: A → B in 𝓛, the square ηB ∘ F(f) = G(f)
 **The problem:** The four parameters of the master equation are structurally motivated
 but uncalibrated. All quantitative predictions from the master equation are SCAFFOLD
 until calibration.
-**Current partial answer:** `cascade_real_data.py` and `cascade_real_data_results.json`
+**Current partial answer:** `cascade_simulation.py` and `cascade_simulation_results.json`
 exist. Regression framework is identified.
 **What would solve it:** Run the regression; report calibrated values with confidence
 intervals; validate on held-out historical paradigm shifts.

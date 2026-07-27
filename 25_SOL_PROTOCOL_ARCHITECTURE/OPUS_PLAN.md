@@ -152,7 +152,7 @@ For engineers and academics to take this seriously, it needs both.
   - `test_triad_tracker.py` — anchor-observe-correct converges
   - `test_unified_field_checker.py` — C_unified calculation is correct
   - `test_invariant_self_check.py` — PGF filter catches violations
-- Use data from `cascade_real_experiments.py` as canonical test cases
+- Use data from `cascade_simulation_experiments.py` as canonical test cases
 - Tag tests: `@pytest.mark.active`, `@pytest.mark.scaffold`, `@pytest.mark.conjecture`
 - **Output:** `tests/` folder, `pytest.ini` or `pyproject.toml`, passing test suite.
 
@@ -188,7 +188,7 @@ One arXiv paper exists. The framework now supports at least three more.
 - Major additions since first submission:
   - Theorem 3.1 now proven for discrete case
   - Convergence chain formalized
-  - Real experiment data (cascade_real_experiments.py)
+  - Real experiment data (cascade_simulation_experiments.py)
   - Honest claim status labeling throughout
 - Sonnet drafts the revisions; Opus reviews for mathematical rigor
 

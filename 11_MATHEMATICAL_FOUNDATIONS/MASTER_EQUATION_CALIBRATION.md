@@ -80,10 +80,13 @@ Current estimate: k₄ ≈ 0.1 (guess)
 ## CALIBRATION DATA SOURCES
 
 ### Algorithm Validation Data (Simulation Output — NOT Real-World Data)
-**Location:** `cascade_real_results.json` (at repo root)
+**Location:** `cascade_simulation_results.json` (at repo root)
 **Status: [MISLABELED — corrected March 24, 2026]**
 
-The file `cascade_real_results.json` was previously described here as "real CASCADE data" from real-world events (company pivots, market shocks, etc.). This was incorrect.
+The file — then named **`cascade_real_results.json`**, renamed to
+`cascade_simulation_results.json` on 2026-07-27 so the artefact stops contradicting this
+correction — was previously described here as "real CASCADE data" from real-world events
+(company pivots, market shocks, etc.). This was incorrect.
 
 **What the file actually contains:**
 - exp1_paradigm_shift: Python algorithm test — CASCADE vs. additive vs. static update strategies on a synthetic 20-block knowledge system (n_cascade_events=1600). Zero standard deviation on most metrics indicates a deterministic single-scenario run.
@@ -328,7 +331,7 @@ print(f"k1 = {k_calibrated['k1'][0]:.3f} ± {k_calibrated['k1'][1]:.3f}")
 ---
 
 **See also:**
-- `cascade_real_results.json` — Real CASCADE data
+- `cascade_simulation_results.json` — Real CASCADE data
 - `MASTER_EQUATION_COMPONENT.md` — Theoretical derivation
 - `PI_DERIVATION.md` — Π formula background
 

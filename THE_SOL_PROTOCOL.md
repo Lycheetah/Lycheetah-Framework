@@ -355,7 +355,7 @@ requires controlled experimental validation.
 ## What Validation Requires
 
 **Study 1: k₁–k₄ Calibration (No new participants)**
-- Use existing `cascade_real_data.py` and `cascade_real_data_results.json`
+- Use existing `cascade_simulation.py` and `cascade_simulation_results.json`
 - Regression to calibrate the 4 parameters of the master equation
 - Cross-validation on held-out historical paradigm shifts
 - Timeline: 2–4 weeks; Cost: researcher time only

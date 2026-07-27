@@ -627,7 +627,7 @@ dΨ/dt = k₁·(Π − Π_th) − k₂·(Ψ − Ψ_inv) − k₃·I_violations +
 
 **Gap:** Coupling constants k₁–k₄ are empirically undetermined. The structure
 is formally sound; the dynamics cannot be predicted until k₁–k₄ are calibrated
-from the cascade_real_results.json dataset (6,000 cascades pending).
+from the cascade_simulation_results.json dataset (6,000 cascades pending).
 
 ---
 

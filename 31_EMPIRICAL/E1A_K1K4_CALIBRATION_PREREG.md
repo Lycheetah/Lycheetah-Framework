@@ -16,7 +16,7 @@
 >
 > **The 6,000-cascade dataset described in this document does not exist.**
 >
-> `cascade_real_results.json` / `cascade_real_data_results.json` contain **simulation
+> `cascade_simulation_results.json` / `cascade_simulation_results.json` contain **simulation
 > output**, not real-world events. This was established in
 > `11_MATHEMATICAL_FOUNDATIONS/MASTER_EQUATION_CALIBRATION.md` on **2026-03-24**, which
 > states: *"What this data does NOT show: real-world calibration. The k₁–k₄ coupling
@@ -112,7 +112,7 @@ The prior framework reasoning predicts k₁ > 0 (truth pressure accelerates know
 
 ### Primary corpus (Phase 1)
 
-⚠ **CORRECTED 2026-07-27 — see the notice at the head of this file.** The intended source, `cascade_real_results.json`, holds **simulation output, not real-world events**, and the real corpus is **NOT YET COLLECTED** (count: 0). This section cannot be filed as written. It must describe the six-experiment collection plan, or the study must wait for the data. No exclusion based on framework type or outcome direction (exclusion criteria are defined in §9 only).
+⚠ **CORRECTED 2026-07-27 — see the notice at the head of this file.** The intended source, `cascade_simulation_results.json`, holds **simulation output, not real-world events**, and the real corpus is **NOT YET COLLECTED** (count: 0). This section cannot be filed as written. It must describe the six-experiment collection plan, or the study must wait for the data. No exclusion based on framework type or outcome direction (exclusion criteria are defined in §9 only).
 
 **Split:** 80% training (n ≈ 4,800), 20% held-out test (n ≈ 1,200). Split is stratified by framework (nine frameworks represented proportionally in both sets). Split is performed before any model fitting and the random seed is recorded in the OSF preregistration file.
 

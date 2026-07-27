@@ -45,7 +45,7 @@ When Π > Π_threshold (1.2 for theory, 1.5 for foundation):
 CASCADE reorganisation event occurs
 ```
 
-**What the experiments showed (cascade_real_results.json):**
+**What the experiments showed (cascade_simulation_results.json):**
 - With truth pressure active: 95%+ accuracy in predicting knowledge reorganisation events
 - Without truth pressure (ablation): accuracy drops to 48% (near random)
 - Π is not decorative. It is the engine.
@@ -273,7 +273,7 @@ since it went on arXiv. That's the signal that matters — not that a company sa
 but that the mathematics is public and anyone can check it.
 
 **For developers:** The `cascade_engine.py` is 668 lines of Python.
-It runs. It produces consistent results. The `cascade_real_results.json`
+It runs. It produces consistent results. The `cascade_simulation_results.json`
 contains the experimental validation data.
 Fork it. Test it. Tell us what you find.
 

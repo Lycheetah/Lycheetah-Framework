@@ -24,4 +24,4 @@ Phase transitions (physics) · synaptic consolidation (neuroscience) · paradigm
 
 ## Next
 
-ArXiv submission · k₁–k₄ master equation calibration from `cascade_real_results.json`
+ArXiv submission · k₁–k₄ master equation calibration from `cascade_simulation_results.json`

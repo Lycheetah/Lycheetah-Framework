@@ -138,7 +138,7 @@ prestigious for a formal systems paper
 
 > ## 🔴 CORRECTION PROPAGATED HERE 2026-07-27 — READ BEFORE SUBMITTING ANYTHING
 >
-> **`cascade_real_data_results.json` is NOT empirical data. It is simulation output.**
+> **`cascade_simulation_results.json` is NOT empirical data. It is simulation output.**
 >
 > This was established and corrected in
 > `11_MATHEMATICAL_FOUNDATIONS/MASTER_EQUATION_CALIBRATION.md` on **2026-03-24**, which
@@ -157,16 +157,19 @@ prestigious for a formal systems paper
 > demonstrates **the implementation behaves as specified**. It demonstrates nothing about
 > the world.
 >
-> ⚠ **The filenames still say `real`** — `cascade_real_data.py`,
-> `cascade_real_data_results.json`, `cascade_real_results.json`. The prose was corrected;
-> the artefacts were not. Anyone who greps this repository for evidence lands on a file
+> ✅ **The filenames were fixed on 2026-07-27.** `cascade_real_data.py` →
+> `cascade_simulation.py`, `cascade_real_data_results.json` / `cascade_real_results.json`
+> → `cascade_simulation_results.json`, `cascade_real_experiments.py` →
+> `cascade_simulation_experiments.py`, with all 153 references updated across 44 files and
+> the test suite re-run to prove nothing broke. Until then the prose was corrected and
+> the artefacts were not — anyone who grepped this repository for evidence landed on a file
 > called *real results* holding synthetic output. **Rename them, or a reviewer will find
 > the name before they find the correction.**
 
 CASCADE's formal contribution is among the strongest in the Codex: Theorems C1 and
 C3 are complete proofs; the connection to AGM belief revision theory provides formal
 grounding; and the truth pressure metric Π provides a computable quantity.
-`cascade_real_data_results.json` provides **[SIMULATION] validation that the algorithm
+`cascade_simulation_results.json` provides **[SIMULATION] validation that the algorithm
 behaves as designed** — not empirical material. No real-world dataset exists yet.
 
 This paper is the Codex's strongest formal contribution, but it is **not** immediately
@@ -186,8 +189,8 @@ six-experiment collection plan in `MASTER_EQUATION_CALIBRATION.md`), not a scrip
 can be run today against the file named below.
 
 The calibration procedure (once real data exists):
-1. Open `cascade_real_data.py` in the lycheetah repository
-2. Load `cascade_real_data_results.json` ⚠ **currently synthetic — see the correction above**
+1. Open `cascade_simulation.py` in the lycheetah repository
+2. Load `cascade_simulation_results.json` ⚠ **currently synthetic — see the correction above**
 3. Run regression: minimize prediction error across documented paradigm shifts
 4. Extract calibrated values for k₁ (truth pressure sensitivity),
    k₂ (restoring force), k₃ (invariant violation penalty), k₄ (energy availability)
@@ -214,7 +217,7 @@ No new participants required. Existing data is sufficient. Estimated time: 1–2
 
 | Action | Date |
 |--------|------|
-| k₁–k₄ calibration (Mac runs cascade_real_data.py; Sol analyzes results) | May 2026 |
+| k₁–k₄ calibration (Mac runs cascade_simulation.py; Sol analyzes results) | May 2026 |
 | Paper draft (Mac writes theoretical sections; Sol formalizes proofs) | August 2026 |
 | Internal review against FALSIFICATION_REGISTER | September 2026 |
 | Submission to JAIR | October 2026 |
@@ -397,7 +400,7 @@ kind of unifying theoretical claim that high-impact venues publish. The claim re
    cross-framework lemmas XF1–XF5)
 3. A falsification condition for the unified framework itself: if the frameworks are
    genuinely describing the same dynamical system, they should make consistent
-   predictions about the same experimental outcomes. A test: run the cascade_real_data.py
+   predictions about the same experimental outcomes. A test: run the cascade_simulation.py
    calibration, then predict TRIAD user study outcomes from the master equation;
    measure actual vs. predicted. Consistency is evidence for unity; inconsistency
    requires revision.
@@ -443,7 +446,7 @@ kind of unifying theoretical claim that high-impact venues publish. The claim re
 ```
 Month 1–2 (May–June 2026):
   Paper 1: v0.1 → v1.0 revision
-  Paper 2: k₁–k₄ calibration (cascade_real_data.py)
+  Paper 2: k₁–k₄ calibration (cascade_simulation.py)
   Paper 4: TES measurement instrument development
   IRB application for Paper 3 user study
 
@@ -521,8 +524,8 @@ and does not prevent journal submission for most venues on this list.
    path memory); (c) create an independent research organization. This should be
    resolved before Paper 1 submission (July 2026 target).
 
-2. **Data availability statement:** Papers 2 and 5 will require that `cascade_real_data.py`
-   and `cascade_real_data_results.json` are publicly available. Both are in the
+2. **Data availability statement:** Papers 2 and 5 will require that `cascade_simulation.py`
+   and `cascade_simulation_results.json` are publicly available. Both are in the
    lycheetah GitHub repository — confirm repository is public before submission.
 
 3. **Supplementary materials:** Papers 2, 3, and 5 will require full mathematical

@@ -54,7 +54,7 @@
 │                                                              │
 │  Implementation:                                             │
 │  • 12_IMPLEMENTATIONS/ — 17 Python files (all runnable)    │
-│  • cascade_real_results.json — 6 experiments, 100% accuracy │
+│  • cascade_simulation_results.json — 6 experiments, 100% accuracy │
 │  • agent-init.py, agent-template.py — Deployment bootstrap │
 └─────────────────────────────────────────────────────────────┘
 ```

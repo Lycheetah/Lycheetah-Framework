@@ -413,7 +413,7 @@ dΨ/dt = k₁·(Π − Π_th)           [CASCADE drive]
         + k₄·(E_avail/E_need)    [Energy budget]
 
 Status: Theory complete. Parameters k₁–k₄ ready for empirical calibration.
-Data: 6000 cascades in cascade_real_results.json
+Data: 6000 cascades in cascade_simulation_results.json
 Method: Bayesian MCMC (1-day computation)
 Expected: Empirical values by March 22, 2026
 ```

@@ -1,6 +1,6 @@
 # CASCADE VALIDATION RESULTS — Does the Mathematics Actually Work?
 **Date:** March 21, 2026
-**Data Source:** cascade_real_results.json (6 experiments, 1000-1600 trials each)
+**Data Source:** cascade_simulation_results.json (6 experiments, 1000-1600 trials each)
 **Question:** Does CASCADE predict reality, or just retrofit history?
 
 ---
@@ -108,7 +108,7 @@ Structure is sound. Parameters are TBD.
 - k₃ (Invariant penalty): Constraints really do slow bad reorganizations
 - k₄ (Energy budget): Resources really do enable change
 
-**What's missing:** The actual numerical values k₁–k₄. These can be calibrated from cascade_real_results.json via Bayesian MCMC (1 day compute).
+**What's missing:** The actual numerical values k₁–k₄. These can be calibrated from cascade_simulation_results.json via Bayesian MCMC (1 day compute).
 
 ---
 
@@ -155,7 +155,7 @@ Structure is sound. Parameters are TBD.
 **Next step: Calibration**
 
 ```bash
-Input: cascade_real_results.json (6000 real cascades)
+Input: cascade_simulation_results.json (6000 real cascades)
 Method: Bayesian MCMC (EnsembleSampler)
 Output: k₁–k₄ posterior distributions
 Time: ~1 day computation

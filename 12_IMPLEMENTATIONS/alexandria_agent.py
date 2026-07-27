@@ -44,7 +44,7 @@ SPEC_CONSTANTS = {
 
 # Gap checklist
 GAP_CHECKLIST = {
-    "k1_k4_calibration": ("cascade_real_results.json", "Calibration data committed"),
+    "k1_k4_calibration": ("cascade_simulation_results.json", "Calibration data committed"),
     "unit_tests": ("12_IMPLEMENTATIONS/test_*.py", "Unit test files exist"),
     "ci_workflow": (".github/workflows/ci.yml", "GitHub Actions CI configured"),
     "12_week_curriculum": ("14_MYSTERY_SCHOOL/12_WEEK_*.md", "Curriculum exists"),

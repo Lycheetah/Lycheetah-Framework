@@ -27,7 +27,7 @@ Truth Pressure Π → Threshold Exceeded → REORGANIZE
 ## Domain Applicability
 - **Quantum Physics:** CASCADE's reorganization model is consistent with the structure of the Classical→Quantum transition
 - **Germ Theory:** CASCADE's reorganization model is consistent with the structure of the Miasma→Germ transition
-- **Predictive Accuracy:** Will measure after k₁–k₄ calibration from 6000 real cascades (cascade_real_results.json)
+- **Predictive Accuracy:** Will measure after k₁–k₄ calibration from 6000 real cascades (cascade_simulation_results.json)
 
 ## Implementation
 - **Core File:** `cascade_engine.py` (27KB, production-grade)

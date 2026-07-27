@@ -35,7 +35,7 @@ from cascade_predictability import (
     _compute_pressure,
     run_experiment5,
 )
-from cascade_real_experiments import Block, Pyramid
+from cascade_simulation_experiments import Block, Pyramid
 
 
 # =============================================================================

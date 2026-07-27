@@ -60,7 +60,7 @@
 - Python implementations: microorcim_tracker, harmonia_calculator, triad_tracker
 - MATHEMATICS_TO_REALITY_BRIDGE.md — every equation mapped across 8 domains
 - README.md rewritten with honest status labels
-- cascade_real_results.json — canonical experiment data
+- cascade_simulation_results.json — canonical experiment data
 - AGENTS.md, CONTRIBUTING.md, .github/ infrastructure
 
 **What was understood:**

@@ -19,7 +19,7 @@ git clone https://github.com/Lycheetah/Lycheetah-Framework.git
 cd Lycheetah-Framework
 pip install -e .
 pytest                        # 219 tests, 18 core implementations
-python cascade_real_data.py   # real-data paradigm-shift experiment
+python cascade_simulation.py   # real-data paradigm-shift experiment
 python chrysopoeia_demo.py    # fixed-point convergence demo
 python earned_light_demo.py   # consciousness density demo
 ```
@@ -128,11 +128,11 @@ Expected output: `Coherence improvement: +40.3% (0.58→0.93), p < 0.001, d = 2.
 
 **Claim:** CASCADE improves coherence from 0.47 to 1.0 across 5 historical paradigm shifts.
 
-**Code path:** `cascade_real_data.py`
+**Code path:** `cascade_simulation.py`
 
 **Replication protocol:**
 ```bash
-python cascade_real_data.py
+python cascade_simulation.py
 ```
 Expected output: table of 5 paradigm shifts (Newtonian→Einsteinian, geocentric→heliocentric, etc.) each showing Coh_before and Coh_after.
 
@@ -480,7 +480,7 @@ Expected output: `(3/2)^12 = 129.746...; 2^7 = 128; Ratio = 1.01364... ≠ 1. Co
 
 **Claim:** dΨ/dt = k₁(Π−Π_th) − k₂(Ψ−Ψ_inv) − k₃I_violations + k₄(E/E_need) captures cross-framework dynamics.
 
-**Code path:** `10_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md`; `cascade_real_data.py` (partial)
+**Code path:** `10_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md`; `cascade_simulation.py` (partial)
 
 **Replication protocol:**
 1. Set k₁–k₄ from calibration (currently [SCAFFOLD] — values pending).
@@ -491,7 +491,7 @@ Expected output: `(3/2)^12 = 129.746...; 2^7 = 128; Ratio = 1.01364... ≠ 1. Co
 
 **Disconfirming outcome:** No correlation between predicted and observed dΨ/dt; or one term consistently dominates (suggesting others are redundant).
 
-**Replication notes:** This protocol gates on k₁–k₄ calibration via `cascade_real_data.py`. Run that first. Until calibration is complete, this test is [SCAFFOLD].
+**Replication notes:** This protocol gates on k₁–k₄ calibration via `cascade_simulation.py`. Run that first. Until calibration is complete, this test is [SCAFFOLD].
 
 ---
 

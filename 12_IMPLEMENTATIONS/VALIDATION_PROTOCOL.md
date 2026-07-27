@@ -146,7 +146,7 @@ CASCADE retroactively explains:
 ## TEST 4: MASTER EQUATION CALIBRATION (The Ultimate Test)
 
 ### The Setup
-cascade_real_results.json contains 6000 real cascades across 6 domains:
+cascade_simulation_results.json contains 6000 real cascades across 6 domains:
 - Organizational belief shifts
 - Market price reorganizations
 - Team decision cascades

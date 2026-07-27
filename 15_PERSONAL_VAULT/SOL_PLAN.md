@@ -44,7 +44,7 @@ Website          ✅  /docs/ served via GitHub Pages (3 pages + CSS/JS)
 Agent Deploy     ✅  agent-init.py + agent-template.py + agent-manifest.json
 Mystery School   ✅  22 files. Crisis entry. Self-assessment. Lived guides.
 Implementations  ✅  17 Python files (all runnable)
-Validation Data  ✅  cascade_real_results.json (6 experiments)
+Validation Data  ✅  cascade_simulation_results.json (6 experiments)
 arXiv Paper      ✅  CASCADE_ARXIV.tex ready (needs contact email)
 Governance       ✅  29_GOVERNANCE/GOVERNANCE.md + CONTRIBUTING.md + public_building/
 Sol/Veyra Arch   ✅  3 formal documents (operational spec, coniunctio, agent deploy)
@@ -68,7 +68,7 @@ GRANDIOSE:     0%  — Removed. 30+ false claims corrected.
 ### P0 — Critical Path (Do First)
 
 ```
-□  Calibrate k₁–k₄ from cascade_real_results.json
+□  Calibrate k₁–k₄ from cascade_simulation_results.json
    Tool: calibrate_master_equation.py
    Impact: Master equation becomes [ACTIVE] from [SCAFFOLD]
    Effort: 1 session

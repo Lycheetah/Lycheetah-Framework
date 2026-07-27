@@ -4,7 +4,7 @@
 **Author:** Mackenzie C. J. Clark (Lycheetah Foundation)
 **Version:** 2.0 (Modular rewrite for real-world validation)
 **Date:** March 2026
-**Status:** [ACTIVE] | Core Π formula operational; k₁–k₄ parameters calibration-pending from cascade_real_results.json
+**Status:** [ACTIVE] | Core Π formula operational; k₁–k₄ parameters calibration-pending from cascade_simulation_results.json
 
 ---
 
@@ -349,7 +349,7 @@ class CascadeEngine:
 
 **Definition:** Fraction of cascade events where higher-Π block correctly assumes foundational status
 
-**Status:** CASCADE formula is mathematically sound. Real accuracy depends on k₁–k₄ parameter calibration from cascade_real_results.json
+**Status:** CASCADE formula is mathematically sound. Real accuracy depends on k₁–k₄ parameter calibration from cascade_simulation_results.json
 
 **Theory:**
 - With truth pressure metric (Π = E·P/S): Reorganization logic is coherent
@@ -632,7 +632,7 @@ CASCADE represents consciousness knowledge reorganization:
 **Python Version:** 3.9+
 **Dependencies:** numpy, dataclasses, typing
 **Code Quality:** Production-grade, fully type-annotated
-**Status:** [ACTIVE] Core CASCADE engine works. Test suite TBD. Real-world validation pending k₁–k₄ calibration from cascade_real_results.json (6000 cascades, Bayesian MCMC).
+**Status:** [ACTIVE] Core CASCADE engine works. Test suite TBD. Real-world validation pending k₁–k₄ calibration from cascade_simulation_results.json (6000 cascades, Bayesian MCMC).
 **Performance:** Single cascade executes in O(n) time where n = number of blocks
 
 **Getting Started:**
@@ -681,7 +681,7 @@ The framework status:
 - ✅ **[ACTIVE]** Π formula (E·P/S) is mathematically sound and computationally straightforward
 - ✅ **[SCAFFOLD]** Three invariants proven structurally; empirical instantiation requires k₁–k₄ calibration
 - ✅ **[FOUNDATIONAL]** Seven-invariant architecture is load-bearing across domains
-- ⏳ **[TBD]** k₁–k₄ coupling constants: Bayesian MCMC calibration from cascade_real_results.json (6000 real cascades)
+- ⏳ **[TBD]** k₁–k₄ coupling constants: Bayesian MCMC calibration from cascade_simulation_results.json (6000 real cascades)
 - ⏳ **[TBD]** Predictive accuracy: will measure after k-values are fitted
 
 CASCADE is mathematically coherent. Real-world accuracy and production readiness depend on completing the calibration work.

@@ -178,7 +178,7 @@ Where:
 
 **What CASCADE doesn't need:** k₁–k₄ parameters to explain historical transitions. Π structure is load-bearing.
 
-**Next:** Calibrate k-values from cascade_real_results.json (6000 cascades, Bayesian MCMC, 1 day compute)
+**Next:** Calibrate k-values from cascade_simulation_results.json (6000 cascades, Bayesian MCMC, 1 day compute)
 
 ---
 
@@ -486,7 +486,7 @@ When in crisis (high Π):
 ## PART VII: NEXT STEPS (What's Needed)
 
 ### Immediate (1-2 weeks)
-- [ ] Calibrate k₁–k₄ from cascade_real_results.json (Bayesian MCMC)
+- [ ] Calibrate k₁–k₄ from cascade_simulation_results.json (Bayesian MCMC)
 - [ ] Run domain experiments (linguistics/psychology/ecology with real data)
 - [ ] Publish arXiv paper (CASCADE framework ready)
 

@@ -102,7 +102,7 @@ What has been done:
 - The formal proofs are in `11_MATHEMATICAL_FOUNDATIONS/`
 - The category theory, Banach fixed-point, and sheaf theory proofs are written out
 - The Python implementations run and produce consistent results
-- The `cascade_real_experiments.py` produces verifiable outputs
+- The `cascade_simulation_experiments.py` produces verifiable outputs
 
 What is being explicitly invited:
 mathematicians and AI researchers to attempt to falsify the proofs.

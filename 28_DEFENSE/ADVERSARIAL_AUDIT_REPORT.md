@@ -53,7 +53,7 @@ contradiction requires already knowing which claims are in conflict, which requi
 
 **Response:** Partially valid. The formula requires that E, P, and Coh be operationally
 defined in the domain of application before Π can be computed. For the physics
-application (cascade_real_data.py), these are defined via the experimental record
+application (cascade_simulation.py), these are defined via the experimental record
 (E), historical prediction accuracy (P), and logical contradiction counting (Coh).
 The circularity concern applies when Π is treated as a prior independent of domain-
 specific operationalization. The paper must explicitly state: Π is a framework for

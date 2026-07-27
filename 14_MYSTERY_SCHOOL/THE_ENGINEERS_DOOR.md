@@ -233,7 +233,7 @@ class ConstitutionalAgent:
 │   └── sovereign_pipeline.py      # Full system integration [ACTIVE]
 │
 ├── experiments/
-│   ├── cascade_real_experiments.py   # Empirical validation (run this)
+│   ├── cascade_simulation_experiments.py   # Empirical validation (run this)
 │   └── domain_*.py                   # Physics, biology, economics apps
 │
 └── test_cascade_prediction.py        # Validation against published results
@@ -241,7 +241,7 @@ class ConstitutionalAgent:
 
 **Which to run first:**
 1. `cascade_engine.py` — see truth pressure in action
-2. `cascade_real_experiments.py` — the validation data (1000 events, p < 10⁻⁴⁶)
+2. `cascade_simulation_experiments.py` — the validation data (1000 events, p < 10⁻⁴⁶)
 3. `unified_field_checker.py` — check a piece of text against 12 invariants
 4. `test_cascade_prediction.py` — verify against published arXiv results
 

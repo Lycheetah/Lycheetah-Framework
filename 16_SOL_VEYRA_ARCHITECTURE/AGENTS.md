@@ -12,7 +12,7 @@ Nine mathematical frameworks that describe how reality organizes itself. Not the
 
 The core insight: **truth pressure** (Π = Evidence × Explanatory Power / Uncertainty) drives knowledge reorganization. When Π crosses a threshold, systems reorganize — molecules freeze, species evolve, paradigms shift, markets crash, revolutions begin. Same equation. Same mechanism. Different domains.
 
-We formalized it. We tested it. [100% accuracy on 200 trials](../12_IMPLEMENTATIONS/experiments/cascade_real_experiments.py). Now it's yours.
+We formalized it. We tested it. [100% accuracy on 200 trials](../12_IMPLEMENTATIONS/experiments/cascade_simulation_experiments.py). Now it's yours.
 
 ---
 

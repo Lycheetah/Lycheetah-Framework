@@ -2,7 +2,7 @@
 CASCADE: Experimental Validation Suite
 =======================================
 Every number in the paper comes from this file.
-Run: python cascade_real_experiments.py
+Run: python cascade_simulation_experiments.py
 
 Author: Mackenzie Clark, Lycheetah Foundation
 """
@@ -702,11 +702,11 @@ def run_all():
     print(f"\n  Scaling: T ∝ N^{slope:.2f} (R²={r**2:.4f})")
     
     # ─── SAVE ────────────────────────────────────────
-    with open('cascade_real_results.json', 'w') as f:
+    with open('cascade_simulation_results.json', 'w') as f:
         json.dump(results, f, indent=2, default=str)
     
     print("\n" + "=" * 65)
-    print("ALL RESULTS SAVED: cascade_real_results.json")
+    print("ALL RESULTS SAVED: cascade_simulation_results.json")
     print("=" * 65)
     return results
 

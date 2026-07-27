@@ -330,8 +330,8 @@ rather than forcing a premature resolution.
 
 **The k₁–k₄ parameters [SCAFFOLD]:** The master equation's k₁ parameter governs how
 strongly truth pressure drives reorganization events. This parameter (along with k₂,
-k₃, k₄) is structurally motivated but empirically uncalibrated. The `cascade_real_data.py`
-implementation exists and the `cascade_real_data_results.json` dataset can support
+k₃, k₄) is structurally motivated but empirically uncalibrated. The `cascade_simulation.py`
+implementation exists and the `cascade_simulation_results.json` dataset can support
 regression — this is Priority 1 in the empirical program (29_GOVERNANCE/EMPIRICAL_INVENTORY.md).
 Until calibrated, quantitative predictions from Π = E·P/Coh remain SCAFFOLD-level.
 
@@ -389,7 +389,7 @@ reorganize would have held contradictions unresolved indefinitely.
 
 - **Coherence non-decrease [SCAFFOLD]**: Each reorganization event produces equal
   or higher overall coherence. Proof gap: assumes demotion fully resolves introduced
-  contradictions; not proven in full generality; requires cascade_real_data validation.
+  contradictions; not proven in full generality; requires cascade_simulation validation.
 
 - **Fixed-point uniqueness [SCAFFOLD]**: The limit ψ_inv is the unique coherence
   maximum. Requires verifying AGM postulate satisfaction and well-curatedness condition.
@@ -1610,7 +1610,7 @@ Each term is contributed by a specific framework:
 
 The equation is **[SCAFFOLD]**: the structure is sound and each term is motivated by
 a specific framework. k₁–k₄ await empirical calibration from the CASCADE dataset
-(`cascade_real_data.py`, `cascade_real_data_results.json`). Once calibrated, the
+(`cascade_simulation.py`, `cascade_simulation_results.json`). Once calibrated, the
 equation makes quantitative predictions about system state evolution over 30-day
 interaction logs — which constitutes a definitive empirical test.
 
@@ -1802,8 +1802,8 @@ In order of impact:
 
 **The empirical program.** Seven priority experiments (29_GOVERNANCE/EMPIRICAL_INVENTORY.md, Act VI).
 Most immediately feasible:
-1. k₁–k₄ calibration from the existing cascade dataset (`cascade_real_data.py`,
-   `cascade_real_data_results.json`) — existing data, no new participants needed
+1. k₁–k₄ calibration from the existing cascade dataset (`cascade_simulation.py`,
+   `cascade_simulation_results.json`) — existing data, no new participants needed
 2. TRIAD protocol user study (20 participants, 30 days, vs. control) — medium resources
 3. Seven-operations coding study (50 transformation narratives, inter-rater reliability) — 2 coders
 

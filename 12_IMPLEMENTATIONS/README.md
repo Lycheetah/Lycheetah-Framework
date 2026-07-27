@@ -28,7 +28,7 @@ applications/               — Specific applications of the framework.
   cascade_resonance_engine.py       — HARMONIA resonance implementation
 
 experiments/                — Real-world domain validation.
-  cascade_real_experiments.py       — Multi-domain experimental runner
+  cascade_simulation_experiments.py       — Multi-domain experimental runner
   domain_quantum_physics.py         — Physics domain implementation
   domain_germ_theory.py             — Biology/medicine domain validation
 ```

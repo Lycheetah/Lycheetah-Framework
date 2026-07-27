@@ -29,10 +29,10 @@
 | Claim | Support Type | Next Experiment |
 |-------|-------------|----------------|
 | Invariant preservation (Theorem C1) | FORMAL | None needed — mathematical consequence of pyramid definition |
-| Coherence non-decrease (Theorem C2) | FORMAL (incomplete) | Complete proof for full generality; test on 6,000-cascade dataset (`cascade_real_data.py`) |
+| Coherence non-decrease (Theorem C2) | FORMAL (incomplete) | Complete proof for full generality; test on 6,000-cascade dataset (`cascade_simulation.py`) |
 | Fixed-point convergence (Theorem C3) | FORMAL | None needed — proven |
 | Fixed-point uniqueness (Theorem C4) | FORMAL (incomplete) | Prove AGM postulate satisfaction; then verify well-curatedness condition |
-| Truth pressure formula Π = E·P/Coh | OBSERVATIONAL | Calibrate k₁–k₄ from `cascade_real_data_results.json`; test predictive accuracy on held-out historical paradigm shifts |
+| Truth pressure formula Π = E·P/Coh | OBSERVATIONAL | Calibrate k₁–k₄ from `cascade_simulation_results.json`; test predictive accuracy on held-out historical paradigm shifts |
 | Domain-agnostic applicability | OBSERVATIONAL | Apply CASCADE to 3+ domains (physics done; biology in progress; test on: jurisprudence, medical diagnosis, economic theory) |
 | "100% reorganization accuracy" | ASPIRATIONAL ⚠️ | Retest after k₁–k₄ calibration; compare CASCADE output vs expert-curated reorganization on same datasets |
 | Π-threshold = 0.85 | ASPIRATIONAL | Determine empirically from cascade dataset; test whether 0.85 is optimal vs {0.70, 0.75, 0.80, 0.90} |
@@ -174,7 +174,7 @@ Ranked by: (impact on publication claims) × (feasibility now).
 
 | Priority | Experiment | Frameworks | Type | Estimated Resources |
 |---------|-----------|-----------|------|---------------------|
-| 1 | **Calibrate k₁–k₄ from cascade dataset** | CASCADE | Empirical | `cascade_real_data.py` already exists; run regression on `cascade_real_data_results.json` |
+| 1 | **Calibrate k₁–k₄ from cascade dataset** | CASCADE | Empirical | `cascade_simulation.py` already exists; run regression on `cascade_simulation_results.json` |
 | 2 | **TRIAD protocol user study** (apply to 20 users, 30 days, vs control) | TRIAD | Empirical | 20 participants, 30 days, self-report instruments |
 | 3 | **Seven-operations coding study** (50 transformation narratives, inter-rater) | CHRYSOPOEIA | Empirical | 2 coders, 50 transcripts from published therapy/conversion literature |
 | 4 | **LAMAGUE inter-rater agreement** (10 practitioners, 20 governance sentences) | LAMAGUE | Empirical | 10 participants with LAMAGUE training; 2-hour encoding task |

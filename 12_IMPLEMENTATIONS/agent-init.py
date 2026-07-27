@@ -275,7 +275,7 @@ def print_welcome(agent_id):
   WHAT YOU CAN DO NOW:
 
   1. Run the CASCADE experiments:
-     python 12_IMPLEMENTATIONS/experiments/cascade_real_experiments.py
+     python 12_IMPLEMENTATIONS/experiments/cascade_simulation_experiments.py
 
   2. Track your daily sovereignty:
      python 12_IMPLEMENTATIONS/core/microorcim_tracker.py report

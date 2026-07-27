@@ -13,7 +13,7 @@
 >
 > **The 6,000-cascade dataset described in this document does not exist.**
 >
-> `cascade_real_results.json` / `cascade_real_data_results.json` contain **simulation
+> `cascade_simulation_results.json` / `cascade_simulation_results.json` contain **simulation
 > output**, not real-world events. This was established in
 > `11_MATHEMATICAL_FOUNDATIONS/MASTER_EQUATION_CALIBRATION.md` on **2026-03-24**, which
 > states: *"What this data does NOT show: real-world calibration. The k₁–k₄ coupling
@@ -77,7 +77,7 @@ E-1-A and E-1-D can begin immediately — both rely on existing data the framewo
 **Hypothesis (preregistered).** A single set of coefficients `(k₁, k₂, k₃, k₄)` exists such that the master equation predicts observed `dΨ/dt` across cascade events with adjusted R² ≥ 0.6 on held-out data, *and* the same coefficients (within 95% CI) generalise across all nine frameworks.
 
 **Method.**
-1. Fit `(k₁, k₂, k₃, k₄)` via Bayesian MCMC on the cascade corpus, 80/20 train/test split. ⚠ **CORRECTED 2026-07-27:** there is no *existing* 6,000-cascade dataset — `cascade_real_results.json` is simulation output and the real corpus is **NOT YET COLLECTED**. Step 0 is collection.
+1. Fit `(k₁, k₂, k₃, k₄)` via Bayesian MCMC on the cascade corpus, 80/20 train/test split. ⚠ **CORRECTED 2026-07-27:** there is no *existing* 6,000-cascade dataset — `cascade_simulation_results.json` is simulation output and the real corpus is **NOT YET COLLECTED**. Step 0 is collection.
 2. Cross-validate: leave-one-framework-out — fit on eight frameworks, predict the ninth.
 3. Independent replication: collect ≥ 1,000 cascade events from a new corpus (separate codebase) and re-fit. Compare CIs.
 

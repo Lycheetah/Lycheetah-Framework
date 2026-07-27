@@ -6,7 +6,7 @@ Claim-status tags on tests:
   @pytest.mark.scaffold  — tests for [SCAFFOLD] claims (structure sound, parameters open)
   @pytest.mark.conjecture — tests for [CONJECTURE] claims (exploratory)
 
-All tests use canonical data derived from cascade_real_results.json where applicable.
+All tests use canonical data derived from cascade_simulation_results.json where applicable.
 """
 
 import sys

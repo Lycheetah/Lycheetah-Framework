@@ -22,7 +22,7 @@ Status tags:
 | # | Claim | Status | Evidence Pointer |
 |---|-------|--------|-----------------|
 | C1.1 | Truth pressure formula: Π = E·P/S | ACTIVE | Mechanism mathematically sound |
-| C1.2 | Demotion accuracy depends on k₁–k₄ calibration | SCAFFOLD | 6000 cascade dataset pending (`cascade_real_results.json`) |
+| C1.2 | Demotion accuracy depends on k₁–k₄ calibration | SCAFFOLD | 6000 cascade dataset pending (`cascade_simulation_results.json`) |
 | C1.3 | Invariant preservation under all contradiction scenarios | SCAFFOLD | Theoretically guaranteed; empirical validation pending |
 | C1.4 | "100% accuracy on reorganization tasks" | **CONJECTURE** ⚠️ | Contradicted by SCAFFOLD k₁–k₄ status — see Contradictions §1 |
 | C1.5 | Domain-agnostic applicability | ACTIVE | Demonstrated on physics + biology retrospective cases |

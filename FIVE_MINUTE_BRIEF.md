@@ -74,7 +74,7 @@ Short version:
 git clone https://github.com/Lycheetah/Lycheetah-Framework.git
 pip install -e .
 pytest                        # 219 tests across 18 core implementations
-python cascade_real_data.py   # real-data paradigm-shift experiment
+python cascade_simulation.py   # real-data paradigm-shift experiment
 ```
 
 Falsifiability conditions for every claim are in `28_DEFENSE/FALSIFICATION_REGISTER.md`. The framework explicitly states what would prove each claim false. Five objections in `28_DEFENSE/COUNTER_CODEX.md` are ones the framework cannot yet answer. They are published anyway.

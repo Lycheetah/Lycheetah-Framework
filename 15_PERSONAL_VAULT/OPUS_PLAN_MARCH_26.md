@@ -35,7 +35,7 @@ All three are achievable this week.
 - Measure coherence improvement
 - If +40.3% holds → publish the data and results
 - If it doesn't hold → Failure Museum exhibit + honest revised number
-- Script: `11_MATHEMATICAL_FOUNDATIONS/cascade_real_data.py`
+- Script: `11_MATHEMATICAL_FOUNDATIONS/cascade_simulation.py`
 - Estimated tokens: moderate (Sonnet can handle)
 
 **B. Competitive Benchmark**
@@ -96,7 +96,7 @@ All three are achievable this week.
 
 If tokens allow, Sonnet should:
 
-1. Write `cascade_real_data.py` — script that downloads Wikipedia abstracts
+1. Write `cascade_simulation.py` — script that downloads Wikipedia abstracts
    and runs CASCADE on them, measuring coherence delta
 2. Write `CONTRIBUTING.md` — clear, welcoming, honest
 3. Start benchmark framework — at minimum the test text corpus

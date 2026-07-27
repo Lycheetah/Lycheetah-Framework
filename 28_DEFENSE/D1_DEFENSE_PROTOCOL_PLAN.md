@@ -226,7 +226,7 @@ The 14 Acts below are each mapped to which threats they close.
 4. Patch instructions and code-paths until a clean install + canonical experiment runs end-to-end.
 5. Record exact outputs in a verification log so future runs can be diffed.
 
-**Acceptance:** Anyone can `git clone && pip install -e . && pytest && python cascade_real_data.py` and get a known-good output. The verification log proves it.
+**Acceptance:** Anyone can `git clone && pip install -e . && pytest && python cascade_simulation.py` and get a known-good output. The verification log proves it.
 
 **Scope:** Multi-hour run + iterative patches.
 

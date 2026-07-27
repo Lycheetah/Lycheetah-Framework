@@ -42,7 +42,7 @@ import os
 # ─── Import CASCADE core ─────────────────────────────────────────────────────
 
 sys.path.insert(0, os.path.dirname(__file__))
-from cascade_real_experiments import Block, Pyramid, cascade_add
+from cascade_simulation_experiments import Block, Pyramid, cascade_add
 
 
 # =============================================================================

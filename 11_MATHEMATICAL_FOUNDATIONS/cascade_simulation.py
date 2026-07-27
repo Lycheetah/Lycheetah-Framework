@@ -12,7 +12,7 @@ with new-paradigm blocks (high evidence, low uncertainty).
 The engine should reorganise toward the stronger paradigm.
 
 Run:
-    py 11_MATHEMATICAL_FOUNDATIONS/cascade_real_data.py
+    py 11_MATHEMATICAL_FOUNDATIONS/cascade_simulation.py
 
 Requirements: numpy (installed), internet optional (fallback datasets included)
 """
@@ -322,11 +322,11 @@ def run_experiment():
         "per_domain": all_results,
     }
 
-    out_path = os.path.join(os.path.dirname(__file__), "cascade_real_data_results.json")
+    out_path = os.path.join(os.path.dirname(__file__), "cascade_simulation_results.json")
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
-    print(f"\n  Results saved: cascade_real_data_results.json")
+    print(f"\n  Results saved: cascade_simulation_results.json")
     print("=" * 65)
 
 

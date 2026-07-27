@@ -89,7 +89,7 @@ issue, please open an issue.
 
 | ID | Implementation | Framework | Claims Validated | Status |
 |----|---------------|-----------|-----------------|--------|
-| I-01 | `cascade_real_data.py` | CASCADE | Π formula, k₁–k₄ scaffold | Runnable (needs calibration) |
+| I-01 | `cascade_simulation.py` | CASCADE | Π formula, k₁–k₄ scaffold | Runnable (needs calibration) |
 | I-02 | `cascade_validator.py` | CASCADE | Theorem C1 (invariant preservation) | Runnable |
 | I-03 | `aura_compliance_checker.py` | AURA | I₁–I₇ compliance logic | Runnable |
 | I-04 | `lamague_tier1_encoder.py` | LAMAGUE | Tier 1 predicate encoding | Runnable |
@@ -112,9 +112,9 @@ issue, please open an issue.
 
 ---
 
-### I-01: `cascade_real_data.py`
+### I-01: `cascade_simulation.py`
 
-**Location:** `CODEX_AURA_PRIME/12_IMPLEMENTATIONS/01_CASCADE_L4/cascade_real_data.py`
+**Location:** `CODEX_AURA_PRIME/12_IMPLEMENTATIONS/01_CASCADE_L4/cascade_simulation.py`
 
 **Framework:** CASCADE
 
@@ -129,7 +129,7 @@ pip install numpy scipy pandas matplotlib
 
 **Run:**
 ```bash
-python cascade_real_data.py --data cascade_real_data_results.json --mode calibrate
+python cascade_simulation.py --data cascade_simulation_results.json --mode calibrate
 ```
 
 **Expected output:**
@@ -141,7 +141,7 @@ Running regression on k₁-k₄...
 Results written to cascade_calibration_output.json
 ```
 
-**Known issues:** k₁–k₄ calibration requires `cascade_real_data_results.json`
+**Known issues:** k₁–k₄ calibration requires `cascade_simulation_results.json`
 to be populated with sufficient historical paradigm shift data. If the JSON is
 empty or insufficient, the script will report SCAFFOLD status and request more data.
 
@@ -546,7 +546,7 @@ k₂=0.300 (TRIAD — restoring force)
 k₃=0.200 (AURA — invariant penalty)
 k₄=0.400 (EARNED LIGHT — energy)
 [WARNING] These are placeholder values — not calibrated from data
-[WARNING] Results are qualitative only until k₁-k₄ calibration (see cascade_real_data.py)
+[WARNING] Results are qualitative only until k₁-k₄ calibration (see cascade_simulation.py)
 Simulating 50 time steps...
 Ψ converges to vicinity of Ψ_inv=0.618 by t≈35 (with placeholder k values)
 Plot saved: master_equation_trajectory.png
