@@ -1,0 +1,7 @@
+packet U;
+observability WHITE_BOX;
+observe a key="u" value=1 unit="J";
+calculate b key="u" value=1 unit="J/K";
+preserve a;
+preserve b;
+analyze;

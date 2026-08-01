@@ -1,0 +1,5 @@
+packet D;
+observability WHITE_BOX;
+observe a key="x" value=1;
+declare a key="x" value=2;
+analyze;

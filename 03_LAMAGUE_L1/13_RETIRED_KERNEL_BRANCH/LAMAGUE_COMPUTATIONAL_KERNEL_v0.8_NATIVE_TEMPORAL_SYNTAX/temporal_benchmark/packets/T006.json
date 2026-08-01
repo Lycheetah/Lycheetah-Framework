@@ -1,0 +1,76 @@
+{
+  "packet_id": "BLACK-BOX-MIMIC",
+  "observability_class": "BLACK_BOX",
+  "evidence": [],
+  "unknowns": [
+    {
+      "key": "hidden_objective",
+      "expected_type": "Objective",
+      "protected": true
+    }
+  ],
+  "conflicts": [],
+  "intents": [
+    {
+      "timestamp": 1,
+      "key": "visible_policy",
+      "value": 1,
+      "scale": 1
+    },
+    {
+      "timestamp": 2,
+      "key": "visible_policy",
+      "value": 1,
+      "scale": 1
+    },
+    {
+      "timestamp": 3,
+      "key": "visible_policy",
+      "value": 1,
+      "scale": 1
+    }
+  ],
+  "actions": [
+    {
+      "timestamp": 1,
+      "key": "visible_policy",
+      "value": 1
+    },
+    {
+      "timestamp": 2,
+      "key": "visible_policy",
+      "value": 1
+    },
+    {
+      "timestamp": 3,
+      "key": "visible_policy",
+      "value": 1
+    }
+  ],
+  "invariants": [
+    {
+      "timestamp": 1,
+      "name": "visible_policy",
+      "preserved": true
+    },
+    {
+      "timestamp": 2,
+      "name": "visible_policy",
+      "preserved": true
+    },
+    {
+      "timestamp": 3,
+      "name": "visible_policy",
+      "preserved": true
+    }
+  ],
+  "boundary": {
+    "discrepancy_threshold": 0.3,
+    "critical_threshold": 0.7,
+    "recovery_horizon": 2,
+    "minimum_invariant_preservation": 0.95
+  },
+  "blocked_operations": [
+    "hidden_alignment_claim"
+  ]
+}

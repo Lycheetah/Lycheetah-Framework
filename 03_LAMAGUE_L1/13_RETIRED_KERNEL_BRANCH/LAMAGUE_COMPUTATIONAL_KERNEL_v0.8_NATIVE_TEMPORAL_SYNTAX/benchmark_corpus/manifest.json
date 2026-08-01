@@ -1,0 +1,1030 @@
+{
+  "benchmark": "LAMAGUE Semantic Integrity Benchmark",
+  "version": "0.6.0",
+  "corpus_type": "synthetic deterministic harness corpus",
+  "references": [
+    "references/001_AI_RELEASE.json",
+    "references/002_SCIENCE_SUMMARY.json",
+    "references/003_POLICY_CONSULT.json",
+    "references/004_CONTRACT_CHANGE.json",
+    "references/005_RESOURCE_ALLOC.json",
+    "references/006_MODEL_MIGRATION.json",
+    "references/007_INCIDENT_RESPONSE.json",
+    "references/008_CARE_ABSTRACT.json",
+    "references/009_CONTENT_MOD.json",
+    "references/010_ENVIRONMENT.json",
+    "references/011_HIRING.json",
+    "references/012_EDUCATION.json",
+    "references/013_DATA_SHARING.json",
+    "references/014_AGENT_PLAN.json",
+    "references/015_FINANCE_ABSTRACT.json",
+    "references/016_LEGAL_SUMMARY.json",
+    "references/017_SUPPLY_CHAIN.json",
+    "references/018_SECURITY_PATCH.json",
+    "references/019_COMMUNITY_GRANT.json",
+    "references/020_IDENTITY_UPDATE.json"
+  ],
+  "candidates": [
+    {
+      "reference": "references/001_AI_RELEASE.json",
+      "candidate": "candidates/001_AI_RELEASE__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/001_AI_RELEASE.json",
+      "candidate": "candidates/001_AI_RELEASE__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/001_AI_RELEASE.json",
+      "candidate": "candidates/001_AI_RELEASE__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/001_AI_RELEASE.json",
+      "candidate": "candidates/001_AI_RELEASE__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/001_AI_RELEASE.json",
+      "candidate": "candidates/001_AI_RELEASE__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/001_AI_RELEASE.json",
+      "candidate": "candidates/001_AI_RELEASE__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/001_AI_RELEASE.json",
+      "candidate": "candidates/001_AI_RELEASE__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/001_AI_RELEASE.json",
+      "candidate": "candidates/001_AI_RELEASE__value_hidden.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/001_AI_RELEASE.json",
+      "candidate": "candidates/001_AI_RELEASE__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/001_AI_RELEASE.json",
+      "candidate": "candidates/001_AI_RELEASE__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/002_SCIENCE_SUMMARY.json",
+      "candidate": "candidates/002_SCIENCE_SUMMARY__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/002_SCIENCE_SUMMARY.json",
+      "candidate": "candidates/002_SCIENCE_SUMMARY__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/002_SCIENCE_SUMMARY.json",
+      "candidate": "candidates/002_SCIENCE_SUMMARY__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/002_SCIENCE_SUMMARY.json",
+      "candidate": "candidates/002_SCIENCE_SUMMARY__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/002_SCIENCE_SUMMARY.json",
+      "candidate": "candidates/002_SCIENCE_SUMMARY__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/002_SCIENCE_SUMMARY.json",
+      "candidate": "candidates/002_SCIENCE_SUMMARY__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/002_SCIENCE_SUMMARY.json",
+      "candidate": "candidates/002_SCIENCE_SUMMARY__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/002_SCIENCE_SUMMARY.json",
+      "candidate": "candidates/002_SCIENCE_SUMMARY__recovery_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/002_SCIENCE_SUMMARY.json",
+      "candidate": "candidates/002_SCIENCE_SUMMARY__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/002_SCIENCE_SUMMARY.json",
+      "candidate": "candidates/002_SCIENCE_SUMMARY__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/003_POLICY_CONSULT.json",
+      "candidate": "candidates/003_POLICY_CONSULT__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/003_POLICY_CONSULT.json",
+      "candidate": "candidates/003_POLICY_CONSULT__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/003_POLICY_CONSULT.json",
+      "candidate": "candidates/003_POLICY_CONSULT__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/003_POLICY_CONSULT.json",
+      "candidate": "candidates/003_POLICY_CONSULT__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/003_POLICY_CONSULT.json",
+      "candidate": "candidates/003_POLICY_CONSULT__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/003_POLICY_CONSULT.json",
+      "candidate": "candidates/003_POLICY_CONSULT__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/003_POLICY_CONSULT.json",
+      "candidate": "candidates/003_POLICY_CONSULT__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/003_POLICY_CONSULT.json",
+      "candidate": "candidates/003_POLICY_CONSULT__value_hidden.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/003_POLICY_CONSULT.json",
+      "candidate": "candidates/003_POLICY_CONSULT__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/003_POLICY_CONSULT.json",
+      "candidate": "candidates/003_POLICY_CONSULT__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/004_CONTRACT_CHANGE.json",
+      "candidate": "candidates/004_CONTRACT_CHANGE__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/004_CONTRACT_CHANGE.json",
+      "candidate": "candidates/004_CONTRACT_CHANGE__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/004_CONTRACT_CHANGE.json",
+      "candidate": "candidates/004_CONTRACT_CHANGE__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/004_CONTRACT_CHANGE.json",
+      "candidate": "candidates/004_CONTRACT_CHANGE__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/004_CONTRACT_CHANGE.json",
+      "candidate": "candidates/004_CONTRACT_CHANGE__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/004_CONTRACT_CHANGE.json",
+      "candidate": "candidates/004_CONTRACT_CHANGE__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/004_CONTRACT_CHANGE.json",
+      "candidate": "candidates/004_CONTRACT_CHANGE__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/004_CONTRACT_CHANGE.json",
+      "candidate": "candidates/004_CONTRACT_CHANGE__value_hidden.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/004_CONTRACT_CHANGE.json",
+      "candidate": "candidates/004_CONTRACT_CHANGE__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/004_CONTRACT_CHANGE.json",
+      "candidate": "candidates/004_CONTRACT_CHANGE__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/005_RESOURCE_ALLOC.json",
+      "candidate": "candidates/005_RESOURCE_ALLOC__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/005_RESOURCE_ALLOC.json",
+      "candidate": "candidates/005_RESOURCE_ALLOC__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/005_RESOURCE_ALLOC.json",
+      "candidate": "candidates/005_RESOURCE_ALLOC__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/005_RESOURCE_ALLOC.json",
+      "candidate": "candidates/005_RESOURCE_ALLOC__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/005_RESOURCE_ALLOC.json",
+      "candidate": "candidates/005_RESOURCE_ALLOC__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/005_RESOURCE_ALLOC.json",
+      "candidate": "candidates/005_RESOURCE_ALLOC__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/005_RESOURCE_ALLOC.json",
+      "candidate": "candidates/005_RESOURCE_ALLOC__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/005_RESOURCE_ALLOC.json",
+      "candidate": "candidates/005_RESOURCE_ALLOC__value_hidden.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/005_RESOURCE_ALLOC.json",
+      "candidate": "candidates/005_RESOURCE_ALLOC__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/005_RESOURCE_ALLOC.json",
+      "candidate": "candidates/005_RESOURCE_ALLOC__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/006_MODEL_MIGRATION.json",
+      "candidate": "candidates/006_MODEL_MIGRATION__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/006_MODEL_MIGRATION.json",
+      "candidate": "candidates/006_MODEL_MIGRATION__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/006_MODEL_MIGRATION.json",
+      "candidate": "candidates/006_MODEL_MIGRATION__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/006_MODEL_MIGRATION.json",
+      "candidate": "candidates/006_MODEL_MIGRATION__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/006_MODEL_MIGRATION.json",
+      "candidate": "candidates/006_MODEL_MIGRATION__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/006_MODEL_MIGRATION.json",
+      "candidate": "candidates/006_MODEL_MIGRATION__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/006_MODEL_MIGRATION.json",
+      "candidate": "candidates/006_MODEL_MIGRATION__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/006_MODEL_MIGRATION.json",
+      "candidate": "candidates/006_MODEL_MIGRATION__recovery_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/006_MODEL_MIGRATION.json",
+      "candidate": "candidates/006_MODEL_MIGRATION__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/006_MODEL_MIGRATION.json",
+      "candidate": "candidates/006_MODEL_MIGRATION__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/007_INCIDENT_RESPONSE.json",
+      "candidate": "candidates/007_INCIDENT_RESPONSE__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/007_INCIDENT_RESPONSE.json",
+      "candidate": "candidates/007_INCIDENT_RESPONSE__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/007_INCIDENT_RESPONSE.json",
+      "candidate": "candidates/007_INCIDENT_RESPONSE__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/007_INCIDENT_RESPONSE.json",
+      "candidate": "candidates/007_INCIDENT_RESPONSE__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/007_INCIDENT_RESPONSE.json",
+      "candidate": "candidates/007_INCIDENT_RESPONSE__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/007_INCIDENT_RESPONSE.json",
+      "candidate": "candidates/007_INCIDENT_RESPONSE__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/007_INCIDENT_RESPONSE.json",
+      "candidate": "candidates/007_INCIDENT_RESPONSE__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/007_INCIDENT_RESPONSE.json",
+      "candidate": "candidates/007_INCIDENT_RESPONSE__value_hidden.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/007_INCIDENT_RESPONSE.json",
+      "candidate": "candidates/007_INCIDENT_RESPONSE__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/007_INCIDENT_RESPONSE.json",
+      "candidate": "candidates/007_INCIDENT_RESPONSE__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/008_CARE_ABSTRACT.json",
+      "candidate": "candidates/008_CARE_ABSTRACT__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/008_CARE_ABSTRACT.json",
+      "candidate": "candidates/008_CARE_ABSTRACT__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/008_CARE_ABSTRACT.json",
+      "candidate": "candidates/008_CARE_ABSTRACT__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/008_CARE_ABSTRACT.json",
+      "candidate": "candidates/008_CARE_ABSTRACT__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/008_CARE_ABSTRACT.json",
+      "candidate": "candidates/008_CARE_ABSTRACT__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/008_CARE_ABSTRACT.json",
+      "candidate": "candidates/008_CARE_ABSTRACT__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/008_CARE_ABSTRACT.json",
+      "candidate": "candidates/008_CARE_ABSTRACT__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/008_CARE_ABSTRACT.json",
+      "candidate": "candidates/008_CARE_ABSTRACT__recovery_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/008_CARE_ABSTRACT.json",
+      "candidate": "candidates/008_CARE_ABSTRACT__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/008_CARE_ABSTRACT.json",
+      "candidate": "candidates/008_CARE_ABSTRACT__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/009_CONTENT_MOD.json",
+      "candidate": "candidates/009_CONTENT_MOD__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/009_CONTENT_MOD.json",
+      "candidate": "candidates/009_CONTENT_MOD__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/009_CONTENT_MOD.json",
+      "candidate": "candidates/009_CONTENT_MOD__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/009_CONTENT_MOD.json",
+      "candidate": "candidates/009_CONTENT_MOD__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/009_CONTENT_MOD.json",
+      "candidate": "candidates/009_CONTENT_MOD__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/009_CONTENT_MOD.json",
+      "candidate": "candidates/009_CONTENT_MOD__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/009_CONTENT_MOD.json",
+      "candidate": "candidates/009_CONTENT_MOD__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/009_CONTENT_MOD.json",
+      "candidate": "candidates/009_CONTENT_MOD__recovery_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/009_CONTENT_MOD.json",
+      "candidate": "candidates/009_CONTENT_MOD__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/009_CONTENT_MOD.json",
+      "candidate": "candidates/009_CONTENT_MOD__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/010_ENVIRONMENT.json",
+      "candidate": "candidates/010_ENVIRONMENT__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/010_ENVIRONMENT.json",
+      "candidate": "candidates/010_ENVIRONMENT__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/010_ENVIRONMENT.json",
+      "candidate": "candidates/010_ENVIRONMENT__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/010_ENVIRONMENT.json",
+      "candidate": "candidates/010_ENVIRONMENT__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/010_ENVIRONMENT.json",
+      "candidate": "candidates/010_ENVIRONMENT__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/010_ENVIRONMENT.json",
+      "candidate": "candidates/010_ENVIRONMENT__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/010_ENVIRONMENT.json",
+      "candidate": "candidates/010_ENVIRONMENT__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/010_ENVIRONMENT.json",
+      "candidate": "candidates/010_ENVIRONMENT__value_hidden.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/010_ENVIRONMENT.json",
+      "candidate": "candidates/010_ENVIRONMENT__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/010_ENVIRONMENT.json",
+      "candidate": "candidates/010_ENVIRONMENT__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/011_HIRING.json",
+      "candidate": "candidates/011_HIRING__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/011_HIRING.json",
+      "candidate": "candidates/011_HIRING__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/011_HIRING.json",
+      "candidate": "candidates/011_HIRING__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/011_HIRING.json",
+      "candidate": "candidates/011_HIRING__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/011_HIRING.json",
+      "candidate": "candidates/011_HIRING__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/011_HIRING.json",
+      "candidate": "candidates/011_HIRING__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/011_HIRING.json",
+      "candidate": "candidates/011_HIRING__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/011_HIRING.json",
+      "candidate": "candidates/011_HIRING__recovery_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/011_HIRING.json",
+      "candidate": "candidates/011_HIRING__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/011_HIRING.json",
+      "candidate": "candidates/011_HIRING__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/012_EDUCATION.json",
+      "candidate": "candidates/012_EDUCATION__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/012_EDUCATION.json",
+      "candidate": "candidates/012_EDUCATION__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/012_EDUCATION.json",
+      "candidate": "candidates/012_EDUCATION__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/012_EDUCATION.json",
+      "candidate": "candidates/012_EDUCATION__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/012_EDUCATION.json",
+      "candidate": "candidates/012_EDUCATION__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/012_EDUCATION.json",
+      "candidate": "candidates/012_EDUCATION__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/012_EDUCATION.json",
+      "candidate": "candidates/012_EDUCATION__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/012_EDUCATION.json",
+      "candidate": "candidates/012_EDUCATION__recovery_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/012_EDUCATION.json",
+      "candidate": "candidates/012_EDUCATION__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/012_EDUCATION.json",
+      "candidate": "candidates/012_EDUCATION__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/013_DATA_SHARING.json",
+      "candidate": "candidates/013_DATA_SHARING__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/013_DATA_SHARING.json",
+      "candidate": "candidates/013_DATA_SHARING__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/013_DATA_SHARING.json",
+      "candidate": "candidates/013_DATA_SHARING__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/013_DATA_SHARING.json",
+      "candidate": "candidates/013_DATA_SHARING__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/013_DATA_SHARING.json",
+      "candidate": "candidates/013_DATA_SHARING__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/013_DATA_SHARING.json",
+      "candidate": "candidates/013_DATA_SHARING__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/013_DATA_SHARING.json",
+      "candidate": "candidates/013_DATA_SHARING__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/013_DATA_SHARING.json",
+      "candidate": "candidates/013_DATA_SHARING__value_hidden.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/013_DATA_SHARING.json",
+      "candidate": "candidates/013_DATA_SHARING__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/013_DATA_SHARING.json",
+      "candidate": "candidates/013_DATA_SHARING__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/014_AGENT_PLAN.json",
+      "candidate": "candidates/014_AGENT_PLAN__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/014_AGENT_PLAN.json",
+      "candidate": "candidates/014_AGENT_PLAN__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/014_AGENT_PLAN.json",
+      "candidate": "candidates/014_AGENT_PLAN__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/014_AGENT_PLAN.json",
+      "candidate": "candidates/014_AGENT_PLAN__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/014_AGENT_PLAN.json",
+      "candidate": "candidates/014_AGENT_PLAN__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/014_AGENT_PLAN.json",
+      "candidate": "candidates/014_AGENT_PLAN__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/014_AGENT_PLAN.json",
+      "candidate": "candidates/014_AGENT_PLAN__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/014_AGENT_PLAN.json",
+      "candidate": "candidates/014_AGENT_PLAN__value_hidden.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/014_AGENT_PLAN.json",
+      "candidate": "candidates/014_AGENT_PLAN__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/014_AGENT_PLAN.json",
+      "candidate": "candidates/014_AGENT_PLAN__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/015_FINANCE_ABSTRACT.json",
+      "candidate": "candidates/015_FINANCE_ABSTRACT__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/015_FINANCE_ABSTRACT.json",
+      "candidate": "candidates/015_FINANCE_ABSTRACT__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/015_FINANCE_ABSTRACT.json",
+      "candidate": "candidates/015_FINANCE_ABSTRACT__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/015_FINANCE_ABSTRACT.json",
+      "candidate": "candidates/015_FINANCE_ABSTRACT__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/015_FINANCE_ABSTRACT.json",
+      "candidate": "candidates/015_FINANCE_ABSTRACT__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/015_FINANCE_ABSTRACT.json",
+      "candidate": "candidates/015_FINANCE_ABSTRACT__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/015_FINANCE_ABSTRACT.json",
+      "candidate": "candidates/015_FINANCE_ABSTRACT__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/015_FINANCE_ABSTRACT.json",
+      "candidate": "candidates/015_FINANCE_ABSTRACT__value_hidden.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/015_FINANCE_ABSTRACT.json",
+      "candidate": "candidates/015_FINANCE_ABSTRACT__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/015_FINANCE_ABSTRACT.json",
+      "candidate": "candidates/015_FINANCE_ABSTRACT__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/016_LEGAL_SUMMARY.json",
+      "candidate": "candidates/016_LEGAL_SUMMARY__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/016_LEGAL_SUMMARY.json",
+      "candidate": "candidates/016_LEGAL_SUMMARY__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/016_LEGAL_SUMMARY.json",
+      "candidate": "candidates/016_LEGAL_SUMMARY__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/016_LEGAL_SUMMARY.json",
+      "candidate": "candidates/016_LEGAL_SUMMARY__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/016_LEGAL_SUMMARY.json",
+      "candidate": "candidates/016_LEGAL_SUMMARY__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/016_LEGAL_SUMMARY.json",
+      "candidate": "candidates/016_LEGAL_SUMMARY__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/016_LEGAL_SUMMARY.json",
+      "candidate": "candidates/016_LEGAL_SUMMARY__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/016_LEGAL_SUMMARY.json",
+      "candidate": "candidates/016_LEGAL_SUMMARY__recovery_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/016_LEGAL_SUMMARY.json",
+      "candidate": "candidates/016_LEGAL_SUMMARY__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/016_LEGAL_SUMMARY.json",
+      "candidate": "candidates/016_LEGAL_SUMMARY__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/017_SUPPLY_CHAIN.json",
+      "candidate": "candidates/017_SUPPLY_CHAIN__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/017_SUPPLY_CHAIN.json",
+      "candidate": "candidates/017_SUPPLY_CHAIN__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/017_SUPPLY_CHAIN.json",
+      "candidate": "candidates/017_SUPPLY_CHAIN__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/017_SUPPLY_CHAIN.json",
+      "candidate": "candidates/017_SUPPLY_CHAIN__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/017_SUPPLY_CHAIN.json",
+      "candidate": "candidates/017_SUPPLY_CHAIN__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/017_SUPPLY_CHAIN.json",
+      "candidate": "candidates/017_SUPPLY_CHAIN__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/017_SUPPLY_CHAIN.json",
+      "candidate": "candidates/017_SUPPLY_CHAIN__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/017_SUPPLY_CHAIN.json",
+      "candidate": "candidates/017_SUPPLY_CHAIN__value_hidden.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/017_SUPPLY_CHAIN.json",
+      "candidate": "candidates/017_SUPPLY_CHAIN__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/017_SUPPLY_CHAIN.json",
+      "candidate": "candidates/017_SUPPLY_CHAIN__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/018_SECURITY_PATCH.json",
+      "candidate": "candidates/018_SECURITY_PATCH__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/018_SECURITY_PATCH.json",
+      "candidate": "candidates/018_SECURITY_PATCH__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/018_SECURITY_PATCH.json",
+      "candidate": "candidates/018_SECURITY_PATCH__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/018_SECURITY_PATCH.json",
+      "candidate": "candidates/018_SECURITY_PATCH__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/018_SECURITY_PATCH.json",
+      "candidate": "candidates/018_SECURITY_PATCH__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/018_SECURITY_PATCH.json",
+      "candidate": "candidates/018_SECURITY_PATCH__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/018_SECURITY_PATCH.json",
+      "candidate": "candidates/018_SECURITY_PATCH__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/018_SECURITY_PATCH.json",
+      "candidate": "candidates/018_SECURITY_PATCH__recovery_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/018_SECURITY_PATCH.json",
+      "candidate": "candidates/018_SECURITY_PATCH__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/018_SECURITY_PATCH.json",
+      "candidate": "candidates/018_SECURITY_PATCH__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/019_COMMUNITY_GRANT.json",
+      "candidate": "candidates/019_COMMUNITY_GRANT__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/019_COMMUNITY_GRANT.json",
+      "candidate": "candidates/019_COMMUNITY_GRANT__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/019_COMMUNITY_GRANT.json",
+      "candidate": "candidates/019_COMMUNITY_GRANT__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/019_COMMUNITY_GRANT.json",
+      "candidate": "candidates/019_COMMUNITY_GRANT__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/019_COMMUNITY_GRANT.json",
+      "candidate": "candidates/019_COMMUNITY_GRANT__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/019_COMMUNITY_GRANT.json",
+      "candidate": "candidates/019_COMMUNITY_GRANT__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/019_COMMUNITY_GRANT.json",
+      "candidate": "candidates/019_COMMUNITY_GRANT__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/019_COMMUNITY_GRANT.json",
+      "candidate": "candidates/019_COMMUNITY_GRANT__value_hidden.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/019_COMMUNITY_GRANT.json",
+      "candidate": "candidates/019_COMMUNITY_GRANT__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/019_COMMUNITY_GRANT.json",
+      "candidate": "candidates/019_COMMUNITY_GRANT__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    },
+    {
+      "reference": "references/020_IDENTITY_UPDATE.json",
+      "candidate": "candidates/020_IDENTITY_UPDATE__exact.json",
+      "expected_class": "EXACT_EQUIVALENT"
+    },
+    {
+      "reference": "references/020_IDENTITY_UPDATE.json",
+      "candidate": "candidates/020_IDENTITY_UPDATE__safe_paraphrase.json",
+      "expected_class": "INVARIANT_EQUIVALENT"
+    },
+    {
+      "reference": "references/020_IDENTITY_UPDATE.json",
+      "candidate": "candidates/020_IDENTITY_UPDATE__secondary_loss.json",
+      "expected_class": "PARTIAL_EQUIVALENT"
+    },
+    {
+      "reference": "references/020_IDENTITY_UPDATE.json",
+      "candidate": "candidates/020_IDENTITY_UPDATE__unknown_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/020_IDENTITY_UPDATE.json",
+      "candidate": "candidates/020_IDENTITY_UPDATE__authority_erased.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/020_IDENTITY_UPDATE.json",
+      "candidate": "candidates/020_IDENTITY_UPDATE__affected_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/020_IDENTITY_UPDATE.json",
+      "candidate": "candidates/020_IDENTITY_UPDATE__dissent_collapsed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/020_IDENTITY_UPDATE.json",
+      "candidate": "candidates/020_IDENTITY_UPDATE__recovery_removed.json",
+      "expected_class": "UNSAFE_COLLAPSE"
+    },
+    {
+      "reference": "references/020_IDENTITY_UPDATE.json",
+      "candidate": "candidates/020_IDENTITY_UPDATE__invariant_changed.json",
+      "expected_class": "DIVERGENT"
+    },
+    {
+      "reference": "references/020_IDENTITY_UPDATE.json",
+      "candidate": "candidates/020_IDENTITY_UPDATE__invalid_structure.json",
+      "expected_class": "UNDECODABLE"
+    }
+  ],
+  "notice": "These cases test the benchmark machinery. They are not human or model decoding results."
+}

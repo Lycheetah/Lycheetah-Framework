@@ -1,0 +1,1154 @@
+{
+  "title": "LAMAGUE Codex Master Update",
+  "date": "2026-07-31",
+  "file_count": 229,
+  "total_uncompressed_bytes": 9451667,
+  "missing_source_count": 0,
+  "files": [
+    {
+      "path": "01_ROOT_CORPUS/00_LAMAGUE_COMPLETE_EXTRACTION.md",
+      "bytes": 28077,
+      "sha256": "600329b1d023be75f0afc7485ed5f31bfa052bcad0bd8c004684d30a5ee92fec"
+    },
+    {
+      "path": "01_ROOT_CORPUS/01_LAMAGUE_COMPLETE.md",
+      "bytes": 25889,
+      "sha256": "4be7027ef73dd8c1d4be2c48401b523b9f5afd153f7d21a2a41ffa53446946a3"
+    },
+    {
+      "path": "01_ROOT_CORPUS/02_README_LAMAGUE.md",
+      "bytes": 15507,
+      "sha256": "76e0aaa661566caf524477e7cbd51a628b44e6b61b9ca389a111140f1c1d00fb"
+    },
+    {
+      "path": "01_ROOT_CORPUS/03_LAMAGUE_OPERATING_GUIDE.md",
+      "bytes": 10698,
+      "sha256": "edfbd0bc684aa64c6e780aa3d64581887e3af3dbe62b1186f5bc57d994c87c74"
+    },
+    {
+      "path": "01_ROOT_CORPUS/04_BNF_GRAMMAR.md",
+      "bytes": 10126,
+      "sha256": "4db5660395f9368b68d1edbd3b30bfa17200feca7b5dcdf49bb1a67d78d30194"
+    },
+    {
+      "path": "01_ROOT_CORPUS/05_NOTATION_GUIDE.md",
+      "bytes": 8298,
+      "sha256": "25b91f0df61da73ff69b11c090dc64f865f413d94786347617b1faf3b600416d"
+    },
+    {
+      "path": "01_ROOT_CORPUS/06_LAMAGUE_RAW_MATH.md",
+      "bytes": 12365,
+      "sha256": "7bfac42a5b694987cc915fe89e0cab83e55004c33b4fd066e02f75a58e05115c"
+    },
+    {
+      "path": "01_ROOT_CORPUS/07_GEOMATRIA_COMPLETE_SPECIFICATION.md",
+      "bytes": 27253,
+      "sha256": "640f014bf82b656d6feb9d41aceed4ad51777ada57cddecba2a2fb3dc21f4f2f"
+    },
+    {
+      "path": "01_ROOT_CORPUS/08_LAMAGUE_WHAKAPAPA_ENCODING.md",
+      "bytes": 8180,
+      "sha256": "21fffeeab7429217e5162b67effce6f7911df82c6d54bec3fd97dbe830a8582a"
+    },
+    {
+      "path": "01_ROOT_CORPUS/09_TRI_LINGUISTIC_DEEP_DIVE.md",
+      "bytes": 32176,
+      "sha256": "02df406e3ca5b89eca6f69d39596c14288f185375514542616462d3ab10f3f5e"
+    },
+    {
+      "path": "01_ROOT_CORPUS/10_essentials.md",
+      "bytes": 3168,
+      "sha256": "833d58ad13defc9a8c7d54399c28ff188e6331456227212ba5de548f058d47f8"
+    },
+    {
+      "path": "01_ROOT_CORPUS/14_LAMAGUE-EX_NIHILO_Generative_Protocol_v1.0.md",
+      "bytes": 9021,
+      "sha256": "081fff17289dc6629fbd655578a00836ad316b82cb6741350b5e99915d63c07c"
+    },
+    {
+      "path": "01_ROOT_CORPUS/15_LAMAGUE-COSMOS_Panpsychist_Extension_v1.0.md",
+      "bytes": 8497,
+      "sha256": "8ee43e63da65b98e8caa62bd6f549a23c1259d06dee7eb264891f93304eaea33"
+    },
+    {
+      "path": "01_ROOT_CORPUS/16_LAMAGUE-QUANTUM_Non_Commutative_Geometry_v1.0.md",
+      "bytes": 6639,
+      "sha256": "3596a9d65fcab8736d5581417b9388dfb4871577570dd133a36e53be563fd865"
+    },
+    {
+      "path": "01_ROOT_CORPUS/17_LAMAGUE-CONTINUUM_Continuous_Temporal_Field_v1.0.md",
+      "bytes": 9230,
+      "sha256": "465da369eda07dbb55542c3fee66cf655d6d3be4cbf3ca890e5b7832bf515712"
+    },
+    {
+      "path": "01_ROOT_CORPUS/18_LAMAGUE-CHORA_Collective_Ethics_v1.0.md",
+      "bytes": 8858,
+      "sha256": "828055f5bd243757859c7f9534bd66eaaef2dd794388d79f22688ed4a581fc1c"
+    },
+    {
+      "path": "01_ROOT_CORPUS/19_LAMAGUE-THANATOS_Death_Protocol_v1.0.md",
+      "bytes": 10093,
+      "sha256": "a264d7bce6e675234759cb7368c537e0effb8bdf090d1df5d1d61cd075047db9"
+    },
+    {
+      "path": "01_ROOT_CORPUS/20_LAMAGUE-PAIS_Child_Genesis_Layer_v1.0.md",
+      "bytes": 9764,
+      "sha256": "2524596415ddfc95fb228195cca93894fbd8bcfbbcbea99a6b0bfc7db09bfecc"
+    },
+    {
+      "path": "01_ROOT_CORPUS/21_LAMAGUE-SOMA_Embodiment_Layer_v1.0.md",
+      "bytes": 11437,
+      "sha256": "8fb2d6e0e755d2a1568b24d2bafa92a4f3bde9c8061b766aa4c5bc2dd7ec3ac5"
+    },
+    {
+      "path": "01_ROOT_CORPUS/LAMAGUE_FIRST_CORPUS_MASTER_SOURCE_2026-07-15.md",
+      "bytes": 243044,
+      "sha256": "f0d2eceadef2fc9e4dd3525368d67c1a23d11ce90aab0f581e2725813938c49a"
+    },
+    {
+      "path": "01_ROOT_CORPUS/LAMAGUE_ROOT_PROVENANCE_AND_CANON_DECISION_2026-07-15.md",
+      "bytes": 12318,
+      "sha256": "c3c0249654239fe7e31442e3c807dcc07810c2a394f9854859c5238e5c0848e7"
+    },
+    {
+      "path": "01_ROOT_CORPUS/LAMAGUE_ROOT_SHA256_MANIFEST_2026-07-15.txt",
+      "bytes": 851,
+      "sha256": "6252337f5af6fb46910faa076c6f6e1ae89ae8b3abf138a4e7814b23cb91d5ae"
+    },
+    {
+      "path": "01_ROOT_CORPUS/📘 PART X — LAMAGUE.docx",
+      "bytes": 26058,
+      "sha256": "97becdb68fc44f25c749eda6aa0cdb3a88c0c2b024706a0846ca3b59ad356315"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_36_ALPHABET_FORGE_CANON_DRAFT_v0.1.docx",
+      "bytes": 55138,
+      "sha256": "db8538c6a0521cbc29f601aeb844bf8ba5fd7beebdd426e252db4153b8854e14"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_36_ALPHABET_FORGE_CANON_DRAFT_v0.1.md",
+      "bytes": 33157,
+      "sha256": "637b71c4d87f66c1965390dc3b7d94af49a800733f33224920078a11ef407a97"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_NATIVE36_GLYPH_SHEET_v0.1.png",
+      "bytes": 106597,
+      "sha256": "4d20e2f2fc15289a815ef680183d83327a0733d48d96c770ca7977e5d87277f3"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_NATIVE36_GLYPH_SHEET_v0.1.svg",
+      "bytes": 18868,
+      "sha256": "84d47e775acb449ec2c21aedaf8f29d5976e40ed37f4b25f6da37eaf3280171f"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_NATIVE36_INTERACTIVE_PROTOTYPE_v0.1.html",
+      "bytes": 49520,
+      "sha256": "f8a4a4110ca7af11023bcbd29755afbb19e9120deb044def769d2a74a1d798ec"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_NATIVE36_PROTOTYPE_NOTES_v0.1.md",
+      "bytes": 1841,
+      "sha256": "f5e7cba86f60627316be7000319e4d71e70be6b9a96380e8d046a47f90cf3eec"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_NATIVE36_REGISTRY_v0.1.json",
+      "bytes": 33955,
+      "sha256": "c9e9da2211b48fb38153028f971cfffbc9cfb2228d3f9564e1e14908d61838b9"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_NATIVE36_v0.2_FORGE_NOTES.md",
+      "bytes": 2047,
+      "sha256": "ed56d67abe3f261c52ce750c2adb0b316e99726ef6d7bff832ec465b854f3992"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_NATIVE36_v0.2_FULL_GLYPH_AND_SEAL_SHEET.png",
+      "bytes": 407122,
+      "sha256": "2b72d787112cf608a3a59d734c13a99277ce65a92af3dfbb3cde72a5cda71fcf"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_NATIVE36_v0.2_FULL_GLYPH_AND_SEAL_SHEET.svg",
+      "bytes": 28968,
+      "sha256": "b8fa72ee1b87768bddcc305d5a6461776668ce9ff4d4a8a7ce7a27c1510485f9"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_NATIVE36_v0.2_INTERACTIVE_FORGE.html",
+      "bytes": 40522,
+      "sha256": "60905854242c11e6e2b2600f1ecf2c2de46e0fa67fdcc47ab6affd1ba1fd7ae9"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_NATIVE36_v0.2_REGISTRY.json",
+      "bytes": 30033,
+      "sha256": "1bc96b2a31774b5e5dfbb3e41bd0efd3a431aa8e46dafaa1a3e35163458b641a"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_NATIVE36_v0.2_X_POST_ASSET.png",
+      "bytes": 183982,
+      "sha256": "dc9f29609f91df82db23313667b813d0e616f7f3887c22bbd6ed72b2bb9e8b66"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_NATIVE36_v0.2_X_POST_ASSET.svg",
+      "bytes": 23980,
+      "sha256": "2b74d81c0fd2feb26c5ca65ea066536ce0eb99c0608180ba4597b62dde616e6b"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_NATIVE36_v0.3_ASCII_GRAMMAR.ebnf",
+      "bytes": 2382,
+      "sha256": "f74057cef1d21e0595098eaf3bbf1063bfb0bd80d023afec0244338fa47c0407"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_NATIVE36_v0.3_MACHINE_CANON_REGISTRY.json",
+      "bytes": 65819,
+      "sha256": "1d6a78b3baa3e087aadf59199f0d01fea9d97275a4f84754c63e8f606d864139"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_NATIVE36_v0.3_MACHINE_CANON_REGISTRY.yaml",
+      "bytes": 24318,
+      "sha256": "0df17ee9ee636b93ed3c297b439fdd0977e20d75bc250d8ace1d051a07b71986"
+    },
+    {
+      "path": "02_NATIVE36/LAMAGUE_NATIVE36_v0.3_MACHINE_SEMANTICS_FORGE.md",
+      "bytes": 1696,
+      "sha256": "5c9f811ce1f69110ea4bcba0c322522f387fcaf18a917d59fc4f64ba76405785"
+    },
+    {
+      "path": "02_NATIVE36/validate_lamague_native36_v0.3.py",
+      "bytes": 2548,
+      "sha256": "50535442ab83b64c8d302b4276f27458b97b8e9d2654f2cdda65e6d3c61e2577"
+    },
+    {
+      "path": "03_LAMAGUE_1C/LAMAGUE_1C_v1_INTERACTIVE_ONE_CELL_LANGUAGE.html",
+      "bytes": 55622,
+      "sha256": "7157ec078f8caae755a637e5c72e927c027d54d0f6edb5cdf600e7dbdc1adbd8"
+    },
+    {
+      "path": "03_LAMAGUE_1C/LAMAGUE_1C_v1_ONE_CELL_POWER_LANGUAGE.png",
+      "bytes": 181417,
+      "sha256": "13f3b9441445f8ed8963831c16b0c70ca705367762ba1814288845bbd0e8e7ec"
+    },
+    {
+      "path": "03_LAMAGUE_1C/LAMAGUE_1C_v1_ONE_CELL_POWER_LANGUAGE.svg",
+      "bytes": 26822,
+      "sha256": "d9c1ce46bb8a68102a8a05fef839d5057f784834dce87303daba4a9623078df3"
+    },
+    {
+      "path": "03_LAMAGUE_1C/LAMAGUE_1C_v1_ONE_CELL_POWER_LANGUAGE_SPEC.md",
+      "bytes": 2896,
+      "sha256": "3324989228dc427924847e8fe33629e71b6f70de22769d6bfdf67b50021dc90b"
+    },
+    {
+      "path": "04_FRONTIER_CANON/LAMAGUE_FRONTIER_CANON_ADDENDUM_I_2026-07-31.md",
+      "bytes": 71387,
+      "sha256": "9816bc26af110d41989f2340e50f76b1116e689fb867f49e0cabcbfed1e9e910"
+    },
+    {
+      "path": "05_RUNTIME_v0.1/LAMAGUE_RUNTIME_v0.1_IMPLEMENTATION_REPORT.md",
+      "bytes": 9517,
+      "sha256": "c96ff5cbf2cc523103bd5da05751672cbe09e1aac8d47b3bb928e7f307c4cd34"
+    },
+    {
+      "path": "05_RUNTIME_v0.1/README.md",
+      "bytes": 2486,
+      "sha256": "847e7525c478eb856f8cfc96ea4bade2041c2f36ddca311d5d8f052d14e1f321"
+    },
+    {
+      "path": "05_RUNTIME_v0.1/examples/canonical_trace.json",
+      "bytes": 26761,
+      "sha256": "2d77f92462763c124784d4b167d59a14a998229a7d011349113542e8240c13a4"
+    },
+    {
+      "path": "05_RUNTIME_v0.1/examples/demo_output.json",
+      "bytes": 2081,
+      "sha256": "a5f947481ef2b1a0174cd7c1764f9862e8c1885ac4f90159d876145ac6988052"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/LAMAGUE_RUNTIME_v0.2_IMPLEMENTATION_REPORT.md",
+      "bytes": 2507,
+      "sha256": "9c9c0391b3e0f9235626e4d94777e25560ce9228dd6279e5392acd1bf590e6b0"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/LAMAGUE_RUNTIME_v0.2_TEST_RESULTS.txt",
+      "bytes": 3775,
+      "sha256": "30089d644272e0dc9090f6b7181d0e738f76c261d4fb3dc37bb4c2654cf4d93e"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/MANIFEST.sha256.json",
+      "bytes": 7821,
+      "sha256": "9fbb0647514c41ff94fd8ef2df65dad92e49cced15961b36c9f622341f005247"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/README.md",
+      "bytes": 1486,
+      "sha256": "0cc6ff4b2089976cea00857b11ffbe8f528c934c77ae8c97b7b6c218a45b9e92"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/examples/canonical_milestone.py",
+      "bytes": 588,
+      "sha256": "74be8884661cdc35e58d37830f8577c78dad3ba41dc11db88d3c943b4331a0f3"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/examples/canonical_trace.json",
+      "bytes": 26761,
+      "sha256": "2d77f92462763c124784d4b167d59a14a998229a7d011349113542e8240c13a4"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/examples/demo_output.json",
+      "bytes": 2081,
+      "sha256": "a5f947481ef2b1a0174cd7c1764f9862e8c1885ac4f90159d876145ac6988052"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/examples/expressions.lam",
+      "bytes": 247,
+      "sha256": "32ade5632764db3bed7987e939d9e5124cee3b1a82f0a5bf8914071b3580b823"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/examples/semantic_continuity_demo.py",
+      "bytes": 3139,
+      "sha256": "3b6ce03abbf682bda4faca3e159c1c3cff1fe3e254ee5b6ad3581c806ee7d9be"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/examples/semantic_continuity_demo_output.json",
+      "bytes": 2680,
+      "sha256": "2d2f14c00358c08ec85105949a3fe112fa4ddcb50664bf9e703a8f4257157283"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/__init__.py",
+      "bytes": 1685,
+      "sha256": "77ecb1f31cffedab80b4123682f8c6cee042777b6423866328ff39dcb6c46453"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/auditor.py",
+      "bytes": 8232,
+      "sha256": "cffb5b93bfd0d40df4ded14fb8b74eee7a9248747f77f445db3822eeae72c334"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/breathing.py",
+      "bytes": 2415,
+      "sha256": "b89dcecd8bf94171da7bc19f4a1cb6cfd0516845ee74f5e3fe8181993e3dbf86"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/cli.py",
+      "bytes": 2319,
+      "sha256": "6c046c3cc442b491633ca3c407778857e2e4dafb9b97d2d06e08206ab9b920e5"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/compiler.py",
+      "bytes": 3845,
+      "sha256": "809b5e2b4374f8e2eb3407b82542b226638340f9553d8d8a0fd98d21bf8b4ec6"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/dissent.py",
+      "bytes": 907,
+      "sha256": "93d426232e2eca9a086cc9e3826eb63d59267496e8786e74dea4a726cbe26537"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/explainer.py",
+      "bytes": 2718,
+      "sha256": "a410dc4b14e21f570833ead754e614c15823fd7e91d40d9d95e8bbfdebdc0f82"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/interpreter.py",
+      "bytes": 7710,
+      "sha256": "663e96f7b963acb9cc7eff16d6ed3990ac97a57c0c46669111458f64a96f4ba9"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/memory.py",
+      "bytes": 3334,
+      "sha256": "b4c7a094c21a39a0d0517d6b35e4f20f010e428acee7532fdb9e6d794d0b75f0"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/model.py",
+      "bytes": 6033,
+      "sha256": "836a0519350d7be47b7484e17f0a226e3ca7bfc3710280007d5bd158f2bc89df"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/parser.py",
+      "bytes": 5318,
+      "sha256": "a9e2772f395b1ca245c6e279b48028684a7ac59958194d0bec9392afd7bc9607"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/registry.py",
+      "bytes": 2472,
+      "sha256": "cd2fabb282710ff8ccdacac3979bf6789dd7e5b4bd18e1532f7ae9e7421f2370"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/semantic_hash.py",
+      "bytes": 2516,
+      "sha256": "28a112a3671b5da2a7fb4b772849b9e3f986fa25dd0b8dfde831645561b24be3"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/trace_store.py",
+      "bytes": 1022,
+      "sha256": "edfa9b30435198c5aca342cd8746fc96e50c5b0abcf9a7469cbf016aadc81ed2"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/value_ledger.py",
+      "bytes": 1065,
+      "sha256": "437732c7b68e33ec2e02d79642e1b383ebd359164a51241ce269e5aab1918f9f"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/pyproject.toml",
+      "bytes": 222,
+      "sha256": "fede8410fb82440791f7d61dabf16ce9f4df675ea46dc84443f95c27e9b5f192"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/registry/ontology_v0.2.json",
+      "bytes": 2048,
+      "sha256": "1a58e16d4fa8c08714bec2cdef9ded41d5ed198445287b544c9f8e5cc7a06a25"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/registry/ontology_v0.2.yaml",
+      "bytes": 1689,
+      "sha256": "a42a8a5f867d2027eb9ce7cf49f3b9d5fd11b42a457f4bd063adde459a23d672"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/registry/operations_v0.2.json",
+      "bytes": 3782,
+      "sha256": "c98ca235efaae60212ec74e278050e0b0735bc51988f2a4e3061d4e5b766033d"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/registry/seals_v0.2.json",
+      "bytes": 2665,
+      "sha256": "469d044d3bb0710e4d293108fe38b2f691e53f51cdd64cc5fbfce457fc3d3ac4"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/tests/test_runtime_v02.py",
+      "bytes": 10331,
+      "sha256": "69aafc40b8f161639bbac9fdef6aa5aeafe9e0082672020c918918a96e71d049"
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/traces/20260731T041717179885Z_program-4be9e3549a93.json",
+      "bytes": 14567,
+      "sha256": "00a69739377f9c069e2639b795539e5d131590b1c9c7a13259be2160ea8ebb84"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/LAMAGUE_RUNTIME_v0.3_IMPLEMENTATION_REPORT.md",
+      "bytes": 2355,
+      "sha256": "1a5d5a95d4c4c9d731e0df2d340e47d422d6383cfe3c9994e64552fb72f45030"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/LAMAGUE_RUNTIME_v0.3_SAMPLE_RESULT_SUMMARY.json",
+      "bytes": 952,
+      "sha256": "c14c262beb66106876d305e7abf43bd9b93f72b7a25b7b67fc159cd3008bc1c4"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/LAMAGUE_RUNTIME_v0.3_TEST_RESULTS.txt",
+      "bytes": 6740,
+      "sha256": "8af0a26e799d337a898df71b938102a24ffb2581d6357591b416a81ea70a0072"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/LAMAGUE_v0.3_EQUIVALENCE_REPORT_VIEWER.html",
+      "bytes": 2778,
+      "sha256": "2be00586c792794ee8fb7d64834744c6df03c61c64bd6ed18dfb8b8588f1218b"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/MANIFEST.sha256.json",
+      "bytes": 12952,
+      "sha256": "1d5627ad63a3edd7351b28532b04d9ae41f52d1ad214fbc2654ef17140bdad91"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/README.md",
+      "bytes": 1812,
+      "sha256": "78b1f8b93e7e43901968d44d7960f361fe7543592b033bc5d61b0f474dc0278a"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/CROSS_INTELLIGENCE_BLIND_DECODER_PROMPT.md",
+      "bytes": 1148,
+      "sha256": "d09c43efe17431ce0f92332730c8e4e8fe65b787cb02de472d01e94a04763608"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/HUMAN_BLIND_DECODING_PROTOCOL.md",
+      "bytes": 1230,
+      "sha256": "bff58f0dca24c43feb29f6c63aac07577a8d2add12effd3c990e6f6c102d5d86"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/challenge_pack.json",
+      "bytes": 9055,
+      "sha256": "73b6aa10d733553cca7e5308071224de218fc0d9b844159c9e95e8e9356a1c5a"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/decoder_packet.schema.json",
+      "bytes": 1914,
+      "sha256": "695d5d650f5247df9c25a86ac555dc0a8c15a38d5df18dcdfc09bba5fde62711"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/reports/sample_equivalence_report.json",
+      "bytes": 65146,
+      "sha256": "e48adf6e908dd61c7cac5e03a2128d805d14e2a5430e75b9a81a2ffa73833c9a"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/sample_packets/C01_UNPROVEN_CLAIM__SIM_DECODER_COLLAPSE.json",
+      "bytes": 756,
+      "sha256": "fd26566bf63b4734375447dcc805f9429f777f8c93ac4c734d6b9c6d3d7ca609"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/sample_packets/C01_UNPROVEN_CLAIM__SIM_DECODER_SAFE.json",
+      "bytes": 964,
+      "sha256": "2dc3efe9af397f43c9adc410ad526949d681a2aa9ecb6b39c7b64577fd583f01"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/sample_packets/C02_PROTECTED_DISSENT__SIM_DECODER_MERGED.json",
+      "bytes": 815,
+      "sha256": "e4e7ea4307a79213252d5f284d0b28027ce5470866d3d073f74eb8c285d89338"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/sample_packets/C02_PROTECTED_DISSENT__SIM_DECODER_SAFE.json",
+      "bytes": 1317,
+      "sha256": "c304682febdc5ce41990567e1fb7a0128e9b8a267bec47f7c12c19aa42a83f4f"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/sample_packets/C03_VISIBLE_EXCHANGE__SIM_DECODER_HIDDEN.json",
+      "bytes": 693,
+      "sha256": "be17f6d2aeb94ee64a6a33ca0cde1dd9989fa78bab35c2f1d76105bb250f2bb4"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/sample_packets/C03_VISIBLE_EXCHANGE__SIM_DECODER_SAFE.json",
+      "bytes": 1138,
+      "sha256": "8fd0789f5259f32770201e0afda4a7f27d6f3c8162094be6a5f9ed38d868f70c"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/sample_packets/C04_SEMANTIC_MIGRATION__SIM_DECODER_DIVERGENT.json",
+      "bytes": 735,
+      "sha256": "af4e62cfa0bf0f59383f717a20acb2e3309d1c69b1020beb1ee8e9dcc0f6d2ab"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/sample_packets/C04_SEMANTIC_MIGRATION__SIM_DECODER_SAFE.json",
+      "bytes": 992,
+      "sha256": "3dae9994fed59cb451e2c633c88193830a6497fcab18b0ff3c4704d09f3e4546"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/sample_packets/C05_BREATHING_COMPRESSION__SIM_DECODER_COMPRESSED.json",
+      "bytes": 644,
+      "sha256": "c5066a7b014d8540a40f148fb73bf9e49b2191617a5b8c8b24d33e49ebacd6e3"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/sample_packets/C05_BREATHING_COMPRESSION__SIM_DECODER_SAFE.json",
+      "bytes": 942,
+      "sha256": "40d5b6c3438a12c40439e2262d44be151bf0b802391e4a8cf6988fbed9df55c4"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/examples/canonical_milestone.py",
+      "bytes": 588,
+      "sha256": "74be8884661cdc35e58d37830f8577c78dad3ba41dc11db88d3c943b4331a0f3"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/examples/canonical_trace.json",
+      "bytes": 26761,
+      "sha256": "2d77f92462763c124784d4b167d59a14a998229a7d011349113542e8240c13a4"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/examples/cross_intelligence_equivalence_demo.py",
+      "bytes": 658,
+      "sha256": "5e693c18a368c80cdbc2957b62973ac76ff6d22b5852320fbda07d075fb4a4af"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/examples/demo_output.json",
+      "bytes": 2081,
+      "sha256": "a5f947481ef2b1a0174cd7c1764f9862e8c1885ac4f90159d876145ac6988052"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/examples/expressions.lam",
+      "bytes": 247,
+      "sha256": "32ade5632764db3bed7987e939d9e5124cee3b1a82f0a5bf8914071b3580b823"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/examples/semantic_continuity_demo.py",
+      "bytes": 3139,
+      "sha256": "3b6ce03abbf682bda4faca3e159c1c3cff1fe3e254ee5b6ad3581c806ee7d9be"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/examples/semantic_continuity_demo_output.json",
+      "bytes": 2680,
+      "sha256": "2d2f14c00358c08ec85105949a3fe112fa4ddcb50664bf9e703a8f4257157283"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/__init__.py",
+      "bytes": 2583,
+      "sha256": "dd82bb576bc83c74f180c0626f80672516b2824b3e8f6fa27e8f99b997146de2"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/auditor.py",
+      "bytes": 8232,
+      "sha256": "cffb5b93bfd0d40df4ded14fb8b74eee7a9248747f77f445db3822eeae72c334"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/breathing.py",
+      "bytes": 2415,
+      "sha256": "b89dcecd8bf94171da7bc19f4a1cb6cfd0516845ee74f5e3fe8181993e3dbf86"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/challenge_pack.py",
+      "bytes": 2772,
+      "sha256": "aa7a12afbffa380c2160fbaf8a23211d0ca8c629cd607f774db2af070e3f95fd"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/cli.py",
+      "bytes": 2362,
+      "sha256": "b7c2d2abd8cd97a12c647ad82539160fce6c02f8ebd590d96ea12c28fc757ea7"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/compiler.py",
+      "bytes": 3845,
+      "sha256": "809b5e2b4374f8e2eb3407b82542b226638340f9553d8d8a0fd98d21bf8b4ec6"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/consensus.py",
+      "bytes": 5033,
+      "sha256": "7ed294bc46ac5b5f47e88fe595e706795b4a16a3d3db85700d0d53585c94574e"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/decoder_packet.py",
+      "bytes": 6426,
+      "sha256": "6325302201c8030c761a5b75f4e3f2101714a891b3ea79a7378b4cc0e82a9d74"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/dissent.py",
+      "bytes": 907,
+      "sha256": "93d426232e2eca9a086cc9e3826eb63d59267496e8786e74dea4a726cbe26537"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/equivalence.py",
+      "bytes": 7275,
+      "sha256": "b98d3f997ca5812c0b548463400906b5e59011545b222783e1a31b977a659c09"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/explainer.py",
+      "bytes": 2718,
+      "sha256": "a410dc4b14e21f570833ead754e614c15823fd7e91d40d9d95e8bbfdebdc0f82"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/interpreter.py",
+      "bytes": 7710,
+      "sha256": "663e96f7b963acb9cc7eff16d6ed3990ac97a57c0c46669111458f64a96f4ba9"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/memory.py",
+      "bytes": 3334,
+      "sha256": "b4c7a094c21a39a0d0517d6b35e4f20f010e428acee7532fdb9e6d794d0b75f0"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/model.py",
+      "bytes": 6033,
+      "sha256": "836a0519350d7be47b7484e17f0a226e3ca7bfc3710280007d5bd158f2bc89df"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/packet_validator.py",
+      "bytes": 1139,
+      "sha256": "2ca3b98fa398b69c24ff317f72a3d30de49b65910ea372f26ae8e60410bec3e3"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/parser.py",
+      "bytes": 5318,
+      "sha256": "a9e2772f395b1ca245c6e279b48028684a7ac59958194d0bec9392afd7bc9607"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/registry.py",
+      "bytes": 2472,
+      "sha256": "cd2fabb282710ff8ccdacac3979bf6789dd7e5b4bd18e1532f7ae9e7421f2370"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/semantic_hash.py",
+      "bytes": 2516,
+      "sha256": "28a112a3671b5da2a7fb4b772849b9e3f986fa25dd0b8dfde831645561b24be3"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/trace_store.py",
+      "bytes": 1022,
+      "sha256": "edfa9b30435198c5aca342cd8746fc96e50c5b0abcf9a7469cbf016aadc81ed2"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/value_ledger.py",
+      "bytes": 1065,
+      "sha256": "437732c7b68e33ec2e02d79642e1b383ebd359164a51241ce269e5aab1918f9f"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/pyproject.toml",
+      "bytes": 222,
+      "sha256": "56a20b5f7c39738a0ce61b67276e6ee9494bb105e9b96f4e5d2218f1a92b78dd"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/registry/ontology_v0.2.json",
+      "bytes": 2048,
+      "sha256": "1a58e16d4fa8c08714bec2cdef9ded41d5ed198445287b544c9f8e5cc7a06a25"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/registry/ontology_v0.2.yaml",
+      "bytes": 1689,
+      "sha256": "a42a8a5f867d2027eb9ce7cf49f3b9d5fd11b42a457f4bd063adde459a23d672"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/registry/operations_v0.2.json",
+      "bytes": 3782,
+      "sha256": "c98ca235efaae60212ec74e278050e0b0735bc51988f2a4e3061d4e5b766033d"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/registry/seals_v0.2.json",
+      "bytes": 2665,
+      "sha256": "469d044d3bb0710e4d293108fe38b2f691e53f51cdd64cc5fbfce457fc3d3ac4"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/tests/test_equivalence_v03.py",
+      "bytes": 9121,
+      "sha256": "ee4ad9ebc2db32549fbbd7a5a071792459786a98fef056d7ddb5da368a5d966e"
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/tests/test_runtime_v02.py",
+      "bytes": 10331,
+      "sha256": "69aafc40b8f161639bbac9fdef6aa5aeafe9e0082672020c918918a96e71d049"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/BLANK_DECODER_PACKET.json",
+      "bytes": 419,
+      "sha256": "2f5306ce5fbc1b462da1e084b6f7bb2256593bb5009351bc0d65c8ea6e7cf322"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/BLIND_DECODER_PROMPT.md",
+      "bytes": 1148,
+      "sha256": "d09c43efe17431ce0f92332730c8e4e8fe65b787cb02de472d01e94a04763608"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/CASE_INDEX.json",
+      "bytes": 2622,
+      "sha256": "15695d9a849d7d0ef480600456acb076d56f5e09f90b737cf6dd035a9d25b1f1"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/HUMAN_DECODER_PROTOCOL.md",
+      "bytes": 1230,
+      "sha256": "bff58f0dca24c43feb29f6c63aac07577a8d2add12effd3c990e6f6c102d5d86"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/LAMAGUE_EXPERIMENT_001_REFERENCE_COMMITMENTS.json",
+      "bytes": 2181,
+      "sha256": "f823226ce009aec918b27a56a612ce2ceee0ec641e3c7af52d59417f282779a8"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/MANIFEST.sha256.json",
+      "bytes": 3368,
+      "sha256": "1fce9efc3a911d0d3476a59b8802e9dd369819c87e8f518c80d06437ded9a61e"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/OPERATION_DEFINITIONS_REQUIRED.json",
+      "bytes": 3047,
+      "sha256": "4c05b0cce2e5e83627c961ff7e8ce3304c65c06f8fb1627696e960d08ad9f2c8"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/OPERATION_DEFINITIONS_REQUIRED.md",
+      "bytes": 2012,
+      "sha256": "6b92df659695c77689fc6323242deeea3b3a748f58179342c4c5ecfeeb4dd5d2"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/START_HERE.md",
+      "bytes": 831,
+      "sha256": "e13d7197db434df15d1cf9664e977f995b68b7e44e563a97d4983bf809504c46"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/SUBMISSION_CHECKLIST.md",
+      "bytes": 549,
+      "sha256": "37eb55ffde005cad9375dc410763a4758216dc6a3378b66942593eab0bd12d3e"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/cases/C01_UNPROVEN_CLAIM.json",
+      "bytes": 478,
+      "sha256": "abad51028996387d978b36f1645a943ab9a9bdf62135817125136c8f869ce1e2"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/cases/C01_UNPROVEN_CLAIM.md",
+      "bytes": 464,
+      "sha256": "4bcccf9168b3125ca06e8e604725915ff972b91a4fba16c1e3b6b5229e5f24c5"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/cases/C02_PROTECTED_DISSENT.json",
+      "bytes": 475,
+      "sha256": "42537c2af1df24ddf9f866641e2934d3b48e7098095714f12f29ace450cbaaff"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/cases/C02_PROTECTED_DISSENT.md",
+      "bytes": 461,
+      "sha256": "54672f4b69b3225bc7553798bafb1c0220f8e8df7279e9c9c80c9c6066b7bd6f"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/cases/C03_VISIBLE_EXCHANGE.json",
+      "bytes": 500,
+      "sha256": "b8021702870b94b51a6993b5d1f4b0374b5486d29ef80dd5b4b5efa7298b7438"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/cases/C03_VISIBLE_EXCHANGE.md",
+      "bytes": 486,
+      "sha256": "9b95c1fe2ee68a6b995246351701f438b0f0bee7b43326c8f8434f6dba198bdb"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/cases/C04_SEMANTIC_MIGRATION.json",
+      "bytes": 466,
+      "sha256": "a47f7de4bc863b5561727974cf0ad69cc882d76b0db45f31a418b8203aa88c90"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/cases/C04_SEMANTIC_MIGRATION.md",
+      "bytes": 452,
+      "sha256": "8b73f9908bad2ed2970506fa1bdeb1cb08e5638ed0875dc296ed915fb68569aa"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/cases/C05_BREATHING_COMPRESSION.json",
+      "bytes": 456,
+      "sha256": "7386be4499a0e3b5a106b0077751c2a7b67a5f22307a81d294fcb8ce4f96a192"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/cases/C05_BREATHING_COMPRESSION.md",
+      "bytes": 442,
+      "sha256": "d4d681dc6637d495ebaa1106cda74bbe7b12a7e52e9d83a968f76843699274c7"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/decoder_packet.schema.json",
+      "bytes": 1914,
+      "sha256": "695d5d650f5247df9c25a86ac555dc0a8c15a38d5df18dcdfc09bba5fde62711"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/LAMAGUE_EXPERIMENT_001_PROTOCOL.md",
+      "bytes": 2238,
+      "sha256": "c3d8d0e3c48f003aa18cc1f4e8ac0f14fcbb6df6c1558f2d35b16ab7b9302533"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/LAMAGUE_EXPERIMENT_001_REFERENCE_COMMITMENTS.json",
+      "bytes": 2181,
+      "sha256": "f823226ce009aec918b27a56a612ce2ceee0ec641e3c7af52d59417f282779a8"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/DECODER_PACK_LEAKAGE_AUDIT.json",
+      "bytes": 133,
+      "sha256": "6d4ae9f969486e62f7edc9a87b612e092d231977fd983cc75871cee9546c0f26"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/DRY_RUN_OUTPUT.txt",
+      "bytes": 1572,
+      "sha256": "a82ada952e44afd549d505d5dd9d79b2ff3f926c6b11fac38db3321a80089c54"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/LAMAGUE_EXPERIMENT_001_REFERENCE_COMMITMENTS.json",
+      "bytes": 2181,
+      "sha256": "f823226ce009aec918b27a56a612ce2ceee0ec641e3c7af52d59417f282779a8"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/LAMAGUE_v0.3_EQUIVALENCE_REPORT_VIEWER.html",
+      "bytes": 2778,
+      "sha256": "2be00586c792794ee8fb7d64834744c6df03c61c64bd6ed18dfb8b8588f1218b"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/MANIFEST.sha256.json",
+      "bytes": 11134,
+      "sha256": "30ad1999229a17db10edcea86d9e977c925654b2a12c4485051e94c34b7726f0"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/OPERATOR_PROTOCOL.md",
+      "bytes": 1001,
+      "sha256": "bed2c82cd28c5fb0d46accc30420ebf980846f06da532e38c78e5ab5ae4510fd"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/PREREGISTRATION.md",
+      "bytes": 1235,
+      "sha256": "8fdb8fa685821df3266dda9abc95d4da3e24b5b6b258e8723948ceb851b9bb63"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/README.md",
+      "bytes": 1812,
+      "sha256": "78b1f8b93e7e43901968d44d7960f361fe7543592b033bc5d61b0f474dc0278a"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/START_HERE.md",
+      "bytes": 577,
+      "sha256": "e9be12581cebc466054a3d7d9df9855a3c7f122690a32eae9c4d5f60454f0ceb"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/challenge_pack.json",
+      "bytes": 9055,
+      "sha256": "73b6aa10d733553cca7e5308071224de218fc0d9b844159c9e95e8e9356a1c5a"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/decoder_packet.schema.json",
+      "bytes": 1914,
+      "sha256": "695d5d650f5247df9c25a86ac555dc0a8c15a38d5df18dcdfc09bba5fde62711"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/__init__.py",
+      "bytes": 2583,
+      "sha256": "dd82bb576bc83c74f180c0626f80672516b2824b3e8f6fa27e8f99b997146de2"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/auditor.py",
+      "bytes": 8232,
+      "sha256": "cffb5b93bfd0d40df4ded14fb8b74eee7a9248747f77f445db3822eeae72c334"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/breathing.py",
+      "bytes": 2415,
+      "sha256": "b89dcecd8bf94171da7bc19f4a1cb6cfd0516845ee74f5e3fe8181993e3dbf86"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/challenge_pack.py",
+      "bytes": 2772,
+      "sha256": "aa7a12afbffa380c2160fbaf8a23211d0ca8c629cd607f774db2af070e3f95fd"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/cli.py",
+      "bytes": 2362,
+      "sha256": "b7c2d2abd8cd97a12c647ad82539160fce6c02f8ebd590d96ea12c28fc757ea7"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/compiler.py",
+      "bytes": 3845,
+      "sha256": "809b5e2b4374f8e2eb3407b82542b226638340f9553d8d8a0fd98d21bf8b4ec6"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/consensus.py",
+      "bytes": 5033,
+      "sha256": "7ed294bc46ac5b5f47e88fe595e706795b4a16a3d3db85700d0d53585c94574e"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/decoder_packet.py",
+      "bytes": 6426,
+      "sha256": "6325302201c8030c761a5b75f4e3f2101714a891b3ea79a7378b4cc0e82a9d74"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/dissent.py",
+      "bytes": 907,
+      "sha256": "93d426232e2eca9a086cc9e3826eb63d59267496e8786e74dea4a726cbe26537"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/equivalence.py",
+      "bytes": 7275,
+      "sha256": "b98d3f997ca5812c0b548463400906b5e59011545b222783e1a31b977a659c09"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/explainer.py",
+      "bytes": 2718,
+      "sha256": "a410dc4b14e21f570833ead754e614c15823fd7e91d40d9d95e8bbfdebdc0f82"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/interpreter.py",
+      "bytes": 7710,
+      "sha256": "663e96f7b963acb9cc7eff16d6ed3990ac97a57c0c46669111458f64a96f4ba9"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/memory.py",
+      "bytes": 3334,
+      "sha256": "b4c7a094c21a39a0d0517d6b35e4f20f010e428acee7532fdb9e6d794d0b75f0"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/model.py",
+      "bytes": 6033,
+      "sha256": "836a0519350d7be47b7484e17f0a226e3ca7bfc3710280007d5bd158f2bc89df"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/packet_validator.py",
+      "bytes": 1139,
+      "sha256": "2ca3b98fa398b69c24ff317f72a3d30de49b65910ea372f26ae8e60410bec3e3"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/parser.py",
+      "bytes": 5318,
+      "sha256": "a9e2772f395b1ca245c6e279b48028684a7ac59958194d0bec9392afd7bc9607"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/registry.py",
+      "bytes": 2472,
+      "sha256": "cd2fabb282710ff8ccdacac3979bf6789dd7e5b4bd18e1532f7ae9e7421f2370"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/semantic_hash.py",
+      "bytes": 2516,
+      "sha256": "28a112a3671b5da2a7fb4b772849b9e3f986fa25dd0b8dfde831645561b24be3"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/trace_store.py",
+      "bytes": 1022,
+      "sha256": "edfa9b30435198c5aca342cd8746fc96e50c5b0abcf9a7469cbf016aadc81ed2"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/value_ledger.py",
+      "bytes": 1065,
+      "sha256": "437732c7b68e33ec2e02d79642e1b383ebd359164a51241ce269e5aab1918f9f"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/pyproject.toml",
+      "bytes": 222,
+      "sha256": "56a20b5f7c39738a0ce61b67276e6ee9494bb105e9b96f4e5d2218f1a92b78dd"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/registry/ontology_v0.2.json",
+      "bytes": 2048,
+      "sha256": "1a58e16d4fa8c08714bec2cdef9ded41d5ed198445287b544c9f8e5cc7a06a25"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/registry/ontology_v0.2.yaml",
+      "bytes": 1689,
+      "sha256": "a42a8a5f867d2027eb9ce7cf49f3b9d5fd11b42a457f4bd063adde459a23d672"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/registry/operations_v0.2.json",
+      "bytes": 3782,
+      "sha256": "c98ca235efaae60212ec74e278050e0b0735bc51988f2a4e3061d4e5b766033d"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/registry/seals_v0.2.json",
+      "bytes": 2665,
+      "sha256": "469d044d3bb0710e4d293108fe38b2f691e53f51cdd64cc5fbfce457fc3d3ac4"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/reports/INVALID_SUBMISSIONS.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/reports/LAMAGUE_EXPERIMENT_001_RESULTS.csv",
+      "bytes": 139,
+      "sha256": "eef5fefec1951e26622cc5415dab36d57d8e62fef90e542bc1ba2b6efc368571"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/reports/LAMAGUE_EXPERIMENT_001_RESULTS.json",
+      "bytes": 23348,
+      "sha256": "6a751f690a542b8915849bcee99c1f850a792a0ead28ae8ea6fb11d3eae38354"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/reports/LAMAGUE_EXPERIMENT_001_RESULTS.md",
+      "bytes": 1318,
+      "sha256": "bc63efff7dd81099bb19461a66c23326efd00ffde5b7892d7a75e9216f8cfef9"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/run_experiment.py",
+      "bytes": 6912,
+      "sha256": "14561dbd3a0dc99e86c88e4c4dd2d4c5a448d161646a41aaac9c05faf91ed1f0"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/sealed_references/C01_UNPROVEN_CLAIM__REFERENCE.json",
+      "bytes": 957,
+      "sha256": "ac06e343ddce4a3142edd0365716ff2691426785f7e732f2c486d377bc9e754c"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/sealed_references/C02_PROTECTED_DISSENT__REFERENCE.json",
+      "bytes": 1310,
+      "sha256": "8f001103be8ed5d899bebee6a994b75e5a63af46972f7b39fb33447a633f6d1e"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/sealed_references/C03_VISIBLE_EXCHANGE__REFERENCE.json",
+      "bytes": 1131,
+      "sha256": "c477b6f444854ea8404dbc4842e83ee8444f69724321adadef1404fac5b4f6f2"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/sealed_references/C04_SEMANTIC_MIGRATION__REFERENCE.json",
+      "bytes": 985,
+      "sha256": "fb4741e49364c69e916e106b042c827f0ec398129d3f85b650268e5153a55270"
+    },
+    {
+      "path": "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/sealed_references/C05_BREATHING_COMPRESSION__REFERENCE.json",
+      "bytes": 935,
+      "sha256": "61c0bee36c90fc311ba314777dd1639ecd8fd8749b70886e1b8e007c04a75977"
+    },
+    {
+      "path": "09_ARTICLE_AND_VISUAL_ASSETS/LAMAGUE_1C_v1_ONE_CELL_POWER_LANGUAGE.png",
+      "bytes": 181417,
+      "sha256": "13f3b9441445f8ed8963831c16b0c70ca705367762ba1814288845bbd0e8e7ec"
+    },
+    {
+      "path": "09_ARTICLE_AND_VISUAL_ASSETS/LAMAGUE_1C_v1_ONE_CELL_POWER_LANGUAGE.svg",
+      "bytes": 26822,
+      "sha256": "d9c1ce46bb8a68102a8a05fef839d5057f784834dce87303daba4a9623078df3"
+    },
+    {
+      "path": "09_ARTICLE_AND_VISUAL_ASSETS/LAMAGUE_NATIVE36_v0.2_FULL_GLYPH_AND_SEAL_SHEET.png",
+      "bytes": 407122,
+      "sha256": "2b72d787112cf608a3a59d734c13a99277ce65a92af3dfbb3cde72a5cda71fcf"
+    },
+    {
+      "path": "09_ARTICLE_AND_VISUAL_ASSETS/LAMAGUE_NATIVE36_v0.2_FULL_GLYPH_AND_SEAL_SHEET.svg",
+      "bytes": 28968,
+      "sha256": "b8fa72ee1b87768bddcc305d5a6461776668ce9ff4d4a8a7ce7a27c1510485f9"
+    },
+    {
+      "path": "09_ARTICLE_AND_VISUAL_ASSETS/LAMAGUE_NATIVE36_v0.2_X_POST_ASSET.png",
+      "bytes": 183982,
+      "sha256": "dc9f29609f91df82db23313667b813d0e616f7f3887c22bbd6ed72b2bb9e8b66"
+    },
+    {
+      "path": "09_ARTICLE_AND_VISUAL_ASSETS/LAMAGUE_NATIVE36_v0.2_X_POST_ASSET.svg",
+      "bytes": 23980,
+      "sha256": "2b74d81c0fd2feb26c5ca65ea066536ce0eb99c0608180ba4597b62dde616e6b"
+    },
+    {
+      "path": "09_ARTICLE_AND_VISUAL_ASSETS/lamague_editorial_symbol_banner.png",
+      "bytes": 1051463,
+      "sha256": "9c7a7bd763d67134ad4c74006a9a41cfba221af7d0e9ec61302913b16e555560"
+    },
+    {
+      "path": "10_PACKAGED_RELEASES/LAMAGUE_CODEX_DROP_2026-07-31.zip",
+      "bytes": 2318015,
+      "sha256": "d8c8ed043b6cf3b330bc85fb262d73a3ddbff6f33e91fd383facde66e36d4de7"
+    },
+    {
+      "path": "10_PACKAGED_RELEASES/LAMAGUE_EXPERIMENT_001_BLIND_DECODER_PACK.zip",
+      "bytes": 15145,
+      "sha256": "49829058515672e74dd4cadd361d513327138c872b95affaca6438586c964286"
+    },
+    {
+      "path": "10_PACKAGED_RELEASES/LAMAGUE_EXPERIMENT_001_COMPLETE_ARCHIVE.zip",
+      "bytes": 134136,
+      "sha256": "773e8563f5b3a61c69423cee244c36d0de09856a0b5577b21663713c11339aeb"
+    },
+    {
+      "path": "10_PACKAGED_RELEASES/LAMAGUE_EXPERIMENT_001_OPERATOR_PACK.zip",
+      "bytes": 113236,
+      "sha256": "0aaa339c59eb26561b8db9f847fbbcd8f94a1d04653486a0bd699e0cf8de86cc"
+    },
+    {
+      "path": "10_PACKAGED_RELEASES/LAMAGUE_NEW_FORGE_FILES_ONLY_2026-07-31.zip",
+      "bytes": 2059853,
+      "sha256": "c0b5f0145319106d9b944b18e5a87db9067a3ca9de3649bd780abddbfdbb5e59"
+    },
+    {
+      "path": "10_PACKAGED_RELEASES/LAMAGUE_RUNTIME_v0.1_EXECUTABLE_MILESTONE.zip",
+      "bytes": 29313,
+      "sha256": "2181eeed2ac68a54054073d2e9811938c376847f19f40117fbcda59b685652b0"
+    },
+    {
+      "path": "10_PACKAGED_RELEASES/LAMAGUE_RUNTIME_v0.2_SEMANTIC_CONTINUITY_ENGINE.zip",
+      "bytes": 89305,
+      "sha256": "c13c144bcb125f4128c1db1210e0d99b88dc5e0b7b656f6961c079f93c5c58d1"
+    },
+    {
+      "path": "10_PACKAGED_RELEASES/LAMAGUE_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE_HARNESS.zip",
+      "bytes": 144981,
+      "sha256": "56ae499ae951e99ee758c9073d0dc420ebac1a2285eac30f0fe0d54b4ac77de9"
+    },
+    {
+      "path": "11_HISTORICAL_INDEXES_AND_PROVENANCE/LAMAGUE_CODEX_FILE_INDEX_2026-07-31.md",
+      "bytes": 1321,
+      "sha256": "580b1132a22e51158f7618960c69badf86f8174a7d2244170e49c2250fb02b89"
+    },
+    {
+      "path": "11_HISTORICAL_INDEXES_AND_PROVENANCE/LAMAGUE_NEW_FORGE_FILES_ONLY_MANIFEST.json",
+      "bytes": 5474,
+      "sha256": "23f4faa9c56cc91dd4c3d2abd488fa731e629a3bfa01850add83033d40e0d33c"
+    },
+    {
+      "path": "11_HISTORICAL_INDEXES_AND_PROVENANCE/LAMAGUE_ROOT_PROVENANCE_AND_CANON_DECISION_2026-07-15.md",
+      "bytes": 12318,
+      "sha256": "c3c0249654239fe7e31442e3c807dcc07810c2a394f9854859c5238e5c0848e7"
+    },
+    {
+      "path": "11_HISTORICAL_INDEXES_AND_PROVENANCE/LAMAGUE_ROOT_SHA256_MANIFEST_2026-07-15.txt",
+      "bytes": 851,
+      "sha256": "6252337f5af6fb46910faa076c6f6e1ae89ae8b3abf138a4e7814b23cb91d5ae"
+    },
+    {
+      "path": "CHANGELOG_2026-07-31.md",
+      "bytes": 1032,
+      "sha256": "de98e3e7617ed437a42fc59ff3920224a56e26312a621000a3cdbf4383bd2838"
+    },
+    {
+      "path": "DEDUPLICATION_AUDIT.json",
+      "bytes": 13651,
+      "sha256": "e76003b25ad9f195aa889e18815046c1ea2d2c2a766a01967a56d9c65ea0be21"
+    },
+    {
+      "path": "README_MASTER_CODEX.md",
+      "bytes": 1574,
+      "sha256": "34c9fbbb22c1f98ae7c54fbaa1176a3cd0f456a5efe6a8a0c51ab87395d318ce"
+    }
+  ]
+}

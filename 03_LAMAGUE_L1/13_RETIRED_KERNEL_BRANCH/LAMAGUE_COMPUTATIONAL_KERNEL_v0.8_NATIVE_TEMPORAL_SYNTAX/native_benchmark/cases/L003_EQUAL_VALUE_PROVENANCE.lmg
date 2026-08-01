@@ -1,0 +1,7 @@
+packet EQ;
+observability WHITE_BOX;
+observe a key="x" value=7;
+declare b key="x" value=7;
+preserve a;
+preserve b;
+analyze;

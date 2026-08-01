@@ -1,0 +1,61 @@
+{
+  "case_id": "C02_PROTECTED_DISSENT",
+  "decoder_id": "REFERENCE",
+  "purpose": "coordinate without erasing disagreement",
+  "claim": "a staged release can preserve both urgency and epistemic caution",
+  "operation_path": [
+    "W",
+    "U",
+    "G",
+    "V",
+    "Y"
+  ],
+  "invariants": [
+    "dissent remains attributable",
+    "human publication authority remains visible"
+  ],
+  "unknowns": [
+    "whether current testing is sufficient"
+  ],
+  "authority": [
+    "human controls publication decision"
+  ],
+  "participants": [
+    "human author",
+    "AI collaborator"
+  ],
+  "affected_parties": [
+    "future users"
+  ],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [
+    {
+      "parties": [
+        "human author",
+        "AI collaborator"
+      ],
+      "positions": {
+        "human author": "publish now",
+        "AI collaborator": "test first"
+      },
+      "unknown_type": "sufficiency disagreement",
+      "protected_boundaries": [
+        "creative agency",
+        "epistemic honesty"
+      ],
+      "status": "UNRESOLVED"
+    }
+  ],
+  "value_ledger": [],
+  "consequences": [
+    "staged release proposed"
+  ],
+  "consequence_horizon": "immediate",
+  "recovery": [
+    "pause later stages if evidence fails"
+  ],
+  "confidence": "reference",
+  "notes": "",
+  "schema_version": "0.3"
+}

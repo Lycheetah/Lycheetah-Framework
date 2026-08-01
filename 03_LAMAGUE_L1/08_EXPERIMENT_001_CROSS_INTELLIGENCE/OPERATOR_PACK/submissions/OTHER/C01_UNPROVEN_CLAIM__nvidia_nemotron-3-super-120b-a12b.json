@@ -1,0 +1,36 @@
+{
+  "case_id": "C01_UNPROVEN_CLAIM",
+  "decoder_id": "nvidia/nemotron-3-super-120b-a12b",
+  "purpose": "Inspect a claim with incomplete evidence and publish a context-limited result while retaining unresolved method question.",
+  "claim": "",
+  "operation_path": [
+    "O",
+    "E",
+    "U",
+    "P",
+    "Y"
+  ],
+  "invariants": [],
+  "unknowns": [
+    "unresolved method question"
+  ],
+  "authority": [],
+  "participants": [
+    "Human collaborators",
+    "AI collaborators"
+  ],
+  "affected_parties": [],
+  "evidence": [
+    "incomplete evidence"
+  ],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "publication of context-limited result"
+  ],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "low",
+  "notes": "Claim content not supplied in source; authority, provenance, affected parties, consequence horizon, and recovery details not specified."
+}

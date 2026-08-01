@@ -1,0 +1,447 @@
+{
+  "lamague_core_version": "0.2.0",
+  "status": "ACCEPTED",
+  "statements": [
+    {
+      "kind": "let",
+      "name": "anchor",
+      "declared_type": "Field",
+      "type": "Field",
+      "normal_form": "Ao"
+    },
+    {
+      "kind": "let",
+      "name": "orientation",
+      "declared_type": "Field",
+      "type": "Field",
+      "normal_form": "Φ"
+    },
+    {
+      "kind": "let",
+      "name": "lifted",
+      "declared_type": "Field",
+      "type": "ModifiedField",
+      "normal_form": "Φ↑"
+    },
+    {
+      "kind": "let",
+      "name": "fixed",
+      "declared_type": "Invariant",
+      "type": "InvariantMarker",
+      "normal_form": "⟟"
+    },
+    {
+      "kind": "let",
+      "name": "nullpoint",
+      "declared_type": "NullState",
+      "type": "NullState",
+      "normal_form": "∅"
+    },
+    {
+      "kind": "let",
+      "name": "target",
+      "declared_type": "Invariant",
+      "type": "InvariantField",
+      "normal_form": "Ψ_inv"
+    },
+    {
+      "kind": "invariant",
+      "name": "stable_return",
+      "declared_type": "Path",
+      "type": "Path",
+      "normal_form": "(Ao → Φ↑ → Ψ_inv)",
+      "semantic_hash": "a582635b2ac22400e9fb31a122925a6287a774368237980aa2f0cbc1d5413905"
+    },
+    {
+      "kind": "macro",
+      "name": "RETURN",
+      "level": "Z₁",
+      "declared_type": "Path",
+      "type": "Path",
+      "normal_form": "(Ao → Φ↑ → Ψ_inv)",
+      "compression": {
+        "expanded_characters": 17,
+        "macro_characters": 6,
+        "character_ratio": 2.833333,
+        "expanded_tokens": 5,
+        "macro_tokens": 1,
+        "roundtrip_law": "expand(macro) = normalized_expression"
+      }
+    },
+    {
+      "kind": "type_check",
+      "matches": true,
+      "actual": "ModifiedField",
+      "expected": "Field",
+      "normal_form": "Φ↑"
+    },
+    {
+      "kind": "type_check",
+      "matches": true,
+      "actual": "InvariantField",
+      "expected": "Field",
+      "normal_form": "Ψ_inv"
+    },
+    {
+      "kind": "type_check",
+      "matches": true,
+      "actual": "InvariantField",
+      "expected": "Invariant",
+      "normal_form": "Ψ_inv"
+    },
+    {
+      "kind": "subtype_check",
+      "is_subtype": true,
+      "actual": "ModifiedField",
+      "expected": "Field"
+    },
+    {
+      "kind": "subtype_check",
+      "is_subtype": true,
+      "actual": "InvariantField",
+      "expected": "Invariant"
+    },
+    {
+      "kind": "subtype_check",
+      "is_subtype": true,
+      "actual": "Path",
+      "expected": "StateLike"
+    },
+    {
+      "kind": "describe",
+      "normal_form": "Φ↑",
+      "semantic_hash": "3b7e3249a915ff40617ccbf753e93fcb9c9683b348015c9e2994fa89a4c7b114",
+      "type": "ModifiedField",
+      "supertypes": [
+        "Field",
+        "StateLike"
+      ],
+      "ontology": {
+        "type": "ModifiedField",
+        "historical_class": "F-class",
+        "role": "oriented_ascent",
+        "definition": "orientation field modified by ascent",
+        "primitive": false,
+        "base": "Φ",
+        "modifier": "↑",
+        "supertypes": [
+          "Field",
+          "StateLike"
+        ]
+      },
+      "decomposition": {
+        "base": "Φ",
+        "modifier": "↑"
+      }
+    },
+    {
+      "kind": "describe",
+      "normal_form": "Ψ_inv",
+      "semantic_hash": "00ecd7d127d6981d976fa92eeeab22d00d619d7ff1d9466061d9a484a1dd68b2",
+      "type": "InvariantField",
+      "supertypes": [
+        "Field",
+        "Invariant",
+        "StateLike"
+      ],
+      "ontology": {
+        "type": "InvariantField",
+        "historical_class": "I/F bridge",
+        "role": "invariant_trajectory",
+        "definition": "contextual Ψ field qualified as invariant",
+        "primitive": false,
+        "base": "Ψ",
+        "modifier": "inv",
+        "supertypes": [
+          "Field",
+          "Invariant",
+          "StateLike"
+        ]
+      },
+      "decomposition": {
+        "base": "Ψ",
+        "modifier": "inv"
+      }
+    },
+    {
+      "kind": "describe",
+      "normal_form": "(Ao → Φ↑)",
+      "semantic_hash": "74967cad960a3c97a6483807346783ea0cc6912ede73410ee26fbd7cc0982966",
+      "type": "Path",
+      "supertypes": [
+        "Composite",
+        "StateLike"
+      ],
+      "operator": "→",
+      "signature": {
+        "left": "StateLike",
+        "right": "StateLike",
+        "returns": "Path"
+      },
+      "left_type": "Field",
+      "right_type": "ModifiedField"
+    },
+    {
+      "kind": "expression",
+      "type": "Path",
+      "normal_form": "(Ao → Φ↑ → Ψ_inv)",
+      "semantic_hash": "a582635b2ac22400e9fb31a122925a6287a774368237980aa2f0cbc1d5413905"
+    }
+  ],
+  "bindings": {
+    "anchor": {
+      "type": "Field",
+      "normal_form": "Ao"
+    },
+    "orientation": {
+      "type": "Field",
+      "normal_form": "Φ"
+    },
+    "lifted": {
+      "type": "ModifiedField",
+      "normal_form": "Φ↑"
+    },
+    "fixed": {
+      "type": "InvariantMarker",
+      "normal_form": "⟟"
+    },
+    "nullpoint": {
+      "type": "NullState",
+      "normal_form": "∅"
+    },
+    "target": {
+      "type": "InvariantField",
+      "normal_form": "Ψ_inv"
+    }
+  },
+  "invariants": {
+    "stable_return": {
+      "type": "Path",
+      "normal_form": "(Ao → Φ↑ → Ψ_inv)"
+    }
+  },
+  "requirements": [],
+  "prohibitions": [],
+  "macros": {
+    "RETURN": {
+      "level": "Z₁",
+      "type": "Path",
+      "normal_form": "(Ao → Φ↑ → Ψ_inv)",
+      "compression": {
+        "expanded_characters": 17,
+        "macro_characters": 6,
+        "character_ratio": 2.833333,
+        "expanded_tokens": 5,
+        "macro_tokens": 1,
+        "roundtrip_law": "expand(macro) = normalized_expression"
+      }
+    }
+  },
+  "checks": [
+    {
+      "kind": "type_check",
+      "matches": true,
+      "actual": "ModifiedField",
+      "expected": "Field",
+      "normal_form": "Φ↑"
+    },
+    {
+      "kind": "type_check",
+      "matches": true,
+      "actual": "InvariantField",
+      "expected": "Field",
+      "normal_form": "Ψ_inv"
+    },
+    {
+      "kind": "type_check",
+      "matches": true,
+      "actual": "InvariantField",
+      "expected": "Invariant",
+      "normal_form": "Ψ_inv"
+    },
+    {
+      "kind": "subtype_check",
+      "is_subtype": true,
+      "actual": "ModifiedField",
+      "expected": "Field"
+    },
+    {
+      "kind": "subtype_check",
+      "is_subtype": true,
+      "actual": "InvariantField",
+      "expected": "Invariant"
+    },
+    {
+      "kind": "subtype_check",
+      "is_subtype": true,
+      "actual": "Path",
+      "expected": "StateLike"
+    }
+  ],
+  "descriptions": [
+    {
+      "kind": "describe",
+      "normal_form": "Φ↑",
+      "semantic_hash": "3b7e3249a915ff40617ccbf753e93fcb9c9683b348015c9e2994fa89a4c7b114",
+      "type": "ModifiedField",
+      "supertypes": [
+        "Field",
+        "StateLike"
+      ],
+      "ontology": {
+        "type": "ModifiedField",
+        "historical_class": "F-class",
+        "role": "oriented_ascent",
+        "definition": "orientation field modified by ascent",
+        "primitive": false,
+        "base": "Φ",
+        "modifier": "↑",
+        "supertypes": [
+          "Field",
+          "StateLike"
+        ]
+      },
+      "decomposition": {
+        "base": "Φ",
+        "modifier": "↑"
+      }
+    },
+    {
+      "kind": "describe",
+      "normal_form": "Ψ_inv",
+      "semantic_hash": "00ecd7d127d6981d976fa92eeeab22d00d619d7ff1d9466061d9a484a1dd68b2",
+      "type": "InvariantField",
+      "supertypes": [
+        "Field",
+        "Invariant",
+        "StateLike"
+      ],
+      "ontology": {
+        "type": "InvariantField",
+        "historical_class": "I/F bridge",
+        "role": "invariant_trajectory",
+        "definition": "contextual Ψ field qualified as invariant",
+        "primitive": false,
+        "base": "Ψ",
+        "modifier": "inv",
+        "supertypes": [
+          "Field",
+          "Invariant",
+          "StateLike"
+        ]
+      },
+      "decomposition": {
+        "base": "Ψ",
+        "modifier": "inv"
+      }
+    },
+    {
+      "kind": "describe",
+      "normal_form": "(Ao → Φ↑)",
+      "semantic_hash": "74967cad960a3c97a6483807346783ea0cc6912ede73410ee26fbd7cc0982966",
+      "type": "Path",
+      "supertypes": [
+        "Composite",
+        "StateLike"
+      ],
+      "operator": "→",
+      "signature": {
+        "left": "StateLike",
+        "right": "StateLike",
+        "returns": "Path"
+      },
+      "left_type": "Field",
+      "right_type": "ModifiedField"
+    }
+  ],
+  "expressions": [
+    "(Ao → Φ↑ → Ψ_inv)"
+  ],
+  "warnings": [],
+  "ontology_lock": {
+    "null_is_not_missing": true,
+    "phi_ascent_is_derived": true,
+    "psi_invariant_is_derived": true,
+    "domain_adapters_absent": true
+  },
+  "claim_boundary": [
+    "parsing does not prove truth",
+    "type validity does not prove domain validity",
+    "∅ is intentional null and never means missing evidence",
+    "core tests do not validate any domain adapter",
+    "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+    "LAMAGUE Core is not an alignment or physical-theory guarantee"
+  ],
+  "semantic_graphs": [
+    {
+      "root": "a582635b2ac22400",
+      "nodes": [
+        {
+          "id": "00ecd7d127d6981d",
+          "kind": "Modifier",
+          "label": "inv",
+          "canonical": "Ψ_inv"
+        },
+        {
+          "id": "13fd1c57e95f74d7",
+          "kind": "Atom",
+          "label": "Φ",
+          "canonical": "Φ"
+        },
+        {
+          "id": "3b7e3249a915ff40",
+          "kind": "Modifier",
+          "label": "↑",
+          "canonical": "Φ↑"
+        },
+        {
+          "id": "8664706224730e9e",
+          "kind": "Atom",
+          "label": "Ao",
+          "canonical": "Ao"
+        },
+        {
+          "id": "a582635b2ac22400",
+          "kind": "Operator",
+          "label": "→",
+          "canonical": "(Ao → Φ↑ → Ψ_inv)"
+        },
+        {
+          "id": "b438ef3dc64c00b4",
+          "kind": "Atom",
+          "label": "Ψ",
+          "canonical": "Ψ"
+        }
+      ],
+      "edges": [
+        {
+          "from": "00ecd7d127d6981d",
+          "to": "b438ef3dc64c00b4",
+          "position": 0,
+          "role": "base"
+        },
+        {
+          "from": "3b7e3249a915ff40",
+          "to": "13fd1c57e95f74d7",
+          "position": 0,
+          "role": "base"
+        },
+        {
+          "from": "a582635b2ac22400",
+          "to": "8664706224730e9e",
+          "position": 0
+        },
+        {
+          "from": "a582635b2ac22400",
+          "to": "3b7e3249a915ff40",
+          "position": 1
+        },
+        {
+          "from": "a582635b2ac22400",
+          "to": "00ecd7d127d6981d",
+          "position": 2
+        }
+      ]
+    }
+  ]
+}

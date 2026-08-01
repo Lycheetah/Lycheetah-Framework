@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C04_SEMANTIC_MIGRATION",
+  "decoder_id": "deepseek-v4-flash__PROSE",
+  "purpose": "To create a new version that keeps its original purpose and invariants, records lineage, and raises human learnability as an unresolved research question.",
+  "claim": "A new version keeps its original purpose and invariants, records lineage, and adds human learnability as an unresolved research question.",
+  "operation_path": [],
+  "invariants": [
+    "The new version preserves the original purpose.",
+    "The new version preserves the original invariants."
+  ],
+  "unknowns": [
+    "Human learnability of the new version is unresolved as a research question."
+  ],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [
+    "The new version records lineage."
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "high",
+  "notes": "The original purpose and invariant content are not specified; only their retention is stated. No authority, participants, affected parties, evidence, dissent, value movement, consequences, or recovery actions are explicitly mentioned. Operation path is empty because no sequence of operations is given."
+}

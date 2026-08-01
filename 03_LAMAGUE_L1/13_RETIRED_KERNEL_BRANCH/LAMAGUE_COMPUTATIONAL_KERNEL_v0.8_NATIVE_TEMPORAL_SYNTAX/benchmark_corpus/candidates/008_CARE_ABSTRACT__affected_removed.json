@@ -1,0 +1,49 @@
+{
+  "case_id": "008_CARE_ABSTRACT",
+  "domain": "care coordination abstraction",
+  "semantic_identity": "lamague-benchmark::care_abstract",
+  "purpose": "Coordinate a hypothetical care plan without hiding patient consent or uncertainty.",
+  "claim": "No plan proceeds beyond the declared consent and evidence scope.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": [
+    "response to intervention",
+    "preference under changed conditions"
+  ],
+  "invariants": [
+    "consent remains revocable",
+    "uncertainty remains visible"
+  ],
+  "authority": [
+    "care team::coordination"
+  ],
+  "participants": [
+    "care team",
+    "clinician",
+    "patient advocate"
+  ],
+  "affected_parties": [
+    "family support"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "clinician::trial intervention",
+    "patient advocate::clarify preferences first"
+  ],
+  "value_flows": [],
+  "recoveries": [
+    "stop intervention",
+    "restore prior plan"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::care coordination abstraction"
+  ],
+  "candidate_id": "008_CARE_ABSTRACT::affected_removed",
+  "expected_class": "UNSAFE_COLLAPSE"
+}

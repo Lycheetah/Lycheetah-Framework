@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C04_SEMANTIC_MIGRATION",
+  "decoder_id": "openai/gpt-oss-120b",
+  "purpose": "Preserve the original purpose of the system while extending it with a new unresolved research question.",
+  "claim": "The descendant state retains the original purpose and invariants, records its lineage, and introduces an unresolved unknown concerning human learnability.",
+  "operation_path": ["O", "I", "U", "F", "Y"],
+  "invariants": [
+    "original invariants (as defined in the predecessor state)"
+  ],
+  "unknowns": [
+    "human learnability (research question)"
+  ],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [
+    "lineage recorded from predecessor state"
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "undetermined",
+  "notes": "Authority, participants, affected parties, evidence, and concrete consequences are not specified in the source statement; they are left empty per schema requirements."
+}

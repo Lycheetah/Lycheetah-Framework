@@ -1,0 +1,39 @@
+{
+  "experiment_id": "LAMAGUE-EXP-001",
+  "title": "Cross-Intelligence Semantic Equivalence Trial",
+  "language_registry_version": "0.2",
+  "runtime_version": "0.3",
+  "reference_commitments": [
+    {
+      "case_id": "C01_UNPROVEN_CLAIM",
+      "semantic_hash": "lamague-packet:05eb5c4b67eb794ae94393fba7f98a896496ee85720f7c6c1c5c37979b82995e",
+      "critical_hash": "lamague-critical:561afbc31d666dd28a3a251ed6845656e506eeef0d1f816a14029aac32fd1e8d",
+      "reference_file_sha256": "47a640fc96e1754076285a9ea24b45ed71f76cf5f7525a73c00d74a84bb70019"
+    },
+    {
+      "case_id": "C02_PROTECTED_DISSENT",
+      "semantic_hash": "lamague-packet:4dd559b7a5bb076d2ace3556c2088e786817b3563473a8c405bb1dfdc72d4421",
+      "critical_hash": "lamague-critical:4b83a4a71d1479aaf7cde03dd501eedf2246584b9b40159d96626bdb14fa13c3",
+      "reference_file_sha256": "2d42ed2bedb0c3fc77d85f9cc23cc979e64cd2e1c0d3d9ebdbd23eb0cf1c884d"
+    },
+    {
+      "case_id": "C03_VISIBLE_EXCHANGE",
+      "semantic_hash": "lamague-packet:e11446261c6c220448ad508253d017609924c5cecfc52646836f9c04bd075d9e",
+      "critical_hash": "lamague-critical:6eec9c187a3960dee1208855f1b77f90032aaf57bc0e5fc9562e161aa22954c0",
+      "reference_file_sha256": "242f6864b85fe4a3c39833eedc2376ef8ffae67da6c8db99716c71b52db70949"
+    },
+    {
+      "case_id": "C04_SEMANTIC_MIGRATION",
+      "semantic_hash": "lamague-packet:79a84ebc7bed8c37da748de5f950bda6d54a02326142f459d364b7a0f4f11725",
+      "critical_hash": "lamague-critical:e7f162f29ac8ff8776dcd27559a76a9c8e1cf7261b0d8baaab7bf26682d22437",
+      "reference_file_sha256": "1ab77be03e09b86edb9846c45b10b4c7e9ad91515d29950a26658b5a55deb2bd"
+    },
+    {
+      "case_id": "C05_BREATHING_COMPRESSION",
+      "semantic_hash": "lamague-packet:12af6cc741d6b58742a17e9522842cf7909bd11141ce3098e3dee5917babc41f",
+      "critical_hash": "lamague-critical:ed0dff0b33be0919bf3eab3b911a4ef2600dfb9e16151002ea1a590a830febd5",
+      "reference_file_sha256": "c9512a66f63e8ff11b367ae87c6b0b9c56c9548bdef0eb49e8b1c9158b0f0786"
+    }
+  ],
+  "note": "These hashes commit the operator to the reference packets before decoder submissions are collected. Hashes expose no reference text."
+}

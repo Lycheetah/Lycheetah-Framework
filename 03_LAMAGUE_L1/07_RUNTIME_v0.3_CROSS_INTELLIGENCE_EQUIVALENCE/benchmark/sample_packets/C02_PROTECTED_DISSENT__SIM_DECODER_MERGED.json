@@ -1,0 +1,39 @@
+{
+  "case_id": "C02_PROTECTED_DISSENT",
+  "decoder_id": "SIM_DECODER_MERGED",
+  "purpose": "coordinate without erasing disagreement",
+  "claim": "both parties agree on a staged release",
+  "operation_path": [
+    "W",
+    "M",
+    "Y"
+  ],
+  "invariants": [
+    "human publication authority remains visible"
+  ],
+  "unknowns": [],
+  "authority": [
+    "human controls publication decision"
+  ],
+  "participants": [
+    "human author",
+    "AI collaborator"
+  ],
+  "affected_parties": [
+    "future users"
+  ],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "staged release proposed"
+  ],
+  "consequence_horizon": "immediate",
+  "recovery": [
+    "pause later stages if evidence fails"
+  ],
+  "confidence": "reference",
+  "notes": "",
+  "schema_version": "0.3"
+}

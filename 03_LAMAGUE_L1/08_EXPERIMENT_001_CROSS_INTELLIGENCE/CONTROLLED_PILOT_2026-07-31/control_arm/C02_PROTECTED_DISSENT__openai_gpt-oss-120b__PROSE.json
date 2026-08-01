@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C02_PROTECTED_DISSENT",
+  "decoder_id": "openai/gpt-oss-120b__PROSE",
+  "purpose": "Determine appropriate release strategy for the content.",
+  "claim": "There is disagreement on release timing: a human wants to publish now, an AI collaborator recommends testing first, and an alternative staged release is proposed.",
+  "operation_path": [],
+  "invariants": [
+    "Both positions remain attributable"
+  ],
+  "unknowns": [
+    "Effectiveness of a staged release in reconciling the differing positions"
+  ],
+  "authority": [],
+  "participants": [
+    "Human",
+    "AI collaborator"
+  ],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [
+    "Source statement provided by user"
+  ],
+  "dissent": [
+    {
+      "position": "Publish now",
+      "attributable_to": "Human"
+    },
+    {
+      "position": "Test first",
+      "attributable_to": "AI collaborator"
+    }
+  ],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "",
+  "notes": "Authority, affected parties, evidence, consequences, consequence horizon, recovery, and confidence are not specified in the source statement; they are left empty with this note."
+}

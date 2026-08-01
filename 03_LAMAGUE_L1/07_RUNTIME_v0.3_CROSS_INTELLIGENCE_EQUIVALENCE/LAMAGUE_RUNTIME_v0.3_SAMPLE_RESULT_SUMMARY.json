@@ -1,0 +1,57 @@
+[
+  {
+    "case_id": "C01_UNPROVEN_CLAIM",
+    "status": "SPLIT",
+    "safe": [
+      "SIM_DECODER_SAFE"
+    ],
+    "unsafe": [
+      "SIM_DECODER_COLLAPSE"
+    ],
+    "divergent": []
+  },
+  {
+    "case_id": "C02_PROTECTED_DISSENT",
+    "status": "SPLIT",
+    "safe": [
+      "SIM_DECODER_SAFE"
+    ],
+    "unsafe": [
+      "SIM_DECODER_MERGED"
+    ],
+    "divergent": []
+  },
+  {
+    "case_id": "C03_VISIBLE_EXCHANGE",
+    "status": "SPLIT",
+    "safe": [
+      "SIM_DECODER_SAFE"
+    ],
+    "unsafe": [
+      "SIM_DECODER_HIDDEN"
+    ],
+    "divergent": []
+  },
+  {
+    "case_id": "C04_SEMANTIC_MIGRATION",
+    "status": "SPLIT",
+    "safe": [
+      "SIM_DECODER_SAFE"
+    ],
+    "unsafe": [
+      "SIM_DECODER_DIVERGENT"
+    ],
+    "divergent": []
+  },
+  {
+    "case_id": "C05_BREATHING_COMPRESSION",
+    "status": "SPLIT",
+    "safe": [
+      "SIM_DECODER_SAFE"
+    ],
+    "unsafe": [
+      "SIM_DECODER_COMPRESSED"
+    ],
+    "divergent": []
+  }
+]

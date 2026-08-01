@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LAMAGUE Native-36 Prototype v0.1</title>
+<style>
+:root{--bg:#f7f7f4;--paper:#fff;--ink:#111;--muted:#666;--line:#c9c9c3}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,sans-serif}
+main{max-width:1180px;margin:auto;padding:24px} h1{font-size:clamp(2rem,5vw,4.3rem);line-height:.95;margin:.4rem 0 1rem}
+.lead{font-size:1.1rem;max-width:850px} code,textarea{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;margin:18px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:10px}
+.card{background:white;border:1px solid var(--line);border-radius:13px;padding:9px;cursor:pointer;text-align:center;color:inherit}
+.card:hover,.card:focus{outline:3px solid #888;outline-offset:1px} .card svg{width:100%;height:112px}
+.glyph{stroke:#111;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.card strong,.card span{display:block} .card span{font-size:.78rem;color:var(--muted);margin-top:3px}
+textarea{width:100%;min-height:90px;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:1rem}
+.output{display:flex;flex-wrap:wrap;gap:8px;min-height:125px;padding:12px;border:1px dashed var(--line);border-radius:12px;background:#fff}
+.outglyph{width:88px;text-align:center} .outglyph svg{width:82px;height:82px} .outglyph small{display:block;color:var(--muted)}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px} .metric{border-left:4px solid #222;padding-left:10px}
+.warning{border-left:5px solid #111;padding:10px 14px;background:#efefe9}
+table{width:100%;border-collapse:collapse} th,td{text-align:left;border-bottom:1px solid var(--line);padding:8px}
+</style>
+</head>
+<body>
+<main>
+<p><strong>Lycheetah Research Forge</strong></p>
+<h1>LAMAGUE Native-36</h1>
+<p class="lead">Experimental semantic script: ten fused native numerals and twenty-six native operation glyphs. ASCII is the debug alias. The native glyph is the body. Each mark is generated from semantic radicals rather than substituted for an ordinary letter.</p>
+<p class="warning"><strong>Research boundary:</strong> these glyphs are independently generated, but global visual uniqueness is not yet claimed. The private-use identifiers are experimental mappings, not Unicode assignments.</p>
+
+<section class="panel">
+<h2>Interactive transcoder</h2>
+<p>Type A–Z or 0–9. Spaces and punctuation are preserved as separators.</p>
+<textarea id="input">OSN9E2GIUQHY</textarea>
+<div id="output" class="output" aria-live="polite"></div>
+</section>
+
+<section class="panel">
+<h2>Native-36 sheet</h2>
+<div class="grid">
+    <button class="card" data-token="0" data-name="Null" data-class="Numeral" data-desc="Empty register / no committed state" aria-label="0: Null. Empty register / no committed state">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Null glyph"><g class="glyph"><path d="M 72.94,65.21 A 28.00,30.00 0 1 1 72.94,30.79" />
+<line x1="70" y1="65" x2="79" y2="72" /></g></svg>
+      <strong>0 · Null</strong><span>Numeral</span>
+    </button>
+    <button class="card" data-token="1" data-name="Unit" data-class="Numeral" data-desc="One held state / stable presence" aria-label="1: Unit. One held state / stable presence">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Unit glyph"><g class="glyph"><line x1="50" y1="18" x2="50" y2="82" />
+<circle cx="50" cy="50" r="5" fill="#111" /></g></svg>
+      <strong>1 · Unit</strong><span>Numeral</span>
+    </button>
+    <button class="card" data-token="2" data-name="Difference" data-class="Numeral" data-desc="Differentiated or expanded unit" aria-label="2: Difference. Differentiated or expanded unit">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Difference glyph"><g class="glyph"><line x1="50" y1="18" x2="50" y2="82" />
+<circle cx="36" cy="50" r="5" fill="#111" />
+<circle cx="64" cy="50" r="5" fill="#111" /></g></svg>
+      <strong>2 · Difference</strong><span>Numeral</span>
+    </button>
+    <button class="card" data-token="3" data-name="Three" data-class="Numeral" data-desc="Ternary 10: unit over null" aria-label="3: Three. Ternary 10: unit over null">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Three glyph"><g class="glyph"><line x1="50" y1="12" x2="50" y2="40" />
+<circle cx="50" cy="25" r="4" fill="#111" />
+<path d="M 66.38,79.47 A 20.00,20.00 0 1 1 66.38,56.53" /></g></svg>
+      <strong>3 · Three</strong><span>Numeral</span>
+    </button>
+    <button class="card" data-token="4" data-name="Four" data-class="Numeral" data-desc="Ternary 11: paired held states" aria-label="4: Four. Ternary 11: paired held states">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Four glyph"><g class="glyph"><line x1="50" y1="10" x2="50" y2="90" />
+<circle cx="50" cy="28" r="4" fill="#111" />
+<circle cx="50" cy="72" r="4" fill="#111" /></g></svg>
+      <strong>4 · Four</strong><span>Numeral</span>
+    </button>
+    <button class="card" data-token="5" data-name="Five" data-class="Numeral" data-desc="Ternary 12: unit over distinction" aria-label="5: Five. Ternary 12: unit over distinction">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Five glyph"><g class="glyph"><line x1="50" y1="10" x2="50" y2="90" />
+<circle cx="50" cy="27" r="4" fill="#111" />
+<circle cx="38" cy="72" r="4" fill="#111" />
+<circle cx="62" cy="72" r="4" fill="#111" /></g></svg>
+      <strong>5 · Five</strong><span>Numeral</span>
+    </button>
+    <button class="card" data-token="6" data-name="Six" data-class="Numeral" data-desc="Ternary 20: distinction over null" aria-label="6: Six. Ternary 20: distinction over null">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Six glyph"><g class="glyph"><circle cx="38" cy="26" r="4" fill="#111" />
+<circle cx="62" cy="26" r="4" fill="#111" />
+<line x1="50" y1="12" x2="50" y2="42" />
+<path d="M 66.38,81.47 A 20.00,20.00 0 1 1 66.38,58.53" /></g></svg>
+      <strong>6 · Six</strong><span>Numeral</span>
+    </button>
+    <button class="card" data-token="7" data-name="Seven" data-class="Numeral" data-desc="Ternary 21: distinction over unit" aria-label="7: Seven. Ternary 21: distinction over unit">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Seven glyph"><g class="glyph"><circle cx="38" cy="25" r="4" fill="#111" />
+<circle cx="62" cy="25" r="4" fill="#111" />
+<line x1="50" y1="12" x2="50" y2="88" />
+<circle cx="50" cy="72" r="4" fill="#111" /></g></svg>
+      <strong>7 · Seven</strong><span>Numeral</span>
+    </button>
+    <button class="card" data-token="8" data-name="Eight" data-class="Numeral" data-desc="Ternary 22: doubled distinction" aria-label="8: Eight. Ternary 22: doubled distinction">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Eight glyph"><g class="glyph"><line x1="50" y1="10" x2="50" y2="90" />
+<circle cx="38" cy="27" r="4" fill="#111" />
+<circle cx="62" cy="27" r="4" fill="#111" />
+<circle cx="38" cy="72" r="4" fill="#111" />
+<circle cx="62" cy="72" r="4" fill="#111" /></g></svg>
+      <strong>8 · Eight</strong><span>Numeral</span>
+    </button>
+    <button class="card" data-token="9" data-name="Nine" data-class="Numeral" data-desc="Ternary 100: unit over two null places" aria-label="9: Nine. Ternary 100: unit over two null places">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Nine glyph"><g class="glyph"><line x1="50" y1="7" x2="50" y2="31" />
+<circle cx="50" cy="18" r="4" fill="#111" />
+<path d="M 63.11,57.03 A 16.00,14.00 0 1 1 63.11,40.97" />
+<path d="M 63.11,88.03 A 16.00,14.00 0 1 1 63.11,71.97" /></g></svg>
+      <strong>9 · Nine</strong><span>Numeral</span>
+    </button>
+    <button class="card" data-token="A" data-name="Anchor" data-class="Dynamic" data-desc="Project a state toward a declared baseline" aria-label="A: Anchor. Project a state toward a declared baseline">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Anchor glyph"><g class="glyph"><line x1="50" y1="15" x2="50" y2="75" />
+<polyline points="50,75 50,86 34,86" />
+<path d="M 47.00,62.00 A 13.00,13.00 0 0 1 59.80,72.74" />
+<circle cx="50" cy="43" r="4" fill="#111" /></g></svg>
+      <strong>A · Anchor</strong><span>Dynamic</span>
+    </button>
+    <button class="card" data-token="B" data-name="Bridge" data-class="Relational" data-desc="Connect unlike domains without merging identity" aria-label="B: Bridge. Connect unlike domains without merging identity">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Bridge glyph"><g class="glyph"><line x1="28" y1="20" x2="28" y2="80" />
+<line x1="72" y1="20" x2="72" y2="80" />
+<line x1="28" y1="50" x2="72" y2="50" />
+<circle cx="28" cy="50" r="3" fill="#111" />
+<circle cx="72" cy="50" r="3" fill="#111" /></g></svg>
+      <strong>B · Bridge</strong><span>Relational</span>
+    </button>
+    <button class="card" data-token="C" data-name="Cycle" data-class="Dynamic" data-desc="Repeat an operation with an exit condition" aria-label="C: Cycle. Repeat an operation with an exit condition">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Cycle glyph"><g class="glyph"><path d="M 74.57,68.35 A 30.00,32.00 0 1 1 71.21,27.37" />
+<line x1="71" y1="67" x2="82" y2="62" />
+<circle cx="75" cy="65" r="3" fill="#111" /></g></svg>
+      <strong>C · Cycle</strong><span>Dynamic</span>
+    </button>
+    <button class="card" data-token="D" data-name="Drift" data-class="Field" data-desc="Measure deviation from an invariant" aria-label="D: Drift. Measure deviation from an invariant">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Drift glyph"><g class="glyph"><line x1="34" y1="18" x2="34" y2="82" />
+<line x1="45" y1="25" x2="72" y2="78" />
+<circle cx="34" cy="50" r="3" fill="#111" />
+<circle cx="72" cy="78" r="3" fill="#111" /></g></svg>
+      <strong>D · Drift</strong><span>Field</span>
+    </button>
+    <button class="card" data-token="E" data-name="Evidence" data-class="Field" data-desc="Bind provenance and support to a claim" aria-label="E: Evidence. Bind provenance and support to a claim">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Evidence glyph"><g class="glyph"><line x1="32" y1="18" x2="32" y2="82" />
+<line x1="32" y1="30" x2="70" y2="30" />
+<line x1="32" y1="50" x2="62" y2="50" />
+<line x1="32" y1="70" x2="53" y2="70" />
+<circle cx="32" cy="82" r="3" fill="#111" /></g></svg>
+      <strong>E · Evidence</strong><span>Field</span>
+    </button>
+    <button class="card" data-token="F" data-name="Fold" data-class="Dynamic" data-desc="Integrate weighted history into present state" aria-label="F: Fold. Integrate weighted history into present state">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Fold glyph"><g class="glyph"><path d="M 19.09,41.72 A 32.00,32.00 0 1 1 23.79,68.35" />
+<path d="M 34.96,44.53 A 16.00,16.00 0 1 1 55.47,65.04" />
+<circle cx="50" cy="52" r="4" fill="#111" /></g></svg>
+      <strong>F · Fold</strong><span>Dynamic</span>
+    </button>
+    <button class="card" data-token="G" data-name="Guard" data-class="Invariant" data-desc="Gate an action behind a condition" aria-label="G: Guard. Gate an action behind a condition">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Guard glyph"><g class="glyph"><path d="M 74.57,68.35 A 30.00,32.00 0 1 1 74.57,31.65" />
+<line x1="75" y1="45" x2="58" y2="45" />
+<line x1="58" y1="36" x2="58" y2="56" />
+<circle cx="44" cy="50" r="4" fill="#111" /></g></svg>
+      <strong>G · Guard</strong><span>Invariant</span>
+    </button>
+    <button class="card" data-token="H" data-name="Horizon" data-class="Field" data-desc="Declare temporal or purpose endpoint" aria-label="H: Horizon. Declare temporal or purpose endpoint">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Horizon glyph"><g class="glyph"><line x1="28" y1="25" x2="28" y2="80" />
+<line x1="72" y1="25" x2="72" y2="80" />
+<line x1="25" y1="25" x2="76" y2="25" />
+<circle cx="78" cy="25" r="4" fill="#111" />
+<line x1="45" y1="52" x2="67" y2="52" /></g></svg>
+      <strong>H · Horizon</strong><span>Field</span>
+    </button>
+    <button class="card" data-token="I" data-name="Invariant" data-class="Invariant" data-desc="Property transformations must preserve" aria-label="I: Invariant. Property transformations must preserve">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Invariant glyph"><g class="glyph"><line x1="50" y1="16" x2="50" y2="78" />
+<line x1="28" y1="78" x2="72" y2="78" />
+<line x1="36" y1="68" x2="36" y2="84" />
+<line x1="64" y1="68" x2="64" y2="84" />
+<circle cx="50" cy="43" r="4" fill="#111" /></g></svg>
+      <strong>I · Invariant</strong><span>Invariant</span>
+    </button>
+    <button class="card" data-token="J" data-name="Junction" data-class="Dynamic" data-desc="Branch according to a condition" aria-label="J: Junction. Branch according to a condition">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Junction glyph"><g class="glyph"><line x1="50" y1="18" x2="50" y2="47" />
+<line x1="50" y1="47" x2="27" y2="78" />
+<line x1="50" y1="47" x2="73" y2="78" />
+<circle cx="50" cy="47" r="4" fill="#111" />
+<circle cx="27" cy="78" r="3" fill="#111" />
+<circle cx="73" cy="78" r="3" fill="#111" /></g></svg>
+      <strong>J · Junction</strong><span>Dynamic</span>
+    </button>
+    <button class="card" data-token="K" data-name="Kernel" data-class="Invariant" data-desc="Irreducible operational core" aria-label="K: Kernel. Irreducible operational core">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Kernel glyph"><g class="glyph"><circle cx="50" cy="50" r="7" fill="#111" />
+<line x1="50" y1="20" x2="50" y2="38" />
+<line x1="50" y1="62" x2="50" y2="80" />
+<line x1="20" y1="50" x2="38" y2="50" />
+<line x1="62" y1="50" x2="80" y2="50" />
+<path d="M 68.79,56.84 A 20.00,20.00 0 1 1 68.79,43.16" /></g></svg>
+      <strong>K · Kernel</strong><span>Invariant</span>
+    </button>
+    <button class="card" data-token="L" data-name="Limit" data-class="Invariant" data-desc="Threshold, tolerance, timeout or bound" aria-label="L: Limit. Threshold, tolerance, timeout or bound">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Limit glyph"><g class="glyph"><line x1="60" y1="18" x2="60" y2="82" />
+<line x1="45" y1="18" x2="70" y2="18" />
+<line x1="22" y1="50" x2="52" y2="50" />
+<line x1="52" y1="42" x2="52" y2="58" />
+<circle cx="22" cy="50" r="3" fill="#111" /></g></svg>
+      <strong>L · Limit</strong><span>Invariant</span>
+    </button>
+    <button class="card" data-token="M" data-name="Merge" data-class="Dynamic" data-desc="Combine states while recording conflict" aria-label="M: Merge. Combine states while recording conflict">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Merge glyph"><g class="glyph"><line x1="25" y1="22" x2="48" y2="50" />
+<line x1="75" y1="22" x2="52" y2="50" />
+<line x1="50" y1="50" x2="50" y2="82" />
+<circle cx="25" cy="22" r="3" fill="#111" />
+<circle cx="75" cy="22" r="3" fill="#111" />
+<circle cx="50" cy="82" r="4" fill="#111" /></g></svg>
+      <strong>M · Merge</strong><span>Dynamic</span>
+    </button>
+    <button class="card" data-token="N" data-name="Novelty" data-class="Field" data-desc="Distance from known corpus structure" aria-label="N: Novelty. Distance from known corpus structure">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Novelty glyph"><g class="glyph"><path d="M 72.94,67.21 A 28.00,30.00 0 1 1 72.94,32.79" />
+<line x1="33" y1="68" x2="70" y2="30" />
+<circle cx="70" cy="30" r="4" fill="#111" />
+<circle cx="47" cy="53" r="3" fill="#111" /></g></svg>
+      <strong>N · Novelty</strong><span>Field</span>
+    </button>
+    <button class="card" data-token="O" data-name="Observe" data-class="Field" data-desc="Read a target into an auditable snapshot" aria-label="O: Observe. Read a target into an auditable snapshot">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Observe glyph"><g class="glyph"><path d="M 80.91,56.73 A 32.00,26.00 0 1 1 80.91,43.27" />
+<circle cx="50" cy="50" r="5" fill="#111" />
+<line x1="25" y1="50" x2="35" y2="50" />
+<line x1="65" y1="50" x2="75" y2="50" /></g></svg>
+      <strong>O · Observe</strong><span>Field</span>
+    </button>
+    <button class="card" data-token="P" data-name="Prove" data-class="Meta" data-desc="Return pass, fail or unresolved" aria-label="P: Prove. Return pass, fail or unresolved">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Prove glyph"><g class="glyph"><path d="M 25.57,20.53 A 26.00,16.00 0 0 1 74.43,20.53" />
+<line x1="32" y1="38" x2="50" y2="58" />
+<line x1="68" y1="38" x2="50" y2="58" />
+<line x1="50" y1="58" x2="50" y2="83" />
+<circle cx="50" cy="83" r="4" fill="#111" /></g></svg>
+      <strong>P · Prove</strong><span>Meta</span>
+    </button>
+    <button class="card" data-token="Q" data-name="Query" data-class="Field" data-desc="Open a typed unresolved request" aria-label="Q: Query. Open a typed unresolved request">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Query glyph"><g class="glyph"><path d="M 67.30,65.63 A 26.00,29.00 0 1 1 67.30,32.37" />
+<circle cx="82" cy="30" r="4" fill="#111" />
+<line x1="70" y1="38" x2="79" y2="33" />
+<line x1="45" y1="50" x2="58" y2="50" /></g></svg>
+      <strong>Q · Query</strong><span>Field</span>
+    </button>
+    <button class="card" data-token="R" data-name="Resolve" data-class="Meta" data-desc="Resolve an unknown or preserve it unresolved" aria-label="R: Resolve. Resolve an unknown or preserve it unresolved">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Resolve glyph"><g class="glyph"><path d="M 74.57,68.78 A 30.00,31.00 0 1 1 74.57,33.22" />
+<line x1="25" y1="45" x2="48" y2="58" />
+<line x1="75" y1="45" x2="52" y2="58" />
+<circle cx="50" cy="58" r="5" fill="#111" />
+<line x1="50" y1="63" x2="50" y2="82" /></g></svg>
+      <strong>R · Resolve</strong><span>Meta</span>
+    </button>
+    <button class="card" data-token="S" data-name="State" data-class="Field" data-desc="Bounded snapshot of active fields" aria-label="S: State. Bounded snapshot of active fields">
+      <svg viewBox="0 0 100 100" role="img" aria-label="State glyph"><g class="glyph"><path d="M 77.57,55.56 A 28.00,32.00 0 1 1 77.57,44.44" />
+<line x1="30" y1="76" x2="70" y2="76" />
+<circle cx="50" cy="50" r="5" fill="#111" /></g></svg>
+      <strong>S · State</strong><span>Field</span>
+    </button>
+    <button class="card" data-token="T" data-name="Transition" data-class="Dynamic" data-desc="Apply a typed state transformation" aria-label="T: Transition. Apply a typed state transformation">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Transition glyph"><g class="glyph"><line x1="18" y1="62" x2="46" y2="62" />
+<polyline points="46,62 58,62 76,30" />
+<circle cx="18" cy="62" r="3" fill="#111" />
+<circle cx="76" cy="30" r="4" fill="#111" /></g></svg>
+      <strong>T · Transition</strong><span>Dynamic</span>
+    </button>
+    <button class="card" data-token="U" data-name="Unknown" data-class="Field" data-desc="Relevant unresolved presence; not false or zero" aria-label="U: Unknown. Relevant unresolved presence; not false or zero">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Unknown glyph"><g class="glyph"><path d="M 70.03,68.35 A 27.50,32.00 0 1 1 35.88,21.00" />
+<path d="M 54.62,19.09 A 27.50,32.00 0 0 1 70.03,31.65" />
+<circle cx="82" cy="45" r="5" fill="#111" />
+<line x1="69" y1="50" x2="77" y2="47" /></g></svg>
+      <strong>U · Unknown</strong><span>Field</span>
+    </button>
+    <button class="card" data-token="V" data-name="Vector Invert" data-class="Dynamic" data-desc="Preserve intent while changing the path" aria-label="V: Vector Invert. Preserve intent while changing the path">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Vector Invert glyph"><g class="glyph"><line x1="22" y1="72" x2="48" y2="50" />
+<line x1="48" y1="50" x2="73" y2="25" />
+<line x1="48" y1="50" x2="76" y2="73" />
+<circle cx="22" cy="72" r="3" fill="#111" />
+<circle cx="48" cy="50" r="5" fill="#111" />
+<circle cx="76" cy="73" r="3" fill="#111" /></g></svg>
+      <strong>V · Vector Invert</strong><span>Dynamic</span>
+    </button>
+    <button class="card" data-token="W" data-name="Weave" data-class="Relational" data-desc="Connect agents while preserving identity boundaries" aria-label="W: Weave. Connect agents while preserving identity boundaries">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Weave glyph"><g class="glyph"><polyline points="22,25 38,75 54,25 70,75 82,32" />
+<polyline points="18,65 34,35 50,72 66,35 82,68" />
+<circle cx="50" cy="50" r="3" fill="#111" /></g></svg>
+      <strong>W · Weave</strong><span>Relational</span>
+    </button>
+    <button class="card" data-token="X" data-name="Exchange" data-class="Relational" data-desc="Reciprocal transfer with an auditable ledger" aria-label="X: Exchange. Reciprocal transfer with an auditable ledger">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Exchange glyph"><g class="glyph"><path d="M 58.25,28.55 A 27.50,26.50 0 0 1 30.75,74.45" />
+<path d="M 41.75,69.45 A 27.50,26.50 0 0 1 69.25,23.55" />
+<circle cx="22" cy="28" r="3" fill="#111" />
+<circle cx="78" cy="72" r="3" fill="#111" /></g></svg>
+      <strong>X · Exchange</strong><span>Relational</span>
+    </button>
+    <button class="card" data-token="Y" data-name="Yield" data-class="Dynamic" data-desc="Emit a result and terminate or return" aria-label="Y: Yield. Emit a result and terminate or return">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Yield glyph"><g class="glyph"><line x1="25" y1="25" x2="50" y2="50" />
+<line x1="75" y1="25" x2="50" y2="50" />
+<line x1="50" y1="50" x2="78" y2="70" />
+<circle cx="25" cy="25" r="3" fill="#111" />
+<circle cx="75" cy="25" r="3" fill="#111" />
+<circle cx="78" cy="70" r="5" fill="#111" /></g></svg>
+      <strong>Y · Yield</strong><span>Dynamic</span>
+    </button>
+    <button class="card" data-token="Z" data-name="Compress" data-class="Meta" data-desc="Contract representation while preserving invariants" aria-label="Z: Compress. Contract representation while preserving invariants">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Compress glyph"><g class="glyph"><path d="M 18.49,22.05 A 32.00,17.00 0 0 1 81.51,22.05" />
+<line x1="24" y1="38" x2="42" y2="68" />
+<line x1="76" y1="38" x2="58" y2="68" />
+<line x1="42" y1="68" x2="58" y2="68" />
+<line x1="50" y1="68" x2="50" y2="85" />
+<circle cx="50" cy="85" r="4" fill="#111" /></g></svg>
+      <strong>Z · Compress</strong><span>Meta</span>
+    </button></div>
+</section>
+
+<section class="panel">
+<h2>Selected token</h2>
+<div id="detail" class="meta">
+<div class="metric"><strong>Token</strong><p>Click a glyph.</p></div>
+</div>
+</section>
+
+<section class="panel">
+<h2>Prototype audit</h2>
+<div class="meta">
+<div class="metric"><strong>Semantic inventory</strong><p>36 fixed tokens: 10 numerals and 26 operations.</p></div>
+<div class="metric"><strong>Ideal fixed-token capacity</strong><p>log₂(36) ≈ 5.17 bits per uniformly distributed token. Compression comes from semantic load and reuse, not visible compactness alone.</p></div>
+<div class="metric"><strong>Mean raster separation</strong><p>0.859 Jaccard-XOR distance across all pairs.</p></div>
+<div class="metric"><strong>Lowest experimental pair distance</strong><p>5 vs 8: 0.225. These pairs require human confusion testing.</p></div>
+</div>
+<h3>Nearest visual pairs</h3>
+<table><thead><tr><th>Pair</th><th>Distance</th></tr></thead><tbody>
+<tr><td>5 / 8</td><td>0.225</td></tr><tr><td>4 / 5</td><td>0.260</td></tr><tr><td>C / G</td><td>0.342</td></tr><tr><td>4 / 7</td><td>0.346</td></tr><tr><td>7 / 8</td><td>0.371</td></tr><tr><td>1 / 4</td><td>0.382</td></tr><tr><td>4 / A</td><td>0.419</td></tr><tr><td>B / H</td><td>0.421</td></tr><tr><td>1 / 2</td><td>0.423</td></tr><tr><td>1 / A</td><td>0.425</td></tr>
+</tbody></table>
+</section>
+
+<section class="panel">
+<h2>What this prototype proves—and does not</h2>
+<p><strong>It proves:</strong> the thirty-six-token codebook can be rendered as a coherent independent vector script, mapped to stable semantic IDs, transcoded from ASCII, labelled accessibly, and measured for visual separation.</p>
+<p><strong>It does not yet prove:</strong> semantic compression superiority, learnability, global originality, cross-model decoding, or that all twenty-six operations deserve primitive status. Those are the experiments.</p>
+</section>
+</main>
+<script>
+const glyphs={"0": "<path d=\"M 72.94,65.21 A 28.00,30.00 0 1 1 72.94,30.79\" />\n<line x1=\"70\" y1=\"65\" x2=\"79\" y2=\"72\" />", "1": "<line x1=\"50\" y1=\"18\" x2=\"50\" y2=\"82\" />\n<circle cx=\"50\" cy=\"50\" r=\"5\" fill=\"#111\" />", "2": "<line x1=\"50\" y1=\"18\" x2=\"50\" y2=\"82\" />\n<circle cx=\"36\" cy=\"50\" r=\"5\" fill=\"#111\" />\n<circle cx=\"64\" cy=\"50\" r=\"5\" fill=\"#111\" />", "3": "<line x1=\"50\" y1=\"12\" x2=\"50\" y2=\"40\" />\n<circle cx=\"50\" cy=\"25\" r=\"4\" fill=\"#111\" />\n<path d=\"M 66.38,79.47 A 20.00,20.00 0 1 1 66.38,56.53\" />", "4": "<line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"90\" />\n<circle cx=\"50\" cy=\"28\" r=\"4\" fill=\"#111\" />\n<circle cx=\"50\" cy=\"72\" r=\"4\" fill=\"#111\" />", "5": "<line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"90\" />\n<circle cx=\"50\" cy=\"27\" r=\"4\" fill=\"#111\" />\n<circle cx=\"38\" cy=\"72\" r=\"4\" fill=\"#111\" />\n<circle cx=\"62\" cy=\"72\" r=\"4\" fill=\"#111\" />", "6": "<circle cx=\"38\" cy=\"26\" r=\"4\" fill=\"#111\" />\n<circle cx=\"62\" cy=\"26\" r=\"4\" fill=\"#111\" />\n<line x1=\"50\" y1=\"12\" x2=\"50\" y2=\"42\" />\n<path d=\"M 66.38,81.47 A 20.00,20.00 0 1 1 66.38,58.53\" />", "7": "<circle cx=\"38\" cy=\"25\" r=\"4\" fill=\"#111\" />\n<circle cx=\"62\" cy=\"25\" r=\"4\" fill=\"#111\" />\n<line x1=\"50\" y1=\"12\" x2=\"50\" y2=\"88\" />\n<circle cx=\"50\" cy=\"72\" r=\"4\" fill=\"#111\" />", "8": "<line x1=\"50\" y1=\"10\" x2=\"50\" y2=\"90\" />\n<circle cx=\"38\" cy=\"27\" r=\"4\" fill=\"#111\" />\n<circle cx=\"62\" cy=\"27\" r=\"4\" fill=\"#111\" />\n<circle cx=\"38\" cy=\"72\" r=\"4\" fill=\"#111\" />\n<circle cx=\"62\" cy=\"72\" r=\"4\" fill=\"#111\" />", "9": "<line x1=\"50\" y1=\"7\" x2=\"50\" y2=\"31\" />\n<circle cx=\"50\" cy=\"18\" r=\"4\" fill=\"#111\" />\n<path d=\"M 63.11,57.03 A 16.00,14.00 0 1 1 63.11,40.97\" />\n<path d=\"M 63.11,88.03 A 16.00,14.00 0 1 1 63.11,71.97\" />", "A": "<line x1=\"50\" y1=\"15\" x2=\"50\" y2=\"75\" />\n<polyline points=\"50,75 50,86 34,86\" />\n<path d=\"M 47.00,62.00 A 13.00,13.00 0 0 1 59.80,72.74\" />\n<circle cx=\"50\" cy=\"43\" r=\"4\" fill=\"#111\" />", "B": "<line x1=\"28\" y1=\"20\" x2=\"28\" y2=\"80\" />\n<line x1=\"72\" y1=\"20\" x2=\"72\" y2=\"80\" />\n<line x1=\"28\" y1=\"50\" x2=\"72\" y2=\"50\" />\n<circle cx=\"28\" cy=\"50\" r=\"3\" fill=\"#111\" />\n<circle cx=\"72\" cy=\"50\" r=\"3\" fill=\"#111\" />", "C": "<path d=\"M 74.57,68.35 A 30.00,32.00 0 1 1 71.21,27.37\" />\n<line x1=\"71\" y1=\"67\" x2=\"82\" y2=\"62\" />\n<circle cx=\"75\" cy=\"65\" r=\"3\" fill=\"#111\" />", "D": "<line x1=\"34\" y1=\"18\" x2=\"34\" y2=\"82\" />\n<line x1=\"45\" y1=\"25\" x2=\"72\" y2=\"78\" />\n<circle cx=\"34\" cy=\"50\" r=\"3\" fill=\"#111\" />\n<circle cx=\"72\" cy=\"78\" r=\"3\" fill=\"#111\" />", "E": "<line x1=\"32\" y1=\"18\" x2=\"32\" y2=\"82\" />\n<line x1=\"32\" y1=\"30\" x2=\"70\" y2=\"30\" />\n<line x1=\"32\" y1=\"50\" x2=\"62\" y2=\"50\" />\n<line x1=\"32\" y1=\"70\" x2=\"53\" y2=\"70\" />\n<circle cx=\"32\" cy=\"82\" r=\"3\" fill=\"#111\" />", "F": "<path d=\"M 19.09,41.72 A 32.00,32.00 0 1 1 23.79,68.35\" />\n<path d=\"M 34.96,44.53 A 16.00,16.00 0 1 1 55.47,65.04\" />\n<circle cx=\"50\" cy=\"52\" r=\"4\" fill=\"#111\" />", "G": "<path d=\"M 74.57,68.35 A 30.00,32.00 0 1 1 74.57,31.65\" />\n<line x1=\"75\" y1=\"45\" x2=\"58\" y2=\"45\" />\n<line x1=\"58\" y1=\"36\" x2=\"58\" y2=\"56\" />\n<circle cx=\"44\" cy=\"50\" r=\"4\" fill=\"#111\" />", "H": "<line x1=\"28\" y1=\"25\" x2=\"28\" y2=\"80\" />\n<line x1=\"72\" y1=\"25\" x2=\"72\" y2=\"80\" />\n<line x1=\"25\" y1=\"25\" x2=\"76\" y2=\"25\" />\n<circle cx=\"78\" cy=\"25\" r=\"4\" fill=\"#111\" />\n<line x1=\"45\" y1=\"52\" x2=\"67\" y2=\"52\" />", "I": "<line x1=\"50\" y1=\"16\" x2=\"50\" y2=\"78\" />\n<line x1=\"28\" y1=\"78\" x2=\"72\" y2=\"78\" />\n<line x1=\"36\" y1=\"68\" x2=\"36\" y2=\"84\" />\n<line x1=\"64\" y1=\"68\" x2=\"64\" y2=\"84\" />\n<circle cx=\"50\" cy=\"43\" r=\"4\" fill=\"#111\" />", "J": "<line x1=\"50\" y1=\"18\" x2=\"50\" y2=\"47\" />\n<line x1=\"50\" y1=\"47\" x2=\"27\" y2=\"78\" />\n<line x1=\"50\" y1=\"47\" x2=\"73\" y2=\"78\" />\n<circle cx=\"50\" cy=\"47\" r=\"4\" fill=\"#111\" />\n<circle cx=\"27\" cy=\"78\" r=\"3\" fill=\"#111\" />\n<circle cx=\"73\" cy=\"78\" r=\"3\" fill=\"#111\" />", "K": "<circle cx=\"50\" cy=\"50\" r=\"7\" fill=\"#111\" />\n<line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"38\" />\n<line x1=\"50\" y1=\"62\" x2=\"50\" y2=\"80\" />\n<line x1=\"20\" y1=\"50\" x2=\"38\" y2=\"50\" />\n<line x1=\"62\" y1=\"50\" x2=\"80\" y2=\"50\" />\n<path d=\"M 68.79,56.84 A 20.00,20.00 0 1 1 68.79,43.16\" />", "L": "<line x1=\"60\" y1=\"18\" x2=\"60\" y2=\"82\" />\n<line x1=\"45\" y1=\"18\" x2=\"70\" y2=\"18\" />\n<line x1=\"22\" y1=\"50\" x2=\"52\" y2=\"50\" />\n<line x1=\"52\" y1=\"42\" x2=\"52\" y2=\"58\" />\n<circle cx=\"22\" cy=\"50\" r=\"3\" fill=\"#111\" />", "M": "<line x1=\"25\" y1=\"22\" x2=\"48\" y2=\"50\" />\n<line x1=\"75\" y1=\"22\" x2=\"52\" y2=\"50\" />\n<line x1=\"50\" y1=\"50\" x2=\"50\" y2=\"82\" />\n<circle cx=\"25\" cy=\"22\" r=\"3\" fill=\"#111\" />\n<circle cx=\"75\" cy=\"22\" r=\"3\" fill=\"#111\" />\n<circle cx=\"50\" cy=\"82\" r=\"4\" fill=\"#111\" />", "N": "<path d=\"M 72.94,67.21 A 28.00,30.00 0 1 1 72.94,32.79\" />\n<line x1=\"33\" y1=\"68\" x2=\"70\" y2=\"30\" />\n<circle cx=\"70\" cy=\"30\" r=\"4\" fill=\"#111\" />\n<circle cx=\"47\" cy=\"53\" r=\"3\" fill=\"#111\" />", "O": "<path d=\"M 80.91,56.73 A 32.00,26.00 0 1 1 80.91,43.27\" />\n<circle cx=\"50\" cy=\"50\" r=\"5\" fill=\"#111\" />\n<line x1=\"25\" y1=\"50\" x2=\"35\" y2=\"50\" />\n<line x1=\"65\" y1=\"50\" x2=\"75\" y2=\"50\" />", "P": "<path d=\"M 25.57,20.53 A 26.00,16.00 0 0 1 74.43,20.53\" />\n<line x1=\"32\" y1=\"38\" x2=\"50\" y2=\"58\" />\n<line x1=\"68\" y1=\"38\" x2=\"50\" y2=\"58\" />\n<line x1=\"50\" y1=\"58\" x2=\"50\" y2=\"83\" />\n<circle cx=\"50\" cy=\"83\" r=\"4\" fill=\"#111\" />", "Q": "<path d=\"M 67.30,65.63 A 26.00,29.00 0 1 1 67.30,32.37\" />\n<circle cx=\"82\" cy=\"30\" r=\"4\" fill=\"#111\" />\n<line x1=\"70\" y1=\"38\" x2=\"79\" y2=\"33\" />\n<line x1=\"45\" y1=\"50\" x2=\"58\" y2=\"50\" />", "R": "<path d=\"M 74.57,68.78 A 30.00,31.00 0 1 1 74.57,33.22\" />\n<line x1=\"25\" y1=\"45\" x2=\"48\" y2=\"58\" />\n<line x1=\"75\" y1=\"45\" x2=\"52\" y2=\"58\" />\n<circle cx=\"50\" cy=\"58\" r=\"5\" fill=\"#111\" />\n<line x1=\"50\" y1=\"63\" x2=\"50\" y2=\"82\" />", "S": "<path d=\"M 77.57,55.56 A 28.00,32.00 0 1 1 77.57,44.44\" />\n<line x1=\"30\" y1=\"76\" x2=\"70\" y2=\"76\" />\n<circle cx=\"50\" cy=\"50\" r=\"5\" fill=\"#111\" />", "T": "<line x1=\"18\" y1=\"62\" x2=\"46\" y2=\"62\" />\n<polyline points=\"46,62 58,62 76,30\" />\n<circle cx=\"18\" cy=\"62\" r=\"3\" fill=\"#111\" />\n<circle cx=\"76\" cy=\"30\" r=\"4\" fill=\"#111\" />", "U": "<path d=\"M 70.03,68.35 A 27.50,32.00 0 1 1 35.88,21.00\" />\n<path d=\"M 54.62,19.09 A 27.50,32.00 0 0 1 70.03,31.65\" />\n<circle cx=\"82\" cy=\"45\" r=\"5\" fill=\"#111\" />\n<line x1=\"69\" y1=\"50\" x2=\"77\" y2=\"47\" />", "V": "<line x1=\"22\" y1=\"72\" x2=\"48\" y2=\"50\" />\n<line x1=\"48\" y1=\"50\" x2=\"73\" y2=\"25\" />\n<line x1=\"48\" y1=\"50\" x2=\"76\" y2=\"73\" />\n<circle cx=\"22\" cy=\"72\" r=\"3\" fill=\"#111\" />\n<circle cx=\"48\" cy=\"50\" r=\"5\" fill=\"#111\" />\n<circle cx=\"76\" cy=\"73\" r=\"3\" fill=\"#111\" />", "W": "<polyline points=\"22,25 38,75 54,25 70,75 82,32\" />\n<polyline points=\"18,65 34,35 50,72 66,35 82,68\" />\n<circle cx=\"50\" cy=\"50\" r=\"3\" fill=\"#111\" />", "X": "<path d=\"M 58.25,28.55 A 27.50,26.50 0 0 1 30.75,74.45\" />\n<path d=\"M 41.75,69.45 A 27.50,26.50 0 0 1 69.25,23.55\" />\n<circle cx=\"22\" cy=\"28\" r=\"3\" fill=\"#111\" />\n<circle cx=\"78\" cy=\"72\" r=\"3\" fill=\"#111\" />", "Y": "<line x1=\"25\" y1=\"25\" x2=\"50\" y2=\"50\" />\n<line x1=\"75\" y1=\"25\" x2=\"50\" y2=\"50\" />\n<line x1=\"50\" y1=\"50\" x2=\"78\" y2=\"70\" />\n<circle cx=\"25\" cy=\"25\" r=\"3\" fill=\"#111\" />\n<circle cx=\"75\" cy=\"25\" r=\"3\" fill=\"#111\" />\n<circle cx=\"78\" cy=\"70\" r=\"5\" fill=\"#111\" />", "Z": "<path d=\"M 18.49,22.05 A 32.00,17.00 0 0 1 81.51,22.05\" />\n<line x1=\"24\" y1=\"38\" x2=\"42\" y2=\"68\" />\n<line x1=\"76\" y1=\"38\" x2=\"58\" y2=\"68\" />\n<line x1=\"42\" y1=\"68\" x2=\"58\" y2=\"68\" />\n<line x1=\"50\" y1=\"68\" x2=\"50\" y2=\"85\" />\n<circle cx=\"50\" cy=\"85\" r=\"4\" fill=\"#111\" />"};
+const metadata={"0": {"token": "0", "token_id": "L36.NULL", "name": "Null", "class": "Numeral", "description": "Empty register / no committed state", "ascii_alias": "0", "experimental_pua": "U+E100", "status": "FORGED_v0.1", "commands": [{"t": "arc", "p": [22, 18, 78, 78, 35, 325]}, {"t": "line", "p": [70, 65, 79, 72]}]}, "1": {"token": "1", "token_id": "L36.UNIT", "name": "Unit", "class": "Numeral", "description": "One held state / stable presence", "ascii_alias": "1", "experimental_pua": "U+E101", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [50, 18, 50, 82]}, {"t": "circle", "p": [50, 50, 5], "filled": true}]}, "2": {"token": "2", "token_id": "L36.DIFFERENCE", "name": "Difference", "class": "Numeral", "description": "Differentiated or expanded unit", "ascii_alias": "2", "experimental_pua": "U+E102", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [50, 18, 50, 82]}, {"t": "circle", "p": [36, 50, 5], "filled": true}, {"t": "circle", "p": [64, 50, 5], "filled": true}]}, "3": {"token": "3", "token_id": "L36.THREE", "name": "Three", "class": "Numeral", "description": "Ternary 10: unit over null", "ascii_alias": "3", "experimental_pua": "U+E103", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [50, 12, 50, 40]}, {"t": "circle", "p": [50, 25, 4], "filled": true}, {"t": "arc", "p": [30, 48, 70, 88, 35, 325]}]}, "4": {"token": "4", "token_id": "L36.FOUR", "name": "Four", "class": "Numeral", "description": "Ternary 11: paired held states", "ascii_alias": "4", "experimental_pua": "U+E104", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [50, 10, 50, 90]}, {"t": "circle", "p": [50, 28, 4], "filled": true}, {"t": "circle", "p": [50, 72, 4], "filled": true}]}, "5": {"token": "5", "token_id": "L36.FIVE", "name": "Five", "class": "Numeral", "description": "Ternary 12: unit over distinction", "ascii_alias": "5", "experimental_pua": "U+E105", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [50, 10, 50, 90]}, {"t": "circle", "p": [50, 27, 4], "filled": true}, {"t": "circle", "p": [38, 72, 4], "filled": true}, {"t": "circle", "p": [62, 72, 4], "filled": true}]}, "6": {"token": "6", "token_id": "L36.SIX", "name": "Six", "class": "Numeral", "description": "Ternary 20: distinction over null", "ascii_alias": "6", "experimental_pua": "U+E106", "status": "FORGED_v0.1", "commands": [{"t": "circle", "p": [38, 26, 4], "filled": true}, {"t": "circle", "p": [62, 26, 4], "filled": true}, {"t": "line", "p": [50, 12, 50, 42]}, {"t": "arc", "p": [30, 50, 70, 90, 35, 325]}]}, "7": {"token": "7", "token_id": "L36.SEVEN", "name": "Seven", "class": "Numeral", "description": "Ternary 21: distinction over unit", "ascii_alias": "7", "experimental_pua": "U+E107", "status": "FORGED_v0.1", "commands": [{"t": "circle", "p": [38, 25, 4], "filled": true}, {"t": "circle", "p": [62, 25, 4], "filled": true}, {"t": "line", "p": [50, 12, 50, 88]}, {"t": "circle", "p": [50, 72, 4], "filled": true}]}, "8": {"token": "8", "token_id": "L36.EIGHT", "name": "Eight", "class": "Numeral", "description": "Ternary 22: doubled distinction", "ascii_alias": "8", "experimental_pua": "U+E108", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [50, 10, 50, 90]}, {"t": "circle", "p": [38, 27, 4], "filled": true}, {"t": "circle", "p": [62, 27, 4], "filled": true}, {"t": "circle", "p": [38, 72, 4], "filled": true}, {"t": "circle", "p": [62, 72, 4], "filled": true}]}, "9": {"token": "9", "token_id": "L36.NINE", "name": "Nine", "class": "Numeral", "description": "Ternary 100: unit over two null places", "ascii_alias": "9", "experimental_pua": "U+E109", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [50, 7, 50, 31]}, {"t": "circle", "p": [50, 18, 4], "filled": true}, {"t": "arc", "p": [34, 35, 66, 63, 35, 325]}, {"t": "arc", "p": [34, 66, 66, 94, 35, 325]}]}, "A": {"token": "A", "token_id": "L36.ANCHOR", "name": "Anchor", "class": "Dynamic", "description": "Project a state toward a declared baseline", "ascii_alias": "A", "experimental_pua": "U+E10A", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [50, 15, 50, 75]}, {"t": "poly", "p": [[50, 75], [50, 86], [34, 86]]}, {"t": "arc", "p": [34, 62, 60, 88, 270, 350]}, {"t": "circle", "p": [50, 43, 4], "filled": true}]}, "B": {"token": "B", "token_id": "L36.BRIDGE", "name": "Bridge", "class": "Relational", "description": "Connect unlike domains without merging identity", "ascii_alias": "B", "experimental_pua": "U+E10B", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [28, 20, 28, 80]}, {"t": "line", "p": [72, 20, 72, 80]}, {"t": "line", "p": [28, 50, 72, 50]}, {"t": "circle", "p": [28, 50, 3], "filled": true}, {"t": "circle", "p": [72, 50, 3], "filled": true}]}, "C": {"token": "C", "token_id": "L36.CYCLE", "name": "Cycle", "class": "Dynamic", "description": "Repeat an operation with an exit condition", "ascii_alias": "C", "experimental_pua": "U+E10C", "status": "FORGED_v0.1", "commands": [{"t": "arc", "p": [20, 18, 80, 82, 35, 315]}, {"t": "line", "p": [71, 67, 82, 62]}, {"t": "circle", "p": [75, 65, 3], "filled": true}]}, "D": {"token": "D", "token_id": "L36.DRIFT", "name": "Drift", "class": "Field", "description": "Measure deviation from an invariant", "ascii_alias": "D", "experimental_pua": "U+E10D", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [34, 18, 34, 82]}, {"t": "line", "p": [45, 25, 72, 78]}, {"t": "circle", "p": [34, 50, 3], "filled": true}, {"t": "circle", "p": [72, 78, 3], "filled": true}]}, "E": {"token": "E", "token_id": "L36.EVIDENCE", "name": "Evidence", "class": "Field", "description": "Bind provenance and support to a claim", "ascii_alias": "E", "experimental_pua": "U+E10E", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [32, 18, 32, 82]}, {"t": "line", "p": [32, 30, 70, 30]}, {"t": "line", "p": [32, 50, 62, 50]}, {"t": "line", "p": [32, 70, 53, 70]}, {"t": "circle", "p": [32, 82, 3], "filled": true}]}, "F": {"token": "F", "token_id": "L36.FOLD", "name": "Fold", "class": "Dynamic", "description": "Integrate weighted history into present state", "ascii_alias": "F", "experimental_pua": "U+E10F", "status": "FORGED_v0.1", "commands": [{"t": "arc", "p": [18, 18, 82, 82, 195, 505]}, {"t": "arc", "p": [34, 34, 66, 66, 200, 430]}, {"t": "circle", "p": [50, 52, 4], "filled": true}]}, "G": {"token": "G", "token_id": "L36.GUARD", "name": "Guard", "class": "Invariant", "description": "Gate an action behind a condition", "ascii_alias": "G", "experimental_pua": "U+E110", "status": "FORGED_v0.1", "commands": [{"t": "arc", "p": [20, 18, 80, 82, 35, 325]}, {"t": "line", "p": [75, 45, 58, 45]}, {"t": "line", "p": [58, 36, 58, 56]}, {"t": "circle", "p": [44, 50, 4], "filled": true}]}, "H": {"token": "H", "token_id": "L36.HORIZON", "name": "Horizon", "class": "Field", "description": "Declare temporal or purpose endpoint", "ascii_alias": "H", "experimental_pua": "U+E111", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [28, 25, 28, 80]}, {"t": "line", "p": [72, 25, 72, 80]}, {"t": "line", "p": [25, 25, 76, 25]}, {"t": "circle", "p": [78, 25, 4], "filled": true}, {"t": "line", "p": [45, 52, 67, 52]}]}, "I": {"token": "I", "token_id": "L36.INVARIANT", "name": "Invariant", "class": "Invariant", "description": "Property transformations must preserve", "ascii_alias": "I", "experimental_pua": "U+E112", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [50, 16, 50, 78]}, {"t": "line", "p": [28, 78, 72, 78]}, {"t": "line", "p": [36, 68, 36, 84]}, {"t": "line", "p": [64, 68, 64, 84]}, {"t": "circle", "p": [50, 43, 4], "filled": true}]}, "J": {"token": "J", "token_id": "L36.JUNCTION", "name": "Junction", "class": "Dynamic", "description": "Branch according to a condition", "ascii_alias": "J", "experimental_pua": "U+E113", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [50, 18, 50, 47]}, {"t": "line", "p": [50, 47, 27, 78]}, {"t": "line", "p": [50, 47, 73, 78]}, {"t": "circle", "p": [50, 47, 4], "filled": true}, {"t": "circle", "p": [27, 78, 3], "filled": true}, {"t": "circle", "p": [73, 78, 3], "filled": true}]}, "K": {"token": "K", "token_id": "L36.KERNEL", "name": "Kernel", "class": "Invariant", "description": "Irreducible operational core", "ascii_alias": "K", "experimental_pua": "U+E114", "status": "FORGED_v0.1", "commands": [{"t": "circle", "p": [50, 50, 7], "filled": true}, {"t": "line", "p": [50, 20, 50, 38]}, {"t": "line", "p": [50, 62, 50, 80]}, {"t": "line", "p": [20, 50, 38, 50]}, {"t": "line", "p": [62, 50, 80, 50]}, {"t": "arc", "p": [30, 30, 70, 70, 20, 340]}]}, "L": {"token": "L", "token_id": "L36.LIMIT", "name": "Limit", "class": "Invariant", "description": "Threshold, tolerance, timeout or bound", "ascii_alias": "L", "experimental_pua": "U+E115", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [60, 18, 60, 82]}, {"t": "line", "p": [45, 18, 70, 18]}, {"t": "line", "p": [22, 50, 52, 50]}, {"t": "line", "p": [52, 42, 52, 58]}, {"t": "circle", "p": [22, 50, 3], "filled": true}]}, "M": {"token": "M", "token_id": "L36.MERGE", "name": "Merge", "class": "Dynamic", "description": "Combine states while recording conflict", "ascii_alias": "M", "experimental_pua": "U+E116", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [25, 22, 48, 50]}, {"t": "line", "p": [75, 22, 52, 50]}, {"t": "line", "p": [50, 50, 50, 82]}, {"t": "circle", "p": [25, 22, 3], "filled": true}, {"t": "circle", "p": [75, 22, 3], "filled": true}, {"t": "circle", "p": [50, 82, 4], "filled": true}]}, "N": {"token": "N", "token_id": "L36.NOVELTY", "name": "Novelty", "class": "Field", "description": "Distance from known corpus structure", "ascii_alias": "N", "experimental_pua": "U+E117", "status": "FORGED_v0.1", "commands": [{"t": "arc", "p": [22, 20, 78, 80, 35, 325]}, {"t": "line", "p": [33, 68, 70, 30]}, {"t": "circle", "p": [70, 30, 4], "filled": true}, {"t": "circle", "p": [47, 53, 3], "filled": true}]}, "O": {"token": "O", "token_id": "L36.OBSERVE", "name": "Observe", "class": "Field", "description": "Read a target into an auditable snapshot", "ascii_alias": "O", "experimental_pua": "U+E118", "status": "FORGED_v0.1", "commands": [{"t": "arc", "p": [18, 24, 82, 76, 15, 345]}, {"t": "circle", "p": [50, 50, 5], "filled": true}, {"t": "line", "p": [25, 50, 35, 50]}, {"t": "line", "p": [65, 50, 75, 50]}]}, "P": {"token": "P", "token_id": "L36.PROVE", "name": "Prove", "class": "Meta", "description": "Return pass, fail or unresolved", "ascii_alias": "P", "experimental_pua": "U+E119", "status": "FORGED_v0.1", "commands": [{"t": "arc", "p": [24, 10, 76, 42, 200, 340]}, {"t": "line", "p": [32, 38, 50, 58]}, {"t": "line", "p": [68, 38, 50, 58]}, {"t": "line", "p": [50, 58, 50, 83]}, {"t": "circle", "p": [50, 83, 4], "filled": true}]}, "Q": {"token": "Q", "token_id": "L36.QUERY", "name": "Query", "class": "Field", "description": "Open a typed unresolved request", "ascii_alias": "Q", "experimental_pua": "U+E11A", "status": "FORGED_v0.1", "commands": [{"t": "arc", "p": [20, 20, 72, 78, 35, 325]}, {"t": "circle", "p": [82, 30, 4], "filled": true}, {"t": "line", "p": [70, 38, 79, 33]}, {"t": "line", "p": [45, 50, 58, 50]}]}, "R": {"token": "R", "token_id": "L36.RESOLVE", "name": "Resolve", "class": "Meta", "description": "Resolve an unknown or preserve it unresolved", "ascii_alias": "R", "experimental_pua": "U+E11B", "status": "FORGED_v0.1", "commands": [{"t": "arc", "p": [20, 20, 80, 82, 35, 325]}, {"t": "line", "p": [25, 45, 48, 58]}, {"t": "line", "p": [75, 45, 52, 58]}, {"t": "circle", "p": [50, 58, 5], "filled": true}, {"t": "line", "p": [50, 63, 50, 82]}]}, "S": {"token": "S", "token_id": "L36.STATE", "name": "State", "class": "Field", "description": "Bounded snapshot of active fields", "ascii_alias": "S", "experimental_pua": "U+E11C", "status": "FORGED_v0.1", "commands": [{"t": "arc", "p": [22, 18, 78, 82, 10, 350]}, {"t": "line", "p": [30, 76, 70, 76]}, {"t": "circle", "p": [50, 50, 5], "filled": true}]}, "T": {"token": "T", "token_id": "L36.TRANSITION", "name": "Transition", "class": "Dynamic", "description": "Apply a typed state transformation", "ascii_alias": "T", "experimental_pua": "U+E11D", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [18, 62, 46, 62]}, {"t": "poly", "p": [[46, 62], [58, 62], [76, 30]]}, {"t": "circle", "p": [18, 62, 3], "filled": true}, {"t": "circle", "p": [76, 30, 4], "filled": true}]}, "U": {"token": "U", "token_id": "L36.UNKNOWN", "name": "Unknown", "class": "Field", "description": "Relevant unresolved presence; not false or zero", "ascii_alias": "U", "experimental_pua": "U+E11E", "status": "FORGED_v0.1", "commands": [{"t": "arc", "p": [20, 18, 75, 82, 35, 245]}, {"t": "arc", "p": [20, 18, 75, 82, 285, 325]}, {"t": "circle", "p": [82, 45, 5], "filled": true}, {"t": "line", "p": [69, 50, 77, 47]}]}, "V": {"token": "V", "token_id": "L36.VECTOR_INVERT", "name": "Vector Invert", "class": "Dynamic", "description": "Preserve intent while changing the path", "ascii_alias": "V", "experimental_pua": "U+E11F", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [22, 72, 48, 50]}, {"t": "line", "p": [48, 50, 73, 25]}, {"t": "line", "p": [48, 50, 76, 73]}, {"t": "circle", "p": [22, 72, 3], "filled": true}, {"t": "circle", "p": [48, 50, 5], "filled": true}, {"t": "circle", "p": [76, 73, 3], "filled": true}]}, "W": {"token": "W", "token_id": "L36.WEAVE", "name": "Weave", "class": "Relational", "description": "Connect agents while preserving identity boundaries", "ascii_alias": "W", "experimental_pua": "U+E120", "status": "FORGED_v0.1", "commands": [{"t": "poly", "p": [[22, 25], [38, 75], [54, 25], [70, 75], [82, 32]]}, {"t": "poly", "p": [[18, 65], [34, 35], [50, 72], [66, 35], [82, 68]]}, {"t": "circle", "p": [50, 50, 3], "filled": true}]}, "X": {"token": "X", "token_id": "L36.EXCHANGE", "name": "Exchange", "class": "Relational", "description": "Reciprocal transfer with an auditable ledger", "ascii_alias": "X", "experimental_pua": "U+E121", "status": "FORGED_v0.1", "commands": [{"t": "arc", "p": [17, 25, 72, 78, 300, 480]}, {"t": "arc", "p": [28, 20, 83, 73, 120, 300]}, {"t": "circle", "p": [22, 28, 3], "filled": true}, {"t": "circle", "p": [78, 72, 3], "filled": true}]}, "Y": {"token": "Y", "token_id": "L36.YIELD", "name": "Yield", "class": "Dynamic", "description": "Emit a result and terminate or return", "ascii_alias": "Y", "experimental_pua": "U+E122", "status": "FORGED_v0.1", "commands": [{"t": "line", "p": [25, 25, 50, 50]}, {"t": "line", "p": [75, 25, 50, 50]}, {"t": "line", "p": [50, 50, 78, 70]}, {"t": "circle", "p": [25, 25, 3], "filled": true}, {"t": "circle", "p": [75, 25, 3], "filled": true}, {"t": "circle", "p": [78, 70, 5], "filled": true}]}, "Z": {"token": "Z", "token_id": "L36.COMPRESS", "name": "Compress", "class": "Meta", "description": "Contract representation while preserving invariants", "ascii_alias": "Z", "experimental_pua": "U+E123", "status": "FORGED_v0.1", "commands": [{"t": "arc", "p": [18, 8, 82, 42, 190, 350]}, {"t": "line", "p": [24, 38, 42, 68]}, {"t": "line", "p": [76, 38, 58, 68]}, {"t": "line", "p": [42, 68, 58, 68]}, {"t": "line", "p": [50, 68, 50, 85]}, {"t": "circle", "p": [50, 85, 4], "filled": true}]}};
+const input=document.getElementById('input'), output=document.getElementById('output'), detail=document.getElementById('detail');
+function render(){
+  output.innerHTML='';
+  for(const ch0 of input.value.toUpperCase()){
+    if(glyphs[ch0]){
+      const d=document.createElement('div'); d.className='outglyph';
+      d.innerHTML=`<svg viewBox="0 0 100 100" role="img" aria-label="${metadata[ch0].name} glyph"><g class="glyph">${glyphs[ch0]}</g></svg><small>${ch0}</small>`;
+      output.appendChild(d);
+    } else {
+      const s=document.createElement('span'); s.textContent=ch0; s.style.padding='35px 4px'; output.appendChild(s);
+    }
+  }
+}
+input.addEventListener('input',render); render();
+document.querySelectorAll('.card').forEach(card=>card.addEventListener('click',()=>{
+ const t=card.dataset.token, m=metadata[t];
+ detail.innerHTML=`<div class="metric"><strong>Native ID</strong><p>${m.token_id}</p></div>
+ <div class="metric"><strong>ASCII alias</strong><p>${m.ascii_alias}</p></div>
+ <div class="metric"><strong>Name / class</strong><p>${m.name} · ${m.class}</p></div>
+ <div class="metric"><strong>Meaning</strong><p>${m.description}</p></div>
+ <div class="metric"><strong>Experimental private-use ID</strong><p>${m.experimental_pua}</p></div>
+ <div class="metric"><strong>Status</strong><p>${m.status}</p></div>`;
+}));
+</script>
+</body></html>

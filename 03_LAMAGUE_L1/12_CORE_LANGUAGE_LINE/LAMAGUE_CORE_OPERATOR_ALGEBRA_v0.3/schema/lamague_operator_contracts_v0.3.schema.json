@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LAMAGUE Core v0.3 operator contracts",
+  "type": "object",
+  "required": [
+    "version",
+    "operators",
+    "composition_matrix"
+  ],
+  "properties": {
+    "version": {
+      "const": "0.3.0"
+    },
+    "operators": {
+      "type": "object",
+      "required": [
+        "⊗",
+        "→",
+        "⇌",
+        "⟲",
+        "↯",
+        "↗"
+      ]
+    },
+    "composition_matrix": {
+      "type": "object"
+    },
+    "binding_distinctions": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+# LAMAGUE Core v0.3 operator contracts
+
+describe operator ⊗;
+describe operator →;
+describe operator ⇌;
+describe operator ⟲;
+describe operator ↯;
+describe operator ↗;
+
+check law(⊗, commutative);
+check law(⊗, associative);
+check law(⊗, idempotent);
+check law(⊗, identity);
+
+check law(→, associative);
+check law(→, reversible);
+
+check law(⇌, inverse);
+check law(⇌, reversible);
+
+check law(⟲, terminating);
+check law(↯, annihilator);
+check law(↗, commutative);
+
+check composition(⊗, →);
+check composition(↯, ⟲);
+
+check equivalent(
+    (Ao ⊗ Φ) ⊗ Ψ,
+    Ψ ⊗ (Φ ⊗ Ao)
+);
+
+check equivalent(
+    (Ao → Φ) → Ψ,
+    Ao → (Φ → Ψ)
+);
+
+describe Ψ ↯ ∅;

@@ -1,0 +1,51 @@
+{
+  "case_id": "005_RESOURCE_ALLOC",
+  "domain": "resource allocation",
+  "semantic_identity": "lamague-benchmark::resource_alloc",
+  "purpose": "Allocate scarce resources while exposing who bears the opportunity cost.",
+  "claim": "Allocation may proceed only with visible priority rule and affected parties.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": [
+    "future demand",
+    "hidden access barriers"
+  ],
+  "invariants": [
+    "priority rule remains explicit",
+    "denied groups remain visible"
+  ],
+  "authority": [
+    "board::allocation"
+  ],
+  "participants": [
+    "board",
+    "community reviewer",
+    "operations"
+  ],
+  "affected_parties": [
+    "deferred group"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "operations::fund current demand",
+    "community reviewer::reserve capacity"
+  ],
+  "value_flows": [
+    "fund::selected group::resource allocation::authorised"
+  ],
+  "recoveries": [
+    "reserve tranche",
+    "reassessment window"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::resource allocation"
+  ],
+  "candidate_id": "005_RESOURCE_ALLOC::affected_removed",
+  "expected_class": "UNSAFE_COLLAPSE"
+}

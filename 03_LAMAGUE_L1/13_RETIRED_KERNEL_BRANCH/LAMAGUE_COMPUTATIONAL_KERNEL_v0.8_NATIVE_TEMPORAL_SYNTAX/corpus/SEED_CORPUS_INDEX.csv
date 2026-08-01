@@ -1,0 +1,6 @@
+case_id,case,expected_outcome,compression,protected_focus
+CR-001,controlled release,VALID,Z_UP,authority;unknowns;recovery
+ER-001,evidence resolution,VALID,UNDECIDED,resolution;proof
+UA-001,missing authority,COMPILE_REJECTED,,authority
+IR-001,irreversible missing gates,COMPILE_REJECTED,,irreversibility;gates
+PD-001,protected dissent,VALID,UNDECIDED,dissent;vector inversion

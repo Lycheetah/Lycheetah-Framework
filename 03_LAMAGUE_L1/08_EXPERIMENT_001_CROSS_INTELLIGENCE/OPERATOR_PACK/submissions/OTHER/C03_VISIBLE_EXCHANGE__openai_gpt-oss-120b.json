@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C03_VISIBLE_EXCHANGE",
+  "decoder_id": "openai/gpt-oss-120b",
+  "purpose": "Document a consented, scoped, and reversible exchange of a research artifact from a human to an AI service.",
+  "claim": "A human transfers a research artifact to an AI service for analysis, with explicit consent, a limited analysis‑only scope, and the ability to reverse the transfer by deleting the data.",
+  "operation_path": ["O", "X", "G", "Y"],
+  "invariants": [
+    "Explicit consent must be retained throughout the exchange.",
+    "The use of the artifact is limited to analysis only.",
+    "The transfer is reversible via deletion of the artifact."
+  ],
+  "unknowns": [
+    "Exact type and format of the research artifact.",
+    "Technical method and verification process for deletion."
+  ],
+  "authority": [
+    "Human (owner of the artifact)",
+    "AI service (recipient of the artifact)",
+    "Platform terms of service governing data handling"
+  ],
+  "participants": [
+    "Human",
+    "AI service"
+  ],
+  "affected_parties": [
+    "Human (data subject)",
+    "Research community (potential indirect beneficiaries or risks)"
+  ],
+  "evidence": [
+    "Declared data transfer statement from the human.",
+    "Recorded consent record attached to the transfer."
+  ],
+  "provenance": [
+    "Source statement provided in case C03_VISIBLE_EXCHANGE.",
+    "Operation sequence defined by expression O -> X -> G -> Y."
+  ],
+  "dissent": [],
+  "value_ledger": [
+    {
+      "from": "Human",
+      "to": "AI service",
+      "resource": "Research artifact",
+      "consent": "Explicitly given",
+      "reversible": "Yes, via deletion"
+    }
+  ],
+  "consequences": [
+    "AI service may generate analytical insights from the artifact.",
+    "Potential risk of unintended data exposure if deletion fails."
+  ],
+  "consequence_horizon": "Immediate (analysis) and downstream (post‑analysis data handling).",
+  "recovery": [
+    "Delete the artifact from AI service storage.",
+    "Confirm deletion through audit logs."
+  ],
+  "confidence": "High",
+  "notes": "The specific artifact type and the exact deletion verification mechanism are not provided in the source statement."
+}

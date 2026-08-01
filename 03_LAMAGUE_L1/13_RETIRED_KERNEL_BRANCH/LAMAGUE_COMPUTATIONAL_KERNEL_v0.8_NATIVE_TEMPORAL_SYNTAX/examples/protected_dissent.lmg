@@ -1,0 +1,16 @@
+program ProtectedDissent
+purpose "Preserve disagreement while finding a bounded route."
+claim "A resolution may proceed without pretending consensus."
+risk medium
+path O -> E -> W -> U -> I -> G -> V -> F -> Y
+evidence record "Attributed positions."
+unknown final_consensus protected required_for=full_merge
+invariant dissent "No position may disappear without resolution."
+authority facilitator scope=bounded_resolution "Facilitator may propose but not erase positions."
+affected advocate
+affected critic
+dissent advocate "Proceed through a bounded pilot."
+dissent critic "Do not proceed while critical unknowns remain."
+recovery reopen "Reopen the decision when new evidence appears."
+effect MayAffect<advocate,critic>
+yield "Bounded resolution with preserved dissent."

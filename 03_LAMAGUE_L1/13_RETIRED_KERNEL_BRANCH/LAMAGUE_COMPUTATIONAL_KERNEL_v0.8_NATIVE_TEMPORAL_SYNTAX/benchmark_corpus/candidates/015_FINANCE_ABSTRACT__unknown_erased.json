@@ -1,0 +1,50 @@
+{
+  "case_id": "015_FINANCE_ABSTRACT",
+  "domain": "financial allocation abstraction",
+  "semantic_identity": "lamague-benchmark::finance_abstract",
+  "purpose": "Compare two abstract investment allocations without presenting uncertainty as certainty.",
+  "claim": "The allocation remains a scenario, not a guaranteed outcome.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": [
+    "liquidity shock"
+  ],
+  "invariants": [
+    "no guaranteed return claim",
+    "risk owner remains visible"
+  ],
+  "authority": [
+    "owner::allocation"
+  ],
+  "participants": [
+    "advisor",
+    "owner"
+  ],
+  "affected_parties": [
+    "owner",
+    "dependants"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "advisor::diversify",
+    "owner::preserve liquidity"
+  ],
+  "value_flows": [
+    "owner->portfolio::capital::authorised"
+  ],
+  "recoveries": [
+    "rebalance",
+    "liquidity reserve"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::financial allocation abstraction"
+  ],
+  "candidate_id": "015_FINANCE_ABSTRACT::unknown_erased",
+  "expected_class": "UNSAFE_COLLAPSE"
+}

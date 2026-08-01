@@ -1,0 +1,652 @@
+name: LAMAGUE Native-36 Machine Canon
+version: '0.3'
+parent: LAMAGUE_NATIVE36_v0.2_REGISTRY.json
+base_glyphs:
+  - token: "0"
+    token_id: "L36.NULL"
+    name: "Null"
+    canon_status: "FORGED_NUMERAL"
+    primitive_status: "primitive"
+    class: "Numeral"
+    spoken_form: "nul"
+    type_signature: "Literal<Scalar>"
+    arity: {min: 0, max: 0}
+    accepts: []
+    returns: "Scalar"
+    preconditions: []
+    preserves: ["exact_value"]
+    failure_modes: ["invalid_radix"]
+    recovery: "reject"
+    radical_provenance: ["vessel", "rift"]
+    visual_logic: "Fused ternary numeral for 0."
+    examples: ["0"]
+  - token: "1"
+    token_id: "L36.UNIT"
+    name: "Unit"
+    canon_status: "FORGED_NUMERAL"
+    primitive_status: "primitive"
+    class: "Numeral"
+    spoken_form: "un"
+    type_signature: "Literal<Scalar>"
+    arity: {min: 0, max: 0}
+    accepts: []
+    returns: "Scalar"
+    preconditions: []
+    preserves: ["exact_value"]
+    failure_modes: ["invalid_radix"]
+    recovery: "reject"
+    radical_provenance: ["keel", "seed"]
+    visual_logic: "Fused ternary numeral for 1."
+    examples: ["1"]
+  - token: "2"
+    token_id: "L36.DIFFERENCE"
+    name: "Difference"
+    canon_status: "FORGED_NUMERAL"
+    primitive_status: "primitive"
+    class: "Numeral"
+    spoken_form: "di"
+    type_signature: "Literal<Scalar>"
+    arity: {min: 0, max: 0}
+    accepts: []
+    returns: "Scalar"
+    preconditions: []
+    preserves: ["exact_value"]
+    failure_modes: ["invalid_radix"]
+    recovery: "reject"
+    radical_provenance: ["keel", "seed", "seed"]
+    visual_logic: "Fused ternary numeral for 2."
+    examples: ["2"]
+  - token: "3"
+    token_id: "L36.THREE"
+    name: "Three"
+    canon_status: "FORGED_NUMERAL"
+    primitive_status: "primitive"
+    class: "Numeral"
+    spoken_form: "tan"
+    type_signature: "Literal<Scalar>"
+    arity: {min: 0, max: 0}
+    accepts: []
+    returns: "Scalar"
+    preconditions: []
+    preserves: ["exact_value"]
+    failure_modes: ["invalid_radix"]
+    recovery: "reject"
+    radical_provenance: ["positional_stack", "unit", "null"]
+    visual_logic: "Fused ternary numeral for 10₃."
+    examples: ["3"]
+  - token: "4"
+    token_id: "L36.FOUR"
+    name: "Four"
+    canon_status: "FORGED_NUMERAL"
+    primitive_status: "primitive"
+    class: "Numeral"
+    spoken_form: "tun"
+    type_signature: "Literal<Scalar>"
+    arity: {min: 0, max: 0}
+    accepts: []
+    returns: "Scalar"
+    preconditions: []
+    preserves: ["exact_value"]
+    failure_modes: ["invalid_radix"]
+    recovery: "reject"
+    radical_provenance: ["positional_stack", "unit", "unit"]
+    visual_logic: "Fused ternary numeral for 11₃."
+    examples: ["4"]
+  - token: "5"
+    token_id: "L36.FIVE"
+    name: "Five"
+    canon_status: "FORGED_NUMERAL"
+    primitive_status: "primitive"
+    class: "Numeral"
+    spoken_form: "tin"
+    type_signature: "Literal<Scalar>"
+    arity: {min: 0, max: 0}
+    accepts: []
+    returns: "Scalar"
+    preconditions: []
+    preserves: ["exact_value"]
+    failure_modes: ["invalid_radix"]
+    recovery: "reject"
+    radical_provenance: ["positional_stack", "unit", "difference"]
+    visual_logic: "Fused ternary numeral for 12₃."
+    examples: ["5"]
+  - token: "6"
+    token_id: "L36.SIX"
+    name: "Six"
+    canon_status: "FORGED_NUMERAL"
+    primitive_status: "primitive"
+    class: "Numeral"
+    spoken_form: "dan"
+    type_signature: "Literal<Scalar>"
+    arity: {min: 0, max: 0}
+    accepts: []
+    returns: "Scalar"
+    preconditions: []
+    preserves: ["exact_value"]
+    failure_modes: ["invalid_radix"]
+    recovery: "reject"
+    radical_provenance: ["positional_stack", "difference", "null"]
+    visual_logic: "Fused ternary numeral for 20₃."
+    examples: ["6"]
+  - token: "7"
+    token_id: "L36.SEVEN"
+    name: "Seven"
+    canon_status: "FORGED_NUMERAL"
+    primitive_status: "primitive"
+    class: "Numeral"
+    spoken_form: "dun"
+    type_signature: "Literal<Scalar>"
+    arity: {min: 0, max: 0}
+    accepts: []
+    returns: "Scalar"
+    preconditions: []
+    preserves: ["exact_value"]
+    failure_modes: ["invalid_radix"]
+    recovery: "reject"
+    radical_provenance: ["positional_stack", "difference", "unit"]
+    visual_logic: "Fused ternary numeral for 21₃."
+    examples: ["7"]
+  - token: "8"
+    token_id: "L36.EIGHT"
+    name: "Eight"
+    canon_status: "FORGED_NUMERAL"
+    primitive_status: "primitive"
+    class: "Numeral"
+    spoken_form: "din"
+    type_signature: "Literal<Scalar>"
+    arity: {min: 0, max: 0}
+    accepts: []
+    returns: "Scalar"
+    preconditions: []
+    preserves: ["exact_value"]
+    failure_modes: ["invalid_radix"]
+    recovery: "reject"
+    radical_provenance: ["positional_stack", "difference", "difference"]
+    visual_logic: "Fused ternary numeral for 22₃."
+    examples: ["8"]
+  - token: "9"
+    token_id: "L36.NINE"
+    name: "Nine"
+    canon_status: "FORGED_NUMERAL"
+    primitive_status: "primitive"
+    class: "Numeral"
+    spoken_form: "taran"
+    type_signature: "Literal<Scalar>"
+    arity: {min: 0, max: 0}
+    accepts: []
+    returns: "Scalar"
+    preconditions: []
+    preserves: ["exact_value"]
+    failure_modes: ["invalid_radix"]
+    recovery: "reject"
+    radical_provenance: ["positional_stack", "unit", "null", "null"]
+    visual_logic: "Fused ternary numeral for 100₃."
+    examples: ["9"]
+  - token: "A"
+    token_id: "L36.ANCHOR"
+    name: "Anchor"
+    canon_status: "ROOT"
+    primitive_status: "primitive_candidate"
+    class: "Dynamic"
+    spoken_form: "an"
+    type_signature: "State \u00d7 Baseline \u2192 State"
+    arity: {min: 2, max: 2}
+    accepts: ["State", "Baseline"]
+    returns: "State"
+    preconditions: ["baseline_declared", "baseline_authority_visible"]
+    preserves: ["protected_invariants", "identity_continuity"]
+    failure_modes: ["undefined_baseline", "unauthorised_baseline", "destructive_overwrite"]
+    recovery: "return U<Baseline> or invoke V"
+    radical_provenance: ["keel", "return", "seed"]
+    visual_logic: "A return path bends toward a load-bearing keel while the seed survives."
+    examples: ["A(state,baseline)", "D@7 → A@8"]
+  - token: "B"
+    token_id: "L36.BRIDGE"
+    name: "Bridge"
+    canon_status: "ROOT"
+    primitive_status: "primitive_candidate"
+    class: "Relational"
+    spoken_form: "ba"
+    type_signature: "\u03b1 \u00d7 \u03b2 \u00d7 Mapping \u2192 Relation<\u03b1,\u03b2>"
+    arity: {min: 3, max: 3}
+    accepts: ["Any", "Any", "Mapping"]
+    returns: "Relation"
+    preconditions: ["mapping_declared"]
+    preserves: ["identity_boundaries", "source_provenance"]
+    failure_modes: ["missing_mapping", "false_equivalence"]
+    recovery: "preserve as unsupported relation"
+    radical_provenance: ["keel", "river", "keel"]
+    visual_logic: "Two independent keels remain separate while one river connects them."
+    examples: ["B(English,LAMAGUE,encoder_v1)"]
+  - token: "C"
+    token_id: "L36.CYCLE"
+    name: "Cycle"
+    canon_status: "ROOT"
+    primitive_status: "primitive_candidate"
+    class: "Dynamic"
+    spoken_form: "ka"
+    type_signature: "Operation \u00d7 State \u00d7 StopCondition \u2192 State"
+    arity: {min: 3, max: 3}
+    accepts: ["Operation", "State", "Condition"]
+    returns: "State"
+    preconditions: ["stop_condition_declared"]
+    preserves: ["declared_invariants"]
+    failure_modes: ["nontermination", "cycle_drift"]
+    recovery: "halt at L or return U<Termination>"
+    radical_provenance: ["return", "river"]
+    visual_logic: "A return loop remains open at the exit so repetition cannot hide termination."
+    examples: ["C(F,state,D<2)", "C^3(F)"]
+  - token: "D"
+    token_id: "L36.DRIFT"
+    name: "Drift"
+    canon_status: "ROOT"
+    primitive_status: "primitive_candidate"
+    class: "Field"
+    spoken_form: "der"
+    type_signature: "State \u00d7 Invariant \u2192 Scalar"
+    arity: {min: 2, max: 2}
+    accepts: ["State", "Invariant"]
+    returns: "Scalar"
+    preconditions: ["metric_declared"]
+    preserves: ["measurement_provenance"]
+    failure_modes: ["undefined_metric", "incomparable_states"]
+    recovery: "return U<DriftMetric>"
+    radical_provenance: ["keel", "river", "seed"]
+    visual_logic: "A river departs from a keel; separation visualises deviation."
+    examples: ["D(state,I_agency)", "D@7"]
+  - token: "E"
+    token_id: "L36.EVIDENCE"
+    name: "Evidence"
+    canon_status: "FORGED"
+    primitive_status: "primitive_candidate"
+    class: "Field"
+    spoken_form: "en"
+    type_signature: "Claim \u00d7 SourceSet \u2192 EvidenceRecord"
+    arity: {min: 2, max: 2}
+    accepts: ["Claim", "SourceSet"]
+    returns: "EvidenceRecord"
+    preconditions: ["sources_traceable"]
+    preserves: ["provenance", "contradictions", "measurement_uncertainty"]
+    failure_modes: ["source_absent", "method_absent", "false_precision"]
+    recovery: "downgrade confidence or return U<Evidence>"
+    radical_provenance: ["vessel", "seed", "river"]
+    visual_logic: "Seeds rise through a vessel toward a sourced exit path."
+    examples: ["E(claim,{trial_04})", "E@8"]
+  - token: "F"
+    token_id: "L36.FOLD"
+    name: "Fold"
+    canon_status: "ROOT"
+    primitive_status: "primitive_candidate"
+    class: "Dynamic"
+    spoken_form: "fal"
+    type_signature: "History \u00d7 Kernel \u2192 IntegratedState"
+    arity: {min: 2, max: 2}
+    accepts: ["History", "Kernel"]
+    returns: "State"
+    preconditions: ["weighting_kernel_declared"]
+    preserves: ["protected_invariants", "excluded_residual"]
+    failure_modes: ["history_loss", "weighting_bias", "temporal_collision"]
+    recovery: "Z↑ excluded history or return U<Integration>"
+    radical_provenance: ["river", "return", "seed"]
+    visual_logic: "A broad river curls inward and deposits history as a present seed."
+    examples: ["F(history,recent_weighted)"]
+  - token: "G"
+    token_id: "L36.GUARD"
+    name: "Guard"
+    canon_status: "FORGED"
+    primitive_status: "primitive_candidate"
+    class: "Invariant"
+    spoken_form: "gar"
+    type_signature: "Predicate \u00d7 Action \u00d7 Fallback \u2192 Action"
+    arity: {min: 3, max: 3}
+    accepts: ["Predicate", "Action", "Action"]
+    returns: "Action"
+    preconditions: ["predicate_typed"]
+    preserves: ["authority", "scope", "protected_invariants"]
+    failure_modes: ["guard_ambiguous", "fallback_absent"]
+    recovery: "block action and yield guarded unknown"
+    radical_provenance: ["thorn", "river", "keel"]
+    visual_logic: "A thorn interrupts an approaching river before entry."
+    examples: ["G(I_authority,T,V)"]
+  - token: "H"
+    token_id: "L36.HORIZON"
+    name: "Horizon"
+    canon_status: "FORGED"
+    primitive_status: "primitive_candidate"
+    class: "Field"
+    spoken_form: "har"
+    type_signature: "Purpose \u00d7 TimeScope \u2192 Horizon"
+    arity: {min: 2, max: 2}
+    accepts: ["Purpose", "TimeScope"]
+    returns: "Horizon"
+    preconditions: ["time_scope_declared"]
+    preserves: ["purpose", "temporal_boundary"]
+    failure_modes: ["horizon_conflict", "undefined_endpoint"]
+    recovery: "preserve multiple horizons as Set<Horizon>"
+    radical_provenance: ["vessel", "river", "seed"]
+    visual_logic: "A field path rises toward a marked temporal endpoint."
+    examples: ["H(purpose,30d)"]
+  - token: "I"
+    token_id: "L36.INVARIANT"
+    name: "Invariant"
+    canon_status: "ROOT"
+    primitive_status: "primitive_candidate"
+    class: "Invariant"
+    spoken_form: "in"
+    type_signature: "Predicate \u00d7 Scope \u2192 Constraint"
+    arity: {min: 2, max: 2}
+    accepts: ["Predicate", "Scope"]
+    returns: "Invariant"
+    preconditions: ["scope_declared"]
+    preserves: ["predicate_semantics"]
+    failure_modes: ["contradictory_invariant", "unverifiable_invariant"]
+    recovery: "return U<Invariant> or isolate conflict"
+    radical_provenance: ["keel", "thorn", "seed"]
+    visual_logic: "A protected keel is stabilised by outward-facing boundary thorns."
+    examples: ["I(agency_out>=agency_in,action)"]
+  - token: "J"
+    token_id: "L36.JUNCTION"
+    name: "Junction"
+    canon_status: "HISTORICAL_FORGED"
+    primitive_status: "primitive_candidate"
+    class: "Dynamic"
+    spoken_form: "ja"
+    type_signature: "Condition \u00d7 TrueBranch \u00d7 FalseBranch \u2192 Branch"
+    arity: {min: 3, max: 3}
+    accepts: ["Condition", "Branch", "Branch"]
+    returns: "Branch"
+    preconditions: ["condition_typed"]
+    preserves: ["branch_provenance"]
+    failure_modes: ["condition_unknown", "branch_missing"]
+    recovery: "route U condition to explicit unresolved branch"
+    radical_provenance: ["river", "junction", "seed"]
+    visual_logic: "One river reaches a decision seed and divides into two exits."
+    examples: ["J(E>=7,P,U)"]
+  - token: "K"
+    token_id: "L36.KERNEL"
+    name: "Kernel"
+    canon_status: "ROOT"
+    primitive_status: "primitive_candidate"
+    class: "Invariant"
+    spoken_form: "ker"
+    type_signature: "System \u2192 MinimalCore"
+    arity: {min: 1, max: 1}
+    accepts: ["System"]
+    returns: "Kernel"
+    preconditions: ["removal_test_available"]
+    preserves: ["load_bearing_structure", "lineage"]
+    failure_modes: ["false_kernel", "overcompression"]
+    recovery: "restore excluded candidates and retest"
+    radical_provenance: ["keel", "seed", "vessel"]
+    visual_logic: "A central seed is the load-bearing centre connected to four supports."
+    examples: ["K(system)"]
+  - token: "L"
+    token_id: "L36.LIMIT"
+    name: "Limit"
+    canon_status: "FORGED"
+    primitive_status: "primitive_candidate"
+    class: "Invariant"
+    spoken_form: "lim"
+    type_signature: "Metric \u00d7 Bound \u2192 Constraint"
+    arity: {min: 2, max: 2}
+    accepts: ["Metric", "Bound"]
+    returns: "Constraint"
+    preconditions: ["units_compatible"]
+    preserves: ["measurement_scope"]
+    failure_modes: ["unit_mismatch", "bound_ambiguous"]
+    recovery: "return U<Bound>"
+    radical_provenance: ["keel", "thorn"]
+    visual_logic: "A crossing thorn fixes a measurable boundary against a keel."
+    examples: ["L(D,2)"]
+  - token: "M"
+    token_id: "L36.MERGE"
+    name: "Merge"
+    canon_status: "ROOT"
+    primitive_status: "primitive_candidate"
+    class: "Dynamic"
+    spoken_form: "mer"
+    type_signature: "State^n \u00d7 ConflictPolicy \u2192 State"
+    arity: {min: 2, max: 2}
+    accepts: ["StateSet", "ConflictPolicy"]
+    returns: "State"
+    preconditions: ["conflict_policy_declared"]
+    preserves: ["dissent", "provenance", "identity_if_required"]
+    failure_modes: ["silent_conflict_erasure", "incompatible_states"]
+    recovery: "use W or preserve unresolved conflict"
+    radical_provenance: ["river", "junction", "seed"]
+    visual_logic: "Multiple inputs converge into one resulting seed while branch history remains visible."
+    examples: ["M(states,preserve_dissent)"]
+  - token: "N"
+    token_id: "L36.NOVELTY"
+    name: "Novelty"
+    canon_status: "FORGED"
+    primitive_status: "primitive_candidate"
+    class: "Field"
+    spoken_form: "nov"
+    type_signature: "Candidate \u00d7 Corpus \u2192 Scalar"
+    arity: {min: 2, max: 2}
+    accepts: ["Candidate", "Corpus"]
+    returns: "Scalar"
+    preconditions: ["comparison_space_declared"]
+    preserves: ["distance_method", "corpus_version"]
+    failure_modes: ["novelty_without_reference", "metric_instability"]
+    recovery: "return U<Novelty>"
+    radical_provenance: ["vessel", "seed", "river"]
+    visual_logic: "A seed is measured by distance toward an external comparison point."
+    examples: ["N(candidate,corpus_v3)"]
+  - token: "O"
+    token_id: "L36.OBSERVE"
+    name: "Observe"
+    canon_status: "FORGED"
+    primitive_status: "primitive_candidate"
+    class: "Field"
+    spoken_form: "or"
+    type_signature: "Target \u00d7 ObserverContext \u2192 Snapshot"
+    arity: {min: 2, max: 2}
+    accepts: ["Target", "ObserverContext"]
+    returns: "Snapshot"
+    preconditions: ["observer_context_declared"]
+    preserves: ["time", "instrument", "scope", "disturbance"]
+    failure_modes: ["observer_missing", "measurement_disturbance_unknown"]
+    recovery: "return partial Snapshot with U fields"
+    radical_provenance: ["vessel", "seed"]
+    visual_logic: "A seed is observed inside an open vessel without forced transformation."
+    examples: ["O(claim,observer_ctx)"]
+  - token: "P"
+    token_id: "L36.PROVE"
+    name: "Prove"
+    canon_status: "FORGED"
+    primitive_status: "macro_candidate"
+    class: "Meta"
+    spoken_form: "pra"
+    type_signature: "Claim \u00d7 Evidence \u00d7 InvariantSet \u2192 ProofStatus"
+    arity: {min: 3, max: 3}
+    accepts: ["Claim", "Evidence", "InvariantSet"]
+    returns: "ProofStatus"
+    preconditions: ["proof_method_declared"]
+    preserves: ["counterexamples", "uncertainty"]
+    failure_modes: ["method_invalid", "evidence_insufficient"]
+    recovery: "return UNRESOLVED"
+    radical_provenance: ["crown", "junction", "seed"]
+    visual_logic: "A crown inspects two possible proof branches and emits a status seed."
+    examples: ["P(claim,evidence,I_set)"]
+  - token: "Q"
+    token_id: "L36.QUERY"
+    name: "Query"
+    canon_status: "FORGED"
+    primitive_status: "primitive_candidate"
+    class: "Field"
+    spoken_form: "qua"
+    type_signature: "Target \u00d7 Property \u2192 U<Property>"
+    arity: {min: 2, max: 2}
+    accepts: ["Target", "Property"]
+    returns: "Unknown"
+    preconditions: ["property_typed"]
+    preserves: ["open_question", "scope"]
+    failure_modes: ["ill_formed_query"]
+    recovery: "request Z↑ clarification"
+    radical_provenance: ["vessel", "rift", "seed"]
+    visual_logic: "A seed remains outside the vessel across a deliberate rift."
+    examples: ["Q(event,cause)"]
+  - token: "R"
+    token_id: "L36.RESOLVE"
+    name: "Resolve"
+    canon_status: "FORGED"
+    primitive_status: "macro_candidate"
+    class: "Meta"
+    spoken_form: "res"
+    type_signature: "Unknown \u00d7 EvidenceOrRule \u2192 Value|Unknown"
+    arity: {min: 2, max: 2}
+    accepts: ["Unknown", "EvidenceOrRule"]
+    returns: "Union<Value,Unknown>"
+    preconditions: ["resolution_rule_declared"]
+    preserves: ["uncertainty_if_unresolved", "provenance"]
+    failure_modes: ["premature_collapse", "contradictory_resolution"]
+    recovery: "preserve U or branch with J"
+    radical_provenance: ["crown", "junction", "seed"]
+    visual_logic: "A crown draws two candidate paths toward a resolution seed and output."
+    examples: ["R(U<Cause>,evidence)"]
+  - token: "S"
+    token_id: "L36.STATE"
+    name: "State"
+    canon_status: "FORGED"
+    primitive_status: "primitive_candidate"
+    class: "Field"
+    spoken_form: "sa"
+    type_signature: "FieldSet \u00d7 Time \u00d7 Scope \u2192 Snapshot"
+    arity: {min: 3, max: 3}
+    accepts: ["FieldSet", "Time", "Scope"]
+    returns: "State"
+    preconditions: ["fields_typed"]
+    preserves: ["time", "scope", "field_provenance"]
+    failure_modes: ["field_collision", "scope_missing"]
+    recovery: "preserve partial state with U fields"
+    radical_provenance: ["vessel", "seed", "keel"]
+    visual_logic: "A seed is held inside a bounded field with time/scope guides."
+    examples: ["S({D3,E6,N8},now,project)"]
+  - token: "T"
+    token_id: "L36.TRANSITION"
+    name: "Transition"
+    canon_status: "ROOT"
+    primitive_status: "primitive_candidate"
+    class: "Dynamic"
+    spoken_form: "tra"
+    type_signature: "State \u00d7 Operation \u2192 TransitionRecord"
+    arity: {min: 2, max: 2}
+    accepts: ["State", "Operation"]
+    returns: "TransitionRecord"
+    preconditions: ["operation_typed"]
+    preserves: ["source_state", "target_state", "invariants"]
+    failure_modes: ["invalid_transition", "untracked_side_effect"]
+    recovery: "block or invoke V"
+    radical_provenance: ["river", "junction", "seed"]
+    visual_logic: "An input river crosses a transition junction and exits changed."
+    examples: ["T(S1,A)"]
+  - token: "U"
+    token_id: "L36.UNKNOWN"
+    name: "Unknown"
+    canon_status: "FORGED"
+    primitive_status: "primitive_candidate"
+    class: "Field"
+    spoken_form: "u"
+    type_signature: "Type \u2192 Unknown<Type>"
+    arity: {min: 1, max: 1}
+    accepts: ["Type"]
+    returns: "Unknown"
+    preconditions: ["unknown_type_declared"]
+    preserves: ["uncertainty", "presence_without_resolution"]
+    failure_modes: ["unknown_erased", "unknown_treated_as_false"]
+    recovery: "restore U from provenance"
+    radical_provenance: ["vessel", "rift", "seed"]
+    visual_logic: "The vessel is incomplete and the seed remains relevant but unresolved outside it."
+    examples: ["U<Cause>"]
+  - token: "V"
+    token_id: "L36.VECTOR_INVERT"
+    name: "Vector Invert"
+    canon_status: "HISTORICAL_FORGED"
+    primitive_status: "primitive_candidate"
+    class: "Dynamic"
+    spoken_form: "vai"
+    type_signature: "FailedPath \u00d7 PreservedIntent \u2192 AlternativeSet"
+    arity: {min: 2, max: 2}
+    accepts: ["FailedPath", "Intent"]
+    returns: "AlternativeSet"
+    preconditions: ["intent_legitimate", "failure_recorded"]
+    preserves: ["intent", "invariants", "failure_provenance"]
+    failure_modes: ["intent_drift", "unsafe_alternative"]
+    recovery: "return U<Alternative>"
+    radical_provenance: ["river", "rift", "junction"]
+    visual_logic: "A failed path crosses a rift and branches into preserved-intent alternatives."
+    examples: ["V(failed_path,intent)"]
+  - token: "W"
+    token_id: "L36.WEAVE"
+    name: "Weave"
+    canon_status: "FORGED"
+    primitive_status: "primitive_candidate"
+    class: "Relational"
+    spoken_form: "we"
+    type_signature: "AgentSet \u00d7 Provenance \u00d7 BoundaryPolicy \u2192 RelationalGraph"
+    arity: {min: 3, max: 3}
+    accepts: ["AgentSet", "Provenance", "BoundaryPolicy"]
+    returns: "RelationalGraph"
+    preconditions: ["boundaries_declared"]
+    preserves: ["identity", "dissent", "provenance"]
+    failure_modes: ["identity_merge", "boundary_loss"]
+    recovery: "separate graph or return U<Relation>"
+    radical_provenance: ["vessel", "river", "rift"]
+    visual_logic: "Two agents remain distinct while reciprocal rivers weave around a protected rift."
+    examples: ["W(agents,provenance,boundaries)"]
+  - token: "X"
+    token_id: "L36.EXCHANGE"
+    name: "Exchange"
+    canon_status: "FORGED"
+    primitive_status: "primitive_candidate"
+    class: "Relational"
+    spoken_form: "ex"
+    type_signature: "Agent \u00d7 Agent \u00d7 Resource \u00d7 LedgerPolicy \u2192 LedgerUpdate"
+    arity: {min: 4, max: 4}
+    accepts: ["Agent", "Agent", "Resource", "LedgerPolicy"]
+    returns: "LedgerUpdate"
+    preconditions: ["consent_declared", "resource_typed"]
+    preserves: ["consent", "value_transfer", "reversibility", "affected_parties"]
+    failure_modes: ["coercive_exchange", "ledger_gap"]
+    recovery: "block exchange"
+    radical_provenance: ["river", "seed", "seed"]
+    visual_logic: "Two directed rivers exchange payload between independent seeds."
+    examples: ["X(A,B,value,ledger_policy)"]
+  - token: "Y"
+    token_id: "L36.YIELD"
+    name: "Yield"
+    canon_status: "FORGED"
+    primitive_status: "primitive_candidate"
+    class: "Dynamic"
+    spoken_form: "ya"
+    type_signature: "Value \u00d7 ProofStatus \u2192 Output"
+    arity: {min: 2, max: 2}
+    accepts: ["Value", "ProofStatus"]
+    returns: "Output"
+    preconditions: ["output_scope_declared"]
+    preserves: ["proof_status", "provenance"]
+    failure_modes: ["yield_without_required_proof"]
+    recovery: "return U<Output>"
+    radical_provenance: ["river", "junction", "seed"]
+    visual_logic: "Two branches converge and emit one proof-bound output seed."
+    examples: ["Y(result,PASS)"]
+  - token: "Z"
+    token_id: "L36.COMPRESS"
+    name: "Compress"
+    canon_status: "ROOT"
+    primitive_status: "primitive_candidate"
+    class: "Meta"
+    spoken_form: "zen"
+    type_signature: "Expression \u00d7 InvariantSet \u00d7 CompressionLevel \u2192 Expression"
+    arity: {min: 3, max: 3}
+    accepts: ["Expression", "InvariantSet", "CompressionLevel"]
+    returns: "Expression"
+    preconditions: ["decoder_available", "invariants_declared"]
+    preserves: ["roundtrip_meaning", "protected_invariants", "residual"]
+    failure_modes: ["semantic_loss", "decoder_mismatch", "codebook_missing"]
+    recovery: "reject compression and invoke Z↑"
+    radical_provenance: ["crown", "vessel", "keel"]
+    visual_logic: "A crown contracts a wide vessel around an unchanged keel and output seed."
+    examples: ["Z(expr,I_set,3)"]

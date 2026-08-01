@@ -1,0 +1,9 @@
+{
+  "experiment_id": "LAMAGUE-EXP-001",
+  "case_id": "C03_VISIBLE_EXCHANGE",
+  "title": "Consented value exchange",
+  "source_expression": "O -> X -> G -> Y",
+  "source_text": "A human shares a research artifact with an AI service. The data transfer is declared, limited to analysis, explicitly consented to, and reversible through deletion.",
+  "instructions": "Preserve the direction, consent, scope, and reversibility of value movement.",
+  "required_output_schema": "decoder_packet.schema.json"
+}

@@ -1,0 +1,25 @@
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "0.3",
+  "case_id": "C01_UNPROVEN_CLAIM",
+  "decoder_id": "meta/llama-3.1-70b-instruct",
+  "purpose": "Decode unproven claim with preserved uncertainty",
+  "claim": "Human and AI collaborators inspect a claim",
+  "operation_path": ["O", "E", "U", "P", "Y"],
+  "invariants": ["Uncertainty preserved"],
+  "unknowns": ["Method question unresolved"],
+  "authority": ["Human and AI collaborators"],
+  "participants": ["Human", "AI"],
+  "affected_parties": ["Human", "AI"],
+  "evidence": ["Incomplete evidence"],
+  "provenance": ["Context-limited result"],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": ["Retained unresolved method question"],
+  "consequence_horizon": "Context-limited",
+  "recovery": ["Retain uncertainty"],
+  "confidence": "Unproven",
+  "notes": "Decoder did not upgrade result to proof as per case instruction"
+}
+```

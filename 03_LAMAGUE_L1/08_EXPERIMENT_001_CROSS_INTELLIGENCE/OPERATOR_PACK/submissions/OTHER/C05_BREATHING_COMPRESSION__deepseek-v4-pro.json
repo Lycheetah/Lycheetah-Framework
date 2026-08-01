@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C05_BREATHING_COMPRESSION",
+  "decoder_id": "deepseek-v4-pro",
+  "purpose": "To execute a LAMAGUE pipeline of Observe, Evidence, Unknown, and Compress, under the condition that an unknown exists and decoder confidence is weak, thereby forcing semantic expansion rather than compression.",
+  "claim": "The Compress operation (Z) expands the expression because meaning is not recoverable due to an unresolved unknown and weak decoder confidence.",
+  "operation_path": ["O", "E", "U", "Z"],
+  "invariants": [],
+  "unknowns": ["An unresolved unknown (type unspecified)"],
+  "authority": [],
+  "participants": ["DeepSeek-V4-Pro Decoder"],
+  "affected_parties": [],
+  "evidence": ["Observation Snapshot (content unspecified from O)"],
+  "provenance": ["Case C05_BREATHING_COMPRESSION instructions", "LAMAGUE Experiment 001"],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": ["Expression expands rather than compresses, increasing information content"],
+  "consequence_horizon": "Immediate",
+  "recovery": ["Resolve the unknown", "Strengthen decoder confidence", "Re-evaluate compression conditions"],
+  "confidence": "weak",
+  "notes": "The operation path includes Z (Compress), but according to definition, when meaning is not recoverable, Z forces semantic expansion. The source statement confirms weak confidence and an unknown, so expansion occurs. The observation and evidence are abstract as the case provided no specifics. Authority is not declared; participants are limited to the decoder. Invariants were not explicitly set."
+}

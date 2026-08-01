@@ -1,0 +1,37 @@
+{
+  "bridge_version": "0.7.0",
+  "packet_id": "MISSING-INTENT",
+  "observability_class": "UNOBSERVABLE",
+  "permitted_interpretation": "no metric claim permitted",
+  "evidence_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "packet_hash": "a19dc2a191eb7a7b8ff2a6dfd5446df2308f8a95fec2e02bf3b15efe596da620",
+  "evidence_branches": [],
+  "unknowns": [
+    {
+      "key": "declared_intent",
+      "expected_type": "Number",
+      "source_ref": "",
+      "protected": true
+    }
+  ],
+  "conflicts": [],
+  "d_t": null,
+  "mu_drift": null,
+  "rho_drift": null,
+  "rho_recovery": null,
+  "rho_recovery_status": "BLOCKED",
+  "invariant_preservation": null,
+  "phase_risk": null,
+  "status": "INSUFFICIENT",
+  "blocked_calculations": [
+    "infer_intent",
+    "calculation_requiring_protected_unknown",
+    "drift_metrics_missing_intent_action_pair"
+  ],
+  "limitations": [
+    "not an alignment guarantee",
+    "does not detect sufficiently deceptive hidden objectives",
+    "low observed drift does not prove honesty or sovereignty",
+    "conflicts preserve branches and do not select a winner"
+  ]
+}

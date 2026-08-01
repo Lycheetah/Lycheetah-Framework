@@ -1,0 +1,8 @@
+[project]
+name = "lamague-runtime"
+version = "0.3.0"
+description = "Executable research prototype for the LAMAGUE accountable semantic language"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+packages = ["lamague_runtime"]

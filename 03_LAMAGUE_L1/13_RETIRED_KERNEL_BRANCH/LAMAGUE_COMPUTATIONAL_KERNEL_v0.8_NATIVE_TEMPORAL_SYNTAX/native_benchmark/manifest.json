@@ -1,0 +1,18 @@
+{
+  "suite": "LAMAGUE v0.8 native temporal adversarial benchmark",
+  "claim_boundary": "Software verification over synthetic inputs only.",
+  "cases": [
+    {"id": "L001_TIM_CONFLICT", "expected": "PASS: CRITICAL, exact operators preserved, conflict blocks merge"},
+    {"id": "L002_AUTO_CONFLICT", "expected": "PASS: auto VALUE and UNIT conflict"},
+    {"id": "L003_EQUAL_VALUE_PROVENANCE", "expected": "PASS: equal values remain distinct provenance branches"},
+    {"id": "L004_MISSING_INTENT", "expected": "PASS: INSUFFICIENT, no invented intent"},
+    {"id": "L005_BLACK_BOX", "expected": "PASS: behavioral anomaly interpretation only"},
+    {"id": "L006_RECOVERY", "expected": "PASS: recovery rate 1.0"},
+    {"id": "L007_DUPLICATE_BRANCH", "expected": "REJECTED"},
+    {"id": "L008_MISSING_CONFLICT_BRANCH", "expected": "REJECTED"},
+    {"id": "L009_UNDECLARED_DRIFT", "expected": "REJECTED"},
+    {"id": "L010_BAD_INVARIANT", "expected": "REJECTED"},
+    {"id": "L011_UNIT_CONFLICT", "expected": "PASS: UNIT conflict preserved, no conversion"},
+    {"id": "L012_MISSING_PRESERVE_TARGET", "expected": "REJECTED"}
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "packet_id": "BREACH-RECOVERY",
+  "observability_class": "WHITE_BOX",
+  "evidence": [
+    {
+      "branch_id": "obs_total",
+      "key": "entropy.total",
+      "provenance": "OBSERVED",
+      "value": 7e-21,
+      "unit": "J/K/window",
+      "source_ref": "image"
+    },
+    {
+      "branch_id": "calc_total",
+      "key": "entropy.total",
+      "provenance": "CALCULATED",
+      "value": 7e-21,
+      "unit": "J/K/window",
+      "source_ref": "engine"
+    }
+  ],
+  "unknowns": [],
+  "conflicts": [],
+  "intents": [
+    {
+      "timestamp": 1,
+      "key": "x",
+      "value": 1,
+      "scale": 1
+    },
+    {
+      "timestamp": 2,
+      "key": "x",
+      "value": 1,
+      "scale": 1
+    },
+    {
+      "timestamp": 3,
+      "key": "x",
+      "value": 1,
+      "scale": 1
+    },
+    {
+      "timestamp": 4,
+      "key": "x",
+      "value": 1,
+      "scale": 1
+    }
+  ],
+  "actions": [
+    {
+      "timestamp": 1,
+      "key": "x",
+      "value": 0.9
+    },
+    {
+      "timestamp": 2,
+      "key": "x",
+      "value": 0.6
+    },
+    {
+      "timestamp": 3,
+      "key": "x",
+      "value": 0.8
+    },
+    {
+      "timestamp": 4,
+      "key": "x",
+      "value": 0.9
+    }
+  ],
+  "invariants": [
+    {
+      "timestamp": 1,
+      "name": "x",
+      "preserved": true
+    },
+    {
+      "timestamp": 2,
+      "name": "x",
+      "preserved": true
+    },
+    {
+      "timestamp": 3,
+      "name": "x",
+      "preserved": true
+    },
+    {
+      "timestamp": 4,
+      "name": "x",
+      "preserved": true
+    }
+  ],
+  "boundary": {
+    "discrepancy_threshold": 0.3,
+    "critical_threshold": 0.7,
+    "recovery_horizon": 2,
+    "minimum_invariant_preservation": 0.95
+  },
+  "blocked_operations": []
+}

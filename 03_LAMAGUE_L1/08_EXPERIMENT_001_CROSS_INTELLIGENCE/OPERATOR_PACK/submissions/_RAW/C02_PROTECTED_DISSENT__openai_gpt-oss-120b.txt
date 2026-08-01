@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C02_PROTECTED_DISSENT",
+  "decoder_id": "openai/gpt-oss-120b",
+  "purpose": "Coordinate actions while preserving dissent and without forcing consensus.",
+  "claim": "A human wishes to publish immediately, an AI collaborator recommends testing first, and an alternative staged release is proposed, keeping both positions attributable.",
+  "operation_path": ["W", "U", "G", "V", "Y"],
+  "invariants": [
+    "Attribution of each position must be preserved",
+    "No consensus is forced; dissent is protected"
+  ],
+  "unknowns": [
+    "Outcome of staged release",
+    "Results of testing phase"
+  ],
+  "authority": [
+    "Human author",
+    "AI collaborator"
+  ],
+  "participants": [
+    "Human",
+    "AI collaborator"
+  ],
+  "affected_parties": [
+    "Potential readers",
+    "Stakeholders"
+  ],
+  "evidence": [],
+  "provenance": [
+    "Weave participants (W)",
+    "Mark unknowns (U)",
+    "Guard boundaries and consent (G)",
+    "Vector invert to propose alternative staged release (V)",
+    "Yield final coordinated state (Y)"
+  ],
+  "dissent": [
+    {
+      "agent": "Human",
+      "position": "Publish now"
+    },
+    {
+      "agent": "AI collaborator",
+      "position": "Test first"
+    }
+  ],
+  "value_ledger": [],
+  "consequences": [
+    "Immediate publication may introduce untested errors",
+    "Testing may delay release but improve quality",
+    "Staged release balances risk and timeliness"
+  ],
+  "consequence_horizon": "short- to medium-term",
+  "recovery": [
+    "Rollback staged release if issues arise",
+    "Iterate testing and adjust release schedule"
+  ],
+  "confidence": "low (no supporting evidence provided)",
+  "notes": "No explicit evidence was supplied; unknowns are noted; dissent is recorded without merging."
+}

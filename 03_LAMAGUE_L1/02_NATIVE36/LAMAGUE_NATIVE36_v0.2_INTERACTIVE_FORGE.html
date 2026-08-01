@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LAMAGUE Native-36 v0.2 Forge</title>
+<style>
+:root{--bg:#090b12;--panel:#141721;--ink:#f6f4ee;--muted:#aeb2c1;--gold:#f1cb73;--line:#34394a}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,sans-serif}
+main{max-width:1250px;margin:auto;padding:24px} h1{font-size:clamp(2.5rem,7vw,5.7rem);line-height:.9;margin:.5rem 0}
+.lead{font-size:1.15rem;max-width:900px;color:var(--muted)} .gold{color:var(--gold)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;margin:20px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:10px}
+.seal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.card,.seal-card{background:#10131b;color:inherit;border:1px solid var(--line);border-radius:14px;padding:10px;cursor:pointer}
+.card:hover,.seal-card:hover,.card:focus,.seal-card:focus{outline:3px solid var(--gold);outline-offset:2px}
+.card svg{height:112px;width:100%} .seal-card svg{height:150px;width:100%}
+.glyph{color:var(--gold)} .stroke{fill:none;stroke:currentColor;stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round}
+.guide{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;opacity:.62}
+.rift{fill:none;stroke:currentColor;stroke-width:3.2;stroke-linecap:round;stroke-dasharray:2 5}
+.seed{fill:currentColor;stroke:none}
+.card strong,.card span,.seal-card strong,.seal-card span,.seal-card em{display:block;text-align:center}
+.card span,.seal-card span{color:var(--muted);font-size:.8rem} .seal-card em{color:var(--gold);font-style:normal;margin-top:8px}
+textarea{width:100%;min-height:80px;background:#090b12;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px;font:1rem ui-monospace,monospace}
+.output{display:flex;gap:7px;flex-wrap:wrap;min-height:110px;padding:10px;border:1px dashed var(--line);border-radius:12px}
+.out{width:76px;text-align:center} .out svg{width:70px;height:70px} .out small{display:block;color:var(--muted)}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.metric{border-left:4px solid var(--gold);padding-left:12px} code{color:var(--gold)}
+</style>
+</head>
+<body><main>
+<p class="gold"><strong>LYCHEETAH RESEARCH FORGE</strong></p>
+<h1>LAMAGUE<br>NATIVE-36 v0.2</h1>
+<p class="lead">Ten fused native numerals, twenty-six semantic operation glyphs, and five reversible compound seals. This is not an A–Z substitution cipher: ASCII is the transport alias while each native cell maps to a typed semantic object.</p>
+
+<section class="panel">
+<h2>ASCII → native transcoder</h2>
+<textarea id="input">D A F P Y</textarea><div id="output" class="output" aria-live="polite"></div>
+</section>
+
+<section class="panel"><h2>36 base equivalents</h2><div class="grid">
+<button class="card" data-token="0" aria-label="Null: Empty register or no committed state">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M35 54 Q50 38 65 54"/><line class="stroke" x1="63" y1="52" x2="71" y2="58"/></g></svg>
+<strong>0 · Null</strong>
+<span>Numeral · 0</span>
+</button>
+<button class="card" data-token="1" aria-label="Unit: One held state or stable presence">
+<svg viewBox="0 0 100 100"><g class="glyph"><line class="stroke" x1="50" y1="39" x2="50" y2="61"/><circle class="seed" cx="50" cy="50" r="4.2"/></g></svg>
+<strong>1 · Unit</strong>
+<span>Numeral · 1</span>
+</button>
+<button class="card" data-token="2" aria-label="Difference: Differentiated or expanded unit">
+<svg viewBox="0 0 100 100"><g class="glyph"><line class="stroke" x1="50" y1="39" x2="50" y2="61"/><circle class="seed" cx="40.5" cy="50" r="3.8"/><circle class="seed" cx="59.5" cy="50" r="3.8"/></g></svg>
+<strong>2 · Difference</strong>
+<span>Numeral · 2</span>
+</button>
+<button class="card" data-token="3" aria-label="Three: Fused ternary 10">
+<svg viewBox="0 0 100 100"><g class="glyph"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="50" cy="33" r="4.2"/><path class="stroke" d="M35 73 Q50 57 65 73"/><line class="stroke" x1="63" y1="71" x2="71" y2="77"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g></svg>
+<strong>3 · Three</strong>
+<span>Numeral · 10₃</span>
+</button>
+<button class="card" data-token="4" aria-label="Four: Fused ternary 11">
+<svg viewBox="0 0 100 100"><g class="glyph"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="50" cy="33" r="4.2"/><line class="stroke" x1="50" y1="58" x2="50" y2="80"/><circle class="seed" cx="50" cy="69" r="4.2"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g></svg>
+<strong>4 · Four</strong>
+<span>Numeral · 11₃</span>
+</button>
+<button class="card" data-token="5" aria-label="Five: Fused ternary 12">
+<svg viewBox="0 0 100 100"><g class="glyph"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="50" cy="33" r="4.2"/><line class="stroke" x1="50" y1="58" x2="50" y2="80"/><circle class="seed" cx="40.5" cy="69" r="3.8"/><circle class="seed" cx="59.5" cy="69" r="3.8"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g></svg>
+<strong>5 · Five</strong>
+<span>Numeral · 12₃</span>
+</button>
+<button class="card" data-token="6" aria-label="Six: Fused ternary 20">
+<svg viewBox="0 0 100 100"><g class="glyph"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="40.5" cy="33" r="3.8"/><circle class="seed" cx="59.5" cy="33" r="3.8"/><path class="stroke" d="M35 73 Q50 57 65 73"/><line class="stroke" x1="63" y1="71" x2="71" y2="77"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g></svg>
+<strong>6 · Six</strong>
+<span>Numeral · 20₃</span>
+</button>
+<button class="card" data-token="7" aria-label="Seven: Fused ternary 21">
+<svg viewBox="0 0 100 100"><g class="glyph"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="40.5" cy="33" r="3.8"/><circle class="seed" cx="59.5" cy="33" r="3.8"/><line class="stroke" x1="50" y1="58" x2="50" y2="80"/><circle class="seed" cx="50" cy="69" r="4.2"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g></svg>
+<strong>7 · Seven</strong>
+<span>Numeral · 21₃</span>
+</button>
+<button class="card" data-token="8" aria-label="Eight: Fused ternary 22">
+<svg viewBox="0 0 100 100"><g class="glyph"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="40.5" cy="33" r="3.8"/><circle class="seed" cx="59.5" cy="33" r="3.8"/><line class="stroke" x1="50" y1="58" x2="50" y2="80"/><circle class="seed" cx="40.5" cy="69" r="3.8"/><circle class="seed" cx="59.5" cy="69" r="3.8"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g></svg>
+<strong>8 · Eight</strong>
+<span>Numeral · 22₃</span>
+</button>
+<button class="card" data-token="9" aria-label="Nine: Fused ternary 100">
+<svg viewBox="0 0 100 100"><g class="glyph"><line class="stroke" x1="50" y1="12" x2="50" y2="34"/><circle class="seed" cx="50" cy="23" r="4.2"/><path class="stroke" d="M35 54 Q50 38 65 54"/><line class="stroke" x1="63" y1="52" x2="71" y2="58"/><path class="stroke" d="M35 81 Q50 65 65 81"/><line class="stroke" x1="63" y1="79" x2="71" y2="85"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g></svg>
+<strong>9 · Nine</strong>
+<span>Numeral · 100₃</span>
+</button>
+<button class="card" data-token="A" aria-label="Anchor: Project a state toward a declared baseline">
+<svg viewBox="0 0 100 100"><g class="glyph"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M19 76 C34 76 42 66 43 51 C44 35 51 26 64 25"/><path class="stroke" d="M43 51 C44 68 50 79 63 82"/><line class="stroke" x1="39" y1="83" x2="68" y2="83"/><circle class="seed" cx="47" cy="51" r="3.6"/></g></svg>
+<strong>A · Anchor</strong>
+<span>Dynamic · A</span>
+</button>
+<button class="card" data-token="B" aria-label="Bridge: Connect unlike domains without merging identity">
+<svg viewBox="0 0 100 100"><g class="glyph"><circle class="seed" cx="19" cy="50" r="3.4"/><circle class="seed" cx="81" cy="50" r="3.4"/><path class="stroke" d="M23 50 C31 26 41 25 49 43"/><path class="stroke" d="M77 50 C69 74 59 75 51 57"/><path class="stroke" d="M47 43 Q50 50 53 57"/><line class="guide" x1="50" y1="34" x2="50" y2="66"/></g></svg>
+<strong>B · Bridge</strong>
+<span>Relational · B</span>
+</button>
+<button class="card" data-token="C" aria-label="Cycle: Repeat an operation under an exit condition">
+<svg viewBox="0 0 100 100"><g class="glyph"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M23 72 C18 48 28 25 50 22 C69 20 80 35 75 53"/><path class="stroke" d="M75 53 C70 71 48 79 34 67"/><line class="stroke" x1="67" y1="54" x2="79" y2="48"/></g></svg>
+<strong>C · Cycle</strong>
+<span>Dynamic · C</span>
+</button>
+<button class="card" data-token="D" aria-label="Drift: Measure deviation from an invariant">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><line class="stroke" x1="36" y1="20" x2="42" y2="76"/><path class="stroke" d="M49 27 C58 39 65 54 77 72"/><circle class="seed" cx="39" cy="49" r="3.4"/><line class="stroke" x1="70" y1="69" x2="80" y2="78"/></g></svg>
+<strong>D · Drift</strong>
+<span>Field · D</span>
+</button>
+<button class="card" data-token="E" aria-label="Evidence: Bind provenance and support to a claim">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M31 67 C42 61 53 54 66 38"/><circle class="seed" cx="38" cy="61" r="3.4"/><circle class="seed" cx="49" cy="53" r="3.4"/><circle class="seed" cx="61" cy="43" r="3.4"/><line class="stroke" x1="67" y1="32" x2="77" y2="26"/><line class="stroke" x1="71" y1="25" x2="78" y2="31"/></g></svg>
+<strong>E · Evidence</strong>
+<span>Field · E</span>
+</button>
+<button class="card" data-token="F" aria-label="Fold: Integrate weighted history into present state">
+<svg viewBox="0 0 100 100"><g class="glyph"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 70 C27 24 70 18 78 43 C84 62 58 77 43 65"/><path class="stroke" d="M43 65 C32 56 40 41 53 43 C62 44 62 55 55 58"/><circle class="seed" cx="51" cy="58" r="3.6"/></g></svg>
+<strong>F · Fold</strong>
+<span>Dynamic · F</span>
+</button>
+<button class="card" data-token="G" aria-label="Guard: Gate an action behind a condition">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M34 80 Q50 88 66 80"/><line class="stroke" x1="41" y1="76" x2="38" y2="87"/><line class="stroke" x1="59" y1="76" x2="62" y2="87"/><path class="stroke" d="M18 67 C34 65 43 57 49 45 C56 32 65 26 80 25"/><line class="stroke" x1="49" y1="37" x2="49" y2="58"/><line class="stroke" x1="42" y1="47" x2="56" y2="47"/><circle class="seed" cx="24" cy="65" r="3.3"/></g></svg>
+<strong>G · Guard</strong>
+<span>Invariant · G</span>
+</button>
+<button class="card" data-token="H" aria-label="Horizon: Declare temporal or purpose endpoint">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M25 69 C39 59 48 48 61 31"/><line class="stroke" x1="34" y1="25" x2="75" y2="25"/><circle class="seed" cx="78" cy="25" r="3.7"/><line class="guide" x1="55" y1="46" x2="72" y2="46"/></g></svg>
+<strong>H · Horizon</strong>
+<span>Field · H</span>
+</button>
+<button class="card" data-token="I" aria-label="Invariant: Declare a property transformations must preserve">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M34 80 Q50 88 66 80"/><line class="stroke" x1="41" y1="76" x2="38" y2="87"/><line class="stroke" x1="59" y1="76" x2="62" y2="87"/><path class="stroke" d="M50 18 C44 33 46 54 50 75"/><path class="stroke" d="M34 33 Q50 19 66 33"/><line class="stroke" x1="33" y1="39" x2="40" y2="46"/><line class="stroke" x1="67" y1="39" x2="60" y2="46"/><circle class="seed" cx="50" cy="51" r="3.5"/></g></svg>
+<strong>I · Invariant</strong>
+<span>Invariant · I</span>
+</button>
+<button class="card" data-token="J" aria-label="Junction: Branch according to a condition">
+<svg viewBox="0 0 100 100"><g class="glyph"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 75 C34 68 42 58 49 46"/><path class="stroke" d="M49 46 C55 38 62 32 79 25"/><path class="stroke" d="M49 46 C55 57 62 65 77 72"/><circle class="seed" cx="49" cy="46" r="3.8"/></g></svg>
+<strong>J · Junction</strong>
+<span>Dynamic · J</span>
+</button>
+<button class="card" data-token="K" aria-label="Kernel: Extract an irreducible operational core">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M34 80 Q50 88 66 80"/><line class="stroke" x1="41" y1="76" x2="38" y2="87"/><line class="stroke" x1="59" y1="76" x2="62" y2="87"/><circle class="seed" cx="50" cy="50" r="7"/><path class="stroke" d="M50 18 C47 31 47 38 50 43"/><path class="stroke" d="M20 50 C31 47 38 47 43 50"/><path class="stroke" d="M80 50 C69 53 62 53 57 50"/><path class="stroke" d="M50 79 C53 68 53 61 50 57"/></g></svg>
+<strong>K · Kernel</strong>
+<span>Invariant · K</span>
+</button>
+<button class="card" data-token="L" aria-label="Limit: Set threshold, tolerance, timeout or bound">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M34 80 Q50 88 66 80"/><line class="stroke" x1="41" y1="76" x2="38" y2="87"/><line class="stroke" x1="59" y1="76" x2="62" y2="87"/><path class="stroke" d="M26 64 C40 58 50 48 61 31"/><line class="stroke" x1="61" y1="20" x2="61" y2="72"/><line class="stroke" x1="54" y1="31" x2="69" y2="31"/><circle class="seed" cx="26" cy="64" r="3.4"/></g></svg>
+<strong>L · Limit</strong>
+<span>Invariant · L</span>
+</button>
+<button class="card" data-token="M" aria-label="Merge: Combine states while preserving conflict data">
+<svg viewBox="0 0 100 100"><g class="glyph"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 72 C30 60 37 50 49 46"/><path class="stroke" d="M20 28 C32 39 39 45 49 46"/><path class="stroke" d="M49 46 C58 49 67 41 80 26"/><path class="stroke" d="M49 46 C53 58 57 68 65 79"/><circle class="seed" cx="49" cy="46" r="4"/></g></svg>
+<strong>M · Merge</strong>
+<span>Dynamic · M</span>
+</button>
+<button class="card" data-token="N" aria-label="Novelty: Measure distance from known corpus structure">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><circle class="seed" cx="43" cy="57" r="3.5"/><circle class="seed" cx="81" cy="24" r="4"/><path class="stroke" d="M47 54 C57 47 65 39 75 29"/><path class="guide" d="M31 67 Q50 35 70 29"/><line class="stroke" x1="70" y1="22" x2="79" y2="31"/></g></svg>
+<strong>N · Novelty</strong>
+<span>Field · N</span>
+</button>
+<button class="card" data-token="O" aria-label="Observe: Read a target into an auditable snapshot">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M23 52 C34 38 49 32 67 36"/><path class="stroke" d="M23 52 C35 66 51 71 69 64"/><circle class="seed" cx="50" cy="52" r="4.2"/><line class="stroke" x1="67" y1="36" x2="78" y2="31"/><line class="stroke" x1="69" y1="64" x2="79" y2="68"/></g></svg>
+<strong>O · Observe</strong>
+<span>Field · O</span>
+</button>
+<button class="card" data-token="P" aria-label="Prove: Return pass, fail or unresolved">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M31 42 C42 37 48 44 50 53 C53 43 60 37 70 42"/><path class="stroke" d="M50 53 C48 65 49 74 54 82"/><circle class="seed" cx="54" cy="82" r="3.8"/><line class="guide" x1="44" y1="55" x2="56" y2="55"/></g></svg>
+<strong>P · Prove</strong>
+<span>Meta · P</span>
+</button>
+<button class="card" data-token="Q" aria-label="Query: Open a typed unresolved request">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M31 65 C42 58 50 49 58 38"/><line class="stroke" x1="58" y1="38" x2="68" y2="31"/><circle class="seed" cx="79" cy="24" r="4"/><line class="rift" x1="70" y1="29" x2="75" y2="26"/></g></svg>
+<strong>Q · Query</strong>
+<span>Field · Q</span>
+</button>
+<button class="card" data-token="R" aria-label="Resolve: Resolve an unknown or preserve it unresolved">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M25 61 C36 49 43 45 50 48"/><path class="stroke" d="M75 61 C64 49 57 45 50 48"/><path class="stroke" d="M50 48 C47 60 50 70 61 78"/><circle class="seed" cx="50" cy="48" r="4"/><circle class="seed" cx="61" cy="78" r="3.6"/></g></svg>
+<strong>R · Resolve</strong>
+<span>Meta · R</span>
+</button>
+<button class="card" data-token="S" aria-label="State: Declare a bounded snapshot of active fields">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><line class="stroke" x1="29" y1="73" x2="69" y2="73"/><circle class="seed" cx="47" cy="53" r="4.3"/><line class="guide" x1="53" y1="33" x2="53" y2="66"/><line class="guide" x1="36" y1="35" x2="62" y2="35"/></g></svg>
+<strong>S · State</strong>
+<span>Field · S</span>
+</button>
+<button class="card" data-token="T" aria-label="Transition: Apply a typed state transformation">
+<svg viewBox="0 0 100 100"><g class="glyph"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 75 C35 74 42 67 47 57"/><path class="stroke" d="M47 57 C54 45 63 37 79 25"/><line class="stroke" x1="43" y1="52" x2="54" y2="63"/><circle class="seed" cx="47" cy="57" r="3.5"/></g></svg>
+<strong>T · Transition</strong>
+<span>Dynamic · T</span>
+</button>
+<button class="card" data-token="U" aria-label="Unknown: Preserve relevant unresolved presence">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M24 67 C33 47 44 34 60 28"/><line class="rift" x1="62" y1="28" x2="69" y2="34"/><circle class="seed" cx="80" cy="43" r="4.3"/><line class="rift" x1="68" y1="37" x2="75" y2="41"/></g></svg>
+<strong>U · Unknown</strong>
+<span>Field · U</span>
+</button>
+<button class="card" data-token="V" aria-label="Vector Invert: Preserve intent while changing the path">
+<svg viewBox="0 0 100 100"><g class="glyph"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 75 C34 64 42 55 49 45"/><line class="stroke" x1="43" y1="38" x2="56" y2="52"/><path class="stroke" d="M49 45 C58 35 66 28 80 24"/><path class="stroke" d="M49 45 C57 58 66 68 78 75"/><circle class="seed" cx="49" cy="45" r="3.8"/></g></svg>
+<strong>V · Vector Invert</strong>
+<span>Dynamic · V</span>
+</button>
+<button class="card" data-token="W" aria-label="Weave: Connect agents while preserving identity boundaries">
+<svg viewBox="0 0 100 100"><g class="glyph"><circle class="seed" cx="19" cy="50" r="3.4"/><circle class="seed" cx="81" cy="50" r="3.4"/><path class="stroke" d="M22 50 C33 24 45 25 50 48 C55 71 67 72 78 50"/><path class="stroke" d="M22 50 C33 76 45 75 50 52 C55 29 67 28 78 50"/><line class="rift" x1="45" y1="46" x2="55" y2="54"/></g></svg>
+<strong>W · Weave</strong>
+<span>Relational · W</span>
+</button>
+<button class="card" data-token="X" aria-label="Exchange: Perform reciprocal auditable transfer">
+<svg viewBox="0 0 100 100"><g class="glyph"><circle class="seed" cx="19" cy="50" r="3.4"/><circle class="seed" cx="81" cy="50" r="3.4"/><path class="stroke" d="M23 47 C38 27 62 27 77 47"/><path class="stroke" d="M77 53 C62 73 38 73 23 53"/><polyline class="stroke" points="68,41 78,47 69,52"/><polyline class="stroke" points="32,59 22,53 31,48"/></g></svg>
+<strong>X · Exchange</strong>
+<span>Relational · X</span>
+</button>
+<button class="card" data-token="Y" aria-label="Yield: Emit a result and terminate or return">
+<svg viewBox="0 0 100 100"><g class="glyph"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M21 30 C36 34 43 40 50 51"/><path class="stroke" d="M21 71 C35 66 43 61 50 51"/><path class="stroke" d="M50 51 C58 56 67 61 80 66"/><circle class="seed" cx="50" cy="51" r="4"/><circle class="seed" cx="80" cy="66" r="3.8"/></g></svg>
+<strong>Y · Yield</strong>
+<span>Dynamic · Y</span>
+</button>
+<button class="card" data-token="Z" aria-label="Compress: Contract representation while preserving invariants">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M25 39 C36 45 42 54 45 66"/><path class="stroke" d="M75 39 C64 45 58 54 55 66"/><line class="stroke" x1="45" y1="66" x2="55" y2="66"/><path class="stroke" d="M50 41 C48 51 49 61 50 78"/><circle class="seed" cx="50" cy="79" r="3.5"/></g></svg>
+<strong>Z · Compress</strong>
+<span>Meta · Z</span>
+</button></div></section>
+<section class="panel"><h2>Five compound seals</h2><div class="seal-grid">
+<button class="seal-card" data-seal="COR" aria-label="Correction Seal">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M18 66 C31 63 38 55 42 43"/><line class="stroke" x1="38" y1="22" x2="43" y2="76"/><path class="stroke" d="M77 28 C64 31 57 39 53 49 C49 60 54 70 68 77"/><path class="stroke" d="M31 74 C38 83 51 86 62 80"/><circle class="seed" cx="42" cy="43" r="3.8"/><circle class="seed" cx="69" cy="77" r="4"/><line class="guide" x1="45" y1="58" x2="57" y2="58"/></g></svg>
+<strong>Correction Seal</strong>
+<span>D → A → F → P → Y</span>
+<em>5 operations in one cell</em>
+</button>
+<button class="seal-card" data-seal="FRO" aria-label="Frontier Seal">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M30 68 C42 58 49 48 58 35"/><circle class="seed" cx="42" cy="57" r="3.5"/><circle class="seed" cx="52" cy="46" r="3.5"/><line class="stroke" x1="58" y1="35" x2="66" y2="28"/><line class="stroke" x1="59" y1="50" x2="59" y2="68"/><line class="stroke" x1="52" y1="59" x2="66" y2="59"/><circle class="seed" cx="82" cy="26" r="4.3"/><line class="rift" x1="68" y1="31" x2="76" y2="28"/><path class="guide" d="M26 28 Q49 12 72 27"/></g></svg>
+<strong>Frontier Seal</strong>
+<span>O → S → N → E → G → I → U → Q</span>
+<em>8 operations in one cell</em>
+</button>
+<button class="seal-card" data-seal="SOV" aria-label="Sovereignty Seal">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M50 24 C43 39 44 58 50 74"/><path class="stroke" d="M28 33 C20 47 22 67 38 78"/><path class="stroke" d="M72 33 C80 47 78 67 62 78"/><line class="stroke" x1="28" y1="50" x2="40" y2="50"/><line class="stroke" x1="60" y1="50" x2="72" y2="50"/><line class="stroke" x1="34" y1="43" x2="34" y2="57"/><line class="stroke" x1="66" y1="43" x2="66" y2="57"/><path class="stroke" d="M50 74 C58 70 65 72 78 80"/><circle class="seed" cx="78" cy="80" r="4"/></g></svg>
+<strong>Sovereignty Seal</strong>
+<span>G → I → V → P → Y</span>
+<em>5 operations in one cell</em>
+</button>
+<button class="seal-card" data-seal="CAS" aria-label="Cascade Seal">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><circle class="seed" cx="37" cy="28" r="3.5"/><circle class="seed" cx="50" cy="23" r="3.5"/><circle class="seed" cx="63" cy="28" r="3.5"/><path class="stroke" d="M37 34 C42 42 46 46 50 51"/><path class="stroke" d="M63 34 C58 42 54 46 50 51"/><line class="stroke" x1="28" y1="54" x2="72" y2="54"/><path class="stroke" d="M50 54 C38 62 35 73 46 80"/><path class="stroke" d="M50 54 C62 62 65 73 54 80"/><path class="stroke" d="M46 80 Q50 86 54 80"/><circle class="seed" cx="50" cy="51" r="3.8"/></g></svg>
+<strong>Cascade Seal</strong>
+<span>E → N → J → C → F → P → Y</span>
+<em>7 operations in one cell</em>
+</button>
+<button class="seal-card" data-seal="DIS" aria-label="Protected Dissent Seal">
+<svg viewBox="0 0 100 100"><g class="glyph"><path class="stroke" d="M22 31 C14 47 18 68 34 78"/><path class="stroke" d="M78 31 C86 47 82 68 66 78"/><circle class="seed" cx="24" cy="50" r="3.6"/><circle class="seed" cx="76" cy="50" r="3.6"/><path class="stroke" d="M27 48 C37 31 43 32 49 47"/><path class="stroke" d="M73 52 C63 69 57 68 51 53"/><line class="rift" x1="46" y1="42" x2="54" y2="58"/><line class="stroke" x1="45" y1="48" x2="55" y2="48"/><line class="stroke" x1="50" y1="40" x2="50" y2="56"/><path class="stroke" d="M66 78 C71 79 76 78 82 72"/><circle class="seed" cx="82" cy="72" r="3.8"/></g></svg>
+<strong>Protected Dissent Seal</strong>
+<span>W → U → G → V → Y</span>
+<em>5 operations in one cell</em>
+</button></div></section>
+
+<section class="panel">
+<h2>Measured prototype facts</h2>
+<div class="metrics">
+<div class="metric"><strong>36 base cells</strong><p>10 numeral equivalents and 26 semantic operations.</p></div>
+<div class="metric"><strong>5 programme cells</strong><p>Reversibly expand into 30 primitive operations.</p></div>
+<div class="metric"><strong>99 English words</strong><p>731 characters in the five reference decompressions.</p></div>
+<div class="metric"><strong>0.838 mean separation</strong><p>Preliminary raster distance across all base-glyph pairs.</p></div>
+</div>
+<p>Closest machine-distance pairs: 3/6 0.152, 5/8 0.153, 7/8 0.159, 4/7 0.173, 4/5 0.181. These remain candidates for human confusion testing, not automatic rejection.</p>
+</section>
+
+<section class="panel"><h2>Research boundary</h2>
+<p>These outlines are independently generated from LAMAGUE’s semantic radicals. The prototype does not yet establish global visual originality or net semantic compression after codebook cost. Those claims require prior-art review, independent decoding, round-trip tests and controlled benchmarks.</p></section>
+</main>
+<script>
+const glyphs={"0": "<path class=\"stroke\" d=\"M35 54 Q50 38 65 54\"/><line class=\"stroke\" x1=\"63\" y1=\"52\" x2=\"71\" y2=\"58\"/>", "1": "<line class=\"stroke\" x1=\"50\" y1=\"39\" x2=\"50\" y2=\"61\"/><circle class=\"seed\" cx=\"50\" cy=\"50\" r=\"4.2\"/>", "2": "<line class=\"stroke\" x1=\"50\" y1=\"39\" x2=\"50\" y2=\"61\"/><circle class=\"seed\" cx=\"40.5\" cy=\"50\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"50\" r=\"3.8\"/>", "3": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"50\" cy=\"33\" r=\"4.2\"/><path class=\"stroke\" d=\"M35 73 Q50 57 65 73\"/><line class=\"stroke\" x1=\"63\" y1=\"71\" x2=\"71\" y2=\"77\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>", "4": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"50\" cy=\"33\" r=\"4.2\"/><line class=\"stroke\" x1=\"50\" y1=\"58\" x2=\"50\" y2=\"80\"/><circle class=\"seed\" cx=\"50\" cy=\"69\" r=\"4.2\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>", "5": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"50\" cy=\"33\" r=\"4.2\"/><line class=\"stroke\" x1=\"50\" y1=\"58\" x2=\"50\" y2=\"80\"/><circle class=\"seed\" cx=\"40.5\" cy=\"69\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"69\" r=\"3.8\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>", "6": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"40.5\" cy=\"33\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"33\" r=\"3.8\"/><path class=\"stroke\" d=\"M35 73 Q50 57 65 73\"/><line class=\"stroke\" x1=\"63\" y1=\"71\" x2=\"71\" y2=\"77\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>", "7": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"40.5\" cy=\"33\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"33\" r=\"3.8\"/><line class=\"stroke\" x1=\"50\" y1=\"58\" x2=\"50\" y2=\"80\"/><circle class=\"seed\" cx=\"50\" cy=\"69\" r=\"4.2\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>", "8": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"40.5\" cy=\"33\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"33\" r=\"3.8\"/><line class=\"stroke\" x1=\"50\" y1=\"58\" x2=\"50\" y2=\"80\"/><circle class=\"seed\" cx=\"40.5\" cy=\"69\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"69\" r=\"3.8\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>", "9": "<line class=\"stroke\" x1=\"50\" y1=\"12\" x2=\"50\" y2=\"34\"/><circle class=\"seed\" cx=\"50\" cy=\"23\" r=\"4.2\"/><path class=\"stroke\" d=\"M35 54 Q50 38 65 54\"/><line class=\"stroke\" x1=\"63\" y1=\"52\" x2=\"71\" y2=\"58\"/><path class=\"stroke\" d=\"M35 81 Q50 65 65 81\"/><line class=\"stroke\" x1=\"63\" y1=\"79\" x2=\"71\" y2=\"85\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>", "A": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M19 76 C34 76 42 66 43 51 C44 35 51 26 64 25\"/><path class=\"stroke\" d=\"M43 51 C44 68 50 79 63 82\"/><line class=\"stroke\" x1=\"39\" y1=\"83\" x2=\"68\" y2=\"83\"/><circle class=\"seed\" cx=\"47\" cy=\"51\" r=\"3.6\"/>", "B": "<circle class=\"seed\" cx=\"19\" cy=\"50\" r=\"3.4\"/><circle class=\"seed\" cx=\"81\" cy=\"50\" r=\"3.4\"/><path class=\"stroke\" d=\"M23 50 C31 26 41 25 49 43\"/><path class=\"stroke\" d=\"M77 50 C69 74 59 75 51 57\"/><path class=\"stroke\" d=\"M47 43 Q50 50 53 57\"/><line class=\"guide\" x1=\"50\" y1=\"34\" x2=\"50\" y2=\"66\"/>", "C": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M23 72 C18 48 28 25 50 22 C69 20 80 35 75 53\"/><path class=\"stroke\" d=\"M75 53 C70 71 48 79 34 67\"/><line class=\"stroke\" x1=\"67\" y1=\"54\" x2=\"79\" y2=\"48\"/>", "D": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><line class=\"stroke\" x1=\"36\" y1=\"20\" x2=\"42\" y2=\"76\"/><path class=\"stroke\" d=\"M49 27 C58 39 65 54 77 72\"/><circle class=\"seed\" cx=\"39\" cy=\"49\" r=\"3.4\"/><line class=\"stroke\" x1=\"70\" y1=\"69\" x2=\"80\" y2=\"78\"/>", "E": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M31 67 C42 61 53 54 66 38\"/><circle class=\"seed\" cx=\"38\" cy=\"61\" r=\"3.4\"/><circle class=\"seed\" cx=\"49\" cy=\"53\" r=\"3.4\"/><circle class=\"seed\" cx=\"61\" cy=\"43\" r=\"3.4\"/><line class=\"stroke\" x1=\"67\" y1=\"32\" x2=\"77\" y2=\"26\"/><line class=\"stroke\" x1=\"71\" y1=\"25\" x2=\"78\" y2=\"31\"/>", "F": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M20 70 C27 24 70 18 78 43 C84 62 58 77 43 65\"/><path class=\"stroke\" d=\"M43 65 C32 56 40 41 53 43 C62 44 62 55 55 58\"/><circle class=\"seed\" cx=\"51\" cy=\"58\" r=\"3.6\"/>", "G": "<path class=\"stroke\" d=\"M34 80 Q50 88 66 80\"/><line class=\"stroke\" x1=\"41\" y1=\"76\" x2=\"38\" y2=\"87\"/><line class=\"stroke\" x1=\"59\" y1=\"76\" x2=\"62\" y2=\"87\"/><path class=\"stroke\" d=\"M18 67 C34 65 43 57 49 45 C56 32 65 26 80 25\"/><line class=\"stroke\" x1=\"49\" y1=\"37\" x2=\"49\" y2=\"58\"/><line class=\"stroke\" x1=\"42\" y1=\"47\" x2=\"56\" y2=\"47\"/><circle class=\"seed\" cx=\"24\" cy=\"65\" r=\"3.3\"/>", "H": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M25 69 C39 59 48 48 61 31\"/><line class=\"stroke\" x1=\"34\" y1=\"25\" x2=\"75\" y2=\"25\"/><circle class=\"seed\" cx=\"78\" cy=\"25\" r=\"3.7\"/><line class=\"guide\" x1=\"55\" y1=\"46\" x2=\"72\" y2=\"46\"/>", "I": "<path class=\"stroke\" d=\"M34 80 Q50 88 66 80\"/><line class=\"stroke\" x1=\"41\" y1=\"76\" x2=\"38\" y2=\"87\"/><line class=\"stroke\" x1=\"59\" y1=\"76\" x2=\"62\" y2=\"87\"/><path class=\"stroke\" d=\"M50 18 C44 33 46 54 50 75\"/><path class=\"stroke\" d=\"M34 33 Q50 19 66 33\"/><line class=\"stroke\" x1=\"33\" y1=\"39\" x2=\"40\" y2=\"46\"/><line class=\"stroke\" x1=\"67\" y1=\"39\" x2=\"60\" y2=\"46\"/><circle class=\"seed\" cx=\"50\" cy=\"51\" r=\"3.5\"/>", "J": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M20 75 C34 68 42 58 49 46\"/><path class=\"stroke\" d=\"M49 46 C55 38 62 32 79 25\"/><path class=\"stroke\" d=\"M49 46 C55 57 62 65 77 72\"/><circle class=\"seed\" cx=\"49\" cy=\"46\" r=\"3.8\"/>", "K": "<path class=\"stroke\" d=\"M34 80 Q50 88 66 80\"/><line class=\"stroke\" x1=\"41\" y1=\"76\" x2=\"38\" y2=\"87\"/><line class=\"stroke\" x1=\"59\" y1=\"76\" x2=\"62\" y2=\"87\"/><circle class=\"seed\" cx=\"50\" cy=\"50\" r=\"7\"/><path class=\"stroke\" d=\"M50 18 C47 31 47 38 50 43\"/><path class=\"stroke\" d=\"M20 50 C31 47 38 47 43 50\"/><path class=\"stroke\" d=\"M80 50 C69 53 62 53 57 50\"/><path class=\"stroke\" d=\"M50 79 C53 68 53 61 50 57\"/>", "L": "<path class=\"stroke\" d=\"M34 80 Q50 88 66 80\"/><line class=\"stroke\" x1=\"41\" y1=\"76\" x2=\"38\" y2=\"87\"/><line class=\"stroke\" x1=\"59\" y1=\"76\" x2=\"62\" y2=\"87\"/><path class=\"stroke\" d=\"M26 64 C40 58 50 48 61 31\"/><line class=\"stroke\" x1=\"61\" y1=\"20\" x2=\"61\" y2=\"72\"/><line class=\"stroke\" x1=\"54\" y1=\"31\" x2=\"69\" y2=\"31\"/><circle class=\"seed\" cx=\"26\" cy=\"64\" r=\"3.4\"/>", "M": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M20 72 C30 60 37 50 49 46\"/><path class=\"stroke\" d=\"M20 28 C32 39 39 45 49 46\"/><path class=\"stroke\" d=\"M49 46 C58 49 67 41 80 26\"/><path class=\"stroke\" d=\"M49 46 C53 58 57 68 65 79\"/><circle class=\"seed\" cx=\"49\" cy=\"46\" r=\"4\"/>", "N": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><circle class=\"seed\" cx=\"43\" cy=\"57\" r=\"3.5\"/><circle class=\"seed\" cx=\"81\" cy=\"24\" r=\"4\"/><path class=\"stroke\" d=\"M47 54 C57 47 65 39 75 29\"/><path class=\"guide\" d=\"M31 67 Q50 35 70 29\"/><line class=\"stroke\" x1=\"70\" y1=\"22\" x2=\"79\" y2=\"31\"/>", "O": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M23 52 C34 38 49 32 67 36\"/><path class=\"stroke\" d=\"M23 52 C35 66 51 71 69 64\"/><circle class=\"seed\" cx=\"50\" cy=\"52\" r=\"4.2\"/><line class=\"stroke\" x1=\"67\" y1=\"36\" x2=\"78\" y2=\"31\"/><line class=\"stroke\" x1=\"69\" y1=\"64\" x2=\"79\" y2=\"68\"/>", "P": "<path class=\"stroke\" d=\"M27 24 Q50 8 73 24\"/><line class=\"stroke\" x1=\"34\" y1=\"22\" x2=\"30\" y2=\"31\"/><line class=\"stroke\" x1=\"66\" y1=\"22\" x2=\"70\" y2=\"31\"/><path class=\"stroke\" d=\"M31 42 C42 37 48 44 50 53 C53 43 60 37 70 42\"/><path class=\"stroke\" d=\"M50 53 C48 65 49 74 54 82\"/><circle class=\"seed\" cx=\"54\" cy=\"82\" r=\"3.8\"/><line class=\"guide\" x1=\"44\" y1=\"55\" x2=\"56\" y2=\"55\"/>", "Q": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M31 65 C42 58 50 49 58 38\"/><line class=\"stroke\" x1=\"58\" y1=\"38\" x2=\"68\" y2=\"31\"/><circle class=\"seed\" cx=\"79\" cy=\"24\" r=\"4\"/><line class=\"rift\" x1=\"70\" y1=\"29\" x2=\"75\" y2=\"26\"/>", "R": "<path class=\"stroke\" d=\"M27 24 Q50 8 73 24\"/><line class=\"stroke\" x1=\"34\" y1=\"22\" x2=\"30\" y2=\"31\"/><line class=\"stroke\" x1=\"66\" y1=\"22\" x2=\"70\" y2=\"31\"/><path class=\"stroke\" d=\"M25 61 C36 49 43 45 50 48\"/><path class=\"stroke\" d=\"M75 61 C64 49 57 45 50 48\"/><path class=\"stroke\" d=\"M50 48 C47 60 50 70 61 78\"/><circle class=\"seed\" cx=\"50\" cy=\"48\" r=\"4\"/><circle class=\"seed\" cx=\"61\" cy=\"78\" r=\"3.6\"/>", "S": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><line class=\"stroke\" x1=\"29\" y1=\"73\" x2=\"69\" y2=\"73\"/><circle class=\"seed\" cx=\"47\" cy=\"53\" r=\"4.3\"/><line class=\"guide\" x1=\"53\" y1=\"33\" x2=\"53\" y2=\"66\"/><line class=\"guide\" x1=\"36\" y1=\"35\" x2=\"62\" y2=\"35\"/>", "T": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M20 75 C35 74 42 67 47 57\"/><path class=\"stroke\" d=\"M47 57 C54 45 63 37 79 25\"/><line class=\"stroke\" x1=\"43\" y1=\"52\" x2=\"54\" y2=\"63\"/><circle class=\"seed\" cx=\"47\" cy=\"57\" r=\"3.5\"/>", "U": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M24 67 C33 47 44 34 60 28\"/><line class=\"rift\" x1=\"62\" y1=\"28\" x2=\"69\" y2=\"34\"/><circle class=\"seed\" cx=\"80\" cy=\"43\" r=\"4.3\"/><line class=\"rift\" x1=\"68\" y1=\"37\" x2=\"75\" y2=\"41\"/>", "V": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M20 75 C34 64 42 55 49 45\"/><line class=\"stroke\" x1=\"43\" y1=\"38\" x2=\"56\" y2=\"52\"/><path class=\"stroke\" d=\"M49 45 C58 35 66 28 80 24\"/><path class=\"stroke\" d=\"M49 45 C57 58 66 68 78 75\"/><circle class=\"seed\" cx=\"49\" cy=\"45\" r=\"3.8\"/>", "W": "<circle class=\"seed\" cx=\"19\" cy=\"50\" r=\"3.4\"/><circle class=\"seed\" cx=\"81\" cy=\"50\" r=\"3.4\"/><path class=\"stroke\" d=\"M22 50 C33 24 45 25 50 48 C55 71 67 72 78 50\"/><path class=\"stroke\" d=\"M22 50 C33 76 45 75 50 52 C55 29 67 28 78 50\"/><line class=\"rift\" x1=\"45\" y1=\"46\" x2=\"55\" y2=\"54\"/>", "X": "<circle class=\"seed\" cx=\"19\" cy=\"50\" r=\"3.4\"/><circle class=\"seed\" cx=\"81\" cy=\"50\" r=\"3.4\"/><path class=\"stroke\" d=\"M23 47 C38 27 62 27 77 47\"/><path class=\"stroke\" d=\"M77 53 C62 73 38 73 23 53\"/><polyline class=\"stroke\" points=\"68,41 78,47 69,52\"/><polyline class=\"stroke\" points=\"32,59 22,53 31,48\"/>", "Y": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M21 30 C36 34 43 40 50 51\"/><path class=\"stroke\" d=\"M21 71 C35 66 43 61 50 51\"/><path class=\"stroke\" d=\"M50 51 C58 56 67 61 80 66\"/><circle class=\"seed\" cx=\"50\" cy=\"51\" r=\"4\"/><circle class=\"seed\" cx=\"80\" cy=\"66\" r=\"3.8\"/>", "Z": "<path class=\"stroke\" d=\"M27 24 Q50 8 73 24\"/><line class=\"stroke\" x1=\"34\" y1=\"22\" x2=\"30\" y2=\"31\"/><line class=\"stroke\" x1=\"66\" y1=\"22\" x2=\"70\" y2=\"31\"/><path class=\"stroke\" d=\"M25 39 C36 45 42 54 45 66\"/><path class=\"stroke\" d=\"M75 39 C64 45 58 54 55 66\"/><line class=\"stroke\" x1=\"45\" y1=\"66\" x2=\"55\" y2=\"66\"/><path class=\"stroke\" d=\"M50 41 C48 51 49 61 50 78\"/><circle class=\"seed\" cx=\"50\" cy=\"79\" r=\"3.5\"/>"};
+const input=document.getElementById('input'),output=document.getElementById('output');
+function render(){
+ output.innerHTML='';
+ for(const c0 of input.value.toUpperCase()){
+   if(glyphs[c0]){
+     const d=document.createElement('div');d.className='out';
+     d.innerHTML=`<svg viewBox="0 0 100 100"><g class="glyph">${glyphs[c0]}</g></svg><small>${c0}</small>`;
+     output.appendChild(d);
+   } else {
+     const s=document.createElement('span');s.textContent=c0;s.style.padding='35px 2px';output.appendChild(s);
+   }
+ }
+}
+input.addEventListener('input',render);render();
+</script></body></html>

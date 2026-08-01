@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C01_UNPROVEN_CLAIM",
+  "decoder_id": "deepseek-v4-pro__PROSE",
+  "purpose": "Inspect a claim",
+  "claim": "",
+  "operation_path": [],
+  "invariants": [],
+  "unknowns": ["Extent of incomplete evidence", "The unresolved method question"],
+  "authority": [],
+  "participants": ["Human collaborators", "AI collaborators"],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "",
+  "notes": "Claim is unspecified in the statement. Operation path cannot be determined from the description without a defined code mapping. The purpose is inferred from the action 'inspect a claim'."
+}

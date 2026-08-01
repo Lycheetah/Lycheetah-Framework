@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LAMAGUE Core v0.1 execution result",
+  "type": "object",
+  "required": [
+    "lamague_core_version",
+    "status",
+    "statements",
+    "claim_boundary"
+  ],
+  "properties": {
+    "lamague_core_version": {
+      "const": "0.1.0"
+    },
+    "status": {
+      "enum": [
+        "ACCEPTED",
+        "REJECTED"
+      ]
+    },
+    "statements": {
+      "type": "array"
+    },
+    "claim_boundary": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

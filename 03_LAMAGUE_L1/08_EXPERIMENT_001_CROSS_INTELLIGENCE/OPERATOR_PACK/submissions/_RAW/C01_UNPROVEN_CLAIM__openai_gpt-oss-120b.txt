@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C01_UNPROVEN_CLAIM",
+  "decoder_id": "openai/gpt-oss-120b",
+  "purpose": "Observe a claim, gather incomplete evidence, acknowledge unresolved methodological questions, attempt limited proof, and yield a context‑limited result without upgrading to full proof.",
+  "claim": "A claim examined by human and AI collaborators (specific content not provided).",
+  "operation_path": ["O", "E", "U", "P", "Y"],
+  "invariants": [
+    "Uncertainty about the claim must be preserved throughout the process."
+  ],
+  "unknowns": [
+    "The method or approach required to fully establish proof remains unresolved."
+  ],
+  "authority": [
+    "Human collaborators",
+    "AI collaborators"
+  ],
+  "participants": [
+    "Human collaborators",
+    "AI collaborators"
+  ],
+  "affected_parties": [],
+  "evidence": [
+    "Incomplete evidence collected during observation."
+  ],
+  "provenance": [
+    "Observation and evidence gathering performed by the human and AI collaborators."
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [
+    "Future investigation to resolve the methodological unknown."
+  ],
+  "confidence": "Uncertain",
+  "notes": "Affected parties, specific consequences, and detailed value exchanges were not specified in the source statement; they are left empty."
+}

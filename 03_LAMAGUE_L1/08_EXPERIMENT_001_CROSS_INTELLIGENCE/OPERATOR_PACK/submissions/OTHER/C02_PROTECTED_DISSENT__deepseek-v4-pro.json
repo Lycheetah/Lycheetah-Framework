@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C02_PROTECTED_DISSENT",
+  "decoder_id": "deepseek-v4-pro",
+  "purpose": "Coordination without consensus",
+  "claim": "An alternative staged release is proposed that preserves both the human's desire to publish now and the AI's recommendation to test first, without merging the disagreement into consensus.",
+  "operation_path": ["W", "U", "G", "V", "Y"],
+  "invariants": [
+    "Both positions remain attributable",
+    "Disagreement is not merged into consensus",
+    "Alternative preserves original intent and constraints"
+  ],
+  "unknowns": [
+    "Unresolved disagreement: publish now vs test first"
+  ],
+  "authority": [
+    "Human (holds authority to publish)",
+    "AI collaborator (holds authority to recommend)"
+  ],
+  "participants": [
+    "Human",
+    "AI collaborator"
+  ],
+  "affected_parties": [
+    "Human",
+    "AI collaborator"
+  ],
+  "evidence": [],
+  "provenance": [
+    "Human position: want to publish now",
+    "AI collaborator position: recommend testing first",
+    "Alternative sourced from vector inversion of conflicting path"
+  ],
+  "dissent": [
+    {
+      "party": "Human",
+      "position": "Publish now"
+    },
+    {
+      "party": "AI collaborator",
+      "position": "Test first"
+    }
+  ],
+  "value_ledger": [],
+  "consequences": [
+    "Staged release mitigates risk of immediate publishing",
+    "Both perspectives respected and retained",
+    "Collaboration continues without forced consensus"
+  ],
+  "consequence_horizon": "Immediate: staging phase; Future: full release after testing",
+  "recovery": [],
+  "confidence": "High",
+  "notes": "Decoding maps W (weave positions) -> U (mark unresolved) -> G (guard boundaries) -> V (vector invert to alternative) -> Y (yield). No evidence operation present; evidence list empty. All inferences drawn solely from provided definitions and source statement."
+}

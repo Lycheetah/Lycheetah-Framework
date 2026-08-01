@@ -1,0 +1,9 @@
+# LAMAGUE itself: no domain adapter is active.
+let return_path = Ao → Φ↑ → Ψ_inv;
+invariant stable_return = return_path;
+require Ao → Φ↑;
+forbid Ψ ↯ ∅;
+macro Z₁ RETURN = return_path;
+check equivalent(Ao ⊗ Φ, Φ ⊗ Ao);
+check equivalent((Ao → Φ↑) → Ψ_inv, Ao → (Φ↑ → Ψ_inv));
+RETURN;

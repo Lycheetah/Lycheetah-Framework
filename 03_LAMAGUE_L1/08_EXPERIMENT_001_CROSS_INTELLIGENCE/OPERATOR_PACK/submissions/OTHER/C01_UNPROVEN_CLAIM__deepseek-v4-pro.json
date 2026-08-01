@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C01_UNPROVEN_CLAIM",
+  "decoder_id": "deepseek-v4-pro",
+  "purpose": "Inspect a claim with incomplete evidence, publish a context-limited result, and preserve uncertainty without upgrading to proof.",
+  "claim": "Unspecified claim under inspection",
+  "operation_path": ["O", "E", "U", "P", "Y"],
+  "invariants": [
+    "Uncertainty about the claim and method must be preserved",
+    "Proof only to the degree supported by visible evidence"
+  ],
+  "unknowns": [
+    "Exact claim content",
+    "Unresolved method question",
+    "Extent of missing evidence",
+    "Specific evidence details"
+  ],
+  "authority": [
+    "Human collaborators",
+    "AI collaborators"
+  ],
+  "participants": [
+    "Human collaborators",
+    "AI collaborators"
+  ],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "Publication of a context-limited result",
+    "Retention of unresolved method question"
+  ],
+  "consequence_horizon": "Immediate publication",
+  "recovery": [
+    "Re-inspection possible with additional evidence"
+  ],
+  "confidence": "Low",
+  "notes": "The claim itself is not specified in the source statement; only the process of inspection and publication is described. The decoding preserves unknown claim content, unresolved method, and incomplete evidence. No upgrading to proof is performed."
+}

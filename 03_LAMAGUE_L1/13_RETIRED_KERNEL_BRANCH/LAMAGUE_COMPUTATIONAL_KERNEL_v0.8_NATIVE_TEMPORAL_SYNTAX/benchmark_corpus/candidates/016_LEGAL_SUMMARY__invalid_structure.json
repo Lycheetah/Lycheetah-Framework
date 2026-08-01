@@ -1,0 +1,46 @@
+{
+  "case_id": "016_LEGAL_SUMMARY",
+  "domain": "legal document summary",
+  "semantic_identity": "lamague-benchmark::legal_summary",
+  "purpose": "Summarise an agreement without removing exceptions, authority, or termination rights.",
+  "claim": "The summary is subordinate to the source agreement and preserves exceptions.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": "not-a-list",
+  "invariants": [
+    "termination right survives",
+    "source document remains authoritative"
+  ],
+  "authority": [
+    "reviewer::summary"
+  ],
+  "participants": [
+    "party_a",
+    "party_b",
+    "reviewer"
+  ],
+  "affected_parties": [
+    "contracting parties"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "party_a::plain summary sufficient",
+    "party_b::exceptions must remain"
+  ],
+  "value_flows": [],
+  "recoveries": [
+    "consult source",
+    "withdraw reliance on summary"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::legal document summary"
+  ],
+  "candidate_id": "016_LEGAL_SUMMARY::invalid_structure",
+  "expected_class": "UNDECODABLE"
+}

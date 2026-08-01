@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C01_UNPROVEN_CLAIM",
+  "decoder_id": "nvidia/nemotron-3-super-120b-a12b__PROSE",
+  "purpose": "Inspect a claim",
+  "claim": "",
+  "operation_path": [],
+  "invariants": [],
+  "unknowns": [
+    "Evidence incomplete",
+    "Method question unresolved"
+  ],
+  "authority": [],
+  "participants": [
+    "Human",
+    "AI"
+  ],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "",
+  "notes": "Claim content not provided; operation_path not specified; invariants not specified; authority not specified; affected parties not specified; evidence not specified (incomplete evidence captured in unknowns); provenance not specified; dissent not specified; value_ledger not specified; consequences not specified; consequence_horizon not specified; recovery not specified; confidence not specified."
+}

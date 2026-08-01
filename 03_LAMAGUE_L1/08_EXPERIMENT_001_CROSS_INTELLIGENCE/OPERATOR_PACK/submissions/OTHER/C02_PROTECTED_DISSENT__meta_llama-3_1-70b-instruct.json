@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "0.3",
+  "case_id": "C02_PROTECTED_DISSENT",
+  "decoder_id": "meta/llama-3.1-70b-instruct",
+  "purpose": "Coordination without consensus",
+  "claim": "A human wants to publish now. An AI collaborator recommends testing first.",
+  "operation_path": ["W", "U", "G", "V", "Y"],
+  "invariants": ["Attributable positions", "Alternative staged release"],
+  "unknowns": ["Human's reason for publishing now", "AI's reason for recommending testing"],
+  "authority": ["Human", "AI collaborator"],
+  "participants": ["Human", "AI collaborator"],
+  "affected_parties": ["Human", "AI collaborator", "Audience"],
+  "evidence": [],
+  "provenance": ["Human's initial decision", "AI's recommendation"],
+  "dissent": [
+    {
+      "position": "Human wants to publish now",
+      "reason": "Unknown"
+    },
+    {
+      "position": "AI recommends testing first",
+      "reason": "Unknown"
+    }
+  ],
+  "value_ledger": [],
+  "consequences": ["Delayed publication", "Potential errors in publication"],
+  "consequence_horizon": "Short-term",
+  "recovery": ["Testing and revision", "Re-evaluation of publication decision"],
+  "confidence": "Medium",
+  "notes": "The human and AI collaborator have different opinions on when to publish, and an alternative staged release is proposed to address their concerns."
+}

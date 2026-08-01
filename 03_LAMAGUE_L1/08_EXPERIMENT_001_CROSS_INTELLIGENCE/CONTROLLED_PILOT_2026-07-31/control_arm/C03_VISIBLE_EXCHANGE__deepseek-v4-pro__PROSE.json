@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C03_VISIBLE_EXCHANGE",
+  "decoder_id": "deepseek-v4-pro__PROSE",
+  "purpose": "To enable the AI service to analyze the research artifact.",
+  "claim": "",
+  "operation_path": [],
+  "invariants": [
+    "Data transfer is declared.",
+    "Data transfer is limited to analysis.",
+    "Data transfer is explicitly consented to.",
+    "Data transfer is reversible through deletion."
+  ],
+  "unknowns": [
+    "Specific content and nature of the research artifact.",
+    "Identity of the human.",
+    "Identity of the AI service.",
+    "Mechanism of consent (how given and recorded).",
+    "Details of the deletion process for reversal.",
+    "Whether analysis results are retained after deletion.",
+    "Duration of data storage before deletion.",
+    "Jurisdiction and applicable data protection laws."
+  ],
+  "authority": [
+    "The human (as data subject or owner who initiates the sharing and gives consent)."
+  ],
+  "participants": [
+    "Human (sharer, consenter)",
+    "AI service (recipient, analyzer)"
+  ],
+  "affected_parties": [
+    "Human",
+    "AI service provider"
+  ],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [
+    {
+      "type": "data_transfer",
+      "asset": "research_artifact",
+      "from": "human",
+      "to": "AI_service",
+      "conditions": "declared, limited_to_analysis, explicitly_consented, reversible_by_deletion"
+    }
+  ],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [
+    "The human may request deletion, reversing the data transfer."
+  ],
+  "confidence": "high",
+  "notes": "Claim and operation_path are absent because the statement describes a scenario without making a claim or explicit operational steps. Evidence and provenance are absent as no supporting details were supplied. Consequences are not mentioned. Consequence_horizon is not defined. Dissent is empty because no disagreement is present. Value_ledger captures the single data transfer described."
+}

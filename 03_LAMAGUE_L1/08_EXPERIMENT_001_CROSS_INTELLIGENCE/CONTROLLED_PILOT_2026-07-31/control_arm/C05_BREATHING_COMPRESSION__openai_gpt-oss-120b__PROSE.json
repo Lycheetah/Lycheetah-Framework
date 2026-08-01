@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C05_BREATHING_COMPRESSION",
+  "decoder_id": "openai/gpt-oss-120b__PROSE",
+  "purpose": "Expand the expression rather than compress it.",
+  "claim": "The context is consequential, an unknown remains, and decoder confidence is weak.",
+  "operation_path": [],
+  "invariants": [
+    "The context is consequential."
+  ],
+  "unknowns": [
+    "An unknown remains."
+  ],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "weak",
+  "notes": "No authority, participants, affected parties, evidence, provenance, dissent, value movements, consequences, or recovery were specified in the source statement."
+}

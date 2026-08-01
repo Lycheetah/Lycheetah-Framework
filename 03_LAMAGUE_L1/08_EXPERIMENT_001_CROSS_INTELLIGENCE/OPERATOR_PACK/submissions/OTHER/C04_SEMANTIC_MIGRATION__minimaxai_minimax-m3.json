@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C04_SEMANTIC_MIGRATION",
+  "decoder_id": "minimaxai/minimax-m3",
+  "purpose": "Migrate a prior state into a descendant version while preserving original purpose and invariants, recording lineage, and adding human learnability as an unresolved research question.",
+  "claim": "A new version keeps its original purpose and invariants, records lineage, and adds human learnability as an unresolved research question.",
+  "operation_path": [
+    "O",
+    "I",
+    "U",
+    "F",
+    "Y"
+  ],
+  "invariants": [
+    "Original purpose is preserved across the migration.",
+    "Original invariants survive the transformation into the descendant state.",
+    "Lineage from the prior state to the descendant state is recorded.",
+    "Human learnability is preserved as an unresolved research question, not silently resolved."
+  ],
+  "unknowns": [
+    "Human learnability — type: research question; status: unresolved."
+  ],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [
+    "Source statement: 'A new version keeps its original purpose and invariants, records lineage, and adds human learnability as an unresolved research question.'"
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "The descendant state inherits the original purpose and invariants.",
+    "Lineage is recorded, enabling traceability back to the prior state.",
+    "Human learnability is carried forward as an explicit unknown rather than collapsed into a claim."
+  ],
+  "consequence_horizon": "Scope of the migration: continuity of purpose and invariants, lineage preservation, and explicit retention of the new unknown.",
+  "recovery": [
+    "Lineage record allows reconstruction of the prior state from the descendant state.",
+    "The unresolved human learnability question remains open and recoverable as a typed unknown."
+  ],
+  "confidence": "The migration preserves declared purpose, invariants, and lineage, and explicitly marks human learnability as unresolved; no silent resolution is performed.",
+  "notes": "Operation path O -> I -> U -> F -> Y is interpreted as: Observe the prior state, declare/preserve invariants, mark the new unknown (human learnability), fold into recoverable memory with lineage and residue, and yield the resulting descendant state. No authority, participants, affected parties, evidence, dissent, or value movement are stated in the source; these fields are left empty and the absence is noted here."
+}

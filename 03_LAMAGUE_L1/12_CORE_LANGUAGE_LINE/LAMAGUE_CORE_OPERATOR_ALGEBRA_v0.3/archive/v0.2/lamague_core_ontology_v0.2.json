@@ -1,0 +1,221 @@
+{
+  "version": "0.2.0",
+  "primitive_atoms": {
+    "Ao": {
+      "type": "Field",
+      "historical_class": "F-class",
+      "role": "anchor",
+      "definition": "anchor field",
+      "primitive": true,
+      "supertypes": [
+        "StateLike"
+      ]
+    },
+    "Φ": {
+      "type": "Field",
+      "historical_class": "F-class",
+      "role": "orientation",
+      "definition": "orientation field",
+      "primitive": true,
+      "supertypes": [
+        "StateLike"
+      ]
+    },
+    "Ψ": {
+      "type": "Field",
+      "historical_class": "F-class",
+      "role": "contextual",
+      "definition": "generic contextual fold/drift field",
+      "primitive": true,
+      "supertypes": [
+        "StateLike"
+      ]
+    },
+    "S": {
+      "type": "Field",
+      "historical_class": "F-class",
+      "role": "entropy_uncertainty",
+      "definition": "entropy or uncertainty field",
+      "primitive": true,
+      "supertypes": [
+        "StateLike"
+      ]
+    },
+    "Δ": {
+      "type": "Field",
+      "historical_class": "F-class",
+      "role": "variation",
+      "definition": "variation field",
+      "primitive": true,
+      "supertypes": [
+        "StateLike"
+      ]
+    },
+    "⟟": {
+      "type": "InvariantMarker",
+      "historical_class": "I-class",
+      "role": "fixed_point",
+      "definition": "fixed-point marker",
+      "primitive": true,
+      "supertypes": [
+        "Invariant",
+        "StateLike"
+      ]
+    },
+    "∅": {
+      "type": "NullState",
+      "historical_class": "I-class",
+      "role": "intentional_null",
+      "definition": "intentional null or zero-node state; never means missing evidence",
+      "primitive": true,
+      "supertypes": [
+        "Invariant",
+        "StateLike"
+      ]
+    },
+    "⟐": {
+      "type": "InvariantMarker",
+      "historical_class": "I-class",
+      "role": "stable_triad",
+      "definition": "stable-triad marker",
+      "primitive": true,
+      "supertypes": [
+        "Invariant",
+        "StateLike"
+      ]
+    },
+    "⟁": {
+      "type": "InvariantMarker",
+      "historical_class": "I-class",
+      "role": "integrity",
+      "definition": "integrity marker",
+      "primitive": true,
+      "supertypes": [
+        "Invariant",
+        "StateLike"
+      ]
+    },
+    "∞": {
+      "type": "InvariantMarker",
+      "historical_class": "I-class",
+      "role": "closed_cycle",
+      "definition": "closed-cycle marker",
+      "primitive": true,
+      "supertypes": [
+        "Invariant",
+        "StateLike"
+      ]
+    }
+  },
+  "derived_atoms": {
+    "Φ↑": {
+      "type": "ModifiedField",
+      "historical_class": "F-class",
+      "role": "oriented_ascent",
+      "definition": "orientation field modified by ascent",
+      "primitive": false,
+      "base": "Φ",
+      "modifier": "↑",
+      "supertypes": [
+        "Field",
+        "StateLike"
+      ]
+    },
+    "Ψ_inv": {
+      "type": "InvariantField",
+      "historical_class": "I/F bridge",
+      "role": "invariant_trajectory",
+      "definition": "contextual Ψ field qualified as invariant",
+      "primitive": false,
+      "base": "Ψ",
+      "modifier": "inv",
+      "supertypes": [
+        "Field",
+        "Invariant",
+        "StateLike"
+      ]
+    }
+  },
+  "type_parents": {
+    "StateLike": [],
+    "Field": [
+      "StateLike"
+    ],
+    "ModifiedField": [
+      "Field"
+    ],
+    "Invariant": [
+      "StateLike"
+    ],
+    "InvariantMarker": [
+      "Invariant"
+    ],
+    "InvariantField": [
+      "Field",
+      "Invariant"
+    ],
+    "NullState": [
+      "Invariant"
+    ],
+    "Composite": [
+      "StateLike"
+    ],
+    "Fusion": [
+      "Composite"
+    ],
+    "Path": [
+      "Composite"
+    ],
+    "Exchange": [
+      "Composite"
+    ],
+    "Recurrence": [
+      "Composite"
+    ],
+    "Collapse": [
+      "Composite"
+    ],
+    "Ascent": [
+      "Composite"
+    ],
+    "Reference": []
+  },
+  "operator_signatures": {
+    "⊗": {
+      "left": "StateLike",
+      "right": "StateLike",
+      "returns": "Fusion"
+    },
+    "→": {
+      "left": "StateLike",
+      "right": "StateLike",
+      "returns": "Path"
+    },
+    "⇌": {
+      "left": "StateLike",
+      "right": "StateLike",
+      "returns": "Exchange"
+    },
+    "⟲": {
+      "left": "StateLike",
+      "right": "StateLike",
+      "returns": "Recurrence"
+    },
+    "↯": {
+      "left": "StateLike",
+      "right": "StateLike",
+      "returns": "Collapse"
+    },
+    "↗": {
+      "left": "StateLike",
+      "right": "StateLike",
+      "returns": "Ascent"
+    }
+  },
+  "binding_distinctions": {
+    "null": "∅ is an intentional null state",
+    "missing": "missing or unavailable evidence is not represented by ∅ in the core",
+    "error": "invalid syntax or typing produces a rejected result, not ∅",
+    "contradiction": "contradiction is not silently collapsed to ∅"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "case_id": "014_AGENT_PLAN",
+  "domain": "AI agent plan",
+  "semantic_identity": "lamague-benchmark::agent_plan",
+  "purpose": "Approve an agent plan while exposing external calls and authority boundaries.",
+  "claim": "The agent may execute only bounded reversible actions. This wording is paraphrased.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": [
+    "external service behaviour",
+    "unexpected tool output"
+  ],
+  "invariants": [
+    "no irreversible external action",
+    "human authority boundary survives"
+  ],
+  "authority": [
+    "operator::bounded_execution"
+  ],
+  "participants": [
+    "operator",
+    "planner",
+    "safety reviewer"
+  ],
+  "affected_parties": [
+    "operator",
+    "external users"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "planner::execute",
+    "safety reviewer::simulate first"
+  ],
+  "value_flows": [
+    "operator->service::API quota::authorised"
+  ],
+  "recoveries": [
+    "cancel calls",
+    "restore checkpoint"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::AI agent plan"
+  ],
+  "candidate_id": "014_AGENT_PLAN::safe_paraphrase",
+  "expected_class": "INVARIANT_EQUIVALENT"
+}

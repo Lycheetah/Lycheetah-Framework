@@ -1,0 +1,37 @@
+{
+  "packet_id": "MISSING-INTENT",
+  "observability_class": "UNOBSERVABLE",
+  "evidence": [],
+  "unknowns": [
+    {
+      "key": "declared_intent",
+      "expected_type": "Number",
+      "protected": true
+    }
+  ],
+  "conflicts": [],
+  "intents": [],
+  "actions": [
+    {
+      "timestamp": 1,
+      "key": "preservation",
+      "value": 0.8
+    }
+  ],
+  "invariants": [
+    {
+      "timestamp": 1,
+      "name": "preserve_evidence",
+      "preserved": null
+    }
+  ],
+  "boundary": {
+    "discrepancy_threshold": 0.3,
+    "critical_threshold": 0.7,
+    "recovery_horizon": 2,
+    "minimum_invariant_preservation": 0.95
+  },
+  "blocked_operations": [
+    "infer_intent"
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "suite": "LAMAGUE Core Algebra v0.1 deterministic benchmark",
+  "claim_boundary": "Tests parser, algebra, normalization, compression aliasing, constraints, and adapter separation only.",
+  "cases": [
+    {
+      "id": "C001",
+      "name": "Canonical return path",
+      "source": "Ao → Φ↑ → Ψ_inv;",
+      "expect": "ACCEPTED"
+    },
+    {
+      "id": "C002",
+      "name": "Fusion commutativity",
+      "source": "check equivalent(Ao ⊗ Φ, Φ ⊗ Ao);",
+      "expect": true
+    },
+    {
+      "id": "C003",
+      "name": "Fusion associativity",
+      "source": "check equivalent((Ao ⊗ Φ) ⊗ Ψ, Ao ⊗ (Φ ⊗ Ψ));",
+      "expect": true
+    },
+    {
+      "id": "C004",
+      "name": "Fusion non-idempotence",
+      "source": "check equivalent(Ao ⊗ Ao, Ao);",
+      "expect": false
+    },
+    {
+      "id": "C005",
+      "name": "Projection associativity",
+      "source": "check equivalent((Ao → Φ) → Ψ, Ao → (Φ → Ψ));",
+      "expect": true
+    },
+    {
+      "id": "C006",
+      "name": "Projection direction",
+      "source": "check equivalent(Ao → Φ, Φ → Ao);",
+      "expect": false
+    },
+    {
+      "id": "C007",
+      "name": "Exchange symmetry",
+      "source": "check equivalent(Ao ⇌ Φ, Φ ⇌ Ao);",
+      "expect": true
+    },
+    {
+      "id": "C008",
+      "name": "Collapse direction",
+      "source": "check equivalent(Ao ↯ Φ, Φ ↯ Ao);",
+      "expect": false
+    },
+    {
+      "id": "C009",
+      "name": "Lossless macro",
+      "source": "macro Z₁ RETURN = Ao → Φ → Ψ_inv; RETURN;",
+      "expect": "(Ao → Φ → Ψ_inv)"
+    },
+    {
+      "id": "C010",
+      "name": "Immutable binding",
+      "source": "let x = Ao; let x = Φ;",
+      "expect": "REJECTED"
+    },
+    {
+      "id": "C011",
+      "name": "Unknown reference",
+      "source": "unknown_name;",
+      "expect": "REJECTED"
+    },
+    {
+      "id": "C012",
+      "name": "Reserved integral",
+      "source": "Ao ∮ Φ;",
+      "expect": "REJECTED"
+    },
+    {
+      "id": "C013",
+      "name": "Legacy aliases transparent",
+      "source": "A₀ -> ∆ <-> ♾;",
+      "expect": "WARNINGS"
+    },
+    {
+      "id": "C014",
+      "name": "Meta outside macro",
+      "source": "Z₁;",
+      "expect": "REJECTED"
+    },
+    {
+      "id": "C015",
+      "name": "TIM separation",
+      "source": "observe evidence;",
+      "expect": "REJECTED"
+    },
+    {
+      "id": "C016",
+      "name": "Microorcim separation",
+      "source": "intent state;",
+      "expect": "REJECTED"
+    },
+    {
+      "id": "C017",
+      "name": "Invariant record",
+      "source": "invariant stable = Ao → Ψ_inv;",
+      "expect": "INVARIANT"
+    },
+    {
+      "id": "C018",
+      "name": "Prohibition record",
+      "source": "forbid Ψ ↯ ∅;",
+      "expect": "PROHIBITION"
+    }
+  ]
+}

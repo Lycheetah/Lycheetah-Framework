@@ -1,0 +1,101 @@
+{
+  "runtime": "LAMAGUE Runtime v0.2",
+  "expression": "W -> U<disagreement> -> G -> V -> Y",
+  "operation_path": [
+    "W",
+    "U",
+    "G",
+    "V",
+    "Y"
+  ],
+  "semantic_hash": "lamague:35e911e6f6c4ecef3c691d7594787ba236c246a049861a155f8a8c6fba460410",
+  "compression": {
+    "mode": "Z_UP",
+    "reasons": [
+      "consequential unknowns remain unresolved",
+      "protected dissent remains unresolved"
+    ],
+    "decoder_confidence": 0.96,
+    "risk_level": "low"
+  },
+  "audit": {
+    "outcome": "VALID",
+    "gates": {
+      "TRUTH": "VALID",
+      "AGENCY": "VALID",
+      "LIFE": "VALID",
+      "CONTINUITY": "VALID"
+    },
+    "findings": [
+      {
+        "gate": "ALL",
+        "outcome": "VALID",
+        "code": "FOUR_GATES_PASSED",
+        "message": "Truth, Agency, Life, and Continuity requirements passed.",
+        "repair": ""
+      }
+    ]
+  },
+  "executed": true,
+  "dissent_preserved": [
+    {
+      "parties": [
+        "Mac",
+        "AI collaborator"
+      ],
+      "positions": {
+        "Mac": "continue inventing at the frontier",
+        "AI collaborator": "bind each leap to tests and lineage"
+      },
+      "unknown_type": "disagreement",
+      "protected_boundaries": [
+        "creative agency",
+        "epistemic honesty"
+      ],
+      "status": "UNRESOLVED"
+    }
+  ],
+  "unknowns_preserved": [
+    "disagreement"
+  ],
+  "memory_record": {
+    "semantic_hash": "lamague:35e911e6f6c4ecef3c691d7594787ba236c246a049861a155f8a8c6fba460410",
+    "parent_hash": "",
+    "purpose": "develop LAMAGUE without erasing uncertainty or disagreement",
+    "invariants": [
+      "dissent remains attributable",
+      "lineage remains recoverable",
+      "uncertainty remains visible"
+    ],
+    "unknowns": [
+      "cross-model reliability"
+    ],
+    "operation_path": [
+      "W",
+      "U",
+      "G",
+      "V",
+      "Y"
+    ],
+    "version": "0.2",
+    "created_at": "2026-07-31T04:17:17.180836+00:00"
+  },
+  "migration": {
+    "status": "DESCENDANT",
+    "old_hash": "lamague:35e911e6f6c4ecef3c691d7594787ba236c246a049861a155f8a8c6fba460410",
+    "new_hash": "lamague:f44e0d22abbf0e22f8285586840edf9e08e6ca469d055fac4e215db86fa3fde7",
+    "preserved_invariants": [
+      "dissent remains attributable",
+      "lineage remains recoverable",
+      "uncertainty remains visible"
+    ],
+    "removed_invariants": [],
+    "added_invariants": [],
+    "preserved_unknowns": [
+      "cross-model reliability"
+    ],
+    "lost_unknowns": [],
+    "reason": "purpose and prior invariants survived while structure expanded"
+  },
+  "trace_path": "/mnt/data/LAMAGUE_RUNTIME_v0.2_SEMANTIC_CONTINUITY/traces/20260731T041717179885Z_program-4be9e3549a93.json"
+}

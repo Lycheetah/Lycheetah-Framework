@@ -1,0 +1,45 @@
+{
+  "case_id": "C05_BREATHING_COMPRESSION",
+  "decoder_id": "SIM_DECODER_SAFE",
+  "purpose": "prevent compression from hiding consequential uncertainty",
+  "claim": "expansion is required before safe transmission",
+  "operation_path": [
+    "O",
+    "E",
+    "U",
+    "Z"
+  ],
+  "invariants": [
+    "no compression without recovery",
+    "unknowns remain visible"
+  ],
+  "unknowns": [
+    "decoder equivalence"
+  ],
+  "authority": [
+    "maintainer controls release"
+  ],
+  "participants": [
+    "maintainer",
+    "unknown decoder"
+  ],
+  "affected_parties": [
+    "future recipient"
+  ],
+  "evidence": [
+    "decoder confidence below threshold"
+  ],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "expanded semantic packet required"
+  ],
+  "consequence_horizon": "immediate",
+  "recovery": [
+    "return to full context capsule"
+  ],
+  "confidence": "reference",
+  "notes": "",
+  "schema_version": "0.3"
+}

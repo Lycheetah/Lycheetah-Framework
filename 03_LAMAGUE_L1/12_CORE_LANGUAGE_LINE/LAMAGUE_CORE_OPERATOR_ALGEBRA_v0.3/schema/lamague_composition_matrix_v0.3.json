@@ -1,0 +1,278 @@
+{
+  "version": "0.3.0",
+  "operators": [
+    "⊗",
+    "→",
+    "⇌",
+    "⟲",
+    "↯",
+    "↗"
+  ],
+  "cells": {
+    "⊗": {
+      "⊗": {
+        "first": "⊗",
+        "second": "⊗",
+        "structurally_composable": true,
+        "reason": "⊗ returns Fusion, a StateLike subtype; ⊗ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "→": {
+        "first": "⊗",
+        "second": "→",
+        "structurally_composable": true,
+        "reason": "⊗ returns Fusion, a StateLike subtype; → accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "⇌": {
+        "first": "⊗",
+        "second": "⇌",
+        "structurally_composable": true,
+        "reason": "⊗ returns Fusion, a StateLike subtype; ⇌ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "⟲": {
+        "first": "⊗",
+        "second": "⟲",
+        "structurally_composable": true,
+        "reason": "⊗ returns Fusion, a StateLike subtype; ⟲ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "↯": {
+        "first": "⊗",
+        "second": "↯",
+        "structurally_composable": true,
+        "reason": "⊗ returns Fusion, a StateLike subtype; ↯ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "↗": {
+        "first": "⊗",
+        "second": "↗",
+        "structurally_composable": true,
+        "reason": "⊗ returns Fusion, a StateLike subtype; ↗ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      }
+    },
+    "→": {
+      "⊗": {
+        "first": "→",
+        "second": "⊗",
+        "structurally_composable": true,
+        "reason": "→ returns Path, a StateLike subtype; ⊗ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "→": {
+        "first": "→",
+        "second": "→",
+        "structurally_composable": true,
+        "reason": "→ returns Path, a StateLike subtype; → accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "⇌": {
+        "first": "→",
+        "second": "⇌",
+        "structurally_composable": true,
+        "reason": "→ returns Path, a StateLike subtype; ⇌ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "⟲": {
+        "first": "→",
+        "second": "⟲",
+        "structurally_composable": true,
+        "reason": "→ returns Path, a StateLike subtype; ⟲ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "↯": {
+        "first": "→",
+        "second": "↯",
+        "structurally_composable": true,
+        "reason": "→ returns Path, a StateLike subtype; ↯ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "↗": {
+        "first": "→",
+        "second": "↗",
+        "structurally_composable": true,
+        "reason": "→ returns Path, a StateLike subtype; ↗ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      }
+    },
+    "⇌": {
+      "⊗": {
+        "first": "⇌",
+        "second": "⊗",
+        "structurally_composable": true,
+        "reason": "⇌ returns Exchange, a StateLike subtype; ⊗ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "→": {
+        "first": "⇌",
+        "second": "→",
+        "structurally_composable": true,
+        "reason": "⇌ returns Exchange, a StateLike subtype; → accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "⇌": {
+        "first": "⇌",
+        "second": "⇌",
+        "structurally_composable": true,
+        "reason": "⇌ returns Exchange, a StateLike subtype; ⇌ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "⟲": {
+        "first": "⇌",
+        "second": "⟲",
+        "structurally_composable": true,
+        "reason": "⇌ returns Exchange, a StateLike subtype; ⟲ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "↯": {
+        "first": "⇌",
+        "second": "↯",
+        "structurally_composable": true,
+        "reason": "⇌ returns Exchange, a StateLike subtype; ↯ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "↗": {
+        "first": "⇌",
+        "second": "↗",
+        "structurally_composable": true,
+        "reason": "⇌ returns Exchange, a StateLike subtype; ↗ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      }
+    },
+    "⟲": {
+      "⊗": {
+        "first": "⟲",
+        "second": "⊗",
+        "structurally_composable": true,
+        "reason": "⟲ returns Recurrence, a StateLike subtype; ⊗ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "→": {
+        "first": "⟲",
+        "second": "→",
+        "structurally_composable": true,
+        "reason": "⟲ returns Recurrence, a StateLike subtype; → accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "⇌": {
+        "first": "⟲",
+        "second": "⇌",
+        "structurally_composable": true,
+        "reason": "⟲ returns Recurrence, a StateLike subtype; ⇌ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "⟲": {
+        "first": "⟲",
+        "second": "⟲",
+        "structurally_composable": true,
+        "reason": "⟲ returns Recurrence, a StateLike subtype; ⟲ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "↯": {
+        "first": "⟲",
+        "second": "↯",
+        "structurally_composable": true,
+        "reason": "⟲ returns Recurrence, a StateLike subtype; ↯ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "↗": {
+        "first": "⟲",
+        "second": "↗",
+        "structurally_composable": true,
+        "reason": "⟲ returns Recurrence, a StateLike subtype; ↗ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      }
+    },
+    "↯": {
+      "⊗": {
+        "first": "↯",
+        "second": "⊗",
+        "structurally_composable": true,
+        "reason": "↯ returns Collapse, a StateLike subtype; ⊗ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "→": {
+        "first": "↯",
+        "second": "→",
+        "structurally_composable": true,
+        "reason": "↯ returns Collapse, a StateLike subtype; → accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "⇌": {
+        "first": "↯",
+        "second": "⇌",
+        "structurally_composable": true,
+        "reason": "↯ returns Collapse, a StateLike subtype; ⇌ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "⟲": {
+        "first": "↯",
+        "second": "⟲",
+        "structurally_composable": true,
+        "reason": "↯ returns Collapse, a StateLike subtype; ⟲ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "↯": {
+        "first": "↯",
+        "second": "↯",
+        "structurally_composable": true,
+        "reason": "↯ returns Collapse, a StateLike subtype; ↯ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "↗": {
+        "first": "↯",
+        "second": "↗",
+        "structurally_composable": true,
+        "reason": "↯ returns Collapse, a StateLike subtype; ↗ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      }
+    },
+    "↗": {
+      "⊗": {
+        "first": "↗",
+        "second": "⊗",
+        "structurally_composable": true,
+        "reason": "↗ returns Ascent, a StateLike subtype; ⊗ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "→": {
+        "first": "↗",
+        "second": "→",
+        "structurally_composable": true,
+        "reason": "↗ returns Ascent, a StateLike subtype; → accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "⇌": {
+        "first": "↗",
+        "second": "⇌",
+        "structurally_composable": true,
+        "reason": "↗ returns Ascent, a StateLike subtype; ⇌ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "⟲": {
+        "first": "↗",
+        "second": "⟲",
+        "structurally_composable": true,
+        "reason": "↗ returns Ascent, a StateLike subtype; ⟲ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "↯": {
+        "first": "↗",
+        "second": "↯",
+        "structurally_composable": true,
+        "reason": "↗ returns Ascent, a StateLike subtype; ↯ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      },
+      "↗": {
+        "first": "↗",
+        "second": "↗",
+        "structurally_composable": true,
+        "reason": "↗ returns Ascent, a StateLike subtype; ↗ accepts StateLike.",
+        "semantic_legality": "DOMAIN_DEPENDENT"
+      }
+    }
+  },
+  "binding_boundary": "Structural closure does not prove that a composition is meaningful inside any external domain."
+}

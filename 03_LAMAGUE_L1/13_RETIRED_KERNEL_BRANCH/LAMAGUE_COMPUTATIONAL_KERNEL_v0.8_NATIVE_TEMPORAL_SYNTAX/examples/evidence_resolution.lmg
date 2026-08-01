@@ -1,0 +1,19 @@
+program EvidenceResolution
+version 0.5
+identity evidence_resolution
+purpose "Resolve one unknown through explicitly named evidence."
+claim "The cause unknown is resolved only through the declared test record."
+risk medium
+confidence 0.95
+path O -> E -> U -> I -> G -> R -> P -> F -> Y
+
+evidence cause_test "Controlled causal test result."
+unknown cause protected required_for=decision
+invariant resolution_rule "Unknowns resolve only through named evidence."
+authority analyst scope=analysis "Analyst may resolve this bounded claim."
+affected decision_subject
+recovery correction "Reopen the claim if the evidence is invalidated."
+effect MayAffect<decision_subject>
+effect ResolvesUnknown<cause>
+resolve cause with=cause_test
+yield "Cause resolved within the scope of the declared test."

@@ -1,0 +1,11 @@
+# Existing one-cell seal chain
+FRO -> COR
+
+# Typed unknown preserved before guarded output
+U<consent> -> G -> Y
+
+# VITA programme sequence
+VERITAS -> CARE -> LIFE
+
+# Visible exchange annotation
+X{from=human,to=ai,value=knowledge,consent=explicit}

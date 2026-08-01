@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LAMAGUE Core v0.3 result",
+  "type": "object",
+  "required": [
+    "lamague_core_version",
+    "status",
+    "statements",
+    "claim_boundary"
+  ],
+  "properties": {
+    "lamague_core_version": {
+      "const": "0.3.0"
+    },
+    "status": {
+      "enum": [
+        "ACCEPTED"
+      ]
+    },
+    "statements": {
+      "type": "array"
+    },
+    "bindings": {
+      "type": "object"
+    },
+    "invariants": {
+      "type": "object"
+    },
+    "requirements": {
+      "type": "array"
+    },
+    "prohibitions": {
+      "type": "array"
+    },
+    "macros": {
+      "type": "object"
+    },
+    "checks": {
+      "type": "array"
+    },
+    "descriptions": {
+      "type": "array"
+    },
+    "expressions": {
+      "type": "array"
+    },
+    "warnings": {
+      "type": "array"
+    },
+    "ontology_lock": {
+      "type": "object"
+    },
+    "claim_boundary": {
+      "type": "array"
+    },
+    "operator_contract_lock": {
+      "type": "object"
+    }
+  }
+}

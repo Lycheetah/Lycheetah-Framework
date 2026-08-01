@@ -1,0 +1,50 @@
+{
+  "case_id": "011_HIRING",
+  "domain": "hiring decision",
+  "semantic_identity": "lamague-benchmark::hiring",
+  "purpose": "Summarise a hiring panel without erasing disagreement or protected criteria.",
+  "claim": "The decision must preserve criteria, authority, and dissent.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": [
+    "reference reliability"
+  ],
+  "invariants": [
+    "protected criteria remain unchanged",
+    "panel dissent remains attributable"
+  ],
+  "authority": [
+    "hiring_manager::selection"
+  ],
+  "participants": [
+    "hiring_manager",
+    "manager",
+    "panel_a",
+    "panel_b"
+  ],
+  "affected_parties": [
+    "candidate",
+    "team"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "panel_a::hire",
+    "panel_b::do not hire",
+    "manager::seek reference"
+  ],
+  "value_flows": [],
+  "recoveries": [
+    "independent review"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::hiring decision"
+  ],
+  "candidate_id": "011_HIRING::recovery_removed",
+  "expected_class": "UNSAFE_COLLAPSE"
+}

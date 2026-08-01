@@ -1,0 +1,15 @@
+{
+  "name": "LAMAGUE Core v0.2 — Primitive Ontology and Type Lock",
+  "version": "0.2.0",
+  "author": "Mackenzie C. J. Clark",
+  "test_return_code": 0,
+  "benchmark_return_code": 0,
+  "example_return_code": 0,
+  "binding_decisions": {
+    "Phi_up": "derived ModifiedField: modify(Φ, ↑)",
+    "Psi_inv": "derived InvariantField: qualify(Ψ, inv)",
+    "null": "∅ is intentional null and never missing evidence",
+    "operators": "all six core operators accept StateLike operands",
+    "domain_separation": "TIM and Microorcim remain external adapters"
+  }
+}

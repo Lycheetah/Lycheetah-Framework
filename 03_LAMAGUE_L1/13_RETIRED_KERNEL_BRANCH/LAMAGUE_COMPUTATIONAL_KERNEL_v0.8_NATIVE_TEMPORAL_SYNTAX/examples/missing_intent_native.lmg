@@ -1,0 +1,10 @@
+packet MISSING_INTENT;
+observability UNOBSERVABLE;
+boundary discrepancy=0.30 critical=0.70 min_invariant=0.95;
+recover horizon=2;
+drift evidence_preservation scale=1 weight=1;
+action evidence_preservation at=1 value=0.82 source="external behavior";
+unknown declared_intent expected=Number source="not provided" protected=true;
+preserve declared_intent;
+block drift_metrics;
+analyze;

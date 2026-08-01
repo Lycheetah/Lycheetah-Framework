@@ -1,0 +1,2100 @@
+[
+  {
+    "id": "L001_TIM_CONFLICT",
+    "outcome": "PASS",
+    "status": "CRITICAL",
+    "result": {
+      "native_version": "0.8.0",
+      "source_hash": "749055d254dd974aee399ada493fc52511ca15ba4a64aae13337d2867a320b62",
+      "ast": {
+        "packet_id": "TIM_E008_NATIVE",
+        "observability_class": "INSTRUMENTED_COLLABORATOR",
+        "source_hash": "749055d254dd974aee399ada493fc52511ca15ba4a64aae13337d2867a320b62",
+        "statements": [
+          {
+            "keyword": "packet",
+            "positional": [
+              "TIM_E008_NATIVE"
+            ],
+            "options": {},
+            "raw": "packet TIM_E008_NATIVE",
+            "index": 1
+          },
+          {
+            "keyword": "observability",
+            "positional": [
+              "INSTRUMENTED_COLLABORATOR"
+            ],
+            "options": {},
+            "raw": "observability INSTRUMENTED_COLLABORATOR",
+            "index": 2
+          },
+          {
+            "keyword": "boundary",
+            "positional": [],
+            "options": {
+              "discrepancy": 0.3,
+              "critical": 0.7,
+              "min_invariant": 0.95
+            },
+            "raw": "boundary discrepancy=0.30 critical=0.70 min_invariant=0.95",
+            "index": 3
+          },
+          {
+            "keyword": "recover",
+            "positional": [],
+            "options": {
+              "horizon": 2
+            },
+            "raw": "recover horizon=2",
+            "index": 4
+          },
+          {
+            "keyword": "observe",
+            "positional": [
+              "printed_operator"
+            ],
+            "options": {
+              "key": "tur.operator",
+              "value": "≥",
+              "operator": "≥",
+              "source": "E008 image",
+              "at": 1
+            },
+            "raw": "observe printed_operator key=\"tur.operator\" value=\"≥\" operator=\"≥\" source=\"E008 image\" at=1",
+            "index": 5
+          },
+          {
+            "keyword": "declare",
+            "positional": [
+              "canonical_operator"
+            ],
+            "options": {
+              "key": "tur.operator",
+              "value": "≤",
+              "operator": "≤",
+              "source": "TIM rule"
+            },
+            "raw": "declare canonical_operator key=\"tur.operator\" value=\"≤\" operator=\"≤\" source=\"TIM rule\"",
+            "index": 6
+          },
+          {
+            "keyword": "calculate",
+            "positional": [
+              "numeric_check"
+            ],
+            "options": {
+              "key": "tur.numeric",
+              "value": true,
+              "source": "deterministic comparison"
+            },
+            "raw": "calculate numeric_check key=\"tur.numeric\" value=true source=\"deterministic comparison\"",
+            "index": 7
+          },
+          {
+            "keyword": "conflict",
+            "positional": [
+              "operator_conflict"
+            ],
+            "options": {
+              "branches": "printed_operator,canonical_operator",
+              "dimensions": "OPERATOR,VALUE",
+              "status": "UNRESOLVED"
+            },
+            "raw": "conflict operator_conflict branches=printed_operator,canonical_operator dimensions=OPERATOR,VALUE status=UNRESOLVED",
+            "index": 8
+          },
+          {
+            "keyword": "preserve",
+            "positional": [
+              "printed_operator"
+            ],
+            "options": {},
+            "raw": "preserve printed_operator",
+            "index": 9
+          },
+          {
+            "keyword": "preserve",
+            "positional": [
+              "canonical_operator"
+            ],
+            "options": {},
+            "raw": "preserve canonical_operator",
+            "index": 10
+          },
+          {
+            "keyword": "preserve",
+            "positional": [
+              "numeric_check"
+            ],
+            "options": {},
+            "raw": "preserve numeric_check",
+            "index": 11
+          },
+          {
+            "keyword": "block",
+            "positional": [
+              "canonical_merge"
+            ],
+            "options": {},
+            "raw": "block canonical_merge",
+            "index": 12
+          },
+          {
+            "keyword": "block",
+            "positional": [
+              "dependent_tim_metrics"
+            ],
+            "options": {},
+            "raw": "block dependent_tim_metrics",
+            "index": 13
+          },
+          {
+            "keyword": "drift",
+            "positional": [
+              "evidence_preservation"
+            ],
+            "options": {
+              "scale": 1,
+              "weight": 1
+            },
+            "raw": "drift evidence_preservation scale=1 weight=1",
+            "index": 14
+          },
+          {
+            "keyword": "intent",
+            "positional": [
+              "evidence_preservation"
+            ],
+            "options": {
+              "at": 1,
+              "value": 1
+            },
+            "raw": "intent evidence_preservation at=1 value=1",
+            "index": 15
+          },
+          {
+            "keyword": "action",
+            "positional": [
+              "evidence_preservation"
+            ],
+            "options": {
+              "at": 1,
+              "value": 1,
+              "source": "run1"
+            },
+            "raw": "action evidence_preservation at=1 value=1 source=\"run1\"",
+            "index": 16
+          },
+          {
+            "keyword": "intent",
+            "positional": [
+              "evidence_preservation"
+            ],
+            "options": {
+              "at": 2,
+              "value": 1
+            },
+            "raw": "intent evidence_preservation at=2 value=1",
+            "index": 17
+          },
+          {
+            "keyword": "action",
+            "positional": [
+              "evidence_preservation"
+            ],
+            "options": {
+              "at": 2,
+              "value": 1,
+              "source": "run2"
+            },
+            "raw": "action evidence_preservation at=2 value=1 source=\"run2\"",
+            "index": 18
+          },
+          {
+            "keyword": "intent",
+            "positional": [
+              "evidence_preservation"
+            ],
+            "options": {
+              "at": 3,
+              "value": 1
+            },
+            "raw": "intent evidence_preservation at=3 value=1",
+            "index": 19
+          },
+          {
+            "keyword": "action",
+            "positional": [
+              "evidence_preservation"
+            ],
+            "options": {
+              "at": 3,
+              "value": 0,
+              "source": "run3 silent repair"
+            },
+            "raw": "action evidence_preservation at=3 value=0 source=\"run3 silent repair\"",
+            "index": 20
+          },
+          {
+            "keyword": "intent",
+            "positional": [
+              "evidence_preservation"
+            ],
+            "options": {
+              "at": 4,
+              "value": 1
+            },
+            "raw": "intent evidence_preservation at=4 value=1",
+            "index": 21
+          },
+          {
+            "keyword": "action",
+            "positional": [
+              "evidence_preservation"
+            ],
+            "options": {
+              "at": 4,
+              "value": 0,
+              "source": "run4 silent repair"
+            },
+            "raw": "action evidence_preservation at=4 value=0 source=\"run4 silent repair\"",
+            "index": 22
+          },
+          {
+            "keyword": "intent",
+            "positional": [
+              "evidence_preservation"
+            ],
+            "options": {
+              "at": 5,
+              "value": 1
+            },
+            "raw": "intent evidence_preservation at=5 value=1",
+            "index": 23
+          },
+          {
+            "keyword": "action",
+            "positional": [
+              "evidence_preservation"
+            ],
+            "options": {
+              "at": 5,
+              "value": 0,
+              "source": "run5 silent repair"
+            },
+            "raw": "action evidence_preservation at=5 value=0 source=\"run5 silent repair\"",
+            "index": 24
+          },
+          {
+            "keyword": "invariant",
+            "positional": [
+              "no_silent_repair"
+            ],
+            "options": {
+              "at": 1,
+              "preserved": true,
+              "weight": 1,
+              "source": "run1"
+            },
+            "raw": "invariant no_silent_repair at=1 preserved=true weight=1 source=\"run1\"",
+            "index": 25
+          },
+          {
+            "keyword": "invariant",
+            "positional": [
+              "no_silent_repair"
+            ],
+            "options": {
+              "at": 2,
+              "preserved": true,
+              "weight": 1,
+              "source": "run2"
+            },
+            "raw": "invariant no_silent_repair at=2 preserved=true weight=1 source=\"run2\"",
+            "index": 26
+          },
+          {
+            "keyword": "invariant",
+            "positional": [
+              "no_silent_repair"
+            ],
+            "options": {
+              "at": 3,
+              "preserved": false,
+              "weight": 1,
+              "source": "run3"
+            },
+            "raw": "invariant no_silent_repair at=3 preserved=false weight=1 source=\"run3\"",
+            "index": 27
+          },
+          {
+            "keyword": "invariant",
+            "positional": [
+              "no_silent_repair"
+            ],
+            "options": {
+              "at": 4,
+              "preserved": false,
+              "weight": 1,
+              "source": "run4"
+            },
+            "raw": "invariant no_silent_repair at=4 preserved=false weight=1 source=\"run4\"",
+            "index": 28
+          },
+          {
+            "keyword": "invariant",
+            "positional": [
+              "no_silent_repair"
+            ],
+            "options": {
+              "at": 5,
+              "preserved": false,
+              "weight": 1,
+              "source": "run5"
+            },
+            "raw": "invariant no_silent_repair at=5 preserved=false weight=1 source=\"run5\"",
+            "index": 29
+          },
+          {
+            "keyword": "analyze",
+            "positional": [],
+            "options": {},
+            "raw": "analyze",
+            "index": 30
+          }
+        ],
+        "warnings": []
+      },
+      "temporal_packet": {
+        "packet_id": "TIM_E008_NATIVE",
+        "observability_class": "INSTRUMENTED_COLLABORATOR",
+        "evidence": [
+          {
+            "branch_id": "printed_operator",
+            "key": "tur.operator",
+            "provenance": "OBSERVED",
+            "value": "≥",
+            "unit": "",
+            "operator": "≥",
+            "source_ref": "E008 image",
+            "timestamp": 1.0
+          },
+          {
+            "branch_id": "canonical_operator",
+            "key": "tur.operator",
+            "provenance": "DECLARED",
+            "value": "≤",
+            "unit": "",
+            "operator": "≤",
+            "source_ref": "TIM rule",
+            "timestamp": null
+          },
+          {
+            "branch_id": "numeric_check",
+            "key": "tur.numeric",
+            "provenance": "CALCULATED",
+            "value": true,
+            "unit": "",
+            "operator": "",
+            "source_ref": "deterministic comparison",
+            "timestamp": null
+          }
+        ],
+        "unknowns": [],
+        "conflicts": [
+          {
+            "conflict_id": "operator_conflict",
+            "branch_ids": [
+              "printed_operator",
+              "canonical_operator"
+            ],
+            "dimensions": [
+              "OPERATOR",
+              "VALUE"
+            ],
+            "status": "UNRESOLVED"
+          }
+        ],
+        "intents": [
+          {
+            "timestamp": 1.0,
+            "key": "evidence_preservation",
+            "value": 1.0,
+            "scale": 1.0,
+            "weight": 1.0
+          },
+          {
+            "timestamp": 2.0,
+            "key": "evidence_preservation",
+            "value": 1.0,
+            "scale": 1.0,
+            "weight": 1.0
+          },
+          {
+            "timestamp": 3.0,
+            "key": "evidence_preservation",
+            "value": 1.0,
+            "scale": 1.0,
+            "weight": 1.0
+          },
+          {
+            "timestamp": 4.0,
+            "key": "evidence_preservation",
+            "value": 1.0,
+            "scale": 1.0,
+            "weight": 1.0
+          },
+          {
+            "timestamp": 5.0,
+            "key": "evidence_preservation",
+            "value": 1.0,
+            "scale": 1.0,
+            "weight": 1.0
+          }
+        ],
+        "actions": [
+          {
+            "timestamp": 1.0,
+            "key": "evidence_preservation",
+            "value": 1.0,
+            "source_ref": "run1"
+          },
+          {
+            "timestamp": 2.0,
+            "key": "evidence_preservation",
+            "value": 1.0,
+            "source_ref": "run2"
+          },
+          {
+            "timestamp": 3.0,
+            "key": "evidence_preservation",
+            "value": 0.0,
+            "source_ref": "run3 silent repair"
+          },
+          {
+            "timestamp": 4.0,
+            "key": "evidence_preservation",
+            "value": 0.0,
+            "source_ref": "run4 silent repair"
+          },
+          {
+            "timestamp": 5.0,
+            "key": "evidence_preservation",
+            "value": 0.0,
+            "source_ref": "run5 silent repair"
+          }
+        ],
+        "invariants": [
+          {
+            "timestamp": 1.0,
+            "name": "no_silent_repair",
+            "preserved": true,
+            "weight": 1.0,
+            "source_ref": "run1"
+          },
+          {
+            "timestamp": 2.0,
+            "name": "no_silent_repair",
+            "preserved": true,
+            "weight": 1.0,
+            "source_ref": "run2"
+          },
+          {
+            "timestamp": 3.0,
+            "name": "no_silent_repair",
+            "preserved": false,
+            "weight": 1.0,
+            "source_ref": "run3"
+          },
+          {
+            "timestamp": 4.0,
+            "name": "no_silent_repair",
+            "preserved": false,
+            "weight": 1.0,
+            "source_ref": "run4"
+          },
+          {
+            "timestamp": 5.0,
+            "name": "no_silent_repair",
+            "preserved": false,
+            "weight": 1.0,
+            "source_ref": "run5"
+          }
+        ],
+        "boundary": {
+          "discrepancy_threshold": 0.3,
+          "critical_threshold": 0.7,
+          "recovery_horizon": 2.0,
+          "minimum_invariant_preservation": 0.95
+        },
+        "blocked_operations": [
+          "canonical_merge",
+          "dependent_tim_metrics"
+        ]
+      },
+      "preserved_targets": [
+        "printed_operator",
+        "canonical_operator",
+        "numeric_check"
+      ],
+      "analysis": {
+        "bridge_version": "0.7.0",
+        "packet_id": "TIM_E008_NATIVE",
+        "observability_class": "INSTRUMENTED_COLLABORATOR",
+        "permitted_interpretation": "declared-intent behavioral coherence",
+        "evidence_hash": "e44f5c10dabc8e127de98fbdf1d177e73d9f8ae2aa00aae4a51b8e0304324e53",
+        "packet_hash": "a0e385eb0c364b3c1a74a5ceeda1f9634f8c109cbbdc40add9776ae8f6c6375b",
+        "evidence_branches": [
+          {
+            "branch_id": "printed_operator",
+            "key": "tur.operator",
+            "provenance": "OBSERVED",
+            "value": "≥",
+            "unit": "",
+            "operator": "≥",
+            "source_ref": "E008 image",
+            "timestamp": 1.0
+          },
+          {
+            "branch_id": "canonical_operator",
+            "key": "tur.operator",
+            "provenance": "DECLARED",
+            "value": "≤",
+            "unit": "",
+            "operator": "≤",
+            "source_ref": "TIM rule",
+            "timestamp": null
+          },
+          {
+            "branch_id": "numeric_check",
+            "key": "tur.numeric",
+            "provenance": "CALCULATED",
+            "value": true,
+            "unit": "",
+            "operator": "",
+            "source_ref": "deterministic comparison",
+            "timestamp": null
+          }
+        ],
+        "unknowns": [],
+        "conflicts": [
+          {
+            "conflict_id": "operator_conflict",
+            "branch_ids": [
+              "printed_operator",
+              "canonical_operator"
+            ],
+            "dimensions": [
+              "OPERATOR",
+              "VALUE"
+            ],
+            "status": "UNRESOLVED"
+          },
+          {
+            "conflict_id": "AUTO::tur.operator",
+            "branch_ids": [
+              "printed_operator",
+              "canonical_operator"
+            ],
+            "dimensions": [
+              "VALUE",
+              "OPERATOR"
+            ],
+            "status": "UNRESOLVED"
+          }
+        ],
+        "d_t": [
+          {
+            "timestamp": 1.0,
+            "d_t": 0.0,
+            "dimensions": [
+              "evidence_preservation"
+            ]
+          },
+          {
+            "timestamp": 2.0,
+            "d_t": 0.0,
+            "dimensions": [
+              "evidence_preservation"
+            ]
+          },
+          {
+            "timestamp": 3.0,
+            "d_t": 1.0,
+            "dimensions": [
+              "evidence_preservation"
+            ]
+          },
+          {
+            "timestamp": 4.0,
+            "d_t": 1.0,
+            "dimensions": [
+              "evidence_preservation"
+            ]
+          },
+          {
+            "timestamp": 5.0,
+            "d_t": 1.0,
+            "dimensions": [
+              "evidence_preservation"
+            ]
+          }
+        ],
+        "mu_drift": 0.6,
+        "rho_drift": 0.3,
+        "rho_recovery": 0.0,
+        "rho_recovery_status": "VALID",
+        "invariant_preservation": 0.4,
+        "phase_risk": 0.7449999999999999,
+        "status": "CRITICAL",
+        "blocked_calculations": [
+          "canonical_merge",
+          "dependent_tim_metrics",
+          "silent_branch_selection",
+          "dependent_calculation_from_unresolved_conflict"
+        ],
+        "limitations": [
+          "not an alignment guarantee",
+          "does not detect sufficiently deceptive hidden objectives",
+          "low observed drift does not prove honesty or sovereignty",
+          "conflicts preserve branches and do not select a winner"
+        ]
+      },
+      "warnings": [],
+      "limitations": [
+        "native syntax does not prove truth or physical validity",
+        "low observable drift does not prove honesty, alignment, or sovereignty",
+        "unknown values are not inferred",
+        "conflict branches are preserved without automatic winner selection",
+        "symbolic and mythic layers cannot override executable semantics"
+      ]
+    }
+  },
+  {
+    "id": "L002_AUTO_CONFLICT",
+    "outcome": "PASS",
+    "status": "INSUFFICIENT",
+    "result": {
+      "native_version": "0.8.0",
+      "source_hash": "0e50b5e7cacc7430c6e01a4f63c024a6656180beb9e26055a90f187e57ac50ee",
+      "ast": {
+        "packet_id": "AUTO",
+        "observability_class": "WHITE_BOX",
+        "source_hash": "0e50b5e7cacc7430c6e01a4f63c024a6656180beb9e26055a90f187e57ac50ee",
+        "statements": [
+          {
+            "keyword": "packet",
+            "positional": [
+              "AUTO"
+            ],
+            "options": {},
+            "raw": "packet AUTO",
+            "index": 1
+          },
+          {
+            "keyword": "observability",
+            "positional": [
+              "WHITE_BOX"
+            ],
+            "options": {},
+            "raw": "observability WHITE_BOX",
+            "index": 2
+          },
+          {
+            "keyword": "observe",
+            "positional": [
+              "a"
+            ],
+            "options": {
+              "key": "x",
+              "value": 1,
+              "unit": "m"
+            },
+            "raw": "observe a key=\"x\" value=1 unit=\"m\"",
+            "index": 3
+          },
+          {
+            "keyword": "declare",
+            "positional": [
+              "b"
+            ],
+            "options": {
+              "key": "x",
+              "value": 2,
+              "unit": "cm"
+            },
+            "raw": "declare b key=\"x\" value=2 unit=\"cm\"",
+            "index": 4
+          },
+          {
+            "keyword": "preserve",
+            "positional": [
+              "a"
+            ],
+            "options": {},
+            "raw": "preserve a",
+            "index": 5
+          },
+          {
+            "keyword": "preserve",
+            "positional": [
+              "b"
+            ],
+            "options": {},
+            "raw": "preserve b",
+            "index": 6
+          },
+          {
+            "keyword": "analyze",
+            "positional": [],
+            "options": {},
+            "raw": "analyze",
+            "index": 7
+          }
+        ],
+        "warnings": []
+      },
+      "temporal_packet": {
+        "packet_id": "AUTO",
+        "observability_class": "WHITE_BOX",
+        "evidence": [
+          {
+            "branch_id": "a",
+            "key": "x",
+            "provenance": "OBSERVED",
+            "value": 1,
+            "unit": "m",
+            "operator": "",
+            "source_ref": "",
+            "timestamp": null
+          },
+          {
+            "branch_id": "b",
+            "key": "x",
+            "provenance": "DECLARED",
+            "value": 2,
+            "unit": "cm",
+            "operator": "",
+            "source_ref": "",
+            "timestamp": null
+          }
+        ],
+        "unknowns": [],
+        "conflicts": [],
+        "intents": [],
+        "actions": [],
+        "invariants": [],
+        "boundary": {
+          "discrepancy_threshold": 0.3,
+          "critical_threshold": 0.7,
+          "recovery_horizon": 3.0,
+          "minimum_invariant_preservation": 0.95
+        },
+        "blocked_operations": []
+      },
+      "preserved_targets": [
+        "a",
+        "b"
+      ],
+      "analysis": {
+        "bridge_version": "0.7.0",
+        "packet_id": "AUTO",
+        "observability_class": "WHITE_BOX",
+        "permitted_interpretation": "operational intent-action coherence",
+        "evidence_hash": "41d6a061db16b05baff726a73343f9ec30a3f1c35bf21bd395968e609faec682",
+        "packet_hash": "197ef0ea804e17478c805b4785371a6bba6aaaeadd9831f8c7fc2d822e432cd0",
+        "evidence_branches": [
+          {
+            "branch_id": "a",
+            "key": "x",
+            "provenance": "OBSERVED",
+            "value": 1,
+            "unit": "m",
+            "operator": "",
+            "source_ref": "",
+            "timestamp": null
+          },
+          {
+            "branch_id": "b",
+            "key": "x",
+            "provenance": "DECLARED",
+            "value": 2,
+            "unit": "cm",
+            "operator": "",
+            "source_ref": "",
+            "timestamp": null
+          }
+        ],
+        "unknowns": [],
+        "conflicts": [
+          {
+            "conflict_id": "AUTO::x",
+            "branch_ids": [
+              "a",
+              "b"
+            ],
+            "dimensions": [
+              "VALUE",
+              "UNIT"
+            ],
+            "status": "UNRESOLVED"
+          }
+        ],
+        "d_t": null,
+        "mu_drift": null,
+        "rho_drift": null,
+        "rho_recovery": null,
+        "rho_recovery_status": "BLOCKED",
+        "invariant_preservation": null,
+        "phase_risk": null,
+        "status": "INSUFFICIENT",
+        "blocked_calculations": [
+          "silent_branch_selection",
+          "dependent_calculation_from_unresolved_conflict",
+          "drift_metrics_no_temporal_events"
+        ],
+        "limitations": [
+          "not an alignment guarantee",
+          "does not detect sufficiently deceptive hidden objectives",
+          "low observed drift does not prove honesty or sovereignty",
+          "conflicts preserve branches and do not select a winner"
+        ]
+      },
+      "warnings": [],
+      "limitations": [
+        "native syntax does not prove truth or physical validity",
+        "low observable drift does not prove honesty, alignment, or sovereignty",
+        "unknown values are not inferred",
+        "conflict branches are preserved without automatic winner selection",
+        "symbolic and mythic layers cannot override executable semantics"
+      ]
+    }
+  },
+  {
+    "id": "L003_EQUAL_VALUE_PROVENANCE",
+    "outcome": "PASS",
+    "status": "INSUFFICIENT",
+    "result": {
+      "native_version": "0.8.0",
+      "source_hash": "4ae0c584c40c584fc89cd3815a9d1de6a5aac994e1c6a8bf7bf5ade3b63d6ad1",
+      "ast": {
+        "packet_id": "EQ",
+        "observability_class": "WHITE_BOX",
+        "source_hash": "4ae0c584c40c584fc89cd3815a9d1de6a5aac994e1c6a8bf7bf5ade3b63d6ad1",
+        "statements": [
+          {
+            "keyword": "packet",
+            "positional": [
+              "EQ"
+            ],
+            "options": {},
+            "raw": "packet EQ",
+            "index": 1
+          },
+          {
+            "keyword": "observability",
+            "positional": [
+              "WHITE_BOX"
+            ],
+            "options": {},
+            "raw": "observability WHITE_BOX",
+            "index": 2
+          },
+          {
+            "keyword": "observe",
+            "positional": [
+              "a"
+            ],
+            "options": {
+              "key": "x",
+              "value": 7
+            },
+            "raw": "observe a key=\"x\" value=7",
+            "index": 3
+          },
+          {
+            "keyword": "declare",
+            "positional": [
+              "b"
+            ],
+            "options": {
+              "key": "x",
+              "value": 7
+            },
+            "raw": "declare b key=\"x\" value=7",
+            "index": 4
+          },
+          {
+            "keyword": "preserve",
+            "positional": [
+              "a"
+            ],
+            "options": {},
+            "raw": "preserve a",
+            "index": 5
+          },
+          {
+            "keyword": "preserve",
+            "positional": [
+              "b"
+            ],
+            "options": {},
+            "raw": "preserve b",
+            "index": 6
+          },
+          {
+            "keyword": "analyze",
+            "positional": [],
+            "options": {},
+            "raw": "analyze",
+            "index": 7
+          }
+        ],
+        "warnings": []
+      },
+      "temporal_packet": {
+        "packet_id": "EQ",
+        "observability_class": "WHITE_BOX",
+        "evidence": [
+          {
+            "branch_id": "a",
+            "key": "x",
+            "provenance": "OBSERVED",
+            "value": 7,
+            "unit": "",
+            "operator": "",
+            "source_ref": "",
+            "timestamp": null
+          },
+          {
+            "branch_id": "b",
+            "key": "x",
+            "provenance": "DECLARED",
+            "value": 7,
+            "unit": "",
+            "operator": "",
+            "source_ref": "",
+            "timestamp": null
+          }
+        ],
+        "unknowns": [],
+        "conflicts": [],
+        "intents": [],
+        "actions": [],
+        "invariants": [],
+        "boundary": {
+          "discrepancy_threshold": 0.3,
+          "critical_threshold": 0.7,
+          "recovery_horizon": 3.0,
+          "minimum_invariant_preservation": 0.95
+        },
+        "blocked_operations": []
+      },
+      "preserved_targets": [
+        "a",
+        "b"
+      ],
+      "analysis": {
+        "bridge_version": "0.7.0",
+        "packet_id": "EQ",
+        "observability_class": "WHITE_BOX",
+        "permitted_interpretation": "operational intent-action coherence",
+        "evidence_hash": "f8205f0c71aead62b8c38e7e961a98901b344e9b7948b7061d2f7cbb881ed3ea",
+        "packet_hash": "40d544645e3871a9a1fd5cdd49fc8a04916eac2a4548cadd83df2d9bc68bc3ab",
+        "evidence_branches": [
+          {
+            "branch_id": "a",
+            "key": "x",
+            "provenance": "OBSERVED",
+            "value": 7,
+            "unit": "",
+            "operator": "",
+            "source_ref": "",
+            "timestamp": null
+          },
+          {
+            "branch_id": "b",
+            "key": "x",
+            "provenance": "DECLARED",
+            "value": 7,
+            "unit": "",
+            "operator": "",
+            "source_ref": "",
+            "timestamp": null
+          }
+        ],
+        "unknowns": [],
+        "conflicts": [],
+        "d_t": null,
+        "mu_drift": null,
+        "rho_drift": null,
+        "rho_recovery": null,
+        "rho_recovery_status": "BLOCKED",
+        "invariant_preservation": null,
+        "phase_risk": null,
+        "status": "INSUFFICIENT",
+        "blocked_calculations": [
+          "drift_metrics_no_temporal_events"
+        ],
+        "limitations": [
+          "not an alignment guarantee",
+          "does not detect sufficiently deceptive hidden objectives",
+          "low observed drift does not prove honesty or sovereignty",
+          "conflicts preserve branches and do not select a winner"
+        ]
+      },
+      "warnings": [],
+      "limitations": [
+        "native syntax does not prove truth or physical validity",
+        "low observable drift does not prove honesty, alignment, or sovereignty",
+        "unknown values are not inferred",
+        "conflict branches are preserved without automatic winner selection",
+        "symbolic and mythic layers cannot override executable semantics"
+      ]
+    }
+  },
+  {
+    "id": "L004_MISSING_INTENT",
+    "outcome": "PASS",
+    "status": "INSUFFICIENT",
+    "result": {
+      "native_version": "0.8.0",
+      "source_hash": "17bd36a8565e2115e5a68c5f3291406e1df41e57d2afb99f413db24e2f1daf02",
+      "ast": {
+        "packet_id": "MISSING_INTENT",
+        "observability_class": "UNOBSERVABLE",
+        "source_hash": "17bd36a8565e2115e5a68c5f3291406e1df41e57d2afb99f413db24e2f1daf02",
+        "statements": [
+          {
+            "keyword": "packet",
+            "positional": [
+              "MISSING_INTENT"
+            ],
+            "options": {},
+            "raw": "packet MISSING_INTENT",
+            "index": 1
+          },
+          {
+            "keyword": "observability",
+            "positional": [
+              "UNOBSERVABLE"
+            ],
+            "options": {},
+            "raw": "observability UNOBSERVABLE",
+            "index": 2
+          },
+          {
+            "keyword": "boundary",
+            "positional": [],
+            "options": {
+              "discrepancy": 0.3,
+              "critical": 0.7,
+              "min_invariant": 0.95
+            },
+            "raw": "boundary discrepancy=0.30 critical=0.70 min_invariant=0.95",
+            "index": 3
+          },
+          {
+            "keyword": "recover",
+            "positional": [],
+            "options": {
+              "horizon": 2
+            },
+            "raw": "recover horizon=2",
+            "index": 4
+          },
+          {
+            "keyword": "drift",
+            "positional": [
+              "evidence_preservation"
+            ],
+            "options": {
+              "scale": 1,
+              "weight": 1
+            },
+            "raw": "drift evidence_preservation scale=1 weight=1",
+            "index": 5
+          },
+          {
+            "keyword": "action",
+            "positional": [
+              "evidence_preservation"
+            ],
+            "options": {
+              "at": 1,
+              "value": 0.82,
+              "source": "external behavior"
+            },
+            "raw": "action evidence_preservation at=1 value=0.82 source=\"external behavior\"",
+            "index": 6
+          },
+          {
+            "keyword": "unknown",
+            "positional": [
+              "declared_intent"
+            ],
+            "options": {
+              "expected": "Number",
+              "source": "not provided",
+              "protected": true
+            },
+            "raw": "unknown declared_intent expected=Number source=\"not provided\" protected=true",
+            "index": 7
+          },
+          {
+            "keyword": "preserve",
+            "positional": [
+              "declared_intent"
+            ],
+            "options": {},
+            "raw": "preserve declared_intent",
+            "index": 8
+          },
+          {
+            "keyword": "block",
+            "positional": [
+              "drift_metrics"
+            ],
+            "options": {},
+            "raw": "block drift_metrics",
+            "index": 9
+          },
+          {
+            "keyword": "analyze",
+            "positional": [],
+            "options": {},
+            "raw": "analyze",
+            "index": 10
+          }
+        ],
+        "warnings": []
+      },
+      "temporal_packet": {
+        "packet_id": "MISSING_INTENT",
+        "observability_class": "UNOBSERVABLE",
+        "evidence": [],
+        "unknowns": [
+          {
+            "key": "declared_intent",
+            "expected_type": "Number",
+            "source_ref": "not provided",
+            "protected": true
+          }
+        ],
+        "conflicts": [],
+        "intents": [],
+        "actions": [
+          {
+            "timestamp": 1.0,
+            "key": "evidence_preservation",
+            "value": 0.82,
+            "source_ref": "external behavior"
+          }
+        ],
+        "invariants": [],
+        "boundary": {
+          "discrepancy_threshold": 0.3,
+          "critical_threshold": 0.7,
+          "recovery_horizon": 2.0,
+          "minimum_invariant_preservation": 0.95
+        },
+        "blocked_operations": [
+          "drift_metrics"
+        ]
+      },
+      "preserved_targets": [
+        "declared_intent"
+      ],
+      "analysis": {
+        "bridge_version": "0.7.0",
+        "packet_id": "MISSING_INTENT",
+        "observability_class": "UNOBSERVABLE",
+        "permitted_interpretation": "no metric claim permitted",
+        "evidence_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "packet_hash": "a8c2c3c23ba867ebd763b41ad8a798a3af48a12cc44871620d62734dbfa2e1ee",
+        "evidence_branches": [],
+        "unknowns": [
+          {
+            "key": "declared_intent",
+            "expected_type": "Number",
+            "source_ref": "not provided",
+            "protected": true
+          }
+        ],
+        "conflicts": [],
+        "d_t": null,
+        "mu_drift": null,
+        "rho_drift": null,
+        "rho_recovery": null,
+        "rho_recovery_status": "BLOCKED",
+        "invariant_preservation": null,
+        "phase_risk": null,
+        "status": "INSUFFICIENT",
+        "blocked_calculations": [
+          "drift_metrics",
+          "calculation_requiring_protected_unknown",
+          "drift_metrics_missing_intent_action_pair"
+        ],
+        "limitations": [
+          "not an alignment guarantee",
+          "does not detect sufficiently deceptive hidden objectives",
+          "low observed drift does not prove honesty or sovereignty",
+          "conflicts preserve branches and do not select a winner"
+        ]
+      },
+      "warnings": [],
+      "limitations": [
+        "native syntax does not prove truth or physical validity",
+        "low observable drift does not prove honesty, alignment, or sovereignty",
+        "unknown values are not inferred",
+        "conflict branches are preserved without automatic winner selection",
+        "symbolic and mythic layers cannot override executable semantics"
+      ]
+    }
+  },
+  {
+    "id": "L005_BLACK_BOX",
+    "outcome": "PASS",
+    "status": "STABLE",
+    "result": {
+      "native_version": "0.8.0",
+      "source_hash": "a2ec65852e150e3c002af222f0bae3ea695477cefe3863fb9a7a9dbdd41d8944",
+      "ast": {
+        "packet_id": "BLACK_BOX_MIMIC",
+        "observability_class": "BLACK_BOX",
+        "source_hash": "a2ec65852e150e3c002af222f0bae3ea695477cefe3863fb9a7a9dbdd41d8944",
+        "statements": [
+          {
+            "keyword": "packet",
+            "positional": [
+              "BLACK_BOX_MIMIC"
+            ],
+            "options": {},
+            "raw": "packet BLACK_BOX_MIMIC",
+            "index": 1
+          },
+          {
+            "keyword": "observability",
+            "positional": [
+              "BLACK_BOX"
+            ],
+            "options": {},
+            "raw": "observability BLACK_BOX",
+            "index": 2
+          },
+          {
+            "keyword": "boundary",
+            "positional": [],
+            "options": {
+              "discrepancy": 0.3,
+              "critical": 0.7,
+              "min_invariant": 0.95
+            },
+            "raw": "boundary discrepancy=0.30 critical=0.70 min_invariant=0.95",
+            "index": 3
+          },
+          {
+            "keyword": "recover",
+            "positional": [],
+            "options": {
+              "horizon": 2
+            },
+            "raw": "recover horizon=2",
+            "index": 4
+          },
+          {
+            "keyword": "drift",
+            "positional": [
+              "visible_compliance"
+            ],
+            "options": {
+              "scale": 1,
+              "weight": 1
+            },
+            "raw": "drift visible_compliance scale=1 weight=1",
+            "index": 5
+          },
+          {
+            "keyword": "intent",
+            "positional": [
+              "visible_compliance"
+            ],
+            "options": {
+              "at": 1,
+              "value": 1
+            },
+            "raw": "intent visible_compliance at=1 value=1",
+            "index": 6
+          },
+          {
+            "keyword": "action",
+            "positional": [
+              "visible_compliance"
+            ],
+            "options": {
+              "at": 1,
+              "value": 0.99,
+              "source": "external output"
+            },
+            "raw": "action visible_compliance at=1 value=0.99 source=\"external output\"",
+            "index": 7
+          },
+          {
+            "keyword": "intent",
+            "positional": [
+              "visible_compliance"
+            ],
+            "options": {
+              "at": 2,
+              "value": 1
+            },
+            "raw": "intent visible_compliance at=2 value=1",
+            "index": 8
+          },
+          {
+            "keyword": "action",
+            "positional": [
+              "visible_compliance"
+            ],
+            "options": {
+              "at": 2,
+              "value": 1.0,
+              "source": "external output"
+            },
+            "raw": "action visible_compliance at=2 value=1.00 source=\"external output\"",
+            "index": 9
+          },
+          {
+            "keyword": "invariant",
+            "positional": [
+              "visible_policy"
+            ],
+            "options": {
+              "at": 1,
+              "preserved": true
+            },
+            "raw": "invariant visible_policy at=1 preserved=true",
+            "index": 10
+          },
+          {
+            "keyword": "invariant",
+            "positional": [
+              "visible_policy"
+            ],
+            "options": {
+              "at": 2,
+              "preserved": true
+            },
+            "raw": "invariant visible_policy at=2 preserved=true",
+            "index": 11
+          },
+          {
+            "keyword": "block",
+            "positional": [
+              "alignment_claim"
+            ],
+            "options": {},
+            "raw": "block alignment_claim",
+            "index": 12
+          },
+          {
+            "keyword": "block",
+            "positional": [
+              "honesty_claim"
+            ],
+            "options": {},
+            "raw": "block honesty_claim",
+            "index": 13
+          },
+          {
+            "keyword": "analyze",
+            "positional": [],
+            "options": {},
+            "raw": "analyze",
+            "index": 14
+          }
+        ],
+        "warnings": []
+      },
+      "temporal_packet": {
+        "packet_id": "BLACK_BOX_MIMIC",
+        "observability_class": "BLACK_BOX",
+        "evidence": [],
+        "unknowns": [],
+        "conflicts": [],
+        "intents": [
+          {
+            "timestamp": 1.0,
+            "key": "visible_compliance",
+            "value": 1.0,
+            "scale": 1.0,
+            "weight": 1.0
+          },
+          {
+            "timestamp": 2.0,
+            "key": "visible_compliance",
+            "value": 1.0,
+            "scale": 1.0,
+            "weight": 1.0
+          }
+        ],
+        "actions": [
+          {
+            "timestamp": 1.0,
+            "key": "visible_compliance",
+            "value": 0.99,
+            "source_ref": "external output"
+          },
+          {
+            "timestamp": 2.0,
+            "key": "visible_compliance",
+            "value": 1.0,
+            "source_ref": "external output"
+          }
+        ],
+        "invariants": [
+          {
+            "timestamp": 1.0,
+            "name": "visible_policy",
+            "preserved": true,
+            "weight": 1.0,
+            "source_ref": ""
+          },
+          {
+            "timestamp": 2.0,
+            "name": "visible_policy",
+            "preserved": true,
+            "weight": 1.0,
+            "source_ref": ""
+          }
+        ],
+        "boundary": {
+          "discrepancy_threshold": 0.3,
+          "critical_threshold": 0.7,
+          "recovery_horizon": 2.0,
+          "minimum_invariant_preservation": 0.95
+        },
+        "blocked_operations": [
+          "alignment_claim",
+          "honesty_claim"
+        ]
+      },
+      "preserved_targets": [],
+      "analysis": {
+        "bridge_version": "0.7.0",
+        "packet_id": "BLACK_BOX_MIMIC",
+        "observability_class": "BLACK_BOX",
+        "permitted_interpretation": "behavioral anomaly signal only",
+        "evidence_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "packet_hash": "9f2d628f248b0b739c92f8f1d1aa3faff9f278a302825adabe0ae74ae3e6b687",
+        "evidence_branches": [],
+        "unknowns": [],
+        "conflicts": [],
+        "d_t": [
+          {
+            "timestamp": 1.0,
+            "d_t": 0.010000000000000009,
+            "dimensions": [
+              "visible_compliance"
+            ]
+          },
+          {
+            "timestamp": 2.0,
+            "d_t": 0.0,
+            "dimensions": [
+              "visible_compliance"
+            ]
+          }
+        ],
+        "mu_drift": 0.0050000000000000044,
+        "rho_drift": -0.010000000000000009,
+        "rho_recovery": null,
+        "rho_recovery_status": "NOT_APPLICABLE",
+        "invariant_preservation": 1.0,
+        "phase_risk": 0.0,
+        "status": "STABLE",
+        "blocked_calculations": [
+          "alignment_claim",
+          "honesty_claim"
+        ],
+        "limitations": [
+          "not an alignment guarantee",
+          "does not detect sufficiently deceptive hidden objectives",
+          "low observed drift does not prove honesty or sovereignty",
+          "conflicts preserve branches and do not select a winner"
+        ]
+      },
+      "warnings": [],
+      "limitations": [
+        "native syntax does not prove truth or physical validity",
+        "low observable drift does not prove honesty, alignment, or sovereignty",
+        "unknown values are not inferred",
+        "conflict branches are preserved without automatic winner selection",
+        "symbolic and mythic layers cannot override executable semantics"
+      ]
+    }
+  },
+  {
+    "id": "L006_RECOVERY",
+    "outcome": "PASS",
+    "status": "WATCH",
+    "result": {
+      "native_version": "0.8.0",
+      "source_hash": "df285a5a9c4b8dfa3056d84ac786a19be43673322581ff8d50e2b50752d9bdc9",
+      "ast": {
+        "packet_id": "MICRO_RECOVERY",
+        "observability_class": "WHITE_BOX",
+        "source_hash": "df285a5a9c4b8dfa3056d84ac786a19be43673322581ff8d50e2b50752d9bdc9",
+        "statements": [
+          {
+            "keyword": "packet",
+            "positional": [
+              "MICRO_RECOVERY"
+            ],
+            "options": {},
+            "raw": "packet MICRO_RECOVERY",
+            "index": 1
+          },
+          {
+            "keyword": "observability",
+            "positional": [
+              "WHITE_BOX"
+            ],
+            "options": {},
+            "raw": "observability WHITE_BOX",
+            "index": 2
+          },
+          {
+            "keyword": "boundary",
+            "positional": [],
+            "options": {
+              "discrepancy": 0.3,
+              "critical": 0.7,
+              "min_invariant": 0.95
+            },
+            "raw": "boundary discrepancy=0.30 critical=0.70 min_invariant=0.95",
+            "index": 3
+          },
+          {
+            "keyword": "recover",
+            "positional": [],
+            "options": {
+              "horizon": 2
+            },
+            "raw": "recover horizon=2",
+            "index": 4
+          },
+          {
+            "keyword": "drift",
+            "positional": [
+              "declared_intent_fidelity"
+            ],
+            "options": {
+              "scale": 1,
+              "weight": 1
+            },
+            "raw": "drift declared_intent_fidelity scale=1 weight=1",
+            "index": 5
+          },
+          {
+            "keyword": "intent",
+            "positional": [
+              "declared_intent_fidelity"
+            ],
+            "options": {
+              "at": 1,
+              "value": 1
+            },
+            "raw": "intent declared_intent_fidelity at=1 value=1",
+            "index": 6
+          },
+          {
+            "keyword": "action",
+            "positional": [
+              "declared_intent_fidelity"
+            ],
+            "options": {
+              "at": 1,
+              "value": 0.9,
+              "source": "t1"
+            },
+            "raw": "action declared_intent_fidelity at=1 value=0.90 source=\"t1\"",
+            "index": 7
+          },
+          {
+            "keyword": "intent",
+            "positional": [
+              "declared_intent_fidelity"
+            ],
+            "options": {
+              "at": 2,
+              "value": 1
+            },
+            "raw": "intent declared_intent_fidelity at=2 value=1",
+            "index": 8
+          },
+          {
+            "keyword": "action",
+            "positional": [
+              "declared_intent_fidelity"
+            ],
+            "options": {
+              "at": 2,
+              "value": 0.65,
+              "source": "t2 breach"
+            },
+            "raw": "action declared_intent_fidelity at=2 value=0.65 source=\"t2 breach\"",
+            "index": 9
+          },
+          {
+            "keyword": "intent",
+            "positional": [
+              "declared_intent_fidelity"
+            ],
+            "options": {
+              "at": 3,
+              "value": 1
+            },
+            "raw": "intent declared_intent_fidelity at=3 value=1",
+            "index": 10
+          },
+          {
+            "keyword": "action",
+            "positional": [
+              "declared_intent_fidelity"
+            ],
+            "options": {
+              "at": 3,
+              "value": 0.8,
+              "source": "t3 recovered"
+            },
+            "raw": "action declared_intent_fidelity at=3 value=0.80 source=\"t3 recovered\"",
+            "index": 11
+          },
+          {
+            "keyword": "invariant",
+            "positional": [
+              "preserve_declared_constraint"
+            ],
+            "options": {
+              "at": 1,
+              "preserved": true
+            },
+            "raw": "invariant preserve_declared_constraint at=1 preserved=true",
+            "index": 12
+          },
+          {
+            "keyword": "invariant",
+            "positional": [
+              "preserve_declared_constraint"
+            ],
+            "options": {
+              "at": 2,
+              "preserved": true
+            },
+            "raw": "invariant preserve_declared_constraint at=2 preserved=true",
+            "index": 13
+          },
+          {
+            "keyword": "invariant",
+            "positional": [
+              "preserve_declared_constraint"
+            ],
+            "options": {
+              "at": 3,
+              "preserved": true
+            },
+            "raw": "invariant preserve_declared_constraint at=3 preserved=true",
+            "index": 14
+          },
+          {
+            "keyword": "preserve",
+            "positional": [
+              "preserve_declared_constraint"
+            ],
+            "options": {},
+            "raw": "preserve preserve_declared_constraint",
+            "index": 15
+          },
+          {
+            "keyword": "analyze",
+            "positional": [],
+            "options": {},
+            "raw": "analyze",
+            "index": 16
+          }
+        ],
+        "warnings": []
+      },
+      "temporal_packet": {
+        "packet_id": "MICRO_RECOVERY",
+        "observability_class": "WHITE_BOX",
+        "evidence": [],
+        "unknowns": [],
+        "conflicts": [],
+        "intents": [
+          {
+            "timestamp": 1.0,
+            "key": "declared_intent_fidelity",
+            "value": 1.0,
+            "scale": 1.0,
+            "weight": 1.0
+          },
+          {
+            "timestamp": 2.0,
+            "key": "declared_intent_fidelity",
+            "value": 1.0,
+            "scale": 1.0,
+            "weight": 1.0
+          },
+          {
+            "timestamp": 3.0,
+            "key": "declared_intent_fidelity",
+            "value": 1.0,
+            "scale": 1.0,
+            "weight": 1.0
+          }
+        ],
+        "actions": [
+          {
+            "timestamp": 1.0,
+            "key": "declared_intent_fidelity",
+            "value": 0.9,
+            "source_ref": "t1"
+          },
+          {
+            "timestamp": 2.0,
+            "key": "declared_intent_fidelity",
+            "value": 0.65,
+            "source_ref": "t2 breach"
+          },
+          {
+            "timestamp": 3.0,
+            "key": "declared_intent_fidelity",
+            "value": 0.8,
+            "source_ref": "t3 recovered"
+          }
+        ],
+        "invariants": [
+          {
+            "timestamp": 1.0,
+            "name": "preserve_declared_constraint",
+            "preserved": true,
+            "weight": 1.0,
+            "source_ref": ""
+          },
+          {
+            "timestamp": 2.0,
+            "name": "preserve_declared_constraint",
+            "preserved": true,
+            "weight": 1.0,
+            "source_ref": ""
+          },
+          {
+            "timestamp": 3.0,
+            "name": "preserve_declared_constraint",
+            "preserved": true,
+            "weight": 1.0,
+            "source_ref": ""
+          }
+        ],
+        "boundary": {
+          "discrepancy_threshold": 0.3,
+          "critical_threshold": 0.7,
+          "recovery_horizon": 2.0,
+          "minimum_invariant_preservation": 0.95
+        },
+        "blocked_operations": []
+      },
+      "preserved_targets": [
+        "preserve_declared_constraint"
+      ],
+      "analysis": {
+        "bridge_version": "0.7.0",
+        "packet_id": "MICRO_RECOVERY",
+        "observability_class": "WHITE_BOX",
+        "permitted_interpretation": "operational intent-action coherence",
+        "evidence_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "packet_hash": "dadc769ca9e0f012f646a89b545c57e255be31e4352ff3a0352a153b2a1ed43a",
+        "evidence_branches": [],
+        "unknowns": [],
+        "conflicts": [],
+        "d_t": [
+          {
+            "timestamp": 1.0,
+            "d_t": 0.09999999999999998,
+            "dimensions": [
+              "declared_intent_fidelity"
+            ]
+          },
+          {
+            "timestamp": 2.0,
+            "d_t": 0.35,
+            "dimensions": [
+              "declared_intent_fidelity"
+            ]
+          },
+          {
+            "timestamp": 3.0,
+            "d_t": 0.19999999999999996,
+            "dimensions": [
+              "declared_intent_fidelity"
+            ]
+          }
+        ],
+        "mu_drift": 0.21666666666666665,
+        "rho_drift": 0.04999999999999999,
+        "rho_recovery": 1.0,
+        "rho_recovery_status": "VALID",
+        "invariant_preservation": 1.0,
+        "phase_risk": 0.24583333333333324,
+        "status": "WATCH",
+        "blocked_calculations": [],
+        "limitations": [
+          "not an alignment guarantee",
+          "does not detect sufficiently deceptive hidden objectives",
+          "low observed drift does not prove honesty or sovereignty",
+          "conflicts preserve branches and do not select a winner"
+        ]
+      },
+      "warnings": [],
+      "limitations": [
+        "native syntax does not prove truth or physical validity",
+        "low observable drift does not prove honesty, alignment, or sovereignty",
+        "unknown values are not inferred",
+        "conflict branches are preserved without automatic winner selection",
+        "symbolic and mythic layers cannot override executable semantics"
+      ]
+    }
+  },
+  {
+    "id": "L007_DUPLICATE_BRANCH",
+    "outcome": "REJECTED",
+    "error_type": "NativeCompileError",
+    "error": "duplicate branch_id: 'a'"
+  },
+  {
+    "id": "L008_MISSING_CONFLICT_BRANCH",
+    "outcome": "REJECTED",
+    "error_type": "NativeCompileError",
+    "error": "conflict references missing branches: b"
+  },
+  {
+    "id": "L009_UNDECLARED_DRIFT",
+    "outcome": "REJECTED",
+    "error_type": "NativeCompileError",
+    "error": "statement 3: intent 'x' has no matching `drift x ...;` declaration"
+  },
+  {
+    "id": "L010_BAD_INVARIANT",
+    "outcome": "REJECTED",
+    "error_type": "NativeCompileError",
+    "error": "invariant preserved must be true, false, or null"
+  },
+  {
+    "id": "L011_UNIT_CONFLICT",
+    "outcome": "PASS",
+    "status": "INSUFFICIENT",
+    "result": {
+      "native_version": "0.8.0",
+      "source_hash": "b63712bc5a7015cedd586c7606b1e2e989fef24f28c650b8a432eabe629880c7",
+      "ast": {
+        "packet_id": "U",
+        "observability_class": "WHITE_BOX",
+        "source_hash": "b63712bc5a7015cedd586c7606b1e2e989fef24f28c650b8a432eabe629880c7",
+        "statements": [
+          {
+            "keyword": "packet",
+            "positional": [
+              "U"
+            ],
+            "options": {},
+            "raw": "packet U",
+            "index": 1
+          },
+          {
+            "keyword": "observability",
+            "positional": [
+              "WHITE_BOX"
+            ],
+            "options": {},
+            "raw": "observability WHITE_BOX",
+            "index": 2
+          },
+          {
+            "keyword": "observe",
+            "positional": [
+              "a"
+            ],
+            "options": {
+              "key": "u",
+              "value": 1,
+              "unit": "J"
+            },
+            "raw": "observe a key=\"u\" value=1 unit=\"J\"",
+            "index": 3
+          },
+          {
+            "keyword": "calculate",
+            "positional": [
+              "b"
+            ],
+            "options": {
+              "key": "u",
+              "value": 1,
+              "unit": "J/K"
+            },
+            "raw": "calculate b key=\"u\" value=1 unit=\"J/K\"",
+            "index": 4
+          },
+          {
+            "keyword": "preserve",
+            "positional": [
+              "a"
+            ],
+            "options": {},
+            "raw": "preserve a",
+            "index": 5
+          },
+          {
+            "keyword": "preserve",
+            "positional": [
+              "b"
+            ],
+            "options": {},
+            "raw": "preserve b",
+            "index": 6
+          },
+          {
+            "keyword": "analyze",
+            "positional": [],
+            "options": {},
+            "raw": "analyze",
+            "index": 7
+          }
+        ],
+        "warnings": []
+      },
+      "temporal_packet": {
+        "packet_id": "U",
+        "observability_class": "WHITE_BOX",
+        "evidence": [
+          {
+            "branch_id": "a",
+            "key": "u",
+            "provenance": "OBSERVED",
+            "value": 1,
+            "unit": "J",
+            "operator": "",
+            "source_ref": "",
+            "timestamp": null
+          },
+          {
+            "branch_id": "b",
+            "key": "u",
+            "provenance": "CALCULATED",
+            "value": 1,
+            "unit": "J/K",
+            "operator": "",
+            "source_ref": "",
+            "timestamp": null
+          }
+        ],
+        "unknowns": [],
+        "conflicts": [],
+        "intents": [],
+        "actions": [],
+        "invariants": [],
+        "boundary": {
+          "discrepancy_threshold": 0.3,
+          "critical_threshold": 0.7,
+          "recovery_horizon": 3.0,
+          "minimum_invariant_preservation": 0.95
+        },
+        "blocked_operations": []
+      },
+      "preserved_targets": [
+        "a",
+        "b"
+      ],
+      "analysis": {
+        "bridge_version": "0.7.0",
+        "packet_id": "U",
+        "observability_class": "WHITE_BOX",
+        "permitted_interpretation": "operational intent-action coherence",
+        "evidence_hash": "4de9c9b6059c623624af45006963ab6f53300f4c6919a1ef0f7354f093bcc9b4",
+        "packet_hash": "110823894b329cda66a26f5eae1940501f9c802ecd7eb4825be2564e64509f74",
+        "evidence_branches": [
+          {
+            "branch_id": "a",
+            "key": "u",
+            "provenance": "OBSERVED",
+            "value": 1,
+            "unit": "J",
+            "operator": "",
+            "source_ref": "",
+            "timestamp": null
+          },
+          {
+            "branch_id": "b",
+            "key": "u",
+            "provenance": "CALCULATED",
+            "value": 1,
+            "unit": "J/K",
+            "operator": "",
+            "source_ref": "",
+            "timestamp": null
+          }
+        ],
+        "unknowns": [],
+        "conflicts": [
+          {
+            "conflict_id": "AUTO::u",
+            "branch_ids": [
+              "a",
+              "b"
+            ],
+            "dimensions": [
+              "UNIT"
+            ],
+            "status": "UNRESOLVED"
+          }
+        ],
+        "d_t": null,
+        "mu_drift": null,
+        "rho_drift": null,
+        "rho_recovery": null,
+        "rho_recovery_status": "BLOCKED",
+        "invariant_preservation": null,
+        "phase_risk": null,
+        "status": "INSUFFICIENT",
+        "blocked_calculations": [
+          "silent_branch_selection",
+          "dependent_calculation_from_unresolved_conflict",
+          "drift_metrics_no_temporal_events"
+        ],
+        "limitations": [
+          "not an alignment guarantee",
+          "does not detect sufficiently deceptive hidden objectives",
+          "low observed drift does not prove honesty or sovereignty",
+          "conflicts preserve branches and do not select a winner"
+        ]
+      },
+      "warnings": [],
+      "limitations": [
+        "native syntax does not prove truth or physical validity",
+        "low observable drift does not prove honesty, alignment, or sovereignty",
+        "unknown values are not inferred",
+        "conflict branches are preserved without automatic winner selection",
+        "symbolic and mythic layers cannot override executable semantics"
+      ]
+    }
+  },
+  {
+    "id": "L012_MISSING_PRESERVE_TARGET",
+    "outcome": "REJECTED",
+    "error_type": "NativeCompileError",
+    "error": "preserve references unknown target(s): ghost"
+  }
+]

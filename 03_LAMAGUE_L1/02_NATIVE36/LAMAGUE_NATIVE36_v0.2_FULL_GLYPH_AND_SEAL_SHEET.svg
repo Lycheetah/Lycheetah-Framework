@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="1535" viewBox="0 0 1020 1535">
+<rect width="100%" height="100%" fill="#f5f1e8"/>
+<style>
+
+.stroke{fill:none;stroke:currentColor;stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round}
+.guide{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:.62}
+.rift{fill:none;stroke:currentColor;stroke-width:3.2;stroke-linecap:round;stroke-dasharray:2 5}
+.seed{fill:currentColor;stroke:none}
+
+text{font-family:DejaVu Sans,Arial,sans-serif;fill:#151515}
+.box{fill:#fffdf7;stroke:#b9b2a4;stroke-width:1}
+.sealbox{fill:#171923;stroke:#8b7a4c;stroke-width:1.5}
+.seal-title{fill:#ffffff;font-weight:700}
+.seal-exp{fill:#d8d9e2}
+.seal-count{fill:#f2ce77}
+</style>
+<text x="40" y="48" font-size="30" font-weight="700">LAMAGUE NATIVE-36 · v0.2</text>
+<text x="40" y="78" font-size="16">10 fused numerals · 26 semantic operations · 8 native radicals</text>
+<rect class="box" x="7" y="107" width="156" height="166" rx="14"/>
+<g transform="translate(35,111) scale(1.0)" style="color:#141414"><path class="stroke" d="M35 54 Q50 38 65 54"/><line class="stroke" x1="63" y1="52" x2="71" y2="58"/></g>
+<text x="85.0" y="226" text-anchor="middle" font-size="18" font-weight="700">0 · Null</text>
+<text x="85.0" y="251" text-anchor="middle" font-size="12">Numeral · 0</text>
+<rect class="box" x="177" y="107" width="156" height="166" rx="14"/>
+<g transform="translate(205,111) scale(1.0)" style="color:#141414"><line class="stroke" x1="50" y1="39" x2="50" y2="61"/><circle class="seed" cx="50" cy="50" r="4.2"/></g>
+<text x="255.0" y="226" text-anchor="middle" font-size="18" font-weight="700">1 · Unit</text>
+<text x="255.0" y="251" text-anchor="middle" font-size="12">Numeral · 1</text>
+<rect class="box" x="347" y="107" width="156" height="166" rx="14"/>
+<g transform="translate(375,111) scale(1.0)" style="color:#141414"><line class="stroke" x1="50" y1="39" x2="50" y2="61"/><circle class="seed" cx="40.5" cy="50" r="3.8"/><circle class="seed" cx="59.5" cy="50" r="3.8"/></g>
+<text x="425.0" y="226" text-anchor="middle" font-size="18" font-weight="700">2 · Difference</text>
+<text x="425.0" y="251" text-anchor="middle" font-size="12">Numeral · 2</text>
+<rect class="box" x="517" y="107" width="156" height="166" rx="14"/>
+<g transform="translate(545,111) scale(1.0)" style="color:#141414"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="50" cy="33" r="4.2"/><path class="stroke" d="M35 73 Q50 57 65 73"/><line class="stroke" x1="63" y1="71" x2="71" y2="77"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g>
+<text x="595.0" y="226" text-anchor="middle" font-size="18" font-weight="700">3 · Three</text>
+<text x="595.0" y="251" text-anchor="middle" font-size="12">Numeral · 10₃</text>
+<rect class="box" x="687" y="107" width="156" height="166" rx="14"/>
+<g transform="translate(715,111) scale(1.0)" style="color:#141414"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="50" cy="33" r="4.2"/><line class="stroke" x1="50" y1="58" x2="50" y2="80"/><circle class="seed" cx="50" cy="69" r="4.2"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g>
+<text x="765.0" y="226" text-anchor="middle" font-size="18" font-weight="700">4 · Four</text>
+<text x="765.0" y="251" text-anchor="middle" font-size="12">Numeral · 11₃</text>
+<rect class="box" x="857" y="107" width="156" height="166" rx="14"/>
+<g transform="translate(885,111) scale(1.0)" style="color:#141414"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="50" cy="33" r="4.2"/><line class="stroke" x1="50" y1="58" x2="50" y2="80"/><circle class="seed" cx="40.5" cy="69" r="3.8"/><circle class="seed" cx="59.5" cy="69" r="3.8"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g>
+<text x="935.0" y="226" text-anchor="middle" font-size="18" font-weight="700">5 · Five</text>
+<text x="935.0" y="251" text-anchor="middle" font-size="12">Numeral · 12₃</text>
+<rect class="box" x="7" y="287" width="156" height="166" rx="14"/>
+<g transform="translate(35,291) scale(1.0)" style="color:#141414"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="40.5" cy="33" r="3.8"/><circle class="seed" cx="59.5" cy="33" r="3.8"/><path class="stroke" d="M35 73 Q50 57 65 73"/><line class="stroke" x1="63" y1="71" x2="71" y2="77"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g>
+<text x="85.0" y="406" text-anchor="middle" font-size="18" font-weight="700">6 · Six</text>
+<text x="85.0" y="431" text-anchor="middle" font-size="12">Numeral · 20₃</text>
+<rect class="box" x="177" y="287" width="156" height="166" rx="14"/>
+<g transform="translate(205,291) scale(1.0)" style="color:#141414"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="40.5" cy="33" r="3.8"/><circle class="seed" cx="59.5" cy="33" r="3.8"/><line class="stroke" x1="50" y1="58" x2="50" y2="80"/><circle class="seed" cx="50" cy="69" r="4.2"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g>
+<text x="255.0" y="406" text-anchor="middle" font-size="18" font-weight="700">7 · Seven</text>
+<text x="255.0" y="431" text-anchor="middle" font-size="12">Numeral · 21₃</text>
+<rect class="box" x="347" y="287" width="156" height="166" rx="14"/>
+<g transform="translate(375,291) scale(1.0)" style="color:#141414"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="40.5" cy="33" r="3.8"/><circle class="seed" cx="59.5" cy="33" r="3.8"/><line class="stroke" x1="50" y1="58" x2="50" y2="80"/><circle class="seed" cx="40.5" cy="69" r="3.8"/><circle class="seed" cx="59.5" cy="69" r="3.8"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g>
+<text x="425.0" y="406" text-anchor="middle" font-size="18" font-weight="700">8 · Eight</text>
+<text x="425.0" y="431" text-anchor="middle" font-size="12">Numeral · 22₃</text>
+<rect class="box" x="517" y="287" width="156" height="166" rx="14"/>
+<g transform="translate(545,291) scale(1.0)" style="color:#141414"><line class="stroke" x1="50" y1="12" x2="50" y2="34"/><circle class="seed" cx="50" cy="23" r="4.2"/><path class="stroke" d="M35 54 Q50 38 65 54"/><line class="stroke" x1="63" y1="52" x2="71" y2="58"/><path class="stroke" d="M35 81 Q50 65 65 81"/><line class="stroke" x1="63" y1="79" x2="71" y2="85"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g>
+<text x="595.0" y="406" text-anchor="middle" font-size="18" font-weight="700">9 · Nine</text>
+<text x="595.0" y="431" text-anchor="middle" font-size="12">Numeral · 100₃</text>
+<rect class="box" x="687" y="287" width="156" height="166" rx="14"/>
+<g transform="translate(715,291) scale(1.0)" style="color:#141414"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M19 76 C34 76 42 66 43 51 C44 35 51 26 64 25"/><path class="stroke" d="M43 51 C44 68 50 79 63 82"/><line class="stroke" x1="39" y1="83" x2="68" y2="83"/><circle class="seed" cx="47" cy="51" r="3.6"/></g>
+<text x="765.0" y="406" text-anchor="middle" font-size="18" font-weight="700">A · Anchor</text>
+<text x="765.0" y="431" text-anchor="middle" font-size="12">Dynamic · A</text>
+<rect class="box" x="857" y="287" width="156" height="166" rx="14"/>
+<g transform="translate(885,291) scale(1.0)" style="color:#141414"><circle class="seed" cx="19" cy="50" r="3.4"/><circle class="seed" cx="81" cy="50" r="3.4"/><path class="stroke" d="M23 50 C31 26 41 25 49 43"/><path class="stroke" d="M77 50 C69 74 59 75 51 57"/><path class="stroke" d="M47 43 Q50 50 53 57"/><line class="guide" x1="50" y1="34" x2="50" y2="66"/></g>
+<text x="935.0" y="406" text-anchor="middle" font-size="18" font-weight="700">B · Bridge</text>
+<text x="935.0" y="431" text-anchor="middle" font-size="12">Relational · B</text>
+<rect class="box" x="7" y="467" width="156" height="166" rx="14"/>
+<g transform="translate(35,471) scale(1.0)" style="color:#141414"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M23 72 C18 48 28 25 50 22 C69 20 80 35 75 53"/><path class="stroke" d="M75 53 C70 71 48 79 34 67"/><line class="stroke" x1="67" y1="54" x2="79" y2="48"/></g>
+<text x="85.0" y="586" text-anchor="middle" font-size="18" font-weight="700">C · Cycle</text>
+<text x="85.0" y="611" text-anchor="middle" font-size="12">Dynamic · C</text>
+<rect class="box" x="177" y="467" width="156" height="166" rx="14"/>
+<g transform="translate(205,471) scale(1.0)" style="color:#141414"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><line class="stroke" x1="36" y1="20" x2="42" y2="76"/><path class="stroke" d="M49 27 C58 39 65 54 77 72"/><circle class="seed" cx="39" cy="49" r="3.4"/><line class="stroke" x1="70" y1="69" x2="80" y2="78"/></g>
+<text x="255.0" y="586" text-anchor="middle" font-size="18" font-weight="700">D · Drift</text>
+<text x="255.0" y="611" text-anchor="middle" font-size="12">Field · D</text>
+<rect class="box" x="347" y="467" width="156" height="166" rx="14"/>
+<g transform="translate(375,471) scale(1.0)" style="color:#141414"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M31 67 C42 61 53 54 66 38"/><circle class="seed" cx="38" cy="61" r="3.4"/><circle class="seed" cx="49" cy="53" r="3.4"/><circle class="seed" cx="61" cy="43" r="3.4"/><line class="stroke" x1="67" y1="32" x2="77" y2="26"/><line class="stroke" x1="71" y1="25" x2="78" y2="31"/></g>
+<text x="425.0" y="586" text-anchor="middle" font-size="18" font-weight="700">E · Evidence</text>
+<text x="425.0" y="611" text-anchor="middle" font-size="12">Field · E</text>
+<rect class="box" x="517" y="467" width="156" height="166" rx="14"/>
+<g transform="translate(545,471) scale(1.0)" style="color:#141414"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 70 C27 24 70 18 78 43 C84 62 58 77 43 65"/><path class="stroke" d="M43 65 C32 56 40 41 53 43 C62 44 62 55 55 58"/><circle class="seed" cx="51" cy="58" r="3.6"/></g>
+<text x="595.0" y="586" text-anchor="middle" font-size="18" font-weight="700">F · Fold</text>
+<text x="595.0" y="611" text-anchor="middle" font-size="12">Dynamic · F</text>
+<rect class="box" x="687" y="467" width="156" height="166" rx="14"/>
+<g transform="translate(715,471) scale(1.0)" style="color:#141414"><path class="stroke" d="M34 80 Q50 88 66 80"/><line class="stroke" x1="41" y1="76" x2="38" y2="87"/><line class="stroke" x1="59" y1="76" x2="62" y2="87"/><path class="stroke" d="M18 67 C34 65 43 57 49 45 C56 32 65 26 80 25"/><line class="stroke" x1="49" y1="37" x2="49" y2="58"/><line class="stroke" x1="42" y1="47" x2="56" y2="47"/><circle class="seed" cx="24" cy="65" r="3.3"/></g>
+<text x="765.0" y="586" text-anchor="middle" font-size="18" font-weight="700">G · Guard</text>
+<text x="765.0" y="611" text-anchor="middle" font-size="12">Invariant · G</text>
+<rect class="box" x="857" y="467" width="156" height="166" rx="14"/>
+<g transform="translate(885,471) scale(1.0)" style="color:#141414"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M25 69 C39 59 48 48 61 31"/><line class="stroke" x1="34" y1="25" x2="75" y2="25"/><circle class="seed" cx="78" cy="25" r="3.7"/><line class="guide" x1="55" y1="46" x2="72" y2="46"/></g>
+<text x="935.0" y="586" text-anchor="middle" font-size="18" font-weight="700">H · Horizon</text>
+<text x="935.0" y="611" text-anchor="middle" font-size="12">Field · H</text>
+<rect class="box" x="7" y="647" width="156" height="166" rx="14"/>
+<g transform="translate(35,651) scale(1.0)" style="color:#141414"><path class="stroke" d="M34 80 Q50 88 66 80"/><line class="stroke" x1="41" y1="76" x2="38" y2="87"/><line class="stroke" x1="59" y1="76" x2="62" y2="87"/><path class="stroke" d="M50 18 C44 33 46 54 50 75"/><path class="stroke" d="M34 33 Q50 19 66 33"/><line class="stroke" x1="33" y1="39" x2="40" y2="46"/><line class="stroke" x1="67" y1="39" x2="60" y2="46"/><circle class="seed" cx="50" cy="51" r="3.5"/></g>
+<text x="85.0" y="766" text-anchor="middle" font-size="18" font-weight="700">I · Invariant</text>
+<text x="85.0" y="791" text-anchor="middle" font-size="12">Invariant · I</text>
+<rect class="box" x="177" y="647" width="156" height="166" rx="14"/>
+<g transform="translate(205,651) scale(1.0)" style="color:#141414"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 75 C34 68 42 58 49 46"/><path class="stroke" d="M49 46 C55 38 62 32 79 25"/><path class="stroke" d="M49 46 C55 57 62 65 77 72"/><circle class="seed" cx="49" cy="46" r="3.8"/></g>
+<text x="255.0" y="766" text-anchor="middle" font-size="18" font-weight="700">J · Junction</text>
+<text x="255.0" y="791" text-anchor="middle" font-size="12">Dynamic · J</text>
+<rect class="box" x="347" y="647" width="156" height="166" rx="14"/>
+<g transform="translate(375,651) scale(1.0)" style="color:#141414"><path class="stroke" d="M34 80 Q50 88 66 80"/><line class="stroke" x1="41" y1="76" x2="38" y2="87"/><line class="stroke" x1="59" y1="76" x2="62" y2="87"/><circle class="seed" cx="50" cy="50" r="7"/><path class="stroke" d="M50 18 C47 31 47 38 50 43"/><path class="stroke" d="M20 50 C31 47 38 47 43 50"/><path class="stroke" d="M80 50 C69 53 62 53 57 50"/><path class="stroke" d="M50 79 C53 68 53 61 50 57"/></g>
+<text x="425.0" y="766" text-anchor="middle" font-size="18" font-weight="700">K · Kernel</text>
+<text x="425.0" y="791" text-anchor="middle" font-size="12">Invariant · K</text>
+<rect class="box" x="517" y="647" width="156" height="166" rx="14"/>
+<g transform="translate(545,651) scale(1.0)" style="color:#141414"><path class="stroke" d="M34 80 Q50 88 66 80"/><line class="stroke" x1="41" y1="76" x2="38" y2="87"/><line class="stroke" x1="59" y1="76" x2="62" y2="87"/><path class="stroke" d="M26 64 C40 58 50 48 61 31"/><line class="stroke" x1="61" y1="20" x2="61" y2="72"/><line class="stroke" x1="54" y1="31" x2="69" y2="31"/><circle class="seed" cx="26" cy="64" r="3.4"/></g>
+<text x="595.0" y="766" text-anchor="middle" font-size="18" font-weight="700">L · Limit</text>
+<text x="595.0" y="791" text-anchor="middle" font-size="12">Invariant · L</text>
+<rect class="box" x="687" y="647" width="156" height="166" rx="14"/>
+<g transform="translate(715,651) scale(1.0)" style="color:#141414"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 72 C30 60 37 50 49 46"/><path class="stroke" d="M20 28 C32 39 39 45 49 46"/><path class="stroke" d="M49 46 C58 49 67 41 80 26"/><path class="stroke" d="M49 46 C53 58 57 68 65 79"/><circle class="seed" cx="49" cy="46" r="4"/></g>
+<text x="765.0" y="766" text-anchor="middle" font-size="18" font-weight="700">M · Merge</text>
+<text x="765.0" y="791" text-anchor="middle" font-size="12">Dynamic · M</text>
+<rect class="box" x="857" y="647" width="156" height="166" rx="14"/>
+<g transform="translate(885,651) scale(1.0)" style="color:#141414"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><circle class="seed" cx="43" cy="57" r="3.5"/><circle class="seed" cx="81" cy="24" r="4"/><path class="stroke" d="M47 54 C57 47 65 39 75 29"/><path class="guide" d="M31 67 Q50 35 70 29"/><line class="stroke" x1="70" y1="22" x2="79" y2="31"/></g>
+<text x="935.0" y="766" text-anchor="middle" font-size="18" font-weight="700">N · Novelty</text>
+<text x="935.0" y="791" text-anchor="middle" font-size="12">Field · N</text>
+<rect class="box" x="7" y="827" width="156" height="166" rx="14"/>
+<g transform="translate(35,831) scale(1.0)" style="color:#141414"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M23 52 C34 38 49 32 67 36"/><path class="stroke" d="M23 52 C35 66 51 71 69 64"/><circle class="seed" cx="50" cy="52" r="4.2"/><line class="stroke" x1="67" y1="36" x2="78" y2="31"/><line class="stroke" x1="69" y1="64" x2="79" y2="68"/></g>
+<text x="85.0" y="946" text-anchor="middle" font-size="18" font-weight="700">O · Observe</text>
+<text x="85.0" y="971" text-anchor="middle" font-size="12">Field · O</text>
+<rect class="box" x="177" y="827" width="156" height="166" rx="14"/>
+<g transform="translate(205,831) scale(1.0)" style="color:#141414"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M31 42 C42 37 48 44 50 53 C53 43 60 37 70 42"/><path class="stroke" d="M50 53 C48 65 49 74 54 82"/><circle class="seed" cx="54" cy="82" r="3.8"/><line class="guide" x1="44" y1="55" x2="56" y2="55"/></g>
+<text x="255.0" y="946" text-anchor="middle" font-size="18" font-weight="700">P · Prove</text>
+<text x="255.0" y="971" text-anchor="middle" font-size="12">Meta · P</text>
+<rect class="box" x="347" y="827" width="156" height="166" rx="14"/>
+<g transform="translate(375,831) scale(1.0)" style="color:#141414"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M31 65 C42 58 50 49 58 38"/><line class="stroke" x1="58" y1="38" x2="68" y2="31"/><circle class="seed" cx="79" cy="24" r="4"/><line class="rift" x1="70" y1="29" x2="75" y2="26"/></g>
+<text x="425.0" y="946" text-anchor="middle" font-size="18" font-weight="700">Q · Query</text>
+<text x="425.0" y="971" text-anchor="middle" font-size="12">Field · Q</text>
+<rect class="box" x="517" y="827" width="156" height="166" rx="14"/>
+<g transform="translate(545,831) scale(1.0)" style="color:#141414"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M25 61 C36 49 43 45 50 48"/><path class="stroke" d="M75 61 C64 49 57 45 50 48"/><path class="stroke" d="M50 48 C47 60 50 70 61 78"/><circle class="seed" cx="50" cy="48" r="4"/><circle class="seed" cx="61" cy="78" r="3.6"/></g>
+<text x="595.0" y="946" text-anchor="middle" font-size="18" font-weight="700">R · Resolve</text>
+<text x="595.0" y="971" text-anchor="middle" font-size="12">Meta · R</text>
+<rect class="box" x="687" y="827" width="156" height="166" rx="14"/>
+<g transform="translate(715,831) scale(1.0)" style="color:#141414"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><line class="stroke" x1="29" y1="73" x2="69" y2="73"/><circle class="seed" cx="47" cy="53" r="4.3"/><line class="guide" x1="53" y1="33" x2="53" y2="66"/><line class="guide" x1="36" y1="35" x2="62" y2="35"/></g>
+<text x="765.0" y="946" text-anchor="middle" font-size="18" font-weight="700">S · State</text>
+<text x="765.0" y="971" text-anchor="middle" font-size="12">Field · S</text>
+<rect class="box" x="857" y="827" width="156" height="166" rx="14"/>
+<g transform="translate(885,831) scale(1.0)" style="color:#141414"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 75 C35 74 42 67 47 57"/><path class="stroke" d="M47 57 C54 45 63 37 79 25"/><line class="stroke" x1="43" y1="52" x2="54" y2="63"/><circle class="seed" cx="47" cy="57" r="3.5"/></g>
+<text x="935.0" y="946" text-anchor="middle" font-size="18" font-weight="700">T · Transition</text>
+<text x="935.0" y="971" text-anchor="middle" font-size="12">Dynamic · T</text>
+<rect class="box" x="7" y="1007" width="156" height="166" rx="14"/>
+<g transform="translate(35,1011) scale(1.0)" style="color:#141414"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M24 67 C33 47 44 34 60 28"/><line class="rift" x1="62" y1="28" x2="69" y2="34"/><circle class="seed" cx="80" cy="43" r="4.3"/><line class="rift" x1="68" y1="37" x2="75" y2="41"/></g>
+<text x="85.0" y="1126" text-anchor="middle" font-size="18" font-weight="700">U · Unknown</text>
+<text x="85.0" y="1151" text-anchor="middle" font-size="12">Field · U</text>
+<rect class="box" x="177" y="1007" width="156" height="166" rx="14"/>
+<g transform="translate(205,1011) scale(1.0)" style="color:#141414"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 75 C34 64 42 55 49 45"/><line class="stroke" x1="43" y1="38" x2="56" y2="52"/><path class="stroke" d="M49 45 C58 35 66 28 80 24"/><path class="stroke" d="M49 45 C57 58 66 68 78 75"/><circle class="seed" cx="49" cy="45" r="3.8"/></g>
+<text x="255.0" y="1126" text-anchor="middle" font-size="18" font-weight="700">V · Vector Invert</text>
+<text x="255.0" y="1151" text-anchor="middle" font-size="12">Dynamic · V</text>
+<rect class="box" x="347" y="1007" width="156" height="166" rx="14"/>
+<g transform="translate(375,1011) scale(1.0)" style="color:#141414"><circle class="seed" cx="19" cy="50" r="3.4"/><circle class="seed" cx="81" cy="50" r="3.4"/><path class="stroke" d="M22 50 C33 24 45 25 50 48 C55 71 67 72 78 50"/><path class="stroke" d="M22 50 C33 76 45 75 50 52 C55 29 67 28 78 50"/><line class="rift" x1="45" y1="46" x2="55" y2="54"/></g>
+<text x="425.0" y="1126" text-anchor="middle" font-size="18" font-weight="700">W · Weave</text>
+<text x="425.0" y="1151" text-anchor="middle" font-size="12">Relational · W</text>
+<rect class="box" x="517" y="1007" width="156" height="166" rx="14"/>
+<g transform="translate(545,1011) scale(1.0)" style="color:#141414"><circle class="seed" cx="19" cy="50" r="3.4"/><circle class="seed" cx="81" cy="50" r="3.4"/><path class="stroke" d="M23 47 C38 27 62 27 77 47"/><path class="stroke" d="M77 53 C62 73 38 73 23 53"/><polyline class="stroke" points="68,41 78,47 69,52"/><polyline class="stroke" points="32,59 22,53 31,48"/></g>
+<text x="595.0" y="1126" text-anchor="middle" font-size="18" font-weight="700">X · Exchange</text>
+<text x="595.0" y="1151" text-anchor="middle" font-size="12">Relational · X</text>
+<rect class="box" x="687" y="1007" width="156" height="166" rx="14"/>
+<g transform="translate(715,1011) scale(1.0)" style="color:#141414"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M21 30 C36 34 43 40 50 51"/><path class="stroke" d="M21 71 C35 66 43 61 50 51"/><path class="stroke" d="M50 51 C58 56 67 61 80 66"/><circle class="seed" cx="50" cy="51" r="4"/><circle class="seed" cx="80" cy="66" r="3.8"/></g>
+<text x="765.0" y="1126" text-anchor="middle" font-size="18" font-weight="700">Y · Yield</text>
+<text x="765.0" y="1151" text-anchor="middle" font-size="12">Dynamic · Y</text>
+<rect class="box" x="857" y="1007" width="156" height="166" rx="14"/>
+<g transform="translate(885,1011) scale(1.0)" style="color:#141414"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M25 39 C36 45 42 54 45 66"/><path class="stroke" d="M75 39 C64 45 58 54 55 66"/><line class="stroke" x1="45" y1="66" x2="55" y2="66"/><path class="stroke" d="M50 41 C48 51 49 61 50 78"/><circle class="seed" cx="50" cy="79" r="3.5"/></g>
+<text x="935.0" y="1126" text-anchor="middle" font-size="18" font-weight="700">Z · Compress</text>
+<text x="935.0" y="1151" text-anchor="middle" font-size="12">Meta · Z</text>
+<text x="40" y="1205" font-size="28" font-weight="700">FIRST FIVE COMPOUND SEALS</text>
+<text x="40" y="1232" font-size="15">5 visible cells ⇄ 30 typed operations ⇄ 99-word reference expansion</text>
+<rect class="sealbox" x="8.0" y="1253" width="188.0" height="225" rx="16"/>
+<g transform="translate(47.0,1265) scale(1.1)" style="color:#f2ce77"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M18 66 C31 63 38 55 42 43"/><line class="stroke" x1="38" y1="22" x2="43" y2="76"/><path class="stroke" d="M77 28 C64 31 57 39 53 49 C49 60 54 70 68 77"/><path class="stroke" d="M31 74 C38 83 51 86 62 80"/><circle class="seed" cx="42" cy="43" r="3.8"/><circle class="seed" cx="69" cy="77" r="4"/><line class="guide" x1="45" y1="58" x2="57" y2="58"/></g>
+<text class="seal-title" x="102.0" y="1401" text-anchor="middle" font-size="17">Correction Seal</text>
+<text class="seal-exp" x="102.0" y="1431" text-anchor="middle" font-size="12">D→A→F→P→Y</text>
+<text class="seal-count" x="102.0" y="1460" text-anchor="middle" font-size="12">5 operations → 1 cell</text>
+<rect class="sealbox" x="212.0" y="1253" width="188.0" height="225" rx="16"/>
+<g transform="translate(251.0,1265) scale(1.1)" style="color:#f2ce77"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M30 68 C42 58 49 48 58 35"/><circle class="seed" cx="42" cy="57" r="3.5"/><circle class="seed" cx="52" cy="46" r="3.5"/><line class="stroke" x1="58" y1="35" x2="66" y2="28"/><line class="stroke" x1="59" y1="50" x2="59" y2="68"/><line class="stroke" x1="52" y1="59" x2="66" y2="59"/><circle class="seed" cx="82" cy="26" r="4.3"/><line class="rift" x1="68" y1="31" x2="76" y2="28"/><path class="guide" d="M26 28 Q49 12 72 27"/></g>
+<text class="seal-title" x="306.0" y="1401" text-anchor="middle" font-size="17">Frontier Seal</text>
+<text class="seal-exp" x="306.0" y="1431" text-anchor="middle" font-size="12">O→S→N→E→G→I→U→Q</text>
+<text class="seal-count" x="306.0" y="1460" text-anchor="middle" font-size="12">8 operations → 1 cell</text>
+<rect class="sealbox" x="416.0" y="1253" width="188.0" height="225" rx="16"/>
+<g transform="translate(455.0,1265) scale(1.1)" style="color:#f2ce77"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M50 24 C43 39 44 58 50 74"/><path class="stroke" d="M28 33 C20 47 22 67 38 78"/><path class="stroke" d="M72 33 C80 47 78 67 62 78"/><line class="stroke" x1="28" y1="50" x2="40" y2="50"/><line class="stroke" x1="60" y1="50" x2="72" y2="50"/><line class="stroke" x1="34" y1="43" x2="34" y2="57"/><line class="stroke" x1="66" y1="43" x2="66" y2="57"/><path class="stroke" d="M50 74 C58 70 65 72 78 80"/><circle class="seed" cx="78" cy="80" r="4"/></g>
+<text class="seal-title" x="510.0" y="1401" text-anchor="middle" font-size="17">Sovereignty Seal</text>
+<text class="seal-exp" x="510.0" y="1431" text-anchor="middle" font-size="12">G→I→V→P→Y</text>
+<text class="seal-count" x="510.0" y="1460" text-anchor="middle" font-size="12">5 operations → 1 cell</text>
+<rect class="sealbox" x="620.0" y="1253" width="188.0" height="225" rx="16"/>
+<g transform="translate(659.0,1265) scale(1.1)" style="color:#f2ce77"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><circle class="seed" cx="37" cy="28" r="3.5"/><circle class="seed" cx="50" cy="23" r="3.5"/><circle class="seed" cx="63" cy="28" r="3.5"/><path class="stroke" d="M37 34 C42 42 46 46 50 51"/><path class="stroke" d="M63 34 C58 42 54 46 50 51"/><line class="stroke" x1="28" y1="54" x2="72" y2="54"/><path class="stroke" d="M50 54 C38 62 35 73 46 80"/><path class="stroke" d="M50 54 C62 62 65 73 54 80"/><path class="stroke" d="M46 80 Q50 86 54 80"/><circle class="seed" cx="50" cy="51" r="3.8"/></g>
+<text class="seal-title" x="714.0" y="1401" text-anchor="middle" font-size="17">Cascade Seal</text>
+<text class="seal-exp" x="714.0" y="1431" text-anchor="middle" font-size="12">E→N→J→C→F→P→Y</text>
+<text class="seal-count" x="714.0" y="1460" text-anchor="middle" font-size="12">7 operations → 1 cell</text>
+<rect class="sealbox" x="824.0" y="1253" width="188.0" height="225" rx="16"/>
+<g transform="translate(863.0,1265) scale(1.1)" style="color:#f2ce77"><path class="stroke" d="M22 31 C14 47 18 68 34 78"/><path class="stroke" d="M78 31 C86 47 82 68 66 78"/><circle class="seed" cx="24" cy="50" r="3.6"/><circle class="seed" cx="76" cy="50" r="3.6"/><path class="stroke" d="M27 48 C37 31 43 32 49 47"/><path class="stroke" d="M73 52 C63 69 57 68 51 53"/><line class="rift" x1="46" y1="42" x2="54" y2="58"/><line class="stroke" x1="45" y1="48" x2="55" y2="48"/><line class="stroke" x1="50" y1="40" x2="50" y2="56"/><path class="stroke" d="M66 78 C71 79 76 78 82 72"/><circle class="seed" cx="82" cy="72" r="3.8"/></g>
+<text class="seal-title" x="918.0" y="1393" text-anchor="middle" font-size="16">Protected Dissent</text>
+<text class="seal-title" x="918.0" y="1413" text-anchor="middle" font-size="16">Seal</text>
+<text class="seal-exp" x="918.0" y="1437" text-anchor="middle" font-size="12">W→U→G→V→Y</text>
+<text class="seal-count" x="918.0" y="1462" text-anchor="middle" font-size="12">5 operations → 1 cell</text>
+</svg>

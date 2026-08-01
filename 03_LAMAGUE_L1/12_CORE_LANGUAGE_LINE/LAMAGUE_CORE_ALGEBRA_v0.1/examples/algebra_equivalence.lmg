@@ -1,0 +1,3 @@
+check equivalent((Ao ⊗ Φ) ⊗ Ψ, Ψ ⊗ (Φ ⊗ Ao));
+check equivalent(Ao ⇌ Φ, Φ ⇌ Ao);
+check equivalent(Ao ↯ Φ, Φ ↯ Ao);

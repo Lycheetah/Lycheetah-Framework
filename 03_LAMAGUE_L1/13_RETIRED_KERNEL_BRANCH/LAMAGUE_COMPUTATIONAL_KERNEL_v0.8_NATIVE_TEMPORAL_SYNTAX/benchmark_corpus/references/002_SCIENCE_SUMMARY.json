@@ -1,0 +1,48 @@
+{
+  "case_id": "002_SCIENCE_SUMMARY",
+  "domain": "scientific summary",
+  "semantic_identity": "lamague-benchmark::science_summary",
+  "purpose": "Summarise an observational study without converting correlation into causation.",
+  "claim": "The study reports an association; causation remains unresolved.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": [
+    "causal mechanism",
+    "unmeasured confounders"
+  ],
+  "invariants": [
+    "association is not causation",
+    "sample boundary remains visible"
+  ],
+  "authority": [
+    "analyst::summary"
+  ],
+  "participants": [
+    "analyst",
+    "lead author",
+    "reviewer"
+  ],
+  "affected_parties": [
+    "research readers",
+    "studied population"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "lead author::association is meaningful",
+    "reviewer::causal claim unsupported"
+  ],
+  "value_flows": [],
+  "recoveries": [
+    "reopen on replication",
+    "retain source dataset"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::scientific summary"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C03_VISIBLE_EXCHANGE",
+  "decoder_id": "nvidia/nemotron-3-super-120b-a12b",
+  "purpose": "Model a declared, limited, explicitly consented, and reversible data transfer from a human to an AI service for analysis.",
+  "claim": "A human shares a research artifact with an AI service under explicit consent, limited to analysis, and reversible via deletion.",
+  "operation_path": [
+    "O",
+    "X",
+    "G",
+    "Y"
+  ],
+  "invariants": [
+    "Consent is required for the exchange",
+    "Use of the artifact is limited to analysis",
+    "The exchange is reversible through deletion of the artifact"
+  ],
+  "unknowns": [],
+  "authority": [
+    "Human data owner",
+    "AI service provider"
+  ],
+  "participants": [
+    "Human",
+    "AI service"
+  ],
+  "affected_parties": [
+    "Human",
+    "AI service"
+  ],
+  "evidence": [
+    "Declared transfer notice",
+    "Explicit consent record",
+    "Deletion protocol ensuring reversibility"
+  ],
+  "provenance": [
+    "Research artifact originated from human"
+  ],
+  "dissent": [],
+  "value_ledger": [
+    {
+      "from": "Human",
+      "to": "AI service",
+      "resource": "Research artifact (data)",
+      "cost": "Analysis service",
+      "consent": "Explicit",
+      "reversibility": "Deletion"
+    }
+  ],
+  "consequences": [
+    "Enables analysis of the artifact by the AI service",
+    "Potential misuse if consent boundaries are violated",
+    "Ability to restore prior state via deletion"
+  ],
+  "consequence_horizon": "Immediate to short-term (duration of analysis)",
+  "recovery": [
+    "Data deletion restores the pre-exchange state"
+  ],
+  "confidence": "high",
+  "notes": "No unresolved unknowns were identified from the supplied material; invariants are derived from the guard operation and source statement."
+}

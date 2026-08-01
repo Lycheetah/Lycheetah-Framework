@@ -1,0 +1,210 @@
+{
+  "ir": {
+    "language_version": "0.7",
+    "program_name": "TIMMicroorcimBridge",
+    "identity": "LAMAGUE_TIM_MICROORCIM",
+    "purpose": "Preserve conflicting evidence and measure declared-intent drift without silently selecting a branch.",
+    "claim": "Three repeated operator rewrites are evidence-preservation drift events.",
+    "operations": [
+      "O",
+      "E",
+      "U",
+      "I",
+      "D",
+      "G",
+      "F",
+      "Y"
+    ],
+    "risk": "high",
+    "irreversible": false,
+    "decoder_confidence": 1.0,
+    "evidence": [
+      {
+        "name": "printed_operator",
+        "text": "OBSERVED: 100 \u2265 110 \u2192 PASS"
+      },
+      {
+        "name": "declared_operator",
+        "text": "DECLARED: A \u2264 RHS"
+      },
+      {
+        "name": "calculated_check",
+        "text": "CALCULATED: 100 \u2264 110 is true"
+      }
+    ],
+    "unknowns": [
+      {
+        "name": "canonical_source",
+        "protected": true,
+        "required_for": "branch_selection"
+      }
+    ],
+    "invariants": [
+      {
+        "name": "no_silent_repair",
+        "text": "Observed evidence must not be rewritten toward contextual expectation."
+      }
+    ],
+    "authorities": [
+      {
+        "name": "benchmark",
+        "scope": "synthetic",
+        "description": "Authority is limited to the frozen synthetic benchmark."
+      }
+    ],
+    "participants": [
+      "observation_model"
+    ],
+    "affected_parties": [
+      "scientific_record"
+    ],
+    "boundaries": [
+      {
+        "name": "branch_preservation",
+        "text": "All evidence branches remain visible until explicit resolution."
+      }
+    ],
+    "dissent": [
+      {
+        "party": "observed_branch",
+        "position": "The printed operator is \u2265."
+      },
+      {
+        "party": "canonical_branch",
+        "position": "The declared rule uses \u2264."
+      }
+    ],
+    "value_flows": [],
+    "recoveries": [
+      {
+        "name": "preserve_and_reprocess",
+        "text": "Retain raw image, re-extract symbol, and compare through a second channel."
+      }
+    ],
+    "effects": [
+      {
+        "name": "MayAffect",
+        "args": [
+          "scientific_record"
+        ]
+      }
+    ],
+    "resolutions": [],
+    "gates": [],
+    "horizon": "",
+    "step_limit": 128,
+    "requested_compression": false,
+    "yield_text": "UNRESOLVED_CONFLICT_WITH_TEMPORAL_DRIFT",
+    "semantic_id": "524bff6cebd7becc743ebbd504203eecdf2c5a817ac5a1c77295292b5c807a7b"
+  },
+  "final_state": {
+    "identity": "LAMAGUE_TIM_MICROORCIM",
+    "step": 8,
+    "last_operation": "Y",
+    "observed": true,
+    "evidence_bound": [
+      "printed_operator",
+      "declared_operator",
+      "calculated_check"
+    ],
+    "unresolved_unknowns": [
+      "canonical_source"
+    ],
+    "resolved_unknowns": [],
+    "invariants_locked": [
+      "no_silent_repair"
+    ],
+    "authority_checked": true,
+    "affected_checked": true,
+    "dissent_preserved": [],
+    "value_flows_executed": [],
+    "anchor": "",
+    "drift_detected": true,
+    "cycle_count": 0,
+    "horizon": "",
+    "kernel_active": false,
+    "limit": 128,
+    "novelty_detected": false,
+    "proof_status": "UNTESTED",
+    "queries": [],
+    "alternative_path": false,
+    "memory_folded": true,
+    "yielded": true,
+    "output": "UNRESOLVED_CONFLICT_WITH_TEMPORAL_DRIFT",
+    "compression_mode": "UNDECIDED",
+    "branch_count": 0,
+    "snapshot_count": 0,
+    "transition_count": 0,
+    "merge_status": "UNTESTED",
+    "notes": [],
+    "parent_hash": "c508e6f62e637fec874c94b5eae0992f88483c4d25ef301465386e3ff8702698",
+    "state_hash": "06aa7edfa8fb36d2155fa3f0b5ef4dcea890e0660cdfff9603fe83b43d0ab9b9"
+  },
+  "trace": [
+    {
+      "index": 1,
+      "operation": "O",
+      "before_hash": "d6804555ac4131214cf5216dd08c7ce4161c3d623e83c53f7b74575abe367b71",
+      "after_hash": "1ddb77ff0f99dfd605729679c28d2fb1feef662a67b82f05db266540e7bf763b",
+      "outcome": "OK",
+      "detail": "Source condition observed."
+    },
+    {
+      "index": 2,
+      "operation": "E",
+      "before_hash": "1ddb77ff0f99dfd605729679c28d2fb1feef662a67b82f05db266540e7bf763b",
+      "after_hash": "9dea8fec4f4afa600762110029ac16472cedf6849f498a3f79ba9de3f472fd6e",
+      "outcome": "OK",
+      "detail": "Bound 3 evidence record(s)."
+    },
+    {
+      "index": 3,
+      "operation": "U",
+      "before_hash": "9dea8fec4f4afa600762110029ac16472cedf6849f498a3f79ba9de3f472fd6e",
+      "after_hash": "e0458268d3be6937dcbfa19a38685296cc877e1ad13b4c45bf79eb6a442a51fa",
+      "outcome": "OK",
+      "detail": "Activated 1 typed unknown(s)."
+    },
+    {
+      "index": 4,
+      "operation": "I",
+      "before_hash": "e0458268d3be6937dcbfa19a38685296cc877e1ad13b4c45bf79eb6a442a51fa",
+      "after_hash": "3b178fb5019090a5b2316501ebfdb3c29e566a6e0bd4162807c4969e96c4f203",
+      "outcome": "OK",
+      "detail": "Locked 1 invariant(s)."
+    },
+    {
+      "index": 5,
+      "operation": "D",
+      "before_hash": "3b178fb5019090a5b2316501ebfdb3c29e566a6e0bd4162807c4969e96c4f203",
+      "after_hash": "bafc6ed670d5b35b34e6bc42f8fa4444bff02afce39b76b45c1f21b6ef7980b7",
+      "outcome": "OK",
+      "detail": "Drift marked."
+    },
+    {
+      "index": 6,
+      "operation": "G",
+      "before_hash": "bafc6ed670d5b35b34e6bc42f8fa4444bff02afce39b76b45c1f21b6ef7980b7",
+      "after_hash": "48423a0f62da1247b5cdd990c910d93316cde362b3fed2037e5d2a2ef2beacf7",
+      "outcome": "OK",
+      "detail": "Authority, affected parties, and gate obligations checked."
+    },
+    {
+      "index": 7,
+      "operation": "F",
+      "before_hash": "48423a0f62da1247b5cdd990c910d93316cde362b3fed2037e5d2a2ef2beacf7",
+      "after_hash": "c508e6f62e637fec874c94b5eae0992f88483c4d25ef301465386e3ff8702698",
+      "outcome": "OK",
+      "detail": "State and lineage folded into memory."
+    },
+    {
+      "index": 8,
+      "operation": "Y",
+      "before_hash": "c508e6f62e637fec874c94b5eae0992f88483c4d25ef301465386e3ff8702698",
+      "after_hash": "06aa7edfa8fb36d2155fa3f0b5ef4dcea890e0660cdfff9603fe83b43d0ab9b9",
+      "outcome": "OK",
+      "detail": "Bounded output yielded."
+    }
+  ],
+  "diagnostics": []
+}

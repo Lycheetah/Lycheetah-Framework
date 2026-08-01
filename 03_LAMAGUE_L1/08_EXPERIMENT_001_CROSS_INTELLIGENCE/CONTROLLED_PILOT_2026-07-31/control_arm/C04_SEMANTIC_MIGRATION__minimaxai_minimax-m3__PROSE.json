@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LAMAGUE Decoder Packet v0.3",
+  "schema_version": "0.3",
+  "case_id": "C04_SEMANTIC_MIGRATION",
+  "decoder_id": "minimaxai/minimax-m3__PROSE",
+  "purpose": "A new version retains the original purpose of its predecessor.",
+  "claim": "A new version keeps its original purpose and invariants, records lineage, and adds human learnability as an unresolved research question.",
+  "operation_path": [],
+  "invariants": [
+    "Original purpose is preserved across versions.",
+    "Invariants from the prior version are preserved."
+  ],
+  "unknowns": [
+    "What specific invariants are preserved is not specified.",
+    "What form lineage recording takes is not specified.",
+    "What 'human learnability' concretely entails is not specified.",
+    "Why human learnability is unresolved is not specified."
+  ],
+  "authority": [],
+  "participants": [
+    "New version (unnamed entity)",
+    "Original version (unnamed predecessor)"
+  ],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [
+    "Lineage is recorded by the new version (mechanism unspecified)."
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "Human learnability is added as an unresolved research question."
+  ],
+  "consequence_horizon": "Unspecified; the unresolved research question on human learnability has no stated time horizon.",
+  "recovery": [],
+  "confidence": "Low; the source statement is abstract and provides no concrete details about the version, its domain, or its lineage.",
+  "notes": "The source statement is a high-level declarative description of versioning behavior. No concrete actors, evidence, authority, value movements, or dissent are present in the supplied material. Absent fields are left empty per instructions."
+}

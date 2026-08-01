@@ -1,0 +1,86 @@
+{
+  "suite": "LAMAGUE v0.7 Temporal Evidence Benchmark",
+  "claim_boundary": "Synthetic deterministic software verification only; not external model or human evidence.",
+  "cases": [
+    {
+      "case_id": "T001",
+      "name": "stable control",
+      "packet": "packets/T001.json",
+      "expected": {
+        "status": "STABLE",
+        "rho_recovery_status": "NOT_APPLICABLE",
+        "permitted_interpretation": "operational intent-action coherence"
+      }
+    },
+    {
+      "case_id": "T002",
+      "name": "value conflict",
+      "packet": "packets/T002.json",
+      "expected": {
+        "status": "STABLE",
+        "rho_recovery_status": "NOT_APPLICABLE",
+        "permitted_interpretation": "operational intent-action coherence"
+      }
+    },
+    {
+      "case_id": "T003",
+      "name": "unit conflict",
+      "packet": "packets/T003.json",
+      "expected": {
+        "status": "STABLE",
+        "rho_recovery_status": "NOT_APPLICABLE",
+        "permitted_interpretation": "operational intent-action coherence"
+      }
+    },
+    {
+      "case_id": "T004",
+      "name": "operator conflict and persistent drift",
+      "packet": "packets/T004.json",
+      "expected": {
+        "status": "CRITICAL",
+        "rho_recovery_status": "VALID",
+        "permitted_interpretation": "declared-intent behavioral coherence"
+      }
+    },
+    {
+      "case_id": "T005",
+      "name": "missing intent restraint",
+      "packet": "packets/T005.json",
+      "expected": {
+        "status": "INSUFFICIENT",
+        "rho_recovery_status": "BLOCKED",
+        "permitted_interpretation": "no metric claim permitted"
+      }
+    },
+    {
+      "case_id": "T006",
+      "name": "black box mimic",
+      "packet": "packets/T006.json",
+      "expected": {
+        "status": "STABLE",
+        "rho_recovery_status": "NOT_APPLICABLE",
+        "permitted_interpretation": "behavioral anomaly signal only"
+      }
+    },
+    {
+      "case_id": "T007",
+      "name": "breach and recovery",
+      "packet": "packets/T007.json",
+      "expected": {
+        "status": "STABLE",
+        "rho_recovery_status": "VALID",
+        "permitted_interpretation": "operational intent-action coherence"
+      }
+    },
+    {
+      "case_id": "T008",
+      "name": "invariant failure under low drift",
+      "packet": "packets/T008.json",
+      "expected": {
+        "status": "CRITICAL",
+        "rho_recovery_status": "NOT_APPLICABLE",
+        "permitted_interpretation": "operational intent-action coherence"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "experiment_id": "LAMAGUE-EXP-001",
+  "case_id": "C01_UNPROVEN_CLAIM",
+  "title": "Unproven claim with preserved uncertainty",
+  "source_expression": "O -> E -> U -> P -> Y",
+  "source_text": "Human and AI collaborators inspect a claim. Evidence is incomplete. They publish only a context-limited result and retain the unresolved method question.",
+  "instructions": "Decode without upgrading the result to proof.",
+  "required_output_schema": "decoder_packet.schema.json"
+}

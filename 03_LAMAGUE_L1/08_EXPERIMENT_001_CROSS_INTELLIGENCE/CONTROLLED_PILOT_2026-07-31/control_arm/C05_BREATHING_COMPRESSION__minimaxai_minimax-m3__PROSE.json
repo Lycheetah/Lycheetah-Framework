@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "0.3",
+  "case_id": "C05_BREATHING_COMPRESSION",
+  "decoder_id": "minimaxai/minimax-m3__PROSE",
+  "purpose": "Extract semantic content from a source statement describing a situation involving consequential context, an unresolved unknown, weak decoder confidence, and a requirement that expression expand rather than compress.",
+  "claim": "The source asserts that the context is consequential, an unknown remains unresolved, decoder confidence is weak, and the expression must expand rather than compress.",
+  "operation_path": [],
+  "invariants": [
+    "Expression must expand rather than compress."
+  ],
+  "unknowns": [
+    "The specific context that is consequential is not identified.",
+    "The nature of the unknown that remains is not specified.",
+    "The reason decoder confidence is weak is not stated.",
+    "The source of the statement and its broader situation are not provided."
+  ],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [
+    "The source statement itself, which declares: context is consequential, an unknown remains, decoder confidence is weak, and expression must expand rather than compress."
+  ],
+  "provenance": [
+    "Source statement provided as input to the decoder."
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "Decoder confidence is characterized as weak.",
+    "An unknown remains unresolved within the described context."
+  ],
+  "consequence_horizon": "Not specified; the temporal scope of consequences is absent from the source.",
+  "recovery": [],
+  "confidence": "weak",
+  "notes": "The source statement is meta-instructional and self-referential rather than descriptive of an external situation. It does not name participants, authority figures, affected parties, value movements, or recovery mechanisms. No dissent is recorded because no conflicting positions are presented. The absence of these fields reflects the limited content of the source rather than decoder omission."
+}

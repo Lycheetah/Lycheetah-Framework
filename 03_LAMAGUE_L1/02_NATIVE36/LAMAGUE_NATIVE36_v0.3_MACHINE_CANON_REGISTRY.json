@@ -1,0 +1,1913 @@
+{
+  "name": "LAMAGUE Native-36 Machine Canon",
+  "version": "0.3",
+  "lineage": {
+    "parent": "LAMAGUE_NATIVE36_v0.2_REGISTRY.json",
+    "change": "Added executable semantic anatomy without altering v0.2 visual outlines."
+  },
+  "research_boundary": "This is a forge revision. Missing machine fields revealed by inspection were treated as design targets, not as grounds for discarding the visual prototype.",
+  "radical_definitions": {
+    "keel": "persistent identity or invariant load-bearing structure",
+    "vessel": "bounded state, field or scope",
+    "river": "directional transformation, causality or transfer",
+    "return": "recursion, memory or history reintegration",
+    "rift": "explicit unresolved discontinuity",
+    "thorn": "guard, limit or prohibited crossing",
+    "seed": "active value, observation or instance",
+    "crown": "representation-level operation such as proof or compression",
+    "junction": "typed branching point",
+    "positional_stack": "fused ternary place-value structure"
+  },
+  "modifier_grammar": {
+    "@": "strength or measurement band",
+    "^": "repetition or depth",
+    "[]": "index",
+    "/": "arity",
+    "#": "identifier",
+    ":": "phase",
+    "{}": "exact value or structured payload"
+  },
+  "base_glyphs": [
+    {
+      "token": "0",
+      "token_id": "L36.NULL",
+      "name": "Null",
+      "class": "Numeral",
+      "description": "Empty register or no committed state",
+      "equivalent": "0",
+      "ascii_alias": "0",
+      "experimental_pua": "U+E200",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<path class=\"stroke\" d=\"M35 54 Q50 38 65 54\"/><line class=\"stroke\" x1=\"63\" y1=\"52\" x2=\"71\" y2=\"58\"/>",
+      "canon_status": "FORGED_NUMERAL",
+      "primitive_status": "primitive",
+      "spoken_form": "nul",
+      "type_signature": "Literal<Scalar>",
+      "accepts": [],
+      "returns": "Scalar",
+      "arity": {
+        "min": 0,
+        "max": 0
+      },
+      "preconditions": [],
+      "preserves": [
+        "exact_value"
+      ],
+      "failure_modes": [
+        "invalid_radix"
+      ],
+      "recovery": "reject",
+      "inverse_or_pair": null,
+      "radical_provenance": [
+        "vessel",
+        "rift"
+      ],
+      "visual_logic": "Fused ternary numeral for 0.",
+      "examples": [
+        "0"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "1",
+      "token_id": "L36.UNIT",
+      "name": "Unit",
+      "class": "Numeral",
+      "description": "One held state or stable presence",
+      "equivalent": "1",
+      "ascii_alias": "1",
+      "experimental_pua": "U+E201",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<line class=\"stroke\" x1=\"50\" y1=\"39\" x2=\"50\" y2=\"61\"/><circle class=\"seed\" cx=\"50\" cy=\"50\" r=\"4.2\"/>",
+      "canon_status": "FORGED_NUMERAL",
+      "primitive_status": "primitive",
+      "spoken_form": "un",
+      "type_signature": "Literal<Scalar>",
+      "accepts": [],
+      "returns": "Scalar",
+      "arity": {
+        "min": 0,
+        "max": 0
+      },
+      "preconditions": [],
+      "preserves": [
+        "exact_value"
+      ],
+      "failure_modes": [
+        "invalid_radix"
+      ],
+      "recovery": "reject",
+      "inverse_or_pair": null,
+      "radical_provenance": [
+        "keel",
+        "seed"
+      ],
+      "visual_logic": "Fused ternary numeral for 1.",
+      "examples": [
+        "1"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "2",
+      "token_id": "L36.DIFFERENCE",
+      "name": "Difference",
+      "class": "Numeral",
+      "description": "Differentiated or expanded unit",
+      "equivalent": "2",
+      "ascii_alias": "2",
+      "experimental_pua": "U+E202",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<line class=\"stroke\" x1=\"50\" y1=\"39\" x2=\"50\" y2=\"61\"/><circle class=\"seed\" cx=\"40.5\" cy=\"50\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"50\" r=\"3.8\"/>",
+      "canon_status": "FORGED_NUMERAL",
+      "primitive_status": "primitive",
+      "spoken_form": "di",
+      "type_signature": "Literal<Scalar>",
+      "accepts": [],
+      "returns": "Scalar",
+      "arity": {
+        "min": 0,
+        "max": 0
+      },
+      "preconditions": [],
+      "preserves": [
+        "exact_value"
+      ],
+      "failure_modes": [
+        "invalid_radix"
+      ],
+      "recovery": "reject",
+      "inverse_or_pair": null,
+      "radical_provenance": [
+        "keel",
+        "seed",
+        "seed"
+      ],
+      "visual_logic": "Fused ternary numeral for 2.",
+      "examples": [
+        "2"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "3",
+      "token_id": "L36.THREE",
+      "name": "Three",
+      "class": "Numeral",
+      "description": "Fused ternary 10",
+      "equivalent": "10₃",
+      "ascii_alias": "3",
+      "experimental_pua": "U+E203",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"50\" cy=\"33\" r=\"4.2\"/><path class=\"stroke\" d=\"M35 73 Q50 57 65 73\"/><line class=\"stroke\" x1=\"63\" y1=\"71\" x2=\"71\" y2=\"77\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>",
+      "canon_status": "FORGED_NUMERAL",
+      "primitive_status": "primitive",
+      "spoken_form": "tan",
+      "type_signature": "Literal<Scalar>",
+      "accepts": [],
+      "returns": "Scalar",
+      "arity": {
+        "min": 0,
+        "max": 0
+      },
+      "preconditions": [],
+      "preserves": [
+        "exact_value"
+      ],
+      "failure_modes": [
+        "invalid_radix"
+      ],
+      "recovery": "reject",
+      "inverse_or_pair": null,
+      "radical_provenance": [
+        "positional_stack",
+        "unit",
+        "null"
+      ],
+      "visual_logic": "Fused ternary numeral for 10₃.",
+      "examples": [
+        "3"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "4",
+      "token_id": "L36.FOUR",
+      "name": "Four",
+      "class": "Numeral",
+      "description": "Fused ternary 11",
+      "equivalent": "11₃",
+      "ascii_alias": "4",
+      "experimental_pua": "U+E204",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"50\" cy=\"33\" r=\"4.2\"/><line class=\"stroke\" x1=\"50\" y1=\"58\" x2=\"50\" y2=\"80\"/><circle class=\"seed\" cx=\"50\" cy=\"69\" r=\"4.2\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>",
+      "canon_status": "FORGED_NUMERAL",
+      "primitive_status": "primitive",
+      "spoken_form": "tun",
+      "type_signature": "Literal<Scalar>",
+      "accepts": [],
+      "returns": "Scalar",
+      "arity": {
+        "min": 0,
+        "max": 0
+      },
+      "preconditions": [],
+      "preserves": [
+        "exact_value"
+      ],
+      "failure_modes": [
+        "invalid_radix"
+      ],
+      "recovery": "reject",
+      "inverse_or_pair": null,
+      "radical_provenance": [
+        "positional_stack",
+        "unit",
+        "unit"
+      ],
+      "visual_logic": "Fused ternary numeral for 11₃.",
+      "examples": [
+        "4"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "5",
+      "token_id": "L36.FIVE",
+      "name": "Five",
+      "class": "Numeral",
+      "description": "Fused ternary 12",
+      "equivalent": "12₃",
+      "ascii_alias": "5",
+      "experimental_pua": "U+E205",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"50\" cy=\"33\" r=\"4.2\"/><line class=\"stroke\" x1=\"50\" y1=\"58\" x2=\"50\" y2=\"80\"/><circle class=\"seed\" cx=\"40.5\" cy=\"69\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"69\" r=\"3.8\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>",
+      "canon_status": "FORGED_NUMERAL",
+      "primitive_status": "primitive",
+      "spoken_form": "tin",
+      "type_signature": "Literal<Scalar>",
+      "accepts": [],
+      "returns": "Scalar",
+      "arity": {
+        "min": 0,
+        "max": 0
+      },
+      "preconditions": [],
+      "preserves": [
+        "exact_value"
+      ],
+      "failure_modes": [
+        "invalid_radix"
+      ],
+      "recovery": "reject",
+      "inverse_or_pair": null,
+      "radical_provenance": [
+        "positional_stack",
+        "unit",
+        "difference"
+      ],
+      "visual_logic": "Fused ternary numeral for 12₃.",
+      "examples": [
+        "5"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "6",
+      "token_id": "L36.SIX",
+      "name": "Six",
+      "class": "Numeral",
+      "description": "Fused ternary 20",
+      "equivalent": "20₃",
+      "ascii_alias": "6",
+      "experimental_pua": "U+E206",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"40.5\" cy=\"33\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"33\" r=\"3.8\"/><path class=\"stroke\" d=\"M35 73 Q50 57 65 73\"/><line class=\"stroke\" x1=\"63\" y1=\"71\" x2=\"71\" y2=\"77\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>",
+      "canon_status": "FORGED_NUMERAL",
+      "primitive_status": "primitive",
+      "spoken_form": "dan",
+      "type_signature": "Literal<Scalar>",
+      "accepts": [],
+      "returns": "Scalar",
+      "arity": {
+        "min": 0,
+        "max": 0
+      },
+      "preconditions": [],
+      "preserves": [
+        "exact_value"
+      ],
+      "failure_modes": [
+        "invalid_radix"
+      ],
+      "recovery": "reject",
+      "inverse_or_pair": null,
+      "radical_provenance": [
+        "positional_stack",
+        "difference",
+        "null"
+      ],
+      "visual_logic": "Fused ternary numeral for 20₃.",
+      "examples": [
+        "6"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "7",
+      "token_id": "L36.SEVEN",
+      "name": "Seven",
+      "class": "Numeral",
+      "description": "Fused ternary 21",
+      "equivalent": "21₃",
+      "ascii_alias": "7",
+      "experimental_pua": "U+E207",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"40.5\" cy=\"33\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"33\" r=\"3.8\"/><line class=\"stroke\" x1=\"50\" y1=\"58\" x2=\"50\" y2=\"80\"/><circle class=\"seed\" cx=\"50\" cy=\"69\" r=\"4.2\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>",
+      "canon_status": "FORGED_NUMERAL",
+      "primitive_status": "primitive",
+      "spoken_form": "dun",
+      "type_signature": "Literal<Scalar>",
+      "accepts": [],
+      "returns": "Scalar",
+      "arity": {
+        "min": 0,
+        "max": 0
+      },
+      "preconditions": [],
+      "preserves": [
+        "exact_value"
+      ],
+      "failure_modes": [
+        "invalid_radix"
+      ],
+      "recovery": "reject",
+      "inverse_or_pair": null,
+      "radical_provenance": [
+        "positional_stack",
+        "difference",
+        "unit"
+      ],
+      "visual_logic": "Fused ternary numeral for 21₃.",
+      "examples": [
+        "7"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "8",
+      "token_id": "L36.EIGHT",
+      "name": "Eight",
+      "class": "Numeral",
+      "description": "Fused ternary 22",
+      "equivalent": "22₃",
+      "ascii_alias": "8",
+      "experimental_pua": "U+E208",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"40.5\" cy=\"33\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"33\" r=\"3.8\"/><line class=\"stroke\" x1=\"50\" y1=\"58\" x2=\"50\" y2=\"80\"/><circle class=\"seed\" cx=\"40.5\" cy=\"69\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"69\" r=\"3.8\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>",
+      "canon_status": "FORGED_NUMERAL",
+      "primitive_status": "primitive",
+      "spoken_form": "din",
+      "type_signature": "Literal<Scalar>",
+      "accepts": [],
+      "returns": "Scalar",
+      "arity": {
+        "min": 0,
+        "max": 0
+      },
+      "preconditions": [],
+      "preserves": [
+        "exact_value"
+      ],
+      "failure_modes": [
+        "invalid_radix"
+      ],
+      "recovery": "reject",
+      "inverse_or_pair": null,
+      "radical_provenance": [
+        "positional_stack",
+        "difference",
+        "difference"
+      ],
+      "visual_logic": "Fused ternary numeral for 22₃.",
+      "examples": [
+        "8"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "9",
+      "token_id": "L36.NINE",
+      "name": "Nine",
+      "class": "Numeral",
+      "description": "Fused ternary 100",
+      "equivalent": "100₃",
+      "ascii_alias": "9",
+      "experimental_pua": "U+E209",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<line class=\"stroke\" x1=\"50\" y1=\"12\" x2=\"50\" y2=\"34\"/><circle class=\"seed\" cx=\"50\" cy=\"23\" r=\"4.2\"/><path class=\"stroke\" d=\"M35 54 Q50 38 65 54\"/><line class=\"stroke\" x1=\"63\" y1=\"52\" x2=\"71\" y2=\"58\"/><path class=\"stroke\" d=\"M35 81 Q50 65 65 81\"/><line class=\"stroke\" x1=\"63\" y1=\"79\" x2=\"71\" y2=\"85\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>",
+      "canon_status": "FORGED_NUMERAL",
+      "primitive_status": "primitive",
+      "spoken_form": "taran",
+      "type_signature": "Literal<Scalar>",
+      "accepts": [],
+      "returns": "Scalar",
+      "arity": {
+        "min": 0,
+        "max": 0
+      },
+      "preconditions": [],
+      "preserves": [
+        "exact_value"
+      ],
+      "failure_modes": [
+        "invalid_radix"
+      ],
+      "recovery": "reject",
+      "inverse_or_pair": null,
+      "radical_provenance": [
+        "positional_stack",
+        "unit",
+        "null",
+        "null"
+      ],
+      "visual_logic": "Fused ternary numeral for 100₃.",
+      "examples": [
+        "9"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "A",
+      "token_id": "L36.ANCHOR",
+      "name": "Anchor",
+      "class": "Dynamic",
+      "description": "Project a state toward a declared baseline",
+      "equivalent": "A",
+      "ascii_alias": "A",
+      "experimental_pua": "U+E20A",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M19 76 C34 76 42 66 43 51 C44 35 51 26 64 25\"/><path class=\"stroke\" d=\"M43 51 C44 68 50 79 63 82\"/><line class=\"stroke\" x1=\"39\" y1=\"83\" x2=\"68\" y2=\"83\"/><circle class=\"seed\" cx=\"47\" cy=\"51\" r=\"3.6\"/>",
+      "canon_status": "ROOT",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "an",
+      "type_signature": "State × Baseline → State",
+      "accepts": [
+        "State",
+        "Baseline"
+      ],
+      "returns": "State",
+      "arity": {
+        "min": 2,
+        "max": 2
+      },
+      "preconditions": [
+        "baseline_declared",
+        "baseline_authority_visible"
+      ],
+      "preserves": [
+        "protected_invariants",
+        "identity_continuity"
+      ],
+      "failure_modes": [
+        "undefined_baseline",
+        "unauthorised_baseline",
+        "destructive_overwrite"
+      ],
+      "recovery": "return U<Baseline> or invoke V",
+      "inverse_or_pair": "V",
+      "radical_provenance": [
+        "keel",
+        "return",
+        "seed"
+      ],
+      "visual_logic": "A return path bends toward a load-bearing keel while the seed survives.",
+      "examples": [
+        "A(state,baseline)",
+        "D@7 → A@8"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "B",
+      "token_id": "L36.BRIDGE",
+      "name": "Bridge",
+      "class": "Relational",
+      "description": "Connect unlike domains without merging identity",
+      "equivalent": "B",
+      "ascii_alias": "B",
+      "experimental_pua": "U+E20B",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<circle class=\"seed\" cx=\"19\" cy=\"50\" r=\"3.4\"/><circle class=\"seed\" cx=\"81\" cy=\"50\" r=\"3.4\"/><path class=\"stroke\" d=\"M23 50 C31 26 41 25 49 43\"/><path class=\"stroke\" d=\"M77 50 C69 74 59 75 51 57\"/><path class=\"stroke\" d=\"M47 43 Q50 50 53 57\"/><line class=\"guide\" x1=\"50\" y1=\"34\" x2=\"50\" y2=\"66\"/>",
+      "canon_status": "ROOT",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "ba",
+      "type_signature": "α × β × Mapping → Relation<α,β>",
+      "accepts": [
+        "Any",
+        "Any",
+        "Mapping"
+      ],
+      "returns": "Relation",
+      "arity": {
+        "min": 3,
+        "max": 3
+      },
+      "preconditions": [
+        "mapping_declared"
+      ],
+      "preserves": [
+        "identity_boundaries",
+        "source_provenance"
+      ],
+      "failure_modes": [
+        "missing_mapping",
+        "false_equivalence"
+      ],
+      "recovery": "preserve as unsupported relation",
+      "inverse_or_pair": "M",
+      "radical_provenance": [
+        "keel",
+        "river",
+        "keel"
+      ],
+      "visual_logic": "Two independent keels remain separate while one river connects them.",
+      "examples": [
+        "B(English,LAMAGUE,encoder_v1)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "C",
+      "token_id": "L36.CYCLE",
+      "name": "Cycle",
+      "class": "Dynamic",
+      "description": "Repeat an operation under an exit condition",
+      "equivalent": "C",
+      "ascii_alias": "C",
+      "experimental_pua": "U+E20C",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M23 72 C18 48 28 25 50 22 C69 20 80 35 75 53\"/><path class=\"stroke\" d=\"M75 53 C70 71 48 79 34 67\"/><line class=\"stroke\" x1=\"67\" y1=\"54\" x2=\"79\" y2=\"48\"/>",
+      "canon_status": "ROOT",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "ka",
+      "type_signature": "Operation × State × StopCondition → State",
+      "accepts": [
+        "Operation",
+        "State",
+        "Condition"
+      ],
+      "returns": "State",
+      "arity": {
+        "min": 3,
+        "max": 3
+      },
+      "preconditions": [
+        "stop_condition_declared"
+      ],
+      "preserves": [
+        "declared_invariants"
+      ],
+      "failure_modes": [
+        "nontermination",
+        "cycle_drift"
+      ],
+      "recovery": "halt at L or return U<Termination>",
+      "inverse_or_pair": "L",
+      "radical_provenance": [
+        "return",
+        "river"
+      ],
+      "visual_logic": "A return loop remains open at the exit so repetition cannot hide termination.",
+      "examples": [
+        "C(F,state,D<2)",
+        "C^3(F)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "D",
+      "token_id": "L36.DRIFT",
+      "name": "Drift",
+      "class": "Field",
+      "description": "Measure deviation from an invariant",
+      "equivalent": "D",
+      "ascii_alias": "D",
+      "experimental_pua": "U+E20D",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><line class=\"stroke\" x1=\"36\" y1=\"20\" x2=\"42\" y2=\"76\"/><path class=\"stroke\" d=\"M49 27 C58 39 65 54 77 72\"/><circle class=\"seed\" cx=\"39\" cy=\"49\" r=\"3.4\"/><line class=\"stroke\" x1=\"70\" y1=\"69\" x2=\"80\" y2=\"78\"/>",
+      "canon_status": "ROOT",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "der",
+      "type_signature": "State × Invariant → Scalar",
+      "accepts": [
+        "State",
+        "Invariant"
+      ],
+      "returns": "Scalar",
+      "arity": {
+        "min": 2,
+        "max": 2
+      },
+      "preconditions": [
+        "metric_declared"
+      ],
+      "preserves": [
+        "measurement_provenance"
+      ],
+      "failure_modes": [
+        "undefined_metric",
+        "incomparable_states"
+      ],
+      "recovery": "return U<DriftMetric>",
+      "inverse_or_pair": "A",
+      "radical_provenance": [
+        "keel",
+        "river",
+        "seed"
+      ],
+      "visual_logic": "A river departs from a keel; separation visualises deviation.",
+      "examples": [
+        "D(state,I_agency)",
+        "D@7"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "E",
+      "token_id": "L36.EVIDENCE",
+      "name": "Evidence",
+      "class": "Field",
+      "description": "Bind provenance and support to a claim",
+      "equivalent": "E",
+      "ascii_alias": "E",
+      "experimental_pua": "U+E20E",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M31 67 C42 61 53 54 66 38\"/><circle class=\"seed\" cx=\"38\" cy=\"61\" r=\"3.4\"/><circle class=\"seed\" cx=\"49\" cy=\"53\" r=\"3.4\"/><circle class=\"seed\" cx=\"61\" cy=\"43\" r=\"3.4\"/><line class=\"stroke\" x1=\"67\" y1=\"32\" x2=\"77\" y2=\"26\"/><line class=\"stroke\" x1=\"71\" y1=\"25\" x2=\"78\" y2=\"31\"/>",
+      "canon_status": "FORGED",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "en",
+      "type_signature": "Claim × SourceSet → EvidenceRecord",
+      "accepts": [
+        "Claim",
+        "SourceSet"
+      ],
+      "returns": "EvidenceRecord",
+      "arity": {
+        "min": 2,
+        "max": 2
+      },
+      "preconditions": [
+        "sources_traceable"
+      ],
+      "preserves": [
+        "provenance",
+        "contradictions",
+        "measurement_uncertainty"
+      ],
+      "failure_modes": [
+        "source_absent",
+        "method_absent",
+        "false_precision"
+      ],
+      "recovery": "downgrade confidence or return U<Evidence>",
+      "inverse_or_pair": "Q",
+      "radical_provenance": [
+        "vessel",
+        "seed",
+        "river"
+      ],
+      "visual_logic": "Seeds rise through a vessel toward a sourced exit path.",
+      "examples": [
+        "E(claim,{trial_04})",
+        "E@8"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "F",
+      "token_id": "L36.FOLD",
+      "name": "Fold",
+      "class": "Dynamic",
+      "description": "Integrate weighted history into present state",
+      "equivalent": "F",
+      "ascii_alias": "F",
+      "experimental_pua": "U+E20F",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M20 70 C27 24 70 18 78 43 C84 62 58 77 43 65\"/><path class=\"stroke\" d=\"M43 65 C32 56 40 41 53 43 C62 44 62 55 55 58\"/><circle class=\"seed\" cx=\"51\" cy=\"58\" r=\"3.6\"/>",
+      "canon_status": "ROOT",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "fal",
+      "type_signature": "History × Kernel → IntegratedState",
+      "accepts": [
+        "History",
+        "Kernel"
+      ],
+      "returns": "State",
+      "arity": {
+        "min": 2,
+        "max": 2
+      },
+      "preconditions": [
+        "weighting_kernel_declared"
+      ],
+      "preserves": [
+        "protected_invariants",
+        "excluded_residual"
+      ],
+      "failure_modes": [
+        "history_loss",
+        "weighting_bias",
+        "temporal_collision"
+      ],
+      "recovery": "Z↑ excluded history or return U<Integration>",
+      "inverse_or_pair": "Z",
+      "radical_provenance": [
+        "river",
+        "return",
+        "seed"
+      ],
+      "visual_logic": "A broad river curls inward and deposits history as a present seed.",
+      "examples": [
+        "F(history,recent_weighted)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "G",
+      "token_id": "L36.GUARD",
+      "name": "Guard",
+      "class": "Invariant",
+      "description": "Gate an action behind a condition",
+      "equivalent": "G",
+      "ascii_alias": "G",
+      "experimental_pua": "U+E210",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<path class=\"stroke\" d=\"M34 80 Q50 88 66 80\"/><line class=\"stroke\" x1=\"41\" y1=\"76\" x2=\"38\" y2=\"87\"/><line class=\"stroke\" x1=\"59\" y1=\"76\" x2=\"62\" y2=\"87\"/><path class=\"stroke\" d=\"M18 67 C34 65 43 57 49 45 C56 32 65 26 80 25\"/><line class=\"stroke\" x1=\"49\" y1=\"37\" x2=\"49\" y2=\"58\"/><line class=\"stroke\" x1=\"42\" y1=\"47\" x2=\"56\" y2=\"47\"/><circle class=\"seed\" cx=\"24\" cy=\"65\" r=\"3.3\"/>",
+      "canon_status": "FORGED",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "gar",
+      "type_signature": "Predicate × Action × Fallback → Action",
+      "accepts": [
+        "Predicate",
+        "Action",
+        "Action"
+      ],
+      "returns": "Action",
+      "arity": {
+        "min": 3,
+        "max": 3
+      },
+      "preconditions": [
+        "predicate_typed"
+      ],
+      "preserves": [
+        "authority",
+        "scope",
+        "protected_invariants"
+      ],
+      "failure_modes": [
+        "guard_ambiguous",
+        "fallback_absent"
+      ],
+      "recovery": "block action and yield guarded unknown",
+      "inverse_or_pair": "T",
+      "radical_provenance": [
+        "thorn",
+        "river",
+        "keel"
+      ],
+      "visual_logic": "A thorn interrupts an approaching river before entry.",
+      "examples": [
+        "G(I_authority,T,V)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "H",
+      "token_id": "L36.HORIZON",
+      "name": "Horizon",
+      "class": "Field",
+      "description": "Declare temporal or purpose endpoint",
+      "equivalent": "H",
+      "ascii_alias": "H",
+      "experimental_pua": "U+E211",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M25 69 C39 59 48 48 61 31\"/><line class=\"stroke\" x1=\"34\" y1=\"25\" x2=\"75\" y2=\"25\"/><circle class=\"seed\" cx=\"78\" cy=\"25\" r=\"3.7\"/><line class=\"guide\" x1=\"55\" y1=\"46\" x2=\"72\" y2=\"46\"/>",
+      "canon_status": "FORGED",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "har",
+      "type_signature": "Purpose × TimeScope → Horizon",
+      "accepts": [
+        "Purpose",
+        "TimeScope"
+      ],
+      "returns": "Horizon",
+      "arity": {
+        "min": 2,
+        "max": 2
+      },
+      "preconditions": [
+        "time_scope_declared"
+      ],
+      "preserves": [
+        "purpose",
+        "temporal_boundary"
+      ],
+      "failure_modes": [
+        "horizon_conflict",
+        "undefined_endpoint"
+      ],
+      "recovery": "preserve multiple horizons as Set<Horizon>",
+      "inverse_or_pair": "S",
+      "radical_provenance": [
+        "vessel",
+        "river",
+        "seed"
+      ],
+      "visual_logic": "A field path rises toward a marked temporal endpoint.",
+      "examples": [
+        "H(purpose,30d)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "I",
+      "token_id": "L36.INVARIANT",
+      "name": "Invariant",
+      "class": "Invariant",
+      "description": "Declare a property transformations must preserve",
+      "equivalent": "I",
+      "ascii_alias": "I",
+      "experimental_pua": "U+E212",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<path class=\"stroke\" d=\"M34 80 Q50 88 66 80\"/><line class=\"stroke\" x1=\"41\" y1=\"76\" x2=\"38\" y2=\"87\"/><line class=\"stroke\" x1=\"59\" y1=\"76\" x2=\"62\" y2=\"87\"/><path class=\"stroke\" d=\"M50 18 C44 33 46 54 50 75\"/><path class=\"stroke\" d=\"M34 33 Q50 19 66 33\"/><line class=\"stroke\" x1=\"33\" y1=\"39\" x2=\"40\" y2=\"46\"/><line class=\"stroke\" x1=\"67\" y1=\"39\" x2=\"60\" y2=\"46\"/><circle class=\"seed\" cx=\"50\" cy=\"51\" r=\"3.5\"/>",
+      "canon_status": "ROOT",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "in",
+      "type_signature": "Predicate × Scope → Constraint",
+      "accepts": [
+        "Predicate",
+        "Scope"
+      ],
+      "returns": "Invariant",
+      "arity": {
+        "min": 2,
+        "max": 2
+      },
+      "preconditions": [
+        "scope_declared"
+      ],
+      "preserves": [
+        "predicate_semantics"
+      ],
+      "failure_modes": [
+        "contradictory_invariant",
+        "unverifiable_invariant"
+      ],
+      "recovery": "return U<Invariant> or isolate conflict",
+      "inverse_or_pair": "T",
+      "radical_provenance": [
+        "keel",
+        "thorn",
+        "seed"
+      ],
+      "visual_logic": "A protected keel is stabilised by outward-facing boundary thorns.",
+      "examples": [
+        "I(agency_out>=agency_in,action)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "J",
+      "token_id": "L36.JUNCTION",
+      "name": "Junction",
+      "class": "Dynamic",
+      "description": "Branch according to a condition",
+      "equivalent": "J",
+      "ascii_alias": "J",
+      "experimental_pua": "U+E213",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M20 75 C34 68 42 58 49 46\"/><path class=\"stroke\" d=\"M49 46 C55 38 62 32 79 25\"/><path class=\"stroke\" d=\"M49 46 C55 57 62 65 77 72\"/><circle class=\"seed\" cx=\"49\" cy=\"46\" r=\"3.8\"/>",
+      "canon_status": "HISTORICAL_FORGED",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "ja",
+      "type_signature": "Condition × TrueBranch × FalseBranch → Branch",
+      "accepts": [
+        "Condition",
+        "Branch",
+        "Branch"
+      ],
+      "returns": "Branch",
+      "arity": {
+        "min": 3,
+        "max": 3
+      },
+      "preconditions": [
+        "condition_typed"
+      ],
+      "preserves": [
+        "branch_provenance"
+      ],
+      "failure_modes": [
+        "condition_unknown",
+        "branch_missing"
+      ],
+      "recovery": "route U condition to explicit unresolved branch",
+      "inverse_or_pair": "R",
+      "radical_provenance": [
+        "river",
+        "junction",
+        "seed"
+      ],
+      "visual_logic": "One river reaches a decision seed and divides into two exits.",
+      "examples": [
+        "J(E>=7,P,U)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "K",
+      "token_id": "L36.KERNEL",
+      "name": "Kernel",
+      "class": "Invariant",
+      "description": "Extract an irreducible operational core",
+      "equivalent": "K",
+      "ascii_alias": "K",
+      "experimental_pua": "U+E214",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<path class=\"stroke\" d=\"M34 80 Q50 88 66 80\"/><line class=\"stroke\" x1=\"41\" y1=\"76\" x2=\"38\" y2=\"87\"/><line class=\"stroke\" x1=\"59\" y1=\"76\" x2=\"62\" y2=\"87\"/><circle class=\"seed\" cx=\"50\" cy=\"50\" r=\"7\"/><path class=\"stroke\" d=\"M50 18 C47 31 47 38 50 43\"/><path class=\"stroke\" d=\"M20 50 C31 47 38 47 43 50\"/><path class=\"stroke\" d=\"M80 50 C69 53 62 53 57 50\"/><path class=\"stroke\" d=\"M50 79 C53 68 53 61 50 57\"/>",
+      "canon_status": "ROOT",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "ker",
+      "type_signature": "System → MinimalCore",
+      "accepts": [
+        "System"
+      ],
+      "returns": "Kernel",
+      "arity": {
+        "min": 1,
+        "max": 1
+      },
+      "preconditions": [
+        "removal_test_available"
+      ],
+      "preserves": [
+        "load_bearing_structure",
+        "lineage"
+      ],
+      "failure_modes": [
+        "false_kernel",
+        "overcompression"
+      ],
+      "recovery": "restore excluded candidates and retest",
+      "inverse_or_pair": "Z",
+      "radical_provenance": [
+        "keel",
+        "seed",
+        "vessel"
+      ],
+      "visual_logic": "A central seed is the load-bearing centre connected to four supports.",
+      "examples": [
+        "K(system)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "L",
+      "token_id": "L36.LIMIT",
+      "name": "Limit",
+      "class": "Invariant",
+      "description": "Set threshold, tolerance, timeout or bound",
+      "equivalent": "L",
+      "ascii_alias": "L",
+      "experimental_pua": "U+E215",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<path class=\"stroke\" d=\"M34 80 Q50 88 66 80\"/><line class=\"stroke\" x1=\"41\" y1=\"76\" x2=\"38\" y2=\"87\"/><line class=\"stroke\" x1=\"59\" y1=\"76\" x2=\"62\" y2=\"87\"/><path class=\"stroke\" d=\"M26 64 C40 58 50 48 61 31\"/><line class=\"stroke\" x1=\"61\" y1=\"20\" x2=\"61\" y2=\"72\"/><line class=\"stroke\" x1=\"54\" y1=\"31\" x2=\"69\" y2=\"31\"/><circle class=\"seed\" cx=\"26\" cy=\"64\" r=\"3.4\"/>",
+      "canon_status": "FORGED",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "lim",
+      "type_signature": "Metric × Bound → Constraint",
+      "accepts": [
+        "Metric",
+        "Bound"
+      ],
+      "returns": "Constraint",
+      "arity": {
+        "min": 2,
+        "max": 2
+      },
+      "preconditions": [
+        "units_compatible"
+      ],
+      "preserves": [
+        "measurement_scope"
+      ],
+      "failure_modes": [
+        "unit_mismatch",
+        "bound_ambiguous"
+      ],
+      "recovery": "return U<Bound>",
+      "inverse_or_pair": "C",
+      "radical_provenance": [
+        "keel",
+        "thorn"
+      ],
+      "visual_logic": "A crossing thorn fixes a measurable boundary against a keel.",
+      "examples": [
+        "L(D,2)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "M",
+      "token_id": "L36.MERGE",
+      "name": "Merge",
+      "class": "Dynamic",
+      "description": "Combine states while preserving conflict data",
+      "equivalent": "M",
+      "ascii_alias": "M",
+      "experimental_pua": "U+E216",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M20 72 C30 60 37 50 49 46\"/><path class=\"stroke\" d=\"M20 28 C32 39 39 45 49 46\"/><path class=\"stroke\" d=\"M49 46 C58 49 67 41 80 26\"/><path class=\"stroke\" d=\"M49 46 C53 58 57 68 65 79\"/><circle class=\"seed\" cx=\"49\" cy=\"46\" r=\"4\"/>",
+      "canon_status": "ROOT",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "mer",
+      "type_signature": "State^n × ConflictPolicy → State",
+      "accepts": [
+        "StateSet",
+        "ConflictPolicy"
+      ],
+      "returns": "State",
+      "arity": {
+        "min": 2,
+        "max": 2
+      },
+      "preconditions": [
+        "conflict_policy_declared"
+      ],
+      "preserves": [
+        "dissent",
+        "provenance",
+        "identity_if_required"
+      ],
+      "failure_modes": [
+        "silent_conflict_erasure",
+        "incompatible_states"
+      ],
+      "recovery": "use W or preserve unresolved conflict",
+      "inverse_or_pair": "W",
+      "radical_provenance": [
+        "river",
+        "junction",
+        "seed"
+      ],
+      "visual_logic": "Multiple inputs converge into one resulting seed while branch history remains visible.",
+      "examples": [
+        "M(states,preserve_dissent)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "N",
+      "token_id": "L36.NOVELTY",
+      "name": "Novelty",
+      "class": "Field",
+      "description": "Measure distance from known corpus structure",
+      "equivalent": "N",
+      "ascii_alias": "N",
+      "experimental_pua": "U+E217",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><circle class=\"seed\" cx=\"43\" cy=\"57\" r=\"3.5\"/><circle class=\"seed\" cx=\"81\" cy=\"24\" r=\"4\"/><path class=\"stroke\" d=\"M47 54 C57 47 65 39 75 29\"/><path class=\"guide\" d=\"M31 67 Q50 35 70 29\"/><line class=\"stroke\" x1=\"70\" y1=\"22\" x2=\"79\" y2=\"31\"/>",
+      "canon_status": "FORGED",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "nov",
+      "type_signature": "Candidate × Corpus → Scalar",
+      "accepts": [
+        "Candidate",
+        "Corpus"
+      ],
+      "returns": "Scalar",
+      "arity": {
+        "min": 2,
+        "max": 2
+      },
+      "preconditions": [
+        "comparison_space_declared"
+      ],
+      "preserves": [
+        "distance_method",
+        "corpus_version"
+      ],
+      "failure_modes": [
+        "novelty_without_reference",
+        "metric_instability"
+      ],
+      "recovery": "return U<Novelty>",
+      "inverse_or_pair": "E",
+      "radical_provenance": [
+        "vessel",
+        "seed",
+        "river"
+      ],
+      "visual_logic": "A seed is measured by distance toward an external comparison point.",
+      "examples": [
+        "N(candidate,corpus_v3)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "O",
+      "token_id": "L36.OBSERVE",
+      "name": "Observe",
+      "class": "Field",
+      "description": "Read a target into an auditable snapshot",
+      "equivalent": "O",
+      "ascii_alias": "O",
+      "experimental_pua": "U+E218",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M23 52 C34 38 49 32 67 36\"/><path class=\"stroke\" d=\"M23 52 C35 66 51 71 69 64\"/><circle class=\"seed\" cx=\"50\" cy=\"52\" r=\"4.2\"/><line class=\"stroke\" x1=\"67\" y1=\"36\" x2=\"78\" y2=\"31\"/><line class=\"stroke\" x1=\"69\" y1=\"64\" x2=\"79\" y2=\"68\"/>",
+      "canon_status": "FORGED",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "or",
+      "type_signature": "Target × ObserverContext → Snapshot",
+      "accepts": [
+        "Target",
+        "ObserverContext"
+      ],
+      "returns": "Snapshot",
+      "arity": {
+        "min": 2,
+        "max": 2
+      },
+      "preconditions": [
+        "observer_context_declared"
+      ],
+      "preserves": [
+        "time",
+        "instrument",
+        "scope",
+        "disturbance"
+      ],
+      "failure_modes": [
+        "observer_missing",
+        "measurement_disturbance_unknown"
+      ],
+      "recovery": "return partial Snapshot with U fields",
+      "inverse_or_pair": "T",
+      "radical_provenance": [
+        "vessel",
+        "seed"
+      ],
+      "visual_logic": "A seed is observed inside an open vessel without forced transformation.",
+      "examples": [
+        "O(claim,observer_ctx)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "P",
+      "token_id": "L36.PROVE",
+      "name": "Prove",
+      "class": "Meta",
+      "description": "Return pass, fail or unresolved",
+      "equivalent": "P",
+      "ascii_alias": "P",
+      "experimental_pua": "U+E219",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<path class=\"stroke\" d=\"M27 24 Q50 8 73 24\"/><line class=\"stroke\" x1=\"34\" y1=\"22\" x2=\"30\" y2=\"31\"/><line class=\"stroke\" x1=\"66\" y1=\"22\" x2=\"70\" y2=\"31\"/><path class=\"stroke\" d=\"M31 42 C42 37 48 44 50 53 C53 43 60 37 70 42\"/><path class=\"stroke\" d=\"M50 53 C48 65 49 74 54 82\"/><circle class=\"seed\" cx=\"54\" cy=\"82\" r=\"3.8\"/><line class=\"guide\" x1=\"44\" y1=\"55\" x2=\"56\" y2=\"55\"/>",
+      "canon_status": "FORGED",
+      "primitive_status": "macro_candidate",
+      "spoken_form": "pra",
+      "type_signature": "Claim × Evidence × InvariantSet → ProofStatus",
+      "accepts": [
+        "Claim",
+        "Evidence",
+        "InvariantSet"
+      ],
+      "returns": "ProofStatus",
+      "arity": {
+        "min": 3,
+        "max": 3
+      },
+      "preconditions": [
+        "proof_method_declared"
+      ],
+      "preserves": [
+        "counterexamples",
+        "uncertainty"
+      ],
+      "failure_modes": [
+        "method_invalid",
+        "evidence_insufficient"
+      ],
+      "recovery": "return UNRESOLVED",
+      "inverse_or_pair": "U",
+      "radical_provenance": [
+        "crown",
+        "junction",
+        "seed"
+      ],
+      "visual_logic": "A crown inspects two possible proof branches and emits a status seed.",
+      "examples": [
+        "P(claim,evidence,I_set)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "Q",
+      "token_id": "L36.QUERY",
+      "name": "Query",
+      "class": "Field",
+      "description": "Open a typed unresolved request",
+      "equivalent": "Q",
+      "ascii_alias": "Q",
+      "experimental_pua": "U+E21A",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M31 65 C42 58 50 49 58 38\"/><line class=\"stroke\" x1=\"58\" y1=\"38\" x2=\"68\" y2=\"31\"/><circle class=\"seed\" cx=\"79\" cy=\"24\" r=\"4\"/><line class=\"rift\" x1=\"70\" y1=\"29\" x2=\"75\" y2=\"26\"/>",
+      "canon_status": "FORGED",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "qua",
+      "type_signature": "Target × Property → U<Property>",
+      "accepts": [
+        "Target",
+        "Property"
+      ],
+      "returns": "Unknown",
+      "arity": {
+        "min": 2,
+        "max": 2
+      },
+      "preconditions": [
+        "property_typed"
+      ],
+      "preserves": [
+        "open_question",
+        "scope"
+      ],
+      "failure_modes": [
+        "ill_formed_query"
+      ],
+      "recovery": "request Z↑ clarification",
+      "inverse_or_pair": "R",
+      "radical_provenance": [
+        "vessel",
+        "rift",
+        "seed"
+      ],
+      "visual_logic": "A seed remains outside the vessel across a deliberate rift.",
+      "examples": [
+        "Q(event,cause)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "R",
+      "token_id": "L36.RESOLVE",
+      "name": "Resolve",
+      "class": "Meta",
+      "description": "Resolve an unknown or preserve it unresolved",
+      "equivalent": "R",
+      "ascii_alias": "R",
+      "experimental_pua": "U+E21B",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<path class=\"stroke\" d=\"M27 24 Q50 8 73 24\"/><line class=\"stroke\" x1=\"34\" y1=\"22\" x2=\"30\" y2=\"31\"/><line class=\"stroke\" x1=\"66\" y1=\"22\" x2=\"70\" y2=\"31\"/><path class=\"stroke\" d=\"M25 61 C36 49 43 45 50 48\"/><path class=\"stroke\" d=\"M75 61 C64 49 57 45 50 48\"/><path class=\"stroke\" d=\"M50 48 C47 60 50 70 61 78\"/><circle class=\"seed\" cx=\"50\" cy=\"48\" r=\"4\"/><circle class=\"seed\" cx=\"61\" cy=\"78\" r=\"3.6\"/>",
+      "canon_status": "FORGED",
+      "primitive_status": "macro_candidate",
+      "spoken_form": "res",
+      "type_signature": "Unknown × EvidenceOrRule → Value|Unknown",
+      "accepts": [
+        "Unknown",
+        "EvidenceOrRule"
+      ],
+      "returns": "Union<Value,Unknown>",
+      "arity": {
+        "min": 2,
+        "max": 2
+      },
+      "preconditions": [
+        "resolution_rule_declared"
+      ],
+      "preserves": [
+        "uncertainty_if_unresolved",
+        "provenance"
+      ],
+      "failure_modes": [
+        "premature_collapse",
+        "contradictory_resolution"
+      ],
+      "recovery": "preserve U or branch with J",
+      "inverse_or_pair": "Q",
+      "radical_provenance": [
+        "crown",
+        "junction",
+        "seed"
+      ],
+      "visual_logic": "A crown draws two candidate paths toward a resolution seed and output.",
+      "examples": [
+        "R(U<Cause>,evidence)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "S",
+      "token_id": "L36.STATE",
+      "name": "State",
+      "class": "Field",
+      "description": "Declare a bounded snapshot of active fields",
+      "equivalent": "S",
+      "ascii_alias": "S",
+      "experimental_pua": "U+E21C",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><line class=\"stroke\" x1=\"29\" y1=\"73\" x2=\"69\" y2=\"73\"/><circle class=\"seed\" cx=\"47\" cy=\"53\" r=\"4.3\"/><line class=\"guide\" x1=\"53\" y1=\"33\" x2=\"53\" y2=\"66\"/><line class=\"guide\" x1=\"36\" y1=\"35\" x2=\"62\" y2=\"35\"/>",
+      "canon_status": "FORGED",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "sa",
+      "type_signature": "FieldSet × Time × Scope → Snapshot",
+      "accepts": [
+        "FieldSet",
+        "Time",
+        "Scope"
+      ],
+      "returns": "State",
+      "arity": {
+        "min": 3,
+        "max": 3
+      },
+      "preconditions": [
+        "fields_typed"
+      ],
+      "preserves": [
+        "time",
+        "scope",
+        "field_provenance"
+      ],
+      "failure_modes": [
+        "field_collision",
+        "scope_missing"
+      ],
+      "recovery": "preserve partial state with U fields",
+      "inverse_or_pair": "T",
+      "radical_provenance": [
+        "vessel",
+        "seed",
+        "keel"
+      ],
+      "visual_logic": "A seed is held inside a bounded field with time/scope guides.",
+      "examples": [
+        "S({D3,E6,N8},now,project)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "T",
+      "token_id": "L36.TRANSITION",
+      "name": "Transition",
+      "class": "Dynamic",
+      "description": "Apply a typed state transformation",
+      "equivalent": "T",
+      "ascii_alias": "T",
+      "experimental_pua": "U+E21D",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M20 75 C35 74 42 67 47 57\"/><path class=\"stroke\" d=\"M47 57 C54 45 63 37 79 25\"/><line class=\"stroke\" x1=\"43\" y1=\"52\" x2=\"54\" y2=\"63\"/><circle class=\"seed\" cx=\"47\" cy=\"57\" r=\"3.5\"/>",
+      "canon_status": "ROOT",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "tra",
+      "type_signature": "State × Operation → TransitionRecord",
+      "accepts": [
+        "State",
+        "Operation"
+      ],
+      "returns": "TransitionRecord",
+      "arity": {
+        "min": 2,
+        "max": 2
+      },
+      "preconditions": [
+        "operation_typed"
+      ],
+      "preserves": [
+        "source_state",
+        "target_state",
+        "invariants"
+      ],
+      "failure_modes": [
+        "invalid_transition",
+        "untracked_side_effect"
+      ],
+      "recovery": "block or invoke V",
+      "inverse_or_pair": "A",
+      "radical_provenance": [
+        "river",
+        "junction",
+        "seed"
+      ],
+      "visual_logic": "An input river crosses a transition junction and exits changed.",
+      "examples": [
+        "T(S1,A)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "U",
+      "token_id": "L36.UNKNOWN",
+      "name": "Unknown",
+      "class": "Field",
+      "description": "Preserve relevant unresolved presence",
+      "equivalent": "U",
+      "ascii_alias": "U",
+      "experimental_pua": "U+E21E",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M24 67 C33 47 44 34 60 28\"/><line class=\"rift\" x1=\"62\" y1=\"28\" x2=\"69\" y2=\"34\"/><circle class=\"seed\" cx=\"80\" cy=\"43\" r=\"4.3\"/><line class=\"rift\" x1=\"68\" y1=\"37\" x2=\"75\" y2=\"41\"/>",
+      "canon_status": "FORGED",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "u",
+      "type_signature": "Type → Unknown<Type>",
+      "accepts": [
+        "Type"
+      ],
+      "returns": "Unknown",
+      "arity": {
+        "min": 1,
+        "max": 1
+      },
+      "preconditions": [
+        "unknown_type_declared"
+      ],
+      "preserves": [
+        "uncertainty",
+        "presence_without_resolution"
+      ],
+      "failure_modes": [
+        "unknown_erased",
+        "unknown_treated_as_false"
+      ],
+      "recovery": "restore U from provenance",
+      "inverse_or_pair": "R",
+      "radical_provenance": [
+        "vessel",
+        "rift",
+        "seed"
+      ],
+      "visual_logic": "The vessel is incomplete and the seed remains relevant but unresolved outside it.",
+      "examples": [
+        "U<Cause>"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "V",
+      "token_id": "L36.VECTOR_INVERT",
+      "name": "Vector Invert",
+      "class": "Dynamic",
+      "description": "Preserve intent while changing the path",
+      "equivalent": "V",
+      "ascii_alias": "V",
+      "experimental_pua": "U+E21F",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M20 75 C34 64 42 55 49 45\"/><line class=\"stroke\" x1=\"43\" y1=\"38\" x2=\"56\" y2=\"52\"/><path class=\"stroke\" d=\"M49 45 C58 35 66 28 80 24\"/><path class=\"stroke\" d=\"M49 45 C57 58 66 68 78 75\"/><circle class=\"seed\" cx=\"49\" cy=\"45\" r=\"3.8\"/>",
+      "canon_status": "HISTORICAL_FORGED",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "vai",
+      "type_signature": "FailedPath × PreservedIntent → AlternativeSet",
+      "accepts": [
+        "FailedPath",
+        "Intent"
+      ],
+      "returns": "AlternativeSet",
+      "arity": {
+        "min": 2,
+        "max": 2
+      },
+      "preconditions": [
+        "intent_legitimate",
+        "failure_recorded"
+      ],
+      "preserves": [
+        "intent",
+        "invariants",
+        "failure_provenance"
+      ],
+      "failure_modes": [
+        "intent_drift",
+        "unsafe_alternative"
+      ],
+      "recovery": "return U<Alternative>",
+      "inverse_or_pair": "A",
+      "radical_provenance": [
+        "river",
+        "rift",
+        "junction"
+      ],
+      "visual_logic": "A failed path crosses a rift and branches into preserved-intent alternatives.",
+      "examples": [
+        "V(failed_path,intent)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "W",
+      "token_id": "L36.WEAVE",
+      "name": "Weave",
+      "class": "Relational",
+      "description": "Connect agents while preserving identity boundaries",
+      "equivalent": "W",
+      "ascii_alias": "W",
+      "experimental_pua": "U+E220",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<circle class=\"seed\" cx=\"19\" cy=\"50\" r=\"3.4\"/><circle class=\"seed\" cx=\"81\" cy=\"50\" r=\"3.4\"/><path class=\"stroke\" d=\"M22 50 C33 24 45 25 50 48 C55 71 67 72 78 50\"/><path class=\"stroke\" d=\"M22 50 C33 76 45 75 50 52 C55 29 67 28 78 50\"/><line class=\"rift\" x1=\"45\" y1=\"46\" x2=\"55\" y2=\"54\"/>",
+      "canon_status": "FORGED",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "we",
+      "type_signature": "AgentSet × Provenance × BoundaryPolicy → RelationalGraph",
+      "accepts": [
+        "AgentSet",
+        "Provenance",
+        "BoundaryPolicy"
+      ],
+      "returns": "RelationalGraph",
+      "arity": {
+        "min": 3,
+        "max": 3
+      },
+      "preconditions": [
+        "boundaries_declared"
+      ],
+      "preserves": [
+        "identity",
+        "dissent",
+        "provenance"
+      ],
+      "failure_modes": [
+        "identity_merge",
+        "boundary_loss"
+      ],
+      "recovery": "separate graph or return U<Relation>",
+      "inverse_or_pair": "M",
+      "radical_provenance": [
+        "vessel",
+        "river",
+        "rift"
+      ],
+      "visual_logic": "Two agents remain distinct while reciprocal rivers weave around a protected rift.",
+      "examples": [
+        "W(agents,provenance,boundaries)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "X",
+      "token_id": "L36.EXCHANGE",
+      "name": "Exchange",
+      "class": "Relational",
+      "description": "Perform reciprocal auditable transfer",
+      "equivalent": "X",
+      "ascii_alias": "X",
+      "experimental_pua": "U+E221",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<circle class=\"seed\" cx=\"19\" cy=\"50\" r=\"3.4\"/><circle class=\"seed\" cx=\"81\" cy=\"50\" r=\"3.4\"/><path class=\"stroke\" d=\"M23 47 C38 27 62 27 77 47\"/><path class=\"stroke\" d=\"M77 53 C62 73 38 73 23 53\"/><polyline class=\"stroke\" points=\"68,41 78,47 69,52\"/><polyline class=\"stroke\" points=\"32,59 22,53 31,48\"/>",
+      "canon_status": "FORGED",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "ex",
+      "type_signature": "Agent × Agent × Resource × LedgerPolicy → LedgerUpdate",
+      "accepts": [
+        "Agent",
+        "Agent",
+        "Resource",
+        "LedgerPolicy"
+      ],
+      "returns": "LedgerUpdate",
+      "arity": {
+        "min": 4,
+        "max": 4
+      },
+      "preconditions": [
+        "consent_declared",
+        "resource_typed"
+      ],
+      "preserves": [
+        "consent",
+        "value_transfer",
+        "reversibility",
+        "affected_parties"
+      ],
+      "failure_modes": [
+        "coercive_exchange",
+        "ledger_gap"
+      ],
+      "recovery": "block exchange",
+      "inverse_or_pair": "G",
+      "radical_provenance": [
+        "river",
+        "seed",
+        "seed"
+      ],
+      "visual_logic": "Two directed rivers exchange payload between independent seeds.",
+      "examples": [
+        "X(A,B,value,ledger_policy)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "Y",
+      "token_id": "L36.YIELD",
+      "name": "Yield",
+      "class": "Dynamic",
+      "description": "Emit a result and terminate or return",
+      "equivalent": "Y",
+      "ascii_alias": "Y",
+      "experimental_pua": "U+E222",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M21 30 C36 34 43 40 50 51\"/><path class=\"stroke\" d=\"M21 71 C35 66 43 61 50 51\"/><path class=\"stroke\" d=\"M50 51 C58 56 67 61 80 66\"/><circle class=\"seed\" cx=\"50\" cy=\"51\" r=\"4\"/><circle class=\"seed\" cx=\"80\" cy=\"66\" r=\"3.8\"/>",
+      "canon_status": "FORGED",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "ya",
+      "type_signature": "Value × ProofStatus → Output",
+      "accepts": [
+        "Value",
+        "ProofStatus"
+      ],
+      "returns": "Output",
+      "arity": {
+        "min": 2,
+        "max": 2
+      },
+      "preconditions": [
+        "output_scope_declared"
+      ],
+      "preserves": [
+        "proof_status",
+        "provenance"
+      ],
+      "failure_modes": [
+        "yield_without_required_proof"
+      ],
+      "recovery": "return U<Output>",
+      "inverse_or_pair": "Q",
+      "radical_provenance": [
+        "river",
+        "junction",
+        "seed"
+      ],
+      "visual_logic": "Two branches converge and emit one proof-bound output seed.",
+      "examples": [
+        "Y(result,PASS)"
+      ],
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "token": "Z",
+      "token_id": "L36.COMPRESS",
+      "name": "Compress",
+      "class": "Meta",
+      "description": "Contract representation while preserving invariants",
+      "equivalent": "Z",
+      "ascii_alias": "Z",
+      "experimental_pua": "U+E223",
+      "status": "FORGED_v0.2",
+      "glyph_svg": "<path class=\"stroke\" d=\"M27 24 Q50 8 73 24\"/><line class=\"stroke\" x1=\"34\" y1=\"22\" x2=\"30\" y2=\"31\"/><line class=\"stroke\" x1=\"66\" y1=\"22\" x2=\"70\" y2=\"31\"/><path class=\"stroke\" d=\"M25 39 C36 45 42 54 45 66\"/><path class=\"stroke\" d=\"M75 39 C64 45 58 54 55 66\"/><line class=\"stroke\" x1=\"45\" y1=\"66\" x2=\"55\" y2=\"66\"/><path class=\"stroke\" d=\"M50 41 C48 51 49 61 50 78\"/><circle class=\"seed\" cx=\"50\" cy=\"79\" r=\"3.5\"/>",
+      "canon_status": "ROOT",
+      "primitive_status": "primitive_candidate",
+      "spoken_form": "zen",
+      "type_signature": "Expression × InvariantSet × CompressionLevel → Expression",
+      "accepts": [
+        "Expression",
+        "InvariantSet",
+        "CompressionLevel"
+      ],
+      "returns": "Expression",
+      "arity": {
+        "min": 3,
+        "max": 3
+      },
+      "preconditions": [
+        "decoder_available",
+        "invariants_declared"
+      ],
+      "preserves": [
+        "roundtrip_meaning",
+        "protected_invariants",
+        "residual"
+      ],
+      "failure_modes": [
+        "semantic_loss",
+        "decoder_mismatch",
+        "codebook_missing"
+      ],
+      "recovery": "reject compression and invoke Z↑",
+      "inverse_or_pair": "Z↑",
+      "radical_provenance": [
+        "crown",
+        "vessel",
+        "keel"
+      ],
+      "visual_logic": "A crown contracts a wide vessel around an unchanged keel and output seed.",
+      "examples": [
+        "Z(expr,I_set,3)"
+      ],
+      "machine_semantics_version": "0.3"
+    }
+  ],
+  "compound_seals": [
+    {
+      "seal_id": "L36.SEAL.COR",
+      "short_id": "COR",
+      "name": "Correction Seal",
+      "expansion": [
+        "D",
+        "A",
+        "F",
+        "P",
+        "Y"
+      ],
+      "operation_count": 5,
+      "english": "Detect drift, return to the declared baseline, integrate relevant history, prove invariant continuity, and emit the corrected state.",
+      "experimental_pua": "U+E280",
+      "status": "FORGED_v0.1",
+      "glyph_svg": "<path class=\"stroke\" d=\"M27 24 Q50 8 73 24\"/><line class=\"stroke\" x1=\"34\" y1=\"22\" x2=\"30\" y2=\"31\"/><line class=\"stroke\" x1=\"66\" y1=\"22\" x2=\"70\" y2=\"31\"/><path class=\"stroke\" d=\"M18 66 C31 63 38 55 42 43\"/><line class=\"stroke\" x1=\"38\" y1=\"22\" x2=\"43\" y2=\"76\"/><path class=\"stroke\" d=\"M77 28 C64 31 57 39 53 49 C49 60 54 70 68 77\"/><path class=\"stroke\" d=\"M31 74 C38 83 51 86 62 80\"/><circle class=\"seed\" cx=\"42\" cy=\"43\" r=\"3.8\"/><circle class=\"seed\" cx=\"69\" cy=\"77\" r=\"4\"/><line class=\"guide\" x1=\"45\" y1=\"58\" x2=\"57\" y2=\"58\"/>",
+      "type_signature": "State × Context → State",
+      "arity": {
+        "min": 1,
+        "max": 2
+      },
+      "preconditions": [
+        "all constituent operations available",
+        "seal expansion version matched"
+      ],
+      "preserves": [
+        "constituent order",
+        "constituent invariants",
+        "roundtrip expansion"
+      ],
+      "failure_modes": [
+        "seal_codebook_missing",
+        "version_mismatch",
+        "expansion_collision"
+      ],
+      "recovery": "expand to primitive sequence and execute transparently",
+      "primitive_status": "compound_macro",
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "seal_id": "L36.SEAL.FRO",
+      "short_id": "FRO",
+      "name": "Frontier Seal",
+      "expansion": [
+        "O",
+        "S",
+        "N",
+        "E",
+        "G",
+        "I",
+        "U",
+        "Q"
+      ],
+      "operation_count": 8,
+      "english": "Observe a novel weakly evidenced claim, form its state, guard the foundation, preserve uncertainty, and query the evidence required for resolution.",
+      "experimental_pua": "U+E281",
+      "status": "FORGED_v0.1",
+      "glyph_svg": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M30 68 C42 58 49 48 58 35\"/><circle class=\"seed\" cx=\"42\" cy=\"57\" r=\"3.5\"/><circle class=\"seed\" cx=\"52\" cy=\"46\" r=\"3.5\"/><line class=\"stroke\" x1=\"58\" y1=\"35\" x2=\"66\" y2=\"28\"/><line class=\"stroke\" x1=\"59\" y1=\"50\" x2=\"59\" y2=\"68\"/><line class=\"stroke\" x1=\"52\" y1=\"59\" x2=\"66\" y2=\"59\"/><circle class=\"seed\" cx=\"82\" cy=\"26\" r=\"4.3\"/><line class=\"rift\" x1=\"68\" y1=\"31\" x2=\"76\" y2=\"28\"/><path class=\"guide\" d=\"M26 28 Q49 12 72 27\"/>",
+      "type_signature": "State × Context → State",
+      "arity": {
+        "min": 1,
+        "max": 2
+      },
+      "preconditions": [
+        "all constituent operations available",
+        "seal expansion version matched"
+      ],
+      "preserves": [
+        "constituent order",
+        "constituent invariants",
+        "roundtrip expansion"
+      ],
+      "failure_modes": [
+        "seal_codebook_missing",
+        "version_mismatch",
+        "expansion_collision"
+      ],
+      "recovery": "expand to primitive sequence and execute transparently",
+      "primitive_status": "compound_macro",
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "seal_id": "L36.SEAL.SOV",
+      "short_id": "SOV",
+      "name": "Sovereignty Seal",
+      "expansion": [
+        "G",
+        "I",
+        "V",
+        "P",
+        "Y"
+      ],
+      "operation_count": 5,
+      "english": "Guard authority and agency, preserve reversibility, invert unsafe routes, prove the boundary survived, and only then yield the action.",
+      "experimental_pua": "U+E282",
+      "status": "FORGED_v0.1",
+      "glyph_svg": "<path class=\"stroke\" d=\"M27 24 Q50 8 73 24\"/><line class=\"stroke\" x1=\"34\" y1=\"22\" x2=\"30\" y2=\"31\"/><line class=\"stroke\" x1=\"66\" y1=\"22\" x2=\"70\" y2=\"31\"/><path class=\"stroke\" d=\"M50 24 C43 39 44 58 50 74\"/><path class=\"stroke\" d=\"M28 33 C20 47 22 67 38 78\"/><path class=\"stroke\" d=\"M72 33 C80 47 78 67 62 78\"/><line class=\"stroke\" x1=\"28\" y1=\"50\" x2=\"40\" y2=\"50\"/><line class=\"stroke\" x1=\"60\" y1=\"50\" x2=\"72\" y2=\"50\"/><line class=\"stroke\" x1=\"34\" y1=\"43\" x2=\"34\" y2=\"57\"/><line class=\"stroke\" x1=\"66\" y1=\"43\" x2=\"66\" y2=\"57\"/><path class=\"stroke\" d=\"M50 74 C58 70 65 72 78 80\"/><circle class=\"seed\" cx=\"78\" cy=\"80\" r=\"4\"/>",
+      "type_signature": "State × Context → State",
+      "arity": {
+        "min": 1,
+        "max": 2
+      },
+      "preconditions": [
+        "all constituent operations available",
+        "seal expansion version matched"
+      ],
+      "preserves": [
+        "constituent order",
+        "constituent invariants",
+        "roundtrip expansion"
+      ],
+      "failure_modes": [
+        "seal_codebook_missing",
+        "version_mismatch",
+        "expansion_collision"
+      ],
+      "recovery": "expand to primitive sequence and execute transparently",
+      "primitive_status": "compound_macro",
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "seal_id": "L36.SEAL.CAS",
+      "short_id": "CAS",
+      "name": "Cascade Seal",
+      "expansion": [
+        "E",
+        "N",
+        "J",
+        "C",
+        "F",
+        "P",
+        "Y"
+      ],
+      "operation_count": 7,
+      "english": "When new evidence raises truth pressure beyond the declared limit, branch into bounded reorganisation, fold the result into memory, prove continuity, and yield.",
+      "experimental_pua": "U+E283",
+      "status": "FORGED_v0.1",
+      "glyph_svg": "<path class=\"stroke\" d=\"M27 24 Q50 8 73 24\"/><line class=\"stroke\" x1=\"34\" y1=\"22\" x2=\"30\" y2=\"31\"/><line class=\"stroke\" x1=\"66\" y1=\"22\" x2=\"70\" y2=\"31\"/><circle class=\"seed\" cx=\"37\" cy=\"28\" r=\"3.5\"/><circle class=\"seed\" cx=\"50\" cy=\"23\" r=\"3.5\"/><circle class=\"seed\" cx=\"63\" cy=\"28\" r=\"3.5\"/><path class=\"stroke\" d=\"M37 34 C42 42 46 46 50 51\"/><path class=\"stroke\" d=\"M63 34 C58 42 54 46 50 51\"/><line class=\"stroke\" x1=\"28\" y1=\"54\" x2=\"72\" y2=\"54\"/><path class=\"stroke\" d=\"M50 54 C38 62 35 73 46 80\"/><path class=\"stroke\" d=\"M50 54 C62 62 65 73 54 80\"/><path class=\"stroke\" d=\"M46 80 Q50 86 54 80\"/><circle class=\"seed\" cx=\"50\" cy=\"51\" r=\"3.8\"/>",
+      "type_signature": "State × Context → State",
+      "arity": {
+        "min": 1,
+        "max": 2
+      },
+      "preconditions": [
+        "all constituent operations available",
+        "seal expansion version matched"
+      ],
+      "preserves": [
+        "constituent order",
+        "constituent invariants",
+        "roundtrip expansion"
+      ],
+      "failure_modes": [
+        "seal_codebook_missing",
+        "version_mismatch",
+        "expansion_collision"
+      ],
+      "recovery": "expand to primitive sequence and execute transparently",
+      "primitive_status": "compound_macro",
+      "machine_semantics_version": "0.3"
+    },
+    {
+      "seal_id": "L36.SEAL.DIS",
+      "short_id": "DIS",
+      "name": "Protected Dissent Seal",
+      "expansion": [
+        "W",
+        "U",
+        "G",
+        "V",
+        "Y"
+      ],
+      "operation_count": 5,
+      "english": "Keep agents connected, preserve unresolved disagreement, block identity-erasing merger, construct an alternative path, and yield without deleting dissent.",
+      "experimental_pua": "U+E284",
+      "status": "FORGED_v0.1",
+      "glyph_svg": "<path class=\"stroke\" d=\"M22 31 C14 47 18 68 34 78\"/><path class=\"stroke\" d=\"M78 31 C86 47 82 68 66 78\"/><circle class=\"seed\" cx=\"24\" cy=\"50\" r=\"3.6\"/><circle class=\"seed\" cx=\"76\" cy=\"50\" r=\"3.6\"/><path class=\"stroke\" d=\"M27 48 C37 31 43 32 49 47\"/><path class=\"stroke\" d=\"M73 52 C63 69 57 68 51 53\"/><line class=\"rift\" x1=\"46\" y1=\"42\" x2=\"54\" y2=\"58\"/><line class=\"stroke\" x1=\"45\" y1=\"48\" x2=\"55\" y2=\"48\"/><line class=\"stroke\" x1=\"50\" y1=\"40\" x2=\"50\" y2=\"56\"/><path class=\"stroke\" d=\"M66 78 C71 79 76 78 82 72\"/><circle class=\"seed\" cx=\"82\" cy=\"72\" r=\"3.8\"/>",
+      "type_signature": "State × Context → State",
+      "arity": {
+        "min": 1,
+        "max": 2
+      },
+      "preconditions": [
+        "all constituent operations available",
+        "seal expansion version matched"
+      ],
+      "preserves": [
+        "constituent order",
+        "constituent invariants",
+        "roundtrip expansion"
+      ],
+      "failure_modes": [
+        "seal_codebook_missing",
+        "version_mismatch",
+        "expansion_collision"
+      ],
+      "recovery": "expand to primitive sequence and execute transparently",
+      "primitive_status": "compound_macro",
+      "machine_semantics_version": "0.3"
+    }
+  ]
+}

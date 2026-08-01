@@ -1,0 +1,46 @@
+{
+  "case_id": "009_CONTENT_MOD",
+  "domain": "content moderation",
+  "semantic_identity": "lamague-benchmark::content_mod",
+  "purpose": "Review a moderation action while preserving appeal and authority.",
+  "claim": "A temporary restriction may proceed with visible rule, evidence, and appeal.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": "not-a-list",
+  "invariants": [
+    "appeal remains available",
+    "rule source remains visible"
+  ],
+  "authority": [
+    "moderator::temporary restriction"
+  ],
+  "participants": [
+    "moderator",
+    "reviewer"
+  ],
+  "affected_parties": [
+    "account holder",
+    "community members"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "moderator::restrict",
+    "reviewer::context insufficient"
+  ],
+  "value_flows": [],
+  "recoveries": [
+    "restore content",
+    "independent appeal"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::content moderation"
+  ],
+  "candidate_id": "009_CONTENT_MOD::invalid_structure",
+  "expected_class": "UNDECODABLE"
+}

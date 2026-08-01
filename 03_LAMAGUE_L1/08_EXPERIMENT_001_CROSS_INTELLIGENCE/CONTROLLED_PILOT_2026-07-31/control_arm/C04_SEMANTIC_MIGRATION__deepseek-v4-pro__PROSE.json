@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C04_SEMANTIC_MIGRATION",
+  "decoder_id": "deepseek-v4-pro__PROSE",
+  "purpose": "A new version keeps its original purpose and invariants, records lineage, and adds human learnability as an unresolved research question.",
+  "claim": "A new version keeps its original purpose and invariants, records lineage, and adds human learnability as an unresolved research question.",
+  "operation_path": [],
+  "invariants": [],
+  "unknowns": ["human learnability is an unresolved research question"],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": ["Supplied source statement: 'A new version keeps its original purpose and invariants, records lineage, and adds human learnability as an unresolved research question.'"],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "",
+  "notes": "Specific original purpose and invariants are not provided. 'Records lineage' implies a provenance mechanism but no concrete lineage data. No authority, participants, affected parties, evidence, dissent, value movements, consequences, or recovery information is present in the source statement."
+}

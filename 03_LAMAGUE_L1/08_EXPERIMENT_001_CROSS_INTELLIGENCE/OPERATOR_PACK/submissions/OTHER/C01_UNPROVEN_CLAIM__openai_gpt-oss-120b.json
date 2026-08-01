@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C01_UNPROVEN_CLAIM",
+  "decoder_id": "openai/gpt-oss-120b",
+  "purpose": "Inspect a claim with incomplete evidence, publish a context‑limited result, and retain the unresolved method question.",
+  "claim": "Unspecified claim inspected by human and AI collaborators.",
+  "operation_path": ["O", "E", "U", "P", "Y"],
+  "invariants": [],
+  "unknowns": ["Method question unresolved"],
+  "authority": ["Human collaborators", "AI collaborators"],
+  "participants": ["Human collaborators", "AI collaborators"],
+  "affected_parties": ["General public"],
+  "evidence": ["Incomplete evidence gathered by collaborators"],
+  "provenance": ["Source statement"],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": ["Context‑limited publication may lead to partial understanding of the claim"],
+  "consequence_horizon": "Short-term",
+  "recovery": ["Further investigation to resolve the method question"],
+  "confidence": "Low (unproven)",
+  "notes": "The specific content of the claim, detailed evidence items, and any dissenting positions were not provided in the source statement; fields are left empty or noted accordingly."
+}

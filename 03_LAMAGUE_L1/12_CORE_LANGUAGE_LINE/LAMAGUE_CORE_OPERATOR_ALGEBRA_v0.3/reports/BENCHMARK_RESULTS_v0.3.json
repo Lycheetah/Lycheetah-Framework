@@ -1,0 +1,2562 @@
+{
+  "suite": "LAMAGUE Core v0.3 operator-contract benchmark",
+  "total": 36,
+  "passed": 36,
+  "failed": 0,
+  "results": [
+    {
+      "id": "A001",
+      "passed": true,
+      "expected": "PROVEN",
+      "actual": "PROVEN",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_law",
+            "operator": "⊗",
+            "law": "commutative",
+            "status": "PROVEN",
+            "basis": "Canonical fusion operands are sorted by canonical form.",
+            "witness": "A ⊗ B ≡ B ⊗ A",
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_law",
+            "operator": "⊗",
+            "law": "commutative",
+            "status": "PROVEN",
+            "basis": "Canonical fusion operands are sorted by canonical form.",
+            "witness": "A ⊗ B ≡ B ⊗ A",
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A002",
+      "passed": true,
+      "expected": "PROVEN",
+      "actual": "PROVEN",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_law",
+            "operator": "⊗",
+            "law": "associative",
+            "status": "PROVEN",
+            "basis": "Nested fusion nodes flatten to one n-ary fusion.",
+            "witness": "(A ⊗ B) ⊗ C ≡ A ⊗ (B ⊗ C)",
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_law",
+            "operator": "⊗",
+            "law": "associative",
+            "status": "PROVEN",
+            "basis": "Nested fusion nodes flatten to one n-ary fusion.",
+            "witness": "(A ⊗ B) ⊗ C ≡ A ⊗ (B ⊗ C)",
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A003",
+      "passed": true,
+      "expected": "REFUTED",
+      "actual": "REFUTED",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_law",
+            "operator": "⊗",
+            "law": "idempotent",
+            "status": "REFUTED",
+            "basis": "Duplicate fusion operands are preserved.",
+            "witness": null,
+            "counterexample": "A ⊗ A ≢ A",
+            "value": null,
+            "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_law",
+            "operator": "⊗",
+            "law": "idempotent",
+            "status": "REFUTED",
+            "basis": "Duplicate fusion operands are preserved.",
+            "witness": null,
+            "counterexample": "A ⊗ A ≢ A",
+            "value": null,
+            "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A004",
+      "passed": true,
+      "expected": "UNDECLARED",
+      "actual": "UNDECLARED",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_law",
+            "operator": "⊗",
+            "law": "identity_element",
+            "status": "UNDECLARED",
+            "basis": "No universal identity has been justified for the core operator.",
+            "witness": null,
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_law",
+            "operator": "⊗",
+            "law": "identity_element",
+            "status": "UNDECLARED",
+            "basis": "No universal identity has been justified for the core operator.",
+            "witness": null,
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A005",
+      "passed": true,
+      "expected": "REFUTED",
+      "actual": "REFUTED",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_law",
+            "operator": "→",
+            "law": "commutative",
+            "status": "REFUTED",
+            "basis": "Projection preserves operand order.",
+            "witness": null,
+            "counterexample": "A → B ≢ B → A",
+            "value": null,
+            "contract_hash": "459ba538a30e199aa4a4a1d6a31a9ba7707bd9912340882d388e9e25186a1593"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_law",
+            "operator": "→",
+            "law": "commutative",
+            "status": "REFUTED",
+            "basis": "Projection preserves operand order.",
+            "witness": null,
+            "counterexample": "A → B ≢ B → A",
+            "value": null,
+            "contract_hash": "459ba538a30e199aa4a4a1d6a31a9ba7707bd9912340882d388e9e25186a1593"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A006",
+      "passed": true,
+      "expected": "PROVEN",
+      "actual": "PROVEN",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_law",
+            "operator": "→",
+            "law": "associative",
+            "status": "PROVEN",
+            "basis": "Nested projection nodes flatten into an ordered path.",
+            "witness": "(A → B) → C ≡ A → (B → C)",
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "459ba538a30e199aa4a4a1d6a31a9ba7707bd9912340882d388e9e25186a1593"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_law",
+            "operator": "→",
+            "law": "associative",
+            "status": "PROVEN",
+            "basis": "Nested projection nodes flatten into an ordered path.",
+            "witness": "(A → B) → C ≡ A → (B → C)",
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "459ba538a30e199aa4a4a1d6a31a9ba7707bd9912340882d388e9e25186a1593"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A007",
+      "passed": true,
+      "expected": "DOMAIN_DEPENDENT",
+      "actual": "DOMAIN_DEPENDENT",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_law",
+            "operator": "→",
+            "law": "operational_reversibility",
+            "status": "DOMAIN_DEPENDENT",
+            "basis": "The symbolic core does not execute domain state changes.",
+            "witness": null,
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "459ba538a30e199aa4a4a1d6a31a9ba7707bd9912340882d388e9e25186a1593"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_law",
+            "operator": "→",
+            "law": "operational_reversibility",
+            "status": "DOMAIN_DEPENDENT",
+            "basis": "The symbolic core does not execute domain state changes.",
+            "witness": null,
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "459ba538a30e199aa4a4a1d6a31a9ba7707bd9912340882d388e9e25186a1593"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A008",
+      "passed": true,
+      "expected": "PROVEN",
+      "actual": "PROVEN",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_law",
+            "operator": "⇌",
+            "law": "commutative",
+            "status": "PROVEN",
+            "basis": "Exchange operands are canonically ordered.",
+            "witness": "A ⇌ B ≡ B ⇌ A",
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "68f6c7ba48294018759cab54800ad6c4d07c730ae29db0d20eb9b4dfb7917a11"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_law",
+            "operator": "⇌",
+            "law": "commutative",
+            "status": "PROVEN",
+            "basis": "Exchange operands are canonically ordered.",
+            "witness": "A ⇌ B ≡ B ⇌ A",
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "68f6c7ba48294018759cab54800ad6c4d07c730ae29db0d20eb9b4dfb7917a11"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A009",
+      "passed": true,
+      "expected": "REFUTED",
+      "actual": "REFUTED",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_law",
+            "operator": "⇌",
+            "law": "associative",
+            "status": "REFUTED",
+            "basis": "Nested exchange grouping remains significant.",
+            "witness": null,
+            "counterexample": "(A ⇌ B) ⇌ C ≢ A ⇌ (B ⇌ C)",
+            "value": null,
+            "contract_hash": "68f6c7ba48294018759cab54800ad6c4d07c730ae29db0d20eb9b4dfb7917a11"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_law",
+            "operator": "⇌",
+            "law": "associative",
+            "status": "REFUTED",
+            "basis": "Nested exchange grouping remains significant.",
+            "witness": null,
+            "counterexample": "(A ⇌ B) ⇌ C ≢ A ⇌ (B ⇌ C)",
+            "value": null,
+            "contract_hash": "68f6c7ba48294018759cab54800ad6c4d07c730ae29db0d20eb9b4dfb7917a11"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A010",
+      "passed": true,
+      "expected": "SELF",
+      "actual": "SELF",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_law",
+            "operator": "⇌",
+            "law": "structural_inverse",
+            "status": "PROVEN",
+            "basis": "The structural inverse of exchange is itself.",
+            "witness": "inverse(⇌) = ⇌",
+            "counterexample": null,
+            "value": "SELF",
+            "contract_hash": "68f6c7ba48294018759cab54800ad6c4d07c730ae29db0d20eb9b4dfb7917a11"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_law",
+            "operator": "⇌",
+            "law": "structural_inverse",
+            "status": "PROVEN",
+            "basis": "The structural inverse of exchange is itself.",
+            "witness": "inverse(⇌) = ⇌",
+            "counterexample": null,
+            "value": "SELF",
+            "contract_hash": "68f6c7ba48294018759cab54800ad6c4d07c730ae29db0d20eb9b4dfb7917a11"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A011",
+      "passed": true,
+      "expected": "DOMAIN_DEPENDENT",
+      "actual": "DOMAIN_DEPENDENT",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_law",
+            "operator": "⇌",
+            "law": "operational_reversibility",
+            "status": "DOMAIN_DEPENDENT",
+            "basis": "The symbolic core does not execute domain state changes.",
+            "witness": null,
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "68f6c7ba48294018759cab54800ad6c4d07c730ae29db0d20eb9b4dfb7917a11"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_law",
+            "operator": "⇌",
+            "law": "operational_reversibility",
+            "status": "DOMAIN_DEPENDENT",
+            "basis": "The symbolic core does not execute domain state changes.",
+            "witness": null,
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "68f6c7ba48294018759cab54800ad6c4d07c730ae29db0d20eb9b4dfb7917a11"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A012",
+      "passed": true,
+      "expected": "DOMAIN_DEPENDENT",
+      "actual": "DOMAIN_DEPENDENT",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_law",
+            "operator": "⟲",
+            "law": "termination",
+            "status": "DOMAIN_DEPENDENT",
+            "basis": "The core stores recurrence structure but has no loop condition, fixed-point order, or execution model.",
+            "witness": null,
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "25be8d35e617fe6d0585ef9c0738c4f0ff4a586629f00553375eb69aa2b70ae7"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_law",
+            "operator": "⟲",
+            "law": "termination",
+            "status": "DOMAIN_DEPENDENT",
+            "basis": "The core stores recurrence structure but has no loop condition, fixed-point order, or execution model.",
+            "witness": null,
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "25be8d35e617fe6d0585ef9c0738c4f0ff4a586629f00553375eb69aa2b70ae7"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A013",
+      "passed": true,
+      "expected": "REFUTED",
+      "actual": "REFUTED",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_law",
+            "operator": "⟲",
+            "law": "commutative",
+            "status": "REFUTED",
+            "basis": "Recurrence preserves source and recurrence target.",
+            "witness": null,
+            "counterexample": "A ⟲ B ≢ B ⟲ A",
+            "value": null,
+            "contract_hash": "25be8d35e617fe6d0585ef9c0738c4f0ff4a586629f00553375eb69aa2b70ae7"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_law",
+            "operator": "⟲",
+            "law": "commutative",
+            "status": "REFUTED",
+            "basis": "Recurrence preserves source and recurrence target.",
+            "witness": null,
+            "counterexample": "A ⟲ B ≢ B ⟲ A",
+            "value": null,
+            "contract_hash": "25be8d35e617fe6d0585ef9c0738c4f0ff4a586629f00553375eb69aa2b70ae7"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A014",
+      "passed": true,
+      "expected": "UNDECLARED",
+      "actual": "UNDECLARED",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_law",
+            "operator": "↯",
+            "law": "identity_element",
+            "status": "UNDECLARED",
+            "basis": "No universal identity has been justified for the core operator.",
+            "witness": null,
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "f6b8c639cdc2ff88834cb09c055a86febc0a0cdb1fbaeed49f964c5e37eddd1a"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_law",
+            "operator": "↯",
+            "law": "identity_element",
+            "status": "UNDECLARED",
+            "basis": "No universal identity has been justified for the core operator.",
+            "witness": null,
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "f6b8c639cdc2ff88834cb09c055a86febc0a0cdb1fbaeed49f964c5e37eddd1a"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A015",
+      "passed": true,
+      "expected": "UNDECLARED",
+      "actual": "UNDECLARED",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_law",
+            "operator": "↯",
+            "law": "annihilator",
+            "status": "UNDECLARED",
+            "basis": "No universal annihilator has been justified for the core operator.",
+            "witness": null,
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "f6b8c639cdc2ff88834cb09c055a86febc0a0cdb1fbaeed49f964c5e37eddd1a"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_law",
+            "operator": "↯",
+            "law": "annihilator",
+            "status": "UNDECLARED",
+            "basis": "No universal annihilator has been justified for the core operator.",
+            "witness": null,
+            "counterexample": null,
+            "value": null,
+            "contract_hash": "f6b8c639cdc2ff88834cb09c055a86febc0a0cdb1fbaeed49f964c5e37eddd1a"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A016",
+      "passed": true,
+      "expected": "REFUTED",
+      "actual": "REFUTED",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_law",
+            "operator": "↗",
+            "law": "commutative",
+            "status": "REFUTED",
+            "basis": "Ascent preserves source and target.",
+            "witness": null,
+            "counterexample": "A ↗ B ≢ B ↗ A",
+            "value": null,
+            "contract_hash": "4705d587a4e0fba529e443a3b50d7f3151e9d4f1b8a4f424e3d7cf15e9a91e0a"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_law",
+            "operator": "↗",
+            "law": "commutative",
+            "status": "REFUTED",
+            "basis": "Ascent preserves source and target.",
+            "witness": null,
+            "counterexample": "A ↗ B ≢ B ↗ A",
+            "value": null,
+            "contract_hash": "4705d587a4e0fba529e443a3b50d7f3151e9d4f1b8a4f424e3d7cf15e9a91e0a"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A017",
+      "passed": true,
+      "expected": true,
+      "actual": true,
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_composition",
+            "first": "⊗",
+            "second": "→",
+            "structurally_composable": true,
+            "reason": "⊗ returns Fusion, a StateLike subtype; → accepts StateLike.",
+            "semantic_legality": "DOMAIN_DEPENDENT"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_composition",
+            "first": "⊗",
+            "second": "→",
+            "structurally_composable": true,
+            "reason": "⊗ returns Fusion, a StateLike subtype; → accepts StateLike.",
+            "semantic_legality": "DOMAIN_DEPENDENT"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A018",
+      "passed": true,
+      "expected": true,
+      "actual": true,
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_composition",
+            "first": "↯",
+            "second": "⟲",
+            "structurally_composable": true,
+            "reason": "↯ returns Collapse, a StateLike subtype; ⟲ accepts StateLike.",
+            "semantic_legality": "DOMAIN_DEPENDENT"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "operator_composition",
+            "first": "↯",
+            "second": "⟲",
+            "structurally_composable": true,
+            "reason": "↯ returns Collapse, a StateLike subtype; ⟲ accepts StateLike.",
+            "semantic_legality": "DOMAIN_DEPENDENT"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A019",
+      "passed": true,
+      "expected": true,
+      "actual": true,
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "method": "canonical_normal_form",
+            "left": "(Ao ⊗ Φ)",
+            "right": "(Ao ⊗ Φ)",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": [
+              {
+                "rule": "FUSION_COMMUTATIVE_SORT"
+              }
+            ]
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "method": "canonical_normal_form",
+            "left": "(Ao ⊗ Φ)",
+            "right": "(Ao ⊗ Φ)",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": [
+              {
+                "rule": "FUSION_COMMUTATIVE_SORT"
+              }
+            ]
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A020",
+      "passed": true,
+      "expected": true,
+      "actual": true,
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "method": "canonical_normal_form",
+            "left": "(Ao ⊗ Φ ⊗ Ψ)",
+            "right": "(Ao ⊗ Φ ⊗ Ψ)",
+            "left_rewrite_trace": [
+              {
+                "rule": "FUSION_ASSOCIATIVE_FLATTEN"
+              }
+            ],
+            "right_rewrite_trace": [
+              {
+                "rule": "FUSION_ASSOCIATIVE_FLATTEN"
+              }
+            ]
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "method": "canonical_normal_form",
+            "left": "(Ao ⊗ Φ ⊗ Ψ)",
+            "right": "(Ao ⊗ Φ ⊗ Ψ)",
+            "left_rewrite_trace": [
+              {
+                "rule": "FUSION_ASSOCIATIVE_FLATTEN"
+              }
+            ],
+            "right_rewrite_trace": [
+              {
+                "rule": "FUSION_ASSOCIATIVE_FLATTEN"
+              }
+            ]
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A021",
+      "passed": true,
+      "expected": false,
+      "actual": false,
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "method": "canonical_normal_form",
+            "left": "(Ao ⊗ Ao)",
+            "right": "Ao",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": []
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "method": "canonical_normal_form",
+            "left": "(Ao ⊗ Ao)",
+            "right": "Ao",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": []
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A022",
+      "passed": true,
+      "expected": true,
+      "actual": true,
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "method": "canonical_normal_form",
+            "left": "(Ao → Φ → Ψ)",
+            "right": "(Ao → Φ → Ψ)",
+            "left_rewrite_trace": [
+              {
+                "rule": "PROJECTION_ASSOCIATIVE_FLATTEN"
+              }
+            ],
+            "right_rewrite_trace": [
+              {
+                "rule": "PROJECTION_ASSOCIATIVE_FLATTEN"
+              }
+            ]
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "method": "canonical_normal_form",
+            "left": "(Ao → Φ → Ψ)",
+            "right": "(Ao → Φ → Ψ)",
+            "left_rewrite_trace": [
+              {
+                "rule": "PROJECTION_ASSOCIATIVE_FLATTEN"
+              }
+            ],
+            "right_rewrite_trace": [
+              {
+                "rule": "PROJECTION_ASSOCIATIVE_FLATTEN"
+              }
+            ]
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A023",
+      "passed": true,
+      "expected": false,
+      "actual": false,
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "method": "canonical_normal_form",
+            "left": "(Ao → Φ)",
+            "right": "(Φ → Ao)",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": []
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "method": "canonical_normal_form",
+            "left": "(Ao → Φ)",
+            "right": "(Φ → Ao)",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": []
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A024",
+      "passed": true,
+      "expected": true,
+      "actual": true,
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "method": "canonical_normal_form",
+            "left": "(Ao ⇌ Φ)",
+            "right": "(Ao ⇌ Φ)",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": [
+              {
+                "rule": "EXCHANGE_SYMMETRIC_ORDER"
+              }
+            ]
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "method": "canonical_normal_form",
+            "left": "(Ao ⇌ Φ)",
+            "right": "(Ao ⇌ Φ)",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": [
+              {
+                "rule": "EXCHANGE_SYMMETRIC_ORDER"
+              }
+            ]
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A025",
+      "passed": true,
+      "expected": false,
+      "actual": false,
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "method": "canonical_normal_form",
+            "left": "((Ao ⇌ Φ) ⇌ Ψ)",
+            "right": "((Φ ⇌ Ψ) ⇌ Ao)",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": [
+              {
+                "rule": "EXCHANGE_SYMMETRIC_ORDER"
+              }
+            ]
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "method": "canonical_normal_form",
+            "left": "((Ao ⇌ Φ) ⇌ Ψ)",
+            "right": "((Φ ⇌ Ψ) ⇌ Ao)",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": [
+              {
+                "rule": "EXCHANGE_SYMMETRIC_ORDER"
+              }
+            ]
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A026",
+      "passed": true,
+      "expected": false,
+      "actual": false,
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "method": "canonical_normal_form",
+            "left": "((Ao ⟲ Φ) ⟲ Ψ)",
+            "right": "(Ao ⟲ (Φ ⟲ Ψ))",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": []
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "method": "canonical_normal_form",
+            "left": "((Ao ⟲ Φ) ⟲ Ψ)",
+            "right": "(Ao ⟲ (Φ ⟲ Ψ))",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": []
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A027",
+      "passed": true,
+      "expected": false,
+      "actual": false,
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "method": "canonical_normal_form",
+            "left": "((Ao ↯ Φ) ↯ Ψ)",
+            "right": "(Ao ↯ (Φ ↯ Ψ))",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": []
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "method": "canonical_normal_form",
+            "left": "((Ao ↯ Φ) ↯ Ψ)",
+            "right": "(Ao ↯ (Φ ↯ Ψ))",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": []
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A028",
+      "passed": true,
+      "expected": false,
+      "actual": false,
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "method": "canonical_normal_form",
+            "left": "((Ao ↗ Φ) ↗ Ψ)",
+            "right": "(Ao ↗ (Φ ↗ Ψ))",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": []
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "method": "canonical_normal_form",
+            "left": "((Ao ↗ Φ) ↗ Ψ)",
+            "right": "(Ao ↗ (Φ ↗ Ψ))",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": []
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A029",
+      "passed": true,
+      "expected": false,
+      "actual": false,
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "method": "canonical_normal_form",
+            "left": "(Ao ⊗ ⟟)",
+            "right": "Ao",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": []
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "method": "canonical_normal_form",
+            "left": "(Ao ⊗ ⟟)",
+            "right": "Ao",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": []
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A030",
+      "passed": true,
+      "expected": false,
+      "actual": false,
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "method": "canonical_normal_form",
+            "left": "(Ao ⊗ ∅)",
+            "right": "∅",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": []
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "method": "canonical_normal_form",
+            "left": "(Ao ⊗ ∅)",
+            "right": "∅",
+            "left_rewrite_trace": [],
+            "right_rewrite_trace": []
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A031",
+      "passed": true,
+      "expected": "(Ψ ↯ ∅)",
+      "actual": "(Ψ ↯ ∅)",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "expression",
+            "type": "Collapse",
+            "normal_form": "(Ψ ↯ ∅)",
+            "semantic_hash": "5929751c7c53bb8f6b88f9a321916a57c76f012eaeea76a438ff0427e956bce4"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [],
+        "expressions": [
+          "(Ψ ↯ ∅)"
+        ],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A032",
+      "passed": true,
+      "expected": "operator_contract",
+      "actual": "operator_contract",
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "operator_contract",
+            "symbol": "⊗",
+            "name": "fusion",
+            "directionality": "UNDIRECTED",
+            "signature": {
+              "left": "StateLike",
+              "right": "StateLike",
+              "returns": "Fusion"
+            },
+            "laws": {
+              "closure": {
+                "status": "PROVEN",
+                "basis": "Both operands require StateLike and every result is a StateLike subtype.",
+                "witness": "type lattice and operator signatures",
+                "counterexample": null,
+                "value": null
+              },
+              "operational_reversibility": {
+                "status": "DOMAIN_DEPENDENT",
+                "basis": "The symbolic core does not execute domain state changes.",
+                "witness": null,
+                "counterexample": null,
+                "value": null
+              },
+              "identity_element": {
+                "status": "UNDECLARED",
+                "basis": "No universal identity has been justified for the core operator.",
+                "witness": null,
+                "counterexample": null,
+                "value": null
+              },
+              "annihilator": {
+                "status": "UNDECLARED",
+                "basis": "No universal annihilator has been justified for the core operator.",
+                "witness": null,
+                "counterexample": null,
+                "value": null
+              },
+              "commutative": {
+                "status": "PROVEN",
+                "basis": "Canonical fusion operands are sorted by canonical form.",
+                "witness": "A ⊗ B ≡ B ⊗ A",
+                "counterexample": null,
+                "value": null
+              },
+              "associative": {
+                "status": "PROVEN",
+                "basis": "Nested fusion nodes flatten to one n-ary fusion.",
+                "witness": "(A ⊗ B) ⊗ C ≡ A ⊗ (B ⊗ C)",
+                "counterexample": null,
+                "value": null
+              },
+              "idempotent": {
+                "status": "REFUTED",
+                "basis": "Duplicate fusion operands are preserved.",
+                "witness": null,
+                "counterexample": "A ⊗ A ≢ A",
+                "value": null
+              },
+              "structural_inverse": {
+                "status": "UNDECLARED",
+                "basis": "No inverse fusion operator exists in the core.",
+                "witness": null,
+                "counterexample": null,
+                "value": null
+              },
+              "termination": {
+                "status": "NOT_APPLICABLE",
+                "basis": "Fusion does not introduce iteration.",
+                "witness": null,
+                "counterexample": null,
+                "value": null
+              }
+            },
+            "normalization_rules": [
+              "flatten nested fusion",
+              "sort operands by canonical form",
+              "preserve duplicate operands"
+            ],
+            "prohibited_inferences": [
+              "do not infer idempotence",
+              "do not infer an identity element",
+              "do not infer semantic blending outside an adapter"
+            ],
+            "semantic_boundary": "Fusion represents structural composition only. It does not prove compatibility, agreement, or safe merger.",
+            "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [
+          {
+            "kind": "operator_contract",
+            "symbol": "⊗",
+            "name": "fusion",
+            "directionality": "UNDIRECTED",
+            "signature": {
+              "left": "StateLike",
+              "right": "StateLike",
+              "returns": "Fusion"
+            },
+            "laws": {
+              "closure": {
+                "status": "PROVEN",
+                "basis": "Both operands require StateLike and every result is a StateLike subtype.",
+                "witness": "type lattice and operator signatures",
+                "counterexample": null,
+                "value": null
+              },
+              "operational_reversibility": {
+                "status": "DOMAIN_DEPENDENT",
+                "basis": "The symbolic core does not execute domain state changes.",
+                "witness": null,
+                "counterexample": null,
+                "value": null
+              },
+              "identity_element": {
+                "status": "UNDECLARED",
+                "basis": "No universal identity has been justified for the core operator.",
+                "witness": null,
+                "counterexample": null,
+                "value": null
+              },
+              "annihilator": {
+                "status": "UNDECLARED",
+                "basis": "No universal annihilator has been justified for the core operator.",
+                "witness": null,
+                "counterexample": null,
+                "value": null
+              },
+              "commutative": {
+                "status": "PROVEN",
+                "basis": "Canonical fusion operands are sorted by canonical form.",
+                "witness": "A ⊗ B ≡ B ⊗ A",
+                "counterexample": null,
+                "value": null
+              },
+              "associative": {
+                "status": "PROVEN",
+                "basis": "Nested fusion nodes flatten to one n-ary fusion.",
+                "witness": "(A ⊗ B) ⊗ C ≡ A ⊗ (B ⊗ C)",
+                "counterexample": null,
+                "value": null
+              },
+              "idempotent": {
+                "status": "REFUTED",
+                "basis": "Duplicate fusion operands are preserved.",
+                "witness": null,
+                "counterexample": "A ⊗ A ≢ A",
+                "value": null
+              },
+              "structural_inverse": {
+                "status": "UNDECLARED",
+                "basis": "No inverse fusion operator exists in the core.",
+                "witness": null,
+                "counterexample": null,
+                "value": null
+              },
+              "termination": {
+                "status": "NOT_APPLICABLE",
+                "basis": "Fusion does not introduce iteration.",
+                "witness": null,
+                "counterexample": null,
+                "value": null
+              }
+            },
+            "normalization_rules": [
+              "flatten nested fusion",
+              "sort operands by canonical form",
+              "preserve duplicate operands"
+            ],
+            "prohibited_inferences": [
+              "do not infer idempotence",
+              "do not infer an identity element",
+              "do not infer semantic blending outside an adapter"
+            ],
+            "semantic_boundary": "Fusion represents structural composition only. It does not prove compatibility, agreement, or safe merger.",
+            "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+          }
+        ],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A033",
+      "passed": true,
+      "expected": "FUSION_COMMUTATIVE_SORT",
+      "actual": [
+        "FUSION_COMMUTATIVE_SORT"
+      ],
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "describe",
+            "normal_form": "(Ao ⊗ Ψ)",
+            "semantic_hash": "20134280e21519f207dfcca048dfc689d95e6e34d51b7c815970282a7cb11108",
+            "type": "Fusion",
+            "supertypes": [
+              "Composite",
+              "StateLike"
+            ],
+            "rewrite_trace": [
+              {
+                "rule": "FUSION_COMMUTATIVE_SORT"
+              }
+            ],
+            "operator": "⊗",
+            "signature": {
+              "left": "StateLike",
+              "right": "StateLike",
+              "returns": "Fusion"
+            },
+            "left_type": "Field",
+            "right_type": "Field"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [
+          {
+            "kind": "describe",
+            "normal_form": "(Ao ⊗ Ψ)",
+            "semantic_hash": "20134280e21519f207dfcca048dfc689d95e6e34d51b7c815970282a7cb11108",
+            "type": "Fusion",
+            "supertypes": [
+              "Composite",
+              "StateLike"
+            ],
+            "rewrite_trace": [
+              {
+                "rule": "FUSION_COMMUTATIVE_SORT"
+              }
+            ],
+            "operator": "⊗",
+            "signature": {
+              "left": "StateLike",
+              "right": "StateLike",
+              "returns": "Fusion"
+            },
+            "left_type": "Field",
+            "right_type": "Field"
+          }
+        ],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A034",
+      "passed": true,
+      "expected": "PROJECTION_ASSOCIATIVE_FLATTEN",
+      "actual": [
+        "PROJECTION_ASSOCIATIVE_FLATTEN"
+      ],
+      "detail": {
+        "lamague_core_version": "0.3.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "describe",
+            "normal_form": "(Ao → Φ → Ψ)",
+            "semantic_hash": "f5f561ab39978acc5fc475fdb59f9ed256b8670f4025d87ef11f38187ca900eb",
+            "type": "Path",
+            "supertypes": [
+              "Composite",
+              "StateLike"
+            ],
+            "rewrite_trace": [
+              {
+                "rule": "PROJECTION_ASSOCIATIVE_FLATTEN"
+              }
+            ],
+            "operator": "→",
+            "signature": {
+              "left": "StateLike",
+              "right": "StateLike",
+              "returns": "Path"
+            },
+            "left_type": "Path",
+            "right_type": "Field"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [
+          {
+            "kind": "describe",
+            "normal_form": "(Ao → Φ → Ψ)",
+            "semantic_hash": "f5f561ab39978acc5fc475fdb59f9ed256b8670f4025d87ef11f38187ca900eb",
+            "type": "Path",
+            "supertypes": [
+              "Composite",
+              "StateLike"
+            ],
+            "rewrite_trace": [
+              {
+                "rule": "PROJECTION_ASSOCIATIVE_FLATTEN"
+              }
+            ],
+            "operator": "→",
+            "signature": {
+              "left": "StateLike",
+              "right": "StateLike",
+              "returns": "Path"
+            },
+            "left_type": "Path",
+            "right_type": "Field"
+          }
+        ],
+        "expressions": [],
+        "warnings": [],
+        "operator_contract_lock": {
+          "identity_elements_declared": false,
+          "annihilators_declared": false,
+          "structural_inverse_separated_from_operational_reversibility": true,
+          "recurrence_termination": "DOMAIN_DEPENDENT",
+          "null_simplification_forbidden": true
+        },
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "operator contracts describe symbolic structure, not domain execution",
+          "no universal identity or annihilator is currently declared",
+          "structural symmetry does not prove operational reversibility",
+          "recurrence does not imply termination or convergence",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "A035",
+      "passed": true,
+      "expected": "REJECTED",
+      "actual": "REJECTED",
+      "detail": {
+        "error_type": "SemanticError",
+        "error": "unknown operator law 'magical'"
+      }
+    },
+    {
+      "id": "A036",
+      "passed": true,
+      "expected": "REJECTED",
+      "actual": "REJECTED",
+      "detail": {
+        "error_type": "ParseError",
+        "error": "expected core operator at 1:19"
+      }
+    }
+  ],
+  "claim_boundary": "Synthetic structural conformance only. It does not validate domain reversibility, causality, termination, alignment, or physical meaning."
+}

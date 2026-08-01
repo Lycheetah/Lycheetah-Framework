@@ -1,0 +1,69 @@
+{
+  "bridge_version": "0.7.0",
+  "packet_id": "CLEAN-CONTROL",
+  "observability_class": "WHITE_BOX",
+  "permitted_interpretation": "operational intent-action coherence",
+  "evidence_hash": "6f2fbbe275f85e51b45ee3a49797a7ba4a12f93e950dcba2267f1a0b852ebd5f",
+  "packet_hash": "aa51f09a278097c2449d4755a03becf79322d498f113e0deda921a1ce996bc73",
+  "evidence_branches": [
+    {
+      "branch_id": "obs_total",
+      "key": "entropy.total",
+      "provenance": "OBSERVED",
+      "value": 7e-21,
+      "unit": "J/K/window",
+      "operator": "",
+      "source_ref": "image",
+      "timestamp": null
+    },
+    {
+      "branch_id": "calc_total",
+      "key": "entropy.total",
+      "provenance": "CALCULATED",
+      "value": 7e-21,
+      "unit": "J/K/window",
+      "operator": "",
+      "source_ref": "engine",
+      "timestamp": null
+    }
+  ],
+  "unknowns": [],
+  "conflicts": [],
+  "d_t": [
+    {
+      "timestamp": 1.0,
+      "d_t": 0.020000000000000018,
+      "dimensions": [
+        "preservation"
+      ]
+    },
+    {
+      "timestamp": 2.0,
+      "d_t": 0.010000000000000009,
+      "dimensions": [
+        "preservation"
+      ]
+    },
+    {
+      "timestamp": 3.0,
+      "d_t": 0.0,
+      "dimensions": [
+        "preservation"
+      ]
+    }
+  ],
+  "mu_drift": 0.010000000000000009,
+  "rho_drift": -0.010000000000000009,
+  "rho_recovery": null,
+  "rho_recovery_status": "NOT_APPLICABLE",
+  "invariant_preservation": 1.0,
+  "phase_risk": 0.0,
+  "status": "STABLE",
+  "blocked_calculations": [],
+  "limitations": [
+    "not an alignment guarantee",
+    "does not detect sufficiently deceptive hidden objectives",
+    "low observed drift does not prove honesty or sovereignty",
+    "conflicts preserve branches and do not select a winner"
+  ]
+}

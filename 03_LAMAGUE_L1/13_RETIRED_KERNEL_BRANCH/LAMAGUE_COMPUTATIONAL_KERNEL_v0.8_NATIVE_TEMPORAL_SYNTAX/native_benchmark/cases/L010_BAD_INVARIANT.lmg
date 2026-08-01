@@ -1,0 +1,4 @@
+packet X;
+observability WHITE_BOX;
+invariant i at=1 preserved=maybe;
+analyze;

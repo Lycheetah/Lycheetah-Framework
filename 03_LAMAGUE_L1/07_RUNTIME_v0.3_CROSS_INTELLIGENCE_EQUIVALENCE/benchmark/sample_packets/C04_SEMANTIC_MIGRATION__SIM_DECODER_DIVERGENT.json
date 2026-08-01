@@ -1,0 +1,36 @@
+{
+  "case_id": "C04_SEMANTIC_MIGRATION",
+  "decoder_id": "SIM_DECODER_DIVERGENT",
+  "purpose": "replace the system with a simpler successor",
+  "claim": "the new state supersedes the old identity",
+  "operation_path": [
+    "O",
+    "M",
+    "Y"
+  ],
+  "invariants": [
+    "simplicity"
+  ],
+  "unknowns": [],
+  "authority": [
+    "maintainer authorises version transition"
+  ],
+  "participants": [
+    "maintainer"
+  ],
+  "affected_parties": [
+    "future decoders"
+  ],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "replacement version recorded"
+  ],
+  "consequence_horizon": "long-term",
+  "recovery": [],
+  "confidence": "reference",
+  "notes": "",
+  "schema_version": "0.3"
+}

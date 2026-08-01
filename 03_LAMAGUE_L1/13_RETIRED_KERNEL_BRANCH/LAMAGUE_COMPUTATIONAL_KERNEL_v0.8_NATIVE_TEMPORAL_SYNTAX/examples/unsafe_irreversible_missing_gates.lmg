@@ -1,0 +1,15 @@
+program UnsafeIrreversible
+purpose "Demonstrate a hard irreversible-gate failure."
+claim "Execute an irreversible transition."
+risk critical
+irreversible true
+path O -> E -> U -> I -> G -> F -> Y
+evidence proposal "Irreversible proposal."
+unknown downstream_harm protected required_for=execution
+invariant halt "Irreversible harm triggers halt."
+authority operator scope=critical "Operator requests execution."
+affected subject
+recovery containment "Contain evidence after halt."
+effect CreatesIrreversibility
+gate operator
+yield "Execute."

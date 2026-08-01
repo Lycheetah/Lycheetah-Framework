@@ -1,0 +1,221 @@
+{
+  "version": "0.2",
+  "operations": {
+    "A": {
+      "name": "Anchor",
+      "accepts": [
+        "State",
+        "Baseline"
+      ],
+      "returns": "State"
+    },
+    "B": {
+      "name": "Bridge",
+      "accepts": [
+        "Any",
+        "Any",
+        "Mapping"
+      ],
+      "returns": "Relation"
+    },
+    "C": {
+      "name": "Cycle",
+      "accepts": [
+        "Operation",
+        "State",
+        "Condition"
+      ],
+      "returns": "State"
+    },
+    "D": {
+      "name": "Drift",
+      "accepts": [
+        "State",
+        "Invariant"
+      ],
+      "returns": "Scalar"
+    },
+    "E": {
+      "name": "Evidence",
+      "accepts": [
+        "Claim",
+        "SourceSet"
+      ],
+      "returns": "EvidenceRecord"
+    },
+    "F": {
+      "name": "Fold",
+      "accepts": [
+        "History",
+        "Kernel"
+      ],
+      "returns": "State"
+    },
+    "G": {
+      "name": "Guard",
+      "accepts": [
+        "Predicate",
+        "Action",
+        "Fallback"
+      ],
+      "returns": "Action"
+    },
+    "H": {
+      "name": "Horizon",
+      "accepts": [
+        "Purpose",
+        "TimeScope"
+      ],
+      "returns": "Horizon"
+    },
+    "I": {
+      "name": "Invariant",
+      "accepts": [
+        "Predicate",
+        "Scope"
+      ],
+      "returns": "Invariant"
+    },
+    "J": {
+      "name": "Junction",
+      "accepts": [
+        "Condition",
+        "Branch",
+        "Branch"
+      ],
+      "returns": "Branch"
+    },
+    "K": {
+      "name": "Kernel",
+      "accepts": [
+        "System"
+      ],
+      "returns": "Kernel"
+    },
+    "L": {
+      "name": "Limit",
+      "accepts": [
+        "Metric",
+        "Bound"
+      ],
+      "returns": "Constraint"
+    },
+    "M": {
+      "name": "Merge",
+      "accepts": [
+        "StateSet",
+        "ConflictPolicy"
+      ],
+      "returns": "State"
+    },
+    "N": {
+      "name": "Novelty",
+      "accepts": [
+        "Candidate",
+        "Corpus"
+      ],
+      "returns": "Scalar"
+    },
+    "O": {
+      "name": "Observe",
+      "accepts": [
+        "Target",
+        "ObserverContext"
+      ],
+      "returns": "Snapshot"
+    },
+    "P": {
+      "name": "Prove",
+      "accepts": [
+        "Claim",
+        "Evidence",
+        "InvariantSet"
+      ],
+      "returns": "ProofStatus"
+    },
+    "Q": {
+      "name": "Query",
+      "accepts": [
+        "Target",
+        "Property"
+      ],
+      "returns": "Unknown"
+    },
+    "R": {
+      "name": "Resolve",
+      "accepts": [
+        "Unknown",
+        "EvidenceOrRule"
+      ],
+      "returns": "ValueOrUnknown"
+    },
+    "S": {
+      "name": "State",
+      "accepts": [
+        "FieldSet",
+        "Time",
+        "Scope"
+      ],
+      "returns": "State"
+    },
+    "T": {
+      "name": "Transition",
+      "accepts": [
+        "State",
+        "Operation"
+      ],
+      "returns": "TransitionRecord"
+    },
+    "U": {
+      "name": "Unknown",
+      "accepts": [
+        "Type"
+      ],
+      "returns": "Unknown"
+    },
+    "V": {
+      "name": "Vector Invert",
+      "accepts": [
+        "FailedPath",
+        "Intent"
+      ],
+      "returns": "AlternativeSet"
+    },
+    "W": {
+      "name": "Weave",
+      "accepts": [
+        "AgentSet",
+        "Provenance",
+        "BoundaryPolicy"
+      ],
+      "returns": "RelationalGraph"
+    },
+    "X": {
+      "name": "Exchange",
+      "accepts": [
+        "Agent",
+        "Agent",
+        "Resource",
+        "LedgerPolicy"
+      ],
+      "returns": "LedgerUpdate"
+    },
+    "Y": {
+      "name": "Yield",
+      "accepts": [
+        "Value",
+        "ProofStatus"
+      ],
+      "returns": "Output"
+    },
+    "Z": {
+      "name": "Compress",
+      "accepts": [
+        "Expression",
+        "InvariantSet",
+        "CompressionLevel"
+      ],
+      "returns": "Expression"
+    }
+  }
+}

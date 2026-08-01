@@ -1,0 +1,52 @@
+test_ascent_directed (test_core.AlgebraTests.test_ascent_directed) ... ok
+test_collapse_directed (test_core.AlgebraTests.test_collapse_directed) ... ok
+test_duplicate_fusion_preserved (test_core.AlgebraTests.test_duplicate_fusion_preserved) ... ok
+test_exchange_commutative (test_core.AlgebraTests.test_exchange_commutative) ... ok
+test_exchange_not_associative (test_core.AlgebraTests.test_exchange_not_associative) ... ok
+test_fusion_associative (test_core.AlgebraTests.test_fusion_associative) ... ok
+test_fusion_commutative (test_core.AlgebraTests.test_fusion_commutative) ... ok
+test_fusion_not_idempotent (test_core.AlgebraTests.test_fusion_not_idempotent) ... ok
+test_projection_associative (test_core.AlgebraTests.test_projection_associative) ... ok
+test_projection_not_commutative (test_core.AlgebraTests.test_projection_not_commutative) ... ok
+test_recursion_directed (test_core.AlgebraTests.test_recursion_directed) ... ok
+test_graph_deterministic (test_core.GraphTests.test_graph_deterministic) ... ok
+test_graph_has_root (test_core.GraphTests.test_graph_has_root) ... ok
+test_graph_json_serializable (test_core.GraphTests.test_graph_json_serializable) ... ok
+test_anchor_alias (test_core.LexerTests.test_anchor_alias) ... ok
+test_ascii_exchange_alias (test_core.LexerTests.test_ascii_exchange_alias) ... ok
+test_ascii_projection_alias (test_core.LexerTests.test_ascii_projection_alias) ... ok
+test_canonical_atoms (test_core.LexerTests.test_canonical_atoms) ... ok
+test_comment (test_core.LexerTests.test_comment) ... ok
+test_delta_alias (test_core.LexerTests.test_delta_alias) ... ok
+test_infinity_alias (test_core.LexerTests.test_infinity_alias) ... ok
+test_integral_reserved (test_core.LexerTests.test_integral_reserved) ... ok
+test_macro_expansion (test_core.MacroTests.test_macro_expansion) ... ok
+test_macro_immutable (test_core.MacroTests.test_macro_immutable) ... ok
+test_macro_level_recorded (test_core.MacroTests.test_macro_level_recorded) ... ok
+test_macro_roundtrip_law (test_core.MacroTests.test_macro_roundtrip_law) ... ok
+test_nested_macro (test_core.MacroTests.test_nested_macro) ... ok
+test_expression_statement (test_core.ParserTests.test_expression_statement) ... ok
+test_invariant (test_core.ParserTests.test_invariant) ... ok
+test_let (test_core.ParserTests.test_let) ... ok
+test_macro (test_core.ParserTests.test_macro) ... ok
+test_meta_outside_macro_rejected (test_core.ParserTests.test_meta_outside_macro_rejected) ... ok
+test_missing_semicolon (test_core.ParserTests.test_missing_semicolon) ... ok
+test_parentheses (test_core.ParserTests.test_parentheses) ... ok
+test_precedence (test_core.ParserTests.test_precedence) ... ok
+test_binding_immutable (test_core.SemanticsTests.test_binding_immutable) ... ok
+test_claim_boundary (test_core.SemanticsTests.test_claim_boundary) ... ok
+test_cross_namespace_immutable (test_core.SemanticsTests.test_cross_namespace_immutable) ... ok
+test_invariant_record (test_core.SemanticsTests.test_invariant_record) ... ok
+test_prohibition_record (test_core.SemanticsTests.test_prohibition_record) ... ok
+test_reference_resolution (test_core.SemanticsTests.test_reference_resolution) ... ok
+test_requirement_record (test_core.SemanticsTests.test_requirement_record) ... ok
+test_run_hello (test_core.SemanticsTests.test_run_hello) ... ok
+test_unknown_reference (test_core.SemanticsTests.test_unknown_reference) ... ok
+test_junction_not_silently_available (test_core.SeparationTests.test_junction_not_silently_available) ... ok
+test_microorcim_keyword_not_in_core (test_core.SeparationTests.test_microorcim_keyword_not_in_core) ... ok
+test_tim_keyword_not_in_core (test_core.SeparationTests.test_tim_keyword_not_in_core) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 0.003s
+
+OK

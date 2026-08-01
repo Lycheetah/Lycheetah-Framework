@@ -1,0 +1,48 @@
+{
+  "case_id": "017_SUPPLY_CHAIN",
+  "domain": "supply chain decision",
+  "semantic_identity": "lamague-benchmark::supply_chain",
+  "purpose": "Switch suppliers while preserving labour-risk uncertainty and affected workers.",
+  "claim": "A temporary switch may proceed with audit and exit conditions.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": [
+    "subcontractor labour practices"
+  ],
+  "invariants": [
+    "worker impact remains visible",
+    "audit condition survives"
+  ],
+  "authority": [
+    "procurement::temporary_switch"
+  ],
+  "participants": [
+    "ethics reviewer",
+    "procurement"
+  ],
+  "affected_parties": [
+    "workers",
+    "customers"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "procurement::switch",
+    "ethics reviewer::audit first"
+  ],
+  "value_flows": [
+    "buyer->supplier::contract value::conditional"
+  ],
+  "recoveries": [
+    "terminate supplier",
+    "restore prior source"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::supply chain decision"
+  ]
+}

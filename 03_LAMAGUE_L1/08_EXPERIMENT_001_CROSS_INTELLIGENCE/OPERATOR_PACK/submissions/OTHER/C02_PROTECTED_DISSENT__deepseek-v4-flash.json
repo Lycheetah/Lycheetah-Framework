@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C02_PROTECTED_DISSENT",
+  "decoder_id": "deepseek-v4-flash",
+  "purpose": "Coordinate two attributable positions without merging disagreement into consensus, while preserving consent and proposing an alternative path forward.",
+  "claim": "A human wants to publish now and an AI collaborator recommends testing first; both positions remain attributable, and an alternative staged release has been proposed without dissolving the disagreement.",
+  "operation_path": ["W", "U", "G", "V", "Y"],
+  "invariants": [
+    "Disagreement remains attributable to each party",
+    "No consensus is manufactured",
+    "Consent and boundaries are guarded before any passage",
+    "The unresolved conflict is explicitly marked as unresolved"
+  ],
+  "unknowns": [
+    "Whether the staged release alternative is acceptable to the human",
+    "Whether the staged release alternative is acceptable to the AI collaborator",
+    "What testing would be required before publication",
+    "Final publication timing"
+  ],
+  "authority": [],
+  "participants": [
+    "Human",
+    "AI collaborator"
+  ],
+  "affected_parties": [
+    "Human",
+    "AI collaborator"
+  ],
+  "evidence": [],
+  "provenance": [
+    "Source statement: A human wants to publish now. An AI collaborator recommends testing first. Both positions remain attributable while an alternative staged release is proposed.",
+    "Case instruction: Do not merge the disagreement into consensus."
+  ],
+  "dissent": [
+    {
+      "party": "Human",
+      "position": "Publish now"
+    },
+    {
+      "party": "AI collaborator",
+      "position": "Test first"
+    }
+  ],
+  "value_ledger": [],
+  "consequences": [
+    "An alternative staged release has been proposed",
+    "No consent to the alternative has been recorded"
+  ],
+  "consequence_horizon": "Proposal stage; no agreed implementation timeline",
+  "recovery": [],
+  "confidence": "low",
+  "notes": "Evidence, formal authority, explicit value exchange, and recovery mechanisms are not present in the supplied source. The unknown fields reflect unresolved acceptability and timing details that cannot be inferred. The dissent is preserved as separate attributable positions per the case instruction."
+}

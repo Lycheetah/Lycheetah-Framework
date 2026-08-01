@@ -1,0 +1,6 @@
+{
+  "suite": "LAMAGUE Core Algebra v0.1 deterministic benchmark",
+  "total": 18,
+  "passed": 18,
+  "failed": 0
+}

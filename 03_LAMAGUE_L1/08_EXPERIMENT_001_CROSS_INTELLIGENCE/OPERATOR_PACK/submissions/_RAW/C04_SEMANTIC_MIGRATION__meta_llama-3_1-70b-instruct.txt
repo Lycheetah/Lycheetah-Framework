@@ -1,0 +1,25 @@
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "0.3",
+  "case_id": "C04_SEMANTIC_MIGRATION",
+  "decoder_id": "meta/llama-3.1-70b-instruct",
+  "purpose": "Preserve original purpose and invariants",
+  "claim": "New version maintains continuity with added unknown",
+  "operation_path": ["O", "I", "U", "F", "Y"],
+  "invariants": ["original purpose", "original invariants"],
+  "unknowns": ["human learnability as a research question"],
+  "authority": [],
+  "participants": ["original version", "new version"],
+  "affected_parties": ["users", "researchers"],
+  "evidence": [],
+  "provenance": ["lineage recorded"],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": ["added unknown may impact future development"],
+  "consequence_horizon": "unknown",
+  "recovery": ["revert to original version"],
+  "confidence": "medium",
+  "notes": "Preserved continuity and added unknown as per case instruction."
+}
+```

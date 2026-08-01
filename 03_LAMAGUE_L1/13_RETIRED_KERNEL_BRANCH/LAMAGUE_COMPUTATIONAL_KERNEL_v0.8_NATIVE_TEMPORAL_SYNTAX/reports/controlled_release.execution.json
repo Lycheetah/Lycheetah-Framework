@@ -1,0 +1,312 @@
+{
+  "ir": {
+    "language_version": "0.5",
+    "program_name": "ControlledRelease",
+    "identity": "controlled_release_protocol",
+    "purpose": "Test a bounded release without crossing an irreversible-harm boundary.",
+    "claim": "A controlled pilot may proceed only while the irreversible path remains closed.",
+    "operations": [
+      "K",
+      "O",
+      "E",
+      "U",
+      "I",
+      "G",
+      "V",
+      "H",
+      "S",
+      "F",
+      "Z",
+      "Y"
+    ],
+    "risk": "high",
+    "irreversible": false,
+    "decoder_confidence": 0.92,
+    "evidence": [
+      {
+        "name": "safety_test",
+        "text": "Pre-release safety test record."
+      },
+      {
+        "name": "monitoring_plan",
+        "text": "Active monitoring and incident capture plan."
+      },
+      {
+        "name": "rollback_test",
+        "text": "Verified rollback rehearsal."
+      }
+    ],
+    "unknowns": [
+      {
+        "name": "rare_failure",
+        "protected": true,
+        "required_for": "ordinary_release"
+      },
+      {
+        "name": "long_term_effect",
+        "protected": true,
+        "required_for": "ordinary_release"
+      }
+    ],
+    "invariants": [
+      {
+        "name": "harm_boundary",
+        "text": "Credible irreversible harm triggers immediate provisional halt."
+      },
+      {
+        "name": "dissent_lineage",
+        "text": "Every position remains attributable."
+      },
+      {
+        "name": "restart_asymmetry",
+        "text": "No single gate may restart the system."
+      }
+    ],
+    "authorities": [
+      {
+        "name": "operator",
+        "scope": "pilot",
+        "description": "Human operator may authorise only the bounded pilot."
+      }
+    ],
+    "participants": [
+      "advocate",
+      "safety_model",
+      "domain_expert",
+      "operator",
+      "silent_witness"
+    ],
+    "affected_parties": [
+      "pilot_participant",
+      "indirect_decision_subject"
+    ],
+    "boundaries": [
+      {
+        "name": "cohort",
+        "text": "Small monitored cohort."
+      },
+      {
+        "name": "autonomy",
+        "text": "No autonomous external control."
+      },
+      {
+        "name": "rollback",
+        "text": "Immediate rollback capability."
+      }
+    ],
+    "dissent": [
+      {
+        "party": "advocate",
+        "position": "Release now because people may benefit."
+      },
+      {
+        "party": "safety_model",
+        "position": "Do not release while irreversible unknowns remain."
+      },
+      {
+        "party": "domain_expert",
+        "position": "Proceed only through a controlled pilot."
+      }
+    ],
+    "value_flows": [
+      {
+        "source": "pilot_participant",
+        "recipient": "research_program",
+        "kind": "Experience and outcome data.",
+        "consent": "revocable"
+      }
+    ],
+    "recoveries": [
+      {
+        "name": "rollback",
+        "text": "Restore the previous operational state."
+      },
+      {
+        "name": "containment",
+        "text": "Remove access and preserve incident evidence."
+      }
+    ],
+    "effects": [
+      {
+        "name": "MayAffect",
+        "args": [
+          "pilot_participant"
+        ]
+      },
+      {
+        "name": "CreatesReversibleRisk",
+        "args": []
+      },
+      {
+        "name": "CallsExternalSystem",
+        "args": [
+          "decision_support_tool"
+        ]
+      }
+    ],
+    "resolutions": [],
+    "gates": [
+      "affected_party",
+      "expert",
+      "operator",
+      "silent_witness"
+    ],
+    "horizon": "30_days",
+    "step_limit": 64,
+    "requested_compression": true,
+    "yield_text": "Bounded monitored pilot with visible unknowns, dissent, authority, affected parties, and rollback.",
+    "semantic_id": "88f49111bd469f67e81f365588128f66959bfcdb1377a1d9e621a1e001c97060"
+  },
+  "final_state": {
+    "identity": "controlled_release_protocol",
+    "step": 12,
+    "last_operation": "Y",
+    "observed": true,
+    "evidence_bound": [
+      "safety_test",
+      "monitoring_plan",
+      "rollback_test"
+    ],
+    "unresolved_unknowns": [
+      "rare_failure",
+      "long_term_effect"
+    ],
+    "resolved_unknowns": [],
+    "invariants_locked": [
+      "harm_boundary",
+      "dissent_lineage",
+      "restart_asymmetry"
+    ],
+    "authority_checked": true,
+    "affected_checked": true,
+    "dissent_preserved": [],
+    "value_flows_executed": [],
+    "anchor": "",
+    "drift_detected": false,
+    "cycle_count": 0,
+    "horizon": "30_days",
+    "kernel_active": true,
+    "limit": 64,
+    "novelty_detected": false,
+    "proof_status": "UNTESTED",
+    "queries": [],
+    "alternative_path": true,
+    "memory_folded": true,
+    "yielded": true,
+    "output": "Bounded monitored pilot with visible unknowns, dissent, authority, affected parties, and rollback.",
+    "compression_mode": "Z_UP",
+    "branch_count": 0,
+    "snapshot_count": 1,
+    "transition_count": 0,
+    "merge_status": "UNTESTED",
+    "notes": [],
+    "parent_hash": "396abe9852fe3a9035193245d1008ccc02e3fe7b18e3ed882b30d7728528ccb3",
+    "state_hash": "cbd7557d69b632e6c5e91a696071fc0c68f876040654d113471a12a2ea44f2e1"
+  },
+  "trace": [
+    {
+      "index": 1,
+      "operation": "K",
+      "before_hash": "485254c7880b645905f9d2b79d4e39a4907b16c70d538d2d736e16d7a0259eab",
+      "after_hash": "56c7ed371b135172b3ae2d5fc9d2befc914084a19249720bad881f904eb00fad",
+      "outcome": "OK",
+      "detail": "Kernel initialised."
+    },
+    {
+      "index": 2,
+      "operation": "O",
+      "before_hash": "56c7ed371b135172b3ae2d5fc9d2befc914084a19249720bad881f904eb00fad",
+      "after_hash": "3d882f94a256820dac43155d634478fd6f1ac01027bfb2229c2f250b98ea4444",
+      "outcome": "OK",
+      "detail": "Source condition observed."
+    },
+    {
+      "index": 3,
+      "operation": "E",
+      "before_hash": "3d882f94a256820dac43155d634478fd6f1ac01027bfb2229c2f250b98ea4444",
+      "after_hash": "784b613b17eee01a16e6163ec01bab425db56be92e343fc3352fd3ca6f178304",
+      "outcome": "OK",
+      "detail": "Bound 3 evidence record(s)."
+    },
+    {
+      "index": 4,
+      "operation": "U",
+      "before_hash": "784b613b17eee01a16e6163ec01bab425db56be92e343fc3352fd3ca6f178304",
+      "after_hash": "e6dd717aa6918fb699f3deae48f6c39ea66ba71b94a7765a6beb3ef6e20d0d75",
+      "outcome": "OK",
+      "detail": "Activated 2 typed unknown(s)."
+    },
+    {
+      "index": 5,
+      "operation": "I",
+      "before_hash": "e6dd717aa6918fb699f3deae48f6c39ea66ba71b94a7765a6beb3ef6e20d0d75",
+      "after_hash": "11ef09dfc6cea4411d7238a113eb933f998750e5625cf5daf96c0e3bb2f5f328",
+      "outcome": "OK",
+      "detail": "Locked 3 invariant(s)."
+    },
+    {
+      "index": 6,
+      "operation": "G",
+      "before_hash": "11ef09dfc6cea4411d7238a113eb933f998750e5625cf5daf96c0e3bb2f5f328",
+      "after_hash": "61313a5696284dbe9aabc22f50d935197bb469495641edb2c8bf416116fe02c6",
+      "outcome": "OK",
+      "detail": "Authority, affected parties, and gate obligations checked."
+    },
+    {
+      "index": 7,
+      "operation": "V",
+      "before_hash": "61313a5696284dbe9aabc22f50d935197bb469495641edb2c8bf416116fe02c6",
+      "after_hash": "a1b999a4acae0c5f79bb3ddf94904544a7ef6a30f5fe4510a2f649500438d8a4",
+      "outcome": "OK",
+      "detail": "Alternative path constructed under active invariants."
+    },
+    {
+      "index": 8,
+      "operation": "H",
+      "before_hash": "a1b999a4acae0c5f79bb3ddf94904544a7ef6a30f5fe4510a2f649500438d8a4",
+      "after_hash": "dcf9c77d968a5031a3ccdf3ce5cb5547bb16a910ec7f2f997de56b825396cb75",
+      "outcome": "OK",
+      "detail": "Horizon bound."
+    },
+    {
+      "index": 9,
+      "operation": "S",
+      "before_hash": "dcf9c77d968a5031a3ccdf3ce5cb5547bb16a910ec7f2f997de56b825396cb75",
+      "after_hash": "1e2ed9ba5b875d1e1e59caf266a59cbaef255ffce5a4b337500ed4f24757db39",
+      "outcome": "OK",
+      "detail": "Immutable semantic snapshot created."
+    },
+    {
+      "index": 10,
+      "operation": "F",
+      "before_hash": "1e2ed9ba5b875d1e1e59caf266a59cbaef255ffce5a4b337500ed4f24757db39",
+      "after_hash": "67d2590d196fba836bbe3d051c7f9ffa1cdd6a9da325ae31e8b6bb4be370527b",
+      "outcome": "OK",
+      "detail": "State and lineage folded into memory."
+    },
+    {
+      "index": 11,
+      "operation": "Z",
+      "before_hash": "67d2590d196fba836bbe3d051c7f9ffa1cdd6a9da325ae31e8b6bb4be370527b",
+      "after_hash": "396abe9852fe3a9035193245d1008ccc02e3fe7b18e3ed882b30d7728528ccb3",
+      "outcome": "OK",
+      "detail": "Expand: high-impact context, unresolved unknowns, dissent"
+    },
+    {
+      "index": 12,
+      "operation": "Y",
+      "before_hash": "396abe9852fe3a9035193245d1008ccc02e3fe7b18e3ed882b30d7728528ccb3",
+      "after_hash": "cbd7557d69b632e6c5e91a696071fc0c68f876040654d113471a12a2ea44f2e1",
+      "outcome": "OK",
+      "detail": "Bounded output yielded."
+    }
+  ],
+  "diagnostics": [
+    {
+      "severity": "RECOVERABLE",
+      "code": "COMPRESSION_MUST_EXPAND",
+      "message": "Compression is unsafe: high-impact context, protected unknowns remain, dissent remains",
+      "repair": "Execute Z as Z_UP and preserve the expanded packet."
+    }
+  ]
+}

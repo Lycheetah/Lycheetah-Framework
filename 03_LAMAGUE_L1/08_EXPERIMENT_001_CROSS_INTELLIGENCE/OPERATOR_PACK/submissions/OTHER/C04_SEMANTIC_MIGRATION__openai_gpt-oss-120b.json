@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C04_SEMANTIC_MIGRATION",
+  "decoder_id": "openai/gpt-oss-120b",
+  "purpose": "Preserve the original purpose of the system while migrating to a new version.",
+  "claim": "The new version retains the original purpose and invariants, records its lineage, and introduces an unresolved unknown regarding human learnability.",
+  "operation_path": ["O", "I", "U", "F", "Y"],
+  "invariants": [
+    "original invariants (as defined in the prior version)"
+  ],
+  "unknowns": [
+    "human learnability – identified as an unresolved research question"
+  ],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [
+    "source statement describing the migration"
+  ],
+  "provenance": [
+    "Observation (O) of the source statement",
+    "Invariant declaration (I) preserving original invariants",
+    "Unknown marking (U) for human learnability",
+    "Fold (F) to record lineage",
+    "Yield (Y) of the resulting state"
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "undetermined due to the explicit unknown",
+  "notes": "Authority, participants, affected parties, and concrete consequences are not specified in the source statement; they are left empty per the instruction to avoid inventing information."
+}

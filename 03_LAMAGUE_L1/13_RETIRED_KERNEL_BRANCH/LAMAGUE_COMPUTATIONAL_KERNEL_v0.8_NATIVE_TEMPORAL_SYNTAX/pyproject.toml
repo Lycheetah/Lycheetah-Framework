@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lamague-computational-kernel"
+version = "0.8.0"
+description = "Typed consequential-meaning kernel with native temporal evidence syntax."
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "Mackenzie Clark"}]
+
+[project.scripts]
+lamague = "lamague_kernel.cli:main"
+lamague-native = "lamague_native.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["lamague_kernel*", "lamague_temporal*", "lamague_benchmark*", "lamague_native*"]

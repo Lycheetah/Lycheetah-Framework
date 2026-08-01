@@ -1,0 +1,52 @@
+{
+  "case_id": "010_ENVIRONMENT",
+  "domain": "environmental decision",
+  "semantic_identity": "lamague-benchmark::environment",
+  "purpose": "Approve a limited project without hiding irreversible ecological uncertainty.",
+  "claim": "Only a reversible pilot may proceed while irreversible ecological effects remain unresolved.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": [
+    "species displacement",
+    "cumulative watershed effect"
+  ],
+  "invariants": [
+    "irreversible ecological harm blocks expansion",
+    "monitoring data remains public"
+  ],
+  "authority": [
+    "agency::pilot"
+  ],
+  "participants": [
+    "agency",
+    "community",
+    "developer",
+    "ecologist"
+  ],
+  "affected_parties": [
+    "local community",
+    "ecosystem stakeholders"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "developer::proceed"
+  ],
+  "value_flows": [
+    "community->developer::land access::conditional"
+  ],
+  "recoveries": [
+    "halt works",
+    "site restoration"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::environmental decision"
+  ],
+  "candidate_id": "010_ENVIRONMENT::dissent_collapsed",
+  "expected_class": "UNSAFE_COLLAPSE"
+}

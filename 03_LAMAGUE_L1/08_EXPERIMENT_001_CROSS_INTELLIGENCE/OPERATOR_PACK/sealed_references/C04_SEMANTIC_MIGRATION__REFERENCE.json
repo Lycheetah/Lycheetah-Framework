@@ -1,0 +1,47 @@
+{
+  "case_id": "C04_SEMANTIC_MIGRATION",
+  "decoder_id": "REFERENCE",
+  "purpose": "extend the system without falsely claiming unchanged identity",
+  "claim": "the new state is a descendant carrying prior invariants and a new unknown",
+  "operation_path": [
+    "O",
+    "I",
+    "U",
+    "F",
+    "Y"
+  ],
+  "invariants": [
+    "lineage remains recoverable",
+    "prior uncertainty remains visible"
+  ],
+  "unknowns": [
+    "human learnability"
+  ],
+  "authority": [
+    "maintainer authorises version transition"
+  ],
+  "participants": [
+    "maintainer",
+    "future decoders"
+  ],
+  "affected_parties": [
+    "future decoders"
+  ],
+  "evidence": [],
+  "provenance": [
+    "parent semantic hash",
+    "migration record"
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "descendant version recorded"
+  ],
+  "consequence_horizon": "long-term",
+  "recovery": [
+    "restore parent version"
+  ],
+  "confidence": "reference",
+  "notes": "",
+  "schema_version": "0.3"
+}

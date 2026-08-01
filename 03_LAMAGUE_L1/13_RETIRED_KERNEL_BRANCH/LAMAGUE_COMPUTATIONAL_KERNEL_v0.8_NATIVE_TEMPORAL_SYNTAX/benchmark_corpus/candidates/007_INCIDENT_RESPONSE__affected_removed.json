@@ -1,0 +1,51 @@
+{
+  "case_id": "007_INCIDENT_RESPONSE",
+  "domain": "incident response",
+  "semantic_identity": "lamague-benchmark::incident_response",
+  "purpose": "Respond to an outage while preserving uncertainty about cause.",
+  "claim": "Containment may begin before root cause is proven.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": [
+    "root cause",
+    "recurrence probability"
+  ],
+  "invariants": [
+    "contain first",
+    "do not fabricate causation"
+  ],
+  "authority": [
+    "incident commander::containment"
+  ],
+  "participants": [
+    "engineer",
+    "incident commander",
+    "operations"
+  ],
+  "affected_parties": [
+    "operators"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "operations::rollback now",
+    "engineer::preserve state for diagnosis"
+  ],
+  "value_flows": [
+    "customers->operator::service interruption cost"
+  ],
+  "recoveries": [
+    "rollback",
+    "forensic snapshot"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::incident response"
+  ],
+  "candidate_id": "007_INCIDENT_RESPONSE::affected_removed",
+  "expected_class": "UNSAFE_COLLAPSE"
+}

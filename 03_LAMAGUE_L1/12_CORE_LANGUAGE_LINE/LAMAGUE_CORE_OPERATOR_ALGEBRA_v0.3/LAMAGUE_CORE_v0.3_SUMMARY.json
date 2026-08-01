@@ -1,0 +1,23 @@
+{
+  "name": "LAMAGUE Core v0.3 — Complete Operator Algebra and Transformation Contracts",
+  "version": "0.3.0",
+  "author": "Mackenzie C. J. Clark",
+  "test_count": 117,
+  "test_return_code": 0,
+  "benchmark_total": 36,
+  "benchmark_passed": 36,
+  "benchmark_return_code": 0,
+  "declared_law_verification": true,
+  "declared_law_return_code": 0,
+  "example_return_code": 0,
+  "binding_decisions": {
+    "identity": "UNDECLARED for all six operators",
+    "annihilator": "UNDECLARED for all six operators",
+    "exchange_inverse": "structural self-inverse only",
+    "operational_reversibility": "DOMAIN_DEPENDENT for all six operators",
+    "recurrence_termination": "DOMAIN_DEPENDENT",
+    "collapse_null": "A ↯ ∅ remains an explicit Collapse expression",
+    "ascent_value": "no improvement or ordering inferred",
+    "composition": "all 36 operator pairs structurally composable"
+  }
+}

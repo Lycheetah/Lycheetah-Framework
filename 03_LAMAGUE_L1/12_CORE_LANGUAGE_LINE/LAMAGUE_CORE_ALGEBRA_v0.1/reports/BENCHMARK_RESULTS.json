@@ -1,0 +1,579 @@
+{
+  "suite": "LAMAGUE Core Algebra v0.1 deterministic benchmark",
+  "total": 18,
+  "passed": 18,
+  "failed": 0,
+  "results": [
+    {
+      "id": "C001",
+      "name": "Canonical return path",
+      "passed": true,
+      "expected": "ACCEPTED",
+      "detail": {
+        "lamague_core_version": "0.1.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "expression",
+            "sort": "Path",
+            "normal_form": "(Ao → Φ↑ → Ψ_inv)",
+            "semantic_hash": "a582635b2ac22400e9fb31a122925a6287a774368237980aa2f0cbc1d5413905"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "expressions": [
+          "(Ao → Φ↑ → Ψ_inv)"
+        ],
+        "warnings": [],
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "C002",
+      "name": "Fusion commutativity",
+      "passed": true,
+      "expected": true,
+      "detail": {
+        "lamague_core_version": "0.1.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "left": "(Ao ⊗ Φ)",
+            "right": "(Ao ⊗ Φ)"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "left": "(Ao ⊗ Φ)",
+            "right": "(Ao ⊗ Φ)"
+          }
+        ],
+        "expressions": [],
+        "warnings": [],
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "C003",
+      "name": "Fusion associativity",
+      "passed": true,
+      "expected": true,
+      "detail": {
+        "lamague_core_version": "0.1.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "left": "(Ao ⊗ Φ ⊗ Ψ)",
+            "right": "(Ao ⊗ Φ ⊗ Ψ)"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "left": "(Ao ⊗ Φ ⊗ Ψ)",
+            "right": "(Ao ⊗ Φ ⊗ Ψ)"
+          }
+        ],
+        "expressions": [],
+        "warnings": [],
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "C004",
+      "name": "Fusion non-idempotence",
+      "passed": true,
+      "expected": false,
+      "detail": {
+        "lamague_core_version": "0.1.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "left": "(Ao ⊗ Ao)",
+            "right": "Ao"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "left": "(Ao ⊗ Ao)",
+            "right": "Ao"
+          }
+        ],
+        "expressions": [],
+        "warnings": [],
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "C005",
+      "name": "Projection associativity",
+      "passed": true,
+      "expected": true,
+      "detail": {
+        "lamague_core_version": "0.1.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "left": "(Ao → Φ → Ψ)",
+            "right": "(Ao → Φ → Ψ)"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "left": "(Ao → Φ → Ψ)",
+            "right": "(Ao → Φ → Ψ)"
+          }
+        ],
+        "expressions": [],
+        "warnings": [],
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "C006",
+      "name": "Projection direction",
+      "passed": true,
+      "expected": false,
+      "detail": {
+        "lamague_core_version": "0.1.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "left": "(Ao → Φ)",
+            "right": "(Φ → Ao)"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "left": "(Ao → Φ)",
+            "right": "(Φ → Ao)"
+          }
+        ],
+        "expressions": [],
+        "warnings": [],
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "C007",
+      "name": "Exchange symmetry",
+      "passed": true,
+      "expected": true,
+      "detail": {
+        "lamague_core_version": "0.1.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "left": "(Ao ⇌ Φ)",
+            "right": "(Ao ⇌ Φ)"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "left": "(Ao ⇌ Φ)",
+            "right": "(Ao ⇌ Φ)"
+          }
+        ],
+        "expressions": [],
+        "warnings": [],
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "C008",
+      "name": "Collapse direction",
+      "passed": true,
+      "expected": false,
+      "detail": {
+        "lamague_core_version": "0.1.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "left": "(Ao ↯ Φ)",
+            "right": "(Φ ↯ Ao)"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "left": "(Ao ↯ Φ)",
+            "right": "(Φ ↯ Ao)"
+          }
+        ],
+        "expressions": [],
+        "warnings": [],
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "C009",
+      "name": "Lossless macro",
+      "passed": true,
+      "expected": "(Ao → Φ → Ψ_inv)",
+      "detail": {
+        "lamague_core_version": "0.1.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "macro",
+            "name": "RETURN",
+            "level": "Z₁",
+            "normal_form": "(Ao → Φ → Ψ_inv)",
+            "compression": {
+              "expanded_characters": 16,
+              "macro_characters": 6,
+              "character_ratio": 2.666667,
+              "expanded_tokens": 5,
+              "macro_tokens": 1,
+              "roundtrip_law": "expand(macro) = normalized_expression"
+            }
+          },
+          {
+            "kind": "expression",
+            "sort": "Path",
+            "normal_form": "(Ao → Φ → Ψ_inv)",
+            "semantic_hash": "4f048eb8d2024202cf01d9d96d47ff9000e9a6aaf3f5340a8ec258b73c2ee73c"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {
+          "RETURN": {
+            "level": "Z₁",
+            "normal_form": "(Ao → Φ → Ψ_inv)",
+            "compression": {
+              "expanded_characters": 16,
+              "macro_characters": 6,
+              "character_ratio": 2.666667,
+              "expanded_tokens": 5,
+              "macro_tokens": 1,
+              "roundtrip_law": "expand(macro) = normalized_expression"
+            }
+          }
+        },
+        "checks": [],
+        "expressions": [
+          "(Ao → Φ → Ψ_inv)"
+        ],
+        "warnings": [],
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "C010",
+      "name": "Immutable binding",
+      "passed": true,
+      "expected": "REJECTED",
+      "detail": {
+        "error_type": "SemanticError",
+        "error": "name 'x' is immutable and already defined"
+      }
+    },
+    {
+      "id": "C011",
+      "name": "Unknown reference",
+      "passed": true,
+      "expected": "REJECTED",
+      "detail": {
+        "error_type": "SemanticError",
+        "error": "unknown reference 'unknown_name'"
+      }
+    },
+    {
+      "id": "C012",
+      "name": "Reserved integral",
+      "passed": true,
+      "expected": "REJECTED",
+      "detail": {
+        "error_type": "LexError",
+        "error": "reserved symbol '∮' at 1:4; core recursion is '⟲' and '∮' is reserved for integration"
+      }
+    },
+    {
+      "id": "C013",
+      "name": "Legacy aliases transparent",
+      "passed": true,
+      "expected": "WARNINGS",
+      "detail": {
+        "lamague_core_version": "0.1.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "expression",
+            "sort": "Exchange",
+            "normal_form": "((Ao → Δ) ⇌ ∞)",
+            "semantic_hash": "9f5d27308aca5bfe7823ea36b44297e47607029e9bf836ab15b24d4c2dab4ee3"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "expressions": [
+          "((Ao → Δ) ⇌ ∞)"
+        ],
+        "warnings": [
+          {
+            "code": "LEGACY_ALIAS",
+            "message": "Use canonical anchor spelling Ao.",
+            "raw": "A₀",
+            "canonical": "Ao",
+            "line": 1,
+            "column": 1
+          },
+          {
+            "code": "ASCII_ALIAS",
+            "message": "Use canonical projection arrow →.",
+            "raw": "->",
+            "canonical": "→",
+            "line": 1,
+            "column": 4
+          },
+          {
+            "code": "LEGACY_ALIAS",
+            "message": "Use Greek capital delta Δ U+0394.",
+            "raw": "∆",
+            "canonical": "Δ",
+            "line": 1,
+            "column": 7
+          },
+          {
+            "code": "ASCII_ALIAS",
+            "message": "Use canonical exchange arrow ⇌.",
+            "raw": "<->",
+            "canonical": "⇌",
+            "line": 1,
+            "column": 9
+          },
+          {
+            "code": "LEGACY_ALIAS",
+            "message": "Use infinity ∞ U+221E.",
+            "raw": "♾",
+            "canonical": "∞",
+            "line": 1,
+            "column": 13
+          }
+        ],
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "C014",
+      "name": "Meta outside macro",
+      "passed": true,
+      "expected": "REJECTED",
+      "detail": {
+        "error_type": "ParseError",
+        "error": "meta symbol Z₁ is legal only in macro declarations at 1:1"
+      }
+    },
+    {
+      "id": "C015",
+      "name": "TIM separation",
+      "passed": true,
+      "expected": "REJECTED",
+      "detail": {
+        "error_type": "ParseError",
+        "error": "expected ';' at 1:9, got 'evidence'"
+      }
+    },
+    {
+      "id": "C016",
+      "name": "Microorcim separation",
+      "passed": true,
+      "expected": "REJECTED",
+      "detail": {
+        "error_type": "ParseError",
+        "error": "expected ';' at 1:8, got 'state'"
+      }
+    },
+    {
+      "id": "C017",
+      "name": "Invariant record",
+      "passed": true,
+      "expected": "INVARIANT",
+      "detail": {
+        "lamague_core_version": "0.1.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "invariant",
+            "name": "stable",
+            "normal_form": "(Ao → Ψ_inv)",
+            "semantic_hash": "d5902330a96a645da0e3a7fd19e2a8280f7e14cac7566bd7e9694285f1dabe96"
+          }
+        ],
+        "bindings": {},
+        "invariants": {
+          "stable": "(Ao → Ψ_inv)"
+        },
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "expressions": [],
+        "warnings": [],
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "C018",
+      "name": "Prohibition record",
+      "passed": true,
+      "expected": "PROHIBITION",
+      "detail": {
+        "lamague_core_version": "0.1.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "forbid",
+            "normal_form": "(Ψ ↯ ∅)",
+            "semantic_hash": "5929751c7c53bb8f6b88f9a321916a57c76f012eaeea76a438ff0427e956bce4"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [
+          "(Ψ ↯ ∅)"
+        ],
+        "macros": {},
+        "checks": [],
+        "expressions": [],
+        "warnings": [],
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    }
+  ],
+  "claim_boundary": "Synthetic software conformance only; no domain validation."
+}

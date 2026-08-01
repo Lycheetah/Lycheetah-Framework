@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LAMAGUE Decoder Packet v0.3",
+  "type": "object",
+  "required": [
+    "case_id",
+    "decoder_id",
+    "purpose",
+    "claim",
+    "operation_path"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.3"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "decoder_id": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "claim": {
+      "type": "string"
+    },
+    "operation_path": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]$"
+      }
+    },
+    "invariants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "authority": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "participants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "affected_parties": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "provenance": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dissent": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "value_ledger": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "consequences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "consequence_horizon": {
+      "type": "string"
+    },
+    "recovery": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

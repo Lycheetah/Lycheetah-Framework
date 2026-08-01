@@ -1,0 +1,5 @@
+packet X;
+observability WHITE_BOX;
+intent x at=1 value=1;
+action x at=1 value=0;
+analyze;

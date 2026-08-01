@@ -1,0 +1,5 @@
+let triad_path = Ao → Φ↑ → Ψ → Ψ_inv;
+macro Z₁ TRIAD_RETURN = triad_path;
+macro Z₂ RETURN_MODULE = TRIAD_RETURN;
+TRIAD_RETURN;
+RETURN_MODULE;

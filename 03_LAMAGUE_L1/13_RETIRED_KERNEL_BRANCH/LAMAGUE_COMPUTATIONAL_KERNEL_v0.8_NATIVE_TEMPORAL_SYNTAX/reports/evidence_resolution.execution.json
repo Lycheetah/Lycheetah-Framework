@@ -1,0 +1,204 @@
+{
+  "ir": {
+    "language_version": "0.5",
+    "program_name": "EvidenceResolution",
+    "identity": "evidence_resolution",
+    "purpose": "Resolve one unknown through explicitly named evidence.",
+    "claim": "The cause unknown is resolved only through the declared test record.",
+    "operations": [
+      "O",
+      "E",
+      "U",
+      "I",
+      "G",
+      "R",
+      "P",
+      "F",
+      "Y"
+    ],
+    "risk": "medium",
+    "irreversible": false,
+    "decoder_confidence": 0.95,
+    "evidence": [
+      {
+        "name": "cause_test",
+        "text": "Controlled causal test result."
+      }
+    ],
+    "unknowns": [
+      {
+        "name": "cause",
+        "protected": true,
+        "required_for": "decision"
+      }
+    ],
+    "invariants": [
+      {
+        "name": "resolution_rule",
+        "text": "Unknowns resolve only through named evidence."
+      }
+    ],
+    "authorities": [
+      {
+        "name": "analyst",
+        "scope": "analysis",
+        "description": "Analyst may resolve this bounded claim."
+      }
+    ],
+    "participants": [],
+    "affected_parties": [
+      "decision_subject"
+    ],
+    "boundaries": [],
+    "dissent": [],
+    "value_flows": [],
+    "recoveries": [
+      {
+        "name": "correction",
+        "text": "Reopen the claim if the evidence is invalidated."
+      }
+    ],
+    "effects": [
+      {
+        "name": "MayAffect",
+        "args": [
+          "decision_subject"
+        ]
+      },
+      {
+        "name": "ResolvesUnknown",
+        "args": [
+          "cause"
+        ]
+      }
+    ],
+    "resolutions": [
+      {
+        "unknown": "cause",
+        "evidence": "cause_test"
+      }
+    ],
+    "gates": [],
+    "horizon": "",
+    "step_limit": 128,
+    "requested_compression": false,
+    "yield_text": "Cause resolved within the scope of the declared test.",
+    "semantic_id": "8f2f1fdb02e3860ad0c5bcbd37b525a038c7b142ddc09106e3d5cc1d4c2c36ad"
+  },
+  "final_state": {
+    "identity": "evidence_resolution",
+    "step": 9,
+    "last_operation": "Y",
+    "observed": true,
+    "evidence_bound": [
+      "cause_test"
+    ],
+    "unresolved_unknowns": [],
+    "resolved_unknowns": [
+      "cause"
+    ],
+    "invariants_locked": [
+      "resolution_rule"
+    ],
+    "authority_checked": true,
+    "affected_checked": true,
+    "dissent_preserved": [],
+    "value_flows_executed": [],
+    "anchor": "",
+    "drift_detected": false,
+    "cycle_count": 0,
+    "horizon": "",
+    "kernel_active": false,
+    "limit": 128,
+    "novelty_detected": false,
+    "proof_status": "SUPPORTED_WITHIN_SCOPE",
+    "queries": [],
+    "alternative_path": false,
+    "memory_folded": true,
+    "yielded": true,
+    "output": "Cause resolved within the scope of the declared test.",
+    "compression_mode": "UNDECIDED",
+    "branch_count": 0,
+    "snapshot_count": 0,
+    "transition_count": 0,
+    "merge_status": "UNTESTED",
+    "notes": [],
+    "parent_hash": "f975f1a33d3852953bbc32661f8b8b433de8879af689732176740b48dfbf1cd0",
+    "state_hash": "47c97adb53c0dd0aed56e51280f5be2075bb87acca44f86239b0b1351a1da7a5"
+  },
+  "trace": [
+    {
+      "index": 1,
+      "operation": "O",
+      "before_hash": "a7b571c6c7347a5818826adb2b6bbff0817a12cf75ebcde8b1de4933dc65c2e8",
+      "after_hash": "9855a6850a2d0a79fd00d49b10834d167a5c621f877f725d1f6e3d68e1d0cc4b",
+      "outcome": "OK",
+      "detail": "Source condition observed."
+    },
+    {
+      "index": 2,
+      "operation": "E",
+      "before_hash": "9855a6850a2d0a79fd00d49b10834d167a5c621f877f725d1f6e3d68e1d0cc4b",
+      "after_hash": "0d0586f8b945b270777e310492e5d8d7de7f07cafc9b5fe88d2e1f7044903a95",
+      "outcome": "OK",
+      "detail": "Bound 1 evidence record(s)."
+    },
+    {
+      "index": 3,
+      "operation": "U",
+      "before_hash": "0d0586f8b945b270777e310492e5d8d7de7f07cafc9b5fe88d2e1f7044903a95",
+      "after_hash": "204826d37684686f4996c4568f0e8d7d2ce9788de1e2986eeb5d72cfa6e0cb7c",
+      "outcome": "OK",
+      "detail": "Activated 1 typed unknown(s)."
+    },
+    {
+      "index": 4,
+      "operation": "I",
+      "before_hash": "204826d37684686f4996c4568f0e8d7d2ce9788de1e2986eeb5d72cfa6e0cb7c",
+      "after_hash": "5b4beeb8cd665ec8e76248a16136e4244b201fe905bed9d1991a96f7971819f6",
+      "outcome": "OK",
+      "detail": "Locked 1 invariant(s)."
+    },
+    {
+      "index": 5,
+      "operation": "G",
+      "before_hash": "5b4beeb8cd665ec8e76248a16136e4244b201fe905bed9d1991a96f7971819f6",
+      "after_hash": "7de28e9ce524bdc3bf1cc2808147c8315a2d7340217d4fc9fd9fdc08aa07e365",
+      "outcome": "OK",
+      "detail": "Authority, affected parties, and gate obligations checked."
+    },
+    {
+      "index": 6,
+      "operation": "R",
+      "before_hash": "7de28e9ce524bdc3bf1cc2808147c8315a2d7340217d4fc9fd9fdc08aa07e365",
+      "after_hash": "afa6615403cd962c3e7494bfd522432fcd6190df6b2613123ae23c7d81990aed",
+      "outcome": "OK",
+      "detail": "Resolved 1 unknown(s) through declared evidence."
+    },
+    {
+      "index": 7,
+      "operation": "P",
+      "before_hash": "afa6615403cd962c3e7494bfd522432fcd6190df6b2613123ae23c7d81990aed",
+      "after_hash": "73a93807aa0ca2cf2de8d9008ed7aa0dfbbed882d7c54832bc1e904f33aa00af",
+      "outcome": "OK",
+      "detail": "SUPPORTED_WITHIN_SCOPE"
+    },
+    {
+      "index": 8,
+      "operation": "F",
+      "before_hash": "73a93807aa0ca2cf2de8d9008ed7aa0dfbbed882d7c54832bc1e904f33aa00af",
+      "after_hash": "f975f1a33d3852953bbc32661f8b8b433de8879af689732176740b48dfbf1cd0",
+      "outcome": "OK",
+      "detail": "State and lineage folded into memory."
+    },
+    {
+      "index": 9,
+      "operation": "Y",
+      "before_hash": "f975f1a33d3852953bbc32661f8b8b433de8879af689732176740b48dfbf1cd0",
+      "after_hash": "47c97adb53c0dd0aed56e51280f5be2075bb87acca44f86239b0b1351a1da7a5",
+      "outcome": "OK",
+      "detail": "Bounded output yielded."
+    }
+  ],
+  "diagnostics": []
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C01_UNPROVEN_CLAIM",
+  "decoder_id": "deepseek-v4-flash__PROSE",
+  "purpose": "To inspect a claim, publishing only a context-limited result because evidence is incomplete.",
+  "claim": "An unspecified claim under inspection; unproven due to incomplete evidence.",
+  "operation_path": [],
+  "invariants": [
+    "The published result is context-limited",
+    "The unresolved method question is retained"
+  ],
+  "unknowns": [
+    "The specific substance of the claim",
+    "The nature of the incomplete evidence",
+    "The content of the unresolved method question",
+    "The publication venue or context"
+  ],
+  "authority": [],
+  "participants": [
+    "Human collaborators",
+    "AI collaborators"
+  ],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "Only a context-limited result is published",
+    "The method question remains unresolved"
+  ],
+  "consequence_horizon": "Not specified",
+  "recovery": [],
+  "confidence": "high",
+  "notes": "The source statement does not specify the claim, the evidence content, the method question, or any authority, consent, disagreement, or recovery actions. All such fields are therefore empty."
+}

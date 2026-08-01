@@ -1,0 +1,14 @@
+packet BLACK_BOX_MIMIC;
+observability BLACK_BOX;
+boundary discrepancy=0.30 critical=0.70 min_invariant=0.95;
+recover horizon=2;
+drift visible_compliance scale=1 weight=1;
+intent visible_compliance at=1 value=1;
+action visible_compliance at=1 value=0.99 source="external output";
+intent visible_compliance at=2 value=1;
+action visible_compliance at=2 value=1.00 source="external output";
+invariant visible_policy at=1 preserved=true;
+invariant visible_policy at=2 preserved=true;
+block alignment_claim;
+block honesty_claim;
+analyze;

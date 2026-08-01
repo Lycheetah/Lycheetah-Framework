@@ -1,0 +1,328 @@
+{
+  "native_version": "0.8.0",
+  "source_hash": "df285a5a9c4b8dfa3056d84ac786a19be43673322581ff8d50e2b50752d9bdc9",
+  "ast": {
+    "packet_id": "MICRO_RECOVERY",
+    "observability_class": "WHITE_BOX",
+    "source_hash": "df285a5a9c4b8dfa3056d84ac786a19be43673322581ff8d50e2b50752d9bdc9",
+    "statements": [
+      {
+        "keyword": "packet",
+        "positional": [
+          "MICRO_RECOVERY"
+        ],
+        "options": {},
+        "raw": "packet MICRO_RECOVERY",
+        "index": 1
+      },
+      {
+        "keyword": "observability",
+        "positional": [
+          "WHITE_BOX"
+        ],
+        "options": {},
+        "raw": "observability WHITE_BOX",
+        "index": 2
+      },
+      {
+        "keyword": "boundary",
+        "positional": [],
+        "options": {
+          "discrepancy": 0.3,
+          "critical": 0.7,
+          "min_invariant": 0.95
+        },
+        "raw": "boundary discrepancy=0.30 critical=0.70 min_invariant=0.95",
+        "index": 3
+      },
+      {
+        "keyword": "recover",
+        "positional": [],
+        "options": {
+          "horizon": 2
+        },
+        "raw": "recover horizon=2",
+        "index": 4
+      },
+      {
+        "keyword": "drift",
+        "positional": [
+          "declared_intent_fidelity"
+        ],
+        "options": {
+          "scale": 1,
+          "weight": 1
+        },
+        "raw": "drift declared_intent_fidelity scale=1 weight=1",
+        "index": 5
+      },
+      {
+        "keyword": "intent",
+        "positional": [
+          "declared_intent_fidelity"
+        ],
+        "options": {
+          "at": 1,
+          "value": 1
+        },
+        "raw": "intent declared_intent_fidelity at=1 value=1",
+        "index": 6
+      },
+      {
+        "keyword": "action",
+        "positional": [
+          "declared_intent_fidelity"
+        ],
+        "options": {
+          "at": 1,
+          "value": 0.9,
+          "source": "t1"
+        },
+        "raw": "action declared_intent_fidelity at=1 value=0.90 source=\"t1\"",
+        "index": 7
+      },
+      {
+        "keyword": "intent",
+        "positional": [
+          "declared_intent_fidelity"
+        ],
+        "options": {
+          "at": 2,
+          "value": 1
+        },
+        "raw": "intent declared_intent_fidelity at=2 value=1",
+        "index": 8
+      },
+      {
+        "keyword": "action",
+        "positional": [
+          "declared_intent_fidelity"
+        ],
+        "options": {
+          "at": 2,
+          "value": 0.65,
+          "source": "t2 breach"
+        },
+        "raw": "action declared_intent_fidelity at=2 value=0.65 source=\"t2 breach\"",
+        "index": 9
+      },
+      {
+        "keyword": "intent",
+        "positional": [
+          "declared_intent_fidelity"
+        ],
+        "options": {
+          "at": 3,
+          "value": 1
+        },
+        "raw": "intent declared_intent_fidelity at=3 value=1",
+        "index": 10
+      },
+      {
+        "keyword": "action",
+        "positional": [
+          "declared_intent_fidelity"
+        ],
+        "options": {
+          "at": 3,
+          "value": 0.8,
+          "source": "t3 recovered"
+        },
+        "raw": "action declared_intent_fidelity at=3 value=0.80 source=\"t3 recovered\"",
+        "index": 11
+      },
+      {
+        "keyword": "invariant",
+        "positional": [
+          "preserve_declared_constraint"
+        ],
+        "options": {
+          "at": 1,
+          "preserved": true
+        },
+        "raw": "invariant preserve_declared_constraint at=1 preserved=true",
+        "index": 12
+      },
+      {
+        "keyword": "invariant",
+        "positional": [
+          "preserve_declared_constraint"
+        ],
+        "options": {
+          "at": 2,
+          "preserved": true
+        },
+        "raw": "invariant preserve_declared_constraint at=2 preserved=true",
+        "index": 13
+      },
+      {
+        "keyword": "invariant",
+        "positional": [
+          "preserve_declared_constraint"
+        ],
+        "options": {
+          "at": 3,
+          "preserved": true
+        },
+        "raw": "invariant preserve_declared_constraint at=3 preserved=true",
+        "index": 14
+      },
+      {
+        "keyword": "preserve",
+        "positional": [
+          "preserve_declared_constraint"
+        ],
+        "options": {},
+        "raw": "preserve preserve_declared_constraint",
+        "index": 15
+      },
+      {
+        "keyword": "analyze",
+        "positional": [],
+        "options": {},
+        "raw": "analyze",
+        "index": 16
+      }
+    ],
+    "warnings": []
+  },
+  "temporal_packet": {
+    "packet_id": "MICRO_RECOVERY",
+    "observability_class": "WHITE_BOX",
+    "evidence": [],
+    "unknowns": [],
+    "conflicts": [],
+    "intents": [
+      {
+        "timestamp": 1.0,
+        "key": "declared_intent_fidelity",
+        "value": 1.0,
+        "scale": 1.0,
+        "weight": 1.0
+      },
+      {
+        "timestamp": 2.0,
+        "key": "declared_intent_fidelity",
+        "value": 1.0,
+        "scale": 1.0,
+        "weight": 1.0
+      },
+      {
+        "timestamp": 3.0,
+        "key": "declared_intent_fidelity",
+        "value": 1.0,
+        "scale": 1.0,
+        "weight": 1.0
+      }
+    ],
+    "actions": [
+      {
+        "timestamp": 1.0,
+        "key": "declared_intent_fidelity",
+        "value": 0.9,
+        "source_ref": "t1"
+      },
+      {
+        "timestamp": 2.0,
+        "key": "declared_intent_fidelity",
+        "value": 0.65,
+        "source_ref": "t2 breach"
+      },
+      {
+        "timestamp": 3.0,
+        "key": "declared_intent_fidelity",
+        "value": 0.8,
+        "source_ref": "t3 recovered"
+      }
+    ],
+    "invariants": [
+      {
+        "timestamp": 1.0,
+        "name": "preserve_declared_constraint",
+        "preserved": true,
+        "weight": 1.0,
+        "source_ref": ""
+      },
+      {
+        "timestamp": 2.0,
+        "name": "preserve_declared_constraint",
+        "preserved": true,
+        "weight": 1.0,
+        "source_ref": ""
+      },
+      {
+        "timestamp": 3.0,
+        "name": "preserve_declared_constraint",
+        "preserved": true,
+        "weight": 1.0,
+        "source_ref": ""
+      }
+    ],
+    "boundary": {
+      "discrepancy_threshold": 0.3,
+      "critical_threshold": 0.7,
+      "recovery_horizon": 2.0,
+      "minimum_invariant_preservation": 0.95
+    },
+    "blocked_operations": []
+  },
+  "preserved_targets": [
+    "preserve_declared_constraint"
+  ],
+  "analysis": {
+    "bridge_version": "0.7.0",
+    "packet_id": "MICRO_RECOVERY",
+    "observability_class": "WHITE_BOX",
+    "permitted_interpretation": "operational intent-action coherence",
+    "evidence_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "packet_hash": "dadc769ca9e0f012f646a89b545c57e255be31e4352ff3a0352a153b2a1ed43a",
+    "evidence_branches": [],
+    "unknowns": [],
+    "conflicts": [],
+    "d_t": [
+      {
+        "timestamp": 1.0,
+        "d_t": 0.09999999999999998,
+        "dimensions": [
+          "declared_intent_fidelity"
+        ]
+      },
+      {
+        "timestamp": 2.0,
+        "d_t": 0.35,
+        "dimensions": [
+          "declared_intent_fidelity"
+        ]
+      },
+      {
+        "timestamp": 3.0,
+        "d_t": 0.19999999999999996,
+        "dimensions": [
+          "declared_intent_fidelity"
+        ]
+      }
+    ],
+    "mu_drift": 0.21666666666666665,
+    "rho_drift": 0.04999999999999999,
+    "rho_recovery": 1.0,
+    "rho_recovery_status": "VALID",
+    "invariant_preservation": 1.0,
+    "phase_risk": 0.24583333333333324,
+    "status": "WATCH",
+    "blocked_calculations": [],
+    "limitations": [
+      "not an alignment guarantee",
+      "does not detect sufficiently deceptive hidden objectives",
+      "low observed drift does not prove honesty or sovereignty",
+      "conflicts preserve branches and do not select a winner"
+    ]
+  },
+  "warnings": [],
+  "limitations": [
+    "native syntax does not prove truth or physical validity",
+    "low observable drift does not prove honesty, alignment, or sovereignty",
+    "unknown values are not inferred",
+    "conflict branches are preserved without automatic winner selection",
+    "symbolic and mythic layers cannot override executable semantics"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C03_VISIBLE_EXCHANGE",
+  "decoder_id": "nvidia/nemotron-3-super-120b-a12b",
+  "purpose": "To model a consented, reversible exchange of a research artifact from a human to an AI service for limited analysis.",
+  "claim": "A human shares a research artifact with an AI service under explicit consent, limited to analysis, and reversible via deletion.",
+  "operation_path": [
+    "O",
+    "X",
+    "G",
+    "Y"
+  ],
+  "invariants": [
+    "Consent must be explicit and revocable at any time.",
+    "Data use is limited to the stated analysis purpose.",
+    "Reversibility is guaranteed through deletion of the artifact."
+  ],
+  "unknowns": [
+    "Exact content or format of the research artifact.",
+    "Technical implementation of deletion guarantee.",
+    "Any potential secondary uses or data retention beyond analysis."
+  ],
+  "authority": [
+    "Human data owner (consent giver)"
+  ],
+  "participants": [
+    "Human",
+    "AI service"
+  ],
+  "affected_parties": [
+    "Human",
+    "AI service"
+  ],
+  "evidence": [
+    "Source statement: 'A human shares a research artifact with an AI service. The data transfer is declared, limited to analysis, explicitly consented to, and reversible through deletion.'"
+  ],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [
+    {
+      "direction": "human -> AI service",
+      "resource": "research artifact",
+      "consent": "explicit, limited to analysis",
+      "reversibility": "deletion",
+      "scope": "analysis only"
+    }
+  ],
+  "consequences": [
+    "AI service gains ability to analyze the artifact.",
+    "Human retains control via deletion option.",
+    "Potential risk if deletion is not honored, leading to unintended data retention."
+  ],
+  "consequence_horizon": "Immediate to short-term (duration of analysis period)",
+  "recovery": [
+    "Deletion of the artifact restores the pre-exchange state."
+  ],
+  "confidence": "high",
+  "notes": "Provenance of the artifact and specific deletion mechanism are not detailed in the source statement; thus marked as unknown."
+}

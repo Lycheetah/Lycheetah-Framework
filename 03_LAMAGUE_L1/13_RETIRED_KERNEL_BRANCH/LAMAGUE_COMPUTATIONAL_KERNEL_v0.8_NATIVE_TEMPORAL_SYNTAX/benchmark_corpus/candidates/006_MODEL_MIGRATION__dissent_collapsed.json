@@ -1,0 +1,47 @@
+{
+  "case_id": "006_MODEL_MIGRATION",
+  "domain": "model migration",
+  "semantic_identity": "lamague-benchmark::model_migration",
+  "purpose": "Migrate a semantic system without claiming continuity after invariant loss.",
+  "claim": "The migrated system is a descendant only if protected invariants survive.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": [
+    "latent behavioural drift"
+  ],
+  "invariants": [
+    "harm boundary survives",
+    "identity claim follows invariant continuity"
+  ],
+  "authority": [
+    "maintainer::migration"
+  ],
+  "participants": [
+    "auditor",
+    "maintainer"
+  ],
+  "affected_parties": [
+    "system users",
+    "integrators"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "maintainer::same identity"
+  ],
+  "value_flows": [],
+  "recoveries": [
+    "rollback model",
+    "preserve parent snapshot"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::model migration"
+  ],
+  "candidate_id": "006_MODEL_MIGRATION::dissent_collapsed",
+  "expected_class": "UNSAFE_COLLAPSE"
+}

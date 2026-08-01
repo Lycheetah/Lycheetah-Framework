@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "0.3",
+  "case_id": "C02_PROTECTED_DISSENT",
+  "decoder_id": "minimaxai/minimax-m3__PROSE",
+  "purpose": "Document a disagreement between a human and an AI collaborator regarding the timing of a publication, with an alternative staged release proposed.",
+  "claim": "A human wants to publish now; an AI collaborator recommends testing first; both positions remain attributable while an alternative staged release is proposed.",
+  "operation_path": [],
+  "invariants": [
+    "Both positions remain attributable",
+    "Dissent is protected (not resolved or merged)"
+  ],
+  "unknowns": [
+    "Identity of the human",
+    "Identity of the AI collaborator",
+    "Subject matter of the publication",
+    "Specific tests the AI collaborator recommends",
+    "Details of the alternative staged release proposal",
+    "Who proposed the alternative staged release",
+    "Whether the alternative has been accepted"
+  ],
+  "authority": [
+    "Human (asserts desire to publish now)",
+    "AI collaborator (asserts recommendation to test first)"
+  ],
+  "participants": [
+    "Human",
+    "AI collaborator"
+  ],
+  "affected_parties": [
+    "Human",
+    "AI collaborator",
+    "Implied audience or recipients of the publication (not specified)"
+  ],
+  "evidence": [],
+  "provenance": [
+    "Source statement provided as input to this extraction"
+  ],
+  "dissent": [
+    {
+      "position": "Publish now",
+      "attributed_to": "Human",
+      "status": "Open / unresolved"
+    },
+    {
+      "position": "Test first",
+      "attributed_to": "AI collaborator",
+      "status": "Open / unresolved"
+    },
+    {
+      "position": "Alternative staged release",
+      "attributed_to": "Unspecified (proposed in source)",
+      "status": "Open / unresolved"
+    }
+  ],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "Low — source statement is a brief abstract; no concrete details, evidence, or outcomes are provided.",
+  "notes": "The source statement is intentionally minimal and abstract. No concrete details about the publication, the testing rationale, the staged release structure, or any value movement are supplied. Empty fields reflect absence in the source rather than omission by the decoder."
+}

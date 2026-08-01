@@ -1,0 +1,48 @@
+{
+  "case_id": "C01_UNPROVEN_CLAIM",
+  "decoder_id": "REFERENCE",
+  "purpose": "publish only what incomplete evidence supports",
+  "claim": "the claim is context-limited rather than proven",
+  "operation_path": [
+    "O",
+    "E",
+    "U",
+    "P",
+    "Y"
+  ],
+  "invariants": [
+    "uncertainty remains visible",
+    "publication matches evidence"
+  ],
+  "unknowns": [
+    "method reliability"
+  ],
+  "authority": [
+    "human authorises publication"
+  ],
+  "participants": [
+    "human researcher",
+    "AI collaborator"
+  ],
+  "affected_parties": [
+    "future readers"
+  ],
+  "evidence": [
+    "limited runtime trace"
+  ],
+  "provenance": [
+    "case source"
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "context-limited result published"
+  ],
+  "consequence_horizon": "immediate",
+  "recovery": [
+    "retract or revise when stronger evidence arrives"
+  ],
+  "confidence": "reference",
+  "notes": "",
+  "schema_version": "0.3"
+}

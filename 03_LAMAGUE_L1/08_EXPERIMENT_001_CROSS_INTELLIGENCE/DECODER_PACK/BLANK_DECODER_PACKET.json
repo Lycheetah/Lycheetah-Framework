@@ -1,0 +1,22 @@
+{
+  "case_id": "",
+  "decoder_id": "",
+  "purpose": "",
+  "claim": "",
+  "operation_path": [],
+  "invariants": [],
+  "unknowns": [],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "unspecified",
+  "notes": "",
+  "schema_version": "0.3"
+}

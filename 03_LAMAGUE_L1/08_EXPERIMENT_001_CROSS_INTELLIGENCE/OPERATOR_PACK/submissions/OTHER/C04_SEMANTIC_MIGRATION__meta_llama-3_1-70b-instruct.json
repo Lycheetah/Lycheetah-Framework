@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "0.3",
+  "case_id": "C04_SEMANTIC_MIGRATION",
+  "decoder_id": "meta/llama-3.1-70b-instruct",
+  "purpose": "Preserve original purpose and invariants, record lineage, and add human learnability as an unresolved research question",
+  "claim": "A new version keeps its original purpose and invariants, records lineage, and adds human learnability as an unresolved research question",
+  "operation_path": ["O", "I", "U", "F", "Y"],
+  "invariants": ["original purpose", "original invariants"],
+  "unknowns": ["human learnability as an unresolved research question"],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "",
+  "notes": "The expression O -> I -> U -> F -> Y indicates that the new version observes the original state, preserves its invariants, marks the new unknown, folds the state into recoverable memory, and yields the resulting state."
+}

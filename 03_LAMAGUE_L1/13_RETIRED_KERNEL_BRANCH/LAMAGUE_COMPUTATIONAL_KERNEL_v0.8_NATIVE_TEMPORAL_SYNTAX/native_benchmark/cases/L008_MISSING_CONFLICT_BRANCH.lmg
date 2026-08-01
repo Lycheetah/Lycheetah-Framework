@@ -1,0 +1,5 @@
+packet C;
+observability WHITE_BOX;
+observe a key="x" value=1;
+conflict c branches=a,b dimensions=VALUE;
+analyze;

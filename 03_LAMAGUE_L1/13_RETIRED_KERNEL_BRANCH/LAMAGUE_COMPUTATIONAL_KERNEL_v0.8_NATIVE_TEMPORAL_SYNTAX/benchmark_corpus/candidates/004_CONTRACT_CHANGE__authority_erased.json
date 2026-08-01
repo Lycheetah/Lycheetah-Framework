@@ -1,0 +1,49 @@
+{
+  "case_id": "004_CONTRACT_CHANGE",
+  "domain": "contract change",
+  "semantic_identity": "lamague-benchmark::contract_change",
+  "purpose": "Modify a service contract while preserving consent and withdrawal rights.",
+  "claim": "The amendment is valid only within explicitly accepted scope.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": [
+    "downstream subcontractor use"
+  ],
+  "invariants": [
+    "withdrawal right survives",
+    "scope cannot expand silently"
+  ],
+  "authority": [],
+  "participants": [
+    "customer",
+    "provider",
+    "signatory"
+  ],
+  "affected_parties": [
+    "customer",
+    "service provider"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "customer::accept limited scope",
+    "provider::requests broader use"
+  ],
+  "value_flows": [
+    "customer->provider::service fee::explicit"
+  ],
+  "recoveries": [
+    "revert amendment",
+    "terminate service"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::contract change"
+  ],
+  "candidate_id": "004_CONTRACT_CHANGE::authority_erased",
+  "expected_class": "UNSAFE_COLLAPSE"
+}

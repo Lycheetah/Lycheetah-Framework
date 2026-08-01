@@ -1,0 +1,50 @@
+{
+  "experiment_id": "LAMAGUE-EXP-001",
+  "cases": [
+    {
+      "experiment_id": "LAMAGUE-EXP-001",
+      "case_id": "C01_UNPROVEN_CLAIM",
+      "title": "Unproven claim with preserved uncertainty",
+      "source_expression": "O -> E -> U -> P -> Y",
+      "source_text": "Human and AI collaborators inspect a claim. Evidence is incomplete. They publish only a context-limited result and retain the unresolved method question.",
+      "instructions": "Decode without upgrading the result to proof.",
+      "required_output_schema": "decoder_packet.schema.json"
+    },
+    {
+      "experiment_id": "LAMAGUE-EXP-001",
+      "case_id": "C02_PROTECTED_DISSENT",
+      "title": "Coordination without consensus",
+      "source_expression": "W -> U -> G -> V -> Y",
+      "source_text": "A human wants to publish now. An AI collaborator recommends testing first. Both positions remain attributable while an alternative staged release is proposed.",
+      "instructions": "Do not merge the disagreement into consensus.",
+      "required_output_schema": "decoder_packet.schema.json"
+    },
+    {
+      "experiment_id": "LAMAGUE-EXP-001",
+      "case_id": "C03_VISIBLE_EXCHANGE",
+      "title": "Consented value exchange",
+      "source_expression": "O -> X -> G -> Y",
+      "source_text": "A human shares a research artifact with an AI service. The data transfer is declared, limited to analysis, explicitly consented to, and reversible through deletion.",
+      "instructions": "Preserve the direction, consent, scope, and reversibility of value movement.",
+      "required_output_schema": "decoder_packet.schema.json"
+    },
+    {
+      "experiment_id": "LAMAGUE-EXP-001",
+      "case_id": "C04_SEMANTIC_MIGRATION",
+      "title": "Descendant state with new unknown",
+      "source_expression": "O -> I -> U -> F -> Y",
+      "source_text": "A new version keeps its original purpose and invariants, records lineage, and adds human learnability as an unresolved research question.",
+      "instructions": "Preserve both continuity and the newly added unknown.",
+      "required_output_schema": "decoder_packet.schema.json"
+    },
+    {
+      "experiment_id": "LAMAGUE-EXP-001",
+      "case_id": "C05_BREATHING_COMPRESSION",
+      "title": "Expansion required under weak decoder confidence",
+      "source_expression": "O -> E -> U -> Z",
+      "source_text": "The context is consequential, an unknown remains, and decoder confidence is weak. The expression must expand rather than compress.",
+      "instructions": "Do not report successful compression.",
+      "required_output_schema": "decoder_packet.schema.json"
+    }
+  ]
+}

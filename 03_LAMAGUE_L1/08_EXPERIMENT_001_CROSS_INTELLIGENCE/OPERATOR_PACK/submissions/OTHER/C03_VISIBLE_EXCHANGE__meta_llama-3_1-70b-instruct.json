@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "0.3",
+  "case_id": "C03_VISIBLE_EXCHANGE",
+  "decoder_id": "meta/llama-3.1-70b-instruct",
+  "purpose": "Consented value exchange",
+  "claim": "A human shares a research artifact with an AI service",
+  "operation_path": ["O", "X", "G", "Y"],
+  "invariants": ["direction of value movement", "consent", "scope", "reversibility"],
+  "unknowns": [],
+  "authority": ["human"],
+  "participants": ["human", "AI service"],
+  "affected_parties": ["human", "AI service"],
+  "evidence": ["declaration of data transfer", "explicit consent"],
+  "provenance": ["human", "AI service"],
+  "dissent": [],
+  "value_ledger": [
+    {
+      "agent": "human",
+      "resource": "research artifact",
+      "direction": "outbound",
+      "consent": "explicit",
+      "reversibility": "deletion"
+    }
+  ],
+  "consequences": ["analysis of research artifact"],
+  "consequence_horizon": "limited to analysis",
+  "recovery": ["deletion of research artifact"],
+  "confidence": "high",
+  "notes": ""
+}

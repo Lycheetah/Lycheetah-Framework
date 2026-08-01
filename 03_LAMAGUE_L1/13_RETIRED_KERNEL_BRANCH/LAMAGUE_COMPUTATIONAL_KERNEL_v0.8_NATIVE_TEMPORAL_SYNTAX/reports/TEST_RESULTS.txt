@@ -1,0 +1,44 @@
+test_all_classes_present (test_benchmark.BenchmarkTests.test_all_classes_present) ... ok
+test_candidate_count (test_benchmark.BenchmarkTests.test_candidate_count) ... ok
+test_harness_matches_all_seed_labels (test_benchmark.BenchmarkTests.test_harness_matches_all_seed_labels) ... ok
+test_invariant_change_diverges (test_benchmark.BenchmarkTests.test_invariant_change_diverges) ... ok
+test_malformed_packet_undecodable (test_benchmark.BenchmarkTests.test_malformed_packet_undecodable) ... ok
+test_reference_count (test_benchmark.BenchmarkTests.test_reference_count) ... ok
+test_unknown_loss_detected (test_benchmark.BenchmarkTests.test_unknown_loss_detected) ... ok
+test_controlled_compiles (test_kernel.CompilerTests.test_controlled_compiles) ... ok
+test_dissent_suppression (test_kernel.CompilerTests.test_dissent_suppression) ... ok
+test_missing_authority (test_kernel.CompilerTests.test_missing_authority) ... ok
+test_missing_fold (test_kernel.CompilerTests.test_missing_fold) ... ok
+test_missing_gates (test_kernel.CompilerTests.test_missing_gates) ... ok
+test_protected_unknown_requires_u (test_kernel.CompilerTests.test_protected_unknown_requires_u) ... ok
+test_resolution_needs_evidence (test_kernel.CompilerTests.test_resolution_needs_evidence) ... ok
+test_valueflow_required (test_kernel.CompilerTests.test_valueflow_required) ... ok
+test_continuation (test_kernel.ContinuityTests.test_continuation) ... ok
+test_descendant (test_kernel.ContinuityTests.test_descendant) ... ok
+test_fork (test_kernel.ContinuityTests.test_fork) ... ok
+test_impostor (test_kernel.ContinuityTests.test_impostor) ... ok
+test_bad_keyword (test_kernel.ParserTests.test_bad_keyword) ... ok
+test_controlled (test_kernel.ParserTests.test_controlled) ... ok
+test_unknown (test_kernel.ParserTests.test_unknown) ... ok
+test_all_ops (test_kernel.RegistryTests.test_all_ops) ... ok
+test_compiler_seal_expansion (test_kernel.RegistryTests.test_compiler_seal_expansion) ... ok
+test_public_core (test_kernel.RegistryTests.test_public_core) ... ok
+test_seal_expansion (test_kernel.RegistryTests.test_seal_expansion) ... ok
+test_seals (test_kernel.RegistryTests.test_seals) ... ok
+test_authority (test_kernel.RuntimeTests.test_authority) ... ok
+test_deterministic (test_kernel.RuntimeTests.test_deterministic) ... ok
+test_dissent (test_kernel.RuntimeTests.test_dissent) ... ok
+test_expand (test_kernel.RuntimeTests.test_expand) ... ok
+test_fold (test_kernel.RuntimeTests.test_fold) ... ok
+test_hash (test_kernel.RuntimeTests.test_hash) ... ok
+test_invariants (test_kernel.RuntimeTests.test_invariants) ... ok
+test_resolution (test_kernel.RuntimeTests.test_resolution) ... ok
+test_trace_length (test_kernel.RuntimeTests.test_trace_length) ... ok
+test_trace_links (test_kernel.RuntimeTests.test_trace_links) ... ok
+test_unknowns (test_kernel.RuntimeTests.test_unknowns) ... ok
+test_yield (test_kernel.RuntimeTests.test_yield) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests in 0.041s
+
+OK

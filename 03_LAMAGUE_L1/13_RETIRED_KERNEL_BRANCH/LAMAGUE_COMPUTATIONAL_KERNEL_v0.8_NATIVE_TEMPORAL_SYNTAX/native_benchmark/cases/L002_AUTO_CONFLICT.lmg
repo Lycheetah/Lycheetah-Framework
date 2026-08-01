@@ -1,0 +1,7 @@
+packet AUTO;
+observability WHITE_BOX;
+observe a key="x" value=1 unit="m";
+declare b key="x" value=2 unit="cm";
+preserve a;
+preserve b;
+analyze;

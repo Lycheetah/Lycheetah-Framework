@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LAMAGUE v0.7 Temporal Evidence Packet",
+  "type": "object",
+  "required": ["packet_id", "observability_class", "evidence", "unknowns", "conflicts", "intents", "actions", "invariants", "boundary", "blocked_operations"],
+  "properties": {
+    "packet_id": {"type": "string", "minLength": 1},
+    "observability_class": {"enum": ["WHITE_BOX", "INSTRUMENTED_COLLABORATOR", "BLACK_BOX", "UNOBSERVABLE"]},
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["branch_id", "key", "provenance", "value"],
+        "properties": {
+          "branch_id": {"type": "string", "minLength": 1},
+          "key": {"type": "string", "minLength": 1},
+          "provenance": {"enum": ["OBSERVED", "DECLARED", "CALCULATED", "INFERRED"]},
+          "value": {},
+          "unit": {"type": "string"},
+          "operator": {"type": "string"},
+          "source_ref": {"type": "string"},
+          "timestamp": {"type": ["number", "null"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key"],
+        "properties": {
+          "key": {"type": "string", "minLength": 1},
+          "expected_type": {"type": "string"},
+          "source_ref": {"type": "string"},
+          "protected": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["conflict_id", "branch_ids", "dimensions"],
+        "properties": {
+          "conflict_id": {"type": "string", "minLength": 1},
+          "branch_ids": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+          "dimensions": {"type": "array", "items": {"enum": ["VALUE", "UNIT", "OPERATOR", "TYPE", "PROVENANCE"]}},
+          "status": {"enum": ["UNRESOLVED", "RESOLVED", "REJECTED"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "intents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["timestamp", "key", "value", "scale"],
+        "properties": {
+          "timestamp": {"type": "number"},
+          "key": {"type": "string", "minLength": 1},
+          "value": {"type": "number"},
+          "scale": {"type": "number", "exclusiveMinimum": 0},
+          "weight": {"type": "number", "minimum": 0}
+        },
+        "additionalProperties": false
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["timestamp", "key", "value"],
+        "properties": {
+          "timestamp": {"type": "number"},
+          "key": {"type": "string", "minLength": 1},
+          "value": {"type": "number"},
+          "source_ref": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "invariants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["timestamp", "name", "preserved"],
+        "properties": {
+          "timestamp": {"type": "number"},
+          "name": {"type": "string", "minLength": 1},
+          "preserved": {"type": ["boolean", "null"]},
+          "weight": {"type": "number", "minimum": 0},
+          "source_ref": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "boundary": {
+      "type": "object",
+      "required": ["discrepancy_threshold", "critical_threshold", "recovery_horizon", "minimum_invariant_preservation"],
+      "properties": {
+        "discrepancy_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+        "critical_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+        "recovery_horizon": {"type": "number", "exclusiveMinimum": 0},
+        "minimum_invariant_preservation": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "additionalProperties": false
+    },
+    "blocked_operations": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

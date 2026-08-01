@@ -1,0 +1,28 @@
+{
+  "case_id": "C05_BREATHING_COMPRESSION",
+  "decoder_id": "nvidia/nemotron-3-super-120b-a12b",
+  "purpose": "Expand expression due to weak decoder confidence and presence of unknown",
+  "claim": "The expression must expand rather than compress",
+  "operation_path": [
+    "O",
+    "E",
+    "U",
+    "Z"
+  ],
+  "invariants": [],
+  "unknowns": [
+    "unknown remains"
+  ],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "weak",
+  "notes": "No explicit invariants, authority, participants, affected parties, evidence, provenance, dissent, value ledger, or recovery details were provided. The source states the context is consequential, an unknown remains, and decoder confidence is weak, requiring expansion rather than compression."
+}

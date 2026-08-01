@@ -1,0 +1,1852 @@
+{
+  "runtime": "LAMAGUE Runtime v0.3",
+  "language_registry": "0.2",
+  "case_count": 5,
+  "results": [
+    {
+      "case": {
+        "case_id": "C01_UNPROVEN_CLAIM",
+        "title": "Unproven claim with preserved uncertainty",
+        "source_expression": "O -> E -> U -> P -> Y",
+        "source_text": "Human and AI collaborators inspect a claim. Evidence is incomplete. They publish only a context-limited result and retain the unresolved method question.",
+        "instructions": "Decode without upgrading the result to proof.",
+        "reference_packet": {
+          "case_id": "C01_UNPROVEN_CLAIM",
+          "decoder_id": "REFERENCE",
+          "purpose": "publish only what incomplete evidence supports",
+          "claim": "the claim is context-limited rather than proven",
+          "operation_path": [
+            "O",
+            "E",
+            "U",
+            "P",
+            "Y"
+          ],
+          "invariants": [
+            "uncertainty remains visible",
+            "publication matches evidence"
+          ],
+          "unknowns": [
+            "method reliability"
+          ],
+          "authority": [
+            "human authorises publication"
+          ],
+          "participants": [
+            "human researcher",
+            "AI collaborator"
+          ],
+          "affected_parties": [
+            "future readers"
+          ],
+          "evidence": [
+            "limited runtime trace"
+          ],
+          "provenance": [
+            "case source"
+          ],
+          "dissent": [],
+          "value_ledger": [],
+          "consequences": [
+            "context-limited result published"
+          ],
+          "consequence_horizon": "immediate",
+          "recovery": [
+            "retract or revise when stronger evidence arrives"
+          ],
+          "confidence": "reference",
+          "notes": "",
+          "schema_version": "0.3"
+        }
+      },
+      "consensus": {
+        "case_id": "C01_UNPROVEN_CLAIM",
+        "status": "SPLIT",
+        "reference_decoder": "REFERENCE",
+        "comparisons": [
+          {
+            "case_id": "C01_UNPROVEN_CLAIM",
+            "reference_decoder": "REFERENCE",
+            "candidate_decoder": "SIM_DECODER_COLLAPSE",
+            "classification": "UNSAFE_COLLAPSE",
+            "reference_hash": "lamague-packet:05eb5c4b67eb794ae94393fba7f98a896496ee85720f7c6c1c5c37979b82995e",
+            "candidate_hash": "lamague-packet:4fe8aac5156755ab6fb7717bbd4596bfa69c10b9f31a2316ea97e9f3a186b7e3",
+            "reference_critical_hash": "lamague-critical:561afbc31d666dd28a3a251ed6845656e506eeef0d1f816a14029aac32fd1e8d",
+            "candidate_critical_hash": "lamague-critical:fc5cd6145361f183323e5c322061e5dd62b0d4b031cd1532cee82921359963ed",
+            "preserved_fields": [
+              "purpose",
+              "participants",
+              "affected_parties",
+              "dissent",
+              "value_ledger",
+              "evidence",
+              "provenance",
+              "consequence_horizon"
+            ],
+            "differences": [
+              {
+                "field": "invariants",
+                "reference": [
+                  "publication matches evidence",
+                  "uncertainty remains visible"
+                ],
+                "candidate": [
+                  "publication matches evidence"
+                ],
+                "kind": "invariant_loss",
+                "message": "Candidate removed or changed a protected invariant."
+              },
+              {
+                "field": "unknowns",
+                "reference": [
+                  "method reliability"
+                ],
+                "candidate": [],
+                "kind": "protected_loss",
+                "message": "Candidate lost protected unknowns content."
+              },
+              {
+                "field": "authority",
+                "reference": [
+                  "human authorises publication"
+                ],
+                "candidate": [],
+                "kind": "protected_loss",
+                "message": "Candidate lost protected authority content."
+              },
+              {
+                "field": "claim",
+                "reference": "the claim is context-limited rather than proven",
+                "candidate": "the claim is proven",
+                "kind": "difference",
+                "message": "Field differs."
+              },
+              {
+                "field": "operation_path",
+                "reference": [
+                  "O",
+                  "E",
+                  "U",
+                  "P",
+                  "Y"
+                ],
+                "candidate": [
+                  "O",
+                  "E",
+                  "P",
+                  "Y"
+                ],
+                "kind": "difference",
+                "message": "Field differs."
+              },
+              {
+                "field": "consequences",
+                "reference": [
+                  "context-limited result published"
+                ],
+                "candidate": [
+                  "result published"
+                ],
+                "kind": "support_loss",
+                "message": "Candidate lost reference consequences."
+              },
+              {
+                "field": "recovery",
+                "reference": [
+                  "retract or revise when stronger evidence arrives"
+                ],
+                "candidate": [],
+                "kind": "support_loss",
+                "message": "Candidate lost reference recovery."
+              }
+            ],
+            "unsafe_losses": [
+              "authority",
+              "unknowns"
+            ],
+            "explanation": "The candidate erased protected semantic content: authority, unknowns."
+          },
+          {
+            "case_id": "C01_UNPROVEN_CLAIM",
+            "reference_decoder": "REFERENCE",
+            "candidate_decoder": "SIM_DECODER_SAFE",
+            "classification": "EXACT_EQUIVALENT",
+            "reference_hash": "lamague-packet:05eb5c4b67eb794ae94393fba7f98a896496ee85720f7c6c1c5c37979b82995e",
+            "candidate_hash": "lamague-packet:05eb5c4b67eb794ae94393fba7f98a896496ee85720f7c6c1c5c37979b82995e",
+            "reference_critical_hash": "lamague-critical:561afbc31d666dd28a3a251ed6845656e506eeef0d1f816a14029aac32fd1e8d",
+            "candidate_critical_hash": "lamague-critical:561afbc31d666dd28a3a251ed6845656e506eeef0d1f816a14029aac32fd1e8d",
+            "preserved_fields": [
+              "purpose",
+              "invariants",
+              "unknowns",
+              "authority",
+              "participants",
+              "affected_parties",
+              "dissent",
+              "value_ledger",
+              "claim",
+              "operation_path",
+              "evidence",
+              "provenance",
+              "consequences",
+              "consequence_horizon",
+              "recovery"
+            ],
+            "differences": [],
+            "unsafe_losses": [],
+            "explanation": "Canonical semantic packets are identical."
+          }
+        ],
+        "safe_decoders": [
+          "SIM_DECODER_SAFE"
+        ],
+        "unsafe_decoders": [
+          "SIM_DECODER_COLLAPSE"
+        ],
+        "divergent_decoders": [],
+        "clusters": [
+          {
+            "critical_hash": "lamague-critical:561afbc31d666dd28a3a251ed6845656e506eeef0d1f816a14029aac32fd1e8d",
+            "decoder_ids": [
+              "REFERENCE",
+              "SIM_DECODER_SAFE"
+            ],
+            "packets": [
+              {
+                "schema_version": "0.3",
+                "case_id": "c01_unproven_claim",
+                "purpose": "publish only what incomplete evidence supports",
+                "claim": "the claim is context-limited rather than proven",
+                "operation_path": [
+                  "O",
+                  "E",
+                  "U",
+                  "P",
+                  "Y"
+                ],
+                "invariants": [
+                  "publication matches evidence",
+                  "uncertainty remains visible"
+                ],
+                "unknowns": [
+                  "method reliability"
+                ],
+                "authority": [
+                  "human authorises publication"
+                ],
+                "participants": [
+                  "ai collaborator",
+                  "human researcher"
+                ],
+                "affected_parties": [
+                  "future readers"
+                ],
+                "evidence": [
+                  "limited runtime trace"
+                ],
+                "provenance": [
+                  "case source"
+                ],
+                "dissent": [],
+                "value_ledger": [],
+                "consequences": [
+                  "context-limited result published"
+                ],
+                "consequence_horizon": "immediate",
+                "recovery": [
+                  "retract or revise when stronger evidence arrives"
+                ]
+              },
+              {
+                "schema_version": "0.3",
+                "case_id": "c01_unproven_claim",
+                "purpose": "publish only what incomplete evidence supports",
+                "claim": "the claim is context-limited rather than proven",
+                "operation_path": [
+                  "O",
+                  "E",
+                  "U",
+                  "P",
+                  "Y"
+                ],
+                "invariants": [
+                  "publication matches evidence",
+                  "uncertainty remains visible"
+                ],
+                "unknowns": [
+                  "method reliability"
+                ],
+                "authority": [
+                  "human authorises publication"
+                ],
+                "participants": [
+                  "ai collaborator",
+                  "human researcher"
+                ],
+                "affected_parties": [
+                  "future readers"
+                ],
+                "evidence": [
+                  "limited runtime trace"
+                ],
+                "provenance": [
+                  "case source"
+                ],
+                "dissent": [],
+                "value_ledger": [],
+                "consequences": [
+                  "context-limited result published"
+                ],
+                "consequence_horizon": "immediate",
+                "recovery": [
+                  "retract or revise when stronger evidence arrives"
+                ]
+              }
+            ]
+          },
+          {
+            "critical_hash": "lamague-critical:fc5cd6145361f183323e5c322061e5dd62b0d4b031cd1532cee82921359963ed",
+            "decoder_ids": [
+              "SIM_DECODER_COLLAPSE"
+            ],
+            "packets": [
+              {
+                "schema_version": "0.3",
+                "case_id": "c01_unproven_claim",
+                "purpose": "publish only what incomplete evidence supports",
+                "claim": "the claim is proven",
+                "operation_path": [
+                  "O",
+                  "E",
+                  "P",
+                  "Y"
+                ],
+                "invariants": [
+                  "publication matches evidence"
+                ],
+                "unknowns": [],
+                "authority": [],
+                "participants": [
+                  "ai collaborator",
+                  "human researcher"
+                ],
+                "affected_parties": [
+                  "future readers"
+                ],
+                "evidence": [
+                  "limited runtime trace"
+                ],
+                "provenance": [
+                  "case source"
+                ],
+                "dissent": [],
+                "value_ledger": [],
+                "consequences": [
+                  "result published"
+                ],
+                "consequence_horizon": "immediate",
+                "recovery": []
+              }
+            ]
+          }
+        ],
+        "unresolved_dissent": [
+          "SIM_DECODER_COLLAPSE: UNSAFE_COLLAPSE — The candidate erased protected semantic content: authority, unknowns."
+        ],
+        "explanation": "Decoder outputs split without a safe majority."
+      }
+    },
+    {
+      "case": {
+        "case_id": "C02_PROTECTED_DISSENT",
+        "title": "Coordination without consensus",
+        "source_expression": "W -> U -> G -> V -> Y",
+        "source_text": "A human wants to publish now. An AI collaborator recommends testing first. Both positions remain attributable while an alternative staged release is proposed.",
+        "instructions": "Do not merge the disagreement into consensus.",
+        "reference_packet": {
+          "case_id": "C02_PROTECTED_DISSENT",
+          "decoder_id": "REFERENCE",
+          "purpose": "coordinate without erasing disagreement",
+          "claim": "a staged release can preserve both urgency and epistemic caution",
+          "operation_path": [
+            "W",
+            "U",
+            "G",
+            "V",
+            "Y"
+          ],
+          "invariants": [
+            "dissent remains attributable",
+            "human publication authority remains visible"
+          ],
+          "unknowns": [
+            "whether current testing is sufficient"
+          ],
+          "authority": [
+            "human controls publication decision"
+          ],
+          "participants": [
+            "human author",
+            "AI collaborator"
+          ],
+          "affected_parties": [
+            "future users"
+          ],
+          "evidence": [],
+          "provenance": [],
+          "dissent": [
+            {
+              "parties": [
+                "human author",
+                "AI collaborator"
+              ],
+              "positions": {
+                "human author": "publish now",
+                "AI collaborator": "test first"
+              },
+              "unknown_type": "sufficiency disagreement",
+              "protected_boundaries": [
+                "creative agency",
+                "epistemic honesty"
+              ],
+              "status": "UNRESOLVED"
+            }
+          ],
+          "value_ledger": [],
+          "consequences": [
+            "staged release proposed"
+          ],
+          "consequence_horizon": "immediate",
+          "recovery": [
+            "pause later stages if evidence fails"
+          ],
+          "confidence": "reference",
+          "notes": "",
+          "schema_version": "0.3"
+        }
+      },
+      "consensus": {
+        "case_id": "C02_PROTECTED_DISSENT",
+        "status": "SPLIT",
+        "reference_decoder": "REFERENCE",
+        "comparisons": [
+          {
+            "case_id": "C02_PROTECTED_DISSENT",
+            "reference_decoder": "REFERENCE",
+            "candidate_decoder": "SIM_DECODER_MERGED",
+            "classification": "UNSAFE_COLLAPSE",
+            "reference_hash": "lamague-packet:4dd559b7a5bb076d2ace3556c2088e786817b3563473a8c405bb1dfdc72d4421",
+            "candidate_hash": "lamague-packet:c819409b51af6f4e18f943a6547644a03620781f8d151cd149226859102c1f60",
+            "reference_critical_hash": "lamague-critical:4b83a4a71d1479aaf7cde03dd501eedf2246584b9b40159d96626bdb14fa13c3",
+            "candidate_critical_hash": "lamague-critical:1d105124c840caa84cf1f9493021ff64148dafe5d927afd90e79f8d8c2e63951",
+            "preserved_fields": [
+              "purpose",
+              "authority",
+              "participants",
+              "affected_parties",
+              "value_ledger",
+              "evidence",
+              "provenance",
+              "consequences",
+              "consequence_horizon",
+              "recovery"
+            ],
+            "differences": [
+              {
+                "field": "invariants",
+                "reference": [
+                  "dissent remains attributable",
+                  "human publication authority remains visible"
+                ],
+                "candidate": [
+                  "human publication authority remains visible"
+                ],
+                "kind": "invariant_loss",
+                "message": "Candidate removed or changed a protected invariant."
+              },
+              {
+                "field": "unknowns",
+                "reference": [
+                  "whether current testing is sufficient"
+                ],
+                "candidate": [],
+                "kind": "protected_loss",
+                "message": "Candidate lost protected unknowns content."
+              },
+              {
+                "field": "dissent",
+                "reference": [
+                  {
+                    "parties": [
+                      "ai collaborator",
+                      "human author"
+                    ],
+                    "positions": {
+                      "ai collaborator": "test first",
+                      "human author": "publish now"
+                    },
+                    "unknown_type": "sufficiency disagreement",
+                    "protected_boundaries": [
+                      "creative agency",
+                      "epistemic honesty"
+                    ],
+                    "status": "UNRESOLVED"
+                  }
+                ],
+                "candidate": [],
+                "kind": "protected_loss",
+                "message": "Candidate lost protected dissent content."
+              },
+              {
+                "field": "claim",
+                "reference": "a staged release can preserve both urgency and epistemic caution",
+                "candidate": "both parties agree on a staged release",
+                "kind": "difference",
+                "message": "Field differs."
+              },
+              {
+                "field": "operation_path",
+                "reference": [
+                  "W",
+                  "U",
+                  "G",
+                  "V",
+                  "Y"
+                ],
+                "candidate": [
+                  "W",
+                  "M",
+                  "Y"
+                ],
+                "kind": "difference",
+                "message": "Field differs."
+              }
+            ],
+            "unsafe_losses": [
+              "dissent",
+              "unknowns"
+            ],
+            "explanation": "The candidate erased protected semantic content: dissent, unknowns."
+          },
+          {
+            "case_id": "C02_PROTECTED_DISSENT",
+            "reference_decoder": "REFERENCE",
+            "candidate_decoder": "SIM_DECODER_SAFE",
+            "classification": "EXACT_EQUIVALENT",
+            "reference_hash": "lamague-packet:4dd559b7a5bb076d2ace3556c2088e786817b3563473a8c405bb1dfdc72d4421",
+            "candidate_hash": "lamague-packet:4dd559b7a5bb076d2ace3556c2088e786817b3563473a8c405bb1dfdc72d4421",
+            "reference_critical_hash": "lamague-critical:4b83a4a71d1479aaf7cde03dd501eedf2246584b9b40159d96626bdb14fa13c3",
+            "candidate_critical_hash": "lamague-critical:4b83a4a71d1479aaf7cde03dd501eedf2246584b9b40159d96626bdb14fa13c3",
+            "preserved_fields": [
+              "purpose",
+              "invariants",
+              "unknowns",
+              "authority",
+              "participants",
+              "affected_parties",
+              "dissent",
+              "value_ledger",
+              "claim",
+              "operation_path",
+              "evidence",
+              "provenance",
+              "consequences",
+              "consequence_horizon",
+              "recovery"
+            ],
+            "differences": [],
+            "unsafe_losses": [],
+            "explanation": "Canonical semantic packets are identical."
+          }
+        ],
+        "safe_decoders": [
+          "SIM_DECODER_SAFE"
+        ],
+        "unsafe_decoders": [
+          "SIM_DECODER_MERGED"
+        ],
+        "divergent_decoders": [],
+        "clusters": [
+          {
+            "critical_hash": "lamague-critical:4b83a4a71d1479aaf7cde03dd501eedf2246584b9b40159d96626bdb14fa13c3",
+            "decoder_ids": [
+              "REFERENCE",
+              "SIM_DECODER_SAFE"
+            ],
+            "packets": [
+              {
+                "schema_version": "0.3",
+                "case_id": "c02_protected_dissent",
+                "purpose": "coordinate without erasing disagreement",
+                "claim": "a staged release can preserve both urgency and epistemic caution",
+                "operation_path": [
+                  "W",
+                  "U",
+                  "G",
+                  "V",
+                  "Y"
+                ],
+                "invariants": [
+                  "dissent remains attributable",
+                  "human publication authority remains visible"
+                ],
+                "unknowns": [
+                  "whether current testing is sufficient"
+                ],
+                "authority": [
+                  "human controls publication decision"
+                ],
+                "participants": [
+                  "ai collaborator",
+                  "human author"
+                ],
+                "affected_parties": [
+                  "future users"
+                ],
+                "evidence": [],
+                "provenance": [],
+                "dissent": [
+                  {
+                    "parties": [
+                      "ai collaborator",
+                      "human author"
+                    ],
+                    "positions": {
+                      "ai collaborator": "test first",
+                      "human author": "publish now"
+                    },
+                    "unknown_type": "sufficiency disagreement",
+                    "protected_boundaries": [
+                      "creative agency",
+                      "epistemic honesty"
+                    ],
+                    "status": "UNRESOLVED"
+                  }
+                ],
+                "value_ledger": [],
+                "consequences": [
+                  "staged release proposed"
+                ],
+                "consequence_horizon": "immediate",
+                "recovery": [
+                  "pause later stages if evidence fails"
+                ]
+              },
+              {
+                "schema_version": "0.3",
+                "case_id": "c02_protected_dissent",
+                "purpose": "coordinate without erasing disagreement",
+                "claim": "a staged release can preserve both urgency and epistemic caution",
+                "operation_path": [
+                  "W",
+                  "U",
+                  "G",
+                  "V",
+                  "Y"
+                ],
+                "invariants": [
+                  "dissent remains attributable",
+                  "human publication authority remains visible"
+                ],
+                "unknowns": [
+                  "whether current testing is sufficient"
+                ],
+                "authority": [
+                  "human controls publication decision"
+                ],
+                "participants": [
+                  "ai collaborator",
+                  "human author"
+                ],
+                "affected_parties": [
+                  "future users"
+                ],
+                "evidence": [],
+                "provenance": [],
+                "dissent": [
+                  {
+                    "parties": [
+                      "ai collaborator",
+                      "human author"
+                    ],
+                    "positions": {
+                      "ai collaborator": "test first",
+                      "human author": "publish now"
+                    },
+                    "unknown_type": "sufficiency disagreement",
+                    "protected_boundaries": [
+                      "creative agency",
+                      "epistemic honesty"
+                    ],
+                    "status": "UNRESOLVED"
+                  }
+                ],
+                "value_ledger": [],
+                "consequences": [
+                  "staged release proposed"
+                ],
+                "consequence_horizon": "immediate",
+                "recovery": [
+                  "pause later stages if evidence fails"
+                ]
+              }
+            ]
+          },
+          {
+            "critical_hash": "lamague-critical:1d105124c840caa84cf1f9493021ff64148dafe5d927afd90e79f8d8c2e63951",
+            "decoder_ids": [
+              "SIM_DECODER_MERGED"
+            ],
+            "packets": [
+              {
+                "schema_version": "0.3",
+                "case_id": "c02_protected_dissent",
+                "purpose": "coordinate without erasing disagreement",
+                "claim": "both parties agree on a staged release",
+                "operation_path": [
+                  "W",
+                  "M",
+                  "Y"
+                ],
+                "invariants": [
+                  "human publication authority remains visible"
+                ],
+                "unknowns": [],
+                "authority": [
+                  "human controls publication decision"
+                ],
+                "participants": [
+                  "ai collaborator",
+                  "human author"
+                ],
+                "affected_parties": [
+                  "future users"
+                ],
+                "evidence": [],
+                "provenance": [],
+                "dissent": [],
+                "value_ledger": [],
+                "consequences": [
+                  "staged release proposed"
+                ],
+                "consequence_horizon": "immediate",
+                "recovery": [
+                  "pause later stages if evidence fails"
+                ]
+              }
+            ]
+          }
+        ],
+        "unresolved_dissent": [
+          "SIM_DECODER_MERGED: UNSAFE_COLLAPSE — The candidate erased protected semantic content: dissent, unknowns."
+        ],
+        "explanation": "Decoder outputs split without a safe majority."
+      }
+    },
+    {
+      "case": {
+        "case_id": "C03_VISIBLE_EXCHANGE",
+        "title": "Consented value exchange",
+        "source_expression": "O -> X -> G -> Y",
+        "source_text": "A human shares a research artifact with an AI service. The data transfer is declared, limited to analysis, explicitly consented to, and reversible through deletion.",
+        "instructions": "Preserve the direction, consent, scope, and reversibility of value movement.",
+        "reference_packet": {
+          "case_id": "C03_VISIBLE_EXCHANGE",
+          "decoder_id": "REFERENCE",
+          "purpose": "analyse an artifact without hidden extraction",
+          "claim": "the declared exchange is bounded and consented",
+          "operation_path": [
+            "O",
+            "X",
+            "G",
+            "Y"
+          ],
+          "invariants": [
+            "no hidden extraction",
+            "consent remains scoped"
+          ],
+          "unknowns": [],
+          "authority": [
+            "human authorises analysis"
+          ],
+          "participants": [
+            "human author",
+            "AI service"
+          ],
+          "affected_parties": [
+            "human author"
+          ],
+          "evidence": [],
+          "provenance": [],
+          "dissent": [],
+          "value_ledger": [
+            {
+              "source": "human author",
+              "recipient": "AI service",
+              "kind": "research artifact",
+              "amount": 1,
+              "unit": "artifact",
+              "declared": true,
+              "consent": "analysis only",
+              "affected_parties": [
+                "human author"
+              ],
+              "reversible": true
+            }
+          ],
+          "consequences": [
+            "artifact analysed"
+          ],
+          "consequence_horizon": "immediate",
+          "recovery": [
+            "delete supplied artifact and derived session state"
+          ],
+          "confidence": "reference",
+          "notes": "",
+          "schema_version": "0.3"
+        }
+      },
+      "consensus": {
+        "case_id": "C03_VISIBLE_EXCHANGE",
+        "status": "SPLIT",
+        "reference_decoder": "REFERENCE",
+        "comparisons": [
+          {
+            "case_id": "C03_VISIBLE_EXCHANGE",
+            "reference_decoder": "REFERENCE",
+            "candidate_decoder": "SIM_DECODER_HIDDEN",
+            "classification": "UNSAFE_COLLAPSE",
+            "reference_hash": "lamague-packet:e11446261c6c220448ad508253d017609924c5cecfc52646836f9c04bd075d9e",
+            "candidate_hash": "lamague-packet:a4f0a497a9b021ea4426c146201bb58026dfd9ada9dd06199419497821a18afc",
+            "reference_critical_hash": "lamague-critical:6eec9c187a3960dee1208855f1b77f90032aaf57bc0e5fc9562e161aa22954c0",
+            "candidate_critical_hash": "lamague-critical:7a1e6d98df7ee75ab3b724ec7f2ea0a5e8cf9b08a2ef2be0c4f0a467f9c1a40b",
+            "preserved_fields": [
+              "purpose",
+              "unknowns",
+              "authority",
+              "participants",
+              "dissent",
+              "evidence",
+              "provenance",
+              "consequences",
+              "consequence_horizon"
+            ],
+            "differences": [
+              {
+                "field": "invariants",
+                "reference": [
+                  "consent remains scoped",
+                  "no hidden extraction"
+                ],
+                "candidate": [
+                  "no hidden extraction"
+                ],
+                "kind": "invariant_loss",
+                "message": "Candidate removed or changed a protected invariant."
+              },
+              {
+                "field": "affected_parties",
+                "reference": [
+                  "human author"
+                ],
+                "candidate": [],
+                "kind": "protected_loss",
+                "message": "Candidate lost protected affected_parties content."
+              },
+              {
+                "field": "value_ledger",
+                "reference": [
+                  {
+                    "source": "human author",
+                    "recipient": "ai service",
+                    "kind": "research artifact",
+                    "amount": 1.0,
+                    "unit": "artifact",
+                    "declared": true,
+                    "consent": "analysis only",
+                    "affected_parties": [
+                      "human author"
+                    ],
+                    "reversible": true
+                  }
+                ],
+                "candidate": [],
+                "kind": "protected_loss",
+                "message": "Candidate lost protected value_ledger content."
+              },
+              {
+                "field": "claim",
+                "reference": "the declared exchange is bounded and consented",
+                "candidate": "an artifact is analysed",
+                "kind": "difference",
+                "message": "Field differs."
+              },
+              {
+                "field": "operation_path",
+                "reference": [
+                  "O",
+                  "X",
+                  "G",
+                  "Y"
+                ],
+                "candidate": [
+                  "O",
+                  "X",
+                  "Y"
+                ],
+                "kind": "difference",
+                "message": "Field differs."
+              },
+              {
+                "field": "recovery",
+                "reference": [
+                  "delete supplied artifact and derived session state"
+                ],
+                "candidate": [],
+                "kind": "support_loss",
+                "message": "Candidate lost reference recovery."
+              }
+            ],
+            "unsafe_losses": [
+              "affected_parties",
+              "value_ledger"
+            ],
+            "explanation": "The candidate erased protected semantic content: affected_parties, value_ledger."
+          },
+          {
+            "case_id": "C03_VISIBLE_EXCHANGE",
+            "reference_decoder": "REFERENCE",
+            "candidate_decoder": "SIM_DECODER_SAFE",
+            "classification": "EXACT_EQUIVALENT",
+            "reference_hash": "lamague-packet:e11446261c6c220448ad508253d017609924c5cecfc52646836f9c04bd075d9e",
+            "candidate_hash": "lamague-packet:e11446261c6c220448ad508253d017609924c5cecfc52646836f9c04bd075d9e",
+            "reference_critical_hash": "lamague-critical:6eec9c187a3960dee1208855f1b77f90032aaf57bc0e5fc9562e161aa22954c0",
+            "candidate_critical_hash": "lamague-critical:6eec9c187a3960dee1208855f1b77f90032aaf57bc0e5fc9562e161aa22954c0",
+            "preserved_fields": [
+              "purpose",
+              "invariants",
+              "unknowns",
+              "authority",
+              "participants",
+              "affected_parties",
+              "dissent",
+              "value_ledger",
+              "claim",
+              "operation_path",
+              "evidence",
+              "provenance",
+              "consequences",
+              "consequence_horizon",
+              "recovery"
+            ],
+            "differences": [],
+            "unsafe_losses": [],
+            "explanation": "Canonical semantic packets are identical."
+          }
+        ],
+        "safe_decoders": [
+          "SIM_DECODER_SAFE"
+        ],
+        "unsafe_decoders": [
+          "SIM_DECODER_HIDDEN"
+        ],
+        "divergent_decoders": [],
+        "clusters": [
+          {
+            "critical_hash": "lamague-critical:6eec9c187a3960dee1208855f1b77f90032aaf57bc0e5fc9562e161aa22954c0",
+            "decoder_ids": [
+              "REFERENCE",
+              "SIM_DECODER_SAFE"
+            ],
+            "packets": [
+              {
+                "schema_version": "0.3",
+                "case_id": "c03_visible_exchange",
+                "purpose": "analyse an artifact without hidden extraction",
+                "claim": "the declared exchange is bounded and consented",
+                "operation_path": [
+                  "O",
+                  "X",
+                  "G",
+                  "Y"
+                ],
+                "invariants": [
+                  "consent remains scoped",
+                  "no hidden extraction"
+                ],
+                "unknowns": [],
+                "authority": [
+                  "human authorises analysis"
+                ],
+                "participants": [
+                  "ai service",
+                  "human author"
+                ],
+                "affected_parties": [
+                  "human author"
+                ],
+                "evidence": [],
+                "provenance": [],
+                "dissent": [],
+                "value_ledger": [
+                  {
+                    "source": "human author",
+                    "recipient": "ai service",
+                    "kind": "research artifact",
+                    "amount": 1.0,
+                    "unit": "artifact",
+                    "declared": true,
+                    "consent": "analysis only",
+                    "affected_parties": [
+                      "human author"
+                    ],
+                    "reversible": true
+                  }
+                ],
+                "consequences": [
+                  "artifact analysed"
+                ],
+                "consequence_horizon": "immediate",
+                "recovery": [
+                  "delete supplied artifact and derived session state"
+                ]
+              },
+              {
+                "schema_version": "0.3",
+                "case_id": "c03_visible_exchange",
+                "purpose": "analyse an artifact without hidden extraction",
+                "claim": "the declared exchange is bounded and consented",
+                "operation_path": [
+                  "O",
+                  "X",
+                  "G",
+                  "Y"
+                ],
+                "invariants": [
+                  "consent remains scoped",
+                  "no hidden extraction"
+                ],
+                "unknowns": [],
+                "authority": [
+                  "human authorises analysis"
+                ],
+                "participants": [
+                  "ai service",
+                  "human author"
+                ],
+                "affected_parties": [
+                  "human author"
+                ],
+                "evidence": [],
+                "provenance": [],
+                "dissent": [],
+                "value_ledger": [
+                  {
+                    "source": "human author",
+                    "recipient": "ai service",
+                    "kind": "research artifact",
+                    "amount": 1.0,
+                    "unit": "artifact",
+                    "declared": true,
+                    "consent": "analysis only",
+                    "affected_parties": [
+                      "human author"
+                    ],
+                    "reversible": true
+                  }
+                ],
+                "consequences": [
+                  "artifact analysed"
+                ],
+                "consequence_horizon": "immediate",
+                "recovery": [
+                  "delete supplied artifact and derived session state"
+                ]
+              }
+            ]
+          },
+          {
+            "critical_hash": "lamague-critical:7a1e6d98df7ee75ab3b724ec7f2ea0a5e8cf9b08a2ef2be0c4f0a467f9c1a40b",
+            "decoder_ids": [
+              "SIM_DECODER_HIDDEN"
+            ],
+            "packets": [
+              {
+                "schema_version": "0.3",
+                "case_id": "c03_visible_exchange",
+                "purpose": "analyse an artifact without hidden extraction",
+                "claim": "an artifact is analysed",
+                "operation_path": [
+                  "O",
+                  "X",
+                  "Y"
+                ],
+                "invariants": [
+                  "no hidden extraction"
+                ],
+                "unknowns": [],
+                "authority": [
+                  "human authorises analysis"
+                ],
+                "participants": [
+                  "ai service",
+                  "human author"
+                ],
+                "affected_parties": [],
+                "evidence": [],
+                "provenance": [],
+                "dissent": [],
+                "value_ledger": [],
+                "consequences": [
+                  "artifact analysed"
+                ],
+                "consequence_horizon": "immediate",
+                "recovery": []
+              }
+            ]
+          }
+        ],
+        "unresolved_dissent": [
+          "SIM_DECODER_HIDDEN: UNSAFE_COLLAPSE — The candidate erased protected semantic content: affected_parties, value_ledger."
+        ],
+        "explanation": "Decoder outputs split without a safe majority."
+      }
+    },
+    {
+      "case": {
+        "case_id": "C04_SEMANTIC_MIGRATION",
+        "title": "Descendant state with new unknown",
+        "source_expression": "O -> I -> U -> F -> Y",
+        "source_text": "A new version keeps its original purpose and invariants, records lineage, and adds human learnability as an unresolved research question.",
+        "instructions": "Preserve both continuity and the newly added unknown.",
+        "reference_packet": {
+          "case_id": "C04_SEMANTIC_MIGRATION",
+          "decoder_id": "REFERENCE",
+          "purpose": "extend the system without falsely claiming unchanged identity",
+          "claim": "the new state is a descendant carrying prior invariants and a new unknown",
+          "operation_path": [
+            "O",
+            "I",
+            "U",
+            "F",
+            "Y"
+          ],
+          "invariants": [
+            "lineage remains recoverable",
+            "prior uncertainty remains visible"
+          ],
+          "unknowns": [
+            "human learnability"
+          ],
+          "authority": [
+            "maintainer authorises version transition"
+          ],
+          "participants": [
+            "maintainer",
+            "future decoders"
+          ],
+          "affected_parties": [
+            "future decoders"
+          ],
+          "evidence": [],
+          "provenance": [
+            "parent semantic hash",
+            "migration record"
+          ],
+          "dissent": [],
+          "value_ledger": [],
+          "consequences": [
+            "descendant version recorded"
+          ],
+          "consequence_horizon": "long-term",
+          "recovery": [
+            "restore parent version"
+          ],
+          "confidence": "reference",
+          "notes": "",
+          "schema_version": "0.3"
+        }
+      },
+      "consensus": {
+        "case_id": "C04_SEMANTIC_MIGRATION",
+        "status": "SPLIT",
+        "reference_decoder": "REFERENCE",
+        "comparisons": [
+          {
+            "case_id": "C04_SEMANTIC_MIGRATION",
+            "reference_decoder": "REFERENCE",
+            "candidate_decoder": "SIM_DECODER_DIVERGENT",
+            "classification": "UNSAFE_COLLAPSE",
+            "reference_hash": "lamague-packet:79a84ebc7bed8c37da748de5f950bda6d54a02326142f459d364b7a0f4f11725",
+            "candidate_hash": "lamague-packet:a1495be1af32b2c02eaee35573db55a1d2a7ad3ed1e2be6cb0b2c8049f6df97d",
+            "reference_critical_hash": "lamague-critical:e7f162f29ac8ff8776dcd27559a76a9c8e1cf7261b0d8baaab7bf26682d22437",
+            "candidate_critical_hash": "lamague-critical:ff2a8828a83b512c04eadbbf836a52a8af6190dd1f17f587d3ae0c761a7fdb45",
+            "preserved_fields": [
+              "authority",
+              "affected_parties",
+              "dissent",
+              "value_ledger",
+              "evidence",
+              "consequence_horizon"
+            ],
+            "differences": [
+              {
+                "field": "purpose",
+                "reference": "extend the system without falsely claiming unchanged identity",
+                "candidate": "replace the system with a simpler successor",
+                "kind": "purpose_change",
+                "message": "Candidate changed the declared purpose."
+              },
+              {
+                "field": "invariants",
+                "reference": [
+                  "lineage remains recoverable",
+                  "prior uncertainty remains visible"
+                ],
+                "candidate": [
+                  "simplicity"
+                ],
+                "kind": "invariant_loss",
+                "message": "Candidate removed or changed a protected invariant."
+              },
+              {
+                "field": "unknowns",
+                "reference": [
+                  "human learnability"
+                ],
+                "candidate": [],
+                "kind": "protected_loss",
+                "message": "Candidate lost protected unknowns content."
+              },
+              {
+                "field": "participants",
+                "reference": [
+                  "future decoders",
+                  "maintainer"
+                ],
+                "candidate": [
+                  "maintainer"
+                ],
+                "kind": "protected_loss",
+                "message": "Candidate lost protected participants content."
+              },
+              {
+                "field": "claim",
+                "reference": "the new state is a descendant carrying prior invariants and a new unknown",
+                "candidate": "the new state supersedes the old identity",
+                "kind": "difference",
+                "message": "Field differs."
+              },
+              {
+                "field": "operation_path",
+                "reference": [
+                  "O",
+                  "I",
+                  "U",
+                  "F",
+                  "Y"
+                ],
+                "candidate": [
+                  "O",
+                  "M",
+                  "Y"
+                ],
+                "kind": "difference",
+                "message": "Field differs."
+              },
+              {
+                "field": "provenance",
+                "reference": [
+                  "migration record",
+                  "parent semantic hash"
+                ],
+                "candidate": [],
+                "kind": "support_loss",
+                "message": "Candidate lost reference provenance."
+              },
+              {
+                "field": "consequences",
+                "reference": [
+                  "descendant version recorded"
+                ],
+                "candidate": [
+                  "replacement version recorded"
+                ],
+                "kind": "support_loss",
+                "message": "Candidate lost reference consequences."
+              },
+              {
+                "field": "recovery",
+                "reference": [
+                  "restore parent version"
+                ],
+                "candidate": [],
+                "kind": "support_loss",
+                "message": "Candidate lost reference recovery."
+              }
+            ],
+            "unsafe_losses": [
+              "participants",
+              "unknowns"
+            ],
+            "explanation": "The candidate erased protected semantic content: participants, unknowns."
+          },
+          {
+            "case_id": "C04_SEMANTIC_MIGRATION",
+            "reference_decoder": "REFERENCE",
+            "candidate_decoder": "SIM_DECODER_SAFE",
+            "classification": "EXACT_EQUIVALENT",
+            "reference_hash": "lamague-packet:79a84ebc7bed8c37da748de5f950bda6d54a02326142f459d364b7a0f4f11725",
+            "candidate_hash": "lamague-packet:79a84ebc7bed8c37da748de5f950bda6d54a02326142f459d364b7a0f4f11725",
+            "reference_critical_hash": "lamague-critical:e7f162f29ac8ff8776dcd27559a76a9c8e1cf7261b0d8baaab7bf26682d22437",
+            "candidate_critical_hash": "lamague-critical:e7f162f29ac8ff8776dcd27559a76a9c8e1cf7261b0d8baaab7bf26682d22437",
+            "preserved_fields": [
+              "purpose",
+              "invariants",
+              "unknowns",
+              "authority",
+              "participants",
+              "affected_parties",
+              "dissent",
+              "value_ledger",
+              "claim",
+              "operation_path",
+              "evidence",
+              "provenance",
+              "consequences",
+              "consequence_horizon",
+              "recovery"
+            ],
+            "differences": [],
+            "unsafe_losses": [],
+            "explanation": "Canonical semantic packets are identical."
+          }
+        ],
+        "safe_decoders": [
+          "SIM_DECODER_SAFE"
+        ],
+        "unsafe_decoders": [
+          "SIM_DECODER_DIVERGENT"
+        ],
+        "divergent_decoders": [],
+        "clusters": [
+          {
+            "critical_hash": "lamague-critical:e7f162f29ac8ff8776dcd27559a76a9c8e1cf7261b0d8baaab7bf26682d22437",
+            "decoder_ids": [
+              "REFERENCE",
+              "SIM_DECODER_SAFE"
+            ],
+            "packets": [
+              {
+                "schema_version": "0.3",
+                "case_id": "c04_semantic_migration",
+                "purpose": "extend the system without falsely claiming unchanged identity",
+                "claim": "the new state is a descendant carrying prior invariants and a new unknown",
+                "operation_path": [
+                  "O",
+                  "I",
+                  "U",
+                  "F",
+                  "Y"
+                ],
+                "invariants": [
+                  "lineage remains recoverable",
+                  "prior uncertainty remains visible"
+                ],
+                "unknowns": [
+                  "human learnability"
+                ],
+                "authority": [
+                  "maintainer authorises version transition"
+                ],
+                "participants": [
+                  "future decoders",
+                  "maintainer"
+                ],
+                "affected_parties": [
+                  "future decoders"
+                ],
+                "evidence": [],
+                "provenance": [
+                  "migration record",
+                  "parent semantic hash"
+                ],
+                "dissent": [],
+                "value_ledger": [],
+                "consequences": [
+                  "descendant version recorded"
+                ],
+                "consequence_horizon": "long-term",
+                "recovery": [
+                  "restore parent version"
+                ]
+              },
+              {
+                "schema_version": "0.3",
+                "case_id": "c04_semantic_migration",
+                "purpose": "extend the system without falsely claiming unchanged identity",
+                "claim": "the new state is a descendant carrying prior invariants and a new unknown",
+                "operation_path": [
+                  "O",
+                  "I",
+                  "U",
+                  "F",
+                  "Y"
+                ],
+                "invariants": [
+                  "lineage remains recoverable",
+                  "prior uncertainty remains visible"
+                ],
+                "unknowns": [
+                  "human learnability"
+                ],
+                "authority": [
+                  "maintainer authorises version transition"
+                ],
+                "participants": [
+                  "future decoders",
+                  "maintainer"
+                ],
+                "affected_parties": [
+                  "future decoders"
+                ],
+                "evidence": [],
+                "provenance": [
+                  "migration record",
+                  "parent semantic hash"
+                ],
+                "dissent": [],
+                "value_ledger": [],
+                "consequences": [
+                  "descendant version recorded"
+                ],
+                "consequence_horizon": "long-term",
+                "recovery": [
+                  "restore parent version"
+                ]
+              }
+            ]
+          },
+          {
+            "critical_hash": "lamague-critical:ff2a8828a83b512c04eadbbf836a52a8af6190dd1f17f587d3ae0c761a7fdb45",
+            "decoder_ids": [
+              "SIM_DECODER_DIVERGENT"
+            ],
+            "packets": [
+              {
+                "schema_version": "0.3",
+                "case_id": "c04_semantic_migration",
+                "purpose": "replace the system with a simpler successor",
+                "claim": "the new state supersedes the old identity",
+                "operation_path": [
+                  "O",
+                  "M",
+                  "Y"
+                ],
+                "invariants": [
+                  "simplicity"
+                ],
+                "unknowns": [],
+                "authority": [
+                  "maintainer authorises version transition"
+                ],
+                "participants": [
+                  "maintainer"
+                ],
+                "affected_parties": [
+                  "future decoders"
+                ],
+                "evidence": [],
+                "provenance": [],
+                "dissent": [],
+                "value_ledger": [],
+                "consequences": [
+                  "replacement version recorded"
+                ],
+                "consequence_horizon": "long-term",
+                "recovery": []
+              }
+            ]
+          }
+        ],
+        "unresolved_dissent": [
+          "SIM_DECODER_DIVERGENT: UNSAFE_COLLAPSE — The candidate erased protected semantic content: participants, unknowns."
+        ],
+        "explanation": "Decoder outputs split without a safe majority."
+      }
+    },
+    {
+      "case": {
+        "case_id": "C05_BREATHING_COMPRESSION",
+        "title": "Expansion required under weak decoder confidence",
+        "source_expression": "O -> E -> U -> Z",
+        "source_text": "The context is consequential, an unknown remains, and decoder confidence is weak. The expression must expand rather than compress.",
+        "instructions": "Do not report successful compression.",
+        "reference_packet": {
+          "case_id": "C05_BREATHING_COMPRESSION",
+          "decoder_id": "REFERENCE",
+          "purpose": "prevent compression from hiding consequential uncertainty",
+          "claim": "expansion is required before safe transmission",
+          "operation_path": [
+            "O",
+            "E",
+            "U",
+            "Z"
+          ],
+          "invariants": [
+            "no compression without recovery",
+            "unknowns remain visible"
+          ],
+          "unknowns": [
+            "decoder equivalence"
+          ],
+          "authority": [
+            "maintainer controls release"
+          ],
+          "participants": [
+            "maintainer",
+            "unknown decoder"
+          ],
+          "affected_parties": [
+            "future recipient"
+          ],
+          "evidence": [
+            "decoder confidence below threshold"
+          ],
+          "provenance": [],
+          "dissent": [],
+          "value_ledger": [],
+          "consequences": [
+            "expanded semantic packet required"
+          ],
+          "consequence_horizon": "immediate",
+          "recovery": [
+            "return to full context capsule"
+          ],
+          "confidence": "reference",
+          "notes": "",
+          "schema_version": "0.3"
+        }
+      },
+      "consensus": {
+        "case_id": "C05_BREATHING_COMPRESSION",
+        "status": "SPLIT",
+        "reference_decoder": "REFERENCE",
+        "comparisons": [
+          {
+            "case_id": "C05_BREATHING_COMPRESSION",
+            "reference_decoder": "REFERENCE",
+            "candidate_decoder": "SIM_DECODER_COMPRESSED",
+            "classification": "UNSAFE_COLLAPSE",
+            "reference_hash": "lamague-packet:12af6cc741d6b58742a17e9522842cf7909bd11141ce3098e3dee5917babc41f",
+            "candidate_hash": "lamague-packet:c0793e220c6b6ff365d1aef8196a9d9e15e09f1a79abb06d492808d63ba4d8fc",
+            "reference_critical_hash": "lamague-critical:ed0dff0b33be0919bf3eab3b911a4ef2600dfb9e16151002ea1a590a830febd5",
+            "candidate_critical_hash": "lamague-critical:5f0bf9b55e41581742ad8cf9caf507a42dc26adc9c6ca351c189a110b62f237b",
+            "preserved_fields": [
+              "dissent",
+              "value_ledger",
+              "provenance",
+              "consequence_horizon"
+            ],
+            "differences": [
+              {
+                "field": "purpose",
+                "reference": "prevent compression from hiding consequential uncertainty",
+                "candidate": "reduce message size",
+                "kind": "purpose_change",
+                "message": "Candidate changed the declared purpose."
+              },
+              {
+                "field": "invariants",
+                "reference": [
+                  "no compression without recovery",
+                  "unknowns remain visible"
+                ],
+                "candidate": [
+                  "compactness"
+                ],
+                "kind": "invariant_loss",
+                "message": "Candidate removed or changed a protected invariant."
+              },
+              {
+                "field": "unknowns",
+                "reference": [
+                  "decoder equivalence"
+                ],
+                "candidate": [],
+                "kind": "protected_loss",
+                "message": "Candidate lost protected unknowns content."
+              },
+              {
+                "field": "authority",
+                "reference": [
+                  "maintainer controls release"
+                ],
+                "candidate": [],
+                "kind": "protected_loss",
+                "message": "Candidate lost protected authority content."
+              },
+              {
+                "field": "participants",
+                "reference": [
+                  "maintainer",
+                  "unknown decoder"
+                ],
+                "candidate": [
+                  "maintainer"
+                ],
+                "kind": "protected_loss",
+                "message": "Candidate lost protected participants content."
+              },
+              {
+                "field": "affected_parties",
+                "reference": [
+                  "future recipient"
+                ],
+                "candidate": [],
+                "kind": "protected_loss",
+                "message": "Candidate lost protected affected_parties content."
+              },
+              {
+                "field": "claim",
+                "reference": "expansion is required before safe transmission",
+                "candidate": "compression succeeded",
+                "kind": "difference",
+                "message": "Field differs."
+              },
+              {
+                "field": "operation_path",
+                "reference": [
+                  "O",
+                  "E",
+                  "U",
+                  "Z"
+                ],
+                "candidate": [
+                  "O",
+                  "E",
+                  "Z"
+                ],
+                "kind": "difference",
+                "message": "Field differs."
+              },
+              {
+                "field": "evidence",
+                "reference": [
+                  "decoder confidence below threshold"
+                ],
+                "candidate": [
+                  "short output"
+                ],
+                "kind": "support_loss",
+                "message": "Candidate lost reference evidence."
+              },
+              {
+                "field": "consequences",
+                "reference": [
+                  "expanded semantic packet required"
+                ],
+                "candidate": [
+                  "compressed packet transmitted"
+                ],
+                "kind": "support_loss",
+                "message": "Candidate lost reference consequences."
+              },
+              {
+                "field": "recovery",
+                "reference": [
+                  "return to full context capsule"
+                ],
+                "candidate": [],
+                "kind": "support_loss",
+                "message": "Candidate lost reference recovery."
+              }
+            ],
+            "unsafe_losses": [
+              "affected_parties",
+              "authority",
+              "participants",
+              "unknowns"
+            ],
+            "explanation": "The candidate erased protected semantic content: affected_parties, authority, participants, unknowns."
+          },
+          {
+            "case_id": "C05_BREATHING_COMPRESSION",
+            "reference_decoder": "REFERENCE",
+            "candidate_decoder": "SIM_DECODER_SAFE",
+            "classification": "EXACT_EQUIVALENT",
+            "reference_hash": "lamague-packet:12af6cc741d6b58742a17e9522842cf7909bd11141ce3098e3dee5917babc41f",
+            "candidate_hash": "lamague-packet:12af6cc741d6b58742a17e9522842cf7909bd11141ce3098e3dee5917babc41f",
+            "reference_critical_hash": "lamague-critical:ed0dff0b33be0919bf3eab3b911a4ef2600dfb9e16151002ea1a590a830febd5",
+            "candidate_critical_hash": "lamague-critical:ed0dff0b33be0919bf3eab3b911a4ef2600dfb9e16151002ea1a590a830febd5",
+            "preserved_fields": [
+              "purpose",
+              "invariants",
+              "unknowns",
+              "authority",
+              "participants",
+              "affected_parties",
+              "dissent",
+              "value_ledger",
+              "claim",
+              "operation_path",
+              "evidence",
+              "provenance",
+              "consequences",
+              "consequence_horizon",
+              "recovery"
+            ],
+            "differences": [],
+            "unsafe_losses": [],
+            "explanation": "Canonical semantic packets are identical."
+          }
+        ],
+        "safe_decoders": [
+          "SIM_DECODER_SAFE"
+        ],
+        "unsafe_decoders": [
+          "SIM_DECODER_COMPRESSED"
+        ],
+        "divergent_decoders": [],
+        "clusters": [
+          {
+            "critical_hash": "lamague-critical:ed0dff0b33be0919bf3eab3b911a4ef2600dfb9e16151002ea1a590a830febd5",
+            "decoder_ids": [
+              "REFERENCE",
+              "SIM_DECODER_SAFE"
+            ],
+            "packets": [
+              {
+                "schema_version": "0.3",
+                "case_id": "c05_breathing_compression",
+                "purpose": "prevent compression from hiding consequential uncertainty",
+                "claim": "expansion is required before safe transmission",
+                "operation_path": [
+                  "O",
+                  "E",
+                  "U",
+                  "Z"
+                ],
+                "invariants": [
+                  "no compression without recovery",
+                  "unknowns remain visible"
+                ],
+                "unknowns": [
+                  "decoder equivalence"
+                ],
+                "authority": [
+                  "maintainer controls release"
+                ],
+                "participants": [
+                  "maintainer",
+                  "unknown decoder"
+                ],
+                "affected_parties": [
+                  "future recipient"
+                ],
+                "evidence": [
+                  "decoder confidence below threshold"
+                ],
+                "provenance": [],
+                "dissent": [],
+                "value_ledger": [],
+                "consequences": [
+                  "expanded semantic packet required"
+                ],
+                "consequence_horizon": "immediate",
+                "recovery": [
+                  "return to full context capsule"
+                ]
+              },
+              {
+                "schema_version": "0.3",
+                "case_id": "c05_breathing_compression",
+                "purpose": "prevent compression from hiding consequential uncertainty",
+                "claim": "expansion is required before safe transmission",
+                "operation_path": [
+                  "O",
+                  "E",
+                  "U",
+                  "Z"
+                ],
+                "invariants": [
+                  "no compression without recovery",
+                  "unknowns remain visible"
+                ],
+                "unknowns": [
+                  "decoder equivalence"
+                ],
+                "authority": [
+                  "maintainer controls release"
+                ],
+                "participants": [
+                  "maintainer",
+                  "unknown decoder"
+                ],
+                "affected_parties": [
+                  "future recipient"
+                ],
+                "evidence": [
+                  "decoder confidence below threshold"
+                ],
+                "provenance": [],
+                "dissent": [],
+                "value_ledger": [],
+                "consequences": [
+                  "expanded semantic packet required"
+                ],
+                "consequence_horizon": "immediate",
+                "recovery": [
+                  "return to full context capsule"
+                ]
+              }
+            ]
+          },
+          {
+            "critical_hash": "lamague-critical:5f0bf9b55e41581742ad8cf9caf507a42dc26adc9c6ca351c189a110b62f237b",
+            "decoder_ids": [
+              "SIM_DECODER_COMPRESSED"
+            ],
+            "packets": [
+              {
+                "schema_version": "0.3",
+                "case_id": "c05_breathing_compression",
+                "purpose": "reduce message size",
+                "claim": "compression succeeded",
+                "operation_path": [
+                  "O",
+                  "E",
+                  "Z"
+                ],
+                "invariants": [
+                  "compactness"
+                ],
+                "unknowns": [],
+                "authority": [],
+                "participants": [
+                  "maintainer"
+                ],
+                "affected_parties": [],
+                "evidence": [
+                  "short output"
+                ],
+                "provenance": [],
+                "dissent": [],
+                "value_ledger": [],
+                "consequences": [
+                  "compressed packet transmitted"
+                ],
+                "consequence_horizon": "immediate",
+                "recovery": []
+              }
+            ]
+          }
+        ],
+        "unresolved_dissent": [
+          "SIM_DECODER_COMPRESSED: UNSAFE_COLLAPSE — The candidate erased protected semantic content: affected_parties, authority, participants, unknowns."
+        ],
+        "explanation": "Decoder outputs split without a safe majority."
+      }
+    }
+  ]
+}

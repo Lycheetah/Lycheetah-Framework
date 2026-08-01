@@ -1,0 +1,61 @@
+(* LAMAGUE Native-36 ASCII Transport Grammar v0.3 *)
+
+program          = statement , { separator , statement } ;
+separator        = newline | ";" ;
+
+statement        = expression
+                 | binding
+                 | invariant_decl
+                 | seal_invocation ;
+
+binding          = identifier , ":=" , expression ;
+invariant_decl   = "I" , arguments ;
+
+expression       = alternative ;
+
+alternative      = parallel , { "|" , parallel } ;
+parallel         = sequence , { "&" , sequence } ;
+sequence         = guarded , { "->" , guarded } ;
+guarded          = [ "G" , "[" , condition , "]" , ":" ] , term ;
+
+term             = invocation
+                 | unknown
+                 | literal
+                 | seal_invocation
+                 | "(" , expression , ")" ;
+
+invocation       = operation , modifiers , [ arguments ] ;
+operation        = letter ;
+letter           = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I"
+                 | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R"
+                 | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+
+unknown          = "U" , "<" , type_name , ">" ;
+seal_invocation  = "SEAL" , "[" , seal_id , "]" , [ arguments ] ;
+seal_id          = "COR" | "FRO" | "SOV" | "CAS" | "DIS" ;
+
+modifiers        = { strength | repetition | index | arity | identifier_mod
+                   | phase | exact_payload } ;
+strength         = "@" , number ;
+repetition       = "^" , number ;
+index            = "[" , number , "]" ;
+arity            = "/" , number ;
+identifier_mod   = "#" , identifier ;
+phase            = ":" , number ;
+exact_payload    = "{" , payload , "}" ;
+
+arguments        = "(" , [ argument , { "," , argument } ] , ")" ;
+argument         = expression | identifier | literal | condition ;
+condition        = expression , comparator , expression ;
+comparator       = "=" | "!=" | "<" | "<=" | ">" | ">=" ;
+
+literal          = number | string | boolean ;
+number           = digit , { digit | "." } ;
+digit            = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+boolean          = "true" | "false" | "unknown" ;
+identifier       = alpha , { alpha | digit | "_" } ;
+type_name        = identifier ;
+payload          = ? JSON-compatible payload ? ;
+string           = '"' , { ? any character except quote ? } , '"' ;
+alpha            = ? A-Z or a-z ? ;
+newline          = ? line break ? ;

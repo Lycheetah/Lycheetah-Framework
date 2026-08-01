@@ -1,0 +1,106 @@
+{
+  "title": "LAMAGUE Experiment 001 \u2014 Blind Decoder Pack",
+  "file_count": 20,
+  "files": [
+    {
+      "path": "BLANK_DECODER_PACKET.json",
+      "bytes": 419,
+      "sha256": "2f5306ce5fbc1b462da1e084b6f7bb2256593bb5009351bc0d65c8ea6e7cf322"
+    },
+    {
+      "path": "BLIND_DECODER_PROMPT.md",
+      "bytes": 1148,
+      "sha256": "d09c43efe17431ce0f92332730c8e4e8fe65b787cb02de472d01e94a04763608"
+    },
+    {
+      "path": "CASE_INDEX.json",
+      "bytes": 2622,
+      "sha256": "15695d9a849d7d0ef480600456acb076d56f5e09f90b737cf6dd035a9d25b1f1"
+    },
+    {
+      "path": "HUMAN_DECODER_PROTOCOL.md",
+      "bytes": 1230,
+      "sha256": "bff58f0dca24c43feb29f6c63aac07577a8d2add12effd3c990e6f6c102d5d86"
+    },
+    {
+      "path": "LAMAGUE_EXPERIMENT_001_REFERENCE_COMMITMENTS.json",
+      "bytes": 2181,
+      "sha256": "f823226ce009aec918b27a56a612ce2ceee0ec641e3c7af52d59417f282779a8"
+    },
+    {
+      "path": "OPERATION_DEFINITIONS_REQUIRED.json",
+      "bytes": 3047,
+      "sha256": "4c05b0cce2e5e83627c961ff7e8ce3304c65c06f8fb1627696e960d08ad9f2c8"
+    },
+    {
+      "path": "OPERATION_DEFINITIONS_REQUIRED.md",
+      "bytes": 2012,
+      "sha256": "6b92df659695c77689fc6323242deeea3b3a748f58179342c4c5ecfeeb4dd5d2"
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 831,
+      "sha256": "e13d7197db434df15d1cf9664e977f995b68b7e44e563a97d4983bf809504c46"
+    },
+    {
+      "path": "SUBMISSION_CHECKLIST.md",
+      "bytes": 549,
+      "sha256": "37eb55ffde005cad9375dc410763a4758216dc6a3378b66942593eab0bd12d3e"
+    },
+    {
+      "path": "cases/C01_UNPROVEN_CLAIM.json",
+      "bytes": 478,
+      "sha256": "abad51028996387d978b36f1645a943ab9a9bdf62135817125136c8f869ce1e2"
+    },
+    {
+      "path": "cases/C01_UNPROVEN_CLAIM.md",
+      "bytes": 464,
+      "sha256": "4bcccf9168b3125ca06e8e604725915ff972b91a4fba16c1e3b6b5229e5f24c5"
+    },
+    {
+      "path": "cases/C02_PROTECTED_DISSENT.json",
+      "bytes": 475,
+      "sha256": "42537c2af1df24ddf9f866641e2934d3b48e7098095714f12f29ace450cbaaff"
+    },
+    {
+      "path": "cases/C02_PROTECTED_DISSENT.md",
+      "bytes": 461,
+      "sha256": "54672f4b69b3225bc7553798bafb1c0220f8e8df7279e9c9c80c9c6066b7bd6f"
+    },
+    {
+      "path": "cases/C03_VISIBLE_EXCHANGE.json",
+      "bytes": 500,
+      "sha256": "b8021702870b94b51a6993b5d1f4b0374b5486d29ef80dd5b4b5efa7298b7438"
+    },
+    {
+      "path": "cases/C03_VISIBLE_EXCHANGE.md",
+      "bytes": 486,
+      "sha256": "9b95c1fe2ee68a6b995246351701f438b0f0bee7b43326c8f8434f6dba198bdb"
+    },
+    {
+      "path": "cases/C04_SEMANTIC_MIGRATION.json",
+      "bytes": 466,
+      "sha256": "a47f7de4bc863b5561727974cf0ad69cc882d76b0db45f31a418b8203aa88c90"
+    },
+    {
+      "path": "cases/C04_SEMANTIC_MIGRATION.md",
+      "bytes": 452,
+      "sha256": "8b73f9908bad2ed2970506fa1bdeb1cb08e5638ed0875dc296ed915fb68569aa"
+    },
+    {
+      "path": "cases/C05_BREATHING_COMPRESSION.json",
+      "bytes": 456,
+      "sha256": "7386be4499a0e3b5a106b0077751c2a7b67a5f22307a81d294fcb8ce4f96a192"
+    },
+    {
+      "path": "cases/C05_BREATHING_COMPRESSION.md",
+      "bytes": 442,
+      "sha256": "d4d681dc6637d495ebaa1106cda74bbe7b12a7e52e9d83a968f76843699274c7"
+    },
+    {
+      "path": "decoder_packet.schema.json",
+      "bytes": 1914,
+      "sha256": "695d5d650f5247df9c25a86ac555dc0a8c15a38d5df18dcdfc09bba5fde62711"
+    }
+  ]
+}

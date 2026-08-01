@@ -1,0 +1,174 @@
+{
+  "name": "LAMAGUE Core Algebra v0.1",
+  "version": "0.1.0",
+  "files": {
+    "LICENSE": {
+      "bytes": 681,
+      "sha256": "dc878dbdc03a252c39a7b87f1e0b25bb9d567eaa21a81e900a72e8ba4b6f2b2d"
+    },
+    "README.md": {
+      "bytes": 1650,
+      "sha256": "51f59c163dbe406c829e86cbd719e122b5749dca94b8a88a52ce23528b707674"
+    },
+    "benchmark/CORE_BENCHMARK_CASES.json": {
+      "bytes": 2818,
+      "sha256": "86076071eec8e59c050c687f6c1540620b9485e6a245a24f7ca24d330cd3b509"
+    },
+    "benchmark/run_benchmark.py": {
+      "bytes": 1974,
+      "sha256": "9e3b771762ca82cd9487730081faaf20f86acb82858dd892f15a0a41a28b2a51"
+    },
+    "docs/ADAPTER_INTERFACE.md": {
+      "bytes": 954,
+      "sha256": "d1bc78c2c565ae42e07460ded6f78a227a607e02d5177c18c7b3dffc61dccdc0"
+    },
+    "docs/ALGEBRA_LAWS.md": {
+      "bytes": 1100,
+      "sha256": "1b9c71a7b10b8f8a5eb596cac2fe5b1926648753346171d22ebd4dc83799a7e6"
+    },
+    "docs/HANDOFF_TO_SOL.md": {
+      "bytes": 824,
+      "sha256": "de1c8a92d9c771e3f642de31a3f13376021b49eb1411d0fc3006f64e454d71da"
+    },
+    "docs/SOURCE_AUDIT_AND_CANON_DECISIONS.md": {
+      "bytes": 2212,
+      "sha256": "dab88b5a10a82e622771f263c0ccda4f333ad2d8c9cc76174e9c55b5673c8b70"
+    },
+    "examples/algebra_equivalence.lmg": {
+      "bytes": 138,
+      "sha256": "0aaab8c02f6bf651557a06c7cde1bf2c64243dcf90e16be6ec59d949624eefdb"
+    },
+    "examples/compression_roundtrip.lmg": {
+      "bytes": 157,
+      "sha256": "9efe087e5e69f5c55c80bde5f20b14994a33e477c05203d6e8dd1e3db06793ae"
+    },
+    "examples/core_return_path.lmg": {
+      "bytes": 323,
+      "sha256": "883c9ca41f0b5e4ae0c2ce947ca3f0bdba4634ea293c3bc3a7bc7b75e86e5cb5"
+    },
+    "examples/legacy_aliases.lmg": {
+      "bytes": 92,
+      "sha256": "bed6675a9f4da85d5f608f6c67e4a97f5cc89e77f21e29d267c42fc2f5a2d375"
+    },
+    "grammar/LAMAGUE_CORE_v0.1.ebnf": {
+      "bytes": 1537,
+      "sha256": "2766d15a6069d9e15c5ec326f2c0058c13ec73f8ea7f7171587e7e1060fcac78"
+    },
+    "lamague_core/__init__.py": {
+      "bytes": 325,
+      "sha256": "22e4840bbfad8941b6a13d9ddfb8a47feb5aa37a071e78b84c2e0adc5a58ee42"
+    },
+    "lamague_core/__pycache__/__init__.cpython-313.pyc": {
+      "bytes": 636,
+      "sha256": "2ad10f5c4dda30318a7eab1ee997f634aca17ce8a6c77337436f496e074d9be3"
+    },
+    "lamague_core/__pycache__/cli.cpython-313.pyc": {
+      "bytes": 2234,
+      "sha256": "8e9b9beff842d26de239de9d82aac992882e7e17cb0cfaffc5657a40a96e77b7"
+    },
+    "lamague_core/__pycache__/core.cpython-313.pyc": {
+      "bytes": 924,
+      "sha256": "660b0b14e7fef813648e18ec7971578cbb50aa8cd592e840ee22609aac89604c"
+    },
+    "lamague_core/__pycache__/errors.cpython-313.pyc": {
+      "bytes": 946,
+      "sha256": "87c3b1d08e82668f3d6a600ed4912f6accf1b8c1c58f997da18943dcc42283a6"
+    },
+    "lamague_core/__pycache__/graph.cpython-313.pyc": {
+      "bytes": 2018,
+      "sha256": "304624c0cd287a513a8991e23adf3655e50fd298ba289b1e1a97f3538128d01e"
+    },
+    "lamague_core/__pycache__/lexer.cpython-313.pyc": {
+      "bytes": 7023,
+      "sha256": "5da0aeebf566f729e06181c37e08052699c8f4574e5ddecb208c07b701e267fa"
+    },
+    "lamague_core/__pycache__/model.cpython-313.pyc": {
+      "bytes": 4963,
+      "sha256": "c5274c9a79179a1d87348e2a7d662737426de85ef8a899b5c692d1895985e69f"
+    },
+    "lamague_core/__pycache__/normalizer.cpython-313.pyc": {
+      "bytes": 3635,
+      "sha256": "cb37f65c65c7d159b8ffd26582c23c92dc536b60db96b0ed77c58c5feb4bd7d3"
+    },
+    "lamague_core/__pycache__/parser.cpython-313.pyc": {
+      "bytes": 8478,
+      "sha256": "2fa43aaf68e0cdb41c721bf3468fb871fdb8243a643640e5bd37921b0d5434c9"
+    },
+    "lamague_core/__pycache__/semantics.cpython-313.pyc": {
+      "bytes": 11554,
+      "sha256": "415faa1cdd32ce6f6cd2519ace451b29e2aeefed0c947ae5258f67861e8293bf"
+    },
+    "lamague_core/adapter.py": {
+      "bytes": 512,
+      "sha256": "2852caa9c3b97ffdbe38ce74379504dfa9d61b25f7e0b19fa028925a5de1f232"
+    },
+    "lamague_core/cli.py": {
+      "bytes": 1306,
+      "sha256": "5b3e7cb5fbab028f6f83ba495b0df497017fb3fdd459adcbd768b3f917be0828"
+    },
+    "lamague_core/core.py": {
+      "bytes": 406,
+      "sha256": "c8a3f07ee339777c0e011af9b9c395992051186e89be828623bf5c6ca9a1b9ce"
+    },
+    "lamague_core/errors.py": {
+      "bytes": 196,
+      "sha256": "cc891811a11f0aaeb952cbc817c342f46617130316c66b0ea886a79fd28fb3fd"
+    },
+    "lamague_core/graph.py": {
+      "bytes": 1170,
+      "sha256": "3d56445a63a0f0ee13c41e839f98bdf67af5e88a6a4c4f87c72eb6796dde64e9"
+    },
+    "lamague_core/lexer.py": {
+      "bytes": 4593,
+      "sha256": "3c00a7e78c040f5cd22ceae5a507374d7ee98f686a0d06288d68c15d9a460184"
+    },
+    "lamague_core/model.py": {
+      "bytes": 2191,
+      "sha256": "506a025e4a7cab3c010a258e22a81e54da6efa42294dab1c7c520f95068df5fe"
+    },
+    "lamague_core/normalizer.py": {
+      "bytes": 2019,
+      "sha256": "e474a770256e19583e96d4d09401f44cf2fb5f1cc65a03047d821afbf5474671"
+    },
+    "lamague_core/parser.py": {
+      "bytes": 4921,
+      "sha256": "8a09a4de23e474d0a311081c23826e6492107ce585df0d0e9194a382bde74410"
+    },
+    "lamague_core/semantics.py": {
+      "bytes": 7199,
+      "sha256": "d1e9449cb95d9f897acab6e9191aa3613e6c2543dce2a7738845bde13468f526"
+    },
+    "reports/BENCHMARK_RESULTS.json": {
+      "bytes": 16673,
+      "sha256": "be5192a86e85f89dd7be5abdf09500ffe38ee2a2d904a6f60863f018061402cf"
+    },
+    "reports/BENCHMARK_RUN.txt": {
+      "bytes": 113,
+      "sha256": "e4467cd186b0f6418c0cb932345b1930b100678f2362ce4a0aa2b54710fabbc2"
+    },
+    "reports/CORE_RETURN_PATH_OUTPUT.json": {
+      "bytes": 3949,
+      "sha256": "d202dbe4563834d142b5adc18d4023cb37b95bec13d72fcacc1b0d1c0c93a064"
+    },
+    "reports/TEST_RESULTS.txt": {
+      "bytes": 3794,
+      "sha256": "a239ed389e35f99caed5dc596b08ec070a4a612b67ff4fb1436847aa3970a54d"
+    },
+    "schema/lamague_core_result.schema.json": {
+      "bytes": 555,
+      "sha256": "c2934171f9f25ecdac43ad0a0dd6da36d084cb515e640f5d238c26e1f0ad84e8"
+    },
+    "spec/LAMAGUE_CORE_SPECIFICATION_v0.1.md": {
+      "bytes": 5920,
+      "sha256": "2527acd8753a242477b52298893b8022c4abe4e88378265f49344e2406589d1a"
+    },
+    "tests/__pycache__/test_core.cpython-313.pyc": {
+      "bytes": 19572,
+      "sha256": "8415e54632bad1c8df4cc091f942897d720d254426d9d0fe0fc8b638345120fc"
+    },
+    "tests/test_core.py": {
+      "bytes": 8451,
+      "sha256": "5e41f8552341010882caac4c975165929343f2b772b879a49cb0e12837782b1f"
+    }
+  }
+}

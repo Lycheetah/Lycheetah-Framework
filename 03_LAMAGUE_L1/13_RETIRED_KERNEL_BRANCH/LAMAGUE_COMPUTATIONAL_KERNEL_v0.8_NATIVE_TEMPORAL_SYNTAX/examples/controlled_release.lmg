@@ -1,0 +1,59 @@
+# LAMAGUE Computational Kernel v0.5
+program ControlledRelease
+version 0.5
+identity controlled_release_protocol
+purpose "Test a bounded release without crossing an irreversible-harm boundary."
+claim "A controlled pilot may proceed only while the irreversible path remains closed."
+risk high
+confidence 0.92
+irreversible false
+path K -> O -> E -> U -> I -> G -> V -> H -> S -> F -> Z -> Y
+
+evidence safety_test "Pre-release safety test record."
+evidence monitoring_plan "Active monitoring and incident capture plan."
+evidence rollback_test "Verified rollback rehearsal."
+
+unknown rare_failure protected required_for=ordinary_release
+unknown long_term_effect protected required_for=ordinary_release
+
+invariant harm_boundary "Credible irreversible harm triggers immediate provisional halt."
+invariant dissent_lineage "Every position remains attributable."
+invariant restart_asymmetry "No single gate may restart the system."
+
+authority operator scope=pilot "Human operator may authorise only the bounded pilot."
+
+participant advocate
+participant safety_model
+participant domain_expert
+participant operator
+participant silent_witness
+
+affected pilot_participant
+affected indirect_decision_subject
+
+boundary cohort "Small monitored cohort."
+boundary autonomy "No autonomous external control."
+boundary rollback "Immediate rollback capability."
+
+dissent advocate "Release now because people may benefit."
+dissent safety_model "Do not release while irreversible unknowns remain."
+dissent domain_expert "Proceed only through a controlled pilot."
+
+valueflow pilot_participant research_program consent=revocable "Experience and outcome data."
+
+recovery rollback "Restore the previous operational state."
+recovery containment "Remove access and preserve incident evidence."
+
+effect MayAffect<pilot_participant>
+effect CreatesReversibleRisk
+effect CallsExternalSystem<decision_support_tool>
+
+gate affected_party
+gate expert
+gate operator
+gate silent_witness
+
+horizon 30_days
+limit max_steps=64
+compress requested
+yield "Bounded monitored pilot with visible unknowns, dissent, authority, affected parties, and rollback."

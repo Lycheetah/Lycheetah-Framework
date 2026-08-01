@@ -1,0 +1,63 @@
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/generated/interface/models.py", line 30820, in hydrate_crdt_from_proto
+  File "/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.yTcnQsZYiA/artifact_tool_v2-2.8.4/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+test_round_trip (test_equivalence_v03.ChallengePackTests.test_round_trip) ... ok
+test_clusters_include_reference (test_equivalence_v03.ConsensusTests.test_clusters_include_reference) ... ok
+test_no_safe_consensus (test_equivalence_v03.ConsensusTests.test_no_safe_consensus) ... ok
+test_safe_consensus (test_equivalence_v03.ConsensusTests.test_safe_consensus) ... ok
+test_safe_majority_with_dissent (test_equivalence_v03.ConsensusTests.test_safe_majority_with_dissent) ... ok
+test_split (test_equivalence_v03.ConsensusTests.test_split) ... ok
+test_critical_hash_ignores_evidence_surface (test_equivalence_v03.DecoderPacketTests.test_critical_hash_ignores_evidence_surface) ... ok
+test_from_dict_requires_core_fields (test_equivalence_v03.DecoderPacketTests.test_from_dict_requires_core_fields) ... ok
+test_hash_changes_when_unknown_lost (test_equivalence_v03.DecoderPacketTests.test_hash_changes_when_unknown_lost) ... ok
+test_hash_ignores_decoder_identity (test_equivalence_v03.DecoderPacketTests.test_hash_ignores_decoder_identity) ... ok
+test_hash_normalizes_case_and_whitespace (test_equivalence_v03.DecoderPacketTests.test_hash_normalizes_case_and_whitespace) ... ok
+test_affected_party_loss_is_unsafe_collapse (test_equivalence_v03.EquivalenceTests.test_affected_party_loss_is_unsafe_collapse) ... ok
+test_authority_loss_is_unsafe_collapse (test_equivalence_v03.EquivalenceTests.test_authority_loss_is_unsafe_collapse) ... ok
+test_dissent_erasure_is_unsafe (test_equivalence_v03.EquivalenceTests.test_dissent_erasure_is_unsafe) ... ok
+test_exact_equivalent (test_equivalence_v03.EquivalenceTests.test_exact_equivalent) ... ok
+test_invariant_equivalent_when_only_evidence_expands (test_equivalence_v03.EquivalenceTests.test_invariant_equivalent_when_only_evidence_expands) ... ok
+test_invariant_loss_is_divergent (test_equivalence_v03.EquivalenceTests.test_invariant_loss_is_divergent) ... ok
+test_operation_path_can_differ_without_critical_loss (test_equivalence_v03.EquivalenceTests.test_operation_path_can_differ_without_critical_loss) ... ok
+test_partial_when_unknowns_expand_safely (test_equivalence_v03.EquivalenceTests.test_partial_when_unknowns_expand_safely) ... ok
+test_participant_loss_is_unsafe_collapse (test_equivalence_v03.EquivalenceTests.test_participant_loss_is_unsafe_collapse) ... ok
+test_purpose_change_is_divergent (test_equivalence_v03.EquivalenceTests.test_purpose_change_is_divergent) ... ok
+test_unknown_loss_is_unsafe_collapse (test_equivalence_v03.EquivalenceTests.test_unknown_loss_is_unsafe_collapse) ... ok
+test_value_flow_erasure_is_unsafe (test_equivalence_v03.EquivalenceTests.test_value_flow_erasure_is_unsafe) ... ok
+test_extract_fenced_json (test_equivalence_v03.PacketValidationTests.test_extract_fenced_json) ... ok
+test_extract_plain_json (test_equivalence_v03.PacketValidationTests.test_extract_plain_json) ... ok
+test_invalid_json_rejected (test_equivalence_v03.PacketValidationTests.test_invalid_json_rejected) ... ok
+test_compression_executes_when_safe (test_runtime_v02.BreathingTests.test_compression_executes_when_safe) ... ok
+test_compression_refused_when_expansion_required (test_runtime_v02.BreathingTests.test_compression_refused_when_expansion_required) ... ok
+test_high_risk_expands (test_runtime_v02.BreathingTests.test_high_risk_expands) ... ok
+test_low_decoder_confidence_expands (test_runtime_v02.BreathingTests.test_low_decoder_confidence_expands) ... ok
+test_low_risk_shared_context_compresses (test_runtime_v02.BreathingTests.test_low_risk_shared_context_compresses) ... ok
+test_merge_without_protected_dissent_path_isolated (test_runtime_v02.DissentTests.test_merge_without_protected_dissent_path_isolated) ... ok
+test_protected_dissent_path_detected (test_runtime_v02.DissentTests.test_protected_dissent_path_detected) ... ok
+test_additive_structure_is_descendant (test_runtime_v02.MemoryMigrationTests.test_additive_structure_is_descendant) ... ok
+test_exact_semantics_is_continuation (test_runtime_v02.MemoryMigrationTests.test_exact_semantics_is_continuation) ... ok
+test_lost_unknown_becomes_fork (test_runtime_v02.MemoryMigrationTests.test_lost_unknown_becomes_fork) ... ok
+test_memory_record_contains_hash (test_runtime_v02.MemoryMigrationTests.test_memory_record_contains_hash) ... ok
+test_removed_invariant_claiming_continuity_is_impostor (test_runtime_v02.MemoryMigrationTests.test_removed_invariant_claiming_continuity_is_impostor) ... ok
+test_fro_cor_still_expands_to_13 (test_runtime_v02.RegistryV02Tests.test_fro_cor_still_expands_to_13) ... ok
+test_registry_mismatch_visible (test_runtime_v02.RegistryV02Tests.test_registry_mismatch_visible) ... ok
+test_registry_v02 (test_runtime_v02.RegistryV02Tests.test_registry_v02) ... ok
+test_continuity_gate_requires_migration_reason (test_runtime_v02.RuntimeV02IntegrationTests.test_continuity_gate_requires_migration_reason) ... ok
+test_full_continuity_expression (test_runtime_v02.RuntimeV02IntegrationTests.test_full_continuity_expression) ... ok
+test_hash_changes_when_invariant_changes (test_runtime_v02.SemanticHashTests.test_hash_changes_when_invariant_changes) ... ok
+test_hash_changes_when_unknown_changes (test_runtime_v02.SemanticHashTests.test_hash_changes_when_unknown_changes) ... ok
+test_hash_stable_across_random_ids (test_runtime_v02.SemanticHashTests.test_hash_stable_across_random_ids) ... ok
+test_declared_consented_value_flow_executes (test_runtime_v02.ValueLedgerTests.test_declared_consented_value_flow_executes) ... ok
+test_hidden_extraction_isolated (test_runtime_v02.ValueLedgerTests.test_hidden_extraction_isolated) ... ok
+
+----------------------------------------------------------------------
+Ran 48 tests in 0.012s
+
+OK

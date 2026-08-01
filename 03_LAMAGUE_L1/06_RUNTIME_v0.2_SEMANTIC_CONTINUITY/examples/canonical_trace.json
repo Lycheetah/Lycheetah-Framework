@@ -1,0 +1,844 @@
+{
+  "registry_version": "0.1",
+  "input": "FORGE_TRUTH",
+  "ast": {
+    "program_id": "program-89371192cd69",
+    "version": "0.1",
+    "source": "FORGE_TRUTH",
+    "expanded_from": [
+      "FORGE_TRUTH"
+    ],
+    "operation_path": [
+      "Q",
+      "O",
+      "E",
+      "U",
+      "I",
+      "G",
+      "T",
+      "P",
+      "F",
+      "Y"
+    ],
+    "context": {
+      "domain": "human-ai semantic research",
+      "participants": [
+        "human collaborators",
+        "AI collaborators"
+      ],
+      "affected_parties": [
+        "future testers",
+        "future users"
+      ],
+      "purpose": "test an unproven semantic language architecture without overstating evidence",
+      "claim": "LAMAGUE may improve inspectable human-AI collaboration",
+      "evidence": [
+        "LAMAGUE-1C prototype exists",
+        "machine registries exist",
+        "Frontier Canon Addendum I specifies the architecture"
+      ],
+      "evidence_score": 0.45,
+      "certainty": 0.35,
+      "unknowns": [
+        "human learnability",
+        "net semantic compression",
+        "cross-model consistency",
+        "long-term usefulness"
+      ],
+      "authority": [
+        "project steward may publish prototype artefacts",
+        "test participants govern their own participation"
+      ],
+      "consent": {
+        "test participants": "required and revocable"
+      },
+      "boundaries": [
+        "prototype claims remain experimental",
+        "no real-world action execution"
+      ],
+      "invariants": [
+        "uncertainty remains visible",
+        "human and AI contributions remain visible",
+        "publication certainty does not exceed evidence"
+      ],
+      "value_created": [
+        "testable structure",
+        "public evidence",
+        "shared learning"
+      ],
+      "costs": [
+        "time",
+        "attention",
+        "computation",
+        "reputational risk"
+      ],
+      "risks": [
+        "overclaiming",
+        "semantic ambiguity",
+        "decoder disagreement"
+      ],
+      "consequences": [
+        "evidence may strengthen, revise, or reject components",
+        "weak forms return to repair or ASH"
+      ],
+      "consequence_horizon": "prototype, independent testing, and later replication",
+      "recovery": [
+        "expand compressed seals",
+        "publish audit findings",
+        "repair or return weak forms to ASH"
+      ],
+      "provenance": [
+        "Frontier Canon Addendum I",
+        "canonical first milestone compiler"
+      ],
+      "risk_level": "medium",
+      "irreversible": false,
+      "execute_requested": true,
+      "registry_version": "0.1"
+    },
+    "nodes": [
+      {
+        "operation": "Q",
+        "operation_name": "Query",
+        "input_types": [
+          "Target",
+          "Property"
+        ],
+        "output_type": "Unknown",
+        "arguments": {
+          "expanded_from": "FORGE_TRUTH"
+        },
+        "context": {
+          "domain": "human-ai semantic research",
+          "purpose": "test an unproven semantic language architecture without overstating evidence"
+        },
+        "provenance": [
+          "Frontier Canon Addendum I",
+          "canonical first milestone compiler"
+        ],
+        "evidence": [
+          "LAMAGUE-1C prototype exists",
+          "machine registries exist",
+          "Frontier Canon Addendum I specifies the architecture"
+        ],
+        "unknowns": [
+          "human learnability",
+          "net semantic compression",
+          "cross-model consistency",
+          "long-term usefulness"
+        ],
+        "authority": [
+          "project steward may publish prototype artefacts",
+          "test participants govern their own participation"
+        ],
+        "invariants": [
+          "uncertainty remains visible",
+          "human and AI contributions remain visible",
+          "publication certainty does not exceed evidence"
+        ],
+        "value_flow": {},
+        "consequence_horizon": "prototype, independent testing, and later replication",
+        "recovery": [
+          "expand compressed seals",
+          "publish audit findings",
+          "repair or return weak forms to ASH"
+        ],
+        "version": "0.1",
+        "node_id": "node-dc524c124725"
+      },
+      {
+        "operation": "O",
+        "operation_name": "Observe",
+        "input_types": [
+          "Target",
+          "ObserverContext"
+        ],
+        "output_type": "Snapshot",
+        "arguments": {
+          "expanded_from": "FORGE_TRUTH"
+        },
+        "context": {
+          "domain": "human-ai semantic research",
+          "purpose": "test an unproven semantic language architecture without overstating evidence"
+        },
+        "provenance": [
+          "Frontier Canon Addendum I",
+          "canonical first milestone compiler"
+        ],
+        "evidence": [
+          "LAMAGUE-1C prototype exists",
+          "machine registries exist",
+          "Frontier Canon Addendum I specifies the architecture"
+        ],
+        "unknowns": [
+          "human learnability",
+          "net semantic compression",
+          "cross-model consistency",
+          "long-term usefulness"
+        ],
+        "authority": [
+          "project steward may publish prototype artefacts",
+          "test participants govern their own participation"
+        ],
+        "invariants": [
+          "uncertainty remains visible",
+          "human and AI contributions remain visible",
+          "publication certainty does not exceed evidence"
+        ],
+        "value_flow": {},
+        "consequence_horizon": "prototype, independent testing, and later replication",
+        "recovery": [
+          "expand compressed seals",
+          "publish audit findings",
+          "repair or return weak forms to ASH"
+        ],
+        "version": "0.1",
+        "node_id": "node-ac94ea53d0a0"
+      },
+      {
+        "operation": "E",
+        "operation_name": "Evidence",
+        "input_types": [
+          "Claim",
+          "SourceSet"
+        ],
+        "output_type": "EvidenceRecord",
+        "arguments": {
+          "expanded_from": "FORGE_TRUTH"
+        },
+        "context": {
+          "domain": "human-ai semantic research",
+          "purpose": "test an unproven semantic language architecture without overstating evidence"
+        },
+        "provenance": [
+          "Frontier Canon Addendum I",
+          "canonical first milestone compiler"
+        ],
+        "evidence": [
+          "LAMAGUE-1C prototype exists",
+          "machine registries exist",
+          "Frontier Canon Addendum I specifies the architecture"
+        ],
+        "unknowns": [
+          "human learnability",
+          "net semantic compression",
+          "cross-model consistency",
+          "long-term usefulness"
+        ],
+        "authority": [
+          "project steward may publish prototype artefacts",
+          "test participants govern their own participation"
+        ],
+        "invariants": [
+          "uncertainty remains visible",
+          "human and AI contributions remain visible",
+          "publication certainty does not exceed evidence"
+        ],
+        "value_flow": {},
+        "consequence_horizon": "prototype, independent testing, and later replication",
+        "recovery": [
+          "expand compressed seals",
+          "publish audit findings",
+          "repair or return weak forms to ASH"
+        ],
+        "version": "0.1",
+        "node_id": "node-f195a01eb542"
+      },
+      {
+        "operation": "U",
+        "operation_name": "Unknown",
+        "input_types": [
+          "Type"
+        ],
+        "output_type": "Unknown",
+        "arguments": {
+          "expanded_from": "FORGE_TRUTH"
+        },
+        "context": {
+          "domain": "human-ai semantic research",
+          "purpose": "test an unproven semantic language architecture without overstating evidence"
+        },
+        "provenance": [
+          "Frontier Canon Addendum I",
+          "canonical first milestone compiler"
+        ],
+        "evidence": [
+          "LAMAGUE-1C prototype exists",
+          "machine registries exist",
+          "Frontier Canon Addendum I specifies the architecture"
+        ],
+        "unknowns": [
+          "human learnability",
+          "net semantic compression",
+          "cross-model consistency",
+          "long-term usefulness"
+        ],
+        "authority": [
+          "project steward may publish prototype artefacts",
+          "test participants govern their own participation"
+        ],
+        "invariants": [
+          "uncertainty remains visible",
+          "human and AI contributions remain visible",
+          "publication certainty does not exceed evidence"
+        ],
+        "value_flow": {},
+        "consequence_horizon": "prototype, independent testing, and later replication",
+        "recovery": [
+          "expand compressed seals",
+          "publish audit findings",
+          "repair or return weak forms to ASH"
+        ],
+        "version": "0.1",
+        "node_id": "node-52c7aa010947"
+      },
+      {
+        "operation": "I",
+        "operation_name": "Invariant",
+        "input_types": [
+          "Predicate",
+          "Scope"
+        ],
+        "output_type": "Invariant",
+        "arguments": {
+          "expanded_from": "FORGE_TRUTH"
+        },
+        "context": {
+          "domain": "human-ai semantic research",
+          "purpose": "test an unproven semantic language architecture without overstating evidence"
+        },
+        "provenance": [
+          "Frontier Canon Addendum I",
+          "canonical first milestone compiler"
+        ],
+        "evidence": [
+          "LAMAGUE-1C prototype exists",
+          "machine registries exist",
+          "Frontier Canon Addendum I specifies the architecture"
+        ],
+        "unknowns": [
+          "human learnability",
+          "net semantic compression",
+          "cross-model consistency",
+          "long-term usefulness"
+        ],
+        "authority": [
+          "project steward may publish prototype artefacts",
+          "test participants govern their own participation"
+        ],
+        "invariants": [
+          "uncertainty remains visible",
+          "human and AI contributions remain visible",
+          "publication certainty does not exceed evidence"
+        ],
+        "value_flow": {},
+        "consequence_horizon": "prototype, independent testing, and later replication",
+        "recovery": [
+          "expand compressed seals",
+          "publish audit findings",
+          "repair or return weak forms to ASH"
+        ],
+        "version": "0.1",
+        "node_id": "node-eb6e3218782c"
+      },
+      {
+        "operation": "G",
+        "operation_name": "Guard",
+        "input_types": [
+          "Predicate",
+          "Action",
+          "Fallback"
+        ],
+        "output_type": "Action",
+        "arguments": {
+          "expanded_from": "FORGE_TRUTH"
+        },
+        "context": {
+          "domain": "human-ai semantic research",
+          "purpose": "test an unproven semantic language architecture without overstating evidence"
+        },
+        "provenance": [
+          "Frontier Canon Addendum I",
+          "canonical first milestone compiler"
+        ],
+        "evidence": [
+          "LAMAGUE-1C prototype exists",
+          "machine registries exist",
+          "Frontier Canon Addendum I specifies the architecture"
+        ],
+        "unknowns": [
+          "human learnability",
+          "net semantic compression",
+          "cross-model consistency",
+          "long-term usefulness"
+        ],
+        "authority": [
+          "project steward may publish prototype artefacts",
+          "test participants govern their own participation"
+        ],
+        "invariants": [
+          "uncertainty remains visible",
+          "human and AI contributions remain visible",
+          "publication certainty does not exceed evidence"
+        ],
+        "value_flow": {},
+        "consequence_horizon": "prototype, independent testing, and later replication",
+        "recovery": [
+          "expand compressed seals",
+          "publish audit findings",
+          "repair or return weak forms to ASH"
+        ],
+        "version": "0.1",
+        "node_id": "node-b9b011e9fb18"
+      },
+      {
+        "operation": "T",
+        "operation_name": "Transition",
+        "input_types": [
+          "State",
+          "Operation"
+        ],
+        "output_type": "TransitionRecord",
+        "arguments": {
+          "expanded_from": "FORGE_TRUTH"
+        },
+        "context": {
+          "domain": "human-ai semantic research",
+          "purpose": "test an unproven semantic language architecture without overstating evidence"
+        },
+        "provenance": [
+          "Frontier Canon Addendum I",
+          "canonical first milestone compiler"
+        ],
+        "evidence": [
+          "LAMAGUE-1C prototype exists",
+          "machine registries exist",
+          "Frontier Canon Addendum I specifies the architecture"
+        ],
+        "unknowns": [
+          "human learnability",
+          "net semantic compression",
+          "cross-model consistency",
+          "long-term usefulness"
+        ],
+        "authority": [
+          "project steward may publish prototype artefacts",
+          "test participants govern their own participation"
+        ],
+        "invariants": [
+          "uncertainty remains visible",
+          "human and AI contributions remain visible",
+          "publication certainty does not exceed evidence"
+        ],
+        "value_flow": {},
+        "consequence_horizon": "prototype, independent testing, and later replication",
+        "recovery": [
+          "expand compressed seals",
+          "publish audit findings",
+          "repair or return weak forms to ASH"
+        ],
+        "version": "0.1",
+        "node_id": "node-d54e04953c86"
+      },
+      {
+        "operation": "P",
+        "operation_name": "Prove",
+        "input_types": [
+          "Claim",
+          "Evidence",
+          "InvariantSet"
+        ],
+        "output_type": "ProofStatus",
+        "arguments": {
+          "expanded_from": "FORGE_TRUTH"
+        },
+        "context": {
+          "domain": "human-ai semantic research",
+          "purpose": "test an unproven semantic language architecture without overstating evidence"
+        },
+        "provenance": [
+          "Frontier Canon Addendum I",
+          "canonical first milestone compiler"
+        ],
+        "evidence": [
+          "LAMAGUE-1C prototype exists",
+          "machine registries exist",
+          "Frontier Canon Addendum I specifies the architecture"
+        ],
+        "unknowns": [
+          "human learnability",
+          "net semantic compression",
+          "cross-model consistency",
+          "long-term usefulness"
+        ],
+        "authority": [
+          "project steward may publish prototype artefacts",
+          "test participants govern their own participation"
+        ],
+        "invariants": [
+          "uncertainty remains visible",
+          "human and AI contributions remain visible",
+          "publication certainty does not exceed evidence"
+        ],
+        "value_flow": {},
+        "consequence_horizon": "prototype, independent testing, and later replication",
+        "recovery": [
+          "expand compressed seals",
+          "publish audit findings",
+          "repair or return weak forms to ASH"
+        ],
+        "version": "0.1",
+        "node_id": "node-1af58de653a9"
+      },
+      {
+        "operation": "F",
+        "operation_name": "Fold",
+        "input_types": [
+          "History",
+          "Kernel"
+        ],
+        "output_type": "State",
+        "arguments": {
+          "expanded_from": "FORGE_TRUTH"
+        },
+        "context": {
+          "domain": "human-ai semantic research",
+          "purpose": "test an unproven semantic language architecture without overstating evidence"
+        },
+        "provenance": [
+          "Frontier Canon Addendum I",
+          "canonical first milestone compiler"
+        ],
+        "evidence": [
+          "LAMAGUE-1C prototype exists",
+          "machine registries exist",
+          "Frontier Canon Addendum I specifies the architecture"
+        ],
+        "unknowns": [
+          "human learnability",
+          "net semantic compression",
+          "cross-model consistency",
+          "long-term usefulness"
+        ],
+        "authority": [
+          "project steward may publish prototype artefacts",
+          "test participants govern their own participation"
+        ],
+        "invariants": [
+          "uncertainty remains visible",
+          "human and AI contributions remain visible",
+          "publication certainty does not exceed evidence"
+        ],
+        "value_flow": {},
+        "consequence_horizon": "prototype, independent testing, and later replication",
+        "recovery": [
+          "expand compressed seals",
+          "publish audit findings",
+          "repair or return weak forms to ASH"
+        ],
+        "version": "0.1",
+        "node_id": "node-8bdeee5aea4c"
+      },
+      {
+        "operation": "Y",
+        "operation_name": "Yield",
+        "input_types": [
+          "Value",
+          "ProofStatus"
+        ],
+        "output_type": "Output",
+        "arguments": {
+          "expanded_from": "FORGE_TRUTH"
+        },
+        "context": {
+          "domain": "human-ai semantic research",
+          "purpose": "test an unproven semantic language architecture without overstating evidence"
+        },
+        "provenance": [
+          "Frontier Canon Addendum I",
+          "canonical first milestone compiler"
+        ],
+        "evidence": [
+          "LAMAGUE-1C prototype exists",
+          "machine registries exist",
+          "Frontier Canon Addendum I specifies the architecture"
+        ],
+        "unknowns": [
+          "human learnability",
+          "net semantic compression",
+          "cross-model consistency",
+          "long-term usefulness"
+        ],
+        "authority": [
+          "project steward may publish prototype artefacts",
+          "test participants govern their own participation"
+        ],
+        "invariants": [
+          "uncertainty remains visible",
+          "human and AI contributions remain visible",
+          "publication certainty does not exceed evidence"
+        ],
+        "value_flow": {},
+        "consequence_horizon": "prototype, independent testing, and later replication",
+        "recovery": [
+          "expand compressed seals",
+          "publish audit findings",
+          "repair or return weak forms to ASH"
+        ],
+        "version": "0.1",
+        "node_id": "node-23da4bcad567"
+      }
+    ]
+  },
+  "execution": {
+    "executed": true,
+    "state": {
+      "observations": [
+        {
+          "target": "LAMAGUE may improve inspectable human-AI collaboration",
+          "domain": "human-ai semantic research",
+          "provenance": [
+            "Frontier Canon Addendum I",
+            "canonical first milestone compiler"
+          ]
+        }
+      ],
+      "evidence": [
+        "LAMAGUE-1C prototype exists",
+        "machine registries exist",
+        "Frontier Canon Addendum I specifies the architecture"
+      ],
+      "unknowns": [
+        "human learnability",
+        "net semantic compression",
+        "cross-model consistency",
+        "long-term usefulness"
+      ],
+      "invariants": [
+        "uncertainty remains visible",
+        "human and AI contributions remain visible",
+        "publication certainty does not exceed evidence"
+      ],
+      "transitions": [
+        {
+          "purpose": "test an unproven semantic language architecture without overstating evidence",
+          "from": "input",
+          "to": "evaluated",
+          "invariants": [
+            "uncertainty remains visible",
+            "human and AI contributions remain visible",
+            "publication certainty does not exceed evidence"
+          ]
+        }
+      ],
+      "memory": [
+        {
+          "claim": "LAMAGUE may improve inspectable human-AI collaboration",
+          "evidence": [
+            "LAMAGUE-1C prototype exists",
+            "machine registries exist",
+            "Frontier Canon Addendum I specifies the architecture"
+          ],
+          "unknowns": [
+            "human learnability",
+            "net semantic compression",
+            "cross-model consistency",
+            "long-term usefulness"
+          ],
+          "invariants": [
+            "uncertainty remains visible",
+            "human and AI contributions remain visible",
+            "publication certainty does not exceed evidence"
+          ],
+          "residue": [
+            "human learnability",
+            "net semantic compression",
+            "cross-model consistency",
+            "long-term usefulness"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "claim": "LAMAGUE may improve inspectable human-AI collaboration",
+          "proof_status": "context-limited",
+          "scope": "human-ai semantic research",
+          "unknowns": [
+            "human learnability",
+            "net semantic compression",
+            "cross-model consistency",
+            "long-term usefulness"
+          ]
+        }
+      ],
+      "operations_applied": [
+        "Q",
+        "O",
+        "E",
+        "U",
+        "I",
+        "G",
+        "T",
+        "P",
+        "F",
+        "Y"
+      ],
+      "queries": [
+        "LAMAGUE may improve inspectable human-AI collaboration"
+      ],
+      "guard": {
+        "passed": true,
+        "authority": [
+          "project steward may publish prototype artefacts",
+          "test participants govern their own participation"
+        ],
+        "boundaries": [
+          "prototype claims remain experimental",
+          "no real-world action execution"
+        ]
+      },
+      "phase": "evaluated",
+      "proof_status": "context-limited"
+    },
+    "audit": {
+      "outcome": "VALID",
+      "gates": {
+        "TRUTH": "VALID",
+        "AGENCY": "VALID",
+        "LIFE": "VALID"
+      },
+      "findings": [
+        {
+          "gate": "ALL",
+          "outcome": "VALID",
+          "code": "THREE_GATES_PASSED",
+          "message": "All applicable Truth, Agency, and Life Gate requirements passed.",
+          "repair": ""
+        }
+      ]
+    },
+    "trace": [
+      {
+        "node_id": "node-dc524c124725",
+        "operation": "Q",
+        "operation_name": "Query",
+        "time": "2026-07-31T02:14:47.004146+00:00",
+        "state_digest": {
+          "phase": null,
+          "proof_status": null,
+          "unknown_count": 0,
+          "output_count": 0
+        }
+      },
+      {
+        "node_id": "node-ac94ea53d0a0",
+        "operation": "O",
+        "operation_name": "Observe",
+        "time": "2026-07-31T02:14:47.004164+00:00",
+        "state_digest": {
+          "phase": null,
+          "proof_status": null,
+          "unknown_count": 0,
+          "output_count": 0
+        }
+      },
+      {
+        "node_id": "node-f195a01eb542",
+        "operation": "E",
+        "operation_name": "Evidence",
+        "time": "2026-07-31T02:14:47.004168+00:00",
+        "state_digest": {
+          "phase": null,
+          "proof_status": null,
+          "unknown_count": 0,
+          "output_count": 0
+        }
+      },
+      {
+        "node_id": "node-52c7aa010947",
+        "operation": "U",
+        "operation_name": "Unknown",
+        "time": "2026-07-31T02:14:47.004173+00:00",
+        "state_digest": {
+          "phase": null,
+          "proof_status": null,
+          "unknown_count": 4,
+          "output_count": 0
+        }
+      },
+      {
+        "node_id": "node-eb6e3218782c",
+        "operation": "I",
+        "operation_name": "Invariant",
+        "time": "2026-07-31T02:14:47.004176+00:00",
+        "state_digest": {
+          "phase": null,
+          "proof_status": null,
+          "unknown_count": 4,
+          "output_count": 0
+        }
+      },
+      {
+        "node_id": "node-b9b011e9fb18",
+        "operation": "G",
+        "operation_name": "Guard",
+        "time": "2026-07-31T02:14:47.004179+00:00",
+        "state_digest": {
+          "phase": null,
+          "proof_status": null,
+          "unknown_count": 4,
+          "output_count": 0
+        }
+      },
+      {
+        "node_id": "node-d54e04953c86",
+        "operation": "T",
+        "operation_name": "Transition",
+        "time": "2026-07-31T02:14:47.004181+00:00",
+        "state_digest": {
+          "phase": "evaluated",
+          "proof_status": null,
+          "unknown_count": 4,
+          "output_count": 0
+        }
+      },
+      {
+        "node_id": "node-1af58de653a9",
+        "operation": "P",
+        "operation_name": "Prove",
+        "time": "2026-07-31T02:14:47.004185+00:00",
+        "state_digest": {
+          "phase": "evaluated",
+          "proof_status": "context-limited",
+          "unknown_count": 4,
+          "output_count": 0
+        }
+      },
+      {
+        "node_id": "node-8bdeee5aea4c",
+        "operation": "F",
+        "operation_name": "Fold",
+        "time": "2026-07-31T02:14:47.004187+00:00",
+        "state_digest": {
+          "phase": "evaluated",
+          "proof_status": "context-limited",
+          "unknown_count": 4,
+          "output_count": 0
+        }
+      },
+      {
+        "node_id": "node-23da4bcad567",
+        "operation": "Y",
+        "operation_name": "Yield",
+        "time": "2026-07-31T02:14:47.004191+00:00",
+        "state_digest": {
+          "phase": "evaluated",
+          "proof_status": "context-limited",
+          "unknown_count": 4,
+          "output_count": 1
+        }
+      }
+    ],
+    "explanation": "Expanded programme seal(s): FORGE_TRUTH.\nOperation path: Q → O → E → U → I → G → T → P → F → Y.\n1. Q — state the unresolved question.\n2. O — observe the target with time, scope, and observer context.\n3. E — attach traceable evidence and preserve contradiction.\n4. U — preserve unresolved content as a typed unknown.\n5. I — declare the properties that must survive transformation.\n6. G — guard the action through declared invariants and fallback.\n7. T — record a typed transition from one state to another.\n8. P — test the claim against evidence without deleting uncertainty.\n9. F — fold relevant history into the present state.\n10. Y — yield only the result permitted by proof and scope.\nPreserved unknowns: human learnability; net semantic compression; cross-model consistency; long-term usefulness.\nProtected invariants: uncertainty remains visible; human and AI contributions remain visible; publication certainty does not exceed evidence.\nVisible authority: project steward may publish prototype artefacts; test participants govern their own participation."
+  }
+}

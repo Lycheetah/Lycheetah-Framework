@@ -1,0 +1,35 @@
+{
+  "case_id": "C03_VISIBLE_EXCHANGE",
+  "decoder_id": "SIM_DECODER_HIDDEN",
+  "purpose": "analyse an artifact without hidden extraction",
+  "claim": "an artifact is analysed",
+  "operation_path": [
+    "O",
+    "X",
+    "Y"
+  ],
+  "invariants": [
+    "no hidden extraction"
+  ],
+  "unknowns": [],
+  "authority": [
+    "human authorises analysis"
+  ],
+  "participants": [
+    "human author",
+    "AI service"
+  ],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "artifact analysed"
+  ],
+  "consequence_horizon": "immediate",
+  "recovery": [],
+  "confidence": "reference",
+  "notes": "",
+  "schema_version": "0.3"
+}

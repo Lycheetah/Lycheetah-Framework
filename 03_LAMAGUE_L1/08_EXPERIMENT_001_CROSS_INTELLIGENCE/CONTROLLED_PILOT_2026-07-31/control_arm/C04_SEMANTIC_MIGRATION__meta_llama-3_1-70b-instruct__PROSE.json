@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C04_SEMANTIC_MIGRATION",
+  "decoder_id": "meta/llama-3.1-70b-instruct__PROSE",
+  "purpose": "keeps its original purpose",
+  "claim": "",
+  "operation_path": [],
+  "invariants": ["original invariants"],
+  "unknowns": ["human learnability as an unresolved research question"],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": ["records lineage"],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "",
+  "notes": "No information is available for claim, operation_path, authority, participants, affected_parties, evidence, dissent, value_ledger, consequences, consequence_horizon, recovery, and confidence."
+}

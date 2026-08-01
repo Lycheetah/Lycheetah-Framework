@@ -1,0 +1,49 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C01_UNPROVEN_CLAIM",
+  "decoder_id": "minimaxai/minimax-m3",
+  "purpose": "Inspect a claim with incomplete evidence and publish only a context-limited result while preserving the unresolved method question.",
+  "claim": "A claim is under inspection; evidence is incomplete, so the result is published as context-limited rather than as proof.",
+  "operation_path": ["O", "E", "U", "P", "Y"],
+  "invariants": [
+    "Evidence is not treated as certainty (E does not upgrade to proof).",
+    "Unresolved method question is preserved, not silently resolved (U).",
+    "Proof status reflects only what visible evidence supports (P).",
+    "Yielded output retains unknowns and proof status (Y)."
+  ],
+  "unknowns": [
+    "The specific claim under inspection is not stated.",
+    "The specific method question left unresolved is not stated.",
+    "The full set of evidence sources is not enumerated.",
+    "The scope of the context-limited result is not specified."
+  ],
+  "authority": [
+    "Human collaborators (joint inspectorship authority, unspecified individuals).",
+    "AI collaborators (joint inspectorship authority, unspecified systems)."
+  ],
+  "participants": [
+    "Human collaborators",
+    "AI collaborators"
+  ],
+  "affected_parties": [
+    "Readers/consumers of the published context-limited result (scope unspecified)."
+  ],
+  "evidence": [
+    "Evidence is incomplete (declared in source statement; specific items not enumerated)."
+  ],
+  "provenance": [
+    "Source statement: 'Human and AI collaborators inspect a claim. Evidence is incomplete. They publish only a context-limited result and retain the unresolved method question.'"
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "A context-limited result is published in place of a proof.",
+    "The unresolved method question remains open and is retained rather than resolved."
+  ],
+  "consequence_horizon": "Unspecified; bounded by the context-limited scope of the published result and the retained unresolved method question.",
+  "recovery": [
+    "The unresolved method question is preserved and can be revisited; the context-limited result does not foreclose future inspection."
+  ],
+  "confidence": "low — evidence is declared incomplete and the result is explicitly not upgraded to proof.",
+  "notes": "No conflicting positions are stated in the source, so dissent is empty. No directional exchange of value, data, cost, or consent is described, so value_ledger is empty. Authority is attributed only to the unnamed human and AI collaborators; no additional authority is invented."
+}

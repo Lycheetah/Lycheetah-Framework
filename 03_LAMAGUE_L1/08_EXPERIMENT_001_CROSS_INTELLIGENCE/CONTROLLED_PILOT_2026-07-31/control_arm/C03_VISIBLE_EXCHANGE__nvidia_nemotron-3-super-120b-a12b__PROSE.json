@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C03_VISIBLE_EXCHANGE",
+  "decoder_id": "nvidia/nemotron-3-super-120b-a12b__PROSE",
+  "purpose": "analysis",
+  "claim": "",
+  "operation_path": [],
+  "invariants": [
+    "declared",
+    "limited to analysis",
+    "explicitly consented",
+    "reversible through deletion"
+  ],
+  "unknowns": [],
+  "authority": [],
+  "participants": [
+    "human",
+    "AI service"
+  ],
+  "affected_parties": [
+    "human",
+    "AI service"
+  ],
+  "evidence": [],
+  "provenance": [
+    "source statement"
+  ],
+  "dissent": [],
+  "value_ledger": [
+    {
+      "from": "human",
+      "to": "AI service",
+      "item": "research artifact",
+      "consent": "explicit",
+      "reversible": "deletion"
+    }
+  ],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "high",
+  "notes": "Claim, operation_path, unknowns, authority, evidence, dissent, consequences, consequence_horizon, and recovery are not specified in the source statement."
+}

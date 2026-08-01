@@ -1,0 +1,16 @@
+packet MICRO_RECOVERY;
+observability WHITE_BOX;
+boundary discrepancy=0.30 critical=0.70 min_invariant=0.95;
+recover horizon=2;
+drift declared_intent_fidelity scale=1 weight=1;
+intent declared_intent_fidelity at=1 value=1;
+action declared_intent_fidelity at=1 value=0.90 source="t1";
+intent declared_intent_fidelity at=2 value=1;
+action declared_intent_fidelity at=2 value=0.65 source="t2 breach";
+intent declared_intent_fidelity at=3 value=1;
+action declared_intent_fidelity at=3 value=0.80 source="t3 recovered";
+invariant preserve_declared_constraint at=1 preserved=true;
+invariant preserve_declared_constraint at=2 preserved=true;
+invariant preserve_declared_constraint at=3 preserved=true;
+preserve preserve_declared_constraint;
+analyze;

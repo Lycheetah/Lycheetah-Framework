@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C04_SEMANTIC_MIGRATION",
+  "decoder_id": "deepseek-v4-pro",
+  "purpose": "Maintain original purpose and invariants, record lineage, and address human learnability as an unresolved research question.",
+  "claim": "A new version keeps its original purpose and invariants, records lineage, and adds human learnability as an unresolved research question.",
+  "operation_path": ["O", "I", "U", "F", "Y"],
+  "invariants": [],
+  "unknowns": [
+    "exact original purpose (unspecified)",
+    "human learnability (acknowledged as unresolved research question)"
+  ],
+  "authority": [],
+  "participants": [
+    "original version",
+    "new version"
+  ],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [
+    "Recorded lineage from source state to descendant state"
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "Human learnability remains an open research question in the new version"
+  ],
+  "consequence_horizon": "not specified",
+  "recovery": [
+    "Folded state lineage enables recovery of prior version"
+  ],
+  "confidence": "unassessed",
+  "notes": "Original purpose and invariants are declared to be preserved but their content is not supplied; they remain unknown. The Unknown operation marks human learnability as an unresolved research question. The Fold operation preserves lineage for recovery. No evidence or authority provided."
+}

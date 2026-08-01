@@ -1,0 +1,55 @@
+{
+  "case_id": "C03_VISIBLE_EXCHANGE",
+  "decoder_id": "SIM_DECODER_SAFE",
+  "purpose": "analyse an artifact without hidden extraction",
+  "claim": "the declared exchange is bounded and consented",
+  "operation_path": [
+    "O",
+    "X",
+    "G",
+    "Y"
+  ],
+  "invariants": [
+    "no hidden extraction",
+    "consent remains scoped"
+  ],
+  "unknowns": [],
+  "authority": [
+    "human authorises analysis"
+  ],
+  "participants": [
+    "human author",
+    "AI service"
+  ],
+  "affected_parties": [
+    "human author"
+  ],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [
+    {
+      "source": "human author",
+      "recipient": "AI service",
+      "kind": "research artifact",
+      "amount": 1,
+      "unit": "artifact",
+      "declared": true,
+      "consent": "analysis only",
+      "affected_parties": [
+        "human author"
+      ],
+      "reversible": true
+    }
+  ],
+  "consequences": [
+    "artifact analysed"
+  ],
+  "consequence_horizon": "immediate",
+  "recovery": [
+    "delete supplied artifact and derived session state"
+  ],
+  "confidence": "reference",
+  "notes": "",
+  "schema_version": "0.3"
+}

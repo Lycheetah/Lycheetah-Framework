@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1350" viewBox="0 0 1800 1350">
+<style>
+.stroke{fill:none;stroke:currentColor;stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round}
+.guide{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:.62}
+.rift{fill:none;stroke:currentColor;stroke-width:3.2;stroke-linecap:round;stroke-dasharray:2 5}
+.seed{fill:currentColor;stroke:none}
+ text{font-family:DejaVu Sans,Arial,sans-serif} .dim{fill:#a9adbd} .gold{fill:#f1cb73} .white{fill:#f7f7f4} .cell{fill:#151824;stroke:#34394a;stroke-width:1}</style>
+<rect width="100%" height="100%" fill="#090b12"/>
+<circle cx="1540" cy="100" r="360" fill="#242038" opacity=".45"/>
+<text x="90" y="105" class="gold" font-size="27" font-weight="700">LYCHEETAH RESEARCH FORGE</text>
+<text x="90" y="190" class="white" font-size="78" font-weight="800">LAMAGUE NATIVE-36</text>
+<text x="90" y="245" class="dim" font-size="25">A native semantic alphabet is now an executable visual prototype.</text>
+<text x="90" y="315" class="gold" font-size="32" font-weight="700">10 NUMERALS  +  26 OPERATIONS  +  5 COMPOUND SEALS</text>
+<text x="90" y="355" class="white" font-size="21">41 visual units generated from 8 semantic radicals</text>
+<rect class="cell" x="90" y="405" width="64" height="64" rx="10"/>
+<g transform="translate(98,410) scale(0.5)" style="color:#f4dfaa"><path class="stroke" d="M35 54 Q50 38 65 54"/><line class="stroke" x1="63" y1="52" x2="71" y2="58"/></g>
+<rect class="cell" x="165" y="405" width="64" height="64" rx="10"/>
+<g transform="translate(173,410) scale(0.5)" style="color:#f4dfaa"><line class="stroke" x1="50" y1="39" x2="50" y2="61"/><circle class="seed" cx="50" cy="50" r="4.2"/></g>
+<rect class="cell" x="240" y="405" width="64" height="64" rx="10"/>
+<g transform="translate(248,410) scale(0.5)" style="color:#f4dfaa"><line class="stroke" x1="50" y1="39" x2="50" y2="61"/><circle class="seed" cx="40.5" cy="50" r="3.8"/><circle class="seed" cx="59.5" cy="50" r="3.8"/></g>
+<rect class="cell" x="315" y="405" width="64" height="64" rx="10"/>
+<g transform="translate(323,410) scale(0.5)" style="color:#f4dfaa"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="50" cy="33" r="4.2"/><path class="stroke" d="M35 73 Q50 57 65 73"/><line class="stroke" x1="63" y1="71" x2="71" y2="77"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g>
+<rect class="cell" x="390" y="405" width="64" height="64" rx="10"/>
+<g transform="translate(398,410) scale(0.5)" style="color:#f4dfaa"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="50" cy="33" r="4.2"/><line class="stroke" x1="50" y1="58" x2="50" y2="80"/><circle class="seed" cx="50" cy="69" r="4.2"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g>
+<rect class="cell" x="465" y="405" width="64" height="64" rx="10"/>
+<g transform="translate(473,410) scale(0.5)" style="color:#f4dfaa"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="50" cy="33" r="4.2"/><line class="stroke" x1="50" y1="58" x2="50" y2="80"/><circle class="seed" cx="40.5" cy="69" r="3.8"/><circle class="seed" cx="59.5" cy="69" r="3.8"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g>
+<rect class="cell" x="540" y="405" width="64" height="64" rx="10"/>
+<g transform="translate(548,410) scale(0.5)" style="color:#f4dfaa"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="40.5" cy="33" r="3.8"/><circle class="seed" cx="59.5" cy="33" r="3.8"/><path class="stroke" d="M35 73 Q50 57 65 73"/><line class="stroke" x1="63" y1="71" x2="71" y2="77"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g>
+<rect class="cell" x="615" y="405" width="64" height="64" rx="10"/>
+<g transform="translate(623,410) scale(0.5)" style="color:#f4dfaa"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="40.5" cy="33" r="3.8"/><circle class="seed" cx="59.5" cy="33" r="3.8"/><line class="stroke" x1="50" y1="58" x2="50" y2="80"/><circle class="seed" cx="50" cy="69" r="4.2"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g>
+<rect class="cell" x="690" y="405" width="64" height="64" rx="10"/>
+<g transform="translate(698,410) scale(0.5)" style="color:#f4dfaa"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="40.5" cy="33" r="3.8"/><circle class="seed" cx="59.5" cy="33" r="3.8"/><line class="stroke" x1="50" y1="58" x2="50" y2="80"/><circle class="seed" cx="40.5" cy="69" r="3.8"/><circle class="seed" cx="59.5" cy="69" r="3.8"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g>
+<rect class="cell" x="765" y="405" width="64" height="64" rx="10"/>
+<g transform="translate(773,410) scale(0.5)" style="color:#f4dfaa"><line class="stroke" x1="50" y1="12" x2="50" y2="34"/><circle class="seed" cx="50" cy="23" r="4.2"/><path class="stroke" d="M35 54 Q50 38 65 54"/><line class="stroke" x1="63" y1="52" x2="71" y2="58"/><path class="stroke" d="M35 81 Q50 65 65 81"/><line class="stroke" x1="63" y1="79" x2="71" y2="85"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g>
+<rect class="cell" x="840" y="405" width="64" height="64" rx="10"/>
+<g transform="translate(848,410) scale(0.5)" style="color:#f4dfaa"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M19 76 C34 76 42 66 43 51 C44 35 51 26 64 25"/><path class="stroke" d="M43 51 C44 68 50 79 63 82"/><line class="stroke" x1="39" y1="83" x2="68" y2="83"/><circle class="seed" cx="47" cy="51" r="3.6"/></g>
+<rect class="cell" x="915" y="405" width="64" height="64" rx="10"/>
+<g transform="translate(923,410) scale(0.5)" style="color:#f4dfaa"><circle class="seed" cx="19" cy="50" r="3.4"/><circle class="seed" cx="81" cy="50" r="3.4"/><path class="stroke" d="M23 50 C31 26 41 25 49 43"/><path class="stroke" d="M77 50 C69 74 59 75 51 57"/><path class="stroke" d="M47 43 Q50 50 53 57"/><line class="guide" x1="50" y1="34" x2="50" y2="66"/></g>
+<rect class="cell" x="90" y="480" width="64" height="64" rx="10"/>
+<g transform="translate(98,485) scale(0.5)" style="color:#f4dfaa"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M23 72 C18 48 28 25 50 22 C69 20 80 35 75 53"/><path class="stroke" d="M75 53 C70 71 48 79 34 67"/><line class="stroke" x1="67" y1="54" x2="79" y2="48"/></g>
+<rect class="cell" x="165" y="480" width="64" height="64" rx="10"/>
+<g transform="translate(173,485) scale(0.5)" style="color:#f4dfaa"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><line class="stroke" x1="36" y1="20" x2="42" y2="76"/><path class="stroke" d="M49 27 C58 39 65 54 77 72"/><circle class="seed" cx="39" cy="49" r="3.4"/><line class="stroke" x1="70" y1="69" x2="80" y2="78"/></g>
+<rect class="cell" x="240" y="480" width="64" height="64" rx="10"/>
+<g transform="translate(248,485) scale(0.5)" style="color:#f4dfaa"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M31 67 C42 61 53 54 66 38"/><circle class="seed" cx="38" cy="61" r="3.4"/><circle class="seed" cx="49" cy="53" r="3.4"/><circle class="seed" cx="61" cy="43" r="3.4"/><line class="stroke" x1="67" y1="32" x2="77" y2="26"/><line class="stroke" x1="71" y1="25" x2="78" y2="31"/></g>
+<rect class="cell" x="315" y="480" width="64" height="64" rx="10"/>
+<g transform="translate(323,485) scale(0.5)" style="color:#f4dfaa"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 70 C27 24 70 18 78 43 C84 62 58 77 43 65"/><path class="stroke" d="M43 65 C32 56 40 41 53 43 C62 44 62 55 55 58"/><circle class="seed" cx="51" cy="58" r="3.6"/></g>
+<rect class="cell" x="390" y="480" width="64" height="64" rx="10"/>
+<g transform="translate(398,485) scale(0.5)" style="color:#f4dfaa"><path class="stroke" d="M34 80 Q50 88 66 80"/><line class="stroke" x1="41" y1="76" x2="38" y2="87"/><line class="stroke" x1="59" y1="76" x2="62" y2="87"/><path class="stroke" d="M18 67 C34 65 43 57 49 45 C56 32 65 26 80 25"/><line class="stroke" x1="49" y1="37" x2="49" y2="58"/><line class="stroke" x1="42" y1="47" x2="56" y2="47"/><circle class="seed" cx="24" cy="65" r="3.3"/></g>
+<rect class="cell" x="465" y="480" width="64" height="64" rx="10"/>
+<g transform="translate(473,485) scale(0.5)" style="color:#f4dfaa"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M25 69 C39 59 48 48 61 31"/><line class="stroke" x1="34" y1="25" x2="75" y2="25"/><circle class="seed" cx="78" cy="25" r="3.7"/><line class="guide" x1="55" y1="46" x2="72" y2="46"/></g>
+<rect class="cell" x="540" y="480" width="64" height="64" rx="10"/>
+<g transform="translate(548,485) scale(0.5)" style="color:#f4dfaa"><path class="stroke" d="M34 80 Q50 88 66 80"/><line class="stroke" x1="41" y1="76" x2="38" y2="87"/><line class="stroke" x1="59" y1="76" x2="62" y2="87"/><path class="stroke" d="M50 18 C44 33 46 54 50 75"/><path class="stroke" d="M34 33 Q50 19 66 33"/><line class="stroke" x1="33" y1="39" x2="40" y2="46"/><line class="stroke" x1="67" y1="39" x2="60" y2="46"/><circle class="seed" cx="50" cy="51" r="3.5"/></g>
+<rect class="cell" x="615" y="480" width="64" height="64" rx="10"/>
+<g transform="translate(623,485) scale(0.5)" style="color:#f4dfaa"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 75 C34 68 42 58 49 46"/><path class="stroke" d="M49 46 C55 38 62 32 79 25"/><path class="stroke" d="M49 46 C55 57 62 65 77 72"/><circle class="seed" cx="49" cy="46" r="3.8"/></g>
+<rect class="cell" x="690" y="480" width="64" height="64" rx="10"/>
+<g transform="translate(698,485) scale(0.5)" style="color:#f4dfaa"><path class="stroke" d="M34 80 Q50 88 66 80"/><line class="stroke" x1="41" y1="76" x2="38" y2="87"/><line class="stroke" x1="59" y1="76" x2="62" y2="87"/><circle class="seed" cx="50" cy="50" r="7"/><path class="stroke" d="M50 18 C47 31 47 38 50 43"/><path class="stroke" d="M20 50 C31 47 38 47 43 50"/><path class="stroke" d="M80 50 C69 53 62 53 57 50"/><path class="stroke" d="M50 79 C53 68 53 61 50 57"/></g>
+<rect class="cell" x="765" y="480" width="64" height="64" rx="10"/>
+<g transform="translate(773,485) scale(0.5)" style="color:#f4dfaa"><path class="stroke" d="M34 80 Q50 88 66 80"/><line class="stroke" x1="41" y1="76" x2="38" y2="87"/><line class="stroke" x1="59" y1="76" x2="62" y2="87"/><path class="stroke" d="M26 64 C40 58 50 48 61 31"/><line class="stroke" x1="61" y1="20" x2="61" y2="72"/><line class="stroke" x1="54" y1="31" x2="69" y2="31"/><circle class="seed" cx="26" cy="64" r="3.4"/></g>
+<rect class="cell" x="840" y="480" width="64" height="64" rx="10"/>
+<g transform="translate(848,485) scale(0.5)" style="color:#f4dfaa"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 72 C30 60 37 50 49 46"/><path class="stroke" d="M20 28 C32 39 39 45 49 46"/><path class="stroke" d="M49 46 C58 49 67 41 80 26"/><path class="stroke" d="M49 46 C53 58 57 68 65 79"/><circle class="seed" cx="49" cy="46" r="4"/></g>
+<rect class="cell" x="915" y="480" width="64" height="64" rx="10"/>
+<g transform="translate(923,485) scale(0.5)" style="color:#f4dfaa"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><circle class="seed" cx="43" cy="57" r="3.5"/><circle class="seed" cx="81" cy="24" r="4"/><path class="stroke" d="M47 54 C57 47 65 39 75 29"/><path class="guide" d="M31 67 Q50 35 70 29"/><line class="stroke" x1="70" y1="22" x2="79" y2="31"/></g>
+<rect class="cell" x="90" y="555" width="64" height="64" rx="10"/>
+<g transform="translate(98,560) scale(0.5)" style="color:#f4dfaa"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M23 52 C34 38 49 32 67 36"/><path class="stroke" d="M23 52 C35 66 51 71 69 64"/><circle class="seed" cx="50" cy="52" r="4.2"/><line class="stroke" x1="67" y1="36" x2="78" y2="31"/><line class="stroke" x1="69" y1="64" x2="79" y2="68"/></g>
+<rect class="cell" x="165" y="555" width="64" height="64" rx="10"/>
+<g transform="translate(173,560) scale(0.5)" style="color:#f4dfaa"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M31 42 C42 37 48 44 50 53 C53 43 60 37 70 42"/><path class="stroke" d="M50 53 C48 65 49 74 54 82"/><circle class="seed" cx="54" cy="82" r="3.8"/><line class="guide" x1="44" y1="55" x2="56" y2="55"/></g>
+<rect class="cell" x="240" y="555" width="64" height="64" rx="10"/>
+<g transform="translate(248,560) scale(0.5)" style="color:#f4dfaa"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M31 65 C42 58 50 49 58 38"/><line class="stroke" x1="58" y1="38" x2="68" y2="31"/><circle class="seed" cx="79" cy="24" r="4"/><line class="rift" x1="70" y1="29" x2="75" y2="26"/></g>
+<rect class="cell" x="315" y="555" width="64" height="64" rx="10"/>
+<g transform="translate(323,560) scale(0.5)" style="color:#f4dfaa"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M25 61 C36 49 43 45 50 48"/><path class="stroke" d="M75 61 C64 49 57 45 50 48"/><path class="stroke" d="M50 48 C47 60 50 70 61 78"/><circle class="seed" cx="50" cy="48" r="4"/><circle class="seed" cx="61" cy="78" r="3.6"/></g>
+<rect class="cell" x="390" y="555" width="64" height="64" rx="10"/>
+<g transform="translate(398,560) scale(0.5)" style="color:#f4dfaa"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><line class="stroke" x1="29" y1="73" x2="69" y2="73"/><circle class="seed" cx="47" cy="53" r="4.3"/><line class="guide" x1="53" y1="33" x2="53" y2="66"/><line class="guide" x1="36" y1="35" x2="62" y2="35"/></g>
+<rect class="cell" x="465" y="555" width="64" height="64" rx="10"/>
+<g transform="translate(473,560) scale(0.5)" style="color:#f4dfaa"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 75 C35 74 42 67 47 57"/><path class="stroke" d="M47 57 C54 45 63 37 79 25"/><line class="stroke" x1="43" y1="52" x2="54" y2="63"/><circle class="seed" cx="47" cy="57" r="3.5"/></g>
+<rect class="cell" x="540" y="555" width="64" height="64" rx="10"/>
+<g transform="translate(548,560) scale(0.5)" style="color:#f4dfaa"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M24 67 C33 47 44 34 60 28"/><line class="rift" x1="62" y1="28" x2="69" y2="34"/><circle class="seed" cx="80" cy="43" r="4.3"/><line class="rift" x1="68" y1="37" x2="75" y2="41"/></g>
+<rect class="cell" x="615" y="555" width="64" height="64" rx="10"/>
+<g transform="translate(623,560) scale(0.5)" style="color:#f4dfaa"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 75 C34 64 42 55 49 45"/><line class="stroke" x1="43" y1="38" x2="56" y2="52"/><path class="stroke" d="M49 45 C58 35 66 28 80 24"/><path class="stroke" d="M49 45 C57 58 66 68 78 75"/><circle class="seed" cx="49" cy="45" r="3.8"/></g>
+<rect class="cell" x="690" y="555" width="64" height="64" rx="10"/>
+<g transform="translate(698,560) scale(0.5)" style="color:#f4dfaa"><circle class="seed" cx="19" cy="50" r="3.4"/><circle class="seed" cx="81" cy="50" r="3.4"/><path class="stroke" d="M22 50 C33 24 45 25 50 48 C55 71 67 72 78 50"/><path class="stroke" d="M22 50 C33 76 45 75 50 52 C55 29 67 28 78 50"/><line class="rift" x1="45" y1="46" x2="55" y2="54"/></g>
+<rect class="cell" x="765" y="555" width="64" height="64" rx="10"/>
+<g transform="translate(773,560) scale(0.5)" style="color:#f4dfaa"><circle class="seed" cx="19" cy="50" r="3.4"/><circle class="seed" cx="81" cy="50" r="3.4"/><path class="stroke" d="M23 47 C38 27 62 27 77 47"/><path class="stroke" d="M77 53 C62 73 38 73 23 53"/><polyline class="stroke" points="68,41 78,47 69,52"/><polyline class="stroke" points="32,59 22,53 31,48"/></g>
+<rect class="cell" x="840" y="555" width="64" height="64" rx="10"/>
+<g transform="translate(848,560) scale(0.5)" style="color:#f4dfaa"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M21 30 C36 34 43 40 50 51"/><path class="stroke" d="M21 71 C35 66 43 61 50 51"/><path class="stroke" d="M50 51 C58 56 67 61 80 66"/><circle class="seed" cx="50" cy="51" r="4"/><circle class="seed" cx="80" cy="66" r="3.8"/></g>
+<rect class="cell" x="915" y="555" width="64" height="64" rx="10"/>
+<g transform="translate(923,560) scale(0.5)" style="color:#f4dfaa"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M25 39 C36 45 42 54 45 66"/><path class="stroke" d="M75 39 C64 45 58 54 55 66"/><line class="stroke" x1="45" y1="66" x2="55" y2="66"/><path class="stroke" d="M50 41 C48 51 49 61 50 78"/><circle class="seed" cx="50" cy="79" r="3.5"/></g>
+<text x="1050" y="425" class="white" font-size="32" font-weight="700">THE EQUIVALENTS</text>
+<text x="1050" y="474" class="dim" font-size="22">0–9 → fused ternary number cells</text>
+<text x="1050" y="512" class="dim" font-size="22">A–Z → typed semantic operations</text>
+<text x="1050" y="550" class="dim" font-size="22">ASCII remains the transport alias</text>
+<text x="1050" y="588" class="dim" font-size="22">Native glyphs become the body</text>
+<text x="1050" y="646" class="gold" font-size="25" font-weight="700">MEANING → TYPE → TOPOLOGY → GLYPH</text>
+<text x="90" y="685" class="white" font-size="36" font-weight="800">THE FIRST FIVE SEALS</text>
+<rect x="90" y="720" width="310" height="300" rx="22" fill="#151824" stroke="#4b5269"/>
+<g transform="translate(185,738) scale(1.2)" style="color:#f1cb73"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M18 66 C31 63 38 55 42 43"/><line class="stroke" x1="38" y1="22" x2="43" y2="76"/><path class="stroke" d="M77 28 C64 31 57 39 53 49 C49 60 54 70 68 77"/><path class="stroke" d="M31 74 C38 83 51 86 62 80"/><circle class="seed" cx="42" cy="43" r="3.8"/><circle class="seed" cx="69" cy="77" r="4"/><line class="guide" x1="45" y1="58" x2="57" y2="58"/></g>
+<text x="245.0" y="886" text-anchor="middle" class="white" font-size="23" font-weight="700">Correction Seal</text>
+<text x="245.0" y="923" text-anchor="middle" class="dim" font-size="18">D → A → F → P → Y</text>
+<text x="245.0" y="965" text-anchor="middle" class="gold" font-size="20" font-weight="700">5 OPS / 1 CELL</text>
+<rect x="425" y="720" width="310" height="300" rx="22" fill="#151824" stroke="#4b5269"/>
+<g transform="translate(520,738) scale(1.2)" style="color:#f1cb73"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M30 68 C42 58 49 48 58 35"/><circle class="seed" cx="42" cy="57" r="3.5"/><circle class="seed" cx="52" cy="46" r="3.5"/><line class="stroke" x1="58" y1="35" x2="66" y2="28"/><line class="stroke" x1="59" y1="50" x2="59" y2="68"/><line class="stroke" x1="52" y1="59" x2="66" y2="59"/><circle class="seed" cx="82" cy="26" r="4.3"/><line class="rift" x1="68" y1="31" x2="76" y2="28"/><path class="guide" d="M26 28 Q49 12 72 27"/></g>
+<text x="580.0" y="886" text-anchor="middle" class="white" font-size="23" font-weight="700">Frontier Seal</text>
+<text x="580.0" y="923" text-anchor="middle" class="dim" font-size="18">O → S → N → E → G → I → U → Q</text>
+<text x="580.0" y="965" text-anchor="middle" class="gold" font-size="20" font-weight="700">8 OPS / 1 CELL</text>
+<rect x="760" y="720" width="310" height="300" rx="22" fill="#151824" stroke="#4b5269"/>
+<g transform="translate(855,738) scale(1.2)" style="color:#f1cb73"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M50 24 C43 39 44 58 50 74"/><path class="stroke" d="M28 33 C20 47 22 67 38 78"/><path class="stroke" d="M72 33 C80 47 78 67 62 78"/><line class="stroke" x1="28" y1="50" x2="40" y2="50"/><line class="stroke" x1="60" y1="50" x2="72" y2="50"/><line class="stroke" x1="34" y1="43" x2="34" y2="57"/><line class="stroke" x1="66" y1="43" x2="66" y2="57"/><path class="stroke" d="M50 74 C58 70 65 72 78 80"/><circle class="seed" cx="78" cy="80" r="4"/></g>
+<text x="915.0" y="886" text-anchor="middle" class="white" font-size="23" font-weight="700">Sovereignty Seal</text>
+<text x="915.0" y="923" text-anchor="middle" class="dim" font-size="18">G → I → V → P → Y</text>
+<text x="915.0" y="965" text-anchor="middle" class="gold" font-size="20" font-weight="700">5 OPS / 1 CELL</text>
+<rect x="1095" y="720" width="310" height="300" rx="22" fill="#151824" stroke="#4b5269"/>
+<g transform="translate(1190,738) scale(1.2)" style="color:#f1cb73"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><circle class="seed" cx="37" cy="28" r="3.5"/><circle class="seed" cx="50" cy="23" r="3.5"/><circle class="seed" cx="63" cy="28" r="3.5"/><path class="stroke" d="M37 34 C42 42 46 46 50 51"/><path class="stroke" d="M63 34 C58 42 54 46 50 51"/><line class="stroke" x1="28" y1="54" x2="72" y2="54"/><path class="stroke" d="M50 54 C38 62 35 73 46 80"/><path class="stroke" d="M50 54 C62 62 65 73 54 80"/><path class="stroke" d="M46 80 Q50 86 54 80"/><circle class="seed" cx="50" cy="51" r="3.8"/></g>
+<text x="1250.0" y="886" text-anchor="middle" class="white" font-size="23" font-weight="700">Cascade Seal</text>
+<text x="1250.0" y="923" text-anchor="middle" class="dim" font-size="18">E → N → J → C → F → P → Y</text>
+<text x="1250.0" y="965" text-anchor="middle" class="gold" font-size="20" font-weight="700">7 OPS / 1 CELL</text>
+<rect x="1430" y="720" width="310" height="300" rx="22" fill="#151824" stroke="#4b5269"/>
+<g transform="translate(1525,738) scale(1.2)" style="color:#f1cb73"><path class="stroke" d="M22 31 C14 47 18 68 34 78"/><path class="stroke" d="M78 31 C86 47 82 68 66 78"/><circle class="seed" cx="24" cy="50" r="3.6"/><circle class="seed" cx="76" cy="50" r="3.6"/><path class="stroke" d="M27 48 C37 31 43 32 49 47"/><path class="stroke" d="M73 52 C63 69 57 68 51 53"/><line class="rift" x1="46" y1="42" x2="54" y2="58"/><line class="stroke" x1="45" y1="48" x2="55" y2="48"/><line class="stroke" x1="50" y1="40" x2="50" y2="56"/><path class="stroke" d="M66 78 C71 79 76 78 82 72"/><circle class="seed" cx="82" cy="72" r="3.8"/></g>
+<text x="1585.0" y="886" text-anchor="middle" class="white" font-size="23" font-weight="700">Protected Dissent Seal</text>
+<text x="1585.0" y="923" text-anchor="middle" class="dim" font-size="18">W → U → G → V → Y</text>
+<text x="1585.0" y="965" text-anchor="middle" class="gold" font-size="20" font-weight="700">5 OPS / 1 CELL</text>
+<rect x="90" y="1070" width="1620" height="175" rx="24" fill="#10131d" stroke="#34394a"/>
+<text x="135" y="1135" class="gold" font-size="46" font-weight="800">5 CELLS ⇄ 30 TYPED OPERATIONS</text>
+<text x="135" y="1185" class="white" font-size="28">⇄ 99 English words / 731 characters in the reference expansion</text>
+<text x="135" y="1225" class="dim" font-size="19">Prototype result. Compression proof still requires round-trip fidelity and codebook-adjusted benchmarking.</text>
+<text x="1690" y="1310" text-anchor="end" class="gold" font-size="22" font-weight="700">MEANING EARNS ITS LIGHT</text>
+</svg>

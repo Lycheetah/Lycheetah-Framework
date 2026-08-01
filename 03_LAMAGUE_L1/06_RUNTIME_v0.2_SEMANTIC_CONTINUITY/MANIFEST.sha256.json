@@ -1,0 +1,232 @@
+{
+  "title": "LAMAGUE Runtime v0.2 \u2014 Semantic Continuity Engine",
+  "version": "0.2.0",
+  "file_count": 45,
+  "files": [
+    {
+      "path": "MANIFEST.sha256.json",
+      "bytes": 2305,
+      "sha256": "424142ea07d3f81c88a46c0fbc694f5d2d8b2c8659fb909874a065bbdeef96db"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1486,
+      "sha256": "0cc6ff4b2089976cea00857b11ffbe8f528c934c77ae8c97b7b6c218a45b9e92"
+    },
+    {
+      "path": "examples/canonical_milestone.py",
+      "bytes": 588,
+      "sha256": "74be8884661cdc35e58d37830f8577c78dad3ba41dc11db88d3c943b4331a0f3"
+    },
+    {
+      "path": "examples/canonical_trace.json",
+      "bytes": 26761,
+      "sha256": "2d77f92462763c124784d4b167d59a14a998229a7d011349113542e8240c13a4"
+    },
+    {
+      "path": "examples/demo_output.json",
+      "bytes": 2081,
+      "sha256": "a5f947481ef2b1a0174cd7c1764f9862e8c1885ac4f90159d876145ac6988052"
+    },
+    {
+      "path": "examples/expressions.lam",
+      "bytes": 247,
+      "sha256": "32ade5632764db3bed7987e939d9e5124cee3b1a82f0a5bf8914071b3580b823"
+    },
+    {
+      "path": "examples/semantic_continuity_demo.py",
+      "bytes": 3139,
+      "sha256": "3b6ce03abbf682bda4faca3e159c1c3cff1fe3e254ee5b6ad3581c806ee7d9be"
+    },
+    {
+      "path": "examples/semantic_continuity_demo_output.json",
+      "bytes": 2680,
+      "sha256": "2d2f14c00358c08ec85105949a3fe112fa4ddcb50664bf9e703a8f4257157283"
+    },
+    {
+      "path": "lamague_runtime/__init__.py",
+      "bytes": 1685,
+      "sha256": "77ecb1f31cffedab80b4123682f8c6cee042777b6423866328ff39dcb6c46453"
+    },
+    {
+      "path": "lamague_runtime/__pycache__/__init__.cpython-313.pyc",
+      "bytes": 1557,
+      "sha256": "b69b6f5810ad87865ddcafc655576e44859d78aca5ea176e0b81d7330b402df5"
+    },
+    {
+      "path": "lamague_runtime/__pycache__/auditor.cpython-313.pyc",
+      "bytes": 10793,
+      "sha256": "9a46c0c9a8c07991746978d1c6f540330be9ff916a51362d6b75efc8b6d39f2b"
+    },
+    {
+      "path": "lamague_runtime/__pycache__/breathing.cpython-313.pyc",
+      "bytes": 3958,
+      "sha256": "831c24363030a92da9a8b568cb395566b487f9d79d9d61d8c33298f5e31a121a"
+    },
+    {
+      "path": "lamague_runtime/__pycache__/compiler.cpython-313.pyc",
+      "bytes": 4605,
+      "sha256": "ec76e7fc4bf7bb56e1d4db6133d569a02655c516be8086ff965b58657709be97"
+    },
+    {
+      "path": "lamague_runtime/__pycache__/dissent.cpython-313.pyc",
+      "bytes": 1818,
+      "sha256": "412ba73505462da78b62da6dea367daa29cd3358eca48de1c1dbffeaaa57d5bf"
+    },
+    {
+      "path": "lamague_runtime/__pycache__/explainer.cpython-313.pyc",
+      "bytes": 4285,
+      "sha256": "917335fc44b896c95879127de31d204f8f0d79d5cb1895135bc2e346520153a7"
+    },
+    {
+      "path": "lamague_runtime/__pycache__/interpreter.cpython-313.pyc",
+      "bytes": 8855,
+      "sha256": "2dbbbc615bee7501350abf5c55b29627e08be88a30ebe210653aee01eee086dd"
+    },
+    {
+      "path": "lamague_runtime/__pycache__/memory.cpython-313.pyc",
+      "bytes": 4911,
+      "sha256": "30301f88703044a7dc5d221aa71e610e061fe09d7feb22df5161e9f635ede393"
+    },
+    {
+      "path": "lamague_runtime/__pycache__/model.cpython-313.pyc",
+      "bytes": 11036,
+      "sha256": "168b226d57c4b3da577af3c4773f5a676acc493c45cb73894407e140bec93267"
+    },
+    {
+      "path": "lamague_runtime/__pycache__/parser.cpython-313.pyc",
+      "bytes": 7638,
+      "sha256": "9f5fdda644b8eaad97adeb690dae31d4dbd6d11154346fcc26ce1a313d07282b"
+    },
+    {
+      "path": "lamague_runtime/__pycache__/registry.cpython-313.pyc",
+      "bytes": 4493,
+      "sha256": "26cbc2d92cbffb85175abf385ee988887a878819269c9d37d132b6c8393bf736"
+    },
+    {
+      "path": "lamague_runtime/__pycache__/semantic_hash.cpython-313.pyc",
+      "bytes": 4152,
+      "sha256": "b5217dc03ad620bcf27efb5ce48c9a6078243563a2ce16c0dd08d5054cb70efe"
+    },
+    {
+      "path": "lamague_runtime/__pycache__/trace_store.cpython-313.pyc",
+      "bytes": 2069,
+      "sha256": "011192f83674b1ac9b0fa110209b76f00a13e33d5faba2ce99e5a720ee85b33a"
+    },
+    {
+      "path": "lamague_runtime/__pycache__/value_ledger.cpython-313.pyc",
+      "bytes": 1867,
+      "sha256": "37577cf032138524050719ffc367327698e82a8c98e8971f034a91fdfba27e6e"
+    },
+    {
+      "path": "lamague_runtime/auditor.py",
+      "bytes": 8232,
+      "sha256": "cffb5b93bfd0d40df4ded14fb8b74eee7a9248747f77f445db3822eeae72c334"
+    },
+    {
+      "path": "lamague_runtime/breathing.py",
+      "bytes": 2415,
+      "sha256": "b89dcecd8bf94171da7bc19f4a1cb6cfd0516845ee74f5e3fe8181993e3dbf86"
+    },
+    {
+      "path": "lamague_runtime/cli.py",
+      "bytes": 2319,
+      "sha256": "6c046c3cc442b491633ca3c407778857e2e4dafb9b97d2d06e08206ab9b920e5"
+    },
+    {
+      "path": "lamague_runtime/compiler.py",
+      "bytes": 3845,
+      "sha256": "809b5e2b4374f8e2eb3407b82542b226638340f9553d8d8a0fd98d21bf8b4ec6"
+    },
+    {
+      "path": "lamague_runtime/dissent.py",
+      "bytes": 907,
+      "sha256": "93d426232e2eca9a086cc9e3826eb63d59267496e8786e74dea4a726cbe26537"
+    },
+    {
+      "path": "lamague_runtime/explainer.py",
+      "bytes": 2718,
+      "sha256": "a410dc4b14e21f570833ead754e614c15823fd7e91d40d9d95e8bbfdebdc0f82"
+    },
+    {
+      "path": "lamague_runtime/interpreter.py",
+      "bytes": 7710,
+      "sha256": "663e96f7b963acb9cc7eff16d6ed3990ac97a57c0c46669111458f64a96f4ba9"
+    },
+    {
+      "path": "lamague_runtime/memory.py",
+      "bytes": 3334,
+      "sha256": "b4c7a094c21a39a0d0517d6b35e4f20f010e428acee7532fdb9e6d794d0b75f0"
+    },
+    {
+      "path": "lamague_runtime/model.py",
+      "bytes": 6033,
+      "sha256": "836a0519350d7be47b7484e17f0a226e3ca7bfc3710280007d5bd158f2bc89df"
+    },
+    {
+      "path": "lamague_runtime/parser.py",
+      "bytes": 5318,
+      "sha256": "a9e2772f395b1ca245c6e279b48028684a7ac59958194d0bec9392afd7bc9607"
+    },
+    {
+      "path": "lamague_runtime/registry.py",
+      "bytes": 2472,
+      "sha256": "cd2fabb282710ff8ccdacac3979bf6789dd7e5b4bd18e1532f7ae9e7421f2370"
+    },
+    {
+      "path": "lamague_runtime/semantic_hash.py",
+      "bytes": 2516,
+      "sha256": "28a112a3671b5da2a7fb4b772849b9e3f986fa25dd0b8dfde831645561b24be3"
+    },
+    {
+      "path": "lamague_runtime/trace_store.py",
+      "bytes": 1022,
+      "sha256": "edfa9b30435198c5aca342cd8746fc96e50c5b0abcf9a7469cbf016aadc81ed2"
+    },
+    {
+      "path": "lamague_runtime/value_ledger.py",
+      "bytes": 1065,
+      "sha256": "437732c7b68e33ec2e02d79642e1b383ebd359164a51241ce269e5aab1918f9f"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 222,
+      "sha256": "fede8410fb82440791f7d61dabf16ce9f4df675ea46dc84443f95c27e9b5f192"
+    },
+    {
+      "path": "registry/ontology_v0.2.json",
+      "bytes": 2048,
+      "sha256": "1a58e16d4fa8c08714bec2cdef9ded41d5ed198445287b544c9f8e5cc7a06a25"
+    },
+    {
+      "path": "registry/ontology_v0.2.yaml",
+      "bytes": 1689,
+      "sha256": "a42a8a5f867d2027eb9ce7cf49f3b9d5fd11b42a457f4bd063adde459a23d672"
+    },
+    {
+      "path": "registry/operations_v0.2.json",
+      "bytes": 3782,
+      "sha256": "c98ca235efaae60212ec74e278050e0b0735bc51988f2a4e3061d4e5b766033d"
+    },
+    {
+      "path": "registry/seals_v0.2.json",
+      "bytes": 2665,
+      "sha256": "469d044d3bb0710e4d293108fe38b2f691e53f51cdd64cc5fbfce457fc3d3ac4"
+    },
+    {
+      "path": "tests/__pycache__/test_runtime_v02.cpython-313.pyc",
+      "bytes": 17857,
+      "sha256": "7acbe5c1d733fdf6925c5bd592b051487b891026ea044793aed56a218887dd6f"
+    },
+    {
+      "path": "tests/test_runtime_v02.py",
+      "bytes": 10331,
+      "sha256": "69aafc40b8f161639bbac9fdef6aa5aeafe9e0082672020c918918a96e71d049"
+    },
+    {
+      "path": "traces/20260731T041717179885Z_program-4be9e3549a93.json",
+      "bytes": 14567,
+      "sha256": "00a69739377f9c069e2639b795539e5d131590b1c9c7a13259be2160ea8ebb84"
+    }
+  ]
+}

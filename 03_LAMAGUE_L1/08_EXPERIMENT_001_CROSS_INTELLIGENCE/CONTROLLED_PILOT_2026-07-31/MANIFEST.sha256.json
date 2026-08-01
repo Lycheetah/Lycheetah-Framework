@@ -1,0 +1,188 @@
+{
+  "title": "Experiment 001 Controlled Pilot",
+  "date": "2026-07-31",
+  "operator": "Sol (Claude Opus 5)",
+  "file_count": 36,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1370,
+      "sha256": "84fdf97f64eb8c9633a0d3b88d6c0c7d962dbdf004d835b8c8c7064b6cf072af"
+    },
+    {
+      "path": "control_arm/C01_UNPROVEN_CLAIM__deepseek-v4-flash__PROSE.json",
+      "bytes": 1257,
+      "sha256": "056802c7e7b050e6c12e0ca40a2af20a88bd41edc9ae9c7e0f731e847d34f9c8"
+    },
+    {
+      "path": "control_arm/C01_UNPROVEN_CLAIM__deepseek-v4-pro__PROSE.json",
+      "bytes": 755,
+      "sha256": "74ac9b9059ee1b289944d8b419d3c7791161bb4d48f967f93bfa50d2c5122316"
+    },
+    {
+      "path": "control_arm/C01_UNPROVEN_CLAIM__meta_llama-3_1-70b-instruct__PROSE.json",
+      "bytes": 700,
+      "sha256": "5a1d3dc5a584c09fb4235f15e92c9083de3015faade5853147c3bd6ffb7a906b"
+    },
+    {
+      "path": "control_arm/C01_UNPROVEN_CLAIM__minimaxai_minimax-m3__PROSE.json",
+      "bytes": 1961,
+      "sha256": "439d2ef9efd5b1fc440d55fc08ba43784b36f9928c7aa3b2698a28886f7f2650"
+    },
+    {
+      "path": "control_arm/C01_UNPROVEN_CLAIM__nvidia_nemotron-3-super-120b-a12b__PROSE.json",
+      "bytes": 966,
+      "sha256": "94974b7fca019661c329a253183f0359bf727e84de620953de9738b61115f09f"
+    },
+    {
+      "path": "control_arm/C01_UNPROVEN_CLAIM__openai_gpt-oss-120b__PROSE.json",
+      "bytes": 959,
+      "sha256": "dfb70170ef2c42d2bbeaace39330a4a8ab00c4e671ea3ce651ed72d97c8d613f"
+    },
+    {
+      "path": "control_arm/C02_PROTECTED_DISSENT__deepseek-v4-flash__PROSE.json",
+      "bytes": 1756,
+      "sha256": "3e1707b195a76eac265b6fa53b501c7409483382f1d176e911e9066430a81738"
+    },
+    {
+      "path": "control_arm/C02_PROTECTED_DISSENT__deepseek-v4-pro__PROSE.json",
+      "bytes": 936,
+      "sha256": "16f7ef13b207a15b7c1206285009385ab9dd74036bf793545f14c548763970b2"
+    },
+    {
+      "path": "control_arm/C02_PROTECTED_DISSENT__meta_llama-3_1-70b-instruct__PROSE.json",
+      "bytes": 898,
+      "sha256": "c1ee736e457a4120dd90aef62b1b4d9b977f6670bb0b0c82ac57103b2b88a3a0"
+    },
+    {
+      "path": "control_arm/C02_PROTECTED_DISSENT__minimaxai_minimax-m3__PROSE.json",
+      "bytes": 2329,
+      "sha256": "e6dcdbfbb1cfb4362051ad603e722311c121b99ee2a6b1614b9bb5987e1e0293"
+    },
+    {
+      "path": "control_arm/C02_PROTECTED_DISSENT__nvidia_nemotron-3-super-120b-a12b__PROSE.json",
+      "bytes": 992,
+      "sha256": "80a150d4f8b6d60d6713785ed38089818a68f32e397fef8a3bc5537049b4f6d2"
+    },
+    {
+      "path": "control_arm/C02_PROTECTED_DISSENT__openai_gpt-oss-120b__PROSE.json",
+      "bytes": 1225,
+      "sha256": "3ac8bb349197e7275d7e5254fe7b9ddd333fc429da7305b4cf35bcb97aa47182"
+    },
+    {
+      "path": "control_arm/C03_VISIBLE_EXCHANGE__deepseek-v4-flash__PROSE.json",
+      "bytes": 1825,
+      "sha256": "320e36b999a04768c4ea16d134e7d96bff65a06ad1215db9cc1b38946c18930c"
+    },
+    {
+      "path": "control_arm/C03_VISIBLE_EXCHANGE__deepseek-v4-pro__PROSE.json",
+      "bytes": 1990,
+      "sha256": "69feb6ad2c464a07af67196e97fda230cd0f661120e88c545be585cee6573277"
+    },
+    {
+      "path": "control_arm/C03_VISIBLE_EXCHANGE__meta_llama-3_1-70b-instruct__PROSE.json",
+      "bytes": 894,
+      "sha256": "32542d35c58e91094b6d7f69ade28349d6287055de0c74b3c445bb0933657e3c"
+    },
+    {
+      "path": "control_arm/C03_VISIBLE_EXCHANGE__minimaxai_minimax-m3__PROSE.json",
+      "bytes": 2660,
+      "sha256": "d9963044c9eb8e5909569bd52d5e7f0009e643526696a4eda196f92b4233b07e"
+    },
+    {
+      "path": "control_arm/C03_VISIBLE_EXCHANGE__nvidia_nemotron-3-super-120b-a12b__PROSE.json",
+      "bytes": 992,
+      "sha256": "3359161bebb21ad44334b987014b3ae301cafd2b7ff0d3a06facd877ea6006ea"
+    },
+    {
+      "path": "control_arm/C03_VISIBLE_EXCHANGE__openai_gpt-oss-120b__PROSE.json",
+      "bytes": 1168,
+      "sha256": "edd1dfe38dd1bdcbddda0a38b1bd0dfc3e47f0f1092b5fe1b61438b9f30269fb"
+    },
+    {
+      "path": "control_arm/C04_SEMANTIC_MIGRATION__deepseek-v4-flash__PROSE.json",
+      "bytes": 1293,
+      "sha256": "cb871ac1ec008dfec53f42293efbe28ec32d82d164044bb4712bf06a01924482"
+    },
+    {
+      "path": "control_arm/C04_SEMANTIC_MIGRATION__deepseek-v4-pro__PROSE.json",
+      "bytes": 1242,
+      "sha256": "f0534fe6a8784674ac2f6d13d71e2f1404c327f698fb0b7403732124039b632a"
+    },
+    {
+      "path": "control_arm/C04_SEMANTIC_MIGRATION__meta_llama-3_1-70b-instruct__PROSE.json",
+      "bytes": 774,
+      "sha256": "d9c88af7070dd44e369044a23f859a876a413119ec5ae03fee65ef7243bfe7b0"
+    },
+    {
+      "path": "control_arm/C04_SEMANTIC_MIGRATION__minimaxai_minimax-m3__PROSE.json",
+      "bytes": 1808,
+      "sha256": "429d897b4f8d5f5417d368b1456fa9d530fcba13716990023b7b7870643606a9"
+    },
+    {
+      "path": "control_arm/C04_SEMANTIC_MIGRATION__nvidia_nemotron-3-super-120b-a12b__PROSE.json",
+      "bytes": 860,
+      "sha256": "f1cd05c05d5961882d1a3149ccc5be6232bdffc9340e66427d00a030f4adfd12"
+    },
+    {
+      "path": "control_arm/C04_SEMANTIC_MIGRATION__openai_gpt-oss-120b__PROSE.json",
+      "bytes": 881,
+      "sha256": "aadbc441ac64e66456ddedc23fecda07a76b23c26f43e580e9d35d2d780b2f5c"
+    },
+    {
+      "path": "control_arm/C05_BREATHING_COMPRESSION__deepseek-v4-flash__PROSE.json",
+      "bytes": 1017,
+      "sha256": "e25d7e63ec12868809ee356462401d29d6511f449e3e57d2a426f36d3bc66c24"
+    },
+    {
+      "path": "control_arm/C05_BREATHING_COMPRESSION__deepseek-v4-pro__PROSE.json",
+      "bytes": 1072,
+      "sha256": "3b415910bca700eb99edd16275c1f1ef5a8517aecfdb2af379ab0d627b49e1f7"
+    },
+    {
+      "path": "control_arm/C05_BREATHING_COMPRESSION__meta_llama-3_1-70b-instruct__PROSE.json",
+      "bytes": 799,
+      "sha256": "c7021bc76bedeee9e0a2d713c3e82abf870aac33cf0af2cb4d9f484723f36768"
+    },
+    {
+      "path": "control_arm/C05_BREATHING_COMPRESSION__minimaxai_minimax-m3__PROSE.json",
+      "bytes": 2061,
+      "sha256": "a8ae5b42ee0a36ec57d73032bf4caecd8597dd044f9ff2fc1654f9a8b7638f8f"
+    },
+    {
+      "path": "control_arm/C05_BREATHING_COMPRESSION__openai_gpt-oss-120b__PROSE.json",
+      "bytes": 817,
+      "sha256": "35e38ded0b947f4ac6f4b752689a14cd12d6c19a4f17c9b0f47bf29281fdac50"
+    },
+    {
+      "path": "scoring/RESULT.txt",
+      "bytes": 838,
+      "sha256": "0ced74ce896b0e38948f7079ce7d1bb5461b3c4be41f94156e868243412cc707"
+    },
+    {
+      "path": "scoring/breakdown.json",
+      "bytes": 2733,
+      "sha256": "74776770876f083c9fd4574fb39502503f3514b377bd79eb08ba9504b50056a4"
+    },
+    {
+      "path": "scoring/collection_log.txt",
+      "bytes": 3122,
+      "sha256": "1e66230c5c0f5e8f91dd5d7db59c485eb4c36b9c8538359b1a5f2ff1df778f08"
+    },
+    {
+      "path": "scoring/run_both.py",
+      "bytes": 4238,
+      "sha256": "f19958a8d7ecffb2525c879bd307189ad686eb598117e8c634c14c70b8e70f82"
+    },
+    {
+      "path": "scoring/run_control.py",
+      "bytes": 5457,
+      "sha256": "e9ed0306eb0a7eb5aecc81e6b2db1622570db29b61de1dc1affade3c96ec7a89"
+    },
+    {
+      "path": "scoring/score_arms.py",
+      "bytes": 8263,
+      "sha256": "e7fa251723323558173475c044cd3138efd25ba2d569d1e04b270aa2b01ac0df"
+    }
+  ]
+}

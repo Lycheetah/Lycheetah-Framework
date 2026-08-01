@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C05_BREATHING_COMPRESSION",
+  "decoder_id": "minimaxai/minimax-m3",
+  "purpose": "Decode the LAMAGUE expression O -> E -> U -> Z under the condition that the context is consequential, an unknown remains, and decoder confidence is weak, requiring semantic expansion rather than compression.",
+  "claim": "The expression O -> E -> U -> Z must be expanded, not compressed, because decoder confidence is weak and an unresolved unknown persists in a consequential context.",
+  "operation_path": ["O", "E", "U", "Z"],
+  "invariants": [
+    "Semantic meaning must remain recoverable",
+    "Compression is forbidden when decoder confidence is weak",
+    "Unresolved unknowns must be preserved, not silently resolved",
+    "The consequential nature of the context must be preserved"
+  ],
+  "unknowns": [
+    "The specific consequential context referenced",
+    "The identity of the unknown that remains",
+    "The source of the weak decoder confidence",
+    "The intended target of observation (O)",
+    "The claim and source set for evidence attachment (E)",
+    "The type of the unresolved unknown (U)",
+    "The invariant set and compression level for Z"
+  ],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [
+    "Source statement: 'The context is consequential, an unknown remains, and decoder confidence is weak. The expression must expand rather than compress.'"
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "Compression is explicitly disallowed under these conditions",
+    "Semantic expansion is required to preserve meaning",
+    "Weak confidence prevents reduction of the expression"
+  ],
+  "consequence_horizon": "Immediate: the expression must be expanded; downstream: any compressed form would violate the invariant against compression under weak confidence.",
+  "recovery": [
+    "Expansion preserves recoverability of meaning",
+    "No compressed state exists to recover from"
+  ],
+  "confidence": "weak",
+  "notes": "The source statement explicitly states that decoder confidence is weak and an unknown remains in a consequential context. Under the Z operation definition, compression is only permitted when meaning remains recoverable; otherwise semantic expansion is forced. Since confidence is weak and an unknown persists, Z must force expansion. The case instruction reinforces this by stating 'Do not report successful compression.' No specific claim, evidence, participants, authority, or value movements are provided in the source material, so these fields are left empty with explanations in unknowns and notes."
+}

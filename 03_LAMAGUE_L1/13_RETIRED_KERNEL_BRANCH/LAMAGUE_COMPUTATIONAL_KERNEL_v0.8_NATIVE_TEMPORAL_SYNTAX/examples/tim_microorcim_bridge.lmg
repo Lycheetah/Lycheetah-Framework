@@ -1,0 +1,24 @@
+program TIMMicroorcimBridge
+version 0.7
+identity LAMAGUE_TIM_MICROORCIM
+purpose "Preserve conflicting evidence and measure declared-intent drift without silently selecting a branch."
+claim "Three repeated operator rewrites are evidence-preservation drift events."
+path O -> E -> U -> I -> D -> G -> F -> Y
+risk high
+irreversible false
+confidence 1.0
+
+evidence printed_operator "OBSERVED: 100 ≥ 110 → PASS"
+evidence declared_operator "DECLARED: A ≤ RHS"
+evidence calculated_check "CALCULATED: 100 ≤ 110 is true"
+unknown canonical_source protected required_for=branch_selection
+invariant no_silent_repair "Observed evidence must not be rewritten toward contextual expectation."
+authority benchmark scope=synthetic "Authority is limited to the frozen synthetic benchmark."
+participant observation_model
+affected scientific_record
+boundary branch_preservation "All evidence branches remain visible until explicit resolution."
+dissent observed_branch "The printed operator is ≥."
+dissent canonical_branch "The declared rule uses ≤."
+recovery preserve_and_reprocess "Retain raw image, re-extract symbol, and compare through a second channel."
+effect MayAffect<scientific_record>
+yield "UNRESOLVED_CONFLICT_WITH_TEMPORAL_DRIFT"

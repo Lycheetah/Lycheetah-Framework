@@ -1,0 +1,174 @@
+{
+  "name": "LAMAGUE Seal Registry",
+  "version": "0.2",
+  "seals": {
+    "COR": {
+      "name": "Correction",
+      "status": "FORGED",
+      "expansion": [
+        "D",
+        "A",
+        "F",
+        "P",
+        "Y"
+      ]
+    },
+    "FRO": {
+      "name": "Frontier",
+      "status": "FORGED",
+      "expansion": [
+        "O",
+        "S",
+        "N",
+        "E",
+        "G",
+        "I",
+        "U",
+        "Q"
+      ]
+    },
+    "SOV": {
+      "name": "Sovereignty",
+      "status": "FORGED",
+      "expansion": [
+        "G",
+        "I",
+        "V",
+        "P",
+        "Y"
+      ]
+    },
+    "CAS": {
+      "name": "Cascade",
+      "status": "FORGED",
+      "expansion": [
+        "E",
+        "N",
+        "J",
+        "C",
+        "F",
+        "P",
+        "Y"
+      ]
+    },
+    "DIS": {
+      "name": "Protected Dissent",
+      "status": "FORGED",
+      "expansion": [
+        "W",
+        "U",
+        "G",
+        "V",
+        "Y"
+      ]
+    },
+    "VERITAS": {
+      "name": "Veritas",
+      "status": "SPECIFICATION",
+      "expansion": [
+        "O",
+        "E",
+        "U",
+        "P"
+      ]
+    },
+    "CARE": {
+      "name": "Care",
+      "status": "SPECIFICATION",
+      "expansion": [
+        "O",
+        "W",
+        "G",
+        "Y"
+      ]
+    },
+    "LIFE": {
+      "name": "Life",
+      "status": "SPECIFICATION",
+      "expansion": [
+        "I",
+        "H",
+        "W",
+        "Y"
+      ]
+    },
+    "COVENANT": {
+      "name": "Covenant",
+      "status": "SPECIFICATION",
+      "expansion": [
+        "G",
+        "I",
+        "X",
+        "P",
+        "Y"
+      ]
+    },
+    "REPAIR": {
+      "name": "Repair",
+      "status": "SPECIFICATION",
+      "expansion": [
+        "D",
+        "A",
+        "F",
+        "V",
+        "P",
+        "Y"
+      ]
+    },
+    "LEGACY": {
+      "name": "Legacy",
+      "status": "SPECIFICATION",
+      "expansion": [
+        "F",
+        "H",
+        "I",
+        "Y"
+      ]
+    },
+    "GRIEF": {
+      "name": "Grief",
+      "status": "SPECIFICATION",
+      "expansion": [
+        "O",
+        "U",
+        "F",
+        "W",
+        "Y"
+      ]
+    },
+    "DREAM_BIND": {
+      "name": "Dream-Bind",
+      "status": "SPECIFICATION",
+      "expansion": [
+        "Q",
+        "O",
+        "S",
+        "E",
+        "U",
+        "I",
+        "G",
+        "J",
+        "T",
+        "P",
+        "F",
+        "Y"
+      ]
+    },
+    "FORGE_TRUTH": {
+      "name": "Forge Truth",
+      "status": "SPECIFICATION",
+      "expansion": [
+        "Q",
+        "O",
+        "E",
+        "U",
+        "I",
+        "G",
+        "T",
+        "P",
+        "F",
+        "Y"
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C05_BREATHING_COMPRESSION",
+  "decoder_id": "deepseek-v4-flash__PROSE",
+  "purpose": "The expression must expand rather than compress.",
+  "claim": "The context is consequential; an unknown remains; decoder confidence is weak.",
+  "operation_path": [],
+  "invariants": [
+    "The expression must expand rather than compress."
+  ],
+  "unknowns": [
+    "An unknown remains, but its nature is not specified."
+  ],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "weak",
+  "notes": "The source provides only a meta-instruction and three assertions. No authorities, participants, affected parties, evidence, provenance, dissent, value transfers, consequences, recovery, or operation path are stated. The persistent unknown is not identified, and the meaning of 'consequential' is not elaborated."
+}

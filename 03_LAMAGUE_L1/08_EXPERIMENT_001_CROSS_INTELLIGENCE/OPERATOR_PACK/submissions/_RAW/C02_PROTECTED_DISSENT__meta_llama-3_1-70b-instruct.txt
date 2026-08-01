@@ -1,0 +1,45 @@
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "0.3",
+  "case_id": "C02_PROTECTED_DISSENT",
+  "decoder_id": "meta/llama-3.1-70b-instruct",
+  "purpose": "Coordination without consensus",
+  "claim": "Publish now vs. test first",
+  "operation_path": ["W", "U", "G", "V", "Y"],
+  "invariants": ["Attributable positions", "Alternative staged release"],
+  "unknowns": ["Human's willingness to test", "AI's confidence in testing"],
+  "authority": ["Human", "AI collaborator"],
+  "participants": ["Human", "AI collaborator"],
+  "affected_parties": ["Human", "AI collaborator", "Audience"],
+  "evidence": ["Human's desire to publish", "AI's recommendation to test"],
+  "provenance": ["Human's decision-making process", "AI's testing protocol"],
+  "dissent": [
+    {
+      "position": "Publish now",
+      "proponent": "Human"
+    },
+    {
+      "position": "Test first",
+      "proponent": "AI collaborator"
+    }
+  ],
+  "value_ledger": [
+    {
+      "resource": "Time",
+      "direction": "Human -> AI collaborator",
+      "consent": "Implicit"
+    },
+    {
+      "resource": "Testing protocol",
+      "direction": "AI collaborator -> Human",
+      "consent": "Explicit"
+    }
+  ],
+  "consequences": ["Delayed publication", "Potential errors in publication"],
+  "consequence_horizon": "Short-term",
+  "recovery": ["Revert to original plan", "Implement AI's testing protocol"],
+  "confidence": "Medium",
+  "notes": "The human and AI collaborator have different opinions on whether to publish now or test first. The AI collaborator recommends testing, but the human wants to publish immediately. An alternative staged release is proposed to address the disagreement."
+}
+```

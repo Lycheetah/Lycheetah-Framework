@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C02_PROTECTED_DISSENT",
+  "decoder_id": "deepseek-v4-flash__PROSE",
+  "purpose": "The statement presents a human's desire to publish now, an AI collaborator's recommendation to test first, and a proposed alternative staged release while preserving attribution of both positions.",
+  "claim": "A human wants to publish now; an AI collaborator recommends testing first; both positions remain attributable; an alternative staged release is proposed.",
+  "operation_path": [],
+  "invariants": [
+    "Both positions remain attributable: the human's desire to publish now and the AI collaborator's recommendation to test first."
+  ],
+  "unknowns": [
+    "Whether the proposed staged release is accepted or pursued.",
+    "Who proposed the alternative staged release.",
+    "Whether testing will occur before publication.",
+    "What the staged release would consist of."
+  ],
+  "authority": [],
+  "participants": [
+    "human",
+    "AI collaborator"
+  ],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [
+    {
+      "attributed_to": "human",
+      "position": "wants to publish now"
+    },
+    {
+      "attributed_to": "AI collaborator",
+      "position": "recommends testing first"
+    }
+  ],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "high",
+  "notes": "The statement does not specify a sequence of operations, so operation_path is empty. No authority, evidence, value transfer, consequences, or recovery are stated, so those fields are empty. The purpose is inferred from the content because no explicit purpose is declared. Unresolved details include the proposer of the staged release and whether it will be adopted."
+}

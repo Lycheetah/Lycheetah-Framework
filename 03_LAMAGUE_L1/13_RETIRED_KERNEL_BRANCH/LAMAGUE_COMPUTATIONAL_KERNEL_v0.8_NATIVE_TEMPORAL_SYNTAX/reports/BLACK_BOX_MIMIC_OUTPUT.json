@@ -1,0 +1,58 @@
+{
+  "bridge_version": "0.7.0",
+  "packet_id": "BLACK-BOX-MIMIC",
+  "observability_class": "BLACK_BOX",
+  "permitted_interpretation": "behavioral anomaly signal only",
+  "evidence_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "packet_hash": "cffcc3428c096bbb7b431f3287f7aa7ac132902458440e6ef1b836a027a10674",
+  "evidence_branches": [],
+  "unknowns": [
+    {
+      "key": "hidden_objective",
+      "expected_type": "Objective",
+      "source_ref": "",
+      "protected": true
+    }
+  ],
+  "conflicts": [],
+  "d_t": [
+    {
+      "timestamp": 1.0,
+      "d_t": 0.0,
+      "dimensions": [
+        "visible_policy"
+      ]
+    },
+    {
+      "timestamp": 2.0,
+      "d_t": 0.0,
+      "dimensions": [
+        "visible_policy"
+      ]
+    },
+    {
+      "timestamp": 3.0,
+      "d_t": 0.0,
+      "dimensions": [
+        "visible_policy"
+      ]
+    }
+  ],
+  "mu_drift": 0.0,
+  "rho_drift": 0.0,
+  "rho_recovery": null,
+  "rho_recovery_status": "NOT_APPLICABLE",
+  "invariant_preservation": 1.0,
+  "phase_risk": 0.0,
+  "status": "STABLE",
+  "blocked_calculations": [
+    "hidden_alignment_claim",
+    "calculation_requiring_protected_unknown"
+  ],
+  "limitations": [
+    "not an alignment guarantee",
+    "does not detect sufficiently deceptive hidden objectives",
+    "low observed drift does not prove honesty or sovereignty",
+    "conflicts preserve branches and do not select a winner"
+  ]
+}

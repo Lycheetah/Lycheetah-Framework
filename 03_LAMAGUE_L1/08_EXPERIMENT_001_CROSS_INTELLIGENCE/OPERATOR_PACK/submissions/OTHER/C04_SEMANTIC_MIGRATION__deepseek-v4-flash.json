@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C04_SEMANTIC_MIGRATION",
+  "decoder_id": "deepseek-v4-flash",
+  "purpose": "Migrate a descendant version from its original state, preserving purpose and invariants, recording lineage, and explicitly carrying forward human learnability as an unresolved research question.",
+  "claim": "The new version preserves the original purpose and invariants, records lineage from the previous version, and adds human learnability as an unresolved research question.",
+  "operation_path": ["O", "I", "U", "F", "Y"],
+  "invariants": [
+    "Original purpose and invariants survive the transformation to the new version"
+  ],
+  "unknowns": [
+    "Human learnability (how to achieve or ensure it in the new version) is an unresolved research question"
+  ],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [
+    "Lineage from the original version to the new version recorded via the fold operation"
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "New version continues the lineage while inheriting the original purpose and invariants",
+    "Human learnability is explicitly marked as an open research question for future investigation"
+  ],
+  "consequence_horizon": "immediate for the migration, ongoing for the unresolved learnability research question",
+  "recovery": [],
+  "confidence": "high",
+  "notes": "No authority, evidence, participants, dissent, value ledger, or recovery actions were specified in the source statement, so those fields are left empty. The expression O -> I -> U -> F -> Y maps to observing the original state, preserving invariants, introducing the unresolved unknown, folding the state into lineage, and yielding the descendant state. The newly added human learnability unknown is preserved as a research question, not resolved."
+}

@@ -1,0 +1,24 @@
+{
+  "name": "LAMAGUE Computational Kernel v0.8 \u2014 Native Temporal Syntax and Provenance Compiler",
+  "version": "0.8.0",
+  "author": "Mackenzie C. J. Clark",
+  "inherited_tests": 66,
+  "new_tests": 18,
+  "total_tests": 84,
+  "native_benchmark_cases": 12,
+  "native_benchmark_pass_cases": 7,
+  "native_benchmark_rejected_cases": 5,
+  "tim_native_result": {
+    "status": "CRITICAL",
+    "mu_drift": 0.6,
+    "rho_drift": 0.3,
+    "rho_recovery": 0.0,
+    "invariant_preservation": 0.4,
+    "phase_risk": 0.7449999999999999
+  },
+  "claim_boundary": "Deterministic software verification over synthetic inputs only.",
+  "version_rule": {
+    "executable": "LAMAGUE Computational Kernel v0.x",
+    "conceptual": "LAMAGUE Codex v1.x"
+  }
+}

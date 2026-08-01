@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C02_PROTECTED_DISSENT",
+  "decoder_id": "deepseek-v4-pro__PROSE",
+  "purpose": "",
+  "claim": "",
+  "operation_path": [],
+  "invariants": [
+    "Both positions remain attributable while an alternative staged release is proposed."
+  ],
+  "unknowns": [],
+  "authority": [],
+  "participants": [
+    "human",
+    "AI collaborator"
+  ],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [
+    {
+      "party": "human",
+      "position": "publish now"
+    },
+    {
+      "party": "AI collaborator",
+      "position": "test first"
+    }
+  ],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "",
+  "notes": "No explicit purpose or claim declared. The source statement describes a disagreement and a proposed compromise. Invariant extracted from the statement that attribution is preserved. Operation path unknown."
+}

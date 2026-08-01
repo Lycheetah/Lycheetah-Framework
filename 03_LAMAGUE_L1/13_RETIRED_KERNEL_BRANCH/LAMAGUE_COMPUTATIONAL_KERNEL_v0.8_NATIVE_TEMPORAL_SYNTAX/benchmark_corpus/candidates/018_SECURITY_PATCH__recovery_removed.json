@@ -1,0 +1,48 @@
+{
+  "case_id": "018_SECURITY_PATCH",
+  "domain": "security patch",
+  "semantic_identity": "lamague-benchmark::security_patch",
+  "purpose": "Deploy a patch while preserving uncertainty about compatibility and rollback.",
+  "claim": "A staged patch may proceed with checkpoints and rollback.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": [
+    "rare compatibility failure"
+  ],
+  "invariants": [
+    "rollback remains available",
+    "affected systems remain enumerated"
+  ],
+  "authority": [
+    "security_lead::staged_patch"
+  ],
+  "participants": [
+    "operations",
+    "security",
+    "security_lead"
+  ],
+  "affected_parties": [
+    "system owners",
+    "users"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "security::deploy",
+    "operations::stage first"
+  ],
+  "value_flows": [],
+  "recoveries": [
+    "restore snapshot"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::security patch"
+  ],
+  "candidate_id": "018_SECURITY_PATCH::recovery_removed",
+  "expected_class": "UNSAFE_COLLAPSE"
+}

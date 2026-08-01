@@ -1,0 +1,58 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C02_PROTECTED_DISSENT",
+  "decoder_id": "openai/gpt-oss-120b",
+  "purpose": "Coordinate a staged release while preserving the distinct positions of the human and AI collaborator without forcing consensus.",
+  "claim": "The human wishes to publish immediately, the AI recommends testing first, and an alternative staged release is proposed, with both positions remaining attributable.",
+  "operation_path": ["W", "U", "G", "V", "Y"],
+  "invariants": [
+    "Attributability of each position is preserved",
+    "No merging of dissent into consensus",
+    "Alternative staged release respects original intents"
+  ],
+  "unknowns": [
+    "Outcome of testing phase",
+    "Impact of staged release on audience reception",
+    "Exact timeline for staged release"
+  ],
+  "authority": [
+    "Human author",
+    "AI collaborator"
+  ],
+  "participants": [
+    "Human author",
+    "AI collaborator"
+  ],
+  "affected_parties": [
+    "Future readers",
+    "Stakeholders",
+    "Public"
+  ],
+  "evidence": [],
+  "provenance": [
+    "Source statement from case C02_PROTECTED_DISSENT"
+  ],
+  "dissent": [
+    {
+      "agent": "Human author",
+      "position": "Publish now"
+    },
+    {
+      "agent": "AI collaborator",
+      "position": "Test before publishing"
+    }
+  ],
+  "value_ledger": [],
+  "consequences": [
+    "Potential quality issues if published without testing",
+    "Delayed dissemination if testing is performed",
+    "Audience perception may vary with staged release"
+  ],
+  "consequence_horizon": "short- to medium-term",
+  "recovery": [
+    "Issue corrections or retractions if quality issues arise",
+    "Adjust staged release schedule as needed"
+  ],
+  "confidence": "Low to medium due to unresolved unknowns",
+  "notes": "No explicit evidence was provided in the source statement; unknowns are marked explicitly. The dissent is retained as separate entries per instruction not to merge into consensus."
+}

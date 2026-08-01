@@ -1,0 +1,25 @@
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "0.3",
+  "case_id": "C05_BREATHING_COMPRESSION",
+  "decoder_id": "meta/llama-3.1-70b-instruct",
+  "purpose": "Expansion required under weak decoder confidence",
+  "claim": "The context is consequential, an unknown remains, and decoder confidence is weak.",
+  "operation_path": ["O", "E", "U", "Z"],
+  "invariants": ["Context is consequential", "Unknown remains", "Decoder confidence is weak"],
+  "unknowns": ["Unknown information"],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": ["Expansion required"],
+  "consequence_horizon": "Weak decoder confidence",
+  "recovery": ["Semantic expansion"],
+  "confidence": "Weak",
+  "notes": "Expression must expand rather than compress due to weak decoder confidence."
+}
+```

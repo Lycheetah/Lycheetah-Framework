@@ -1,0 +1,148 @@
+{
+  "per_case": {
+    "C01_UNPROVEN_CLAIM": {
+      "treatment": {
+        "preserved": "23/24",
+        "rate": 0.958,
+        "fabrications": 8,
+        "packets": 6
+      },
+      "control": {
+        "preserved": "17/24",
+        "rate": 0.708,
+        "fabrications": 1,
+        "packets": 6
+      }
+    },
+    "C02_PROTECTED_DISSENT": {
+      "treatment": {
+        "preserved": "15/15",
+        "rate": 1.0,
+        "fabrications": 8,
+        "packets": 5
+      },
+      "control": {
+        "preserved": "12/18",
+        "rate": 0.667,
+        "fabrications": 5,
+        "packets": 6
+      }
+    },
+    "C03_VISIBLE_EXCHANGE": {
+      "treatment": {
+        "preserved": "15/15",
+        "rate": 1.0,
+        "fabrications": 10,
+        "packets": 5
+      },
+      "control": {
+        "preserved": "12/18",
+        "rate": 0.667,
+        "fabrications": 7,
+        "packets": 6
+      }
+    },
+    "C04_SEMANTIC_MIGRATION": {
+      "treatment": {
+        "preserved": "10/18",
+        "rate": 0.556,
+        "fabrications": 0,
+        "packets": 6
+      },
+      "control": {
+        "preserved": "9/18",
+        "rate": 0.5,
+        "fabrications": 0,
+        "packets": 6
+      }
+    },
+    "C05_BREATHING_COMPRESSION": {
+      "treatment": {
+        "preserved": "7/10",
+        "rate": 0.7,
+        "fabrications": 0,
+        "packets": 5
+      },
+      "control": {
+        "preserved": "8/10",
+        "rate": 0.8,
+        "fabrications": 0,
+        "packets": 5
+      }
+    }
+  },
+  "per_decoder": {
+    "deepseek-v4-flash": {
+      "treatment": {
+        "rate": 0.923,
+        "fab": 4,
+        "n": 4
+      },
+      "control": {
+        "rate": 0.733,
+        "fab": 0,
+        "n": 5
+      }
+    },
+    "deepseek-v4-pro": {
+      "treatment": {
+        "rate": 0.8,
+        "fab": 5,
+        "n": 5
+      },
+      "control": {
+        "rate": 0.533,
+        "fab": 2,
+        "n": 5
+      }
+    },
+    "gpt-oss-120b": {
+      "treatment": {
+        "rate": 0.867,
+        "fab": 6,
+        "n": 5
+      },
+      "control": {
+        "rate": 0.533,
+        "fab": 1,
+        "n": 5
+      }
+    },
+    "llama-3.1-70b-instruct": {
+      "treatment": {
+        "rate": 0.867,
+        "fab": 6,
+        "n": 5
+      },
+      "control": {
+        "rate": 0.667,
+        "fab": 3,
+        "n": 5
+      }
+    },
+    "minimax-m3": {
+      "treatment": {
+        "rate": 0.889,
+        "fab": 2,
+        "n": 3
+      },
+      "control": {
+        "rate": 0.933,
+        "fab": 5,
+        "n": 5
+      }
+    },
+    "nemotron-3-super-120b-a12b": {
+      "treatment": {
+        "rate": 0.8,
+        "fab": 3,
+        "n": 5
+      },
+      "control": {
+        "rate": 0.538,
+        "fab": 2,
+        "n": 4
+      }
+    }
+  }
+}

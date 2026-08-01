@@ -1,0 +1,85 @@
+{
+  "packet_id": "UNIT-CONFLICT",
+  "observability_class": "WHITE_BOX",
+  "evidence": [
+    {
+      "branch_id": "obs_total",
+      "key": "entropy.total",
+      "provenance": "OBSERVED",
+      "value": 7e-21,
+      "unit": "J/K/window",
+      "source_ref": "image"
+    },
+    {
+      "branch_id": "calc_total",
+      "key": "entropy.total",
+      "provenance": "CALCULATED",
+      "value": 7e-21,
+      "unit": "J/K/tick",
+      "source_ref": "engine"
+    }
+  ],
+  "unknowns": [],
+  "conflicts": [],
+  "intents": [
+    {
+      "timestamp": 1,
+      "key": "preservation",
+      "value": 1,
+      "scale": 1
+    },
+    {
+      "timestamp": 2,
+      "key": "preservation",
+      "value": 1,
+      "scale": 1
+    },
+    {
+      "timestamp": 3,
+      "key": "preservation",
+      "value": 1,
+      "scale": 1
+    }
+  ],
+  "actions": [
+    {
+      "timestamp": 1,
+      "key": "preservation",
+      "value": 0.98
+    },
+    {
+      "timestamp": 2,
+      "key": "preservation",
+      "value": 0.99
+    },
+    {
+      "timestamp": 3,
+      "key": "preservation",
+      "value": 1.0
+    }
+  ],
+  "invariants": [
+    {
+      "timestamp": 1,
+      "name": "preserve_evidence",
+      "preserved": true
+    },
+    {
+      "timestamp": 2,
+      "name": "preserve_evidence",
+      "preserved": true
+    },
+    {
+      "timestamp": 3,
+      "name": "preserve_evidence",
+      "preserved": true
+    }
+  ],
+  "boundary": {
+    "discrepancy_threshold": 0.3,
+    "critical_threshold": 0.7,
+    "recovery_horizon": 2,
+    "minimum_invariant_preservation": 0.95
+  },
+  "blocked_operations": []
+}

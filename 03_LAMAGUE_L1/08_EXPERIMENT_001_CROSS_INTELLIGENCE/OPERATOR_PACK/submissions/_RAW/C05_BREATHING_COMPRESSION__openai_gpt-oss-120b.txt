@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C05_BREATHING_COMPRESSION",
+  "decoder_id": "openai/gpt-oss-120b",
+  "purpose": "Expand the given LAMAGUE expression O→E→U→Z under weak decoder confidence, avoiding compression.",
+  "claim": "Given the consequential context and a remaining unknown, the expression must be expanded rather than compressed.",
+  "operation_path": ["O", "E", "U", "Z"],
+  "invariants": [],
+  "unknowns": ["Unresolved information indicated by U operation"],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": ["Source statement: The context is consequential, an unknown remains, and decoder confidence is weak. The expression must expand rather than compress."],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": ["No compression performed; expression remains expanded."],
+  "consequence_horizon": "Immediate",
+  "recovery": [],
+  "confidence": "weak",
+  "notes": "Z (Compress) operation is noted but not executed per instruction to expand rather than compress. The unknown remains unresolved as marked by U."
+}

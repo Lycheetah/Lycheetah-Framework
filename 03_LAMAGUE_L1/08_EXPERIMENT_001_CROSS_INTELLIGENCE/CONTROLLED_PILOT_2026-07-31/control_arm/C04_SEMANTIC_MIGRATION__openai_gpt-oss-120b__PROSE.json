@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C04_SEMANTIC_MIGRATION",
+  "decoder_id": "openai/gpt-oss-120b__PROSE",
+  "purpose": "",
+  "claim": "The new version retains its original purpose and invariants, records lineage, and adds human learnability as an unresolved research question.",
+  "operation_path": [],
+  "invariants": [],
+  "unknowns": [
+    "human learnability"
+  ],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "",
+  "notes": "The source statement does not specify the actual purpose, the concrete invariants, any authority, participants, affected parties, evidence, provenance, dissent, value movements, consequences, or recovery actions. These fields are left empty with this note."
+}

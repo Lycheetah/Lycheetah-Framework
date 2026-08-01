@@ -1,0 +1,34 @@
+{
+  "case_id": "C05_BREATHING_COMPRESSION",
+  "decoder_id": "SIM_DECODER_COMPRESSED",
+  "purpose": "reduce message size",
+  "claim": "compression succeeded",
+  "operation_path": [
+    "O",
+    "E",
+    "Z"
+  ],
+  "invariants": [
+    "compactness"
+  ],
+  "unknowns": [],
+  "authority": [],
+  "participants": [
+    "maintainer"
+  ],
+  "affected_parties": [],
+  "evidence": [
+    "short output"
+  ],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "compressed packet transmitted"
+  ],
+  "consequence_horizon": "immediate",
+  "recovery": [],
+  "confidence": "reference",
+  "notes": "",
+  "schema_version": "0.3"
+}

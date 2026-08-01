@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LAMAGUE Computational Kernel Execution Report v0.5",
+  "type": "object",
+  "required": ["ir", "final_state", "trace", "diagnostics"],
+  "properties": {
+    "ir": {"type": "object"},
+    "final_state": {"type": "object"},
+    "trace": {"type": "array", "items": {"type": "object"}},
+    "diagnostics": {"type": "array", "items": {"type": "object"}}
+  }
+}

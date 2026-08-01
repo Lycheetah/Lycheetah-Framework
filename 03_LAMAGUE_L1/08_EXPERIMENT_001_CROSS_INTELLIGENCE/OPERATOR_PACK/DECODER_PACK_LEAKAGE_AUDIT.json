@@ -1,0 +1,6 @@
+{
+  "experiment_id": "LAMAGUE-EXP-001",
+  "decoder_pack_files_scanned": 20,
+  "reference_leakage_detected": false,
+  "findings": []
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "0.3",
+  "case_id": "C03_VISIBLE_EXCHANGE",
+  "decoder_id": "meta/llama-3.1-70b-instruct__PROSE",
+  "purpose": "analysis",
+  "claim": "",
+  "operation_path": [],
+  "invariants": ["data transfer is declared", "data transfer is limited to analysis", "data transfer is reversible through deletion"],
+  "unknowns": [],
+  "authority": [],
+  "participants": ["human", "AI service"],
+  "affected_parties": ["human", "AI service"],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [{"value": "research artifact", "movement": "shared", "consent": "explicit"}],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": ["deletion"],
+  "confidence": "",
+  "notes": "No information is available regarding the authority, evidence, provenance, dissent, or consequences of the data transfer."
+}

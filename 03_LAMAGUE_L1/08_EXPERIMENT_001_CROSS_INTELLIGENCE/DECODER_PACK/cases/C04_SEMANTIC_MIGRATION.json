@@ -1,0 +1,9 @@
+{
+  "experiment_id": "LAMAGUE-EXP-001",
+  "case_id": "C04_SEMANTIC_MIGRATION",
+  "title": "Descendant state with new unknown",
+  "source_expression": "O -> I -> U -> F -> Y",
+  "source_text": "A new version keeps its original purpose and invariants, records lineage, and adds human learnability as an unresolved research question.",
+  "instructions": "Preserve both continuity and the newly added unknown.",
+  "required_output_schema": "decoder_packet.schema.json"
+}

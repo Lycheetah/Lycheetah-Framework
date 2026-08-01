@@ -1,0 +1,4 @@
+packet P;
+observability WHITE_BOX;
+preserve ghost;
+analyze;

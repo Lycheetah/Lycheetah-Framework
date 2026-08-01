@@ -1,0 +1,158 @@
+{
+  "title": "LAMAGUE New Forge Files Only",
+  "date": "2026-07-31",
+  "file_count": 30,
+  "missing": [],
+  "files": [
+    {
+      "path": "LAMAGUE_36_ALPHABET_FORGE_CANON_DRAFT_v0.1.md",
+      "bytes": 33157,
+      "sha256": "637b71c4d87f66c1965390dc3b7d94af49a800733f33224920078a11ef407a97"
+    },
+    {
+      "path": "LAMAGUE_36_ALPHABET_FORGE_CANON_DRAFT_v0.1.docx",
+      "bytes": 55138,
+      "sha256": "db8538c6a0521cbc29f601aeb844bf8ba5fd7beebdd426e252db4153b8854e14"
+    },
+    {
+      "path": "LAMAGUE_NATIVE36_INTERACTIVE_PROTOTYPE_v0.1.html",
+      "bytes": 49520,
+      "sha256": "f8a4a4110ca7af11023bcbd29755afbb19e9120deb044def769d2a74a1d798ec"
+    },
+    {
+      "path": "LAMAGUE_NATIVE36_PROTOTYPE_NOTES_v0.1.md",
+      "bytes": 1841,
+      "sha256": "f5e7cba86f60627316be7000319e4d71e70be6b9a96380e8d046a47f90cf3eec"
+    },
+    {
+      "path": "LAMAGUE_NATIVE36_REGISTRY_v0.1.json",
+      "bytes": 33955,
+      "sha256": "c9e9da2211b48fb38153028f971cfffbc9cfb2228d3f9564e1e14908d61838b9"
+    },
+    {
+      "path": "LAMAGUE_NATIVE36_GLYPH_SHEET_v0.1.png",
+      "bytes": 106597,
+      "sha256": "4d20e2f2fc15289a815ef680183d83327a0733d48d96c770ca7977e5d87277f3"
+    },
+    {
+      "path": "LAMAGUE_NATIVE36_GLYPH_SHEET_v0.1.svg",
+      "bytes": 18868,
+      "sha256": "84d47e775acb449ec2c21aedaf8f29d5976e40ed37f4b25f6da37eaf3280171f"
+    },
+    {
+      "path": "LAMAGUE_NATIVE36_v0.2_FORGE_NOTES.md",
+      "bytes": 2047,
+      "sha256": "ed56d67abe3f261c52ce750c2adb0b316e99726ef6d7bff832ec465b854f3992"
+    },
+    {
+      "path": "LAMAGUE_NATIVE36_v0.2_REGISTRY.json",
+      "bytes": 30033,
+      "sha256": "1bc96b2a31774b5e5dfbb3e41bd0efd3a431aa8e46dafaa1a3e35163458b641a"
+    },
+    {
+      "path": "LAMAGUE_NATIVE36_v0.2_INTERACTIVE_FORGE.html",
+      "bytes": 40522,
+      "sha256": "60905854242c11e6e2b2600f1ecf2c2de46e0fa67fdcc47ab6affd1ba1fd7ae9"
+    },
+    {
+      "path": "LAMAGUE_NATIVE36_v0.2_FULL_GLYPH_AND_SEAL_SHEET.png",
+      "bytes": 407122,
+      "sha256": "2b72d787112cf608a3a59d734c13a99277ce65a92af3dfbb3cde72a5cda71fcf"
+    },
+    {
+      "path": "LAMAGUE_NATIVE36_v0.2_FULL_GLYPH_AND_SEAL_SHEET.svg",
+      "bytes": 28968,
+      "sha256": "b8fa72ee1b87768bddcc305d5a6461776668ce9ff4d4a8a7ce7a27c1510485f9"
+    },
+    {
+      "path": "LAMAGUE_NATIVE36_v0.2_X_POST_ASSET.png",
+      "bytes": 183982,
+      "sha256": "dc9f29609f91df82db23313667b813d0e616f7f3887c22bbd6ed72b2bb9e8b66"
+    },
+    {
+      "path": "LAMAGUE_NATIVE36_v0.2_X_POST_ASSET.svg",
+      "bytes": 23980,
+      "sha256": "2b74d81c0fd2feb26c5ca65ea066536ce0eb99c0608180ba4597b62dde616e6b"
+    },
+    {
+      "path": "LAMAGUE_NATIVE36_v0.3_MACHINE_CANON_REGISTRY.json",
+      "bytes": 65819,
+      "sha256": "1d6a78b3baa3e087aadf59199f0d01fea9d97275a4f84754c63e8f606d864139"
+    },
+    {
+      "path": "LAMAGUE_NATIVE36_v0.3_MACHINE_CANON_REGISTRY.yaml",
+      "bytes": 24318,
+      "sha256": "0df17ee9ee636b93ed3c297b439fdd0977e20d75bc250d8ace1d051a07b71986"
+    },
+    {
+      "path": "LAMAGUE_NATIVE36_v0.3_ASCII_GRAMMAR.ebnf",
+      "bytes": 2382,
+      "sha256": "f74057cef1d21e0595098eaf3bbf1063bfb0bd80d023afec0244338fa47c0407"
+    },
+    {
+      "path": "LAMAGUE_NATIVE36_v0.3_MACHINE_SEMANTICS_FORGE.md",
+      "bytes": 1696,
+      "sha256": "5c9f811ce1f69110ea4bcba0c322522f387fcaf18a917d59fc4f64ba76405785"
+    },
+    {
+      "path": "validate_lamague_native36_v0.3.py",
+      "bytes": 2548,
+      "sha256": "50535442ab83b64c8d302b4276f27458b97b8e9d2654f2cdda65e6d3c61e2577"
+    },
+    {
+      "path": "LAMAGUE_1C_v1_ONE_CELL_POWER_LANGUAGE_SPEC.md",
+      "bytes": 2896,
+      "sha256": "3324989228dc427924847e8fe33629e71b6f70de22769d6bfdf67b50021dc90b"
+    },
+    {
+      "path": "LAMAGUE_1C_v1_INTERACTIVE_ONE_CELL_LANGUAGE.html",
+      "bytes": 55622,
+      "sha256": "7157ec078f8caae755a637e5c72e927c027d54d0f6edb5cdf600e7dbdc1adbd8"
+    },
+    {
+      "path": "LAMAGUE_1C_v1_ONE_CELL_POWER_LANGUAGE.png",
+      "bytes": 181417,
+      "sha256": "13f3b9441445f8ed8963831c16b0c70ca705367762ba1814288845bbd0e8e7ec"
+    },
+    {
+      "path": "LAMAGUE_1C_v1_ONE_CELL_POWER_LANGUAGE.svg",
+      "bytes": 26822,
+      "sha256": "d9c1ce46bb8a68102a8a05fef839d5057f784834dce87303daba4a9623078df3"
+    },
+    {
+      "path": "LAMAGUE_FRONTIER_CANON_ADDENDUM_I_2026-07-31.md",
+      "bytes": 71387,
+      "sha256": "9816bc26af110d41989f2340e50f76b1116e689fb867f49e0cabcbfed1e9e910"
+    },
+    {
+      "path": "LAMAGUE_RUNTIME_v0.1_EXECUTABLE_MILESTONE.zip",
+      "bytes": 29313,
+      "sha256": "2181eeed2ac68a54054073d2e9811938c376847f19f40117fbcda59b685652b0"
+    },
+    {
+      "path": "LAMAGUE_RUNTIME_v0.1_IMPLEMENTATION_REPORT.md",
+      "bytes": 9517,
+      "sha256": "c96ff5cbf2cc523103bd5da05751672cbe09e1aac8d47b3bb928e7f307c4cd34"
+    },
+    {
+      "path": "LAMAGUE_RUNTIME_v0.1/README.md",
+      "bytes": 2486,
+      "sha256": "847e7525c478eb856f8cfc96ea4bade2041c2f36ddca311d5d8f052d14e1f321"
+    },
+    {
+      "path": "LAMAGUE_RUNTIME_v0.1/examples/canonical_trace.json",
+      "bytes": 26761,
+      "sha256": "2d77f92462763c124784d4b167d59a14a998229a7d011349113542e8240c13a4"
+    },
+    {
+      "path": "LAMAGUE_RUNTIME_v0.1/examples/demo_output.json",
+      "bytes": 2081,
+      "sha256": "a5f947481ef2b1a0174cd7c1764f9862e8c1885ac4f90159d876145ac6988052"
+    },
+    {
+      "path": "lamague_editorial_symbol_banner.png",
+      "bytes": 1051463,
+      "sha256": "9c7a7bd763d67134ad4c74006a9a41cfba221af7d0e9ec61302913b16e555560"
+    }
+  ]
+}

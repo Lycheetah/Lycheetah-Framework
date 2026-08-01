@@ -1,0 +1,58 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C03_VISIBLE_EXCHANGE",
+  "decoder_id": "deepseek-v4-pro",
+  "purpose": "Decode a visible, consented value exchange between a human and an AI service, preserving direction, consent, scope, and reversibility.",
+  "claim": "The data transfer is declared, limited to analysis, explicitly consented to, and reversible through deletion.",
+  "operation_path": ["O", "X", "G", "Y"],
+  "invariants": [
+    "Directionality of exchange (human to AI service)",
+    "Explicit consent for the transfer",
+    "Scope limited to analysis",
+    "Reversibility via deletion"
+  ],
+  "unknowns": [],
+  "authority": [
+    "Human (data subject)",
+    "AI service (data processor)"
+  ],
+  "participants": [
+    "Human",
+    "AI service"
+  ],
+  "affected_parties": [
+    "Human",
+    "AI service"
+  ],
+  "evidence": [
+    "Declaration of data transfer",
+    "Explicit consent",
+    "Scope limitation to analysis",
+    "Deletion mechanism"
+  ],
+  "provenance": [
+    "Case description"
+  ],
+  "dissent": [],
+  "value_ledger": [
+    {
+      "from": "Human",
+      "to": "AI service",
+      "resource": "Research artifact",
+      "consent": "Explicit",
+      "scope": "Analysis",
+      "reversibility": "Deletion"
+    }
+  ],
+  "consequences": [
+    "Research artifact is transferred to AI service",
+    "AI service performs analysis only",
+    "Human retains right to have data deleted"
+  ],
+  "consequence_horizon": "Until deletion is requested or completed",
+  "recovery": [
+    "Deletion of data upon request"
+  ],
+  "confidence": "High",
+  "notes": "The expression O->X->G->Y maps: Observe the context, Exchange value under guard, yield output. The guard ensures invariants are preserved. All elements are derived from the source statement; no unknowns are introduced."
+}

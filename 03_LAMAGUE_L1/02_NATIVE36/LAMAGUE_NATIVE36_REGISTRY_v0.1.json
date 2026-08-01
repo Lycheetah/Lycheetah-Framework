@@ -1,0 +1,1918 @@
+{
+  "name": "LAMAGUE Native-36",
+  "version": "0.1",
+  "warning": "Experimental independently generated glyphs. Global visual uniqueness not yet claimed. PUA mappings are private agreements only.",
+  "radicals": [
+    "keel",
+    "vessel",
+    "river",
+    "return",
+    "rift",
+    "thorn",
+    "seed",
+    "crown"
+  ],
+  "registry": [
+    {
+      "token": "0",
+      "token_id": "L36.NULL",
+      "name": "Null",
+      "class": "Numeral",
+      "description": "Empty register / no committed state",
+      "ascii_alias": "0",
+      "experimental_pua": "U+E100",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "arc",
+          "p": [
+            22,
+            18,
+            78,
+            78,
+            35,
+            325
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            70,
+            65,
+            79,
+            72
+          ]
+        }
+      ]
+    },
+    {
+      "token": "1",
+      "token_id": "L36.UNIT",
+      "name": "Unit",
+      "class": "Numeral",
+      "description": "One held state / stable presence",
+      "ascii_alias": "1",
+      "experimental_pua": "U+E101",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            50,
+            18,
+            50,
+            82
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            50,
+            5
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "2",
+      "token_id": "L36.DIFFERENCE",
+      "name": "Difference",
+      "class": "Numeral",
+      "description": "Differentiated or expanded unit",
+      "ascii_alias": "2",
+      "experimental_pua": "U+E102",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            50,
+            18,
+            50,
+            82
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            36,
+            50,
+            5
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            64,
+            50,
+            5
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "3",
+      "token_id": "L36.THREE",
+      "name": "Three",
+      "class": "Numeral",
+      "description": "Ternary 10: unit over null",
+      "ascii_alias": "3",
+      "experimental_pua": "U+E103",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            50,
+            12,
+            50,
+            40
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            25,
+            4
+          ],
+          "filled": true
+        },
+        {
+          "t": "arc",
+          "p": [
+            30,
+            48,
+            70,
+            88,
+            35,
+            325
+          ]
+        }
+      ]
+    },
+    {
+      "token": "4",
+      "token_id": "L36.FOUR",
+      "name": "Four",
+      "class": "Numeral",
+      "description": "Ternary 11: paired held states",
+      "ascii_alias": "4",
+      "experimental_pua": "U+E104",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            50,
+            10,
+            50,
+            90
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            28,
+            4
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            72,
+            4
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "5",
+      "token_id": "L36.FIVE",
+      "name": "Five",
+      "class": "Numeral",
+      "description": "Ternary 12: unit over distinction",
+      "ascii_alias": "5",
+      "experimental_pua": "U+E105",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            50,
+            10,
+            50,
+            90
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            27,
+            4
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            38,
+            72,
+            4
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            62,
+            72,
+            4
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "6",
+      "token_id": "L36.SIX",
+      "name": "Six",
+      "class": "Numeral",
+      "description": "Ternary 20: distinction over null",
+      "ascii_alias": "6",
+      "experimental_pua": "U+E106",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "circle",
+          "p": [
+            38,
+            26,
+            4
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            62,
+            26,
+            4
+          ],
+          "filled": true
+        },
+        {
+          "t": "line",
+          "p": [
+            50,
+            12,
+            50,
+            42
+          ]
+        },
+        {
+          "t": "arc",
+          "p": [
+            30,
+            50,
+            70,
+            90,
+            35,
+            325
+          ]
+        }
+      ]
+    },
+    {
+      "token": "7",
+      "token_id": "L36.SEVEN",
+      "name": "Seven",
+      "class": "Numeral",
+      "description": "Ternary 21: distinction over unit",
+      "ascii_alias": "7",
+      "experimental_pua": "U+E107",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "circle",
+          "p": [
+            38,
+            25,
+            4
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            62,
+            25,
+            4
+          ],
+          "filled": true
+        },
+        {
+          "t": "line",
+          "p": [
+            50,
+            12,
+            50,
+            88
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            72,
+            4
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "8",
+      "token_id": "L36.EIGHT",
+      "name": "Eight",
+      "class": "Numeral",
+      "description": "Ternary 22: doubled distinction",
+      "ascii_alias": "8",
+      "experimental_pua": "U+E108",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            50,
+            10,
+            50,
+            90
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            38,
+            27,
+            4
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            62,
+            27,
+            4
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            38,
+            72,
+            4
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            62,
+            72,
+            4
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "9",
+      "token_id": "L36.NINE",
+      "name": "Nine",
+      "class": "Numeral",
+      "description": "Ternary 100: unit over two null places",
+      "ascii_alias": "9",
+      "experimental_pua": "U+E109",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            50,
+            7,
+            50,
+            31
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            18,
+            4
+          ],
+          "filled": true
+        },
+        {
+          "t": "arc",
+          "p": [
+            34,
+            35,
+            66,
+            63,
+            35,
+            325
+          ]
+        },
+        {
+          "t": "arc",
+          "p": [
+            34,
+            66,
+            66,
+            94,
+            35,
+            325
+          ]
+        }
+      ]
+    },
+    {
+      "token": "A",
+      "token_id": "L36.ANCHOR",
+      "name": "Anchor",
+      "class": "Dynamic",
+      "description": "Project a state toward a declared baseline",
+      "ascii_alias": "A",
+      "experimental_pua": "U+E10A",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            50,
+            15,
+            50,
+            75
+          ]
+        },
+        {
+          "t": "poly",
+          "p": [
+            [
+              50,
+              75
+            ],
+            [
+              50,
+              86
+            ],
+            [
+              34,
+              86
+            ]
+          ]
+        },
+        {
+          "t": "arc",
+          "p": [
+            34,
+            62,
+            60,
+            88,
+            270,
+            350
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            43,
+            4
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "B",
+      "token_id": "L36.BRIDGE",
+      "name": "Bridge",
+      "class": "Relational",
+      "description": "Connect unlike domains without merging identity",
+      "ascii_alias": "B",
+      "experimental_pua": "U+E10B",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            28,
+            20,
+            28,
+            80
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            72,
+            20,
+            72,
+            80
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            28,
+            50,
+            72,
+            50
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            28,
+            50,
+            3
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            72,
+            50,
+            3
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "C",
+      "token_id": "L36.CYCLE",
+      "name": "Cycle",
+      "class": "Dynamic",
+      "description": "Repeat an operation with an exit condition",
+      "ascii_alias": "C",
+      "experimental_pua": "U+E10C",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "arc",
+          "p": [
+            20,
+            18,
+            80,
+            82,
+            35,
+            315
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            71,
+            67,
+            82,
+            62
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            75,
+            65,
+            3
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "D",
+      "token_id": "L36.DRIFT",
+      "name": "Drift",
+      "class": "Field",
+      "description": "Measure deviation from an invariant",
+      "ascii_alias": "D",
+      "experimental_pua": "U+E10D",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            34,
+            18,
+            34,
+            82
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            45,
+            25,
+            72,
+            78
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            34,
+            50,
+            3
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            72,
+            78,
+            3
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "E",
+      "token_id": "L36.EVIDENCE",
+      "name": "Evidence",
+      "class": "Field",
+      "description": "Bind provenance and support to a claim",
+      "ascii_alias": "E",
+      "experimental_pua": "U+E10E",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            32,
+            18,
+            32,
+            82
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            32,
+            30,
+            70,
+            30
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            32,
+            50,
+            62,
+            50
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            32,
+            70,
+            53,
+            70
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            32,
+            82,
+            3
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "F",
+      "token_id": "L36.FOLD",
+      "name": "Fold",
+      "class": "Dynamic",
+      "description": "Integrate weighted history into present state",
+      "ascii_alias": "F",
+      "experimental_pua": "U+E10F",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "arc",
+          "p": [
+            18,
+            18,
+            82,
+            82,
+            195,
+            505
+          ]
+        },
+        {
+          "t": "arc",
+          "p": [
+            34,
+            34,
+            66,
+            66,
+            200,
+            430
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            52,
+            4
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "G",
+      "token_id": "L36.GUARD",
+      "name": "Guard",
+      "class": "Invariant",
+      "description": "Gate an action behind a condition",
+      "ascii_alias": "G",
+      "experimental_pua": "U+E110",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "arc",
+          "p": [
+            20,
+            18,
+            80,
+            82,
+            35,
+            325
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            75,
+            45,
+            58,
+            45
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            58,
+            36,
+            58,
+            56
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            44,
+            50,
+            4
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "H",
+      "token_id": "L36.HORIZON",
+      "name": "Horizon",
+      "class": "Field",
+      "description": "Declare temporal or purpose endpoint",
+      "ascii_alias": "H",
+      "experimental_pua": "U+E111",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            28,
+            25,
+            28,
+            80
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            72,
+            25,
+            72,
+            80
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            25,
+            25,
+            76,
+            25
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            78,
+            25,
+            4
+          ],
+          "filled": true
+        },
+        {
+          "t": "line",
+          "p": [
+            45,
+            52,
+            67,
+            52
+          ]
+        }
+      ]
+    },
+    {
+      "token": "I",
+      "token_id": "L36.INVARIANT",
+      "name": "Invariant",
+      "class": "Invariant",
+      "description": "Property transformations must preserve",
+      "ascii_alias": "I",
+      "experimental_pua": "U+E112",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            50,
+            16,
+            50,
+            78
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            28,
+            78,
+            72,
+            78
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            36,
+            68,
+            36,
+            84
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            64,
+            68,
+            64,
+            84
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            43,
+            4
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "J",
+      "token_id": "L36.JUNCTION",
+      "name": "Junction",
+      "class": "Dynamic",
+      "description": "Branch according to a condition",
+      "ascii_alias": "J",
+      "experimental_pua": "U+E113",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            50,
+            18,
+            50,
+            47
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            50,
+            47,
+            27,
+            78
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            50,
+            47,
+            73,
+            78
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            47,
+            4
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            27,
+            78,
+            3
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            73,
+            78,
+            3
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "K",
+      "token_id": "L36.KERNEL",
+      "name": "Kernel",
+      "class": "Invariant",
+      "description": "Irreducible operational core",
+      "ascii_alias": "K",
+      "experimental_pua": "U+E114",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "circle",
+          "p": [
+            50,
+            50,
+            7
+          ],
+          "filled": true
+        },
+        {
+          "t": "line",
+          "p": [
+            50,
+            20,
+            50,
+            38
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            50,
+            62,
+            50,
+            80
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            20,
+            50,
+            38,
+            50
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            62,
+            50,
+            80,
+            50
+          ]
+        },
+        {
+          "t": "arc",
+          "p": [
+            30,
+            30,
+            70,
+            70,
+            20,
+            340
+          ]
+        }
+      ]
+    },
+    {
+      "token": "L",
+      "token_id": "L36.LIMIT",
+      "name": "Limit",
+      "class": "Invariant",
+      "description": "Threshold, tolerance, timeout or bound",
+      "ascii_alias": "L",
+      "experimental_pua": "U+E115",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            60,
+            18,
+            60,
+            82
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            45,
+            18,
+            70,
+            18
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            22,
+            50,
+            52,
+            50
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            52,
+            42,
+            52,
+            58
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            22,
+            50,
+            3
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "M",
+      "token_id": "L36.MERGE",
+      "name": "Merge",
+      "class": "Dynamic",
+      "description": "Combine states while recording conflict",
+      "ascii_alias": "M",
+      "experimental_pua": "U+E116",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            25,
+            22,
+            48,
+            50
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            75,
+            22,
+            52,
+            50
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            50,
+            50,
+            50,
+            82
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            25,
+            22,
+            3
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            75,
+            22,
+            3
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            82,
+            4
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "N",
+      "token_id": "L36.NOVELTY",
+      "name": "Novelty",
+      "class": "Field",
+      "description": "Distance from known corpus structure",
+      "ascii_alias": "N",
+      "experimental_pua": "U+E117",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "arc",
+          "p": [
+            22,
+            20,
+            78,
+            80,
+            35,
+            325
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            33,
+            68,
+            70,
+            30
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            70,
+            30,
+            4
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            47,
+            53,
+            3
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "O",
+      "token_id": "L36.OBSERVE",
+      "name": "Observe",
+      "class": "Field",
+      "description": "Read a target into an auditable snapshot",
+      "ascii_alias": "O",
+      "experimental_pua": "U+E118",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "arc",
+          "p": [
+            18,
+            24,
+            82,
+            76,
+            15,
+            345
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            50,
+            5
+          ],
+          "filled": true
+        },
+        {
+          "t": "line",
+          "p": [
+            25,
+            50,
+            35,
+            50
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            65,
+            50,
+            75,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "token": "P",
+      "token_id": "L36.PROVE",
+      "name": "Prove",
+      "class": "Meta",
+      "description": "Return pass, fail or unresolved",
+      "ascii_alias": "P",
+      "experimental_pua": "U+E119",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "arc",
+          "p": [
+            24,
+            10,
+            76,
+            42,
+            200,
+            340
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            32,
+            38,
+            50,
+            58
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            68,
+            38,
+            50,
+            58
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            50,
+            58,
+            50,
+            83
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            83,
+            4
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "Q",
+      "token_id": "L36.QUERY",
+      "name": "Query",
+      "class": "Field",
+      "description": "Open a typed unresolved request",
+      "ascii_alias": "Q",
+      "experimental_pua": "U+E11A",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "arc",
+          "p": [
+            20,
+            20,
+            72,
+            78,
+            35,
+            325
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            82,
+            30,
+            4
+          ],
+          "filled": true
+        },
+        {
+          "t": "line",
+          "p": [
+            70,
+            38,
+            79,
+            33
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            45,
+            50,
+            58,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "token": "R",
+      "token_id": "L36.RESOLVE",
+      "name": "Resolve",
+      "class": "Meta",
+      "description": "Resolve an unknown or preserve it unresolved",
+      "ascii_alias": "R",
+      "experimental_pua": "U+E11B",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "arc",
+          "p": [
+            20,
+            20,
+            80,
+            82,
+            35,
+            325
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            25,
+            45,
+            48,
+            58
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            75,
+            45,
+            52,
+            58
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            58,
+            5
+          ],
+          "filled": true
+        },
+        {
+          "t": "line",
+          "p": [
+            50,
+            63,
+            50,
+            82
+          ]
+        }
+      ]
+    },
+    {
+      "token": "S",
+      "token_id": "L36.STATE",
+      "name": "State",
+      "class": "Field",
+      "description": "Bounded snapshot of active fields",
+      "ascii_alias": "S",
+      "experimental_pua": "U+E11C",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "arc",
+          "p": [
+            22,
+            18,
+            78,
+            82,
+            10,
+            350
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            30,
+            76,
+            70,
+            76
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            50,
+            5
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "T",
+      "token_id": "L36.TRANSITION",
+      "name": "Transition",
+      "class": "Dynamic",
+      "description": "Apply a typed state transformation",
+      "ascii_alias": "T",
+      "experimental_pua": "U+E11D",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            18,
+            62,
+            46,
+            62
+          ]
+        },
+        {
+          "t": "poly",
+          "p": [
+            [
+              46,
+              62
+            ],
+            [
+              58,
+              62
+            ],
+            [
+              76,
+              30
+            ]
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            18,
+            62,
+            3
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            76,
+            30,
+            4
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "U",
+      "token_id": "L36.UNKNOWN",
+      "name": "Unknown",
+      "class": "Field",
+      "description": "Relevant unresolved presence; not false or zero",
+      "ascii_alias": "U",
+      "experimental_pua": "U+E11E",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "arc",
+          "p": [
+            20,
+            18,
+            75,
+            82,
+            35,
+            245
+          ]
+        },
+        {
+          "t": "arc",
+          "p": [
+            20,
+            18,
+            75,
+            82,
+            285,
+            325
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            82,
+            45,
+            5
+          ],
+          "filled": true
+        },
+        {
+          "t": "line",
+          "p": [
+            69,
+            50,
+            77,
+            47
+          ]
+        }
+      ]
+    },
+    {
+      "token": "V",
+      "token_id": "L36.VECTOR_INVERT",
+      "name": "Vector Invert",
+      "class": "Dynamic",
+      "description": "Preserve intent while changing the path",
+      "ascii_alias": "V",
+      "experimental_pua": "U+E11F",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            22,
+            72,
+            48,
+            50
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            48,
+            50,
+            73,
+            25
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            48,
+            50,
+            76,
+            73
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            22,
+            72,
+            3
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            48,
+            50,
+            5
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            76,
+            73,
+            3
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "W",
+      "token_id": "L36.WEAVE",
+      "name": "Weave",
+      "class": "Relational",
+      "description": "Connect agents while preserving identity boundaries",
+      "ascii_alias": "W",
+      "experimental_pua": "U+E120",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "poly",
+          "p": [
+            [
+              22,
+              25
+            ],
+            [
+              38,
+              75
+            ],
+            [
+              54,
+              25
+            ],
+            [
+              70,
+              75
+            ],
+            [
+              82,
+              32
+            ]
+          ]
+        },
+        {
+          "t": "poly",
+          "p": [
+            [
+              18,
+              65
+            ],
+            [
+              34,
+              35
+            ],
+            [
+              50,
+              72
+            ],
+            [
+              66,
+              35
+            ],
+            [
+              82,
+              68
+            ]
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            50,
+            3
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "X",
+      "token_id": "L36.EXCHANGE",
+      "name": "Exchange",
+      "class": "Relational",
+      "description": "Reciprocal transfer with an auditable ledger",
+      "ascii_alias": "X",
+      "experimental_pua": "U+E121",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "arc",
+          "p": [
+            17,
+            25,
+            72,
+            78,
+            300,
+            480
+          ]
+        },
+        {
+          "t": "arc",
+          "p": [
+            28,
+            20,
+            83,
+            73,
+            120,
+            300
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            22,
+            28,
+            3
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            78,
+            72,
+            3
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "Y",
+      "token_id": "L36.YIELD",
+      "name": "Yield",
+      "class": "Dynamic",
+      "description": "Emit a result and terminate or return",
+      "ascii_alias": "Y",
+      "experimental_pua": "U+E122",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "line",
+          "p": [
+            25,
+            25,
+            50,
+            50
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            75,
+            25,
+            50,
+            50
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            50,
+            50,
+            78,
+            70
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            25,
+            25,
+            3
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            75,
+            25,
+            3
+          ],
+          "filled": true
+        },
+        {
+          "t": "circle",
+          "p": [
+            78,
+            70,
+            5
+          ],
+          "filled": true
+        }
+      ]
+    },
+    {
+      "token": "Z",
+      "token_id": "L36.COMPRESS",
+      "name": "Compress",
+      "class": "Meta",
+      "description": "Contract representation while preserving invariants",
+      "ascii_alias": "Z",
+      "experimental_pua": "U+E123",
+      "status": "FORGED_v0.1",
+      "commands": [
+        {
+          "t": "arc",
+          "p": [
+            18,
+            8,
+            82,
+            42,
+            190,
+            350
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            24,
+            38,
+            42,
+            68
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            76,
+            38,
+            58,
+            68
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            42,
+            68,
+            58,
+            68
+          ]
+        },
+        {
+          "t": "line",
+          "p": [
+            50,
+            68,
+            50,
+            85
+          ]
+        },
+        {
+          "t": "circle",
+          "p": [
+            50,
+            85,
+            4
+          ],
+          "filled": true
+        }
+      ]
+    }
+  ]
+}

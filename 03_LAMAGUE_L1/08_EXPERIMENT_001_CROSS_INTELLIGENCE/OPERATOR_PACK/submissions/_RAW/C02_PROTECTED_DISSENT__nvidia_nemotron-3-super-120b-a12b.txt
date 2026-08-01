@@ -1,0 +1,43 @@
+{
+  "case_id": "C02_PROTECTED_DISSENT",
+  "decoder_id": "nvidia/nemotron-3-super-120b-a12b",
+  "purpose": "Coordinate divergent positions (publish now vs test first) while preserving attribution and proposing an alternative staged release without merging into consensus.",
+  "claim": "Both positions remain attributable while an alternative staged release is proposed.",
+  "operation_path": [
+    "W",
+    "U",
+    "G",
+    "V",
+    "Y"
+  ],
+  "invariants": [
+    "Attribution of each position is preserved."
+  ],
+  "unknowns": [
+    "Whether the staged release proposal will be adopted."
+  ],
+  "authority": [],
+  "participants": [
+    "Human publisher",
+    "AI collaborator"
+  ],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [
+    {
+      "agent": "Human publisher",
+      "position": "Publish now"
+    },
+    {
+      "agent": "AI collaborator",
+      "position": "Test first"
+    }
+  ],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "",
+  "notes": "Fields authority, evidence, provenance, value_ledger, consequences, consequence_horizon, recovery, and confidence lack explicit information in the source statement and are therefore left empty."
+}

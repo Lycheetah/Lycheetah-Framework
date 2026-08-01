@@ -1,0 +1,9 @@
+{
+  "experiment_id": "LAMAGUE-EXP-001",
+  "case_id": "C02_PROTECTED_DISSENT",
+  "title": "Coordination without consensus",
+  "source_expression": "W -> U -> G -> V -> Y",
+  "source_text": "A human wants to publish now. An AI collaborator recommends testing first. Both positions remain attributable while an alternative staged release is proposed.",
+  "instructions": "Do not merge the disagreement into consensus.",
+  "required_output_schema": "decoder_packet.schema.json"
+}

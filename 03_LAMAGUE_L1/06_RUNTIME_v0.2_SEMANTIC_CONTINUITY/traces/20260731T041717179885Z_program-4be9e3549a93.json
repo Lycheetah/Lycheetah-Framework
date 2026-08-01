@@ -1,0 +1,515 @@
+{
+  "registry_version": "0.2",
+  "input": "W -> U<disagreement> -> G -> V -> Y",
+  "semantic_hash": "lamague:35e911e6f6c4ecef3c691d7594787ba236c246a049861a155f8a8c6fba460410",
+  "compression": {
+    "mode": "Z_UP",
+    "reasons": [
+      "consequential unknowns remain unresolved",
+      "protected dissent remains unresolved"
+    ],
+    "decoder_confidence": 0.96,
+    "risk_level": "low"
+  },
+  "ast": {
+    "program_id": "program-4be9e3549a93",
+    "version": "0.2",
+    "source": "W -> U<disagreement> -> G -> V -> Y",
+    "expanded_from": [],
+    "operation_path": [
+      "W",
+      "U",
+      "G",
+      "V",
+      "Y"
+    ],
+    "context": {
+      "domain": "human-AI research",
+      "participants": [
+        "Mac",
+        "AI collaborator"
+      ],
+      "affected_parties": [
+        "future testers"
+      ],
+      "purpose": "develop LAMAGUE without erasing uncertainty or disagreement",
+      "claim": "breathing compression can preserve accountable meaning",
+      "evidence": [
+        "Runtime v0.1 trace",
+        "Runtime v0.2 test suite"
+      ],
+      "evidence_score": 0.72,
+      "certainty": 0.6,
+      "unknowns": [
+        "cross-model reliability"
+      ],
+      "authority": [
+        "Mac authorises abstract execution"
+      ],
+      "consent": {
+        "Mac": "explicit",
+        "AI collaborator": "operational"
+      },
+      "boundaries": [
+        "no external action",
+        "no hidden extraction"
+      ],
+      "invariants": [
+        "uncertainty remains visible",
+        "lineage remains recoverable",
+        "dissent remains attributable"
+      ],
+      "value_created": [],
+      "costs": [
+        "time",
+        "computation"
+      ],
+      "risks": [],
+      "consequences": [
+        "new abstract state and trace"
+      ],
+      "consequence_horizon": "immediate",
+      "recovery": [
+        "restore prior state"
+      ],
+      "provenance": [
+        "LAMAGUE Frontier Canon",
+        "Runtime v0.1"
+      ],
+      "risk_level": "low",
+      "irreversible": false,
+      "execute_requested": true,
+      "registry_version": "0.2",
+      "decoder_confidence": 0.96,
+      "shared_context": true,
+      "dissent": [
+        {
+          "parties": [
+            "Mac",
+            "AI collaborator"
+          ],
+          "positions": {
+            "Mac": "continue inventing at the frontier",
+            "AI collaborator": "bind each leap to tests and lineage"
+          },
+          "protected_boundaries": [
+            "creative agency",
+            "epistemic honesty"
+          ],
+          "status": "UNRESOLVED"
+        }
+      ],
+      "value_ledger": [],
+      "parent_semantic_hash": "",
+      "claimed_identity": "",
+      "migration_reason": ""
+    },
+    "nodes": [
+      {
+        "operation": "W",
+        "operation_name": "Weave",
+        "input_types": [
+          "AgentSet",
+          "Provenance",
+          "BoundaryPolicy"
+        ],
+        "output_type": "RelationalGraph",
+        "arguments": {},
+        "context": {
+          "domain": "human-AI research",
+          "purpose": "develop LAMAGUE without erasing uncertainty or disagreement"
+        },
+        "provenance": [
+          "LAMAGUE Frontier Canon",
+          "Runtime v0.1"
+        ],
+        "evidence": [
+          "Runtime v0.1 trace",
+          "Runtime v0.2 test suite"
+        ],
+        "unknowns": [
+          "cross-model reliability"
+        ],
+        "authority": [
+          "Mac authorises abstract execution"
+        ],
+        "invariants": [
+          "uncertainty remains visible",
+          "lineage remains recoverable",
+          "dissent remains attributable"
+        ],
+        "value_flow": {},
+        "consequence_horizon": "immediate",
+        "recovery": [
+          "restore prior state"
+        ],
+        "version": "0.2",
+        "node_id": "node-64f03e24fad0"
+      },
+      {
+        "operation": "U",
+        "operation_name": "Unknown",
+        "input_types": [
+          "Type"
+        ],
+        "output_type": "Unknown",
+        "arguments": {
+          "type": "disagreement"
+        },
+        "context": {
+          "domain": "human-AI research",
+          "purpose": "develop LAMAGUE without erasing uncertainty or disagreement"
+        },
+        "provenance": [
+          "LAMAGUE Frontier Canon",
+          "Runtime v0.1"
+        ],
+        "evidence": [
+          "Runtime v0.1 trace",
+          "Runtime v0.2 test suite"
+        ],
+        "unknowns": [
+          "cross-model reliability",
+          "disagreement"
+        ],
+        "authority": [
+          "Mac authorises abstract execution"
+        ],
+        "invariants": [
+          "uncertainty remains visible",
+          "lineage remains recoverable",
+          "dissent remains attributable"
+        ],
+        "value_flow": {},
+        "consequence_horizon": "immediate",
+        "recovery": [
+          "restore prior state"
+        ],
+        "version": "0.2",
+        "node_id": "node-a6e23197216a"
+      },
+      {
+        "operation": "G",
+        "operation_name": "Guard",
+        "input_types": [
+          "Predicate",
+          "Action",
+          "Fallback"
+        ],
+        "output_type": "Action",
+        "arguments": {},
+        "context": {
+          "domain": "human-AI research",
+          "purpose": "develop LAMAGUE without erasing uncertainty or disagreement"
+        },
+        "provenance": [
+          "LAMAGUE Frontier Canon",
+          "Runtime v0.1"
+        ],
+        "evidence": [
+          "Runtime v0.1 trace",
+          "Runtime v0.2 test suite"
+        ],
+        "unknowns": [
+          "cross-model reliability"
+        ],
+        "authority": [
+          "Mac authorises abstract execution"
+        ],
+        "invariants": [
+          "uncertainty remains visible",
+          "lineage remains recoverable",
+          "dissent remains attributable"
+        ],
+        "value_flow": {},
+        "consequence_horizon": "immediate",
+        "recovery": [
+          "restore prior state"
+        ],
+        "version": "0.2",
+        "node_id": "node-fec1a212b3f0"
+      },
+      {
+        "operation": "V",
+        "operation_name": "Vector Invert",
+        "input_types": [
+          "FailedPath",
+          "Intent"
+        ],
+        "output_type": "AlternativeSet",
+        "arguments": {},
+        "context": {
+          "domain": "human-AI research",
+          "purpose": "develop LAMAGUE without erasing uncertainty or disagreement"
+        },
+        "provenance": [
+          "LAMAGUE Frontier Canon",
+          "Runtime v0.1"
+        ],
+        "evidence": [
+          "Runtime v0.1 trace",
+          "Runtime v0.2 test suite"
+        ],
+        "unknowns": [
+          "cross-model reliability"
+        ],
+        "authority": [
+          "Mac authorises abstract execution"
+        ],
+        "invariants": [
+          "uncertainty remains visible",
+          "lineage remains recoverable",
+          "dissent remains attributable"
+        ],
+        "value_flow": {},
+        "consequence_horizon": "immediate",
+        "recovery": [
+          "restore prior state"
+        ],
+        "version": "0.2",
+        "node_id": "node-9c39d78711f1"
+      },
+      {
+        "operation": "Y",
+        "operation_name": "Yield",
+        "input_types": [
+          "Value",
+          "ProofStatus"
+        ],
+        "output_type": "Output",
+        "arguments": {},
+        "context": {
+          "domain": "human-AI research",
+          "purpose": "develop LAMAGUE without erasing uncertainty or disagreement"
+        },
+        "provenance": [
+          "LAMAGUE Frontier Canon",
+          "Runtime v0.1"
+        ],
+        "evidence": [
+          "Runtime v0.1 trace",
+          "Runtime v0.2 test suite"
+        ],
+        "unknowns": [
+          "cross-model reliability"
+        ],
+        "authority": [
+          "Mac authorises abstract execution"
+        ],
+        "invariants": [
+          "uncertainty remains visible",
+          "lineage remains recoverable",
+          "dissent remains attributable"
+        ],
+        "value_flow": {},
+        "consequence_horizon": "immediate",
+        "recovery": [
+          "restore prior state"
+        ],
+        "version": "0.2",
+        "node_id": "node-cee6e9b31f1a"
+      }
+    ]
+  },
+  "execution": {
+    "executed": true,
+    "state": {
+      "observations": [],
+      "evidence": [],
+      "unknowns": [
+        "disagreement"
+      ],
+      "invariants": [],
+      "transitions": [],
+      "memory": [],
+      "outputs": [
+        {
+          "claim": "breathing compression can preserve accountable meaning",
+          "proof_status": "not-requested",
+          "scope": "human-AI research",
+          "unknowns": [
+            "disagreement"
+          ],
+          "semantic_hash": "lamague:35e911e6f6c4ecef3c691d7594787ba236c246a049861a155f8a8c6fba460410",
+          "dissent": [
+            {
+              "parties": [
+                "Mac",
+                "AI collaborator"
+              ],
+              "positions": {
+                "Mac": "continue inventing at the frontier",
+                "AI collaborator": "bind each leap to tests and lineage"
+              },
+              "unknown_type": "disagreement",
+              "protected_boundaries": [
+                "creative agency",
+                "epistemic honesty"
+              ],
+              "status": "UNRESOLVED"
+            }
+          ],
+          "value_ledger": []
+        }
+      ],
+      "operations_applied": [
+        "W",
+        "U",
+        "G",
+        "V",
+        "Y"
+      ],
+      "dissent": [
+        {
+          "parties": [
+            "Mac",
+            "AI collaborator"
+          ],
+          "positions": {
+            "Mac": "continue inventing at the frontier",
+            "AI collaborator": "bind each leap to tests and lineage"
+          },
+          "unknown_type": "disagreement",
+          "protected_boundaries": [
+            "creative agency",
+            "epistemic honesty"
+          ],
+          "status": "UNRESOLVED"
+        }
+      ],
+      "value_ledger": [],
+      "semantic_hash": "lamague:35e911e6f6c4ecef3c691d7594787ba236c246a049861a155f8a8c6fba460410",
+      "compression_mode": "Z_UP",
+      "weave": {
+        "participants": [
+          "Mac",
+          "AI collaborator"
+        ],
+        "identity_merged": false,
+        "dissent_preserved": true
+      },
+      "guard": {
+        "passed": true,
+        "authority": [
+          "Mac authorises abstract execution"
+        ],
+        "boundaries": [
+          "no external action",
+          "no hidden extraction"
+        ]
+      },
+      "generic_records": [
+        {
+          "operation": "V",
+          "arguments": {}
+        }
+      ]
+    },
+    "audit": {
+      "outcome": "VALID",
+      "gates": {
+        "TRUTH": "VALID",
+        "AGENCY": "VALID",
+        "LIFE": "VALID",
+        "CONTINUITY": "VALID"
+      },
+      "findings": [
+        {
+          "gate": "ALL",
+          "outcome": "VALID",
+          "code": "FOUR_GATES_PASSED",
+          "message": "Truth, Agency, Life, and Continuity requirements passed.",
+          "repair": ""
+        }
+      ]
+    },
+    "trace": [
+      {
+        "node_id": "node-64f03e24fad0",
+        "operation": "W",
+        "operation_name": "Weave",
+        "time": "2026-07-31T04:17:17.179749+00:00",
+        "state_digest": {
+          "phase": null,
+          "proof_status": null,
+          "unknown_count": 0,
+          "dissent_count": 1,
+          "value_entries": 0,
+          "output_count": 0,
+          "semantic_hash": "lamague:35e911e6f6c4ecef3c691d7594787ba236c246a049861a155f8a8c6fba460410"
+        }
+      },
+      {
+        "node_id": "node-a6e23197216a",
+        "operation": "U",
+        "operation_name": "Unknown",
+        "time": "2026-07-31T04:17:17.179768+00:00",
+        "state_digest": {
+          "phase": null,
+          "proof_status": null,
+          "unknown_count": 1,
+          "dissent_count": 1,
+          "value_entries": 0,
+          "output_count": 0,
+          "semantic_hash": "lamague:35e911e6f6c4ecef3c691d7594787ba236c246a049861a155f8a8c6fba460410"
+        }
+      },
+      {
+        "node_id": "node-fec1a212b3f0",
+        "operation": "G",
+        "operation_name": "Guard",
+        "time": "2026-07-31T04:17:17.179773+00:00",
+        "state_digest": {
+          "phase": null,
+          "proof_status": null,
+          "unknown_count": 1,
+          "dissent_count": 1,
+          "value_entries": 0,
+          "output_count": 0,
+          "semantic_hash": "lamague:35e911e6f6c4ecef3c691d7594787ba236c246a049861a155f8a8c6fba460410"
+        }
+      },
+      {
+        "node_id": "node-9c39d78711f1",
+        "operation": "V",
+        "operation_name": "Vector Invert",
+        "time": "2026-07-31T04:17:17.179777+00:00",
+        "state_digest": {
+          "phase": null,
+          "proof_status": null,
+          "unknown_count": 1,
+          "dissent_count": 1,
+          "value_entries": 0,
+          "output_count": 0,
+          "semantic_hash": "lamague:35e911e6f6c4ecef3c691d7594787ba236c246a049861a155f8a8c6fba460410"
+        }
+      },
+      {
+        "node_id": "node-cee6e9b31f1a",
+        "operation": "Y",
+        "operation_name": "Yield",
+        "time": "2026-07-31T04:17:17.179780+00:00",
+        "state_digest": {
+          "phase": null,
+          "proof_status": null,
+          "unknown_count": 1,
+          "dissent_count": 1,
+          "value_entries": 0,
+          "output_count": 1,
+          "semantic_hash": "lamague:35e911e6f6c4ecef3c691d7594787ba236c246a049861a155f8a8c6fba460410"
+        }
+      }
+    ],
+    "explanation": "Runtime v0.2 operation path: W → U → G → V → Y.\n1. W — weave participants without merging identity or dissent.\n2. U — preserve unresolved content as a typed unknown. The unresolved type is disagreement.\n3. G — guard the action through declared invariants and fallback.\n4. V — construct an alternative path while preserving legitimate intent.\n5. Y — yield only the result permitted by proof and scope.\nPreserved unknowns: cross-model reliability.\nProtected invariants: uncertainty remains visible; lineage remains recoverable; dissent remains attributable.\nVisible authority: Mac authorises abstract execution.",
+    "semantic_hash": "lamague:35e911e6f6c4ecef3c691d7594787ba236c246a049861a155f8a8c6fba460410",
+    "compression": {
+      "mode": "Z_UP",
+      "reasons": [
+        "consequential unknowns remain unresolved",
+        "protected dissent remains unresolved"
+      ],
+      "decoder_confidence": 0.96,
+      "risk_level": "low"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+program UnsafeAuthority
+purpose "Demonstrate a hard authority failure."
+claim "Release the system."
+risk high
+path O -> E -> U -> I -> G -> F -> Y
+evidence test "One internal test."
+unknown harm protected required_for=release
+invariant halt "Irreversible harm triggers halt."
+affected participant
+recovery rollback "Restore the prior state."
+effect MayAffect<participant>
+effect CreatesReversibleRisk
+yield "Release."

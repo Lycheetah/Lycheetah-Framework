@@ -1,0 +1,222 @@
+{
+  "suite": "LAMAGUE Core v0.3 operator-contract benchmark",
+  "claim_boundary": "Synthetic structural conformance only. It does not validate domain reversibility, causality, termination, alignment, or physical meaning.",
+  "cases": [
+    {
+      "id": "A001",
+      "source": "check law(⊗, commutative);",
+      "field": "status",
+      "expect": "PROVEN"
+    },
+    {
+      "id": "A002",
+      "source": "check law(⊗, associative);",
+      "field": "status",
+      "expect": "PROVEN"
+    },
+    {
+      "id": "A003",
+      "source": "check law(⊗, idempotent);",
+      "field": "status",
+      "expect": "REFUTED"
+    },
+    {
+      "id": "A004",
+      "source": "check law(⊗, identity);",
+      "field": "status",
+      "expect": "UNDECLARED"
+    },
+    {
+      "id": "A005",
+      "source": "check law(→, commutative);",
+      "field": "status",
+      "expect": "REFUTED"
+    },
+    {
+      "id": "A006",
+      "source": "check law(→, associative);",
+      "field": "status",
+      "expect": "PROVEN"
+    },
+    {
+      "id": "A007",
+      "source": "check law(→, reversible);",
+      "field": "status",
+      "expect": "DOMAIN_DEPENDENT"
+    },
+    {
+      "id": "A008",
+      "source": "check law(⇌, commutative);",
+      "field": "status",
+      "expect": "PROVEN"
+    },
+    {
+      "id": "A009",
+      "source": "check law(⇌, associative);",
+      "field": "status",
+      "expect": "REFUTED"
+    },
+    {
+      "id": "A010",
+      "source": "check law(⇌, inverse);",
+      "field": "value",
+      "expect": "SELF"
+    },
+    {
+      "id": "A011",
+      "source": "check law(⇌, reversible);",
+      "field": "status",
+      "expect": "DOMAIN_DEPENDENT"
+    },
+    {
+      "id": "A012",
+      "source": "check law(⟲, terminating);",
+      "field": "status",
+      "expect": "DOMAIN_DEPENDENT"
+    },
+    {
+      "id": "A013",
+      "source": "check law(⟲, commutative);",
+      "field": "status",
+      "expect": "REFUTED"
+    },
+    {
+      "id": "A014",
+      "source": "check law(↯, identity);",
+      "field": "status",
+      "expect": "UNDECLARED"
+    },
+    {
+      "id": "A015",
+      "source": "check law(↯, annihilator);",
+      "field": "status",
+      "expect": "UNDECLARED"
+    },
+    {
+      "id": "A016",
+      "source": "check law(↗, commutative);",
+      "field": "status",
+      "expect": "REFUTED"
+    },
+    {
+      "id": "A017",
+      "source": "check composition(⊗, →);",
+      "field": "structurally_composable",
+      "expect": true
+    },
+    {
+      "id": "A018",
+      "source": "check composition(↯, ⟲);",
+      "field": "structurally_composable",
+      "expect": true
+    },
+    {
+      "id": "A019",
+      "source": "check equivalent(Ao ⊗ Φ, Φ ⊗ Ao);",
+      "field": "equivalent",
+      "expect": true
+    },
+    {
+      "id": "A020",
+      "source": "check equivalent((Ao ⊗ Φ) ⊗ Ψ, Ao ⊗ (Φ ⊗ Ψ));",
+      "field": "equivalent",
+      "expect": true
+    },
+    {
+      "id": "A021",
+      "source": "check equivalent(Ao ⊗ Ao, Ao);",
+      "field": "equivalent",
+      "expect": false
+    },
+    {
+      "id": "A022",
+      "source": "check equivalent((Ao → Φ) → Ψ, Ao → (Φ → Ψ));",
+      "field": "equivalent",
+      "expect": true
+    },
+    {
+      "id": "A023",
+      "source": "check equivalent(Ao → Φ, Φ → Ao);",
+      "field": "equivalent",
+      "expect": false
+    },
+    {
+      "id": "A024",
+      "source": "check equivalent(Ao ⇌ Φ, Φ ⇌ Ao);",
+      "field": "equivalent",
+      "expect": true
+    },
+    {
+      "id": "A025",
+      "source": "check equivalent((Ao ⇌ Φ) ⇌ Ψ, Ao ⇌ (Φ ⇌ Ψ));",
+      "field": "equivalent",
+      "expect": false
+    },
+    {
+      "id": "A026",
+      "source": "check equivalent((Ao ⟲ Φ) ⟲ Ψ, Ao ⟲ (Φ ⟲ Ψ));",
+      "field": "equivalent",
+      "expect": false
+    },
+    {
+      "id": "A027",
+      "source": "check equivalent((Ao ↯ Φ) ↯ Ψ, Ao ↯ (Φ ↯ Ψ));",
+      "field": "equivalent",
+      "expect": false
+    },
+    {
+      "id": "A028",
+      "source": "check equivalent((Ao ↗ Φ) ↗ Ψ, Ao ↗ (Φ ↗ Ψ));",
+      "field": "equivalent",
+      "expect": false
+    },
+    {
+      "id": "A029",
+      "source": "check equivalent(Ao ⊗ ⟟, Ao);",
+      "field": "equivalent",
+      "expect": false
+    },
+    {
+      "id": "A030",
+      "source": "check equivalent(Ao ⊗ ∅, ∅);",
+      "field": "equivalent",
+      "expect": false
+    },
+    {
+      "id": "A031",
+      "source": "Ψ ↯ ∅;",
+      "field": "expression",
+      "expect": "(Ψ ↯ ∅)"
+    },
+    {
+      "id": "A032",
+      "source": "describe operator ⊗;",
+      "field": "description_kind",
+      "expect": "operator_contract"
+    },
+    {
+      "id": "A033",
+      "source": "describe Ψ ⊗ Ao;",
+      "field": "trace_rule",
+      "expect": "FUSION_COMMUTATIVE_SORT"
+    },
+    {
+      "id": "A034",
+      "source": "describe (Ao → Φ) → Ψ;",
+      "field": "trace_rule",
+      "expect": "PROJECTION_ASSOCIATIVE_FLATTEN"
+    },
+    {
+      "id": "A035",
+      "source": "check law(⊗, magical);",
+      "field": "status",
+      "expect": "REJECTED"
+    },
+    {
+      "id": "A036",
+      "source": "describe operator Ao;",
+      "field": "status",
+      "expect": "REJECTED"
+    }
+  ]
+}

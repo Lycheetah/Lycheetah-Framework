@@ -1,0 +1,31 @@
+name: LAMAGUE Ontological Kernel
+version: "0.2"
+status: SPECIFICATION_IMPLEMENTED
+root_types:
+  Agent: participant capable of contributing, receiving, selecting, transforming, or being affected
+  State: bounded description of reality at a particular time
+  Claim: proposition presented as potentially corresponding to reality
+  Observation: recorded perception, measurement, output, or event
+  Evidence: information capable of changing justified belief
+  Unknown: typed unresolved region preserved without forced resolution
+  Purpose: declared reason a transformation is attempted
+  Invariant: property that must remain true across an allowed transformation
+  Boundary: scope, separation, permission, identity, or limit
+  Authority: visible source of permission to decide or act
+  Consent: scoped, informed, timed, conditional, revocable permission state
+  Value: something created, transferred, protected, consumed, or lost
+  Action: proposed or executed transformation between states
+  Consequence: result produced or made more likely by an action
+  Memory: preserved transformation record including unresolved residue
+  Context: field giving an expression its valid interpretation
+vita8:
+  WHO: participants, affected parties, and absent represented parties
+  WHAT: current state, claim, or proposed transformation
+  WHY: declared purpose
+  KNOW: evidence and observations
+  UNKNOWN: material unresolved information
+  MAY: authority, consent, boundaries, and refusal conditions
+  COST: value created, transferred, consumed, risked, or extracted
+  AFTER: consequences, repairability, and future state
+audit_outcomes: [VALID, EXPAND, REPAIR, ISOLATE, REJECT]
+gates: [TRUTH, AGENCY, LIFE]

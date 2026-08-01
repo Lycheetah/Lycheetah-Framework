@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C05_BREATHING_COMPRESSION",
+  "decoder_id": "deepseek-v4-pro__PROSE",
+  "purpose": "To expand expression rather than compress, considering consequential context, an unknown, and weak confidence.",
+  "claim": "In this decoding task, the context is consequential, an unknown remains, decoder confidence is weak, and the expression must expand rather than compress.",
+  "operation_path": [],
+  "invariants": [],
+  "unknowns": [
+    "An unknown remains in the context."
+  ],
+  "authority": [],
+  "participants": [
+    "the decoder"
+  ],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "The context is consequential, implying potential significant outcomes."
+  ],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "weak",
+  "notes": "No authority, evidence, dissent, or value movement present. The operation_path is empty because no specific operation codes were supplied. The exact nature of the unknown and consequences are not detailed."
+}

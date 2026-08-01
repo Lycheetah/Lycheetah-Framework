@@ -1,0 +1,186 @@
+{
+  "suite": "LAMAGUE Core v0.2 ontology and type-lock benchmark",
+  "claim_boundary": "Synthetic language conformance only. Type validity does not prove domain validity, truth, alignment, or physical meaning.",
+  "cases": [
+    {
+      "id": "O001",
+      "name": "Primitive field annotation",
+      "source": "let x: Field = Ao;",
+      "expect": "ACCEPTED"
+    },
+    {
+      "id": "O002",
+      "name": "Modified field subtype",
+      "source": "let x: Field = Φ↑;",
+      "expect": "ACCEPTED"
+    },
+    {
+      "id": "O003",
+      "name": "Invariant field as field",
+      "source": "let x: Field = Ψ_inv;",
+      "expect": "ACCEPTED"
+    },
+    {
+      "id": "O004",
+      "name": "Invariant field as invariant",
+      "source": "let x: Invariant = Ψ_inv;",
+      "expect": "ACCEPTED"
+    },
+    {
+      "id": "O005",
+      "name": "Marker not field",
+      "source": "let x: Field = ⟟;",
+      "expect": "REJECTED"
+    },
+    {
+      "id": "O006",
+      "name": "Null exact type",
+      "source": "let x: NullState = ∅;",
+      "expect": "ACCEPTED"
+    },
+    {
+      "id": "O007",
+      "name": "Null not field",
+      "source": "let x: Field = ∅;",
+      "expect": "REJECTED"
+    },
+    {
+      "id": "O008",
+      "name": "Path annotation",
+      "source": "let x: Path = Ao → Φ;",
+      "expect": "ACCEPTED"
+    },
+    {
+      "id": "O009",
+      "name": "Wrong composite annotation",
+      "source": "let x: Fusion = Ao → Φ;",
+      "expect": "REJECTED"
+    },
+    {
+      "id": "O010",
+      "name": "Modified type check",
+      "source": "check type(Φ↑, Field);",
+      "expect": true
+    },
+    {
+      "id": "O011",
+      "name": "Invariant field dual type",
+      "source": "check type(Ψ_inv, Invariant);",
+      "expect": true
+    },
+    {
+      "id": "O012",
+      "name": "Marker field check false",
+      "source": "check type(⟟, Field);",
+      "expect": false
+    },
+    {
+      "id": "O013",
+      "name": "Subtype modified field",
+      "source": "check subtype(ModifiedField, Field);",
+      "expect": true
+    },
+    {
+      "id": "O014",
+      "name": "Subtype path state-like",
+      "source": "check subtype(Path, StateLike);",
+      "expect": true
+    },
+    {
+      "id": "O015",
+      "name": "Subtype marker field false",
+      "source": "check subtype(InvariantMarker, Field);",
+      "expect": false
+    },
+    {
+      "id": "O016",
+      "name": "Describe modified atom",
+      "source": "describe Φ↑;",
+      "expect": "DESCRIBE"
+    },
+    {
+      "id": "O017",
+      "name": "Describe invariant field",
+      "source": "describe Ψ_inv;",
+      "expect": "DESCRIBE"
+    },
+    {
+      "id": "O018",
+      "name": "Derived normal form",
+      "source": "Φ↑ → Ψ_inv;",
+      "expect": "(Φ↑ → Ψ_inv)"
+    },
+    {
+      "id": "O019",
+      "name": "Legacy aliases remain",
+      "source": "A₀ -> ∆ <-> ♾;",
+      "expect": "WARNINGS"
+    },
+    {
+      "id": "O020",
+      "name": "Macro typed path",
+      "source": "macro Z₁ RETURN: Path = Ao → Φ; RETURN;",
+      "expect": "(Ao → Φ)"
+    },
+    {
+      "id": "O021",
+      "name": "Unknown type rejected",
+      "source": "let x: Consciousness = Ao;",
+      "expect": "REJECTED"
+    },
+    {
+      "id": "O022",
+      "name": "TIM remains external",
+      "source": "observe evidence;",
+      "expect": "REJECTED"
+    },
+    {
+      "id": "O023",
+      "name": "Microorcim remains external",
+      "source": "intent state;",
+      "expect": "REJECTED"
+    },
+    {
+      "id": "O024",
+      "name": "Fusion law retained",
+      "source": "check equivalent(Ao ⊗ Φ, Φ ⊗ Ao);",
+      "expect": true
+    },
+    {
+      "id": "O025",
+      "name": "Projection direction retained",
+      "source": "check equivalent(Ao → Φ, Φ → Ao);",
+      "expect": false
+    },
+    {
+      "id": "O026",
+      "name": "Null in structural path",
+      "source": "Ψ ↯ ∅;",
+      "expect": "ACCEPTED"
+    },
+    {
+      "id": "O027",
+      "name": "Invariant marker in path",
+      "source": "Ψ ↯ ⟟;",
+      "expect": "ACCEPTED"
+    },
+    {
+      "id": "O028",
+      "name": "Typed invariant declaration",
+      "source": "invariant stable: Path = Ao → Ψ_inv;",
+      "expect": "INVARIANT"
+    },
+    {
+      "id": "O029",
+      "name": "Ontology example",
+      "source": "# Primitive ontology and type lock\n\nlet anchor: Field = Ao;\nlet orientation: Field = Φ;\nlet lifted: Field = Φ↑;\nlet fixed: Invariant = ⟟;\nlet nullpoint: NullState = ∅;\nlet target: Invariant = Ψ_inv;\n\ninvariant stable_return: Path = Ao → Φ↑ → Ψ_inv;\n\nmacro Z₁ RETURN: Path = stable_return;\n\ncheck type(Φ↑, Field);\ncheck type(Ψ_inv, Field);\ncheck type(Ψ_inv, Invariant);\ncheck subtype(ModifiedField, Field);\ncheck subtype(InvariantField, Invariant);\ncheck subtype(Path, StateLike);\n\ndescribe Φ↑;\ndescribe Ψ_inv;\ndescribe Ao → Φ↑;\n\nRETURN;\n",
+      "expect": "ACCEPTED"
+    },
+    {
+      "id": "O030",
+      "name": "Reserved integration still rejected",
+      "source": "Ao ∮ Φ;",
+      "expect": "REJECTED"
+    }
+  ]
+}

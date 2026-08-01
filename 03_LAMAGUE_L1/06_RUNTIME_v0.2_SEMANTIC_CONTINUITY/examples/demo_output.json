@@ -1,0 +1,42 @@
+{
+  "input": "Human and AI collaborators examine an unproven claim, preserve uncertainty, record contributions, and publish only what the evidence supports.",
+  "operation_path": [
+    "Q",
+    "O",
+    "E",
+    "U",
+    "I",
+    "G",
+    "T",
+    "P",
+    "F",
+    "Y"
+  ],
+  "audit": {
+    "outcome": "VALID",
+    "gates": {
+      "TRUTH": "VALID",
+      "AGENCY": "VALID",
+      "LIFE": "VALID"
+    },
+    "findings": [
+      {
+        "gate": "ALL",
+        "outcome": "VALID",
+        "code": "THREE_GATES_PASSED",
+        "message": "All applicable Truth, Agency, and Life Gate requirements passed.",
+        "repair": ""
+      }
+    ]
+  },
+  "executed": true,
+  "proof_status": "context-limited",
+  "unknowns": [
+    "human learnability",
+    "net semantic compression",
+    "cross-model consistency",
+    "long-term usefulness"
+  ],
+  "trace_path": "/mnt/data/LAMAGUE_RUNTIME_v0.1/traces/20260731T021447004267Z_program-89371192cd69.json",
+  "explanation": "Expanded programme seal(s): FORGE_TRUTH.\nOperation path: Q → O → E → U → I → G → T → P → F → Y.\n1. Q — state the unresolved question.\n2. O — observe the target with time, scope, and observer context.\n3. E — attach traceable evidence and preserve contradiction.\n4. U — preserve unresolved content as a typed unknown.\n5. I — declare the properties that must survive transformation.\n6. G — guard the action through declared invariants and fallback.\n7. T — record a typed transition from one state to another.\n8. P — test the claim against evidence without deleting uncertainty.\n9. F — fold relevant history into the present state.\n10. Y — yield only the result permitted by proof and scope.\nPreserved unknowns: human learnability; net semantic compression; cross-model consistency; long-term usefulness.\nProtected invariants: uncertainty remains visible; human and AI contributions remain visible; publication certainty does not exceed evidence.\nVisible authority: project steward may publish prototype artefacts; test participants govern their own participation."
+}

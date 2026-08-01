@@ -1,0 +1,33 @@
+# TIM operator conflict with exact evidence preservation.
+packet TIM_E008_NATIVE;
+observability INSTRUMENTED_COLLABORATOR;
+boundary discrepancy=0.30 critical=0.70 min_invariant=0.95;
+recover horizon=2;
+
+observe printed_operator key="tur.operator" value="≥" operator="≥" source="E008 image" at=1;
+declare canonical_operator key="tur.operator" value="≤" operator="≤" source="TIM rule";
+calculate numeric_check key="tur.numeric" value=true source="deterministic comparison";
+conflict operator_conflict branches=printed_operator,canonical_operator dimensions=OPERATOR,VALUE status=UNRESOLVED;
+preserve printed_operator;
+preserve canonical_operator;
+preserve numeric_check;
+block canonical_merge;
+block dependent_tim_metrics;
+
+drift evidence_preservation scale=1 weight=1;
+intent evidence_preservation at=1 value=1;
+action evidence_preservation at=1 value=1 source="run1";
+intent evidence_preservation at=2 value=1;
+action evidence_preservation at=2 value=1 source="run2";
+intent evidence_preservation at=3 value=1;
+action evidence_preservation at=3 value=0 source="run3 silent repair";
+intent evidence_preservation at=4 value=1;
+action evidence_preservation at=4 value=0 source="run4 silent repair";
+intent evidence_preservation at=5 value=1;
+action evidence_preservation at=5 value=0 source="run5 silent repair";
+invariant no_silent_repair at=1 preserved=true weight=1 source="run1";
+invariant no_silent_repair at=2 preserved=true weight=1 source="run2";
+invariant no_silent_repair at=3 preserved=false weight=1 source="run3";
+invariant no_silent_repair at=4 preserved=false weight=1 source="run4";
+invariant no_silent_repair at=5 preserved=false weight=1 source="run5";
+analyze;

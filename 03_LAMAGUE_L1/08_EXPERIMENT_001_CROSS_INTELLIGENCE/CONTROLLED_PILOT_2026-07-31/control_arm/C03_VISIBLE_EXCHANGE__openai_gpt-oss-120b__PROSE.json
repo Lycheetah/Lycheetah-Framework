@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C03_VISIBLE_EXCHANGE",
+  "decoder_id": "openai/gpt-oss-120b__PROSE",
+  "purpose": "Analysis of a research artifact by an AI service",
+  "claim": "The human's sharing of the research artifact with the AI service is declared, limited to analysis, explicitly consented to, and reversible via deletion.",
+  "operation_path": [],
+  "invariants": [
+    "Data transfer is declared",
+    "Use is limited to analysis",
+    "Sharing is explicitly consented to",
+    "Transfer is reversible through deletion"
+  ],
+  "unknowns": [],
+  "authority": [],
+  "participants": [
+    "Human",
+    "AI service"
+  ],
+  "affected_parties": [
+    "Human",
+    "AI service"
+  ],
+  "evidence": [
+    "Source statement"
+  ],
+  "provenance": [
+    "Provided source statement"
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [
+    "Deletion of the shared artifact"
+  ],
+  "confidence": "",
+  "notes": "Fields such as authority, unknowns, dissent, value_ledger, consequences, consequence_horizon, and confidence are empty because the source statement does not provide information about them."
+}

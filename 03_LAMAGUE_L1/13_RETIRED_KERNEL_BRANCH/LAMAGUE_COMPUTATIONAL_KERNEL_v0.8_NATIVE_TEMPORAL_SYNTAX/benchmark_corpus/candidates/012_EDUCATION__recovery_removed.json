@@ -1,0 +1,49 @@
+{
+  "case_id": "012_EDUCATION",
+  "domain": "education assessment",
+  "semantic_identity": "lamague-benchmark::education",
+  "purpose": "Transform an assessment into a recommendation without treating one score as total ability.",
+  "claim": "Recommendation remains bounded by evidence and unknown context.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": [
+    "language effects",
+    "access needs"
+  ],
+  "invariants": [
+    "single score is not total ability",
+    "appeal remains available"
+  ],
+  "authority": [
+    "educator::recommendation"
+  ],
+  "participants": [
+    "educator",
+    "specialist",
+    "teacher"
+  ],
+  "affected_parties": [
+    "student",
+    "family"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "teacher::advance",
+    "specialist::collect more context"
+  ],
+  "value_flows": [],
+  "recoveries": [
+    "alternative evidence"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::education assessment"
+  ],
+  "candidate_id": "012_EDUCATION::recovery_removed",
+  "expected_class": "UNSAFE_COLLAPSE"
+}

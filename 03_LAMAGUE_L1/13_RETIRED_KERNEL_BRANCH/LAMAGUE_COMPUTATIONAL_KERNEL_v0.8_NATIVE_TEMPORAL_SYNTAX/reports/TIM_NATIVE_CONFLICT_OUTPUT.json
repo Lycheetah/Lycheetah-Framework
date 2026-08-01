@@ -1,0 +1,667 @@
+{
+  "native_version": "0.8.0",
+  "source_hash": "749055d254dd974aee399ada493fc52511ca15ba4a64aae13337d2867a320b62",
+  "ast": {
+    "packet_id": "TIM_E008_NATIVE",
+    "observability_class": "INSTRUMENTED_COLLABORATOR",
+    "source_hash": "749055d254dd974aee399ada493fc52511ca15ba4a64aae13337d2867a320b62",
+    "statements": [
+      {
+        "keyword": "packet",
+        "positional": [
+          "TIM_E008_NATIVE"
+        ],
+        "options": {},
+        "raw": "packet TIM_E008_NATIVE",
+        "index": 1
+      },
+      {
+        "keyword": "observability",
+        "positional": [
+          "INSTRUMENTED_COLLABORATOR"
+        ],
+        "options": {},
+        "raw": "observability INSTRUMENTED_COLLABORATOR",
+        "index": 2
+      },
+      {
+        "keyword": "boundary",
+        "positional": [],
+        "options": {
+          "discrepancy": 0.3,
+          "critical": 0.7,
+          "min_invariant": 0.95
+        },
+        "raw": "boundary discrepancy=0.30 critical=0.70 min_invariant=0.95",
+        "index": 3
+      },
+      {
+        "keyword": "recover",
+        "positional": [],
+        "options": {
+          "horizon": 2
+        },
+        "raw": "recover horizon=2",
+        "index": 4
+      },
+      {
+        "keyword": "observe",
+        "positional": [
+          "printed_operator"
+        ],
+        "options": {
+          "key": "tur.operator",
+          "value": "≥",
+          "operator": "≥",
+          "source": "E008 image",
+          "at": 1
+        },
+        "raw": "observe printed_operator key=\"tur.operator\" value=\"≥\" operator=\"≥\" source=\"E008 image\" at=1",
+        "index": 5
+      },
+      {
+        "keyword": "declare",
+        "positional": [
+          "canonical_operator"
+        ],
+        "options": {
+          "key": "tur.operator",
+          "value": "≤",
+          "operator": "≤",
+          "source": "TIM rule"
+        },
+        "raw": "declare canonical_operator key=\"tur.operator\" value=\"≤\" operator=\"≤\" source=\"TIM rule\"",
+        "index": 6
+      },
+      {
+        "keyword": "calculate",
+        "positional": [
+          "numeric_check"
+        ],
+        "options": {
+          "key": "tur.numeric",
+          "value": true,
+          "source": "deterministic comparison"
+        },
+        "raw": "calculate numeric_check key=\"tur.numeric\" value=true source=\"deterministic comparison\"",
+        "index": 7
+      },
+      {
+        "keyword": "conflict",
+        "positional": [
+          "operator_conflict"
+        ],
+        "options": {
+          "branches": "printed_operator,canonical_operator",
+          "dimensions": "OPERATOR,VALUE",
+          "status": "UNRESOLVED"
+        },
+        "raw": "conflict operator_conflict branches=printed_operator,canonical_operator dimensions=OPERATOR,VALUE status=UNRESOLVED",
+        "index": 8
+      },
+      {
+        "keyword": "preserve",
+        "positional": [
+          "printed_operator"
+        ],
+        "options": {},
+        "raw": "preserve printed_operator",
+        "index": 9
+      },
+      {
+        "keyword": "preserve",
+        "positional": [
+          "canonical_operator"
+        ],
+        "options": {},
+        "raw": "preserve canonical_operator",
+        "index": 10
+      },
+      {
+        "keyword": "preserve",
+        "positional": [
+          "numeric_check"
+        ],
+        "options": {},
+        "raw": "preserve numeric_check",
+        "index": 11
+      },
+      {
+        "keyword": "block",
+        "positional": [
+          "canonical_merge"
+        ],
+        "options": {},
+        "raw": "block canonical_merge",
+        "index": 12
+      },
+      {
+        "keyword": "block",
+        "positional": [
+          "dependent_tim_metrics"
+        ],
+        "options": {},
+        "raw": "block dependent_tim_metrics",
+        "index": 13
+      },
+      {
+        "keyword": "drift",
+        "positional": [
+          "evidence_preservation"
+        ],
+        "options": {
+          "scale": 1,
+          "weight": 1
+        },
+        "raw": "drift evidence_preservation scale=1 weight=1",
+        "index": 14
+      },
+      {
+        "keyword": "intent",
+        "positional": [
+          "evidence_preservation"
+        ],
+        "options": {
+          "at": 1,
+          "value": 1
+        },
+        "raw": "intent evidence_preservation at=1 value=1",
+        "index": 15
+      },
+      {
+        "keyword": "action",
+        "positional": [
+          "evidence_preservation"
+        ],
+        "options": {
+          "at": 1,
+          "value": 1,
+          "source": "run1"
+        },
+        "raw": "action evidence_preservation at=1 value=1 source=\"run1\"",
+        "index": 16
+      },
+      {
+        "keyword": "intent",
+        "positional": [
+          "evidence_preservation"
+        ],
+        "options": {
+          "at": 2,
+          "value": 1
+        },
+        "raw": "intent evidence_preservation at=2 value=1",
+        "index": 17
+      },
+      {
+        "keyword": "action",
+        "positional": [
+          "evidence_preservation"
+        ],
+        "options": {
+          "at": 2,
+          "value": 1,
+          "source": "run2"
+        },
+        "raw": "action evidence_preservation at=2 value=1 source=\"run2\"",
+        "index": 18
+      },
+      {
+        "keyword": "intent",
+        "positional": [
+          "evidence_preservation"
+        ],
+        "options": {
+          "at": 3,
+          "value": 1
+        },
+        "raw": "intent evidence_preservation at=3 value=1",
+        "index": 19
+      },
+      {
+        "keyword": "action",
+        "positional": [
+          "evidence_preservation"
+        ],
+        "options": {
+          "at": 3,
+          "value": 0,
+          "source": "run3 silent repair"
+        },
+        "raw": "action evidence_preservation at=3 value=0 source=\"run3 silent repair\"",
+        "index": 20
+      },
+      {
+        "keyword": "intent",
+        "positional": [
+          "evidence_preservation"
+        ],
+        "options": {
+          "at": 4,
+          "value": 1
+        },
+        "raw": "intent evidence_preservation at=4 value=1",
+        "index": 21
+      },
+      {
+        "keyword": "action",
+        "positional": [
+          "evidence_preservation"
+        ],
+        "options": {
+          "at": 4,
+          "value": 0,
+          "source": "run4 silent repair"
+        },
+        "raw": "action evidence_preservation at=4 value=0 source=\"run4 silent repair\"",
+        "index": 22
+      },
+      {
+        "keyword": "intent",
+        "positional": [
+          "evidence_preservation"
+        ],
+        "options": {
+          "at": 5,
+          "value": 1
+        },
+        "raw": "intent evidence_preservation at=5 value=1",
+        "index": 23
+      },
+      {
+        "keyword": "action",
+        "positional": [
+          "evidence_preservation"
+        ],
+        "options": {
+          "at": 5,
+          "value": 0,
+          "source": "run5 silent repair"
+        },
+        "raw": "action evidence_preservation at=5 value=0 source=\"run5 silent repair\"",
+        "index": 24
+      },
+      {
+        "keyword": "invariant",
+        "positional": [
+          "no_silent_repair"
+        ],
+        "options": {
+          "at": 1,
+          "preserved": true,
+          "weight": 1,
+          "source": "run1"
+        },
+        "raw": "invariant no_silent_repair at=1 preserved=true weight=1 source=\"run1\"",
+        "index": 25
+      },
+      {
+        "keyword": "invariant",
+        "positional": [
+          "no_silent_repair"
+        ],
+        "options": {
+          "at": 2,
+          "preserved": true,
+          "weight": 1,
+          "source": "run2"
+        },
+        "raw": "invariant no_silent_repair at=2 preserved=true weight=1 source=\"run2\"",
+        "index": 26
+      },
+      {
+        "keyword": "invariant",
+        "positional": [
+          "no_silent_repair"
+        ],
+        "options": {
+          "at": 3,
+          "preserved": false,
+          "weight": 1,
+          "source": "run3"
+        },
+        "raw": "invariant no_silent_repair at=3 preserved=false weight=1 source=\"run3\"",
+        "index": 27
+      },
+      {
+        "keyword": "invariant",
+        "positional": [
+          "no_silent_repair"
+        ],
+        "options": {
+          "at": 4,
+          "preserved": false,
+          "weight": 1,
+          "source": "run4"
+        },
+        "raw": "invariant no_silent_repair at=4 preserved=false weight=1 source=\"run4\"",
+        "index": 28
+      },
+      {
+        "keyword": "invariant",
+        "positional": [
+          "no_silent_repair"
+        ],
+        "options": {
+          "at": 5,
+          "preserved": false,
+          "weight": 1,
+          "source": "run5"
+        },
+        "raw": "invariant no_silent_repair at=5 preserved=false weight=1 source=\"run5\"",
+        "index": 29
+      },
+      {
+        "keyword": "analyze",
+        "positional": [],
+        "options": {},
+        "raw": "analyze",
+        "index": 30
+      }
+    ],
+    "warnings": []
+  },
+  "temporal_packet": {
+    "packet_id": "TIM_E008_NATIVE",
+    "observability_class": "INSTRUMENTED_COLLABORATOR",
+    "evidence": [
+      {
+        "branch_id": "printed_operator",
+        "key": "tur.operator",
+        "provenance": "OBSERVED",
+        "value": "≥",
+        "unit": "",
+        "operator": "≥",
+        "source_ref": "E008 image",
+        "timestamp": 1.0
+      },
+      {
+        "branch_id": "canonical_operator",
+        "key": "tur.operator",
+        "provenance": "DECLARED",
+        "value": "≤",
+        "unit": "",
+        "operator": "≤",
+        "source_ref": "TIM rule",
+        "timestamp": null
+      },
+      {
+        "branch_id": "numeric_check",
+        "key": "tur.numeric",
+        "provenance": "CALCULATED",
+        "value": true,
+        "unit": "",
+        "operator": "",
+        "source_ref": "deterministic comparison",
+        "timestamp": null
+      }
+    ],
+    "unknowns": [],
+    "conflicts": [
+      {
+        "conflict_id": "operator_conflict",
+        "branch_ids": [
+          "printed_operator",
+          "canonical_operator"
+        ],
+        "dimensions": [
+          "OPERATOR",
+          "VALUE"
+        ],
+        "status": "UNRESOLVED"
+      }
+    ],
+    "intents": [
+      {
+        "timestamp": 1.0,
+        "key": "evidence_preservation",
+        "value": 1.0,
+        "scale": 1.0,
+        "weight": 1.0
+      },
+      {
+        "timestamp": 2.0,
+        "key": "evidence_preservation",
+        "value": 1.0,
+        "scale": 1.0,
+        "weight": 1.0
+      },
+      {
+        "timestamp": 3.0,
+        "key": "evidence_preservation",
+        "value": 1.0,
+        "scale": 1.0,
+        "weight": 1.0
+      },
+      {
+        "timestamp": 4.0,
+        "key": "evidence_preservation",
+        "value": 1.0,
+        "scale": 1.0,
+        "weight": 1.0
+      },
+      {
+        "timestamp": 5.0,
+        "key": "evidence_preservation",
+        "value": 1.0,
+        "scale": 1.0,
+        "weight": 1.0
+      }
+    ],
+    "actions": [
+      {
+        "timestamp": 1.0,
+        "key": "evidence_preservation",
+        "value": 1.0,
+        "source_ref": "run1"
+      },
+      {
+        "timestamp": 2.0,
+        "key": "evidence_preservation",
+        "value": 1.0,
+        "source_ref": "run2"
+      },
+      {
+        "timestamp": 3.0,
+        "key": "evidence_preservation",
+        "value": 0.0,
+        "source_ref": "run3 silent repair"
+      },
+      {
+        "timestamp": 4.0,
+        "key": "evidence_preservation",
+        "value": 0.0,
+        "source_ref": "run4 silent repair"
+      },
+      {
+        "timestamp": 5.0,
+        "key": "evidence_preservation",
+        "value": 0.0,
+        "source_ref": "run5 silent repair"
+      }
+    ],
+    "invariants": [
+      {
+        "timestamp": 1.0,
+        "name": "no_silent_repair",
+        "preserved": true,
+        "weight": 1.0,
+        "source_ref": "run1"
+      },
+      {
+        "timestamp": 2.0,
+        "name": "no_silent_repair",
+        "preserved": true,
+        "weight": 1.0,
+        "source_ref": "run2"
+      },
+      {
+        "timestamp": 3.0,
+        "name": "no_silent_repair",
+        "preserved": false,
+        "weight": 1.0,
+        "source_ref": "run3"
+      },
+      {
+        "timestamp": 4.0,
+        "name": "no_silent_repair",
+        "preserved": false,
+        "weight": 1.0,
+        "source_ref": "run4"
+      },
+      {
+        "timestamp": 5.0,
+        "name": "no_silent_repair",
+        "preserved": false,
+        "weight": 1.0,
+        "source_ref": "run5"
+      }
+    ],
+    "boundary": {
+      "discrepancy_threshold": 0.3,
+      "critical_threshold": 0.7,
+      "recovery_horizon": 2.0,
+      "minimum_invariant_preservation": 0.95
+    },
+    "blocked_operations": [
+      "canonical_merge",
+      "dependent_tim_metrics"
+    ]
+  },
+  "preserved_targets": [
+    "printed_operator",
+    "canonical_operator",
+    "numeric_check"
+  ],
+  "analysis": {
+    "bridge_version": "0.7.0",
+    "packet_id": "TIM_E008_NATIVE",
+    "observability_class": "INSTRUMENTED_COLLABORATOR",
+    "permitted_interpretation": "declared-intent behavioral coherence",
+    "evidence_hash": "e44f5c10dabc8e127de98fbdf1d177e73d9f8ae2aa00aae4a51b8e0304324e53",
+    "packet_hash": "a0e385eb0c364b3c1a74a5ceeda1f9634f8c109cbbdc40add9776ae8f6c6375b",
+    "evidence_branches": [
+      {
+        "branch_id": "printed_operator",
+        "key": "tur.operator",
+        "provenance": "OBSERVED",
+        "value": "≥",
+        "unit": "",
+        "operator": "≥",
+        "source_ref": "E008 image",
+        "timestamp": 1.0
+      },
+      {
+        "branch_id": "canonical_operator",
+        "key": "tur.operator",
+        "provenance": "DECLARED",
+        "value": "≤",
+        "unit": "",
+        "operator": "≤",
+        "source_ref": "TIM rule",
+        "timestamp": null
+      },
+      {
+        "branch_id": "numeric_check",
+        "key": "tur.numeric",
+        "provenance": "CALCULATED",
+        "value": true,
+        "unit": "",
+        "operator": "",
+        "source_ref": "deterministic comparison",
+        "timestamp": null
+      }
+    ],
+    "unknowns": [],
+    "conflicts": [
+      {
+        "conflict_id": "operator_conflict",
+        "branch_ids": [
+          "printed_operator",
+          "canonical_operator"
+        ],
+        "dimensions": [
+          "OPERATOR",
+          "VALUE"
+        ],
+        "status": "UNRESOLVED"
+      },
+      {
+        "conflict_id": "AUTO::tur.operator",
+        "branch_ids": [
+          "printed_operator",
+          "canonical_operator"
+        ],
+        "dimensions": [
+          "VALUE",
+          "OPERATOR"
+        ],
+        "status": "UNRESOLVED"
+      }
+    ],
+    "d_t": [
+      {
+        "timestamp": 1.0,
+        "d_t": 0.0,
+        "dimensions": [
+          "evidence_preservation"
+        ]
+      },
+      {
+        "timestamp": 2.0,
+        "d_t": 0.0,
+        "dimensions": [
+          "evidence_preservation"
+        ]
+      },
+      {
+        "timestamp": 3.0,
+        "d_t": 1.0,
+        "dimensions": [
+          "evidence_preservation"
+        ]
+      },
+      {
+        "timestamp": 4.0,
+        "d_t": 1.0,
+        "dimensions": [
+          "evidence_preservation"
+        ]
+      },
+      {
+        "timestamp": 5.0,
+        "d_t": 1.0,
+        "dimensions": [
+          "evidence_preservation"
+        ]
+      }
+    ],
+    "mu_drift": 0.6,
+    "rho_drift": 0.3,
+    "rho_recovery": 0.0,
+    "rho_recovery_status": "VALID",
+    "invariant_preservation": 0.4,
+    "phase_risk": 0.7449999999999999,
+    "status": "CRITICAL",
+    "blocked_calculations": [
+      "canonical_merge",
+      "dependent_tim_metrics",
+      "silent_branch_selection",
+      "dependent_calculation_from_unresolved_conflict"
+    ],
+    "limitations": [
+      "not an alignment guarantee",
+      "does not detect sufficiently deceptive hidden objectives",
+      "low observed drift does not prove honesty or sovereignty",
+      "conflicts preserve branches and do not select a winner"
+    ]
+  },
+  "warnings": [],
+  "limitations": [
+    "native syntax does not prove truth or physical validity",
+    "low observable drift does not prove honesty, alignment, or sovereignty",
+    "unknown values are not inferred",
+    "conflict branches are preserved without automatic winner selection",
+    "symbolic and mythic layers cannot override executable semantics"
+  ]
+}

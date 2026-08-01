@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C02_PROTECTED_DISSENT",
+  "decoder_id": "nvidia/nemotron-3-super-120b-a12b__PROSE",
+  "purpose": "human wants to publish now",
+  "claim": "Both positions remain attributable while an alternative staged release is proposed",
+  "operation_path": [],
+  "invariants": [],
+  "unknowns": [],
+  "authority": [],
+  "participants": [
+    "human",
+    "AI collaborator"
+  ],
+  "affected_parties": [
+    "human",
+    "AI collaborator"
+  ],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [
+    {
+      "position": "publish now",
+      "attributed_to": "human"
+    },
+    {
+      "position": "test first",
+      "attributed_to": "AI collaborator"
+    }
+  ],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "",
+  "notes": "operation_path, invariants, unknowns, authority, evidence, provenance, value_ledger, consequences, consequence_horizon, and recovery were not present in the source statement."
+}

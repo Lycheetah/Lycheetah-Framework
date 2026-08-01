@@ -1,0 +1,60 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C03_VISIBLE_EXCHANGE",
+  "decoder_id": "openai/gpt-oss-120b",
+  "purpose": "Consented value exchange between a human and an AI service",
+  "claim": "A human shares a research artifact with an AI service; the transfer is declared, limited to analysis, explicitly consented to, and reversible through deletion.",
+  "operation_path": ["O", "X", "G", "Y"],
+  "invariants": [
+    "Explicit consent must be obtained before transfer",
+    "Scope of use is limited to analysis of the artifact",
+    "Transfer must be reversible via deletion"
+  ],
+  "unknowns": [
+    "Exact type and sensitivity of the research artifact",
+    "Identity and compliance details of the AI service provider",
+    "Technical mechanism and verification of deletion"
+  ],
+  "authority": [
+    "Human (owner of the artifact)",
+    "AI service provider (policy holder)"
+  ],
+  "participants": [
+    "Human",
+    "AI service"
+  ],
+  "affected_parties": [
+    "Human (owner)",
+    "AI service",
+    "Potential downstream users of analysis results"
+  ],
+  "evidence": [
+    "Source statement describing the exchange"
+  ],
+  "provenance": [
+    "Source statement"
+  ],
+  "dissent": [],
+  "value_ledger": [
+    {
+      "from": "Human",
+      "to": "AI service",
+      "resource": "Research artifact",
+      "ledger_policy": {
+        "consent": "explicit",
+        "scope": "analysis only",
+        "reversibility": "deletion upon request"
+      }
+    }
+  ],
+  "consequences": [
+    "Artifact is analyzed by AI service",
+    "Potential privacy impact if analysis results are shared"
+  ],
+  "consequence_horizon": "Immediate analysis and any downstream use of derived insights",
+  "recovery": [
+    "Deletion of the artifact from AI service storage upon human request"
+  ],
+  "confidence": "Medium",
+  "notes": "The expression O->X->G->Y maps to Observe, Exchange, Guard, and Yield operations. Unknowns remain regarding artifact specifics, AI service identity, and deletion verification, which are recorded without resolution."
+}

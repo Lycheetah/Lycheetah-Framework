@@ -1,0 +1,34 @@
+(* LAMAGUE Core Algebra v0.1 *)
+
+program             = { statement } ;
+
+statement           = let_statement
+                    | invariant_statement
+                    | require_statement
+                    | forbid_statement
+                    | macro_statement
+                    | check_statement
+                    | expression_statement ;
+
+let_statement       = "let" identifier "=" expression ";" ;
+invariant_statement = "invariant" identifier "=" expression ";" ;
+require_statement   = "require" expression ";" ;
+forbid_statement    = "forbid" expression ";" ;
+macro_statement     = "macro" meta identifier "=" expression ";" ;
+check_statement     = "check" "equivalent" "(" expression "," expression ")" ";" ;
+expression_statement= expression ";" ;
+
+expression          = path_expression ;
+path_expression     = dynamic_expression { ("→" | "⇌") dynamic_expression } ;
+dynamic_expression  = fusion_expression { ("↯" | "↗" | "⟲") fusion_expression } ;
+fusion_expression   = primary { "⊗" primary } ;
+primary             = atom | identifier | "(" expression ")" ;
+
+atom                = invariant_atom | field_atom ;
+invariant_atom      = "⟟" | "∅" | "⟐" | "⟁" | "∞" | "Ψ_inv" ;
+field_atom          = "Ao" | "Φ" | "Φ↑" | "Ψ" | "S" | "Δ" ;
+meta                = "Z₁" | "Z₂" | "Z₃" ;
+identifier          = letter { letter | digit | "_" } ;
+
+(* Warning-bearing aliases: A₀→Ao, ∆→Δ, ♾→∞, ->→→, <->→⇌ *)
+(* Reserved and rejected in the core: ∮ and junction use of ↯ *)

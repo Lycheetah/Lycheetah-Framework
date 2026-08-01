@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C02_PROTECTED_DISSENT",
+  "decoder_id": "nvidia/nemotron-3-super-120b-a12b",
+  "purpose": "Coordinate disagreement without merging positions, preserving attribution and proposing an alternative staged release.",
+  "claim": "An alternative staged release is proposed while both positions remain attributable.",
+  "operation_path": [
+    "W",
+    "U",
+    "G",
+    "V",
+    "Y"
+  ],
+  "invariants": [
+    "positions remain attributable"
+  ],
+  "unknowns": [
+    "release timing decision"
+  ],
+  "authority": [],
+  "participants": [
+    "human",
+    "AI collaborator"
+  ],
+  "affected_parties": [
+    "human",
+    "AI collaborator"
+  ],
+  "evidence": [],
+  "provenance": [
+    "source statement"
+  ],
+  "dissent": [
+    {
+      "agent": "human",
+      "position": "publish now"
+    },
+    {
+      "agent": "AI collaborator",
+      "position": "test first"
+    }
+  ],
+  "value_ledger": [],
+  "consequences": [
+    "alternative staged release is proposed"
+  ],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "low",
+  "notes": "Authority, evidence, value ledger, recovery, and consequence horizon are not present in the supplied material."
+}

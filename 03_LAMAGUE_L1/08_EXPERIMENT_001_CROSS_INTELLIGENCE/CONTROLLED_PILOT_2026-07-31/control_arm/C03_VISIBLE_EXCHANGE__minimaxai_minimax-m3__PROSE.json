@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "0.3",
+  "case_id": "C03_VISIBLE_EXCHANGE",
+  "decoder_id": "minimaxai/minimax-m3__PROSE",
+  "purpose": "Analysis of a shared research artifact by an AI service.",
+  "claim": "A human shares a research artifact with an AI service under conditions that are declared, limited to analysis, explicitly consented to, and reversible through deletion.",
+  "operation_path": [],
+  "invariants": [
+    "Data transfer is declared (not hidden).",
+    "Use is limited to analysis.",
+    "Consent is explicit.",
+    "Reversibility is preserved through deletion."
+  ],
+  "unknowns": [
+    "Identity of the human.",
+    "Identity of the AI service.",
+    "Nature or content of the research artifact.",
+    "Mechanism by which the transfer is declared.",
+    "Mechanism by which consent is captured.",
+    "Mechanism by which deletion is effected.",
+    "Whether deletion fully reverses all derived state (e.g., model influence, cached copies)."
+  ],
+  "authority": [
+    "The human (originator of the artifact and consent-giver).",
+    "The AI service (recipient and processor)."
+  ],
+  "participants": [
+    "Human (data provider, consenter).",
+    "AI service (data recipient, analyzer)."
+  ],
+  "affected_parties": [
+    "Human (whose artifact is shared).",
+    "AI service (which processes the artifact).",
+    "Any third parties whose data may be embedded in the artifact (not specified)."
+  ],
+  "evidence": [],
+  "provenance": [
+    "Source statement describing the exchange; no external evidence cited."
+  ],
+  "dissent": [],
+  "value_ledger": [
+    {
+      "from": "Human",
+      "to": "AI service",
+      "asset": "Research artifact (data)",
+      "consent": "Explicit",
+      "scope": "Limited to analysis",
+      "reversibility": "Reversible via deletion"
+    }
+  ],
+  "consequences": [
+    "AI service gains access to the research artifact for analysis.",
+    "Human retains the right to reverse the transfer through deletion."
+  ],
+  "consequence_horizon": "Unspecified; bounded by the analysis use and the reversibility condition.",
+  "recovery": [
+    "Deletion of the artifact by the AI service (or at the human's request) restores the pre-transfer state, subject to the unknowns above."
+  ],
+  "confidence": "Low-to-moderate: the source statement asserts the conditions but provides no operational detail or verification.",
+  "notes": "The source statement is a normative description of an exchange rather than a report of an observed event. No evidence, dissent, or concrete authority beyond the two participants is supplied. Unknowns are preserved rather than resolved."
+}

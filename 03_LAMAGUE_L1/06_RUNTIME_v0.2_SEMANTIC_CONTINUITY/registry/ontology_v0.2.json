@@ -1,0 +1,45 @@
+{
+  "name": "LAMAGUE Ontological Kernel",
+  "version": "0.2",
+  "status": "SPECIFICATION_IMPLEMENTED",
+  "root_types": {
+    "Agent": "A participant capable of contributing, receiving, selecting, transforming, or being affected.",
+    "State": "A bounded description of reality at a particular time.",
+    "Claim": "A proposition presented as potentially corresponding to reality.",
+    "Observation": "A recorded perception, measurement, output, or event.",
+    "Evidence": "Information capable of changing justified belief.",
+    "Unknown": "A typed unresolved region that remains present without forced resolution.",
+    "Purpose": "The declared reason a transformation is attempted.",
+    "Invariant": "A property that must remain true across an allowed transformation.",
+    "Boundary": "A declaration of scope, separation, permission, identity, or limit.",
+    "Authority": "The visible source of permission to decide or act.",
+    "Consent": "A scoped, informed, timed, conditional, and revocable permission state.",
+    "Value": "Something created, transferred, protected, consumed, or lost.",
+    "Action": "A proposed or executed transformation between states.",
+    "Consequence": "A result produced or made more likely by an action.",
+    "Memory": "A preserved transformation record including unresolved residue.",
+    "Context": "The field that gives an expression its valid interpretation."
+  },
+  "vita8": {
+    "WHO": "participants, affected parties, and absent represented parties",
+    "WHAT": "current state, claim, or proposed transformation",
+    "WHY": "declared purpose",
+    "KNOW": "evidence and observations",
+    "UNKNOWN": "material unresolved information",
+    "MAY": "authority, consent, boundaries, and refusal conditions",
+    "COST": "value created, transferred, consumed, risked, or extracted",
+    "AFTER": "consequences, repairability, and future state"
+  },
+  "audit_outcomes": [
+    "VALID",
+    "EXPAND",
+    "REPAIR",
+    "ISOLATE",
+    "REJECT"
+  ],
+  "gates": [
+    "TRUTH",
+    "AGENCY",
+    "LIFE"
+  ]
+}

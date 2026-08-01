@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "0.3",
+  "case_id": "C01_UNPROVEN_CLAIM",
+  "decoder_id": "minimaxai/minimax-m3__PROSE",
+  "purpose": "Inspect a claim and publish a context-limited result while retaining the unresolved method question.",
+  "claim": "A claim is under inspection; only a context-limited result is published.",
+  "operation_path": [],
+  "invariants": [
+    "Published output is limited to what the available context supports.",
+    "The unresolved method question is retained rather than resolved or discarded."
+  ],
+  "unknowns": [
+    "The specific claim under inspection",
+    "The nature of the method question that remains unresolved",
+    "The identity of the human collaborators",
+    "The identity of the AI collaborators",
+    "The criteria defining the context limit",
+    "The venue or medium of publication"
+  ],
+  "authority": [
+    "Human collaborators (inspection and publication authority, unspecified)",
+    "AI collaborators (inspection authority, unspecified)"
+  ],
+  "participants": [
+    "Human collaborators",
+    "AI collaborators"
+  ],
+  "affected_parties": [],
+  "evidence": [
+    "Evidence is incomplete (no specific evidence items provided)"
+  ],
+  "provenance": [
+    "Source statement describing the inspection activity"
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "A context-limited result is published.",
+    "The unresolved method question is retained."
+  ],
+  "consequence_horizon": "Immediate publication; downstream effects of retaining the unresolved method question are not specified.",
+  "recovery": [],
+  "confidence": "low",
+  "notes": "The source statement is a high-level description of an inspection process. No specific claim content, evidence items, participants' identities, value movements, consent details, or recovery mechanisms are provided. Empty arrays and strings reflect these absences rather than inferred content."
+}

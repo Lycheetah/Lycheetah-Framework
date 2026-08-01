@@ -1,0 +1,218 @@
+{
+  "archive_title": "LAMAGUE Codex Master Update",
+  "date": "2026-07-31",
+  "missing_source_paths": [],
+  "suffix_duplicate_files_included": [],
+  "identical_content_groups": {
+    "c3c0249654239fe7e31442e3c807dcc07810c2a394f9854859c5238e5c0848e7": [
+      "01_ROOT_CORPUS/LAMAGUE_ROOT_PROVENANCE_AND_CANON_DECISION_2026-07-15.md",
+      "11_HISTORICAL_INDEXES_AND_PROVENANCE/LAMAGUE_ROOT_PROVENANCE_AND_CANON_DECISION_2026-07-15.md"
+    ],
+    "6252337f5af6fb46910faa076c6f6e1ae89ae8b3abf138a4e7814b23cb91d5ae": [
+      "01_ROOT_CORPUS/LAMAGUE_ROOT_SHA256_MANIFEST_2026-07-15.txt",
+      "11_HISTORICAL_INDEXES_AND_PROVENANCE/LAMAGUE_ROOT_SHA256_MANIFEST_2026-07-15.txt"
+    ],
+    "2b72d787112cf608a3a59d734c13a99277ce65a92af3dfbb3cde72a5cda71fcf": [
+      "02_NATIVE36/LAMAGUE_NATIVE36_v0.2_FULL_GLYPH_AND_SEAL_SHEET.png",
+      "09_ARTICLE_AND_VISUAL_ASSETS/LAMAGUE_NATIVE36_v0.2_FULL_GLYPH_AND_SEAL_SHEET.png"
+    ],
+    "b8fa72ee1b87768bddcc305d5a6461776668ce9ff4d4a8a7ce7a27c1510485f9": [
+      "02_NATIVE36/LAMAGUE_NATIVE36_v0.2_FULL_GLYPH_AND_SEAL_SHEET.svg",
+      "09_ARTICLE_AND_VISUAL_ASSETS/LAMAGUE_NATIVE36_v0.2_FULL_GLYPH_AND_SEAL_SHEET.svg"
+    ],
+    "dc9f29609f91df82db23313667b813d0e616f7f3887c22bbd6ed72b2bb9e8b66": [
+      "02_NATIVE36/LAMAGUE_NATIVE36_v0.2_X_POST_ASSET.png",
+      "09_ARTICLE_AND_VISUAL_ASSETS/LAMAGUE_NATIVE36_v0.2_X_POST_ASSET.png"
+    ],
+    "2b74d81c0fd2feb26c5ca65ea066536ce0eb99c0608180ba4597b62dde616e6b": [
+      "02_NATIVE36/LAMAGUE_NATIVE36_v0.2_X_POST_ASSET.svg",
+      "09_ARTICLE_AND_VISUAL_ASSETS/LAMAGUE_NATIVE36_v0.2_X_POST_ASSET.svg"
+    ],
+    "13f3b9441445f8ed8963831c16b0c70ca705367762ba1814288845bbd0e8e7ec": [
+      "03_LAMAGUE_1C/LAMAGUE_1C_v1_ONE_CELL_POWER_LANGUAGE.png",
+      "09_ARTICLE_AND_VISUAL_ASSETS/LAMAGUE_1C_v1_ONE_CELL_POWER_LANGUAGE.png"
+    ],
+    "d9c1ce46bb8a68102a8a05fef839d5057f784834dce87303daba4a9623078df3": [
+      "03_LAMAGUE_1C/LAMAGUE_1C_v1_ONE_CELL_POWER_LANGUAGE.svg",
+      "09_ARTICLE_AND_VISUAL_ASSETS/LAMAGUE_1C_v1_ONE_CELL_POWER_LANGUAGE.svg"
+    ],
+    "2d77f92462763c124784d4b167d59a14a998229a7d011349113542e8240c13a4": [
+      "05_RUNTIME_v0.1/examples/canonical_trace.json",
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/examples/canonical_trace.json",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/examples/canonical_trace.json"
+    ],
+    "a5f947481ef2b1a0174cd7c1764f9862e8c1885ac4f90159d876145ac6988052": [
+      "05_RUNTIME_v0.1/examples/demo_output.json",
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/examples/demo_output.json",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/examples/demo_output.json"
+    ],
+    "74be8884661cdc35e58d37830f8577c78dad3ba41dc11db88d3c943b4331a0f3": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/examples/canonical_milestone.py",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/examples/canonical_milestone.py"
+    ],
+    "32ade5632764db3bed7987e939d9e5124cee3b1a82f0a5bf8914071b3580b823": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/examples/expressions.lam",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/examples/expressions.lam"
+    ],
+    "3b6ce03abbf682bda4faca3e159c1c3cff1fe3e254ee5b6ad3581c806ee7d9be": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/examples/semantic_continuity_demo.py",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/examples/semantic_continuity_demo.py"
+    ],
+    "2d2f14c00358c08ec85105949a3fe112fa4ddcb50664bf9e703a8f4257157283": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/examples/semantic_continuity_demo_output.json",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/examples/semantic_continuity_demo_output.json"
+    ],
+    "cffb5b93bfd0d40df4ded14fb8b74eee7a9248747f77f445db3822eeae72c334": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/auditor.py",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/auditor.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/auditor.py"
+    ],
+    "b89dcecd8bf94171da7bc19f4a1cb6cfd0516845ee74f5e3fe8181993e3dbf86": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/breathing.py",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/breathing.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/breathing.py"
+    ],
+    "809b5e2b4374f8e2eb3407b82542b226638340f9553d8d8a0fd98d21bf8b4ec6": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/compiler.py",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/compiler.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/compiler.py"
+    ],
+    "93d426232e2eca9a086cc9e3826eb63d59267496e8786e74dea4a726cbe26537": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/dissent.py",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/dissent.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/dissent.py"
+    ],
+    "a410dc4b14e21f570833ead754e614c15823fd7e91d40d9d95e8bbfdebdc0f82": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/explainer.py",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/explainer.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/explainer.py"
+    ],
+    "663e96f7b963acb9cc7eff16d6ed3990ac97a57c0c46669111458f64a96f4ba9": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/interpreter.py",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/interpreter.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/interpreter.py"
+    ],
+    "b4c7a094c21a39a0d0517d6b35e4f20f010e428acee7532fdb9e6d794d0b75f0": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/memory.py",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/memory.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/memory.py"
+    ],
+    "836a0519350d7be47b7484e17f0a226e3ca7bfc3710280007d5bd158f2bc89df": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/model.py",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/model.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/model.py"
+    ],
+    "a9e2772f395b1ca245c6e279b48028684a7ac59958194d0bec9392afd7bc9607": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/parser.py",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/parser.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/parser.py"
+    ],
+    "cd2fabb282710ff8ccdacac3979bf6789dd7e5b4bd18e1532f7ae9e7421f2370": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/registry.py",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/registry.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/registry.py"
+    ],
+    "28a112a3671b5da2a7fb4b772849b9e3f986fa25dd0b8dfde831645561b24be3": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/semantic_hash.py",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/semantic_hash.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/semantic_hash.py"
+    ],
+    "edfa9b30435198c5aca342cd8746fc96e50c5b0abcf9a7469cbf016aadc81ed2": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/trace_store.py",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/trace_store.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/trace_store.py"
+    ],
+    "437732c7b68e33ec2e02d79642e1b383ebd359164a51241ce269e5aab1918f9f": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/lamague_runtime/value_ledger.py",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/value_ledger.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/value_ledger.py"
+    ],
+    "1a58e16d4fa8c08714bec2cdef9ded41d5ed198445287b544c9f8e5cc7a06a25": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/registry/ontology_v0.2.json",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/registry/ontology_v0.2.json",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/registry/ontology_v0.2.json"
+    ],
+    "a42a8a5f867d2027eb9ce7cf49f3b9d5fd11b42a457f4bd063adde459a23d672": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/registry/ontology_v0.2.yaml",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/registry/ontology_v0.2.yaml",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/registry/ontology_v0.2.yaml"
+    ],
+    "c98ca235efaae60212ec74e278050e0b0735bc51988f2a4e3061d4e5b766033d": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/registry/operations_v0.2.json",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/registry/operations_v0.2.json",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/registry/operations_v0.2.json"
+    ],
+    "469d044d3bb0710e4d293108fe38b2f691e53f51cdd64cc5fbfce457fc3d3ac4": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/registry/seals_v0.2.json",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/registry/seals_v0.2.json",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/registry/seals_v0.2.json"
+    ],
+    "69aafc40b8f161639bbac9fdef6aa5aeafe9e0082672020c918918a96e71d049": [
+      "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY/tests/test_runtime_v02.py",
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/tests/test_runtime_v02.py"
+    ],
+    "2be00586c792794ee8fb7d64834744c6df03c61c64bd6ed18dfb8b8588f1218b": [
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/LAMAGUE_v0.3_EQUIVALENCE_REPORT_VIEWER.html",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/LAMAGUE_v0.3_EQUIVALENCE_REPORT_VIEWER.html"
+    ],
+    "78b1f8b93e7e43901968d44d7960f361fe7543592b033bc5d61b0f474dc0278a": [
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/README.md",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/README.md"
+    ],
+    "d09c43efe17431ce0f92332730c8e4e8fe65b787cb02de472d01e94a04763608": [
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/CROSS_INTELLIGENCE_BLIND_DECODER_PROMPT.md",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/BLIND_DECODER_PROMPT.md"
+    ],
+    "bff58f0dca24c43feb29f6c63aac07577a8d2add12effd3c990e6f6c102d5d86": [
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/HUMAN_BLIND_DECODING_PROTOCOL.md",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/HUMAN_DECODER_PROTOCOL.md"
+    ],
+    "73b6aa10d733553cca7e5308071224de218fc0d9b844159c9e95e8e9356a1c5a": [
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/challenge_pack.json",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/challenge_pack.json"
+    ],
+    "695d5d650f5247df9c25a86ac555dc0a8c15a38d5df18dcdfc09bba5fde62711": [
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/benchmark/decoder_packet.schema.json",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/decoder_packet.schema.json",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/decoder_packet.schema.json"
+    ],
+    "dd82bb576bc83c74f180c0626f80672516b2824b3e8f6fa27e8f99b997146de2": [
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/__init__.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/__init__.py"
+    ],
+    "aa7a12afbffa380c2160fbaf8a23211d0ca8c629cd607f774db2af070e3f95fd": [
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/challenge_pack.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/challenge_pack.py"
+    ],
+    "b7c2d2abd8cd97a12c647ad82539160fce6c02f8ebd590d96ea12c28fc757ea7": [
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/cli.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/cli.py"
+    ],
+    "7ed294bc46ac5b5f47e88fe595e706795b4a16a3d3db85700d0d53585c94574e": [
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/consensus.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/consensus.py"
+    ],
+    "6325302201c8030c761a5b75f4e3f2101714a891b3ea79a7378b4cc0e82a9d74": [
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/decoder_packet.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/decoder_packet.py"
+    ],
+    "b98d3f997ca5812c0b548463400906b5e59011545b222783e1a31b977a659c09": [
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/equivalence.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/equivalence.py"
+    ],
+    "2ca3b98fa398b69c24ff317f72a3d30de49b65910ea372f26ae8e60410bec3e3": [
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/lamague_runtime/packet_validator.py",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/lamague_runtime/packet_validator.py"
+    ],
+    "56a20b5f7c39738a0ce61b67276e6ee9494bb105e9b96f4e5d2218f1a92b78dd": [
+      "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/pyproject.toml",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/pyproject.toml"
+    ],
+    "f823226ce009aec918b27a56a612ce2ceee0ec641e3c7af52d59417f282779a8": [
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/DECODER_PACK/LAMAGUE_EXPERIMENT_001_REFERENCE_COMMITMENTS.json",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/LAMAGUE_EXPERIMENT_001_REFERENCE_COMMITMENTS.json",
+      "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/LAMAGUE_EXPERIMENT_001_REFERENCE_COMMITMENTS.json"
+    ]
+  },
+  "note": "Identical content may intentionally recur between canonical source directories and packaged release archives. No filename copies with (1) or (2) suffixes were included."
+}

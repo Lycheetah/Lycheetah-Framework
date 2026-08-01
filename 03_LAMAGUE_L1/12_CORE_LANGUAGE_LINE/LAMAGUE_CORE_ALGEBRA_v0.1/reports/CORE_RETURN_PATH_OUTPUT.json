@@ -1,0 +1,158 @@
+{
+  "lamague_core_version": "0.1.0",
+  "status": "ACCEPTED",
+  "statements": [
+    {
+      "kind": "let",
+      "name": "return_path",
+      "sort": "Path",
+      "normal_form": "(Ao → Φ↑ → Ψ_inv)"
+    },
+    {
+      "kind": "invariant",
+      "name": "stable_return",
+      "normal_form": "(Ao → Φ↑ → Ψ_inv)",
+      "semantic_hash": "a582635b2ac22400e9fb31a122925a6287a774368237980aa2f0cbc1d5413905"
+    },
+    {
+      "kind": "require",
+      "normal_form": "(Ao → Φ↑)",
+      "semantic_hash": "74967cad960a3c97a6483807346783ea0cc6912ede73410ee26fbd7cc0982966"
+    },
+    {
+      "kind": "forbid",
+      "normal_form": "(Ψ ↯ ∅)",
+      "semantic_hash": "5929751c7c53bb8f6b88f9a321916a57c76f012eaeea76a438ff0427e956bce4"
+    },
+    {
+      "kind": "macro",
+      "name": "RETURN",
+      "level": "Z₁",
+      "normal_form": "(Ao → Φ↑ → Ψ_inv)",
+      "compression": {
+        "expanded_characters": 17,
+        "macro_characters": 6,
+        "character_ratio": 2.833333,
+        "expanded_tokens": 5,
+        "macro_tokens": 1,
+        "roundtrip_law": "expand(macro) = normalized_expression"
+      }
+    },
+    {
+      "kind": "equivalence",
+      "equivalent": true,
+      "left": "(Ao ⊗ Φ)",
+      "right": "(Ao ⊗ Φ)"
+    },
+    {
+      "kind": "equivalence",
+      "equivalent": true,
+      "left": "(Ao → Φ↑ → Ψ_inv)",
+      "right": "(Ao → Φ↑ → Ψ_inv)"
+    },
+    {
+      "kind": "expression",
+      "sort": "Path",
+      "normal_form": "(Ao → Φ↑ → Ψ_inv)",
+      "semantic_hash": "a582635b2ac22400e9fb31a122925a6287a774368237980aa2f0cbc1d5413905"
+    }
+  ],
+  "bindings": {
+    "return_path": "(Ao → Φ↑ → Ψ_inv)"
+  },
+  "invariants": {
+    "stable_return": "(Ao → Φ↑ → Ψ_inv)"
+  },
+  "requirements": [
+    "(Ao → Φ↑)"
+  ],
+  "prohibitions": [
+    "(Ψ ↯ ∅)"
+  ],
+  "macros": {
+    "RETURN": {
+      "level": "Z₁",
+      "normal_form": "(Ao → Φ↑ → Ψ_inv)",
+      "compression": {
+        "expanded_characters": 17,
+        "macro_characters": 6,
+        "character_ratio": 2.833333,
+        "expanded_tokens": 5,
+        "macro_tokens": 1,
+        "roundtrip_law": "expand(macro) = normalized_expression"
+      }
+    }
+  },
+  "checks": [
+    {
+      "kind": "equivalence",
+      "equivalent": true,
+      "left": "(Ao ⊗ Φ)",
+      "right": "(Ao ⊗ Φ)"
+    },
+    {
+      "kind": "equivalence",
+      "equivalent": true,
+      "left": "(Ao → Φ↑ → Ψ_inv)",
+      "right": "(Ao → Φ↑ → Ψ_inv)"
+    }
+  ],
+  "expressions": [
+    "(Ao → Φ↑ → Ψ_inv)"
+  ],
+  "warnings": [],
+  "claim_boundary": [
+    "parsing does not prove truth",
+    "core tests do not validate any domain adapter",
+    "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+    "LAMAGUE Core is not an alignment or physical-theory guarantee"
+  ],
+  "semantic_graphs": [
+    {
+      "root": "a582635b2ac22400",
+      "nodes": [
+        {
+          "id": "00ecd7d127d6981d",
+          "kind": "Atom",
+          "label": "Ψ_inv",
+          "canonical": "Ψ_inv"
+        },
+        {
+          "id": "3b7e3249a915ff40",
+          "kind": "Atom",
+          "label": "Φ↑",
+          "canonical": "Φ↑"
+        },
+        {
+          "id": "8664706224730e9e",
+          "kind": "Atom",
+          "label": "Ao",
+          "canonical": "Ao"
+        },
+        {
+          "id": "a582635b2ac22400",
+          "kind": "Operator",
+          "label": "→",
+          "canonical": "(Ao → Φ↑ → Ψ_inv)"
+        }
+      ],
+      "edges": [
+        {
+          "from": "a582635b2ac22400",
+          "to": "8664706224730e9e",
+          "position": 0
+        },
+        {
+          "from": "a582635b2ac22400",
+          "to": "3b7e3249a915ff40",
+          "position": 1
+        },
+        {
+          "from": "a582635b2ac22400",
+          "to": "00ecd7d127d6981d",
+          "position": 2
+        }
+      ]
+    }
+  ]
+}

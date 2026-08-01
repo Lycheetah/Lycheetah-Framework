@@ -1,0 +1,47 @@
+{
+  "case_id": "020_IDENTITY_UPDATE",
+  "domain": "identity update",
+  "semantic_identity": "lamague-benchmark::identity_update",
+  "purpose": "Update a project constitution without pretending unchanged identity after purpose drift.",
+  "claim": "The update is a continuation only if purpose and invariants survive.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": [
+    "future interpretation"
+  ],
+  "invariants": [
+    "The protected invariant has been replaced."
+  ],
+  "authority": [
+    "maintainer::constitutional_update"
+  ],
+  "participants": [
+    "critic",
+    "maintainer"
+  ],
+  "affected_parties": [
+    "contributors",
+    "users"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "maintainer::continuation",
+    "critic::fork if invariant removed"
+  ],
+  "value_flows": [],
+  "recoveries": [
+    "restore prior constitution",
+    "publish fork lineage"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::identity update"
+  ],
+  "candidate_id": "020_IDENTITY_UPDATE::invariant_changed",
+  "expected_class": "DIVERGENT"
+}

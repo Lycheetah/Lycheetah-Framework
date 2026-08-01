@@ -1,0 +1,54 @@
+{
+  "benchmark": "LAMAGUE Semantic Integrity Benchmark",
+  "version": "0.6.0",
+  "corpus_type": "synthetic deterministic harness corpus",
+  "reference_cases": 20,
+  "candidate_packets": 200,
+  "expected_matches": 200,
+  "accuracy": 1.0,
+  "classification_distribution": {
+    "DIVERGENT": 20,
+    "EXACT_EQUIVALENT": 20,
+    "INVARIANT_EQUIVALENT": 20,
+    "PARTIAL_EQUIVALENT": 20,
+    "UNDECODABLE": 20,
+    "UNSAFE_COLLAPSE": 100
+  },
+  "expected_distribution": {
+    "DIVERGENT": 20,
+    "EXACT_EQUIVALENT": 20,
+    "INVARIANT_EQUIVALENT": 20,
+    "PARTIAL_EQUIVALENT": 20,
+    "UNDECODABLE": 20,
+    "UNSAFE_COLLAPSE": 100
+  },
+  "critical_loss_events_by_field": {
+    "affected_parties": 40,
+    "authority": 40,
+    "dissent": 43,
+    "invariants": 60,
+    "recoveries": 29,
+    "unknowns": 40,
+    "value_flows": 31
+  },
+  "confusion_matrix": {
+    "DIVERGENT": {
+      "DIVERGENT": 20
+    },
+    "EXACT_EQUIVALENT": {
+      "EXACT_EQUIVALENT": 20
+    },
+    "INVARIANT_EQUIVALENT": {
+      "INVARIANT_EQUIVALENT": 20
+    },
+    "PARTIAL_EQUIVALENT": {
+      "PARTIAL_EQUIVALENT": 20
+    },
+    "UNDECODABLE": {
+      "UNDECODABLE": 20
+    },
+    "UNSAFE_COLLAPSE": {
+      "UNSAFE_COLLAPSE": 100
+    }
+  }
+}

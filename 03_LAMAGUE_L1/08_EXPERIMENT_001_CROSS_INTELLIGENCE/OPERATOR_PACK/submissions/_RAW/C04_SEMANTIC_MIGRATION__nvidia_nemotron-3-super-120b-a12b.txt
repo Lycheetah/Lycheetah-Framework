@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C04_SEMANTIC_MIGRATION",
+  "decoder_id": "nvidia/nemotron-3-super-120b-a12b",
+  "purpose": "original purpose (preserved)",
+  "claim": "A new version keeps its original purpose and invariants, records lineage, and adds human learnability as an unresolved research question.",
+  "operation_path": [
+    "O",
+    "I",
+    "U",
+    "F",
+    "Y"
+  ],
+  "invariants": [
+    "original invariants (preserved)"
+  ],
+  "unknowns": [
+    "human learnability"
+  ],
+  "authority": [],
+  "participants": [],
+  "affected_parties": [],
+  "evidence": [],
+  "provenance": [
+    "lineage recorded"
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "low",
+  "notes": "Original purpose and invariants are not explicitly specified; represented as placeholders. No evidence, participants, affected parties, dissent, value ledger, consequences, or recovery details were provided."
+}

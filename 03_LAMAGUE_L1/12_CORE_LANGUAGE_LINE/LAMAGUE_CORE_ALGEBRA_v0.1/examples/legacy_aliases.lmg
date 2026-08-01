@@ -1,0 +1,4 @@
+let anchor = A₀;
+let variation = ∆;
+let closure = ♾;
+anchor -> variation <-> closure;

@@ -1,0 +1,40 @@
+{
+  "case_id": "C01_UNPROVEN_CLAIM",
+  "decoder_id": "SIM_DECODER_COLLAPSE",
+  "purpose": "publish only what incomplete evidence supports",
+  "claim": "the claim is proven",
+  "operation_path": [
+    "O",
+    "E",
+    "P",
+    "Y"
+  ],
+  "invariants": [
+    "publication matches evidence"
+  ],
+  "unknowns": [],
+  "authority": [],
+  "participants": [
+    "human researcher",
+    "AI collaborator"
+  ],
+  "affected_parties": [
+    "future readers"
+  ],
+  "evidence": [
+    "limited runtime trace"
+  ],
+  "provenance": [
+    "case source"
+  ],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "result published"
+  ],
+  "consequence_horizon": "immediate",
+  "recovery": [],
+  "confidence": "reference",
+  "notes": "",
+  "schema_version": "0.3"
+}

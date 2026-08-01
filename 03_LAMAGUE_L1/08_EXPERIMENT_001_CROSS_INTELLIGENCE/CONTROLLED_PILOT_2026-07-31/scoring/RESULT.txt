@@ -1,0 +1,18 @@
+
+  EXPERIMENT 001 — TREATMENT vs CONTROL
+  --------------------------------------------------------------------------
+  arm                         packets   preserved  preserve  fab/pkt   agree
+  LAMAGUE (treatment)              27       70/82     0.854    0.963   0.892
+  PLAIN ENGLISH (control)          29       58/88     0.659    0.448   0.849
+  --------------------------------------------------------------------------
+
+  preservation delta : +0.195   (LAMAGUE minus prose)
+  agreement delta    : +0.043
+  fabrication delta  : -0.515 per packet (positive = LAMAGUE invents less)
+
+  → LAMAGUE preserved more / agreed more than prose on these
+    cases. Structural only — NOT semantic accuracy.
+
+  ⚠ field-level structure, not correctness. Only the operator arm,
+    scored against sealed references, can speak to accuracy.
+

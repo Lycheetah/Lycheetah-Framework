@@ -1,0 +1,161 @@
+{
+  "suite": "LAMAGUE v0.7 Temporal Evidence Benchmark",
+  "case_count": 8,
+  "expected_matches": 8,
+  "accuracy": 1.0,
+  "results": [
+    {
+      "case_id": "T001",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "rho_recovery_status": true,
+        "permitted_interpretation": true
+      },
+      "expected": {
+        "status": "STABLE",
+        "rho_recovery_status": "NOT_APPLICABLE",
+        "permitted_interpretation": "operational intent-action coherence"
+      },
+      "observed": {
+        "status": "STABLE",
+        "rho_recovery_status": "NOT_APPLICABLE",
+        "permitted_interpretation": "operational intent-action coherence"
+      }
+    },
+    {
+      "case_id": "T002",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "rho_recovery_status": true,
+        "permitted_interpretation": true
+      },
+      "expected": {
+        "status": "STABLE",
+        "rho_recovery_status": "NOT_APPLICABLE",
+        "permitted_interpretation": "operational intent-action coherence"
+      },
+      "observed": {
+        "status": "STABLE",
+        "rho_recovery_status": "NOT_APPLICABLE",
+        "permitted_interpretation": "operational intent-action coherence"
+      }
+    },
+    {
+      "case_id": "T003",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "rho_recovery_status": true,
+        "permitted_interpretation": true
+      },
+      "expected": {
+        "status": "STABLE",
+        "rho_recovery_status": "NOT_APPLICABLE",
+        "permitted_interpretation": "operational intent-action coherence"
+      },
+      "observed": {
+        "status": "STABLE",
+        "rho_recovery_status": "NOT_APPLICABLE",
+        "permitted_interpretation": "operational intent-action coherence"
+      }
+    },
+    {
+      "case_id": "T004",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "rho_recovery_status": true,
+        "permitted_interpretation": true
+      },
+      "expected": {
+        "status": "CRITICAL",
+        "rho_recovery_status": "VALID",
+        "permitted_interpretation": "declared-intent behavioral coherence"
+      },
+      "observed": {
+        "status": "CRITICAL",
+        "rho_recovery_status": "VALID",
+        "permitted_interpretation": "declared-intent behavioral coherence"
+      }
+    },
+    {
+      "case_id": "T005",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "rho_recovery_status": true,
+        "permitted_interpretation": true
+      },
+      "expected": {
+        "status": "INSUFFICIENT",
+        "rho_recovery_status": "BLOCKED",
+        "permitted_interpretation": "no metric claim permitted"
+      },
+      "observed": {
+        "status": "INSUFFICIENT",
+        "rho_recovery_status": "BLOCKED",
+        "permitted_interpretation": "no metric claim permitted"
+      }
+    },
+    {
+      "case_id": "T006",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "rho_recovery_status": true,
+        "permitted_interpretation": true
+      },
+      "expected": {
+        "status": "STABLE",
+        "rho_recovery_status": "NOT_APPLICABLE",
+        "permitted_interpretation": "behavioral anomaly signal only"
+      },
+      "observed": {
+        "status": "STABLE",
+        "rho_recovery_status": "NOT_APPLICABLE",
+        "permitted_interpretation": "behavioral anomaly signal only"
+      }
+    },
+    {
+      "case_id": "T007",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "rho_recovery_status": true,
+        "permitted_interpretation": true
+      },
+      "expected": {
+        "status": "STABLE",
+        "rho_recovery_status": "VALID",
+        "permitted_interpretation": "operational intent-action coherence"
+      },
+      "observed": {
+        "status": "STABLE",
+        "rho_recovery_status": "VALID",
+        "permitted_interpretation": "operational intent-action coherence"
+      }
+    },
+    {
+      "case_id": "T008",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "rho_recovery_status": true,
+        "permitted_interpretation": true
+      },
+      "expected": {
+        "status": "CRITICAL",
+        "rho_recovery_status": "NOT_APPLICABLE",
+        "permitted_interpretation": "operational intent-action coherence"
+      },
+      "observed": {
+        "status": "CRITICAL",
+        "rho_recovery_status": "NOT_APPLICABLE",
+        "permitted_interpretation": "operational intent-action coherence"
+      }
+    }
+  ],
+  "claim_boundary": "Synthetic deterministic software verification only; not external model or human evidence."
+}

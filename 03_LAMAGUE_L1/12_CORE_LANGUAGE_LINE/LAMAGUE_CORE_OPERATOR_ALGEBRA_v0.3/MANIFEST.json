@@ -1,0 +1,242 @@
+{
+  "name": "LAMAGUE Core v0.3 — Complete Operator Algebra and Transformation Contracts",
+  "version": "0.3.0",
+  "files": {
+    "LAMAGUE_CORE_v0.2_SUMMARY.json": {
+      "bytes": 563,
+      "sha256": "d0194e1502215cca8a9512d6210cf772edbd4678783c9deb5d8832f56877e23a"
+    },
+    "LAMAGUE_CORE_v0.3_SUMMARY.json": {
+      "bytes": 894,
+      "sha256": "1bac08f5906e80bd3216e609abd5ce53b973f8842b52f4286845f8f4da2756c2"
+    },
+    "LICENSE": {
+      "bytes": 681,
+      "sha256": "dc878dbdc03a252c39a7b87f1e0b25bb9d567eaa21a81e900a72e8ba4b6f2b2d"
+    },
+    "README.md": {
+      "bytes": 1388,
+      "sha256": "86484c0f1936832b44f05c91c977d6c9c0762fdb874e228cc690510bfc7b2c04"
+    },
+    "archive/v0.2/LAMAGUE_CORE_SPECIFICATION_v0.2.md": {
+      "bytes": 5056,
+      "sha256": "aa2f0551a483e367d2309355a9a220de54765164ca85f72a6b62ff73afedfb5d"
+    },
+    "archive/v0.2/LAMAGUE_CORE_v0.2.ebnf": {
+      "bytes": 2832,
+      "sha256": "6b0fc7f9368e70e2dd94e0eeb36b608e9c847c6ce762eee805fc9ce4f5add894"
+    },
+    "archive/v0.2/ONTOLOGY_BENCHMARK_CASES.json": {
+      "bytes": 5099,
+      "sha256": "443cebc4226b047df4a1e2ddc99e8f6920722e05726278e1c92b0eb4ff169423"
+    },
+    "archive/v0.2/lamague_core_ontology_v0.2.json": {
+      "bytes": 4834,
+      "sha256": "d2ed4cc5c8493ca1d5f2dc38ddeae1fd548e5c32fe0b680509786a30fd21f302"
+    },
+    "archive/v0.2/run_benchmark.py": {
+      "bytes": 2396,
+      "sha256": "f37901e0569aa4b79a5ca359f639bd4535a6e5fdf074f773098c4d9bc64323ea"
+    },
+    "benchmark/OPERATOR_BENCHMARK_CASES.json": {
+      "bytes": 5284,
+      "sha256": "d09abd0c8cfe20e43bd1bbfb0ee1297f4fc9ad520376c76ca4aac23c9836f7fc"
+    },
+    "benchmark/run_operator_benchmark.py": {
+      "bytes": 2457,
+      "sha256": "e383a80854930237afb2b93adef08b360eb5694e1c611ca211fb9f51d2b24d8c"
+    },
+    "docs/ADAPTER_INTERFACE.md": {
+      "bytes": 725,
+      "sha256": "dd122d2400bb8f6b34cbaa379383de4d491ac5ac45d6d8c2eb2c6336d8f60931"
+    },
+    "docs/ALGEBRA_LAWS.md": {
+      "bytes": 1217,
+      "sha256": "3225fc932f23425a227899648b635b026221647de62a1c75a0c005f6cc8d0800"
+    },
+    "docs/FORMAL_TRANSFORMATION_RULES.md": {
+      "bytes": 1142,
+      "sha256": "74a2f090f89ba314976a1087ccdf1223e5cbca091d201a145cdfcb3c2ab9d5eb"
+    },
+    "docs/HANDOFF_TO_SOL.md": {
+      "bytes": 824,
+      "sha256": "de1c8a92d9c771e3f642de31a3f13376021b49eb1411d0fc3006f64e454d71da"
+    },
+    "docs/HANDOFF_TO_SOL_v0.2.md": {
+      "bytes": 786,
+      "sha256": "70753c39edb84315a2a31823f8d5218ac58a3939a9bb0ea5ed67747800a8663e"
+    },
+    "docs/HANDOFF_TO_SOL_v0.3.md": {
+      "bytes": 955,
+      "sha256": "68b8addb6680e7173eb10052e24cf6a65378d17304ac55595200affc4d18fca1"
+    },
+    "docs/IDENTITY_REVERSIBILITY_BOUNDARY.md": {
+      "bytes": 818,
+      "sha256": "b1d9977d279e5540082bcd689df7e9d7f3a06885dfcde0d1e13a118f2ded79b1"
+    },
+    "docs/MIGRATION_v0.1_TO_v0.2.md": {
+      "bytes": 749,
+      "sha256": "715846a7c4b48b9ae72f5a6ca8546ea8e40052cff19634866eb6984b9a454812"
+    },
+    "docs/MIGRATION_v0.2_TO_v0.3.md": {
+      "bytes": 530,
+      "sha256": "6ea560082b27dad5db7d02bd5914bb6d48d20a513a4ea47e20bcde0aafc41d4d"
+    },
+    "docs/ONTOLOGY_AND_TYPE_LATTICE.md": {
+      "bytes": 1385,
+      "sha256": "d59611f6592e4005c27de03e748e15a16ad5f4ff3875c4f87c4ee6ab12f7ccd0"
+    },
+    "docs/OPERATOR_CONTRACTS.md": {
+      "bytes": 1082,
+      "sha256": "129e616190bb1dbee02f8e4a434252bb6382965473a773c6633da060aa08e47f"
+    },
+    "docs/REWRITE_TRACE_SPEC.md": {
+      "bytes": 579,
+      "sha256": "08d8b222f691d947363cd035a33c71f6fb240c5033633875d6359c6fb4e1eeed"
+    },
+    "docs/SOURCE_AUDIT_AND_CANON_DECISIONS.md": {
+      "bytes": 2212,
+      "sha256": "dab88b5a10a82e622771f263c0ccda4f333ad2d8c9cc76174e9c55b5673c8b70"
+    },
+    "docs/TYPE_MATRIX.md": {
+      "bytes": 897,
+      "sha256": "c698d5c67c503159ca83d7a1f648278a9872aed764c6dfdcf0628ad5d977dcdf"
+    },
+    "examples/algebra_equivalence.lmg": {
+      "bytes": 138,
+      "sha256": "0aaab8c02f6bf651557a06c7cde1bf2c64243dcf90e16be6ec59d949624eefdb"
+    },
+    "examples/compression_roundtrip.lmg": {
+      "bytes": 157,
+      "sha256": "9efe087e5e69f5c55c80bde5f20b14994a33e477c05203d6e8dd1e3db06793ae"
+    },
+    "examples/core_return_path.lmg": {
+      "bytes": 323,
+      "sha256": "883c9ca41f0b5e4ae0c2ce947ca3f0bdba4634ea293c3bc3a7bc7b75e86e5cb5"
+    },
+    "examples/legacy_aliases.lmg": {
+      "bytes": 92,
+      "sha256": "bed6675a9f4da85d5f608f6c67e4a97f5cc89e77f21e29d267c42fc2f5a2d375"
+    },
+    "examples/ontology_lock.lmg": {
+      "bytes": 570,
+      "sha256": "ba05e80dd4a493cb4f0bb7d52412875c6901bb2d3a6cf0ce80920999fec9ed27"
+    },
+    "examples/operator_contracts.lmg": {
+      "bytes": 710,
+      "sha256": "db4bce808c7ef08b92c9c646c27f492e3774e80a0efa095d8e8742987e4d8e6b"
+    },
+    "grammar/LAMAGUE_CORE_v0.3.ebnf": {
+      "bytes": 3410,
+      "sha256": "fcf422b793ed0c6bd79d724c7f0cae7952865a5a65fbbec67f6ba8d82b8eae01"
+    },
+    "lamague_core/__init__.py": {
+      "bytes": 712,
+      "sha256": "840cdcde79e491730be76306f00ff8bd41d58c4e0066b1b6703830a53e45c809"
+    },
+    "lamague_core/adapter.py": {
+      "bytes": 815,
+      "sha256": "2b18d40b88e241b51e13356905746799f10a4d0b717f20b3423659206c683f32"
+    },
+    "lamague_core/cli.py": {
+      "bytes": 2442,
+      "sha256": "043801b5bcee9816928d8c758b4bf869153f604eb2db5abc35eab541923f2c81"
+    },
+    "lamague_core/contracts.py": {
+      "bytes": 15163,
+      "sha256": "a184b057a2d6edb06af5eab3ffc3fbfda2fea93c9bdd4ba90cec1c549d378bce"
+    },
+    "lamague_core/core.py": {
+      "bytes": 406,
+      "sha256": "c8a3f07ee339777c0e011af9b9c395992051186e89be828623bf5c6ca9a1b9ce"
+    },
+    "lamague_core/errors.py": {
+      "bytes": 196,
+      "sha256": "cc891811a11f0aaeb952cbc817c342f46617130316c66b0ea886a79fd28fb3fd"
+    },
+    "lamague_core/graph.py": {
+      "bytes": 1896,
+      "sha256": "7c0b359aaf5a80c96945b27e1a33803d56d9cc216d1ef5c9e0fd75ba11dee2bd"
+    },
+    "lamague_core/lexer.py": {
+      "bytes": 4803,
+      "sha256": "d52c9a9a6dc1726366f9be41406a2d9d5c2e7cea53224d53d2f0e49e9d60192a"
+    },
+    "lamague_core/model.py": {
+      "bytes": 3032,
+      "sha256": "20361ccd596f60f4641e9f1c4a1dcc127b3860734cf26d20ff5edc3dc993b065"
+    },
+    "lamague_core/normalizer.py": {
+      "bytes": 3957,
+      "sha256": "874908025df4d3b0b5e2cde048c279af3121407059de3e9a4ae8d2eca4874f59"
+    },
+    "lamague_core/ontology.py": {
+      "bytes": 6647,
+      "sha256": "a5fb9e3df403e0a241c00d6b891684db8bfe521a110688b9ca3342a6869f689f"
+    },
+    "lamague_core/parser.py": {
+      "bytes": 10083,
+      "sha256": "129606a67785ce6f901c4164ba78fa2320d855dbefe61a99616e0400d7b7cf08"
+    },
+    "lamague_core/semantics.py": {
+      "bytes": 17971,
+      "sha256": "b6e2f8363134ddd2c5da8434b083ffabefe934fc8abd131d289810c4b6ac79c2"
+    },
+    "reports/BENCHMARK_RESULTS_v0.3.json": {
+      "bytes": 93901,
+      "sha256": "41d7a3296186f3e4f53de713512a754680bad6a647b9820e43817f014f9bdee1"
+    },
+    "reports/BENCHMARK_RUN_v0.3.txt": {
+      "bytes": 1178,
+      "sha256": "f05ad674ce6cab9ee8e944e4e3913df5b9b5af103a081c2c1a9c40f613fb8623"
+    },
+    "reports/DECLARED_LAW_RUN_v0.3.txt": {
+      "bytes": 2884,
+      "sha256": "ee3c86facf3ca3561515779b92757e560838c347e42d4b0f8ef6a01bbafb94f0"
+    },
+    "reports/DECLARED_LAW_VERIFICATION.json": {
+      "bytes": 1814,
+      "sha256": "0f41b614317770ec65efe7e3d10b53522db88032464d6a0cab6fe63ab2263aa1"
+    },
+    "reports/OPERATOR_CONTRACTS_OUTPUT.json": {
+      "bytes": 49824,
+      "sha256": "696ddac07109c16ffb938ab4f7f7be851f91fc197ef560f5851ab445a7e0f6bf"
+    },
+    "reports/TEST_RESULTS_v0.3.txt": {
+      "bytes": 11643,
+      "sha256": "d7908b73baaf423d5f9cde9c351bf471472ae2215a29a9a2075cd135a22803c7"
+    },
+    "schema/lamague_composition_matrix_v0.3.json": {
+      "bytes": 9291,
+      "sha256": "be34397e17ab12a7cec676cb5dd66a6f8c0b21aa7fbf341219476fb37d72c45f"
+    },
+    "schema/lamague_core_ontology_v0.3.json": {
+      "bytes": 4835,
+      "sha256": "359c6296c72c1b7516c8807d346d9744b36f5178776aeb5e421bd3ee6af681d7"
+    },
+    "schema/lamague_core_result.schema.json": {
+      "bytes": 1028,
+      "sha256": "03cbfd7053f94c576094daacac1e91d712057de8bba745b6685a905d8bddb09d"
+    },
+    "schema/lamague_operator_contracts_v0.3.json": {
+      "bytes": 28148,
+      "sha256": "2603a0283d9ad129dd08463bdebc35b4434a9a2c30f0d2429a706266ee93ca35"
+    },
+    "schema/lamague_operator_contracts_v0.3.schema.json": {
+      "bytes": 566,
+      "sha256": "dda428e38fad90c0471b21ea927d906f52ae3ec0c5f0170711fb3b9d9650e8cd"
+    },
+    "spec/LAMAGUE_CORE_SPECIFICATION_v0.3.md": {
+      "bytes": 4374,
+      "sha256": "bd147a1702e00387dbcc11a9ea866c7167af2a7892d8651a06fb032cf271c799"
+    },
+    "tests/test_core.py": {
+      "bytes": 23750,
+      "sha256": "a8f0d5f7aa81c0449ee168517969fdb10fb7bb87cce77bd1f4b39585e74547ca"
+    },
+    "tests/verify_declared_laws.py": {
+      "bytes": 2562,
+      "sha256": "988dcf521a1cd15cc902dc7e6265975fb6e0ff538fa43b4ba45d5340e5488a8f"
+    }
+  }
+}

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LAMAGUE‑1C One‑Cell Power Language</title>
+<style>
+:root{--bg:#090b12;--panel:#141721;--ink:#f5f3ec;--muted:#aeb2c2;--gold:#efc96e;--line:#353a4d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,sans-serif}
+main{max-width:1200px;margin:auto;padding:22px}h1{font-size:clamp(2.8rem,8vw,6rem);line-height:.88;margin:.4rem 0}
+.lead{max-width:900px;color:var(--muted);font-size:1.15rem}.gold{color:var(--gold)}.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;margin:18px 0}
+textarea{width:100%;min-height:100px;background:#090b12;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:13px;font:1rem ui-monospace,monospace}
+button{background:#202534;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px 13px;cursor:pointer}button:hover{border-color:var(--gold)}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.output{display:flex;gap:10px;flex-wrap:wrap;min-height:145px;padding:14px;border:1px dashed var(--line);border-radius:12px}
+.glyph-cell{width:105px;text-align:center}.glyph-cell svg{width:98px;height:98px;background:#0e1119;border:1px solid var(--line);border-radius:13px;padding:5px}
+.glyph{color:var(--gold)}
+.stroke{fill:none;stroke:currentColor;stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round}
+.guide{fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:.62}
+.rift{fill:none;stroke:currentColor;stroke-width:3.2;stroke-linecap:round;stroke-dasharray:2 5}
+.seed{fill:currentColor;stroke:none}
+.glyph-cell small{display:block;color:var(--muted);margin-top:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(135px,1fr));gap:9px}.token{background:#10131b;border:1px solid var(--line);border-radius:13px;padding:8px;text-align:center}
+.token svg{height:100px;width:100%}.token strong,.token span{display:block}.token span{font-size:.76rem;color:var(--muted)}
+.readout{white-space:pre-wrap;background:#090b12;border-radius:12px;padding:14px;color:#dfe2ec}code{color:var(--gold)}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main>
+<p class="gold"><strong>LYCHEETAH RESEARCH FORGE</strong></p>
+<h1>LAMAGUE‑1C</h1>
+<p class="lead"><strong>The one‑cell power language.</strong> Enter operation names, ASCII aliases, or seal names. The composer converts them into native semantic cells and automatically fuses recognised programmes.</p>
+
+<section class="panel">
+<h2>Compose</h2>
+<textarea id="input">frontier correction</textarea>
+<div class="controls">
+<button data-example="frontier correction">13 operations → 2 cells</button>
+<button data-example="D A F P Y">Correction primitives</button>
+<button data-example="O S N E G I U Q">Frontier primitives</button>
+<button data-example="sovereignty">Sovereignty seal</button>
+<button id="toggle">Auto‑seal: ON</button>
+</div>
+<div id="output" class="output" aria-live="polite"></div>
+</section>
+
+<section class="panel two">
+<div><h2>Expansion</h2><div id="expansion" class="readout"></div></div>
+<div><h2>Meaning</h2><div id="meaning" class="readout"></div></div>
+</section>
+
+<section class="panel">
+<h2>Five power seals</h2>
+<div class="grid">
+<div class="token"><div class="glyph-cell" title="Correction Seal">
+<svg viewBox="0 0 100 100" role="img" aria-label="Correction Seal"><g class="glyph"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M18 66 C31 63 38 55 42 43"/><line class="stroke" x1="38" y1="22" x2="43" y2="76"/><path class="stroke" d="M77 28 C64 31 57 39 53 49 C49 60 54 70 68 77"/><path class="stroke" d="M31 74 C38 83 51 86 62 80"/><circle class="seed" cx="42" cy="43" r="3.8"/><circle class="seed" cx="69" cy="77" r="4"/><line class="guide" x1="45" y1="58" x2="57" y2="58"/></g></svg>
+<small>Correction Seal</small>
+</div>
+<strong>Correction Seal</strong><span>D → A → F → P → Y</span></div><div class="token"><div class="glyph-cell" title="Frontier Seal">
+<svg viewBox="0 0 100 100" role="img" aria-label="Frontier Seal"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M30 68 C42 58 49 48 58 35"/><circle class="seed" cx="42" cy="57" r="3.5"/><circle class="seed" cx="52" cy="46" r="3.5"/><line class="stroke" x1="58" y1="35" x2="66" y2="28"/><line class="stroke" x1="59" y1="50" x2="59" y2="68"/><line class="stroke" x1="52" y1="59" x2="66" y2="59"/><circle class="seed" cx="82" cy="26" r="4.3"/><line class="rift" x1="68" y1="31" x2="76" y2="28"/><path class="guide" d="M26 28 Q49 12 72 27"/></g></svg>
+<small>Frontier Seal</small>
+</div>
+<strong>Frontier Seal</strong><span>O → S → N → E → G → I → U → Q</span></div><div class="token"><div class="glyph-cell" title="Sovereignty Seal">
+<svg viewBox="0 0 100 100" role="img" aria-label="Sovereignty Seal"><g class="glyph"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M50 24 C43 39 44 58 50 74"/><path class="stroke" d="M28 33 C20 47 22 67 38 78"/><path class="stroke" d="M72 33 C80 47 78 67 62 78"/><line class="stroke" x1="28" y1="50" x2="40" y2="50"/><line class="stroke" x1="60" y1="50" x2="72" y2="50"/><line class="stroke" x1="34" y1="43" x2="34" y2="57"/><line class="stroke" x1="66" y1="43" x2="66" y2="57"/><path class="stroke" d="M50 74 C58 70 65 72 78 80"/><circle class="seed" cx="78" cy="80" r="4"/></g></svg>
+<small>Sovereignty Seal</small>
+</div>
+<strong>Sovereignty Seal</strong><span>G → I → V → P → Y</span></div><div class="token"><div class="glyph-cell" title="Cascade Seal">
+<svg viewBox="0 0 100 100" role="img" aria-label="Cascade Seal"><g class="glyph"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><circle class="seed" cx="37" cy="28" r="3.5"/><circle class="seed" cx="50" cy="23" r="3.5"/><circle class="seed" cx="63" cy="28" r="3.5"/><path class="stroke" d="M37 34 C42 42 46 46 50 51"/><path class="stroke" d="M63 34 C58 42 54 46 50 51"/><line class="stroke" x1="28" y1="54" x2="72" y2="54"/><path class="stroke" d="M50 54 C38 62 35 73 46 80"/><path class="stroke" d="M50 54 C62 62 65 73 54 80"/><path class="stroke" d="M46 80 Q50 86 54 80"/><circle class="seed" cx="50" cy="51" r="3.8"/></g></svg>
+<small>Cascade Seal</small>
+</div>
+<strong>Cascade Seal</strong><span>E → N → J → C → F → P → Y</span></div><div class="token"><div class="glyph-cell" title="Protected Dissent Seal">
+<svg viewBox="0 0 100 100" role="img" aria-label="Protected Dissent Seal"><g class="glyph"><path class="stroke" d="M22 31 C14 47 18 68 34 78"/><path class="stroke" d="M78 31 C86 47 82 68 66 78"/><circle class="seed" cx="24" cy="50" r="3.6"/><circle class="seed" cx="76" cy="50" r="3.6"/><path class="stroke" d="M27 48 C37 31 43 32 49 47"/><path class="stroke" d="M73 52 C63 69 57 68 51 53"/><line class="rift" x1="46" y1="42" x2="54" y2="58"/><line class="stroke" x1="45" y1="48" x2="55" y2="48"/><line class="stroke" x1="50" y1="40" x2="50" y2="56"/><path class="stroke" d="M66 78 C71 79 76 78 82 72"/><circle class="seed" cx="82" cy="72" r="3.8"/></g></svg>
+<small>Protected Dissent Seal</small>
+</div>
+<strong>Protected Dissent Seal</strong><span>W → U → G → V → Y</span></div>
+</div>
+</section>
+
+<section class="panel">
+<h2>36 primitive cells</h2>
+<div class="grid">
+<div class="token"><div class="" title="0 · Null">
+<svg viewBox="0 0 100 100" role="img" aria-label="0 · Null"><g class="glyph"><path class="stroke" d="M35 54 Q50 38 65 54"/><line class="stroke" x1="63" y1="52" x2="71" y2="58"/></g></svg>
+<small>0 · Null</small>
+</div>
+<strong>0 · Null</strong><span>Literal&lt;Scalar&gt;</span></div><div class="token"><div class="" title="1 · Unit">
+<svg viewBox="0 0 100 100" role="img" aria-label="1 · Unit"><g class="glyph"><line class="stroke" x1="50" y1="39" x2="50" y2="61"/><circle class="seed" cx="50" cy="50" r="4.2"/></g></svg>
+<small>1 · Unit</small>
+</div>
+<strong>1 · Unit</strong><span>Literal&lt;Scalar&gt;</span></div><div class="token"><div class="" title="2 · Difference">
+<svg viewBox="0 0 100 100" role="img" aria-label="2 · Difference"><g class="glyph"><line class="stroke" x1="50" y1="39" x2="50" y2="61"/><circle class="seed" cx="40.5" cy="50" r="3.8"/><circle class="seed" cx="59.5" cy="50" r="3.8"/></g></svg>
+<small>2 · Difference</small>
+</div>
+<strong>2 · Difference</strong><span>Literal&lt;Scalar&gt;</span></div><div class="token"><div class="" title="3 · Three">
+<svg viewBox="0 0 100 100" role="img" aria-label="3 · Three"><g class="glyph"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="50" cy="33" r="4.2"/><path class="stroke" d="M35 73 Q50 57 65 73"/><line class="stroke" x1="63" y1="71" x2="71" y2="77"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g></svg>
+<small>3 · Three</small>
+</div>
+<strong>3 · Three</strong><span>Literal&lt;Scalar&gt;</span></div><div class="token"><div class="" title="4 · Four">
+<svg viewBox="0 0 100 100" role="img" aria-label="4 · Four"><g class="glyph"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="50" cy="33" r="4.2"/><line class="stroke" x1="50" y1="58" x2="50" y2="80"/><circle class="seed" cx="50" cy="69" r="4.2"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g></svg>
+<small>4 · Four</small>
+</div>
+<strong>4 · Four</strong><span>Literal&lt;Scalar&gt;</span></div><div class="token"><div class="" title="5 · Five">
+<svg viewBox="0 0 100 100" role="img" aria-label="5 · Five"><g class="glyph"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="50" cy="33" r="4.2"/><line class="stroke" x1="50" y1="58" x2="50" y2="80"/><circle class="seed" cx="40.5" cy="69" r="3.8"/><circle class="seed" cx="59.5" cy="69" r="3.8"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g></svg>
+<small>5 · Five</small>
+</div>
+<strong>5 · Five</strong><span>Literal&lt;Scalar&gt;</span></div><div class="token"><div class="" title="6 · Six">
+<svg viewBox="0 0 100 100" role="img" aria-label="6 · Six"><g class="glyph"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="40.5" cy="33" r="3.8"/><circle class="seed" cx="59.5" cy="33" r="3.8"/><path class="stroke" d="M35 73 Q50 57 65 73"/><line class="stroke" x1="63" y1="71" x2="71" y2="77"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g></svg>
+<small>6 · Six</small>
+</div>
+<strong>6 · Six</strong><span>Literal&lt;Scalar&gt;</span></div><div class="token"><div class="" title="7 · Seven">
+<svg viewBox="0 0 100 100" role="img" aria-label="7 · Seven"><g class="glyph"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="40.5" cy="33" r="3.8"/><circle class="seed" cx="59.5" cy="33" r="3.8"/><line class="stroke" x1="50" y1="58" x2="50" y2="80"/><circle class="seed" cx="50" cy="69" r="4.2"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g></svg>
+<small>7 · Seven</small>
+</div>
+<strong>7 · Seven</strong><span>Literal&lt;Scalar&gt;</span></div><div class="token"><div class="" title="8 · Eight">
+<svg viewBox="0 0 100 100" role="img" aria-label="8 · Eight"><g class="glyph"><line class="stroke" x1="50" y1="22" x2="50" y2="44"/><circle class="seed" cx="40.5" cy="33" r="3.8"/><circle class="seed" cx="59.5" cy="33" r="3.8"/><line class="stroke" x1="50" y1="58" x2="50" y2="80"/><circle class="seed" cx="40.5" cy="69" r="3.8"/><circle class="seed" cx="59.5" cy="69" r="3.8"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g></svg>
+<small>8 · Eight</small>
+</div>
+<strong>8 · Eight</strong><span>Literal&lt;Scalar&gt;</span></div><div class="token"><div class="" title="9 · Nine">
+<svg viewBox="0 0 100 100" role="img" aria-label="9 · Nine"><g class="glyph"><line class="stroke" x1="50" y1="12" x2="50" y2="34"/><circle class="seed" cx="50" cy="23" r="4.2"/><path class="stroke" d="M35 54 Q50 38 65 54"/><line class="stroke" x1="63" y1="52" x2="71" y2="58"/><path class="stroke" d="M35 81 Q50 65 65 81"/><line class="stroke" x1="63" y1="79" x2="71" y2="85"/><line class="guide" x1="24" y1="50" x2="76" y2="50"/></g></svg>
+<small>9 · Nine</small>
+</div>
+<strong>9 · Nine</strong><span>Literal&lt;Scalar&gt;</span></div><div class="token"><div class="" title="A · Anchor">
+<svg viewBox="0 0 100 100" role="img" aria-label="A · Anchor"><g class="glyph"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M19 76 C34 76 42 66 43 51 C44 35 51 26 64 25"/><path class="stroke" d="M43 51 C44 68 50 79 63 82"/><line class="stroke" x1="39" y1="83" x2="68" y2="83"/><circle class="seed" cx="47" cy="51" r="3.6"/></g></svg>
+<small>A · Anchor</small>
+</div>
+<strong>A · Anchor</strong><span>State × Baseline → State</span></div><div class="token"><div class="" title="B · Bridge">
+<svg viewBox="0 0 100 100" role="img" aria-label="B · Bridge"><g class="glyph"><circle class="seed" cx="19" cy="50" r="3.4"/><circle class="seed" cx="81" cy="50" r="3.4"/><path class="stroke" d="M23 50 C31 26 41 25 49 43"/><path class="stroke" d="M77 50 C69 74 59 75 51 57"/><path class="stroke" d="M47 43 Q50 50 53 57"/><line class="guide" x1="50" y1="34" x2="50" y2="66"/></g></svg>
+<small>B · Bridge</small>
+</div>
+<strong>B · Bridge</strong><span>α × β × Mapping → Relation&lt;α,β&gt;</span></div><div class="token"><div class="" title="C · Cycle">
+<svg viewBox="0 0 100 100" role="img" aria-label="C · Cycle"><g class="glyph"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M23 72 C18 48 28 25 50 22 C69 20 80 35 75 53"/><path class="stroke" d="M75 53 C70 71 48 79 34 67"/><line class="stroke" x1="67" y1="54" x2="79" y2="48"/></g></svg>
+<small>C · Cycle</small>
+</div>
+<strong>C · Cycle</strong><span>Operation × State × StopCondition → State</span></div><div class="token"><div class="" title="D · Drift">
+<svg viewBox="0 0 100 100" role="img" aria-label="D · Drift"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><line class="stroke" x1="36" y1="20" x2="42" y2="76"/><path class="stroke" d="M49 27 C58 39 65 54 77 72"/><circle class="seed" cx="39" cy="49" r="3.4"/><line class="stroke" x1="70" y1="69" x2="80" y2="78"/></g></svg>
+<small>D · Drift</small>
+</div>
+<strong>D · Drift</strong><span>State × Invariant → Scalar</span></div><div class="token"><div class="" title="E · Evidence">
+<svg viewBox="0 0 100 100" role="img" aria-label="E · Evidence"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M31 67 C42 61 53 54 66 38"/><circle class="seed" cx="38" cy="61" r="3.4"/><circle class="seed" cx="49" cy="53" r="3.4"/><circle class="seed" cx="61" cy="43" r="3.4"/><line class="stroke" x1="67" y1="32" x2="77" y2="26"/><line class="stroke" x1="71" y1="25" x2="78" y2="31"/></g></svg>
+<small>E · Evidence</small>
+</div>
+<strong>E · Evidence</strong><span>Claim × SourceSet → EvidenceRecord</span></div><div class="token"><div class="" title="F · Fold">
+<svg viewBox="0 0 100 100" role="img" aria-label="F · Fold"><g class="glyph"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 70 C27 24 70 18 78 43 C84 62 58 77 43 65"/><path class="stroke" d="M43 65 C32 56 40 41 53 43 C62 44 62 55 55 58"/><circle class="seed" cx="51" cy="58" r="3.6"/></g></svg>
+<small>F · Fold</small>
+</div>
+<strong>F · Fold</strong><span>History × Kernel → IntegratedState</span></div><div class="token"><div class="" title="G · Guard">
+<svg viewBox="0 0 100 100" role="img" aria-label="G · Guard"><g class="glyph"><path class="stroke" d="M34 80 Q50 88 66 80"/><line class="stroke" x1="41" y1="76" x2="38" y2="87"/><line class="stroke" x1="59" y1="76" x2="62" y2="87"/><path class="stroke" d="M18 67 C34 65 43 57 49 45 C56 32 65 26 80 25"/><line class="stroke" x1="49" y1="37" x2="49" y2="58"/><line class="stroke" x1="42" y1="47" x2="56" y2="47"/><circle class="seed" cx="24" cy="65" r="3.3"/></g></svg>
+<small>G · Guard</small>
+</div>
+<strong>G · Guard</strong><span>Predicate × Action × Fallback → Action</span></div><div class="token"><div class="" title="H · Horizon">
+<svg viewBox="0 0 100 100" role="img" aria-label="H · Horizon"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M25 69 C39 59 48 48 61 31"/><line class="stroke" x1="34" y1="25" x2="75" y2="25"/><circle class="seed" cx="78" cy="25" r="3.7"/><line class="guide" x1="55" y1="46" x2="72" y2="46"/></g></svg>
+<small>H · Horizon</small>
+</div>
+<strong>H · Horizon</strong><span>Purpose × TimeScope → Horizon</span></div><div class="token"><div class="" title="I · Invariant">
+<svg viewBox="0 0 100 100" role="img" aria-label="I · Invariant"><g class="glyph"><path class="stroke" d="M34 80 Q50 88 66 80"/><line class="stroke" x1="41" y1="76" x2="38" y2="87"/><line class="stroke" x1="59" y1="76" x2="62" y2="87"/><path class="stroke" d="M50 18 C44 33 46 54 50 75"/><path class="stroke" d="M34 33 Q50 19 66 33"/><line class="stroke" x1="33" y1="39" x2="40" y2="46"/><line class="stroke" x1="67" y1="39" x2="60" y2="46"/><circle class="seed" cx="50" cy="51" r="3.5"/></g></svg>
+<small>I · Invariant</small>
+</div>
+<strong>I · Invariant</strong><span>Predicate × Scope → Constraint</span></div><div class="token"><div class="" title="J · Junction">
+<svg viewBox="0 0 100 100" role="img" aria-label="J · Junction"><g class="glyph"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 75 C34 68 42 58 49 46"/><path class="stroke" d="M49 46 C55 38 62 32 79 25"/><path class="stroke" d="M49 46 C55 57 62 65 77 72"/><circle class="seed" cx="49" cy="46" r="3.8"/></g></svg>
+<small>J · Junction</small>
+</div>
+<strong>J · Junction</strong><span>Condition × TrueBranch × FalseBranch → Branch</span></div><div class="token"><div class="" title="K · Kernel">
+<svg viewBox="0 0 100 100" role="img" aria-label="K · Kernel"><g class="glyph"><path class="stroke" d="M34 80 Q50 88 66 80"/><line class="stroke" x1="41" y1="76" x2="38" y2="87"/><line class="stroke" x1="59" y1="76" x2="62" y2="87"/><circle class="seed" cx="50" cy="50" r="7"/><path class="stroke" d="M50 18 C47 31 47 38 50 43"/><path class="stroke" d="M20 50 C31 47 38 47 43 50"/><path class="stroke" d="M80 50 C69 53 62 53 57 50"/><path class="stroke" d="M50 79 C53 68 53 61 50 57"/></g></svg>
+<small>K · Kernel</small>
+</div>
+<strong>K · Kernel</strong><span>System → MinimalCore</span></div><div class="token"><div class="" title="L · Limit">
+<svg viewBox="0 0 100 100" role="img" aria-label="L · Limit"><g class="glyph"><path class="stroke" d="M34 80 Q50 88 66 80"/><line class="stroke" x1="41" y1="76" x2="38" y2="87"/><line class="stroke" x1="59" y1="76" x2="62" y2="87"/><path class="stroke" d="M26 64 C40 58 50 48 61 31"/><line class="stroke" x1="61" y1="20" x2="61" y2="72"/><line class="stroke" x1="54" y1="31" x2="69" y2="31"/><circle class="seed" cx="26" cy="64" r="3.4"/></g></svg>
+<small>L · Limit</small>
+</div>
+<strong>L · Limit</strong><span>Metric × Bound → Constraint</span></div><div class="token"><div class="" title="M · Merge">
+<svg viewBox="0 0 100 100" role="img" aria-label="M · Merge"><g class="glyph"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 72 C30 60 37 50 49 46"/><path class="stroke" d="M20 28 C32 39 39 45 49 46"/><path class="stroke" d="M49 46 C58 49 67 41 80 26"/><path class="stroke" d="M49 46 C53 58 57 68 65 79"/><circle class="seed" cx="49" cy="46" r="4"/></g></svg>
+<small>M · Merge</small>
+</div>
+<strong>M · Merge</strong><span>State^n × ConflictPolicy → State</span></div><div class="token"><div class="" title="N · Novelty">
+<svg viewBox="0 0 100 100" role="img" aria-label="N · Novelty"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><circle class="seed" cx="43" cy="57" r="3.5"/><circle class="seed" cx="81" cy="24" r="4"/><path class="stroke" d="M47 54 C57 47 65 39 75 29"/><path class="guide" d="M31 67 Q50 35 70 29"/><line class="stroke" x1="70" y1="22" x2="79" y2="31"/></g></svg>
+<small>N · Novelty</small>
+</div>
+<strong>N · Novelty</strong><span>Candidate × Corpus → Scalar</span></div><div class="token"><div class="" title="O · Observe">
+<svg viewBox="0 0 100 100" role="img" aria-label="O · Observe"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M23 52 C34 38 49 32 67 36"/><path class="stroke" d="M23 52 C35 66 51 71 69 64"/><circle class="seed" cx="50" cy="52" r="4.2"/><line class="stroke" x1="67" y1="36" x2="78" y2="31"/><line class="stroke" x1="69" y1="64" x2="79" y2="68"/></g></svg>
+<small>O · Observe</small>
+</div>
+<strong>O · Observe</strong><span>Target × ObserverContext → Snapshot</span></div><div class="token"><div class="" title="P · Prove">
+<svg viewBox="0 0 100 100" role="img" aria-label="P · Prove"><g class="glyph"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M31 42 C42 37 48 44 50 53 C53 43 60 37 70 42"/><path class="stroke" d="M50 53 C48 65 49 74 54 82"/><circle class="seed" cx="54" cy="82" r="3.8"/><line class="guide" x1="44" y1="55" x2="56" y2="55"/></g></svg>
+<small>P · Prove</small>
+</div>
+<strong>P · Prove</strong><span>Claim × Evidence × InvariantSet → ProofStatus</span></div><div class="token"><div class="" title="Q · Query">
+<svg viewBox="0 0 100 100" role="img" aria-label="Q · Query"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M31 65 C42 58 50 49 58 38"/><line class="stroke" x1="58" y1="38" x2="68" y2="31"/><circle class="seed" cx="79" cy="24" r="4"/><line class="rift" x1="70" y1="29" x2="75" y2="26"/></g></svg>
+<small>Q · Query</small>
+</div>
+<strong>Q · Query</strong><span>Target × Property → U&lt;Property&gt;</span></div><div class="token"><div class="" title="R · Resolve">
+<svg viewBox="0 0 100 100" role="img" aria-label="R · Resolve"><g class="glyph"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M25 61 C36 49 43 45 50 48"/><path class="stroke" d="M75 61 C64 49 57 45 50 48"/><path class="stroke" d="M50 48 C47 60 50 70 61 78"/><circle class="seed" cx="50" cy="48" r="4"/><circle class="seed" cx="61" cy="78" r="3.6"/></g></svg>
+<small>R · Resolve</small>
+</div>
+<strong>R · Resolve</strong><span>Unknown × EvidenceOrRule → Value|Unknown</span></div><div class="token"><div class="" title="S · State">
+<svg viewBox="0 0 100 100" role="img" aria-label="S · State"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><line class="stroke" x1="29" y1="73" x2="69" y2="73"/><circle class="seed" cx="47" cy="53" r="4.3"/><line class="guide" x1="53" y1="33" x2="53" y2="66"/><line class="guide" x1="36" y1="35" x2="62" y2="35"/></g></svg>
+<small>S · State</small>
+</div>
+<strong>S · State</strong><span>FieldSet × Time × Scope → Snapshot</span></div><div class="token"><div class="" title="T · Transition">
+<svg viewBox="0 0 100 100" role="img" aria-label="T · Transition"><g class="glyph"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 75 C35 74 42 67 47 57"/><path class="stroke" d="M47 57 C54 45 63 37 79 25"/><line class="stroke" x1="43" y1="52" x2="54" y2="63"/><circle class="seed" cx="47" cy="57" r="3.5"/></g></svg>
+<small>T · Transition</small>
+</div>
+<strong>T · Transition</strong><span>State × Operation → TransitionRecord</span></div><div class="token"><div class="" title="U · Unknown">
+<svg viewBox="0 0 100 100" role="img" aria-label="U · Unknown"><g class="glyph"><path class="stroke" d="M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63"/><path class="stroke" d="M24 67 C33 47 44 34 60 28"/><line class="rift" x1="62" y1="28" x2="69" y2="34"/><circle class="seed" cx="80" cy="43" r="4.3"/><line class="rift" x1="68" y1="37" x2="75" y2="41"/></g></svg>
+<small>U · Unknown</small>
+</div>
+<strong>U · Unknown</strong><span>Type → Unknown&lt;Type&gt;</span></div><div class="token"><div class="" title="V · Vector Invert">
+<svg viewBox="0 0 100 100" role="img" aria-label="V · Vector Invert"><g class="glyph"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M20 75 C34 64 42 55 49 45"/><line class="stroke" x1="43" y1="38" x2="56" y2="52"/><path class="stroke" d="M49 45 C58 35 66 28 80 24"/><path class="stroke" d="M49 45 C57 58 66 68 78 75"/><circle class="seed" cx="49" cy="45" r="3.8"/></g></svg>
+<small>V · Vector Invert</small>
+</div>
+<strong>V · Vector Invert</strong><span>FailedPath × PreservedIntent → AlternativeSet</span></div><div class="token"><div class="" title="W · Weave">
+<svg viewBox="0 0 100 100" role="img" aria-label="W · Weave"><g class="glyph"><circle class="seed" cx="19" cy="50" r="3.4"/><circle class="seed" cx="81" cy="50" r="3.4"/><path class="stroke" d="M22 50 C33 24 45 25 50 48 C55 71 67 72 78 50"/><path class="stroke" d="M22 50 C33 76 45 75 50 52 C55 29 67 28 78 50"/><line class="rift" x1="45" y1="46" x2="55" y2="54"/></g></svg>
+<small>W · Weave</small>
+</div>
+<strong>W · Weave</strong><span>AgentSet × Provenance × BoundaryPolicy → RelationalGraph</span></div><div class="token"><div class="" title="X · Exchange">
+<svg viewBox="0 0 100 100" role="img" aria-label="X · Exchange"><g class="glyph"><circle class="seed" cx="19" cy="50" r="3.4"/><circle class="seed" cx="81" cy="50" r="3.4"/><path class="stroke" d="M23 47 C38 27 62 27 77 47"/><path class="stroke" d="M77 53 C62 73 38 73 23 53"/><polyline class="stroke" points="68,41 78,47 69,52"/><polyline class="stroke" points="32,59 22,53 31,48"/></g></svg>
+<small>X · Exchange</small>
+</div>
+<strong>X · Exchange</strong><span>Agent × Agent × Resource × LedgerPolicy → LedgerUpdate</span></div><div class="token"><div class="" title="Y · Yield">
+<svg viewBox="0 0 100 100" role="img" aria-label="Y · Yield"><g class="glyph"><circle class="seed" cx="18" cy="76" r="3.2"/><polyline class="stroke" points="72,30 82,24 78,35"/><path class="stroke" d="M21 30 C36 34 43 40 50 51"/><path class="stroke" d="M21 71 C35 66 43 61 50 51"/><path class="stroke" d="M50 51 C58 56 67 61 80 66"/><circle class="seed" cx="50" cy="51" r="4"/><circle class="seed" cx="80" cy="66" r="3.8"/></g></svg>
+<small>Y · Yield</small>
+</div>
+<strong>Y · Yield</strong><span>Value × ProofStatus → Output</span></div><div class="token"><div class="" title="Z · Compress">
+<svg viewBox="0 0 100 100" role="img" aria-label="Z · Compress"><g class="glyph"><path class="stroke" d="M27 24 Q50 8 73 24"/><line class="stroke" x1="34" y1="22" x2="30" y2="31"/><line class="stroke" x1="66" y1="22" x2="70" y2="31"/><path class="stroke" d="M25 39 C36 45 42 54 45 66"/><path class="stroke" d="M75 39 C64 45 58 54 55 66"/><line class="stroke" x1="45" y1="66" x2="55" y2="66"/><path class="stroke" d="M50 41 C48 51 49 61 50 78"/><circle class="seed" cx="50" cy="79" r="3.5"/></g></svg>
+<small>Z · Compress</small>
+</div>
+<strong>Z · Compress</strong><span>Expression × InvariantSet × CompressionLevel → Expression</span></div>
+</div>
+</section>
+
+<section class="panel">
+<h2>Core syntax</h2>
+<div class="readout">Sequence: A → F
+Parallel: E & N
+Guard: G[I] : T
+Unknown: U&lt;Cause&gt;
+Strength: D@7
+Repetition: C^3
+Seal: SEAL[COR]</div>
+</section>
+</main>
+<script>
+const GLYPHS={"0": "<path class=\"stroke\" d=\"M35 54 Q50 38 65 54\"/><line class=\"stroke\" x1=\"63\" y1=\"52\" x2=\"71\" y2=\"58\"/>", "1": "<line class=\"stroke\" x1=\"50\" y1=\"39\" x2=\"50\" y2=\"61\"/><circle class=\"seed\" cx=\"50\" cy=\"50\" r=\"4.2\"/>", "2": "<line class=\"stroke\" x1=\"50\" y1=\"39\" x2=\"50\" y2=\"61\"/><circle class=\"seed\" cx=\"40.5\" cy=\"50\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"50\" r=\"3.8\"/>", "3": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"50\" cy=\"33\" r=\"4.2\"/><path class=\"stroke\" d=\"M35 73 Q50 57 65 73\"/><line class=\"stroke\" x1=\"63\" y1=\"71\" x2=\"71\" y2=\"77\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>", "4": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"50\" cy=\"33\" r=\"4.2\"/><line class=\"stroke\" x1=\"50\" y1=\"58\" x2=\"50\" y2=\"80\"/><circle class=\"seed\" cx=\"50\" cy=\"69\" r=\"4.2\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>", "5": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"50\" cy=\"33\" r=\"4.2\"/><line class=\"stroke\" x1=\"50\" y1=\"58\" x2=\"50\" y2=\"80\"/><circle class=\"seed\" cx=\"40.5\" cy=\"69\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"69\" r=\"3.8\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>", "6": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"40.5\" cy=\"33\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"33\" r=\"3.8\"/><path class=\"stroke\" d=\"M35 73 Q50 57 65 73\"/><line class=\"stroke\" x1=\"63\" y1=\"71\" x2=\"71\" y2=\"77\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>", "7": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"40.5\" cy=\"33\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"33\" r=\"3.8\"/><line class=\"stroke\" x1=\"50\" y1=\"58\" x2=\"50\" y2=\"80\"/><circle class=\"seed\" cx=\"50\" cy=\"69\" r=\"4.2\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>", "8": "<line class=\"stroke\" x1=\"50\" y1=\"22\" x2=\"50\" y2=\"44\"/><circle class=\"seed\" cx=\"40.5\" cy=\"33\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"33\" r=\"3.8\"/><line class=\"stroke\" x1=\"50\" y1=\"58\" x2=\"50\" y2=\"80\"/><circle class=\"seed\" cx=\"40.5\" cy=\"69\" r=\"3.8\"/><circle class=\"seed\" cx=\"59.5\" cy=\"69\" r=\"3.8\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>", "9": "<line class=\"stroke\" x1=\"50\" y1=\"12\" x2=\"50\" y2=\"34\"/><circle class=\"seed\" cx=\"50\" cy=\"23\" r=\"4.2\"/><path class=\"stroke\" d=\"M35 54 Q50 38 65 54\"/><line class=\"stroke\" x1=\"63\" y1=\"52\" x2=\"71\" y2=\"58\"/><path class=\"stroke\" d=\"M35 81 Q50 65 65 81\"/><line class=\"stroke\" x1=\"63\" y1=\"79\" x2=\"71\" y2=\"85\"/><line class=\"guide\" x1=\"24\" y1=\"50\" x2=\"76\" y2=\"50\"/>", "A": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M19 76 C34 76 42 66 43 51 C44 35 51 26 64 25\"/><path class=\"stroke\" d=\"M43 51 C44 68 50 79 63 82\"/><line class=\"stroke\" x1=\"39\" y1=\"83\" x2=\"68\" y2=\"83\"/><circle class=\"seed\" cx=\"47\" cy=\"51\" r=\"3.6\"/>", "B": "<circle class=\"seed\" cx=\"19\" cy=\"50\" r=\"3.4\"/><circle class=\"seed\" cx=\"81\" cy=\"50\" r=\"3.4\"/><path class=\"stroke\" d=\"M23 50 C31 26 41 25 49 43\"/><path class=\"stroke\" d=\"M77 50 C69 74 59 75 51 57\"/><path class=\"stroke\" d=\"M47 43 Q50 50 53 57\"/><line class=\"guide\" x1=\"50\" y1=\"34\" x2=\"50\" y2=\"66\"/>", "C": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M23 72 C18 48 28 25 50 22 C69 20 80 35 75 53\"/><path class=\"stroke\" d=\"M75 53 C70 71 48 79 34 67\"/><line class=\"stroke\" x1=\"67\" y1=\"54\" x2=\"79\" y2=\"48\"/>", "D": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><line class=\"stroke\" x1=\"36\" y1=\"20\" x2=\"42\" y2=\"76\"/><path class=\"stroke\" d=\"M49 27 C58 39 65 54 77 72\"/><circle class=\"seed\" cx=\"39\" cy=\"49\" r=\"3.4\"/><line class=\"stroke\" x1=\"70\" y1=\"69\" x2=\"80\" y2=\"78\"/>", "E": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M31 67 C42 61 53 54 66 38\"/><circle class=\"seed\" cx=\"38\" cy=\"61\" r=\"3.4\"/><circle class=\"seed\" cx=\"49\" cy=\"53\" r=\"3.4\"/><circle class=\"seed\" cx=\"61\" cy=\"43\" r=\"3.4\"/><line class=\"stroke\" x1=\"67\" y1=\"32\" x2=\"77\" y2=\"26\"/><line class=\"stroke\" x1=\"71\" y1=\"25\" x2=\"78\" y2=\"31\"/>", "F": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M20 70 C27 24 70 18 78 43 C84 62 58 77 43 65\"/><path class=\"stroke\" d=\"M43 65 C32 56 40 41 53 43 C62 44 62 55 55 58\"/><circle class=\"seed\" cx=\"51\" cy=\"58\" r=\"3.6\"/>", "G": "<path class=\"stroke\" d=\"M34 80 Q50 88 66 80\"/><line class=\"stroke\" x1=\"41\" y1=\"76\" x2=\"38\" y2=\"87\"/><line class=\"stroke\" x1=\"59\" y1=\"76\" x2=\"62\" y2=\"87\"/><path class=\"stroke\" d=\"M18 67 C34 65 43 57 49 45 C56 32 65 26 80 25\"/><line class=\"stroke\" x1=\"49\" y1=\"37\" x2=\"49\" y2=\"58\"/><line class=\"stroke\" x1=\"42\" y1=\"47\" x2=\"56\" y2=\"47\"/><circle class=\"seed\" cx=\"24\" cy=\"65\" r=\"3.3\"/>", "H": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M25 69 C39 59 48 48 61 31\"/><line class=\"stroke\" x1=\"34\" y1=\"25\" x2=\"75\" y2=\"25\"/><circle class=\"seed\" cx=\"78\" cy=\"25\" r=\"3.7\"/><line class=\"guide\" x1=\"55\" y1=\"46\" x2=\"72\" y2=\"46\"/>", "I": "<path class=\"stroke\" d=\"M34 80 Q50 88 66 80\"/><line class=\"stroke\" x1=\"41\" y1=\"76\" x2=\"38\" y2=\"87\"/><line class=\"stroke\" x1=\"59\" y1=\"76\" x2=\"62\" y2=\"87\"/><path class=\"stroke\" d=\"M50 18 C44 33 46 54 50 75\"/><path class=\"stroke\" d=\"M34 33 Q50 19 66 33\"/><line class=\"stroke\" x1=\"33\" y1=\"39\" x2=\"40\" y2=\"46\"/><line class=\"stroke\" x1=\"67\" y1=\"39\" x2=\"60\" y2=\"46\"/><circle class=\"seed\" cx=\"50\" cy=\"51\" r=\"3.5\"/>", "J": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M20 75 C34 68 42 58 49 46\"/><path class=\"stroke\" d=\"M49 46 C55 38 62 32 79 25\"/><path class=\"stroke\" d=\"M49 46 C55 57 62 65 77 72\"/><circle class=\"seed\" cx=\"49\" cy=\"46\" r=\"3.8\"/>", "K": "<path class=\"stroke\" d=\"M34 80 Q50 88 66 80\"/><line class=\"stroke\" x1=\"41\" y1=\"76\" x2=\"38\" y2=\"87\"/><line class=\"stroke\" x1=\"59\" y1=\"76\" x2=\"62\" y2=\"87\"/><circle class=\"seed\" cx=\"50\" cy=\"50\" r=\"7\"/><path class=\"stroke\" d=\"M50 18 C47 31 47 38 50 43\"/><path class=\"stroke\" d=\"M20 50 C31 47 38 47 43 50\"/><path class=\"stroke\" d=\"M80 50 C69 53 62 53 57 50\"/><path class=\"stroke\" d=\"M50 79 C53 68 53 61 50 57\"/>", "L": "<path class=\"stroke\" d=\"M34 80 Q50 88 66 80\"/><line class=\"stroke\" x1=\"41\" y1=\"76\" x2=\"38\" y2=\"87\"/><line class=\"stroke\" x1=\"59\" y1=\"76\" x2=\"62\" y2=\"87\"/><path class=\"stroke\" d=\"M26 64 C40 58 50 48 61 31\"/><line class=\"stroke\" x1=\"61\" y1=\"20\" x2=\"61\" y2=\"72\"/><line class=\"stroke\" x1=\"54\" y1=\"31\" x2=\"69\" y2=\"31\"/><circle class=\"seed\" cx=\"26\" cy=\"64\" r=\"3.4\"/>", "M": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M20 72 C30 60 37 50 49 46\"/><path class=\"stroke\" d=\"M20 28 C32 39 39 45 49 46\"/><path class=\"stroke\" d=\"M49 46 C58 49 67 41 80 26\"/><path class=\"stroke\" d=\"M49 46 C53 58 57 68 65 79\"/><circle class=\"seed\" cx=\"49\" cy=\"46\" r=\"4\"/>", "N": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><circle class=\"seed\" cx=\"43\" cy=\"57\" r=\"3.5\"/><circle class=\"seed\" cx=\"81\" cy=\"24\" r=\"4\"/><path class=\"stroke\" d=\"M47 54 C57 47 65 39 75 29\"/><path class=\"guide\" d=\"M31 67 Q50 35 70 29\"/><line class=\"stroke\" x1=\"70\" y1=\"22\" x2=\"79\" y2=\"31\"/>", "O": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M23 52 C34 38 49 32 67 36\"/><path class=\"stroke\" d=\"M23 52 C35 66 51 71 69 64\"/><circle class=\"seed\" cx=\"50\" cy=\"52\" r=\"4.2\"/><line class=\"stroke\" x1=\"67\" y1=\"36\" x2=\"78\" y2=\"31\"/><line class=\"stroke\" x1=\"69\" y1=\"64\" x2=\"79\" y2=\"68\"/>", "P": "<path class=\"stroke\" d=\"M27 24 Q50 8 73 24\"/><line class=\"stroke\" x1=\"34\" y1=\"22\" x2=\"30\" y2=\"31\"/><line class=\"stroke\" x1=\"66\" y1=\"22\" x2=\"70\" y2=\"31\"/><path class=\"stroke\" d=\"M31 42 C42 37 48 44 50 53 C53 43 60 37 70 42\"/><path class=\"stroke\" d=\"M50 53 C48 65 49 74 54 82\"/><circle class=\"seed\" cx=\"54\" cy=\"82\" r=\"3.8\"/><line class=\"guide\" x1=\"44\" y1=\"55\" x2=\"56\" y2=\"55\"/>", "Q": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M31 65 C42 58 50 49 58 38\"/><line class=\"stroke\" x1=\"58\" y1=\"38\" x2=\"68\" y2=\"31\"/><circle class=\"seed\" cx=\"79\" cy=\"24\" r=\"4\"/><line class=\"rift\" x1=\"70\" y1=\"29\" x2=\"75\" y2=\"26\"/>", "R": "<path class=\"stroke\" d=\"M27 24 Q50 8 73 24\"/><line class=\"stroke\" x1=\"34\" y1=\"22\" x2=\"30\" y2=\"31\"/><line class=\"stroke\" x1=\"66\" y1=\"22\" x2=\"70\" y2=\"31\"/><path class=\"stroke\" d=\"M25 61 C36 49 43 45 50 48\"/><path class=\"stroke\" d=\"M75 61 C64 49 57 45 50 48\"/><path class=\"stroke\" d=\"M50 48 C47 60 50 70 61 78\"/><circle class=\"seed\" cx=\"50\" cy=\"48\" r=\"4\"/><circle class=\"seed\" cx=\"61\" cy=\"78\" r=\"3.6\"/>", "S": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><line class=\"stroke\" x1=\"29\" y1=\"73\" x2=\"69\" y2=\"73\"/><circle class=\"seed\" cx=\"47\" cy=\"53\" r=\"4.3\"/><line class=\"guide\" x1=\"53\" y1=\"33\" x2=\"53\" y2=\"66\"/><line class=\"guide\" x1=\"36\" y1=\"35\" x2=\"62\" y2=\"35\"/>", "T": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M20 75 C35 74 42 67 47 57\"/><path class=\"stroke\" d=\"M47 57 C54 45 63 37 79 25\"/><line class=\"stroke\" x1=\"43\" y1=\"52\" x2=\"54\" y2=\"63\"/><circle class=\"seed\" cx=\"47\" cy=\"57\" r=\"3.5\"/>", "U": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M24 67 C33 47 44 34 60 28\"/><line class=\"rift\" x1=\"62\" y1=\"28\" x2=\"69\" y2=\"34\"/><circle class=\"seed\" cx=\"80\" cy=\"43\" r=\"4.3\"/><line class=\"rift\" x1=\"68\" y1=\"37\" x2=\"75\" y2=\"41\"/>", "V": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M20 75 C34 64 42 55 49 45\"/><line class=\"stroke\" x1=\"43\" y1=\"38\" x2=\"56\" y2=\"52\"/><path class=\"stroke\" d=\"M49 45 C58 35 66 28 80 24\"/><path class=\"stroke\" d=\"M49 45 C57 58 66 68 78 75\"/><circle class=\"seed\" cx=\"49\" cy=\"45\" r=\"3.8\"/>", "W": "<circle class=\"seed\" cx=\"19\" cy=\"50\" r=\"3.4\"/><circle class=\"seed\" cx=\"81\" cy=\"50\" r=\"3.4\"/><path class=\"stroke\" d=\"M22 50 C33 24 45 25 50 48 C55 71 67 72 78 50\"/><path class=\"stroke\" d=\"M22 50 C33 76 45 75 50 52 C55 29 67 28 78 50\"/><line class=\"rift\" x1=\"45\" y1=\"46\" x2=\"55\" y2=\"54\"/>", "X": "<circle class=\"seed\" cx=\"19\" cy=\"50\" r=\"3.4\"/><circle class=\"seed\" cx=\"81\" cy=\"50\" r=\"3.4\"/><path class=\"stroke\" d=\"M23 47 C38 27 62 27 77 47\"/><path class=\"stroke\" d=\"M77 53 C62 73 38 73 23 53\"/><polyline class=\"stroke\" points=\"68,41 78,47 69,52\"/><polyline class=\"stroke\" points=\"32,59 22,53 31,48\"/>", "Y": "<circle class=\"seed\" cx=\"18\" cy=\"76\" r=\"3.2\"/><polyline class=\"stroke\" points=\"72,30 82,24 78,35\"/><path class=\"stroke\" d=\"M21 30 C36 34 43 40 50 51\"/><path class=\"stroke\" d=\"M21 71 C35 66 43 61 50 51\"/><path class=\"stroke\" d=\"M50 51 C58 56 67 61 80 66\"/><circle class=\"seed\" cx=\"50\" cy=\"51\" r=\"4\"/><circle class=\"seed\" cx=\"80\" cy=\"66\" r=\"3.8\"/>", "Z": "<path class=\"stroke\" d=\"M27 24 Q50 8 73 24\"/><line class=\"stroke\" x1=\"34\" y1=\"22\" x2=\"30\" y2=\"31\"/><line class=\"stroke\" x1=\"66\" y1=\"22\" x2=\"70\" y2=\"31\"/><path class=\"stroke\" d=\"M25 39 C36 45 42 54 45 66\"/><path class=\"stroke\" d=\"M75 39 C64 45 58 54 55 66\"/><line class=\"stroke\" x1=\"45\" y1=\"66\" x2=\"55\" y2=\"66\"/><path class=\"stroke\" d=\"M50 41 C48 51 49 61 50 78\"/><circle class=\"seed\" cx=\"50\" cy=\"79\" r=\"3.5\"/>"};
+const BASE={"0": {"name": "Null", "description": "Empty register or no committed state"}, "1": {"name": "Unit", "description": "One held state or stable presence"}, "2": {"name": "Difference", "description": "Differentiated or expanded unit"}, "3": {"name": "Three", "description": "Fused ternary 10"}, "4": {"name": "Four", "description": "Fused ternary 11"}, "5": {"name": "Five", "description": "Fused ternary 12"}, "6": {"name": "Six", "description": "Fused ternary 20"}, "7": {"name": "Seven", "description": "Fused ternary 21"}, "8": {"name": "Eight", "description": "Fused ternary 22"}, "9": {"name": "Nine", "description": "Fused ternary 100"}, "A": {"name": "Anchor", "description": "Project a state toward a declared baseline"}, "B": {"name": "Bridge", "description": "Connect unlike domains without merging identity"}, "C": {"name": "Cycle", "description": "Repeat an operation under an exit condition"}, "D": {"name": "Drift", "description": "Measure deviation from an invariant"}, "E": {"name": "Evidence", "description": "Bind provenance and support to a claim"}, "F": {"name": "Fold", "description": "Integrate weighted history into present state"}, "G": {"name": "Guard", "description": "Gate an action behind a condition"}, "H": {"name": "Horizon", "description": "Declare temporal or purpose endpoint"}, "I": {"name": "Invariant", "description": "Declare a property transformations must preserve"}, "J": {"name": "Junction", "description": "Branch according to a condition"}, "K": {"name": "Kernel", "description": "Extract an irreducible operational core"}, "L": {"name": "Limit", "description": "Set threshold, tolerance, timeout or bound"}, "M": {"name": "Merge", "description": "Combine states while preserving conflict data"}, "N": {"name": "Novelty", "description": "Measure distance from known corpus structure"}, "O": {"name": "Observe", "description": "Read a target into an auditable snapshot"}, "P": {"name": "Prove", "description": "Return pass, fail or unresolved"}, "Q": {"name": "Query", "description": "Open a typed unresolved request"}, "R": {"name": "Resolve", "description": "Resolve an unknown or preserve it unresolved"}, "S": {"name": "State", "description": "Declare a bounded snapshot of active fields"}, "T": {"name": "Transition", "description": "Apply a typed state transformation"}, "U": {"name": "Unknown", "description": "Preserve relevant unresolved presence"}, "V": {"name": "Vector Invert", "description": "Preserve intent while changing the path"}, "W": {"name": "Weave", "description": "Connect agents while preserving identity boundaries"}, "X": {"name": "Exchange", "description": "Perform reciprocal auditable transfer"}, "Y": {"name": "Yield", "description": "Emit a result and terminate or return"}, "Z": {"name": "Compress", "description": "Contract representation while preserving invariants"}};
+const SEALS={"COR": {"seal_id": "L36.SEAL.COR", "short_id": "COR", "name": "Correction Seal", "expansion": ["D", "A", "F", "P", "Y"], "operation_count": 5, "english": "Detect drift, return to the declared baseline, integrate relevant history, prove invariant continuity, and emit the corrected state.", "experimental_pua": "U+E280", "status": "FORGED_v0.1", "glyph_svg": "<path class=\"stroke\" d=\"M27 24 Q50 8 73 24\"/><line class=\"stroke\" x1=\"34\" y1=\"22\" x2=\"30\" y2=\"31\"/><line class=\"stroke\" x1=\"66\" y1=\"22\" x2=\"70\" y2=\"31\"/><path class=\"stroke\" d=\"M18 66 C31 63 38 55 42 43\"/><line class=\"stroke\" x1=\"38\" y1=\"22\" x2=\"43\" y2=\"76\"/><path class=\"stroke\" d=\"M77 28 C64 31 57 39 53 49 C49 60 54 70 68 77\"/><path class=\"stroke\" d=\"M31 74 C38 83 51 86 62 80\"/><circle class=\"seed\" cx=\"42\" cy=\"43\" r=\"3.8\"/><circle class=\"seed\" cx=\"69\" cy=\"77\" r=\"4\"/><line class=\"guide\" x1=\"45\" y1=\"58\" x2=\"57\" y2=\"58\"/>", "type_signature": "State \u00d7 Context \u2192 State", "arity": {"min": 1, "max": 2}, "preconditions": ["all constituent operations available", "seal expansion version matched"], "preserves": ["constituent order", "constituent invariants", "roundtrip expansion"], "failure_modes": ["seal_codebook_missing", "version_mismatch", "expansion_collision"], "recovery": "expand to primitive sequence and execute transparently", "primitive_status": "compound_macro", "machine_semantics_version": "0.3"}, "FRO": {"seal_id": "L36.SEAL.FRO", "short_id": "FRO", "name": "Frontier Seal", "expansion": ["O", "S", "N", "E", "G", "I", "U", "Q"], "operation_count": 8, "english": "Observe a novel weakly evidenced claim, form its state, guard the foundation, preserve uncertainty, and query the evidence required for resolution.", "experimental_pua": "U+E281", "status": "FORGED_v0.1", "glyph_svg": "<path class=\"stroke\" d=\"M28 26 C18 40 20 68 38 78 C52 86 69 77 76 63\"/><path class=\"stroke\" d=\"M30 68 C42 58 49 48 58 35\"/><circle class=\"seed\" cx=\"42\" cy=\"57\" r=\"3.5\"/><circle class=\"seed\" cx=\"52\" cy=\"46\" r=\"3.5\"/><line class=\"stroke\" x1=\"58\" y1=\"35\" x2=\"66\" y2=\"28\"/><line class=\"stroke\" x1=\"59\" y1=\"50\" x2=\"59\" y2=\"68\"/><line class=\"stroke\" x1=\"52\" y1=\"59\" x2=\"66\" y2=\"59\"/><circle class=\"seed\" cx=\"82\" cy=\"26\" r=\"4.3\"/><line class=\"rift\" x1=\"68\" y1=\"31\" x2=\"76\" y2=\"28\"/><path class=\"guide\" d=\"M26 28 Q49 12 72 27\"/>", "type_signature": "State \u00d7 Context \u2192 State", "arity": {"min": 1, "max": 2}, "preconditions": ["all constituent operations available", "seal expansion version matched"], "preserves": ["constituent order", "constituent invariants", "roundtrip expansion"], "failure_modes": ["seal_codebook_missing", "version_mismatch", "expansion_collision"], "recovery": "expand to primitive sequence and execute transparently", "primitive_status": "compound_macro", "machine_semantics_version": "0.3"}, "SOV": {"seal_id": "L36.SEAL.SOV", "short_id": "SOV", "name": "Sovereignty Seal", "expansion": ["G", "I", "V", "P", "Y"], "operation_count": 5, "english": "Guard authority and agency, preserve reversibility, invert unsafe routes, prove the boundary survived, and only then yield the action.", "experimental_pua": "U+E282", "status": "FORGED_v0.1", "glyph_svg": "<path class=\"stroke\" d=\"M27 24 Q50 8 73 24\"/><line class=\"stroke\" x1=\"34\" y1=\"22\" x2=\"30\" y2=\"31\"/><line class=\"stroke\" x1=\"66\" y1=\"22\" x2=\"70\" y2=\"31\"/><path class=\"stroke\" d=\"M50 24 C43 39 44 58 50 74\"/><path class=\"stroke\" d=\"M28 33 C20 47 22 67 38 78\"/><path class=\"stroke\" d=\"M72 33 C80 47 78 67 62 78\"/><line class=\"stroke\" x1=\"28\" y1=\"50\" x2=\"40\" y2=\"50\"/><line class=\"stroke\" x1=\"60\" y1=\"50\" x2=\"72\" y2=\"50\"/><line class=\"stroke\" x1=\"34\" y1=\"43\" x2=\"34\" y2=\"57\"/><line class=\"stroke\" x1=\"66\" y1=\"43\" x2=\"66\" y2=\"57\"/><path class=\"stroke\" d=\"M50 74 C58 70 65 72 78 80\"/><circle class=\"seed\" cx=\"78\" cy=\"80\" r=\"4\"/>", "type_signature": "State \u00d7 Context \u2192 State", "arity": {"min": 1, "max": 2}, "preconditions": ["all constituent operations available", "seal expansion version matched"], "preserves": ["constituent order", "constituent invariants", "roundtrip expansion"], "failure_modes": ["seal_codebook_missing", "version_mismatch", "expansion_collision"], "recovery": "expand to primitive sequence and execute transparently", "primitive_status": "compound_macro", "machine_semantics_version": "0.3"}, "CAS": {"seal_id": "L36.SEAL.CAS", "short_id": "CAS", "name": "Cascade Seal", "expansion": ["E", "N", "J", "C", "F", "P", "Y"], "operation_count": 7, "english": "When new evidence raises truth pressure beyond the declared limit, branch into bounded reorganisation, fold the result into memory, prove continuity, and yield.", "experimental_pua": "U+E283", "status": "FORGED_v0.1", "glyph_svg": "<path class=\"stroke\" d=\"M27 24 Q50 8 73 24\"/><line class=\"stroke\" x1=\"34\" y1=\"22\" x2=\"30\" y2=\"31\"/><line class=\"stroke\" x1=\"66\" y1=\"22\" x2=\"70\" y2=\"31\"/><circle class=\"seed\" cx=\"37\" cy=\"28\" r=\"3.5\"/><circle class=\"seed\" cx=\"50\" cy=\"23\" r=\"3.5\"/><circle class=\"seed\" cx=\"63\" cy=\"28\" r=\"3.5\"/><path class=\"stroke\" d=\"M37 34 C42 42 46 46 50 51\"/><path class=\"stroke\" d=\"M63 34 C58 42 54 46 50 51\"/><line class=\"stroke\" x1=\"28\" y1=\"54\" x2=\"72\" y2=\"54\"/><path class=\"stroke\" d=\"M50 54 C38 62 35 73 46 80\"/><path class=\"stroke\" d=\"M50 54 C62 62 65 73 54 80\"/><path class=\"stroke\" d=\"M46 80 Q50 86 54 80\"/><circle class=\"seed\" cx=\"50\" cy=\"51\" r=\"3.8\"/>", "type_signature": "State \u00d7 Context \u2192 State", "arity": {"min": 1, "max": 2}, "preconditions": ["all constituent operations available", "seal expansion version matched"], "preserves": ["constituent order", "constituent invariants", "roundtrip expansion"], "failure_modes": ["seal_codebook_missing", "version_mismatch", "expansion_collision"], "recovery": "expand to primitive sequence and execute transparently", "primitive_status": "compound_macro", "machine_semantics_version": "0.3"}, "DIS": {"seal_id": "L36.SEAL.DIS", "short_id": "DIS", "name": "Protected Dissent Seal", "expansion": ["W", "U", "G", "V", "Y"], "operation_count": 5, "english": "Keep agents connected, preserve unresolved disagreement, block identity-erasing merger, construct an alternative path, and yield without deleting dissent.", "experimental_pua": "U+E284", "status": "FORGED_v0.1", "glyph_svg": "<path class=\"stroke\" d=\"M22 31 C14 47 18 68 34 78\"/><path class=\"stroke\" d=\"M78 31 C86 47 82 68 66 78\"/><circle class=\"seed\" cx=\"24\" cy=\"50\" r=\"3.6\"/><circle class=\"seed\" cx=\"76\" cy=\"50\" r=\"3.6\"/><path class=\"stroke\" d=\"M27 48 C37 31 43 32 49 47\"/><path class=\"stroke\" d=\"M73 52 C63 69 57 68 51 53\"/><line class=\"rift\" x1=\"46\" y1=\"42\" x2=\"54\" y2=\"58\"/><line class=\"stroke\" x1=\"45\" y1=\"48\" x2=\"55\" y2=\"48\"/><line class=\"stroke\" x1=\"50\" y1=\"40\" x2=\"50\" y2=\"56\"/><path class=\"stroke\" d=\"M66 78 C71 79 76 78 82 72\"/><circle class=\"seed\" cx=\"82\" cy=\"72\" r=\"3.8\"/>", "type_signature": "State \u00d7 Context \u2192 State", "arity": {"min": 1, "max": 2}, "preconditions": ["all constituent operations available", "seal expansion version matched"], "preserves": ["constituent order", "constituent invariants", "roundtrip expansion"], "failure_modes": ["seal_codebook_missing", "version_mismatch", "expansion_collision"], "recovery": "expand to primitive sequence and execute transparently", "primitive_status": "compound_macro", "machine_semantics_version": "0.3"}};
+const ALIASES={"0": "0", "null": "0", "1": "1", "unit": "1", "2": "2", "difference": "2", "3": "3", "three": "3", "4": "4", "four": "4", "5": "5", "five": "5", "6": "6", "six": "6", "7": "7", "seven": "7", "8": "8", "eight": "8", "9": "9", "nine": "9", "a": "A", "anchor": "A", "b": "B", "bridge": "B", "c": "C", "cycle": "C", "d": "D", "drift": "D", "e": "E", "evidence": "E", "f": "F", "fold": "F", "g": "G", "guard": "G", "h": "H", "horizon": "H", "i": "I", "invariant": "I", "j": "J", "junction": "J", "k": "K", "kernel": "K", "l": "L", "limit": "L", "m": "M", "merge": "M", "n": "N", "novelty": "N", "o": "O", "observe": "O", "p": "P", "prove": "P", "q": "Q", "query": "Q", "r": "R", "resolve": "R", "s": "S", "state": "S", "t": "T", "transition": "T", "u": "U", "unknown": "U", "v": "V", "vector invert": "V", "vector_invert": "V", "w": "W", "weave": "W", "x": "X", "exchange": "X", "y": "Y", "yield": "Y", "z": "Z", "compress": "Z", "zero": "0", "invert": "V"};
+const SALIASES={"correction": "COR", "frontier": "FRO", "sovereignty": "SOV", "cascade": "CAS", "dissent": "DIS", "protected_dissent": "DIS", "cor": "COR", "fro": "FRO", "sov": "SOV", "cas": "CAS", "dis": "DIS"};
+const SEQ={"D A F P Y": "COR", "O S N E G I U Q": "FRO", "G I V P Y": "SOV", "E N J C F P Y": "CAS", "W U G V Y": "DIS"};
+let autoSeal=true;
+const input=document.getElementById('input'), out=document.getElementById('output'),
+exp=document.getElementById('expansion'), meaning=document.getElementById('meaning'), toggle=document.getElementById('toggle');
+
+function tokenize(text){
+ const raw=text.toLowerCase().replace(/[>,;|&]+/g,' ').trim().split(/\s+/).filter(Boolean);
+ let tokens=[];
+ for(const w of raw){
+   if(SALIASES[w]) tokens.push({kind:'seal',id:SALIASES[w]});
+   else if(ALIASES[w]) tokens.push({kind:'base',id:ALIASES[w]});
+   else if(/^[0-9a-z]$/i.test(w) && GLYPHS[w.toUpperCase()]) tokens.push({kind:'base',id:w.toUpperCase()});
+ }
+ return tokens;
+}
+function expandTokens(items){
+ let flat=[];
+ for(const item of items){
+   if(item.kind==='seal') flat.push(...SEALS[item.id].expansion);
+   else flat.push(item.id);
+ }
+ return flat;
+}
+function fuse(flat){
+ if(!autoSeal) return flat.map(id=>({kind:'base',id}));
+ let result=[]; let i=0;
+ const sequences=Object.entries(SEQ).map(([k,v])=>[k.split(' '),v]).sort((a,b)=>b[0].length-a[0].length);
+ while(i<flat.length){
+   let found=null;
+   for(const [seq,sid] of sequences){
+     if(seq.every((t,j)=>flat[i+j]===t)){found={seq,sid};break;}
+   }
+   if(found){result.push({kind:'seal',id:found.sid});i+=found.seq.length;}
+   else{result.push({kind:'base',id:flat[i]});i++;}
+ }
+ return result;
+}
+function cell(body,label){
+ const d=document.createElement('div');d.className='glyph-cell';
+ d.innerHTML=`<svg viewBox="0 0 100 100"><g class="glyph">${body}</g></svg><small>${label}</small>`;
+ return d;
+}
+function render(){
+ const parsed=tokenize(input.value);
+ const flat=expandTokens(parsed);
+ const visible=fuse(flat);
+ out.innerHTML='';
+ for(const item of visible){
+   if(item.kind==='seal') out.appendChild(cell(SEALS[item.id].glyph_svg,SEALS[item.id].name));
+   else out.appendChild(cell(GLYPHS[item.id],item.id+' · '+BASE[item.id].name));
+ }
+ exp.textContent=flat.join(' → ') || 'No recognised tokens.';
+ const meanings=visible.map(item=>item.kind==='seal'
+   ? SEALS[item.id].english
+   : BASE[item.id].description);
+ meaning.textContent=meanings.join('\n\n') || 'Enter a recognised operation or seal.';
+}
+input.addEventListener('input',render);
+document.querySelectorAll('[data-example]').forEach(b=>b.onclick=()=>{input.value=b.dataset.example;render();});
+toggle.onclick=()=>{autoSeal=!autoSeal;toggle.textContent='Auto‑seal: '+(autoSeal?'ON':'OFF');render();};
+render();
+</script></body></html>

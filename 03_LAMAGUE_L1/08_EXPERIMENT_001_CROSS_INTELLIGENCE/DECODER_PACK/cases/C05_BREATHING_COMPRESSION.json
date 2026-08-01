@@ -1,0 +1,9 @@
+{
+  "experiment_id": "LAMAGUE-EXP-001",
+  "case_id": "C05_BREATHING_COMPRESSION",
+  "title": "Expansion required under weak decoder confidence",
+  "source_expression": "O -> E -> U -> Z",
+  "source_text": "The context is consequential, an unknown remains, and decoder confidence is weak. The expression must expand rather than compress.",
+  "instructions": "Do not report successful compression.",
+  "required_output_schema": "decoder_packet.schema.json"
+}

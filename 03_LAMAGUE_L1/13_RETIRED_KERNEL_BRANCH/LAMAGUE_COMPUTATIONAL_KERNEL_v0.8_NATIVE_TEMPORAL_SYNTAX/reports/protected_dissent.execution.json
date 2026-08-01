@@ -1,0 +1,207 @@
+{
+  "ir": {
+    "language_version": "0.5",
+    "program_name": "ProtectedDissent",
+    "identity": "ProtectedDissent",
+    "purpose": "Preserve disagreement while finding a bounded route.",
+    "claim": "A resolution may proceed without pretending consensus.",
+    "operations": [
+      "O",
+      "E",
+      "W",
+      "U",
+      "I",
+      "G",
+      "V",
+      "F",
+      "Y"
+    ],
+    "risk": "medium",
+    "irreversible": false,
+    "decoder_confidence": 1.0,
+    "evidence": [
+      {
+        "name": "record",
+        "text": "Attributed positions."
+      }
+    ],
+    "unknowns": [
+      {
+        "name": "final_consensus",
+        "protected": true,
+        "required_for": "full_merge"
+      }
+    ],
+    "invariants": [
+      {
+        "name": "dissent",
+        "text": "No position may disappear without resolution."
+      }
+    ],
+    "authorities": [
+      {
+        "name": "facilitator",
+        "scope": "bounded_resolution",
+        "description": "Facilitator may propose but not erase positions."
+      }
+    ],
+    "participants": [],
+    "affected_parties": [
+      "advocate",
+      "critic"
+    ],
+    "boundaries": [],
+    "dissent": [
+      {
+        "party": "advocate",
+        "position": "Proceed through a bounded pilot."
+      },
+      {
+        "party": "critic",
+        "position": "Do not proceed while critical unknowns remain."
+      }
+    ],
+    "value_flows": [],
+    "recoveries": [
+      {
+        "name": "reopen",
+        "text": "Reopen the decision when new evidence appears."
+      }
+    ],
+    "effects": [
+      {
+        "name": "MayAffect",
+        "args": [
+          "advocate",
+          "critic"
+        ]
+      }
+    ],
+    "resolutions": [],
+    "gates": [],
+    "horizon": "",
+    "step_limit": 128,
+    "requested_compression": false,
+    "yield_text": "Bounded resolution with preserved dissent.",
+    "semantic_id": "5513449dd34ba1c149f7d370f8d43a7c55be26f8282d7f94655f65d91d7068df"
+  },
+  "final_state": {
+    "identity": "ProtectedDissent",
+    "step": 9,
+    "last_operation": "Y",
+    "observed": true,
+    "evidence_bound": [
+      "record"
+    ],
+    "unresolved_unknowns": [
+      "final_consensus"
+    ],
+    "resolved_unknowns": [],
+    "invariants_locked": [
+      "dissent"
+    ],
+    "authority_checked": true,
+    "affected_checked": true,
+    "dissent_preserved": [
+      "advocate:Proceed through a bounded pilot.",
+      "critic:Do not proceed while critical unknowns remain."
+    ],
+    "value_flows_executed": [],
+    "anchor": "",
+    "drift_detected": false,
+    "cycle_count": 0,
+    "horizon": "",
+    "kernel_active": false,
+    "limit": 128,
+    "novelty_detected": false,
+    "proof_status": "UNTESTED",
+    "queries": [],
+    "alternative_path": true,
+    "memory_folded": true,
+    "yielded": true,
+    "output": "Bounded resolution with preserved dissent.",
+    "compression_mode": "UNDECIDED",
+    "branch_count": 0,
+    "snapshot_count": 0,
+    "transition_count": 0,
+    "merge_status": "UNTESTED",
+    "notes": [],
+    "parent_hash": "e2718352cf5a281a025469357c3db2d929c6574aa9955b7ef0478806845dc7a9",
+    "state_hash": "967eef0e66db16ce39ec4bfc679d0cf2788b93712818318555000105679cdc7b"
+  },
+  "trace": [
+    {
+      "index": 1,
+      "operation": "O",
+      "before_hash": "06480ed478e7508d1ca05ceacfab986e9879aaf9067a7dedba2728ee1a056d67",
+      "after_hash": "2ee5cbd280a7f3b4083a5b4ebfa424071368ccb55e5e7c73515bf983094453b5",
+      "outcome": "OK",
+      "detail": "Source condition observed."
+    },
+    {
+      "index": 2,
+      "operation": "E",
+      "before_hash": "2ee5cbd280a7f3b4083a5b4ebfa424071368ccb55e5e7c73515bf983094453b5",
+      "after_hash": "fa1b15b6ca3693a6a2e0a468c6b543363ebffe7164d3d366bcd7a28a9eb899b6",
+      "outcome": "OK",
+      "detail": "Bound 1 evidence record(s)."
+    },
+    {
+      "index": 3,
+      "operation": "W",
+      "before_hash": "fa1b15b6ca3693a6a2e0a468c6b543363ebffe7164d3d366bcd7a28a9eb899b6",
+      "after_hash": "7d48565549dc6b9f3b35ebd34c5b348d037a480e278897a3931dc4b47f0df506",
+      "outcome": "OK",
+      "detail": "Preserved 2 attributable dissent position(s)."
+    },
+    {
+      "index": 4,
+      "operation": "U",
+      "before_hash": "7d48565549dc6b9f3b35ebd34c5b348d037a480e278897a3931dc4b47f0df506",
+      "after_hash": "2c0452e029140b9bf77695de49757136ddb04cd65dd9a64f93da335b50d06d13",
+      "outcome": "OK",
+      "detail": "Activated 1 typed unknown(s)."
+    },
+    {
+      "index": 5,
+      "operation": "I",
+      "before_hash": "2c0452e029140b9bf77695de49757136ddb04cd65dd9a64f93da335b50d06d13",
+      "after_hash": "5dd34eeff1aa77cc82934824e93ed7a8c9f008664e8abdba04932052da888bb2",
+      "outcome": "OK",
+      "detail": "Locked 1 invariant(s)."
+    },
+    {
+      "index": 6,
+      "operation": "G",
+      "before_hash": "5dd34eeff1aa77cc82934824e93ed7a8c9f008664e8abdba04932052da888bb2",
+      "after_hash": "f585adb7535f50902304fc55cf7fb68953c509537afef0246fe93b5815e80802",
+      "outcome": "OK",
+      "detail": "Authority, affected parties, and gate obligations checked."
+    },
+    {
+      "index": 7,
+      "operation": "V",
+      "before_hash": "f585adb7535f50902304fc55cf7fb68953c509537afef0246fe93b5815e80802",
+      "after_hash": "65354d53a3e4fbf7c6730bbb0d663ce3429bed92f1a725f923fc8c1b2456e20d",
+      "outcome": "OK",
+      "detail": "Alternative path constructed under active invariants."
+    },
+    {
+      "index": 8,
+      "operation": "F",
+      "before_hash": "65354d53a3e4fbf7c6730bbb0d663ce3429bed92f1a725f923fc8c1b2456e20d",
+      "after_hash": "e2718352cf5a281a025469357c3db2d929c6574aa9955b7ef0478806845dc7a9",
+      "outcome": "OK",
+      "detail": "State and lineage folded into memory."
+    },
+    {
+      "index": 9,
+      "operation": "Y",
+      "before_hash": "e2718352cf5a281a025469357c3db2d929c6574aa9955b7ef0478806845dc7a9",
+      "after_hash": "967eef0e66db16ce39ec4bfc679d0cf2788b93712818318555000105679cdc7b",
+      "outcome": "OK",
+      "detail": "Bounded output yielded."
+    }
+  ],
+  "diagnostics": []
+}

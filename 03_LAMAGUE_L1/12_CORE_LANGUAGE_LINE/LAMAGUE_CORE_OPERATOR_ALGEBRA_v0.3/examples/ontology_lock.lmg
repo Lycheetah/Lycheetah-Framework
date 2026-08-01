@@ -1,0 +1,25 @@
+# Primitive ontology and type lock
+
+let anchor: Field = Ao;
+let orientation: Field = Φ;
+let lifted: Field = Φ↑;
+let fixed: Invariant = ⟟;
+let nullpoint: NullState = ∅;
+let target: Invariant = Ψ_inv;
+
+invariant stable_return: Path = Ao → Φ↑ → Ψ_inv;
+
+macro Z₁ RETURN: Path = stable_return;
+
+check type(Φ↑, Field);
+check type(Ψ_inv, Field);
+check type(Ψ_inv, Invariant);
+check subtype(ModifiedField, Field);
+check subtype(InvariantField, Invariant);
+check subtype(Path, StateLike);
+
+describe Φ↑;
+describe Ψ_inv;
+describe Ao → Φ↑;
+
+RETURN;

@@ -1,0 +1,66 @@
+{
+  "version": "0.3.0",
+  "atom_basis": [
+    "Ao",
+    "Φ",
+    "Ψ"
+  ],
+  "operators": [
+    {
+      "operator": "⊗",
+      "commutative_status": "PROVEN",
+      "commutative_verified": true,
+      "associative_status": "PROVEN",
+      "associative_verified": true,
+      "idempotent_status": "REFUTED",
+      "idempotent_verified": true
+    },
+    {
+      "operator": "→",
+      "commutative_status": "REFUTED",
+      "commutative_verified": true,
+      "associative_status": "PROVEN",
+      "associative_verified": true,
+      "idempotent_status": "REFUTED",
+      "idempotent_verified": true
+    },
+    {
+      "operator": "⇌",
+      "commutative_status": "PROVEN",
+      "commutative_verified": true,
+      "associative_status": "REFUTED",
+      "associative_verified": true,
+      "idempotent_status": "REFUTED",
+      "idempotent_verified": true
+    },
+    {
+      "operator": "⟲",
+      "commutative_status": "REFUTED",
+      "commutative_verified": true,
+      "associative_status": "REFUTED",
+      "associative_verified": true,
+      "idempotent_status": "REFUTED",
+      "idempotent_verified": true
+    },
+    {
+      "operator": "↯",
+      "commutative_status": "REFUTED",
+      "commutative_verified": true,
+      "associative_status": "REFUTED",
+      "associative_verified": true,
+      "idempotent_status": "REFUTED",
+      "idempotent_verified": true
+    },
+    {
+      "operator": "↗",
+      "commutative_status": "REFUTED",
+      "commutative_verified": true,
+      "associative_status": "REFUTED",
+      "associative_verified": true,
+      "idempotent_status": "REFUTED",
+      "idempotent_verified": true
+    }
+  ],
+  "passed": true,
+  "boundary": "Finite structural verification over the listed atom basis. It supports implementation conformance, not universal domain laws."
+}

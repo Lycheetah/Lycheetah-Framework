@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C03_VISIBLE_EXCHANGE",
+  "decoder_id": "deepseek-v4-flash",
+  "purpose": "Consented value exchange of a research artifact from a human to an AI service, with declared scope, explicit consent, and reversibility through deletion.",
+  "claim": "A human shares a research artifact with an AI service; the data transfer is declared, limited to analysis, explicitly consented to, and reversible through deletion.",
+  "operation_path": ["O", "X", "G", "Y"],
+  "invariants": [
+    "Data transfer is declared",
+    "Processing is limited to analysis",
+    "Consent is explicit",
+    "Reversibility through deletion is preserved"
+  ],
+  "unknowns": [
+    "Exact deletion mechanism and timing are unspecified",
+    "Scope of any AI service use beyond analysis is unspecified"
+  ],
+  "authority": [
+    "Human (as owner of the research artifact and consent-giver)"
+  ],
+  "participants": [
+    "Human",
+    "AI service"
+  ],
+  "affected_parties": [
+    "Human",
+    "AI service"
+  ],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [
+    {
+      "from": "Human",
+      "to": "AI service",
+      "resource": "research artifact",
+      "consent": "explicit",
+      "scope": "analysis only",
+      "reversibility": "deletion"
+    }
+  ],
+  "consequences": [
+    "AI service may process the artifact for analysis under the declared scope",
+    "Transfer remains reversible through deletion"
+  ],
+  "consequence_horizon": "Not specified",
+  "recovery": [
+    "Deletion of the shared artifact"
+  ],
+  "confidence": "high",
+  "notes": "Evidence, provenance, and dissent are absent from the source statement. Exact deletion mechanism/timing and downstream use beyond analysis are unresolved."
+}

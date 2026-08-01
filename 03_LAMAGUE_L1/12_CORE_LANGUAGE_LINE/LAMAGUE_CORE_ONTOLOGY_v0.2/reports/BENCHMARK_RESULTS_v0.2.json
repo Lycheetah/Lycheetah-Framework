@@ -1,0 +1,1650 @@
+{
+  "suite": "LAMAGUE Core v0.2 ontology and type-lock benchmark",
+  "total": 30,
+  "passed": 30,
+  "failed": 0,
+  "results": [
+    {
+      "id": "O001",
+      "name": "Primitive field annotation",
+      "passed": true,
+      "expected": "ACCEPTED",
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "let",
+            "name": "x",
+            "declared_type": "Field",
+            "type": "Field",
+            "normal_form": "Ao"
+          }
+        ],
+        "bindings": {
+          "x": {
+            "type": "Field",
+            "normal_form": "Ao"
+          }
+        },
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O002",
+      "name": "Modified field subtype",
+      "passed": true,
+      "expected": "ACCEPTED",
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "let",
+            "name": "x",
+            "declared_type": "Field",
+            "type": "ModifiedField",
+            "normal_form": "Φ↑"
+          }
+        ],
+        "bindings": {
+          "x": {
+            "type": "ModifiedField",
+            "normal_form": "Φ↑"
+          }
+        },
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O003",
+      "name": "Invariant field as field",
+      "passed": true,
+      "expected": "ACCEPTED",
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "let",
+            "name": "x",
+            "declared_type": "Field",
+            "type": "InvariantField",
+            "normal_form": "Ψ_inv"
+          }
+        ],
+        "bindings": {
+          "x": {
+            "type": "InvariantField",
+            "normal_form": "Ψ_inv"
+          }
+        },
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O004",
+      "name": "Invariant field as invariant",
+      "passed": true,
+      "expected": "ACCEPTED",
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "let",
+            "name": "x",
+            "declared_type": "Invariant",
+            "type": "InvariantField",
+            "normal_form": "Ψ_inv"
+          }
+        ],
+        "bindings": {
+          "x": {
+            "type": "InvariantField",
+            "normal_form": "Ψ_inv"
+          }
+        },
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O005",
+      "name": "Marker not field",
+      "passed": true,
+      "expected": "REJECTED",
+      "detail": {
+        "error_type": "SemanticError",
+        "error": "name 'x' declared as Field but expression has type InvariantMarker"
+      }
+    },
+    {
+      "id": "O006",
+      "name": "Null exact type",
+      "passed": true,
+      "expected": "ACCEPTED",
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "let",
+            "name": "x",
+            "declared_type": "NullState",
+            "type": "NullState",
+            "normal_form": "∅"
+          }
+        ],
+        "bindings": {
+          "x": {
+            "type": "NullState",
+            "normal_form": "∅"
+          }
+        },
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O007",
+      "name": "Null not field",
+      "passed": true,
+      "expected": "REJECTED",
+      "detail": {
+        "error_type": "SemanticError",
+        "error": "name 'x' declared as Field but expression has type NullState"
+      }
+    },
+    {
+      "id": "O008",
+      "name": "Path annotation",
+      "passed": true,
+      "expected": "ACCEPTED",
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "let",
+            "name": "x",
+            "declared_type": "Path",
+            "type": "Path",
+            "normal_form": "(Ao → Φ)"
+          }
+        ],
+        "bindings": {
+          "x": {
+            "type": "Path",
+            "normal_form": "(Ao → Φ)"
+          }
+        },
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O009",
+      "name": "Wrong composite annotation",
+      "passed": true,
+      "expected": "REJECTED",
+      "detail": {
+        "error_type": "SemanticError",
+        "error": "name 'x' declared as Fusion but expression has type Path"
+      }
+    },
+    {
+      "id": "O010",
+      "name": "Modified type check",
+      "passed": true,
+      "expected": true,
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "type_check",
+            "matches": true,
+            "actual": "ModifiedField",
+            "expected": "Field",
+            "normal_form": "Φ↑"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "type_check",
+            "matches": true,
+            "actual": "ModifiedField",
+            "expected": "Field",
+            "normal_form": "Φ↑"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O011",
+      "name": "Invariant field dual type",
+      "passed": true,
+      "expected": true,
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "type_check",
+            "matches": true,
+            "actual": "InvariantField",
+            "expected": "Invariant",
+            "normal_form": "Ψ_inv"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "type_check",
+            "matches": true,
+            "actual": "InvariantField",
+            "expected": "Invariant",
+            "normal_form": "Ψ_inv"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O012",
+      "name": "Marker field check false",
+      "passed": true,
+      "expected": false,
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "type_check",
+            "matches": false,
+            "actual": "InvariantMarker",
+            "expected": "Field",
+            "normal_form": "⟟"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "type_check",
+            "matches": false,
+            "actual": "InvariantMarker",
+            "expected": "Field",
+            "normal_form": "⟟"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O013",
+      "name": "Subtype modified field",
+      "passed": true,
+      "expected": true,
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "subtype_check",
+            "is_subtype": true,
+            "actual": "ModifiedField",
+            "expected": "Field"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "subtype_check",
+            "is_subtype": true,
+            "actual": "ModifiedField",
+            "expected": "Field"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O014",
+      "name": "Subtype path state-like",
+      "passed": true,
+      "expected": true,
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "subtype_check",
+            "is_subtype": true,
+            "actual": "Path",
+            "expected": "StateLike"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "subtype_check",
+            "is_subtype": true,
+            "actual": "Path",
+            "expected": "StateLike"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O015",
+      "name": "Subtype marker field false",
+      "passed": true,
+      "expected": false,
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "subtype_check",
+            "is_subtype": false,
+            "actual": "InvariantMarker",
+            "expected": "Field"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "subtype_check",
+            "is_subtype": false,
+            "actual": "InvariantMarker",
+            "expected": "Field"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O016",
+      "name": "Describe modified atom",
+      "passed": true,
+      "expected": "DESCRIBE",
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "describe",
+            "normal_form": "Φ↑",
+            "semantic_hash": "3b7e3249a915ff40617ccbf753e93fcb9c9683b348015c9e2994fa89a4c7b114",
+            "type": "ModifiedField",
+            "supertypes": [
+              "Field",
+              "StateLike"
+            ],
+            "ontology": {
+              "type": "ModifiedField",
+              "historical_class": "F-class",
+              "role": "oriented_ascent",
+              "definition": "orientation field modified by ascent",
+              "primitive": false,
+              "base": "Φ",
+              "modifier": "↑",
+              "supertypes": [
+                "Field",
+                "StateLike"
+              ]
+            },
+            "decomposition": {
+              "base": "Φ",
+              "modifier": "↑"
+            }
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [
+          {
+            "kind": "describe",
+            "normal_form": "Φ↑",
+            "semantic_hash": "3b7e3249a915ff40617ccbf753e93fcb9c9683b348015c9e2994fa89a4c7b114",
+            "type": "ModifiedField",
+            "supertypes": [
+              "Field",
+              "StateLike"
+            ],
+            "ontology": {
+              "type": "ModifiedField",
+              "historical_class": "F-class",
+              "role": "oriented_ascent",
+              "definition": "orientation field modified by ascent",
+              "primitive": false,
+              "base": "Φ",
+              "modifier": "↑",
+              "supertypes": [
+                "Field",
+                "StateLike"
+              ]
+            },
+            "decomposition": {
+              "base": "Φ",
+              "modifier": "↑"
+            }
+          }
+        ],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O017",
+      "name": "Describe invariant field",
+      "passed": true,
+      "expected": "DESCRIBE",
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "describe",
+            "normal_form": "Ψ_inv",
+            "semantic_hash": "00ecd7d127d6981d976fa92eeeab22d00d619d7ff1d9466061d9a484a1dd68b2",
+            "type": "InvariantField",
+            "supertypes": [
+              "Field",
+              "Invariant",
+              "StateLike"
+            ],
+            "ontology": {
+              "type": "InvariantField",
+              "historical_class": "I/F bridge",
+              "role": "invariant_trajectory",
+              "definition": "contextual Ψ field qualified as invariant",
+              "primitive": false,
+              "base": "Ψ",
+              "modifier": "inv",
+              "supertypes": [
+                "Field",
+                "Invariant",
+                "StateLike"
+              ]
+            },
+            "decomposition": {
+              "base": "Ψ",
+              "modifier": "inv"
+            }
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [
+          {
+            "kind": "describe",
+            "normal_form": "Ψ_inv",
+            "semantic_hash": "00ecd7d127d6981d976fa92eeeab22d00d619d7ff1d9466061d9a484a1dd68b2",
+            "type": "InvariantField",
+            "supertypes": [
+              "Field",
+              "Invariant",
+              "StateLike"
+            ],
+            "ontology": {
+              "type": "InvariantField",
+              "historical_class": "I/F bridge",
+              "role": "invariant_trajectory",
+              "definition": "contextual Ψ field qualified as invariant",
+              "primitive": false,
+              "base": "Ψ",
+              "modifier": "inv",
+              "supertypes": [
+                "Field",
+                "Invariant",
+                "StateLike"
+              ]
+            },
+            "decomposition": {
+              "base": "Ψ",
+              "modifier": "inv"
+            }
+          }
+        ],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O018",
+      "name": "Derived normal form",
+      "passed": true,
+      "expected": "(Φ↑ → Ψ_inv)",
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "expression",
+            "type": "Path",
+            "normal_form": "(Φ↑ → Ψ_inv)",
+            "semantic_hash": "a494b431c351098b6619079a4b40c7e5ff602b3676ecbe066443427c01b94daa"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [],
+        "expressions": [
+          "(Φ↑ → Ψ_inv)"
+        ],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O019",
+      "name": "Legacy aliases remain",
+      "passed": true,
+      "expected": "WARNINGS",
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "expression",
+            "type": "Exchange",
+            "normal_form": "((Ao → Δ) ⇌ ∞)",
+            "semantic_hash": "9f5d27308aca5bfe7823ea36b44297e47607029e9bf836ab15b24d4c2dab4ee3"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [],
+        "expressions": [
+          "((Ao → Δ) ⇌ ∞)"
+        ],
+        "warnings": [
+          {
+            "code": "LEGACY_ALIAS",
+            "message": "Use canonical anchor spelling Ao.",
+            "raw": "A₀",
+            "canonical": "Ao",
+            "line": 1,
+            "column": 1
+          },
+          {
+            "code": "ASCII_ALIAS",
+            "message": "Use canonical projection arrow →.",
+            "raw": "->",
+            "canonical": "→",
+            "line": 1,
+            "column": 4
+          },
+          {
+            "code": "LEGACY_ALIAS",
+            "message": "Use Greek capital delta Δ U+0394.",
+            "raw": "∆",
+            "canonical": "Δ",
+            "line": 1,
+            "column": 7
+          },
+          {
+            "code": "ASCII_ALIAS",
+            "message": "Use canonical exchange arrow ⇌.",
+            "raw": "<->",
+            "canonical": "⇌",
+            "line": 1,
+            "column": 9
+          },
+          {
+            "code": "LEGACY_ALIAS",
+            "message": "Use infinity ∞ U+221E.",
+            "raw": "♾",
+            "canonical": "∞",
+            "line": 1,
+            "column": 13
+          }
+        ],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O020",
+      "name": "Macro typed path",
+      "passed": true,
+      "expected": "(Ao → Φ)",
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "macro",
+            "name": "RETURN",
+            "level": "Z₁",
+            "declared_type": "Path",
+            "type": "Path",
+            "normal_form": "(Ao → Φ)",
+            "compression": {
+              "expanded_characters": 8,
+              "macro_characters": 6,
+              "character_ratio": 1.333333,
+              "expanded_tokens": 3,
+              "macro_tokens": 1,
+              "roundtrip_law": "expand(macro) = normalized_expression"
+            }
+          },
+          {
+            "kind": "expression",
+            "type": "Path",
+            "normal_form": "(Ao → Φ)",
+            "semantic_hash": "49be5e2faf1594e815d17c89077a5003d49f84d03155d4ba675b76144de2df20"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {
+          "RETURN": {
+            "level": "Z₁",
+            "type": "Path",
+            "normal_form": "(Ao → Φ)",
+            "compression": {
+              "expanded_characters": 8,
+              "macro_characters": 6,
+              "character_ratio": 1.333333,
+              "expanded_tokens": 3,
+              "macro_tokens": 1,
+              "roundtrip_law": "expand(macro) = normalized_expression"
+            }
+          }
+        },
+        "checks": [],
+        "descriptions": [],
+        "expressions": [
+          "(Ao → Φ)"
+        ],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O021",
+      "name": "Unknown type rejected",
+      "passed": true,
+      "expected": "REJECTED",
+      "detail": {
+        "error_type": "ParseError",
+        "error": "expected core type name at 1:8, got 'Consciousness'"
+      }
+    },
+    {
+      "id": "O022",
+      "name": "TIM remains external",
+      "passed": true,
+      "expected": "REJECTED",
+      "detail": {
+        "error_type": "ParseError",
+        "error": "expected ';' at 1:9, got 'evidence'"
+      }
+    },
+    {
+      "id": "O023",
+      "name": "Microorcim remains external",
+      "passed": true,
+      "expected": "REJECTED",
+      "detail": {
+        "error_type": "ParseError",
+        "error": "expected ';' at 1:8, got 'state'"
+      }
+    },
+    {
+      "id": "O024",
+      "name": "Fusion law retained",
+      "passed": true,
+      "expected": true,
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "left": "(Ao ⊗ Φ)",
+            "right": "(Ao ⊗ Φ)"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": true,
+            "left": "(Ao ⊗ Φ)",
+            "right": "(Ao ⊗ Φ)"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O025",
+      "name": "Projection direction retained",
+      "passed": true,
+      "expected": false,
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "left": "(Ao → Φ)",
+            "right": "(Φ → Ao)"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [
+          {
+            "kind": "equivalence",
+            "equivalent": false,
+            "left": "(Ao → Φ)",
+            "right": "(Φ → Ao)"
+          }
+        ],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O026",
+      "name": "Null in structural path",
+      "passed": true,
+      "expected": "ACCEPTED",
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "expression",
+            "type": "Collapse",
+            "normal_form": "(Ψ ↯ ∅)",
+            "semantic_hash": "5929751c7c53bb8f6b88f9a321916a57c76f012eaeea76a438ff0427e956bce4"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [],
+        "expressions": [
+          "(Ψ ↯ ∅)"
+        ],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O027",
+      "name": "Invariant marker in path",
+      "passed": true,
+      "expected": "ACCEPTED",
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "expression",
+            "type": "Collapse",
+            "normal_form": "(Ψ ↯ ⟟)",
+            "semantic_hash": "c5597b9b1b7505683b96b2c60d5e9e3156aafe70596d712b86dfcced4ea75c0a"
+          }
+        ],
+        "bindings": {},
+        "invariants": {},
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [],
+        "expressions": [
+          "(Ψ ↯ ⟟)"
+        ],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O028",
+      "name": "Typed invariant declaration",
+      "passed": true,
+      "expected": "INVARIANT",
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "invariant",
+            "name": "stable",
+            "declared_type": "Path",
+            "type": "Path",
+            "normal_form": "(Ao → Ψ_inv)",
+            "semantic_hash": "d5902330a96a645da0e3a7fd19e2a8280f7e14cac7566bd7e9694285f1dabe96"
+          }
+        ],
+        "bindings": {},
+        "invariants": {
+          "stable": {
+            "type": "Path",
+            "normal_form": "(Ao → Ψ_inv)"
+          }
+        },
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {},
+        "checks": [],
+        "descriptions": [],
+        "expressions": [],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O029",
+      "name": "Ontology example",
+      "passed": true,
+      "expected": "ACCEPTED",
+      "detail": {
+        "lamague_core_version": "0.2.0",
+        "status": "ACCEPTED",
+        "statements": [
+          {
+            "kind": "let",
+            "name": "anchor",
+            "declared_type": "Field",
+            "type": "Field",
+            "normal_form": "Ao"
+          },
+          {
+            "kind": "let",
+            "name": "orientation",
+            "declared_type": "Field",
+            "type": "Field",
+            "normal_form": "Φ"
+          },
+          {
+            "kind": "let",
+            "name": "lifted",
+            "declared_type": "Field",
+            "type": "ModifiedField",
+            "normal_form": "Φ↑"
+          },
+          {
+            "kind": "let",
+            "name": "fixed",
+            "declared_type": "Invariant",
+            "type": "InvariantMarker",
+            "normal_form": "⟟"
+          },
+          {
+            "kind": "let",
+            "name": "nullpoint",
+            "declared_type": "NullState",
+            "type": "NullState",
+            "normal_form": "∅"
+          },
+          {
+            "kind": "let",
+            "name": "target",
+            "declared_type": "Invariant",
+            "type": "InvariantField",
+            "normal_form": "Ψ_inv"
+          },
+          {
+            "kind": "invariant",
+            "name": "stable_return",
+            "declared_type": "Path",
+            "type": "Path",
+            "normal_form": "(Ao → Φ↑ → Ψ_inv)",
+            "semantic_hash": "a582635b2ac22400e9fb31a122925a6287a774368237980aa2f0cbc1d5413905"
+          },
+          {
+            "kind": "macro",
+            "name": "RETURN",
+            "level": "Z₁",
+            "declared_type": "Path",
+            "type": "Path",
+            "normal_form": "(Ao → Φ↑ → Ψ_inv)",
+            "compression": {
+              "expanded_characters": 17,
+              "macro_characters": 6,
+              "character_ratio": 2.833333,
+              "expanded_tokens": 5,
+              "macro_tokens": 1,
+              "roundtrip_law": "expand(macro) = normalized_expression"
+            }
+          },
+          {
+            "kind": "type_check",
+            "matches": true,
+            "actual": "ModifiedField",
+            "expected": "Field",
+            "normal_form": "Φ↑"
+          },
+          {
+            "kind": "type_check",
+            "matches": true,
+            "actual": "InvariantField",
+            "expected": "Field",
+            "normal_form": "Ψ_inv"
+          },
+          {
+            "kind": "type_check",
+            "matches": true,
+            "actual": "InvariantField",
+            "expected": "Invariant",
+            "normal_form": "Ψ_inv"
+          },
+          {
+            "kind": "subtype_check",
+            "is_subtype": true,
+            "actual": "ModifiedField",
+            "expected": "Field"
+          },
+          {
+            "kind": "subtype_check",
+            "is_subtype": true,
+            "actual": "InvariantField",
+            "expected": "Invariant"
+          },
+          {
+            "kind": "subtype_check",
+            "is_subtype": true,
+            "actual": "Path",
+            "expected": "StateLike"
+          },
+          {
+            "kind": "describe",
+            "normal_form": "Φ↑",
+            "semantic_hash": "3b7e3249a915ff40617ccbf753e93fcb9c9683b348015c9e2994fa89a4c7b114",
+            "type": "ModifiedField",
+            "supertypes": [
+              "Field",
+              "StateLike"
+            ],
+            "ontology": {
+              "type": "ModifiedField",
+              "historical_class": "F-class",
+              "role": "oriented_ascent",
+              "definition": "orientation field modified by ascent",
+              "primitive": false,
+              "base": "Φ",
+              "modifier": "↑",
+              "supertypes": [
+                "Field",
+                "StateLike"
+              ]
+            },
+            "decomposition": {
+              "base": "Φ",
+              "modifier": "↑"
+            }
+          },
+          {
+            "kind": "describe",
+            "normal_form": "Ψ_inv",
+            "semantic_hash": "00ecd7d127d6981d976fa92eeeab22d00d619d7ff1d9466061d9a484a1dd68b2",
+            "type": "InvariantField",
+            "supertypes": [
+              "Field",
+              "Invariant",
+              "StateLike"
+            ],
+            "ontology": {
+              "type": "InvariantField",
+              "historical_class": "I/F bridge",
+              "role": "invariant_trajectory",
+              "definition": "contextual Ψ field qualified as invariant",
+              "primitive": false,
+              "base": "Ψ",
+              "modifier": "inv",
+              "supertypes": [
+                "Field",
+                "Invariant",
+                "StateLike"
+              ]
+            },
+            "decomposition": {
+              "base": "Ψ",
+              "modifier": "inv"
+            }
+          },
+          {
+            "kind": "describe",
+            "normal_form": "(Ao → Φ↑)",
+            "semantic_hash": "74967cad960a3c97a6483807346783ea0cc6912ede73410ee26fbd7cc0982966",
+            "type": "Path",
+            "supertypes": [
+              "Composite",
+              "StateLike"
+            ],
+            "operator": "→",
+            "signature": {
+              "left": "StateLike",
+              "right": "StateLike",
+              "returns": "Path"
+            },
+            "left_type": "Field",
+            "right_type": "ModifiedField"
+          },
+          {
+            "kind": "expression",
+            "type": "Path",
+            "normal_form": "(Ao → Φ↑ → Ψ_inv)",
+            "semantic_hash": "a582635b2ac22400e9fb31a122925a6287a774368237980aa2f0cbc1d5413905"
+          }
+        ],
+        "bindings": {
+          "anchor": {
+            "type": "Field",
+            "normal_form": "Ao"
+          },
+          "orientation": {
+            "type": "Field",
+            "normal_form": "Φ"
+          },
+          "lifted": {
+            "type": "ModifiedField",
+            "normal_form": "Φ↑"
+          },
+          "fixed": {
+            "type": "InvariantMarker",
+            "normal_form": "⟟"
+          },
+          "nullpoint": {
+            "type": "NullState",
+            "normal_form": "∅"
+          },
+          "target": {
+            "type": "InvariantField",
+            "normal_form": "Ψ_inv"
+          }
+        },
+        "invariants": {
+          "stable_return": {
+            "type": "Path",
+            "normal_form": "(Ao → Φ↑ → Ψ_inv)"
+          }
+        },
+        "requirements": [],
+        "prohibitions": [],
+        "macros": {
+          "RETURN": {
+            "level": "Z₁",
+            "type": "Path",
+            "normal_form": "(Ao → Φ↑ → Ψ_inv)",
+            "compression": {
+              "expanded_characters": 17,
+              "macro_characters": 6,
+              "character_ratio": 2.833333,
+              "expanded_tokens": 5,
+              "macro_tokens": 1,
+              "roundtrip_law": "expand(macro) = normalized_expression"
+            }
+          }
+        },
+        "checks": [
+          {
+            "kind": "type_check",
+            "matches": true,
+            "actual": "ModifiedField",
+            "expected": "Field",
+            "normal_form": "Φ↑"
+          },
+          {
+            "kind": "type_check",
+            "matches": true,
+            "actual": "InvariantField",
+            "expected": "Field",
+            "normal_form": "Ψ_inv"
+          },
+          {
+            "kind": "type_check",
+            "matches": true,
+            "actual": "InvariantField",
+            "expected": "Invariant",
+            "normal_form": "Ψ_inv"
+          },
+          {
+            "kind": "subtype_check",
+            "is_subtype": true,
+            "actual": "ModifiedField",
+            "expected": "Field"
+          },
+          {
+            "kind": "subtype_check",
+            "is_subtype": true,
+            "actual": "InvariantField",
+            "expected": "Invariant"
+          },
+          {
+            "kind": "subtype_check",
+            "is_subtype": true,
+            "actual": "Path",
+            "expected": "StateLike"
+          }
+        ],
+        "descriptions": [
+          {
+            "kind": "describe",
+            "normal_form": "Φ↑",
+            "semantic_hash": "3b7e3249a915ff40617ccbf753e93fcb9c9683b348015c9e2994fa89a4c7b114",
+            "type": "ModifiedField",
+            "supertypes": [
+              "Field",
+              "StateLike"
+            ],
+            "ontology": {
+              "type": "ModifiedField",
+              "historical_class": "F-class",
+              "role": "oriented_ascent",
+              "definition": "orientation field modified by ascent",
+              "primitive": false,
+              "base": "Φ",
+              "modifier": "↑",
+              "supertypes": [
+                "Field",
+                "StateLike"
+              ]
+            },
+            "decomposition": {
+              "base": "Φ",
+              "modifier": "↑"
+            }
+          },
+          {
+            "kind": "describe",
+            "normal_form": "Ψ_inv",
+            "semantic_hash": "00ecd7d127d6981d976fa92eeeab22d00d619d7ff1d9466061d9a484a1dd68b2",
+            "type": "InvariantField",
+            "supertypes": [
+              "Field",
+              "Invariant",
+              "StateLike"
+            ],
+            "ontology": {
+              "type": "InvariantField",
+              "historical_class": "I/F bridge",
+              "role": "invariant_trajectory",
+              "definition": "contextual Ψ field qualified as invariant",
+              "primitive": false,
+              "base": "Ψ",
+              "modifier": "inv",
+              "supertypes": [
+                "Field",
+                "Invariant",
+                "StateLike"
+              ]
+            },
+            "decomposition": {
+              "base": "Ψ",
+              "modifier": "inv"
+            }
+          },
+          {
+            "kind": "describe",
+            "normal_form": "(Ao → Φ↑)",
+            "semantic_hash": "74967cad960a3c97a6483807346783ea0cc6912ede73410ee26fbd7cc0982966",
+            "type": "Path",
+            "supertypes": [
+              "Composite",
+              "StateLike"
+            ],
+            "operator": "→",
+            "signature": {
+              "left": "StateLike",
+              "right": "StateLike",
+              "returns": "Path"
+            },
+            "left_type": "Field",
+            "right_type": "ModifiedField"
+          }
+        ],
+        "expressions": [
+          "(Ao → Φ↑ → Ψ_inv)"
+        ],
+        "warnings": [],
+        "ontology_lock": {
+          "null_is_not_missing": true,
+          "phi_ascent_is_derived": true,
+          "psi_invariant_is_derived": true,
+          "domain_adapters_absent": true
+        },
+        "claim_boundary": [
+          "parsing does not prove truth",
+          "type validity does not prove domain validity",
+          "∅ is intentional null and never means missing evidence",
+          "core tests do not validate any domain adapter",
+          "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+          "LAMAGUE Core is not an alignment or physical-theory guarantee"
+        ]
+      }
+    },
+    {
+      "id": "O030",
+      "name": "Reserved integration still rejected",
+      "passed": true,
+      "expected": "REJECTED",
+      "detail": {
+        "error_type": "LexError",
+        "error": "reserved symbol '∮' at 1:4; core recursion is '⟲' and '∮' is reserved for integration"
+      }
+    }
+  ],
+  "claim_boundary": "Synthetic language conformance only; no domain validation."
+}

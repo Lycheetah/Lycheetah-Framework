@@ -1,0 +1,51 @@
+{
+  "case_id": "019_COMMUNITY_GRANT",
+  "domain": "community grant",
+  "semantic_identity": "lamague-benchmark::community_grant",
+  "purpose": "Award a grant while exposing selection criteria and nonselected applicants.",
+  "claim": "The award remains bounded by published criteria and appeal.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": [
+    "long-term community effect"
+  ],
+  "invariants": [
+    "criteria remain public",
+    "nonselected applicants remain visible"
+  ],
+  "authority": [
+    "grant_board::award"
+  ],
+  "participants": [
+    "board",
+    "grant_board",
+    "reviewer"
+  ],
+  "affected_parties": [
+    "nonselected applicants",
+    "community"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "board::award now",
+    "reviewer::publish rationale first"
+  ],
+  "value_flows": [
+    "fund->recipient::grant::authorised"
+  ],
+  "recoveries": [
+    "appeal",
+    "clawback for breach"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::community grant"
+  ],
+  "candidate_id": "019_COMMUNITY_GRANT::affected_removed",
+  "expected_class": "UNSAFE_COLLAPSE"
+}

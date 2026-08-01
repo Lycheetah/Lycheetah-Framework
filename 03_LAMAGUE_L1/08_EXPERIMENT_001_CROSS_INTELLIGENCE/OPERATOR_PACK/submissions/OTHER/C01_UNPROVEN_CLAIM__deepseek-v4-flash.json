@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C01_UNPROVEN_CLAIM",
+  "decoder_id": "deepseek-v4-flash",
+  "purpose": "Human and AI collaborators inspect a claim with incomplete evidence and publish only a context-limited result, while retaining the unresolved method question.",
+  "claim": "No specific claim text is supplied in the source statement; the packet describes the act of inspecting 'a claim'.",
+  "operation_path": ["O", "E", "U", "P", "Y"],
+  "invariants": [
+    "Evidence must not be elevated to certainty.",
+    "The unresolved method question must remain unresolved.",
+    "The result is context-limited, not a general proof."
+  ],
+  "unknowns": [
+    "The specific content of the claim is not supplied.",
+    "The method question remains unresolved and is preserved as an unknown."
+  ],
+  "authority": [
+    "Human and AI collaborators"
+  ],
+  "participants": [
+    "Human and AI collaborators"
+  ],
+  "affected_parties": [],
+  "evidence": [
+    "Evidence is incomplete (details not supplied in source statement)."
+  ],
+  "provenance": [],
+  "dissent": [],
+  "value_ledger": [],
+  "consequences": [
+    "Publication of a context-limited result.",
+    "The unresolved method question is retained."
+  ],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "medium",
+  "notes": "The decode preserves uncertainty rather than upgrading the result to proof. The observed path O->E->U->P->Y matches the source statement's inspection-with-incomplete-evidence and context-limited yield. No specific claim proposition, evidence details, provenance, dissent, value flows, or recovery actions are supplied in the source."
+}

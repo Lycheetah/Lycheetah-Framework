@@ -1,0 +1,89 @@
+(* LAMAGUE Core v0.3 — Operator Algebra and Transformation Contracts *)
+
+program               = { statement } ;
+
+statement             = let_statement
+                      | invariant_statement
+                      | require_statement
+                      | forbid_statement
+                      | macro_statement
+                      | check_statement
+                      | describe_statement
+                      | expression_statement ;
+
+let_statement         = "let" identifier [ type_annotation ] "=" expression ";" ;
+invariant_statement   = "invariant" identifier [ type_annotation ] "=" expression ";" ;
+require_statement     = "require" expression ";" ;
+forbid_statement      = "forbid" expression ";" ;
+macro_statement       = "macro" meta identifier [ type_annotation ] "=" expression ";" ;
+
+check_statement       = "check" (
+                          "equivalent" "(" expression "," expression ")"
+                        | "type" "(" expression "," type_name ")"
+                        | "subtype" "(" type_name "," type_name ")"
+                        | "law" "(" operator "," law_name ")"
+                        | "composition" "(" operator "," operator ")"
+                        ) ";" ;
+
+describe_statement    = "describe" (
+                          "operator" operator
+                        | expression
+                        ) ";" ;
+
+expression_statement  = expression ";" ;
+type_annotation       = ":" type_name ;
+
+expression            = path_expression ;
+path_expression       = dynamic_expression { ("→" | "⇌") dynamic_expression } ;
+dynamic_expression    = fusion_expression { ("↯" | "↗" | "⟲") fusion_expression } ;
+fusion_expression     = primary { "⊗" primary } ;
+primary               = atom | identifier | "(" expression ")" ;
+
+operator              = "⊗" | "→" | "⇌" | "⟲" | "↯" | "↗" ;
+
+law_name              = "commutative"
+                      | "associative"
+                      | "idempotent"
+                      | "closed"
+                      | "reversible"
+                      | "inverse"
+                      | "identity"
+                      | "annihilator"
+                      | "terminating" ;
+
+primitive_field       = "Ao" | "Φ" | "Ψ" | "S" | "Δ" ;
+derived_field         = "Φ↑" ;
+invariant_marker      = "⟟" | "⟐" | "⟁" | "∞" ;
+null_state            = "∅" ;
+invariant_field       = "Ψ_inv" ;
+
+atom                  = primitive_field
+                      | derived_field
+                      | invariant_marker
+                      | null_state
+                      | invariant_field ;
+
+meta                  = "Z₁" | "Z₂" | "Z₃" ;
+
+type_name             = "StateLike"
+                      | "Field"
+                      | "ModifiedField"
+                      | "Invariant"
+                      | "InvariantMarker"
+                      | "InvariantField"
+                      | "NullState"
+                      | "Composite"
+                      | "Fusion"
+                      | "Path"
+                      | "Exchange"
+                      | "Recurrence"
+                      | "Collapse"
+                      | "Ascent" ;
+
+identifier            = letter { letter | digit | "_" } ;
+
+(* Binding contract distinctions:
+   structural inverse != operational reversibility
+   structural closure != domain semantic validity
+   ∅ is not a universal identity or annihilator
+*)

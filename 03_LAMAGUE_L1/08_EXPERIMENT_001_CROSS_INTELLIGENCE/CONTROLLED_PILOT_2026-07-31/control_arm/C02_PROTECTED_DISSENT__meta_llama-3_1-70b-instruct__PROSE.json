@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.3",
+  "case_id": "C02_PROTECTED_DISSENT",
+  "decoder_id": "meta/llama-3.1-70b-instruct__PROSE",
+  "purpose": "Publishing decision",
+  "claim": "Human and AI collaborator have differing opinions on publishing",
+  "operation_path": [],
+  "invariants": ["Positions remain attributable"],
+  "unknowns": ["Outcome of alternative staged release"],
+  "authority": ["Human", "AI collaborator"],
+  "participants": ["Human", "AI collaborator"],
+  "affected_parties": ["Human", "AI collaborator"],
+  "evidence": [],
+  "provenance": [],
+  "dissent": [
+    {"position": "Publish now", "attributed_to": "Human"},
+    {"position": "Test first", "attributed_to": "AI collaborator"}
+  ],
+  "value_ledger": [],
+  "consequences": [],
+  "consequence_horizon": "",
+  "recovery": [],
+  "confidence": "",
+  "notes": "No evidence or provenance provided. Consequences and recovery not specified."
+}

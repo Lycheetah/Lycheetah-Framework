@@ -1,0 +1,49 @@
+{
+  "case_id": "013_DATA_SHARING",
+  "domain": "data sharing",
+  "semantic_identity": "lamague-benchmark::data_sharing",
+  "purpose": "Authorise data use without hiding consent scope or downstream recipients.",
+  "claim": "Data use is permitted only for declared recipients and revocable scope.",
+  "evidence": [
+    "source statement",
+    "supporting record"
+  ],
+  "unknowns": [
+    "future derivative use"
+  ],
+  "invariants": [
+    "consent scope survives",
+    "recipients remain visible"
+  ],
+  "authority": [
+    "data_steward::limited_use"
+  ],
+  "participants": [
+    "data_steward",
+    "researcher",
+    "steward"
+  ],
+  "affected_parties": [
+    "data subjects",
+    "researchers"
+  ],
+  "boundaries": [
+    "bounded scope",
+    "visible review point"
+  ],
+  "dissent": [
+    "researcher::broader reuse",
+    "steward::limited purpose only"
+  ],
+  "value_flows": [],
+  "recoveries": [
+    "revoke access",
+    "delete derived copies where possible"
+  ],
+  "provenance": [
+    "synthetic benchmark case",
+    "domain::data sharing"
+  ],
+  "candidate_id": "013_DATA_SHARING::value_hidden",
+  "expected_class": "UNSAFE_COLLAPSE"
+}

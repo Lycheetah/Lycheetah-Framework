@@ -1,0 +1,1486 @@
+{
+  "lamague_core_version": "0.3.0",
+  "status": "ACCEPTED",
+  "statements": [
+    {
+      "kind": "operator_contract",
+      "symbol": "⊗",
+      "name": "fusion",
+      "directionality": "UNDIRECTED",
+      "signature": {
+        "left": "StateLike",
+        "right": "StateLike",
+        "returns": "Fusion"
+      },
+      "laws": {
+        "closure": {
+          "status": "PROVEN",
+          "basis": "Both operands require StateLike and every result is a StateLike subtype.",
+          "witness": "type lattice and operator signatures",
+          "counterexample": null,
+          "value": null
+        },
+        "operational_reversibility": {
+          "status": "DOMAIN_DEPENDENT",
+          "basis": "The symbolic core does not execute domain state changes.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "identity_element": {
+          "status": "UNDECLARED",
+          "basis": "No universal identity has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "annihilator": {
+          "status": "UNDECLARED",
+          "basis": "No universal annihilator has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "commutative": {
+          "status": "PROVEN",
+          "basis": "Canonical fusion operands are sorted by canonical form.",
+          "witness": "A ⊗ B ≡ B ⊗ A",
+          "counterexample": null,
+          "value": null
+        },
+        "associative": {
+          "status": "PROVEN",
+          "basis": "Nested fusion nodes flatten to one n-ary fusion.",
+          "witness": "(A ⊗ B) ⊗ C ≡ A ⊗ (B ⊗ C)",
+          "counterexample": null,
+          "value": null
+        },
+        "idempotent": {
+          "status": "REFUTED",
+          "basis": "Duplicate fusion operands are preserved.",
+          "witness": null,
+          "counterexample": "A ⊗ A ≢ A",
+          "value": null
+        },
+        "structural_inverse": {
+          "status": "UNDECLARED",
+          "basis": "No inverse fusion operator exists in the core.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "termination": {
+          "status": "NOT_APPLICABLE",
+          "basis": "Fusion does not introduce iteration.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        }
+      },
+      "normalization_rules": [
+        "flatten nested fusion",
+        "sort operands by canonical form",
+        "preserve duplicate operands"
+      ],
+      "prohibited_inferences": [
+        "do not infer idempotence",
+        "do not infer an identity element",
+        "do not infer semantic blending outside an adapter"
+      ],
+      "semantic_boundary": "Fusion represents structural composition only. It does not prove compatibility, agreement, or safe merger.",
+      "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+    },
+    {
+      "kind": "operator_contract",
+      "symbol": "→",
+      "name": "projection",
+      "directionality": "DIRECTED",
+      "signature": {
+        "left": "StateLike",
+        "right": "StateLike",
+        "returns": "Path"
+      },
+      "laws": {
+        "closure": {
+          "status": "PROVEN",
+          "basis": "Both operands require StateLike and every result is a StateLike subtype.",
+          "witness": "type lattice and operator signatures",
+          "counterexample": null,
+          "value": null
+        },
+        "operational_reversibility": {
+          "status": "DOMAIN_DEPENDENT",
+          "basis": "The symbolic core does not execute domain state changes.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "identity_element": {
+          "status": "UNDECLARED",
+          "basis": "No universal identity has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "annihilator": {
+          "status": "UNDECLARED",
+          "basis": "No universal annihilator has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "commutative": {
+          "status": "REFUTED",
+          "basis": "Projection preserves operand order.",
+          "witness": null,
+          "counterexample": "A → B ≢ B → A",
+          "value": null
+        },
+        "associative": {
+          "status": "PROVEN",
+          "basis": "Nested projection nodes flatten into an ordered path.",
+          "witness": "(A → B) → C ≡ A → (B → C)",
+          "counterexample": null,
+          "value": null
+        },
+        "idempotent": {
+          "status": "REFUTED",
+          "basis": "Repeated path nodes remain explicit.",
+          "witness": null,
+          "counterexample": "A → A ≢ A",
+          "value": null
+        },
+        "structural_inverse": {
+          "status": "UNDECLARED",
+          "basis": "Reversing a path is not an equivalence rule.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "termination": {
+          "status": "NOT_APPLICABLE",
+          "basis": "Projection does not introduce iteration.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        }
+      },
+      "normalization_rules": [
+        "flatten nested projection",
+        "preserve exact left-to-right order",
+        "preserve repeated states"
+      ],
+      "prohibited_inferences": [
+        "do not reverse the path",
+        "do not infer causality",
+        "do not infer mutation of the left operand"
+      ],
+      "semantic_boundary": "Projection is an ordered symbolic path. Domain adapters decide whether it means transition, mapping, causation, or another relation.",
+      "contract_hash": "459ba538a30e199aa4a4a1d6a31a9ba7707bd9912340882d388e9e25186a1593"
+    },
+    {
+      "kind": "operator_contract",
+      "symbol": "⇌",
+      "name": "exchange",
+      "directionality": "SYMMETRIC",
+      "signature": {
+        "left": "StateLike",
+        "right": "StateLike",
+        "returns": "Exchange"
+      },
+      "laws": {
+        "closure": {
+          "status": "PROVEN",
+          "basis": "Both operands require StateLike and every result is a StateLike subtype.",
+          "witness": "type lattice and operator signatures",
+          "counterexample": null,
+          "value": null
+        },
+        "operational_reversibility": {
+          "status": "DOMAIN_DEPENDENT",
+          "basis": "The symbolic core does not execute domain state changes.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "identity_element": {
+          "status": "UNDECLARED",
+          "basis": "No universal identity has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "annihilator": {
+          "status": "UNDECLARED",
+          "basis": "No universal annihilator has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "commutative": {
+          "status": "PROVEN",
+          "basis": "Exchange operands are canonically ordered.",
+          "witness": "A ⇌ B ≡ B ⇌ A",
+          "counterexample": null,
+          "value": null
+        },
+        "associative": {
+          "status": "REFUTED",
+          "basis": "Nested exchange grouping remains significant.",
+          "witness": null,
+          "counterexample": "(A ⇌ B) ⇌ C ≢ A ⇌ (B ⇌ C)",
+          "value": null
+        },
+        "idempotent": {
+          "status": "REFUTED",
+          "basis": "Self-exchange remains an explicit relation.",
+          "witness": null,
+          "counterexample": "A ⇌ A ≢ A",
+          "value": null
+        },
+        "structural_inverse": {
+          "status": "PROVEN",
+          "basis": "The structural inverse of exchange is itself.",
+          "witness": "inverse(⇌) = ⇌",
+          "counterexample": null,
+          "value": "SELF"
+        },
+        "termination": {
+          "status": "NOT_APPLICABLE",
+          "basis": "Exchange does not introduce iteration.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        }
+      },
+      "normalization_rules": [
+        "sort the two direct operands",
+        "preserve nested grouping"
+      ],
+      "prohibited_inferences": [
+        "do not flatten nested exchanges",
+        "do not infer operational reversibility",
+        "do not infer equal value transfer"
+      ],
+      "semantic_boundary": "Exchange is structurally symmetric. Whether an actual exchange can be undone is domain-dependent.",
+      "contract_hash": "68f6c7ba48294018759cab54800ad6c4d07c730ae29db0d20eb9b4dfb7917a11"
+    },
+    {
+      "kind": "operator_contract",
+      "symbol": "⟲",
+      "name": "recurrence",
+      "directionality": "DIRECTED",
+      "signature": {
+        "left": "StateLike",
+        "right": "StateLike",
+        "returns": "Recurrence"
+      },
+      "laws": {
+        "closure": {
+          "status": "PROVEN",
+          "basis": "Both operands require StateLike and every result is a StateLike subtype.",
+          "witness": "type lattice and operator signatures",
+          "counterexample": null,
+          "value": null
+        },
+        "operational_reversibility": {
+          "status": "DOMAIN_DEPENDENT",
+          "basis": "The symbolic core does not execute domain state changes.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "identity_element": {
+          "status": "UNDECLARED",
+          "basis": "No universal identity has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "annihilator": {
+          "status": "UNDECLARED",
+          "basis": "No universal annihilator has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "commutative": {
+          "status": "REFUTED",
+          "basis": "Recurrence preserves source and recurrence target.",
+          "witness": null,
+          "counterexample": "A ⟲ B ≢ B ⟲ A",
+          "value": null
+        },
+        "associative": {
+          "status": "REFUTED",
+          "basis": "Nested recurrence grouping remains significant.",
+          "witness": null,
+          "counterexample": "(A ⟲ B) ⟲ C ≢ A ⟲ (B ⟲ C)",
+          "value": null
+        },
+        "idempotent": {
+          "status": "REFUTED",
+          "basis": "A recurrence relation is not reduced to its operand.",
+          "witness": null,
+          "counterexample": "A ⟲ A ≢ A",
+          "value": null
+        },
+        "structural_inverse": {
+          "status": "UNDECLARED",
+          "basis": "No inverse recurrence law is defined.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "termination": {
+          "status": "DOMAIN_DEPENDENT",
+          "basis": "The core stores recurrence structure but has no loop condition, fixed-point order, or execution model.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        }
+      },
+      "normalization_rules": [
+        "preserve direction",
+        "preserve grouping",
+        "do not execute or unroll"
+      ],
+      "prohibited_inferences": [
+        "do not infer termination",
+        "do not infer convergence",
+        "do not infer a fixed point"
+      ],
+      "semantic_boundary": "Recurrence records a directed return relation. Termination and convergence require a domain adapter.",
+      "contract_hash": "25be8d35e617fe6d0585ef9c0738c4f0ff4a586629f00553375eb69aa2b70ae7"
+    },
+    {
+      "kind": "operator_contract",
+      "symbol": "↯",
+      "name": "collapse",
+      "directionality": "DIRECTED",
+      "signature": {
+        "left": "StateLike",
+        "right": "StateLike",
+        "returns": "Collapse"
+      },
+      "laws": {
+        "closure": {
+          "status": "PROVEN",
+          "basis": "Both operands require StateLike and every result is a StateLike subtype.",
+          "witness": "type lattice and operator signatures",
+          "counterexample": null,
+          "value": null
+        },
+        "operational_reversibility": {
+          "status": "DOMAIN_DEPENDENT",
+          "basis": "The symbolic core does not execute domain state changes.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "identity_element": {
+          "status": "UNDECLARED",
+          "basis": "No universal identity has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "annihilator": {
+          "status": "UNDECLARED",
+          "basis": "No universal annihilator has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "commutative": {
+          "status": "REFUTED",
+          "basis": "Collapse preserves source and target.",
+          "witness": null,
+          "counterexample": "A ↯ B ≢ B ↯ A",
+          "value": null
+        },
+        "associative": {
+          "status": "REFUTED",
+          "basis": "Nested collapse grouping remains significant.",
+          "witness": null,
+          "counterexample": "(A ↯ B) ↯ C ≢ A ↯ (B ↯ C)",
+          "value": null
+        },
+        "idempotent": {
+          "status": "REFUTED",
+          "basis": "A collapse relation does not reduce to its operand.",
+          "witness": null,
+          "counterexample": "A ↯ A ≢ A",
+          "value": null
+        },
+        "structural_inverse": {
+          "status": "UNDECLARED",
+          "basis": "No recovery or inverse operator is implied by collapse.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "termination": {
+          "status": "NOT_APPLICABLE",
+          "basis": "Collapse does not introduce iteration.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        }
+      },
+      "normalization_rules": [
+        "preserve direction",
+        "preserve grouping",
+        "preserve explicit null target"
+      ],
+      "prohibited_inferences": [
+        "do not interpret ↯ as a decision junction",
+        "do not simplify A ↯ ∅ to ∅",
+        "do not infer irrecoverability outside an adapter"
+      ],
+      "semantic_boundary": "Collapse is a directed structural relation. It does not prove deletion, failure, destruction, or irreversibility.",
+      "contract_hash": "f6b8c639cdc2ff88834cb09c055a86febc0a0cdb1fbaeed49f964c5e37eddd1a"
+    },
+    {
+      "kind": "operator_contract",
+      "symbol": "↗",
+      "name": "ascent",
+      "directionality": "DIRECTED",
+      "signature": {
+        "left": "StateLike",
+        "right": "StateLike",
+        "returns": "Ascent"
+      },
+      "laws": {
+        "closure": {
+          "status": "PROVEN",
+          "basis": "Both operands require StateLike and every result is a StateLike subtype.",
+          "witness": "type lattice and operator signatures",
+          "counterexample": null,
+          "value": null
+        },
+        "operational_reversibility": {
+          "status": "DOMAIN_DEPENDENT",
+          "basis": "The symbolic core does not execute domain state changes.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "identity_element": {
+          "status": "UNDECLARED",
+          "basis": "No universal identity has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "annihilator": {
+          "status": "UNDECLARED",
+          "basis": "No universal annihilator has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "commutative": {
+          "status": "REFUTED",
+          "basis": "Ascent preserves source and target.",
+          "witness": null,
+          "counterexample": "A ↗ B ≢ B ↗ A",
+          "value": null
+        },
+        "associative": {
+          "status": "REFUTED",
+          "basis": "Nested ascent grouping remains significant.",
+          "witness": null,
+          "counterexample": "(A ↗ B) ↗ C ≢ A ↗ (B ↗ C)",
+          "value": null
+        },
+        "idempotent": {
+          "status": "REFUTED",
+          "basis": "An ascent relation does not reduce to its operand.",
+          "witness": null,
+          "counterexample": "A ↗ A ≢ A",
+          "value": null
+        },
+        "structural_inverse": {
+          "status": "UNDECLARED",
+          "basis": "No descent or inverse operator is implied.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "termination": {
+          "status": "NOT_APPLICABLE",
+          "basis": "Ascent does not introduce iteration.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        }
+      },
+      "normalization_rules": [
+        "preserve direction",
+        "preserve grouping"
+      ],
+      "prohibited_inferences": [
+        "do not infer improvement",
+        "do not infer monotonic progress",
+        "do not infer a numerical ordering"
+      ],
+      "semantic_boundary": "Ascent is a directed structural relation. Positive value, improvement, or hierarchy are not core-language guarantees.",
+      "contract_hash": "4705d587a4e0fba529e443a3b50d7f3151e9d4f1b8a4f424e3d7cf15e9a91e0a"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "⊗",
+      "law": "commutative",
+      "status": "PROVEN",
+      "basis": "Canonical fusion operands are sorted by canonical form.",
+      "witness": "A ⊗ B ≡ B ⊗ A",
+      "counterexample": null,
+      "value": null,
+      "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "⊗",
+      "law": "associative",
+      "status": "PROVEN",
+      "basis": "Nested fusion nodes flatten to one n-ary fusion.",
+      "witness": "(A ⊗ B) ⊗ C ≡ A ⊗ (B ⊗ C)",
+      "counterexample": null,
+      "value": null,
+      "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "⊗",
+      "law": "idempotent",
+      "status": "REFUTED",
+      "basis": "Duplicate fusion operands are preserved.",
+      "witness": null,
+      "counterexample": "A ⊗ A ≢ A",
+      "value": null,
+      "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "⊗",
+      "law": "identity_element",
+      "status": "UNDECLARED",
+      "basis": "No universal identity has been justified for the core operator.",
+      "witness": null,
+      "counterexample": null,
+      "value": null,
+      "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "→",
+      "law": "associative",
+      "status": "PROVEN",
+      "basis": "Nested projection nodes flatten into an ordered path.",
+      "witness": "(A → B) → C ≡ A → (B → C)",
+      "counterexample": null,
+      "value": null,
+      "contract_hash": "459ba538a30e199aa4a4a1d6a31a9ba7707bd9912340882d388e9e25186a1593"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "→",
+      "law": "operational_reversibility",
+      "status": "DOMAIN_DEPENDENT",
+      "basis": "The symbolic core does not execute domain state changes.",
+      "witness": null,
+      "counterexample": null,
+      "value": null,
+      "contract_hash": "459ba538a30e199aa4a4a1d6a31a9ba7707bd9912340882d388e9e25186a1593"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "⇌",
+      "law": "structural_inverse",
+      "status": "PROVEN",
+      "basis": "The structural inverse of exchange is itself.",
+      "witness": "inverse(⇌) = ⇌",
+      "counterexample": null,
+      "value": "SELF",
+      "contract_hash": "68f6c7ba48294018759cab54800ad6c4d07c730ae29db0d20eb9b4dfb7917a11"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "⇌",
+      "law": "operational_reversibility",
+      "status": "DOMAIN_DEPENDENT",
+      "basis": "The symbolic core does not execute domain state changes.",
+      "witness": null,
+      "counterexample": null,
+      "value": null,
+      "contract_hash": "68f6c7ba48294018759cab54800ad6c4d07c730ae29db0d20eb9b4dfb7917a11"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "⟲",
+      "law": "termination",
+      "status": "DOMAIN_DEPENDENT",
+      "basis": "The core stores recurrence structure but has no loop condition, fixed-point order, or execution model.",
+      "witness": null,
+      "counterexample": null,
+      "value": null,
+      "contract_hash": "25be8d35e617fe6d0585ef9c0738c4f0ff4a586629f00553375eb69aa2b70ae7"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "↯",
+      "law": "annihilator",
+      "status": "UNDECLARED",
+      "basis": "No universal annihilator has been justified for the core operator.",
+      "witness": null,
+      "counterexample": null,
+      "value": null,
+      "contract_hash": "f6b8c639cdc2ff88834cb09c055a86febc0a0cdb1fbaeed49f964c5e37eddd1a"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "↗",
+      "law": "commutative",
+      "status": "REFUTED",
+      "basis": "Ascent preserves source and target.",
+      "witness": null,
+      "counterexample": "A ↗ B ≢ B ↗ A",
+      "value": null,
+      "contract_hash": "4705d587a4e0fba529e443a3b50d7f3151e9d4f1b8a4f424e3d7cf15e9a91e0a"
+    },
+    {
+      "kind": "operator_composition",
+      "first": "⊗",
+      "second": "→",
+      "structurally_composable": true,
+      "reason": "⊗ returns Fusion, a StateLike subtype; → accepts StateLike.",
+      "semantic_legality": "DOMAIN_DEPENDENT"
+    },
+    {
+      "kind": "operator_composition",
+      "first": "↯",
+      "second": "⟲",
+      "structurally_composable": true,
+      "reason": "↯ returns Collapse, a StateLike subtype; ⟲ accepts StateLike.",
+      "semantic_legality": "DOMAIN_DEPENDENT"
+    },
+    {
+      "kind": "equivalence",
+      "equivalent": true,
+      "method": "canonical_normal_form",
+      "left": "(Ao ⊗ Φ ⊗ Ψ)",
+      "right": "(Ao ⊗ Φ ⊗ Ψ)",
+      "left_rewrite_trace": [
+        {
+          "rule": "FUSION_ASSOCIATIVE_FLATTEN"
+        }
+      ],
+      "right_rewrite_trace": [
+        {
+          "rule": "FUSION_COMMUTATIVE_SORT"
+        },
+        {
+          "rule": "FUSION_ASSOCIATIVE_FLATTEN"
+        },
+        {
+          "rule": "FUSION_COMMUTATIVE_SORT"
+        }
+      ]
+    },
+    {
+      "kind": "equivalence",
+      "equivalent": true,
+      "method": "canonical_normal_form",
+      "left": "(Ao → Φ → Ψ)",
+      "right": "(Ao → Φ → Ψ)",
+      "left_rewrite_trace": [
+        {
+          "rule": "PROJECTION_ASSOCIATIVE_FLATTEN"
+        }
+      ],
+      "right_rewrite_trace": [
+        {
+          "rule": "PROJECTION_ASSOCIATIVE_FLATTEN"
+        }
+      ]
+    },
+    {
+      "kind": "describe",
+      "normal_form": "(Ψ ↯ ∅)",
+      "semantic_hash": "5929751c7c53bb8f6b88f9a321916a57c76f012eaeea76a438ff0427e956bce4",
+      "type": "Collapse",
+      "supertypes": [
+        "Composite",
+        "StateLike"
+      ],
+      "rewrite_trace": [],
+      "operator": "↯",
+      "signature": {
+        "left": "StateLike",
+        "right": "StateLike",
+        "returns": "Collapse"
+      },
+      "left_type": "Field",
+      "right_type": "NullState"
+    }
+  ],
+  "bindings": {},
+  "invariants": {},
+  "requirements": [],
+  "prohibitions": [],
+  "macros": {},
+  "checks": [
+    {
+      "kind": "operator_law",
+      "operator": "⊗",
+      "law": "commutative",
+      "status": "PROVEN",
+      "basis": "Canonical fusion operands are sorted by canonical form.",
+      "witness": "A ⊗ B ≡ B ⊗ A",
+      "counterexample": null,
+      "value": null,
+      "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "⊗",
+      "law": "associative",
+      "status": "PROVEN",
+      "basis": "Nested fusion nodes flatten to one n-ary fusion.",
+      "witness": "(A ⊗ B) ⊗ C ≡ A ⊗ (B ⊗ C)",
+      "counterexample": null,
+      "value": null,
+      "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "⊗",
+      "law": "idempotent",
+      "status": "REFUTED",
+      "basis": "Duplicate fusion operands are preserved.",
+      "witness": null,
+      "counterexample": "A ⊗ A ≢ A",
+      "value": null,
+      "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "⊗",
+      "law": "identity_element",
+      "status": "UNDECLARED",
+      "basis": "No universal identity has been justified for the core operator.",
+      "witness": null,
+      "counterexample": null,
+      "value": null,
+      "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "→",
+      "law": "associative",
+      "status": "PROVEN",
+      "basis": "Nested projection nodes flatten into an ordered path.",
+      "witness": "(A → B) → C ≡ A → (B → C)",
+      "counterexample": null,
+      "value": null,
+      "contract_hash": "459ba538a30e199aa4a4a1d6a31a9ba7707bd9912340882d388e9e25186a1593"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "→",
+      "law": "operational_reversibility",
+      "status": "DOMAIN_DEPENDENT",
+      "basis": "The symbolic core does not execute domain state changes.",
+      "witness": null,
+      "counterexample": null,
+      "value": null,
+      "contract_hash": "459ba538a30e199aa4a4a1d6a31a9ba7707bd9912340882d388e9e25186a1593"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "⇌",
+      "law": "structural_inverse",
+      "status": "PROVEN",
+      "basis": "The structural inverse of exchange is itself.",
+      "witness": "inverse(⇌) = ⇌",
+      "counterexample": null,
+      "value": "SELF",
+      "contract_hash": "68f6c7ba48294018759cab54800ad6c4d07c730ae29db0d20eb9b4dfb7917a11"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "⇌",
+      "law": "operational_reversibility",
+      "status": "DOMAIN_DEPENDENT",
+      "basis": "The symbolic core does not execute domain state changes.",
+      "witness": null,
+      "counterexample": null,
+      "value": null,
+      "contract_hash": "68f6c7ba48294018759cab54800ad6c4d07c730ae29db0d20eb9b4dfb7917a11"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "⟲",
+      "law": "termination",
+      "status": "DOMAIN_DEPENDENT",
+      "basis": "The core stores recurrence structure but has no loop condition, fixed-point order, or execution model.",
+      "witness": null,
+      "counterexample": null,
+      "value": null,
+      "contract_hash": "25be8d35e617fe6d0585ef9c0738c4f0ff4a586629f00553375eb69aa2b70ae7"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "↯",
+      "law": "annihilator",
+      "status": "UNDECLARED",
+      "basis": "No universal annihilator has been justified for the core operator.",
+      "witness": null,
+      "counterexample": null,
+      "value": null,
+      "contract_hash": "f6b8c639cdc2ff88834cb09c055a86febc0a0cdb1fbaeed49f964c5e37eddd1a"
+    },
+    {
+      "kind": "operator_law",
+      "operator": "↗",
+      "law": "commutative",
+      "status": "REFUTED",
+      "basis": "Ascent preserves source and target.",
+      "witness": null,
+      "counterexample": "A ↗ B ≢ B ↗ A",
+      "value": null,
+      "contract_hash": "4705d587a4e0fba529e443a3b50d7f3151e9d4f1b8a4f424e3d7cf15e9a91e0a"
+    },
+    {
+      "kind": "operator_composition",
+      "first": "⊗",
+      "second": "→",
+      "structurally_composable": true,
+      "reason": "⊗ returns Fusion, a StateLike subtype; → accepts StateLike.",
+      "semantic_legality": "DOMAIN_DEPENDENT"
+    },
+    {
+      "kind": "operator_composition",
+      "first": "↯",
+      "second": "⟲",
+      "structurally_composable": true,
+      "reason": "↯ returns Collapse, a StateLike subtype; ⟲ accepts StateLike.",
+      "semantic_legality": "DOMAIN_DEPENDENT"
+    },
+    {
+      "kind": "equivalence",
+      "equivalent": true,
+      "method": "canonical_normal_form",
+      "left": "(Ao ⊗ Φ ⊗ Ψ)",
+      "right": "(Ao ⊗ Φ ⊗ Ψ)",
+      "left_rewrite_trace": [
+        {
+          "rule": "FUSION_ASSOCIATIVE_FLATTEN"
+        }
+      ],
+      "right_rewrite_trace": [
+        {
+          "rule": "FUSION_COMMUTATIVE_SORT"
+        },
+        {
+          "rule": "FUSION_ASSOCIATIVE_FLATTEN"
+        },
+        {
+          "rule": "FUSION_COMMUTATIVE_SORT"
+        }
+      ]
+    },
+    {
+      "kind": "equivalence",
+      "equivalent": true,
+      "method": "canonical_normal_form",
+      "left": "(Ao → Φ → Ψ)",
+      "right": "(Ao → Φ → Ψ)",
+      "left_rewrite_trace": [
+        {
+          "rule": "PROJECTION_ASSOCIATIVE_FLATTEN"
+        }
+      ],
+      "right_rewrite_trace": [
+        {
+          "rule": "PROJECTION_ASSOCIATIVE_FLATTEN"
+        }
+      ]
+    }
+  ],
+  "descriptions": [
+    {
+      "kind": "operator_contract",
+      "symbol": "⊗",
+      "name": "fusion",
+      "directionality": "UNDIRECTED",
+      "signature": {
+        "left": "StateLike",
+        "right": "StateLike",
+        "returns": "Fusion"
+      },
+      "laws": {
+        "closure": {
+          "status": "PROVEN",
+          "basis": "Both operands require StateLike and every result is a StateLike subtype.",
+          "witness": "type lattice and operator signatures",
+          "counterexample": null,
+          "value": null
+        },
+        "operational_reversibility": {
+          "status": "DOMAIN_DEPENDENT",
+          "basis": "The symbolic core does not execute domain state changes.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "identity_element": {
+          "status": "UNDECLARED",
+          "basis": "No universal identity has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "annihilator": {
+          "status": "UNDECLARED",
+          "basis": "No universal annihilator has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "commutative": {
+          "status": "PROVEN",
+          "basis": "Canonical fusion operands are sorted by canonical form.",
+          "witness": "A ⊗ B ≡ B ⊗ A",
+          "counterexample": null,
+          "value": null
+        },
+        "associative": {
+          "status": "PROVEN",
+          "basis": "Nested fusion nodes flatten to one n-ary fusion.",
+          "witness": "(A ⊗ B) ⊗ C ≡ A ⊗ (B ⊗ C)",
+          "counterexample": null,
+          "value": null
+        },
+        "idempotent": {
+          "status": "REFUTED",
+          "basis": "Duplicate fusion operands are preserved.",
+          "witness": null,
+          "counterexample": "A ⊗ A ≢ A",
+          "value": null
+        },
+        "structural_inverse": {
+          "status": "UNDECLARED",
+          "basis": "No inverse fusion operator exists in the core.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "termination": {
+          "status": "NOT_APPLICABLE",
+          "basis": "Fusion does not introduce iteration.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        }
+      },
+      "normalization_rules": [
+        "flatten nested fusion",
+        "sort operands by canonical form",
+        "preserve duplicate operands"
+      ],
+      "prohibited_inferences": [
+        "do not infer idempotence",
+        "do not infer an identity element",
+        "do not infer semantic blending outside an adapter"
+      ],
+      "semantic_boundary": "Fusion represents structural composition only. It does not prove compatibility, agreement, or safe merger.",
+      "contract_hash": "0fa9d28975d6245ac5f1b6f6ecd83b0a4469b323a379fce3153a098753e731e0"
+    },
+    {
+      "kind": "operator_contract",
+      "symbol": "→",
+      "name": "projection",
+      "directionality": "DIRECTED",
+      "signature": {
+        "left": "StateLike",
+        "right": "StateLike",
+        "returns": "Path"
+      },
+      "laws": {
+        "closure": {
+          "status": "PROVEN",
+          "basis": "Both operands require StateLike and every result is a StateLike subtype.",
+          "witness": "type lattice and operator signatures",
+          "counterexample": null,
+          "value": null
+        },
+        "operational_reversibility": {
+          "status": "DOMAIN_DEPENDENT",
+          "basis": "The symbolic core does not execute domain state changes.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "identity_element": {
+          "status": "UNDECLARED",
+          "basis": "No universal identity has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "annihilator": {
+          "status": "UNDECLARED",
+          "basis": "No universal annihilator has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "commutative": {
+          "status": "REFUTED",
+          "basis": "Projection preserves operand order.",
+          "witness": null,
+          "counterexample": "A → B ≢ B → A",
+          "value": null
+        },
+        "associative": {
+          "status": "PROVEN",
+          "basis": "Nested projection nodes flatten into an ordered path.",
+          "witness": "(A → B) → C ≡ A → (B → C)",
+          "counterexample": null,
+          "value": null
+        },
+        "idempotent": {
+          "status": "REFUTED",
+          "basis": "Repeated path nodes remain explicit.",
+          "witness": null,
+          "counterexample": "A → A ≢ A",
+          "value": null
+        },
+        "structural_inverse": {
+          "status": "UNDECLARED",
+          "basis": "Reversing a path is not an equivalence rule.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "termination": {
+          "status": "NOT_APPLICABLE",
+          "basis": "Projection does not introduce iteration.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        }
+      },
+      "normalization_rules": [
+        "flatten nested projection",
+        "preserve exact left-to-right order",
+        "preserve repeated states"
+      ],
+      "prohibited_inferences": [
+        "do not reverse the path",
+        "do not infer causality",
+        "do not infer mutation of the left operand"
+      ],
+      "semantic_boundary": "Projection is an ordered symbolic path. Domain adapters decide whether it means transition, mapping, causation, or another relation.",
+      "contract_hash": "459ba538a30e199aa4a4a1d6a31a9ba7707bd9912340882d388e9e25186a1593"
+    },
+    {
+      "kind": "operator_contract",
+      "symbol": "⇌",
+      "name": "exchange",
+      "directionality": "SYMMETRIC",
+      "signature": {
+        "left": "StateLike",
+        "right": "StateLike",
+        "returns": "Exchange"
+      },
+      "laws": {
+        "closure": {
+          "status": "PROVEN",
+          "basis": "Both operands require StateLike and every result is a StateLike subtype.",
+          "witness": "type lattice and operator signatures",
+          "counterexample": null,
+          "value": null
+        },
+        "operational_reversibility": {
+          "status": "DOMAIN_DEPENDENT",
+          "basis": "The symbolic core does not execute domain state changes.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "identity_element": {
+          "status": "UNDECLARED",
+          "basis": "No universal identity has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "annihilator": {
+          "status": "UNDECLARED",
+          "basis": "No universal annihilator has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "commutative": {
+          "status": "PROVEN",
+          "basis": "Exchange operands are canonically ordered.",
+          "witness": "A ⇌ B ≡ B ⇌ A",
+          "counterexample": null,
+          "value": null
+        },
+        "associative": {
+          "status": "REFUTED",
+          "basis": "Nested exchange grouping remains significant.",
+          "witness": null,
+          "counterexample": "(A ⇌ B) ⇌ C ≢ A ⇌ (B ⇌ C)",
+          "value": null
+        },
+        "idempotent": {
+          "status": "REFUTED",
+          "basis": "Self-exchange remains an explicit relation.",
+          "witness": null,
+          "counterexample": "A ⇌ A ≢ A",
+          "value": null
+        },
+        "structural_inverse": {
+          "status": "PROVEN",
+          "basis": "The structural inverse of exchange is itself.",
+          "witness": "inverse(⇌) = ⇌",
+          "counterexample": null,
+          "value": "SELF"
+        },
+        "termination": {
+          "status": "NOT_APPLICABLE",
+          "basis": "Exchange does not introduce iteration.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        }
+      },
+      "normalization_rules": [
+        "sort the two direct operands",
+        "preserve nested grouping"
+      ],
+      "prohibited_inferences": [
+        "do not flatten nested exchanges",
+        "do not infer operational reversibility",
+        "do not infer equal value transfer"
+      ],
+      "semantic_boundary": "Exchange is structurally symmetric. Whether an actual exchange can be undone is domain-dependent.",
+      "contract_hash": "68f6c7ba48294018759cab54800ad6c4d07c730ae29db0d20eb9b4dfb7917a11"
+    },
+    {
+      "kind": "operator_contract",
+      "symbol": "⟲",
+      "name": "recurrence",
+      "directionality": "DIRECTED",
+      "signature": {
+        "left": "StateLike",
+        "right": "StateLike",
+        "returns": "Recurrence"
+      },
+      "laws": {
+        "closure": {
+          "status": "PROVEN",
+          "basis": "Both operands require StateLike and every result is a StateLike subtype.",
+          "witness": "type lattice and operator signatures",
+          "counterexample": null,
+          "value": null
+        },
+        "operational_reversibility": {
+          "status": "DOMAIN_DEPENDENT",
+          "basis": "The symbolic core does not execute domain state changes.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "identity_element": {
+          "status": "UNDECLARED",
+          "basis": "No universal identity has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "annihilator": {
+          "status": "UNDECLARED",
+          "basis": "No universal annihilator has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "commutative": {
+          "status": "REFUTED",
+          "basis": "Recurrence preserves source and recurrence target.",
+          "witness": null,
+          "counterexample": "A ⟲ B ≢ B ⟲ A",
+          "value": null
+        },
+        "associative": {
+          "status": "REFUTED",
+          "basis": "Nested recurrence grouping remains significant.",
+          "witness": null,
+          "counterexample": "(A ⟲ B) ⟲ C ≢ A ⟲ (B ⟲ C)",
+          "value": null
+        },
+        "idempotent": {
+          "status": "REFUTED",
+          "basis": "A recurrence relation is not reduced to its operand.",
+          "witness": null,
+          "counterexample": "A ⟲ A ≢ A",
+          "value": null
+        },
+        "structural_inverse": {
+          "status": "UNDECLARED",
+          "basis": "No inverse recurrence law is defined.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "termination": {
+          "status": "DOMAIN_DEPENDENT",
+          "basis": "The core stores recurrence structure but has no loop condition, fixed-point order, or execution model.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        }
+      },
+      "normalization_rules": [
+        "preserve direction",
+        "preserve grouping",
+        "do not execute or unroll"
+      ],
+      "prohibited_inferences": [
+        "do not infer termination",
+        "do not infer convergence",
+        "do not infer a fixed point"
+      ],
+      "semantic_boundary": "Recurrence records a directed return relation. Termination and convergence require a domain adapter.",
+      "contract_hash": "25be8d35e617fe6d0585ef9c0738c4f0ff4a586629f00553375eb69aa2b70ae7"
+    },
+    {
+      "kind": "operator_contract",
+      "symbol": "↯",
+      "name": "collapse",
+      "directionality": "DIRECTED",
+      "signature": {
+        "left": "StateLike",
+        "right": "StateLike",
+        "returns": "Collapse"
+      },
+      "laws": {
+        "closure": {
+          "status": "PROVEN",
+          "basis": "Both operands require StateLike and every result is a StateLike subtype.",
+          "witness": "type lattice and operator signatures",
+          "counterexample": null,
+          "value": null
+        },
+        "operational_reversibility": {
+          "status": "DOMAIN_DEPENDENT",
+          "basis": "The symbolic core does not execute domain state changes.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "identity_element": {
+          "status": "UNDECLARED",
+          "basis": "No universal identity has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "annihilator": {
+          "status": "UNDECLARED",
+          "basis": "No universal annihilator has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "commutative": {
+          "status": "REFUTED",
+          "basis": "Collapse preserves source and target.",
+          "witness": null,
+          "counterexample": "A ↯ B ≢ B ↯ A",
+          "value": null
+        },
+        "associative": {
+          "status": "REFUTED",
+          "basis": "Nested collapse grouping remains significant.",
+          "witness": null,
+          "counterexample": "(A ↯ B) ↯ C ≢ A ↯ (B ↯ C)",
+          "value": null
+        },
+        "idempotent": {
+          "status": "REFUTED",
+          "basis": "A collapse relation does not reduce to its operand.",
+          "witness": null,
+          "counterexample": "A ↯ A ≢ A",
+          "value": null
+        },
+        "structural_inverse": {
+          "status": "UNDECLARED",
+          "basis": "No recovery or inverse operator is implied by collapse.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "termination": {
+          "status": "NOT_APPLICABLE",
+          "basis": "Collapse does not introduce iteration.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        }
+      },
+      "normalization_rules": [
+        "preserve direction",
+        "preserve grouping",
+        "preserve explicit null target"
+      ],
+      "prohibited_inferences": [
+        "do not interpret ↯ as a decision junction",
+        "do not simplify A ↯ ∅ to ∅",
+        "do not infer irrecoverability outside an adapter"
+      ],
+      "semantic_boundary": "Collapse is a directed structural relation. It does not prove deletion, failure, destruction, or irreversibility.",
+      "contract_hash": "f6b8c639cdc2ff88834cb09c055a86febc0a0cdb1fbaeed49f964c5e37eddd1a"
+    },
+    {
+      "kind": "operator_contract",
+      "symbol": "↗",
+      "name": "ascent",
+      "directionality": "DIRECTED",
+      "signature": {
+        "left": "StateLike",
+        "right": "StateLike",
+        "returns": "Ascent"
+      },
+      "laws": {
+        "closure": {
+          "status": "PROVEN",
+          "basis": "Both operands require StateLike and every result is a StateLike subtype.",
+          "witness": "type lattice and operator signatures",
+          "counterexample": null,
+          "value": null
+        },
+        "operational_reversibility": {
+          "status": "DOMAIN_DEPENDENT",
+          "basis": "The symbolic core does not execute domain state changes.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "identity_element": {
+          "status": "UNDECLARED",
+          "basis": "No universal identity has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "annihilator": {
+          "status": "UNDECLARED",
+          "basis": "No universal annihilator has been justified for the core operator.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "commutative": {
+          "status": "REFUTED",
+          "basis": "Ascent preserves source and target.",
+          "witness": null,
+          "counterexample": "A ↗ B ≢ B ↗ A",
+          "value": null
+        },
+        "associative": {
+          "status": "REFUTED",
+          "basis": "Nested ascent grouping remains significant.",
+          "witness": null,
+          "counterexample": "(A ↗ B) ↗ C ≢ A ↗ (B ↗ C)",
+          "value": null
+        },
+        "idempotent": {
+          "status": "REFUTED",
+          "basis": "An ascent relation does not reduce to its operand.",
+          "witness": null,
+          "counterexample": "A ↗ A ≢ A",
+          "value": null
+        },
+        "structural_inverse": {
+          "status": "UNDECLARED",
+          "basis": "No descent or inverse operator is implied.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        },
+        "termination": {
+          "status": "NOT_APPLICABLE",
+          "basis": "Ascent does not introduce iteration.",
+          "witness": null,
+          "counterexample": null,
+          "value": null
+        }
+      },
+      "normalization_rules": [
+        "preserve direction",
+        "preserve grouping"
+      ],
+      "prohibited_inferences": [
+        "do not infer improvement",
+        "do not infer monotonic progress",
+        "do not infer a numerical ordering"
+      ],
+      "semantic_boundary": "Ascent is a directed structural relation. Positive value, improvement, or hierarchy are not core-language guarantees.",
+      "contract_hash": "4705d587a4e0fba529e443a3b50d7f3151e9d4f1b8a4f424e3d7cf15e9a91e0a"
+    },
+    {
+      "kind": "describe",
+      "normal_form": "(Ψ ↯ ∅)",
+      "semantic_hash": "5929751c7c53bb8f6b88f9a321916a57c76f012eaeea76a438ff0427e956bce4",
+      "type": "Collapse",
+      "supertypes": [
+        "Composite",
+        "StateLike"
+      ],
+      "rewrite_trace": [],
+      "operator": "↯",
+      "signature": {
+        "left": "StateLike",
+        "right": "StateLike",
+        "returns": "Collapse"
+      },
+      "left_type": "Field",
+      "right_type": "NullState"
+    }
+  ],
+  "expressions": [],
+  "warnings": [],
+  "operator_contract_lock": {
+    "identity_elements_declared": false,
+    "annihilators_declared": false,
+    "structural_inverse_separated_from_operational_reversibility": true,
+    "recurrence_termination": "DOMAIN_DEPENDENT",
+    "null_simplification_forbidden": true
+  },
+  "ontology_lock": {
+    "null_is_not_missing": true,
+    "phi_ascent_is_derived": true,
+    "psi_invariant_is_derived": true,
+    "domain_adapters_absent": true
+  },
+  "claim_boundary": [
+    "parsing does not prove truth",
+    "type validity does not prove domain validity",
+    "∅ is intentional null and never means missing evidence",
+    "core tests do not validate any domain adapter",
+    "macro expansion is lossless AST aliasing, not unrestricted natural-language compression",
+    "operator contracts describe symbolic structure, not domain execution",
+    "no universal identity or annihilator is currently declared",
+    "structural symmetry does not prove operational reversibility",
+    "recurrence does not imply termination or convergence",
+    "LAMAGUE Core is not an alignment or physical-theory guarantee"
+  ]
+}
