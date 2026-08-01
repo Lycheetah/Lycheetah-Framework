@@ -20,6 +20,7 @@
 | `LQ_PI_ISOMORPHISM.md` | Formal test: Sol LQ and CASCADE Π are dual instruments for the same construct |
 | `MASTER_EQUATION.md` | dΨ/dt full physical exposition + k₁–k₄ calibration specification (E-1.0 program) |
 | `IP_PROVENANCE.md` | Authorship record, development timeline, what is and is not claimed, signed statement |
+| `APP_IMPLEMENTATION_STATE_2026-08-01.md` | **⚠ READ BEFORE COMPARING ANY Π ACROSS DOCUMENTS.** What the Sovereign Sol app actually runs — MEASURED. Three Π's exist on **three different scales** (canon 0–20, `cascade-score` 0–1, `cascade-onion` 0–2000); the app's is the canon's **÷ 20**. Also: the first concrete operationalisation of E/P/S as marker densities, two defects the implementation found in itself, and eight uncalibrated constants standing beside S₀. |
 
 ---
 
