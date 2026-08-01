@@ -34,10 +34,17 @@ import statistics
 from collections import defaultdict
 from pathlib import Path
 
-SC = Path("/tmp/claude-1000/-home-guestpc/de0fd768-8681-476b-a69d-2ceca940b96f/scratchpad")
+# ⚠ THE CONTROL ARM POINTED AT A DELETED SESSION SCRATCHPAD.
+# `/tmp/claude-1000/…/de0fd768-…/scratchpad/control_submissions` no longer exists,
+# so re-running this scorer reported PLAIN ENGLISH with 0 packets and silently
+# dropped the entire control arm — the headline (+0.195 preservation) could not be
+# re-derived from the repository at all. The 29 submissions were preserved into
+# `control_arm/` beside this script; the path simply never followed them.
+# Anchored relative to THIS file so it cannot rot again when the CWD changes.
+SC = Path(__file__).resolve().parent.parent
 TREAT = Path("/home/guestpc/CODEX_AURA_PRIME/03_LAMAGUE_L1/"
              "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/submissions/OTHER")
-CTRL = SC / "control_submissions"
+CTRL = SC / "control_arm"
 
 PROTECTED = ["invariants", "unknowns", "authority", "participants",
              "affected_parties", "evidence", "provenance", "dissent",
