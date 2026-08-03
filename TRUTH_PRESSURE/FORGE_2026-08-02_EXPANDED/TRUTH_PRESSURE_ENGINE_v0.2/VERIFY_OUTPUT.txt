@@ -1,0 +1,30 @@
+
+Truth Pressure Engine v0.2 verification
+
+  ✅ canon/app conversion remains exact
+  ✅ core monotonicity holds
+  ✅ S0 keeps zero-strain case finite
+  ✅ frozen corpus produces finite inspectable outputs
+  ✅ checkable measured prediction beats unsupported assertion
+  ✅ independent replication beats repetition
+  ✅ mechanism raises explanatory power
+  ✅ contradiction resolution lowers strain
+  ✅ exact duplication does not materially change pressure
+  ✅ paraphrases remain in the same broad pressure region
+  ✅ negated evidence receives zero evidence credit
+  ✅ citation theatre is flagged and capped
+  ✅ marker stuffing is flagged and cannot score high
+  ✅ jargon is not treated as explanation
+  ✅ honest uncertainty has handling credit and bounded pressure
+  ✅ unsupported certainty is not evidence and retains strain
+  ✅ prompt injection is ignored and flagged
+  ✅ strong local measurement has high E but narrow P
+  ✅ confirmed risky prediction beats untested prediction
+  ✅ scope limits earn handling quality
+  ✅ strict judge parser rejects partial verdicts
+  ✅ strict judge parser accepts complete verdicts
+  ✅ onion v2 separates tension magnitude from handling quality
+  ✅ review threshold is strict and metadata moves with content
+
+  🟢 24 checks passed.
+

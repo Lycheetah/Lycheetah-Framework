@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Truth Pressure Human Annotation v0.4",
+  "type": "object",
+  "required": [
+    "item_code", "E_score_0_4", "E_confidence_1_3",
+    "P_score_0_4", "P_confidence_1_3",
+    "S_score_0_4", "S_confidence_1_3",
+    "brief_reason", "ambiguity_flag_yes_no"
+  ],
+  "properties": {
+    "item_code": { "type": "string", "minLength": 1 },
+    "E_score_0_4": { "type": "integer", "minimum": 0, "maximum": 4 },
+    "E_confidence_1_3": { "type": "integer", "minimum": 1, "maximum": 3 },
+    "P_score_0_4": { "type": "integer", "minimum": 0, "maximum": 4 },
+    "P_confidence_1_3": { "type": "integer", "minimum": 1, "maximum": 3 },
+    "S_score_0_4": { "type": "integer", "minimum": 0, "maximum": 4 },
+    "S_confidence_1_3": { "type": "integer", "minimum": 1, "maximum": 3 },
+    "brief_reason": { "type": "string", "minLength": 1 },
+    "ambiguity_flag_yes_no": { "enum": ["yes", "no"] }
+  },
+  "additionalProperties": true
+}

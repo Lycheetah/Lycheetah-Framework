@@ -1,0 +1,24 @@
+EXIT_CODE: 0
+
+STDOUT:
+
+Truth Pressure Sovereign Sol Shadow Bridge v0.6
+
+  ✅ off mode executes legacy only
+  ✅ shadow mode keeps legacy visible and builds candidate privately
+  ✅ candidate preview remains triage-only
+  ✅ shadow records contain no raw input text
+  ✅ privacy validator rejects forbidden raw-content fields
+  ✅ dataset is bounded to configured maximum
+  ✅ serialized recorder prevents lost concurrent writes
+  ✅ run-and-record path persists one privacy-safe comparison
+  ✅ summary reports engineering comparison counts
+  ✅ invalid datasets fail closed
+  ✅ empty dataset has explicit privacy contract
+
+  🟢 11 bridge checks passed.
+
+
+STDERR:
+(node:11412) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)

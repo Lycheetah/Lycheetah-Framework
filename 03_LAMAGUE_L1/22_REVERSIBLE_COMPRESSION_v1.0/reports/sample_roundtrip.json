@@ -1,0 +1,223 @@
+{
+  "source_packet": {
+    "schema": "LAMAGUE-SEMANTIC-PACKET-1",
+    "id": "knowledge_merge_review",
+    "purpose": "Merge knowledge branches without suppressing dissent or inventing resolution.",
+    "claim": "The merge may complete only when conflicting branches, provenance, and unresolved questions remain visible.",
+    "risk": "HIGH",
+    "operations": [
+      "K",
+      "O",
+      "E",
+      "U",
+      "I",
+      "G",
+      "V",
+      "H",
+      "S",
+      "F",
+      "Z",
+      "Y"
+    ],
+    "evidence": [
+      {
+        "id": "e_primary",
+        "text": "Both branches carry source hashes and timestamps.",
+        "provenance": "source://knowledge_merge_review/primary"
+      },
+      {
+        "id": "e_secondary",
+        "text": "The merge tool reports every protected-field difference.",
+        "provenance": "source://knowledge_merge_review/secondary"
+      },
+      {
+        "id": "e_review",
+        "text": "A separate reviewer checked the declared boundary and source receipts.",
+        "provenance": "source://knowledge_merge_review/review"
+      }
+    ],
+    "unknowns": [
+      {
+        "id": "u_primary",
+        "protected": true,
+        "requiredFor": "whether one branch contains a hidden dependency"
+      },
+      {
+        "id": "u_secondary",
+        "protected": true,
+        "requiredFor": "whether apparent agreement comes from copied evidence"
+      }
+    ],
+    "invariants": [
+      {
+        "id": "i_domain",
+        "text": "Dissent may not be deleted to create consensus."
+      },
+      {
+        "id": "i_boundary",
+        "text": "A resolved label requires named evidence."
+      },
+      {
+        "id": "i_recovery",
+        "text": "No compression without recovery."
+      }
+    ],
+    "authority": [
+      {
+        "id": "authority",
+        "scope": "branch_merge",
+        "text": "The knowledge maintainer may approve a merge but may not overwrite an unresolved branch."
+      }
+    ],
+    "participants": [
+      "advocate",
+      "safety_model",
+      "domain_expert",
+      "operator",
+      "silent_witness"
+    ],
+    "affectedParties": [
+      "branch_author",
+      "downstream_reader"
+    ],
+    "dissent": [
+      {
+        "party": "advocate",
+        "position": "Merge shared fields because differences remain explicit."
+      },
+      {
+        "party": "safety_model",
+        "position": "Do not collapse disputed fields while dependency and independence remain unknown."
+      }
+    ],
+    "valueFlow": [
+      {
+        "source": "branch_author",
+        "recipient": "review_program",
+        "consent": "REVOCABLE",
+        "kind": "Authored knowledge, review labor, and downstream trust."
+      }
+    ],
+    "recovery": [
+      {
+        "id": "rollback",
+        "text": "Restore both parent branches and reopen the merge."
+      }
+    ],
+    "horizon": "90_days",
+    "yield": "Bounded a knowledge-base merge review with visible evidence, unknowns, authority, affected parties, dissent, value flow, and recovery."
+  },
+  "compressed": "L1D{\"i\":\"knowledge_merge_review\",\"p\":\"Merge knowledge branches without suppressing dissent or inventing resolution.\",\"c\":\"The merge may complete only when conflicting branches, provenance, and unresolved questions remain visible.\",\"r\":\"H\",\"o\":\"KOEUIGVHSFZY\",\"e\":[[13,\"Both branches carry source hashes and timestamps.\",\"source://knowledge_merge_review/primary\"],[7,\"The merge tool reports every protected-field difference.\",\"source://knowledge_merge_review/secondary\"],[\"e_review\",0,\"source://knowledge_merge_review/review\"]],\"u\":[[14,1,\"whether one branch contains a hidden dependency\"],[8,1,\"whether apparent agreement comes from copied evidence\"]],\"n\":[[15,\"Dissent may not be deleted to create consensus.\"],[9,\"A resolved label requires named evidence.\"],[10,1]],\"a\":[[12,\"branch_merge\",\"The knowledge maintainer may approve a merge but may not overwrite an unresolved branch.\"]],\"t\":[3,2,6,11,5],\"f\":[\"branch_author\",\"downstream_reader\"],\"d\":[[3,\"Merge shared fields because differences remain explicit.\"],[2,\"Do not collapse disputed fields while dependency and independence remain unknown.\"]],\"v\":[[\"branch_author\",4,\"R\",\"Authored knowledge, review labor, and downstream trust.\"]],\"x\":[[16,\"Restore both parent branches and reopen the merge.\"]],\"h\":\"90_days\",\"y\":\"Bounded a knowledge-base merge review with visible evidence, unknowns, authority, affected parties, dissent, value flow, and recovery.\"}",
+  "decoded_packet": {
+    "schema": "LAMAGUE-SEMANTIC-PACKET-1",
+    "id": "knowledge_merge_review",
+    "purpose": "Merge knowledge branches without suppressing dissent or inventing resolution.",
+    "claim": "The merge may complete only when conflicting branches, provenance, and unresolved questions remain visible.",
+    "risk": "HIGH",
+    "operations": [
+      "K",
+      "O",
+      "E",
+      "U",
+      "I",
+      "G",
+      "V",
+      "H",
+      "S",
+      "F",
+      "Z",
+      "Y"
+    ],
+    "evidence": [
+      {
+        "id": "e_primary",
+        "text": "Both branches carry source hashes and timestamps.",
+        "provenance": "source://knowledge_merge_review/primary"
+      },
+      {
+        "id": "e_secondary",
+        "text": "The merge tool reports every protected-field difference.",
+        "provenance": "source://knowledge_merge_review/secondary"
+      },
+      {
+        "id": "e_review",
+        "text": "A separate reviewer checked the declared boundary and source receipts.",
+        "provenance": "source://knowledge_merge_review/review"
+      }
+    ],
+    "unknowns": [
+      {
+        "id": "u_primary",
+        "protected": true,
+        "requiredFor": "whether one branch contains a hidden dependency"
+      },
+      {
+        "id": "u_secondary",
+        "protected": true,
+        "requiredFor": "whether apparent agreement comes from copied evidence"
+      }
+    ],
+    "invariants": [
+      {
+        "id": "i_domain",
+        "text": "Dissent may not be deleted to create consensus."
+      },
+      {
+        "id": "i_boundary",
+        "text": "A resolved label requires named evidence."
+      },
+      {
+        "id": "i_recovery",
+        "text": "No compression without recovery."
+      }
+    ],
+    "authority": [
+      {
+        "id": "authority",
+        "scope": "branch_merge",
+        "text": "The knowledge maintainer may approve a merge but may not overwrite an unresolved branch."
+      }
+    ],
+    "participants": [
+      "advocate",
+      "safety_model",
+      "domain_expert",
+      "operator",
+      "silent_witness"
+    ],
+    "affectedParties": [
+      "branch_author",
+      "downstream_reader"
+    ],
+    "dissent": [
+      {
+        "party": "advocate",
+        "position": "Merge shared fields because differences remain explicit."
+      },
+      {
+        "party": "safety_model",
+        "position": "Do not collapse disputed fields while dependency and independence remain unknown."
+      }
+    ],
+    "valueFlow": [
+      {
+        "source": "branch_author",
+        "recipient": "review_program",
+        "consent": "REVOCABLE",
+        "kind": "Authored knowledge, review labor, and downstream trust."
+      }
+    ],
+    "recovery": [
+      {
+        "id": "rollback",
+        "text": "Restore both parent branches and reopen the merge."
+      }
+    ],
+    "horizon": "90_days",
+    "yield": "Bounded a knowledge-base merge review with visible evidence, unknowns, authority, affected parties, dissent, value flow, and recovery."
+  },
+  "full_hash_before": "932fd5f4818a3a9594aefc4203391436e5d5bc577792c91f53328586a578667d",
+  "full_hash_after": "932fd5f4818a3a9594aefc4203391436e5d5bc577792c91f53328586a578667d",
+  "critical_hash_before": "fda30aa91bbf022a24de30c1d25297d8e12636fa54e8320bb964dfa4173cc5bb",
+  "critical_hash_after": "fda30aa91bbf022a24de30c1d25297d8e12636fa54e8320bb964dfa4173cc5bb"
+}

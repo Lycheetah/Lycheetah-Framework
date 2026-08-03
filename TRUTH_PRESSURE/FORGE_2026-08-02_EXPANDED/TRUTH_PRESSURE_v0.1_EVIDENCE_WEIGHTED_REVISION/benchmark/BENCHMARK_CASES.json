@@ -1,0 +1,22 @@
+{
+  "suite": "Truth Pressure v0.1 synthetic benchmark",
+  "claim_boundary": "Synthetic software conformance only; thresholds are not empirically calibrated.",
+  "cases": [
+    {"id":"TP001","name":"Strong replicated contradiction","example":"strong_challenger.json","expected_state":"CASCADE_CANDIDATE"},
+    {"id":"TP002","name":"Frontier importance without evidence","example":"frontier_claim.json","expected_state":"HELD_FRONTIER"},
+    {"id":"TP003","name":"Compatible strong evidence","example":"compatible_claim.json","expected_state":"OBSERVE"},
+    {"id":"TP004","name":"No foundation comparator","base":"strong","remove_foundation":true,"expected_state":"REVIEW_PRIORITY"},
+    {"id":"TP005","name":"Provenance failure","base":"strong","set":{"provenance_completeness":0.1},"expected_not_candidate":true},
+    {"id":"TP006","name":"Single source","base":"strong","set":{"source_count":1},"expected_not_candidate":true},
+    {"id":"TP007","name":"No pressure delta","base":"strong","foundation_same":true,"expected_not_candidate":true},
+    {"id":"TP008","name":"Zero uncertainty finite","base":"strong","set":{"uncertainty":0},"expected_finite":true},
+    {"id":"TP009","name":"Low impact","base":"strong","set":{"load_bearing_centrality":0.1,"scope_of_consequence":0.1},"expected_not_candidate":true},
+    {"id":"TP010","name":"Low reproducibility","base":"strong","set":{"reproducibility":0.1},"expected_not_candidate":true},
+    {"id":"TP011","name":"Circular evidence","base":"strong","set":{"source_independence":0.1},"expected_not_candidate":true},
+    {"id":"TP012","name":"Out of range","base":"strong","set":{"evidence_quality":1.2},"expected_rejected":true},
+    {"id":"TP013","name":"Negligible conflict","base":"strong","set":{"contradiction_strength":0.01},"expected_not_candidate":true},
+    {"id":"TP014","name":"Impact cannot rescue zero replication","base":"frontier","set":{"reproducibility":0,"load_bearing_centrality":1,"scope_of_consequence":1},"expected_state":"HELD_FRONTIER"},
+    {"id":"TP015","name":"Strict custom threshold","base":"strong","config":{"cascade_threshold":0.95},"expected_not_candidate":true},
+    {"id":"TP016","name":"Foundation stronger","base":"strong","swap":true,"expected_not_candidate":true}
+  ]
+}

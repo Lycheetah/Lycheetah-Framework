@@ -1,0 +1,91 @@
+{
+  "schema": "LAMAGUE-REVERSIBLE-COMPRESSION-BENCHMARK-1",
+  "corpus": {
+    "total_packets": 36,
+    "training_packets": 24,
+    "heldout_packets": 12,
+    "domains": 18,
+    "synthetic": true,
+    "frozen_before_benchmark": true
+  },
+  "codebook": {
+    "trained_on": "training split only",
+    "entries": 20,
+    "wire_bytes": 784,
+    "entries_list": [
+      "A separate reviewer checked the declared boundary and source receipts.",
+      "No compression without recovery.",
+      "safety_model",
+      "advocate",
+      "review_program",
+      "silent_witness",
+      "domain_expert",
+      "e_secondary",
+      "u_secondary",
+      "i_boundary",
+      "i_recovery",
+      "operator",
+      "authority",
+      "e_primary",
+      "u_primary",
+      "i_domain",
+      "rollback",
+      "Bounded a community-governance proposal review with visible evidence, unknowns, authority, affected parties, dissent, value flow, and recovery.",
+      "Bounded a conflicting evidence review review with visible evidence, unknowns, authority, affected parties, dissent, value flow, and recovery.",
+      "Bounded an environmental intervention review with visible evidence, unknowns, authority, affected parties, dissent, value flow, and recovery."
+    ]
+  },
+  "roundtrip": {
+    "exact_full_packet": 36,
+    "critical_hash_preserved": 36,
+    "total": 36
+  },
+  "mutation_detection": {
+    "mutation_types": 9,
+    "cases": 324,
+    "matched_expected_class": 324,
+    "accuracy_on_constructed_mutations": 1.0,
+    "safe_extension_cases": 36,
+    "safe_extensions_correctly_partial": 36
+  },
+  "sizes": {
+    "all": {
+      "packets": 36,
+      "baseline_bytes": 76482,
+      "l1_bytes": 59852,
+      "l1d_bytes": 49850
+    },
+    "training": {
+      "packets": 24,
+      "baseline_bytes": 50962,
+      "l1_bytes": 39868,
+      "l1d_bytes": 32950
+    },
+    "heldout": {
+      "packets": 12,
+      "baseline_bytes": 25520,
+      "l1_bytes": 19984,
+      "l1d_bytes": 16900
+    }
+  },
+  "compression": {
+    "all_l1_reduction_vs_minified_json": 0.21743678251091758,
+    "all_l1d_warm_reduction_vs_minified_json": 0.34821265134279966,
+    "all_l1d_cold_reduction_including_codebook": 0.33796187338197226,
+    "heldout_l1_reduction_vs_minified_json": 0.21692789968652038,
+    "heldout_l1d_warm_reduction_vs_minified_json": 0.3377742946708464,
+    "heldout_l1d_cold_reduction_including_codebook": 0.3070532915360502,
+    "heldout_dictionary_break_even_vs_l1_packets": 3,
+    "heldout_dictionary_break_even_vs_minified_json_packets": 2,
+    "heldout_min_l1d_warm_reduction": 0.31781084973595775,
+    "heldout_max_l1d_warm_reduction": 0.35775667118950705
+  },
+  "boundaries": [
+    "The corpus is synthetic and structured.",
+    "The codec does not infer semantic packets from unrestricted natural language.",
+    "Exact round-trip demonstrates software fidelity under the declared schema, not universal semantic equivalence.",
+    "Mutation accuracy is measured on constructed protected-field deletions, not adversarial external model outputs.",
+    "Compression is measured against canonical minified JSON in UTF-8 bytes.",
+    "The dictionary was learned only from the training split."
+  ]
+}

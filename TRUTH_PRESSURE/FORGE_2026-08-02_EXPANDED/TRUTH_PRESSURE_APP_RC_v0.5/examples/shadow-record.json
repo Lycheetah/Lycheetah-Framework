@@ -1,0 +1,30 @@
+{
+  "version": "TP-SHADOW-0.5",
+  "createdAt": "2026-08-02T01:42:00.000Z",
+  "inputClass": "TEXT",
+  "privacy": "NO_RAW_CONTENT",
+  "inputLength": 93,
+  "legacy": {
+    "truthPressure": 0.42,
+    "coherence": 82,
+    "reorganisationNeeded": false,
+    "dominantLayer": "THEORY"
+  },
+  "candidate": {
+    "engineVersion": "0.5.0-rc.1",
+    "mode": "TEXT_TRIAGE",
+    "piNormalized": 0.018370800000000007,
+    "piCanon": 0.36741600000000013,
+    "evidence": 0.38880000000000003,
+    "explanatoryPower": 0.18900000000000006,
+    "strain": 0.15,
+    "reviewState": "TRIAGE_ONLY",
+    "warnings": [
+      "Text mode is pattern-based, English-oriented, and provisional."
+    ]
+  },
+  "deltas": {
+    "normalizedPressure": -0.40162919999999996,
+    "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+  }
+}

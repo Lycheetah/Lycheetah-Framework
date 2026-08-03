@@ -1,0 +1,18 @@
+{
+  "version": "v0.1",
+  "status": "proposed_frozen_before_source_execution",
+  "files": {
+    "TRUTH_PRESSURE_UNTUNED_ENGINE_RUNBOOK_v0.1.md": {
+      "bytes": 8551,
+      "sha256": "01ea02e7a9d42ca4149ca965f5c247c08bc529c095bf44baa50c584119e607c1"
+    },
+    "TRUTH_PRESSURE_FAILURE_TAXONOMY_v0.1.md": {
+      "bytes": 5839,
+      "sha256": "491ce7b4b39173c251d68d8a68a4eace71b2b2fa81ab0efdca9d8a19748f855e"
+    },
+    "TRUTH_PRESSURE_CASE_RESULT_SCHEMA_v0.1.json": {
+      "bytes": 3346,
+      "sha256": "ffa50027733e56dd17e4636398bf7367858c123a53ebd0a79dad633dd8852e70"
+    }
+  }
+}

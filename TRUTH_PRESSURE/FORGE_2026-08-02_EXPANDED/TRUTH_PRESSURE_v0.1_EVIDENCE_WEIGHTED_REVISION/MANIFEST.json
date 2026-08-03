@@ -1,0 +1,106 @@
+{
+  "name": "Truth Pressure v0.1 — Evidence-Weighted Revision Pressure",
+  "version": "0.1.0",
+  "files": {
+    "README.md": {
+      "bytes": 943,
+      "sha256": "07ce8a62af57bf21cc59792cee531017d98589ae1bb4df1cb1297e616f2d6667"
+    },
+    "TRUTH_PRESSURE_v0.1_SUMMARY.json": {
+      "bytes": 650,
+      "sha256": "d410f2eeaec785ca655c925131fa5d16a62044de3b348ff69cb3acc888e89eb1"
+    },
+    "benchmark/BENCHMARK_CASES.json": {
+      "bytes": 2257,
+      "sha256": "cc90fa330fa7787258bc8bb0001a4c96fd20d7478f1039b389a109727dd2b446"
+    },
+    "benchmark/run_benchmark.py": {
+      "bytes": 2777,
+      "sha256": "d69bb2927de16ee2cce73f16f5f97cb6b7cfbe83ba02bd349c03ef846691381d"
+    },
+    "docs/CALIBRATION_PLAN.md": {
+      "bytes": 1004,
+      "sha256": "1dc8a805822fd6b9e7b2b6426a59911dd9b74eb11396c58de6ead129666a364e"
+    },
+    "docs/CANON_DECISIONS.md": {
+      "bytes": 833,
+      "sha256": "7dcbfa52f20556a0ee4971ead8e9694448ae5735ed7dde1a87a2ec70994f744a"
+    },
+    "docs/CASCADE_HANDOFF.md": {
+      "bytes": 476,
+      "sha256": "7d4da3b5c3cc5e646d3f7505abaa7a960101ef1bcb6ee48c913000392301d064"
+    },
+    "docs/HANDOFF_TO_SOL.md": {
+      "bytes": 685,
+      "sha256": "c18e560617b79a6208b56f8ad97028647efb8430fc013fa89183e213e24c51ed"
+    },
+    "docs/LAMAGUE_RELATIONSHIP.md": {
+      "bytes": 808,
+      "sha256": "c30db1f8564d0cd18aa8924567f338b1a85ed3dbc7fc0c8b7668380d9da027b7"
+    },
+    "examples/compatible_claim.json": {
+      "bytes": 669,
+      "sha256": "9643b53d095cc81d5716a6b594ae637b4de6abf23d1307ee1d85306979130888"
+    },
+    "examples/frontier_claim.json": {
+      "bytes": 334,
+      "sha256": "a34bcc9fcad971ab72b3b41e4e77a6b274658f89876ec6f0cd42948518cf4305"
+    },
+    "examples/strong_challenger.json": {
+      "bytes": 669,
+      "sha256": "4954a847c0c3fd240951f2016b0f1c6339bcf7d643a8c256b85e1181c32ecaa4"
+    },
+    "lamague_adapter/TRUTH_PRESSURE_ADAPTER_v0.1.md": {
+      "bytes": 461,
+      "sha256": "39f0dcd0a87e366dff37f748e1413aeec7304fb6becb22efdaabddb76b49d4be"
+    },
+    "reports/BENCHMARK_RESULTS.json": {
+      "bytes": 41556,
+      "sha256": "25acbe2cbbc26af3cb867e13948bdd77d64b29abbf5b348848e5b39c3d0bf12a"
+    },
+    "reports/BENCHMARK_RUN.txt": {
+      "bytes": 103,
+      "sha256": "4934f4ba4258fe05af1db3dbb99cc4df113ee3bcd9ed1945a8e58c2d4bcea621"
+    },
+    "reports/COMPATIBLE_CLAIM_OUTPUT.json": {
+      "bytes": 2062,
+      "sha256": "374aceace851addc24854683906bc03de17664a5451c08573431796105b16dfa"
+    },
+    "reports/FRONTIER_CLAIM_OUTPUT.json": {
+      "bytes": 2453,
+      "sha256": "c4f46ed4065c8d60e97b52d13ac87822a77d4a09d523ca15d02bc0bb4ec53408"
+    },
+    "reports/STRONG_CHALLENGER_OUTPUT.json": {
+      "bytes": 2197,
+      "sha256": "6f5d22f25b1b3d68e52d94a1137ae499dc62a0ec346efacef14a2974557ad7f3"
+    },
+    "reports/TEST_RESULTS.txt": {
+      "bytes": 3153,
+      "sha256": "712f80fca173fa1b27f14e0978445a7bd9ce9d0cfe4a2151d834368a1f053451"
+    },
+    "schema/truth_pressure_packet_v0.1.schema.json": {
+      "bytes": 1554,
+      "sha256": "ad1a908f1303467f4b3fbc3772c11b475358ad480aaa7b54f46190b38ec06a21"
+    },
+    "spec/TRUTH_PRESSURE_SPECIFICATION_v0.1.md": {
+      "bytes": 3542,
+      "sha256": "78b15276917ed8ec9be0e23d394cd7829734e55b1dcc22930b7b6cedfc6c9ca1"
+    },
+    "tests/test_truth_pressure.py": {
+      "bytes": 7133,
+      "sha256": "8d9b93a191aca90b0a56c9314837c761601b3d381cab39432a07570c185bd52c"
+    },
+    "truth_pressure/__init__.py": {
+      "bytes": 267,
+      "sha256": "72e6bf34f4d4f79de30efa207617c6783fa75a88ed8d927d2670c30f288b2f6a"
+    },
+    "truth_pressure/__main__.py": {
+      "bytes": 1358,
+      "sha256": "001c97f2ff0467edfa31b4d7dcd00be4d2bea5b8d3fece386d613098397c1196"
+    },
+    "truth_pressure/engine.py": {
+      "bytes": 12300,
+      "sha256": "1353bbcaa4f7f9794079ce175c829439b356dfdc4da63498751855f1b9052cef"
+    }
+  }
+}

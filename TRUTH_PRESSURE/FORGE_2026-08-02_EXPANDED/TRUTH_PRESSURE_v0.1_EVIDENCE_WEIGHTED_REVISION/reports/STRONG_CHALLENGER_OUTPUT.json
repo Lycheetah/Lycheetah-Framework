@@ -1,0 +1,72 @@
+{
+  "truth_pressure_version": "0.1.0",
+  "claim_id": "K_NEW_STRONG",
+  "vector": {
+    "support": 0.935556,
+    "impact": 0.924662,
+    "conflict": 0.95,
+    "uncertainty": 0.08
+  },
+  "raw_pressure": 4.565663,
+  "bounded_pressure": 0.820327,
+  "foundation_pressure": 0.1845,
+  "delta_vs_foundation": 0.635827,
+  "state": "CASCADE_CANDIDATE",
+  "cascade_authorized": true,
+  "gates": [
+    {
+      "name": "support",
+      "passed": true,
+      "actual": 0.935556,
+      "required": 0.55,
+      "reason": "Evidence support must clear the minimum gate."
+    },
+    {
+      "name": "provenance",
+      "passed": true,
+      "actual": 0.98,
+      "required": 0.5,
+      "reason": "The evidence chain must be inspectable."
+    },
+    {
+      "name": "independence",
+      "passed": true,
+      "actual": 0.9,
+      "required": 0.35,
+      "reason": "Corroboration must not be purely circular."
+    },
+    {
+      "name": "reproducibility",
+      "passed": true,
+      "actual": 0.92,
+      "required": 0.35,
+      "reason": "The result must have a meaningful replication path."
+    },
+    {
+      "name": "source_count",
+      "passed": true,
+      "actual": 8,
+      "required": 2,
+      "reason": "At least the configured number of sources is required."
+    },
+    {
+      "name": "conflict",
+      "passed": true,
+      "actual": 0.95,
+      "required": 0.35,
+      "reason": "A Cascade candidate must materially challenge the foundation."
+    }
+  ],
+  "blockers": [],
+  "warnings": [],
+  "interpretation": "The claim clears the evidence, conflict, absolute-pressure, and relative-margin gates. This authorizes structured review for a possible Cascade; it does not automatically rewrite the foundation.",
+  "claim_boundary": [
+    "Truth Pressure is not the probability that a claim is true.",
+    "Structural importance cannot substitute for evidence.",
+    "Conviction is not an input to the canonical metric.",
+    "A Cascade candidate authorizes review, not automatic replacement.",
+    "The default thresholds are synthetic calibration defaults, not universal constants.",
+    "Zero uncertainty does not produce infinity.",
+    "FRONTIER is a maturity state, not the numeric value 999."
+  ]
+}

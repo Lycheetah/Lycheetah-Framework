@@ -1,0 +1,45 @@
+{
+  "instrument": "TP-CANONICAL-SCALAR-v0.3",
+  "components": {
+    "evidence": 0.78,
+    "explanatoryPower": 0.774,
+    "strain": 0.2775
+  },
+  "piCanon": 1.8434198473282444,
+  "piNormalized": 0.09217099236641223,
+  "piApp": 0.09217099236641223,
+  "scale": {
+    "canonRange": [
+      0,
+      20
+    ],
+    "normalizedRange": [
+      0,
+      1
+    ],
+    "conversion": "piNormalized = piCanon × s0 = piCanon × 0.05",
+    "s0": 0.05
+  },
+  "reviewThresholdCanon": null,
+  "reviewTriggered": null,
+  "interpretation": {
+    "limitingComponents": [
+      "strain"
+    ],
+    "summary": "The principal limiting component is strain. Pressure is a review signal, not a truth probability.",
+    "boundary": "This score represents revision pressure under the declared operationalization. It does not establish factual truth."
+  },
+  "counterfactuals": null,
+  "claim": "Removing component B reverses the effect.",
+  "inputScale": "percent",
+  "loadBearingness": 0.8,
+  "handlingQuality": 0.8225,
+  "assessmentReadiness": 0.87575,
+  "assumptions": [
+    "Onion v3 requires an explicit unit or percent scale; no value-based scale guessing occurs.",
+    "Axiom load-bearingness is separate from explanatory power.",
+    "Tension magnitude is separate from tension-handling quality.",
+    "The onion-to-E/P/S mapping is an authored adapter assumption, not canonical mathematics.",
+    "Falsifiability affects assessment readiness, not Truth Pressure directly."
+  ]
+}

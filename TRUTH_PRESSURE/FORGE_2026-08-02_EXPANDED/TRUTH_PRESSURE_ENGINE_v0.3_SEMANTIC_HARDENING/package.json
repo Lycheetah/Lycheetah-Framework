@@ -1,0 +1,15 @@
+{
+  "name": "@lycheetah/truth-pressure-engine",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "description": "Semantically hardened revision-pressure engine with explicit scales, strict validation, provenance-aware structured scoring, and sovereign review transactions.",
+  "scripts": {
+    "verify": "node --experimental-strip-types scripts/verify.ts",
+    "analyze:text": "node --experimental-strip-types src/cli.ts analyze-text",
+    "score": "node --experimental-strip-types src/cli.ts score",
+    "onion": "node --experimental-strip-types src/cli.ts onion",
+    "corpus": "node --experimental-strip-types src/cli.ts corpus"
+  },
+  "engines": { "node": ">=22" }
+}

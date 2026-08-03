@@ -1,0 +1,120 @@
+{
+  "version": "0.3.0",
+  "status": "semantic-hardening-development",
+  "verification": "24/24 passed",
+  "typescript": "passed",
+  "files": {
+    "README.md": {
+      "sha256": "eb38352ddf424210be0da2ed26e111578c53a36eea818a392330bdb2ee52cdf5",
+      "bytes": 2068
+    },
+    "data/frozen-corpus-v0.1.jsonl": {
+      "sha256": "64329863db70d3682b89bcd114bc02bf0a45d05267c6116520dee03e1b49f0e1",
+      "bytes": 9477
+    },
+    "docs/KNOWN_LIMITATIONS.md": {
+      "sha256": "4664dbc9bdb3feec646244b5920367f462b6a4b09b923ac1c466e5ee9b762ece",
+      "bytes": 711
+    },
+    "docs/MIGRATION_v0.2_TO_v0.3.md": {
+      "sha256": "96db795b0ce07aadf1de53554f983fa9baff56ddcf043d668b4d92de50951250",
+      "bytes": 564
+    },
+    "docs/SEMANTIC_DECISIONS_v0.3.md": {
+      "sha256": "ce8994463373777dad429826eb51ab3a072b0353d14a99e1a30aa86eb1938d1f",
+      "bytes": 1310
+    },
+    "examples/assessment-result.json": {
+      "sha256": "ed48b25dde7557b3406e83e5289ee51199d43c628b2ddf94799d1b5cd1f036c6",
+      "bytes": 1815
+    },
+    "examples/assessment.json": {
+      "sha256": "4ae86f9a34712ad930c9969847f85ba2a282eda3ff6bc2006d8c6a9e7258f4b5",
+      "bytes": 1192
+    },
+    "examples/onion-result.json": {
+      "sha256": "726ea81724051d817ea6100f647e903cc857078628ea34e51d555df246097978",
+      "bytes": 1460
+    },
+    "examples/onion.json": {
+      "sha256": "d0f10a0ecaeda9de1fcfd3807e4c54b17e75c7c69973db6a618a0e1ba1586296",
+      "bytes": 469
+    },
+    "package.json": {
+      "sha256": "5e732f77527f0630ddafd4230a4d37ddf0e9360427d615093e671bf8d9845a35",
+      "bytes": 685
+    },
+    "reports/DEVELOPMENT_CORPUS_RESULTS.jsonl": {
+      "sha256": "ec3f23a6099f1eb448fd6ec2126ada7cbc0d3d7cf7cebabd622ac338334919e5",
+      "bytes": 57179
+    },
+    "reports/SEMANTIC_HARDENING_REPORT.md": {
+      "sha256": "1f75e27a99df54aa7bd89175c442c62ccf6ebdc74e7d4f1b88330d7f9517f5f9",
+      "bytes": 2705
+    },
+    "reports/V0_2_CORPUS_RESULTS.jsonl": {
+      "sha256": "48a1fa178b32906651467171e6d1897ac29f4ba80fce9c302d153ac2047af4d5",
+      "bytes": 54275
+    },
+    "reports/V0_2_TO_V0_3_CORPUS_COMPARISON.json": {
+      "sha256": "9435e98986725f150ef7a05667166592ea31dc15abc34fba816a52a82922dec6",
+      "bytes": 6483
+    },
+    "reports/V0_3_DEVELOPMENT_SUMMARY.json": {
+      "sha256": "96c8b8b47c52c392f848d00ffb2e9282a1e70f3c5f7bb4c3b65cd50ca87ccd0b",
+      "bytes": 2799
+    },
+    "reports/VERIFY_OUTPUT.txt": {
+      "sha256": "daedaea2e4a1483398891217fecb94a6c431823bac3e4f67a0614e980519a0d7",
+      "bytes": 1656
+    },
+    "scripts/verify.ts": {
+      "sha256": "e9cb6889502c9706f286bed3fe29d44d48eeb2c1a707bc2ff878b2ac85b42700",
+      "bytes": 11530
+    },
+    "src/cli.ts": {
+      "sha256": "01946c35a9ea21559ef16ee83112eb8313dea00fe908760e50ae54f7ba715387",
+      "bytes": 1645
+    },
+    "src/core.ts": {
+      "sha256": "0139d7944221c26534c45b210f2119054c9babb1270c8860b1547168005ef94e",
+      "bytes": 5384
+    },
+    "src/judge-schema.ts": {
+      "sha256": "e0f02f18656ec376bb872bc2c6a574b5c0c8d281fcda076e2b32d22feabc8d45",
+      "bytes": 2733
+    },
+    "src/node-shims.d.ts": {
+      "sha256": "d55b3aa20a896442dceab031e652e0c73e975a6c314f8380a15e8d9623036b66",
+      "bytes": 470
+    },
+    "src/onion-v3.ts": {
+      "sha256": "52d32cf92360de70b6ba68e68503a6a845a874ff520a85de0eabea0c7a872cbd",
+      "bytes": 3015
+    },
+    "src/reorganisation.ts": {
+      "sha256": "ff0d65d953ba8edf3a1f3504187fb2d96ed40d2b94a13e120b4ab627bb425c47",
+      "bytes": 5865
+    },
+    "src/structured.ts": {
+      "sha256": "f3456d10444cb546765e00787938db87d058bbeaffbd115d15a1af7326795779",
+      "bytes": 8028
+    },
+    "src/text-adapter.ts": {
+      "sha256": "52e2b85a2c912ec2f8007a2bf3e9f8586405a3fbcc5490fedd18eed30acd81f6",
+      "bytes": 12233
+    },
+    "src/types.ts": {
+      "sha256": "70ee2ed1e73906119634de39a2062be68de2264d1f3bc84ee07c4d2712ead7af",
+      "bytes": 3410
+    },
+    "src/validation.ts": {
+      "sha256": "581f0913bbae798db569131363a00387e9705657f68e264658c7763ab3dbcbae",
+      "bytes": 1890
+    },
+    "tsconfig.json": {
+      "sha256": "3076245d6d1fb324c279844e46fcefd102f4b68feca825d6aac582258c86e3ed",
+      "bytes": 271
+    }
+  }
+}

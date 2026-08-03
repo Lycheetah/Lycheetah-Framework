@@ -1,0 +1,16 @@
+{
+  "name": "@lycheetah/truth-pressure-engine",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Transparent revision-pressure engine with structured scoring, provisional text analysis, provenance, and reversible review proposals.",
+  "scripts": {
+    "verify": "node --experimental-strip-types scripts/verify.ts",
+    "analyze:text": "node --experimental-strip-types src/cli.ts analyze-text",
+    "score": "node --experimental-strip-types src/cli.ts score",
+    "corpus": "node --experimental-strip-types src/cli.ts corpus"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

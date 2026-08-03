@@ -1,0 +1,23 @@
+{
+  "name": "Truth Pressure v0.1 — Evidence-Weighted Revision Pressure",
+  "version": "0.1.0",
+  "author": "Mackenzie C. J. Clark",
+  "tests": {
+    "count": 33,
+    "passed": true
+  },
+  "benchmark": {
+    "total": 16,
+    "passed": 16,
+    "failed": 0
+  },
+  "canonical_decisions": [
+    "Truth Pressure is revision pressure, not truth probability.",
+    "The canonical object is a four-dimensional vector.",
+    "The scalar is bounded and finite.",
+    "Impact cannot substitute for evidence.",
+    "999 is replaced by HELD_FRONTIER.",
+    "Cascade requires foundation comparison and gated review.",
+    "LAMAGUE Core remains independent."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "claim": {
+    "claim_id": "K_FRONTIER",
+    "evidence_quality": 0.25,
+    "source_independence": 0.10,
+    "reproducibility": 0.05,
+    "provenance_completeness": 0.35,
+    "load_bearing_centrality": 0.95,
+    "scope_of_consequence": 0.95,
+    "contradiction_strength": 0.90,
+    "uncertainty": 0.80,
+    "source_count": 1
+  }
+}

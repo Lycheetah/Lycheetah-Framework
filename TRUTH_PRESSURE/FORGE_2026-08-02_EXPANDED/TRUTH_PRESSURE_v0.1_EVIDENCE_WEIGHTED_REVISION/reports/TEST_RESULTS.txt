@@ -1,0 +1,38 @@
+test_compatible_no_conflict_blocker (test_truth_pressure.GateAndExportTests.test_compatible_no_conflict_blocker) ... ok
+test_export_version (test_truth_pressure.GateAndExportTests.test_export_version) ... ok
+test_failed_gate_recorded (test_truth_pressure.GateAndExportTests.test_failed_gate_recorded) ... ok
+test_frontier_boundary (test_truth_pressure.GateAndExportTests.test_frontier_boundary) ... ok
+test_gate_names (test_truth_pressure.GateAndExportTests.test_gate_names) ... ok
+test_json_ready (test_truth_pressure.GateAndExportTests.test_json_ready) ... ok
+test_not_probability_boundary (test_truth_pressure.GateAndExportTests.test_not_probability_boundary) ... ok
+test_six_gates (test_truth_pressure.GateAndExportTests.test_six_gates) ... ok
+test_bounded_unit_interval (test_truth_pressure.ScalarTests.test_bounded_unit_interval) ... ok
+test_conflict_raises_pressure (test_truth_pressure.ScalarTests.test_conflict_raises_pressure) ... ok
+test_finite_zero_uncertainty (test_truth_pressure.ScalarTests.test_finite_zero_uncertainty) ... ok
+test_support_raises_pressure (test_truth_pressure.ScalarTests.test_support_raises_pressure) ... ok
+test_uncertainty_lowers_pressure (test_truth_pressure.ScalarTests.test_uncertainty_lowers_pressure) ... ok
+test_frontier (test_truth_pressure.StateTests.test_frontier) ... ok
+test_low_conflict_not_candidate (test_truth_pressure.StateTests.test_low_conflict_not_candidate) ... ok
+test_low_pressure_observe (test_truth_pressure.StateTests.test_low_pressure_observe) ... ok
+test_no_foundation_no_cascade (test_truth_pressure.StateTests.test_no_foundation_no_cascade) ... ok
+test_single_source_not_candidate (test_truth_pressure.StateTests.test_single_source_not_candidate) ... ok
+test_strong_candidate (test_truth_pressure.StateTests.test_strong_candidate) ... ok
+test_tie_not_candidate (test_truth_pressure.StateTests.test_tie_not_candidate) ... ok
+test_weak_provenance_not_candidate (test_truth_pressure.StateTests.test_weak_provenance_not_candidate) ... ok
+test_zero_uncertainty_warning (test_truth_pressure.StateTests.test_zero_uncertainty_warning) ... ok
+test_above_one (test_truth_pressure.ValidationTests.test_above_one) ... ok
+test_negative_input (test_truth_pressure.ValidationTests.test_negative_input) ... ok
+test_negative_sources (test_truth_pressure.ValidationTests.test_negative_sources) ... ok
+test_threshold_order (test_truth_pressure.ValidationTests.test_threshold_order) ... ok
+test_zero_floor (test_truth_pressure.ValidationTests.test_zero_floor) ... ok
+test_zero_weights (test_truth_pressure.ValidationTests.test_zero_weights) ... ok
+test_conflict_preserved (test_truth_pressure.VectorTests.test_conflict_preserved) ... ok
+test_impact_geometric (test_truth_pressure.VectorTests.test_impact_geometric) ... ok
+test_uncertainty_preserved (test_truth_pressure.VectorTests.test_uncertainty_preserved) ... ok
+test_vector_bounded (test_truth_pressure.VectorTests.test_vector_bounded) ... ok
+test_zero_component_zeroes_support (test_truth_pressure.VectorTests.test_zero_component_zeroes_support) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 0.001s
+
+OK

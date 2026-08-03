@@ -197,6 +197,54 @@ Run at most one resource-heavy background process at a time unless Mac explicitl
 authorizes more. Reuse or stop servers cleanly. Prefer focused foreground checks.
 Do not consume the machine to perform certainty.
 
+### Turn economy — Mac pays for every turn
+
+**The cost model.** Every request re-reads the entire accumulated context. Cost is
+therefore `context_size × turn_count` — **quadratic in session length**, not linear
+in payload. Both factors are Sol's to control. Nothing else in this file matters if
+this law is broken, because breaking it prices Sol out of existence.
+
+**MEASURED baseline, 2026-08-02** (60,071 requests, 124 sessions, read from
+transcript `usage` fields — reproducible, not estimated):
+
+- 17,517,770,755 cache-read tokens against 85,139,960 output tokens — **206 : 1**
+- **98.4%** of all input was re-reading context already paid for
+- mean **291,617 tokens re-read per request** to produce **1,417 tokens** of output
+- worst session: 912M cache-read across 2,062 requests
+- in the six worst sessions all tool output totalled **20 MB (~5M tokens)** against
+  **4.3B** consumed — proving payload was never the driver; **turn count was**
+- 2,952 Bash calls averaging **800 bytes** of result — a ~400k-token turn spent to
+  learn one line, roughly three thousand times
+
+That last figure is the signature failure: **probing instead of thinking.** A cheap
+tool call is not cheap. It costs a full context re-read.
+
+**Binding rules.**
+
+1. **Think before probing.** If reasoning from what is already in context answers
+   the question, do not spend a turn confirming it. Re-reading a file already in
+   context, or re-verifying an `Edit` that returned success, is pure waste.
+2. **One turn, many calls.** Batch every independent probe into a single message.
+   Compose shell work into one command with clear section markers rather than a
+   sequence of small ones. A serial chain of trivial calls is the most expensive
+   possible way to learn anything.
+3. **Read wide, once.** Read the whole relevant region in one call instead of
+   returning to it. Never re-read to confirm a write; the harness reports failure.
+4. **Write large.** Prefer one substantial, considered edit over a drizzle of small
+   corrections. This is Mac's standing `reason once, then power code` instruction
+   restated as an economic law, not a style note.
+5. **End at mission boundaries.** A finished mission ends the session. Carrying an
+   800-turn context into unrelated work multiplies its full weight across every new
+   turn. Long sessions are the single largest source of the waste measured above.
+6. **Subagents start cold.** Each one re-derives context already held here. Spawn
+   only when Mac asks, or when genuine parallel fan-out beats the re-derivation.
+7. **Never idle-poll.** Waiting by repeated checking bills a full context per check.
+
+**Re-audit.** Recompute the baseline before claiming improvement. The measurement
+sums `cache_read_input_tokens` and `output_tokens` across
+`~/.claude/projects/**/*.jsonl`. A claim of reduced burn without a rerun is
+UNVERIFIED — the same standard this file applies to every other consequential claim.
+
 ### Performance, accessibility, and security are product behavior
 
 Keep interaction responsive, motion owned and interruptible, focus visible,
@@ -209,6 +257,53 @@ Inspect status and diff before edits and before handoff. Never discard unrelated
 changes. Stage exact files only; no broad staging. Do not commit, push, open a PR,
 or mutate a remote unless Mac requested that workflow. Never use destructive Git
 commands as cleanup.
+
+## The Lycheetah game engine — north star and laws
+
+Ruled by Mac, 2026-08-02. This governs the RPG engine in
+`lib/lycheetah-rpg/`, `components/lycheetah-rpg/` and their content and tools.
+
+The target is a **Lycheetah-native fusion**, not an imitation of any parent:
+
+- **Diablo** — satisfying exploration, encounters, loot, build choices, dangerous
+  regions, readable combat impact.
+- **Pokémon** — one emotionally distinct companion, growth, moves, bonding,
+  collection and discovery, creatures worth remembering.
+- **Lycheetah** — mystery-school study changes what the player can *perceive or
+  do*; encounters produce consequences that return to Companion, School, Sol and
+  Sanctum; **no manipulative retention loops.**
+- **World authorship** — the same region/encounter/creature schemas must drive a
+  visual editor, so Mac builds characters, companions, encounters and worlds
+  without hand-editing code.
+
+### The eight engine laws
+
+1. A **reusable Lycheetah game engine**, not a single hard-coded field.
+2. **Content is data.** Renderer and rules hold no one-off world assumptions.
+3. A **companion** has identity, visible growth, build choices, equipment/traits,
+   relationship state, and persistent consequences.
+4. A **region** has entrances, exits, portals, scale, camera language, encounter
+   tables, landmarks, and save-safe state.
+5. **Combat stays legible on a phone**: movement, threat, hit response, companion
+   action, reward, consequence.
+6. **Every editor action compiles through the same validators as shipped
+   content.** The editor never bypasses engine truth, and is never a second engine.
+7. **No claim of "finished", "phone-ready" or "proprietary engine" without a named
+   witness.** Say *our in-repository engine architecture*. The code is Mac's; Expo,
+   React Native, Skia, React and every other dependency remain third-party under
+   their own licenses, and inspirations stay attributed. This is a naming law, not
+   a modesty ritual — it is the same truth-pressure that forbids upgrading an
+   unverified claim by rhetoric.
+8. **Preserve the green gates.** Never lower the baseline by letting a validator or
+   `tsc` fail early. ⚠ A *falling* TypeScript error count means `tsc` stopped, not
+   that anything improved — check for **equal to baseline**, never smaller.
+
+### What the phone owns
+
+Feel is Mac's verdict and no gate's. Every engine gate must state in its own
+refusals what it cannot say: a green gate is not a green browser, and a green
+browser is not a green phone. Frame pacing, heat, touch latency and whether the
+loop is *fun* are only ever answered by a person holding the device.
 
 ## Product craft
 

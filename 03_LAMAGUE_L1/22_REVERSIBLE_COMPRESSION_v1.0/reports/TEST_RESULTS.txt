@@ -1,0 +1,26 @@
+EXIT_CODE: 0
+
+test_all_reference_packets_are_safe (test_codec.CodecTests.test_all_reference_packets_are_safe) ... ok
+test_codebook_count (test_codec.CodecTests.test_codebook_count) ... ok
+test_corpus_count (test_codec.CodecTests.test_corpus_count) ... ok
+test_dictionary_roundtrip_all (test_codec.CodecTests.test_dictionary_roundtrip_all) ... ok
+test_dictionary_source_requires_codebook (test_codec.CodecTests.test_dictionary_source_requires_codebook) ... ok
+test_exact_classification (test_codec.CodecTests.test_exact_classification) ... ok
+test_guard_removal_is_unsafe (test_codec.CodecTests.test_guard_removal_is_unsafe) ... ok
+test_hashes_preserved (test_codec.CodecTests.test_hashes_preserved) ... ok
+test_invalid_operation_rejected (test_codec.CodecTests.test_invalid_operation_rejected) ... ok
+test_invalid_prefix_rejected (test_codec.CodecTests.test_invalid_prefix_rejected) ... ok
+test_invariant_change_is_divergent (test_codec.CodecTests.test_invariant_change_is_divergent) ... ok
+test_missing_field_rejected (test_codec.CodecTests.test_missing_field_rejected) ... ok
+test_out_of_range_dictionary_reference_rejected (test_codec.CodecTests.test_out_of_range_dictionary_reference_rejected) ... ok
+test_plain_codec_is_smaller_than_minified_json_for_all_packets (test_codec.CodecTests.test_plain_codec_is_smaller_than_minified_json_for_all_packets) ... ok
+test_plain_roundtrip_all (test_codec.CodecTests.test_plain_roundtrip_all) ... ok
+test_safe_extension_is_partial (test_codec.CodecTests.test_safe_extension_is_partial) ... ok
+test_split_count (test_codec.CodecTests.test_split_count) ... ok
+test_unknown_field_rejected (test_codec.CodecTests.test_unknown_field_rejected) ... ok
+test_unknown_loss_is_unsafe (test_codec.CodecTests.test_unknown_loss_is_unsafe) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.053s
+
+OK

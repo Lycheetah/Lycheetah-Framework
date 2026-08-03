@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Truth Pressure Instrument Lab v0.1</title>
+<style>
+body{margin:0;background:#0b0d12;color:#edf2f7;font-family:Arial,sans-serif}
+main{max-width:1100px;margin:auto;padding:28px 18px 70px}
+h1{font-size:48px;line-height:1;margin:10px 0} h2{margin:0 0 10px}
+.sub,.small{color:#9aa6b6}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:#151b26;border:1px solid #2a3447;border-radius:16px;padding:18px}
+.full{grid-column:1/-1}.control{display:grid;grid-template-columns:1fr 72px;gap:10px;align-items:center;margin:14px 0}
+input[type=range]{width:100%}.value,.trace,textarea{background:#0d121a;border:1px solid #2a3447;border-radius:9px;padding:9px;color:#edf2f7}
+textarea{width:100%;min-height:150px}.metric{font-size:46px;font-weight:800}.reason{border-left:3px solid #f2c76e;padding:12px;background:#0d131d;border-radius:8px}
+.trace{white-space:pre-wrap;font-family:monospace}.compare{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.box{background:#0d121a;border:1px solid #2a3447;border-radius:10px;padding:12px}
+button{background:#f2c76e;border:0;border-radius:9px;padding:10px 14px;font-weight:700;cursor:pointer}
+.marker{display:flex;justify-content:space-between;border-bottom:1px solid #283143;padding:6px 0}
+@media(max-width:760px){.grid,.compare{grid-template-columns:1fr}.full{grid-column:auto}}
+</style>
+</head>
+<body><main>
+<div class="small">Lycheetah · LAMAGUE · CASCADE</div>
+<h1>Truth Pressure Instrument Lab</h1>
+<p class="sub">The number is never shown alone. Every score explains what moved it, why that matters, what scale it uses, and what it cannot prove.</p>
+<div class="grid">
+
+<section class="card">
+<h2>Canon laboratory</h2>
+<div class="control"><div><label>Evidence strength E</label><input id="E" type="range" min="0" max="1" step=".01" value=".72"></div><div id="Ev" class="value"></div></div>
+<div class="control"><div><label>Explanatory power P</label><input id="P" type="range" min="0" max="1" step=".01" value=".64"></div><div id="Pv" class="value"></div></div>
+<div class="control"><div><label>Coherence strain S</label><input id="S" type="range" min="0" max="1" step=".01" value=".22"></div><div id="Sv" class="value"></div></div>
+<div class="control"><div><label>Strain floor S₀</label><input id="S0" type="range" min=".01" max=".25" step=".01" value=".05"></div><div id="S0v" class="value"></div></div>
+</section>
+
+<section class="card">
+<h2>What the number means</h2>
+<div id="piCanon" class="metric"></div>
+<div class="small">canon Π</div>
+<p id="canonReason" class="reason"></p>
+<div id="canonTrace" class="trace"></div>
+</section>
+
+<section class="card full">
+<h2>One quantity · three views</h2>
+<div class="compare">
+<div class="box"><div class="small">Canon</div><div id="canonCompare" class="metric"></div></div>
+<div class="box"><div class="small">App cascade-score</div><div id="appCompare" class="metric"></div><div class="small">canon ÷ 20</div></div>
+<div class="box"><div class="small">App trigger 0.6</div><div id="triggerCompare" class="metric"></div><div class="small">canon 12</div></div>
+</div>
+<p id="scaleReason" class="reason"></p>
+</section>
+
+<section class="card">
+<h2>Text lens prototype</h2>
+<p class="small">Transparent demonstration markers. The exact app marker lists still need the TypeScript source.</p>
+<textarea id="textInput">The evidence shows repeated measurements. Therefore the model explains the observed pattern. However one result contradicts the earlier assumption and remains uncertain.</textarea>
+<button id="analyze">Analyze text</button>
+<div class="control"><div><label>Evidence saturation k</label><input id="kE" type="range" min=".5" max="10" step=".5" value="4"></div><div id="kEv" class="value"></div></div>
+<div class="control"><div><label>Explanation saturation k</label><input id="kP" type="range" min=".5" max="10" step=".5" value="3"></div><div id="kPv" class="value"></div></div>
+<div class="control"><div><label>Strain saturation k</label><input id="kS" type="range" min=".5" max="10" step=".5" value="3"></div><div id="kSv" class="value"></div></div>
+</section>
+
+<section class="card">
+<h2>Text-lens result</h2>
+<div id="textPi" class="metric"></div>
+<div class="small">app Π</div>
+<p id="textReason" class="reason"></p>
+<div id="textTrace" class="trace"></div>
+<div id="markerLedger"></div>
+</section>
+
+<section class="card full">
+<h2>Instrument boundary</h2>
+<p class="reason"><strong>This does not detect truth.</strong> It demonstrates how an instrument can expose its reasoning. Marker densities are proxies. Thresholds and saturation constants are uncalibrated. A high score means selected features created high revision pressure under this model.</p>
+</section>
+</div></main>
+
+<script>
+const $=x=>document.getElementById(x), fmt=x=>Number(x).toFixed(3);
+const sat=(d,k)=>d/(d+k);
+const evidence=["evidence","measured","measurement","data","observed","shows","demonstrates","replicated","result","results","tested","experiment","study","because"];
+const power=["therefore","explains","predicts","implies","model","mechanism","across","general","pattern","accounts","unifies","consequence","means"];
+const strain=["contradicts","contradiction","however","uncertain","uncertainty","conflict","inconsistent","but","failure","fails","unknown","ambiguous","disputed"];
+
+function qual(v){return v<.33?"low":v<.67?"moderate":"high"}
+function updateCanon(){
+ let E=+$("E").value,P=+$("P").value,S=+$("S").value,S0=+$("S0").value;
+ ["E","P","S","S0"].forEach(id=>$(id+"v").textContent=fmt(+$(id).value));
+ let pi=E*P/(S+S0), app=pi*S0;
+ $("piCanon").textContent=fmt(pi); $("canonCompare").textContent=fmt(pi); $("appCompare").textContent=fmt(app);
+ $("triggerCompare").textContent=app>0.6?"above":"below";
+ let layer=pi>=1.5?"FOUNDATION territory":pi>=1.2?"THEORY territory":"EDGE territory";
+ let why=`${layer}. Evidence is ${qual(E)}, explanatory reach is ${qual(P)}, and strain is ${qual(S)}. `;
+ if(E<.3) why+="Weak support is the main restraint. ";
+ else if(P<.3) why+="The claim explains too little beyond itself. ";
+ else if(S>.65) why+="Contradiction burden disperses the pressure. ";
+ else if(S<.2) why+="A coherent structure lets decisive evidence act more directly. ";
+ why+="This is revision pressure, not truth probability.";
+ $("canonReason").textContent=why;
+ $("canonTrace").textContent=`Π = (E × P) / (S + S₀)
+  = (${fmt(E)} × ${fmt(P)}) / (${fmt(S)} + ${fmt(S0)})
+  = ${fmt(pi)}
+
+app Π = canon Π × S₀ = ${fmt(app)}`;
+ $("scaleReason").textContent=`${fmt(app)} on the app scale equals ${fmt(pi)} on the canon scale. The quantity did not change; only the units did.`;
+}
+function count(text,list){
+ let lower=text.toLowerCase();
+ return list.map(m=>({marker:m,count:(lower.match(new RegExp("\\b"+m+"\\b","g"))||[]).length})).filter(x=>x.count);
+}
+function wordCount(t){return (t.trim().match(/\b[\w’-]+\b/g)||[]).length}
+function analyze(){
+ let text=$("textInput").value,n=Math.max(wordCount(text),1);
+ let eh=count(text,evidence),ph=count(text,power),sh=count(text,strain);
+ let ec=eh.reduce((a,b)=>a+b.count,0),pc=ph.reduce((a,b)=>a+b.count,0),sc=sh.reduce((a,b)=>a+b.count,0);
+ let eD=ec/n*100,pD=pc/n*100,sD=sc/n*100;
+ let kE=+$("kE").value,kP=+$("kP").value,kS=+$("kS").value;
+ ["kE","kP","kS"].forEach(id=>$(id+"v").textContent=fmt(+$(id).value));
+ let E=sat(eD,kE),P=sat(pD,kP),S=sat(sD,kS),app=E*P*.05/(S+.05),canon=app*20;
+ $("textPi").textContent=fmt(app);
+ let why=`The text produced ${fmt(app)} app-scale, equal to ${fmt(canon)} canon-scale. `;
+ if(!ec) why+="No evidence markers were found. ";
+ if(!pc) why+="No explanatory markers were found. ";
+ if(sc>ec+pc) why+="Strain markers dominate the visible signal. ";
+ else if(ec&&pc) why+="Support and explanatory reach both contribute visibly. ";
+ why+="This explains the marker model, not the factual truth of the text.";
+ $("textReason").textContent=why;
+ $("textTrace").textContent=`words = ${n}
+E hits = ${ec} · density = ${fmt(eD)} · E = ${fmt(E)}
+P hits = ${pc} · density = ${fmt(pD)} · P = ${fmt(P)}
+S hits = ${sc} · density = ${fmt(sD)} · S = ${fmt(S)}
+
+app Π = ${fmt(app)}
+canon Π = ${fmt(canon)}`;
+ const rows=(title,arr)=>`<div class="marker"><strong>${title}</strong><span>${arr.reduce((a,b)=>a+b.count,0)}</span></div>`+
+ (arr.length?arr.map(x=>`<div class="marker"><span>${x.marker}</span><span>${x.count}</span></div>`).join(""):`<div class="marker"><span>none found</span><span>0</span></div>`);
+ $("markerLedger").innerHTML=rows("Evidence",eh)+rows("Explanation",ph)+rows("Strain",sh);
+}
+["E","P","S","S0"].forEach(id=>$(id).addEventListener("input",updateCanon));
+["kE","kP","kS"].forEach(id=>$(id).addEventListener("input",analyze));
+$("analyze").addEventListener("click",analyze);
+updateCanon(); analyze();
+</script>
+</body></html>

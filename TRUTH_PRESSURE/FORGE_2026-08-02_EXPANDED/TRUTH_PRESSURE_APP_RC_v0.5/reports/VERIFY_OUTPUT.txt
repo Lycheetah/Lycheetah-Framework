@@ -1,0 +1,20 @@
+
+Truth Pressure App RC v0.5 verification
+
+  ✅ canonical normalized index remains bounded
+  ✅ app adapter exposes stable contract and mandatory boundary
+  ✅ text triage never becomes structurally eligible
+  ✅ structured assessment is app-ready and threshold-free by default
+  ✅ configured threshold opens review without authorizing movement
+  ✅ onion adapter exposes separated strain and handling semantics
+  ✅ shadow record stores no raw content
+  ✅ review state token is deterministic and React-Native safe
+  ✅ review application requires approval and rejects stale state
+  ✅ approved review moves metadata and remains reversible by receipt
+  ✅ judge parser requires exact complete contract
+  ✅ onion judge contract separates magnitude from handling and maps directly
+  ✅ adversarial text remains flagged and bounded
+  ✅ runtime source contains no Node built-in imports
+
+  🟢 14 app-readiness checks passed.
+

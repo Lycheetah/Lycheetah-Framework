@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Truth Pressure Untuned Case Result",
+  "type": "object",
+  "required": [
+    "run_id",
+    "case_id",
+    "engine_commit",
+    "configuration_hash",
+    "word_count",
+    "E_final",
+    "P_final",
+    "S_final",
+    "pi_text",
+    "scale",
+    "marker_matches",
+    "branches_taken",
+    "warnings"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "engine_commit": {
+      "type": "string"
+    },
+    "configuration_hash": {
+      "type": "string"
+    },
+    "word_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "marker_matches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "family",
+          "marker",
+          "count"
+        ],
+        "properties": {
+          "family": {
+            "type": "string"
+          },
+          "marker": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "raw_counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "densities": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "E_raw": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "P_raw": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "S_raw": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "E_final": {
+      "type": "number"
+    },
+    "P_final": {
+      "type": "number"
+    },
+    "S_final": {
+      "type": "number"
+    },
+    "s0": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "pi_text": {
+      "type": "number"
+    },
+    "pi_canon_equivalent": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "pi_onion": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "scale": {
+      "enum": [
+        "app_text",
+        "canon",
+        "onion"
+      ]
+    },
+    "five_layer_scores": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "nine_layer_scores": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "net_coherence": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "caps_activated": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dependencies_applied": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "branches_taken": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review_trigger": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "reorganization_state": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "runtime_ms": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "repeat_index": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "additionalProperties": true
+}

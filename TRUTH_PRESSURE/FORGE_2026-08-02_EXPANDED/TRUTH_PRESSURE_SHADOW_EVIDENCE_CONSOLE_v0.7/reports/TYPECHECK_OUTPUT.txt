@@ -1,0 +1,9 @@
+EXIT_CODE: 0
+
+STDOUT:
+
+> @lycheetah/truth-pressure-shadow-evidence-console@0.7.0-rc.1 typecheck
+> tsc --noEmit
+
+
+STDERR:

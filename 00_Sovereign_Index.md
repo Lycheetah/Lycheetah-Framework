@@ -117,7 +117,7 @@ Instead of "48% of mathematics is decorative," understand:
 | Framework | File | Core Function | Why Beacon |
 |-----------|------|--------------|-----------|
 | **ANAMNESIS** | `07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md` | Discovery vs. invention; convergent truth | The theory of WHY truth can be found |
-| **LAMAGUE Grammar** | `03_LAMAGUE_L1/LAMAGUE_COMPLETE.md` | Formal grammar for expressing alignment and ethical constraint states | The navigation language |
+| **LAMAGUE Grammar** | `03_LAMAGUE_L1/01_LAMAGUE_COMPLETE.md` | Formal grammar for expressing alignment and ethical constraint states | The navigation language. ⚠ *Path corrected 2026-08-03 — the cited `LAMAGUE_COMPLETE.md` does not exist; the file carries its `01_` corpus prefix.* |
 | **CASCADE (Vision Layer)** | `01_CASCADE_L4/CASCADE_COMPLETE.md` §Edge | Frontier knowledge, paradigm navigation | Beacon is the Edge tier of CASCADE |
 | **HIDDEN MATHEMATICAL TRUTHS** | `HIDDEN_MATHEMATICAL_TRUTHS.md` | 10 deep truths: curvature, cohomology, Hopf, etc. | The deepest beacon — where math points |
 | **ADVANCED IMPLEMENTATION** | `ADVANCED_IMPLEMENTATION_GUIDE.md` | Geodesic algorithms, Lyapunov controllers | Turning beacon light into operational capability |
@@ -166,7 +166,7 @@ Instead of "48% of mathematics is decorative," understand:
 | File | Primary | Secondary | Notes |
 |------|---------|-----------|-------|
 | `01_CASCADE_L4/CASCADE_COMPLETE.md` | B | P | Knowledge navigation system |
-| `03_LAMAGUE_L1/LAMAGUE_COMPLETE.md` | B | P | Navigation language |
+| `03_LAMAGUE_L1/01_LAMAGUE_COMPLETE.md` | B | P | Navigation language. *Path corrected 2026-08-03.* |
 | `07_ANAMNESIS_L0/ANAMNESIS_COMPLETE.md` | B | H | Discovery theory |
 
 ### MYSTERY SCHOOL — All Three Axioms (Living Curriculum)
@@ -493,7 +493,7 @@ All source files that constitute the Sovereign System:
 | CASCADE engine | `Sovereign_Systems_Library/01_CASCADE_Framework/cascade_engine.py` | → `01_CASCADE_L4/CASCADE_COMPLETE.md` §Implementation |
 | AURA/VEYRA Codex | `Sovereign_Systems_Library/02_AURA_Protocol/AURA_VEYRA_CODEX_COMPLETE.md` | → `02_AURA_L3/AURA_COMPLETE.md` |
 | AURA System Builder | `Sovereign_Systems_Library/02_AURA_Protocol/AURA_VEYRA_SYSTEM_BUILDER_SPEC.md` | → `08_INTEGRATIONS/` |
-| LAMAGUE Grammar | `Sovereign_Systems_Library/03_LAMAGUE_Grammar/grammar.md` | → `03_LAMAGUE_L1/LAMAGUE_COMPLETE.md` |
+| LAMAGUE Grammar | `Sovereign_Systems_Library/03_LAMAGUE_Grammar/grammar.md` | → `03_LAMAGUE_L1/01_LAMAGUE_COMPLETE.md` |
 | CHRYSOPOEIA | `Downloads/CHRYSOPOEIA-main (1)latest/CHRYSOPOEIA-main/CHRYSOPOEIA.md` | → `09_CHRYSOPOEIA_L4/CHRYSOPOEIA_COMPLETE.md` |
 | HARMONIA | `Downloads/CHRYSOPOEIA-main (1)latest/CHRYSOPOEIA-main/HARMONIA.md` | → `10_HARMONIA_L6/HARMONIA_COMPLETE.md` |
 | Lycheetah Complete Guide | `Downloads/CHRYSOPOEIA-main (1)latest/CHRYSOPOEIA-main/THE_LYCHEETAH_FRAMEWORK_Complete_Guide-1.md` | Cross-referenced |
@@ -523,7 +523,7 @@ All source files that constitute the Sovereign System:
 
 ### For a Developer/Implementer:
 1. CASCADE_COMPLETE.md for knowledge system architecture
-2. LAMAGUE_COMPLETE.md for grammar specification
+2. `03_LAMAGUE_L1/01_LAMAGUE_COMPLETE.md` for grammar specification
 3. System Integration Guide for API architecture
 4. AURA_VEYRA_SYSTEM_BUILDER_SPEC for full stack spec
 5. Advanced Implementation Guide for mathematical algorithms
@@ -596,6 +596,78 @@ All source files that constitute the Sovereign System:
 | **CROSS-CULTURAL GOVERNANCE** | **[ACTIVE] Six convergence classes formally encoded** | **All Three** | Paper submitted to AI and Ethics; Catalyst 2027 |
 
 **System state (April 1, 2026):** Sol Protocol v3.1 live — velocity matching, disagreement protocol, session priming added. First academic paper complete: LAMAGUE cross-cultural convergence, targeting AI and Ethics (Springer), 6,300 words, 37 citations. NZ AI Governance folder — 34+ documents, four implementable open standards (WOF, Three Worlds, Whakapapa, Matariki). NZIAT 2026 rounds closed; 2027 Catalyst Strategic remains target. Cross-cultural governance (24_LAMAGUE_CROSS_CULTURAL/) with academic paper. Failure Museum active. Cultural content marked [PROPOSAL] pending iwi/scholar validation.
+
+---
+
+## ADDENDUM — STATE OF THE TWO ACTIVE RESEARCH TREES (2026-08-03)
+
+*The map above was drawn April 1, 2026. Two folders have grown substantially since,
+and neither was represented. This addendum records what is on disk **now**. Full
+ingestion receipt: `13_SYNTHESIS_REPORTS/INGEST_2026-08-03_LAMAGUE_AND_TRUTH_PRESSURE.md`.*
+
+### `03_LAMAGUE_L1/` — the LAMAGUE corpus (authoritative; **not** the app's card registry)
+
+⚠⚠ **THERE ARE NOW THREE NUMBERED LAMAGUE LINES AND THEIR VERSIONS DO NOT RELATE.**
+This is the single most confusing thing in the corpus. Say which line, or the
+sentence does not mean anything. **Never renumber a line to fix it** — the numbers
+are stamped inside the release zips, manifests, schemas and test suites.
+
+| line | what it is | operators | where |
+|------|-----------|-----------|-------|
+| **CORE** v0.1→v0.3 | the *language*: algebra, ontology, operator contracts | 6 symbolic `⊗ → ⇌ ⟲ ↯ ↗` | `12_CORE_LANGUAGE_LINE/` |
+| **RUNTIME** v0.1→v0.3 | the *experiment harness*: does meaning survive crossing intelligences? | — | `05_` `06_` `07_` |
+| **PACKET / PUBLIC CORE** | consequential semantic packets and their wire codec | 9 letter `O E U I G V F Y Z` | `22_REVERSIBLE_COMPRESSION_v1.0/` |
+
+**MEASURED 2026-08-03:** the CORE and PACKET operator sets are *disjoint* — not one
+symbol in common.
+
+| Folder | Contents | Status |
+|--------|----------|--------|
+| `12_CORE_LANGUAGE_LINE/` | CORE v0.1 algebra · v0.2 ontology + type lock · v0.3 operator contracts. Next: `NEXT_FORGE_v0.4.md` (rewrite confluence, semantic hash stability). | **[ACTIVE]** 47 / 80 / 117 unit tests, all re-run and matched on this machine 2026-08-01 |
+| `13_RETIRED_KERNEL_BRANCH/` | Computational Kernel v0.7, v0.8 — preserved, **not** the authoritative line. To return later as `lamague-adapter-tim` / `lamague-adapter-microorcim`. | **[SCAFFOLD]** v0.8 runs 84 tests; ⚠ **v0.7 ships no test suite at all** |
+| `22_REVERSIBLE_COMPRESSION_v1.0/` | **NEW 2026-08-03.** Reversible structured semantic codec + held-out compression benchmark. | **[ACTIVE]** re-executed here: 19/19 tests, 36/36 exact round trips, 324/324 mutation classifications, held-out 33.8% warm / 30.7% cold |
+| `10_PACKAGED_RELEASES/` | 14 original release zips, unmodified. | Archive |
+| `08_EXPERIMENT_001_CROSS_INTELLIGENCE/` | Blind decoder pack, operator pack, frozen reference commitments, controlled pilot. | **[SCAFFOLD]** preregistered; baseline run empty pending independent submissions |
+
+⚠ **`22_REVERSIBLE_COMPRESSION_v1.0/` is the first artifact in this folder carrying
+reproducible quantitative data rather than formal structure alone.** Its boundary is
+narrow and its own `docs/CLAIM_BOUNDARY.md` states it: a synthetic 36-packet corpus
+the package authored, held out from *dictionary construction only, not codec design*.
+**No external human or model validation has been run.**
+
+### `TRUTH_PRESSURE/` — Π = (E·P)/(S + S₀)
+
+| Folder / File | Contents | Status |
+|---------------|----------|--------|
+| `TRUTH_PRESSURE_THEORY.md`, `PI_DERIVATION.md`, `MASTER_EQUATION.md`, … | The theory. ~20 documents. | **[ACTIVE]** / **[SCAFFOLD]** per `00_INDEX.md` |
+| `APP_IMPLEMENTATION_STATE_2026-08-01.md` | ⚠ **Read before comparing any Π across documents.** Three Π's on three scales; the app's is canon ÷ 20. | **[MEASURED]** |
+| `FORGE_2026-08-02/` | **NEW 2026-08-03.** Complete forge: foundation, preregistered validation protocol + 24-case frozen corpus, source audit, engines v0.2/v0.3, measurement pack, app integration v0.5–v0.7, collector v0.8. **Authoritative.** | **[ACTIVE]** 29/29 SHA-256 verified at this path |
+| `FORGE_2026-08-02_EXPANDED/` | ⚠ **NON-AUTHORITATIVE** convenience expansion of the nine zips (214 files), so the sources can be read and grepped. The zips are the truth. | Generated mirror |
+| `FORGE_2026-08-02_NOTES.md` | Codex ingestion + verification note: where the historical Π-constant defect lives, proof the engines compute Π, and what the forge did and did not measure. | **[MEASURED]** |
+
+**MEASURED 2026-08-03, Node v24.16.0** — engine v0.3 passes its own 24 hardening
+checks, and `piCanon` reproduces `(E·P)/(S+S₀)` exactly (agreement to 1e-12) on the
+same four rows already recorded in `APP_IMPLEMENTATION_STATE_2026-08-01.md`.
+
+⚠ **The forge's headline finding is a negative result, and it is the valuable part.**
+Run against its own 24 preregistered cases, the legacy text lens produced
+**Π = 0 in 24 / 24** while unsupported certainty language scored **Π = 0.831**. The
+audit's own verdict names six FAILED categories including *general-language construct
+validity* and *marker-gaming resistance*. The scalar was repaired; the **construct was
+not validated**.
+
+⚠ **No human data exists anywhere in this material.** The measurement pack holds three
+*blank* rater packets, a preregistration whose status line reads *"Frozen before human
+ratings are collected"*, and a collection checklist with **all nine boxes unticked**.
+Krippendorff alpha, rater agreement and engine correspondence are planned, none computed.
+
+⚠ The audit also identifies a **fourth Π** (`computePyramidPi`) beyond the three
+documented in `APP_IMPLEMENTATION_STATE_2026-08-01.md`. Four constructs, one symbol.
+
+**Honest position:** the prior finding — *strong formal work, no empirical data* —
+still holds for the theory. What is new is **executed measurement of the instrument
+against itself**, which returned the failure its preregistration was built to expose.
+That is real methodological progress. It is not evidence about the world.
 
 ---
 

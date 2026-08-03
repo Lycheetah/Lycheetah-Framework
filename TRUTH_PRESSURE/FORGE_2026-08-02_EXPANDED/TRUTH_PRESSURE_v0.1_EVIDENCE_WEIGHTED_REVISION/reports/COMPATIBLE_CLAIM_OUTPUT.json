@@ -1,0 +1,72 @@
+{
+  "truth_pressure_version": "0.1.0",
+  "claim_id": "K_COMPATIBLE",
+  "vector": {
+    "support": 0.910673,
+    "impact": 0.648074,
+    "conflict": 0.05,
+    "uncertainty": 0.1
+  },
+  "raw_pressure": 0.147546,
+  "bounded_pressure": 0.128575,
+  "foundation_pressure": 0.1845,
+  "delta_vs_foundation": -0.055925,
+  "state": "OBSERVE",
+  "cascade_authorized": false,
+  "gates": [
+    {
+      "name": "support",
+      "passed": true,
+      "actual": 0.910673,
+      "required": 0.55,
+      "reason": "Evidence support must clear the minimum gate."
+    },
+    {
+      "name": "provenance",
+      "passed": true,
+      "actual": 0.95,
+      "required": 0.5,
+      "reason": "The evidence chain must be inspectable."
+    },
+    {
+      "name": "independence",
+      "passed": true,
+      "actual": 0.88,
+      "required": 0.35,
+      "reason": "Corroboration must not be purely circular."
+    },
+    {
+      "name": "reproducibility",
+      "passed": true,
+      "actual": 0.9,
+      "required": 0.35,
+      "reason": "The result must have a meaningful replication path."
+    },
+    {
+      "name": "source_count",
+      "passed": true,
+      "actual": 7,
+      "required": 2,
+      "reason": "At least the configured number of sources is required."
+    },
+    {
+      "name": "conflict",
+      "passed": false,
+      "actual": 0.05,
+      "required": 0.35,
+      "reason": "A Cascade candidate must materially challenge the foundation."
+    }
+  ],
+  "blockers": [],
+  "warnings": [],
+  "interpretation": "The claim currently exerts low evidence-weighted revision pressure.",
+  "claim_boundary": [
+    "Truth Pressure is not the probability that a claim is true.",
+    "Structural importance cannot substitute for evidence.",
+    "Conviction is not an input to the canonical metric.",
+    "A Cascade candidate authorizes review, not automatic replacement.",
+    "The default thresholds are synthetic calibration defaults, not universal constants.",
+    "Zero uncertainty does not produce infinity.",
+    "FRONTIER is a maturity state, not the numeric value 999."
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "bundle": "TRUTH_PRESSURE_SHADOW_EVIDENCE_CONSOLE_v0.7",
+  "version": "0.7.0-rc.1",
+  "verify_exit_code": 0,
+  "typecheck_exit_code": 0,
+  "cli_smoke_exit_code": 0,
+  "files": {
+    "README.md": {
+      "bytes": 1732,
+      "sha256": "f518c04f1115f24dda52fb74653f6d9115e0197eb2161869d3e4c50c87d233d8"
+    },
+    "article/ARTICLE_EVIDENCE_LEDGER.md": {
+      "bytes": 1556,
+      "sha256": "4e894b138ec0242c3de2ca7b38145f00788fc340a34828ccedbb2738e9f8b750"
+    },
+    "components/cascade/TruthPressureCandidateCard.tsx": {
+      "bytes": 3842,
+      "sha256": "89e0c734ed85b6e69c524ec42ee4a6429526f4f9b0bd3f388d2f574857fe163b"
+    },
+    "components/cascade/TruthPressureShadowReviewPanel.tsx": {
+      "bytes": 7315,
+      "sha256": "6d1f9031ec408615682cb90c432c53c104295593a2667a0717e405bf9bf57197"
+    },
+    "docs/CALL_SITE_PATCH_TEMPLATE.md": {
+      "bytes": 2286,
+      "sha256": "051022817cdd06f65257612c75b6b2912d7e7d9bfd8e3369f75bf0cd2a78f02d"
+    },
+    "docs/SHADOW_EVIDENCE_REVIEW_PROTOCOL.md": {
+      "bytes": 1841,
+      "sha256": "b352ead43dd72c9001ee5c0b1e02fdb9549594eeba4e5d493d01d1cb63ba4954"
+    },
+    "examples/SYNTHETIC_100_RECORD_DATASET.json": {
+      "bytes": 84854,
+      "sha256": "6cb7212357f353f7895284c83c5c863d868d27da743d77bfe4cddb7f7a9d8390"
+    },
+    "hooks/useTruthPressureShadow.ts": {
+      "bytes": 2123,
+      "sha256": "3d9aa19cd549719c2d9f0362800afe8bbf9bb0a1af9b5c49e5caec23266dd611"
+    },
+    "hooks/useTruthPressureShadowReview.ts": {
+      "bytes": 2229,
+      "sha256": "647d9b921c1448307c60f979eeb74827589accdc7bee07ba6573a4d2baf9b293"
+    },
+    "lib/cascade-score.ts": {
+      "bytes": 12044,
+      "sha256": "7eb35a04071042a610a1e9770860beb40974fb8fdc5c8373d2e42b226c26408a"
+    },
+    "lib/node-test-shims.d.ts": {
+      "bytes": 311,
+      "sha256": "651f4e4c53d0f02d6817fd5bbb9806f45f43da300d4e41788698b535f58fec30"
+    },
+    "lib/truth-pressure-integration/feature.ts": {
+      "bytes": 787,
+      "sha256": "4896543899f4aca636e16cd00e477a787089528108256df1a71ebddab86eaca8"
+    },
+    "lib/truth-pressure-integration/shadow-analysis.ts": {
+      "bytes": 10010,
+      "sha256": "0b2151b54a01f6068bf288ef1ff36cb6faea05b40d931b172263bed08be913f1"
+    },
+    "lib/truth-pressure-integration/shadow-export.ts": {
+      "bytes": 1138,
+      "sha256": "1bf7be874264ef15167af30afeab55998fd47309c00ba64889b0cda36b447c28"
+    },
+    "lib/truth-pressure-integration/shadow-service.ts": {
+      "bytes": 1994,
+      "sha256": "0afe0a9238a8a3c01ac01bd3ba15fc16a363c0974149e2a23be42980fc09eaca"
+    },
+    "lib/truth-pressure-integration/shadow-store-async.ts": {
+      "bytes": 676,
+      "sha256": "5f6019917b4e1d0e7cb65a7a4b5874557e4892d203ca578baea72f08a550d133"
+    },
+    "lib/truth-pressure-integration/shadow-store-core.ts": {
+      "bytes": 8612,
+      "sha256": "b32f9a1b21020c912ffde395bf301e5dcb1cc54a4efab04c69dc86cdbce934d0"
+    },
+    "lib/truth-pressure-rc/app-adapter.ts": {
+      "bytes": 8498,
+      "sha256": "8a1ba1cf80719fb05887e0ef6e457e20acfbb3370ef28a859d06e62d8682301a"
+    },
+    "lib/truth-pressure-rc/core.ts": {
+      "bytes": 5384,
+      "sha256": "6b6f96b088104ff5df0ae2ab4c14180d457be89dc1cb03b4fe59e545d48fb3fd"
+    },
+    "lib/truth-pressure-rc/index.ts": {
+      "bytes": 356,
+      "sha256": "51ff8c219ed4bdb074ad141fd2e9c5a56fb679c3253e4c65141656f096881d89"
+    },
+    "lib/truth-pressure-rc/judge-contract.ts": {
+      "bytes": 2733,
+      "sha256": "354059577008506aba1276caf7311ea014b26bbf165839e69859b25c308b6e0e"
+    },
+    "lib/truth-pressure-rc/onion-judge-contract.ts": {
+      "bytes": 5338,
+      "sha256": "305bc3f034b13032da8b21514069603abf4afefe3485ef6fd903ae02c5aec230"
+    },
+    "lib/truth-pressure-rc/onion.ts": {
+      "bytes": 3015,
+      "sha256": "52d32cf92360de70b6ba68e68503a6a845a874ff520a85de0eabea0c7a872cbd"
+    },
+    "lib/truth-pressure-rc/review.ts": {
+      "bytes": 6595,
+      "sha256": "fd9d5f79bf5ff2bdd1e1c2e958b852b325dc3e391d996a3a9bb390f9f16c56e9"
+    },
+    "lib/truth-pressure-rc/shadow.ts": {
+      "bytes": 2291,
+      "sha256": "20ccf75fc23869619a55d9dd35a42f07d441eecedf10c3ab796171a9650d4666"
+    },
+    "lib/truth-pressure-rc/structured.ts": {
+      "bytes": 8028,
+      "sha256": "f3456d10444cb546765e00787938db87d058bbeaffbd115d15a1af7326795779"
+    },
+    "lib/truth-pressure-rc/text-adapter.ts": {
+      "bytes": 12233,
+      "sha256": "85a9388774ef121490b3717de2ab3d7ef896c53f224186e94899e6b34d74ff0c"
+    },
+    "lib/truth-pressure-rc/types.ts": {
+      "bytes": 3410,
+      "sha256": "d2a2d55634a00bec85ef1cc5fa5dfb818bbaef01e1342e4d32f8c13b8ef4c01d"
+    },
+    "lib/truth-pressure-rc/validation.ts": {
+      "bytes": 1890,
+      "sha256": "581f0913bbae798db569131363a00387e9705657f68e264658c7763ab3dbcbae"
+    },
+    "package.json": {
+      "bytes": 514,
+      "sha256": "3e89a90af5ef4a7cff22612036ff9d5745ab23562fa574d8965596cfaabe47e0"
+    },
+    "reports/CLI_SMOKE_OUTPUT.txt": {
+      "bytes": 296,
+      "sha256": "7e92f69af7a9ec2609e9480b17ede03748a33c00f5718faf191ecc0f9a41df93"
+    },
+    "reports/SYNTHETIC_REPORT.md": {
+      "bytes": 2107,
+      "sha256": "2aded37f259471d18bd2da7b7f35d85ef583733edf5165cd698f9101b9bc59ec"
+    },
+    "reports/TYPECHECK_OUTPUT.txt": {
+      "bytes": 121,
+      "sha256": "93e7f26963ebbca3d41385ac2e843eb8e2b2fee3d90d857bd1093e02990e3082"
+    },
+    "reports/VERIFY_OUTPUT.txt": {
+      "bytes": 2123,
+      "sha256": "5e0535ced85d8ed2042dfce041b7b1bf9b50a1b4aaf888efdf47e8c5a769ca84"
+    },
+    "scripts/analyze-shadow-dataset.ts": {
+      "bytes": 903,
+      "sha256": "c3b760d2095fb31b62b9d32fcaff4b24df3440781950c381f8d2c06962ea8c34"
+    },
+    "scripts/verify-shadow-bridge.ts": {
+      "bytes": 6013,
+      "sha256": "5b935579e37cc9b9d41d70df3948bb5c6fdcc3ddacb01160a5bd971ec80dbc0e"
+    },
+    "scripts/verify-shadow-review.ts": {
+      "bytes": 5441,
+      "sha256": "d242cd795816d2367118b7d07f5376e8cd25928ea399bb59174f357ea77ed2c5"
+    },
+    "tools/apply-shadow-bridge.mjs": {
+      "bytes": 2092,
+      "sha256": "fd9e4ac37c49eeda3c1048a92f3283c3ad2dc3459f9a6ada24ed696991af6ebc"
+    },
+    "tsconfig.json": {
+      "bytes": 471,
+      "sha256": "bad8722339d183428c36f4784448a4cc012fcf433b6c5b2447f7ac8fe99077d4"
+    }
+  }
+}

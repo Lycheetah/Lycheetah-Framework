@@ -1,0 +1,10 @@
+{
+  "name": "@lycheetah/truth-pressure-sovereign-sol-shadow-bridge",
+  "version": "0.6.0-rc.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "verify": "node --experimental-strip-types scripts/verify-shadow-bridge.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}

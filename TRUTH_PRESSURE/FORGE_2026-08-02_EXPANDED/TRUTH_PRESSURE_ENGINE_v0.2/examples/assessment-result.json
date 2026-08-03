@@ -1,0 +1,43 @@
+{
+  "components": {
+    "evidence": 0.8718591091654877,
+    "explanatoryPower": 0.822,
+    "strain": 0.46249999999999997
+  },
+  "piCanon": 1.398376951676158,
+  "piApp": 0.0699188475838079,
+  "scaleConversion": "piApp = piCanon × 0.05",
+  "reviewThresholdCanon": null,
+  "reviewTriggered": null,
+  "interpretation": {
+    "dominantLimiter": "strain",
+    "summary": "The principal limiter is unresolved contradiction, ambiguity, or structural strain. Pressure is a review signal, not a truth probability.",
+    "boundary": "This score represents revision pressure under the declared operationalization. It does not establish factual truth."
+  },
+  "claim": "Removing component B reverses the effect while component C remains unchanged.",
+  "loadBearingness": 0.7,
+  "handlingQuality": 0.8500000000000001,
+  "reviewPriority": 0.27394319330866557,
+  "registers": {
+    "piCanon": "DERIVED",
+    "piApp": "DERIVED",
+    "evidence": "ASSUMED",
+    "explanatoryPower": "ASSUMED",
+    "strain": "ASSUMED",
+    "loadBearingness": "INTERPRETIVE",
+    "handlingQuality": "INTERPRETIVE",
+    "reviewPriority": "PROVISIONAL"
+  },
+  "provenance": {
+    "evidence": [
+      "Trial record A",
+      "Trial record B"
+    ],
+    "explanation": [
+      "A specified mechanism predicts the intervention outcome."
+    ],
+    "strain": [
+      "One alternative mechanism remains possible."
+    ]
+  }
+}

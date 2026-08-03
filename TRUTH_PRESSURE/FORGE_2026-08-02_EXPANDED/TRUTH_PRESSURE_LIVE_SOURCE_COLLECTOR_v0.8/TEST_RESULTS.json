@@ -1,0 +1,23 @@
+{
+  "exitCode": 0,
+  "stdout": "\nTP-LIVE-SOURCE-COLLECTOR-0.8\nRepository: /mnt/data/TRUTH_PRESSURE_LIVE_SOURCE_COLLECTOR_v0.8/_test_repo\nCollected: 5 files\nOutput: /mnt/data/TRUTH_PRESSURE_LIVE_SOURCE_COLLECTOR_v0.8/_test_repo/_truth-pressure-live-source-extract\n\nMatched source files:\n  app/cascade.tsx  [LIKELY-PATH, LIVE-SCORE-CALL]\n  components/cascade/OnionProfile.tsx  [LIKELY-PATH, ONION-UI]\n  lib/storage/local.ts  [LIKELY-PATH, PERSISTENCE]\n  package.json  [PROJECT-CONFIG]\n  tsconfig.json  [PROJECT-CONFIG]\n\nNo .env, keys, databases, logs, dependencies, builds, or user data were collected.\n\nCompress the output directory and upload it here.\n\n",
+  "stderr": "",
+  "collectedPaths": [
+    "app/cascade.tsx",
+    "components/cascade/OnionProfile.tsx",
+    "lib/storage/local.ts",
+    "package.json",
+    "tsconfig.json"
+  ],
+  "assertions": {
+    "foundCascadeScreen": true,
+    "foundOnionProfile": true,
+    "foundStorage": true,
+    "includedPackage": true,
+    "excludedEnv": true,
+    "excludedPrivateKey": true,
+    "excludedNodeModules": true,
+    "excludedDist": true
+  },
+  "passed": true
+}

@@ -1,0 +1,65 @@
+{
+  "instrument": "TP-CANONICAL-SCALAR-v0.3",
+  "components": {
+    "evidence": 0.7272000000000002,
+    "explanatoryPower": 0.837,
+    "strain": 0.53
+  },
+  "piCanon": 1.049424827586207,
+  "piNormalized": 0.052471241379310356,
+  "piApp": 0.052471241379310356,
+  "scale": {
+    "canonRange": [
+      0,
+      20
+    ],
+    "normalizedRange": [
+      0,
+      1
+    ],
+    "conversion": "piNormalized = piCanon × s0 = piCanon × 0.05",
+    "s0": 0.05
+  },
+  "reviewThresholdCanon": null,
+  "reviewTriggered": null,
+  "interpretation": {
+    "limitingComponents": [
+      "strain"
+    ],
+    "summary": "The principal limiting component is strain. Pressure is a review signal, not a truth probability.",
+    "boundary": "This score represents revision pressure under the declared operationalization. It does not establish factual truth."
+  },
+  "counterfactuals": null,
+  "claim": "Removing component B reverses the effect while component C remains unchanged.",
+  "loadBearingness": 0.8,
+  "handlingQuality": 0.8250000000000001,
+  "reviewPriority": 0.04984767931034484,
+  "adjudicationReadiness": 0.8250000000000001,
+  "registers": {
+    "piCanon": "DERIVED",
+    "piNormalized": "DERIVED",
+    "evidence": "ASSUMED",
+    "explanatoryPower": "ASSUMED",
+    "strain": "ASSUMED",
+    "loadBearingness": "INTERPRETIVE",
+    "handlingQuality": "INTERPRETIVE",
+    "reviewPriority": "PROVISIONAL",
+    "adjudicationReadiness": "PROVISIONAL"
+  },
+  "provenance": {
+    "evidence": [
+      {
+        "label": "Trial A record",
+        "status": "INSPECTABLE",
+        "locator": "local://trial-a"
+      }
+    ],
+    "explanation": [
+      "Component B mediates the effect and predicts the intervention result."
+    ],
+    "strain": [
+      "Only one intervention series has been completed."
+    ]
+  },
+  "diagnostics": []
+}

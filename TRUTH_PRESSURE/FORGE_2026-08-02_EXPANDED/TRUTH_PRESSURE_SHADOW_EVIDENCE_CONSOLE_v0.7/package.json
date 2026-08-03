@@ -1,0 +1,13 @@
+{
+  "name": "@lycheetah/truth-pressure-shadow-evidence-console",
+  "version": "0.7.0-rc.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "verify:bridge": "node --experimental-strip-types scripts/verify-shadow-bridge.ts",
+    "verify:review": "node --experimental-strip-types scripts/verify-shadow-review.ts",
+    "verify": "npm run verify:bridge && npm run verify:review",
+    "analyze:shadow": "node --experimental-strip-types scripts/analyze-shadow-dataset.ts"
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "package": "LAMAGUE_REVERSIBLE_COMPRESSION_MILESTONE_v1.0",
+  "version": "1.0",
+  "benchmarkExitCode": 0,
+  "testExitCode": 0,
+  "headline": {
+    "packets": 36,
+    "heldout": 12,
+    "exactRoundTrips": "36/36",
+    "mutationMatches": "324/324",
+    "heldoutWarmReduction": 0.3377742946708464,
+    "heldoutColdReduction": 0.3070532915360502
+  },
+  "files": {
+    "README.md": {
+      "bytes": 1315,
+      "sha256": "3ec87c8f5a2293f6b692a6f37a6cfed8ec31eeb32587ebc4f464cac42fc7ac30"
+    },
+    "article/ARTICLE_DRAFT.md": {
+      "bytes": 7049,
+      "sha256": "ffded41b793d6ae02ae253b02b7e111204c83ceeab0d3ec513cf2e32b230e27f"
+    },
+    "article/LAUNCH_POST.md": {
+      "bytes": 550,
+      "sha256": "58c151311faa53bf56faf420a7e5ea32d58826ef99592eaa7bde7e6857b5de88"
+    },
+    "article/X_POST.md": {
+      "bytes": 285,
+      "sha256": "956d13598a82f56aab55c29dfe7a0b52863d26dc16fef66c388202d626c6f675"
+    },
+    "browser/index.html": {
+      "bytes": 14087,
+      "sha256": "8981f9d01e12a11eed8b829582cc1c8db53d0e56d20cff13b03d40b796bd6858"
+    },
+    "corpus/codebook.json": {
+      "bytes": 896,
+      "sha256": "f95148283a18a506cecf981d2e30d35b5184f0cc34205d5486827064ba35c4a5"
+    },
+    "corpus/packets.jsonl": {
+      "bytes": 80313,
+      "sha256": "f4462f68828e1ff019a686bc8657ce4d401088a38c524f0d6d750d08a824500a"
+    },
+    "corpus/split.json": {
+      "bytes": 1332,
+      "sha256": "79cb78d3c1c26ca94728467ef65f372796ded5c462cfd0950a0e138e22a2a37d"
+    },
+    "docs/BENCHMARK_PROTOCOL.md": {
+      "bytes": 1363,
+      "sha256": "9ad279dd45da88d283068d5d9b356d6351f10c9f998ea62e884c5997336be05a"
+    },
+    "docs/CLAIM_BOUNDARY.md": {
+      "bytes": 838,
+      "sha256": "1113625f126402b0c020751fee6ffe280dd4f54f883c0802b77ab8b4945e0ca8"
+    },
+    "docs/CODEC_SPEC.md": {
+      "bytes": 1670,
+      "sha256": "e70b432359e154330838009b5c1de7ad8c40d32e8a7acbc0869c6535d6a0b3ad"
+    },
+    "docs/SOURCE_LINEAGE.md": {
+      "bytes": 1095,
+      "sha256": "2223d75be97ecd6704a889bd20d7d17ddbf5f925c30ac793893d06f387a5059b"
+    },
+    "reports/BENCHMARK_REPORT.md": {
+      "bytes": 2057,
+      "sha256": "0cf9a7dc6327ac650abb4b3a0f4662a1bc094a35fa47fa13a96810ecfd59bc37"
+    },
+    "reports/BENCHMARK_STDOUT.txt": {
+      "bytes": 4279,
+      "sha256": "da5e5dbd594a24f545d3c20af1ab490a4db8576584679bb0830ab5e40e98d80a"
+    },
+    "reports/ENVIRONMENT_NOTE.md": {
+      "bytes": 274,
+      "sha256": "7e4d059d3202afb08d530afca6a0bf674dc269d49c8f08bbf9f5dcc8ff7b159b"
+    },
+    "reports/RELEASE_REPORT.md": {
+      "bytes": 681,
+      "sha256": "3f1ba269ab3b82091bc8090c12330bce49b1a88144bfe9a8791188be0b0300f9"
+    },
+    "reports/TEST_RESULTS.txt": {
+      "bytes": 1874,
+      "sha256": "0d8bbedee8849cd2c8e98aea562dc11a78cc081619c6602b415fe05a1ab4222e"
+    },
+    "reports/benchmark_report.json": {
+      "bytes": 3178,
+      "sha256": "e20b67600bcbf733db6963bf5326c8387c600a43e0b70ae0e5b5ff4291da6367"
+    },
+    "reports/mutation_results.jsonl": {
+      "bytes": 92538,
+      "sha256": "4ec02767c41c12546c3f615010cf9d0ed1dffc53dd5264d6dd864a75431f5088"
+    },
+    "reports/packet_sizes.csv": {
+      "bytes": 3661,
+      "sha256": "65b53a775e6bc9608db77adba584414f3eddd86678df4e21ec2c31c097bebd3b"
+    },
+    "reports/sample_roundtrip.json": {
+      "bytes": 7888,
+      "sha256": "579d5226168d76bf09515164fce00b5feb5bf50d46ed5a251ada2df687daba08"
+    },
+    "src/__pycache__/lamague_codec.cpython-313.pyc": {
+      "bytes": 27279,
+      "sha256": "e581c14956925582c72c3ceaaed1de2d1f44c6f0bbb215edc457ecc2a6026393"
+    },
+    "src/benchmark.py": {
+      "bytes": 11114,
+      "sha256": "763deb96041bc5fb7f8dd477a4de73f0ba3894536866ec2ff746d16710ceb1fd"
+    },
+    "src/cli.py": {
+      "bytes": 2231,
+      "sha256": "b2f5ed61fe7ef1aa6ed480ff9e6c56a6a6ff586a3ab9412642ca25e91e3f93a9"
+    },
+    "src/lamague_codec.py": {
+      "bytes": 18817,
+      "sha256": "73f94c0512abcb2767d23aaa9cec3aaeee3aec220166d19b4d1327be89679f80"
+    },
+    "tests/__pycache__/test_codec.cpython-313.pyc": {
+      "bytes": 11223,
+      "sha256": "f13e6d6fc038bc3ed68dd620d2161819dfb4d86f1c2d2e9f428bc336d3622dc5"
+    },
+    "tests/test_codec.py": {
+      "bytes": 5053,
+      "sha256": "8c56c939be7c60cf966be09e0a35c5ca69814890d66b42cffe5606ef1fa7e15f"
+    },
+    "upstream/LAMAGUE_EXECUTABLE_KERNEL_v0.1.zip": {
+      "bytes": 23937,
+      "sha256": "19684c6cf0de023eceb647cfbd1543669700b2919222b10e2e9e781e9bfaa5d6"
+    }
+  }
+}

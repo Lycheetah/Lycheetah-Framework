@@ -1,0 +1,30 @@
+
+Truth Pressure Engine v0.3 semantic hardening verification
+
+  ✅ canonical scalar passes deterministic grid monotonicity
+  ✅ normalized pressure is exactly bounded for any valid s0
+  ✅ invalid core inputs fail loudly instead of silently clamping
+  ✅ limiter ties are reported instead of hidden by branch order
+  ✅ pressure ratio decomposition is exact when components are nonzero
+  ✅ structured assessment is finite and provenance-aware
+  ✅ duplicate evidence cannot manufacture independent-support bonus
+  ✅ distinct but non-independent evidence receives no independence bonus
+  ✅ handling quality does not inflate Truth Pressure or review priority
+  ✅ structured invalid scores and weights are rejected
+  ✅ contractions are not mistaken for quoted material
+  ✅ negated evidence in one sentence does not erase unrelated measured evidence
+  ✅ a source-looking URL is recorded as unverified and earns no credit by itself
+  ✅ resolving one contradiction does not erase a separate unresolved contradiction
+  ✅ exact sentence duplication remains invariant
+  ✅ marker stuffing remains capped
+  ✅ prompt injection remains inert
+  ✅ onion input scale is explicit and has no 1 versus 1.01 discontinuity
+  ✅ onion load-bearingness no longer inflates explanatory power
+  ✅ judge contract rejects legacy numeric-key JSON and greedy wrappers
+  ✅ judge contract accepts exact named complete schema
+  ✅ review plan requires explicit approval and rejects stale application
+  ✅ approved review transaction moves metadata and is reversible
+  ✅ development corpus remains executable and inspectable
+
+  🟢 24 checks passed.
+

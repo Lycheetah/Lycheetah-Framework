@@ -1,0 +1,14 @@
+{
+  "name": "@lycheetah/truth-pressure-app-rc",
+  "version": "0.5.0-rc.1",
+  "private": true,
+  "type": "module",
+  "description": "React-Native-safe Truth Pressure release candidate for shadow integration in Sovereign Sol.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "verify": "node --experimental-strip-types scripts/verify.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}

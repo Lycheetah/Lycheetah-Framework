@@ -1,0 +1,29 @@
+COMMAND: node --experimental-strip-types scripts/verify-truth-pressure.ts
+EXIT_CODE: 0
+
+STDOUT:
+
+  Π = (E·P)/(S + S₀) — behavioural gate
+
+  ✅ a long, dense, coherent text does not pin at 1.000
+      Π = 0.783 on 492 words
+  ✅ Π is invariant under repetition (density, not volume)
+      82w → 0.783   410w → 0.783
+  ✅ contradiction lowers Π (S behaves like entropy, not coherence)
+      coherent Π=0.783  ·  self-contradicting Π=0.04
+  ✅ a perfectly coherent text stays finite and ≤ 1 (S₀ holds the floor)
+      Π = 0.783 with zero contradiction markers
+  ✅ assertion without evidence does not earn pressure (E·P is a product)
+      pure assertion, no causal reasoning → Π = 0
+  ✅ weak prose < reasoned claim (the scale actually discriminates)
+      plain prose Π=0  ·  reasoned Π=0.557
+
+  🟢 Π gate passed — the scorer implements the canon it teaches.
+
+
+STDERR:
+(node:4420) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:4420) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///mnt/data/TRUTH_PRESSURE_SOURCE_AUDIT_PASS_1_v0.1/SOURCE_SNAPSHOT/scripts/verify-truth-pressure.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /mnt/data/TRUTH_PRESSURE_SOURCE_AUDIT_PASS_1_v0.1/SOURCE_SNAPSHOT/package.json.

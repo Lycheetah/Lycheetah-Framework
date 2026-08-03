@@ -1,0 +1,6 @@
+{
+  "suite": "Truth Pressure v0.1 synthetic benchmark",
+  "total": 16,
+  "passed": 16,
+  "failed": 0
+}

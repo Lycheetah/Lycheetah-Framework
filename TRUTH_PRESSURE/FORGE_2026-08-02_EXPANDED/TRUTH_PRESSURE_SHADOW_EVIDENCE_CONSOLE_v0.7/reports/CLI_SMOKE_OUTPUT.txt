@@ -1,0 +1,8 @@
+EXIT_CODE: 0
+
+STDOUT:
+Wrote /mnt/data/TRUTH_PRESSURE_SHADOW_EVIDENCE_CONSOLE_v0.7/reports/SYNTHETIC_REPORT.md
+
+STDERR:
+(node:12109) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)

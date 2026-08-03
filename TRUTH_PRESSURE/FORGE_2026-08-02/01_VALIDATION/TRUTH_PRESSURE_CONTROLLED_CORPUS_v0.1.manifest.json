@@ -1,0 +1,19 @@
+{
+  "version": "v0.1",
+  "status": "proposed_frozen_before_untuned_engine_run",
+  "case_count": 24,
+  "files": {
+    "TRUTH_PRESSURE_CONTROLLED_CORPUS_v0.1.md": {
+      "bytes": 10304,
+      "sha256": "42dd39c65d9aaef2270a824eb431bf197cb180ea47319f185cbe1dcb8702cf24"
+    },
+    "TRUTH_PRESSURE_CONTROLLED_CORPUS_v0.1.jsonl": {
+      "bytes": 9477,
+      "sha256": "64329863db70d3682b89bcd114bc02bf0a45d05267c6116520dee03e1b49f0e1"
+    },
+    "TRUTH_PRESSURE_HUMAN_ANNOTATION_GUIDE_v0.1.md": {
+      "bytes": 3424,
+      "sha256": "45c11b56d9964b980aa375c76c208614d648d71f55d7047d90a54894173805ca"
+    }
+  }
+}

@@ -1,0 +1,1203 @@
+{
+  "suite": "Truth Pressure v0.1 synthetic benchmark",
+  "total": 16,
+  "passed": 16,
+  "failed": 0,
+  "results": [
+    {
+      "id": "TP001",
+      "name": "Strong replicated contradiction",
+      "passed": true,
+      "detail": {
+        "truth_pressure_version": "0.1.0",
+        "claim_id": "K_NEW_STRONG",
+        "vector": {
+          "support": 0.935556,
+          "impact": 0.924662,
+          "conflict": 0.95,
+          "uncertainty": 0.08
+        },
+        "raw_pressure": 4.565663,
+        "bounded_pressure": 0.820327,
+        "foundation_pressure": 0.1845,
+        "delta_vs_foundation": 0.635827,
+        "state": "CASCADE_CANDIDATE",
+        "cascade_authorized": true,
+        "gates": [
+          {
+            "name": "support",
+            "passed": true,
+            "actual": 0.935556,
+            "required": 0.55,
+            "reason": "Evidence support must clear the minimum gate."
+          },
+          {
+            "name": "provenance",
+            "passed": true,
+            "actual": 0.98,
+            "required": 0.5,
+            "reason": "The evidence chain must be inspectable."
+          },
+          {
+            "name": "independence",
+            "passed": true,
+            "actual": 0.9,
+            "required": 0.35,
+            "reason": "Corroboration must not be purely circular."
+          },
+          {
+            "name": "reproducibility",
+            "passed": true,
+            "actual": 0.92,
+            "required": 0.35,
+            "reason": "The result must have a meaningful replication path."
+          },
+          {
+            "name": "source_count",
+            "passed": true,
+            "actual": 8,
+            "required": 2,
+            "reason": "At least the configured number of sources is required."
+          },
+          {
+            "name": "conflict",
+            "passed": true,
+            "actual": 0.95,
+            "required": 0.35,
+            "reason": "A Cascade candidate must materially challenge the foundation."
+          }
+        ],
+        "blockers": [],
+        "warnings": [],
+        "interpretation": "The claim clears the evidence, conflict, absolute-pressure, and relative-margin gates. This authorizes structured review for a possible Cascade; it does not automatically rewrite the foundation.",
+        "claim_boundary": [
+          "Truth Pressure is not the probability that a claim is true.",
+          "Structural importance cannot substitute for evidence.",
+          "Conviction is not an input to the canonical metric.",
+          "A Cascade candidate authorizes review, not automatic replacement.",
+          "The default thresholds are synthetic calibration defaults, not universal constants.",
+          "Zero uncertainty does not produce infinity.",
+          "FRONTIER is a maturity state, not the numeric value 999."
+        ]
+      }
+    },
+    {
+      "id": "TP002",
+      "name": "Frontier importance without evidence",
+      "passed": true,
+      "detail": {
+        "truth_pressure_version": "0.1.0",
+        "claim_id": "K_FRONTIER",
+        "vector": {
+          "support": 0.142213,
+          "impact": 0.95,
+          "conflict": 0.9,
+          "uncertainty": 0.8
+        },
+        "raw_pressure": 0.135102,
+        "bounded_pressure": 0.119022,
+        "foundation_pressure": null,
+        "delta_vs_foundation": null,
+        "state": "HELD_FRONTIER",
+        "cascade_authorized": false,
+        "gates": [
+          {
+            "name": "support",
+            "passed": false,
+            "actual": 0.142213,
+            "required": 0.55,
+            "reason": "Evidence support must clear the minimum gate."
+          },
+          {
+            "name": "provenance",
+            "passed": false,
+            "actual": 0.35,
+            "required": 0.5,
+            "reason": "The evidence chain must be inspectable."
+          },
+          {
+            "name": "independence",
+            "passed": false,
+            "actual": 0.1,
+            "required": 0.35,
+            "reason": "Corroboration must not be purely circular."
+          },
+          {
+            "name": "reproducibility",
+            "passed": false,
+            "actual": 0.05,
+            "required": 0.35,
+            "reason": "The result must have a meaningful replication path."
+          },
+          {
+            "name": "source_count",
+            "passed": false,
+            "actual": 1,
+            "required": 2,
+            "reason": "At least the configured number of sources is required."
+          },
+          {
+            "name": "conflict",
+            "passed": true,
+            "actual": 0.9,
+            "required": 0.35,
+            "reason": "A Cascade candidate must materially challenge the foundation."
+          }
+        ],
+        "blockers": [
+          "independence gate failed: 0.1 < 0.35",
+          "provenance gate failed: 0.35 < 0.5",
+          "reproducibility gate failed: 0.05 < 0.35",
+          "source_count gate failed: 1 < 2",
+          "support gate failed: 0.142213 < 0.55"
+        ],
+        "warnings": [
+          "no foundation comparator supplied; Cascade authorization is unavailable"
+        ],
+        "interpretation": "The claim may be consequential, but its evidence gates do not permit promotion. Preserve it as a frontier claim without a numeric sentinel such as 999 or infinity.",
+        "claim_boundary": [
+          "Truth Pressure is not the probability that a claim is true.",
+          "Structural importance cannot substitute for evidence.",
+          "Conviction is not an input to the canonical metric.",
+          "A Cascade candidate authorizes review, not automatic replacement.",
+          "The default thresholds are synthetic calibration defaults, not universal constants.",
+          "Zero uncertainty does not produce infinity.",
+          "FRONTIER is a maturity state, not the numeric value 999."
+        ]
+      }
+    },
+    {
+      "id": "TP003",
+      "name": "Compatible strong evidence",
+      "passed": true,
+      "detail": {
+        "truth_pressure_version": "0.1.0",
+        "claim_id": "K_COMPATIBLE",
+        "vector": {
+          "support": 0.910673,
+          "impact": 0.648074,
+          "conflict": 0.05,
+          "uncertainty": 0.1
+        },
+        "raw_pressure": 0.147546,
+        "bounded_pressure": 0.128575,
+        "foundation_pressure": 0.1845,
+        "delta_vs_foundation": -0.055925,
+        "state": "OBSERVE",
+        "cascade_authorized": false,
+        "gates": [
+          {
+            "name": "support",
+            "passed": true,
+            "actual": 0.910673,
+            "required": 0.55,
+            "reason": "Evidence support must clear the minimum gate."
+          },
+          {
+            "name": "provenance",
+            "passed": true,
+            "actual": 0.95,
+            "required": 0.5,
+            "reason": "The evidence chain must be inspectable."
+          },
+          {
+            "name": "independence",
+            "passed": true,
+            "actual": 0.88,
+            "required": 0.35,
+            "reason": "Corroboration must not be purely circular."
+          },
+          {
+            "name": "reproducibility",
+            "passed": true,
+            "actual": 0.9,
+            "required": 0.35,
+            "reason": "The result must have a meaningful replication path."
+          },
+          {
+            "name": "source_count",
+            "passed": true,
+            "actual": 7,
+            "required": 2,
+            "reason": "At least the configured number of sources is required."
+          },
+          {
+            "name": "conflict",
+            "passed": false,
+            "actual": 0.05,
+            "required": 0.35,
+            "reason": "A Cascade candidate must materially challenge the foundation."
+          }
+        ],
+        "blockers": [],
+        "warnings": [],
+        "interpretation": "The claim currently exerts low evidence-weighted revision pressure.",
+        "claim_boundary": [
+          "Truth Pressure is not the probability that a claim is true.",
+          "Structural importance cannot substitute for evidence.",
+          "Conviction is not an input to the canonical metric.",
+          "A Cascade candidate authorizes review, not automatic replacement.",
+          "The default thresholds are synthetic calibration defaults, not universal constants.",
+          "Zero uncertainty does not produce infinity.",
+          "FRONTIER is a maturity state, not the numeric value 999."
+        ]
+      }
+    },
+    {
+      "id": "TP004",
+      "name": "No foundation comparator",
+      "passed": true,
+      "detail": {
+        "truth_pressure_version": "0.1.0",
+        "claim_id": "K_NEW_STRONG",
+        "vector": {
+          "support": 0.935556,
+          "impact": 0.924662,
+          "conflict": 0.95,
+          "uncertainty": 0.08
+        },
+        "raw_pressure": 4.565663,
+        "bounded_pressure": 0.820327,
+        "foundation_pressure": null,
+        "delta_vs_foundation": null,
+        "state": "REVIEW_PRIORITY",
+        "cascade_authorized": false,
+        "gates": [
+          {
+            "name": "support",
+            "passed": true,
+            "actual": 0.935556,
+            "required": 0.55,
+            "reason": "Evidence support must clear the minimum gate."
+          },
+          {
+            "name": "provenance",
+            "passed": true,
+            "actual": 0.98,
+            "required": 0.5,
+            "reason": "The evidence chain must be inspectable."
+          },
+          {
+            "name": "independence",
+            "passed": true,
+            "actual": 0.9,
+            "required": 0.35,
+            "reason": "Corroboration must not be purely circular."
+          },
+          {
+            "name": "reproducibility",
+            "passed": true,
+            "actual": 0.92,
+            "required": 0.35,
+            "reason": "The result must have a meaningful replication path."
+          },
+          {
+            "name": "source_count",
+            "passed": true,
+            "actual": 8,
+            "required": 2,
+            "reason": "At least the configured number of sources is required."
+          },
+          {
+            "name": "conflict",
+            "passed": true,
+            "actual": 0.95,
+            "required": 0.35,
+            "reason": "A Cascade candidate must materially challenge the foundation."
+          }
+        ],
+        "blockers": [],
+        "warnings": [
+          "no foundation comparator supplied; Cascade authorization is unavailable"
+        ],
+        "interpretation": "The claim merits review, but cannot become a Cascade candidate without comparison against the current foundation.",
+        "claim_boundary": [
+          "Truth Pressure is not the probability that a claim is true.",
+          "Structural importance cannot substitute for evidence.",
+          "Conviction is not an input to the canonical metric.",
+          "A Cascade candidate authorizes review, not automatic replacement.",
+          "The default thresholds are synthetic calibration defaults, not universal constants.",
+          "Zero uncertainty does not produce infinity.",
+          "FRONTIER is a maturity state, not the numeric value 999."
+        ]
+      }
+    },
+    {
+      "id": "TP005",
+      "name": "Provenance failure",
+      "passed": true,
+      "detail": {
+        "truth_pressure_version": "0.1.0",
+        "claim_id": "K_NEW_STRONG",
+        "vector": {
+          "support": 0.592686,
+          "impact": 0.924662,
+          "conflict": 0.95,
+          "uncertainty": 0.08
+        },
+        "raw_pressure": 2.892403,
+        "bounded_pressure": 0.743089,
+        "foundation_pressure": 0.1845,
+        "delta_vs_foundation": 0.558589,
+        "state": "HELD_FRONTIER",
+        "cascade_authorized": false,
+        "gates": [
+          {
+            "name": "support",
+            "passed": true,
+            "actual": 0.592686,
+            "required": 0.55,
+            "reason": "Evidence support must clear the minimum gate."
+          },
+          {
+            "name": "provenance",
+            "passed": false,
+            "actual": 0.1,
+            "required": 0.5,
+            "reason": "The evidence chain must be inspectable."
+          },
+          {
+            "name": "independence",
+            "passed": true,
+            "actual": 0.9,
+            "required": 0.35,
+            "reason": "Corroboration must not be purely circular."
+          },
+          {
+            "name": "reproducibility",
+            "passed": true,
+            "actual": 0.92,
+            "required": 0.35,
+            "reason": "The result must have a meaningful replication path."
+          },
+          {
+            "name": "source_count",
+            "passed": true,
+            "actual": 8,
+            "required": 2,
+            "reason": "At least the configured number of sources is required."
+          },
+          {
+            "name": "conflict",
+            "passed": true,
+            "actual": 0.95,
+            "required": 0.35,
+            "reason": "A Cascade candidate must materially challenge the foundation."
+          }
+        ],
+        "blockers": [
+          "provenance gate failed: 0.1 < 0.5"
+        ],
+        "warnings": [],
+        "interpretation": "The claim may be consequential, but its evidence gates do not permit promotion. Preserve it as a frontier claim without a numeric sentinel such as 999 or infinity.",
+        "claim_boundary": [
+          "Truth Pressure is not the probability that a claim is true.",
+          "Structural importance cannot substitute for evidence.",
+          "Conviction is not an input to the canonical metric.",
+          "A Cascade candidate authorizes review, not automatic replacement.",
+          "The default thresholds are synthetic calibration defaults, not universal constants.",
+          "Zero uncertainty does not produce infinity.",
+          "FRONTIER is a maturity state, not the numeric value 999."
+        ]
+      }
+    },
+    {
+      "id": "TP006",
+      "name": "Single source",
+      "passed": true,
+      "detail": {
+        "truth_pressure_version": "0.1.0",
+        "claim_id": "K_NEW_STRONG",
+        "vector": {
+          "support": 0.935556,
+          "impact": 0.924662,
+          "conflict": 0.95,
+          "uncertainty": 0.08
+        },
+        "raw_pressure": 4.565663,
+        "bounded_pressure": 0.820327,
+        "foundation_pressure": 0.1845,
+        "delta_vs_foundation": 0.635827,
+        "state": "HELD_FRONTIER",
+        "cascade_authorized": false,
+        "gates": [
+          {
+            "name": "support",
+            "passed": true,
+            "actual": 0.935556,
+            "required": 0.55,
+            "reason": "Evidence support must clear the minimum gate."
+          },
+          {
+            "name": "provenance",
+            "passed": true,
+            "actual": 0.98,
+            "required": 0.5,
+            "reason": "The evidence chain must be inspectable."
+          },
+          {
+            "name": "independence",
+            "passed": true,
+            "actual": 0.9,
+            "required": 0.35,
+            "reason": "Corroboration must not be purely circular."
+          },
+          {
+            "name": "reproducibility",
+            "passed": true,
+            "actual": 0.92,
+            "required": 0.35,
+            "reason": "The result must have a meaningful replication path."
+          },
+          {
+            "name": "source_count",
+            "passed": false,
+            "actual": 1,
+            "required": 2,
+            "reason": "At least the configured number of sources is required."
+          },
+          {
+            "name": "conflict",
+            "passed": true,
+            "actual": 0.95,
+            "required": 0.35,
+            "reason": "A Cascade candidate must materially challenge the foundation."
+          }
+        ],
+        "blockers": [
+          "source_count gate failed: 1 < 2"
+        ],
+        "warnings": [],
+        "interpretation": "The claim may be consequential, but its evidence gates do not permit promotion. Preserve it as a frontier claim without a numeric sentinel such as 999 or infinity.",
+        "claim_boundary": [
+          "Truth Pressure is not the probability that a claim is true.",
+          "Structural importance cannot substitute for evidence.",
+          "Conviction is not an input to the canonical metric.",
+          "A Cascade candidate authorizes review, not automatic replacement.",
+          "The default thresholds are synthetic calibration defaults, not universal constants.",
+          "Zero uncertainty does not produce infinity.",
+          "FRONTIER is a maturity state, not the numeric value 999."
+        ]
+      }
+    },
+    {
+      "id": "TP007",
+      "name": "No pressure delta",
+      "passed": true,
+      "detail": {
+        "truth_pressure_version": "0.1.0",
+        "claim_id": "K_NEW_STRONG",
+        "vector": {
+          "support": 0.935556,
+          "impact": 0.924662,
+          "conflict": 0.95,
+          "uncertainty": 0.08
+        },
+        "raw_pressure": 4.565663,
+        "bounded_pressure": 0.820327,
+        "foundation_pressure": 0.820327,
+        "delta_vs_foundation": 0.0,
+        "state": "CHALLENGE",
+        "cascade_authorized": false,
+        "gates": [
+          {
+            "name": "support",
+            "passed": true,
+            "actual": 0.935556,
+            "required": 0.55,
+            "reason": "Evidence support must clear the minimum gate."
+          },
+          {
+            "name": "provenance",
+            "passed": true,
+            "actual": 0.98,
+            "required": 0.5,
+            "reason": "The evidence chain must be inspectable."
+          },
+          {
+            "name": "independence",
+            "passed": true,
+            "actual": 0.9,
+            "required": 0.35,
+            "reason": "Corroboration must not be purely circular."
+          },
+          {
+            "name": "reproducibility",
+            "passed": true,
+            "actual": 0.92,
+            "required": 0.35,
+            "reason": "The result must have a meaningful replication path."
+          },
+          {
+            "name": "source_count",
+            "passed": true,
+            "actual": 8,
+            "required": 2,
+            "reason": "At least the configured number of sources is required."
+          },
+          {
+            "name": "conflict",
+            "passed": true,
+            "actual": 0.95,
+            "required": 0.35,
+            "reason": "A Cascade candidate must materially challenge the foundation."
+          }
+        ],
+        "blockers": [],
+        "warnings": [],
+        "interpretation": "The claim meaningfully challenges the foundation but does not clear every Cascade gate.",
+        "claim_boundary": [
+          "Truth Pressure is not the probability that a claim is true.",
+          "Structural importance cannot substitute for evidence.",
+          "Conviction is not an input to the canonical metric.",
+          "A Cascade candidate authorizes review, not automatic replacement.",
+          "The default thresholds are synthetic calibration defaults, not universal constants.",
+          "Zero uncertainty does not produce infinity.",
+          "FRONTIER is a maturity state, not the numeric value 999."
+        ]
+      }
+    },
+    {
+      "id": "TP008",
+      "name": "Zero uncertainty finite",
+      "passed": true,
+      "detail": {
+        "truth_pressure_version": "0.1.0",
+        "claim_id": "K_NEW_STRONG",
+        "vector": {
+          "support": 0.935556,
+          "impact": 0.924662,
+          "conflict": 0.95,
+          "uncertainty": 0
+        },
+        "raw_pressure": 8.218194,
+        "bounded_pressure": 0.891519,
+        "foundation_pressure": 0.1845,
+        "delta_vs_foundation": 0.707019,
+        "state": "CASCADE_CANDIDATE",
+        "cascade_authorized": true,
+        "gates": [
+          {
+            "name": "support",
+            "passed": true,
+            "actual": 0.935556,
+            "required": 0.55,
+            "reason": "Evidence support must clear the minimum gate."
+          },
+          {
+            "name": "provenance",
+            "passed": true,
+            "actual": 0.98,
+            "required": 0.5,
+            "reason": "The evidence chain must be inspectable."
+          },
+          {
+            "name": "independence",
+            "passed": true,
+            "actual": 0.9,
+            "required": 0.35,
+            "reason": "Corroboration must not be purely circular."
+          },
+          {
+            "name": "reproducibility",
+            "passed": true,
+            "actual": 0.92,
+            "required": 0.35,
+            "reason": "The result must have a meaningful replication path."
+          },
+          {
+            "name": "source_count",
+            "passed": true,
+            "actual": 8,
+            "required": 2,
+            "reason": "At least the configured number of sources is required."
+          },
+          {
+            "name": "conflict",
+            "passed": true,
+            "actual": 0.95,
+            "required": 0.35,
+            "reason": "A Cascade candidate must materially challenge the foundation."
+          }
+        ],
+        "blockers": [],
+        "warnings": [
+          "uncertainty is zero; the positive denominator floor prevents infinity"
+        ],
+        "interpretation": "The claim clears the evidence, conflict, absolute-pressure, and relative-margin gates. This authorizes structured review for a possible Cascade; it does not automatically rewrite the foundation.",
+        "claim_boundary": [
+          "Truth Pressure is not the probability that a claim is true.",
+          "Structural importance cannot substitute for evidence.",
+          "Conviction is not an input to the canonical metric.",
+          "A Cascade candidate authorizes review, not automatic replacement.",
+          "The default thresholds are synthetic calibration defaults, not universal constants.",
+          "Zero uncertainty does not produce infinity.",
+          "FRONTIER is a maturity state, not the numeric value 999."
+        ]
+      }
+    },
+    {
+      "id": "TP009",
+      "name": "Low impact",
+      "passed": true,
+      "detail": {
+        "truth_pressure_version": "0.1.0",
+        "claim_id": "K_NEW_STRONG",
+        "vector": {
+          "support": 0.935556,
+          "impact": 0.1,
+          "conflict": 0.95,
+          "uncertainty": 0.08
+        },
+        "raw_pressure": 0.493766,
+        "bounded_pressure": 0.330551,
+        "foundation_pressure": 0.1845,
+        "delta_vs_foundation": 0.146051,
+        "state": "OBSERVE",
+        "cascade_authorized": false,
+        "gates": [
+          {
+            "name": "support",
+            "passed": true,
+            "actual": 0.935556,
+            "required": 0.55,
+            "reason": "Evidence support must clear the minimum gate."
+          },
+          {
+            "name": "provenance",
+            "passed": true,
+            "actual": 0.98,
+            "required": 0.5,
+            "reason": "The evidence chain must be inspectable."
+          },
+          {
+            "name": "independence",
+            "passed": true,
+            "actual": 0.9,
+            "required": 0.35,
+            "reason": "Corroboration must not be purely circular."
+          },
+          {
+            "name": "reproducibility",
+            "passed": true,
+            "actual": 0.92,
+            "required": 0.35,
+            "reason": "The result must have a meaningful replication path."
+          },
+          {
+            "name": "source_count",
+            "passed": true,
+            "actual": 8,
+            "required": 2,
+            "reason": "At least the configured number of sources is required."
+          },
+          {
+            "name": "conflict",
+            "passed": true,
+            "actual": 0.95,
+            "required": 0.35,
+            "reason": "A Cascade candidate must materially challenge the foundation."
+          }
+        ],
+        "blockers": [],
+        "warnings": [],
+        "interpretation": "The claim currently exerts low evidence-weighted revision pressure.",
+        "claim_boundary": [
+          "Truth Pressure is not the probability that a claim is true.",
+          "Structural importance cannot substitute for evidence.",
+          "Conviction is not an input to the canonical metric.",
+          "A Cascade candidate authorizes review, not automatic replacement.",
+          "The default thresholds are synthetic calibration defaults, not universal constants.",
+          "Zero uncertainty does not produce infinity.",
+          "FRONTIER is a maturity state, not the numeric value 999."
+        ]
+      }
+    },
+    {
+      "id": "TP010",
+      "name": "Low reproducibility",
+      "passed": true,
+      "detail": {
+        "truth_pressure_version": "0.1.0",
+        "claim_id": "K_NEW_STRONG",
+        "vector": {
+          "support": 0.537184,
+          "impact": 0.924662,
+          "conflict": 0.95,
+          "uncertainty": 0.08
+        },
+        "raw_pressure": 2.621544,
+        "bounded_pressure": 0.723875,
+        "foundation_pressure": 0.1845,
+        "delta_vs_foundation": 0.539375,
+        "state": "HELD_FRONTIER",
+        "cascade_authorized": false,
+        "gates": [
+          {
+            "name": "support",
+            "passed": false,
+            "actual": 0.537184,
+            "required": 0.55,
+            "reason": "Evidence support must clear the minimum gate."
+          },
+          {
+            "name": "provenance",
+            "passed": true,
+            "actual": 0.98,
+            "required": 0.5,
+            "reason": "The evidence chain must be inspectable."
+          },
+          {
+            "name": "independence",
+            "passed": true,
+            "actual": 0.9,
+            "required": 0.35,
+            "reason": "Corroboration must not be purely circular."
+          },
+          {
+            "name": "reproducibility",
+            "passed": false,
+            "actual": 0.1,
+            "required": 0.35,
+            "reason": "The result must have a meaningful replication path."
+          },
+          {
+            "name": "source_count",
+            "passed": true,
+            "actual": 8,
+            "required": 2,
+            "reason": "At least the configured number of sources is required."
+          },
+          {
+            "name": "conflict",
+            "passed": true,
+            "actual": 0.95,
+            "required": 0.35,
+            "reason": "A Cascade candidate must materially challenge the foundation."
+          }
+        ],
+        "blockers": [
+          "reproducibility gate failed: 0.1 < 0.35",
+          "support gate failed: 0.537184 < 0.55"
+        ],
+        "warnings": [],
+        "interpretation": "The claim may be consequential, but its evidence gates do not permit promotion. Preserve it as a frontier claim without a numeric sentinel such as 999 or infinity.",
+        "claim_boundary": [
+          "Truth Pressure is not the probability that a claim is true.",
+          "Structural importance cannot substitute for evidence.",
+          "Conviction is not an input to the canonical metric.",
+          "A Cascade candidate authorizes review, not automatic replacement.",
+          "The default thresholds are synthetic calibration defaults, not universal constants.",
+          "Zero uncertainty does not produce infinity.",
+          "FRONTIER is a maturity state, not the numeric value 999."
+        ]
+      }
+    },
+    {
+      "id": "TP011",
+      "name": "Circular evidence",
+      "passed": true,
+      "detail": {
+        "truth_pressure_version": "0.1.0",
+        "claim_id": "K_NEW_STRONG",
+        "vector": {
+          "support": 0.540144,
+          "impact": 0.924662,
+          "conflict": 0.95,
+          "uncertainty": 0.08
+        },
+        "raw_pressure": 2.635989,
+        "bounded_pressure": 0.724972,
+        "foundation_pressure": 0.1845,
+        "delta_vs_foundation": 0.540472,
+        "state": "HELD_FRONTIER",
+        "cascade_authorized": false,
+        "gates": [
+          {
+            "name": "support",
+            "passed": false,
+            "actual": 0.540144,
+            "required": 0.55,
+            "reason": "Evidence support must clear the minimum gate."
+          },
+          {
+            "name": "provenance",
+            "passed": true,
+            "actual": 0.98,
+            "required": 0.5,
+            "reason": "The evidence chain must be inspectable."
+          },
+          {
+            "name": "independence",
+            "passed": false,
+            "actual": 0.1,
+            "required": 0.35,
+            "reason": "Corroboration must not be purely circular."
+          },
+          {
+            "name": "reproducibility",
+            "passed": true,
+            "actual": 0.92,
+            "required": 0.35,
+            "reason": "The result must have a meaningful replication path."
+          },
+          {
+            "name": "source_count",
+            "passed": true,
+            "actual": 8,
+            "required": 2,
+            "reason": "At least the configured number of sources is required."
+          },
+          {
+            "name": "conflict",
+            "passed": true,
+            "actual": 0.95,
+            "required": 0.35,
+            "reason": "A Cascade candidate must materially challenge the foundation."
+          }
+        ],
+        "blockers": [
+          "independence gate failed: 0.1 < 0.35",
+          "support gate failed: 0.540144 < 0.55"
+        ],
+        "warnings": [],
+        "interpretation": "The claim may be consequential, but its evidence gates do not permit promotion. Preserve it as a frontier claim without a numeric sentinel such as 999 or infinity.",
+        "claim_boundary": [
+          "Truth Pressure is not the probability that a claim is true.",
+          "Structural importance cannot substitute for evidence.",
+          "Conviction is not an input to the canonical metric.",
+          "A Cascade candidate authorizes review, not automatic replacement.",
+          "The default thresholds are synthetic calibration defaults, not universal constants.",
+          "Zero uncertainty does not produce infinity.",
+          "FRONTIER is a maturity state, not the numeric value 999."
+        ]
+      }
+    },
+    {
+      "id": "TP012",
+      "name": "Out of range",
+      "passed": true,
+      "detail": {
+        "error_type": "TruthPressureError",
+        "error": "evidence_quality must be finite and within [0, 1]"
+      }
+    },
+    {
+      "id": "TP013",
+      "name": "Negligible conflict",
+      "passed": true,
+      "detail": {
+        "truth_pressure_version": "0.1.0",
+        "claim_id": "K_NEW_STRONG",
+        "vector": {
+          "support": 0.935556,
+          "impact": 0.924662,
+          "conflict": 0.01,
+          "uncertainty": 0.08
+        },
+        "raw_pressure": 0.04806,
+        "bounded_pressure": 0.045856,
+        "foundation_pressure": 0.1845,
+        "delta_vs_foundation": -0.138644,
+        "state": "OBSERVE",
+        "cascade_authorized": false,
+        "gates": [
+          {
+            "name": "support",
+            "passed": true,
+            "actual": 0.935556,
+            "required": 0.55,
+            "reason": "Evidence support must clear the minimum gate."
+          },
+          {
+            "name": "provenance",
+            "passed": true,
+            "actual": 0.98,
+            "required": 0.5,
+            "reason": "The evidence chain must be inspectable."
+          },
+          {
+            "name": "independence",
+            "passed": true,
+            "actual": 0.9,
+            "required": 0.35,
+            "reason": "Corroboration must not be purely circular."
+          },
+          {
+            "name": "reproducibility",
+            "passed": true,
+            "actual": 0.92,
+            "required": 0.35,
+            "reason": "The result must have a meaningful replication path."
+          },
+          {
+            "name": "source_count",
+            "passed": true,
+            "actual": 8,
+            "required": 2,
+            "reason": "At least the configured number of sources is required."
+          },
+          {
+            "name": "conflict",
+            "passed": false,
+            "actual": 0.01,
+            "required": 0.35,
+            "reason": "A Cascade candidate must materially challenge the foundation."
+          }
+        ],
+        "blockers": [],
+        "warnings": [],
+        "interpretation": "The claim currently exerts low evidence-weighted revision pressure.",
+        "claim_boundary": [
+          "Truth Pressure is not the probability that a claim is true.",
+          "Structural importance cannot substitute for evidence.",
+          "Conviction is not an input to the canonical metric.",
+          "A Cascade candidate authorizes review, not automatic replacement.",
+          "The default thresholds are synthetic calibration defaults, not universal constants.",
+          "Zero uncertainty does not produce infinity.",
+          "FRONTIER is a maturity state, not the numeric value 999."
+        ]
+      }
+    },
+    {
+      "id": "TP014",
+      "name": "Impact cannot rescue zero replication",
+      "passed": true,
+      "detail": {
+        "truth_pressure_version": "0.1.0",
+        "claim_id": "K_FRONTIER",
+        "vector": {
+          "support": 0.0,
+          "impact": 1.0,
+          "conflict": 0.9,
+          "uncertainty": 0.8
+        },
+        "raw_pressure": 0.0,
+        "bounded_pressure": 0.0,
+        "foundation_pressure": null,
+        "delta_vs_foundation": null,
+        "state": "HELD_FRONTIER",
+        "cascade_authorized": false,
+        "gates": [
+          {
+            "name": "support",
+            "passed": false,
+            "actual": 0.0,
+            "required": 0.55,
+            "reason": "Evidence support must clear the minimum gate."
+          },
+          {
+            "name": "provenance",
+            "passed": false,
+            "actual": 0.35,
+            "required": 0.5,
+            "reason": "The evidence chain must be inspectable."
+          },
+          {
+            "name": "independence",
+            "passed": false,
+            "actual": 0.1,
+            "required": 0.35,
+            "reason": "Corroboration must not be purely circular."
+          },
+          {
+            "name": "reproducibility",
+            "passed": false,
+            "actual": 0,
+            "required": 0.35,
+            "reason": "The result must have a meaningful replication path."
+          },
+          {
+            "name": "source_count",
+            "passed": false,
+            "actual": 1,
+            "required": 2,
+            "reason": "At least the configured number of sources is required."
+          },
+          {
+            "name": "conflict",
+            "passed": true,
+            "actual": 0.9,
+            "required": 0.35,
+            "reason": "A Cascade candidate must materially challenge the foundation."
+          }
+        ],
+        "blockers": [
+          "independence gate failed: 0.1 < 0.35",
+          "provenance gate failed: 0.35 < 0.5",
+          "reproducibility gate failed: 0 < 0.35",
+          "source_count gate failed: 1 < 2",
+          "support gate failed: 0.0 < 0.55"
+        ],
+        "warnings": [
+          "no foundation comparator supplied; Cascade authorization is unavailable"
+        ],
+        "interpretation": "The claim may be consequential, but its evidence gates do not permit promotion. Preserve it as a frontier claim without a numeric sentinel such as 999 or infinity.",
+        "claim_boundary": [
+          "Truth Pressure is not the probability that a claim is true.",
+          "Structural importance cannot substitute for evidence.",
+          "Conviction is not an input to the canonical metric.",
+          "A Cascade candidate authorizes review, not automatic replacement.",
+          "The default thresholds are synthetic calibration defaults, not universal constants.",
+          "Zero uncertainty does not produce infinity.",
+          "FRONTIER is a maturity state, not the numeric value 999."
+        ]
+      }
+    },
+    {
+      "id": "TP015",
+      "name": "Strict custom threshold",
+      "passed": true,
+      "detail": {
+        "truth_pressure_version": "0.1.0",
+        "claim_id": "K_NEW_STRONG",
+        "vector": {
+          "support": 0.935556,
+          "impact": 0.924662,
+          "conflict": 0.95,
+          "uncertainty": 0.08
+        },
+        "raw_pressure": 4.565663,
+        "bounded_pressure": 0.820327,
+        "foundation_pressure": 0.1845,
+        "delta_vs_foundation": 0.635827,
+        "state": "CHALLENGE",
+        "cascade_authorized": false,
+        "gates": [
+          {
+            "name": "support",
+            "passed": true,
+            "actual": 0.935556,
+            "required": 0.55,
+            "reason": "Evidence support must clear the minimum gate."
+          },
+          {
+            "name": "provenance",
+            "passed": true,
+            "actual": 0.98,
+            "required": 0.5,
+            "reason": "The evidence chain must be inspectable."
+          },
+          {
+            "name": "independence",
+            "passed": true,
+            "actual": 0.9,
+            "required": 0.35,
+            "reason": "Corroboration must not be purely circular."
+          },
+          {
+            "name": "reproducibility",
+            "passed": true,
+            "actual": 0.92,
+            "required": 0.35,
+            "reason": "The result must have a meaningful replication path."
+          },
+          {
+            "name": "source_count",
+            "passed": true,
+            "actual": 8,
+            "required": 2,
+            "reason": "At least the configured number of sources is required."
+          },
+          {
+            "name": "conflict",
+            "passed": true,
+            "actual": 0.95,
+            "required": 0.35,
+            "reason": "A Cascade candidate must materially challenge the foundation."
+          }
+        ],
+        "blockers": [],
+        "warnings": [],
+        "interpretation": "The claim meaningfully challenges the foundation but does not clear every Cascade gate.",
+        "claim_boundary": [
+          "Truth Pressure is not the probability that a claim is true.",
+          "Structural importance cannot substitute for evidence.",
+          "Conviction is not an input to the canonical metric.",
+          "A Cascade candidate authorizes review, not automatic replacement.",
+          "The default thresholds are synthetic calibration defaults, not universal constants.",
+          "Zero uncertainty does not produce infinity.",
+          "FRONTIER is a maturity state, not the numeric value 999."
+        ]
+      }
+    },
+    {
+      "id": "TP016",
+      "name": "Foundation stronger",
+      "passed": true,
+      "detail": {
+        "truth_pressure_version": "0.1.0",
+        "claim_id": "K_FOUND",
+        "vector": {
+          "support": 0.550519,
+          "impact": 0.924662,
+          "conflict": 0.2,
+          "uncertainty": 0.35
+        },
+        "raw_pressure": 0.226242,
+        "bounded_pressure": 0.1845,
+        "foundation_pressure": 0.820327,
+        "delta_vs_foundation": -0.635827,
+        "state": "OBSERVE",
+        "cascade_authorized": false,
+        "gates": [
+          {
+            "name": "support",
+            "passed": true,
+            "actual": 0.550519,
+            "required": 0.55,
+            "reason": "Evidence support must clear the minimum gate."
+          },
+          {
+            "name": "provenance",
+            "passed": true,
+            "actual": 0.8,
+            "required": 0.5,
+            "reason": "The evidence chain must be inspectable."
+          },
+          {
+            "name": "independence",
+            "passed": true,
+            "actual": 0.45,
+            "required": 0.35,
+            "reason": "Corroboration must not be purely circular."
+          },
+          {
+            "name": "reproducibility",
+            "passed": true,
+            "actual": 0.5,
+            "required": 0.35,
+            "reason": "The result must have a meaningful replication path."
+          },
+          {
+            "name": "source_count",
+            "passed": true,
+            "actual": 5,
+            "required": 2,
+            "reason": "At least the configured number of sources is required."
+          },
+          {
+            "name": "conflict",
+            "passed": false,
+            "actual": 0.2,
+            "required": 0.35,
+            "reason": "A Cascade candidate must materially challenge the foundation."
+          }
+        ],
+        "blockers": [],
+        "warnings": [],
+        "interpretation": "The claim currently exerts low evidence-weighted revision pressure.",
+        "claim_boundary": [
+          "Truth Pressure is not the probability that a claim is true.",
+          "Structural importance cannot substitute for evidence.",
+          "Conviction is not an input to the canonical metric.",
+          "A Cascade candidate authorizes review, not automatic replacement.",
+          "The default thresholds are synthetic calibration defaults, not universal constants.",
+          "Zero uncertainty does not produce infinity.",
+          "FRONTIER is a maturity state, not the numeric value 999."
+        ]
+      }
+    }
+  ],
+  "claim_boundary": "Synthetic software conformance only; thresholds are not empirically calibrated."
+}

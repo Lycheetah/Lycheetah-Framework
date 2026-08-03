@@ -1,0 +1,54 @@
+{
+  "version": "0.4",
+  "status": "frozen-before-human-ratings",
+  "files": {
+    "RATER_INSTRUCTIONS.md": {
+      "sha256": "24050e05c3451153779896541d4d8d02686a187909ce873707fe8147f1ce7c55",
+      "bytes": 2480
+    },
+    "README.md": {
+      "sha256": "d2fce43c2206a7380719a47175dd6896674667c1eb94699357f9f850bbfc0906",
+      "bytes": 1194
+    },
+    "admin/BLINDING_KEY.json": {
+      "sha256": "cdd19a335709911f0052a97c2fa6316462f60d1d389b34b5524ddcb5078db704",
+      "bytes": 6068
+    },
+    "admin/DEVELOPMENT_CORPUS_v0.1.jsonl": {
+      "sha256": "64329863db70d3682b89bcd114bc02bf0a45d05267c6116520dee03e1b49f0e1",
+      "bytes": 9477
+    },
+    "rater_packets/RATER_A_PACKET.csv": {
+      "sha256": "7d15793a0b56de7fccb66148d94cb03d0ef2282156adb491492dac1fe46c3827",
+      "bytes": 3506
+    },
+    "rater_packets/RATER_B_PACKET.csv": {
+      "sha256": "d4e9747335f3a255bdec7ab628e8abe22fef4f2d18468385555e1466a8e3f349",
+      "bytes": 3506
+    },
+    "rater_packets/RATER_C_PACKET.csv": {
+      "sha256": "bbe7c28154a2ee573cf294aa7c5e571160fbcc7939cabeffb7815696ccad766b",
+      "bytes": 3506
+    },
+    "reports/COLLECTION_CHECKLIST.md": {
+      "sha256": "ba0548832038016a75611f894c3b9993f1c883aa0bbab20429d73ae0088548ba",
+      "bytes": 580
+    },
+    "reports/PRE_REGISTRATION.md": {
+      "sha256": "d89a252c169945050f9f44bacb0a944d11980bbe01fc523f1721a51a1ac8dfb6",
+      "bytes": 1906
+    },
+    "schemas/annotation.schema.json": {
+      "sha256": "07607fbc8a0d4b8745040545f207a66ab977d39c899e0a7fe66f9ab29df185c1",
+      "bytes": 988
+    },
+    "scripts/analyze_annotations.py": {
+      "sha256": "4fd7870bd583c8b3fad7a0fd56970e55c9d97ea077de667c716e41679e081514",
+      "bytes": 5597
+    },
+    "templates/ADJUDICATION_TEMPLATE.csv": {
+      "sha256": "9c1b868208b4f1cd7544a5b6f8fe243f29250dda9964fb18198298df48f666b0",
+      "bytes": 109
+    }
+  }
+}

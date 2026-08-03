@@ -1,0 +1,27 @@
+{
+  "bundle": "TRUTH_PRESSURE_LIVE_SOURCE_COLLECTOR_v0.8",
+  "version": "0.8.0",
+  "testPassed": true,
+  "files": {
+    "README.md": {
+      "bytes": 1558,
+      "sha256": "6d186a12ccf1fda72339617351924291699ada0466af12080cf6668de5203ed9"
+    },
+    "TEST_RESULTS.json": {
+      "bytes": 1124,
+      "sha256": "dffd6797aa4b4afb1c290ea18f89da216bbfb02afe3b0c28969303473a17c802"
+    },
+    "collect-and-zip.ps1": {
+      "bytes": 562,
+      "sha256": "85fe2431cf5a9727375f51286583cf3203f28b107fc9d48c38cf25832797198f"
+    },
+    "collect-and-zip.sh": {
+      "bytes": 422,
+      "sha256": "9f56ce3667753e9cb6fea16246154e975af6cb6945b0b57751a8fbec880c5aa2"
+    },
+    "collect-truth-pressure-live-source.mjs": {
+      "bytes": 10772,
+      "sha256": "f5f4b3bb8341ea489e77b25dcf5230b31c75913ede4737e317238d5a59397518"
+    }
+  }
+}

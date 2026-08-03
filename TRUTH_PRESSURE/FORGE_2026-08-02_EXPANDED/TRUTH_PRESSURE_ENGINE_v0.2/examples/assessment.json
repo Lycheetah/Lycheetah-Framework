@@ -1,0 +1,53 @@
+{
+  "claim": "Removing component B reverses the effect while component C remains unchanged.",
+  "evidenceItems": [
+    {
+      "id": "trial-1",
+      "description": "Preregistered intervention produced the predicted reversal.",
+      "directness": 0.95,
+      "verifiability": 0.9,
+      "sourceQuality": 0.8,
+      "independence": 0.7,
+      "replication": 0.5,
+      "provenance": "Trial record A"
+    },
+    {
+      "id": "trial-2",
+      "description": "Independent second trial reproduced the pattern.",
+      "directness": 0.95,
+      "verifiability": 0.9,
+      "sourceQuality": 0.8,
+      "independence": 0.95,
+      "replication": 0.9,
+      "provenance": "Trial record B"
+    }
+  ],
+  "explanationItems": [
+    {
+      "id": "mechanism",
+      "description": "A specified mechanism predicts the intervention outcome.",
+      "mechanismSpecificity": 0.85,
+      "scopeFit": 0.8,
+      "predictiveRisk": 0.9,
+      "unification": 0.55,
+      "falsifiability": 0.95
+    }
+  ],
+  "strainItems": [
+    {
+      "id": "alternative",
+      "description": "One alternative mechanism remains possible.",
+      "severity": 0.35,
+      "unresolved": 0.6,
+      "centrality": 0.45,
+      "kind": "alternative"
+    }
+  ],
+  "loadBearingness": 0.7,
+  "handling": {
+    "acknowledgesLimits": 0.9,
+    "distinguishesAlternatives": 0.8,
+    "scopesClaims": 0.8,
+    "namesFalsifier": 0.9
+  }
+}

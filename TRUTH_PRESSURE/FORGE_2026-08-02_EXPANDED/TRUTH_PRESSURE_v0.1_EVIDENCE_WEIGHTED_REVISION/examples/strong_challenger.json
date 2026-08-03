@@ -1,0 +1,26 @@
+{
+  "claim": {
+    "claim_id": "K_NEW_STRONG",
+    "evidence_quality": 0.95,
+    "source_independence": 0.90,
+    "reproducibility": 0.92,
+    "provenance_completeness": 0.98,
+    "load_bearing_centrality": 0.95,
+    "scope_of_consequence": 0.90,
+    "contradiction_strength": 0.95,
+    "uncertainty": 0.08,
+    "source_count": 8
+  },
+  "foundation": {
+    "claim_id": "K_FOUND",
+    "evidence_quality": 0.55,
+    "source_independence": 0.45,
+    "reproducibility": 0.50,
+    "provenance_completeness": 0.80,
+    "load_bearing_centrality": 0.95,
+    "scope_of_consequence": 0.90,
+    "contradiction_strength": 0.20,
+    "uncertainty": 0.35,
+    "source_count": 5
+  }
+}

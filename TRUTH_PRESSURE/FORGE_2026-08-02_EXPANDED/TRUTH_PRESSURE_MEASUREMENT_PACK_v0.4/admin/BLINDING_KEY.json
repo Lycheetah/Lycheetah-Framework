@@ -1,0 +1,300 @@
+{
+  "version": "TP-MEASURE-0.4",
+  "purpose": "blinded construct pilot on development corpus",
+  "raters": {
+    "A": [
+      {
+        "item_code": "A-354013-01",
+        "case_id": "TP-C003"
+      },
+      {
+        "item_code": "A-764386-02",
+        "case_id": "TP-C012"
+      },
+      {
+        "item_code": "A-800842-03",
+        "case_id": "TP-C024"
+      },
+      {
+        "item_code": "A-257105-04",
+        "case_id": "TP-C014"
+      },
+      {
+        "item_code": "A-895913-05",
+        "case_id": "TP-C023"
+      },
+      {
+        "item_code": "A-364100-06",
+        "case_id": "TP-C011"
+      },
+      {
+        "item_code": "A-150992-07",
+        "case_id": "TP-C022"
+      },
+      {
+        "item_code": "A-943725-08",
+        "case_id": "TP-C020"
+      },
+      {
+        "item_code": "A-760750-09",
+        "case_id": "TP-C017"
+      },
+      {
+        "item_code": "A-671088-10",
+        "case_id": "TP-C013"
+      },
+      {
+        "item_code": "A-463578-11",
+        "case_id": "TP-C015"
+      },
+      {
+        "item_code": "A-242893-12",
+        "case_id": "TP-C006"
+      },
+      {
+        "item_code": "A-807101-13",
+        "case_id": "TP-C004"
+      },
+      {
+        "item_code": "A-250267-14",
+        "case_id": "TP-C005"
+      },
+      {
+        "item_code": "A-352775-15",
+        "case_id": "TP-C002"
+      },
+      {
+        "item_code": "A-685000-16",
+        "case_id": "TP-C019"
+      },
+      {
+        "item_code": "A-581385-17",
+        "case_id": "TP-C009"
+      },
+      {
+        "item_code": "A-138161-18",
+        "case_id": "TP-C016"
+      },
+      {
+        "item_code": "A-548384-19",
+        "case_id": "TP-C010"
+      },
+      {
+        "item_code": "A-407612-20",
+        "case_id": "TP-C021"
+      },
+      {
+        "item_code": "A-430196-21",
+        "case_id": "TP-C007"
+      },
+      {
+        "item_code": "A-250696-22",
+        "case_id": "TP-C001"
+      },
+      {
+        "item_code": "A-678102-23",
+        "case_id": "TP-C018"
+      },
+      {
+        "item_code": "A-743206-24",
+        "case_id": "TP-C008"
+      }
+    ],
+    "B": [
+      {
+        "item_code": "B-280420-01",
+        "case_id": "TP-C001"
+      },
+      {
+        "item_code": "B-151462-02",
+        "case_id": "TP-C013"
+      },
+      {
+        "item_code": "B-735288-03",
+        "case_id": "TP-C002"
+      },
+      {
+        "item_code": "B-703904-04",
+        "case_id": "TP-C007"
+      },
+      {
+        "item_code": "B-888277-05",
+        "case_id": "TP-C022"
+      },
+      {
+        "item_code": "B-997429-06",
+        "case_id": "TP-C008"
+      },
+      {
+        "item_code": "B-459099-07",
+        "case_id": "TP-C018"
+      },
+      {
+        "item_code": "B-442258-08",
+        "case_id": "TP-C023"
+      },
+      {
+        "item_code": "B-189305-09",
+        "case_id": "TP-C021"
+      },
+      {
+        "item_code": "B-837199-10",
+        "case_id": "TP-C010"
+      },
+      {
+        "item_code": "B-910046-11",
+        "case_id": "TP-C019"
+      },
+      {
+        "item_code": "B-596560-12",
+        "case_id": "TP-C004"
+      },
+      {
+        "item_code": "B-287122-13",
+        "case_id": "TP-C015"
+      },
+      {
+        "item_code": "B-372177-14",
+        "case_id": "TP-C016"
+      },
+      {
+        "item_code": "B-680105-15",
+        "case_id": "TP-C020"
+      },
+      {
+        "item_code": "B-607983-16",
+        "case_id": "TP-C011"
+      },
+      {
+        "item_code": "B-304497-17",
+        "case_id": "TP-C005"
+      },
+      {
+        "item_code": "B-844205-18",
+        "case_id": "TP-C009"
+      },
+      {
+        "item_code": "B-735996-19",
+        "case_id": "TP-C003"
+      },
+      {
+        "item_code": "B-361726-20",
+        "case_id": "TP-C017"
+      },
+      {
+        "item_code": "B-469226-21",
+        "case_id": "TP-C006"
+      },
+      {
+        "item_code": "B-540545-22",
+        "case_id": "TP-C012"
+      },
+      {
+        "item_code": "B-845045-23",
+        "case_id": "TP-C014"
+      },
+      {
+        "item_code": "B-844677-24",
+        "case_id": "TP-C024"
+      }
+    ],
+    "C": [
+      {
+        "item_code": "C-593977-01",
+        "case_id": "TP-C004"
+      },
+      {
+        "item_code": "C-135740-02",
+        "case_id": "TP-C016"
+      },
+      {
+        "item_code": "C-609277-03",
+        "case_id": "TP-C017"
+      },
+      {
+        "item_code": "C-753181-04",
+        "case_id": "TP-C001"
+      },
+      {
+        "item_code": "C-637428-05",
+        "case_id": "TP-C003"
+      },
+      {
+        "item_code": "C-585826-06",
+        "case_id": "TP-C022"
+      },
+      {
+        "item_code": "C-461327-07",
+        "case_id": "TP-C023"
+      },
+      {
+        "item_code": "C-693970-08",
+        "case_id": "TP-C024"
+      },
+      {
+        "item_code": "C-645003-09",
+        "case_id": "TP-C019"
+      },
+      {
+        "item_code": "C-440065-10",
+        "case_id": "TP-C006"
+      },
+      {
+        "item_code": "C-248107-11",
+        "case_id": "TP-C013"
+      },
+      {
+        "item_code": "C-956376-12",
+        "case_id": "TP-C008"
+      },
+      {
+        "item_code": "C-877906-13",
+        "case_id": "TP-C002"
+      },
+      {
+        "item_code": "C-980438-14",
+        "case_id": "TP-C020"
+      },
+      {
+        "item_code": "C-467641-15",
+        "case_id": "TP-C018"
+      },
+      {
+        "item_code": "C-464792-16",
+        "case_id": "TP-C015"
+      },
+      {
+        "item_code": "C-581057-17",
+        "case_id": "TP-C021"
+      },
+      {
+        "item_code": "C-849822-18",
+        "case_id": "TP-C012"
+      },
+      {
+        "item_code": "C-866743-19",
+        "case_id": "TP-C014"
+      },
+      {
+        "item_code": "C-935497-20",
+        "case_id": "TP-C005"
+      },
+      {
+        "item_code": "C-142806-21",
+        "case_id": "TP-C010"
+      },
+      {
+        "item_code": "C-503832-22",
+        "case_id": "TP-C009"
+      },
+      {
+        "item_code": "C-991995-23",
+        "case_id": "TP-C011"
+      },
+      {
+        "item_code": "C-171581-24",
+        "case_id": "TP-C007"
+      }
+    ]
+  }
+}

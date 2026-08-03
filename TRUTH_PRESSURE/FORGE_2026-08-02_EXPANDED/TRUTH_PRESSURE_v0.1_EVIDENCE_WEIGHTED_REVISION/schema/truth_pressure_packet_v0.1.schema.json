@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Truth Pressure v0.1 evaluation packet",
+  "type": "object",
+  "required": ["claim"],
+  "properties": {
+    "claim": {"$ref": "#/$defs/claim"},
+    "foundation": {"$ref": "#/$defs/claim"},
+    "config": {"type": "object"}
+  },
+  "$defs": {
+    "claim": {
+      "type": "object",
+      "required": [
+        "evidence_quality",
+        "source_independence",
+        "reproducibility",
+        "provenance_completeness",
+        "load_bearing_centrality",
+        "scope_of_consequence",
+        "contradiction_strength",
+        "uncertainty",
+        "source_count"
+      ],
+      "properties": {
+        "claim_id": {"type": "string"},
+        "evidence_quality": {"type": "number", "minimum": 0, "maximum": 1},
+        "source_independence": {"type": "number", "minimum": 0, "maximum": 1},
+        "reproducibility": {"type": "number", "minimum": 0, "maximum": 1},
+        "provenance_completeness": {"type": "number", "minimum": 0, "maximum": 1},
+        "load_bearing_centrality": {"type": "number", "minimum": 0, "maximum": 1},
+        "scope_of_consequence": {"type": "number", "minimum": 0, "maximum": 1},
+        "contradiction_strength": {"type": "number", "minimum": 0, "maximum": 1},
+        "uncertainty": {"type": "number", "minimum": 0, "maximum": 1},
+        "source_count": {"type": "integer", "minimum": 0},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

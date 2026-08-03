@@ -1,0 +1,26 @@
+{
+  "claim": {
+    "claim_id": "K_COMPATIBLE",
+    "evidence_quality": 0.92,
+    "source_independence": 0.88,
+    "reproducibility": 0.90,
+    "provenance_completeness": 0.95,
+    "load_bearing_centrality": 0.70,
+    "scope_of_consequence": 0.60,
+    "contradiction_strength": 0.05,
+    "uncertainty": 0.10,
+    "source_count": 7
+  },
+  "foundation": {
+    "claim_id": "K_FOUND",
+    "evidence_quality": 0.55,
+    "source_independence": 0.45,
+    "reproducibility": 0.50,
+    "provenance_completeness": 0.80,
+    "load_bearing_centrality": 0.95,
+    "scope_of_consequence": 0.90,
+    "contradiction_strength": 0.20,
+    "uncertainty": 0.35,
+    "source_count": 5
+  }
+}

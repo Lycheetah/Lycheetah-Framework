@@ -1,0 +1,83 @@
+{
+  "name": "TRUTH_PRESSURE_ENGINE_v0.2",
+  "version": "0.2.0",
+  "status": "executable_research_tool_precalibration",
+  "files": {
+    "FROZEN_CORPUS_DEVELOPMENT_REPORT.md": {
+      "bytes": 3671,
+      "sha256": "894826628e744109173eab8c68e3ad70b0e103395a7aca55d3868814dbc782ac"
+    },
+    "FROZEN_CORPUS_v0.2_RESULTS.jsonl": {
+      "bytes": 54275,
+      "sha256": "48a1fa178b32906651467171e6d1897ac29f4ba80fce9c302d153ac2047af4d5"
+    },
+    "README.md": {
+      "bytes": 1902,
+      "sha256": "5386768556e4c1369947a763eacc5b9c485738d41ec52b7fd5293a63f8b6e7e8"
+    },
+    "VERIFY_OUTPUT.txt": {
+      "bytes": 1310,
+      "sha256": "661f293c87e858cb4ae0f3f2a2537a901a655ce97f018b73d8126227f120db6d"
+    },
+    "data/frozen-corpus-v0.1.jsonl": {
+      "bytes": 9477,
+      "sha256": "64329863db70d3682b89bcd114bc02bf0a45d05267c6116520dee03e1b49f0e1"
+    },
+    "docs/CLAIM_REGISTER.md": {
+      "bytes": 775,
+      "sha256": "679b47eb18efc5d1ff9cdbf1b446cd5a75072d6e7864d92217b5efae535c93d6"
+    },
+    "docs/MIGRATION_FROM_SOVEREIGN_SOL_v0.1.md": {
+      "bytes": 1525,
+      "sha256": "fda04f07d2fe4b4d0c43eba28d9d53404fd886a876902385ae1da5cd14f4536a"
+    },
+    "examples/assessment-result.json": {
+      "bytes": 1382,
+      "sha256": "7328b07a7d7bbee9f1f37899292a5efb390862d5f4af9aba00cc3c32770ec3c7"
+    },
+    "examples/assessment.json": {
+      "bytes": 1386,
+      "sha256": "56256eda1ca457756cc7166d8f7a7de998b776fdb29fc5d0d4127a11307b171f"
+    },
+    "package.json": {
+      "bytes": 600,
+      "sha256": "9cb736ab7b9e70cfe50695a77ccb7118dbfc8e7727e895151c2ca35c73f66ad8"
+    },
+    "scripts/verify.ts": {
+      "bytes": 7458,
+      "sha256": "ceb7280bfb5d4403abc7e9aec33842916338742b0d5a7461222acbfaca50352d"
+    },
+    "src/cli.ts": {
+      "bytes": 1355,
+      "sha256": "bd2ec9a51a6d7d04cfbacf1e41c50383be3fcde260b8934a5df31262cdc26308"
+    },
+    "src/core.ts": {
+      "bytes": 3981,
+      "sha256": "2526835c605d79bd0782fd779a1195f4882f2450a5757973c15de37fb3401982"
+    },
+    "src/judge-schema.ts": {
+      "bytes": 1420,
+      "sha256": "e6ffdaa3257eec20fab16756236e7bc83a6ce2000f10aa63fb594f470abc96bb"
+    },
+    "src/onion-v2.ts": {
+      "bytes": 2324,
+      "sha256": "4bd3f8740e30ee15eb21406937cf1a28db1748a2e6ae37ce396ca21cede6117f"
+    },
+    "src/reorganisation.ts": {
+      "bytes": 3105,
+      "sha256": "26e40bcabfd0d01b1a0b77a34a9342e05963eb82bcfe5efc156ab43b436e572d"
+    },
+    "src/structured.ts": {
+      "bytes": 4228,
+      "sha256": "ef08edbfc6c35c50922e07d92e5105df781404a93413f81a6d58b92bd62973f1"
+    },
+    "src/text-adapter.ts": {
+      "bytes": 14811,
+      "sha256": "6ab634c8f17781de113636c62d96f8b6b46f995847a3b8a9d1e450a96e3c745c"
+    },
+    "src/types.ts": {
+      "bytes": 2577,
+      "sha256": "9a27bebca54080f54746ede901c586be4b501417d95b639eacf5af2b7d0450e0"
+    }
+  }
+}

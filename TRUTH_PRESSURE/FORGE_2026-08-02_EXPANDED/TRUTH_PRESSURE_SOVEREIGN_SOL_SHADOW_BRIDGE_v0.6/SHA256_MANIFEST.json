@@ -1,0 +1,120 @@
+{
+  "bundle": "TRUTH_PRESSURE_SOVEREIGN_SOL_SHADOW_BRIDGE_v0.6",
+  "version": "0.6.0-rc.1",
+  "verify_exit_code": 0,
+  "typecheck_exit_code": 0,
+  "files": {
+    "README.md": {
+      "bytes": 2020,
+      "sha256": "3a501fc261275dffc0c693dab30c17e897984c1a07595b6f6313b241ae22d0ca"
+    },
+    "components/cascade/TruthPressureCandidateCard.tsx": {
+      "bytes": 3842,
+      "sha256": "89e0c734ed85b6e69c524ec42ee4a6429526f4f9b0bd3f388d2f574857fe163b"
+    },
+    "docs/CALL_SITE_PATCH_TEMPLATE.md": {
+      "bytes": 2286,
+      "sha256": "051022817cdd06f65257612c75b6b2912d7e7d9bfd8e3369f75bf0cd2a78f02d"
+    },
+    "hooks/useTruthPressureShadow.ts": {
+      "bytes": 2123,
+      "sha256": "3d9aa19cd549719c2d9f0362800afe8bbf9bb0a1af9b5c49e5caec23266dd611"
+    },
+    "lib/cascade-score.ts": {
+      "bytes": 12044,
+      "sha256": "7eb35a04071042a610a1e9770860beb40974fb8fdc5c8373d2e42b226c26408a"
+    },
+    "lib/node-test-shims.d.ts": {
+      "bytes": 86,
+      "sha256": "60b566ae7e94efbda3084569c6245ac66eff9b9d1401122a8bf3ae6e4f1fdc5a"
+    },
+    "lib/truth-pressure-integration/feature.ts": {
+      "bytes": 787,
+      "sha256": "173047cda1251d2f5673f2a0968f8dcfb5e73ca57338c077dfad525e0d8889b3"
+    },
+    "lib/truth-pressure-integration/shadow-service.ts": {
+      "bytes": 1994,
+      "sha256": "0afe0a9238a8a3c01ac01bd3ba15fc16a363c0974149e2a23be42980fc09eaca"
+    },
+    "lib/truth-pressure-integration/shadow-store-async.ts": {
+      "bytes": 676,
+      "sha256": "5f6019917b4e1d0e7cb65a7a4b5874557e4892d203ca578baea72f08a550d133"
+    },
+    "lib/truth-pressure-integration/shadow-store-core.ts": {
+      "bytes": 8612,
+      "sha256": "b32f9a1b21020c912ffde395bf301e5dcb1cc54a4efab04c69dc86cdbce934d0"
+    },
+    "lib/truth-pressure-rc/app-adapter.ts": {
+      "bytes": 8498,
+      "sha256": "8a1ba1cf80719fb05887e0ef6e457e20acfbb3370ef28a859d06e62d8682301a"
+    },
+    "lib/truth-pressure-rc/core.ts": {
+      "bytes": 5384,
+      "sha256": "6b6f96b088104ff5df0ae2ab4c14180d457be89dc1cb03b4fe59e545d48fb3fd"
+    },
+    "lib/truth-pressure-rc/index.ts": {
+      "bytes": 356,
+      "sha256": "51ff8c219ed4bdb074ad141fd2e9c5a56fb679c3253e4c65141656f096881d89"
+    },
+    "lib/truth-pressure-rc/judge-contract.ts": {
+      "bytes": 2733,
+      "sha256": "354059577008506aba1276caf7311ea014b26bbf165839e69859b25c308b6e0e"
+    },
+    "lib/truth-pressure-rc/onion-judge-contract.ts": {
+      "bytes": 5338,
+      "sha256": "305bc3f034b13032da8b21514069603abf4afefe3485ef6fd903ae02c5aec230"
+    },
+    "lib/truth-pressure-rc/onion.ts": {
+      "bytes": 3015,
+      "sha256": "52d32cf92360de70b6ba68e68503a6a845a874ff520a85de0eabea0c7a872cbd"
+    },
+    "lib/truth-pressure-rc/review.ts": {
+      "bytes": 6595,
+      "sha256": "fd9d5f79bf5ff2bdd1e1c2e958b852b325dc3e391d996a3a9bb390f9f16c56e9"
+    },
+    "lib/truth-pressure-rc/shadow.ts": {
+      "bytes": 2291,
+      "sha256": "20ccf75fc23869619a55d9dd35a42f07d441eecedf10c3ab796171a9650d4666"
+    },
+    "lib/truth-pressure-rc/structured.ts": {
+      "bytes": 8028,
+      "sha256": "f3456d10444cb546765e00787938db87d058bbeaffbd115d15a1af7326795779"
+    },
+    "lib/truth-pressure-rc/text-adapter.ts": {
+      "bytes": 12233,
+      "sha256": "85a9388774ef121490b3717de2ab3d7ef896c53f224186e94899e6b34d74ff0c"
+    },
+    "lib/truth-pressure-rc/types.ts": {
+      "bytes": 3410,
+      "sha256": "d2a2d55634a00bec85ef1cc5fa5dfb818bbaef01e1342e4d32f8c13b8ef4c01d"
+    },
+    "lib/truth-pressure-rc/validation.ts": {
+      "bytes": 1890,
+      "sha256": "581f0913bbae798db569131363a00387e9705657f68e264658c7763ab3dbcbae"
+    },
+    "package.json": {
+      "bytes": 268,
+      "sha256": "e51aab7520804117c5f7464b6a2dfca7535bd43d05fd5a75f76e6bdedb1c567f"
+    },
+    "reports/TYPECHECK_OUTPUT.txt": {
+      "bytes": 31,
+      "sha256": "08d923de8f22f4d5d9b4af1e38c55bba3c0abc1fb0bd320fec9f27462324cc47"
+    },
+    "reports/VERIFY_OUTPUT.txt": {
+      "bytes": 855,
+      "sha256": "7176ec5ee2771ffef15193ae79c4b5c5361a8e22a29b3addb237deff4d7887ea"
+    },
+    "scripts/verify-shadow-bridge.ts": {
+      "bytes": 5910,
+      "sha256": "21fe844998ab981a3b74e349cfeccff0d70c67a2083a101c0b560e463e108061"
+    },
+    "tools/apply-shadow-bridge.mjs": {
+      "bytes": 1888,
+      "sha256": "4be5c328f6778d1b457a88a72703bd9dcefadd6095b39895b0be52c328d345bb"
+    },
+    "tsconfig.json": {
+      "bytes": 471,
+      "sha256": "bad8722339d183428c36f4784448a4cc012fcf433b6c5b2447f7ac8fe99077d4"
+    }
+  }
+}

@@ -1,0 +1,3008 @@
+{
+  "version": "TP-SHADOW-DATASET-0.7",
+  "privacy": "NO_RAW_CONTENT",
+  "updatedAt": "2026-08-02T00:00:00.000Z",
+  "maxRecords": 250,
+  "records": [
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:00.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 100,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.0,
+        "piCanon": 0.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:01.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 101,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.1,
+        "piCanon": 2.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.1,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:02.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 102,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.2,
+        "piCanon": 4.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.0,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:03.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 103,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.3,
+        "piCanon": 6.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.09999999999999998,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:04.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 104,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.4,
+        "piCanon": 8.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:05.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 105,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.5,
+        "piCanon": 10.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.3,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:06.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 106,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.6,
+        "piCanon": 12.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.39999999999999997,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:07.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 107,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.7,
+        "piCanon": 14.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.49999999999999994,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:08.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 108,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.8,
+        "piCanon": 16.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.6000000000000001,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:09.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 109,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.9,
+        "piCanon": 18.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.7,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:10.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 110,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.0,
+        "piCanon": 0.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:11.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 111,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.1,
+        "piCanon": 2.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.1,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:12.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 112,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.2,
+        "piCanon": 4.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.0,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:13.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 113,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.3,
+        "piCanon": 6.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.09999999999999998,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:14.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 114,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.4,
+        "piCanon": 8.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:15.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 115,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.5,
+        "piCanon": 10.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.3,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:16.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 116,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.6,
+        "piCanon": 12.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.39999999999999997,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:17.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 117,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.7,
+        "piCanon": 14.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.49999999999999994,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:18.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 118,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.8,
+        "piCanon": 16.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.6000000000000001,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:19.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 119,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.9,
+        "piCanon": 18.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.7,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:20.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 120,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.0,
+        "piCanon": 0.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:21.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 121,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.1,
+        "piCanon": 2.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.1,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:22.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 122,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.2,
+        "piCanon": 4.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.0,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:23.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 123,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.3,
+        "piCanon": 6.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.09999999999999998,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:24.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 124,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.4,
+        "piCanon": 8.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:25.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 125,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.5,
+        "piCanon": 10.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.3,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:26.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 126,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.6,
+        "piCanon": 12.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.39999999999999997,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:27.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 127,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.7,
+        "piCanon": 14.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.49999999999999994,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:28.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 128,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.8,
+        "piCanon": 16.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.6000000000000001,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:29.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 129,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.9,
+        "piCanon": 18.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.7,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:30.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 130,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.0,
+        "piCanon": 0.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:31.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 131,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.1,
+        "piCanon": 2.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.1,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:32.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 132,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.2,
+        "piCanon": 4.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.0,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:33.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 133,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.3,
+        "piCanon": 6.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.09999999999999998,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:34.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 134,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.4,
+        "piCanon": 8.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:35.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 135,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.5,
+        "piCanon": 10.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.3,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:36.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 136,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.6,
+        "piCanon": 12.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.39999999999999997,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:37.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 137,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.7,
+        "piCanon": 14.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.49999999999999994,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:38.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 138,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.8,
+        "piCanon": 16.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.6000000000000001,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:39.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 139,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.9,
+        "piCanon": 18.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.7,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:40.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 140,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.0,
+        "piCanon": 0.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:41.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 141,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.1,
+        "piCanon": 2.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.1,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:42.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 142,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.2,
+        "piCanon": 4.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.0,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:43.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 143,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.3,
+        "piCanon": 6.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.09999999999999998,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:44.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 144,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.4,
+        "piCanon": 8.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:45.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 145,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.5,
+        "piCanon": 10.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.3,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:46.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 146,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.6,
+        "piCanon": 12.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.39999999999999997,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:47.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 147,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.7,
+        "piCanon": 14.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.49999999999999994,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:48.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 148,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.8,
+        "piCanon": 16.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.6000000000000001,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:49.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 149,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.9,
+        "piCanon": 18.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.7,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:50.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 150,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.0,
+        "piCanon": 0.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:51.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 151,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.1,
+        "piCanon": 2.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.1,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:52.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 152,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.2,
+        "piCanon": 4.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.0,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:53.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 153,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.3,
+        "piCanon": 6.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.09999999999999998,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:54.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 154,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.4,
+        "piCanon": 8.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:55.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 155,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.5,
+        "piCanon": 10.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.3,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:56.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 156,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.6,
+        "piCanon": 12.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.39999999999999997,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:57.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 157,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.7,
+        "piCanon": 14.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.49999999999999994,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:58.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 158,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.8,
+        "piCanon": 16.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.6000000000000001,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:00:59.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 159,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.9,
+        "piCanon": 18.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.7,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:00.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 160,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.0,
+        "piCanon": 0.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:01.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 161,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.1,
+        "piCanon": 2.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.1,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:02.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 162,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.2,
+        "piCanon": 4.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.0,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:03.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 163,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.3,
+        "piCanon": 6.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.09999999999999998,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:04.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 164,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.4,
+        "piCanon": 8.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:05.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 165,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.5,
+        "piCanon": 10.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.3,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:06.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 166,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.6,
+        "piCanon": 12.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.39999999999999997,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:07.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 167,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.7,
+        "piCanon": 14.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.49999999999999994,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:08.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 168,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.8,
+        "piCanon": 16.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.6000000000000001,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:09.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 169,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.9,
+        "piCanon": 18.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.7,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:10.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 170,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.0,
+        "piCanon": 0.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:11.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 171,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.1,
+        "piCanon": 2.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.1,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:12.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 172,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.2,
+        "piCanon": 4.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.0,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:13.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 173,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.3,
+        "piCanon": 6.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.09999999999999998,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:14.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 174,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.4,
+        "piCanon": 8.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:15.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 175,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.5,
+        "piCanon": 10.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.3,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:16.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 176,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.6,
+        "piCanon": 12.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.39999999999999997,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:17.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 177,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.7,
+        "piCanon": 14.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.49999999999999994,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:18.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 178,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.8,
+        "piCanon": 16.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.6000000000000001,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:19.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 179,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.9,
+        "piCanon": 18.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.7,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:20.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 180,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.0,
+        "piCanon": 0.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:21.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 181,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.1,
+        "piCanon": 2.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.1,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:22.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 182,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.2,
+        "piCanon": 4.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.0,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:23.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 183,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.3,
+        "piCanon": 6.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.09999999999999998,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:24.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 184,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.4,
+        "piCanon": 8.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:25.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 185,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.5,
+        "piCanon": 10.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.3,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:26.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 186,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.6,
+        "piCanon": 12.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.39999999999999997,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:27.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 187,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.7,
+        "piCanon": 14.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.49999999999999994,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:28.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 188,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.8,
+        "piCanon": 16.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.6000000000000001,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:29.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 189,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.9,
+        "piCanon": 18.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.7,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:30.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 190,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.0,
+        "piCanon": 0.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:31.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 191,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.1,
+        "piCanon": 2.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": -0.1,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:32.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 192,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.2,
+        "piCanon": 4.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.0,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:33.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 193,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.3,
+        "piCanon": 6.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.09999999999999998,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:34.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 194,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.4,
+        "piCanon": 8.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.2,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:35.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 195,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.5,
+        "piCanon": 10.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.3,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:36.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 196,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.6,
+        "piCanon": 12.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.39999999999999997,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:37.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 197,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.7,
+        "piCanon": 14.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.49999999999999994,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:38.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 198,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.8,
+        "piCanon": 16.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.6000000000000001,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    },
+    {
+      "version": "TP-SHADOW-0.5",
+      "createdAt": "2026-08-02T00:01:39.000Z",
+      "inputClass": "TEXT",
+      "privacy": "NO_RAW_CONTENT",
+      "inputLength": 199,
+      "legacy": {
+        "truthPressure": 0.2,
+        "coherence": 80,
+        "reorganisationNeeded": false,
+        "dominantLayer": "THEORY"
+      },
+      "candidate": {
+        "engineVersion": "0.5.0-rc.1",
+        "mode": "TEXT_TRIAGE",
+        "piNormalized": 0.9,
+        "piCanon": 18.0,
+        "evidence": 0.4,
+        "explanatoryPower": 0.5,
+        "strain": 0.2,
+        "reviewState": "TRIAGE_ONLY",
+        "warnings": [
+          "Text mode is pattern-based, English-oriented, and provisional."
+        ]
+      },
+      "deltas": {
+        "normalizedPressure": 0.7,
+        "legacyReorganiseVsCandidateReview": "NOT_COMPARABLE"
+      }
+    }
+  ]
+}

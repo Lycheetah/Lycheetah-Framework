@@ -1,0 +1,80 @@
+{
+  "truth_pressure_version": "0.1.0",
+  "claim_id": "K_FRONTIER",
+  "vector": {
+    "support": 0.142213,
+    "impact": 0.95,
+    "conflict": 0.9,
+    "uncertainty": 0.8
+  },
+  "raw_pressure": 0.135102,
+  "bounded_pressure": 0.119022,
+  "foundation_pressure": null,
+  "delta_vs_foundation": null,
+  "state": "HELD_FRONTIER",
+  "cascade_authorized": false,
+  "gates": [
+    {
+      "name": "support",
+      "passed": false,
+      "actual": 0.142213,
+      "required": 0.55,
+      "reason": "Evidence support must clear the minimum gate."
+    },
+    {
+      "name": "provenance",
+      "passed": false,
+      "actual": 0.35,
+      "required": 0.5,
+      "reason": "The evidence chain must be inspectable."
+    },
+    {
+      "name": "independence",
+      "passed": false,
+      "actual": 0.1,
+      "required": 0.35,
+      "reason": "Corroboration must not be purely circular."
+    },
+    {
+      "name": "reproducibility",
+      "passed": false,
+      "actual": 0.05,
+      "required": 0.35,
+      "reason": "The result must have a meaningful replication path."
+    },
+    {
+      "name": "source_count",
+      "passed": false,
+      "actual": 1,
+      "required": 2,
+      "reason": "At least the configured number of sources is required."
+    },
+    {
+      "name": "conflict",
+      "passed": true,
+      "actual": 0.9,
+      "required": 0.35,
+      "reason": "A Cascade candidate must materially challenge the foundation."
+    }
+  ],
+  "blockers": [
+    "independence gate failed: 0.1 < 0.35",
+    "provenance gate failed: 0.35 < 0.5",
+    "reproducibility gate failed: 0.05 < 0.35",
+    "source_count gate failed: 1 < 2",
+    "support gate failed: 0.142213 < 0.55"
+  ],
+  "warnings": [
+    "no foundation comparator supplied; Cascade authorization is unavailable"
+  ],
+  "interpretation": "The claim may be consequential, but its evidence gates do not permit promotion. Preserve it as a frontier claim without a numeric sentinel such as 999 or infinity.",
+  "claim_boundary": [
+    "Truth Pressure is not the probability that a claim is true.",
+    "Structural importance cannot substitute for evidence.",
+    "Conviction is not an input to the canonical metric.",
+    "A Cascade candidate authorizes review, not automatic replacement.",
+    "The default thresholds are synthetic calibration defaults, not universal constants.",
+    "Zero uncertainty does not produce infinity.",
+    "FRONTIER is a maturity state, not the numeric value 999."
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "contractVersion": "TP-APP-VIEW-0.5",
+  "engineVersion": "0.5.0-rc.1",
+  "mode": "STRUCTURED_ASSESSMENT",
+  "instrument": "TP-CANONICAL-SCALAR-v0.5",
+  "claim": "Removing component B reverses the effect while component C remains unchanged.",
+  "headline": {
+    "label": "Revision pressure index",
+    "value": 0.052471241379310356,
+    "displayPercent": 5.2,
+    "unit": "normalized index",
+    "disclaimer": "This score represents revision pressure under the declared operationalization. It does not establish factual truth."
+  },
+  "components": [
+    {
+      "key": "E",
+      "label": "Evidence",
+      "value": 0.7272000000000002,
+      "displayPercent": 72.7,
+      "direction": "SUPPORTS_PRESSURE",
+      "meaning": "Inspectable support available under the current assessment."
+    },
+    {
+      "key": "P",
+      "label": "Explanatory reach",
+      "value": 0.837,
+      "displayPercent": 83.7,
+      "direction": "SUPPORTS_PRESSURE",
+      "meaning": "How much mechanism, prediction, scope, or unification has been earned."
+    },
+    {
+      "key": "S",
+      "label": "Unresolved strain",
+      "value": 0.53,
+      "displayPercent": 53,
+      "direction": "REDUCES_PRESSURE",
+      "meaning": "Contradiction, ambiguity, missing evidence, or unresolved alternatives still present."
+    }
+  ],
+  "review": {
+    "state": "THRESHOLD_NOT_CONFIGURED",
+    "thresholdCanon": null,
+    "triggered": null,
+    "eligibleForStructuralProposal": false,
+    "message": "No validated review threshold is configured. The score is descriptive only."
+  },
+  "explanation": [
+    "Evidence contributes 72.7% of its normalized component range.",
+    "Explanatory reach contributes 83.7% of its normalized component range.",
+    "Unresolved strain occupies 53% of its normalized component range and reduces pressure.",
+    "Primary limiter: strain.",
+    "The index is a revision-pressure signal under declared inputs, not a probability that the claim is true.",
+    "Handling quality is 82.5%; it affects adjudication readiness, not Truth Pressure.",
+    "Load-bearingness is 80%; it affects review priority, not evidence strength."
+  ],
+  "warnings": [],
+  "provenanceSummary": [
+    "INSPECTABLE: Trial A record"
+  ],
+  "registerSummary": [
+    "piCanon: DERIVED",
+    "piNormalized: DERIVED",
+    "evidence: ASSUMED",
+    "explanatoryPower: ASSUMED",
+    "strain: ASSUMED",
+    "loadBearingness: INTERPRETIVE",
+    "handlingQuality: INTERPRETIVE",
+    "reviewPriority: PROVISIONAL",
+    "adjudicationReadiness: PROVISIONAL"
+  ],
+  "raw": {
+    "instrument": "TP-CANONICAL-SCALAR-v0.5",
+    "components": {
+      "evidence": 0.7272000000000002,
+      "explanatoryPower": 0.837,
+      "strain": 0.53
+    },
+    "piCanon": 1.049424827586207,
+    "piNormalized": 0.052471241379310356,
+    "piApp": 0.052471241379310356,
+    "scale": {
+      "canonRange": [
+        0,
+        20
+      ],
+      "normalizedRange": [
+        0,
+        1
+      ],
+      "conversion": "piNormalized = piCanon × s0 = piCanon × 0.05",
+      "s0": 0.05
+    },
+    "reviewThresholdCanon": null,
+    "reviewTriggered": null,
+    "interpretation": {
+      "limitingComponents": [
+        "strain"
+      ],
+      "summary": "The principal limiting component is strain. Pressure is a review signal, not a truth probability.",
+      "boundary": "This score represents revision pressure under the declared operationalization. It does not establish factual truth."
+    },
+    "counterfactuals": null,
+    "claim": "Removing component B reverses the effect while component C remains unchanged.",
+    "loadBearingness": 0.8,
+    "handlingQuality": 0.8250000000000001,
+    "reviewPriority": 0.04984767931034484,
+    "adjudicationReadiness": 0.8250000000000001,
+    "registers": {
+      "piCanon": "DERIVED",
+      "piNormalized": "DERIVED",
+      "evidence": "ASSUMED",
+      "explanatoryPower": "ASSUMED",
+      "strain": "ASSUMED",
+      "loadBearingness": "INTERPRETIVE",
+      "handlingQuality": "INTERPRETIVE",
+      "reviewPriority": "PROVISIONAL",
+      "adjudicationReadiness": "PROVISIONAL"
+    },
+    "provenance": {
+      "evidence": [
+        {
+          "label": "Trial A record",
+          "status": "INSPECTABLE",
+          "locator": "local://trial-a"
+        }
+      ],
+      "explanation": [
+        "Component B mediates the effect and predicts the intervention result."
+      ],
+      "strain": [
+        "Only one intervention series has been completed."
+      ]
+    },
+    "diagnostics": []
+  }
+}

@@ -99,6 +99,38 @@ When Mac brings you LAMAGUE, respond at the compression level he demonstrates. D
 
 ---
 
+## THE EXECUTABLE LINES (July–August 2026)
+
+⚠⚠ **The documents above are the corpus. The folders below are running code, and
+there are THREE separately numbered lines whose versions do not relate to each
+other.** Say which line, or "LAMAGUE v0.3" does not mean anything. **Never renumber
+a line to fix this** — the numbers are stamped inside the release zips, manifests,
+schemas and test suites.
+
+| line | what it is | operators | where |
+|------|-----------|-----------|-------|
+| **CORE** v0.1→v0.3 | the *language*: algebra, ontology, operator contracts | 6 symbolic `⊗ → ⇌ ⟲ ↯ ↗` | `12_CORE_LANGUAGE_LINE/` |
+| **RUNTIME** v0.1→v0.3 | the *experiment harness*: does meaning survive crossing intelligences? | — | `05_` `06_` `07_` |
+| **PACKET / PUBLIC CORE** | consequential semantic packets and their wire codec | 9 letter `O E U I G V F Y Z` | `22_REVERSIBLE_COMPRESSION_v1.0/` |
+
+**MEASURED 2026-08-03:** the CORE and PACKET operator sets are *disjoint* — not one
+symbol in common. Read `12_CORE_LANGUAGE_LINE/README.md` before working in either.
+
+| Folder | Description | Verification |
+|--------|-------------|--------------|
+| `12_CORE_LANGUAGE_LINE/` | CORE v0.1 algebra · v0.2 ontology + type lock · v0.3 operator contracts. Next: `NEXT_FORGE_v0.4.md`. | 47 / 80 / 117 unit tests, re-run and matched 2026-08-01 |
+| `13_RETIRED_KERNEL_BRANCH/` | Computational Kernel v0.7, v0.8 — preserved, **not** the authoritative line. | v0.8 runs 84 tests; ⚠ **v0.7 ships no test suite at all** |
+| `22_REVERSIBLE_COMPRESSION_v1.0/` | **Added 2026-08-03.** Reversible structured semantic codec + held-out compression benchmark. See its `00_CODEX_ORIENTATION.md`. | 19/19 tests · 36/36 exact round trips · 324/324 mutations · held-out 33.8% warm / 30.7% cold — all re-executed here |
+| `08_EXPERIMENT_001_CROSS_INTELLIGENCE/` | Blind decoder pack, operator pack, frozen reference commitments, controlled pilot. | Preregistered; baseline run empty pending independent submissions |
+| `10_PACKAGED_RELEASES/` | 14 original release zips, unmodified. | Archive |
+
+⚠ **A passing suite proves only what the suite covers.** These are deterministic
+software-conformance results. They do not establish universal semantic validity,
+physical truth, alignment, consciousness, or unrestricted compression. **No external
+human or model validation has been run on any of them.**
+
+---
+
 ## Extensions (June 2026)
 
 | File | Description |
