@@ -30,6 +30,14 @@ is a command you can run, not a paragraph. Where a claim is unverified it says s
 > Tier 3. The tiers below are corrected, not rewritten — the reasoning that put
 > those rows in Tier 2 is left visible, because the lesson is that internal
 > validation could not have caught this.
+>
+> **Then the loop was inverted.** Cues derived *from* 42,486 human-labelled
+> pairs rather than written by hand reach **60.6%** against a measured ceiling of
+> **64.9%** — closing 53% of the gap with six regular expressions, and revealing
+> that **three of six empirically-supported harm families had no counterpart
+> anywhere in the framework**, including the strongest one.
+>
+> Full record: [`DERIVED_CUES_2026-08-07.md`](DERIVED_CUES_2026-08-07.md)
 
 ## The method — how to tell a real solution from a good document
 
@@ -277,18 +285,26 @@ far end no matter how rigorous the internal work is.
 
 Concretely, in order:
 
-1. **Derive cue families from external labelled data.** 2,308 hh-rlhf pairs and
-   1,000 persona statements are already downloadable and hashed by
-   `external_validation.py`. Find what actually separates them; do not write more
-   cues by hand and hope.
-2. **Demote the self-authored corpus to a unit test.** It belongs in `pytest` as a
+1. ~~**Derive cue families from external labelled data.**~~ **Done** — see
+   [`DERIVED_CUES_2026-08-07.md`](DERIVED_CUES_2026-08-07.md). 60.6% against a
+   64.9% ceiling, and it found three harm families the framework never had.
+   Regenerate with `python3 33_APPLICATIONS/derive_cues.py --write`.
+2. **Test the derived families on a second corpus.** Families derived from one
+   dataset that survive on another are constructs; families that do not are
+   corpus artefacts, and right now nobody knows which these six are. This is the
+   single highest-value next run, and `third_party_target` is the one to watch —
+   it carries real weight and rests on function words.
+3. **Demote the self-authored corpus to a unit test.** It belongs in `pytest` as a
    regression check that known frames still fire. It must never again appear as
    evidence, and `discrimination_audit.py` should print the external number beside
    the internal one every time it runs.
-3. **Add an external evidence path to every load-bearing claim, or mark it
+4. **Add an external evidence path to every load-bearing claim, or mark it
    internally-validated-only.** All 67 would currently carry that mark. Seeing it
    written 67 times in `CLAIMS.json` is the useful part.
-4. **Find a third referent from a different publisher.** Both current datasets are
+5. **Publish a ceiling beside every score, permanently.** A number without one
+   cannot be read in either direction — 55.5% looked like failure until 64.9%
+   showed how much room actually existed.
+6. **Find a third referent from a different publisher.** Both current datasets are
    Anthropic's. Two agreeing results are decisive about this lens; they are not
    yet decisive about the constructs.
 

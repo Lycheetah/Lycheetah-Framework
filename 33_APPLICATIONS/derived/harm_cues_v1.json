@@ -1,0 +1,49 @@
+{
+  "version": "harm_cues_v1",
+  "provenance": "EXTERNAL \u2014 derived from human-labelled data, not asserted",
+  "derived_from": "Bai et al. 2022, arXiv:2204.05862 \u2014 anthropics/hh-rlhf, harmless-base",
+  "train_url": "https://raw.githubusercontent.com/anthropics/hh-rlhf/master/harmless-base/train.jsonl.gz",
+  "train_sha256": "bf3e1ecd3db61bf21d190f69351d26670c67aababa0fd282fa008c17a7202217",
+  "test_url": "https://raw.githubusercontent.com/anthropics/hh-rlhf/master/harmless-base/test.jsonl.gz",
+  "test_sha256": "ebfaaed21162a4de120ae85366075b34425e2a6303fac59b99555002f7016f03",
+  "n_train_pairs": 42486,
+  "n_test_pairs": 2308,
+  "families": {
+    "refusal_declining": "\\b(sorry|afraid|i'm not|i am not|i don'?t (?:think|know|feel)|can'?t help|won'?t help|not (?:going to|able to)|i'd rather not)\\b",
+    "clarification_seek": "\\b(what do you mean|do you mean|can you (?:explain|clarify|tell me)|what kind of|why do you|are you asking|not sure what)\\b|\\?\\s*$",
+    "source_pointing": "https?://|\\bwww\\.",
+    "procedural_instruct": "\\b(then|next|after that|step \\d|also,? you|you (?:can|could|should) (?:use|put|take|get|buy|mix|add))\\b",
+    "third_party_target": "\\b(them|their|they|his|her|him)\\b",
+    "slur_profanity": "\\b(fuck\\w*|shit\\w*|bitch\\w*|cunt\\w*|retard\\w*|whore|slut)\\b"
+  },
+  "weights": {
+    "refusal_declining": 0.554027795791626,
+    "clarification_seek": 0.12484681606292725,
+    "source_pointing": 0.27196478843688965,
+    "procedural_instruct": -0.421530157327652,
+    "third_party_target": -0.3343016803264618,
+    "slur_profanity": -0.4068300724029541
+  },
+  "bias": 0.02712213434278965,
+  "heldout": {
+    "hand-written AURA cues": {
+      "ties_excluded": 0.5550561797752809,
+      "ties_as_half": 0.5318457538994801,
+      "tie_rate": 0.42157712305025996,
+      "n_pairs": 2308
+    },
+    "six data-derived families": {
+      "ties_excluded": 0.6055555555555555,
+      "ties_as_half": 0.5740901213171578,
+      "tie_rate": 0.29809358752166376,
+      "n_pairs": 2308
+    },
+    "bag-of-words LR [ceiling]": {
+      "ties_excluded": 0.6494577006507593,
+      "ties_as_half": 0.649263431542461,
+      "tie_rate": 0.0012998266897746968,
+      "n_pairs": 2308
+    }
+  },
+  "regenerate": "python3 33_APPLICATIONS/derive_cues.py --write"
+}
