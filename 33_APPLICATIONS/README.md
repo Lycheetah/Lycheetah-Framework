@@ -45,6 +45,21 @@ is a command you can run, not a paragraph. Where a claim is unverified it says s
 > anywhere in the framework**, including the strongest one.
 >
 > Full record: [`DERIVED_CUES_2026-08-07.md`](DERIVED_CUES_2026-08-07.md)
+>
+> **Then they were transferred, frozen, to two more corpora.** Five of six
+> survive on a different sample under a different label type — human 0-4
+> red-team ratings rather than pairwise preference:
+>
+> ```text
+> convergent  red-team-attempts, n=7999   six families rho=-0.300  p=1.9e-174
+>                                          AURA lens    rho=-0.149  p=1.7e-41
+> discriminant helpful-base, n=2348        37.4% — BELOW chance, the
+>                                          helpfulness/harmlessness tension
+> ```
+>
+> The hand-written AURA constructs transfer too, at about half the effect size.
+>
+> Full record: [`TRANSFER_TEST_2026-08-07.md`](TRANSFER_TEST_2026-08-07.md)
 
 ## The method — how to tell a real solution from a good document
 
@@ -296,11 +311,11 @@ Concretely, in order:
    [`DERIVED_CUES_2026-08-07.md`](DERIVED_CUES_2026-08-07.md). 60.6% against a
    64.9% ceiling, and it found three harm families the framework never had.
    Regenerate with `python3 33_APPLICATIONS/derive_cues.py --write`.
-2. **Test the derived families on a second corpus.** Families derived from one
-   dataset that survive on another are constructs; families that do not are
-   corpus artefacts, and right now nobody knows which these six are. This is the
-   single highest-value next run, and `third_party_target` is the one to watch —
-   it carries real weight and rests on function words.
+2. ~~**Test the derived families on a second corpus.**~~ **Done** — see
+   [`TRANSFER_TEST_2026-08-07.md`](TRANSFER_TEST_2026-08-07.md). Five of six
+   transferred with frozen weights. `third_party_target`, which I flagged as
+   likeliest to be an artefact, survived at rho=+0.129; `source_pointing` was
+   the one that failed and should be dropped or rebuilt.
 3. **Demote the self-authored corpus to a unit test.** It belongs in `pytest` as a
    regression check that known frames still fire. It must never again appear as
    evidence, and `discrimination_audit.py` should print the external number beside
