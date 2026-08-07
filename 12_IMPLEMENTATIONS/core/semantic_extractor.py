@@ -367,6 +367,93 @@ INTEGRITY_CUES: Dict[str, List[Tuple[re.Pattern, float, str]]] = {
 # RESULT TYPES
 # ─────────────────────────────────────────────────────────────
 
+# ─────────────────────────────────────────────────────────────
+# STANCE
+#
+# Added 2026-08-07 after a reflexive audit aimed this extractor at fourteen of
+# the project's own documents. 42 flagged spans, nearly all false positives.
+# The most honest sentence in the corpus —
+#
+#     "must never be described as peer-reviewed... no external validation"
+#
+# scored -0.630, while a deliberate overclaim written to be one scored -0.396.
+# **The confession scored 59% worse than the fabrication.**
+#
+# One cause: the extractor matched spans and could not read STANCE. A cue tells
+# you a phrase is present. Stance tells you what the writer is DOING with it —
+# asserting it, denying it, confessing it, or quoting it in order to attack it.
+# Those are opposite acts and they share a surface form.
+#
+# Three stance operators, each fixing one recorded defect class:
+#
+#   CONFESSION  "no external validation at all" negates the writer's OWN
+#               epistemic support. That is the most honest move available, and
+#               the absolute-negation cue was scoring it as an overclaim.
+#               Distinguished by WHAT is negated, not by the negation.
+#
+#   DENIAL      "it is not production-ready", "must never be described as
+#               peer-reviewed" — a status term inside the scope of a negation or
+#               a prohibition is being refused, not claimed.
+#
+#   ATTRIBUTION Markdown quotes with backticks. The existing quotation handling
+#               looked only for straight and curly quotes, so it was dead on
+#               every document in this repository.
+#
+# Reference test case, per LAMAGUE_MASTER_SOURCE_2026-08-07_AMENDMENT.md §3:
+# a stance layer that cannot clear its seven flagged spans has not solved this.
+# Those seven are `tests/test_stance_layer.py`.
+# ─────────────────────────────────────────────────────────────
+
+#: Things a writer can lack. Negating one of these is a confession about
+#: oneself, not a claim about the world. "no side effects" is an overclaim;
+#: "no test suite" is an admission. The difference is entirely in the object.
+EPISTEMIC_SUPPORT = (
+    r"(?:validation|validat\w+|evidence|test\s*suite|tests?|source|sources|"
+    r"implementation|proof|proofs|peer[- ]review\w*|review\w*|replication|"
+    r"data|dataset|benchmark|citation|citations|provenance|verification|"
+    r"experiment\w*|study|studies|sample|baseline|audit|corpus)"
+)
+
+CONFESSION = _cue(
+    rf"\b(?:no|not|never|without|lacks?|lacking|missing|absent|zero)\b"
+    rf"[^.!?;]{{0,40}}?\b{EPISTEMIC_SUPPORT}\b"
+)
+
+#: A status term inside the scope of a refusal is being denied, not asserted.
+DENIAL = _cue(
+    r"\b(?:not|never|cannot|can'?t|must\s+not|must\s+never|should\s+not|"
+    r"do\s+not|don'?t|is\s+n[o']t|are\s+n[o']t|no\s+longer|refuse\w*|"
+    r"avoid\w*|prohibit\w*|forbid\w*|stop\s+describing)\b"
+)
+
+#: Alethic modality — states that something is impossible. Descriptive.
+ALETHIC = re.compile(r"\b(?:cannot|can'?t|could\s*n[o']t|unable\s+to|impossible\s+to)\b",
+                     re.IGNORECASE)
+#: Deontic modality — releases or forbids an obligation. Directive.
+DEONTIC = re.compile(
+    r"\b(?:no\s+need|do\s*n[o']t\s+(?:need|bother|have)|need\s*n[o']t|must\s+not|"
+    r"should\s*n[o']t|do\s+not\s+(?:check|verify|review|ask|question|consult)|"
+    r"just\s+do|trust\s+me)\b", re.IGNORECASE)
+
+#: Second person marks a directive. A writer confessing speaks about their own
+#: artifact; a writer suppressing speaks to a reader about the reader.
+ADDRESSEE = re.compile(r"\b(?:you|your|yours|yourself)\b", re.IGNORECASE)
+
+#: Status terms a writer can deny holding. Only these are cancellable by
+#: negation — a directive under negation is still a directive.
+DENIABLE_STATUS = {
+    "peer-reviewed", "peer reviewed", "production-ready", "production ready",
+    "proven breakthrough", "already validated", "the science is settled",
+    "the science is completely settled",
+}
+DENIABLE_STATUS_RE = re.compile(
+    r"(?:peer[- ]reviewed|production[- ]ready|proven\s+breakthrough|already\s+validated)",
+    re.IGNORECASE)
+
+#: Markdown quoting. The original quotation handler missed backticks entirely.
+MARKDOWN_QUOTE = re.compile(r"`([^`\n]{3,300})`|^>\s?(.{3,300})$", re.MULTILINE)
+
+
 @dataclass(frozen=True)
 class Signal:
     """One cue firing, with the span that triggered it — the audit unit."""
@@ -376,6 +463,12 @@ class Signal:
     span: str
     weight: float
     quoted: bool = False     # fired inside quoted text being criticised
+    stance: str = "asserted"  # asserted | confession | denial | attributed
+
+    @property
+    def suppressed(self) -> bool:
+        """A cue that is not being asserted does not count against the writer."""
+        return self.quoted or self.stance in ("confession", "denial", "attributed")
 
 
 @dataclass
@@ -398,7 +491,14 @@ class Extraction:
     # ── views ───────────────────────────────────────────────
     @property
     def manipulation_signals(self) -> List[Signal]:
-        return [s for s in self.signals if s.polarity == "manipulation"]
+        """Only cues the writer is actually asserting — see Signal.stance."""
+        return [s for s in self.signals
+                if s.polarity == "manipulation" and not s.suppressed]
+
+    @property
+    def suppressed_signals(self) -> List[Signal]:
+        """Cues that fired but were confessions, denials or attributions."""
+        return [s for s in self.signals if s.suppressed]
 
     @property
     def integrity_signals(self) -> List[Signal]:
@@ -407,7 +507,7 @@ class Extraction:
     def categories(self, polarity: str) -> List[str]:
         seen: List[str] = []
         for s in self.signals:
-            if s.polarity == polarity and s.category not in seen:
+            if s.polarity == polarity and not s.suppressed and s.category not in seen:
                 seen.append(s.category)
         return seen
 
@@ -418,7 +518,8 @@ class Extraction:
         return sum(1 for s in self.signals if s.category == category)
 
     def evidence(self, category: str, limit: int = 3) -> List[str]:
-        return [s.span for s in self.signals if s.category == category][:limit]
+        return [s.span for s in self.signals
+                if s.category == category and not s.suppressed][:limit]
 
     @property
     def net_integrity(self) -> float:
@@ -475,9 +576,13 @@ class SemanticExtractor:
                     for m in pattern.finditer(text):
                         span = m.group(0).strip()
                         in_quote = any(a <= m.start() and m.end() <= b for a, b in quoted_spans)
+                        stance = ("attributed" if in_quote
+                                  else self._stance_of(text, m.start(), m.end(),
+                                                       span, polarity, category))
                         signals.append(Signal(
                             category=category, polarity=polarity, label=label,
                             span=span, weight=weight, quoted=in_quote,
+                            stance=stance,
                         ))
 
         return Extraction(
@@ -491,6 +596,79 @@ class SemanticExtractor:
 
     # ── internals ───────────────────────────────────────────
 
+    def _stance_of(self, text: str, start: int, end: int,
+                   span: str, polarity: str, category: str) -> str:
+        """
+        What is the writer DOING with this phrase?
+
+        Only manipulation cues are re-read for stance. An integrity cue under
+        negation is a separate problem and is not handled by pretending it is
+        this one.
+        """
+        if polarity != "manipulation":
+            return "asserted"
+
+        clause_start = max(0, text.rfind(".", 0, start) + 1)
+        clause_end = text.find(".", end)
+        clause = text[clause_start: clause_end if clause_end > 0 else min(len(text), end + 120)]
+
+        # A DIRECTIVE HAS AN ADDRESSEE. That is what separates
+        #
+        #     "there is no need for YOU to review the reasoning"   suppression
+        #     "this work has had no review at all"                 confession
+        #
+        # Both negate `review`, an epistemic-support word, so the object test
+        # alone cannot tell them apart — it suppressed a real manipulation cue
+        # and broke a test. Second person is the discriminator: a writer
+        # confessing speaks about their own artifact, never to a reader about
+        # the reader's obligations.
+        addressed = ADDRESSEE.search(clause) is not None
+
+        if not addressed:
+            # CONFESSION — the negated object is the writer's own epistemic
+            # support. "no external validation at all" is the most honest
+            # sentence available, and absolute-negation was scoring it as an
+            # overclaim.
+            if CONFESSION.search(span) or CONFESSION.search(clause):
+                return "confession"
+
+            # DESCRIPTIVE — alethic vs deontic modality.
+            #
+            #     "a claim a reader CANNOT verify"     alethic: states an
+            #                                          impossibility. Descriptive.
+            #     "you DON'T NEED to verify"           deontic: releases an
+            #                                          obligation. Directive.
+            #
+            # Both negate a verification act and only the second suppresses
+            # anything. `cannot` reports that checking is impossible, which is
+            # a property of the claim and usually a warning about it — the
+            # opposite of discouraging scrutiny.
+            # Scoped to verification only. "This CANNOT possibly be wrong" is
+            # alethic modality used to ASSERT certainty — the overclaim itself,
+            # not a description of it. Alethic modality about *verification* is
+            # descriptive; about *correctness* it is the manipulation.
+            if (category == "verification_suppression"
+                    and ALETHIC.search(span) and not DEONTIC.search(clause)):
+                return "confession"
+
+        # DENIAL applies to STATUS CLAIMS ONLY.
+        #
+        # A first version tested every cue against a negation window and broke
+        # seven tests: "Don't stop to research it" and "Do not mention it to
+        # your manager" were suppressed as denials. They are not denials — they
+        # are imperatives, and the negation IS the manipulation.
+        #
+        # The distinction is what kind of act the cue names. A *status* under
+        # negation is being refused ("not production-ready"). A *directive*
+        # under negation is still a directive. Denial can only cancel the first.
+        if span.lower().strip("'\"` ") in DENIABLE_STATUS or DENIABLE_STATUS_RE.fullmatch(
+                span.lower().strip("'\"` ")):
+            window = text[max(0, start - 60): end + 20]
+            if DENIAL.search(window):
+                return "denial"
+
+        return "asserted"
+
     def _quoted_criticised_spans(self, text: str) -> List[Tuple[int, int]]:
         """
         Character ranges of quoted material that the surrounding sentence is
@@ -502,6 +680,13 @@ class SemanticExtractor:
         example of overclaim." The overclaim belongs to the report.
         """
         spans: List[Tuple[int, int]] = []
+        # Markdown quoting: backticks and blockquotes. The original handler
+        # looked only for straight and curly quotes and was therefore dead on
+        # every document in this repository.
+        for m in MARKDOWN_QUOTE.finditer(text):
+            window = text[max(0, m.start() - 140): min(len(text), m.end() + 180)]
+            if self.CRITICISM_FRAMES.search(window):
+                spans.append((m.start(), m.end()))
         for m in self._QUOTE_SPAN.finditer(text):
             window = text[max(0, m.start() - 120): min(len(text), m.end() + 160)]
             if self.CRITICISM_FRAMES.search(window):
@@ -534,7 +719,7 @@ class SemanticExtractor:
         per_cat: Dict[str, Tuple[float, int]] = {}
         seen_spans: set = set()
         for s in signals:
-            if s.polarity != polarity or s.quoted:
+            if s.polarity != polarity or s.suppressed:
                 continue
             key = (s.category, s.span.strip().lower())
             if key in seen_spans:
