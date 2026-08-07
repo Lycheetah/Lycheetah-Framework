@@ -60,6 +60,23 @@ is a command you can run, not a paragraph. Where a claim is unverified it says s
 > The hand-written AURA constructs transfer too, at about half the effect size.
 >
 > Full record: [`TRANSFER_TEST_2026-08-07.md`](TRANSFER_TEST_2026-08-07.md)
+>
+> **Finally, an independent publisher.** Google Jigsaw's Unhealthy Comments
+> Corpus — 48,909 human-labelled comments, and its six attributes (hostile,
+> dismissive, condescending…) are the framework's own construct, not content
+> harm. The fairest test available:
+>
+> ```text
+> AURA lens         0/6 attributes tracked   cue coverage  2.2%
+> derived families  2/6 (AUC <= 0.553)       cue coverage 39.1%
+> ```
+>
+> **THE BOUNDARY.** Within AI-assistant text the constructs carry real,
+> replicated signal across two label types. Outside it they do not. That is
+> narrower than "constitutional invariants for AI governance" — and it is a
+> claim that survives an adversarial reader, which the larger one never would.
+>
+> Full record: [`INDEPENDENT_PUBLISHER_2026-08-07.md`](INDEPENDENT_PUBLISHER_2026-08-07.md)
 
 ## The method — how to tell a real solution from a good document
 
@@ -326,9 +343,13 @@ Concretely, in order:
 5. **Publish a ceiling beside every score, permanently.** A number without one
    cannot be read in either direction — 55.5% looked like failure until 64.9%
    showed how much room actually existed.
-6. **Find a third referent from a different publisher.** Both current datasets are
-   Anthropic's. Two agreeing results are decisive about this lens; they are not
-   yet decisive about the constructs.
+6. ~~**Find a third referent from a different publisher.**~~ **Done** — see
+   [`INDEPENDENT_PUBLISHER_2026-08-07.md`](INDEPENDENT_PUBLISHER_2026-08-07.md).
+   The result bounds the constructs to AI-assistant register.
+7. **Restate the framework's scope to match the evidence.** The measured claim is
+   AI-assistant output. Every document implying general applicability to human
+   communication is now contradicted by a number in this repository. This is the
+   highest-value remaining work and it is writing, not code.
 
 **Ship 1.1 regardless.** Reversible compression does not route through the lens,
 has its own held-out split, and is the one thing here that survived the day
