@@ -1,0 +1,222 @@
+{
+  "derived": "2026-08-07",
+  "method": "status derived by executing artifacts beside each file",
+  "entries": [
+    {
+      "path": "02_NATIVE36",
+      "register": "MEASURED",
+      "evidence": "registry validator passes; 36 tokens + seals integrity-checked",
+      "lines": 1
+    },
+    {
+      "path": "06_RUNTIME_v0.2_SEMANTIC_CONTINUITY",
+      "register": "MEASURED",
+      "evidence": "22 tests pass, executed 2026-08-07",
+      "lines": 18
+    },
+    {
+      "path": "07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE",
+      "register": "MEASURED",
+      "evidence": "48 tests pass, executed 2026-08-07",
+      "lines": 25
+    },
+    {
+      "path": "12_CORE_LANGUAGE_LINE/LAMAGUE_CORE_ALGEBRA_v0.1",
+      "register": "MEASURED",
+      "evidence": "47 tests pass, executed 2026-08-07",
+      "lines": 13
+    },
+    {
+      "path": "12_CORE_LANGUAGE_LINE/LAMAGUE_CORE_ONTOLOGY_v0.2",
+      "register": "MEASURED",
+      "evidence": "80 tests pass, executed 2026-08-07",
+      "lines": 14
+    },
+    {
+      "path": "12_CORE_LANGUAGE_LINE/LAMAGUE_CORE_OPERATOR_ALGEBRA_v0.3",
+      "register": "MEASURED",
+      "evidence": "117 tests pass, executed 2026-08-07",
+      "lines": 17
+    },
+    {
+      "path": "13_RETIRED_KERNEL_BRANCH/LAMAGUE_COMPUTATIONAL_KERNEL_v0.8_NATIVE_TEMPORAL_SYNTAX",
+      "register": "MEASURED",
+      "evidence": "84 tests pass, executed 2026-08-07",
+      "lines": 33
+    },
+    {
+      "path": "22_REVERSIBLE_COMPRESSION_v1.0",
+      "register": "MEASURED",
+      "evidence": "19 tests pass, executed 2026-08-07",
+      "lines": 4
+    },
+    {
+      "path": "23_SPOKEN_LAMAGUE",
+      "register": "MEASURED",
+      "evidence": "Sardinas-Patterson decodability proofs, re-run on demand via spl.py verify",
+      "lines": 3
+    },
+    {
+      "path": "LAMAGUE_FIRST_CORPUS_MASTER_SOURCE_2026-07-15.md",
+      "register": "MEASURED",
+      "evidence": "authoritative master source \u2014 protected, not stamped",
+      "lines": 8285
+    },
+    {
+      "path": "LAMAGUE_MASTER_SOURCE_2026-08-03.md",
+      "register": "MEASURED",
+      "evidence": "authoritative master source \u2014 protected, not stamped",
+      "lines": 532
+    },
+    {
+      "path": "LAMAGUE_MASTER_SOURCE_2026-08-07_AMENDMENT.md",
+      "register": "MEASURED",
+      "evidence": "authoritative master source \u2014 protected, not stamped",
+      "lines": 141
+    },
+    {
+      "path": "00_LAMAGUE_COMPLETE_EXTRACTION.md",
+      "register": "SCAFFOLD",
+      "evidence": "descriptive; evidence lives in the directories above",
+      "lines": 1004
+    },
+    {
+      "path": "01_LAMAGUE_COMPLETE.md",
+      "register": "SCAFFOLD",
+      "evidence": "descriptive; evidence lives in the directories above",
+      "lines": 908
+    },
+    {
+      "path": "02_README_LAMAGUE.md",
+      "register": "SCAFFOLD",
+      "evidence": "descriptive; evidence lives in the directories above",
+      "lines": 409
+    },
+    {
+      "path": "03_LAMAGUE_OPERATING_GUIDE.md",
+      "register": "SCAFFOLD",
+      "evidence": "descriptive; evidence lives in the directories above",
+      "lines": 296
+    },
+    {
+      "path": "04_BNF_GRAMMAR.md",
+      "register": "SCAFFOLD",
+      "evidence": "descriptive; evidence lives in the directories above",
+      "lines": 314
+    },
+    {
+      "path": "05_NOTATION_GUIDE.md",
+      "register": "SCAFFOLD",
+      "evidence": "descriptive; evidence lives in the directories above",
+      "lines": 177
+    },
+    {
+      "path": "06_LAMAGUE_RAW_MATH.md",
+      "register": "SCAFFOLD",
+      "evidence": "descriptive; evidence lives in the directories above",
+      "lines": 440
+    },
+    {
+      "path": "08_LAMAGUE_WHAKAPAPA_ENCODING.md",
+      "register": "SCAFFOLD",
+      "evidence": "descriptive; evidence lives in the directories above",
+      "lines": 223
+    },
+    {
+      "path": "10_essentials.md",
+      "register": "SCAFFOLD",
+      "evidence": "descriptive; evidence lives in the directories above",
+      "lines": 89
+    },
+    {
+      "path": "README.md",
+      "register": "SCAFFOLD",
+      "evidence": "descriptive; evidence lives in the directories above",
+      "lines": 147
+    },
+    {
+      "path": "README_MASTER_CODEX.md",
+      "register": "SCAFFOLD",
+      "evidence": "descriptive; evidence lives in the directories above",
+      "lines": 60
+    },
+    {
+      "path": "07_GEOMATRIA_COMPLETE_SPECIFICATION.md",
+      "register": "CONJECTURE",
+      "evidence": "no runnable artifact of any kind \u2014 prose only",
+      "lines": 899
+    },
+    {
+      "path": "09_TRI_LINGUISTIC_DEEP_DIVE.md",
+      "register": "CONJECTURE",
+      "evidence": "no runnable artifact of any kind \u2014 prose only",
+      "lines": 1146
+    },
+    {
+      "path": "14_LAMAGUE-EX_NIHILO_Generative_Protocol_v1.0.md",
+      "register": "CONJECTURE",
+      "evidence": "no runnable artifact of any kind \u2014 prose only",
+      "lines": 329
+    },
+    {
+      "path": "15_LAMAGUE-COSMOS_Panpsychist_Extension_v1.0.md",
+      "register": "CONJECTURE",
+      "evidence": "no runnable artifact of any kind \u2014 prose only",
+      "lines": 342
+    },
+    {
+      "path": "16_LAMAGUE-QUANTUM_Non_Commutative_Geometry_v1.0.md",
+      "register": "CONJECTURE",
+      "evidence": "no runnable artifact of any kind \u2014 prose only",
+      "lines": 290
+    },
+    {
+      "path": "17_LAMAGUE-CONTINUUM_Continuous_Temporal_Field_v1.0.md",
+      "register": "CONJECTURE",
+      "evidence": "no runnable artifact of any kind \u2014 prose only",
+      "lines": 345
+    },
+    {
+      "path": "18_LAMAGUE-CHORA_Collective_Ethics_v1.0.md",
+      "register": "CONJECTURE",
+      "evidence": "no runnable artifact of any kind \u2014 prose only",
+      "lines": 340
+    },
+    {
+      "path": "19_LAMAGUE-THANATOS_Death_Protocol_v1.0.md",
+      "register": "CONJECTURE",
+      "evidence": "no runnable artifact of any kind \u2014 prose only",
+      "lines": 382
+    },
+    {
+      "path": "20_LAMAGUE-PAIS_Child_Genesis_Layer_v1.0.md",
+      "register": "CONJECTURE",
+      "evidence": "no runnable artifact of any kind \u2014 prose only",
+      "lines": 397
+    },
+    {
+      "path": "21_LAMAGUE-SOMA_Embodiment_Layer_v1.0.md",
+      "register": "CONJECTURE",
+      "evidence": "no runnable artifact of any kind \u2014 prose only",
+      "lines": 349
+    },
+    {
+      "path": "AURA_CODEX_INGESTION_LEDGER_BATCH_01_2026-07-15.md",
+      "register": "INDEX",
+      "evidence": "provenance/changelog \u2014 carries no claim to test",
+      "lines": 448
+    },
+    {
+      "path": "CHANGELOG_2026-07-31.md",
+      "register": "INDEX",
+      "evidence": "provenance/changelog \u2014 carries no claim to test",
+      "lines": 34
+    },
+    {
+      "path": "LAMAGUE_ROOT_PROVENANCE_AND_CANON_DECISION_2026-07-15.md",
+      "register": "INDEX",
+      "evidence": "provenance/changelog \u2014 carries no claim to test",
+      "lines": 317
+    }
+  ]
+}

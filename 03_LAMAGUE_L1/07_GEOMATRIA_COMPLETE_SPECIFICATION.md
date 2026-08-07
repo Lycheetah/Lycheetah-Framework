@@ -1,3 +1,23 @@
+<!-- LAMAGUE-REGISTER register="CONJECTURE" derived="2026-08-07" by="lamague_register.py" -->
+
+> ## ⚠ REGISTER: CONJECTURE
+>
+> **No runnable artifact of any kind sits beside this document. It is prose.**
+>
+> This file uses the vocabulary of evidence — *test*, *measured*, *reproduce* —
+> and has none. That is not a criticism of the ideas in it. It is a statement of
+> what a reader may rely on, placed where it cannot be missed.
+>
+> Speculative extensions are legitimate and this corpus keeps them deliberately.
+> What was missing was the marker, so that a later reader — human or model —
+> cannot mistake this register for the measured one. Evidence in this directory
+> lives in `12_CORE_LANGUAGE_LINE/`, `22_REVERSIBLE_COMPRESSION_v1.0/`,
+> `02_NATIVE36/` and `23_SPOKEN_LAMAGUE/`, which carry 417 passing tests between
+> them. **This document carries none, and nothing here is retracted by saying so.**
+>
+> Derived by executing what sits beside each file, not by reading what the file
+> says about itself: `python3 03_LAMAGUE_L1/lamague_register.py`
+
 # GEOMATRIA COMPLETE SPECIFICATION
 ## Sacred Geometry Operational Language - The Third Way
 
