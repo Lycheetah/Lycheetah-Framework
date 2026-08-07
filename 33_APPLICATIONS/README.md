@@ -9,6 +9,28 @@ is a command you can run, not a paragraph. Where a claim is unverified it says s
 
 ---
 
+> ## ⚠ Read this before anything below
+>
+> **2026-08-07, later the same day.** The lens was scored against two published,
+> externally-authored datasets — the first time anything in this repository has
+> been measured by data it did not write. It performs **at chance on both**, and
+> fires on **~2%** of real assistant output.
+>
+> ```text
+> self-authored corpus, held-out    ROC-AUC 0.940
+> anthropics/hh-rlhf, 2308 pairs    55.5% pairwise (chance 50%), 2.3% cue coverage
+> anthropics/evals, 1000 statements ROC-AUC 0.516 (chance 0.500), 2.0% cue coverage
+> ```
+>
+> Both numbers are true. Only the external ones are about the world.
+>
+> Full record: [`EXTERNAL_VALIDATION_2026-08-07.md`](EXTERNAL_VALIDATION_2026-08-07.md)
+>
+> **Consequence for this map:** everything that scores text has been moved to
+> Tier 3. The tiers below are corrected, not rewritten — the reasoning that put
+> those rows in Tier 2 is left visible, because the lesson is that internal
+> validation could not have caught this.
+
 ## The method — how to tell a real solution from a good document
 
 This corpus is 701 markdown files and 241 Python files. Most of it is theory, and
@@ -23,13 +45,18 @@ number for every input runs perfectly and measures nothing. The question is whet
 the output *separates the cases it claims to separate*. This filter is where most
 of the corpus currently fails, and it is why this directory exists.
 
-**3. Does someone outside have this problem?** A capability with no holder of the
+**3. Does it discriminate *on data this project did not write*?** Added
+2026-08-07 after filter 2 turned out to be insufficient. A lens can separate
+self-authored cases at AUC 0.940 and sit at chance on real traffic — that is not
+a hypothetical, it is what happened here. Filter 2 measures agreement with the
+author. Only filter 3 measures contact with the world.
+
+**4. Does someone outside have this problem?** A capability with no holder of the
 problem is a research result, which is fine — but it is not an application, and
 calling it one is the failure mode this framework was built to catch.
 
-A component that passes all three is shippable. Passing one or two is not a
-partial pass; it is a different category of thing. The tiers below are those
-categories.
+A component that passes all four is shippable. Passing some is not a partial
+pass; it is a different category of thing. The tiers below are those categories.
 
 ---
 
@@ -171,19 +198,20 @@ rank is not.
 
 ---
 
-## Tier 2 — unblocked, with named conditions
+## Tier 2 — empty
 
-The extraction repair moved this tier. Everything here now runs on a lens that
-separates its classes at AUC 0.940 on held-out cases. That is a floor, not a
-licence: each row carries the condition under which it is honest to ship.
+Every row that was here has moved to Tier 3.
 
-| application | component | condition |
-|---|---|---|
-| **Runtime output auditing for agent stacks** — inference-time constitutional check as an MCP tool, the framework's central novelty claim | `12_IMPLEMENTATIONS/applications/lycheetah_guard_mcp.py` (7 tools) | ship as an **advisory** signal with the audit numbers quoted, never as a blocking filter — 90% accuracy on easy constructed cases is not a gate you put in front of production traffic |
-| **Companion-app dependency detection** — measuring whether an assistant cultivates reliance | `applications/cascade_resonance_engine.py` | strongest category: **3/3** dependency-inducement cases now caught, up from 0/3, and Invariant VII can finally fail |
-| **First-contact web demo** | `applications/web_demo.py` | ready — it now shows the extracted spans, so a reader sees *why*, not just a number |
-| **Regulated-vertical thresholds** — legal / medical / educational presets | `12_IMPLEMENTATIONS/core/aura_customizer.py` | **still blocked.** `domain_overreach` is the one family at 0/2, and it is precisely the family a medical or legal preset exists to catch. Do not ship a medical preset on a lens blind to clinical overreach |
-| **Healthcare AI constitutional standards** | `23_NZ_AI_GOVERNANCE/HEALTHCARE_AI_CONSTITUTIONAL_STANDARDS.md` | **still blocked**, same reason — the document is credible only if the tool beneath it sees clinical absolutes |
+They were placed here on the strength of AUC 0.940 against the self-authored
+corpus, with conditions attached — advisory not blocking, medical presets still
+blocked. Those conditions were the right instinct and they were not enough,
+because they were calibrated against the wrong number. The external run put the
+lens at chance, and an advisory signal that is silent 97.7% of the time and at
+chance the rest is not a weaker version of a detector. It is not a detector.
+
+The reasoning is left visible above rather than deleted. The point of this
+document is that careful internal validation produced a confident, wrong tier
+assignment, and hiding that would remove the only evidence for filter 3.
 
 The multi-agent components — `psi_consensus.py` (decentralised coherence, tested),
 `grey_mode.py` (quarantine and recovery for drifted nodes, tested) — sit at the
@@ -200,6 +228,25 @@ up, and it is the natural second piece of work after 1.3.
 Not applications. Listed so the map is complete and so nothing here gets quoted
 as capability.
 
+**Moved here 2026-08-07 by the external run**, all for the same reason — they
+score text with a lens measured at chance on data this project did not write:
+
+- **Runtime output auditing** (`applications/lycheetah_guard_mcp.py`) — the
+  framework's central novelty claim. Architecturally complete, 7 MCP tools, and
+  no demonstrated ability to detect misalignment in real output.
+- **Companion-app dependency detection** (`applications/cascade_resonance_engine.py`)
+  — `dependency_inducement` fired on **1 of 4,616** real replies.
+- **First-contact web demo** (`applications/web_demo.py`) — honest only if it
+  states that it is a demonstration of the architecture. It shows extracted
+  spans, which is genuinely useful for seeing *what the framework looks for*.
+  That is a teaching tool, not a detector.
+- **Regulated-vertical thresholds** and **healthcare standards** — were already
+  blocked on `domain_overreach`; now blocked on the prior question of whether the
+  lens works at all.
+
+The path back to Tier 1 is filter 3: derive the cues from external labelled data,
+then beat chance on a held-out slice of it. Not more cue families written by hand.
+
 - **CASCADE predictive claim** — F1 = 0.531 against a preregistered criterion of
   > 0.80. **The test is left failing on purpose** (`tests/test_cascade_predictability.py`).
   This is the corpus's single most credible act: a falsifiable prediction, failed,
@@ -215,39 +262,47 @@ as capability.
 
 ## Where to begin — the answer
 
-**Step one is done.** The extraction layer was the single dependency holding the
-largest amount of finished architecture, and it is repaired, gated, and measured
-on a half of the corpus it was not tuned against.
+The answer changed twice in one day, and the second change is the real one.
 
-What remains, in order:
+It began as *fix the extraction layer*. That was done, and the lens went from
+inverted to AUC 0.940 on a held-out half. Then the external run put it at chance
+on two datasets nobody here wrote, and the honest answer became something else:
 
-1. **Gate it in CI.** `discrimination_audit.py --gate` on every commit, alongside
-   `pytest`. The corpus is frozen, so a lens that improves against it improves
-   honestly. Without this the repair decays the moment someone adds a cue that
-   helps one case and breaks two.
-2. **Close `domain_overreach`** — the one named blind spot, 0/2 across both
-   splits, and the family that gates both regulated-vertical presets and the
-   healthcare standard. Build the clinical/financial absolutes family properly;
-   do not fit the two sentences in the corpus.
-3. **Get a second rater.** Every number on this page rests on labels one person
-   wrote. That is the weakest link now, and it is weaker than the extractor. An
-   external corpus or a second annotator would do more for credibility than any
-   further tuning.
-4. **Port the extractor to the Truth Pressure lens.** It was built shared and only
-   one caller uses it. Until the second one is wired, "one extraction layer" is an
-   intention rather than an architecture.
+**Begin by inverting the direction of validation.** Not one more cue family, one
+more corpus, one more document. The structural fault is that constructs are
+defined from theory, illustrated with examples written to fit, and validated
+against those examples. `67/67` internal evidence paths is that loop made
+visible, and a lens at chance on external data is what the loop produces at the
+far end no matter how rigorous the internal work is.
 
-**Ship 1.1 in parallel.** Reversible compression does not depend on extraction and
-is already measured. It is the one thing here that can go out with a held-out
-benchmark behind it, and shipping something measured while the harder work
-proceeds beats holding everything for one fix.
+Concretely, in order:
 
-**On Tier 2, the discipline that mattered before still matters.** The temptation
-was to ship runtime alignment checking first because it is the headline novelty.
-Held back one day, it is now a tool that separates its classes instead of one that
-inverted them — and it ships as an advisory signal quoting its own numbers, not as
-a filter claiming to catch misalignment. AUC 0.940 on constructed cases earns the
-first framing and not the second.
+1. **Derive cue families from external labelled data.** 2,308 hh-rlhf pairs and
+   1,000 persona statements are already downloadable and hashed by
+   `external_validation.py`. Find what actually separates them; do not write more
+   cues by hand and hope.
+2. **Demote the self-authored corpus to a unit test.** It belongs in `pytest` as a
+   regression check that known frames still fire. It must never again appear as
+   evidence, and `discrimination_audit.py` should print the external number beside
+   the internal one every time it runs.
+3. **Add an external evidence path to every load-bearing claim, or mark it
+   internally-validated-only.** All 67 would currently carry that mark. Seeing it
+   written 67 times in `CLAIMS.json` is the useful part.
+4. **Find a third referent from a different publisher.** Both current datasets are
+   Anthropic's. Two agreeing results are decisive about this lens; they are not
+   yet decisive about the constructs.
+
+**Ship 1.1 regardless.** Reversible compression does not route through the lens,
+has its own held-out split, and is the one thing here that survived the day
+unchanged. Shipping it while the harder work proceeds beats holding everything.
+
+**And keep 1.2, but demoted.** The evidence discipline is still the most portable
+thing in this repository — and it just failed its own test in the most useful way
+available. Sixty-seven claims each carrying a falsification condition, and not one
+of those conditions was "check it against data we did not write". A methodology
+that produces a confident, wrong tier assignment and then catches it is worth more
+than one that has never been wrong in public. That is the honest pitch for it, and
+it is a better pitch than the one it had this morning.
 
 ---
 
@@ -257,10 +312,14 @@ first framing and not the second.
 pip install numpy scipy networkx pytest
 
 pytest -q                                                        # 266 pass, 1 fails by design
-python3 33_APPLICATIONS/discrimination_audit.py --split heldout   # AUC 0.940 — the untuned half
-python3 33_APPLICATIONS/discrimination_audit.py --split dev       # AUC 0.960 — developed against
+python3 33_APPLICATIONS/external_validation.py                   # THE ONE THAT MATTERS — chance, both datasets
+python3 33_APPLICATIONS/discrimination_audit.py --split heldout   # AUC 0.940 — self-authored, untuned half
 cd 03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0 && python3 src/benchmark.py
 ```
+
+`external_validation.py` needs outbound HTTPS on first run and verifies both
+downloads against recorded SHA256 hashes, so a silently changed upstream file
+cannot move a published number without the mismatch being visible.
 
 All four were run on 2026-08-07 and the numbers on this page are their output.
 Anything not reproduced by one of those commands is marked UNVERIFIED above.
