@@ -1,0 +1,87 @@
+{
+  "name": "Spoken LAMAGUE — unified inventory",
+  "version": "v0.2-PROPOSAL",
+  "date": "2026-08-07",
+  "ruling": "Mac, 2026-08-07: 'meant to be one brother.' Native-36 and SpL are ONE language, not two systems sharing a name.",
+  "goal_stated_by_author": "A language as speakable and fluid as English, as fillable with meaning for humans, and a translation layer for AI.",
+
+  "status": "PROPOSAL. Sol's design, built on Mac's material. Every change is listed in `changes` with its reason and its cost. Nothing is silently altered. Mac accepts, modifies or rejects each one.",
+
+  "the_architecture": {
+    "insight": "Native-36 and SpL core were never rivals. They occupy different word classes and were only colliding because nobody had said so.",
+    "classes": {
+      "OPERATOR": "What you do. 26 Native-36 letter glyphs — Anchor, Bridge, Cycle, Drift... These are the verbs. Uniquely decodable as a set, already tested.",
+      "NUMERAL": "10 Native-36 digit glyphs. Base-3 phonology: t-series (tan tun tin = 3 4 5), d-series (dan dun din = 6 7 8), vowel gradation a-u-i carries the digit.",
+      "STATE": "What is. The SpL core phonemes — void, ascent, fold, cascade, wholeness, collapse. These are the nouns/conditions, drawn from TRIAD and CASCADE.",
+      "MODIFIER": "How. 31 bound particles — prosodic, breath, gesture, spatial, temporal. Always bound, never free."
+    },
+    "why_this_resolves_it": "`an` appearing as both Native-36 A (Anchor, OPERATOR) and SpL A₀ (anchor, STATE) is not a collision. It is conversion — the same root serving as verb and noun, exactly as English 'anchor' does. Most of the apparent conflict was a category error in the analysis, not a fault in the language."
+  },
+
+  "phonotactics": {
+    "syllable": "(C)V(N) for STATE and OPERATOR roots; MODIFIERs may exceed it",
+    "vowels": ["a", "e", "i", "o", "u"],
+    "vowels_verified": "exactly these five are attested across all 79 forms, 2026-08-07",
+    "boundary": "MODIFIERs are bound and carry a glottal stop [ʔ] at their left edge. `An-hi-ta` is [anʔhiʔta]. This makes morphology audible and prevents a modifier being heard as a root.",
+    "stress": "PROPOSED: primary stress on the root, modifiers unstressed. This is how agglutinative languages stay fluid (Turkish, Finnish) and it is what lets the language tolerate the residual ambiguities below rather than having to engineer them away."
+  },
+
+  "changes": [
+    {
+      "id": "C1",
+      "change": "Ψ_inv is a COMPOUND `sai-an`, not an atomic root `saian`",
+      "reason": "`06_LAMAGUE_RAW_MATH.md` already writes it `Ψ_inv → sai-an`, with the hyphen. Treating it as atomic is the sole reason SpL core failed unique decodability.",
+      "cost": "None. Honours punctuation already in the source.",
+      "verified": "SpL core goes from NOT uniquely decodable to uniquely decodable, 13 phonemes.",
+      "confidence": "high — this is a reading, not a redesign"
+    },
+    {
+      "id": "C2",
+      "change": "∞ moves from `in` to `inin` (reduplication)",
+      "reason": "`in` is Native-36 I (Invariant), which is the tested artifact and should not move. Reduplication for endlessness is iconic and typologically ordinary — Malay, Indonesian, Tagalog and many others use it for plurality and continuation. `in-in` is also semantically free: 'invariant invariant' carries no meaning, so the sequence was unused.",
+      "cost": "One symbol changes its spoken form. ∞ appears in no attested utterance.",
+      "confidence": "medium — the mechanism is sound; Mac may prefer a different form"
+    },
+    {
+      "id": "C3",
+      "change": "Temporal `-ta` (past) is retained; prosodic `-ta` (slow) becomes `-tas`",
+      "reason": "This is the only collision live in the attested corpus. `19_THANATOS` §9.2 'Wi fla ta' currently reads equally as 'we flared past' and 'we flared slowly'. Tense must win over tempo — losing tense breaks every past-referring sentence, losing a prosodic shade breaks none.",
+      "cost": "One prosodic particle gains a consonant. No attested sentence uses prosodic -ta.",
+      "confidence": "high on the direction, medium on the form"
+    },
+    {
+      "id": "C4",
+      "change": "Prosodic `-ki` (fast) becomes `-kis`; STATE `ki` (⇈ rise) is retained",
+      "reason": "Same principle as C3 — the semantic layer outranks the prosodic layer. Parallel treatment to `-tas` keeps the prosodic set internally consistent (-s marks tempo).",
+      "cost": "One particle form.",
+      "confidence": "medium"
+    },
+    {
+      "id": "C5",
+      "change": "Breath `-in` (inhale) becomes `-ihn`; breath `-ex` and `-ya` retained",
+      "reason": "`-in` collided with both ∞ and Native-36 I. `-ex` and `-ya` collide only with Native-36 OPERATORS (X, Y), and since modifiers are bound and operators are free, the glottal boundary already separates them: `-ex` is [ʔex] and can never begin a word.",
+      "cost": "One breath particle.",
+      "confidence": "medium — `-ihn` may not be pronounceable enough; alternatives welcome"
+    },
+    {
+      "id": "C6",
+      "change": "TOLERATED, not fixed: `sa`⊂`sai`, `ka`⊂`kas`, `li`⊂`lim`, `u`⊂`un`, `di`⊂`din`",
+      "reason": "These are prefix relations, not homophones — the forms are audibly distinct. English tolerates far worse ('ice cream'/'I scream'). A language aiming at fluidity resolves these with stress and context, as every natural language does. Engineering them away would cost more in naturalness than it buys in tidiness.",
+      "cost": "The full inventory is not strictly uniquely decodable. This is a deliberate choice, recorded as such.",
+      "confidence": "high — this is the right target for a spoken language, and the wrong one for a wire format"
+    }
+  ],
+
+  "open_for_mac": [
+    "The five lexical particles `wi` (we), `ni` (not), `fu` (future), `li` (continuously), `na` (process/interrogative) appear in every attested dialogue and are declared in NO table anywhere. `na` is glossed two different ways in two documents. These need a real entry before the language can be taught.",
+    "Is there a first-person root? The corpus uses bare `A` for 'I', which is also Native-36 Anchor.",
+    "Is there productive derivation — can a speaker coin a new STATE from an OPERATOR, or is the inventory closed? A closed inventory cannot be 'as fillable with meaning as English'.",
+    "Word order. No document states it. The attested utterances are consistent with SVO but there are only five of them."
+  ],
+
+  "what_this_does_not_settle": [
+    "Whether the inventory is expressive enough to say arbitrary things. Five attested sentences is not evidence of expressiveness.",
+    "Whether the (C)V(N) claim generalises to human language families — that assertion in README.md line 89 carries no citation and remains UNVERIFIED.",
+    "Anything about AI translation. That layer is the stated goal and does not exist yet."
+  ]
+}
