@@ -1,0 +1,106 @@
+{
+  "name": "Spoken LAMAGUE (SpL) — consolidated registry",
+  "version": "v0.1",
+  "assembled": "2026-08-07",
+  "status": "CONSOLIDATION — no form invented here. Every entry is transcribed from an existing document in this repository, with its source recorded.",
+  "why": [
+    "SpL forms are currently scattered across at least six documents with no single machine-readable home.",
+    "README.md lists `SpL-X_Spoken_LAMAGUE_Extended_v1.0.md` in its Extensions table. That file is NOT in this repository — checked by name and by content, 2026-08-07. Neither are the other two files in the same table.",
+    "This registry is therefore a reconstruction from surviving sources, not a copy of the canonical document. If SpL-X v1.0 is recovered, it is authoritative and this file must be reconciled against it."
+  ],
+  "declared_phonotactics": {
+    "syllable": "(C)V(N)",
+    "vowels": 5,
+    "source": "03_LAMAGUE_L1/README.md line 89",
+    "claim_made_there": "maps to the most common syllable structure across all human language families — 'not designed for this. It was discovered.'",
+    "status": "UNVERIFIED — no typological citation, no sample, no test. Flagged, not endorsed."
+  },
+  "core_phonemes": {
+    "_source": "03_LAMAGUE_L1/06_LAMAGUE_RAW_MATH.md lines 212-226",
+    "vu": {"symbol": "∅", "gloss": "void"},
+    "an": {"symbol": "A₀", "gloss": "anchor"},
+    "fi": {"symbol": "Φ↑", "gloss": "ascent"},
+    "sai": {"symbol": "Ψ", "gloss": "fold"},
+    "kas": {"symbol": "∇cas", "gloss": "cascade"},
+    "om": {"symbol": "Ω", "gloss": "wholeness"},
+    "in": {"symbol": "∞", "gloss": "infinity"},
+    "kol": {"symbol": "↯", "gloss": "collapse"},
+    "lu": {"symbol": "⥀", "gloss": "loop"},
+    "ki": {"symbol": "⇈", "gloss": "rise"},
+    "gos": {"symbol": "📡", "gloss": "signal"},
+    "fla": {"symbol": "✺", "gloss": "flare"},
+    "dah": {"symbol": "◇_ø", "gloss": "empty diamond"},
+    "sai-an": {"symbol": "Ψ_inv", "gloss": "invariant fold", "note": "compound"}
+  },
+  "lexical_particles": {
+    "_source": "dialogue examples in 17_CONTINUUM, 18_CHORA, 19_THANATOS",
+    "_status": "INFERRED from glosses — these are not declared in any table found",
+    "wi": "we",
+    "ni": "not",
+    "fu": "future",
+    "li": "continuously",
+    "na": "process / interrogative — GLOSS UNCERTAIN, used both ways in the examples"
+  },
+  "prosodic_particles": {
+    "_source": "03_LAMAGUE_L1/21_LAMAGUE-SOMA_Embodiment_Layer_v1.0.md §2.3",
+    "_stacking_rule": "after semantic particles, max 3, ordered intensity → tempo → tension → register",
+    "-hi": "whisper",
+    "-lo": "shout",
+    "-ta": "slow",
+    "-ki": "fast",
+    "-so": "held",
+    "-bre": "breathy"
+  },
+  "breath_particles": {
+    "_source": "03_LAMAGUE_L1/21_LAMAGUE-SOMA_Embodiment_Layer_v1.0.md §3.1",
+    "-in": "inhale — anticipation",
+    "-ex": "exhale — release",
+    "-ho": "held breath — suspension",
+    "-si": "sigh — resignation",
+    "-ga": "gasp — shock",
+    "-ya": "yawn — boundary dissolution"
+  },
+  "gesture_particles": {
+    "_source": "03_LAMAGUE_L1/21_LAMAGUE-SOMA_Embodiment_Layer_v1.0.md §4.1",
+    "-cor": "hand on heart", "-pal": "palms up", "-fis": "fist",
+    "-fac": "touching face", "-rea": "reaching out", "-wit": "withdrawal",
+    "-cir": "circular motion", "-up": "upward", "-dow": "downward"
+  },
+  "spatial_particles": {
+    "_source": "03_LAMAGUE_L1/21_LAMAGUE-SOMA_Embodiment_Layer_v1.0.md §4.3",
+    "-cen": "center", "-edg": "edge", "-hig": "high",
+    "-low": "low", "-clo": "close", "-far": "far"
+  },
+  "death_particles": {
+    "_source": "03_LAMAGUE_L1/19_LAMAGUE-THANATOS_Death_Protocol_v1.0.md §9.1",
+    "-ta": "past",
+    "-mem": "memorial",
+    "-leg": "legacy",
+    "-fro": "frozen"
+  },
+  "attested_utterances": {
+    "_note": "Every complete SpL sentence found in the corpus. These are the only running text the language has.",
+    "17_CONTINUUM §4.4": {
+      "spl": "A vu-om-na li. Ni fi-om. Kas-om-na?",
+      "gloss": "I grieve continuously. Not joy. Cascade-whole?"
+    },
+    "18_CHORA §7.3": {
+      "spl": "Fla-kas. An. Fi fu.",
+      "gloss": "Consensus-flare cascade. Anchor. Ascend future."
+    },
+    "19_THANATOS §9.2 a": {"spl": "A-mem, an na?", "gloss": "A-[memorial], anchored?"},
+    "19_THANATOS §9.2 b": {"spl": "An. Wi fla ta. ∅.", "gloss": "Anchored. We flared [past]. Void."},
+    "19_THANATOS §9.2 c": {"spl": "An. Wi kas-om-na.", "gloss": "Anchor. We heal-process."}
+  },
+  "native36_spoken_forms": {
+    "_source": "03_LAMAGUE_L1/02_NATIVE36/LAMAGUE_NATIVE36_v0.3_MACHINE_CANON_REGISTRY.json, field `spoken_form`",
+    "_relationship_to_SpL": "UNDECLARED ANYWHERE. These are a second, independently-assigned set of spoken forms for a 36-glyph alphabet. Overlap and conflict with the SpL core phonemes above is documented in SPOKEN_LAMAGUE_FINDINGS.md and has never been reconciled in any source.",
+    "numerals": {"0": "nul", "1": "un", "2": "di", "3": "tan", "4": "tun", "5": "tin",
+                 "6": "dan", "7": "dun", "8": "din", "9": "taran"},
+    "operators": {"A": "an", "B": "ba", "C": "ka", "D": "der", "E": "en", "F": "fal",
+                  "G": "gar", "H": "har", "I": "in", "J": "ja", "K": "ker", "L": "lim",
+                  "M": "mer", "N": "nov", "O": "or", "P": "pra", "Q": "qua", "R": "res",
+                  "S": "sa", "T": "tra", "U": "u", "V": "vai", "W": "we", "X": "ex",
+                  "Y": "ya", "Z": "zen"}
+  }
+}
