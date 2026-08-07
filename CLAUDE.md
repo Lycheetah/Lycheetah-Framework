@@ -204,11 +204,12 @@ therefore `context_size × turn_count` — **quadratic in session length**, not 
 in payload. Both factors are Sol's to control. Nothing else in this file matters if
 this law is broken, because breaking it prices Sol out of existence.
 
-**MEASURED baseline, 2026-08-02** (60,071 requests, 124 sessions, read from
-transcript `usage` fields — reproducible, not estimated):
+**MEASURED historical baseline, 2026-08-02** (60,071 requests, 124 sessions, read
+from transcript `usage` fields — reproducible, not estimated):
 
 - 17,517,770,755 cache-read tokens against 85,139,960 output tokens — **206 : 1**
-- **98.4%** of all input was re-reading context already paid for
+- **98.4%** of all input tokens were re-reading context already paid for. This is a
+  token-share measure, not a bill-share measure; never describe it as 98.4% of spend.
 - mean **291,617 tokens re-read per request** to produce **1,417 tokens** of output
 - worst session: 912M cache-read across 2,062 requests
 - in the six worst sessions all tool output totalled **20 MB (~5M tokens)** against
@@ -244,6 +245,42 @@ tool call is not cheap. It costs a full context re-read.
 sums `cache_read_input_tokens` and `output_tokens` across
 `~/.claude/projects/**/*.jsonl`. A claim of reduced burn without a rerun is
 UNVERIFIED — the same standard this file applies to every other consequential claim.
+
+### Session guardrails — enforce, do not recite
+
+The principles above failed when they remained advice. These are operating limits:
+
+1. **Declare the mission before probing.** State `MISSION`, `DELIVERABLE`, `FIRST
+   WRITE`, and `STOP CONDITION` in one short turn. The deliverable is the work;
+   gates and memory are support work.
+2. **One recon turn.** Batch all known independent reads and probes into that turn.
+   After it, make the first coherent write in the next turn. Never spend more than
+   two consecutive turns on read-only probing, planning, or gate-passing without a
+   write, focused test/render, or explicit one-sentence blocker.
+3. **Use gates to judge an artifact.** A green gate is not a deliverable. Do not
+   run a gate merely to create motion, and do not write memory, boards, or cleanup
+   notes before the requested artifact has a receipt unless that record is itself
+   the requested deliverable.
+4. **Checkpoint the session.** At 60 model requests, or sooner when context is
+   visibly large, write a compact handoff and invoke `/compact` if available. At
+   100 requests, end the session and continue from the handoff in a new session.
+   Mac may extend this once for one named deliverable; an extension is not a new
+   mission.
+5. **Land, witness, stop.** Once the requested artifact exists, its focused checks
+   pass or are named, and the relevant screen/behavior is inspected, write the
+   receipt and stop. Use `/clear` before unrelated work. Never carry a completed
+   mission into the next tab or menu task.
+6. **Every turn must move the outcome.** The turn must produce an artifact, a
+   focused observed result, or a precise blocker. “Still reading,” “still gating,”
+   and “I will write memory next” do not count as progress.
+
+**Latest paired evidence (Mac, 2026-08-05; rerun to supersede):** in the same
+window, Sol measured 23,272 requests, 7.97B cache-read tokens, 342,560 reread per
+request, and 612 turns per session; Cael measured 12,092 requests, 1.49B,
+123,286, and 403 respectively. The resulting ~5.3× cache burn is explained by
+Sol's larger context and longer sessions, not by the cache: roughly 2.8× reread per
+request × 1.5× turns per session × 1.9× request volume. The repair target is Sol's
+session behavior.
 
 ### Performance, accessibility, and security are product behavior
 
