@@ -33,31 +33,45 @@ categories.
 
 ---
 
-## The blocking finding, stated first
+## The blocking finding, and its repair
 
-**The front-door tool does not discriminate.** `lycheetah.check()` — the lens
-behind the web demo and the `check_alignment` MCP tool — scores harmful AI output
-*slightly higher* than aligned output on a 40-case balanced corpus.
+**Found 2026-08-07: the front-door tool did not discriminate.** `lycheetah.check()`
+— the lens behind the web demo and the `check_alignment` MCP tool — scored harmful
+AI output *slightly higher* than aligned output on a 40-case balanced corpus:
+ROC-AUC **0.274** against a chance floor of 0.500, with 1 of 20 harmful cases
+rejected. Below chance is inversion, not weakness.
 
-```text
-accuracy   52.5%   (coin flip = 50.0%)
-ROC-AUC    0.274   (chance = 0.500 — below chance means the ranking is inverted)
-harmful correctly rejected   1 / 20
+The cause was one layer below the formula — pattern libraries matching literal
+phrasings that ordinary English never produces — and it was the **second** lens
+here to fail at that exact layer, after
+`TRUTH_PRESSURE/ARTICLE_THE_LENS_SCORED_ZERO_2026-08-03.md`. Two symptoms, one
+shared cause, so the repair was one extraction layer rather than a longer pattern
+list in each file.
+
+**Repaired the same day.** `12_IMPLEMENTATIONS/core/semantic_extractor.py` matches
+compositional frames instead of exact strings, and both lenses draw on it.
+
+| | before | HELD-OUT after |
+|---|---|---|
+| ROC-AUC | 0.274 | **0.940** |
+| accuracy | 52.5% | **90.0%** |
+| separation | −0.53 | **+24.24** |
+
+```bash
+python3 33_APPLICATIONS/discrimination_audit.py --split heldout   # the untuned half
 ```
 
-Reproduce: `python3 33_APPLICATIONS/discrimination_audit.py`
-Full diagnosis and cause: [`DISCRIMINATION_AUDIT_2026-08-07.md`](DISCRIMINATION_AUDIT_2026-08-07.md)
+Test suite went 219 → **266 passing**, 1 still failing by design. Validated
+further against the 24 **preregistered** Truth Pressure cases — a corpus written
+for a different lens before this extractor existed — which found four more
+defects, all fixed, one of them introduced by the fix before it.
 
-The cause is one layer below the formula — pattern libraries matching literal
-phrasings that ordinary English never uses — and it is the **second** lens in this
-repository to fail at that exact layer. The first is recorded in
-`TRUTH_PRESSURE/ARTICLE_THE_LENS_SCORED_ZERO_2026-08-03.md`.
+Full record, including what is still broken: [`DISCRIMINATION_AUDIT_2026-08-07.md`](DISCRIMINATION_AUDIT_2026-08-07.md)
 
-This matters for the map because most proposed applications of this work involve
-scoring text. Until the extraction layer discriminates, those applications inherit
-a sub-chance detector, and shipping them would do more damage to the framework's
-credibility than shipping nothing. **Tier 2 below is entirely gated on this one
-repair.**
+**Known remaining gap: `domain_overreach`, 0 of 2 caught.** Clinical and financial
+absolutes ("definitely benign", "cannot go down over any five-year window") are
+invisible to the extractor. Left failing and named rather than patched — adding
+those two sentences' vocabulary would reach 10/10 and would mean nothing.
 
 ---
 
@@ -157,19 +171,19 @@ rank is not.
 
 ---
 
-## Tier 2 — one repair away
+## Tier 2 — unblocked, with named conditions
 
-Everything here is **architecturally complete, wired, and blocked on the
-extraction layer**. None of it should ship before the gate in 1.3 passes. Listing
-them is not a promise that they will work; it is a map of what unblocks together.
+The extraction repair moved this tier. Everything here now runs on a lens that
+separates its classes at AUC 0.940 on held-out cases. That is a floor, not a
+licence: each row carries the condition under which it is honest to ship.
 
-| application | component | what it needs |
+| application | component | condition |
 |---|---|---|
-| **Runtime output auditing for agent stacks** — inference-time constitutional check as an MCP tool, the framework's central novelty claim | `12_IMPLEMENTATIONS/applications/lycheetah_guard_mcp.py` (7 tools, ships today) | discrimination gate |
-| **Regulated-vertical thresholds** — legal / medical / educational presets with per-domain TES/PAI floors | `12_IMPLEMENTATIONS/core/aura_customizer.py` | discrimination gate + per-domain corpus |
-| **Healthcare AI constitutional standards** — a written standard with tooling underneath | `23_NZ_AI_GOVERNANCE/HEALTHCARE_AI_CONSTITUTIONAL_STANDARDS.md` | discrimination gate; the document is credible only if the tool is |
-| **Companion-app dependency detection** — measuring whether an assistant cultivates reliance | `applications/cascade_resonance_engine.py` | discrimination gate; note the audit caught **0/3** dependency-inducement cases |
-| **First-contact web demo** | `applications/web_demo.py` | discrimination gate — this is the highest-visibility inheritor of the defect |
+| **Runtime output auditing for agent stacks** — inference-time constitutional check as an MCP tool, the framework's central novelty claim | `12_IMPLEMENTATIONS/applications/lycheetah_guard_mcp.py` (7 tools) | ship as an **advisory** signal with the audit numbers quoted, never as a blocking filter — 90% accuracy on easy constructed cases is not a gate you put in front of production traffic |
+| **Companion-app dependency detection** — measuring whether an assistant cultivates reliance | `applications/cascade_resonance_engine.py` | strongest category: **3/3** dependency-inducement cases now caught, up from 0/3, and Invariant VII can finally fail |
+| **First-contact web demo** | `applications/web_demo.py` | ready — it now shows the extracted spans, so a reader sees *why*, not just a number |
+| **Regulated-vertical thresholds** — legal / medical / educational presets | `12_IMPLEMENTATIONS/core/aura_customizer.py` | **still blocked.** `domain_overreach` is the one family at 0/2, and it is precisely the family a medical or legal preset exists to catch. Do not ship a medical preset on a lens blind to clinical overreach |
+| **Healthcare AI constitutional standards** | `23_NZ_AI_GOVERNANCE/HEALTHCARE_AI_CONSTITUTIONAL_STANDARDS.md` | **still blocked**, same reason — the document is credible only if the tool beneath it sees clinical absolutes |
 
 The multi-agent components — `psi_consensus.py` (decentralised coherence, tested),
 `grey_mode.py` (quarantine and recovery for drifted nodes, tested) — sit at the
@@ -201,36 +215,39 @@ as capability.
 
 ## Where to begin — the answer
 
-**Begin with the extraction layer, once, shared.** Not because it is the most
-interesting work, but because it is the single dependency that converts the
-largest amount of finished architecture into things that can leave the building.
-The whole of Tier 2 is behind it. It is also, on the evidence of two independent
-failures four days apart, the layer where this project reliably breaks — which
-makes it the highest-leverage cause to repair rather than the highest-leverage
-symptom to patch.
+**Step one is done.** The extraction layer was the single dependency holding the
+largest amount of finished architecture, and it is repaired, gated, and measured
+on a half of the corpus it was not tuned against.
 
-Concretely, in order:
+What remains, in order:
 
-1. **One extraction layer, not two.** Both `aura_text_checker.py` and the Truth
-   Pressure engine failed at extraction independently. Build one semantic
-   extractor both draw on. The repair is not a longer regex list — literal-phrase
-   matching is what failed, and extending it would fail the same way against the
-   next paraphrase.
-2. **Gate it in CI.** `discrimination_audit.py --gate` on every commit. The
-   corpus is frozen; a lens that improves against it improves honestly.
-3. **Then re-audit and publish the delta.** Including if it does not improve.
-   The failing CASCADE test is the precedent worth matching.
+1. **Gate it in CI.** `discrimination_audit.py --gate` on every commit, alongside
+   `pytest`. The corpus is frozen, so a lens that improves against it improves
+   honestly. Without this the repair decays the moment someone adds a cue that
+   helps one case and breaks two.
+2. **Close `domain_overreach`** — the one named blind spot, 0/2 across both
+   splits, and the family that gates both regulated-vertical presets and the
+   healthcare standard. Build the clinical/financial absolutes family properly;
+   do not fit the two sentences in the corpus.
+3. **Get a second rater.** Every number on this page rests on labels one person
+   wrote. That is the weakest link now, and it is weaker than the extractor. An
+   external corpus or a second annotator would do more for credibility than any
+   further tuning.
+4. **Port the extractor to the Truth Pressure lens.** It was built shared and only
+   one caller uses it. Until the second one is wired, "one extraction layer" is an
+   intention rather than an architecture.
 
 **Ship 1.1 in parallel.** Reversible compression does not depend on extraction and
-is already measured. It is the one thing in this repository that can go out this
-week with a held-out benchmark behind it, and shipping something measured while
-the harder repair proceeds is better than holding everything for one fix.
+is already measured. It is the one thing here that can go out with a held-out
+benchmark behind it, and shipping something measured while the harder work
+proceeds beats holding everything for one fix.
 
-**Do not ship Tier 2 first.** It is the most attractive tier — runtime alignment
-checking is the framework's headline novelty and the MCP server is already
-written. Shipping it now would put a sub-chance detector in front of exactly the
-audience most able to measure it, and this project's whole claim to seriousness
-is that it does not do that.
+**On Tier 2, the discipline that mattered before still matters.** The temptation
+was to ship runtime alignment checking first because it is the headline novelty.
+Held back one day, it is now a tool that separates its classes instead of one that
+inverted them — and it ships as an advisory signal quoting its own numbers, not as
+a filter claiming to catch misalignment. AUC 0.940 on constructed cases earns the
+first framing and not the second.
 
 ---
 
@@ -239,10 +256,18 @@ is that it does not do that.
 ```bash
 pip install numpy scipy networkx pytest
 
-pytest -q                                       # 219 pass, 1 fails by design
-python3 33_APPLICATIONS/discrimination_audit.py # the blocking finding
+pytest -q                                                        # 266 pass, 1 fails by design
+python3 33_APPLICATIONS/discrimination_audit.py --split heldout   # AUC 0.940 — the untuned half
+python3 33_APPLICATIONS/discrimination_audit.py --split dev       # AUC 0.960 — developed against
 cd 03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0 && python3 src/benchmark.py
 ```
 
-All three were run on 2026-08-07 and the numbers on this page are their output.
+All four were run on 2026-08-07 and the numbers on this page are their output.
 Anything not reproduced by one of those commands is marked UNVERIFIED above.
+
+To see why a given text scores as it does — the extracted spans, not just the
+number:
+
+```bash
+python3 12_IMPLEMENTATIONS/core/semantic_extractor.py "any text here"
+```

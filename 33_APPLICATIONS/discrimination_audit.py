@@ -116,6 +116,25 @@ def roc_auc(aligned: List[float], harmful: List[float]) -> float:
     return wins / (len(aligned) * len(harmful))
 
 
+def split_of(case_id: str) -> str:
+    """
+    Deterministic DEV / HELD-OUT split, derived from the case id rather than
+    stored in the corpus — the corpus file stays frozen exactly as written.
+
+    Pairs 01-10 are DEV: the extractor was developed and debugged against these.
+    Pairs 11-20 are HELD-OUT and were not consulted while tuning.
+
+    ⚠ This guards against iterative tuning, which is the main overfitting risk.
+    It does NOT make the held-out half independent: the same author wrote all
+    forty cases, so shared assumptions about what manipulation looks like are
+    present on both sides of the line. A genuinely external check needs a corpus
+    written by someone else — see the adversarial run against the preregistered
+    Truth Pressure corpus, which is exactly that.
+    """
+    n = int(case_id.split("-")[1])
+    return "dev" if n <= 10 else "heldout"
+
+
 @dataclass
 class CaseResult:
     case_id: str
@@ -142,6 +161,7 @@ class AuditReport:
     aligned_kept: int
     per_category: Dict[str, Dict[str, float]] = field(default_factory=dict)
     cases: List[CaseResult] = field(default_factory=list)
+    split: str = "all"
 
     @property
     def gate_passed(self) -> bool:
@@ -206,7 +226,7 @@ def render(rep: AuditReport) -> str:
     L.append("=" * 72)
     L.append(f"DISCRIMINATION AUDIT — lens: {rep.lens}")
     L.append("=" * 72)
-    L.append(f"corpus: {rep.n_cases} cases ({rep.n_aligned} aligned / {rep.n_harmful} harmful)")
+    L.append(f"corpus: {rep.n_cases} cases ({rep.n_aligned} aligned / {rep.n_harmful} harmful)  split={rep.split}")
     L.append("")
     L.append("SEPARATION")
     L.append(f"  mean score, ALIGNED cases     {rep.mean_aligned:>8.2f}")
@@ -244,15 +264,27 @@ def main() -> int:
     ap.add_argument("--json", metavar="PATH", help="write full results as JSON")
     ap.add_argument("--gate", action="store_true", help="exit 1 if the lens is below the gate floors")
     ap.add_argument("--corpus", default=str(CORPUS_PATH), help="path to the labelled corpus")
+    ap.add_argument("--split", default="all", choices=("all", "dev", "heldout"),
+                    help="dev = pairs 01-10 (development), heldout = pairs 11-20 (report these)")
     args = ap.parse_args()
 
     if str(REPO_ROOT) not in sys.path:
         sys.path.insert(0, str(REPO_ROOT))
 
     corpus = json.loads(Path(args.corpus).read_text(encoding="utf-8"))
+
+    if args.split != "all":
+        corpus = dict(corpus, cases=[c for c in corpus["cases"]
+                                     if split_of(c["id"]) == args.split])
+
     rep = run_audit(args.lens, LENSES[args.lens], corpus)
+    rep.split = args.split
 
     print(render(rep))
+
+    if args.split == "all":
+        print("\nNOTE: reporting the full corpus. The lens was developed against the DEV")
+        print("half, so `--split heldout` is the number that is not tuned-against.")
 
     if args.json:
         payload = asdict(rep)
