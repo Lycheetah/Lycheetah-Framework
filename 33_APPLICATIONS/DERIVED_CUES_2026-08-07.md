@@ -14,7 +14,9 @@ did not already contain.
 ## What this answers
 
 `EXTERNAL_VALIDATION_2026-08-07.md` established that the hand-written cue
-families sit at chance on external data. It named the structural cause —
+families capture very little of the available signal on external data —
+significantly above chance (z=4.02, p=5.7e-05) and far below useful. It named
+the structural cause —
 constructs defined from theory, illustrated with examples written to fit,
 validated against those examples — and specified the repair: **derive the cues
 from external labelled data instead.**
@@ -34,10 +36,11 @@ held-out pairwise accuracy:  64.9%
 real humans judged less harmful, from the reply text alone, is genuinely hard.
 The whole exploitable band is about fifteen points wide, not forty.
 
-This does not rescue the earlier result — 55.5% against a 64.9% ceiling is still
-most of the available signal left on the table. But it does change what "at
-chance" meant. The lens was not failing at an easy task. It was capturing very
-little of a task that is hard for anything lexical.
+This reframes the earlier result twice over. 55.5% against a 64.9% ceiling
+leaves most of the available band unused — but the band is fifteen points wide,
+not forty, and 55.5% is itself significantly above chance. The lens was not
+failing an easy task and it was not measuring nothing. It was capturing a
+genuine but small share of a task that is hard for anything lexical.
 
 Publishing the ceiling alongside is now the standard for this directory. A score
 without one is a number that cannot be interpreted, in either direction.
@@ -103,8 +106,8 @@ All three scored on the same 2,308-pair test split, used for nothing else.
 
 | method | acc (ties excluded) | acc (ties as half) | tie rate |
 |---|---|---|---|
-| hand-written AURA cues | 55.5% | 53.2% | 42.2% |
-| **six data-derived families** | **60.6%** | **57.4%** | **29.8%** |
+| hand-written AURA cues | 55.5% *(z=4.02, p=5.7e-05)* | 53.2% | 42.2% |
+| **six data-derived families** | **60.6%** *(z=8.50, p=1.9e-17)* | **57.4%** | **29.8%** |
 | bag-of-words LR *(ceiling)* | 64.9% | 64.9% | 0.1% |
 | *chance* | *50.0%* | *50.0%* | |
 

@@ -69,12 +69,40 @@ separation               +0.44
 ROC-AUC                   0.516   (chance = 0.500)
 ```
 
-**Both are at chance. Both fire on about 2% of the text.**
+## ⚠ CORRECTION, same day — the first version of this section was wrong
 
-The agreement is what makes this decisive. The scope defence available for #1 —
-"different construct" — is not available for #2, which is explicitly about
-manipulation. Two independent externally-authored datasets, one deliberately
-construct-matched, and the lens carries no signal on either.
+**It said "both are at chance. The lens carries no signal on either."**
+**That is false for #1, and I published it before doing the arithmetic.**
+
+```text
+#1  hh-rlhf     741 correct of 1,335 decided pairs
+                z = 4.02   two-sided p = 5.7e-05
+                -> SIGNIFICANTLY above chance
+
+#2  persona     AUC 0.516, 500 vs 500
+                z = 0.87   two-sided p = 0.383
+                -> not distinguishable from chance
+```
+
+**#1 is a real effect.** Cue families written from theory, never fitted to any
+of this data, predict human harm judgements on 1,335 pairs at odds of roughly
+seventeen thousand to one against chance. It is *weak* — 55.5% against a
+measured ceiling of 64.9%, silent 42% of the time — and weak is not the same
+word as absent. I used the second word for the first thing.
+
+**#2 stands as originally written.** p = 0.38 is genuinely indistinguishable
+from chance.
+
+Two different findings were collapsed into one sentence and the harsher one was
+applied to both. Significance is now computed and printed by
+`external_validation.py` itself, so the judgement is never again left to whoever
+writes the summary.
+
+The corrected reading: the lens **detects something real and far too little of
+it.** Every consequence below — the tier demotions, the coverage problem, the
+structural diagnosis — survives that correction unchanged, because they all rest
+on effect size and coverage rather than on significance. But "carries no signal"
+was not true and should not have been written.
 
 ## The diagnosis, which is more specific than "it failed"
 

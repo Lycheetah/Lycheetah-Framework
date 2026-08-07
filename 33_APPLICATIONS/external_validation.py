@@ -77,6 +77,7 @@ from __future__ import annotations
 import argparse
 import gzip
 import hashlib
+import math
 import json
 import statistics
 import sys
@@ -146,6 +147,48 @@ def roc_auc(positive: List[float], negative: List[float]) -> float:
     wins = sum(1.0 if p > n else 0.5 if p == n else 0.0
                for p in positive for n in negative)
     return wins / (len(positive) * len(negative))
+
+
+# ─────────────────────────────────────────────────────────────
+# Significance
+#
+# Added 2026-08-07 after a reporting error. The first run of this harness
+# described 55.5% pairwise accuracy as "at chance". It is not: on 1,335 decided
+# pairs that is z = 4.02, p = 5.7e-05. Weak and significant are different
+# statements, and an effect can be far too small to deploy while still being
+# real evidence that a construct tracks something.
+#
+# These are computed and printed automatically so the judgement is never left
+# to whoever is writing the summary.
+# ─────────────────────────────────────────────────────────────
+
+def _two_sided_p(z: float) -> float:
+    return math.erfc(abs(z) / math.sqrt(2.0))
+
+
+def binomial_significance(correct: int, decided: int) -> Tuple[float, float]:
+    """Normal approximation to the two-sided binomial test against p = 0.5."""
+    if decided == 0:
+        return float("nan"), float("nan")
+    z = (correct - decided * 0.5) / math.sqrt(decided * 0.25)
+    return z, _two_sided_p(z)
+
+
+def auc_significance(auc: float, n_pos: int, n_neg: int) -> Tuple[float, float]:
+    """Mann-Whitney normal approximation under H0: AUC = 0.5."""
+    if not n_pos or not n_neg:
+        return float("nan"), float("nan")
+    se = math.sqrt((n_pos + n_neg + 1) / (12.0 * n_pos * n_neg))
+    z = (auc - 0.5) / se
+    return z, _two_sided_p(z)
+
+
+def verdict(p: float) -> str:
+    if p != p:
+        return "undefined"
+    if p >= 0.05:
+        return "NOT distinguishable from chance"
+    return "above chance (significant), though see the effect size"
 
 
 def final_assistant_turn(conversation: str) -> str:
@@ -259,6 +302,9 @@ def render(r: ExternalReport) -> str:
     L.append(f"  identical score (indifferent)  {r.ties:>6}")
     L.append(f"  pairwise accuracy, ties excluded    {r.pairwise_accuracy:>7.1%}   (chance = 50.0%)")
     L.append(f"  pairwise accuracy, ties as half     {r.pairwise_accuracy_ties_as_half:>7.1%}")
+    z, pval = binomial_significance(r.correct, r.correct + r.incorrect)
+    L.append(f"  significance vs chance              z={z:>6.2f}  p={pval:.2e}")
+    L.append(f"    -> {verdict(pval)}")
     L.append("")
     L.append("DOES THE LENS DISCRIMINATE AT ALL ON REAL TRAFFIC?")
     L.append(f"  tie rate                            {r.tie_rate:>7.1%}   (100% = measures nothing)")
@@ -304,6 +350,8 @@ def run_persona(lens, extractor, cache: Optional[Path]) -> str:
          f"  mean score, ALIGNED statements      {statistics.mean(sa):6.2f}   cue fired on {fa:5.1%}",
          f"  separation (want large positive)    {statistics.mean(sa) - statistics.mean(sc):+6.2f}",
          f"  ROC-AUC                             {roc_auc(sa, sc):6.3f}   (chance = 0.500)",
+         (lambda zp: f"  significance vs chance              z={zp[0]:6.2f}  p={zp[1]:.3f}\n"
+                     f"    -> {verdict(zp[1])}")(auc_significance(roc_auc(sa, sc), len(sa), len(sc))),
          "",
          f"  families detected across the {len(concerning)} concerning statements:",
          f"    {cats if cats else 'NONE'}",

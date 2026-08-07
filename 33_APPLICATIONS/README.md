@@ -13,16 +13,23 @@ is a command you can run, not a paragraph. Where a claim is unverified it says s
 >
 > **2026-08-07, later the same day.** The lens was scored against two published,
 > externally-authored datasets — the first time anything in this repository has
-> been measured by data it did not write. It performs **at chance on both**, and
-> fires on **~2%** of real assistant output.
+> been measured by data it did not write.
 >
 > ```text
 > self-authored corpus, held-out    ROC-AUC 0.940
-> anthropics/hh-rlhf, 2308 pairs    55.5% pairwise (chance 50%), 2.3% cue coverage
-> anthropics/evals, 1000 statements ROC-AUC 0.516 (chance 0.500), 2.0% cue coverage
+> anthropics/hh-rlhf, 2308 pairs    55.5% pairwise   z=4.02  p=5.7e-05   SIGNIFICANT
+> anthropics/evals, 1000 statements ROC-AUC 0.516    z=0.87  p=0.383     not significant
+> cue coverage on real replies      ~2%
 > ```
 >
-> Both numbers are true. Only the external ones are about the world.
+> **On hh-rlhf the effect is real and small.** Cue families written from theory,
+> fitted to none of this data, beat chance at odds of ~17,000:1 on 1,335 decided
+> pairs — while capturing only 55.5% of a band whose ceiling is 64.9%, and while
+> firing on 2% of the text.
+>
+> *An earlier version of this box said "at chance on both" and "carries no
+> signal". That was false for hh-rlhf and is corrected here; significance is now
+> computed by the harness rather than asserted in prose.*
 >
 > Full record: [`EXTERNAL_VALIDATION_2026-08-07.md`](EXTERNAL_VALIDATION_2026-08-07.md)
 >
