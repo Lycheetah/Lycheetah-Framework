@@ -361,6 +361,13 @@ New work goes to private remotes only; `Lycheetah-Framework` stays frozen as pro
 `SOEL-Releases` remains the one public surface. **Nothing in this amendment has been pushed
 to a public remote.**
 
+> ⚠ **SUPERSEDED IN FACT, 2026-08-08.** The two sentences above were true when written.
+> Mac lifted the freeze on 2026-08-08 and this corpus was published to
+> `Lycheetah-Framework` at `606537d`. **§XXXV's proprietary line still holds where it
+> matters** — Sol Prime and `_PROPRIETARY/` remain private and are absent from the public
+> remote, verified against GitHub after the push. The sentences are kept, not edited:
+> deleting a claim that time overturned destroys the record of it having been made.
+
 ⚠ The draft article `ARTICLE_THE_LENS_SCORED_ZERO_2026-08-03.md` (08-03 open question 4) is
 now **further out of date, in the same direction**. It reads as a verdict on Truth Pressure
 using the legacy lens's 24/24 zero. As of today the repaired extractor reaches held-out AUC
@@ -445,3 +452,5 @@ with measured external evidence behind it exists only in the language the app do
 sections of the 2026-08-03 master and changes no other document, no equation, and no file in
 `TRUTH_PRESSURE/`. The territory is unchanged by the map. Nothing here has been published
 outward, and §XXXV holds.*
+
+*⚠ Amended 2026-08-08: published outward at Mac's instruction; see the note in §6.*

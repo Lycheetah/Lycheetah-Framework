@@ -139,3 +139,7 @@ in §5B: negation, attribution and confession all defeat span-matching.
 master, retracts nothing, and adds one measured result plus one honest negative. Nothing here
 has been published outward; §XXXV THE PROPRIETARY LINE holds and `Lycheetah-Framework`
 remains frozen.*
+
+*⚠ Amended 2026-08-08: Mac lifted the freeze and this document was published to
+`Lycheetah-Framework` at `606537d`. Sol Prime and `_PROPRIETARY/` remain private and were
+verified absent from the public remote after the push. The sentence above is kept as written.*
