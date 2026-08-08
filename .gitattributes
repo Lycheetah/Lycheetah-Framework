@@ -1,0 +1,51 @@
+# Normalise line endings in the repository.
+#
+# 57 tracked files were committed with CRLF, including source that Python parses and
+# workflows that GitHub Actions reads. Mixed endings make diffs noisy, break `git
+# blame` across a re-save, and were how a stray `-e ` line survived unnoticed inside
+# subject_catalogue.py. Text is stored as LF; working copies keep whatever the
+# platform wants.
+
+* text=auto eol=lf
+
+# Explicit, so nothing here depends on the auto-detector's guess.
+*.py    text eol=lf diff=python
+*.pyi   text eol=lf diff=python
+*.md    text eol=lf
+*.txt   text eol=lf
+*.json  text eol=lf
+*.toml  text eol=lf
+*.cfg   text eol=lf
+*.ini   text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.csv   text eol=lf
+*.tex   text eol=lf
+*.ebnf  text eol=lf
+*.lmg   text eol=lf
+*.ts    text eol=lf
+*.tsx   text eol=lf
+*.js    text eol=lf
+*.jsx   text eol=lf
+*.mjs   text eol=lf
+*.css   text eol=lf
+*.html  text eol=lf
+*.astro text eol=lf
+*.svg   text eol=lf
+*.sh    text eol=lf
+
+# Binary — never touched, never diffed as text.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.pdf   binary
+*.zip   binary
+*.woff  binary
+*.woff2 binary
+*.rtf   binary
+
+# Keep generated and archival material out of language statistics and diffs.
+99_ARCHIVE/**                 linguist-vendored
+000_1404RawSourceTranslate/** linguist-vendored
+*.ipynb                       linguist-documentation
