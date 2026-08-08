@@ -590,7 +590,6 @@ if __name__ == "__main__":
     find_entry_points(curriculum)
     print("\n\nREFUSED SPECTACLE — VALIDATED STRUGGLE")
     print("THE FORGE ENDURES BECAUSE WE REMEMBER WHY CREATION MUST EXIST")
--e 
 
 # ============================================================
 # ALIAS — compatibility with new documentation

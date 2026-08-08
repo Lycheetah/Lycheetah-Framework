@@ -260,9 +260,14 @@ class GreyModeMonitor:
         delta_s = last_event.delta_s if last_event else 0.0
         delta_phi = last_event.delta_phi if last_event else 0.0
 
+        # Read the clock once, so the audit trail timestamp and entry_time describe
+        # the same instant. They previously came from two separate time.time() calls.
+        entry_time = time.time()
+        entry_time_str = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(entry_time))
+
         record = IsolationRecord(
             agent_id=agent_id,
-            entry_time=time.time(),
+            entry_time=entry_time,
             entry_state=state.copy(),
             trigger_delta_s=delta_s,
             trigger_delta_phi=delta_phi,
@@ -272,11 +277,9 @@ class GreyModeMonitor:
                 f"  ‖ΔS‖={delta_s:.4f} (threshold={self.s_threshold:.4f})",
                 f"  Δφ={delta_phi:.4f} (threshold={self.phi_threshold:.4f})",
                 f"  Alert count at activation: {self.alert_count}",
-                f"  Entry time: {record_time_str(record.entry_time) if False else 'now'}",
+                f"  Entry time: {entry_time_str}",
             ],
         )
-        # Fix the audit trail time
-        record.audit_trail[-1] = f"  Entry time: {time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}"
 
         self.isolation_record = record
         self.status = GreyModeStatus.GREY

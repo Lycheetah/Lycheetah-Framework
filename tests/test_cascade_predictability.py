@@ -352,11 +352,28 @@ class TestPredictabilityPerformance:
             )
 
     @pytest.mark.conjecture
+    @pytest.mark.xfail(
+        strict=True,
+        reason=(
+            "[DERIVED 2026-07-27] Unreachable by construction, not a weak predictor. "
+            "At the 8.8% base rate the oracle ceiling at k=5 is F1=0.548; the measured "
+            "0.531 sits within 0.017 of a bound no threshold choice can cross, and "
+            "F1>0.80 would need AUC around 0.99 against the measured 0.921. The "
+            "criterion was stated without accounting for base rate. Marked strict so "
+            "an unexpected pass reopens that derivation rather than passing silently. "
+            "See 28_DEFENSE/REPRODUCIBILITY_REPORT.md. Choosing a replacement "
+            "criterion is an author's decision and is deliberately left open."
+        ),
+    )
     def test_success_criterion_k5_on_full_run(self):
         """
         [CONJECTURE] The full 500-trial run should achieve F1 > 0.80 at k=5.
         This is the publishable claim — runs in ~30 seconds.
         Skip with: pytest -m 'not conjecture'
+
+        Expected to fail: the criterion is above the mathematical ceiling for this
+        base rate. The assertion is kept, unchanged, so the measured value stays
+        under test and the shortfall stays visible in the report.
         """
         results = run_experiment5(
             n_trials=500, n_domains=4, n_steps=44,

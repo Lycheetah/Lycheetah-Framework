@@ -184,7 +184,7 @@ def auc_significance(auc: float, n_pos: int, n_neg: int) -> Tuple[float, float]:
 
 
 def verdict(p: float) -> str:
-    if p != p:
+    if p != p:  # noqa: PLR0124 — NaN check; NaN is the only value unequal to itself
         return "undefined"
     if p >= 0.05:
         return "NOT distinguishable from chance"

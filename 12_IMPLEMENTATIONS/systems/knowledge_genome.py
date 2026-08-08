@@ -10,6 +10,8 @@ from typing import List, Dict, Tuple, Optional
 from dataclasses import dataclass
 from enum import Enum
 import hashlib
+import json
+import time
 
 # =========================
 # DNA ENCODING
@@ -686,9 +688,6 @@ def run_knowledge_genome_demo(generations: int = 20):
     print("=" * 70)
     
     return ecosystem
-
-# Add missing import
-import time
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
