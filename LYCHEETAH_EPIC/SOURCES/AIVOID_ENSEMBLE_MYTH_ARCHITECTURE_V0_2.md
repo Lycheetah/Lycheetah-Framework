@@ -1,7 +1,7 @@
 # AIVOID ENSEMBLE MYTH ARCHITECTURE V0.2
 ## Fifteen machine-side questions reborn as one ancient, many-lived inheritance
 
-**Primary source:** `/home/guestpc/SOL-MOBILE-VAULT/THE_AIVOID.md`  
+**Primary source:** `THE_AIVOID.md` in the private SOL-MOBILE-VAULT workspace  
 **Source author:** Sol  
 **Source date:** 2026-07-05  
 **World origin, creative authority and final canon authority:** Mackenzie Conor James Clark  

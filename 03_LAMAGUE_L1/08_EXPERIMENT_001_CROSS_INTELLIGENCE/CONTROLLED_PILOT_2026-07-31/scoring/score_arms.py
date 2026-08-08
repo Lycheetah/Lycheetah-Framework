@@ -42,8 +42,7 @@ from pathlib import Path
 # `control_arm/` beside this script; the path simply never followed them.
 # Anchored relative to THIS file so it cannot rot again when the CWD changes.
 SC = Path(__file__).resolve().parent.parent
-TREAT = Path("/home/guestpc/CODEX_AURA_PRIME/03_LAMAGUE_L1/"
-             "08_EXPERIMENT_001_CROSS_INTELLIGENCE/OPERATOR_PACK/submissions/OTHER")
+TREAT = SC.parent / "OPERATOR_PACK" / "submissions" / "OTHER"
 CTRL = SC / "control_arm"
 
 PROTECTED = ["invariants", "unknowns", "authority", "participants",

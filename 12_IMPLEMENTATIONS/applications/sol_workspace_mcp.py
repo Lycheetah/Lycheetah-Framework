@@ -19,14 +19,21 @@ Add to ~/.claude/settings.json:
 """
 
 import json
+import os
 import re
 import sys
 from pathlib import Path
 
 # ─── Paths ────────────────────────────────────────────────────
-TASKS_MD   = Path("/home/guestpc/LYCHEETAH_VERGE_CODEX/TASKS.md")
-APP_JSON   = Path("/home/guestpc/Lycheetah-Mobile--SOLORIGINARCHIVE/app.json")
-SETTINGS_TSX = Path("/home/guestpc/Lycheetah-Mobile--SOLORIGINARCHIVE/app/(tabs)/settings.tsx")
+# Both of these are SEPARATE repositories. Resolved through the environment so
+# the server runs from any checkout instead of one machine's home directory.
+WORKSPACE   = Path(os.environ.get("SOL_WORKSPACE", Path.home()))
+VERGE_CODEX = Path(os.environ.get("VERGE_CODEX", WORKSPACE / "LYCHEETAH_VERGE_CODEX"))
+MOBILE_APP  = Path(os.environ.get("MOBILE_APP", WORKSPACE / "Lycheetah-Mobile--SOLORIGINARCHIVE"))
+
+TASKS_MD     = VERGE_CODEX / "TASKS.md"
+APP_JSON     = MOBILE_APP / "app.json"
+SETTINGS_TSX = MOBILE_APP / "app" / "(tabs)" / "settings.tsx"
 
 try:
     from mcp.server import Server

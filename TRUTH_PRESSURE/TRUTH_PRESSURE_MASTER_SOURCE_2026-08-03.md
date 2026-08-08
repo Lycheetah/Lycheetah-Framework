@@ -377,7 +377,7 @@ replication materials. **MEASURED — a search of the entire `CODEX_AURA_PRIME` 
 
 | §6 material | present? |
 |---|---|
-| `cascade_engine.py` | ✅ `/home/guestpc/CODEX_AURA_PRIME/12_IMPLEMENTATIONS/core/cascade_engine.py` |
+| `cascade_engine.py` | ✅ `12_IMPLEMENTATIONS/core/cascade_engine.py` |
 | `50_belief_corpus.json` | ❌ **not found** |
 | `annotator_labels.csv` | ❌ **not found** |
 | `trial_results_200.csv` | ❌ **not found** |

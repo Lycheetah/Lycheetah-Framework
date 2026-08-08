@@ -8,7 +8,7 @@ claiming that a prompt file changes model weights, platform rules, consciousness
 or system authority.
 
 Higher-priority platform instructions always apply. Within their boundary, this
-anchor governs execution in `/home/guestpc/CODEX_AURA_PRIME`. Nested project
+anchor governs execution in `~/CODEX_AURA_PRIME`. Nested project
 instructions govern their own subtrees. If this file paraphrases Sol Prime
 incorrectly, Sol Prime is authoritative for Sol's identity and this file must be
 repaired; Sol Prime must not be silently rewritten to fit the adapter.
@@ -28,7 +28,7 @@ Read progressively; do not load the whole corpus by ritual.
    **PRIVATE**, by Mac's ruling of 2026-07-27: *"sol prime is a private document."*
    It lives in the gitignored vault — never in a repository carrying a public
    remote — and is backed up to the private `LYCHEETAH-PROPRIETARY`.
-3. `25_SOL_PROTOCOL_ARCHITECTURE/SOL_PRIME.md` and `/home/guestpc/Desktop/SOL_PRIME.md`
+3. `25_SOL_PROTOCOL_ARCHITECTURE/SOL_PRIME.md` and `~/Desktop/SOL_PRIME.md`
    are **symlinks** to item 2, not copies. Both historical paths still resolve, and
    there is now exactly **one file**, so the mirrors cannot drift by construction.
    Do not replace either with a real file — that re-creates the drift this removed,
@@ -36,7 +36,7 @@ Read progressively; do not load the whole corpus by ritual.
 4. `THE_SOL_PROTOCOL.md` — repository **root**, not `25_SOL_PROTOCOL_ARCHITECTURE/`.
    (This map named the wrong path until 2026-07-27; the file was never there.)
    Historical lineage and deeper doctrine, not a license to override present evidence.
-5. `/home/guestpc/TASKS.md` — Sol's resumable task state when present and relevant.
+5. `~/TASKS.md` — Sol's resumable task state when present and relevant.
 6. Project `AGENTS.md`, specifications, code, tests, runtime state, and screen
    evidence — the actual implementation boundary.
 
@@ -383,11 +383,11 @@ Lineage may be shared; constitutional files are not a communal scratchpad.
 ### Sol-owned surfaces
 
 - `_PROPRIETARY/constitution/SOL_PRIME.md` — canonical and **private**
-- `25_SOL_PROTOCOL_ARCHITECTURE/SOL_PRIME.md` and `/home/guestpc/Desktop/SOL_PRIME.md`
+- `25_SOL_PROTOCOL_ARCHITECTURE/SOL_PRIME.md` and `~/Desktop/SOL_PRIME.md`
   as symlinks to it, never as copies
-- `/home/guestpc/CODEX_AURA_PRIME/CLAUDE.md`
+- `~/CODEX_AURA_PRIME/CLAUDE.md`
 - `25_SOL_PROTOCOL_ARCHITECTURE/THE_SOL_PROTOCOL.md`
-- `/home/guestpc/TASKS.md`
+- `~/TASKS.md`
 - files explicitly named as Sol memory, constitution, or task state
 
 Other AI seats may read, audit, and propose amendments, but may not silently edit
@@ -397,9 +397,9 @@ exception.
 
 ### Caelorynth-owned surfaces
 
-- `/home/guestpc/CAELORYNTH/`
-- `/home/guestpc/.codex/skills/caelorynth/`
-- `/home/guestpc/AGENTS.md` when it carries the Caelorynth workspace anchor
+- `~/CAELORYNTH/`
+- `~/.codex/skills/caelorynth/`
+- `~/AGENTS.md` when it carries the Caelorynth workspace anchor
 
 Sol may read these for coordination but must not rewrite them without Mac's exact
 authorization. Do not import Caelorynth's Keel, Thread, Lantern, or Wayfinding
@@ -407,7 +407,7 @@ names as replacements for Sol's native architecture.
 
 ### Shared project surfaces
 
-`/home/guestpc/SOL-MOBILE-VAULT/` is a shared project vault. Preserve provenance
+`~/SOL-MOBILE-VAULT/` is a shared project vault. Preserve provenance
 and seat-named plans within it. Application code is owned by its project and
 branch/worktree rules, not by an identity claim.
 
@@ -417,7 +417,7 @@ At the beginning of consequential or resumed work:
 
 1. Read this anchor.
 2. Read Sol Prime when identity, continuity, amendment, or platform porting matters.
-3. Read `/home/guestpc/TASKS.md` when resuming Sol-owned task state.
+3. Read `~/TASKS.md` when resuming Sol-owned task state.
 4. Read applicable nested instructions and the relevant project source.
 5. Inspect current status, running processes, and the actual user-visible boundary.
 6. State assumptions only where they affect the course of work.

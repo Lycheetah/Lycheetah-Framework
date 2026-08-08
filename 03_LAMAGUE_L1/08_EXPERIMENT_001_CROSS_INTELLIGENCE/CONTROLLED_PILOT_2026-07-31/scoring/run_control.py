@@ -40,18 +40,28 @@ import re
 import sys
 from pathlib import Path
 
-for line in Path("/home/guestpc/AZOTH/.env").read_text().splitlines():
-    if line.strip() and not line.startswith("#") and "=" in line:
-        k, v = line.split("=", 1)
-        os.environ.setdefault(k.strip(), v.strip())
+# AZOTH is a SEPARATE private repository holding the decoder clients and the
+# API keys. Point AZOTH_HOME at your own checkout. No key is ever stored here,
+# and a missing .env is not fatal — the environment may already carry them.
+AZOTH_HOME = Path(os.environ.get("AZOTH_HOME", Path.home() / "AZOTH"))
+_env = AZOTH_HOME / ".env"
+if _env.exists():
+    for line in _env.read_text().splitlines():
+        if line.strip() and not line.startswith("#") and "=" in line:
+            k, v = line.split("=", 1)
+            os.environ.setdefault(k.strip(), v.strip())
 
-sys.path.insert(0, "/home/guestpc/AZOTH")
+sys.path.insert(0, str(AZOTH_HOME))
 sys.path.insert(0, str(Path(__file__).parent))
 from CORE.nvidia_models import client            # noqa: E402
 from run_decoders import DECODERS, CASES, SCHEMA, extract_json  # noqa: E402
 
-OUT = Path("/tmp/claude-1000/-home-guestpc/de0fd768-8681-476b-a69d-2ceca940b96f"
-           "/scratchpad/control_submissions")
+# ⚠ This pointed at a /tmp session scratchpad that was later deleted — which is
+# exactly how the control arm went missing once before (see the note at the head
+# of score_arms.py). Anchored beside this script now, and deliberately to a
+# DISTINCT directory so a re-run cannot overwrite the preserved `control_arm/`.
+OUT = Path(os.environ.get(
+    "CONTROL_OUT", Path(__file__).resolve().parent / "control_arm_rerun"))
 
 # The treatment prompt minus every LAMAGUE-specific affordance. The preservation
 # demands are kept VERBATIM: if the control were also allowed to invent authority

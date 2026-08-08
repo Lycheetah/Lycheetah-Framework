@@ -16,32 +16,39 @@ at the documents that do the claiming. Authorised by Mac, 2026-08-07:
   A file that scores badly on quoted spans alone is doing its job.
 """
 from __future__ import annotations
-import sys, collections
+import os, sys, collections
 from pathlib import Path
 
-sys.path.insert(0, "/home/guestpc/CODEX_AURA_PRIME/12_IMPLEMENTATIONS/core")
+# Anchored to THIS file, so the audit runs from any checkout on any machine
+# rather than from one home directory. The game repository is SEPARATE and
+# private; set GAME_REPO to include its rows, otherwise they report MISSING,
+# which is the honest outcome and already handled below.
+REPO = Path(__file__).resolve().parents[1]
+GAME_REPO = Path(os.environ.get("GAME_REPO", REPO.parent / "0sol-by-lycheetah"))
+
+sys.path.insert(0, str(REPO / "12_IMPLEMENTATIONS" / "core"))
 from semantic_extractor import SemanticExtractor  # noqa: E402
 
 TARGETS = [
     # ── the Truth Pressure line: the documents that make the claims ──
-    ("TP master 08-03",   "/home/guestpc/CODEX_AURA_PRIME/TRUTH_PRESSURE/TRUTH_PRESSURE_MASTER_SOURCE_2026-08-03.md"),
-    ("TP master 08-07",   "/home/guestpc/CODEX_AURA_PRIME/TRUTH_PRESSURE/TRUTH_PRESSURE_MASTER_SOURCE_2026-08-07.md"),
-    ("TP canon",          "/home/guestpc/CODEX_AURA_PRIME/TRUTH_PRESSURE/TRUTH_PRESSURE_CANON.md"),
+    ("TP master 08-03",   REPO / "TRUTH_PRESSURE/TRUTH_PRESSURE_MASTER_SOURCE_2026-08-03.md"),
+    ("TP master 08-07",   REPO / "TRUTH_PRESSURE/TRUTH_PRESSURE_MASTER_SOURCE_2026-08-07.md"),
+    ("TP canon",          REPO / "TRUTH_PRESSURE/TRUTH_PRESSURE_CANON.md"),
     # ── Hypermax's own new work, held to its own standard ──
-    ("33_APP readme",     "/home/guestpc/CODEX_AURA_PRIME/33_APPLICATIONS/README.md"),
-    ("external valid.",   "/home/guestpc/CODEX_AURA_PRIME/33_APPLICATIONS/EXTERNAL_VALIDATION_2026-08-07.md"),
-    ("discrim. audit",    "/home/guestpc/CODEX_AURA_PRIME/33_APPLICATIONS/DISCRIMINATION_AUDIT_2026-08-07.md"),
-    ("derived cues",      "/home/guestpc/CODEX_AURA_PRIME/33_APPLICATIONS/DERIVED_CUES_2026-08-07.md"),
-    ("transfer test",     "/home/guestpc/CODEX_AURA_PRIME/33_APPLICATIONS/TRANSFER_TEST_2026-08-07.md"),
+    ("33_APP readme",     REPO / "33_APPLICATIONS/README.md"),
+    ("external valid.",   REPO / "33_APPLICATIONS/EXTERNAL_VALIDATION_2026-08-07.md"),
+    ("discrim. audit",    REPO / "33_APPLICATIONS/DISCRIMINATION_AUDIT_2026-08-07.md"),
+    ("derived cues",      REPO / "33_APPLICATIONS/DERIVED_CUES_2026-08-07.md"),
+    ("transfer test",     REPO / "33_APPLICATIONS/TRANSFER_TEST_2026-08-07.md"),
     # ── LAMAGUE ──
-    ("LAMAGUE master",    "/home/guestpc/CODEX_AURA_PRIME/03_LAMAGUE_L1/LAMAGUE_MASTER_SOURCE_2026-08-03.md"),
+    ("LAMAGUE master",    REPO / "03_LAMAGUE_L1/LAMAGUE_MASTER_SOURCE_2026-08-03.md"),
     # ── the governing instruments ──
-    ("CLAUDE.md",         "/home/guestpc/CODEX_AURA_PRIME/CLAUDE.md"),
-    ("THE_SOL_PROTOCOL",  "/home/guestpc/CODEX_AURA_PRIME/THE_SOL_PROTOCOL.md"),
+    ("CLAUDE.md",         REPO / "CLAUDE.md"),
+    ("THE_SOL_PROTOCOL",  REPO / "THE_SOL_PROTOCOL.md"),
     # ── the game repo: the outward-facing surfaces ──
-    ("game README",       "/home/guestpc/0sol-by-lycheetah/README.md"),
-    ("world plan",        "/home/guestpc/0sol-by-lycheetah/docs/OPUS_SOL_WORLD_FILL_AND_BATTLE_PLAN_2026-08-07.md"),
-    ("topdown plans",     "/home/guestpc/0sol-by-lycheetah/docs/WORLD_TOPDOWN_PLANS_2026-08-07.md"),
+    ("game README",       GAME_REPO / "README.md"),
+    ("world plan",        GAME_REPO / "docs/OPUS_SOL_WORLD_FILL_AND_BATTLE_PLAN_2026-08-07.md"),
+    ("topdown plans",     GAME_REPO / "docs/WORLD_TOPDOWN_PLANS_2026-08-07.md"),
 ]
 
 ex = SemanticExtractor()

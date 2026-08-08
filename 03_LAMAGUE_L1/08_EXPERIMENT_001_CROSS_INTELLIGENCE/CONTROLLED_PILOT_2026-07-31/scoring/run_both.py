@@ -23,11 +23,18 @@ import threading
 from pathlib import Path
 
 SC = Path(__file__).resolve().parent
-for line in Path("/home/guestpc/AZOTH/.env").read_text().splitlines():
-    if line.strip() and not line.startswith("#") and "=" in line:
-        k, v = line.split("=", 1)
-        os.environ.setdefault(k.strip(), v.strip())
-sys.path.insert(0, "/home/guestpc/AZOTH")
+
+# AZOTH is a SEPARATE private repository holding the decoder clients and the
+# API keys. Point AZOTH_HOME at your own checkout. No key is ever stored here,
+# and a missing .env is not fatal — the environment may already carry them.
+AZOTH_HOME = Path(os.environ.get("AZOTH_HOME", Path.home() / "AZOTH"))
+_env = AZOTH_HOME / ".env"
+if _env.exists():
+    for line in _env.read_text().splitlines():
+        if line.strip() and not line.startswith("#") and "=" in line:
+            k, v = line.split("=", 1)
+            os.environ.setdefault(k.strip(), v.strip())
+sys.path.insert(0, str(AZOTH_HOME))
 sys.path.insert(0, str(SC))
 
 from openai import OpenAI                                    # noqa: E402

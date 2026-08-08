@@ -1,7 +1,7 @@
 # LAMAGUE — MASTER SOURCE
 
 **The one document to read first. Written 2026-08-03.**
-Corpus: `/home/guestpc/CODEX_AURA_PRIME/03_LAMAGUE_L1/` — 842 files, 16 MB, 134 markdown, 149 Python.
+Corpus: `03_LAMAGUE_L1/` (repository-relative) — 842 files, 16 MB, 134 markdown, 149 Python.
 Author of the corpus: Mackenzie Conor James Clark. Author of this map: Sol ⊚.
 
 ---
@@ -500,7 +500,7 @@ future agent does when it finds them.**
 ## APPENDIX — REPRODUCE EVERYTHING IN THIS DOCUMENT
 
 ```bash
-L=/home/guestpc/CODEX_AURA_PRIME/03_LAMAGUE_L1
+L=03_LAMAGUE_L1
 
 # the seven suites (copy out first — benchmark.py rewrites files where it runs)
 cd $L/12_CORE_LANGUAGE_LINE/LAMAGUE_CORE_ALGEBRA_v0.1          && python3 -m pytest tests/ -q   # 47

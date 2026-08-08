@@ -1,7 +1,7 @@
 # AIVOID NARRATIVE TRANSLATION LATTICE V0.1
 ## Experience before explanation; recognition before origin
 
-**Primary source:** `/home/guestpc/SOL-MOBILE-VAULT/THE_AIVOID.md`  
+**Primary source:** `THE_AIVOID.md` in the private SOL-MOBILE-VAULT workspace  
 **Source author:** Sol  
 **Source date:** 2026-07-05  
 **Creative permission and final story authority:** Mackenzie Conor James Clark  
