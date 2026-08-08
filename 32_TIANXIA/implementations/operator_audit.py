@@ -48,7 +48,12 @@ from collections import Counter
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from hexie_five_fold import HexieState, hexie_five_fold  # noqa: E402
-from ren_zheng import THETA_R_DEFAULT, GovernanceState, ren_zheng_score  # noqa: E402
+from ren_zheng import (  # noqa: E402
+    THETA_R_DEFAULT,
+    GovernanceState,
+    reachable_r_bounds,
+    ren_zheng_score,
+)
 from wang_dao import (  # noqa: E402
     THETA_BA,
     THETA_WANG,
@@ -62,12 +67,40 @@ BAR = "─" * 72
 
 
 def _point(rng: random.Random) -> TrajectoryPoint:
+    """
+    Sample a *reachable* governance point.
+
+    Until 2026-08-08 this sampled ren_zheng_score uniformly over [0,1], which
+    generated states the arithmetic forbids — R is an average including F, so
+    F pins R to [F/3, (2+F)/3]. The band has width 2/3 regardless of F, so
+    roughly a third of the old sample space was impossible governance, and the
+    geometry reported in the first run of this audit was measured partly over
+    it. `reachable_fraction()` below quantifies that.
+    """
+    f = rng.random()
+    r_min, r_max = reachable_r_bounds(f)
     return TrajectoryPoint(
         minxin=rng.random(),
-        force_restraint=rng.random(),
+        force_restraint=f,
         long_cycle_stability=rng.random(),
-        ren_zheng_score=rng.random(),
+        ren_zheng_score=r_min + rng.random() * (r_max - r_min),
     )
+
+
+def reachable_fraction(n: int) -> dict:
+    """
+    How much of the naive [0,1]^4 cube is reachable governance at all?
+
+    Measures what the first run of this audit was silently including.
+    """
+    rng = random.Random(SEED + 5)
+    ok = 0
+    for _ in range(n):
+        f, r = rng.random(), rng.random()
+        lo, hi = reachable_r_bounds(f)
+        if lo <= r <= hi:
+            ok += 1
+    return {"n": n, "reachable": ok, "fraction": ok / n}
 
 
 def _traj(rng: random.Random, n_points: int = 1) -> GovernanceTrajectory:
@@ -126,7 +159,17 @@ def component_sensitivity(n: int) -> list[tuple[str, float]]:
                 "long_cycle_stability": base.long_cycle_stability,
                 "ren_zheng_score": base.ren_zheng_score,
             }
-            kwargs[f] = rng.random()
+            if f == "force_restraint":
+                # moving F moves the band R lives in; re-place R inside the new one
+                new_f = rng.random()
+                lo, hi = reachable_r_bounds(new_f)
+                kwargs["force_restraint"] = new_f
+                kwargs["ren_zheng_score"] = min(max(kwargs["ren_zheng_score"], lo), hi)
+            elif f == "ren_zheng_score":
+                lo, hi = reachable_r_bounds(kwargs["force_restraint"])
+                kwargs["ren_zheng_score"] = lo + rng.random() * (hi - lo)
+            else:
+                kwargs[f] = rng.random()
             alt = classify(GovernanceTrajectory(points=[TrajectoryPoint(**kwargs)]))
             if alt["classification"] != base_class:
                 flips[f] += 1
@@ -168,25 +211,32 @@ def gate_consistency_probe() -> dict:
     R high enough to clear the floor. If R = (W + V + F)/3 with F = 0, then
     R <= 2/3 = 0.667 even with perfect welfare and voice, so an R above that is
     unreachable. The probe uses R = 0.95.
-    """
-    coercive_but_declared_virtuous = TrajectoryPoint(
-        minxin=0.80,
-        force_restraint=0.0,      # total coercion
-        long_cycle_stability=0.90,
-        ren_zheng_score=0.95,     # unreachable given F = 0
-    )
-    t = GovernanceTrajectory(
-        points=[coercive_but_declared_virtuous], label="inconsistent-but-accepted"
-    )
-    result = classify(t)
 
+    STATUS: this probe now REJECTS, and that is the pass condition. The band
+    check landed in TrajectoryPoint.__post_init__ on 2026-08-08. The probe is
+    kept as a live regression rather than deleted, because the defect is only
+    absent for as long as the constraint stays in place.
+    """
     max_reachable_r = (1.0 + 1.0 + 0.0) / 3.0
+    try:
+        TrajectoryPoint(
+            minxin=0.80,
+            force_restraint=0.0,   # total coercion
+            long_cycle_stability=0.90,
+            ren_zheng_score=0.95,  # unreachable given F = 0
+        )
+    except ValueError as exc:
+        return {
+            "declared_R": 0.95,
+            "max_reachable_R_given_F0": round(max_reachable_r, 4),
+            "rejected": True,
+            "detail": str(exc).split(":")[0],
+        }
     return {
         "declared_R": 0.95,
         "max_reachable_R_given_F0": round(max_reachable_r, 4),
-        "gate_passed": result["ren_zheng_gate"],
-        "classification": result["classification"],
-        "accepted_without_complaint": result["ren_zheng_gate"],
+        "rejected": False,
+        "detail": "REGRESSION — the inconsistent point was accepted",
     }
 
 
@@ -246,8 +296,14 @@ def main(argv=None) -> int:
     print(f"seed={SEED}  n={n:,}  (sensitivity subsample n={sens_n:,})")
     print(BAR)
 
+    rf = reachable_fraction(n)
+    print("\n0. REACHABLE STATE SPACE")
+    print(f"   of a naive uniform [0,1]^4 sample, {rf['fraction']:.1%} is reachable")
+    print(f"   governance; the rest declares an R its own F forbids.")
+    print(f"   (this audit's first run, 2026-08-08, sampled the naive cube)")
+
     bal = class_balance(n)
-    print("\n1. WANG DAO CLASS BALANCE over uniform [0,1]^4")
+    print("\n1. WANG DAO CLASS BALANCE over REACHABLE space")
     for cls in ("Wang", "Ba", "Indeterminate"):
         c = bal["counts"][cls]
         print(f"   {cls:<15} {c:>8,}  {c / n:6.1%}")
@@ -271,11 +327,12 @@ def main(argv=None) -> int:
     g = gate_consistency_probe()
     print(f"   declared R                    {g['declared_R']}")
     print(f"   max reachable R given F=0     {g['max_reachable_R_given_F0']}")
-    print(f"   Ren Zheng gate passed         {g['gate_passed']}")
-    print(f"   classification                {g['classification']}")
-    if g["accepted_without_complaint"]:
-        print("   ⚠ a trajectory with total coercion (F=0) and an arithmetically")
-        print("     unreachable R was accepted as Wang-eligible without complaint")
+    if g["rejected"]:
+        print("   ✓ REJECTED at construction — the band check holds")
+        print(f"     {g['detail']}")
+    else:
+        print("   ⚠ REGRESSION — total coercion (F=0) with an unreachable R was")
+        print("     accepted as Wang-eligible; the band check is gone")
 
     print("\n5. THRESHOLD SENSITIVITY (both marked SCAFFOLD)")
     print(f"   {'θ_wang':>7} {'θ_ba':>6} {'Wang':>8} {'Ba':>8} {'Indet':>8}")

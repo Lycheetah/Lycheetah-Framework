@@ -15,7 +15,12 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import List
 
-from ren_zheng import GovernanceState, ren_zheng_score, THETA_R_DEFAULT
+from ren_zheng import (
+    GovernanceState,
+    ren_zheng_score,
+    reachable_r_bounds,
+    THETA_R_DEFAULT,
+)
 
 
 class WangDaoClass(Enum):
@@ -45,6 +50,20 @@ class TrajectoryPoint:
         ]:
             if not 0.0 <= val <= 1.0:
                 raise ValueError(f"{name} must be in [0, 1], got {val}")
+
+        # R(s) averages force_restraint as one of its three terms, so this point's
+        # own F bounds the R it may declare. Without this, a trajectory at F = 0
+        # could claim R = 0.95 (true ceiling 0.667) and pass the Ren Zheng gate —
+        # admitting a polity under total coercion as Wang-eligible.
+        # Added 2026-08-08; see OPERATOR_AUDIT_2026-08-08.md §3.
+        r_min, r_max = reachable_r_bounds(self.force_restraint)
+        if not r_min - 1e-9 <= self.ren_zheng_score <= r_max + 1e-9:
+            raise ValueError(
+                f"ren_zheng_score={self.ren_zheng_score:.4f} is unreachable at "
+                f"force_restraint={self.force_restraint:.4f}: R=(W+V+F)/3 admits "
+                f"only [{r_min:.4f}, {r_max:.4f}]. A declared R outside this band "
+                f"contradicts the trajectory's own coercion level."
+            )
 
 
 @dataclass

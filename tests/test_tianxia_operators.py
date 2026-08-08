@@ -7,7 +7,7 @@ Claim coverage:
   [ACTIVE]     Wang Dao WD_score = (L+F+Γ)/3, two-stage gate
   [ACTIVE]     Five-Fold Hexie composite and binding-constraint identification
   [SCAFFOLD]   Decision geometry characterised — see operator_audit.py
-  [CONJECTURE] Gate consistency defect, held open as strict xfail
+  [ACTIVE]     Gate consistency defect FIXED — reachable-R band enforced
 
 WHY THIS FILE EXISTS
 --------------------
@@ -108,11 +108,32 @@ def test_ren_zheng_rejects_out_of_range():
 
 
 def _traj(minxin, force, stability, r, n=1):
+    """
+    Build a trajectory. `r` must lie in the reachable band [F/3, (2+F)/3];
+    passing one outside it is now a ValueError by design, so tests that want
+    an extreme R must choose an F that admits it.
+    """
     from wang_dao import GovernanceTrajectory, TrajectoryPoint
 
     return GovernanceTrajectory(
         points=[TrajectoryPoint(minxin, force, stability, r) for _ in range(n)]
     )
+
+
+def _rand_point(rng):
+    """Uniform sample over the *reachable* state space."""
+    from ren_zheng import reachable_r_bounds
+    from wang_dao import TrajectoryPoint
+
+    f = rng.random()
+    lo, hi = reachable_r_bounds(f)
+    return TrajectoryPoint(rng.random(), f, rng.random(), lo + rng.random() * (hi - lo))
+
+
+def _rand_traj(rng):
+    from wang_dao import GovernanceTrajectory
+
+    return GovernanceTrajectory(points=[_rand_point(rng)])
 
 
 @pytest.mark.active
@@ -136,13 +157,15 @@ def test_wang_dao_ren_zheng_gate_forces_ba_regardless_of_score():
     """
     Documented behaviour: R(s) < θ_r → Ba, whatever WD_score says.
 
-    Note what this means in practice — the audit found 85.1% of all Ba verdicts
+    Note what this means in practice — the audit found 91.5% of all Ba verdicts
     are decided here, so for the majority class the three-axis Wang Dao
     diagnostic is not what is doing the work.
     """
     from wang_dao import classify
 
-    r = classify(_traj(0.99, 0.99, 0.99, 0.10))
+    # F must be low enough for R to fall below the floor, yet L and Γ high
+    # enough to carry WD_score over θ_wang. F=0.30 admits R ∈ [0.10, 0.767].
+    r = classify(_traj(1.0, 0.30, 1.0, 0.25))
     assert r["classification"] == "Ba"
     assert r["ren_zheng_gate"] is False
     assert r["WD_score"] >= 0.70  # would have been Wang but for the gate
@@ -164,10 +187,15 @@ def test_wang_dao_rejects_empty_trajectory():
 @pytest.mark.scaffold
 def test_class_balance_is_heavily_skewed_to_ba():
     """
-    MEASURED 2026-08-08 by operator_audit.py at n=100,000:
-    Wang 4.6% · Ba 72.8% · Indeterminate 22.6%.
+    MEASURED 2026-08-08 by operator_audit.py at n=100,000, over the REACHABLE
+    state space: Wang 5.6% · Ba 74.1% · Indeterminate 20.3%, with 91.5% of Ba
+    verdicts decided by the Ren Zheng gate alone.
 
-    Locked as characterisation. A governance classifier assigning 73% of its
+    (The first run reported 4.6/72.8/22.6 with 85.1% gate-decided, but sampled
+    the naive [0,1]^4 cube — a third of which is impossible governance. The
+    corrected numbers make the gate-dominance finding stronger, not weaker.)
+
+    Locked as characterisation. A governance classifier assigning 74% of its
     input space to one class may be correct — most conceivable governments are
     not virtuous — but it has never been checked against a real distribution,
     and the number should not move silently.
@@ -180,11 +208,7 @@ def test_class_balance_is_heavily_skewed_to_ba():
     counts = {"Wang": 0, "Ba": 0, "Indeterminate": 0}
     n = 20_000
     for _ in range(n):
-        counts[
-            classify(_traj(rng.random(), rng.random(), rng.random(), rng.random()))[
-                "classification"
-            ]
-        ] += 1
+        counts[classify(_rand_traj(rng))["classification"]] += 1
 
     assert 0.02 < counts["Wang"] / n < 0.09, counts
     assert 0.65 < counts["Ba"] / n < 0.80, counts
@@ -193,10 +217,10 @@ def test_class_balance_is_heavily_skewed_to_ba():
 @pytest.mark.scaffold
 def test_ren_zheng_score_dominates_the_decision():
     """
-    MEASURED 2026-08-08: decision-flip rates were ren_zheng_score 34.7%, then
-    long_cycle_stability 14.6%, force_restraint 14.1%, minxin 13.8%.
+    MEASURED 2026-08-08 over the reachable space: ren_zheng_score 31.4%, then
+    long_cycle_stability 12.8%, minxin 12.2%, force_restraint 11.7%.
 
-    One input moves the verdict roughly 2.4x more than any other, and the three
+    One input moves the verdict roughly 2.5x more than any other, and the three
     that are nominally the Wang Dao axes are near-interchangeable — which
     follows from WD_score being their unweighted mean.
     """
@@ -204,14 +228,18 @@ def test_ren_zheng_score_dominates_the_decision():
 
     from wang_dao import classify
 
+    from ren_zheng import reachable_r_bounds
+
     rng = random.Random(20260809)
     n = 1_500
     flips = {"ren_zheng_score": 0, "minxin": 0}
 
     for _ in range(n):
-        m, f, g, r = (rng.random() for _ in range(4))
+        p = _rand_point(rng)
+        m, f, g, r = p.minxin, p.force_restraint, p.long_cycle_stability, p.ren_zheng_score
         base = classify(_traj(m, f, g, r))["classification"]
-        if classify(_traj(m, f, g, rng.random()))["classification"] != base:
+        lo, hi = reachable_r_bounds(f)
+        if classify(_traj(m, f, g, lo + rng.random() * (hi - lo)))["classification"] != base:
             flips["ren_zheng_score"] += 1
         if classify(_traj(rng.random(), f, g, r))["classification"] != base:
             flips["minxin"] += 1
@@ -225,27 +253,49 @@ def test_ren_zheng_score_dominates_the_decision():
 
 
 @pytest.mark.active
-@pytest.mark.xfail(
-    strict=True,
-    reason=(
-        "KNOWN DEFECT, found 2026-08-08. TrajectoryPoint.ren_zheng_score is a free "
-        "float with no binding to a GovernanceState, so a point may declare an R "
-        "that its own force_restraint makes arithmetically unreachable. With F=0, "
-        "R=(W+V+F)/3 <= 0.667, yet R=0.95 passes the Ren Zheng gate unchallenged — "
-        "a polity under total coercion is admitted as Wang-eligible. Fixing this "
-        "means deriving R from a GovernanceState rather than accepting it as input. "
-        "When that lands, this test passes and strict=True fails the suite, which "
-        "is the point: the fix must be acknowledged, not absorbed silently."
-    ),
-)
 def test_ren_zheng_gate_rejects_arithmetically_unreachable_score():
-    from wang_dao import classify
+    """
+    FIXED 2026-08-08 — this was a strict xfail for the length of one commit.
+
+    The defect: TrajectoryPoint.ren_zheng_score was a free float bound to no
+    GovernanceState, so a point could declare an R that its own force_restraint
+    made arithmetically unreachable. R = (W+V+F)/3 with W,V ∈ [0,1] pins R to
+    [F/3, (2+F)/3], so at F=0 the true ceiling is 0.667 — yet R=0.95 passed the
+    Ren Zheng gate unchallenged, admitting a polity under total coercion as
+    Wang-eligible.
+
+    The repair is the band check in TrajectoryPoint.__post_init__, using
+    ren_zheng.reachable_r_bounds(). Every pre-existing fixture in the module
+    satisfies it; only the impossible states are rejected.
+    """
+    from ren_zheng import reachable_r_bounds
 
     # F = 0 caps R at 2/3 even with perfect welfare and voice.
-    result = classify(_traj(0.80, 0.0, 0.90, 0.95))
-    assert result["ren_zheng_gate"] is False, (
-        "total coercion (F=0) with an unreachable declared R was accepted"
-    )
+    assert reachable_r_bounds(0.0) == pytest.approx((0.0, 2 / 3))
+
+    with pytest.raises(ValueError, match="unreachable"):
+        _traj(0.80, 0.0, 0.90, 0.95)
+
+    # The boundary itself is admissible; only beyond it is rejected.
+    _traj(0.80, 0.0, 0.90, 2 / 3)
+    with pytest.raises(ValueError, match="unreachable"):
+        _traj(0.80, 0.0, 0.90, 2 / 3 + 0.01)
+
+
+@pytest.mark.active
+def test_reachable_band_width_is_constant():
+    """
+    The band [F/3, (2+F)/3] has width 2/3 for every F, so exactly one third of
+    a naive uniform [0,1] draw for R is impossible at any given F.
+
+    MEASURED: the audit's first run sampled the naive cube, making 33.4% of its
+    input space states no governance could occupy.
+    """
+    from ren_zheng import reachable_r_bounds
+
+    for f in (0.0, 0.25, 0.5, 0.75, 1.0):
+        lo, hi = reachable_r_bounds(f)
+        assert hi - lo == pytest.approx(2 / 3)
 
 
 # ─────────────────────────────────────────────────────────────

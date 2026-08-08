@@ -49,6 +49,30 @@ def ren_zheng_score(state: GovernanceState) -> float:
     return (state.welfare_baseline + state.voice_coverage + state.force_restraint) / 3.0
 
 
+def reachable_r_bounds(force_restraint: float) -> tuple:
+    """
+    The interval of R(s) values reachable at a given force restraint.
+
+    R(s) = (W + V + F) / 3 with W, V ∈ [0, 1], so F alone pins the band:
+
+        R_min = F / 3          (W = V = 0 — no welfare, no voice)
+        R_max = (2 + F) / 3    (W = V = 1 — perfect welfare and voice)
+
+    Added 2026-08-08. Before this, a governance trajectory could declare an R
+    that its own force_restraint made arithmetically impossible, and the Wang
+    Dao gate accepted it: a polity at F = 0 (total coercion) could claim
+    R = 0.95 against a true ceiling of 0.667 and be admitted as Wang-eligible.
+    Force restraint is one of the three terms averaged into R, so a high R
+    cannot coexist with total coercion — the arithmetic already forbade it and
+    nothing enforced the arithmetic.
+
+    See 32_TIANXIA/OPERATOR_AUDIT_2026-08-08.md §3.
+    """
+    if not 0.0 <= force_restraint <= 1.0:
+        raise ValueError(f"force_restraint must be in [0, 1], got {force_restraint}")
+    return (force_restraint / 3.0, (2.0 + force_restraint) / 3.0)
+
+
 def wang_dao_eligible(state: GovernanceState, theta_r: float = THETA_R_DEFAULT) -> bool:
     """
     Proposition R-1: Wang Dao classification requires R(s) ≥ θ_r.
