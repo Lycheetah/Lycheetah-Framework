@@ -39,8 +39,11 @@ dependencies = [
 [project.optional-dependencies]
 web   = ["flask>=3.0"]
 mcp   = ["mcp>=1.0"]
-dev   = ["pytest>=7.0", "pytest-cov>=4.0"]
-all   = ["flask>=3.0", "mcp>=1.0", "pytest>=7.0", "pytest-cov>=4.0"]
+dev   = ["pytest>=7.0", "pytest-cov>=4.0", "ruff>=0.6", "mypy>=1.11", "build>=1.0"]
+all   = [
+    "flask>=3.0", "mcp>=1.0",
+    "pytest>=7.0", "pytest-cov>=4.0", "ruff>=0.6", "mypy>=1.11", "build>=1.0",
+]
 
 [project.scripts]
 lycheetah-check = "lycheetah.cli:check_alignment_cli"
@@ -53,11 +56,23 @@ Repository    = "https://github.com/Lycheetah/Lycheetah-Framework"
 Documentation = "https://github.com/Lycheetah/Lycheetah-Framework/tree/master/12_IMPLEMENTATIONS"
 Discussions   = "https://github.com/Lycheetah/Lycheetah-Framework/discussions"
 "Issue Tracker" = "https://github.com/Lycheetah/Lycheetah-Framework/issues"
-"Failure Museum" = "https://github.com/Lycheetah/Lycheetah-Framework/blob/master/FAILURE_MUSEUM.md"
+"Failure Museum" = "https://github.com/Lycheetah/Lycheetah-Framework/blob/master/28_DEFENSE/FAILURE_MUSEUM.md"
 
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["lycheetah*"]
+# The implementation lives in 12_IMPLEMENTATIONS/ and is mapped into the
+# distribution rather than copied, so there stays exactly one copy of every module.
+# Without this mapping the wheel shipped only __init__.py and cli.py, and every
+# advertised entry point raised ModuleNotFoundError once installed.
+[tool.setuptools]
+packages = [
+    "lycheetah",
+    "lycheetah.core",
+    "lycheetah.applications",
+]
+
+[tool.setuptools.package-dir]
+"lycheetah" = "lycheetah"
+"lycheetah.core" = "12_IMPLEMENTATIONS/core"
+"lycheetah.applications" = "12_IMPLEMENTATIONS/applications"
 
 [tool.setuptools.package-data]
 "lycheetah" = ["py.typed"]

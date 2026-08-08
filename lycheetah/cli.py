@@ -6,12 +6,12 @@ Registered in pyproject.toml as console_scripts.
 
 from __future__ import annotations
 import sys
-import os
 
-_HERE = os.path.dirname(os.path.abspath(__file__))
-_IMPL = os.path.join(os.path.dirname(_HERE), "12_IMPLEMENTATIONS")
-if _IMPL not in sys.path:
-    sys.path.insert(0, _IMPL)
+from ._bootstrap import ensure_implementation_on_path
+
+# Resolve the implementation tree for both layouts — source checkout and installed
+# wheel. See lycheetah/_bootstrap.py for why this is not a hardcoded relative path.
+ensure_implementation_on_path()
 
 
 def check_alignment_cli():
@@ -97,8 +97,6 @@ def web_demo_cli():
     parser.add_argument("--host", default="127.0.0.1")
     args = parser.parse_args()
 
-    # Import the app from the applications folder
-    sys.path.insert(0, _IMPL)
     from applications.web_demo import app
     print(f"Lycheetah Web Demo running at http://{args.host}:{args.port}")
     print("Ctrl+C to stop")

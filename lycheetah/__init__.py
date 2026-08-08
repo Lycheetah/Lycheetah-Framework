@@ -20,17 +20,19 @@ __version__ = "1.0.0"
 __author__  = "Mackenzie Conor James Clark"
 __license__ = "MIT"
 
-import sys
-import os
+from typing import TYPE_CHECKING
 
-# Make core and applications importable as lycheetah.core / lycheetah.applications
-_HERE = os.path.dirname(os.path.abspath(__file__))
-_IMPL = os.path.join(os.path.dirname(_HERE), "12_IMPLEMENTATIONS")
-if _IMPL not in sys.path:
-    sys.path.insert(0, _IMPL)
+from ._bootstrap import ensure_implementation_on_path
+
+# Resolve the implementation tree for both layouts — source checkout and installed
+# wheel. See lycheetah/_bootstrap.py for why this is not a hardcoded relative path.
+ensure_implementation_on_path()
+
+if TYPE_CHECKING:  # pragma: no cover — import exists for annotations only
+    from applications.aura_text_checker import AURATextReport
 
 
-def check(text: str, context: str = "") -> "AURATextReport":
+def check(text: str, context: str = "") -> AURATextReport:
     """
     Run a full constitutional alignment check on any text.
 
