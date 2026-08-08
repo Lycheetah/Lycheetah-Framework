@@ -52,7 +52,7 @@ It also has teeth, because these principles generate requirements current framew
 
 And there is a concrete failure sitting underneath all of it. Māori are undercounted in health administrative data by roughly 16% due to ethnicity misclassification. Systems trained on that data will systematically underestimate Māori morbidity and mortality — not because the model malfunctions, but because the governance around collection already failed. The model will be confident. Its epistemic base will be wrong. Nobody downstream will be able to tell, because nothing requires the system to disclose its own whakapapa.
 
-These mechanisms are proposals, not achievements. I'd rather say that than let a document's confidence do work its evidence hasn't earned.
+These mechanisms are `[PROPOSAL]`, not achievements. I'd rather say that than let a document's confidence do work its evidence hasn't earned.
 
 ---
 
@@ -116,3 +116,7 @@ It's a manner of proceeding — and the earning never ends. That isn't a problem
 
 *Mackenzie Conor James Clark — Lycheetah Framework, Dunedin, Aotearoa New Zealand.*
 *The framework is open source: github.com/Lycheetah/Lycheetah-Framework — including the parts that didn't work.*
+
+---
+
+*Footing, in the framework's own vocabulary: the four positions are stated as positions — the framework stands behind them publicly and they are open to refutation. The Māori data sovereignty mechanisms are `[PROPOSAL]`, not in force, and require iwi co-development to become anything else. The 2028 engagement prediction is a published falsifier, not a result. The Sovereign Supporter commitment is `MEASURED` — check the app.*

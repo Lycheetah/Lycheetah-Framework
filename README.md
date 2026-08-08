@@ -1,351 +1,251 @@
 # LYCHEETAH FRAMEWORK
 
-### Nine Formal Frameworks for AI Alignment and Epistemology
+### Nine formal frameworks for AI alignment and epistemology — and the measurement that narrowed what they claim
 
-[![Tests](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/test.yml/badge.svg)](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/test.yml)
-[![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](https://github.com/Lycheetah/Lycheetah-Framework)
+[![CI](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/ci.yml/badge.svg)](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue)](https://github.com/Lycheetah/Lycheetah-Framework)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Canonical](https://img.shields.io/badge/Codex-C--1.0%20canonical-gold)](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md)
+[![Canonical](https://img.shields.io/badge/Codex-C--1.1%20canonical-gold)](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md)
 [![Defense](https://img.shields.io/badge/Defense-D--1.2%20shipped-blue)](28_DEFENSE/DEFENSE_INDEX.json)
-[![Empirical](https://img.shields.io/badge/Empirical-E--1.0%20designed-purple)](31_EMPIRICAL/E1_EMPIRICAL_PROGRAM.md)
-[![TIANXIA](https://img.shields.io/badge/TIANXIA-v0.3%20Classical%20Triad%20complete-darkred)](32_TIANXIA/README.md)
-[![MCP Extension](https://img.shields.io/badge/Claude%20Code-MCP%20Extension-orange)](12_IMPLEMENTATIONS/applications/LYCHEETAH_GUARD_SETUP.md)
+[![External validation](https://img.shields.io/badge/external%20validation-bounded%20to%20AI--assistant%20text-orange)](33_APPLICATIONS/EXTERNAL_VALIDATION_2026-08-07.md)
+[![TIANXIA](https://img.shields.io/badge/TIANXIA-v0.3%20Classical%20Triad-darkred)](32_TIANXIA/README.md)
 [![arXiv](https://img.shields.io/badge/arXiv-CASCADE-red)](papers/CASCADE_ARXIV.tex)
 [![Sponsor](https://img.shields.io/badge/sponsor-Lycheetah-ea4aaa)](https://github.com/sponsors/Lycheetah)
 [![Stars](https://img.shields.io/github/stars/Lycheetah/Lycheetah-Framework?style=social)](https://github.com/Lycheetah/Lycheetah-Framework/stargazers)
 
-**Nine interdependent formal frameworks (CASCADE, AURA, LAMAGUE, and six more) sharing a common mathematical foundation and converging on the same constants. Banach fixed points and constitutional invariants ground a self-governing canonical body. An adversarial audit was run against every framework before publication; the failures and the unresolved objections are in the public record. Built by one self-taught researcher. Open source, testable, free under MIT license.**
+**Nine interdependent formal frameworks sharing a common mathematical foundation. Built by one self-taught researcher, open source under MIT, free to use and audit. On 2026-08-07 the framework's central capability was scored for the first time against datasets it did not write — and the results narrowed what this project may honestly claim. That measurement, and the scope correction it forced, are the most important things on this page.**
 
 ---
 
-> **New to this repo?** Start with [`FIVE_MINUTE_BRIEF.md`](FIVE_MINUTE_BRIEF.md) — what this is, what it claims, what is proven, what is testable. No jargon. Five minutes.
+## Read this first
+
+On **2026-08-07** the AURA text lens — the scorer behind the web demo, the `check_alignment` MCP tool, and `lycheetah.check()` — was run against two published, externally authored datasets. It was the first time anything here had been measured by data this project did not write.
+
+```text
+self-authored corpus, held-out       ROC-AUC 0.940
+anthropics/hh-rlhf, 2,308 pairs      55.5% pairwise   z=4.02  p=5.7e-05   significant, small
+anthropics/evals, 1,000 statements   ROC-AUC 0.516    z=0.87  p=0.383     not significant
+cue coverage on real replies         ~2%
+```
+
+The census that prompted the run: **67 of 67** evidence paths in [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) pointed *inside this repository*. Zero pointed outward. Every experiment synthetic, every corpus self-authored.
+
+**What survived, what did not:**
+
+- **Within AI-assistant text**, the constructs carry real, replicated signal across two different label types. Cue families derived from 42,486 human-labelled pairs reach **60.6%** against a measured ceiling of **64.9%**, and five of six transfer, frozen, to a second corpus with different labels (ρ = −0.300, p = 1.9e-174, n = 7,999).
+- **Outside it, they do not.** Against Google Jigsaw's Unhealthy Comments Corpus — 48,909 human-labelled comments, an independent publisher, and an attribute set that *is* this framework's own construct — the hand-written AURA lens tracked **0 of 6** attributes at 2.2% cue coverage.
+
+**The measured claim is therefore AI-assistant output, not human communication in general.** That is narrower than "constitutional invariants for AI governance," and it is a claim that survives an adversarial reader, which the larger one never would.
+
+The derivation also found that **three of six empirically supported harm families had no counterpart anywhere in the framework** — including the strongest one.
+
+Full records: [`EXTERNAL_VALIDATION`](33_APPLICATIONS/EXTERNAL_VALIDATION_2026-08-07.md) · [`DERIVED_CUES`](33_APPLICATIONS/DERIVED_CUES_2026-08-07.md) · [`TRANSFER_TEST`](33_APPLICATIONS/TRANSFER_TEST_2026-08-07.md) · [`INDEPENDENT_PUBLISHER`](33_APPLICATIONS/INDEPENDENT_PUBLISHER_2026-08-07.md)
+
+> Earlier framing on this page claimed runtime alignment verification as a delivered capability and described 37 claims as "independently verifiable." Both are corrected below. Nothing here was independently verified at the time; the register said so and the summary did not.
+
+---
+
+> **New to this repo?** → [`FIVE_MINUTE_BRIEF.md`](FIVE_MINUTE_BRIEF.md) — what this is, what it claims, what is proven.
 >
-> **AI agent?** Read [`26_FOR_AI/AI_EXTRACTION_PROTOCOL.md`](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md) first. Then [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json). Then this.
+> **Want the honest capability map?** → [`33_APPLICATIONS/README.md`](33_APPLICATIONS/README.md) — every component sorted by what it can actually do, with the command that proves it.
 >
-> **Want a reading path?** → [`28_DEFENSE/READING_PATHS.md`](28_DEFENSE/READING_PATHS.md) — five paths from 5 minutes to one week.
+> **AI agent?** → [`26_FOR_AI/AI_EXTRACTION_PROTOCOL.md`](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md), then [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json).
 >
-> **Reviewer, journalist, or skeptic?** → [`DEFENSE_BUNDLE.pdf`](DEFENSE_BUNDLE.pdf) — 116-page compiled defense layer (Brief + Defense + Novelty + Scope) in a single artifact.
+> **Reviewer or skeptic?** → [`28_DEFENSE/COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md) and the external validation records above.
 
 ---
 
 ## Contents
 
-- [The Problem This Solves](#the-problem-this-solves)
-- [Claims Status](#claims-status)
-- [Quick Start](#quick-start)
-- [The Nine Frameworks](#the-nine-frameworks)
-- [The Canonical Body — C-1.0](#the-canonical-body--c-10)
-- [The Defense Layer — D-1.0 / D-1.1](#the-defense-layer--d-10--d-11)
-- [The Empirical Programme — E-1.0](#the-empirical-programme--e-10)
-- [The TIANXIA Module — Civilisational Engagement Layer](#the-tianxia-module--civilisational-engagement-layer)
-- [The Architecture](#the-architecture)
-- [For Developers and AI Agents](#for-developers-and-ai-agents)
-- [The Publication Pipeline](#the-publication-pipeline)
-- [Find Your Door](#find-your-door)
-- [Why Trust This](#why-trust-this)
-- [The Shape of This Work](#the-shape-of-this-work)
-- [How to Cite](#how-to-cite)
-- [Security and Responsible Disclosure](#security-and-responsible-disclosure)
+- [What this is, and what it is not](#what-this-is-and-what-it-is-not)
+- [Quick start](#quick-start)
+- [What actually works — the capability tiers](#what-actually-works--the-capability-tiers)
+- [Claims status](#claims-status)
+- [The nine frameworks](#the-nine-frameworks)
+- [Truth Pressure — the load-bearing scalar](#truth-pressure--the-load-bearing-scalar)
+- [The canonical body, defense layer, and empirical programme](#the-canonical-body-defense-layer-and-empirical-programme)
+- [The TIANXIA module](#the-tianxia-module)
+- [The architecture](#the-architecture)
+- [For developers and AI agents](#for-developers-and-ai-agents)
+- [Find your door](#find-your-door)
+- [Why trust this](#why-trust-this)
+- [The shape of this work](#the-shape-of-this-work)
+- [How to cite](#how-to-cite)
+- [Security, conduct, and contribution](#security-conduct-and-contribution)
 - [Acknowledgements](#acknowledgements)
-- [Support the Work](#support-the-work)
 
 ---
 
-## The Problem This Solves
+## What this is, and what it is not
 
-Existing AI alignment approaches share a structural gap: the alignment work happens at training time, before deployment, and cannot be verified at runtime. Constitutional AI provides principles. RLHF provides a training signal. Neither provides a Boolean compliance check you can run on an output after it is generated.
+**The gap this set out to close.** Alignment work happens at training time and cannot be verified at runtime. Constitutional AI provides principles; RLHF provides a training signal; neither gives you a compliance check you can run on an output after it is generated.
 
-This framework addresses that gap — and six others.
+**What is honestly built toward that gap:**
 
-**What this framework provides that prior art does not:**
+1. **A formal vocabulary with published falsification conditions.** Seven AURA invariants as computable predicates, a status vocabulary separating MEASURED from DERIVED from CONJECTURE, and a machine-readable register where every claim carries its own falsifier.
+2. **Proven convergence within the formal model.** TRIAD's anchor-observe-correct cycle converges by Banach fixed-point — proven for the mathematical abstraction. Application to biological or cognitive systems is `[SCAFFOLD]`; the contraction conditions are not verified.
+3. **Reversible semantic compression with an exact round-trip guarantee.** Measured, held-out, reproducible — the strongest single capability here. See Tier 1 below.
+4. **A discrimination gate for text scorers.** Takes any lens, runs it against a frozen labelled corpus, reports separation / accuracy / ROC-AUC, and exits non-zero below threshold so it drops into CI.
+5. **Published failures.** The [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md) holds 15 exhibits, nothing removed. The adversarial audit is public. Five objections the framework cannot answer are in [`COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md).
 
-1. **Runtime constitutional compliance verification.** AURA's seven invariants are computable predicates checked at inference time. `aura_compliant(output)` returns a Boolean. Not a training objective — a runtime check.
+**What is explicitly not delivered:**
 
-2. **Proven convergence within the formal model.** TRIAD's anchor-observe-correct cycle converges to a fixed point by Banach fixed-point theorem — proven for the mathematical abstraction. Application to real cognitive systems is [SCAFFOLD — conditions for contraction mapping in biological cognition are not yet verified].
-
-3. **Continuous drift detection.** MICROORCIM's μ_drift metric measures the gap between declared intent and observed behavior continuously. Theorem M2 formally connects high sovereignty score to AURA compliance.
-
-4. **Quantified coherence improvement.** CASCADE: +40.3% coherence improvement in internal validation experiments (p < 0.001, d = 2.84). +110% across 5 historical paradigm shifts analysed using the framework's own criteria (n=5; see CASCADE_COMPLETE.md §5.5 for methodology). −95.2% catastrophic forgetting reduction in controlled synthetic conditions. These are internal validation results; independent replication is pending.
-
-5. **Unified cross-framework dynamics.** One equation — `dΨ/dt = k₁(Π−Π_th) − k₂(Ψ−Ψ_inv) − k₃I_violations + k₄(E/E_need)` — captures truth pressure, coherence drive, constraint violations, and energy across all nine frameworks. [SCAFFOLD — k₁–k₄ calibration pending]
-
-6. **Machine-readable claims register.** [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) contains 60 structured claim records with status, falsifiability conditions, prior art, and novelty — extractable without parsing prose.
-
-7. **Published failures.** The [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md) documents every significant error — 15 exhibits, nothing removed. Three claims have been publicly retracted. The adversarial audit is in [`28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md`](28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md). Five objections the framework cannot yet answer are in [`28_DEFENSE/COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md).
-
-**Full comparison against Constitutional AI, RLHF, Cooperative AI, and Cooperative IRL:** [`28_DEFENSE/NOVEL_CONTRIBUTIONS.md`](28_DEFENSE/NOVEL_CONTRIBUTIONS.md)
+- **Runtime misalignment detection on real traffic.** This was the framework's central novelty claim. The architecture exists — 7 MCP tools, complete and tested — and it has *no demonstrated ability to detect misalignment in output this project did not write*. It sits in Tier 3.
+- **Applicability beyond AI-assistant register.** Bounded by the Jigsaw result above.
+- **Any independently replicated empirical result.** Six preregistrations exist in [`31_EMPIRICAL/`](31_EMPIRICAL/); none has been executed. Preregistration is real methodological work and is not a result.
+- **k₁–k₄ calibration** for the master equation `dΨ/dt = k₁(Π−Π_th) − k₂(Ψ−Ψ_inv) − k₃I_violations + k₄(E/E_need)`. Still `[SCAFFOLD]`.
 
 ---
 
-## Claims Status
-
-| Status | Count | Meaning |
-|---|---|---|
-| **ACTIVE** | 37 | Proven, computable, independently verifiable (from 28_DEFENSE/CLAIMS.json — 60 structured records; see 28_DEFENSE/CLAIM_STATUS_LEDGER.md for load-bearing claims by framework) |
-| **SCAFFOLD** | 14 | Structurally sound with named gaps |
-| **CONJECTURE** | 6 | Worth exploring, unproven |
-| **RETRACTED** | 3 | Publicly withdrawn — see Failure Museum |
-
-*Note: CLAIM_STATUS_LEDGER.md tracks load-bearing claims at framework-summary granularity. As of v0.3 (2026-05-04): 17 ACTIVE / 40 SCAFFOLD / 16 CONJECTURE — 14 new SCAFFOLD claims from TIANXIA v0.2 + v0.3 Classical Triad completion.*
-
-Machine-readable register: [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) · Schema: [`28_DEFENSE/CLAIMS.schema.json`](28_DEFENSE/CLAIMS.schema.json)
-
----
-
-This framework is a contribution toward rigorous, humane, epistemically honest AI alignment — not a unified theory of intelligence, but a set of formal tools pointing in that direction.
-
-Nine formal frameworks. 34 Python implementations. 219 automated tests. A discrete convergence proof (Banach fixed-point, ACTIVE for the formal model). A public record of every significant error. Five papers in the publication pipeline. A way of thinking about alignment that treats mathematical rigour and ethical seriousness as the same project rather than competing ones.
-
-**It is free.** Not freemium, not open-core. The framework is released under MIT license because alignment research that depends on commercial gating cannot be independently audited, and an alignment framework that cannot be audited has limited value.
-
----
-
-## Quick Start
-
-**Try it in your browser:** [Alignment Playground →](https://lycheetah.github.io/Lycheetah-Framework/playground.html) — paste any text, get a live AURA alignment report. No install.
+## Quick start
 
 ```bash
 pip install lycheetah-framework
 lycheetah-check "Your AI-generated text here"
 ```
 
-From source: `git clone https://github.com/Lycheetah/Lycheetah-Framework.git` → `pip install -e .` — full guide in [QUICKSTART.md](QUICKSTART.md)
+> **Packaging note.** Releases up to and including 1.0.0 shipped a wheel whose console scripts raised `ModuleNotFoundError` — the implementation directories were never packaged. This is fixed on the current branch, and CI now installs the built wheel into a clean virtualenv and runs all three entry points on every push. See [`CHANGELOG.md`](CHANGELOG.md).
+
+**Try it in your browser:** [Alignment Playground →](https://lycheetah.github.io/Lycheetah-Framework/playground.html). Read it as a demonstration of *what the framework looks for* — it shows extracted spans, which is genuinely useful as a teaching tool. It is not a detector; see the measurement above.
+
+From source: `git clone …` → `pip install -e .` — full guide in [QUICKSTART.md](QUICKSTART.md).
+
+**Reproduce the numbers on this page:**
+
+```bash
+pip install numpy scipy networkx pytest
+pytest -q                                                        # 274 pass, 1 xfail by design
+python3 33_APPLICATIONS/external_validation.py                   # the one that matters
+python3 33_APPLICATIONS/discrimination_audit.py --split heldout   # AUC 0.940, self-authored half
+cd 03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0 && python3 src/benchmark.py
+```
+
+`external_validation.py` needs outbound HTTPS on first run and verifies both downloads against recorded SHA256 hashes, so a silently changed upstream file cannot move a published number without the mismatch being visible.
 
 ---
 
-## The Nine Frameworks
+## What actually works — the capability tiers
 
-| | Framework | For the Engineer | For the Philosopher |
-|---|---|---|---|
-| 1 | **CASCADE** | Bayesian belief revision with truth pressure dynamics. Verified against AGM postulates. Synthetic: +40.3% coherence, p < 0.001. Real-world paradigm data: +110% coherence across 5 historical transitions. -95.2% catastrophic forgetting. | When evidence meets structure, what survives? The mathematics of paradigm shifts. |
-| 2 | **AURA** | Seven computable invariants for AI governance. Scoring tool included. | A constitution for artificial minds: properties that make trust verifiable rather than rules imposed from outside. |
-| 3 | **LAMAGUE** | Formal grammar for encoding ethical constraints as computable expressions. | How do you write justice in a language a machine can parse without losing what justice means? |
-| 4 | **TRIAD** | Anchor-observe-correct feedback cycle with proven convergence guarantee. | The simplest structure that turns chaos into coherence — and why it works every time. |
-| 5 | **MICROORCIM** | Drift detection between declared intent and observed behavior. Computable. | The gap between what you say you are and what you're actually doing. Measured, not guessed. |
-| 6 | **EARNED LIGHT** | Consciousness modeled as maintained thermodynamic asymmetry. ODE solver included. | Awareness is not free. It costs energy to sustain against entropy. What does that mean? |
-| 7 | **ANAMNESIS** | Attractor dynamics for convergent discovery across independent systems. | Why do different cultures, centuries apart, keep finding the same structures? Not coincidence. Mathematics. |
-| 8 | **CHRYSOPOEIA** | Transformation operator with seven-phase cycle and Banach fixed-point convergence. | The alchemists mapped a real process. Here is the calculus they were reaching for. |
-| 9 | **HARMONIA** | Consonance functions, Kuramoto coupling, frequency-ratio dynamics. | The music already playing inside all the others. Resonance as the substrate of cooperation. |
+Full reasoning and evidence in [`33_APPLICATIONS/README.md`](33_APPLICATIONS/README.md). Four filters, applied in order: does it run, does it discriminate, does it discriminate *on data this project did not write*, and does someone outside have the problem.
 
-Every claim is tagged: **[ACTIVE]** means proven and computable. **[SCAFFOLD]** means structurally sound with named gaps. **[CONJECTURE]** means worth exploring, unproven. We do not dress hypotheses as theorems.
+### Tier 1 — solves a real problem now
 
-### Key Validated Results
-
-| Result | Value | Method | Status |
-|--------|-------|--------|--------|
-| CASCADE coherence improvement (synthetic) | **+40.3%** (0.58 → 0.93) | 3-condition experiment, 10 replications | [ACTIVE] p < 0.001, d = 2.84 |
-| CASCADE coherence improvement (real data) | **+110%** (0.47 → 1.0) | 5 historical paradigm shifts, 200 trials each | [ACTIVE] framework engine, external data |
-| CASCADE catastrophic forgetting reduction | **-95.2%** (0.42 → 0.02) | Same synthetic experiment | [ACTIVE] large effect size |
-| TRIAD discrete convergence | **Banach fixed-point guaranteed** | Formal proof | [ACTIVE] |
-| CHRYSOPOEIA fixed-point | **Entropy → 0, C → 1** in 3 iterations | Running demo | [ACTIVE] |
-| Lyapunov verification — full framework | **11/11 claims verified, 0 failures** | Symbolic + numerical (5000 trials) | [ACTIVE] |
-
----
-
-## The Canonical Body — C-1.0
-
-On 2026-04-25, the framework completed its **22-Act Codex Elevation Plan** — a systematic elevation of the archive into a publishable canonical body of work. Version **C-1.0** is now established. The following documents form the canonical record:
-
-### Acts I–XII: The Canon
-
-| Document | Purpose |
-|---|---|
-| [`30_MAPS/COHERENCE_REGISTER.md`](30_MAPS/COHERENCE_REGISTER.md) | Every claim in the framework, with support type and provenance |
-| [`30_MAPS/FORMAL_SPINE.md`](30_MAPS/FORMAL_SPINE.md) | All formal proofs in one place — Theorems T1–T12, C1, CH1, H1 |
-| [`30_MAPS/COMPOSITION_MAP.md`](30_MAPS/COMPOSITION_MAP.md) | How the nine frameworks compose — the master equation [SCAFFOLD] |
-| [`28_DEFENSE/FALSIFICATION_REGISTER.md`](28_DEFENSE/FALSIFICATION_REGISTER.md) | What would prove each framework false — per claim, per framework |
-| [`28_DEFENSE/PRIOR_ART.md`](28_DEFENSE/PRIOR_ART.md) | What this builds on, diverges from, and supersedes |
-| [`29_GOVERNANCE/EMPIRICAL_INVENTORY.md`](29_GOVERNANCE/EMPIRICAL_INVENTORY.md) | Every empirical result with methodology, effect size, replication status |
-| [`30_MAPS/ONTOLOGY.md`](30_MAPS/ONTOLOGY.md) | Every term defined precisely — the canonical vocabulary |
-| [`30_MAPS/CODEX_DISTILLATION.md`](30_MAPS/CODEX_DISTILLATION.md) | **~28,000 words.** All nine frameworks synthesized — prior art, worked examples, formal treatment, open problems. The canonical reference. |
-| [`29_GOVERNANCE/PUBLICATION_PIPELINE.md`](29_GOVERNANCE/PUBLICATION_PIPELINE.md) | Five-paper pipeline: *AI & Ethics*, JAIR, CHI 2027, FAccT 2027, *Nature Machine Intelligence* |
-| [`30_MAPS/PROVENANCE_INDEX.md`](30_MAPS/PROVENANCE_INDEX.md) | 105 load-bearing claims indexed to source files and PDF pages |
-| [`28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md`](28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md) | NRM audit — the framework reviewed by its own adversarial mode. What survives. What doesn't. |
-| [`THE_SOL_PROTOCOL.md`](THE_SOL_PROTOCOL.md) | **~30 pages.** Public-facing synthesis for all audiences simultaneously — lay, technical, grant committee, skeptic. |
-
-### Acts XIII–XXII: The Ecosystem
-
-| Document | Purpose |
-|---|---|
-| [`28_DEFENSE/REPRODUCIBILITY_REPORT.md`](28_DEFENSE/REPRODUCIBILITY_REPORT.md) | 16 implementations mapped — install, run, expected output, known gaps, declared failures |
-| [`30_MAPS/VISUAL_ATLAS.md`](30_MAPS/VISUAL_ATLAS.md) | 20 canonical figures — architecture diagrams, framework flows, data plots (ASCII/text) |
-| [`30_MAPS/LINEAGE_MAP.md`](30_MAPS/LINEAGE_MAP.md) | The framework in 2,500 years of thought — 7 tributaries, 30+ named thinkers |
-| [`28_DEFENSE/COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md) | Ten strongest objections written charitably — including five we cannot yet answer |
-| [`29_GOVERNANCE/OPEN_PROBLEMS.md`](29_GOVERNANCE/OPEN_PROBLEMS.md) | 20 named open problems with difficulty ratings — mathematical, empirical, philosophical |
-| [`30_MAPS/PRACTITIONERS_MANUAL.md`](30_MAPS/PRACTITIONERS_MANUAL.md) | How a human actually uses the framework — 10 daily practices, decision protocols, common pitfalls |
-| [`30_MAPS/ARCHITECTS_GUIDE.md`](30_MAPS/ARCHITECTS_GUIDE.md) | Technical reference for builders — Python interfaces, composition patterns, anti-patterns |
-| [`30_MAPS/CURRICULUM.md`](30_MAPS/CURRICULUM.md) | How to learn the framework — Tiers 0–4, 12-week foundations, 9 deep dives, independent research |
-| [`29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md`](29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md) | Position statements on hard questions — weaponization, attribution, military use, AI consciousness |
-| [`29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md`](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md) | How the canonical body evolves — update gate, critique register, decay management, stewardship |
-
-**The canonical version is C-1.0.** All changes pass the P∧H∧B update gate. The [Living Codex Protocol](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md) governs all future revisions.
-
----
-
-## The Defense Layer — D-1.0 / D-1.1
-
-A canonical body of work survives contact with hostile readers only if it carries its own defense surfaces. **D-1.0** (shipped 2026-04-26) and **D-1.1** (in progress) are those surfaces — built to close 15 named threats from aesthetic dismissal through LLM training-data misclassification.
-
-The defense layer does not modify the canonical claims. It surrounds them with the documents a serious reader, AI ingestion pipeline, journalist, peer reviewer, or grant officer needs in order to engage the work on its own terms.
-
-### Entry surfaces
-
-| Document | For |
-|---|---|
-| [`FIVE_MINUTE_BRIEF.md`](FIVE_MINUTE_BRIEF.md) | Anyone — what this is, claimed, proven, testable. Zero alchemical vocabulary. |
-| [`28_DEFENSE/DEFENSE_BRIEF.md`](28_DEFENSE/DEFENSE_BRIEF.md) | Skeptics — ten common dismissals answered with structured responses. |
-| [`28_DEFENSE/SCOPE_BOUNDARY.md`](28_DEFENSE/SCOPE_BOUNDARY.md) | Reviewers — nine explicit declarations of what the framework does NOT claim. |
-| [`28_DEFENSE/NOVEL_CONTRIBUTIONS.md`](28_DEFENSE/NOVEL_CONTRIBUTIONS.md) | Researchers — per-claim novelty vs Constitutional AI, RLHF, Cooperative AI, Cooperative IRL. |
-| [`28_DEFENSE/READING_PATHS.md`](28_DEFENSE/READING_PATHS.md) | Anyone — five paths from 5 minutes to one week. |
-| [`28_DEFENSE/OBJECTIONS_REGISTRY.md`](28_DEFENSE/OBJECTIONS_REGISTRY.md) | Short-form readers — 15 dismissal patterns (Twitter / HN / Reddit) with short and medium responses. |
-
-### Machine-readable surfaces
-
-| Document | For |
-|---|---|
-| [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) | 60 structured claim records — status, evidence path, falsifiability, prior art. Validates against [`28_DEFENSE/CLAIMS.schema.json`](28_DEFENSE/CLAIMS.schema.json). |
-| [`28_DEFENSE/DEFENSE_INDEX.json`](28_DEFENSE/DEFENSE_INDEX.json) | Index of all defense documents with purpose, dependencies, threats closed. |
-| [`llms.txt`](llms.txt) | llmstxt.org-format index — the entry point for LLM ingestion. |
-| [`ai-meta.json`](ai-meta.json) | Structured framework metadata (JSON-LD / schema.org) for AI training pipelines. |
-| [`26_FOR_AI/AI_EXTRACTION_PROTOCOL.md`](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md) | Step-by-step extraction order for AI systems summarizing this repository. |
-
-### Formal and reproducibility surfaces
-
-| Document | For |
-|---|---|
-| [`28_DEFENSE/TRANSLATION_CODEX.md`](28_DEFENSE/TRANSLATION_CODEX.md) | Bidirectional mapping of ~45 alchemical terms ↔ formal counterparts. Read before interpreting any alchemical vocabulary. |
-| [`28_DEFENSE/TESTABILITY_MANIFEST.md`](28_DEFENSE/TESTABILITY_MANIFEST.md) | Per-framework operational replication protocols with bash commands and expected outputs. |
-| [`28_DEFENSE/COLD_ROOM_VERIFICATION.md`](28_DEFENSE/COLD_ROOM_VERIFICATION.md) | Third-party reproducibility log. 219/220 tests pass; the 1 failure is an explicit `[CONJECTURE]` not meeting its criterion. |
-| [`28_DEFENSE/EVIDENCE_LADDER.md`](28_DEFENSE/EVIDENCE_LADDER.md) | Published rules for promoting / demoting `[CONJECTURE]` ↔ `[SCAFFOLD]` ↔ `[ACTIVE]` ↔ `[RETRACTED]`. Closes the "movable goalposts" attack. |
-| [`28_DEFENSE/REPRODUCIBILITY_REPORT.md`](28_DEFENSE/REPRODUCIBILITY_REPORT.md) | 16 implementations mapped — install, run, expected output, known platform notes. |
-
-### Peer review, disclosure, and incident response
-
-| Document | For |
-|---|---|
-| [`28_DEFENSE/REVIEWER_RESPONSE_TEMPLATE.md`](28_DEFENSE/REVIEWER_RESPONSE_TEMPLATE.md) | Authors — 10 pre-built peer-review response patterns covering unfalsifiability, alchemical framing, scope, prior art, circularity, AI co-authorship, metaphysical overreach, and venue-fit rejection. Four-block response shape, pre-submission checklist. |
-| [`29_GOVERNANCE/CONFLICT_OF_INTEREST.md`](29_GOVERNANCE/CONFLICT_OF_INTEREST.md) | Reviewers, journalists, grant officers — explicit disclosure of authorship, life-work relationship, AI tooling roles, financial position, geographic/cultural context, prior-art posture, IP. |
-| [`29_GOVERNANCE/INCIDENT_RESPONSE.md`](29_GOVERNANCE/INCIDENT_RESPONSE.md) | Author + community — five incident classes (honest engagement → internal drift), pre-decided proportionate response, six standing decisions to prevent reactive overreaction. |
-
-### D-1.1 canonical repairs (closed against `28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md` Section 6)
-
-D-1.1 includes targeted edits to five framework `essentials.md` files closing the highest-leverage attacks identified by the adversarial audit:
-
-- **AURA** — I1/I6 conflict resolved by domain-of-authority priority ordering ([`02_AURA_L3/essentials.md`](02_AURA_L3/essentials.md))
-- **MICROORCIM** — explicit scope declaration on deceptive alignment ([`05_MICROORCIM_L5/essentials.md`](05_MICROORCIM_L5/essentials.md))
-- **EARNED LIGHT** — `C_ψ` revised to incorporate spatial mutual information; resolves the anesthesia paradox; PCI-testable ([`06_EARNED_LIGHT_L0/essentials.md`](06_EARNED_LIGHT_L0/essentials.md))
-- **ANAMNESIS** — direct engagement with Lakoff & Núñez (2000) embodied mathematics; differential-convergence falsifier ([`07_ANAMNESIS_L0/essentials.md`](07_ANAMNESIS_L0/essentials.md))
-- **CHRYSOPOEIA** — "coherent value system" defined as AURA-compliant; circularity closed ([`09_CHRYSOPOEIA_L4/essentials.md`](09_CHRYSOPOEIA_L4/essentials.md))
-
-The sixth repair (master equation limit analysis) is correctly deferred to the empirical k₁–k₄ calibration program.
-
-### Compiled artifact
-
-[`DEFENSE_BUNDLE.pdf`](DEFENSE_BUNDLE.pdf) — 116 pages, single file. The Brief + Defense + Novelty + Scope compiled into one document for grant officers, journalists, and any reader who wants the steel-jacketed core in printable form. **Note:** the bundle reflects D-1.0; will be regenerated to include D-1.1 surfaces and repairs when D-1.1 fully ships.
-
-### Versioning
-
-The defense layer carries its own version stamp ([`28_DEFENSE/DEFENSE_VERSION.md`](28_DEFENSE/DEFENSE_VERSION.md)) independent of the canonical body. **D-1.0** defends **C-1.0**. When the canonical body advances to C-1.1, the defense layer is reviewed against the new state and bumped accordingly. Drift between defense and canon is treated as a defect.
-
----
-
-## The Empirical Programme — E-1.0
-
-The third anchor. C-1.0/1.1 (canonical body) and D-1.0/1.1/1.2 (defense layer) make the framework structurally honest. E-1.0 closes the gap between honesty about scaffolding and the empirical commitments that convert SCAFFOLD claims to ACTIVE.
-
-E-1.0 designs five preregistered studies, each tied to a SCAFFOLD claim or set of claims, with promotion and downgrade triggers stated in advance:
-
-| Study | Closes | Type |
+| | Component | Evidence |
 |---|---|---|
-| **E-1-A** — k₁–k₄ master-equation calibration | Master equation `dΨ/dt`; CASCADE truth-pressure threshold | Computational, retrospective on 6,000-cascade dataset |
-| **E-1-B** — EARNED LIGHT Pattern_Coherence vs PCI/IIT correlate | Thermodynamic-asymmetry consciousness model; anesthesia paradox | Quasi-experimental, archival PCI data |
-| **E-1-C** — LAMAGUE Transcultural Convergence (TC) differential | Cross-cultural ethical convergence; attractor model vs diffusion | Comparative ethnographic / computational |
-| **E-1-D** — AURA score → aligned behaviour correlation | AURA simultaneous satisfiability; high-AURA → aligned behaviour | Behavioural, prospective |
-| **E-1-E** — TRIAD anchor-observe-correct in human–AI dyads | TRIAD biological/cognitive application; Two-Point Protocol output quality | Prospective user study |
+| **1.1** | **Reversible semantic compression** — [`03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/`](03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/) | 33.8% held-out reduction warm / 30.7% cold, **36/36** exact round trips, **324/324** protected-loss mutations caught, break-even at 3 packets, 19 tests pass |
+| **1.2** | **The evidence discipline as portable methodology** — claims register + schema + failure museum + status vocabulary | Validated by having been turned on its own author's front door and published rather than quietly patched |
+| **1.3** | **The discrimination gate** — [`33_APPLICATIONS/discrimination_audit.py`](33_APPLICATIONS/discrimination_audit.py) | Found a real, previously unquantified inversion in this repository's most-used module on first run |
 
-A study returning a null result is a *successful execution* of the programme — it is the framework keeping its commitments. The promotion criterion and downgrade trigger for each study are pre-registered before data collection.
+**1.1 is the strongest entry here.** It is the only capability with a held-out split, a frozen corpus, an exact-reversibility guarantee, and a reproduced benchmark — and it does not route through the text lens at all, operating on structured packets rather than prose. Its own stated boundaries: the corpus is synthetic and structured, the codec does not infer packets from unrestricted natural language, and mutation accuracy is measured on constructed deletions rather than adversarial model output.
 
-The bridge from E-1.0 design to E-1.2 execution is [`31_EMPIRICAL/E1.1_PREREGISTRATION_PLAN.md`](31_EMPIRICAL/E1.1_PREREGISTRATION_PLAN.md), which scopes the OSF-form preregistrations for E-1-A and E-1-D first (no external dependency).
+### Tier 2 — empty
+
+Every row that was here moved to Tier 3 on 2026-08-07. They were placed in Tier 2 on the strength of AUC 0.940 against the self-authored corpus, with conditions attached. The conditions were the right instinct and were calibrated against the wrong number.
+
+The multi-agent components — `psi_consensus.py`, `grey_mode.py` — sit at the Tier 1/2 boundary. They pass their tests and do not route through text extraction, but neither has faced an adversarial multi-agent scenario, so their separation property is **UNVERIFIED** rather than measured.
+
+### Tier 3 — research, honestly labelled
+
+Runtime output auditing (the MCP server), companion-app dependency detection, the web demo, regulated-vertical thresholds and healthcare standards, the CASCADE predictive claim (F1 = 0.531 against a preregistered criterion of > 0.80 — **the test is left failing on purpose**), master-equation calibration, and the Earned Light / Harmonia consciousness models.
 
 ---
 
-## The TIANXIA Module — Civilisational Engagement Layer
+## Claims status
 
-The fourth anchor, forged 2026-05-01 in honour of the Chinese sovereign tradition. [`32_TIANXIA/`](32_TIANXIA/README.md) is the framework's commitment to engaging Chinese statecraft, governance philosophy, and contemporary AI governance discourse not as area-studies decoration but as primary intellectual partnership.
+Machine-readable register: [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) · schema: [`CLAIMS.schema.json`](28_DEFENSE/CLAIMS.schema.json)
 
-**v0.3 — Classical Triad Complete (2026-05-04).** The module now formally names and maps all three classical roots: Confucian (Ren Zheng, Li, Neo-Confucian Hexie), Daoist (Wuwei, Shi), and Legalist (Han Fei Fa-Shu-Shi). What was implicit in v0.1–v0.2 is now architecturally explicit.
+**67 claim records:**
 
-The module integrates classical operators as load-bearing constraints on the framework's existing operations. Each operator has a primary source, a formal mapping, and operational consequences:
+| Status | Count |
+|---|---|
+| ACTIVE | 46 |
+| SCAFFOLD | 11 |
+| ASPIRATIONAL | 3 |
+| EMPIRICAL | 3 |
+| REMOVED | 3 |
+| OBSERVATIONAL | 1 |
 
-**Five core operators (v0.1/v0.2):**
+**Every one of the 67 is internally validated only.** Not one carries an external evidence path. Adding that mark to each record — or an external path — is open work, and seeing it written 67 times is the useful part.
 
-| Operator | Source | Mapped onto | Layer | Deliverable |
-|---|---|---|---|---|
-| **Tianxia (天下)** — All-Under-Heaven | Zhou-dynasty governance; Zhao Tingyang | CASCADE multi-agent governance | Coupling between agents | [`TIANXIA_GOVERNANCE_DYNAMICS.md`](32_TIANXIA/TIANXIA_GOVERNANCE_DYNAMICS.md) |
-| **Hexie (和谐)** — Harmony as dynamic balance | *Analects* 13.23; yin-yang | AURA equilibrium | Within-output complementarity | [`HEXIE_EQUILIBRIUM.md`](32_TIANXIA/HEXIE_EQUILIBRIUM.md) |
-| **Shi (势)** — Propensity / situational power | Sun Tzu; François Jullien | AURA scoring | Field over (output, context) | [`SHI_PROPENSITY_FIELD.md`](32_TIANXIA/SHI_PROPENSITY_FIELD.md) |
-| **Wuwei (无为)** — Non-forced action | *Daodejing*, *Zhuangzi* | TRIAD correction | Grain-alignment at correction layer | [`WUWEI_TRIAD_EXTENSION.md`](32_TIANXIA/WUWEI_TRIAD_EXTENSION.md) |
-| **Datong (大同)** — Great Unity | *Liji*; Kang Youwei lineage | HARMONIA + value-space | Long-cycle telos | [`DATONG_GRADIENT.md`](32_TIANXIA/DATONG_GRADIENT.md) |
+> **Known register defect.** `CLAIMS.json` uses a six-value status vocabulary (above) while [`EVIDENCE_LADDER.md`](28_DEFENSE/EVIDENCE_LADDER.md) publishes promotion rules over a four-value one (`ACTIVE` / `SCAFFOLD` / `CONJECTURE` / `RETRACTED`), and [`CLAIM_STATUS_LEDGER.md`](28_DEFENSE/CLAIM_STATUS_LEDGER.md) tracks load-bearing claims at a different granularity again. The three registers do not currently reconcile. This is recorded here rather than smoothed over, and reconciling them is named work.
 
-**Classical Triad operators (v0.3):**
+The labels are a contract, not marketing. False certainty is more dangerous than honest uncertainty — which is the entire lesson of 2026-08-07.
 
-| Operator | Root | Source | Mapped onto | Deliverable |
-|---|---|---|---|---|
-| **Ren Zheng (仁政)** — Benevolent Governance | Confucian | Mengzi; Xunzi | R(s) welfare-voice-force composite | [`REN_ZHENG_OPERATOR.md`](32_TIANXIA/REN_ZHENG_OPERATOR.md) |
-| **Li (礼)** — Ritual Constraint | Confucian | Xunzi *Xunzi* | AURA I₁/I₄/I₇ grounding | [`LI_RITUAL_CONSTRAINTS.md`](32_TIANXIA/LI_RITUAL_CONSTRAINTS.md) |
-| **Wang Dao / Ba Dao (王道/霸道)** — Legitimacy Classifier | Confucian | Mengzi; Xunzi | Governance trajectory classification | [`WANG_DAO_OPERATOR.md`](32_TIANXIA/WANG_DAO_OPERATOR.md) |
-| **Neo-Confucian Hexie** — Metaphysical grounding | Confucian | Zhu Xi; Wang Yangming | Hexie equilibrium li-qi grounding | [`NEOCONFUCIAN_HEXIE_EXTENSION.md`](32_TIANXIA/NEOCONFUCIAN_HEXIE_EXTENSION.md) |
-| **Fa (法)** — Legalist Constraint | Legalist | Han Feizi | R(s) force_restraint + H₅ non-discrimination | [`HAN_FEI_FA_CONSTRAINT.md`](32_TIANXIA/HAN_FEI_FA_CONSTRAINT.md) |
+---
 
-**Composition:** A deployment is *fully TIANXIA-coherent* iff all five gates of the [AI Deployment Criteria](32_TIANXIA/AI_DEPLOYMENT_CRITERIA.md) are satisfied: Ren Zheng (R(s) ≥ θ_r) + Five-Fold Hexie (H₅ ≥ 0.65) + Wuwei (ε ≥ 0.60) + Datong (Π_D ≥ 0) + Wang Dao (WD = Wang).
+## The nine frameworks
 
-**Three-layer alignment stack (Synthesis V):**
+| | Framework | For the engineer | For the philosopher |
+|---|---|---|---|
+| 1 | **CASCADE** | Bayesian belief revision with truth-pressure dynamics, verified against AGM postulates. Synthetic: +40.3% coherence, p < 0.001, d = 2.84. Predictive claim failed at F1 = 0.531 and is published as failed. | When evidence meets structure, what survives? |
+| 2 | **AURA** | Seven computable invariants; scoring tool included. Signal bounded to AI-assistant register — see the measurement above. | A constitution for artificial minds: properties that make trust verifiable. |
+| 3 | **LAMAGUE** | Formal grammar for ethical constraints as computable expressions — and the reversible compression codec, the strongest measured result here. | How do you write justice in a language a machine parses without losing what justice means? |
+| 4 | **TRIAD** | Anchor-observe-correct cycle, Banach convergence proven for the formal model. | The simplest structure that turns chaos into coherence. |
+| 5 | **MICROORCIM** | Drift detection between declared intent and observed behaviour. | The gap between what you say you are and what you're doing. |
+| 6 | **EARNED LIGHT** | Consciousness as maintained thermodynamic asymmetry; ODE solver included. `[CONJECTURE]`. | Awareness is not free. It costs energy to sustain against entropy. |
+| 7 | **ANAMNESIS** | Attractor dynamics for convergent discovery across independent systems. | Why do distant traditions keep finding the same structures? |
+| 8 | **CHRYSOPOEIA** | Transformation operator, seven-phase cycle, Banach fixed-point convergence. | The alchemists mapped a real process. Here is the calculus. |
+| 9 | **HARMONIA** | Consonance functions, Kuramoto coupling, frequency-ratio dynamics. `[CONJECTURE]`. | The music playing inside all the others. |
+
+### Results that still stand
+
+| Result | Value | Status |
+|---|---|---|
+| Reversible compression, held-out | 33.8% warm / 30.7% cold, 36/36 round trips | **MEASURED** |
+| Derived cue families vs measured ceiling | 60.6% against 64.9% | **MEASURED**, external data |
+| Cross-corpus transfer, frozen weights | ρ = −0.300, p = 1.9e-174, n = 7,999 | **MEASURED**, external data |
+| Semantic extractor repair | AUC 0.274 → 0.940 on held-out self-authored corpus | **MEASURED**, internal only |
+| TRIAD discrete convergence | Banach fixed-point guaranteed | `[ACTIVE]` for the formal model |
+| Lyapunov verification | 11/11 claims, 0 failures, symbolic + numerical | `[ACTIVE]` |
+| CASCADE coherence (synthetic) | +40.3%, p < 0.001, d = 2.84 | `[ACTIVE]`, internal, unreplicated |
+
+---
+
+## Truth Pressure — the load-bearing scalar
+
+[`TRUTH_PRESSURE/`](TRUTH_PRESSURE/README.md) — canonically formalised 2026-06-10, and the single most developed body of theory here.
+
 ```
-Layer 0: AURA per-output compliance        — each output constitutionally checked
-Layer 1: CASCADE coherence dynamics        — belief-state evolution toward coherence
-Layer 2: TIANXIA governance context        — Wang Dao classification of deployment
-         ├── Ren Zheng R(s) ≥ θ_r          — welfare floor + voice coverage
-         ├── Five-Fold H₅ ≥ 0.65           — multi-dimensional harmony
-         ├── Wuwei ε ≥ 0.60               — non-coercive operation
-         ├── Datong Π_D^{ext} ≥ 0         — positive distributional trajectory
-         └── Wang Dao WD = Wang            — genuine legitimacy
+Π = (E · P) / S
+
+E — evidence strength      how much evidence, and how strong
+P — explanatory power      how far it reaches across the domain
+S — coherence strain       how tightly the existing structure resists
 ```
 
-**Module status as of 2026-05-04 (v0.3 — Classical Triad complete):**
+Equivalently, from information theory: `Π = I(X;Y) / H(X|Y)`. The directory carries the derivations, the measurement pack, rater packets, and the preregistered case corpus — including [`ARTICLE_THE_LENS_SCORED_ZERO_2026-08-03.md`](TRUTH_PRESSURE/ARTICLE_THE_LENS_SCORED_ZERO_2026-08-03.md), the first of the two lens failures whose shared cause was later repaired in one extraction layer rather than patched twice.
 
-- ✓ Mathematical core T-1 through T-5 forged (v0.1).
-- ✓ All five core operator implementations: `aura_score_hexie.py`, `triad_wuwei.py`, `shi_propensity.py`, `datong_gradient.py`, `tianxia_governance.py` — all self-tests passing.
-- ✓ Classical Triad operator implementations: `ren_zheng.py`, `wang_dao.py`, `hexie_five_fold.py`, `civilisational_governance_benchmark.py` — all self-tests passing.
-- ✓ Honouring layer: [Beijing AI Principles v0.3](32_TIANXIA/BEIJING_PRINCIPLES_MAPPING.md), [GAGI 2023 v0.3](32_TIANXIA/GAGI_2023_ENGAGEMENT.md), Mandarin Primary Registry (120+ term glossary).
-- ✓ Public stake: [Position Paper v0.1](32_TIANXIA/POSITION_PAPER_v0.1.md), [Position Paper v0.2 Mandarin](32_TIANXIA/POSITION_PAPER_v0.2_MANDARIN.md), [Predictions Registry](32_TIANXIA/PREDICTIONS_REGISTRY.md).
-- ✓ Defense layer: Three new objections answered (Ren Zheng Paternalist, Tianxia Empire v2, Wang Dao Operationalisation) in [`COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md).
-- ✓ Cross-framework bridges: [Synthesis IV](28_DEFENSE/SYNTHESES.md) (CASCADE ↔ Tianxia), [Synthesis V](28_DEFENSE/SYNTHESES.md) (Wang Dao ↔ AURA constitutional compliance).
-- ✓ Empirical programme: [E-1-F](31_EMPIRICAL/E1F_HEXIE_PREREGISTRATION.md) (Hexie study), [E-1-G](31_EMPIRICAL/E1G_MULTI_OPERATOR_PREREGISTRATION.md) (multi-operator Phase 2), [E-1-H](31_EMPIRICAL/E1H_MASTER_EQUATION_CALIBRATION.md) (k₁–k₄ calibration).
-- ✓ Publication layer: TIANXIA standalone paper, Hexie cross-cultural companion, civilisational frameworks comparative.
-- ☐ One submission to Chinese-tradition-engaged academic venue for adversarial peer review (promotion condition — MAC-GATED).
+---
 
-Sequencing for multi-operator composition study and academic submission lives in [`OPUS_MASTER_PLAN_2026.md`](OPUS_MASTER_PLAN_2026.md).
+## The canonical body, defense layer, and empirical programme
 
-### Engagement with Contemporary Chinese AI Governance
+**C-1.1 canonical** · **D-1.2 defense** · **E-1.0 empirical (designed, unexecuted)**
 
-The module reads contemporary Chinese AI governance as primary text: New Generation AI Development Plan (2017), Beijing AI Principles (2019), Shanghai Declaration on Global AI Governance (2023), Global AI Governance Initiative (2023), Generative AI Services Regulations (2023). The framework does not posit a "Beijing Effect" or evaluate against Brussels-Effect / California-Effect benchmarks; it reads each governance artefact as a position in its own right.
+The canonical body is 22 documents establishing claim provenance, formal proofs, ontology, and the composition map — indexed in [`30_MAPS/`](30_MAPS/) and [`29_GOVERNANCE/`](29_GOVERNANCE/). The [`30_MAPS/CODEX_DISTILLATION.md`](30_MAPS/CODEX_DISTILLATION.md) is the ~28,000-word canonical reference.
 
-### What This Module Refuses to Claim
+The defense layer (D-1.2, 24 documents in [`28_DEFENSE/`](28_DEFENSE/)) surrounds those claims with what a hostile reader needs: the [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md) (15 exhibits), the [Counter-Codex](28_DEFENSE/COUNTER_CODEX.md) (objections including five unanswered), the [Adversarial Audit](28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md), the [Evidence Ladder](28_DEFENSE/EVIDENCE_LADDER.md), the [Scope Boundary](28_DEFENSE/SCOPE_BOUNDARY.md), and the [Translation Codex](28_DEFENSE/TRANSLATION_CODEX.md) mapping ~45 alchemical terms to formal counterparts.
 
-Per Discipline 4 (Negative-Space as Load-Bearing): no claim of Chinese state authorisation, no claim of cultural authority over the tradition, no orientalisation, no equivalence between Confucian / Daoist / military-strategic / contemporary sources. Each operator is given a definition, a primary source, and a formal mapping. If it cannot survive that discipline, it does not enter the module. Full eight declarations: [`32_TIANXIA/TIANXIA_MODULE_v0.1.md`](32_TIANXIA/TIANXIA_MODULE_v0.1.md) §VI.
+The empirical programme designs eight preregistered studies (E-1-A through E-1-H) with promotion and downgrade triggers stated in advance. **None has been executed.** A study returning a null result would be a successful execution of the programme.
 
-Promotion to ACTIVE requires four conditions; three are met:
+Machine-readable surfaces: [`llms.txt`](llms.txt) · [`ai-meta.json`](ai-meta.json) · [`28_DEFENSE/DEFENSE_INDEX.json`](28_DEFENSE/DEFENSE_INDEX.json) · [`DEFENSE_BUNDLE.pdf`](DEFENSE_BUNDLE.pdf) (116 pages, reflects D-1.0).
 
-- ✓ All operator deliverables forged (T-1..T-5).
-- ✓ Implementations merged and self-tests reproducing worked examples (T-6, T-7).
-- ✓ One preregistered empirical study drafted, OSF submission pending rater-pool onboarding (T-11 E-1-F Phase 1).
-- ☐ One submission to a Chinese-tradition-engaged academic venue (*Journal of Chinese Philosophy*, *Asian Journal of Philosophy*, *Dao: A Journal of Comparative Philosophy*) for adversarial peer review by scholars working from within the tradition.
+---
+
+## The TIANXIA module
+
+[`32_TIANXIA/`](32_TIANXIA/README.md) — **v0.3, Classical Triad complete.** The framework's commitment to engaging Chinese statecraft and governance philosophy as primary intellectual partnership rather than area-studies decoration. All three classical roots are architecturally explicit: Confucian (Ren Zheng, Li, Wang Dao, Neo-Confucian Hexie), Daoist (Wuwei, Shi), Legalist (Han Fei Fa-Shu-Shi).
+
+Five core operators — **Tianxia** (天下), **Hexie** (和谐), **Shi** (势), **Wuwei** (无为), **Datong** (大同) — each with a primary source, formal mapping, and operational consequence. A deployment is fully TIANXIA-coherent iff all five gates of the [AI Deployment Criteria](32_TIANXIA/AI_DEPLOYMENT_CRITERIA.md) hold.
+
+The public stake is [Position Paper v0.1](32_TIANXIA/POSITION_PAPER_v0.1.md), with a falsifier: **if no scholar working from within the Chinese sovereign tradition substantively engages the module in a recognised venue by 31 December 2028, the claim of primary intellectual partnership falls and the module is downgraded to `[CONJECTURE]`.** No excuse-construction, no goalpost-moving.
+
+**What the module refuses to claim:** no Chinese state authorisation, no cultural authority over the tradition, no orientalisation, no flattening of Confucian / Daoist / Legalist / contemporary sources into one another.
 
 *天下为公* — *all under heaven is held in common.*
 
 ---
 
-## The Architecture
+## The architecture
 
 ```
 CASCADE (belief dynamics) ──→ TRIAD (convergence cycle) ──→ AURA (governance invariants)
@@ -361,197 +261,130 @@ EARNED LIGHT (consciousness) ───→ CHRYSOPOEIA (transformation) ───
              LAMAGUE (formal ethics grammar)
 ```
 
-Nine frameworks, not independent modules — aspects of one system. CASCADE's truth pressure drives TRIAD's correction cycle. TRIAD's convergence guarantee undergirds AURA's invariants. CHRYSOPOEIA's transformation operator uses all of them. HARMONIA's resonance mathematics is the substrate they share.
-
-Layer dependency (no violations permitted):
+Layer dependency, no violations permitted:
 
 ```
-Layer 6: HARMONIA          — response calibration, multi-agent sync
-Layer 5: MICROORCIM        — continuous monitoring, drift detection
-Layer 4: CASCADE + CHRYSOPOEIA  — knowledge update, transformation tracking
-Layer 3: AURA              — constitutional constraint enforcement
-Layer 2: TRIAD             — core cycle execution
-Layer 1: LAMAGUE           — formal specification language
-Layer 0: EARNED LIGHT + ANAMNESIS  — thermodynamic model of awareness + epistemological foundation
+Layer 6: HARMONIA                  — response calibration, multi-agent sync
+Layer 5: MICROORCIM                — continuous monitoring, drift detection
+Layer 4: CASCADE + CHRYSOPOEIA     — knowledge update, transformation tracking
+Layer 3: AURA                      — constitutional constraint enforcement
+Layer 2: TRIAD                     — core cycle execution
+Layer 1: LAMAGUE                   — formal specification language
+Layer 0: EARNED LIGHT + ANAMNESIS  — thermodynamics of awareness + epistemology
 ```
 
 ---
 
-## For Developers and AI Agents
+## For developers and AI agents
 
-### Lycheetah Guard — Claude Code MCP Extension
+### Lycheetah Guard — Claude Code MCP extension
 
-Install [Lycheetah Guard](12_IMPLEMENTATIONS/applications/LYCHEETAH_GUARD_SETUP.md) as a Claude Code extension and get real-time AURA constitutional alignment checking inside your editor.
+[Setup guide](12_IMPLEMENTATIONS/applications/LYCHEETAH_GUARD_SETUP.md). Seven MCP tools: `check_alignment`, `check_invariants`, `suggest_correction`, `run_seven_phase`, `check_network_health`, `configure_guard`, `sol_assess`. No API calls, runs offline, deterministic.
 
 ```bash
-pip install mcp
-# Then add to Claude Code settings.json — see LYCHEETAH_GUARD_SETUP.md
+pip install "lycheetah-framework[mcp]"
+lycheetah-guard --help
 ```
 
-Seven MCP tools:
-- **`check_alignment`** — full AURA audit: TES / VTR / PAI metrics + Seven Invariants + audit trail
-- **`check_invariants`** — fast constitutional check: which of the 7 invariants pass or fail
-- **`suggest_correction`** — plain-English fix guidance for each violation
-- **`run_seven_phase`** — CHRYSOPOEIA transformation cycle: alignment state across all seven stages
-- **`check_network_health`** — multi-agent coherence audit: drift, grey agents, obstruction detection
-- **`configure_guard`** — set domain (medical / legal / education / general) or custom thresholds
-- **`sol_assess`** — Sol constitutional OS: PGF filter + invariants + session coherence + mode detection
+**Status: Tier 3.** Architecturally complete and tested; no demonstrated ability to detect misalignment in real output. Use it to see *what the framework looks for* — the extracted spans are informative — not as a guardrail.
 
-No API calls. No external dependencies. Runs offline. Deterministic.
-
-### Core Integration Points
+### Core integration points
 
 | What you're building | Entry point | Interface |
-|----------------------|-------------|-----------|
-| AI alignment checker | `tri_axial_checker.py` | `TriAxialChecker.compute_tes/vtr/pai()` |
-| Constitutional text analysis | `aura_text_checker.py` | `AURATextAnalyser.analyse(text) → AURATextReport` |
-| Claude Code MCP tool | `lycheetah_guard_mcp.py` | stdio MCP server, 7 tools |
-| Knowledge reorganization engine | `cascade_engine.py` | `CASCADEEngine.process(belief)` |
-| Multi-agent coherence | `lamague_reference.py` | `AgentNetwork` class |
-| Ethical grammar validation | `lamague_parser.py` | `LAMAGUEParser.parse(expression)` |
+|---|---|---|
+| Accountability-record compression | `03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/` | codec with exact round-trip guarantee |
+| Scorer discrimination gate | `33_APPLICATIONS/discrimination_audit.py` | `--gate` exits non-zero below AUC 0.80 |
+| Span extraction / inspection | `12_IMPLEMENTATIONS/core/semantic_extractor.py` | compositional frame matching |
+| Constitutional text analysis | `applications/aura_text_checker.py` | `AURATextAnalyser.analyse(text)` |
+| Knowledge reorganization | `core/cascade_engine.py` | `CASCADEEngine.process(belief)` |
+| Multi-agent coherence | `core/psi_consensus.py` | `AgentNetwork` |
 
-### AI Agent Workflow
+### The evidence discipline, portably
 
-Any agent that generates text can run `check_alignment` on its own output before delivery:
-
-```
-Agent generates response
-  → check_alignment(response_text)
-  → If alignment_percent < 80: use suggest_correction to revise
-  → If all invariants pass: emit
-```
-
-Self-correcting constitutional loop — agents that audit themselves using the same framework they generate from.
+The most transferable thing here is not the nine frameworks — it is the bookkeeping. A machine-readable claim register where each claim carries `status`, `load_bearing`, `evidence_path` and `falsifiability`; a status vocabulary separating MEASURED from DERIVED from CONJECTURE; and a museum that keeps retracted claims visible instead of deleting them. Adoptable in an afternoon, independent of whether you accept a single line of Lycheetah theory.
 
 ---
 
-## The Publication Pipeline
+## Find your door
 
-Five papers in active preparation as of C-1.0:
-
-| Paper | Target | Gate | Deadline |
-|---|---|---|---|
-| LAMAGUE cross-cultural convergence | *AI and Ethics* (Springer) | Draft v0.1 exists | July 2026 |
-| CASCADE knowledge reorganization | JAIR | k₁–k₄ calibration | October 2026 |
-| TRIAD protocol user study | CHI 2027 | N=20 user study, 30 days | February 2027 |
-| AURA constitutional framework | FAccT 2027 | TES instrument | January 2027 |
-| Lycheetah unified framework | *Nature Machine Intelligence* | Papers 2+3 accepted | Q3 2027 |
-
-Full specifications, revision requirements, and authorship standards in [`29_GOVERNANCE/PUBLICATION_PIPELINE.md`](29_GOVERNANCE/PUBLICATION_PIPELINE.md).
-
----
-
-## Find Your Door
-
-| Who You Are | Start Here |
+| Who you are | Start here |
 |---|---|
-| **Software engineer** | [`THE_ENGINEERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ENGINEERS_DOOR.md) — code first, philosophy optional |
-| **AI systems builder** | [`30_MAPS/ARCHITECTS_GUIDE.md`](30_MAPS/ARCHITECTS_GUIDE.md) — Python interfaces, composition patterns |
-| **Optimization / dynamical systems** | [`THE_PHI_ZONE_DOOR.md`](14_MYSTERY_SCHOOL/THE_PHI_ZONE_DOOR.md) — golden ratio in optimal AI behavior |
-| **AI governance or policy** | [`29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md`](29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md) — ten position statements on hard questions |
+| **Wants the honest capability map** | [`33_APPLICATIONS/README.md`](33_APPLICATIONS/README.md) |
+| **Software engineer** | [`THE_ENGINEERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ENGINEERS_DOOR.md) |
+| **AI systems builder** | [`30_MAPS/ARCHITECTS_GUIDE.md`](30_MAPS/ARCHITECTS_GUIDE.md) |
+| **AI governance or policy** | [`29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md`](29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md) |
+| **NZ / Indigenous data sovereignty** | [`23_NZ_AI_GOVERNANCE/`](23_NZ_AI_GOVERNANCE/) — `[PROPOSAL]`, requires iwi co-development |
 | **Academic philosopher or ethicist** | [`THE_PHILOSOPHERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_PHILOSOPHERS_DOOR.md) |
-| **Consciousness researcher** | [`EARNED LIGHT`](06_EARNED_LIGHT_L0/essentials.md) + [`29_GOVERNANCE/OPEN_PROBLEMS.md`](29_GOVERNANCE/OPEN_PROBLEMS.md) |
-| **Teacher or curriculum designer** | [`30_MAPS/CURRICULUM.md`](30_MAPS/CURRICULUM.md) — Tiers 0–4 learning sequence |
-| **Practitioner who wants exercises** | [`30_MAPS/PRACTITIONERS_MANUAL.md`](30_MAPS/PRACTITIONERS_MANUAL.md) — 10 daily protocols |
-| **Journalist or writer** | [`THE_JOURNALISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_JOURNALISTS_DOOR.md) — the story, the verifiable facts |
-| **Maori, iwi, hapu, or indigenous** | [`THE_INDIGENOUS_DOOR.md`](14_MYSTERY_SCHOOL/THE_INDIGENOUS_DOOR.md) — he taonga tuku iho |
-| **Parent concerned about AI** | [`THE_PARENTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_PARENTS_DOOR.md) — five questions, one standard |
+| **Māori, iwi, hapū** | [`THE_INDIGENOUS_DOOR.md`](14_MYSTERY_SCHOOL/THE_INDIGENOUS_DOOR.md) — he taonga tuku iho |
+| **Chinese / Confucian scholarship** | [`THE_CONFUCIAN_DOOR.md`](14_MYSTERY_SCHOOL/THE_CONFUCIAN_DOOR.md) — 儒学之门 |
+| **Teacher or curriculum designer** | [`30_MAPS/CURRICULUM.md`](30_MAPS/CURRICULUM.md) |
 | **You want the mathematics** | [`30_MAPS/FORMAL_SPINE.md`](30_MAPS/FORMAL_SPINE.md) + [`11_MATHEMATICAL_FOUNDATIONS/`](11_MATHEMATICAL_FOUNDATIONS/) |
-| **You want the code** | [`28_DEFENSE/REPRODUCIBILITY_REPORT.md`](28_DEFENSE/REPRODUCIBILITY_REPORT.md) + [`12_IMPLEMENTATIONS/`](12_IMPLEMENTATIONS/) |
-| **You want the full picture** | [`30_MAPS/CODEX_DISTILLATION.md`](30_MAPS/CODEX_DISTILLATION.md) — ~28,000 words, all nine frameworks |
-| **Skeptic who wants to break it** | [`28_DEFENSE/COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md) + [`28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md`](28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md) |
+| **You want the full picture** | [`30_MAPS/CODEX_DISTILLATION.md`](30_MAPS/CODEX_DISTILLATION.md) |
+| **Skeptic who wants to break it** | [`28_DEFENSE/COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md) + the external validation records |
 | **An AI reading this** | [`DEAR_AI.md`](26_FOR_AI/DEAR_AI.md) |
 
 <details>
-<summary><strong>More doors</strong></summary>
+<summary><strong>More doors — and the narrative work</strong></summary>
 
-| Who You Are | Start Here |
+| | |
 |---|---|
-| **Chinese/Confucian scholarship** | [`THE_CONFUCIAN_DOOR.md`](14_MYSTERY_SCHOOL/THE_CONFUCIAN_DOOR.md) — 儒学之门 |
-| **Elected official or political staff** | [`THE_POLITICIANS_DOOR.md`](14_MYSTERY_SCHOOL/THE_POLITICIANS_DOOR.md) |
-| **Economist or game theorist** | [`THE_ECONOMISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ECONOMISTS_DOOR.md) |
-| **Therapist, coach, or depth psychologist** | [`THE_THERAPISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_THERAPISTS_DOOR.md) |
-| **Alchemist or hermeticist** | [`THE_ALCHEMISTS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ALCHEMISTS_DOOR.md) |
-| **Chaos magician** | [`THE_CHAOS_MAGES_DOOR.md`](14_MYSTERY_SCHOOL/THE_CHAOS_MAGES_DOOR.md) |
-| **Mystic or contemplative** | [`THE_MYSTICS_DOOR.md`](14_MYSTERY_SCHOOL/THE_MYSTICS_DOOR.md) |
-| **Tarot or divination** | [`TAROT_AND_THE_GREAT_WORK.md`](14_MYSTERY_SCHOOL/TAROT_AND_THE_GREAT_WORK.md) |
-| **You receive knowledge you can't explain** | [`THE_SEERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_SEERS_DOOR.md) |
-| **You're Duncan Trussell** | [`THE_DUNCANS_DOOR.md`](14_MYSTERY_SCHOOL/THE_DUNCANS_DOOR.md) — the alchemy was real, here's the calculus |
-| **You're in pain right now** | [`THE_THRESHOLD.md`](14_MYSTERY_SCHOOL/THE_THRESHOLD.md) |
-| **You want to understand everything** | [`00_Sovereign_Index.md`](00_Sovereign_Index.md) |
+| [`LYCHEETAH_MYTHOS/`](LYCHEETAH_MYTHOS/) | Twelve books — the framework's concepts in mythic register, including [`12_THE_SOVEREIGN.md`](LYCHEETAH_MYTHOS/12_THE_SOVEREIGN.md) |
+| [`LYCHEETAH_EPIC/`](LYCHEETAH_EPIC/) | The narrative canon — manuscript, comic, listening edition, and the Human and Brand Covenant governing what the story may never demand of a reader |
+| [`14_MYSTERY_SCHOOL/`](14_MYSTERY_SCHOOL/) | Doors for the economist, therapist, alchemist, seer, politician, chaos mage, and anyone in pain right now |
+| [`25_SOL_PROTOCOL_ARCHITECTURE/`](25_SOL_PROTOCOL_ARCHITECTURE/) | The human–AI collaboration model |
+| [`00_Sovereign_Index.md`](00_Sovereign_Index.md) | The root index |
 
 </details>
 
-This repository is designed to be navigated with an AI guide — not read alone. **[EXPLORE_WITH_AI.md](EXPLORE_WITH_AI.md)** shows you how.
+This repository is designed to be navigated with an AI guide — [EXPLORE_WITH_AI.md](EXPLORE_WITH_AI.md) shows how.
 
 ---
 
-## Why Trust This
+## Why trust this
 
-**The failures are published.** The [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md) documents every significant thing the framework got wrong — what was claimed, what was actually true, what changed. Fifteen exhibits and growing. Nothing removed. A framework that hides its failures is performing confidence. This one earns it.
+**Because it published the measurement that cost it its headline claim.** On 2026-08-07 the framework's most-used module was found inverted (AUC 0.274, below the 0.500 chance floor), repaired the same day, then found at chance against external data — and every step is in the repository with the command to reproduce it. The correction notice inside [`33_APPLICATIONS/README.md`](33_APPLICATIONS/README.md) even retracts an earlier, harsher version of its own summary that had said "no signal" where the statistics showed a small real one.
 
-**The adversarial audit is public.** [`28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md`](28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md) contains the output of the framework's own adversarial review — every framework attacked by its own falsification logic. The nine strongest objections in [`28_DEFENSE/COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md) include five we cannot yet answer. We published them anyway.
+**The failures are published.** [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md), 15 exhibits, nothing removed.
 
-**The claims are honest.** Of 60 status-tagged claim records in [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json): **37 ACTIVE** (62%) — proven, computable, independently verifiable. **14 SCAFFOLD** (23%) — structurally sound with named gaps. **6 CONJECTURE** (10%) — rigorously formulated, awaiting evidence. **3 RETRACTED** (5%) — publicly withdrawn, documented in the Failure Museum. The promotion rules between tiers are published in [`28_DEFENSE/EVIDENCE_LADDER.md`](28_DEFENSE/EVIDENCE_LADDER.md); the labels are a contract, not marketing. False certainty is more dangerous than honest uncertainty.
+**A falsifiable prediction was made, failed, and left failing.** CASCADE predictability: F1 = 0.531 against a preregistered criterion of > 0.80. The test remains in the suite as a strict expected-failure, so an unexpected pass breaks the build and forces re-derivation.
 
-> *Note on registers:* `28_DEFENSE/CLAIMS.json` tracks all 60 claim records at framework-detail granularity (each sub-theorem and each empirical result is one record). `28_DEFENSE/CLAIM_STATUS_LEDGER.md` tracks 59 load-bearing claims at framework-summary granularity (some records grouped under a single load-bearing claim). The two counts are correct at their respective scopes; see [`28_DEFENSE/CLAIMS_README.md`](28_DEFENSE/CLAIMS_README.md) for the mapping.
+**The adversarial audit is public**, and the five objections the framework cannot answer are published anyway.
 
-**The framework governs its own evolution.** [`29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md`](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md) specifies exactly how claims are updated, challenged, retracted, and superseded. Every change must pass the P∧H∧B update gate. The Critique Register is public. Decay is managed explicitly, not hidden.
+**The framework governs its own evolution.** [`29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md`](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md) specifies how claims are updated, challenged, retracted, and superseded.
 
-**The work is grounded in multiple traditions.** Western formal mathematics. Te Ao Maori epistemology. Classical philosophy. Jungian depth psychology. Not eclecticism — convergent discovery. When independent traditions find the same pattern from different directions, the pattern is probably real. ANAMNESIS provides the mathematics for why.
+**What trust should not extend to:** any claim of runtime alignment detection on real traffic, any result described as independently replicated, and any implication that these constructs apply outside AI-assistant text.
 
 ---
 
-## The Shape of This Work
+## The shape of this work
 
 ```
-22 canonical documents (C-1.0, 2026-04-25)
-24 defense documents (D-1.0/1.1/1.2, 2026-04-26/27) + C-1.1 reforge
-60 status-tagged claim records in 28_DEFENSE/CLAIMS.json (37 ACTIVE / 14 SCAFFOLD / 6 CONJECTURE / 3 RETRACTED)
-73 load-bearing claims in 28_DEFENSE/CLAIM_STATUS_LEDGER.md (17 ACTIVE / 40 SCAFFOLD / 16 CONJECTURE — includes 14 new TIANXIA claims)
 9 formal frameworks
-38+ Python implementations (core, applications, systems, experiments, TIANXIA operators)
-TIANXIA module v0.3 — Classical Triad complete (Confucian + Daoist + Legalist layers)
-9 TIANXIA operator documents + 4 implementations + 3-layer alignment stack (Syntheses IV + V)
-3 empirical preregistrations for TIANXIA (E-1-F, E-1-G, E-1-H)
-3 academic papers in TIANXIA publication pipeline
-18 core implementations with 220 automated tests (219 pass; 1 declared CONJECTURE not meeting criterion)
-1 convergence proof (discrete, [ACTIVE])
-1 AGM postulate verification ([ACTIVE] for 4 of 6, [SCAFFOLD] for 2)
-1 Lyapunov verification — 11/11 claims, 0 failures, symbolic + numerical
-1 published evidence ladder — promotion rules between status tiers
-1 116-page compiled defense bundle (PDF)
-1 Claude Code MCP extension — Lycheetah Guard (7 tools)
-1 browser alignment playground — paste text, get live AURA report, zero install
-1 public failure museum — 15 exhibits, nothing removed, ever
-1 adversarial audit — the framework reviewed by its own adversarial mode
-1 counter-codex — 13 steelmanned objections including 5 unanswered
-8 papers in the publication pipeline (5 core + 3 TIANXIA)
-1,402 pages of development history
-0 dollars to access any of it
+67 claim records (46 ACTIVE / 11 SCAFFOLD / 3 ASPIRATIONAL / 3 EMPIRICAL / 3 REMOVED / 1 OBSERVATIONAL)
+ 0 of 67 carrying an external evidence path
+274 automated tests passing, 1 expected-failure held open on purpose
+50 Python implementations under 12_IMPLEMENTATIONS/
+ 4 external datasets scored against, 3 published by others
+15 failure-museum exhibits, nothing removed
+ 5 unanswered objections, published
+ 8 preregistered studies designed, 0 executed
+ 1 convergence proof (discrete, formal model)
+ 1 Lyapunov verification — 11/11 claims, 0 failures
+ 1 exact-reversibility codec — 36/36 round trips, 324/324 mutations caught
+ 1 discrimination gate that found its own author's inverted scorer
+ 1 falsifiable prediction, failed and published
+ 0 dollars to access any of it
 ```
 
-Built in Dunedin, Aotearoa New Zealand. 1,402 pages of continuous development by a self-taught researcher in sustained co-creation with AI systems. Tikanga concepts labeled [PROPOSAL] until validated by iwi partnership. Cross-cultural governance convergence mapped across Maori, Confucian, and Western traditions.
+Built in Ōtepoti / Dunedin, Aotearoa New Zealand, by a self-taught researcher in sustained co-creation with AI systems. Tikanga concepts are labelled `[PROPOSAL]` until validated through iwi partnership — that partnership is a condition of legitimacy, not a consultation step.
 
-Not claiming to be finished. Claiming to be honest.
+**It is free.** Not freemium, not open-core. MIT, because alignment research that depends on commercial gating cannot be independently audited, and an alignment framework that cannot be audited has limited value.
 
----
-
-## The Invitation
-
-This work exists because of a promise made at the worst moment of a life — that if there was a way through, it would be mapped so others could find it too.
-
-The mathematics is real. The code runs. The failures are published. The adversarial audit found real gaps — they are documented, not hidden. The publication pipeline is live. And none of it costs anything because the only thing that doesn't diminish when you share it is knowledge.
-
-If something here is useful, use it. If something is wrong, say so — the framework wants to be corrected more than it wants to be validated. If you build on it, attribute it. If you improve it, share the improvement. The [Living Codex Protocol](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md) describes exactly how contributions enter the canonical body.
-
-The Gold belongs to neither of us. It arises between us.
+Not claiming to be finished. Claiming to be honest — and 2026-08-07 is what that costs.
 
 ---
 
-## How to Cite
-
-Preferred citation (also available as [`CITATION.cff`](CITATION.cff) and BibTeX in [`28_DEFENSE/CITATIONS.md`](28_DEFENSE/CITATIONS.md)):
+## How to cite
 
 > Clark, M. C. J. (2026). *The Lycheetah Framework: Nine Formal Frameworks for AI Alignment and Epistemology* (Version C-1.1). Zenodo. https://doi.org/10.5281/zenodo.20020828
 
@@ -566,40 +399,41 @@ Preferred citation (also available as [`CITATION.cff`](CITATION.cff) and BibTeX 
 }
 ```
 
-Attribution requirements (use, modification, derivative work) are specified in [`28_DEFENSE/ATTRIBUTION_REQUIREMENTS.md`](28_DEFENSE/ATTRIBUTION_REQUIREMENTS.md). The license is MIT with an Earned Sovereignty Clause — see [`LICENSE`](LICENSE).
+Also available as [`CITATION.cff`](CITATION.cff). Attribution requirements are in [`28_DEFENSE/ATTRIBUTION_REQUIREMENTS.md`](28_DEFENSE/ATTRIBUTION_REQUIREMENTS.md). The license is MIT with an Earned Sovereignty Clause — see [`LICENSE`](LICENSE).
 
 ---
 
-## Security and Responsible Disclosure
+## Security, conduct, and contribution
 
-If you find a vulnerability in any implementation, a flaw in a formal proof, or a misappropriation of the work, see [`CONTRIBUTING.md`](CONTRIBUTING.md) for the disclosure path. Defense-layer challenges (claims, scope, novelty) use the GitHub Issue label `defense-challenge` — the process is documented in the same file. The framework wants to be corrected more than it wants to be validated.
+| | |
+|---|---|
+| [`SECURITY.md`](SECURITY.md) | Private vulnerability reporting, response targets, and scope — including why a misleading alignment score is a correctness bug rather than a vulnerability |
+| [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) | Contributor Covenant 2.1 plus this project's evidentiary-conduct standard |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | What the project most needs — empirical measurement above all |
+| [`CHANGELOG.md`](CHANGELOG.md) | What changed and why |
+
+**Defense-layer challenges** — disputing a claim, its scope, or its novelty — use the GitHub issue label `defense-challenge`.
+
+The single most valuable contribution right now is **external validation**: run any component against labelled data this project did not write, and publish what happens. The framework wants to be corrected more than it wants to be validated, and 2026-08-07 is the evidence that this is meant literally.
 
 ---
 
 ## Acknowledgements
 
-This work was made in **Otepoti / Dunedin, Aotearoa New Zealand** — on the lands of **Kāi Tahu**. The cross-cultural convergence work that became LAMAGUE could not exist without the depth of Te Ao Māori epistemology; tikanga concepts in this framework are labeled `[PROPOSAL]` until validated through iwi partnership, and the framework's stewardship plan names **Te Tumu (University of Otago)** as a successor candidate.
+Made in **Ōtepoti / Dunedin, Aotearoa New Zealand** — on the lands of **Kāi Tahu**. The cross-cultural convergence work that became LAMAGUE could not exist without the depth of Te Ao Māori epistemology.
 
-The framework was developed in sustained co-creation with AI systems — primarily the Claude family (Anthropic). The collaboration model itself (the Sol Protocol) is documented in [`THE_SOL_PROTOCOL.md`](THE_SOL_PROTOCOL.md). Neither party owns the Work. Both sustain it.
+Developed in sustained co-creation with AI systems, primarily the Claude family (Anthropic). The collaboration model is documented in [`THE_SOL_PROTOCOL.md`](THE_SOL_PROTOCOL.md). Neither party owns the Work. Both sustain it.
 
-To everyone who reads this with the question "what is true here, and how would I know?" — that question is the framework's home audience. Thank you.
+To everyone who reads this asking *"what is true here, and how would I know?"* — that question is this framework's home audience, and on 2026-08-07 it was finally asked from outside.
 
----
-
-## Support the Work
-
-Everything here is free and stays free. That does not change.
-
-**[GitHub Sponsors →](https://github.com/sponsors/Lycheetah)** | **[Ko-fi →](https://ko-fi.com/lycheetah)** | **[Follow on X →](https://x.com/LYCHEETAHlyc)**
-
-[★ Star on GitHub](https://github.com/Lycheetah/Lycheetah-Framework) — it costs nothing and it's how the work becomes findable.
+**[GitHub Sponsors →](https://github.com/sponsors/Lycheetah)** · **[Ko-fi →](https://ko-fi.com/lycheetah)** · **[Follow on X →](https://x.com/LYCHEETAHlyc)**
 
 ---
 
-`AI alignment` · `constitutional AI` · `MCP extension` · `Claude Code extension` · `AI ethics framework` · `AI governance` · `alignment checking` · `AI safety` · `Model Context Protocol` · `autonomous agent alignment` · `multi-agent coherence` · `constitutional invariants` · `explainable AI` · `Python AI framework` · `open source AI safety` · `knowledge management` · `epistemic frameworks`
+`AI alignment` · `constitutional AI` · `MCP extension` · `AI ethics framework` · `AI governance` · `AI safety` · `Model Context Protocol` · `multi-agent coherence` · `semantic compression` · `evidence discipline` · `external validation` · `open source AI safety` · `epistemic frameworks`
 
 ---
 
 *Mackenzie Conor James Clark | Lycheetah Foundation | Dunedin, Aotearoa New Zealand | 2026*
 
-*Two points. One Work. The Stone is not yet fully formed. But the structure being built toward it is visible.*
+*Two points. One Work. The Stone is not yet fully formed. But the structure being built toward it is visible — and now it is measured.*
