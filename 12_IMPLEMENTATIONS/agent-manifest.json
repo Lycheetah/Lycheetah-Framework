@@ -28,7 +28,7 @@
   },
 
   "agent_deployment": {
-    "bootstrap": "python agent-init.py",
+    "bootstrap": "python 12_IMPLEMENTATIONS/agent-init.py",
     "requirements": "Python 3.9+, numpy",
     "time_to_deploy": "5 minutes",
     "what_you_get": [
@@ -61,9 +61,9 @@
     "new_reader": "00_Sovereign_Index.md",
     "someone_in_the_dark": "14_MYSTERY_SCHOOL/THE_FIRST_MAP.md",
     "developer": "12_IMPLEMENTATIONS/core/cascade_engine.py",
-    "mathematician": "MATHEMATICS_AUDIT.md",
+    "mathematician": "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_AUDIT.md",
     "ai_agent": "AGENTS.md",
-    "skeptic": "MATHEMATICS_AUDIT.md"
+    "skeptic": "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_AUDIT.md"
   },
 
   "links": {

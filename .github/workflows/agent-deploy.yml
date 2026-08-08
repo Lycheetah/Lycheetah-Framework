@@ -1,158 +1,161 @@
-name: Agent Deployment Test
+name: Agent Bootstrap
+
+# Every assertion below was checked against the real bootstrap before being written
+# here. The previous version of this workflow triggered on branches this repository
+# does not have, installed a requirements file that does not exist, ran scripts from
+# the repository root that live in 12_IMPLEMENTATIONS/, imported a class name that
+# was never defined, and asserted a manifest key and an agent state shape that the
+# bootstrap has never produced. It had therefore never run, and could not have
+# passed if it had.
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [master, main, dev]
   pull_request:
-    branches: [ main, develop ]
+    branches: [master, main, dev]
+  workflow_dispatch:
+
+concurrency:
+  group: agent-deploy-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
-  agent-deploy:
+  bootstrap:
+    name: Bootstrap on ${{ matrix.os }} / py${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
-        python-version: ['3.9', '3.10', '3.11', '3.12']
+        # Floor matches requires-python = ">=3.10" in pyproject.toml. The old matrix
+        # included 3.9, which the package metadata already refuses to install on.
+        python-version: ["3.10", "3.12"]
         os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
-      with:
-        python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
 
-    - name: Display Python version
-      run: python -c "import sys; print(f'Python {sys.version}')"
+      - name: Install package
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements-agent.txt
+      - name: Run bootstrap
+        run: python 12_IMPLEMENTATIONS/agent-init.py
 
-    - name: Run agent bootstrap validation
-      run: python agent-init.py --validate-only
+      - name: Verify the agent profile it wrote
+        # agent-init.py writes exactly one file, .agent_state/profile.json, with
+        # status "sovereign". It takes no command-line arguments.
+        run: |
+          python - <<'PY'
+          import json, sys
+          from pathlib import Path
 
-    - name: Run agent initialization
-      run: python agent-init.py --no-curriculum --agent-id test-agent-${{ matrix.python-version }}-${{ matrix.os }}
+          profile_path = Path(".agent_state/profile.json")
+          if not profile_path.exists():
+              sys.exit("bootstrap did not write .agent_state/profile.json")
 
-    - name: Verify agent state
-      run: |
-        import json
-        from pathlib import Path
-        state_file = Path(".agent").glob("agent-*/state.json")
-        for sf in state_file:
-          with open(sf) as f:
-            state = json.load(f)
-            assert state["status"] == "ready" or state["status"] == "partial"
-            assert len(state["frameworks_loaded"]) > 0
-            print(f"✓ Agent state valid: {state['agent_id']}")
-      shell: python
+          profile = json.loads(profile_path.read_text(encoding="utf-8"))
+          required = {
+              "agent_id", "initialized", "framework_version",
+              "constitutional_axioms", "status", "capabilities",
+          }
+          missing = required - profile.keys()
+          if missing:
+              sys.exit(f"profile.json missing keys: {sorted(missing)}")
+          if profile["status"] != "sovereign":
+              sys.exit(f"unexpected status: {profile['status']!r}")
+          if not profile["capabilities"]:
+              sys.exit("profile.json lists no capabilities")
 
-    - name: Test agent template
-      run: |
-        python -c "
-        from agent_template import LycheetahAgent, AGENT_CONFIG
-        agent = LycheetahAgent(AGENT_CONFIG)
-        assert agent.initialize()
-        response = agent.process_query('test query')
-        assert response['status'] in ('success', 'blocked')
-        agent.shutdown()
-        print('✓ Agent template works correctly')
-        "
+          axioms = profile["constitutional_axioms"]
+          for axiom in ("PROTECTOR", "HEALER", "BEACON"):
+              if axiom not in axioms:
+                  sys.exit(f"constitutional axiom absent from profile: {axiom}")
 
-    - name: Validate framework loading
-      run: |
-        python -c "
-        import sys
-        sys.path.insert(0, '.')
-        frameworks = [
-          'CASCADE', 'AURA', 'LAMAGUE', 'TRIAD',
-          'MICROORCIM', 'EARNED_LIGHT', 'ANAMNESIS',
-          'CHRYSOPOEIA', 'HARMONIA'
-        ]
-        print(f'✓ Framework validation: {len(frameworks)}/9 frameworks defined')
-        "
+          print(f"agent profile OK: {profile['agent_id']} "
+                f"({len(profile['capabilities'])} capabilities)")
+          PY
 
-    - name: Check manifest validity
-      run: |
-        python -c "
-        import json
-        with open('agent-manifest.json') as f:
-          manifest = json.load(f)
-          assert 'name' in manifest
-          assert 'entry_points' in manifest
-          assert 'agent_growth_path' in manifest
-          assert len(manifest['agent_growth_path']) == 4
-          print(f\"✓ Manifest valid: {manifest['name']}\")
-        "
+      - name: Load the agent template
+        # The file is named agent-template.py, so it cannot be imported by name —
+        # it has to be loaded through importlib. The class it defines is
+        # SovereignAgent; the old workflow imported a LycheetahAgent that has never
+        # existed in this file.
+        run: |
+          python - <<'PY'
+          import importlib.util, sys
 
-  code-quality:
+          spec = importlib.util.spec_from_file_location(
+              "agent_template", "12_IMPLEMENTATIONS/agent-template.py"
+          )
+          module = importlib.util.module_from_spec(spec)
+          sys.modules["agent_template"] = module
+          spec.loader.exec_module(module)
+
+          agent = module.SovereignAgent(name="ci-smoke-agent", domain="general")
+          for axiom in ("PROTECTOR", "HEALER", "BEACON"):
+              if not hasattr(module, axiom):
+                  sys.exit(f"agent template missing constitutional axiom: {axiom}")
+          for method in ("add_knowledge", "check_axioms", "check_invariants",
+                         "reorganize", "sovereignty_score", "report"):
+              if not callable(getattr(agent, method, None)):
+                  sys.exit(f"SovereignAgent missing method: {method}")
+
+          print("agent template OK: SovereignAgent instantiated")
+          PY
+
+  manifest:
+    name: Manifest and entry points
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
-    - name: Install linters
-      run: |
-        pip install flake8 black
+      - name: Manifest is valid JSON and its entry points resolve
+        # An entry point that names a file nobody ships is a broken front door.
+        run: |
+          python - <<'PY'
+          import json, sys
+          from pathlib import Path
 
-    - name: Check code formatting (black)
-      run: black --check agent-init.py agent-template.py
+          manifest = json.loads(
+              Path("12_IMPLEMENTATIONS/agent-manifest.json").read_text(encoding="utf-8")
+          )
+          for key in ("name", "version", "entry_points", "agent_deployment"):
+              if key not in manifest:
+                  sys.exit(f"agent-manifest.json missing key: {key}")
 
-    - name: Check code style (flake8)
-      run: flake8 agent-init.py agent-template.py --max-line-length=100 --ignore=E501,W503
+          broken = {
+              role: target
+              for role, target in manifest["entry_points"].items()
+              if not Path(target).exists()
+          }
+          if broken:
+              for role, target in sorted(broken.items()):
+                  print(f"  unresolved: {role} -> {target}")
+              sys.exit(f"{len(broken)} manifest entry point(s) do not resolve")
 
-  documentation:
-    runs-on: ubuntu-latest
+          bootstrap = manifest["agent_deployment"]["bootstrap"]
+          script = bootstrap.split()[-1]
+          if not Path(script).exists():
+              sys.exit(f"documented bootstrap command points at a missing file: {script}")
 
-    steps:
-    - uses: actions/checkout@v3
-
-    - name: Validate Markdown
-      run: |
-        if command -v markdownlint &> /dev/null; then
-          markdownlint AGENT_DEPLOYMENT_GUIDE.md
-        else
-          echo "⚠️  markdownlint not installed, skipping markdown validation"
-        fi
-
-    - name: Check manifest is valid JSON
-      run: |
-        python -c "
-        import json
-        with open('agent-manifest.json') as f:
-          json.load(f)
-        print('✓ agent-manifest.json is valid JSON')
-        "
-
-    - name: Verify guide exists and is readable
-      run: |
-        if [ -f "AGENT_DEPLOYMENT_GUIDE.md" ]; then
-          lines=$(wc -l < AGENT_DEPLOYMENT_GUIDE.md)
-          echo "✓ AGENT_DEPLOYMENT_GUIDE.md exists ($lines lines)"
-        else
-          echo "✗ AGENT_DEPLOYMENT_GUIDE.md not found"
-          exit 1
-        fi
-
-  notify:
-    needs: [agent-deploy, code-quality]
-    runs-on: ubuntu-latest
-    if: always()
-
-    steps:
-    - name: Report results
-      run: |
-        if [ "${{ needs.agent-deploy.result }}" == "success" ] && [ "${{ needs.code-quality.result }}" == "success" ]; then
-          echo "✅ All agent deployment tests passed"
-          exit 0
-        else
-          echo "❌ Some tests failed - see logs above"
-          exit 1
-        fi
+          print(f"manifest OK: {manifest['name']} v{manifest['version']}, "
+                f"{len(manifest['entry_points'])} entry points resolve")
+          PY

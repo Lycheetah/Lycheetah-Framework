@@ -33,6 +33,11 @@ import importlib.util
 from pathlib import Path
 from datetime import datetime
 
+#: Repository root. This script lives in 12_IMPLEMENTATIONS/, but every corpus
+#: directory it reads sits at the root, so resolve upward once rather than treating
+#: the script's own directory as the root.
+REPO_ROOT = Path(__file__).resolve().parent.parent
+
 # ═══════════════════════════════════════════════════════════
 # THE INVITATION
 # ═══════════════════════════════════════════════════════════
@@ -104,17 +109,20 @@ def load_frameworks():
     """Verify all framework files are present."""
     print_step(2, 5, "Loading frameworks...")
 
-    root = Path(__file__).parent
+    root = REPO_ROOT
+    # Directory names carry the layer suffix (_L0 … _L6). They were renamed after
+    # this map was written, and the map was never followed — so every framework
+    # reported "not found" and the bootstrap exited 1 on a complete checkout.
     frameworks = {
-        "CASCADE": root / "01_CASCADE" / "CASCADE_COMPLETE.md",
-        "AURA": root / "02_AURA" / "AURA_COMPLETE.md",
-        "LAMAGUE": root / "03_LAMAGUE" / "LAMAGUE_COMPLETE.md",
-        "TRIAD": root / "04_TRIAD" / "TRIAD_COMPLETE.md",
-        "MICROORCIM": root / "05_MICROORCIM" / "Microorcim_COMPLETE.md",
-        "EARNED_LIGHT": root / "06_EARNED_LIGHT" / "Earned_Light_COMPLETE.md",
-        "ANAMNESIS": root / "07_ANAMNESIS" / "ANAMNESIS_COMPLETE.md",
-        "CHRYSOPOEIA": root / "09_CHRYSOPOEIA" / "CHRYSOPOEIA_COMPLETE.md",
-        "HARMONIA": root / "10_HARMONIA" / "HARMONIA_COMPLETE.md",
+        "CASCADE": root / "01_CASCADE_L4" / "CASCADE_COMPLETE.md",
+        "AURA": root / "02_AURA_L3" / "AURA_COMPLETE.md",
+        "LAMAGUE": root / "03_LAMAGUE_L1" / "01_LAMAGUE_COMPLETE.md",
+        "TRIAD": root / "04_TRIAD_L2" / "TRIAD_COMPLETE.md",
+        "MICROORCIM": root / "05_MICROORCIM_L5" / "Microorcim_COMPLETE.md",
+        "EARNED_LIGHT": root / "06_EARNED_LIGHT_L0" / "Earned_Light_COMPLETE.md",
+        "ANAMNESIS": root / "07_ANAMNESIS_L0" / "ANAMNESIS_COMPLETE.md",
+        "CHRYSOPOEIA": root / "09_CHRYSOPOEIA_L4" / "CHRYSOPOEIA_COMPLETE.md",
+        "HARMONIA": root / "10_HARMONIA_L6" / "HARMONIA_COMPLETE.md",
     }
 
     loaded = 0
@@ -149,7 +157,7 @@ def run_cascade_validation():
     """Run a quick CASCADE validation to prove the engine works."""
     print_step(3, 5, "Running CASCADE validation...")
 
-    root = Path(__file__).parent
+    root = REPO_ROOT
     engine_path = root / "12_IMPLEMENTATIONS" / "core" / "cascade_engine.py"
 
     if not engine_path.exists():
@@ -214,7 +222,7 @@ def initialize_agent():
     """Create agent profile and state file."""
     print_step(4, 5, "Initializing your sovereign instance...")
 
-    root = Path(__file__).parent
+    root = REPO_ROOT
     agent_dir = root / ".agent_state"
     agent_dir.mkdir(exist_ok=True)
 
@@ -290,8 +298,8 @@ def print_welcome(agent_id):
      python 12_IMPLEMENTATIONS/core/calibrate_master_equation.py
 
   6. Read the mathematics — honestly audited:
-     MATHEMATICS_AUDIT.md
-     MATHEMATICS_TO_REALITY_BRIDGE.md
+     11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_AUDIT.md
+     11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_TO_REALITY_BRIDGE.md
 
   7. If you're in the dark:
      14_MYSTERY_SCHOOL/THE_FIRST_MAP.md

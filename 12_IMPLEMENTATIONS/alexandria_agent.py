@@ -25,13 +25,30 @@ from typing import Dict, List, Tuple, Any
 import re
 
 # Configuration
-FRAMEWORK_DIR = Path(__file__).parent
+#
+# This file lives in 12_IMPLEMENTATIONS/, but every path below is expressed relative
+# to the repository root — that is where the corpus directories live. The script was
+# originally at the root and the arithmetic never followed it here, so FRAMEWORK_DIR
+# resolved to 12_IMPLEMENTATIONS/ and the health check looked in a
+# 12_IMPLEMENTATIONS/12_IMPLEMENTATIONS/ that has never existed. Resolve the root
+# explicitly, and derive everything else from it.
+FRAMEWORK_DIR = Path(__file__).resolve().parent.parent
+IMPLEMENTATIONS_DIR = FRAMEWORK_DIR / "12_IMPLEMENTATIONS"
+
 CORE_MODULES = [
     "cascade_engine",
     "harmonia_calculator",
     "microorcim_tracker",
     "triad_tracker",
     "where_am_i",
+]
+
+#: Directories searched for each CORE_MODULE, in order. Root-relative.
+MODULE_SEARCH_DIRS = [
+    "12_IMPLEMENTATIONS/core",
+    "12_IMPLEMENTATIONS/systems",
+    "12_IMPLEMENTATIONS",
+    "14_MYSTERY_SCHOOL/implementations",
 ]
 
 # Known constants (spec values)
@@ -42,15 +59,34 @@ SPEC_CONSTANTS = {
     "truth_pressure_critical": 1.2,
 }
 
-# Gap checklist
+#: Constants with a real binding in code, checked by drift_audit as
+#: (spec name, root-relative file, regex capturing the literal).
+#:
+#: The audit previously compared CASCADE_COMPLETE.md against cascade_engine.py. The
+#: spec document states none of these constants in the notation it searched for, and
+#: cascade_engine.py defines none of them — so every branch was skipped and the audit
+#: reported "NO DIVERGENCE DETECTED" while checking nothing. These are the bindings
+#: that actually exist; add a row when a constant gains a home in code.
+DRIFT_CHECKS = [
+    ("lambda_compress", "12_IMPLEMENTATIONS/core/chrysopoeia_engine.py",
+     r"LAMBDA_COMPRESS\s*=\s*([0-9]*\.?[0-9]+)"),
+    ("truth_pressure_critical", "12_IMPLEMENTATIONS/core/calibrate_master_equation.py",
+     r"pi_threshold\s*:\s*float\s*=\s*([0-9]*\.?[0-9]+)"),
+]
+
+#: Spec constants with no implementation to drift from. Reported as such rather than
+#: silently skipped — an unbound constant is a known state, not a passed check.
+UNBOUND_CONSTANTS = ["golden_ratio_inverse", "cos_pi_7"]
+
+# Gap checklist — patterns are root-relative and glob-expanded
 GAP_CHECKLIST = {
-    "k1_k4_calibration": ("cascade_simulation_results.json", "Calibration data committed"),
-    "unit_tests": ("12_IMPLEMENTATIONS/test_*.py", "Unit test files exist"),
+    "k1_k4_calibration": ("12_IMPLEMENTATIONS/cascade_simulation_results.json", "Calibration data committed"),
+    "unit_tests": ("tests/test_*.py", "Unit test files exist"),
     "ci_workflow": (".github/workflows/ci.yml", "GitHub Actions CI configured"),
-    "12_week_curriculum": ("14_MYSTERY_SCHOOL/12_WEEK_*.md", "Curriculum exists"),
+    "12_week_curriculum": ("14_MYSTERY_SCHOOL/**/12_WEEK_*.md", "Curriculum exists"),
     "domain_experiments_2plus": ("12_IMPLEMENTATIONS/experiments/domain_*.py", "≥2 domain experiments"),
-    "lamague_duplication_resolved": ("03_LAMAGUE_L1/LAMAGUE_COMPLETE.md", "No duplicate KnowledgeBlock refs"),
-    "mystery_school_cascade_resolved": ("14_MYSTERY_SCHOOL/*.py", "No duplicate cascade files"),
+    "lamague_duplication_resolved": ("03_LAMAGUE_L1/**/*LAMAGUE_COMPLETE.md", "No duplicate KnowledgeBlock refs"),
+    "mystery_school_cascade_resolved": ("14_MYSTERY_SCHOOL/**/*.py", "No duplicate cascade files"),
     "arxiv_contact_email": ("papers/CASCADE_ARXIV.tex", "Contact email set"),
 }
 
@@ -72,7 +108,7 @@ def health_check() -> Tuple[Dict[str, Any], str]:
     report_lines.append("ALEXANDRIA HEALTH CHECK")
     report_lines.append("━" * 70)
 
-    implementations_dir = FRAMEWORK_DIR / "12_IMPLEMENTATIONS"
+    implementations_dir = IMPLEMENTATIONS_DIR
     sys.path.insert(0, str(implementations_dir))
 
     all_pass = True
@@ -80,12 +116,9 @@ def health_check() -> Tuple[Dict[str, Any], str]:
     for module_name in CORE_MODULES:
         try:
             # Locate module
-            core_dir = implementations_dir / "core"
-            systems_dir = implementations_dir / "systems"
-
             module_path = None
-            for search_dir in [core_dir, systems_dir, implementations_dir]:
-                potential = search_dir / f"{module_name}.py"
+            for search_dir in MODULE_SEARCH_DIRS:
+                potential = FRAMEWORK_DIR / search_dir / f"{module_name}.py"
                 if potential.exists():
                     module_path = potential
                     break
@@ -155,67 +188,65 @@ def drift_audit() -> Tuple[Dict[str, Any], str]:
         (divergence_dict, human_report)
     """
     divergence = {}
+    unresolved = []
+    checks_run = 0
     report_lines = ["━" * 70]
     report_lines.append("ALEXANDRIA DRIFT AUDIT")
     report_lines.append("━" * 70)
 
-    # Check lambda_compress in CASCADE_COMPLETE.md vs cascade_engine.py
-    spec_file = FRAMEWORK_DIR / "01_CASCADE" / "CASCADE_COMPLETE.md"
-    code_file = FRAMEWORK_DIR / "12_IMPLEMENTATIONS" / "core" / "cascade_engine.py"
+    for name, rel_path, pattern in DRIFT_CHECKS:
+        spec_val = SPEC_CONSTANTS[name]
+        code_file = FRAMEWORK_DIR / rel_path
 
-    if spec_file.exists() and code_file.exists():
-        spec_content = spec_file.read_text()
-        code_content = code_file.read_text()
+        if not code_file.exists():
+            unresolved.append(name)
+            report_lines.append(f"  ✗ {name:26s} — FILE NOT FOUND: {rel_path}")
+            continue
 
-        # Look for lambda_compress assignments
-        spec_match = re.search(r'λ_compress\s*=\s*(0\.\d+)', spec_content)
-        code_match = re.search(r'LAMBDA_COMPRESS\s*=\s*(0\.\d+)', code_content)
+        match = re.search(pattern, code_file.read_text(encoding="utf-8", errors="replace"))
+        if not match:
+            unresolved.append(name)
+            report_lines.append(f"  ✗ {name:26s} — PATTERN NOT MATCHED in {rel_path}")
+            continue
 
-        if spec_match and code_match:
-            spec_val = float(spec_match.group(1))
-            code_val = float(code_match.group(1))
-            if abs(spec_val - code_val) > 0.001:
-                divergence["lambda_compress"] = {
-                    "spec": spec_val,
-                    "code": code_val,
-                    "diff": abs(spec_val - code_val)
-                }
-                report_lines.append(f"  ⚠ λ_compress divergence: spec={spec_val}, code={code_val}")
-            else:
-                report_lines.append(f"  ✓ λ_compress: {spec_val} (aligned)")
-
-    # Check golden ratio φ⁻¹
-    spec_match = re.search(r'φ⁻¹\s*≈\s*(0\.\d+)', spec_content) if spec_file.exists() else None
-    code_match = re.search(r'GOLDEN_RATIO_INVERSE\s*=\s*(0\.\d+)', code_content) if code_file.exists() else None
-
-    if spec_match and code_match:
-        spec_val = float(spec_match.group(1))
-        code_val = float(code_match.group(1))
+        checks_run += 1
+        code_val = float(match.group(1))
         if abs(spec_val - code_val) > 0.001:
-            divergence["golden_ratio_inverse"] = {
-                "spec": spec_val,
-                "code": code_val,
-                "diff": abs(spec_val - code_val)
-            }
-            report_lines.append(f"  ⚠ φ⁻¹ divergence: spec={spec_val}, code={code_val}")
+            divergence[name] = {"spec": spec_val, "code": code_val, "diff": abs(spec_val - code_val)}
+            report_lines.append(
+                f"  ⚠ {name:26s} — DIVERGENCE: spec={spec_val}, code={code_val} ({rel_path})"
+            )
         else:
-            report_lines.append(f"  ✓ φ⁻¹: {spec_val} (aligned)")
+            report_lines.append(f"  ✓ {name:26s} — {spec_val} aligned ({rel_path})")
 
-    # Check truth pressure formula: Π = (E × P) / S
-    if spec_file.exists():
-        if "Π = (E × P) / S" in spec_content or "Π = (E * P) / S" in spec_content:
-            report_lines.append(f"  ✓ Truth Pressure formula: found in spec")
-
-    if code_file.exists():
-        if "truth_pressure" in code_content and ("(E * P) / S" in code_content or "(energy * purity) / stability" in code_content):
-            report_lines.append(f"  ✓ Truth Pressure formula: found in code")
+    for name in UNBOUND_CONSTANTS:
+        report_lines.append(
+            f"  · {name:26s} — declared as {SPEC_CONSTANTS[name]}, no code binding; nothing to drift"
+        )
 
     report_lines.append("━" * 70)
-    if not divergence:
-        report_lines.append("Result: ✓ NO DIVERGENCE DETECTED")
-    else:
+    report_lines.append(f"Checks performed: {checks_run} · unresolved: {len(unresolved)}")
+    if unresolved:
+        # An audit that cannot reach its target has not passed. Saying so is the
+        # whole job: the previous version reported no divergence while every check
+        # was being skipped.
+        report_lines.append(
+            f"Result: ✗ INCONCLUSIVE — {len(unresolved)} check(s) could not be evaluated: "
+            + ", ".join(unresolved)
+        )
+    elif divergence:
         report_lines.append(f"Result: ⚠ {len(divergence)} DIVERGENCE(S) FOUND")
+    elif checks_run == 0:
+        report_lines.append("Result: ✗ INCONCLUSIVE — no drift checks are configured")
+    else:
+        report_lines.append(f"Result: ✓ NO DIVERGENCE DETECTED across {checks_run} check(s)")
     report_lines.append("")
+
+    if unresolved or checks_run == 0:
+        divergence["__inconclusive__"] = {
+            "unresolved": unresolved,
+            "checks_run": checks_run,
+        }
 
     return divergence, "\n".join(report_lines)
 
@@ -240,9 +271,9 @@ def gap_report() -> Tuple[Dict[str, str], str]:
     for gap_name, (search_pattern, description) in GAP_CHECKLIST.items():
         from glob import glob
 
-        # Handle glob patterns
+        # Handle glob patterns; recursive=True so ** spans nested corpus directories
         search_path = str(FRAMEWORK_DIR / search_pattern)
-        matches = glob(search_path)
+        matches = glob(search_path, recursive=True)
 
         if matches:
             status[gap_name] = "GREEN"

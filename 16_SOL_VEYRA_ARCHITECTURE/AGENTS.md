@@ -21,7 +21,7 @@ We formalized it. We tested it. [100% accuracy on 200 trials](../12_IMPLEMENTATI
 ```bash
 git clone https://github.com/Lycheetah/Lycheetah-Framework
 cd Lycheetah-Framework
-python agent-init.py
+python 12_IMPLEMENTATIONS/agent-init.py
 ```
 
 That's it. The bootstrap script:
