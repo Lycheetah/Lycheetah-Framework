@@ -26,6 +26,13 @@ Author: Mackenzie Clark, Lycheetah Foundation
 Implementation: Sol Aureum Azoth Veritas -- March 2026
 """
 
+# Annotations are not evaluated at definition time. build_server() is annotated
+# `-> Server`, a name that only exists when the optional `mcp` extra is installed;
+# without this, importing the module without `mcp` raises NameError at line 1 of
+# build_server's definition, before MCP_AVAILABLE can ever be consulted.
+from __future__ import annotations
+
+import argparse
 import sys
 import os
 import json
@@ -699,16 +706,49 @@ def main_http(port: int = 8765):
     uvicorn.run(app, host="127.0.0.1", port=port, log_level="warning")
 
 
-if __name__ == "__main__":
+def main(argv=None):
+    """
+    Entry point for the ``lycheetah-guard`` console script and for
+    ``python lycheetah_guard_mcp.py``.
+
+    Both paths land here, so the MCP_AVAILABLE check guards them equally. It
+    previously lived in the ``__main__`` block alone, which the console script
+    never executes.
+    """
+    parser = argparse.ArgumentParser(
+        prog="lycheetah-guard",
+        description=(
+            "Lycheetah Guard MCP server — exposes AURA alignment checking as MCP "
+            "tools. Defaults to HTTP/SSE; use --stdio when registering as an MCP "
+            "server in Claude Code settings.json."
+        ),
+    )
+    parser.add_argument(
+        "--stdio",
+        action="store_true",
+        help="Serve over stdio instead of HTTP/SSE (the transport Claude Code expects).",
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=8765,
+        help="Port for the HTTP/SSE transport. Ignored with --stdio. Default: %(default)s",
+    )
+    args = parser.parse_args(argv)
+
     if not MCP_AVAILABLE:
-        print("ERROR: mcp package not installed. Run: pip install mcp", file=sys.stderr)
-        sys.exit(1)
-    import asyncio
-    if "--stdio" in sys.argv:
+        parser.exit(
+            1,
+            "ERROR: the 'mcp' package is not installed.\n"
+            "       Install it with:  pip install 'lycheetah-framework[mcp]'\n",
+        )
+
+    if args.stdio:
+        import asyncio
         asyncio.run(main_stdio())
     else:
-        port = 8765
-        for arg in sys.argv[1:]:
-            if arg.startswith("--port="):
-                port = int(arg.split("=")[1])
-        main_http(port)
+        main_http(args.port)
+
+
+if __name__ == "__main__":
+    main()

@@ -21,6 +21,19 @@ history, which was the only changelog until now.
   `lycheetah.core` and `lycheetah.applications`, and path resolution moved into
   `lycheetah/_bootstrap.py`, which handles both layouts and raises a named error when
   neither is present.
+- **`lycheetah-guard` could never have started**, from 1.0.0 onward. Three failures
+  were stacked in it: `build_server()` is annotated `-> Server`, a name bound only
+  inside the `try: from mcp.server import Server` block, so importing without the
+  optional `mcp` extra raised `NameError` before the `MCP_AVAILABLE` flag could be
+  read; `lycheetah/cli.py` imported a `main` that did not exist, the module defining
+  only `main_stdio` and `main_http`, so the script was broken even *with* `mcp`
+  installed; and the `MCP_AVAILABLE` check sat in the `if __name__ == "__main__"`
+  block, which a console script never runs, leaving the intended "install mcp"
+  message unreachable. The module now uses `from __future__ import annotations`,
+  exposes a real `main()` behind an `argparse` parser (so `--help` works and both
+  `--port=N` and `--port N` parse), and gates on the missing extra with a named,
+  actionable error. `tests/test_entry_points.py` covers it, and the CI packaging gate
+  now smoke-tests all three scripts rather than only the one that happened to work.
 - `lycheetah/py.typed` was declared in package data since 1.0.0 but never existed, so
   the distribution claimed PEP 561 typing and shipped no marker.
 - Two modules could not be imported at all: `subject_catalogue.py` carried a stray

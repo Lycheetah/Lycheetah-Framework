@@ -98,7 +98,14 @@ jobs:
           print('wheel OK — lycheetah.check() ->', round(report.alignment_percent, 1))
           "
           /tmp/wheelcheck/bin/lycheetah-check "smoke test" > /dev/null
-          echo "console script OK"
+          # Every declared console script, not just the one that happened to work.
+          # lycheetah-guard shipped broken from 1.0.0 because nothing invoked it.
+          # --help is enough: it proves the entry point resolves and the module
+          # imports without the optional mcp extra.
+          /tmp/wheelcheck/bin/lycheetah-check --help > /dev/null
+          /tmp/wheelcheck/bin/lycheetah-web   --help > /dev/null
+          /tmp/wheelcheck/bin/lycheetah-guard --help > /dev/null
+          echo "console scripts OK — all 3 resolve and run"
 
   framework-health:
     name: Alexandria health and drift
