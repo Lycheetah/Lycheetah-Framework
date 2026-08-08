@@ -204,7 +204,7 @@ def test_invalid_input():
     """Out-of-range values raise ValueError."""
     try:
         GovernanceState(1.1, 0.5, 0.5)
-        assert False, "Should have raised ValueError"
+        raise AssertionError("Should have raised ValueError")
     except ValueError:
         pass
     print("  PASS: test_invalid_input")

@@ -77,8 +77,61 @@ packages = [
 [tool.setuptools.package-data]
 "lycheetah" = ["py.typed"]
 
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+extend-exclude = [
+    "99_ARCHIVE",                              # frozen record; corrected in place, never
+    "000_1404RawSourceTranslate",              # raw source translation, not maintained code
+    "03_LAMAGUE_L1/13_RETIRED_KERNEL_BRANCH",  # retired branch, kept for lineage
+]
+
+[tool.ruff.lint]
+# The corpus-wide floor is deliberately narrow: rules where a hit means something is
+# actually wrong, not that the house style differs. This is a research corpus of 255
+# Python files written over many sessions, and a gate wide enough to demand a rewrite
+# is a gate that gets switched off. It currently reports zero, so any new hit is a
+# regression introduced by the change in front of you.
+#
+# The shipped package is held to a much stricter set — see lycheetah/.ruff.toml.
+# Widening this floor is done by deleting an ignore below and fixing what appears,
+# one rule at a time.
+select = ["F", "E9", "PLE", "B"]
+ignore = [
+    "F401",  # unused import — 248 corpus-wide, and some re-export deliberately
+    "F541",  # f-string without placeholders — cosmetic
+    "F841",  # unused local — often a named intermediate kept for readability
+    "B006",  # mutable default — real, but pervasive and behaviour-preserving here
+    "B007",  # unused loop variable
+    "B008",  # function call in default argument
+    "B905",  # zip() without explicit strict=
+]
+
+[tool.ruff.format]
+# Formatting is enforced only on lycheetah/. Reformatting the whole corpus would be
+# a diff nobody can review, against files whose current shape is deliberate.
+exclude = ["*"]
+
+[tool.mypy]
+files = ["lycheetah"]
+python_version = "3.10"
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+strict_equality = true
+
+# The implementation modules are reached through a runtime sys.path insertion (see
+# lycheetah/_bootstrap.py) and carry no annotations yet, so mypy cannot follow them
+# statically. Annotating that tree is separate work; this gate covers the public
+# wrapper and says only that.
+[[tool.mypy.overrides]]
+module = ["core.*", "applications.*"]
+ignore_missing_imports = true
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+# Fail on an unregistered marker rather than silently treating the test as unmarked.
+addopts = "--strict-markers"
 markers = [
     "active: tests for [ACTIVE] formally proven claims",
     "scaffold: tests for [SCAFFOLD] structural but unfinished claims",

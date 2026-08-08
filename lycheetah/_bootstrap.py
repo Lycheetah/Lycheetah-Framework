@@ -22,32 +22,32 @@ Resolution now happens in one place, and says so when it fails.
 
 from __future__ import annotations
 
-import os
 import sys
+from pathlib import Path
 
-_HERE = os.path.dirname(os.path.abspath(__file__))
+_HERE = Path(__file__).resolve().parent
 
 #: Candidate roots in priority order. The first that holds every required sub-tree
 #: wins: ``_HERE`` covers the installed wheel, the sibling ``12_IMPLEMENTATIONS``
 #: covers a source checkout.
-_CANDIDATE_ROOTS: tuple[str, ...] = (
+_CANDIDATE_ROOTS: tuple[Path, ...] = (
     _HERE,
-    os.path.join(os.path.dirname(_HERE), "12_IMPLEMENTATIONS"),
+    _HERE.parent / "12_IMPLEMENTATIONS",
 )
 
 #: Sub-trees the flat ``core.*`` / ``applications.*`` imports resolve against.
 _REQUIRED_SUBTREES: tuple[str, ...] = ("core", "applications")
 
 
-def implementation_root() -> str | None:
+def implementation_root() -> Path | None:
     """Return the directory holding every required sub-tree, or ``None`` if absent."""
     for root in _CANDIDATE_ROOTS:
-        if all(os.path.isdir(os.path.join(root, sub)) for sub in _REQUIRED_SUBTREES):
+        if all((root / sub).is_dir() for sub in _REQUIRED_SUBTREES):
             return root
     return None
 
 
-def ensure_implementation_on_path() -> str:
+def ensure_implementation_on_path() -> Path:
     """
     Put the implementation root on ``sys.path`` and return it.
 
@@ -58,13 +58,14 @@ def ensure_implementation_on_path() -> str:
     """
     root = implementation_root()
     if root is None:
+        looked_in = ", ".join(str(candidate) for candidate in _CANDIDATE_ROOTS)
+        required = " and ".join(repr(sub) for sub in _REQUIRED_SUBTREES)
         raise ImportError(
-            "Lycheetah implementation tree not found. Looked for a directory "
-            f"containing {' and '.join(repr(s) for s in _REQUIRED_SUBTREES)} in: "
-            + ", ".join(repr(c) for c in _CANDIDATE_ROOTS)
-            + ". This normally means the distribution was built without its "
-            "implementation packages — reinstall from a complete source tree."
+            f"Lycheetah implementation tree not found. Looked for a directory "
+            f"containing {required} in: {looked_in}. This normally means the "
+            f"distribution was built without its implementation packages — "
+            f"reinstall from a complete source tree."
         )
-    if root not in sys.path:
-        sys.path.insert(0, root)
+    if str(root) not in sys.path:
+        sys.path.insert(0, str(root))
     return root

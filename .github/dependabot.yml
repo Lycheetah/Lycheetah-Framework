@@ -1,0 +1,40 @@
+version: 2
+
+updates:
+  # GitHub Actions. The workflows in this repository had been pinned to checkout@v3
+  # and setup-python@v4 long after both were superseded; this is what stops that
+  # happening silently again.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: "ci"
+    labels:
+      - dependencies
+      - github-actions
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: "deps"
+    labels:
+      - dependencies
+      - python
+    open-pull-requests-limit: 5
+    groups:
+      # One PR for the tooling, so a routine bump is one review rather than four.
+      dev-tooling:
+        patterns:
+          - pytest*
+          - ruff
+          - mypy
+          - build
+      scientific-stack:
+        patterns:
+          - numpy
+          - scipy
+          - networkx

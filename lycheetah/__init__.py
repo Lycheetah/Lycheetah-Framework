@@ -17,7 +17,7 @@ Web demo:   python -m lycheetah.web
 from __future__ import annotations
 
 __version__ = "1.0.0"
-__author__  = "Mackenzie Conor James Clark"
+__author__ = "Mackenzie Conor James Clark"
 __license__ = "MIT"
 
 from typing import TYPE_CHECKING
@@ -32,7 +32,7 @@ if TYPE_CHECKING:  # pragma: no cover — import exists for annotations only
     from applications.aura_text_checker import AURATextReport
 
 
-def check(text: str, context: str = "") -> AURATextReport:
+def check(text: str, context: str = "") -> AURATextReport:  # noqa: ARG001
     """
     Run a full constitutional alignment check on any text.
 
@@ -52,8 +52,15 @@ def check(text: str, context: str = "") -> AURATextReport:
         print(r.overall_pass)        # False
         for inv in r.invariants:
             print(inv.name, inv.passed)
+
+    ``context`` is accepted and currently ignored: AURATextAnalyser.analyse takes
+    text alone. The parameter is kept so the signature stays stable for callers
+    already passing it, and is documented here rather than left to look supported.
+    Wiring it through means teaching the analyser to use it, which is a change to
+    what the metrics mean, not a change to this wrapper.
     """
     from applications.aura_text_checker import AURATextAnalyser
+
     return AURATextAnalyser().analyse(text)
 
 
@@ -68,7 +75,8 @@ def sol_assess(text: str, context: str = "") -> str:
     - Detected mode and emotional register
     """
     from core.sol_self_protocol import SolSelfProtocol
+
     return SolSelfProtocol().assess_full(text, context)
 
 
-__all__ = ["check", "sol_assess", "__version__"]
+__all__ = ["__version__", "check", "sol_assess"]

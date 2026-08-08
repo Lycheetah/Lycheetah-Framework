@@ -325,7 +325,7 @@ def test_invalid_input():
             datong_short_cycle=0.5, datong_long_cycle=0.5,
             wang_dao_minxin=0.5, wang_dao_stability=0.5,
         )
-        assert False, "Should raise ValueError"
+        raise AssertionError("Should raise ValueError")
     except ValueError:
         pass
     print("  PASS: test_invalid_input")
