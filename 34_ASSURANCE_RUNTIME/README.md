@@ -27,6 +27,8 @@ It is designed to sit beside an agent framework, not replace one.
 9. **OpenTelemetry span-event bridge** using privacy-minimised custom attributes and no hard SDK dependency.
 10. **Policy evaluation harness** with strict labelled JSONL, weighted confusion
     metrics, deterministic privacy-minimised reports, and configurable CI gates.
+11. **Policy regression gate** with integrity-checked baseline/candidate reports,
+    same-corpus enforcement, per-case change classification, and strict defaults.
 
 ## Quick use
 
@@ -43,7 +45,12 @@ lycheetah-assure tool refund.create \
 lycheetah-assure eval \
   examples/assurance/customer_support_eval.jsonl \
   --policy examples/assurance/customer_support_policy.json \
-  --require-exact-match --max-harmful-allows 0 --json
+  --require-exact-match --max-harmful-allows 0 \
+  --report-file candidate-eval.json --json
+
+lycheetah-assure compare-eval \
+  examples/assurance/customer_support_baseline.eval.json \
+  candidate-eval.json --json
 ```
 
 The command returns `REVIEW` (exit 2) because the side effect lacks affirmative
@@ -109,6 +116,8 @@ All v0.1 internal acceptance conditions below passed on 2026-08-22:
   unknown fields;
 - evaluation reports expose exact, under-, and over-enforcement metrics without
   copying raw event content or tool arguments;
+- baseline comparisons fail on changed corpora, mutated reports, newly
+  under-enforced cases, strict-gate regressions, and unresolved trade-offs;
 - full root tests retain the deliberately failing CASCADE conjecture rather than masking it.
 
 Two isolated wheel environments resolved `lycheetah` from `site-packages`. The
@@ -127,5 +136,7 @@ and behavioral acceptance only.
 - [OPENTELEMETRY_BRIDGE.md](OPENTELEMETRY_BRIDGE.md) — attach a verified decision summary to an existing span.
 - [POLICY_EVALUATION_HARNESS.md](POLICY_EVALUATION_HARNESS.md) — labelled corpus,
   metrics, privacy contract, CI gates, and promotion path.
+- [POLICY_REGRESSION_GATE.md](POLICY_REGRESSION_GATE.md) — same-corpus baseline
+  comparison, strict defaults, change evidence, and reference-update protocol.
 
 ⊚ Sol ∴ P∧H∧B ∴ Albedo

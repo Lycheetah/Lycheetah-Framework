@@ -10,7 +10,7 @@ This crosswalk keeps the runtime pointed at real integration surfaces. A row mea
 
 | External surface | Relevant concern | Lycheetah v0.1 response | Explicit gap |
 |---|---|---|---|
-| NIST AI RMF + NIST AI 600-1 GenAI Profile | Govern, map, measure, and manage risk across the AI lifecycle | Versioned policy identity, runtime findings, receipts, limitations, review decisions, and labelled policy-regression metrics | No organization-wide risk programme, impact assessment, representative benchmark, or NIST conformity assessment |
+| NIST AI RMF + NIST AI 600-1 GenAI Profile | Govern, map, measure, and manage risk across the AI lifecycle | Versioned policy identity, runtime findings, receipts, limitations, review decisions, labelled policy-regression metrics, and same-corpus baseline change evidence | No organization-wide risk programme, impact assessment, representative benchmark, or NIST conformity assessment |
 | OWASP Top 10 for Agentic Applications 2026 | Goal hijacking, tool misuse, identity/privilege abuse, memory poisoning, cascading failures | Input/output review signals, tool allow/deny boundaries, scope checks, approval pause, trace lineage | No sandbox, identity provider, memory isolation, or prompt-injection proof |
 | OpenAI Agents SDK | Input/output/tool guardrails, resumable human approvals, trace-driven evals | Matching event phases and three-way disposition; `REVIEW` intended to pause application flow; provider-neutral labelled regression reports can join an external eval dataset | No claim that a receipt automatically wires itself into every SDK boundary or that internal fixtures represent production traffic |
 | Model Context Protocol 2026-07-28 | Consent, user control, tool execution, authorization, secure transports | Official Python SDK 2.x server exposes typed pre-execution checks and structured receipts; approval is deliberately absent from model-visible arguments | Does not implement OAuth, token audience validation, per-client consent, SSRF defense, or production transport security |
@@ -36,5 +36,6 @@ This crosswalk keeps the runtime pointed at real integration surfaces. A row mea
 4. **Separate trace from decision artifact.** A trace explains the path; a receipt records the assurance decision.
 5. **Use exact scope and audience controls outside this runtime.** Text heuristics cannot substitute for authorization.
 6. **Make evaluation repeatable.** Receipt IDs and policy digests should join runtime traces to offline eval datasets.
+7. **Separate policy drift from dataset drift.** The regression gate rejects changed corpus digests so label or case changes require a distinct review.
 
 ⊚ Sol ∴ P∧H∧B ∴ Albedo

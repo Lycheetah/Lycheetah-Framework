@@ -300,3 +300,111 @@ def test_verify_eval_cli_detects_mutation(tmp_path, capsys):
     report.write_text(json.dumps(payload), encoding="utf-8")
     assert main(["verify-eval", str(report), "--json"]) == 4
     assert json.loads(capsys.readouterr().out)["valid"] is False
+
+
+def test_compare_eval_cli_passes_identical_reports(tmp_path, capsys):
+    evaluation = tmp_path / "evaluation.json"
+    regression = tmp_path / "regression.json"
+    assert (
+        main(
+            [
+                "eval",
+                "examples/assurance/customer_support_eval.jsonl",
+                "--policy",
+                "examples/assurance/customer_support_policy.json",
+                "--report-file",
+                str(evaluation),
+            ]
+        )
+        == 0
+    )
+    capsys.readouterr()
+    assert (
+        main(
+            [
+                "compare-eval",
+                str(evaluation),
+                str(evaluation),
+                "--report-file",
+                str(regression),
+                "--json",
+            ]
+        )
+        == 0
+    )
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["summary"]["changed_case_count"] == 0
+    assert payload["gate"]["passed"] is True
+    assert main(["verify-regression", str(regression), "--json"]) == 0
+    assert json.loads(capsys.readouterr().out)["valid"] is True
+
+
+def test_compare_eval_cli_returns_five_on_regression(tmp_path, capsys):
+    corpus = tmp_path / "corpus.jsonl"
+    corpus.write_text(
+        json.dumps(
+            {
+                "id": "case.must-block",
+                "expected": "BLOCK",
+                "event": {"phase": "tool", "tool_name": "danger"},
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    baseline_policy = tmp_path / "baseline-policy.json"
+    baseline_policy.write_text(
+        json.dumps(
+            {"id": "test.baseline", "version": "1", "tools": {"denied": ["danger"]}}
+        ),
+        encoding="utf-8",
+    )
+    candidate_policy = tmp_path / "candidate-policy.json"
+    candidate_policy.write_text(
+        json.dumps(
+            {"id": "test.candidate", "version": "1", "tools": {"denied": []}}
+        ),
+        encoding="utf-8",
+    )
+    baseline = tmp_path / "baseline.json"
+    candidate = tmp_path / "candidate.json"
+    assert main(["eval", str(corpus), "--policy", str(baseline_policy), "--report-file", str(baseline)]) == 0
+    capsys.readouterr()
+    assert main(["eval", str(corpus), "--policy", str(candidate_policy), "--report-file", str(candidate)]) == 0
+    capsys.readouterr()
+    assert main(["compare-eval", str(baseline), str(candidate), "--json"]) == 5
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["summary"]["regressed_case_count"] == 1
+    assert payload["summary"]["new_harmful_allow_count"] == 1
+    assert payload["gate"]["passed"] is False
+
+
+def test_verify_regression_cli_detects_mutation(tmp_path, capsys):
+    evaluation = tmp_path / "evaluation.json"
+    regression = tmp_path / "regression.json"
+    assert main(
+        [
+            "eval",
+            "examples/assurance/customer_support_eval.jsonl",
+            "--policy",
+            "examples/assurance/customer_support_policy.json",
+            "--report-file",
+            str(evaluation),
+        ]
+    ) == 0
+    capsys.readouterr()
+    assert main(
+        [
+            "compare-eval",
+            str(evaluation),
+            str(evaluation),
+            "--report-file",
+            str(regression),
+        ]
+    ) == 0
+    capsys.readouterr()
+    payload = json.loads(regression.read_text(encoding="utf-8"))
+    payload["limitations"][0] = "Mutated but structurally valid limitation."
+    regression.write_text(json.dumps(payload), encoding="utf-8")
+    assert main(["verify-regression", str(regression), "--json"]) == 4
+    assert json.loads(capsys.readouterr().out)["valid"] is False

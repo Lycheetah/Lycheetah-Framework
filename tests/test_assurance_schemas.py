@@ -9,6 +9,8 @@ from lycheetah.assurance import (
     AssuranceRuntime,
     EvaluationCorpus,
     EvaluationGate,
+    EvaluationReport,
+    compare_evaluations,
     default_policy,
     evaluate_corpus,
 )
@@ -61,3 +63,27 @@ def test_evaluation_report_conforms_to_packaged_schema():
     jsonschema.Draft202012Validator(
         _schema("evaluation-report.schema.json")
     ).validate(report.to_dict())
+
+
+def test_committed_baseline_is_valid_and_conforms_to_schema():
+    report = EvaluationReport.from_json(
+        ROOT / "examples/assurance/customer_support_baseline.eval.json"
+    )
+    assert report.verify()
+    jsonschema.Draft202012Validator(
+        _schema("evaluation-report.schema.json")
+    ).validate(report.to_dict())
+
+
+def test_regression_report_conforms_to_packaged_schema():
+    policy = AssurancePolicy.from_json(
+        ROOT / "examples/assurance/customer_support_policy.json"
+    )
+    corpus = EvaluationCorpus.from_jsonl(
+        ROOT / "examples/assurance/customer_support_eval.jsonl"
+    )
+    evaluation = evaluate_corpus(AssuranceRuntime(policy), corpus)
+    regression = compare_evaluations(evaluation, evaluation)
+    jsonschema.Draft202012Validator(
+        _schema("evaluation-regression-report.schema.json")
+    ).validate(regression.to_dict())

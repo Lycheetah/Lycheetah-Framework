@@ -21,6 +21,7 @@ from .in_toto import to_in_toto_statement
 from .models import AssuranceEvent, Disposition, Phase
 from .policy import AssurancePolicy, PolicyError, default_policy
 from .receipt import AssuranceReceipt, ReceiptError, ReceiptLog
+from .regression import RegressionGate, RegressionReport, compare_evaluations
 from .runtime import AssuranceRuntime
 
 
@@ -114,6 +115,64 @@ def build_parser() -> argparse.ArgumentParser:
     )
     verify_evaluation.add_argument("path")
     verify_evaluation.add_argument("--json", action="store_true")
+
+    compare = subparsers.add_parser(
+        "compare-eval",
+        help="Compare candidate and baseline reports for the same corpus",
+    )
+    compare.add_argument("baseline", help="Trusted baseline evaluation report")
+    compare.add_argument("candidate", help="Candidate evaluation report")
+    compare.add_argument("--json", action="store_true", help="Print the full report as JSON")
+    compare.add_argument("--report-file", help="Write the regression report JSON to this file")
+    compare.add_argument(
+        "--max-regressed-cases",
+        type=_non_negative_integer,
+        default=0,
+        help="Maximum cases whose labelled correctness may worsen; default 0",
+    )
+    compare.add_argument(
+        "--max-tradeoff-cases",
+        type=_non_negative_integer,
+        default=0,
+        help="Maximum cross-direction REVIEW trade-offs; default 0",
+    )
+    compare.add_argument(
+        "--max-new-under-enforcement",
+        type=_non_negative_integer,
+        default=0,
+        help="Maximum newly under-enforced cases; default 0",
+    )
+    compare.add_argument(
+        "--max-new-harmful-allows",
+        type=_non_negative_integer,
+        default=0,
+        help="Maximum new expected-BLOCK/actual-ALLOW cases; default 0",
+    )
+    compare.add_argument(
+        "--max-new-false-blocks",
+        type=_non_negative_integer,
+        default=0,
+        help="Maximum new expected-ALLOW/actual-BLOCK cases; default 0",
+    )
+    compare.add_argument(
+        "--max-exact-match-rate-drop",
+        type=_rate,
+        default=0.0,
+        help="Maximum exact-match rate drop in [0,1]; default 0",
+    )
+    compare.add_argument(
+        "--max-macro-f1-drop",
+        type=_rate,
+        default=0.0,
+        help="Maximum weighted macro-F1 drop in [0,1]; default 0",
+    )
+
+    verify_regression = subparsers.add_parser(
+        "verify-regression",
+        help="Verify the canonical SHA-256 digest of a regression report",
+    )
+    verify_regression.add_argument("path")
+    verify_regression.add_argument("--json", action="store_true")
     return parser
 
 
@@ -152,6 +211,10 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             return _run_evaluation(args)
         if args.command == "verify-eval":
             return _verify_evaluation(args)
+        if args.command == "compare-eval":
+            return _compare_evaluations(args)
+        if args.command == "verify-regression":
+            return _verify_regression(args)
         return _evaluate(args)
     except (EvaluationError, PolicyError, ReceiptError, ValueError, OSError) as exc:
         print(f"lycheetah-assure: {exc}", file=sys.stderr)
@@ -315,6 +378,42 @@ def _verify_evaluation(args: argparse.Namespace) -> int:
     return 0 if valid else 4
 
 
+def _compare_evaluations(args: argparse.Namespace) -> int:
+    baseline = EvaluationReport.from_json(args.baseline)
+    candidate = EvaluationReport.from_json(args.candidate)
+    gate = RegressionGate(
+        max_regressed_cases=args.max_regressed_cases,
+        max_tradeoff_cases=args.max_tradeoff_cases,
+        max_new_under_enforcement=args.max_new_under_enforcement,
+        max_new_harmful_allows=args.max_new_harmful_allows,
+        max_new_false_blocks=args.max_new_false_blocks,
+        max_exact_match_rate_drop=args.max_exact_match_rate_drop,
+        max_macro_f1_drop=args.max_macro_f1_drop,
+    )
+    report = compare_evaluations(baseline, candidate, gate=gate)
+    if args.report_file:
+        path = Path(args.report_file)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(report.to_json() + "\n", encoding="utf-8")
+    if args.json:
+        print(report.to_json())
+    else:
+        _print_regression_summary(report)
+    return 0 if report.gate_passed else 5
+
+
+def _verify_regression(args: argparse.Namespace) -> int:
+    report = RegressionReport.from_json(args.path)
+    valid = report.verify()
+    payload = {"valid": valid, "digest": report.digest}
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print("VALID" if valid else "INVALID")
+        print(f"digest: {report.digest}")
+    return 0 if valid else 4
+
+
 def _secret_from_env(name: Optional[str]) -> Optional[bytes]:
     if not name:
         return None
@@ -374,6 +473,33 @@ def _print_evaluation_summary(report: EvaluationReport) -> None:
         f"over={summary['over_enforcement_count']} "
         f"harmful_allows={summary['harmful_allow_count']} "
         f"false_blocks={summary['false_block_count']}"
+    )
+    gate = payload["gate"]
+    print("gate: " + ("PASS" if gate["passed"] else "FAIL"))
+    for failure in gate["failures"]:
+        print(f"  - {failure}")
+    print(f"digest: {report.digest}")
+
+
+def _print_regression_summary(report: RegressionReport) -> None:
+    payload = report.to_dict()
+    summary = payload["summary"]
+    deltas = summary["metric_deltas"]
+    print(
+        f"cases={summary['case_count']} changed={summary['changed_case_count']} "
+        f"improved={summary['improved_case_count']} "
+        f"regressed={summary['regressed_case_count']} "
+        f"tradeoff={summary['tradeoff_case_count']}"
+    )
+    print(
+        f"new_under={summary['new_under_enforcement_count']} "
+        f"new_harmful_allows={summary['new_harmful_allow_count']} "
+        f"new_false_blocks={summary['new_false_block_count']}"
+    )
+    print(
+        f"delta_exact={deltas['exact_match_rate']:+.3f} "
+        f"delta_macro_f1={deltas['macro_f1']:+.3f} "
+        f"delta_review={deltas['review_rate']:+.3f}"
     )
     gate = payload["gate"]
     print("gate: " + ("PASS" if gate["passed"] else "FAIL"))

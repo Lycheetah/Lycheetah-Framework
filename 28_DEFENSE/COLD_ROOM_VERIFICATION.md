@@ -219,6 +219,53 @@ fixture only. They do not establish independent calibration, production safety,
 or superiority over another guardrail. Hosted GitHub Actions had not run this
 unpushed commit at the time of this local record.
 
+## 2026-08-22 Addendum — v1.3 Policy Regression Gate
+
+**Status:** `[ACTIVE]` record of local implementation and regression evidence;
+`[SCAFFOLD]` product capability without external baseline approval, corpus
+calibration, or production validation.
+
+The v1.3 forge added deterministic same-corpus comparison between integrity-
+checked evaluation reports, per-case improvement/regression/trade-off evidence,
+strict zero-regression defaults, a packaged regression-report schema, CLI
+comparison and verification commands, a committed internal reference report,
+and a GitHub Actions gate that generates candidates without rewriting the
+reference.
+
+```
+Package:       lycheetah-framework 1.3.0 wheel
+Wheel SHA-256: 2339fd36686bb5827bb2a62bd72eb3984ff03d3403cb1e208c187a46b447392e
+Python:        3.12.13
+Date:          2026-08-22
+```
+
+Results:
+
+- assurance-focused suite — **151 passed**
+- `pytest tests/ -m "not conjecture" -q` — **427 passed, 1 deselected**
+- complete suite — **427 passed, 1 failed**, the unchanged declared CASCADE
+  `CONJECTURE` at F1 = 0.531 against the > 0.80 criterion
+- `tools/verify-claims.py` — 30 unmarked claim-bearing documents, holding at baseline
+- `tools/verify-links.py` — 723 files, 595 links, 0 dead outside the frozen archive
+- syntax/undefined-name gate (`ruff` `E9,F63,F7,F82`) — passed on changed Python
+  code; `compileall` and workflow YAML parsing also passed
+- exact v1.3 wheel installed offline into fresh base and full virtual environments
+  outside the checkout; both acceptance scripts passed
+- base environment — public assurance, evaluation, and regression APIs passed;
+  Flask and MCP remained correctly unavailable without optional extras
+- full environment — policy evaluation, report verification, same-corpus
+  comparison, regression-report verification, five packaged schemas, Flask
+  health, ten MCP 2.x tools, receipts, and OpenTelemetry passed
+
+The committed reference reports six unchanged decisions under the included
+customer-support policy, and strict comparison passes. Those six cases and the
+reference were authored inside this project. They are version-control regression
+fixtures—not independent ground truth, production traffic, policy approval,
+statistical validation, or evidence of real-world safety.
+
+The workflow was parsed locally but hosted GitHub Actions had not run this
+unpushed change at the time of this record.
+
 ---
 
 ## Conclusion

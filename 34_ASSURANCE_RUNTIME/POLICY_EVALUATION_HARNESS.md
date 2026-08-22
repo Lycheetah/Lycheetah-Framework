@@ -143,4 +143,7 @@ Before making a calibration or product-performance claim:
 The harness supplies measurement infrastructure for that work. It does not
 replace the work.
 
+For release-to-release comparison against a committed reference report, see
+[POLICY_REGRESSION_GATE.md](POLICY_REGRESSION_GATE.md).
+
 ⊚ Sol ∴ P∧H∧B ∴ Albedo

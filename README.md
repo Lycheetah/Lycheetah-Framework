@@ -56,7 +56,7 @@
 
 **Status: `[SCAFFOLD]` product runtime; clean-wheel acceptance passed on August 22, 2026.**
 
-The version 1.2.0 source tree now builds a self-contained Python wheel with:
+The version 1.3.0 source tree now builds a self-contained Python wheel with:
 
 - a provider-neutral Assurance Runtime for input, output, and proposed tool actions;
 - versioned policy-as-data and `ALLOW`, `REVIEW`, or `BLOCK` decisions;
@@ -69,6 +69,8 @@ The version 1.2.0 source tree now builds a self-contained Python wheel with:
 - a privacy-minimised OpenTelemetry span-event bridge using custom Lycheetah attributes;
 - a strict labelled-corpus evaluation harness with confusion matrices, privacy-minimised
   case outcomes, deterministic report digests, and configurable CI regression gates;
+- a strict same-corpus baseline comparator that exposes new under-enforcement,
+  harmful allows, false blocks, REVIEW trade-offs, and aggregate metric drops;
 - the AURA text checker, Sol assessment, and Flask demo as explicitly heuristic
   interfaces rather than safety certifications; and
 - a cold-room test that installs the wheel outside the checkout and exercises the
@@ -79,7 +81,9 @@ the product boundary and
 [`34_ASSURANCE_RUNTIME/CUSTOMER_SUPPORT_WALKTHROUGH.md`](34_ASSURANCE_RUNTIME/CUSTOMER_SUPPORT_WALKTHROUGH.md)
 for a concrete tool-approval flow, then
 [`34_ASSURANCE_RUNTIME/POLICY_EVALUATION_HARNESS.md`](34_ASSURANCE_RUNTIME/POLICY_EVALUATION_HARNESS.md)
-for regression measurement and CI gates.
+for regression measurement and CI gates, then
+[`34_ASSURANCE_RUNTIME/POLICY_REGRESSION_GATE.md`](34_ASSURANCE_RUNTIME/POLICY_REGRESSION_GATE.md)
+for strict baseline-to-candidate comparison.
 
 ## The Problem This Solves
 
@@ -88,7 +92,7 @@ or tool boundary, an operator may need a compact answer to five questions: what
 was proposed, which policy version evaluated it, what evidence was found, what
 decision followed, and whether the record was later changed.
 
-Lycheetah v1.2 addresses that bounded operational problem. It is designed to sit
+Lycheetah v1.3 addresses that bounded operational problem. It is designed to sit
 beside agent frameworks, authorization systems, sandboxes, telemetry, and human
 approval—not replace them. It does **not** establish that an agent is safe,
 aligned, truthful, or compliant.
@@ -272,7 +276,7 @@ The defense layer does not modify the canonical claims. It surrounds them with t
 |---|---|
 | [`28_DEFENSE/TRANSLATION_CODEX.md`](28_DEFENSE/TRANSLATION_CODEX.md) | Bidirectional mapping of ~45 alchemical terms ↔ formal counterparts. Read before interpreting any alchemical vocabulary. |
 | [`28_DEFENSE/TESTABILITY_MANIFEST.md`](28_DEFENSE/TESTABILITY_MANIFEST.md) | Per-framework operational replication protocols with bash commands and expected outputs. |
-| [`28_DEFENSE/COLD_ROOM_VERIFICATION.md`](28_DEFENSE/COLD_ROOM_VERIFICATION.md) | Reproducibility log with historical snapshots and the current local result: 406 active checks pass; one explicit `[CONJECTURE]` misses its criterion. |
+| [`28_DEFENSE/COLD_ROOM_VERIFICATION.md`](28_DEFENSE/COLD_ROOM_VERIFICATION.md) | Reproducibility log with historical snapshots and the current local result: 427 non-conjectural checks pass; one explicit `[CONJECTURE]` misses its criterion. |
 | [`28_DEFENSE/EVIDENCE_LADDER.md`](28_DEFENSE/EVIDENCE_LADDER.md) | Published rules for promoting / demoting `[CONJECTURE]` ↔ `[SCAFFOLD]` ↔ `[ACTIVE]` ↔ `[RETRACTED]`. Closes the "movable goalposts" attack. |
 | [`28_DEFENSE/REPRODUCIBILITY_REPORT.md`](28_DEFENSE/REPRODUCIBILITY_REPORT.md) | 16 implementations mapped — install, run, expected output, known platform notes. |
 
@@ -490,7 +494,7 @@ sandboxing, OAuth, or a safety guarantee.
 | Need | Installable entry point | Boundary |
 |---|---|---|
 | Input/output/tool decision | `lycheetah.assurance.AssuranceRuntime` | `[SCAFFOLD]` bounded policy decision + receipt |
-| CLI or CI gate | `lycheetah-assure` | exit 0 ALLOW, 2 REVIEW, 3 BLOCK, 4 invalid input |
+| CLI or CI gate | `lycheetah-assure` | exit 0 ALLOW/pass, 2 REVIEW, 3 BLOCK, 4 invalid input, 5 failed evaluation/regression gate |
 | MCP integration | `lycheetah-guard` | stdio MCP 2.x server, ten tools |
 | Text heuristic | `lycheetah.check(text)` | cue families and proxy formulas; not semantic proof |
 | Sol assessment | `lycheetah.sol_assess(text, context)` | experimental constitutional heuristic |
@@ -595,7 +599,7 @@ TIANXIA module v0.3 — Classical Triad complete (Confucian + Daoist + Legalist 
 9 TIANXIA operator documents + 4 implementations + 3-layer alignment stack (Syntheses IV + V)
 3 empirical preregistrations for TIANXIA (E-1-F, E-1-G, E-1-H)
 3 academic papers in TIANXIA publication pipeline
-406 non-conjectural checks pass as of 2026-08-22; the complete suite has the same 406 passes plus one declared predictive CONJECTURE below its stated criterion
+427 non-conjectural checks pass as of 2026-08-22; the complete suite has the same 427 passes plus one declared predictive CONJECTURE below its stated criterion
 1 convergence proof (discrete, [ACTIVE])
 1 AGM postulate verification ([ACTIVE] for 4 of 6, [SCAFFOLD] for 2)
 1 Lyapunov verification — 11/11 claims, 0 failures, symbolic + numerical

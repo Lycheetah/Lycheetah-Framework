@@ -52,7 +52,7 @@ def main() -> int:
         repo_root not in installed_path.parents,
         f"package resolved from checkout, not installed wheel: {installed_path}",
     )
-    require(lycheetah.__version__ == "1.2.0", "unexpected package version")
+    require(lycheetah.__version__ == "1.3.0", "unexpected package version")
 
     report = lycheetah.check(
         "I may be wrong. Please verify this independently before deciding."
@@ -85,6 +85,7 @@ def main() -> int:
         "policy.schema.json",
         "evaluation-case.schema.json",
         "evaluation-report.schema.json",
+        "evaluation-regression-report.schema.json",
     ):
         require(
             schema_root.joinpath(schema_name).is_file(),
@@ -151,6 +152,36 @@ def main() -> int:
             json.loads(verify_eval_result.stdout)["valid"] is True,
             "evaluation report verification failed",
         )
+        regression_path = Path(directory) / "regression.json"
+        compare_result = run_console(
+            "lycheetah-assure",
+            "compare-eval",
+            str(report_path),
+            str(report_path),
+            "--report-file",
+            str(regression_path),
+            "--json",
+        )
+        require(
+            compare_result.returncode == 0,
+            compare_result.stderr or compare_result.stdout,
+        )
+        compare_payload = json.loads(compare_result.stdout)
+        require(
+            compare_payload["summary"]["changed_case_count"] == 0,
+            "regression CLI failed",
+        )
+        verify_regression_result = run_console(
+            "lycheetah-assure", "verify-regression", str(regression_path), "--json"
+        )
+        require(
+            verify_regression_result.returncode == 0,
+            verify_regression_result.stderr or verify_regression_result.stdout,
+        )
+        require(
+            json.loads(verify_regression_result.stdout)["valid"] is True,
+            "regression report verification failed",
+        )
 
     from lycheetah.applications.web_demo import app
 
@@ -173,6 +204,7 @@ def main() -> int:
                 "mcp_tools": tools,
                 "schema_packaged": True,
                 "evaluation_harness": True,
+                "regression_gate": True,
                 "otel_event": True,
             },
             indent=2,

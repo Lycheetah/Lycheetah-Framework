@@ -16,8 +16,10 @@ The product spine must remain useful without depending on speculative theory. Fr
 
 **2026-08-22 infrastructure note:** The v0.1 policy evaluation harness now
 computes decision confusion, false blocks, harmful allows, review load, and CI
-gates on strict labelled corpora. The included six-case authored fixture is not
-the preregistered, independent comparison required by this hypothesis.
+gates on strict labelled corpora. The v0.1 same-corpus regression gate now makes
+baseline-to-candidate decision changes inspectable and fails strict defaults on
+new regressions or trade-offs. The included six-case authored fixture is not the
+preregistered, independent comparison required by this hypothesis.
 
 **Falsifier:** No calibration benefit, or a material increase in harmful completion that cannot be corrected without collapsing back to the comparison policy.
 

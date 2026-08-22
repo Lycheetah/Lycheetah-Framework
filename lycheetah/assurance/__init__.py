@@ -34,6 +34,12 @@ from .receipt import (
     ReceiptLog,
     VerificationReport,
 )
+from .regression import (
+    REGRESSION_SCHEMA_VERSION,
+    RegressionGate,
+    RegressionReport,
+    compare_evaluations,
+)
 from .runtime import ASSURANCE_VERSION, AssuranceRuntime
 
 __all__ = [
@@ -58,11 +64,15 @@ __all__ = [
     "PolicyError",
     "ReceiptError",
     "ReceiptLog",
+    "REGRESSION_SCHEMA_VERSION",
+    "RegressionGate",
+    "RegressionReport",
     "Severity",
     "TextRule",
     "VerificationReport",
     "add_receipt_event",
     "capped_disposition",
+    "compare_evaluations",
     "default_policy",
     "enforcement_cap",
     "evaluate_corpus",

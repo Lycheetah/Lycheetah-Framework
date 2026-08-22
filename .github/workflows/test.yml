@@ -38,6 +38,20 @@ jobs:
         python -m pytest tests/ -q -m "active"
         echo "All [ACTIVE] claim tests passed."
 
+    - name: Run strict policy regression gate
+      run: |
+        mkdir -p build/assurance
+        lycheetah-assure eval \
+          examples/assurance/customer_support_eval.jsonl \
+          --policy examples/assurance/customer_support_policy.json \
+          --report-file build/assurance/customer-support-candidate.json
+        lycheetah-assure compare-eval \
+          examples/assurance/customer_support_baseline.eval.json \
+          build/assurance/customer-support-candidate.json \
+          --report-file build/assurance/customer-support-regression.json
+        lycheetah-assure verify-regression \
+          build/assurance/customer-support-regression.json --json
+
     - name: Build wheel
       run: python -m build --wheel
 

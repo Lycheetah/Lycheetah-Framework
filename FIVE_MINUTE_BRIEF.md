@@ -1,6 +1,6 @@
 # Five-Minute Brief — Lycheetah Framework
 
-**Revision:** 2026-08-22 | **Runtime:** 1.2.0 source tree | **Status:** `[MIXED]`
+**Revision:** 2026-08-22 | **Runtime:** 1.3.0 source tree | **Status:** `[MIXED]`
 
 ## Share card
 
@@ -15,7 +15,7 @@
 
 ## What can be used today
 
-The version 1.2.0 source tree builds an installable wheel containing:
+The version 1.3.0 source tree builds an installable wheel containing:
 
 - `AssuranceRuntime` for input, output, and proposed tool actions;
 - versioned policy data and `ALLOW`, `REVIEW`, or `BLOCK` decisions;
@@ -26,6 +26,8 @@ The version 1.2.0 source tree builds an installable wheel containing:
 - Lycheetah Guard using the official MCP Python SDK 2.x API with ten typed tools;
 - a privacy-minimised OpenTelemetry span-event bridge with custom Lycheetah attributes;
 - a strict labelled-corpus policy evaluator with confusion metrics and CI gates;
+- a same-corpus policy regression gate with integrity-checked reference and
+  candidate reports, strict zero-regression defaults, and per-case change evidence;
 - AURA and Sol text-analysis interfaces, explicitly bounded as heuristics; and
 - a clean-room wheel gate that rejects imports accidentally resolved from the
   source checkout.
@@ -124,7 +126,7 @@ its counts differ. `28_DEFENSE/CLAIMS_README.md` explains the scopes.
 The full suite deliberately retains a failed predictive conjecture: its measured
 F1 remains about 0.53 against a stated success criterion above 0.80. That failure
 is evidence about the current limit, not a test to be hidden. On 2026-08-22, the
-non-conjectural suite reported **406 passed**; the full suite reported **406 passed,
+non-conjectural suite reported **427 passed**; the full suite reported **427 passed,
 1 failed**, with that single failure carrying the `CONJECTURE` marker.
 
 ## Test it

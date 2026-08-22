@@ -1,4 +1,4 @@
-# Quickstart — Lycheetah Framework 1.2
+# Quickstart — Lycheetah Framework 1.3
 
 **Status:** `[SCAFFOLD]` runtime and `[MIXED]` research body. A decision receipt is
 not a safety, truth, alignment, or compliance certificate.
@@ -79,6 +79,13 @@ lycheetah-assure eval \
   --report-file assurance-eval.json
 
 lycheetah-assure verify-eval assurance-eval.json --json
+
+lycheetah-assure compare-eval \
+  examples/assurance/customer_support_baseline.eval.json \
+  assurance-eval.json \
+  --report-file policy-regression.json
+
+lycheetah-assure verify-regression policy-regression.json --json
 ```
 
 The report contains a three-class confusion matrix, exact-match and macro-F1,
@@ -89,7 +96,8 @@ tool arguments are excluded.
 Expected dispositions are labels supplied by the corpus author—not automatic
 ground truth. A six-case included example passing six cases is an internal
 regression fixture, not an external benchmark or calibration result. See
-[Policy Evaluation Harness](34_ASSURANCE_RUNTIME/POLICY_EVALUATION_HARNESS.md).
+[Policy Evaluation Harness](34_ASSURANCE_RUNTIME/POLICY_EVALUATION_HARNESS.md)
+and [Policy Regression Gate](34_ASSURANCE_RUNTIME/POLICY_REGRESSION_GATE.md).
 
 ## Write and verify receipts
 
@@ -185,6 +193,7 @@ packaging failure recorded as Failure Museum Exhibit 16.
 - [Receipt specification](34_ASSURANCE_RUNTIME/ASSURANCE_RECEIPT_SPEC_v0.1.md)
 - [Evidence-Capped Enforcement](34_ASSURANCE_RUNTIME/EVIDENCE_CAPPED_ENFORCEMENT_v0.1.md)
 - [Policy Evaluation Harness](34_ASSURANCE_RUNTIME/POLICY_EVALUATION_HARNESS.md)
+- [Policy Regression Gate](34_ASSURANCE_RUNTIME/POLICY_REGRESSION_GATE.md)
 - [Industry crosswalk](34_ASSURANCE_RUNTIME/INDUSTRY_CROSSWALK_2026-08-22.md)
 - [Claims register](28_DEFENSE/CLAIMS.json)
 - [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md)
