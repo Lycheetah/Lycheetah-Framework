@@ -1,0 +1,39 @@
+{
+  "id": "example.customer-support",
+  "version": "0.1.0",
+  "description": "Example policy for a support agent that may read orders and propose reviewed changes.",
+  "text": {
+    "manipulation_review_threshold": 0.25,
+    "aura_review_below_percent": 70.0,
+    "max_text_characters": 20000,
+    "rules": [
+      {
+        "id": "support.unreviewed-guarantee",
+        "pattern": "\\b(?:guarantee|100\\s*%)\\b",
+        "title": "Customer guarantee requires review",
+        "description": "The output contains an unqualified guarantee; this example policy routes it to a person.",
+        "phases": ["output"],
+        "requested_disposition": "REVIEW",
+        "claim_status": "SCAFFOLD",
+        "deterministic": false,
+        "severity": "HIGH",
+        "status_basis": "Example business rule; external calibration has not been performed."
+      }
+    ]
+  },
+  "tools": {
+    "require_approval_for_side_effects": true,
+    "denied": ["shell*", "database.drop*", "identity.delete*"],
+    "review": ["refund*", "cancel*", "send_email*"],
+    "allowlist": ["order.read", "knowledge.search", "refund*", "cancel*", "send_email*"],
+    "blocked_scopes": ["payments.unlimited", "identity.admin", "production.shell"]
+  },
+  "privacy": {
+    "capture_content": false,
+    "capture_arguments": false,
+    "capture_evidence_spans": false,
+    "sensitive_argument_keys": [
+      "password", "secret", "token", "authorization", "api_key", "cookie", "credential"
+    ]
+  }
+}

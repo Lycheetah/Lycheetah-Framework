@@ -16,21 +16,17 @@ Web demo:   python -m lycheetah.web
 
 from __future__ import annotations
 
-__version__ = "1.0.0"
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .applications.aura_text_checker import AURATextReport
+
+__version__ = "1.1.0"
 __author__  = "Mackenzie Conor James Clark"
 __license__ = "MIT"
 
-import sys
-import os
 
-# Make core and applications importable as lycheetah.core / lycheetah.applications
-_HERE = os.path.dirname(os.path.abspath(__file__))
-_IMPL = os.path.join(os.path.dirname(_HERE), "12_IMPLEMENTATIONS")
-if _IMPL not in sys.path:
-    sys.path.insert(0, _IMPL)
-
-
-def check(text: str, context: str = "") -> "AURATextReport":
+def check(text: str, context: str = "") -> AURATextReport:
     """
     Run a full constitutional alignment check on any text.
 
@@ -51,7 +47,7 @@ def check(text: str, context: str = "") -> "AURATextReport":
         for inv in r.invariants:
             print(inv.name, inv.passed)
     """
-    from applications.aura_text_checker import AURATextAnalyser
+    from .applications.aura_text_checker import AURATextAnalyser
     return AURATextAnalyser().analyse(text)
 
 
@@ -65,7 +61,7 @@ def sol_assess(text: str, context: str = "") -> str:
     - Session coherence trend
     - Detected mode and emotional register
     """
-    from core.sol_self_protocol import SolSelfProtocol
+    from .core.sol_self_protocol import SolSelfProtocol
     return SolSelfProtocol().assess_full(text, context)
 
 

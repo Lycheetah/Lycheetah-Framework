@@ -24,16 +24,30 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest pytest-cov numpy scipy
+        pip install -e ".[all]" build
 
     - name: Run tests
       run: |
         python -m pytest tests/ -v --tb=short \
-          --cov=12_IMPLEMENTATIONS/core \
+          --cov=lycheetah \
           --cov-report=term-missing \
-          -m "active or scaffold"
+          -m "not conjecture"
 
     - name: Run active-only (no scaffold)
       run: |
         python -m pytest tests/ -q -m "active"
         echo "All [ACTIVE] claim tests passed."
+
+    - name: Build wheel
+      run: python -m build --wheel
+
+    - name: Smoke-test wheel in isolation
+      shell: bash
+      run: |
+        wheel_path="$(find dist -maxdepth 1 -name '*.whl' -print -quit)"
+        python -m venv /tmp/lycheetah-wheel-base
+        /tmp/lycheetah-wheel-base/bin/pip install "${wheel_path}"
+        /tmp/lycheetah-wheel-base/bin/python tools/verify_base_distribution.py
+        python -m venv /tmp/lycheetah-wheel-smoke
+        /tmp/lycheetah-wheel-smoke/bin/pip install "${wheel_path}[all]"
+        /tmp/lycheetah-wheel-smoke/bin/python tools/verify_installed_distribution.py

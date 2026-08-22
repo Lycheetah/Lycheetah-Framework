@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lycheetah-framework"
-version = "1.0.0"
-description = "Constitutional AI alignment — TRI-AXIAL metrics, Seven Invariants, Sol self-protocol, Psi-Consensus"
+version = "1.1.0"
+description = "Evidence-capped AI assurance receipts with experimental constitutional alignment heuristics"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
     {name = "Mackenzie Conor James Clark", email = "mac@lycheetah.nz"},
 ]
@@ -24,7 +24,6 @@ classifiers = [
     "Intended Audience :: Science/Research",
     "Intended Audience :: Developers",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -38,29 +37,30 @@ dependencies = [
 
 [project.optional-dependencies]
 web   = ["flask>=3.0"]
-mcp   = ["mcp>=1.0"]
-dev   = ["pytest>=7.0", "pytest-cov>=4.0"]
-all   = ["flask>=3.0", "mcp>=1.0", "pytest>=7.0", "pytest-cov>=4.0"]
+mcp   = ["mcp>=2.0,<3.0"]
+dev   = ["pytest>=7.0", "pytest-cov>=4.0", "jsonschema>=4.23"]
+all   = ["flask>=3.0", "mcp>=2.0,<3.0", "pytest>=7.0", "pytest-cov>=4.0", "jsonschema>=4.23"]
 
 [project.scripts]
 lycheetah-check = "lycheetah.cli:check_alignment_cli"
 lycheetah-web   = "lycheetah.cli:web_demo_cli"
 lycheetah-guard = "lycheetah.cli:guard_cli"
+lycheetah-assure = "lycheetah.cli:assure_cli"
 
 [project.urls]
 Homepage      = "https://github.com/Lycheetah/Lycheetah-Framework"
 Repository    = "https://github.com/Lycheetah/Lycheetah-Framework"
-Documentation = "https://github.com/Lycheetah/Lycheetah-Framework/tree/master/12_IMPLEMENTATIONS"
+Documentation = "https://github.com/Lycheetah/Lycheetah-Framework/tree/master/34_ASSURANCE_RUNTIME"
 Discussions   = "https://github.com/Lycheetah/Lycheetah-Framework/discussions"
 "Issue Tracker" = "https://github.com/Lycheetah/Lycheetah-Framework/issues"
-"Failure Museum" = "https://github.com/Lycheetah/Lycheetah-Framework/blob/master/FAILURE_MUSEUM.md"
+"Failure Museum" = "https://github.com/Lycheetah/Lycheetah-Framework/blob/master/28_DEFENSE/FAILURE_MUSEUM.md"
 
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["lycheetah*"]
 
 [tool.setuptools.package-data]
-"lycheetah" = ["py.typed"]
+"lycheetah.assurance" = ["schemas/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

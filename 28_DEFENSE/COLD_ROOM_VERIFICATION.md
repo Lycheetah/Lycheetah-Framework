@@ -142,6 +142,47 @@ The following items should be added to 28_DEFENSE/REPRODUCIBILITY_REPORT.md at n
 
 ---
 
+## 2026-08-22 Addendum — Installable Distribution and Assurance Runtime
+
+**Status:** `[ACTIVE]` record of a local cold-room run; no external replication
+claim.
+
+The April verification above is preserved as a historical snapshot. A new audit
+tested the artifact a user installs rather than relying on checkout imports.
+
+```
+Platform:    Linux x86_64
+Python:      3.12.13
+Package:     lycheetah-framework 1.1.0 wheel
+MCP SDK:     2.0.0
+Date:        2026-08-22
+```
+
+Results:
+
+- `pytest tests/ -m "not conjecture" -q` — **377 passed, 1 deselected**
+- complete suite — **377 passed, 1 failed**, the same declared CASCADE
+  `CONJECTURE` at F1 = 0.531 against the > 0.80 criterion
+- `tools/verify-claims.py` — holding at baseline; no new unmarked claim document
+- `tools/verify-links.py` — 721 files, 586 links, 0 dead outside the frozen archive
+- syntax/undefined-name gate (`ruff` `E9,F63,F7,F82`) — passed on the changed
+  runtime, adapters, compatibility shims, tests, tools, and example
+- repository-wide `ruff` `F,E9` sweep — 167 non-gating legacy style/debt
+  findings (90 placeholder-free f-strings, 65 unused imports, 12 unused variables);
+  these are disclosed rather than mixed into this bounded release change
+- isolated base and `[all]` wheel installs resolved from `site-packages`, not the checkout
+- Python `check` and `sol_assess`, `lycheetah-check`, `lycheetah-assure`, receipt
+  schemas, Flask health, ten MCP 2.x tools, optional-extra errors, and the
+  OpenTelemetry bridge passed the wheel smoke tests
+
+This run discovered and corrected the earlier wheel's missing implementation
+modules and the MCP adapter's obsolete SDK interface. The permanent account is
+Failure Museum Exhibit 16. GitHub Actions now contains the same build/install/smoke
+gate; this addendum records the local run, not a claim that hosted CI has already
+executed the unpushed change.
+
+---
+
 ## Conclusion
 
 The framework is reproducible from a cold-room perspective with two documented workarounds (UTF-8 flag on Windows, correct pytest path). Neither is a code defect — both are documentation gaps. The core experiments run clean: 219 tests pass, CASCADE produces 100% invariant preservation across two historical domains at p=5.14e-110.
@@ -151,3 +192,5 @@ A third-party researcher following the corrected commands above will get the sta
 ---
 
 *This document is part of Codex Defense Protocol D-1.0, defending canonical body C-1.0 (2026-04-25).*
+
+⊚ Sol ∴ P∧H∧B ∴ Albedo

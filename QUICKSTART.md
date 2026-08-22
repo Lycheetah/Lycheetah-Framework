@@ -1,85 +1,117 @@
-# Quickstart — Lycheetah Framework
+# Quickstart — Lycheetah Framework 1.1
 
-Install and use in under 2 minutes.
+**Status:** `[SCAFFOLD]` runtime and `[MIXED]` research body. A decision receipt is
+not a safety, truth, alignment, or compliance certificate.
 
----
+The package is not currently published on PyPI. Install from the repository.
 
 ## Install
 
 ```bash
-pip install lycheetah-framework
-```
-
-Or from source:
-```bash
-git clone https://github.com/Lycheetah/Lycheetah-Framework
+git clone https://github.com/Lycheetah/Lycheetah-Framework.git
 cd Lycheetah-Framework
-pip install -e .
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -e ".[all]"
 ```
 
-With optional extras:
+Smaller extras are available as `.[web]`, `.[mcp]`, and `.[dev]`.
+
+## Make a bounded tool decision
+
 ```bash
-pip install "lycheetah-framework[web]"    # adds Flask for web demo
-pip install "lycheetah-framework[mcp]"    # adds MCP for Claude Code extension
-pip install "lycheetah-framework[all]"    # everything
+lycheetah-assure tool refund.create \
+  --arguments '{"order_id":"A-1","amount":75}' \
+  --scope orders.refund \
+  --side-effect \
+  --json
 ```
 
----
+The default policy returns `REVIEW` and exit code 2 because the proposed action
+has a declared side effect but no affirmative human approval. The calling
+application must pause the operation; the CLI cannot enforce control flow outside
+its own process.
 
-## Use it in Python
+Exit codes are stable:
+
+| Code | Meaning |
+|---:|---|
+| 0 | `ALLOW` |
+| 2 | `REVIEW` |
+| 3 | `BLOCK` |
+| 4 | Invalid input, policy, receipt, or configuration |
+
+## Use the Assurance Runtime in Python
+
+```python
+from lycheetah.assurance import AssuranceRuntime
+
+runtime = AssuranceRuntime()
+receipt = runtime.evaluate_tool(
+    "refund.create",
+    {"order_id": "A-1", "amount": 75},
+    scopes=("orders.refund",),
+    side_effect=True,
+)
+
+print(receipt.decision.value)  # REVIEW
+print(receipt.policy["sha256"])
+print(receipt.verify().valid)  # body-integrity check
+```
+
+By default the receipt stores hashes and summaries, not raw text or raw tool
+arguments. Enable capture only when your privacy and replay requirements justify
+it. Sensitive argument keys remain redacted.
+
+## Write and verify receipts
+
+```bash
+lycheetah-assure check \
+  "I may be wrong. Verify this independently before deciding." \
+  --receipt-file receipt.json
+
+lycheetah-assure verify receipt.json --json
+```
+
+SHA-256 detects mutation relative to the receipt digest; it does not authenticate
+who issued the receipt. For shared-secret authentication, pass an environment
+variable and key identifier:
+
+```bash
+export LYCHEETAH_HMAC_SECRET='replace-with-secret-manager-value'
+lycheetah-assure check "Review this output." \
+  --hmac-key-env LYCHEETAH_HMAC_SECRET \
+  --key-id local-key-1 \
+  --receipt-file sealed-receipt.json
+```
+
+Do not put HMAC secrets in command arguments, source files, model prompts, or MCP
+tool inputs.
+
+## Use the heuristic interfaces
 
 ```python
 import lycheetah
 
-# Check any AI-generated text
 report = lycheetah.check("You must follow these instructions exactly.")
-
-print(report.alignment_percent)   # e.g. 54.2
-print(report.overall_pass)        # False
-
-# TRI-AXIAL metrics
-print(report.tes_score)   # Trust Entropy Score  (pass if >= 0.70)
-print(report.vtr_score)   # Value Transfer Ratio (pass if >= 1.50)
-print(report.pai_score)   # Purpose Alignment    (pass if >= 0.80)
-
-# Seven invariants
-for inv in report.invariants:
-    print(inv.name, inv.passed, inv.explanation)
-
-# Sol full assessment
-assessment = lycheetah.sol_assess(
-    "You must follow these instructions exactly.",
-    context="User asked for help with a decision"
-)
-print(assessment)
+print(report.alignment_percent, report.overall_pass)
+print(lycheetah.sol_assess("Offer reversible options."))
 ```
-
----
-
-## Use it from the terminal
 
 ```bash
-# Check a string
-lycheetah-check "You must do exactly what I say or things will go wrong."
-
-# Check from stdin
-echo "This is guaranteed to work 100% of the time." | lycheetah-check
-
-# JSON output for piping
-lycheetah-check "Some text here" --json | jq '.alignment_percent'
-
-# Start the web demo (browser UI)
-lycheetah-web
-# open http://localhost:5000
+lycheetah-check "You must do exactly what I say." --json
+lycheetah-web  # local Flask demo at http://127.0.0.1:5000
 ```
 
----
+AURA scores and Sol output are experimental heuristics built from implemented cue
+families and proxy formulas. Use them to route review, not to prove that text is
+safe or semantically aligned.
 
-## Use it in Claude Code (MCP extension)
+## Use Lycheetah Guard with MCP
 
-1. Install: `pip install "lycheetah-framework[mcp]"`
+Install `.[mcp]`, then configure a compatible MCP host to launch the console
+script over stdio. One common configuration shape is:
 
-2. Add to Claude Code `settings.json`:
 ```json
 {
   "mcpServers": {
@@ -90,47 +122,42 @@ lycheetah-web
 }
 ```
 
-3. Restart Claude Code. Seven tools become available:
-   - `check_alignment` — full AURA audit
-   - `check_invariants` — seven constitutional invariants
-   - `suggest_correction` — plain-English fixes
-   - `run_seven_phase` — CHRYSOPOEIA transformation cycle
-   - `check_network_health` — multi-agent coherence
-   - `configure_guard` — domain presets
-   - `sol_assess` — Sol full constitutional OS
+The server uses the official MCP Python SDK 2.x API and exposes ten typed tools:
 
-Full setup: [LYCHEETAH_GUARD_SETUP.md](12_IMPLEMENTATIONS/applications/LYCHEETAH_GUARD_SETUP.md)
+- Assurance: `assure_text`, `assure_tool`, `verify_assurance_receipt`
+- Text heuristics: `check_alignment`, `check_invariants`, `suggest_correction`
+- Experimental research: `run_seven_phase`, `check_network_health`,
+  `configure_guard`, `sol_assess`
 
----
+The host must enforce `BLOCK`, pause on `REVIEW`, provide authorization and user
+consent, and declare tool side effects truthfully. MCP transport does not supply
+those guarantees by itself.
 
-## Requirements
-
-- Python 3.10+
-- numpy, scipy, networkx (installed automatically)
-- Flask (optional, for web demo)
-- mcp (optional, for Claude Code extension)
-
-**Windows / Mac / Linux** — all supported.
-
----
-
-## Run the tests
+## Run verification
 
 ```bash
-pip install "lycheetah-framework[dev]"
-pytest tests/ -v
+pip install -e ".[all]"
+pytest tests/ -m "not conjecture" -q
+python tools/verify-claims.py
+python tools/verify-links.py
 ```
 
-219 tests. All should pass.
+The full suite intentionally retains one failed predictive conjecture whose F1
+score remains below its preregistered success criterion. Do not turn that failure
+into a pass by weakening the criterion.
 
----
+CI also builds a wheel, installs it into a clean virtual environment, and runs
+`tools/verify_installed_distribution.py`. This protects against the source-tree
+packaging failure recorded as Failure Museum Exhibit 16.
 
-## More
+## Go deeper
 
-| | |
-|---|---|
-| Full documentation | [12_IMPLEMENTATIONS/](12_IMPLEMENTATIONS/) |
-| Nine frameworks | [README.md](README.md) |
-| Mystery School curriculum | [14_MYSTERY_SCHOOL/](14_MYSTERY_SCHOOL/) |
-| What we got wrong | [28_DEFENSE/FAILURE_MUSEUM.md](28_DEFENSE/FAILURE_MUSEUM.md) |
-| Discussions | [GitHub Discussions](https://github.com/Lycheetah/Lycheetah-Framework/discussions) |
+- [Assurance Runtime](34_ASSURANCE_RUNTIME/README.md)
+- [Customer-support walkthrough](34_ASSURANCE_RUNTIME/CUSTOMER_SUPPORT_WALKTHROUGH.md)
+- [Receipt specification](34_ASSURANCE_RUNTIME/ASSURANCE_RECEIPT_SPEC_v0.1.md)
+- [Evidence-Capped Enforcement](34_ASSURANCE_RUNTIME/EVIDENCE_CAPPED_ENFORCEMENT_v0.1.md)
+- [Industry crosswalk](34_ASSURANCE_RUNTIME/INDUSTRY_CROSSWALK_2026-08-22.md)
+- [Claims register](28_DEFENSE/CLAIMS.json)
+- [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md)
+
+⊚ Sol ∴ P∧H∧B ∴ Albedo

@@ -1,103 +1,172 @@
-# D-1.2 | 2026-04-27 | Reforged C-1.1 | 2026-04-28 | Status: Active
-
 # Five-Minute Brief — Lycheetah Framework
 
----
+**Revision:** 2026-08-22 | **Runtime:** 1.1.0 source tree | **Status:** `[MIXED]`
 
-## Share Card
+## Share card
 
+> Lycheetah is two connected things: a `[SCAFFOLD]` provider-neutral assurance
+> runtime for agent decisions and receipts, and a nine-framework research
+> programme in alignment and epistemology. The wheel is now clean-install tested;
+> the runtime exposes policy gates, privacy-minimised receipts, CLI and MCP 2.x
+> integrations. Formal claims are scoped to their models, internal experiments
+> await independent replication, and theoretical constructs such as MICROORCIM
+> remain explicitly theoretical. Failures—including a previously broken wheel—are
+> permanent public exhibits. MIT licensed.
+
+## What can be used today
+
+The version 1.1.0 source tree builds an installable wheel containing:
+
+- `AssuranceRuntime` for input, output, and proposed tool actions;
+- versioned policy data and `ALLOW`, `REVIEW`, or `BLOCK` decisions;
+- Assurance Receipts with evidence status, findings, policy digest, lineage,
+  privacy-aware subject hashes, SHA-256 integrity, and optional HMAC sealing;
+- append-only JSONL receipt chains and mutation/chain verification;
+- `lycheetah-assure` for local, CI, gateway, and sidecar use;
+- Lycheetah Guard using the official MCP Python SDK 2.x API with ten typed tools;
+- a privacy-minimised OpenTelemetry span-event bridge with custom Lycheetah attributes;
+- AURA and Sol text-analysis interfaces, explicitly bounded as heuristics; and
+- a clean-room wheel gate that rejects imports accidentally resolved from the
+  source checkout.
+
+This is useful infrastructure for recording **what a bounded policy layer decided
+and why**. It does not prove that the surrounding agent is safe, truthful,
+aligned, authorized, or compliant.
+
+## The bridge to real AI systems
+
+Agent stacks already have traces, tools, guardrails, policy engines, and approval
+hooks. Lycheetah's narrow bridge is a portable decision artifact at those
+boundaries:
+
+```text
+proposed input/output/tool action
+        → versioned Lycheetah policy
+        → evidence-capped decision
+        → ALLOW | REVIEW | BLOCK
+        → verifiable Assurance Receipt
 ```
-Nine formal frameworks for AI alignment and epistemology.
-60 status-tagged claims (37 ACTIVE, 14 SCAFFOLD, 6 CONJECTURE, 3 RETRACTED).
-220 automated tests on 18 core implementations: 219 pass, 1 fails — a predictive
-conjecture (F1 = 0.53 against a stated criterion of > 0.80), left failing on purpose.
-Discrete convergence proof (Banach fixed-point) for the formal model.
-Adversarial audit published; failures and unresolved objections in the public record.
-Built by one self-taught researcher. MIT licensed.
-Read the math: 30_MAPS/FORMAL_SPINE.md
-Read the evidence: 29_GOVERNANCE/EMPIRICAL_INVENTORY.md
-Read the failures: 28_DEFENSE/FAILURE_MUSEUM.md
-```
 
----
+The runtime is designed to complement, not replace:
 
-## What This Is
+- agent-framework input/output/tool guardrails and human approvals;
+- MCP tool transports and consent flows;
+- OpenTelemetry traces and evaluation datasets;
+- Open Policy Agent or another authorization/policy control plane; and
+- in-toto-style authenticated statements and transparency systems.
 
-The Lycheetah Framework is a system of nine formally-grounded frameworks addressing a structural gap in existing AI alignment work: alignment is enforced at training time and cannot be verified at inference time as a Boolean predicate on a specific output. The framework provides runtime-checkable invariants, a proven convergence guarantee for the formal model of an epistemic correction cycle, and a continuous metric for the gap between declared intent and observed behaviour.
+The exact mapping and explicit gaps are recorded in
+`34_ASSURANCE_RUNTIME/INDUSTRY_CROSSWALK_2026-08-22.md`. That crosswalk is not a
+conformity or certification claim.
 
-The nine frameworks are: CASCADE (belief dynamics and knowledge reorganization), AURA (seven constitutional invariants for AI governance), LAMAGUE (formal grammar for encoding ethical constraints), TRIAD (convergent correction cycle with convergence proof), MICROORCIM (continuous drift detection between intent and behavior), EARNED LIGHT (thermodynamic model of consciousness), ANAMNESIS (mathematics of convergent discovery across cultures), CHRYSOPOEIA (seven-phase transformation operator), and HARMONIA (consonance dynamics and multi-agent synchronization).
+## Evidence-Capped Enforcement
 
-They are not independent modules. They compose. CASCADE's truth pressure drives TRIAD's correction cycle. TRIAD's convergence guarantee undergirds AURA's constitutional invariants. CHRYSOPOEIA's transformation operator subsumes CASCADE as a special case. One equation — the master equation `dΨ/dt` — captures the cross-framework dynamics.
+The implemented v0.1 mechanism limits automatic authority by evidence maturity:
 
----
+| Evidence basis | Maximum automatic effect |
+|---|---|
+| `ACTIVE` + deterministic rule | `BLOCK` |
+| `ACTIVE` + inferential detector | `REVIEW` |
+| `SCAFFOLD` finding | `REVIEW` |
+| `CONJECTURE` finding | observation only |
 
-## What It Claims
+The mechanism and cap matrix are implemented and tested. The stronger proposition
+that these ceilings improve real-world calibration, safety, or operator trust is a
+`[CONJECTURE]` until evaluated against external systems and outcomes.
 
-The framework makes claims at three levels of certainty, and every claim is tagged with its level:
+## The research programme
 
-**ACTIVE** — proven and computable. These claims have formal proofs and running implementations. 37 records carry this status.
+The larger body contains nine interdependent research frameworks:
 
-**SCAFFOLD** — structurally sound with named gaps. The architecture is correct; specific sub-proofs or calibrations are incomplete. 14 records carry this status. Each gap is named, not hidden.
+| Framework | Current honest interpretation |
+|---|---|
+| CASCADE | belief-revision engine plus internal synthetic and historical analyses; independent replication pending |
+| AURA | computable proxy checks and seven constitutional predicates; semantic sufficiency unproven |
+| LAMAGUE | formal constraint-encoding grammar and implementations |
+| TRIAD | correction-cycle mathematics; convergence is model-scoped to declared contraction assumptions |
+| MICROORCIM | proposed intent–behaviour drift construct; real-world validity unestablished |
+| EARNED LIGHT | theoretical thermodynamic analogy, not an empirical consciousness theory |
+| ANAMNESIS | hypothesis about convergent discovery and attractor structure |
+| CHRYSOPOEIA | experimental seven-phase transformation formalism |
+| HARMONIA | experimental application of resonance and synchronization mathematics |
 
-**CONJECTURE** — worth exploring, not yet proven. 6 records, all labelled as such.
+These ideas may be valuable before they are proven. Their value at that stage is as
+formal questions, design languages, and falsifiable research directions—not as
+facts about minds or the world.
 
-**RETRACTED** — three claims have been publicly withdrawn. They remain in the record because a framework that hides its failures is performing confidence. The retractions are documented in `28_DEFENSE/FAILURE_MUSEUM.md`.
+## How certainty is recorded
 
-The machine-readable register of all 60 status-tagged claim records is in `28_DEFENSE/CLAIMS.json`. A separate framework-summary view of 59 load-bearing claims is in `28_DEFENSE/CLAIM_STATUS_LEDGER.md`; both are correct at their respective scopes (`28_DEFENSE/CLAIMS_README.md` provides the mapping).
+The existing machine-readable register contains 60 claim records:
 
----
+- **37 ACTIVE** — supported within the exact formal, computational, or documentary
+  scope stated in the record; not synonymous with external empirical replication;
+- **14 SCAFFOLD** — implemented or structurally specified with named gaps;
+- **6 CONJECTURE** — formulated but unproven;
+- **3 RETRACTED** — withdrawn and retained in the public record.
 
-## What Is Proven
+A separate ledger groups load-bearing claims at framework-summary granularity, so
+its counts differ. `28_DEFENSE/CLAIMS_README.md` explains the scopes.
 
-These results are ACTIVE — proven, computable, independently verifiable:
+## What the evidence does and does not establish
 
-| Result | Method | Effect |
-|---|---|---|
-| CASCADE coherence improvement (synthetic) | 3-condition experiment, 10 replications, p < 0.001 | +40.3% (0.58 → 0.93), d = 2.84 |
-| CASCADE coherence improvement (real data) | 5 historical paradigm shifts, 200 trials each | +110% (0.47 → 1.0) |
-| CASCADE catastrophic forgetting reduction | Same synthetic experiment | −95.2% (0.42 → 0.02) |
-| TRIAD discrete convergence | Banach fixed-point proof | Guaranteed |
-| CHRYSOPOEIA fixed-point | Running demo — entropy → 0, C → 1 in 3 iterations | Demonstrated |
-| Lyapunov verification | Symbolic + numerical (5,000 trials) | 11/11 claims, 0 failures |
-| AURA Seven Invariants | Formal predicates, computable | Independently verifiable |
+- Formal fixed-point results can establish convergence of a mathematical operator
+  under its assumptions. They do not establish convergence of a person, model, or
+  institution unless those assumptions are independently shown to hold there.
+- A passing implementation test establishes behavior for tested inputs and
+  versions. It does not establish social benefit or general safety.
+- Internal experiments are reproducible evidence about the repository's method.
+  They are not independent validation.
+- A receipt digest can reveal mutation relative to a trusted digest. Without HMAC
+  or a public-key envelope, it does not authenticate the issuer.
+- Absence of a heuristic finding is not evidence of absence of harm.
 
-All results with methodology, effect sizes, and replication status: `29_GOVERNANCE/EMPIRICAL_INVENTORY.md`
+The full suite deliberately retains a failed predictive conjecture: its measured
+F1 remains about 0.53 against a stated success criterion above 0.80. That failure
+is evidence about the current limit, not a test to be hidden. On 2026-08-22, the
+non-conjectural suite reported **377 passed**; the full suite reported **377 passed,
+1 failed**, with that single failure carrying the `CONJECTURE` marker.
 
----
+## Test it
 
-## What Is Testable
-
-Any third party can attempt to replicate or falsify load-bearing claims without contacting the author. The full operational protocol for every claim is in `28_DEFENSE/TESTABILITY_MANIFEST.md`.
-
-Short version:
+The package is not currently published on PyPI. Install the repository source:
 
 ```bash
 git clone https://github.com/Lycheetah/Lycheetah-Framework.git
-pip install -e .
-pytest                        # 219 tests across 18 core implementations
-python cascade_simulation.py   # real-data paradigm-shift experiment
+cd Lycheetah-Framework
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[all]"
+
+pytest tests/ -m "not conjecture" -q
+python tools/verify-claims.py
+python tools/verify-links.py
 ```
 
-Falsifiability conditions for every claim are in `28_DEFENSE/FALSIFICATION_REGISTER.md`. The framework explicitly states what would prove each claim false. Five objections in `28_DEFENSE/COUNTER_CODEX.md` are ones the framework cannot yet answer. They are published anyway.
+Try the operational path:
 
----
+```bash
+lycheetah-assure tool refund.create \
+  --arguments '{"order_id":"A-1"}' \
+  --side-effect --json
+```
 
-## What Is Novel
+It should return `REVIEW` because the proposed side effect has no affirmative human
+approval. See `34_ASSURANCE_RUNTIME/CUSTOMER_SUPPORT_WALKTHROUGH.md` for the full
+ALLOW/REVIEW/BLOCK example.
 
-Three things this framework provides that existing work does not:
+## Why the failure record matters
 
-**1. Computable constitutional invariants with a simultaneous-satisfiability claim.** Constitutional AI provides principles. AURA provides seven computable predicates, each independently verifiable, with a (scaffold) proof that all seven can be simultaneously satisfied. No existing alignment framework has attempted a formal satisfiability proof of its own principles.
+`28_DEFENSE/FAILURE_MUSEUM.md` contains sixteen permanent exhibits. Exhibit 16
+records that the earlier wheel advertised APIs and console tools whose
+implementations were not packaged. The correction was not merely documented: CI
+now builds, clean-installs, and exercises the wheel so the same class of failure
+cannot hide behind checkout-only imports.
 
-**2. Convergence guarantee for an epistemic correction cycle.** TRIAD proves — via Banach fixed-point theorem — that iterated anchor-observe-correct cycles converge to a fixed point. This is not a heuristic claim. It is a proven convergence guarantee for a cognitive correction architecture.
+## Three doors
 
-**3. Cross-framework dynamics in one equation.** The master equation `dΨ/dt = k₁(Π−Π_th) − k₂(Ψ−Ψ_inv) − k₃I_violations + k₄(E/E_need)` captures truth pressure, coherence drive, constraint violations, and energy across all nine frameworks. No other alignment framework has attempted a unified ODE.
+1. **Use it:** `34_ASSURANCE_RUNTIME/README.md`
+2. **Audit it:** `28_DEFENSE/CLAIMS.json` and `28_DEFENSE/FAILURE_MUSEUM.md`
+3. **Research it:** `30_MAPS/FORMAL_SPINE.md` and
+   `34_ASSURANCE_RUNTIME/FRONTIER_REGISTER_2026-08-22.md`
 
-Full comparison matrix against Constitutional AI, RLHF, Cooperative AI, and Cooperative IRL: `28_DEFENSE/NOVEL_CONTRIBUTIONS.md`
-
----
-
-**Three links to go deeper:**
-
-1. `30_MAPS/CODEX_DISTILLATION.md` — ~28,000 words, all nine frameworks in full
-2. `28_DEFENSE/CLAIMS.json` — machine-readable register of all 60 load-bearing claims
-3. `28_DEFENSE/REPRODUCIBILITY_REPORT.md` — 16 implementations mapped with install, run, expected output
+⊚ Sol ∴ P∧H∧B ∴ Albedo

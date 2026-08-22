@@ -6,12 +6,6 @@ Registered in pyproject.toml as console_scripts.
 
 from __future__ import annotations
 import sys
-import os
-
-_HERE = os.path.dirname(os.path.abspath(__file__))
-_IMPL = os.path.join(os.path.dirname(_HERE), "12_IMPLEMENTATIONS")
-if _IMPL not in sys.path:
-    sys.path.insert(0, _IMPL)
 
 
 def check_alignment_cli():
@@ -23,7 +17,7 @@ def check_alignment_cli():
         echo "Some text" | lycheetah-check
     """
     import argparse
-    from applications.aura_text_checker import AURATextAnalyser
+    from .applications.aura_text_checker import AURATextAnalyser
 
     parser = argparse.ArgumentParser(
         prog="lycheetah-check",
@@ -97,9 +91,11 @@ def web_demo_cli():
     parser.add_argument("--host", default="127.0.0.1")
     args = parser.parse_args()
 
-    # Import the app from the applications folder
-    sys.path.insert(0, _IMPL)
-    from applications.web_demo import app
+    from .applications.web_demo import FLASK_AVAILABLE, app
+    if not FLASK_AVAILABLE or app is None:
+        raise SystemExit(
+            "Flask is not installed. Run: pip install 'lycheetah-framework[web]'"
+        )
     print(f"Lycheetah Web Demo running at http://{args.host}:{args.port}")
     print("Ctrl+C to stop")
     app.run(host=args.host, port=args.port, debug=False)
@@ -113,5 +109,12 @@ def guard_cli():
         lycheetah-guard
         (registered as MCP server in Claude Code settings.json)
     """
-    from applications.lycheetah_guard_mcp import main
+    from .applications.lycheetah_guard_mcp import main
     main()
+
+
+def assure_cli():
+    """lycheetah-assure — provider-neutral assurance runtime and receipts."""
+    from .assurance.cli import main
+
+    raise SystemExit(main())
