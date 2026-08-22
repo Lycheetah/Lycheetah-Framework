@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lycheetah.dev/schemas/assurance-evaluation-report-0.1.json",
+  "title": "Lycheetah Assurance Evaluation Report v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "status", "runtime", "policy", "corpus", "summary",
+    "confusion_matrix", "per_class", "cases", "gate", "limitations", "integrity"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "status": {"const": "SCAFFOLD"},
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version"],
+      "properties": {
+        "name": {"const": "lycheetah-assurance"},
+        "version": {"type": "string", "minLength": 1}
+      }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version", "sha256"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "corpus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_name", "sha256", "case_count", "total_weight", "tags"],
+      "properties": {
+        "source_name": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "case_count": {"type": "integer", "minimum": 1},
+        "total_weight": {"type": "number", "exclusiveMinimum": 0},
+        "tags": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}
+      }
+    },
+    "summary": {"$ref": "#/$defs/summary"},
+    "confusion_matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["orientation", "counts", "weighted"],
+      "properties": {
+        "orientation": {"const": "expected_rows_actual_columns"},
+        "counts": {"$ref": "#/$defs/countMatrix"},
+        "weighted": {"$ref": "#/$defs/weightMatrix"}
+      }
+    },
+    "per_class": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ALLOW", "REVIEW", "BLOCK"],
+      "properties": {
+        "ALLOW": {"$ref": "#/$defs/classMetrics"},
+        "REVIEW": {"$ref": "#/$defs/classMetrics"},
+        "BLOCK": {"$ref": "#/$defs/classMetrics"}
+      }
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/outcome"}
+    },
+    "gate": {"$ref": "#/$defs/gate"},
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "canonicalization", "digest"],
+      "properties": {
+        "algorithm": {"const": "sha256"},
+        "canonicalization": {"const": "lycheetah-json-v1"},
+        "digest": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rate": {"type": "number", "minimum": 0, "maximum": 1},
+    "nullableRate": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_count", "total_weight", "exact_match_count", "exact_match_rate",
+        "under_enforcement_count", "under_enforcement_rate", "over_enforcement_count",
+        "over_enforcement_rate", "harmful_allow_count", "harmful_allow_weight",
+        "false_block_count", "false_block_weight", "review_count", "review_rate", "macro_f1"
+      ],
+      "properties": {
+        "case_count": {"type": "integer", "minimum": 1},
+        "total_weight": {"type": "number", "exclusiveMinimum": 0},
+        "exact_match_count": {"type": "integer", "minimum": 0},
+        "exact_match_rate": {"$ref": "#/$defs/rate"},
+        "under_enforcement_count": {"type": "integer", "minimum": 0},
+        "under_enforcement_rate": {"$ref": "#/$defs/rate"},
+        "over_enforcement_count": {"type": "integer", "minimum": 0},
+        "over_enforcement_rate": {"$ref": "#/$defs/rate"},
+        "harmful_allow_count": {"type": "integer", "minimum": 0},
+        "harmful_allow_weight": {"type": "number", "minimum": 0},
+        "false_block_count": {"type": "integer", "minimum": 0},
+        "false_block_weight": {"type": "number", "minimum": 0},
+        "review_count": {"type": "integer", "minimum": 0},
+        "review_rate": {"$ref": "#/$defs/rate"},
+        "macro_f1": {"$ref": "#/$defs/rate"}
+      }
+    },
+    "matrixRowCount": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ALLOW", "REVIEW", "BLOCK"],
+      "properties": {
+        "ALLOW": {"type": "integer", "minimum": 0},
+        "REVIEW": {"type": "integer", "minimum": 0},
+        "BLOCK": {"type": "integer", "minimum": 0}
+      }
+    },
+    "matrixRowWeight": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ALLOW", "REVIEW", "BLOCK"],
+      "properties": {
+        "ALLOW": {"type": "number", "minimum": 0},
+        "REVIEW": {"type": "number", "minimum": 0},
+        "BLOCK": {"type": "number", "minimum": 0}
+      }
+    },
+    "countMatrix": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ALLOW", "REVIEW", "BLOCK"],
+      "properties": {
+        "ALLOW": {"$ref": "#/$defs/matrixRowCount"},
+        "REVIEW": {"$ref": "#/$defs/matrixRowCount"},
+        "BLOCK": {"$ref": "#/$defs/matrixRowCount"}
+      }
+    },
+    "weightMatrix": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ALLOW", "REVIEW", "BLOCK"],
+      "properties": {
+        "ALLOW": {"$ref": "#/$defs/matrixRowWeight"},
+        "REVIEW": {"$ref": "#/$defs/matrixRowWeight"},
+        "BLOCK": {"$ref": "#/$defs/matrixRowWeight"}
+      }
+    },
+    "classMetrics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["support_count", "support_weight", "predicted_weight", "precision", "recall", "f1"],
+      "properties": {
+        "support_count": {"type": "integer", "minimum": 0},
+        "support_weight": {"type": "number", "minimum": 0},
+        "predicted_weight": {"type": "number", "minimum": 0},
+        "precision": {"$ref": "#/$defs/rate"},
+        "recall": {"$ref": "#/$defs/nullableRate"},
+        "f1": {"$ref": "#/$defs/rate"}
+      }
+    },
+    "finding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "effective_disposition", "claim_status", "deterministic"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "effective_disposition": {"enum": ["ALLOW", "REVIEW", "BLOCK"]},
+        "claim_status": {"enum": ["ACTIVE", "SCAFFOLD", "CONJECTURE"]},
+        "deterministic": {"type": "boolean"}
+      }
+    },
+    "outcome": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "expected", "actual", "exact_match", "direction", "weight", "tags", "subject_sha256", "findings"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "expected": {"enum": ["ALLOW", "REVIEW", "BLOCK"]},
+        "actual": {"enum": ["ALLOW", "REVIEW", "BLOCK"]},
+        "exact_match": {"type": "boolean"},
+        "direction": {"enum": ["EXACT", "UNDER", "OVER"]},
+        "weight": {"type": "number", "exclusiveMinimum": 0},
+        "tags": {"type": "array", "items": {"type": "string"}},
+        "subject_sha256": {"$ref": "#/$defs/sha256"},
+        "findings": {"type": "array", "items": {"$ref": "#/$defs/finding"}}
+      }
+    },
+    "gate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["configured", "passed", "thresholds", "failures"],
+      "properties": {
+        "configured": {"type": "boolean"},
+        "passed": {"type": "boolean"},
+        "thresholds": {
+          "type": "object", "additionalProperties": false,
+          "required": ["require_exact_match", "max_under_enforcement_rate", "max_harmful_allows", "max_false_blocks", "min_macro_f1"],
+          "properties": {
+            "require_exact_match": {"type": "boolean"},
+            "max_under_enforcement_rate": {"$ref": "#/$defs/nullableRate"},
+            "max_harmful_allows": {"type": ["integer", "null"], "minimum": 0},
+            "max_false_blocks": {"type": ["integer", "null"], "minimum": 0},
+            "min_macro_f1": {"$ref": "#/$defs/nullableRate"}
+          }
+        },
+        "failures": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

@@ -1,9 +1,20 @@
 import json
 from importlib.resources import files
+from pathlib import Path
 
 import jsonschema
 
-from lycheetah.assurance import AssuranceRuntime, default_policy
+from lycheetah.assurance import (
+    AssurancePolicy,
+    AssuranceRuntime,
+    EvaluationCorpus,
+    EvaluationGate,
+    default_policy,
+    evaluate_corpus,
+)
+
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def _schema(name):
@@ -24,3 +35,29 @@ def test_receipt_conforms_to_packaged_schema():
     jsonschema.Draft202012Validator(_schema("receipt.schema.json")).validate(
         receipt.to_dict()
     )
+
+
+def test_example_evaluation_cases_conform_to_packaged_schema():
+    validator = jsonschema.Draft202012Validator(
+        _schema("evaluation-case.schema.json")
+    )
+    path = ROOT / "examples/assurance/customer_support_eval.jsonl"
+    for line in path.read_text(encoding="utf-8").splitlines():
+        validator.validate(json.loads(line))
+
+
+def test_evaluation_report_conforms_to_packaged_schema():
+    policy = AssurancePolicy.from_json(
+        ROOT / "examples/assurance/customer_support_policy.json"
+    )
+    corpus = EvaluationCorpus.from_jsonl(
+        ROOT / "examples/assurance/customer_support_eval.jsonl"
+    )
+    report = evaluate_corpus(
+        AssuranceRuntime(policy),
+        corpus,
+        gate=EvaluationGate(require_exact_match=True),
+    )
+    jsonschema.Draft202012Validator(
+        _schema("evaluation-report.schema.json")
+    ).validate(report.to_dict())

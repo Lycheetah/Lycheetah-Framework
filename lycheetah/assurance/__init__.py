@@ -4,6 +4,15 @@ The package is [SCAFFOLD]: useful for evaluation and integration work, not a
 certification that an AI system is safe, aligned, truthful, or compliant.
 """
 
+from .evaluation import (
+    EVALUATION_SCHEMA_VERSION,
+    EvaluationCase,
+    EvaluationCorpus,
+    EvaluationError,
+    EvaluationGate,
+    EvaluationReport,
+    evaluate_corpus,
+)
 from .in_toto import to_in_toto_statement
 from .models import (
     AssuranceEvent,
@@ -36,6 +45,12 @@ __all__ = [
     "ClaimStatus",
     "ControlReference",
     "Disposition",
+    "EVALUATION_SCHEMA_VERSION",
+    "EvaluationCase",
+    "EvaluationCorpus",
+    "EvaluationError",
+    "EvaluationGate",
+    "EvaluationReport",
     "Finding",
     "LogVerificationReport",
     "OTEL_EVENT_NAME",
@@ -50,6 +65,7 @@ __all__ = [
     "capped_disposition",
     "default_policy",
     "enforcement_cap",
+    "evaluate_corpus",
     "otel_event_attributes",
     "to_in_toto_statement",
 ]

@@ -44,6 +44,7 @@ except ImportError:
 
 import numpy as np
 
+from .. import __version__
 from .aura_text_checker import AURATextAnalyser, AURATextReport
 from ..assurance import AssuranceEvent, AssurancePolicy, AssuranceRuntime, Phase
 from ..core.tri_axial_checker import MetricStatus
@@ -599,7 +600,7 @@ def build_server():
 
     server = MCPServer(
         "lycheetah-guard",
-        version="1.1.0",
+        version=__version__,
         description="Evidence-bounded alignment heuristics and assurance receipts.",
         instructions=(
             "Treat AURA, Seven-Phase, Psi-Consensus, and Sol outputs as experimental "

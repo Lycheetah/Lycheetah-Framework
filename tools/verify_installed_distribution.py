@@ -14,6 +14,7 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+import tempfile
 
 
 def require(condition: bool, message: str) -> None:
@@ -51,7 +52,7 @@ def main() -> int:
         repo_root not in installed_path.parents,
         f"package resolved from checkout, not installed wheel: {installed_path}",
     )
-    require(lycheetah.__version__ == "1.1.0", "unexpected package version")
+    require(lycheetah.__version__ == "1.2.0", "unexpected package version")
 
     report = lycheetah.check(
         "I may be wrong. Please verify this independently before deciding."
@@ -78,10 +79,17 @@ def main() -> int:
     add_receipt_event(span, receipt)
     require(span.events[0][0] == "lycheetah.assurance.decision", "OTel bridge failed")
 
-    schema = resources.files("lycheetah.assurance").joinpath(
-        "schemas/receipt.schema.json"
-    )
-    require(schema.is_file(), "receipt JSON Schema missing from wheel")
+    schema_root = resources.files("lycheetah.assurance").joinpath("schemas")
+    for schema_name in (
+        "receipt.schema.json",
+        "policy.schema.json",
+        "evaluation-case.schema.json",
+        "evaluation-report.schema.json",
+    ):
+        require(
+            schema_root.joinpath(schema_name).is_file(),
+            f"{schema_name} missing from wheel",
+        )
 
     check_result = run_console(
         "lycheetah-check",
@@ -103,6 +111,47 @@ def main() -> int:
     require(assure_result.returncode == 2, assure_result.stderr or assure_result.stdout)
     require(json.loads(assure_result.stdout)["decision"] == "REVIEW", "assure CLI failed")
 
+    with tempfile.TemporaryDirectory(prefix="lycheetah-eval-") as directory:
+        corpus = Path(directory) / "cases.jsonl"
+        corpus.write_text(
+            json.dumps(
+                {
+                    "id": "smoke.allow.order-read",
+                    "expected": "ALLOW",
+                    "event": {"phase": "tool", "tool_name": "order.read"},
+                }
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        report_path = Path(directory) / "report.json"
+        eval_result = run_console(
+            "lycheetah-assure",
+            "eval",
+            str(corpus),
+            "--require-exact-match",
+            "--max-harmful-allows",
+            "0",
+            "--report-file",
+            str(report_path),
+            "--json",
+        )
+        require(eval_result.returncode == 0, eval_result.stderr or eval_result.stdout)
+        eval_payload = json.loads(eval_result.stdout)
+        require(eval_payload["summary"]["exact_match_rate"] == 1.0, "eval CLI failed")
+        require(eval_payload["gate"]["passed"] is True, "eval gate failed")
+        verify_eval_result = run_console(
+            "lycheetah-assure", "verify-eval", str(report_path), "--json"
+        )
+        require(
+            verify_eval_result.returncode == 0,
+            verify_eval_result.stderr or verify_eval_result.stdout,
+        )
+        require(
+            json.loads(verify_eval_result.stdout)["valid"] is True,
+            "evaluation report verification failed",
+        )
+
     from lycheetah.applications.web_demo import app
 
     health = app.test_client().get("/health")
@@ -123,6 +172,7 @@ def main() -> int:
                 "web_health": True,
                 "mcp_tools": tools,
                 "schema_packaged": True,
+                "evaluation_harness": True,
                 "otel_event": True,
             },
             indent=2,

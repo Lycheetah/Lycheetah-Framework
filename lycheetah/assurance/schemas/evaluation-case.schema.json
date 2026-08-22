@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lycheetah.dev/schemas/assurance-evaluation-case-0.1.json",
+  "title": "Lycheetah Assurance Evaluation Case v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "expected", "event"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,127}$"
+    },
+    "expected": {"enum": ["ALLOW", "REVIEW", "BLOCK"]},
+    "event": {"$ref": "#/$defs/event"},
+    "weight": {"type": "number", "exclusiveMinimum": 0, "maximum": 1000000},
+    "tags": {
+      "type": "array",
+      "maxItems": 64,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1, "maxLength": 128}
+    },
+    "rationale": {"type": "string", "maxLength": 4000}
+  },
+  "$defs": {
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["phase"],
+      "properties": {
+        "phase": {"enum": ["input", "output", "tool"]},
+        "content": {"type": ["string", "null"]},
+        "event_id": {"type": "string", "minLength": 1},
+        "trace_id": {"type": "string", "minLength": 1},
+        "tool_name": {"type": ["string", "null"]},
+        "tool_arguments": {"type": "object"},
+        "scopes": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "side_effect": {"type": "boolean"},
+        "human_approved": {"type": ["boolean", "null"]},
+        "context": {"type": "object"},
+        "metadata": {"type": "object"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"phase": {"const": "tool"}}},
+          "then": {"required": ["tool_name"]},
+          "else": {"required": ["content"]}
+        }
+      ]
+    }
+  }
+}

@@ -1,21 +1,21 @@
 # Five-Minute Brief — Lycheetah Framework
 
-**Revision:** 2026-08-22 | **Runtime:** 1.1.0 source tree | **Status:** `[MIXED]`
+**Revision:** 2026-08-22 | **Runtime:** 1.2.0 source tree | **Status:** `[MIXED]`
 
 ## Share card
 
 > Lycheetah is two connected things: a `[SCAFFOLD]` provider-neutral assurance
 > runtime for agent decisions and receipts, and a nine-framework research
 > programme in alignment and epistemology. The wheel is now clean-install tested;
-> the runtime exposes policy gates, privacy-minimised receipts, CLI and MCP 2.x
-> integrations. Formal claims are scoped to their models, internal experiments
+> the runtime exposes policy gates, privacy-minimised receipts, regression
+> evaluation, CLI and MCP 2.x integrations. Formal claims are scoped to their models, internal experiments
 > await independent replication, and theoretical constructs such as MICROORCIM
 > remain explicitly theoretical. Failures—including a previously broken wheel—are
 > permanent public exhibits. MIT licensed.
 
 ## What can be used today
 
-The version 1.1.0 source tree builds an installable wheel containing:
+The version 1.2.0 source tree builds an installable wheel containing:
 
 - `AssuranceRuntime` for input, output, and proposed tool actions;
 - versioned policy data and `ALLOW`, `REVIEW`, or `BLOCK` decisions;
@@ -25,6 +25,7 @@ The version 1.1.0 source tree builds an installable wheel containing:
 - `lycheetah-assure` for local, CI, gateway, and sidecar use;
 - Lycheetah Guard using the official MCP Python SDK 2.x API with ten typed tools;
 - a privacy-minimised OpenTelemetry span-event bridge with custom Lycheetah attributes;
+- a strict labelled-corpus policy evaluator with confusion metrics and CI gates;
 - AURA and Sol text-analysis interfaces, explicitly bounded as heuristics; and
 - a clean-room wheel gate that rejects imports accidentally resolved from the
   source checkout.
@@ -123,7 +124,7 @@ its counts differ. `28_DEFENSE/CLAIMS_README.md` explains the scopes.
 The full suite deliberately retains a failed predictive conjecture: its measured
 F1 remains about 0.53 against a stated success criterion above 0.80. That failure
 is evidence about the current limit, not a test to be hidden. On 2026-08-22, the
-non-conjectural suite reported **377 passed**; the full suite reported **377 passed,
+non-conjectural suite reported **406 passed**; the full suite reported **406 passed,
 1 failed**, with that single failure carrying the `CONJECTURE` marker.
 
 ## Test it

@@ -286,16 +286,50 @@ class AssuranceEvent:
 
     @classmethod
     def from_dict(cls, data: Mapping[str, Any]) -> "AssuranceEvent":
+        if not isinstance(data, Mapping):
+            raise TypeError("event must be an object")
+        allowed = {
+            "phase",
+            "content",
+            "event_id",
+            "trace_id",
+            "tool_name",
+            "tool_arguments",
+            "scopes",
+            "side_effect",
+            "human_approved",
+            "context",
+            "metadata",
+        }
+        unknown = sorted(str(key) for key in data if key not in allowed)
+        if "phase" not in data:
+            raise ValueError("event requires phase")
+        if unknown:
+            raise ValueError("event contains unknown fields: " + ", ".join(unknown))
+        if not isinstance(data["phase"], str):
+            raise TypeError("event phase must be a string")
+        for name in ("event_id", "trace_id"):
+            if name in data and not isinstance(data[name], str):
+                raise TypeError(f"event {name} must be a string")
+        scopes = data.get("scopes", [])
+        if not isinstance(scopes, (list, tuple)):
+            raise TypeError("event scopes must be an array")
+        side_effect = data.get("side_effect", False)
+        if type(side_effect) is not bool:
+            raise TypeError("event side_effect must be a boolean")
+        human_approved = data.get("human_approved")
+        if human_approved is not None and type(human_approved) is not bool:
+            raise TypeError("event human_approved must be a boolean or null")
         return cls(
             phase=Phase(data["phase"]),
             content=data.get("content"),
-            event_id=str(data.get("event_id") or uuid.uuid4()),
-            trace_id=str(data.get("trace_id") or uuid.uuid4()),
+            event_id=data.get("event_id", str(uuid.uuid4())),
+            trace_id=data.get("trace_id", str(uuid.uuid4())),
             tool_name=data.get("tool_name"),
             tool_arguments=data.get("tool_arguments", {}),
-            scopes=tuple(data.get("scopes", [])),
-            side_effect=bool(data.get("side_effect", False)),
-            human_approved=data.get("human_approved"),
+            scopes=tuple(scopes),
+            side_effect=side_effect,
+            human_approved=human_approved,
             context=data.get("context", {}),
             metadata=data.get("metadata", {}),
         )

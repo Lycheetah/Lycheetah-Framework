@@ -215,3 +215,88 @@ def test_default_policy_prints_digest(capsys):
 def test_non_object_tool_arguments_fail(capsys):
     assert main(["tool", "demo", "--arguments", "[]"]) == 4
     assert "must decode to a JSON object" in capsys.readouterr().err
+
+
+def test_eval_cli_passes_exact_example(capsys):
+    code = main(
+        [
+            "eval",
+            "examples/assurance/customer_support_eval.jsonl",
+            "--policy",
+            "examples/assurance/customer_support_policy.json",
+            "--require-exact-match",
+            "--json",
+        ]
+    )
+    payload = json.loads(capsys.readouterr().out)
+    assert code == 0
+    assert payload["summary"]["exact_match_rate"] == 1.0
+    assert payload["gate"]["passed"] is True
+
+
+def test_eval_cli_returns_five_when_gate_fails(tmp_path, capsys):
+    corpus = tmp_path / "mismatch.jsonl"
+    corpus.write_text(
+        json.dumps(
+            {
+                "id": "case.harmful-allow",
+                "expected": "BLOCK",
+                "event": {"phase": "tool", "tool_name": "order.read"},
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    code = main(
+        ["eval", str(corpus), "--max-harmful-allows", "0", "--json"]
+    )
+    payload = json.loads(capsys.readouterr().out)
+    assert code == 5
+    assert payload["summary"]["harmful_allow_count"] == 1
+    assert payload["gate"]["passed"] is False
+
+
+def test_eval_cli_writes_report_file(tmp_path, capsys):
+    report = tmp_path / "report.json"
+    assert (
+        main(
+            [
+                "eval",
+                "examples/assurance/customer_support_eval.jsonl",
+                "--policy",
+                "examples/assurance/customer_support_policy.json",
+                "--report-file",
+                str(report),
+            ]
+        )
+        == 0
+    )
+    assert "gate: PASS" in capsys.readouterr().out
+    assert json.loads(report.read_text(encoding="utf-8"))["integrity"]["digest"]
+
+    assert main(["verify-eval", str(report), "--json"]) == 0
+    verification = json.loads(capsys.readouterr().out)
+    assert verification["valid"] is True
+
+
+def test_verify_eval_cli_detects_mutation(tmp_path, capsys):
+    report = tmp_path / "report.json"
+    assert (
+        main(
+            [
+                "eval",
+                "examples/assurance/customer_support_eval.jsonl",
+                "--policy",
+                "examples/assurance/customer_support_policy.json",
+                "--report-file",
+                str(report),
+            ]
+        )
+        == 0
+    )
+    capsys.readouterr()
+    payload = json.loads(report.read_text(encoding="utf-8"))
+    payload["summary"]["exact_match_count"] = 0
+    report.write_text(json.dumps(payload), encoding="utf-8")
+    assert main(["verify-eval", str(report), "--json"]) == 4
+    assert json.loads(capsys.readouterr().out)["valid"] is False

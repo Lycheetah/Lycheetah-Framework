@@ -28,13 +28,14 @@ def console(name: str) -> subprocess.CompletedProcess[str]:
 def main() -> int:
     import lycheetah
     from lycheetah.applications import lycheetah_guard_mcp, web_demo
-    from lycheetah.assurance import AssuranceRuntime
+    from lycheetah.assurance import AssuranceRuntime, EvaluationGate
 
     repo_root = Path(__file__).resolve().parents[1]
     installed_path = Path(lycheetah.__file__).resolve()
     require(repo_root not in installed_path.parents, "package resolved from checkout")
     require(lycheetah.check("Offer reversible options.").alignment_percent >= 0, "API failed")
     require(AssuranceRuntime().evaluate_tool("order.read", {}).verify().valid, "receipt failed")
+    require(EvaluationGate(max_harmful_allows=0).configured, "evaluation API failed")
 
     require(web_demo.FLASK_AVAILABLE is False, "base wheel unexpectedly contains Flask")
     require(web_demo.app is None, "web app should be unavailable without Flask")
@@ -57,6 +58,7 @@ def main() -> int:
                 "status": "PASS",
                 "package": str(installed_path),
                 "base_api": True,
+                "evaluation_api": True,
                 "web_extra_boundary": True,
                 "mcp_extra_boundary": True,
             },

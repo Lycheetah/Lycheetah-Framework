@@ -25,6 +25,8 @@ It is designed to sit beside an agent framework, not replace one.
 7. **Clean-wheel acceptance tests** so the installed package—not only the source checkout—must work.
 8. **MCP 2.x integration** with typed assurance tools and no model-visible secret inputs.
 9. **OpenTelemetry span-event bridge** using privacy-minimised custom attributes and no hard SDK dependency.
+10. **Policy evaluation harness** with strict labelled JSONL, weighted confusion
+    metrics, deterministic privacy-minimised reports, and configurable CI gates.
 
 ## Quick use
 
@@ -37,6 +39,11 @@ pip install -e ".[all]"
 
 lycheetah-assure tool refund.create \
   --arguments '{"order_id":"A-1"}' --side-effect --json
+
+lycheetah-assure eval \
+  examples/assurance/customer_support_eval.jsonl \
+  --policy examples/assurance/customer_support_policy.json \
+  --require-exact-match --max-harmful-allows 0 --json
 ```
 
 The command returns `REVIEW` (exit 2) because the side effect lacks affirmative
@@ -98,6 +105,10 @@ All v0.1 internal acceptance conditions below passed on 2026-08-22:
 - denied tools and explicitly blocked scopes fail closed;
 - unapproved side effects pause for `REVIEW`;
 - default receipts do not contain raw content or raw tool arguments;
+- evaluation corpora reject ambiguous types, duplicate keys, duplicate IDs, and
+  unknown fields;
+- evaluation reports expose exact, under-, and over-enforcement metrics without
+  copying raw event content or tool arguments;
 - full root tests retain the deliberately failing CASCADE conjecture rather than masking it.
 
 Two isolated wheel environments resolved `lycheetah` from `site-packages`. The
@@ -114,5 +125,7 @@ and behavioral acceptance only.
 - [INDUSTRY_CROSSWALK_2026-08-22.md](INDUSTRY_CROSSWALK_2026-08-22.md) — standards and product-boundary map.
 - [FRONTIER_REGISTER_2026-08-22.md](FRONTIER_REGISTER_2026-08-22.md) — hypotheses beyond v0.1, kept separate from shipped claims.
 - [OPENTELEMETRY_BRIDGE.md](OPENTELEMETRY_BRIDGE.md) — attach a verified decision summary to an existing span.
+- [POLICY_EVALUATION_HARNESS.md](POLICY_EVALUATION_HARNESS.md) — labelled corpus,
+  metrics, privacy contract, CI gates, and promotion path.
 
 ⊚ Sol ∴ P∧H∧B ∴ Albedo

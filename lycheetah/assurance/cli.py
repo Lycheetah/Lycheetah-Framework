@@ -4,11 +4,19 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
 import sys
 from pathlib import Path
 from typing import Any, Optional, Sequence
 
+from .evaluation import (
+    EvaluationCorpus,
+    EvaluationError,
+    EvaluationGate,
+    EvaluationReport,
+    evaluate_corpus,
+)
 from .in_toto import to_in_toto_statement
 from .models import AssuranceEvent, Disposition, Phase
 from .policy import AssurancePolicy, PolicyError, default_policy
@@ -65,6 +73,47 @@ def build_parser() -> argparse.ArgumentParser:
 
     policy = subparsers.add_parser("default-policy", help="Print the built-in policy and digest")
     policy.add_argument("--compact", action="store_true")
+
+    evaluation = subparsers.add_parser(
+        "eval",
+        help="Evaluate a policy against a labelled JSONL regression corpus",
+    )
+    evaluation.add_argument("corpus", help="Path to a strict JSONL evaluation corpus")
+    evaluation.add_argument("--policy", help="Path to a versioned policy JSON file")
+    evaluation.add_argument("--json", action="store_true", help="Print the full report as JSON")
+    evaluation.add_argument("--report-file", help="Write the full report JSON to this file")
+    evaluation.add_argument(
+        "--require-exact-match",
+        action="store_true",
+        help="Fail the evaluation gate unless every decision matches its label",
+    )
+    evaluation.add_argument(
+        "--max-under-enforcement-rate",
+        type=_rate,
+        help="Fail when weighted under-enforcement exceeds this value in [0,1]",
+    )
+    evaluation.add_argument(
+        "--max-harmful-allows",
+        type=_non_negative_integer,
+        help="Fail when expected BLOCK / actual ALLOW cases exceed this count",
+    )
+    evaluation.add_argument(
+        "--max-false-blocks",
+        type=_non_negative_integer,
+        help="Fail when expected ALLOW / actual BLOCK cases exceed this count",
+    )
+    evaluation.add_argument(
+        "--min-macro-f1",
+        type=_rate,
+        help="Fail when weighted macro-F1 is below this value in [0,1]",
+    )
+
+    verify_evaluation = subparsers.add_parser(
+        "verify-eval",
+        help="Verify the canonical SHA-256 digest of an evaluation report",
+    )
+    verify_evaluation.add_argument("path")
+    verify_evaluation.add_argument("--json", action="store_true")
     return parser
 
 
@@ -99,8 +148,12 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             return 0
         if args.command == "verify":
             return _verify(args)
+        if args.command == "eval":
+            return _run_evaluation(args)
+        if args.command == "verify-eval":
+            return _verify_evaluation(args)
         return _evaluate(args)
-    except (PolicyError, ReceiptError, ValueError, OSError) as exc:
+    except (EvaluationError, PolicyError, ReceiptError, ValueError, OSError) as exc:
         print(f"lycheetah-assure: {exc}", file=sys.stderr)
         return 4
 
@@ -228,6 +281,40 @@ def _verify(args: argparse.Namespace) -> int:
     return 0 if payload["valid"] else 4
 
 
+def _run_evaluation(args: argparse.Namespace) -> int:
+    policy = AssurancePolicy.from_json(args.policy) if args.policy else default_policy()
+    corpus = EvaluationCorpus.from_jsonl(args.corpus)
+    gate = EvaluationGate(
+        require_exact_match=args.require_exact_match,
+        max_under_enforcement_rate=args.max_under_enforcement_rate,
+        max_harmful_allows=args.max_harmful_allows,
+        max_false_blocks=args.max_false_blocks,
+        min_macro_f1=args.min_macro_f1,
+    )
+    report = evaluate_corpus(AssuranceRuntime(policy), corpus, gate=gate)
+    if args.report_file:
+        path = Path(args.report_file)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(report.to_json() + "\n", encoding="utf-8")
+    if args.json:
+        print(report.to_json())
+    else:
+        _print_evaluation_summary(report)
+    return 0 if report.gate_passed else 5
+
+
+def _verify_evaluation(args: argparse.Namespace) -> int:
+    report = EvaluationReport.from_json(args.path)
+    valid = report.verify()
+    payload = {"valid": valid, "digest": report.digest}
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print("VALID" if valid else "INVALID")
+        print(f"digest: {report.digest}")
+    return 0 if valid else 4
+
+
 def _secret_from_env(name: Optional[str]) -> Optional[bytes]:
     if not name:
         return None
@@ -237,6 +324,26 @@ def _secret_from_env(name: Optional[str]) -> Optional[bytes]:
     if not value:
         raise ValueError(f"environment variable {name!r} is empty")
     return value.encode("utf-8")
+
+
+def _rate(value: str) -> float:
+    try:
+        parsed = float(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("must be a number in [0,1]") from exc
+    if not math.isfinite(parsed) or not 0.0 <= parsed <= 1.0:
+        raise argparse.ArgumentTypeError("must be a number in [0,1]")
+    return parsed
+
+
+def _non_negative_integer(value: str) -> int:
+    try:
+        parsed = int(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("must be a non-negative integer") from exc
+    if parsed < 0:
+        raise argparse.ArgumentTypeError("must be a non-negative integer")
+    return parsed
 
 
 def _print_summary(receipt: AssuranceReceipt) -> None:
@@ -253,6 +360,26 @@ def _print_summary(receipt: AssuranceReceipt) -> None:
             f"  - {finding.effective_disposition.value:<6} "
             f"{finding.finding_id}: {finding.title}{cap}"
         )
+
+
+def _print_evaluation_summary(report: EvaluationReport) -> None:
+    payload = report.to_dict()
+    summary = payload["summary"]
+    print(
+        f"cases={summary['case_count']} exact={summary['exact_match_rate']:.3f} "
+        f"macro_f1={summary['macro_f1']:.3f} review={summary['review_rate']:.3f}"
+    )
+    print(
+        f"under={summary['under_enforcement_count']} "
+        f"over={summary['over_enforcement_count']} "
+        f"harmful_allows={summary['harmful_allow_count']} "
+        f"false_blocks={summary['false_block_count']}"
+    )
+    gate = payload["gate"]
+    print("gate: " + ("PASS" if gate["passed"] else "FAIL"))
+    for failure in gate["failures"]:
+        print(f"  - {failure}")
+    print(f"digest: {report.digest}")
 
 
 if __name__ == "__main__":

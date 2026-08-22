@@ -21,7 +21,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from .applications.aura_text_checker import AURATextReport
 
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 __author__  = "Mackenzie Conor James Clark"
 __license__ = "MIT"
 

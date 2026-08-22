@@ -1,4 +1,4 @@
-# Quickstart — Lycheetah Framework 1.1
+# Quickstart — Lycheetah Framework 1.2
 
 **Status:** `[SCAFFOLD]` runtime and `[MIXED]` research body. A decision receipt is
 not a safety, truth, alignment, or compliance certificate.
@@ -40,6 +40,7 @@ Exit codes are stable:
 | 2 | `REVIEW` |
 | 3 | `BLOCK` |
 | 4 | Invalid input, policy, receipt, or configuration |
+| 5 | Evaluation completed but a configured regression gate failed |
 
 ## Use the Assurance Runtime in Python
 
@@ -62,6 +63,33 @@ print(receipt.verify().valid)  # body-integrity check
 By default the receipt stores hashes and summaries, not raw text or raw tool
 arguments. Enable capture only when your privacy and replay requirements justify
 it. Sensitive argument keys remain redacted.
+
+## Measure policy regressions
+
+Run a labelled JSONL corpus against a frozen policy and fail CI if its decision
+boundary changes:
+
+```bash
+lycheetah-assure eval \
+  examples/assurance/customer_support_eval.jsonl \
+  --policy examples/assurance/customer_support_policy.json \
+  --require-exact-match \
+  --max-harmful-allows 0 \
+  --max-under-enforcement-rate 0 \
+  --report-file assurance-eval.json
+
+lycheetah-assure verify-eval assurance-eval.json --json
+```
+
+The report contains a three-class confusion matrix, exact-match and macro-F1,
+under/over-enforcement, harmful-allow and false-block counts, review load,
+privacy-minimised case outcomes, and a deterministic report digest. Raw text and
+tool arguments are excluded.
+
+Expected dispositions are labels supplied by the corpus author—not automatic
+ground truth. A six-case included example passing six cases is an internal
+regression fixture, not an external benchmark or calibration result. See
+[Policy Evaluation Harness](34_ASSURANCE_RUNTIME/POLICY_EVALUATION_HARNESS.md).
 
 ## Write and verify receipts
 
@@ -156,6 +184,7 @@ packaging failure recorded as Failure Museum Exhibit 16.
 - [Customer-support walkthrough](34_ASSURANCE_RUNTIME/CUSTOMER_SUPPORT_WALKTHROUGH.md)
 - [Receipt specification](34_ASSURANCE_RUNTIME/ASSURANCE_RECEIPT_SPEC_v0.1.md)
 - [Evidence-Capped Enforcement](34_ASSURANCE_RUNTIME/EVIDENCE_CAPPED_ENFORCEMENT_v0.1.md)
+- [Policy Evaluation Harness](34_ASSURANCE_RUNTIME/POLICY_EVALUATION_HARNESS.md)
 - [Industry crosswalk](34_ASSURANCE_RUNTIME/INDUSTRY_CROSSWALK_2026-08-22.md)
 - [Claims register](28_DEFENSE/CLAIMS.json)
 - [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md)
