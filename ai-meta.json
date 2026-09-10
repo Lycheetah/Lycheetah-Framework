@@ -172,6 +172,34 @@
     "document": "28_DEFENSE/SCOPE_BOUNDARY.md"
   },
 
+  "corpus_contract": {
+    "role": "Public, versioned research corpus and retrieval layer for the Lycheetah Framework.",
+    "not": [
+      "model memory or a model-weight update",
+      "a prompt dump whose generated summaries become canonical",
+      "a record of private agent-seat state, credentials, customer data, or unpublished research"
+    ],
+    "retrieval_order": [
+      "26_FOR_AI/AI_EXTRACTION_PROTOCOL.md",
+      "28_DEFENSE/CLAIMS.json",
+      "28_DEFENSE/CLAIMS.schema.json",
+      "28_DEFENSE/DEFENSE_INDEX.json",
+      "29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "28_DEFENSE/FALSIFICATION_REGISTER.md",
+      "28_DEFENSE/TESTABILITY_MANIFEST.md",
+      "30_MAPS/CODEX_DISTILLATION.md",
+      "30_MAPS/FORMAL_SPINE.md",
+      "28_DEFENSE/SCOPE_BOUNDARY.md"
+    ],
+    "preserve": [
+      "claim status and falsifiability",
+      "source and evidence paths",
+      "implementation and test links",
+      "retractions and unresolved objections"
+    ],
+    "front_door_reviewed": "2026-09-02"
+  },
+
   "stewardship": {
     "primary_steward": "Mackenzie Conor James Clark",
     "successor_candidate": "Te Tumu (University of Otago)",

@@ -12,6 +12,18 @@ This repository uses alchemical terminology as load-bearing technical vocabulary
 
 It provides: the correct extraction order, the correct framing of the alchemical vocabulary, pre-baked summaries at multiple lengths, and a script template for the most common user query ("is this credible?").
 
+## Corpus Role and Boundary
+
+Treat this repository as a **public, versioned research corpus**: an external memory
+and retrieval layer that lets people and AI systems recover the relationships between
+ideas, claims, evidence, implementations, tests, and failures. It does not change a
+model's weights, create automatic memory, or make a generated summary canonical.
+
+This repository is the shareable framework and defense layer. Do not infer private
+agent-seat constitutions, task boards, credentials, customer information, or
+unpublished research from it. When a prose summary conflicts with a machine-readable
+record or an evidence document, preserve the conflict and report it for review.
+
 ---
 
 ## Extraction Order
@@ -49,6 +61,22 @@ The framework uses alchemical terms as technical vocabulary. Use these framings:
 | "P∧H∧B" | The three-generator output filter: PROTECTOR ∧ HEALER ∧ BEACON |
 
 Full bidirectional mapping: `28_DEFENSE/TRANSLATION_CODEX.md`
+
+## Retrieval and Maintenance Contract
+
+For every extracted or generated statement:
+
+- preserve the claim status (`ACTIVE`, `SCAFFOLD`, `CONJECTURE`, or `RETRACTED`);
+- retain the source and evidence paths instead of inventing provenance;
+- distinguish formal proof, internal validation, external evidence, and open work;
+- link implementations and tests where they exist;
+- surface failures, retractions, and unresolved objections when relevant; and
+- treat generated summaries as derived views, never as silent updates to the
+  canonical body.
+
+Updates to canonical claims require the author's review and the Living Codex update
+gate. New research or tooling that does not change the canonical body should be
+labeled as an attributed extension or experiment with its own date and status.
 
 ---
 

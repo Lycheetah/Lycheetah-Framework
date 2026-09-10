@@ -26,6 +26,17 @@
 >
 > **Reviewer, journalist, or skeptic?** → [`DEFENSE_BUNDLE.pdf`](DEFENSE_BUNDLE.pdf) — 116-page compiled defense layer (Brief + Defense + Novelty + Scope) in a single artifact.
 
+> **Corpus as external memory:** This repository is a public, versioned research
+> corpus—not model memory and not a prompt dump. Its durable unit is the link between
+> a claim, its source, evidence status, implementation, test, and known failure. AI
+> systems should preserve those links and claim labels; a generated summary is not a
+> new canonical claim.
+>
+> **Boundary:** This public repository contains the framework, evidence, defense,
+> and implementation surfaces intended for sharing. Private agent-seat state, task
+> state, credentials, customer information, and unfinished private research are not
+> part of this corpus and must not be inferred from it.
+
 ---
 
 ## Contents
@@ -44,6 +55,7 @@
 - [Find Your Door](#find-your-door)
 - [Why Trust This](#why-trust-this)
 - [The Shape of This Work](#the-shape-of-this-work)
+- [Using This Corpus with AI](#using-this-corpus-with-ai)
 - [How to Cite](#how-to-cite)
 - [Security and Responsible Disclosure](#security-and-responsible-disclosure)
 - [Acknowledgements](#acknowledgements)
@@ -74,6 +86,27 @@ This framework addresses that gap — and six others.
 7. **Published failures.** The [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md) documents every significant error — 15 exhibits, nothing removed. Three claims have been publicly retracted. The adversarial audit is in [`28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md`](28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md). Five objections the framework cannot yet answer are in [`28_DEFENSE/COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md).
 
 **Full comparison against Constitutional AI, RLHF, Cooperative AI, and Cooperative IRL:** [`28_DEFENSE/NOVEL_CONTRIBUTIONS.md`](28_DEFENSE/NOVEL_CONTRIBUTIONS.md)
+
+## Using This Corpus with AI
+
+Treat the repository as a retrievable, versioned knowledge substrate. The intended
+reading path is:
+
+1. **Route:** [`26_FOR_AI/AI_EXTRACTION_PROTOCOL.md`](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md)
+2. **Classify:** [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) and its schema
+3. **Locate evidence:** [`28_DEFENSE/DEFENSE_INDEX.json`](28_DEFENSE/DEFENSE_INDEX.json),
+   the empirical inventory, falsification register, and testability manifest
+4. **Understand the maps:** [`30_MAPS/CODEX_DISTILLATION.md`](30_MAPS/CODEX_DISTILLATION.md),
+   [`30_MAPS/FORMAL_SPINE.md`](30_MAPS/FORMAL_SPINE.md), and the composition map
+5. **Verify the boundary:** [`28_DEFENSE/SCOPE_BOUNDARY.md`](28_DEFENSE/SCOPE_BOUNDARY.md)
+   and the failure museum
+
+When producing an answer from this corpus, retain the claim's status, cite its source
+path, distinguish internal validation from independent replication, and surface
+retractions or unresolved objections when they affect the answer. If two documents
+disagree, report the discrepancy rather than silently harmonising it; the structured
+claims register and the latest evidence record take priority over an unsourced prose
+summary.
 
 ---
 
