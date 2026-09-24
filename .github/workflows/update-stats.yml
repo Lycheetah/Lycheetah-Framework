@@ -23,6 +23,7 @@ jobs:
     - name: Install dependencies
       run: pip install numpy scipy pytest
 
+    # promote.py restored at repo root from history (deleted in cf9feb2 cleanup).
     - name: Run stats updater
       run: python promote.py --update-readme
 

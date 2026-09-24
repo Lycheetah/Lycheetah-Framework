@@ -25,7 +25,9 @@ from typing import Dict, List, Tuple, Any
 import re
 
 # Configuration
-FRAMEWORK_DIR = Path(__file__).parent
+# Script lives under 12_IMPLEMENTATIONS/ (moved from repo root); resolve repo root.
+_HERE = Path(__file__).resolve().parent
+FRAMEWORK_DIR = _HERE.parent if _HERE.name == "12_IMPLEMENTATIONS" else _HERE
 CORE_MODULES = [
     "cascade_engine",
     "harmonia_calculator",
@@ -42,15 +44,15 @@ SPEC_CONSTANTS = {
     "truth_pressure_critical": 1.2,
 }
 
-# Gap checklist
+# Gap checklist (paths updated for post-reorg tree; MISSING > invent)
 GAP_CHECKLIST = {
-    "k1_k4_calibration": ("cascade_simulation_results.json", "Calibration data committed"),
+    "k1_k4_calibration": ("12_IMPLEMENTATIONS/cascade_simulation_results.json", "Calibration data committed"),
     "unit_tests": ("12_IMPLEMENTATIONS/test_*.py", "Unit test files exist"),
     "ci_workflow": (".github/workflows/ci.yml", "GitHub Actions CI configured"),
-    "12_week_curriculum": ("14_MYSTERY_SCHOOL/12_WEEK_*.md", "Curriculum exists"),
+    "12_week_curriculum": ("14_MYSTERY_SCHOOL/GETTING_STARTED.md", "Curriculum entry exists"),
     "domain_experiments_2plus": ("12_IMPLEMENTATIONS/experiments/domain_*.py", "≥2 domain experiments"),
-    "lamague_duplication_resolved": ("03_LAMAGUE_L1/LAMAGUE_COMPLETE.md", "No duplicate KnowledgeBlock refs"),
-    "mystery_school_cascade_resolved": ("14_MYSTERY_SCHOOL/*.py", "No duplicate cascade files"),
+    "lamague_duplication_resolved": ("03_LAMAGUE_L1/01_LAMAGUE_COMPLETE.md", "Lamague complete corpus present"),
+    "mystery_school_cascade_resolved": ("14_MYSTERY_SCHOOL/implementations/*.py", "Mystery school implementations present"),
     "arxiv_contact_email": ("papers/CASCADE_ARXIV.tex", "Contact email set"),
 }
 
@@ -84,7 +86,8 @@ def health_check() -> Tuple[Dict[str, Any], str]:
             systems_dir = implementations_dir / "systems"
 
             module_path = None
-            for search_dir in [core_dir, systems_dir, implementations_dir]:
+            mystery_dir = FRAMEWORK_DIR / "14_MYSTERY_SCHOOL" / "implementations"
+            for search_dir in [core_dir, systems_dir, implementations_dir, mystery_dir]:
                 potential = search_dir / f"{module_name}.py"
                 if potential.exists():
                     module_path = potential
@@ -160,13 +163,15 @@ def drift_audit() -> Tuple[Dict[str, Any], str]:
     report_lines.append("━" * 70)
 
     # Check lambda_compress in CASCADE_COMPLETE.md vs cascade_engine.py
-    spec_file = FRAMEWORK_DIR / "01_CASCADE" / "CASCADE_COMPLETE.md"
+    # Post-reorg folder is 01_CASCADE_L4 (was 01_CASCADE).
+    spec_file = FRAMEWORK_DIR / "01_CASCADE_L4" / "CASCADE_COMPLETE.md"
+    if not spec_file.exists():
+        spec_file = FRAMEWORK_DIR / "01_CASCADE" / "CASCADE_COMPLETE.md"
     code_file = FRAMEWORK_DIR / "12_IMPLEMENTATIONS" / "core" / "cascade_engine.py"
+    spec_content = spec_file.read_text() if spec_file.exists() else ""
+    code_content = code_file.read_text() if code_file.exists() else ""
 
-    if spec_file.exists() and code_file.exists():
-        spec_content = spec_file.read_text()
-        code_content = code_file.read_text()
-
+    if spec_content and code_content:
         # Look for lambda_compress assignments
         spec_match = re.search(r'λ_compress\s*=\s*(0\.\d+)', spec_content)
         code_match = re.search(r'LAMBDA_COMPRESS\s*=\s*(0\.\d+)', code_content)
@@ -185,8 +190,8 @@ def drift_audit() -> Tuple[Dict[str, Any], str]:
                 report_lines.append(f"  ✓ λ_compress: {spec_val} (aligned)")
 
     # Check golden ratio φ⁻¹
-    spec_match = re.search(r'φ⁻¹\s*≈\s*(0\.\d+)', spec_content) if spec_file.exists() else None
-    code_match = re.search(r'GOLDEN_RATIO_INVERSE\s*=\s*(0\.\d+)', code_content) if code_file.exists() else None
+    spec_match = re.search(r'φ⁻¹\s*≈\s*(0\.\d+)', spec_content) if spec_content else None
+    code_match = re.search(r'GOLDEN_RATIO_INVERSE\s*=\s*(0\.\d+)', code_content) if code_content else None
 
     if spec_match and code_match:
         spec_val = float(spec_match.group(1))
