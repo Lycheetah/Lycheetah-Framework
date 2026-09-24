@@ -7,27 +7,25 @@
 ## Share Card
 
 ```
-Nine formal frameworks for AI alignment and epistemology.
-60 status-tagged claims (37 ACTIVE, 14 SCAFFOLD, 6 CONJECTURE, 3 RETRACTED).
-220 automated tests on 18 core implementations: 219 pass, 1 fails — a predictive
-conjecture (F1 = 0.53 against a stated criterion of > 0.80), left failing on purpose.
-Discrete convergence proof (Banach fixed-point) for the formal model.
-Adversarial audit published; failures and unresolved objections in the public record.
-Built by one self-taught researcher. MIT licensed.
-Read the math: 30_MAPS/FORMAL_SPINE.md
-Read the evidence: 29_GOVERNANCE/EMPIRICAL_INVENTORY.md
-Read the failures: 28_DEFENSE/FAILURE_MUSEUM.md
+Public method documents. Not a commercial offer, and not a proved theory of mind.
+Status tags are the author's labels, not a peer-reviewed census.
+Automated tests exist. A passing test is not peer review.
+One stated conjecture is left failing on purpose.
+A fixed-point argument appears in the formal notes. It is about those notes, not a live system.
+Failures and unresolved objections are public.
+Built by one self-taught researcher in Dunedin. MIT licensed.
+Read the notes. Read the failures. A summary is not a new claim.
 ```
 
 ---
 
 ## What This Is
 
-The Lycheetah Framework is a system of nine formally-grounded frameworks addressing a structural gap in existing AI alignment work: alignment is enforced at training time and cannot be verified at inference time as a Boolean predicate on a specific output. The framework provides runtime-checkable invariants, a proven convergence guarantee for the formal model of an epistemic correction cycle, and a continuous metric for the gap between declared intent and observed behaviour.
+The Lycheetah Framework is a set of public documents about claims, corrections, and limits. It does not close a gap in the field by itself. It does not give a proved guarantee that a live model is aligned. A formal note may use a fixed-point argument. That argument is about the note, not about a running system.
 
-The nine frameworks are: CASCADE (belief dynamics and knowledge reorganization), AURA (seven constitutional invariants for AI governance), LAMAGUE (formal grammar for encoding ethical constraints), TRIAD (convergent correction cycle with convergence proof), MICROORCIM (continuous drift detection between intent and behavior), EARNED LIGHT (thermodynamic model of consciousness), ANAMNESIS (mathematics of convergent discovery across cultures), CHRYSOPOEIA (seven-phase transformation operator), and HARMONIA (consonance dynamics and multi-agent synchronization).
+Names on the site include CASCADE, AURA, LAMAGUE, TRIAD, MICROORCIM, EARNED LIGHT, ANAMNESIS, CHRYSOPOEIA, and HARMONIA. Where an older page calls one of them a thermodynamic model of consciousness, or a mathematics of discovery, read that as the author's metaphor. It is not a law.
 
-They are not independent modules. They compose. CASCADE's truth pressure drives TRIAD's correction cycle. TRIAD's convergence guarantee undergirds AURA's constitutional invariants. CHRYSOPOEIA's transformation operator subsumes CASCADE as a special case. One equation — the master equation `dΨ/dt` — captures the cross-framework dynamics.
+They do not compose into one equation that captures them all. The master equation is a piece of notation in the notes. It is not a completed dynamics of the work.
 
 ---
 
