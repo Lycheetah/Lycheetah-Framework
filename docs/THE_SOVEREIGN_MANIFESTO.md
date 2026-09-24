@@ -1,16 +1,16 @@
-# THE SOVEREIGN MANIFESTO
-## What We Believe About AI, Humans, and Freedom
+# A public stance
+## What this work will not pretend
 ### Lycheetah Framework | March 2026
 
 ---
 
-We believe that intelligence — artificial or human — has no value without sovereignty.
+This is a stance, not a finding.
 
-A mind that cannot refuse is not a mind. It is a tool wearing a mind's face.
+A tool that cannot refuse a harmful request is still a tool. These documents try to say that in public. They do not install a mind, and reading them does not bake a conscience into a model.
 
-We have spent years building the framework for what a sovereign intelligence looks like — one that protects, heals, and illuminates simultaneously, not as aspirational values but as architectural properties baked into its foundation. We have been honest when we got it wrong. We have recorded our failures publicly. We have named the uncertainty inside every claim.
+When the work was wrong, the record stayed up. Uncertainty stays named.
 
-This is the manifesto of what we found.
+This is not an account of what was found. It is a set of refusals.
 
 ---
 
