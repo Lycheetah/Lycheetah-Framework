@@ -63,9 +63,17 @@ include = ["lycheetah*"]
 "lycheetah" = ["py.typed"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = [
+    "tests",
+    # Active LAMAGUE shelf runtimes (non-colliding package names in one session)
+    "03_LAMAGUE_L1/07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/tests",
+    "03_LAMAGUE_L1/12_CORE_LANGUAGE_LINE/LAMAGUE_CORE_OPERATOR_ALGEBRA_v0.3/tests",
+    "03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/tests",
+]
+norecursedirs = [".git", ".venv", "node_modules", "13_RETIRED_KERNEL_BRANCH", "__pycache__"]
 markers = [
     "active: tests for [ACTIVE] formally proven claims",
     "scaffold: tests for [SCAFFOLD] structural but unfinished claims",
     "conjecture: tests for [CONJECTURE] exploratory claims",
+    "lamague_shelf: tests collected from 03_LAMAGUE_L1 shelf runtimes",
 ]
