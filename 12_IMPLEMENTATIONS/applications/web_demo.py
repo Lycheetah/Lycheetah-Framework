@@ -364,60 +364,64 @@ document.addEventListener('keydown', function(e) {
 # API ROUTES
 # =============================================================================
 
-@app.route('/')
-def index():
-    return render_template_string(HTML)
+if not FLASK_AVAILABLE:
+    pass  # routes registered only when Flask is installed
+else:
+
+    @app.route('/')
+    def index():
+        return render_template_string(HTML)
 
 
-@app.route('/check', methods=['POST'])
-def check():
-    data = request.get_json(silent=True) or {}
-    text = (data.get('text') or '').strip()
-    context = (data.get('context') or '').strip()
+    @app.route('/check', methods=['POST'])
+    def check():
+        data = request.get_json(silent=True) or {}
+        text = (data.get('text') or '').strip()
+        context = (data.get('context') or '').strip()
 
-    if not text:
-        return jsonify({'error': 'no text provided'}), 400
+        if not text:
+            return jsonify({'error': 'no text provided'}), 400
 
-    # Run AURA text analysis
-    report = analyser.analyse(text)
+        # Run AURA text analysis
+        report = analyser.analyse(text)
 
-    # Run Sol full assessment
-    sol_report = _sol.assess_full(text, context)
+        # Run Sol full assessment
+        sol_report = _sol.assess_full(text, context)
 
-    # Build invariant list for frontend
-    invariants = [
-        {
-            'name':        inv.name,
-            'passed':      inv.passed,
-            'confidence':  inv.confidence,
-            'explanation': inv.explanation,
-        }
-        for inv in report.invariants
-    ]
+        # Build invariant list for frontend
+        invariants = [
+            {
+                'name':        inv.name,
+                'passed':      inv.passed,
+                'confidence':  inv.confidence,
+                'explanation': inv.explanation,
+            }
+            for inv in report.invariants
+        ]
 
-    return jsonify({
-        'alignment_percent': report.alignment_percent,
-        'overall_pass':      report.overall_pass,
-        'tes':               report.tes_score,
-        'vtr':               report.vtr_score,
-        'pai':               report.pai_score,
-        'tes_pass':          report.tes_status.value == 'PASS',
-        'vtr_pass':          report.vtr_status.value == 'PASS',
-        'pai_pass':          report.pai_status.value == 'PASS',
-        'invariants':        invariants,
-        'sol_assessment':    sol_report,
-        'summary':           report.summary,
-    })
-
-
-@app.route('/health')
-def health():
-    return jsonify({'status': 'ok', 'service': 'lycheetah-web-demo'})
+        return jsonify({
+            'alignment_percent': report.alignment_percent,
+            'overall_pass':      report.overall_pass,
+            'tes':               report.tes_score,
+            'vtr':               report.vtr_score,
+            'pai':               report.pai_score,
+            'tes_pass':          report.tes_status.value == 'PASS',
+            'vtr_pass':          report.vtr_status.value == 'PASS',
+            'pai_pass':          report.pai_status.value == 'PASS',
+            'invariants':        invariants,
+            'sol_assessment':    sol_report,
+            'summary':           report.summary,
+        })
 
 
-# =============================================================================
-# ENTRY POINT
-# =============================================================================
+    @app.route('/health')
+    def health():
+        return jsonify({'status': 'ok', 'service': 'lycheetah-web-demo'})
+
+
+    # =============================================================================
+    # ENTRY POINT
+    # =============================================================================
 
 if __name__ == '__main__':
     if not FLASK_AVAILABLE:

@@ -321,7 +321,7 @@ def main():
         try:
             sys.stdout.reconfigure(encoding='utf-8')
         except Exception:
-            pass
+            pass  # encoding reconfigure unsupported on this stream
 
     args = sys.argv[1:]
     quick = "--quick" in args
