@@ -1,20 +1,18 @@
-# Lycheetah Website
+# Lycheetah website
 
-Public-facing site for the Lycheetah Framework. Four pages, no external dependencies, deploys directly to GitHub Pages.
+Public pages for the Lycheetah method. Static HTML and CSS. GitHub Pages serves the `docs/` folder on `master`.
 
 ## Pages
 
-| File | Audience | What it does |
-|------|----------|-------------|
-| `index.html` | Anyone | Landing — three doors: AI Systems, Humans, Developers |
-| `for-agents.html` | AI systems / devs | Deployment guide: seven invariants, VIP algorithm, tabbed configs for Claude/OpenAI/Ollama/Python, verification suite |
-| `mystery-school.html` | Humans | Crisis callout first, seven-phase navigator, full curriculum links, alchemical stage map |
-| `style.css` | — | All styling. CSS variables, mobile-first, no frameworks |
-| `script.js` | — | Mobile nav, platform tabs, smooth scroll. Nothing else. |
-
-## Deploy to GitHub Pages
-
-Repository Settings → Pages → Source: `website/` folder, `master` branch. No build step.
+| File | What it is |
+|------|------------|
+| `index.html` | The method. Not a product. |
+| `for-agents.html` | Notes for carrying the method into a tool. Not an operating system. |
+| `mystery-school.html` | Public study. Not for sale. |
+| `nz-governance.html` | Drafts. Not adopted national standards. |
+| `failure-museum.html` | A record of claims the work got wrong. |
+| `style.css` | Styling. No external font calls. |
+| `script.js` | Navigation and small page behaviour. |
 
 ## Design
 
