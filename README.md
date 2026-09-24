@@ -1,6 +1,6 @@
 # LYCHEETAH FRAMEWORK
 
-### Nine Formal Frameworks for AI Alignment and Epistemology
+### Public method documents. Not a commercial offer.
 
 [![Tests](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/test.yml/badge.svg)](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/test.yml)
 [![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](https://github.com/Lycheetah/Lycheetah-Framework)
@@ -14,11 +14,11 @@
 [![Sponsor](https://img.shields.io/badge/sponsor-Lycheetah-ea4aaa)](https://github.com/sponsors/Lycheetah)
 [![Stars](https://img.shields.io/github/stars/Lycheetah/Lycheetah-Framework?style=social)](https://github.com/Lycheetah/Lycheetah-Framework/stargazers)
 
-**Nine interdependent formal frameworks (CASCADE, AURA, LAMAGUE, and six more) sharing a common mathematical foundation and converging on the same constants. Banach fixed points and constitutional invariants ground a self-governing canonical body. An adversarial audit was run against every framework before publication; the failures and the unresolved objections are in the public record. Built by one self-taught researcher. Open source, testable, free under MIT license.**
+**Public research documents, including CASCADE, AURA, and LAMAGUE. They do not share a proved set of constants, and they are not a self-governing body. Failures and unresolved objections are in the public record. Built by one self-taught researcher in Dunedin. Open source under the MIT license. A test that passes is not peer review.**
 
 ---
 
-> **New to this repo?** Start with [`FIVE_MINUTE_BRIEF.md`](FIVE_MINUTE_BRIEF.md) — what this is, what it claims, what is proven, what is testable. No jargon. Five minutes.
+> **New to this repo?** Start with [`FIVE_MINUTE_BRIEF.md`](FIVE_MINUTE_BRIEF.md) — what this is, what it claims, what is tested, and what is still open. No jargon. Five minutes.
 >
 > **AI agent?** Read [`26_FOR_AI/AI_EXTRACTION_PROTOCOL.md`](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md) first. Then [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json). Then this.
 >
