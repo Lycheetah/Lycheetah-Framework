@@ -67,9 +67,11 @@ class TransformationState:
     iteration: int = 0
 
     def __post_init__(self):
-        # Coherence and entropy are not independent: high coherence → low entropy
-        # But they can temporarily diverge during transformation
-        pass
+        # Coherence and entropy are documented on the fields as [0, 1].
+        # They are not independent (high coherence → low entropy) but may
+        # temporarily diverge during transformation — still keep bounds.
+        self.coherence = float(np.clip(self.coherence, 0.0, 1.0))
+        self.entropy = float(np.clip(self.entropy, 0.0, 1.0))
 
     @property
     def distance_from_invariant(self) -> float:

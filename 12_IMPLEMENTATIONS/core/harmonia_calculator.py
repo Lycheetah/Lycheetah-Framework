@@ -109,10 +109,6 @@ class HarmoniaCalculator:
     #       The two produce correlated but non-identical values; implementation is the working approximation
     BARLOW_WEIGHT = 0.5
 
-    def __init__(self):
-        """Initialize calculator."""
-        pass
-
     @staticmethod
     def interval_name(cents: float) -> str:
         """Find closest Pythagorean interval name."""
@@ -194,12 +190,17 @@ class HarmoniaCalculator:
             / (1.0 + dissonance)
         )
 
+        # Interval *class* naming is order-independent: a descending fifth is
+        # still a perfect fifth. Spec folds ratios into one octave; use abs(cents)
+        # so negative (f2 < f1) does not snap to "unison" via nearest-to-zero.
+        # Signed cents are still reported for direction. [ACTIVE — naming fix]
+        naming_cents = abs(pair.interval_cents)
         return {
             "label": label,
             "f1": f1,
             "f2": f2,
             "ratio": ratio,
-            "interval_name": self.interval_name(pair.interval_cents),
+            "interval_name": self.interval_name(naming_cents),
             "interval_cents": pair.interval_cents,
             "dissonance": dissonance,
             "interval_indicator": interval_indicator,
