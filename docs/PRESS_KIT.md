@@ -6,25 +6,22 @@
 
 ## THE ONE-PARAGRAPH VERSION
 
-A self-taught researcher in Dunedin, New Zealand has built a mathematical framework
-for AI governance grounded in Māori epistemology and constitutional theory — and is
-giving it away. The Lycheetah Framework consists of nine mathematical frameworks
-describing how knowledge, consciousness, and ethics organise, plus four implementable
-AI accountability standards for Aotearoa New Zealand: a Community AI Warrant of Fitness,
-a Three Worlds Disclosure Standard (grounded in Māori concepts of the known, uncertain,
-and unknowable), a Whakapapa Disclosure Standard (AI genealogy), and a Matariki Annual
-Audit. All are open-source, CC BY 4.0. The framework also maintains a public Failure Museum
-— a permanent record of every claim it got wrong. Nothing removed. Ever.
+Mackenzie Conor James Clark, a self-taught researcher in Dunedin, New Zealand,
+publishes method documents and governance drafts. They are not a finished mathematical
+theory of knowledge, consciousness, or ethics. Four drafts on the site — a community
+check, a three-part disclosure, a whakapapa disclosure, and an annual review — are
+proposals. They are not adopted New Zealand standards. The Failure Museum keeps a
+public record of claims the work got wrong. Open source. A passing test is not peer review.
 
 ---
 
 ## KEY CLAIMS (HONEST STATUS LABELS)
 
 **[ACTIVE] — computable, tested, verifiable now:**
-- The CASCADE truth pressure formula Π = (E·P)/S retroactively explains paradigm shifts in science (Miasma→Germ theory, Classical→Quantum mechanics)
-- The four NZ AI accountability standards are implementable under current NZ law via ministerial directive — no legislation required
-- The Community AI WOF maps directly to seven AURA constitutional invariants with mathematical thresholds
-- The Failure Museum: eight public exhibits of framework failures, including a brain energy claim that would have been physiologically lethal
+- CASCADE includes a formula the author uses when talking about changes in science. The formula does not by itself explain those changes.
+- The four governance drafts are proposals. This page does not claim they are implementable by ministerial directive, and it does not claim they are law.
+- The community check is a draft mapping. It is not a set of mathematical thresholds in force.
+- The Failure Museum records claims the work got wrong, including a brain-energy claim that would have been physiologically lethal.
 
 **[SCAFFOLD] — structure sound, parameters need empirical measurement:**
 - Master equation `dΨ/dt = k₁·(Π − Π_th) − k₂·(Ψ − Ψ_inv) − k₃·I_violations + k₄·(E_avail/E_need)` — coupling constants k₁–k₄ await calibration
