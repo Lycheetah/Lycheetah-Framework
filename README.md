@@ -103,7 +103,7 @@ Full records: [`EXTERNAL_VALIDATION`](33_APPLICATIONS/EXTERNAL_VALIDATION_2026-0
 | Runnable engineering | [`lycheetah/`](lycheetah/) and [`12_IMPLEMENTATIONS/`](12_IMPLEMENTATIONS/) | Executable code and tests. Passing local tests does not establish effectiveness on real-world traffic. |
 | Research and empirical records | [`31_EMPIRICAL/`](31_EMPIRICAL/) and [`33_APPLICATIONS/`](33_APPLICATIONS/) | Formal work, measurements, and preregistrations; each result is bounded by its own data and method. A preregistration is not a result. |
 | Assurance runtime | [`34_ASSURANCE_RUNTIME/`](34_ASSURANCE_RUNTIME/) | An experimental scaffold for policy evaluation and decision receipts. It is not a production safety or compliance certification. |
-| Abstract and generative work | [`35_ABSTRACT_AND_GENERATIVE/`](35_ABSTRACT_AND_GENERATIVE/) | Symbolic, philosophical, mythic, and research-adjacent objects. These remain speculative unless separately tested and promoted with evidence. |
+| Abstract and generative work | [`35_ABSTRACT_AND_GENERATIVE/README.md`](35_ABSTRACT_AND_GENERATIVE/README.md) · [`REGISTER.md`](35_ABSTRACT_AND_GENERATIVE/REGISTER.md) | Symbolic, philosophical, mythic, experiential, and research-adjacent objects, kept distinct from the empirical claims register. |
 | History and recovery | [`99_ARCHIVE/`](99_ARCHIVE/) | Corrections, prior states, and branch records retained for context. Archived material is not a current capability claim. |
 
 ---

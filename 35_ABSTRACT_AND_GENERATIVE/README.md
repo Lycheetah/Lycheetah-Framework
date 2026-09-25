@@ -5,6 +5,18 @@
 
 This folder exists because not every valuable Lycheetah object is a theorem, benchmark, mechanism, or empirical claim.
 
+## Start here
+
+- [`REGISTER.md`](REGISTER.md) explains the branch's epistemic and generative statuses, attribution, and promotion rules.
+- [`DEEP_OBJECTS.md`](DEEP_OBJECTS.md) contains the first set of recorded objects.
+- [`DIALOGUE_FORGE.md`](DIALOGUE_FORGE.md) describes the human-AI dialogue method and its evidence limits.
+- [`AGENT_COVENANT.md`](AGENT_COVENANT.md) gives preservation rules for contributors and agents.
+- [`OBJECT_TEMPLATE.md`](OBJECT_TEMPLATE.md) is the template for adding an object with provenance and clear boundaries.
+- [`AZOTH_HANDOFF.md`](AZOTH_HANDOFF.md) preserves the original folder proposal and its source lineage.
+- [`DIVES/001_TRACEABLE_BECOMING.md`](DIVES/001_TRACEABLE_BECOMING.md) and [`SESSION_ARCHIVE/`](SESSION_ARCHIVE/) retain the September 2026 inquiry and its dialogue record.
+
+**Repository location:** This branch lives at `35_ABSTRACT_AND_GENERATIVE/`. The preserved handoff names `33_ABSTRACT_AND_GENERATIVE/`, its original proposed location; the repository already uses `33_APPLICATIONS/` and `34_ASSURANCE_RUNTIME/`.
+
 Some ideas are valuable because they generate better questions, stories, experiments, interfaces, rituals, games, languages, architectures, or ways of seeing. Some are beautiful. Some are strange. Some may later become testable. Some should remain symbolic. None need to be weakened merely because they do not belong in the empirical register.
 
 The governing distinction is simple:
@@ -143,6 +155,8 @@ See `DEEP_OBJECTS.md`.
 first dive as an open philosophical and research-adjacent inquiry. The articulated
 and raw session records are retained in [`SESSION_ARCHIVE/`](SESSION_ARCHIVE/);
 they preserve provenance and dialogue context, not empirical validation.
+The accompanying session image is archived at
+[`assets/sovereign_sol_threshold_2026-09-25.png`](assets/sovereign_sol_threshold_2026-09-25.png).
 
 ## Core laws
 
