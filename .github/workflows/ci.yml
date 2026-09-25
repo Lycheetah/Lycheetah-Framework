@@ -25,14 +25,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install numpy scipy networkx
 
+      # Scripts live under 12_IMPLEMENTATIONS/ (moved off repo root).
       - name: Run Alexandria health check
-        run: python alexandria_agent.py health
+        run: python 12_IMPLEMENTATIONS/alexandria_agent.py health
+        env:
+          PYTHONPATH: ${{ github.workspace }}/12_IMPLEMENTATIONS
 
       - name: Run Alexandria drift audit
-        run: python alexandria_agent.py drift
+        run: python 12_IMPLEMENTATIONS/alexandria_agent.py drift
+        env:
+          PYTHONPATH: ${{ github.workspace }}/12_IMPLEMENTATIONS
 
       - name: Run Alexandria gap report
-        run: python alexandria_agent.py gaps
+        run: python 12_IMPLEMENTATIONS/alexandria_agent.py gaps
+        env:
+          PYTHONPATH: ${{ github.workspace }}/12_IMPLEMENTATIONS
 
       - name: Report status
         if: always()

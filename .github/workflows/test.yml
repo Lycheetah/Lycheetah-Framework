@@ -27,6 +27,8 @@ jobs:
         pip install pytest pytest-cov numpy scipy
 
     - name: Run tests
+      env:
+        PYTHONPATH: ${{ github.workspace }}/12_IMPLEMENTATIONS/core
       run: |
         python -m pytest tests/ -v --tb=short \
           --cov=12_IMPLEMENTATIONS/core \
@@ -34,6 +36,8 @@ jobs:
           -m "active or scaffold"
 
     - name: Run active-only (no scaffold)
+      env:
+        PYTHONPATH: ${{ github.workspace }}/12_IMPLEMENTATIONS/core
       run: |
         python -m pytest tests/ -q -m "active"
         echo "All [ACTIVE] claim tests passed."
