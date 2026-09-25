@@ -155,7 +155,7 @@ Snapshot of the six GitHub branch tips inspected for the local consolidation. `m
 
 </details>
 
-| `claude/sovereign-instance-quality-xtcckq` | `dfe7c55cf375970cfda811e2e27f22178ff366b0` | `606537d43c56da9409b0ed41f2d37c921b6459db` | 16 / 13 | 13 | 103 | Integration is in progress on consolidation/2026-09-25; final merge commit will be recorded after local verification. |
+| `claude/sovereign-instance-quality-xtcckq` | `dfe7c55cf375970cfda811e2e27f22178ff366b0` | `606537d43c56da9409b0ed41f2d37c921b6459db` | 16 / 13 | 13 | 103 | Merged locally as `2931d30` on consolidation/2026-09-25 after local verification. No remote refs changed. |
 
 <details><summary>claude/sovereign-instance-quality-xtcckq: paths changed since merge base (103; 54 line-ending-only)</summary>
 
