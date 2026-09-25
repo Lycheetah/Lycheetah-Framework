@@ -99,7 +99,13 @@ def web_demo_cli():
 
     # Import the app from the applications folder
     sys.path.insert(0, _IMPL)
-    from applications.web_demo import app
+    from applications.web_demo import app, FLASK_AVAILABLE
+    if not FLASK_AVAILABLE or app is None:
+        print(
+            "ERROR: flask not installed. Run: pip install 'lycheetah-framework[web]'",
+            file=sys.stderr,
+        )
+        sys.exit(1)
     print(f"Lycheetah Web Demo running at http://{args.host}:{args.port}")
     print("Ctrl+C to stop")
     app.run(host=args.host, port=args.port, debug=False)
@@ -113,5 +119,15 @@ def guard_cli():
         lycheetah-guard
         (registered as MCP server in Claude Code settings.json)
     """
-    from applications.lycheetah_guard_mcp import main
+    try:
+        from applications.lycheetah_guard_mcp import main, MCP_AVAILABLE
+    except ImportError as e:
+        print(f"ERROR: could not load lycheetah-guard: {e}", file=sys.stderr)
+        sys.exit(1)
+    if not MCP_AVAILABLE:
+        print(
+            "ERROR: mcp package not installed. Run: pip install 'lycheetah-framework[mcp]'",
+            file=sys.stderr,
+        )
+        sys.exit(1)
     main()

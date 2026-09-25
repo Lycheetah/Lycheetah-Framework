@@ -46,6 +46,8 @@ class Visualizer:
     
     def __init__(self):
         self.figures = []
+        # Series payloads use TimeSeriesData.to_dict() — no invented schema.
+        self._exported_series: Dict[str, Dict] = {}
     
     def plot_drift_over_time(
         self, 
@@ -63,6 +65,10 @@ class Visualizer:
             threshold: Critical drift threshold line
             save_path: If provided, save figure to this path
         """
+        # Retain series for export_all_data (schema = TimeSeriesData.to_dict)
+        for agent_name, data in agent_drifts.items():
+            self._exported_series[f"drift:{agent_name}"] = data.to_dict()
+
         if not MATPLOTLIB_AVAILABLE:
             print("Cannot plot: matplotlib not installed")
             return
@@ -101,7 +107,7 @@ class Visualizer:
             print(f"📊 Saved: {save_path}")
         else:
             plt.show()
-        
+
         self.figures.append(fig)
     
     def plot_consensus_evolution(
@@ -337,10 +343,18 @@ class Visualizer:
         self.figures = []
     
     def export_all_data(self, filename: str):
-        """Export all plot data to JSON"""
-        # This would store plot data for later regeneration
-        # Implementation depends on what data you want to preserve
-        pass
+        """Export retained plot series to JSON.
+
+        Uses TimeSeriesData.to_dict() payloads captured from plot_drift_over_time.
+        Figure objects themselves are not serialized (matplotlib handles).
+        """
+        payload = {
+            "figure_count": len(self.figures),
+            "series": dict(self._exported_series),
+        }
+        with open(filename, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2)
+        return payload
 
 
 # =========================

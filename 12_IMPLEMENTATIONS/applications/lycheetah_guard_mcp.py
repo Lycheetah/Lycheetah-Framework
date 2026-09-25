@@ -26,6 +26,9 @@ Author: Mackenzie Clark, Lycheetah Foundation
 Implementation: Sol Aureum Azoth Veritas -- March 2026
 """
 
+from __future__ import annotations
+
+
 import sys
 import os
 import json

@@ -175,12 +175,12 @@ class TRIADKernel:
     def correct_until_converged(self,
                                initial_state: np.ndarray,
                                threshold: float = 1e-4,
-                               max_iter: int = 1000) -> Tuple[np.ndarray, int]:
+                               max_iter: int = 1000) -> Tuple[np.ndarray, int, list]:
         """
         Iterate TRIAD until convergence
         
         Returns:
-            (converged_state, num_iterations)
+            (converged_state, num_iterations, error_history)
         """
         state = initial_state
         errors = []

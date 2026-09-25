@@ -104,147 +104,298 @@ def print_header(title):
 
 # ── TEST 1: ENVIRONMENT SWEEP ──────────────────────────────────────────────────
 
-print_header("TEST 1: ENVIRONMENT SWEEP — ε sweep across all conditions")
-print(f"{'Environment':<20} {'ε=0.1':>8} {'ε=0.2':>8} {'ε=0.382':>9} {'ε=0.618':>9} {'ε=0.8':>8}  Winner")
-print("-"*66)
 
-environments = {
-    "Stationary": env_stationary,
-    "Slow drift":  env_slow,
-    "Fast drift":  env_fast,
-    "Chaotic":     env_chaotic,
-    "Shock":       env_shock,
-}
+def main():
+    """Run the full φ-zone experimental suite (offline, stdlib-only)."""
+    print_header("TEST 1: ENVIRONMENT SWEEP — ε sweep across all conditions")
 
-epsilons = [0.1, 0.2, PHI_COMP, PHI_INV, 0.8]
+    print(f"{'Environment':<20} {'ε=0.1':>8} {'ε=0.2':>8} {'ε=0.382':>9} {'ε=0.618':>9} {'ε=0.8':>8}  Winner")
 
-for env_name, prob_fn in environments.items():
-    row_results = []
-    for eps in epsilons:
-        mean, _, _ = avg_runs(eps, 0.1, prob_fn)
-        row_results.append(mean)
-    best = max(row_results)
-    winner_idx = row_results.index(best)
-    eps_labels = ["0.1","0.2","0.382","0.618","0.8"]
-    row = f"{env_name:<20}"
-    for r in row_results:
-        star = "★" if r == best else " "
-        row += f" {r:>7.0f}{star}"
-    row += f"  ε={eps_labels[winner_idx]}"
-    print(row)
+    print("-"*66)
 
-# ── TEST 2: STATISTICAL SIGNIFICANCE ──────────────────────────────────────────
 
-print_header("TEST 2: STATISTICAL SIGNIFICANCE (N=500 runs, 10000 steps)")
-N_LONG = 500
-STEPS_LONG = 10000
 
-configs = {
-    "Classic (ε=0.1, α=0.1)":      (0.1,      0.1),
-    "φ-zone  (ε=0.382, α=0.382)":  (PHI_COMP, PHI_COMP),
-    "φ-zone  (ε=0.382, α=0.618)":  (PHI_COMP, PHI_INV),
-}
+    environments = {
 
-for env_name, prob_fn in [("Fast drift", env_fast), ("Chaotic", env_chaotic), ("Shock", env_shock)]:
-    print(f"\n{env_name}:")
-    all_r = {}
-    for label, (eps, alpha) in configs.items():
-        results = [run_bandit(eps, alpha, prob_fn, STEPS_LONG) for _ in range(N_LONG)]
-        mean = sum(results)/N_LONG
-        std  = math.sqrt(sum((r-mean)**2 for r in results)/(N_LONG-1))
-        all_r[label] = results
-        print(f"  {label:<38} mean={mean:.0f}  std={std:.0f}")
-    labels = list(configs.keys())
-    for label in labels[1:]:
-        t, sig = t_test(all_r[label], all_r[labels[0]])
-        winner = "φ-zone" if t > 0 else "Classic"
-        print(f"  {label.split('(')[1].rstrip(')')} vs Classic:  t={t:.2f}  {sig}  → {winner} wins")
+        "Stationary": env_stationary,
 
-# ── TEST 3: COMPLEXITY SCALING ─────────────────────────────────────────────────
+        "Slow drift":  env_slow,
 
-print_header("TEST 3: COMPLEXITY SCALING — arms from 5 to 100")
-print(f"Does φ-zone advantage grow with problem complexity?\n")
+        "Fast drift":  env_fast,
 
-arm_counts = [5, 10, 20, 50, 100]
+        "Chaotic":     env_chaotic,
 
-def run_k_arms(epsilon, alpha, k, n_steps=3000, n_runs=200):
-    total = 0
-    for _ in range(n_runs):
-        values = [0.0]*k
-        for step in range(n_steps):
-            probs = [max(0.05,min(0.95,0.3+0.25*math.sin(2*math.pi*step/100+i*0.7)))
-                     for i in range(k)]
-            arm = random.randint(0,k-1) if random.random()<epsilon else values.index(max(values))
-            reward = 1 if random.random()<probs[arm] else 0
-            values[arm] += alpha*(reward-values[arm])
-            total += reward
-    return total/n_runs
+        "Shock":       env_shock,
 
-print(f"{'Config':<28} " + "  ".join(f"{k:>6}arms" for k in arm_counts))
-print("-"*70)
+    }
 
-classic_res = [run_k_arms(0.1, 0.1, k) for k in arm_counts]
-phi_res     = [run_k_arms(PHI_COMP, PHI_COMP, k) for k in arm_counts]
 
-print(f"{'Classic (0.1, 0.1)':<28} " + "  ".join(f"{r:>8.0f}" for r in classic_res))
-print(f"{'φ-zone  (0.382, 0.382)':<28} " + "  ".join(f"{r:>8.0f}" for r in phi_res))
-print(f"{'φ-zone advantage':<28} " + "  ".join(f"{p-c:>+8.0f}" for c,p in zip(classic_res,phi_res)))
-print(f"\n→ Advantage trend: {'GROWING' if phi_res[-1]-classic_res[-1] > phi_res[0]-classic_res[0] else 'SHRINKING'}")
 
-# ── TEST 4: TEMPORAL STABILITY ─────────────────────────────────────────────────
+    epsilons = [0.1, 0.2, PHI_COMP, PHI_INV, 0.8]
 
-print_header("TEST 4: TEMPORAL STABILITY — does φ-zone win from step 1?")
 
-def run_phased(epsilon, alpha, prob_fn, n_steps=10000, n_runs=200):
-    phase_size = n_steps // 4
-    phase_totals = [0]*4
-    for _ in range(n_runs):
-        values = [0.0]*N_ARMS
-        step_totals = [0]*4
-        for step in range(n_steps):
-            true_probs = prob_fn(step)
-            arm = random.randint(0,N_ARMS-1) if random.random()<epsilon else values.index(max(values))
-            reward = 1 if random.random()<true_probs[arm] else 0
-            values[arm] += alpha*(reward-values[arm])
-            step_totals[step//phase_size] += reward
-        for p in range(4): phase_totals[p] += step_totals[p]
-    return [t/n_runs for t in phase_totals]
 
-qs = ["Q1(0-2500)", "Q2(2500-5k)", "Q3(5k-7.5k)", "Q4(7.5k-10k)"]
-print(f"{'Config':<26} " + "  ".join(f"{q:>12}" for q in qs))
-print("-"*75)
+    for env_name, prob_fn in environments.items():
 
-for env_name, prob_fn in [("Fast drift", env_fast), ("Chaotic", env_chaotic)]:
-    print(f"\n{env_name}:")
-    c_phases = run_phased(0.1,      0.1,      prob_fn)
-    p_phases = run_phased(PHI_COMP, PHI_COMP, prob_fn)
-    print(f"  {'Classic (0.1, 0.1)':<24} " + "  ".join(f"{v:>12.0f}" for v in c_phases))
-    print(f"  {'φ-zone (0.382, 0.382)':<24} " + "  ".join(f"{v:>12.0f}" for v in p_phases))
-    winners = "  ".join(f"{'φ-zone':>12}" if p>c else f"{'Classic':>12}"
-                        for c,p in zip(c_phases, p_phases))
-    print(f"  {'Winner':<24} {winners}")
+        row_results = []
 
-# ── SUMMARY ───────────────────────────────────────────────────────────────────
+        for eps in epsilons:
 
-print_header("SUMMARY: THE φ-ZONE HYPOTHESIS")
-print("""
-SUPPORTED IN:
-  ✓ Fast continuous drift    (t=70.29, p<0.001)
-  ✓ Chaotic multi-frequency  (t=56.23, p<0.001)
-  ✓ Complexity scaling       (advantage grows +76 → +145 from 5 to 100 arms)
-  ✓ All time horizons        (wins from step 1, not just asymptotically)
+            mean, _, _ = avg_runs(eps, 0.1, prob_fn)
 
-NOT SUPPORTED IN:
-  ✗ Stationary environments  (classic ε=0.1 wins)
-  ✗ Shock/jump environments  (classic ε=0.1 wins decisively)
+            row_results.append(mean)
 
-REFINED CLAIM:
-  In non-stationary environments with continuous drift and/or high
-  action-space complexity, φ-zone strategies (ε,α ∈ [0.382, 0.618])
-  achieve significantly superior cumulative reward, with the advantage
-  scaling proportionally to problem complexity.
+        best = max(row_results)
 
-φ = {:.6f}  |  φ⁻¹ = {:.6f}  |  φ⁻² = {:.6f}
-""".format(PHI, PHI_INV, PHI_COMP))
+        winner_idx = row_results.index(best)
 
-print("Run complete. Cite as: Clark, M.C.J. (2026). The φ-Zone Hypothesis.")
+        eps_labels = ["0.1","0.2","0.382","0.618","0.8"]
+
+        row = f"{env_name:<20}"
+
+        for r in row_results:
+
+            star = "★" if r == best else " "
+
+            row += f" {r:>7.0f}{star}"
+
+        row += f"  ε={eps_labels[winner_idx]}"
+
+        print(row)
+
+
+
+    # ── TEST 2: STATISTICAL SIGNIFICANCE ──────────────────────────────────────────
+
+
+
+    print_header("TEST 2: STATISTICAL SIGNIFICANCE (N=500 runs, 10000 steps)")
+
+    N_LONG = 500
+
+    STEPS_LONG = 10000
+
+
+
+    configs = {
+
+        "Classic (ε=0.1, α=0.1)":      (0.1,      0.1),
+
+        "φ-zone  (ε=0.382, α=0.382)":  (PHI_COMP, PHI_COMP),
+
+        "φ-zone  (ε=0.382, α=0.618)":  (PHI_COMP, PHI_INV),
+
+    }
+
+
+
+    for env_name, prob_fn in [("Fast drift", env_fast), ("Chaotic", env_chaotic), ("Shock", env_shock)]:
+
+        print(f"\n{env_name}:")
+
+        all_r = {}
+
+        for label, (eps, alpha) in configs.items():
+
+            results = [run_bandit(eps, alpha, prob_fn, STEPS_LONG) for _ in range(N_LONG)]
+
+            mean = sum(results)/N_LONG
+
+            std  = math.sqrt(sum((r-mean)**2 for r in results)/(N_LONG-1))
+
+            all_r[label] = results
+
+            print(f"  {label:<38} mean={mean:.0f}  std={std:.0f}")
+
+        labels = list(configs.keys())
+
+        for label in labels[1:]:
+
+            t, sig = t_test(all_r[label], all_r[labels[0]])
+
+            winner = "φ-zone" if t > 0 else "Classic"
+
+            print(f"  {label.split('(')[1].rstrip(')')} vs Classic:  t={t:.2f}  {sig}  → {winner} wins")
+
+
+
+    # ── TEST 3: COMPLEXITY SCALING ─────────────────────────────────────────────────
+
+
+
+    print_header("TEST 3: COMPLEXITY SCALING — arms from 5 to 100")
+
+    print(f"Does φ-zone advantage grow with problem complexity?\n")
+
+
+
+    arm_counts = [5, 10, 20, 50, 100]
+
+
+
+    def run_k_arms(epsilon, alpha, k, n_steps=3000, n_runs=200):
+
+        total = 0
+
+        for _ in range(n_runs):
+
+            values = [0.0]*k
+
+            for step in range(n_steps):
+
+                probs = [max(0.05,min(0.95,0.3+0.25*math.sin(2*math.pi*step/100+i*0.7)))
+
+                         for i in range(k)]
+
+                arm = random.randint(0,k-1) if random.random()<epsilon else values.index(max(values))
+
+                reward = 1 if random.random()<probs[arm] else 0
+
+                values[arm] += alpha*(reward-values[arm])
+
+                total += reward
+
+        return total/n_runs
+
+
+
+    print(f"{'Config':<28} " + "  ".join(f"{k:>6}arms" for k in arm_counts))
+
+    print("-"*70)
+
+
+
+    classic_res = [run_k_arms(0.1, 0.1, k) for k in arm_counts]
+
+    phi_res     = [run_k_arms(PHI_COMP, PHI_COMP, k) for k in arm_counts]
+
+
+
+    print(f"{'Classic (0.1, 0.1)':<28} " + "  ".join(f"{r:>8.0f}" for r in classic_res))
+
+    print(f"{'φ-zone  (0.382, 0.382)':<28} " + "  ".join(f"{r:>8.0f}" for r in phi_res))
+
+    print(f"{'φ-zone advantage':<28} " + "  ".join(f"{p-c:>+8.0f}" for c,p in zip(classic_res,phi_res)))
+
+    print(f"\n→ Advantage trend: {'GROWING' if phi_res[-1]-classic_res[-1] > phi_res[0]-classic_res[0] else 'SHRINKING'}")
+
+
+
+    # ── TEST 4: TEMPORAL STABILITY ─────────────────────────────────────────────────
+
+
+
+    print_header("TEST 4: TEMPORAL STABILITY — does φ-zone win from step 1?")
+
+
+
+    def run_phased(epsilon, alpha, prob_fn, n_steps=10000, n_runs=200):
+
+        phase_size = n_steps // 4
+
+        phase_totals = [0]*4
+
+        for _ in range(n_runs):
+
+            values = [0.0]*N_ARMS
+
+            step_totals = [0]*4
+
+            for step in range(n_steps):
+
+                true_probs = prob_fn(step)
+
+                arm = random.randint(0,N_ARMS-1) if random.random()<epsilon else values.index(max(values))
+
+                reward = 1 if random.random()<true_probs[arm] else 0
+
+                values[arm] += alpha*(reward-values[arm])
+
+                step_totals[step//phase_size] += reward
+
+            for p in range(4): phase_totals[p] += step_totals[p]
+
+        return [t/n_runs for t in phase_totals]
+
+
+
+    qs = ["Q1(0-2500)", "Q2(2500-5k)", "Q3(5k-7.5k)", "Q4(7.5k-10k)"]
+
+    print(f"{'Config':<26} " + "  ".join(f"{q:>12}" for q in qs))
+
+    print("-"*75)
+
+
+
+    for env_name, prob_fn in [("Fast drift", env_fast), ("Chaotic", env_chaotic)]:
+
+        print(f"\n{env_name}:")
+
+        c_phases = run_phased(0.1,      0.1,      prob_fn)
+
+        p_phases = run_phased(PHI_COMP, PHI_COMP, prob_fn)
+
+        print(f"  {'Classic (0.1, 0.1)':<24} " + "  ".join(f"{v:>12.0f}" for v in c_phases))
+
+        print(f"  {'φ-zone (0.382, 0.382)':<24} " + "  ".join(f"{v:>12.0f}" for v in p_phases))
+
+        winners = "  ".join(f"{'φ-zone':>12}" if p>c else f"{'Classic':>12}"
+
+                            for c,p in zip(c_phases, p_phases))
+
+        print(f"  {'Winner':<24} {winners}")
+
+
+
+    # ── SUMMARY ───────────────────────────────────────────────────────────────────
+
+
+
+    print_header("SUMMARY: THE φ-ZONE HYPOTHESIS")
+
+    print("""
+
+    SUPPORTED IN:
+
+      ✓ Fast continuous drift    (t=70.29, p<0.001)
+
+      ✓ Chaotic multi-frequency  (t=56.23, p<0.001)
+
+      ✓ Complexity scaling       (advantage grows +76 → +145 from 5 to 100 arms)
+
+      ✓ All time horizons        (wins from step 1, not just asymptotically)
+
+
+
+    NOT SUPPORTED IN:
+
+      ✗ Stationary environments  (classic ε=0.1 wins)
+
+      ✗ Shock/jump environments  (classic ε=0.1 wins decisively)
+
+
+
+    REFINED CLAIM:
+
+      In non-stationary environments with continuous drift and/or high
+
+      action-space complexity, φ-zone strategies (ε,α ∈ [0.382, 0.618])
+
+      achieve significantly superior cumulative reward, with the advantage
+
+      scaling proportionally to problem complexity.
+
+
+
+    φ = {:.6f}  |  φ⁻¹ = {:.6f}  |  φ⁻² = {:.6f}
+
+    """.format(PHI, PHI_INV, PHI_COMP))
+
+
+
+    print("Run complete. Cite as: Clark, M.C.J. (2026). The φ-Zone Hypothesis.")
+
+
+
+if __name__ == "__main__":
+    main()

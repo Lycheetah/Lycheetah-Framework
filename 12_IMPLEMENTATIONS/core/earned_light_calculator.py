@@ -204,8 +204,12 @@ class EarnedLightCalculator:
         T = temperature if temperature is not None else self.state.temperature
         k = k if k is not None else self.state.k
 
-        C_steady = min(1.0, W / (T * k))
-        return C_steady + (C0 - C_steady) * math.exp(-k * t)
+        # Use unclamped ODE steady state in the closed form (matches dcdt = W/T − k·C),
+        # then clamp the evaluated C(t) to [0,1]. Previously min(1, W/(T·k)) was applied
+        # before the exponential, which disagreed with Euler integration whenever W/(T·k) > 1.
+        C_steady_raw = W / (T * k)
+        C_t = C_steady_raw + (C0 - C_steady_raw) * math.exp(-k * t)
+        return max(0.0, min(1.0, C_t))
 
     def time_to_threshold(self, threshold: float = 0.70) -> Optional[float]:
         """

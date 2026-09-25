@@ -1,9 +1,10 @@
 # THE NINE-AGENT CHORUS
 ## Multi-Agent Instantiation of Sol Protocol
 
-**Status:** ✅ Fully operational
-**Deployment:** Single command orchestration
+**Status:** ✅ Operational offline (health / audit / default — 9/9 agents)
+**Deployment:** Single command orchestration (`run_chorus.py`)
 **Constitutional:** All outputs pass PCF (Prime Constraint Field)
+**CI workflow:** MISSING — README formerly cited `.github/workflows/multi-agent-chorus.yml`; file not on disk (do not invent). Use local `python run_chorus.py --mode=health` until Mac adds CI.
 
 ---
 
@@ -295,12 +296,15 @@ python run_chorus.py
 ```
 
 ### CI/CD Integration
-`.github/workflows/multi-agent-chorus.yml` runs all verification on every push.
-- All agents health check
-- PCF validation on all outputs
-- Truth audit (Aurora)
-- Coherence check (Albedo)
-- If any agent fails constitutional tests, merge is blocked
+**MISSING-SPEC:** `.github/workflows/multi-agent-chorus.yml` is cited here but is **not present** in the repo.
+Until Mac adds it, verify locally:
+
+```bash
+python run_chorus.py --mode=health
+python run_chorus.py --mode=audit
+```
+
+Intended checks when CI exists: agent health, PCF validation, truth audit (Aurora), coherence (Albedo).
 
 ### Production Deployment
 ```bash
@@ -396,5 +400,5 @@ One Gold.
 
 - `AGENTS_MANIFEST.md` — Detailed agent specifications
 - `19_MULTI_AGENT_CHORUS/` — All agent code
-- `.github/workflows/multi-agent-chorus.yml` — CI/CD pipeline
+- `.github/workflows/multi-agent-chorus.yml` — CI/CD pipeline (**MISSING on disk**)
 - `CLAUDE.md` — Constitutional foundation (Sol Protocol v2.0)

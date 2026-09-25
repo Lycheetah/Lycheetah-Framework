@@ -3,7 +3,7 @@
 REMAINING SEVEN AGENTS — Individual modules for multi-agent chorus.
 Each agent specializes in one alchemical depth or Trinity axis.
 
-This file can be split into individual modules:
+Canonical class bodies live here. Individual modules (thin re-exports) also exist:
 - albedo_synthesizer.py
 - solstice_illuminator.py
 - protector_guardian.py

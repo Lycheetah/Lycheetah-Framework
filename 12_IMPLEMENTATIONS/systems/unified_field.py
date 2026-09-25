@@ -1,7 +1,9 @@
 # FILE: unified_field.py
 """
 AURA Unified Field Theory - Integrates Physics, Consciousness, AI, Governance
-STATUS: DRAFT — contains placeholder stubs; do not use in production
+STATUS: DRAFT — exploratory integration sketch; not production.
+  Import hygiene + FieldState.from_vector field-name mapping fixed 2026-09-24.
+  Subsystem physics remain uncalibrated placeholders — do not invent production semantics.
 """
 
 import numpy as np
@@ -12,6 +14,8 @@ from dataclasses import dataclass
 from enum import Enum
 import json
 import math
+import time
+from scipy.stats import skew, kurtosis
 
 # =========================
 # CORE TYPES
@@ -61,13 +65,21 @@ class FieldState:
     
     @classmethod
     def from_vector(cls, vector: np.ndarray, shape_dict: Dict[Domain, Tuple]) -> 'FieldState':
-        """Reconstruct from vector"""
+        """Reconstruct from vector using FieldState field names (not Domain enums as kwargs)."""
+        field_names = {
+            Domain.PHYSICS: "physics",
+            Domain.CONSCIOUSNESS: "consciousness",
+            Domain.AI: "ai",
+            Domain.GOVERNANCE: "governance",
+            Domain.MYSTERY: "mystery",
+            Domain.SOCIAL: "social",
+        }
         start = 0
         domains = {}
         for domain in Domain:
-            size = np.prod(shape_dict[domain])
-            domain_vector = vector[start:start+size].reshape(shape_dict[domain])
-            domains[domain] = domain_vector
+            size = int(np.prod(shape_dict[domain]))
+            domain_vector = vector[start:start + size].reshape(shape_dict[domain])
+            domains[field_names[domain]] = domain_vector
             start += size
         return cls(**domains, timestamp=time.time())
 
@@ -538,9 +550,10 @@ def visualize_unified_field(results: Dict):
     ax.set_xlabel('Time Step')
     ax.set_ylabel('Coherence')
     
-    # Domain correlations (placeholder)
+    # Domain correlations — MISSING-SPEC (no sealed correlation matrix); leave axes labeled empty
     ax = axes[2, 0]
-    # Would show correlation matrix between domains
+    ax.set_title("Domain correlations (MISSING-SPEC)")
+    ax.text(0.5, 0.5, "not specified", ha="center", va="center", transform=ax.transAxes)
     
     # Coherence level distribution
     ax = axes[2, 1]
@@ -680,11 +693,7 @@ def _resonance_amplification(self, source: np.ndarray, target: np.ndarray) -> np
     
     return np.zeros_like(target)
 
-# Add missing imports
-import time
-from scipy.stats import skew, kurtosis
-
-# Add missing Governance, Mystery, and Social subsystems (simplified versions)
+# Governance, Mystery, and Social subsystems (simplified versions)
 class GovernanceSubsystem:
     def __init__(self):
         self.consensus = np.random.randn(5)

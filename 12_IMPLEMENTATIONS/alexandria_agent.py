@@ -24,7 +24,6 @@ from pathlib import Path
 from typing import Dict, List, Tuple, Any
 import re
 
-# Configuration
 # Script lives under 12_IMPLEMENTATIONS/ (moved from repo root); resolve repo root.
 _HERE = Path(__file__).resolve().parent
 FRAMEWORK_DIR = _HERE.parent if _HERE.name == "12_IMPLEMENTATIONS" else _HERE
@@ -47,12 +46,12 @@ SPEC_CONSTANTS = {
 # Gap checklist (paths updated for post-reorg tree; MISSING > invent)
 GAP_CHECKLIST = {
     "k1_k4_calibration": ("12_IMPLEMENTATIONS/cascade_simulation_results.json", "Calibration data committed"),
-    "unit_tests": ("12_IMPLEMENTATIONS/test_*.py", "Unit test files exist"),
+    "unit_tests": ("tests/test_*.py", "Unit test files exist"),
     "ci_workflow": (".github/workflows/ci.yml", "GitHub Actions CI configured"),
-    "12_week_curriculum": ("14_MYSTERY_SCHOOL/GETTING_STARTED.md", "Curriculum entry exists"),
+    "12_week_curriculum": ("14_MYSTERY_SCHOOL/12_WEEK_*.md", "12-week curriculum artifact exists"),
     "domain_experiments_2plus": ("12_IMPLEMENTATIONS/experiments/domain_*.py", "≥2 domain experiments"),
-    "lamague_duplication_resolved": ("03_LAMAGUE_L1/01_LAMAGUE_COMPLETE.md", "Lamague complete corpus present"),
-    "mystery_school_cascade_resolved": ("14_MYSTERY_SCHOOL/implementations/*.py", "Mystery school implementations present"),
+    "lamague_duplication_resolved": ("03_LAMAGUE_L1/01_LAMAGUE_COMPLETE.md", "Lamague source file exists"),
+    "mystery_school_cascade_resolved": ("14_MYSTERY_SCHOOL/implementations/*.py", "Mystery school implementation sources exist"),
     "arxiv_contact_email": ("papers/CASCADE_ARXIV.tex", "Contact email set"),
 }
 
@@ -75,13 +74,16 @@ def health_check() -> Tuple[Dict[str, Any], str]:
     report_lines.append("━" * 70)
 
     implementations_dir = FRAMEWORK_DIR / "12_IMPLEMENTATIONS"
+    mystery_impl = FRAMEWORK_DIR / "14_MYSTERY_SCHOOL" / "implementations"
     sys.path.insert(0, str(implementations_dir))
+    if mystery_impl.exists():
+        sys.path.insert(0, str(mystery_impl))
 
     all_pass = True
 
     for module_name in CORE_MODULES:
         try:
-            # Locate module
+            # Locate module (core engines + mystery-school helpers like where_am_i)
             core_dir = implementations_dir / "core"
             systems_dir = implementations_dir / "systems"
 
@@ -229,10 +231,16 @@ def drift_audit() -> Tuple[Dict[str, Any], str]:
 # 2c — GAP REPORT
 # ===========================
 
+# Gaps known absent by design / awaiting Mac — do not invent bodies.
+MISSING_SPEC_GAPS = {
+    "12_week_curriculum": "Mac-gated curriculum file not on disk (do not invent 12_WEEK_*.md)",
+}
+
 def gap_report() -> Tuple[Dict[str, str], str]:
     """
     Hard-coded gap checklist against known P0/P1 gaps.
     Check for existence of expected files/data.
+    Known Mac-gated absences report as MISSING_SPEC (not RED invent-pressure).
 
     Returns:
         (status_dict, human_report)
@@ -252,6 +260,11 @@ def gap_report() -> Tuple[Dict[str, str], str]:
         if matches:
             status[gap_name] = "GREEN"
             report_lines.append(f"  ✓ {gap_name:40s} — {description}")
+        elif gap_name in MISSING_SPEC_GAPS:
+            status[gap_name] = "MISSING_SPEC"
+            report_lines.append(
+                f"  ○ {gap_name:40s} — MISSING-SPEC: {MISSING_SPEC_GAPS[gap_name]}"
+            )
         else:
             status[gap_name] = "RED"
             report_lines.append(f"  ✗ {gap_name:40s} — MISSING: {search_pattern}")
@@ -259,7 +272,10 @@ def gap_report() -> Tuple[Dict[str, str], str]:
     report_lines.append("━" * 70)
     green_count = sum(1 for v in status.values() if v == "GREEN")
     red_count = sum(1 for v in status.values() if v == "RED")
-    report_lines.append(f"Result: {green_count} GREEN, {red_count} RED")
+    miss_count = sum(1 for v in status.values() if v == "MISSING_SPEC")
+    report_lines.append(
+        f"Result: {green_count} GREEN, {red_count} RED, {miss_count} MISSING_SPEC"
+    )
     report_lines.append("")
 
     return status, "\n".join(report_lines)
@@ -294,7 +310,7 @@ from typing import List, Tuple
 def build_blocks() -> List[KnowledgeBlock]:
     blocks = []
 
-    # TODO: Add knowledge blocks here
+    # TODO (intentional scaffold template): Add knowledge blocks here
     # Example:
     # blocks.append(KnowledgeBlock(
     #     id="block_id",
@@ -318,7 +334,7 @@ def example_run():
     engine = CascadeEngine()
 
     if blocks:
-        # TODO: Run CASCADE pipeline
+        # TODO (intentional scaffold template): Run CASCADE pipeline
         print(f"[{__name__}] Loaded {{len(blocks)}} knowledge blocks")
     else:
         print(f"[{__name__}] WARNING: No knowledge blocks defined yet")

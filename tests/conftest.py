@@ -16,11 +16,25 @@ import pytest
 # Add implementations to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '12_IMPLEMENTATIONS', 'core'))
 
+# ── LAMAGUE shelf runtime import paths (active, non-colliding packages) ───────
+# lamague_runtime (v0.3) · lamague_core (operator algebra v0.3) · lamague_codec
+_REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+LAMAGUE_SHELF_ROOTS = [
+    os.path.join(_REPO_ROOT, '03_LAMAGUE_L1', '07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE'),
+    os.path.join(_REPO_ROOT, '03_LAMAGUE_L1', '12_CORE_LANGUAGE_LINE', 'LAMAGUE_CORE_OPERATOR_ALGEBRA_v0.3'),
+    os.path.join(_REPO_ROOT, '03_LAMAGUE_L1', '22_REVERSIBLE_COMPRESSION_v1.0', 'src'),
+]
+for _root in reversed(LAMAGUE_SHELF_ROOTS):
+    if _root not in sys.path:
+        sys.path.insert(0, _root)
+
+
 
 def pytest_configure(config):
     config.addinivalue_line("markers", "active: tests for [ACTIVE] formally proven claims")
     config.addinivalue_line("markers", "scaffold: tests for [SCAFFOLD] structural but unfinished claims")
     config.addinivalue_line("markers", "conjecture: tests for [CONJECTURE] exploratory claims")
+    config.addinivalue_line("markers", "lamague_shelf: tests collected from 03_LAMAGUE_L1 shelf runtimes")
 
 
 # ── Shared fixtures ────────────────────────────────────────────────────────────

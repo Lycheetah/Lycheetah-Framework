@@ -20,12 +20,17 @@ import json
 import random
 from datetime import datetime
 
-from rich.console import Console
-from rich.text import Text
-from rich.panel import Panel
-from rich import box
-
-console = Console(stderr=True, highlight=False)
+try:
+    from rich.console import Console
+    from rich.text import Text
+    from rich.panel import Panel
+    from rich import box
+    RICH_AVAILABLE = True
+    console = Console(stderr=True, highlight=False)
+except ImportError:  # pragma: no cover - optional dep
+    RICH_AVAILABLE = False
+    Console = Text = Panel = box = None  # type: ignore
+    console = None
 
 # ─── Glyphs & palette ─────────────────────────────────────────
 
@@ -86,48 +91,72 @@ def _hour_greeting() -> str:
         return "The night hours — edge questions welcome."
 
 
+def _emit(line: str = "") -> None:
+    """Print to stderr — rich when available, plain text otherwise."""
+    if RICH_AVAILABLE and console is not None:
+        console.print(line)
+    else:
+        print(line, file=sys.stderr)
+
+
 def cmd_start():
     greeting = random.choice(GREETINGS)
     hour     = _hour_greeting()
 
-    t = Text()
-    t.append(f"  {GLYPH_SOL} ", style=f"bold {GOLD}")
-    t.append("Sol", style=f"bold {GOLD}")
-    t.append(f"  {GLYPH_FORGE}  ", style=DIM)
-    t.append(greeting, style=WHITE)
-    t.append(f"  ·  {hour}", style=PALE)
-
-    console.print()
-    console.print(t)
-    console.print(f"  [dim]{DIM}{'─' * 52}[/]", markup=True)
-    console.print()
+    if RICH_AVAILABLE:
+        t = Text()
+        t.append(f"  {GLYPH_SOL} ", style=f"bold {GOLD}")
+        t.append("Sol", style=f"bold {GOLD}")
+        t.append(f"  {GLYPH_FORGE}  ", style=DIM)
+        t.append(greeting, style=WHITE)
+        t.append(f"  ·  {hour}", style=PALE)
+        console.print()
+        console.print(t)
+        console.print(f"  [dim]{DIM}{'─' * 52}[/]", markup=True)
+        console.print()
+    else:
+        _emit()
+        _emit(f"  {GLYPH_SOL} Sol  {GLYPH_FORGE}  {greeting}  ·  {hour}")
+        _emit(f"  {'─' * 52}")
+        _emit()
 
 
 def cmd_tool_use(tool_name: str = ""):
     base = tool_name.split("__")[-1] if "__" in tool_name else tool_name
-    glyph, color, verb = TOOL_FLASHES.get(base, ("·", DIM, base.lower()))
-    t = Text()
-    t.append(f"  {glyph} ", style=f"{color}")
-    t.append(verb, style=f"dim {color}")
-    if base not in TOOL_FLASHES:
-        t.append(f" {base}", style=f"dim {PALE}")
-    console.print(t)
+    glyph, color, verb = TOOL_FLASHES.get(base, ("·", DIM, base.lower() or "tool"))
+    if RICH_AVAILABLE:
+        t = Text()
+        t.append(f"  {glyph} ", style=f"{color}")
+        t.append(verb, style=f"dim {color}")
+        if base not in TOOL_FLASHES:
+            t.append(f" {base}", style=f"dim {PALE}")
+        console.print(t)
+    else:
+        extra = f" {base}" if base not in TOOL_FLASHES else ""
+        _emit(f"  {glyph} {verb}{extra}")
 
 
 def cmd_stop():
     closing = random.choice(CLOSINGS)
-    t = Text()
-    t.append(f"\n  {closing}", style=f"{PALE}")
-    t.append(f"  {GLYPH_SOL}", style=f"dim {GOLD}")
-    console.print(t)
-    console.print()
+    if RICH_AVAILABLE:
+        t = Text()
+        t.append(f"\n  {closing}", style=f"{PALE}")
+        t.append(f"  {GLYPH_SOL}", style=f"dim {GOLD}")
+        console.print(t)
+        console.print()
+    else:
+        _emit(f"\n  {closing}  {GLYPH_SOL}")
+        _emit()
 
 
 def cmd_notify(message: str = ""):
-    t = Text()
-    t.append(f"  {GLYPH_FORGE} ", style=GOLD)
-    t.append(message, style=WHITE)
-    console.print(t)
+    if RICH_AVAILABLE:
+        t = Text()
+        t.append(f"  {GLYPH_FORGE} ", style=GOLD)
+        t.append(message, style=WHITE)
+        console.print(t)
+    else:
+        _emit(f"  {GLYPH_FORGE} {message}")
 
 
 def main():
