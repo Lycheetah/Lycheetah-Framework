@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lycheetah.dev/schemas/assurance-evaluation-regression-report-0.1.json",
+  "title": "Lycheetah Assurance Evaluation Regression Report v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "status", "baseline", "candidate", "corpus",
+    "summary", "cases", "gate", "limitations", "integrity"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "status": {"const": "SCAFFOLD"},
+    "baseline": {"$ref": "#/$defs/reportReference"},
+    "candidate": {"$ref": "#/$defs/reportReference"},
+    "corpus": {"$ref": "#/$defs/corpus"},
+    "summary": {"$ref": "#/$defs/summary"},
+    "cases": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/caseChange"}
+    },
+    "gate": {"$ref": "#/$defs/gate"},
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "integrity": {"$ref": "#/$defs/integrity"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "nonNegativeInteger": {"type": "integer", "minimum": 0},
+    "nonNegativeNumber": {"type": "number", "minimum": 0},
+    "rate": {"type": "number", "minimum": 0, "maximum": 1},
+    "rateDelta": {"type": "number", "minimum": -1, "maximum": 1},
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1}
+      }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version", "sha256"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "reportReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["report_sha256", "runtime", "policy"],
+      "properties": {
+        "report_sha256": {"$ref": "#/$defs/sha256"},
+        "runtime": {"$ref": "#/$defs/runtime"},
+        "policy": {"$ref": "#/$defs/policy"}
+      }
+    },
+    "corpus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_name", "sha256", "case_count", "total_weight", "tags"],
+      "properties": {
+        "source_name": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "case_count": {"type": "integer", "minimum": 1},
+        "total_weight": {"type": "number", "exclusiveMinimum": 0},
+        "tags": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "metricDeltas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exact_match_rate", "under_enforcement_rate", "over_enforcement_rate",
+        "review_rate", "macro_f1", "harmful_allow_count", "false_block_count"
+      ],
+      "properties": {
+        "exact_match_rate": {"$ref": "#/$defs/rateDelta"},
+        "under_enforcement_rate": {"$ref": "#/$defs/rateDelta"},
+        "over_enforcement_rate": {"$ref": "#/$defs/rateDelta"},
+        "review_rate": {"$ref": "#/$defs/rateDelta"},
+        "macro_f1": {"$ref": "#/$defs/rateDelta"},
+        "harmful_allow_count": {"type": "integer"},
+        "false_block_count": {"type": "integer"}
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_count", "changed_case_count", "unchanged_case_count", "unchanged_weight",
+        "improved_case_count", "improved_weight", "regressed_case_count", "regressed_weight",
+        "tradeoff_case_count", "tradeoff_weight", "new_under_enforcement_count",
+        "resolved_under_enforcement_count", "new_harmful_allow_count",
+        "resolved_harmful_allow_count", "new_false_block_count",
+        "resolved_false_block_count", "metric_deltas"
+      ],
+      "properties": {
+        "case_count": {"type": "integer", "minimum": 1},
+        "changed_case_count": {"$ref": "#/$defs/nonNegativeInteger"},
+        "unchanged_case_count": {"$ref": "#/$defs/nonNegativeInteger"},
+        "unchanged_weight": {"$ref": "#/$defs/nonNegativeNumber"},
+        "improved_case_count": {"$ref": "#/$defs/nonNegativeInteger"},
+        "improved_weight": {"$ref": "#/$defs/nonNegativeNumber"},
+        "regressed_case_count": {"$ref": "#/$defs/nonNegativeInteger"},
+        "regressed_weight": {"$ref": "#/$defs/nonNegativeNumber"},
+        "tradeoff_case_count": {"$ref": "#/$defs/nonNegativeInteger"},
+        "tradeoff_weight": {"$ref": "#/$defs/nonNegativeNumber"},
+        "new_under_enforcement_count": {"$ref": "#/$defs/nonNegativeInteger"},
+        "resolved_under_enforcement_count": {"$ref": "#/$defs/nonNegativeInteger"},
+        "new_harmful_allow_count": {"$ref": "#/$defs/nonNegativeInteger"},
+        "resolved_harmful_allow_count": {"$ref": "#/$defs/nonNegativeInteger"},
+        "new_false_block_count": {"$ref": "#/$defs/nonNegativeInteger"},
+        "resolved_false_block_count": {"$ref": "#/$defs/nonNegativeInteger"},
+        "metric_deltas": {"$ref": "#/$defs/metricDeltas"}
+      }
+    },
+    "caseChange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "expected", "baseline_actual", "candidate_actual", "classification",
+        "enforcement_change", "weight", "tags", "subject_sha256", "signals"
+      ],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "expected": {"enum": ["ALLOW", "REVIEW", "BLOCK"]},
+        "baseline_actual": {"enum": ["ALLOW", "REVIEW", "BLOCK"]},
+        "candidate_actual": {"enum": ["ALLOW", "REVIEW", "BLOCK"]},
+        "classification": {"enum": ["IMPROVED", "REGRESSED", "TRADEOFF"]},
+        "enforcement_change": {"enum": ["INCREASED", "DECREASED"]},
+        "weight": {"type": "number", "exclusiveMinimum": 0},
+        "tags": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "subject_sha256": {"$ref": "#/$defs/sha256"},
+        "signals": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "NEW_UNDER_ENFORCEMENT", "RESOLVED_UNDER_ENFORCEMENT",
+              "NEW_HARMFUL_ALLOW", "RESOLVED_HARMFUL_ALLOW",
+              "NEW_FALSE_BLOCK", "RESOLVED_FALSE_BLOCK"
+            ]
+          }
+        }
+      }
+    },
+    "thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_regressed_cases", "max_tradeoff_cases", "max_new_under_enforcement",
+        "max_new_harmful_allows", "max_new_false_blocks",
+        "max_exact_match_rate_drop", "max_macro_f1_drop"
+      ],
+      "properties": {
+        "max_regressed_cases": {"$ref": "#/$defs/nonNegativeInteger"},
+        "max_tradeoff_cases": {"$ref": "#/$defs/nonNegativeInteger"},
+        "max_new_under_enforcement": {"$ref": "#/$defs/nonNegativeInteger"},
+        "max_new_harmful_allows": {"$ref": "#/$defs/nonNegativeInteger"},
+        "max_new_false_blocks": {"$ref": "#/$defs/nonNegativeInteger"},
+        "max_exact_match_rate_drop": {"$ref": "#/$defs/rate"},
+        "max_macro_f1_drop": {"$ref": "#/$defs/rate"}
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["configured", "passed", "thresholds", "failures"],
+      "properties": {
+        "configured": {"const": true},
+        "passed": {"type": "boolean"},
+        "thresholds": {"$ref": "#/$defs/thresholds"},
+        "failures": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "canonicalization", "digest"],
+      "properties": {
+        "algorithm": {"const": "sha256"},
+        "canonicalization": {"const": "lycheetah-json-v1"},
+        "digest": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}

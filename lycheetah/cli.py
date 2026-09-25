@@ -6,12 +6,6 @@ Registered in pyproject.toml as console_scripts.
 
 from __future__ import annotations
 import sys
-import os
-
-_HERE = os.path.dirname(os.path.abspath(__file__))
-_IMPL = os.path.join(os.path.dirname(_HERE), "12_IMPLEMENTATIONS")
-if _IMPL not in sys.path:
-    sys.path.insert(0, _IMPL)
 
 
 def check_alignment_cli():
@@ -23,7 +17,7 @@ def check_alignment_cli():
         echo "Some text" | lycheetah-check
     """
     import argparse
-    from applications.aura_text_checker import AURATextAnalyser
+    from .applications.aura_text_checker import AURATextAnalyser
 
     parser = argparse.ArgumentParser(
         prog="lycheetah-check",
@@ -97,15 +91,11 @@ def web_demo_cli():
     parser.add_argument("--host", default="127.0.0.1")
     args = parser.parse_args()
 
-    # Import the app from the applications folder
-    sys.path.insert(0, _IMPL)
-    from applications.web_demo import app, FLASK_AVAILABLE
+    from .applications.web_demo import FLASK_AVAILABLE, app
     if not FLASK_AVAILABLE or app is None:
-        print(
-            "ERROR: flask not installed. Run: pip install 'lycheetah-framework[web]'",
-            file=sys.stderr,
+        raise SystemExit(
+            "Flask is not installed. Run: pip install 'lycheetah-framework[web]'"
         )
-        sys.exit(1)
     print(f"Lycheetah Web Demo running at http://{args.host}:{args.port}")
     print("Ctrl+C to stop")
     app.run(host=args.host, port=args.port, debug=False)
@@ -119,15 +109,17 @@ def guard_cli():
         lycheetah-guard
         (registered as MCP server in Claude Code settings.json)
     """
-    try:
-        from applications.lycheetah_guard_mcp import main, MCP_AVAILABLE
-    except ImportError as e:
-        print(f"ERROR: could not load lycheetah-guard: {e}", file=sys.stderr)
-        sys.exit(1)
+    from .applications.lycheetah_guard_mcp import MCP_AVAILABLE, main
+
     if not MCP_AVAILABLE:
-        print(
-            "ERROR: mcp package not installed. Run: pip install 'lycheetah-framework[mcp]'",
-            file=sys.stderr,
+        raise SystemExit(
+            "The MCP extra is not installed. Run: pip install 'lycheetah-framework[mcp]'"
         )
-        sys.exit(1)
     main()
+
+
+def assure_cli():
+    """lycheetah-assure — provider-neutral assurance runtime and receipts."""
+    from .assurance.cli import main
+
+    raise SystemExit(main())

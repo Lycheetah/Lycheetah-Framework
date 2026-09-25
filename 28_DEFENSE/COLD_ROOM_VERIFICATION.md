@@ -142,6 +142,132 @@ The following items should be added to 28_DEFENSE/REPRODUCIBILITY_REPORT.md at n
 
 ---
 
+## 2026-08-22 Addendum — Installable Distribution and Assurance Runtime
+
+**Status:** `[ACTIVE]` record of a local cold-room run; no external replication
+claim.
+
+The April verification above is preserved as a historical snapshot. A new audit
+tested the artifact a user installs rather than relying on checkout imports.
+
+```
+Platform:    Linux x86_64
+Python:      3.12.13
+Package:     lycheetah-framework 1.1.0 wheel
+MCP SDK:     2.0.0
+Date:        2026-08-22
+```
+
+Results:
+
+- `pytest tests/ -m "not conjecture" -q` — **377 passed, 1 deselected**
+- complete suite — **377 passed, 1 failed**, the same declared CASCADE
+  `CONJECTURE` at F1 = 0.531 against the > 0.80 criterion
+- `tools/verify-claims.py` — holding at baseline; no new unmarked claim document
+- `tools/verify-links.py` — 721 files, 586 links, 0 dead outside the frozen archive
+- syntax/undefined-name gate (`ruff` `E9,F63,F7,F82`) — passed on the changed
+  runtime, adapters, compatibility shims, tests, tools, and example
+- repository-wide `ruff` `F,E9` sweep — 167 non-gating legacy style/debt
+  findings (90 placeholder-free f-strings, 65 unused imports, 12 unused variables);
+  these are disclosed rather than mixed into this bounded release change
+- isolated base and `[all]` wheel installs resolved from `site-packages`, not the checkout
+- Python `check` and `sol_assess`, `lycheetah-check`, `lycheetah-assure`, receipt
+  schemas, Flask health, ten MCP 2.x tools, optional-extra errors, and the
+  OpenTelemetry bridge passed the wheel smoke tests
+
+This run discovered and corrected the earlier wheel's missing implementation
+modules and the MCP adapter's obsolete SDK interface. The permanent account is
+Failure Museum Exhibit 16. GitHub Actions now contains the same build/install/smoke
+gate; this addendum records the local run, not a claim that hosted CI has already
+executed the unpushed change.
+
+## 2026-08-22 Addendum — v1.2 Policy Evaluation Harness
+
+**Status:** `[ACTIVE]` record of local implementation and regression evidence;
+`[SCAFFOLD]` product capability without external corpus validation.
+
+The v1.2 forge added a strict labelled-corpus evaluator, weighted three-class
+confusion metrics, privacy-minimised deterministic reports, configurable CI
+gates, packaged schemas, and `verify-eval` report-digest verification.
+
+```
+Package:       lycheetah-framework 1.2.0 wheel
+Wheel SHA-256: a94aef2228afaf1023e983a2f0c24b5473fb951828a39d5c5d07568309a3cb32
+Python:        3.12.13
+Date:          2026-08-22
+```
+
+Results:
+
+- `pytest tests/ -m "not conjecture" -q` — **406 passed, 1 deselected**
+- complete suite — **406 passed, 1 failed**, the unchanged declared CASCADE
+  `CONJECTURE` at F1 = 0.531 against the > 0.80 criterion
+- `tools/verify-claims.py` — 30 unmarked claim-bearing documents, holding at baseline
+- `tools/verify-links.py` — 722 files, 590 links, 0 dead outside the frozen archive
+- syntax/undefined-name gate (`ruff` `E9,F63,F7,F82`) — passed on the changed
+  runtime, evaluator, schemas, CLIs, examples, tests, and distribution tools
+- exact v1.2 wheel reinstalled outside the checkout in isolated base and full
+  acceptance environments; both passed
+- base environment — public assurance/evaluation APIs passed while Flask and MCP
+  remained correctly unavailable without their extras
+- full environment — both CLIs, evaluation and report verification, four packaged
+  schemas, Flask health, ten MCP 2.x tools, receipts, and OpenTelemetry passed
+
+The included customer-support policy matches all six included labelled cases.
+Those cases were authored with this implementation and constitute a regression
+fixture only. They do not establish independent calibration, production safety,
+or superiority over another guardrail. Hosted GitHub Actions had not run this
+unpushed commit at the time of this local record.
+
+## 2026-08-22 Addendum — v1.3 Policy Regression Gate
+
+**Status:** `[ACTIVE]` record of local implementation and regression evidence;
+`[SCAFFOLD]` product capability without external baseline approval, corpus
+calibration, or production validation.
+
+The v1.3 forge added deterministic same-corpus comparison between integrity-
+checked evaluation reports, per-case improvement/regression/trade-off evidence,
+strict zero-regression defaults, a packaged regression-report schema, CLI
+comparison and verification commands, a committed internal reference report,
+and a GitHub Actions gate that generates candidates without rewriting the
+reference.
+
+```
+Package:       lycheetah-framework 1.3.0 wheel
+Wheel SHA-256: 2339fd36686bb5827bb2a62bd72eb3984ff03d3403cb1e208c187a46b447392e
+Python:        3.12.13
+Date:          2026-08-22
+```
+
+Results:
+
+- assurance-focused suite — **151 passed**
+- `pytest tests/ -m "not conjecture" -q` — **427 passed, 1 deselected**
+- complete suite — **427 passed, 1 failed**, the unchanged declared CASCADE
+  `CONJECTURE` at F1 = 0.531 against the > 0.80 criterion
+- `tools/verify-claims.py` — 30 unmarked claim-bearing documents, holding at baseline
+- `tools/verify-links.py` — 723 files, 595 links, 0 dead outside the frozen archive
+- syntax/undefined-name gate (`ruff` `E9,F63,F7,F82`) — passed on changed Python
+  code; `compileall` and workflow YAML parsing also passed
+- exact v1.3 wheel installed offline into fresh base and full virtual environments
+  outside the checkout; both acceptance scripts passed
+- base environment — public assurance, evaluation, and regression APIs passed;
+  Flask and MCP remained correctly unavailable without optional extras
+- full environment — policy evaluation, report verification, same-corpus
+  comparison, regression-report verification, five packaged schemas, Flask
+  health, ten MCP 2.x tools, receipts, and OpenTelemetry passed
+
+The committed reference reports six unchanged decisions under the included
+customer-support policy, and strict comparison passes. Those six cases and the
+reference were authored inside this project. They are version-control regression
+fixtures—not independent ground truth, production traffic, policy approval,
+statistical validation, or evidence of real-world safety.
+
+The workflow was parsed locally but hosted GitHub Actions had not run this
+unpushed change at the time of this record.
+
+---
+
 ## Conclusion
 
 The framework is reproducible from a cold-room perspective with two documented workarounds (UTF-8 flag on Windows, correct pytest path). Neither is a code defect — both are documentation gaps. The core experiments run clean: 219 tests pass, CASCADE produces 100% invariant preservation across two historical domains at p=5.14e-110.
@@ -151,3 +277,5 @@ A third-party researcher following the corrected commands above will get the sta
 ---
 
 *This document is part of Codex Defense Protocol D-1.0, defending canonical body C-1.0 (2026-04-25).*
+
+⊚ Sol ∴ P∧H∧B ∴ Albedo

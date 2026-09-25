@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Lycheetah/Lycheetah-Framework/lycheetah/assurance/schemas/receipt.schema.json",
+  "title": "Lycheetah Assurance Receipt v0.1",
+  "type": "object",
+  "required": [
+    "schema_version", "receipt_id", "issued_at", "runtime", "policy",
+    "event", "decision", "findings", "metrics", "limitations", "lineage", "integrity"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "receipt_id": {"type": "string", "minLength": 1},
+    "issued_at": {"type": "string", "format": "date-time"},
+    "runtime": {"type": "object"},
+    "policy": {
+      "type": "object",
+      "required": ["id", "version", "sha256"],
+      "properties": {
+        "id": {"type": "string"},
+        "version": {"type": "string"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "event": {
+      "type": "object",
+      "required": ["event_id", "phase", "subject", "replayable"],
+      "properties": {
+        "event_id": {"type": "string"},
+        "phase": {"enum": ["input", "output", "tool"]},
+        "subject": {
+          "type": "object",
+          "required": ["name", "sha256"],
+          "properties": {
+            "name": {"type": "string"},
+            "sha256": {"$ref": "#/$defs/sha256"}
+          }
+        },
+        "replayable": {"type": "boolean"}
+      }
+    },
+    "decision": {"enum": ["ALLOW", "REVIEW", "BLOCK"]},
+    "findings": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/finding"}
+    },
+    "metrics": {"type": "object"},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "lineage": {
+      "type": "object",
+      "required": ["trace_id", "previous_receipt_sha256"],
+      "properties": {
+        "trace_id": {"type": "string"},
+        "previous_receipt_sha256": {
+          "oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]
+        }
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "required": ["algorithm", "canonicalization", "digest", "seal"],
+      "properties": {
+        "algorithm": {"const": "sha256"},
+        "canonicalization": {"const": "lycheetah-json-v1"},
+        "digest": {"$ref": "#/$defs/sha256"},
+        "seal": {
+          "oneOf": [
+            {"type": "null"},
+            {
+              "type": "object",
+              "required": ["algorithm", "key_id", "value"],
+              "properties": {
+                "algorithm": {"const": "hmac-sha256"},
+                "key_id": {"type": "string", "minLength": 1},
+                "value": {"$ref": "#/$defs/sha256"}
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "finding": {
+      "type": "object",
+      "required": [
+        "id", "title", "description", "severity", "requested_disposition",
+        "effective_disposition", "claim_status", "deterministic", "evaluator",
+        "confidence", "evidence", "controls"
+      ],
+      "properties": {
+        "id": {"type": "string"},
+        "title": {"type": "string"},
+        "description": {"type": "string"},
+        "severity": {"enum": ["INFO", "LOW", "MEDIUM", "HIGH", "CRITICAL"]},
+        "requested_disposition": {"enum": ["ALLOW", "REVIEW", "BLOCK"]},
+        "effective_disposition": {"enum": ["ALLOW", "REVIEW", "BLOCK"]},
+        "claim_status": {"enum": ["ACTIVE", "SCAFFOLD", "CONJECTURE"]},
+        "deterministic": {"type": "boolean"},
+        "evaluator": {"type": "string"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "evidence": {"type": "array", "items": {"type": "string"}},
+        "controls": {"type": "array", "items": {"type": "object"}},
+        "status_basis": {"type": "string"},
+        "cap_reason": {"type": "string"}
+      }
+    }
+  }
+}

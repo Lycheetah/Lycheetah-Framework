@@ -715,6 +715,75 @@ No published mathematical claim is wrong. The 7-invariant system in `aura_checke
 
 ---
 
+## EXHIBIT 16: THE WHEEL THAT ADVERTISED CODE IT DID NOT CONTAIN
+### [ACTIVE] Identified and corrected: August 22, 2026 | Clean-room distribution audit
+
+**What was claimed:**
+
+The `pyproject.toml` advertised an installable `lycheetah-framework` package with
+Python APIs, three console tools, a web demo, and an optional MCP server. The
+README and Quickstart told a user to install the package and call those surfaces.
+
+**What was actually true:**
+
+The built wheel contained only `lycheetah/__init__.py` and `lycheetah/cli.py`.
+The implementations those files imported lived in the source-only
+`12_IMPLEMENTATIONS/` tree and were not packaged. A source checkout masked the
+defect by adding that tree to `sys.path`.
+
+In a clean virtual environment, the advertised surfaces failed:
+
+- `lycheetah.check(...)` raised `ModuleNotFoundError: No module named 'applications'`
+- `lycheetah.sol_assess(...)` raised `ModuleNotFoundError: No module named 'core'`
+- `lycheetah-check` depended on the same missing source-tree import path
+- the MCP adapter used the older low-level SDK decorator API; with the current
+  MCP Python SDK 2.0 it failed because `Server.list_tools` no longer existed
+
+The tests passed in the repository because they tested the checkout, not the
+artifact users actually install. This was a distribution-integrity failure, not
+a mathematical failure.
+
+**What changed:**
+
+- Canonical runtime modules now live under the installable `lycheetah.core`,
+  `lycheetah.applications`, and `lycheetah.assurance` packages
+- historical `12_IMPLEMENTATIONS/` module paths are compatibility imports rather
+  than a second divergent implementation
+- source-tree `sys.path` injection was removed from the public package and CLI
+- Lycheetah Guard migrated to the official MCP 2.x `MCPServer` typed-tool API,
+  exposes ten tools, defaults to stdio, and does not log to stdout on stdio
+- version 1.1.0 packages the Assurance Runtime, receipt schemas, web app, core
+  modules, and MCP adapter
+- `tools/verify_installed_distribution.py` now rejects checkout imports and checks
+  Python APIs, console scripts, schema resources, Flask health, receipts, and all
+  ten MCP tools from an isolated wheel install
+- a separate base-wheel check verifies that omitted Flask and MCP extras fail with
+  actionable messages instead of import-time crashes
+- GitHub Actions now builds and smoke-tests the wheel after the non-conjectural
+  test suite, so source-only success is no longer sufficient
+
+The August 22, 2026 clean-room acceptance run passed from
+`site-packages/lycheetah`, not from the repository checkout.
+
+**What this teaches:**
+
+The shipped artifact is the product. Repository tests cannot establish that an
+installation works when the checkout itself supplies hidden import paths. Build,
+install, and exercise the wheel in isolation; otherwise packaging claims are only
+assumptions.
+
+MCP compatibility adds a second lesson: a lower bound such as `mcp>=1.0` is not a
+compatibility guarantee across a breaking major release. A live integration must
+declare the API line it implements and test that line.
+
+**Severity: HIGH**
+
+The algorithms were present, but the normal installation route to them was
+broken. This directly undermined the framework's most practical claim: that a new
+developer could use it rather than merely read it.
+
+---
+
 ## HOW TO READ THIS MUSEUM
 
 Each exhibit follows the same structure because the structure IS the point:

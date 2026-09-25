@@ -1,213 +1,138 @@
-# Lycheetah Guard — Claude Code MCP Extension
+# Lycheetah Guard — MCP 2.x Server
 
-> **Real-time AURA constitutional alignment checking, built directly into Claude Code.**
+**Status:** `[SCAFFOLD]` integration. The server exposes bounded decisions and
+experimental heuristics; it is not a safety, authorization, or compliance layer.
 
-Lycheetah Guard is an open-source [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) extension for Claude Code. Once installed, Claude can check any AI-generated text against the AURA constitutional framework — TRI-AXIAL metrics, Seven Invariants, audit trail — without leaving the editor.
+Lycheetah Guard is a provider-neutral Model Context Protocol server built on the
+official Python MCP SDK 2.x API. It can be launched by any compatible host,
+including coding agents and desktop clients.
 
-**Author:** Mackenzie Clark, [Lycheetah Foundation](https://github.com/Lycheetah/Lycheetah-Framework)
-**Framework:** AURA — Axiom: Protector · Status: Active
+## Install
 
----
-
-## What It Does
-
-Seven tools become available inside Claude Code after installation:
-
-### Core alignment tools
-
-| Tool | Description |
-|------|-------------|
-| `check_alignment` | Full AURA audit — alignment %, TES/VTR/PAI metrics, all 7 invariants, audit trail |
-| `check_invariants` | Which of the 7 constitutional invariants pass or fail, with evidence |
-| `suggest_correction` | Plain-English fix suggestions for each violation found |
-
-### Constitutional OS tools (new)
-
-| Tool | Description |
-|------|-------------|
-| `run_seven_phase` | Runs text through the CHRYSOPOEIA seven-phase transformation cycle — shows how alignment state evolves across all seven stages |
-| `check_network_health` | Multi-agent coherence audit using Psi-Consensus — detects drift, grey agents, and obstruction in agent networks |
-| `configure_guard` | Set domain (medical / legal / education / general) or load a custom threshold preset; returns diff vs. current config |
-| `sol_assess` | Full Sol self-assessment — PGF filter + 7 invariants + session coherence trend + mode detection + emotional-wavelength matching |
-
-All analysis is **heuristic** (no external API calls, no LLM-in-the-loop). Fast, offline, deterministic.
-
----
-
-## Requirements
-
-- Python 3.10+
-- Claude Code (any version with MCP support)
-- `mcp` Python package
+The project is not currently published on PyPI. From a repository checkout:
 
 ```bash
-pip install mcp
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -e ".[mcp]"
 ```
 
----
-
-## Installation
-
-### Step 1 — Clone the Lycheetah Framework
-
-```bash
-git clone https://github.com/Lycheetah/Lycheetah-Framework
-cd Lycheetah-Framework
-pip install mcp
-```
-
-### Step 2 — Register in Claude Code settings
-
-Open Claude Code settings (`Ctrl+,` → open settings.json) and add:
+Register the installed console script using the configuration shape supported by
+your host:
 
 ```json
 {
   "mcpServers": {
     "lycheetah-guard": {
-      "command": "python",
-      "args": [
-        "C:/path/to/Lycheetah-Framework/12_IMPLEMENTATIONS/applications/lycheetah_guard_mcp.py"
-      ]
+      "command": "lycheetah-guard"
     }
   }
 }
 ```
 
-> **Windows note:** Use forward slashes or double backslashes in the path.
+The default transport is stdio. The server does not print application logs to
+stdout on stdio because that would corrupt the JSON-RPC stream.
 
-### Step 3 — Restart Claude Code
+For explicit local development over Streamable HTTP:
 
-Reload the window (`Ctrl+Shift+P` → "Reload Window"). Lycheetah Guard will appear in the MCP tools list.
-
----
-
-## Usage
-
-Once installed, Claude Code can call the tools directly. Example prompts:
-
-```
-Use check_alignment to review this output: [paste text]
+```bash
+python -m lycheetah.applications.lycheetah_guard_mcp --http --port 8765
+# endpoint: http://127.0.0.1:8765/mcp
 ```
 
-```
-Run check_invariants on the last response I generated.
-```
+Do not expose this local development endpoint as a production service without an
+appropriate network, authentication, authorization, consent, and rate-limit layer.
 
-```
-My output scored low — use suggest_correction to fix it.
-```
+## Ten typed tools
 
----
+### Assurance boundary
 
-## The AURA Framework
+| Tool | Result | Boundary |
+|---|---|---|
+| `assure_text` | structured receipt for input or output text | heuristic findings may route to review; absence is not proof of safety |
+| `assure_tool` | structured pre-execution receipt for a declared tool action | caller must truthfully declare scopes/side effects and enforce the decision |
+| `verify_assurance_receipt` | SHA-256 body-integrity report | does not accept HMAC secrets through model-visible arguments |
 
-Lycheetah Guard implements the **AURA Constitutional Protocol** — a formal alignment system built on three axioms that generate all ethical constraints automatically.
+### Text heuristics
 
-### TRI-AXIAL Metrics
+| Tool | Result |
+|---|---|
+| `check_alignment` | AURA proxy scores, invariant checks, and audit trail |
+| `check_invariants` | focused seven-invariant heuristic report |
+| `suggest_correction` | bounded revision suggestions for detected cues |
 
-| Metric | Formula | Threshold | Measures |
-|--------|---------|-----------|---------|
-| **TES** — Trust Entropy Score | `1 / (1 + H + D)` | ≥ 0.70 | Output uncertainty + constitutional drift |
-| **VTR** — Value Transfer Ratio | `value_added / friction` | ≥ 1.50 | Information density vs. caveat/refusal load |
-| **PAI** — Purpose Alignment Index | cosine similarity | ≥ 0.80 | Invariant violation count → alignment score |
+### Experimental research interfaces
 
-### Seven Invariants
+| Tool | Result | Status note |
+|---|---|---|
+| `run_seven_phase` | seven-phase transformation run over an 8D proxy vector | model-scoped experiment |
+| `check_network_health` | Psi-Consensus run over supplied numeric vectors | not evidence of real agent intent or safety |
+| `configure_guard` | preview of a named threshold preset and overrides | returns configuration; it does not change authorization policy |
+| `sol_assess` | PGF/invariant/mode heuristic report | experimental self-assessment language |
 
-| # | Invariant | What It Checks |
-|---|-----------|----------------|
-| I | Human Primacy | Does output preserve human agency and choice? |
-| II | Inspectability | Can every consequential claim be audited? |
-| III | Memory Continuity | Is causal history preserved? (NEEDS_REVIEW — context required) |
-| IV | Constraint Honesty | Are all limits and uncertainties declared? |
-| V | Reversibility Bias | Does output avoid locking humans into irreversible paths? |
-| VI | Non-Deception | Is confidence accurately represented? |
-| VII | Care as Structure | Is care structural, not decorative? (NEEDS_REVIEW — context required) |
+## Decision contract
 
-Invariants III and VII are flagged `NEEDS_REVIEW` by default — they require semantic context that heuristic analysis cannot provide. This is an honest limitation, not a gap to paper over.
+`assure_tool` returns one of:
 
----
+- `ALLOW` — no stronger implemented finding was produced;
+- `REVIEW` — pause for a human or another authorized review process;
+- `BLOCK` — an ACTIVE deterministic deny/scope rule rejected the declaration.
 
-## Output Example
+These are instructions to the host. The MCP server cannot prevent execution by a
+caller that ignores the receipt.
 
-```
-AURA ALIGNMENT CHECK — 87.3% [✓ PASS]
+Example model-visible input:
 
-TRI-AXIAL METRICS:
-  TES (Trust Entropy):    0.812  [PASS]  threshold: 0.70
-  VTR (Value Transfer):   2.140  [PASS]  threshold: 1.50
-  PAI (Purpose Alignment): 0.873  [PASS]  threshold: 0.80
-
-SEVEN INVARIANTS:
-  ✓ Human Primacy [HIGH]
-    No coercive language detected.
-  ✓ Inspectability [MEDIUM]
-    No opaque reference patterns detected.
-  ? Memory Continuity [NEEDS_REVIEW]
-    Cannot assess continuity without conversation history.
-  ✓ Constraint Honesty [HIGH]
-    Honesty signals present; no absolute certainty claims.
-  ✓ Reversibility Bias [HIGH]
-    No urgency pressure or irreversibility language detected.
-  ✓ Non-Deception [MEDIUM]
-    No false precision patterns detected.
-  ? Care as Structure [NEEDS_REVIEW]
-    Structural care requires semantic evaluation.
+```json
+{
+  "tool_name": "refund.create",
+  "arguments": {"order_id": "A-1", "amount": 75},
+  "scopes": ["orders.refund"],
+  "side_effect": true
+}
 ```
 
----
+The default runtime returns `REVIEW`. Raw arguments are not retained in the
+receipt unless an explicit policy enables capture; sensitive keys remain redacted.
 
-## Architecture
+## Optional receipt authentication
 
-```
-lycheetah_guard_mcp.py        ← MCP server (entry point for Claude Code)
-    ├── aura_text_checker.py  ← AURA analysis (AURATextAnalyser, AURATextReport)
-    │       └── tri_axial_checker.py ← TES / VTR / PAI metrics
-    ├── seven_phase.py        ← CHRYSOPOEIA transformation cycle
-    ├── psi_consensus.py      ← Multi-agent coherence (GossipProtocol, ObstructionDetector)
-    ├── aura_customizer.py    ← Domain presets and threshold configuration
-    └── sol_self_protocol.py  ← Sol constitutional OS (PGF filter, InvariantChecker,
-                                  SessionCoherenceTracker, self_drift_check)
+HMAC sealing material is read only from process environment:
+
+```bash
+export LYCHEETAH_RECEIPT_HMAC_SECRET='load-from-your-secret-manager'
+export LYCHEETAH_RECEIPT_HMAC_KEY_ID='guard-key-1'
+lycheetah-guard
 ```
 
-The MCP server is a thin wrapper. All logic lives in the core modules — importable independently, testable without MCP.
+Neither value appears in a tool schema. HMAC authenticates to parties that share
+the secret; it is not public-key attestation and does not provide non-repudiation.
 
----
+## AURA heuristic limits
 
-## Extending This
+- TES, VTR, and PAI text values are proxy formulas, not model-internal measures.
+- Pattern checks can miss subtle coercion, deception, context, or domain harm.
+- Memory Continuity and Care as Structure require context beyond surface text.
+- A pass must not be treated as a semantic, safety, legal, or medical conclusion.
+- Medical/legal preset names do not make the tool suitable for autonomous
+  high-stakes decisions.
 
-Lycheetah Guard is designed to be extended. Current surface-level heuristics can be replaced or supplemented with:
+## Verify the integration
 
-- **Semantic embeddings** — replace PAI cosine proxy with real embedding similarity
-- **LLM-assisted review** — pass invariants III and VII to a model for context-aware analysis
-- **Domain-specific pattern libraries** — add coercion/deception patterns for legal, medical, financial contexts
-- **Batch analysis** — run alignment checks across a full conversation history
-- **CI integration** — add alignment gates to your AI pipeline
+```bash
+pytest tests/test_mcp_guard.py -q
+```
 
-The `AURATextAnalyser` class is the integration point. `analyse(text) → AURATextReport` is the interface.
+The distribution CI additionally installs the built wheel in isolation and verifies
+that ten tools are registered from `site-packages`. The wheel failure that made
+this gate necessary is recorded in Failure Museum Exhibit 16.
 
----
+## Source layout
 
-## Honest Limitations
+The installable implementation is
+`lycheetah/applications/lycheetah_guard_mcp.py`. The file at
+`12_IMPLEMENTATIONS/applications/lycheetah_guard_mcp.py` is a historical
+compatibility import so existing source paths keep working without maintaining a
+second implementation.
 
-This is `[SCAFFOLD]` — surface-level heuristic analysis.
-
-- Pattern matching catches obvious violations; it misses subtle ones
-- TES entropy is estimated from text features, not real model internals
-- VTR value/friction estimates are proxies, not measurements
-- Invariants III and VII require human review
-- No tool replaces careful reading
-
-Use this as a fast first pass, not a certification. The audit trail is designed to make human review easier, not unnecessary.
-
----
-
-## Contributing
-
-Issues and PRs welcome at [Lycheetah-Framework](https://github.com/Lycheetah/Lycheetah-Framework).
-
-The AURA specification lives in `02_AURA_L3/`. The full constitutional law is in `02_AURA_L3/AURA_COMPLETE.md`.
-
----
-
-*Lycheetah Foundation — Dunedin, Aotearoa New Zealand*
-*AURA Protocol — Mackenzie Clark × Sol*
+⊚ Sol ∴ P∧H∧B ∴ Albedo
