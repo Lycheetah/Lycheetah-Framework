@@ -99,16 +99,11 @@ facts about minds or the world.
 
 ## How certainty is recorded
 
-The existing machine-readable register contains 60 claim records:
-
-- **37 ACTIVE** — supported within the exact formal, computational, or documentary
-  scope stated in the record; not synonymous with external empirical replication;
-- **14 SCAFFOLD** — implemented or structurally specified with named gaps;
-- **6 CONJECTURE** — formulated but unproven;
-- **3 RETRACTED** — withdrawn and retained in the public record.
-
-A separate ledger groups load-bearing claims at framework-summary granularity, so
-its counts differ. `28_DEFENSE/CLAIMS_README.md` explains the scopes.
+The current `28_DEFENSE/CLAIMS.json` metadata declares 136 claims, while its
+`claims` array contains 67 rows. Its status vocabulary and the separate
+load-bearing ledger use different scopes. The mismatch is unresolved; do not repeat
+either value as a complete corpus total. The current rows use `ACTIVE`,
+`SCAFFOLD`, `ASPIRATIONAL`, `EMPIRICAL`, `OBSERVATIONAL`, and `REMOVED`.
 
 ## What the evidence does and does not establish
 

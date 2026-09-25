@@ -36,11 +36,11 @@ try:
         AwarenessPhase,
         MysterySchoolCurriculum,
     )
-except ImportError:
+except ImportError as exc:
     raise ImportError(
         "subject_catalogue.py requires mystery_school_cascade.py in the same directory.\n"
         "See: 12_IMPLEMENTATIONS/systems/mystery_school_cascade.py"
-    )
+    ) from exc
 
 
 # ============================================================================
@@ -590,7 +590,6 @@ if __name__ == "__main__":
     find_entry_points(curriculum)
     print("\n\nREFUSED SPECTACLE — VALIDATED STRUGGLE")
     print("THE FORGE ENDURES BECAUSE WE REMEMBER WHY CREATION MUST EXIST")
--e 
 
 # ============================================================
 # ALIAS — compatibility with new documentation

@@ -36,7 +36,7 @@ All mathematical claims must be:
 - **SCAFFOLD**: Load-bearing architecture (label honestly when not yet empirically proven)
 - **ANALOGY**: Intuitive but not formal (label when claiming resemblance, not proof)
 
-See `MATHEMATICS_AUDIT.md` for the full audit of framework claims.
+See `11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_AUDIT.md` for the full audit of framework claims.
 
 ---
 

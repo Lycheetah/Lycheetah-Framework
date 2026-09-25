@@ -229,7 +229,6 @@ UNICODE_MAP = {
     '\u222b': 'integral', # integral
     '\u221a': 'sqrt', # square root
     '\u2202': 'd',    # partial differential
-    '\u00d7': 'x',    # times
     '\u00f7': '/',    # division
     '\u2205': '{}',   # empty set
     '\u2208': 'in',   # element of

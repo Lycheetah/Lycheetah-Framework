@@ -8,7 +8,7 @@ version = "1.3.0"
 description = "Evidence-capped AI assurance receipts with experimental constitutional alignment heuristics"
 readme = "README.md"
 requires-python = ">=3.10"
-license = "MIT"
+license = {text = "MIT"}
 authors = [
     {name = "Mackenzie Conor James Clark", email = "mac@lycheetah.nz"},
 ]
@@ -24,6 +24,7 @@ classifiers = [
     "Intended Audience :: Science/Research",
     "Intended Audience :: Developers",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -38,8 +39,11 @@ dependencies = [
 [project.optional-dependencies]
 web   = ["flask>=3.0"]
 mcp   = ["mcp>=2.0,<3.0"]
-dev   = ["pytest>=7.0", "pytest-cov>=4.0", "jsonschema>=4.23"]
-all   = ["flask>=3.0", "mcp>=2.0,<3.0", "pytest>=7.0", "pytest-cov>=4.0", "jsonschema>=4.23"]
+dev   = ["pytest>=7.0", "pytest-cov>=4.0", "jsonschema>=4.23", "ruff>=0.6", "mypy>=1.11", "build>=1.0"]
+all   = [
+    "flask>=3.0", "mcp>=2.0,<3.0", "jsonschema>=4.23",
+    "pytest>=7.0", "pytest-cov>=4.0", "ruff>=0.6", "mypy>=1.11", "build>=1.0",
+]
 
 [project.scripts]
 lycheetah-check = "lycheetah.cli:check_alignment_cli"
@@ -55,25 +59,84 @@ Discussions   = "https://github.com/Lycheetah/Lycheetah-Framework/discussions"
 "Issue Tracker" = "https://github.com/Lycheetah/Lycheetah-Framework/issues"
 "Failure Museum" = "https://github.com/Lycheetah/Lycheetah-Framework/blob/master/28_DEFENSE/FAILURE_MUSEUM.md"
 
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["lycheetah*"]
+# The implementation lives in 12_IMPLEMENTATIONS/ and is mapped into the
+# distribution rather than copied, so there stays exactly one copy of every module.
+# Without this mapping the wheel shipped only __init__.py and cli.py, and every
+# advertised entry point raised ModuleNotFoundError once installed.
+[tool.setuptools]
+packages = [
+    "lycheetah",
+    "lycheetah.core",
+    "lycheetah.applications",
+    "lycheetah.assurance",
+]
+
+[tool.setuptools.package-dir]
+"lycheetah" = "lycheetah"
+"lycheetah.core" = "12_IMPLEMENTATIONS/core"
+"lycheetah.applications" = "12_IMPLEMENTATIONS/applications"
 
 [tool.setuptools.package-data]
+"lycheetah" = ["py.typed"]
 "lycheetah.assurance" = ["schemas/*.json"]
 
-[tool.pytest.ini_options]
-testpaths = [
-    "tests",
-    # Active LAMAGUE shelf runtimes (non-colliding package names in one session)
-    "03_LAMAGUE_L1/07_RUNTIME_v0.3_CROSS_INTELLIGENCE_EQUIVALENCE/tests",
-    "03_LAMAGUE_L1/12_CORE_LANGUAGE_LINE/LAMAGUE_CORE_OPERATOR_ALGEBRA_v0.3/tests",
-    "03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/tests",
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+extend-exclude = [
+    "99_ARCHIVE",                              # frozen record; corrected in place, never
+    "000_1404RawSourceTranslate",              # raw source translation, not maintained code
+    "03_LAMAGUE_L1/13_RETIRED_KERNEL_BRANCH",  # retired branch, kept for lineage
 ]
-norecursedirs = [".git", ".venv", "node_modules", "13_RETIRED_KERNEL_BRANCH", "__pycache__"]
+
+[tool.ruff.lint]
+# The corpus-wide floor is deliberately narrow: rules where a hit means something is
+# actually wrong, not that the house style differs. This is a research corpus of 255
+# Python files written over many sessions, and a gate wide enough to demand a rewrite
+# is a gate that gets switched off. It currently reports zero, so any new hit is a
+# regression introduced by the change in front of you.
+#
+# The shipped package is held to a much stricter set — see lycheetah/.ruff.toml.
+# Widening this floor is done by deleting an ignore below and fixing what appears,
+# one rule at a time.
+select = ["F", "E9", "PLE", "B"]
+ignore = [
+    "F401",  # unused import — 248 corpus-wide, and some re-export deliberately
+    "F541",  # f-string without placeholders — cosmetic
+    "F841",  # unused local — often a named intermediate kept for readability
+    "B006",  # mutable default — real, but pervasive and behaviour-preserving here
+    "B007",  # unused loop variable
+    "B008",  # function call in default argument
+    "B905",  # zip() without explicit strict=
+]
+
+[tool.ruff.format]
+# Formatting is enforced only on lycheetah/. Reformatting the whole corpus would be
+# a diff nobody can review, against files whose current shape is deliberate.
+exclude = ["*"]
+
+[tool.mypy]
+files = ["lycheetah"]
+python_version = "3.10"
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+strict_equality = true
+
+# The implementation modules are reached through a runtime sys.path insertion (see
+# lycheetah/_bootstrap.py) and carry no annotations yet, so mypy cannot follow them
+# statically. Annotating that tree is separate work; this gate covers the public
+# wrapper and says only that.
+[[tool.mypy.overrides]]
+module = ["core.*", "applications.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Fail on an unregistered marker rather than silently treating the test as unmarked.
+addopts = "--strict-markers"
 markers = [
     "active: tests for [ACTIVE] formally proven claims",
     "scaffold: tests for [SCAFFOLD] structural but unfinished claims",
     "conjecture: tests for [CONJECTURE] exploratory claims",
-    "lamague_shelf: tests collected from 03_LAMAGUE_L1 shelf runtimes",
 ]

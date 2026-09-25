@@ -1,0 +1,67 @@
+# Local mirror of the CI gates, so a failure costs seconds instead of a round trip.
+#
+#     pip install pre-commit && pre-commit install
+#
+# Nothing here is stricter than .github/workflows/ci.yml. If a hook fires that CI
+# would not, that is a bug in this file — the two must agree, or one of them stops
+# being believed.
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+        args: [--maxkb=2048]
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-json
+      - id: check-toml
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: detect-private-key
+      # Catches the class of defect where a file is added under a name that only
+      # differs by case, or a symlink is committed as a regular file — the two ways
+      # the private Sol Prime symlinks could be turned back into copies by accident.
+      - id: destroyed-symlinks
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.16.2
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.18.2
+    hooks:
+      - id: mypy
+        files: ^lycheetah/
+        additional_dependencies: [numpy, scipy, networkx]
+
+  - repo: local
+    hooks:
+      # These read the whole corpus, so they run on demand rather than per commit:
+      #     pre-commit run --hook-stage manual --all-files
+      - id: verify-claims
+        name: every claim-bearing document declares its footing
+        entry: python tools/verify-claims.py --quiet
+        language: system
+        pass_filenames: false
+        stages: [manual]
+
+      - id: verify-links
+        name: internal links resolve
+        entry: python tools/verify-links.py
+        language: system
+        pass_filenames: false
+        stages: [manual]
+
+      - id: alexandria-health
+        name: core modules import and smoke-test
+        entry: python 12_IMPLEMENTATIONS/alexandria_agent.py health
+        language: system
+        pass_filenames: false
+        stages: [manual]

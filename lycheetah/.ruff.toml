@@ -1,0 +1,16 @@
+# Strict tier — the package that actually ships to PyPI.
+#
+# The corpus-wide floor in ../pyproject.toml is narrow on purpose (see the comment
+# there). This directory is small, new, and installed by other people, so it is held
+# to the full set with no blanket ignores. Ruff applies this file to everything under
+# lycheetah/ automatically, because configuration resolves to the closest config file
+# in a file's ancestry.
+
+extend = "../pyproject.toml"
+
+[lint]
+select = ["F", "E", "W", "I", "UP", "B", "SIM", "RUF", "PLE", "PTH", "C4", "ARG"]
+ignore = []
+
+[format]
+exclude = []

@@ -1,0 +1,19 @@
+# Keep the repository's existing line-ending history intact. The legacy corpus has
+# intentional CRLF files; normalising every text path would create broad, low-signal
+# diffs. Binary classification and repository-language hints remain explicit below.
+
+# Binary — do not treat as text.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.pdf   binary
+*.zip   binary
+*.woff  binary
+*.woff2 binary
+*.rtf   binary
+
+# Keep generated and archival material out of language statistics and diffs.
+99_ARCHIVE/**                 linguist-vendored
+000_1404RawSourceTranslate/** linguist-vendored
+*.ipynb                       linguist-documentation

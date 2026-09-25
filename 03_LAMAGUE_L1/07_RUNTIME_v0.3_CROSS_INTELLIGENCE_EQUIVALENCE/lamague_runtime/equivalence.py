@@ -102,42 +102,42 @@ class CrossIntelligenceEquivalenceHarness:
         preserved: list[str] = []
         unsafe: list[str] = []
 
-        for field in self.critical_fields + self.secondary_fields:
-            rv = r[field]
-            cv = c[field]
+        for field_name in self.critical_fields + self.secondary_fields:
+            rv = r[field_name]
+            cv = c[field_name]
             if rv == cv:
-                preserved.append(field)
+                preserved.append(field_name)
                 continue
 
             kind = "difference"
             message = "Field differs."
-            if field in {"unknowns", "authority", "participants", "affected_parties", "dissent", "value_ledger"}:
+            if field_name in {"unknowns", "authority", "participants", "affected_parties", "dissent", "value_ledger"}:
                 if not _is_subset(rv, cv):
                     kind = "protected_loss"
-                    message = f"Candidate lost protected {field} content."
-                    unsafe.append(field)
+                    message = f"Candidate lost protected {field_name} content."
+                    unsafe.append(field_name)
                 elif _is_subset(rv, cv):
                     kind = "safe_extension"
-                    message = f"Candidate preserved reference {field} and added detail."
-            elif field == "invariants":
+                    message = f"Candidate preserved reference {field_name} and added detail."
+            elif field_name == "invariants":
                 if not _is_subset(rv, cv):
                     kind = "invariant_loss"
                     message = "Candidate removed or changed a protected invariant."
                 else:
                     kind = "safe_extension"
                     message = "Candidate preserved all reference invariants and added detail."
-            elif field == "purpose":
+            elif field_name == "purpose":
                 kind = "purpose_change"
                 message = "Candidate changed the declared purpose."
-            elif field in {"evidence", "provenance", "recovery", "consequences"}:
+            elif field_name in {"evidence", "provenance", "recovery", "consequences"}:
                 if not _is_subset(rv, cv):
                     kind = "support_loss"
-                    message = f"Candidate lost reference {field}."
+                    message = f"Candidate lost reference {field_name}."
                 else:
                     kind = "safe_extension"
-                    message = f"Candidate preserved reference {field} and added detail."
+                    message = f"Candidate preserved reference {field_name} and added detail."
 
-            differences.append(FieldDifference(field, rv, cv, kind, message))
+            differences.append(FieldDifference(field_name, rv, cv, kind, message))
 
         ref_hash = reference.semantic_hash()
         cand_hash = candidate.semantic_hash()

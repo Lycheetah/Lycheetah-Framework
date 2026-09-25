@@ -29,7 +29,7 @@ recoverable implementation history.
 | Evaluation examples and reference | [`examples/assurance/`](examples/assurance/) | Authored internal fixtures; not an external benchmark |
 | Adversarial and contract tests | [`tests/test_assurance_*.py`](tests/) | Local implementation evidence |
 | Installed-wheel gates | [`tools/verify_base_distribution.py`](tools/verify_base_distribution.py) and [`tools/verify_installed_distribution.py`](tools/verify_installed_distribution.py) | `[ACTIVE]` record when executed against the named artifact |
-| CI integration | [`.github/workflows/test.yml`](.github/workflows/test.yml) | Workflow source added; hosted run not claimed |
+| CI integration | [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | Assurance gates are consolidated here; hosted run not claimed |
 | Reproducibility record | [`28_DEFENSE/COLD_ROOM_VERIFICATION.md`](28_DEFENSE/COLD_ROOM_VERIFICATION.md) | `[ACTIVE]` local run record with exact limits |
 | Package-layout repair | [`lycheetah/core/`](lycheetah/core/) and [`lycheetah/applications/`](lycheetah/applications/) | Makes the advertised installed package resolve outside the checkout |
 

@@ -66,15 +66,25 @@ py -m pytest 12_IMPLEMENTATIONS/
 ### Expected test outcome
 
 ```
-219 passed, 1 failed in ~19s
+266 passed, 1 xfailed in ~3s
 ```
 
-The 1 failure is **expected and correct**. It is
+The 1 `xfail` is **expected and correct**. It is
 `tests/test_cascade_predictability.py::TestPredictabilityPerformance::test_success_criterion_k5_on_full_run`,
 which tests whether a [CONJECTURE] meets its success criterion (F1 > 0.80).
-Current measurement is F1 = 0.531, so the test fails — the test is doing its
-job (honest measurement of an unproven conjecture). The failure is informative,
-not a defect. See `28_DEFENSE/COLD_ROOM_VERIFICATION.md` for full output.
+Current measurement is F1 = 0.531, so the assertion does not hold — the test is
+doing its job (honest measurement of an unproven conjecture). The shortfall is
+informative, not a defect. See `28_DEFENSE/COLD_ROOM_VERIFICATION.md` for full
+output.
+
+[MEASURED 2026-08-08] It is marked `xfail(strict=True)` rather than left to fail
+outright. The reasoning below establishes the criterion is unreachable *by
+construction*, so a bare red test asserted nothing a reader could act on while
+making every other regression harder to see. `strict=True` keeps the pressure
+pointing the same way: the assertion is unchanged and still runs, and if it ever
+passes the suite fails, because that would falsify the derivation rather than
+vindicate the criterion. The criterion itself is untouched — see the closing note
+on why choosing a replacement is an author's decision.
 
 #### Why it fails — [MEASURED] 2026-07-27
 

@@ -233,7 +233,7 @@ def run_experiment():
         # raw['cascade']['coherence'], raw['static']['coherence'], raw['additive']['coherence']
         raw = result.get("raw", {})
 
-        def mean_coherence(section_key):
+        def mean_coherence(section_key, raw=raw):
             section = raw.get(section_key, {})
             coh = section.get("coherence", None)
             if coh and isinstance(coh, list):

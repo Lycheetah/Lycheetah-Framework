@@ -7,6 +7,11 @@ import pytest
 pytest.importorskip("mcp")
 pytestmark = pytest.mark.scaffold
 
+from mcp import server as mcp_server  # noqa: E402
+
+if not hasattr(mcp_server, "MCPServer"):
+    pytest.skip("MCP guard integration requires the MCP SDK 2.x API", allow_module_level=True)
+
 
 from lycheetah.applications.lycheetah_guard_mcp import (  # noqa: E402
     build_server,

@@ -79,7 +79,7 @@ class TestLycheetahPackageAPI:
 
     @pytest.mark.active
     def test_version_present(self):
-        assert lycheetah.__version__ == "1.0.0"
+        assert lycheetah.__version__ == "1.3.0"
 
     @pytest.mark.active
     def test_sol_assess_returns_string(self):

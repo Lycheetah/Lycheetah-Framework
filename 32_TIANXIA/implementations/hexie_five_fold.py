@@ -224,7 +224,7 @@ def test_fragility_flags():
 def test_invalid_input():
     try:
         HexieState(1.1, 0.5, 0.5, 0.5, 0.5)
-        assert False, "Should raise ValueError"
+        raise AssertionError("Should raise ValueError")
     except ValueError:
         pass
     print("  PASS: test_invalid_input")
