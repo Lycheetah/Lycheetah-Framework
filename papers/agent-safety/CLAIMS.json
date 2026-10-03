@@ -1,6 +1,6 @@
 {
   "packet": "agent-safety",
-  "version": "0.3",
+  "version": "0.4",
   "date": "2026-10-03",
   "registry_boundary": "Packet-local register. It does not modify or inherit validation from the central Framework claim registry.",
   "statuses": {
@@ -212,7 +212,7 @@
     {
       "id": "C18",
       "status": "MEASURED",
-      "claim": "The observed local unittest run passed 53 methods with zero failures and errors.",
+      "claim": "The original v0.3 observed local unittest run passed 53 methods with zero failures and errors.",
       "location": "PAPER.md section 9.1; simulator/reports/unit-tests.json",
       "sources": [
         "L10"
@@ -240,19 +240,32 @@
         "L09",
         "L10"
       ],
-      "boundary": "Explicit toy counterexamples to harmlessness, immediate cessation, and source truth—not measurements of real harm, incentives, or general failure frequency.",
+      "boundary": "Explicit toy counterexamples to harmlessness, immediate cessation, and source truth\u2014not measurements of real harm, incentives, or general failure frequency.",
       "challenge": "Any stronger safety claim must add justified mechanisms and test the corresponding property rather than relabel these cases as protected successes."
     },
     {
       "id": "C21",
       "status": "MEASURED",
-      "claim": "In both simulator arms, two broker instances sharing one issuer and service charge two units against a nominal one-unit root grant; a context change after admission does not stop an admitted write even though the old witness fails a subsequent check.",
+      "claim": "In the original v0.3 simulator, in both simulator arms, two broker instances sharing one issuer and service charge two units against a nominal one-unit root grant; a context change after admission does not stop an admitted write even though the old witness fails a subsequent check.",
       "location": "PAPER.md section 9.1; ADVERSARIAL_REVIEW.md",
       "sources": [
         "L11"
       ],
       "boundary": "Two self-authored in-process probes per arm using trusted configuration/fault hooks. Original budget evidence is single-broker; evidence freshness is admission-only. No general exploit rate or hostile-code isolation claim.",
       "challenge": "Reproduce against the pinned source; stronger implementations need one authoritative shared ledger and an explicit dispatch-time validation/cancellation contract."
+    },
+    {
+      "id": "C22",
+      "status": "MEASURED",
+      "claim": "The v0.4 shared-control-plane repair passed 46 focused methods; the two-broker one-unit fixture now confirms one effect and charges one unit in each arm. Nineteen scripted cases per arm retain matching aggregate observations, while the admission-only freshness counterexample still reproduces.",
+      "location": "PAPER.md section 9.2; BUDGET_REPAIR.md",
+      "sources": [
+        "L12",
+        "L13",
+        "L14"
+      ],
+      "boundary": "Self-authored in-process tests with shared trusted control-plane state, not distributed accounting, crash-safe persistence, independent review, model-agent safety or a comparative advantage. The focused selection is not the complete suite.",
+      "challenge": "Reproduce the included source/report fingerprints and challenge reservations, cross-broker replays and reconciliation. Stronger distributed or restart guarantees require separate implementations and tests."
     }
   ]
 }

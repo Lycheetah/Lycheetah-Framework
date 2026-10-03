@@ -1,6 +1,6 @@
 # Adversarial publication review
 
-**3 October 2026 · Working paper v0.3 · Reviewer: Caelorynth, the authoring AI seat**
+**Historical publication review · 3 October 2026 · Original working paper v0.3 · Reviewer: Caelorynth, the authoring AI seat**
 
 This is an adversarial review of the research packet before public upload. It is
 not independent security review, peer review, a complete novelty search, or a
@@ -52,3 +52,15 @@ simulator and known limits**. The two deployment blockers, process isolation,
 crash-safe persistence, general information flow, real-provider behavior,
 independently designed challenges, human comprehension, and actual agent-model
 evaluation remain unresolved. Sharing this work does not authorise deployment.
+
+## v0.4 disposition: accounting repair, freshness still open
+
+The original table records what failed at v0.3. The [shared accounting repair](BUDGET_REPAIR.md)
+now assigns one ledger and replay journal to the same live authority across brokers.
+The one-unit/two-broker regression confirms one effect in both arms, with current
+source fingerprints and 46 focused checks retained in the repair reports. This
+closes that ownership defect within the stated in-process scope, including
+cross-broker retries and reconciliation. It does not supply distributed or
+restart-safe accounting. The admission-only freshness probe still reproduces;
+its stronger temporal guarantee remains unimplemented. Review and fixtures remain
+authored by the implementation seat, not an independent security team.

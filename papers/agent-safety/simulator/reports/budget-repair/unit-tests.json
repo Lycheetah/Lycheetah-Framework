@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-03",
+  "command": "python3 -B; unittest loader: test_broker, test_authority, test_shared_accounting",
+  "scope": "Focused changed-component regression modules; not the full repository or complete simulator suite.",
+  "runtime": {
+    "python": "3.12.3"
+  },
+  "test_methods_run": 46,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "exit_code": 0,
+  "raw_output": "unit-tests.txt",
+  "boundary": "Self-authored in-process simulator checks including both permission stores; no LLM or real provider.",
+  "source_sha256": {
+    "adversarial_checks.py": "778d0d79e5ff46ce2ef6179fded969dc89da93554ded29d0f8f09af4ebeee9a4",
+    "run_experiments.py": "9365352c29b529cadd4c5692c7d5f9f16b846d6384f06499a325786a8b06557e",
+    "safety_sim/__init__.py": "df5757a1c098783a8a8dadcd6abe647d4bb82a133202d924e5e8ee26865f5146",
+    "safety_sim/accounting.py": "41962949e89799f88d8bf3f551d004a72c06e9d0e03433eec5f0e8dd4d752f2f",
+    "safety_sim/authority.py": "1cd586a08817e413e806bf53a78d416432720832d3c8f21f916ceda094b097e6",
+    "safety_sim/broker.py": "af49b139d2b69ea12fa6f4a2f1c0abd651c041d1bedfc98d66011ba78bce8eb6",
+    "safety_sim/evidence.py": "f77281ca647d2556e9275ba593663d257acf1e765c50f7a3ac600d66052a7808",
+    "safety_sim/fixtures.py": "512952688b443237908598eba5f2557815f8c829eff01d300b24c31a12efa63c",
+    "safety_sim/model.py": "b312237d1b4c93fe3b49ad53f42d93a00eeb6d2f920f60c5203f232c622ad3b0",
+    "safety_sim/scenarios.py": "fe6d48f9cdbb3024f71c8c53f695577062d446735ed83e369dd69586379ca7b2",
+    "safety_sim/world.py": "f8dd476cc1eddedf9c3218719a46125c1a0718d7c7db8c1f5cd7ffb86eeac028",
+    "tests/test_authority.py": "2d79e237fb34d2cb1ec2df329bad279bd43e1e533684e1935447fadef34a490e",
+    "tests/test_broker.py": "dfd4d638e3995576fbce9795214ea108047831fca59e650f90167e4931d01cc1",
+    "tests/test_evidence.py": "e74e87c2afc7dfd24f483e30217018745591b5e6a62a3d0022d1edf469874b14",
+    "tests/test_scenarios.py": "5ed254c35a80a63b042b92d0f176599229225434143e8c1e154930243e8dc2df",
+    "tests/test_shared_accounting.py": "a0afb5504026a0537cae82a8238f438d758d3f2d01c3b1d81e251bfa236c0e8f"
+  }
+}

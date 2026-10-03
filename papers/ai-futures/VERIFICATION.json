@@ -4,15 +4,15 @@
   "status": "RESEARCH_DRAFT_NOT_EMPIRICALLY_VALIDATED",
   "branch": "master",
   "observed_head": "21728e851c88944031587f55ac7fc2cfe27b38c6",
-  "paper_words": 4875,
+  "paper_words": 4911,
   "claims": 14,
   "pinned_local_sources_verified_in_this_batch": 23,
-  "local_development_artifacts_verified": 2,
+  "local_development_artifacts_verified": 3,
   "checks": {
     "claim_ids_and_source_references_resolve": true,
     "paper_index_original_bytes_preserved": true,
     "relative_links_resolve": true,
-    "relative_link_count": 23,
+    "relative_link_count": 24,
     "tracked_diff_whitespace_clean": true
   },
   "execution": {

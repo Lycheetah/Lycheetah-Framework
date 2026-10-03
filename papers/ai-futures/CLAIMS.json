@@ -218,15 +218,18 @@
     {
       "id": "F14",
       "status": "INSPECTED",
-      "statement": "The earlier simulator's multi-broker accounting and admission-time freshness limits remain unresolved by this documentation batch.",
+      "statement": "The earlier inspected simulator revision exposed accounting and freshness limits. The later self-authored repair report addresses accounting within one live authority while freshness remains open; none of this validates the AI-futures proposals.",
       "section": "12",
       "external_sources": [],
       "local_sources": [
         "L21",
         "L22"
       ],
-      "boundary": "Prior packet source readback only; no runtime rerun or deployment validation.",
-      "challenge": "Check the previous receipt and raw reproducer; changing these limits requires a separate implementation and verification."
+      "boundary": "Pinned earlier packet sources and the later bounded simulator repair report; no model-agent, memory, learning or production validation.",
+      "challenge": "Check the previous receipt and raw reproducer; changing these limits requires a separate implementation and verification.",
+      "development_artifacts": [
+        "X03"
+      ]
     }
   ]
 }

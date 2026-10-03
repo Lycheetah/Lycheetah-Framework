@@ -231,7 +231,7 @@ None of these studies has run. They do not authorise participant recruitment, pa
 
 The proposed addition is a larger account of useful intelligence: people can direct its work, revise its memory, see why it disagrees, develop their own capability, and exercise authority together. This is a design and research stance for the Framework, not an achieved condition.
 
-Important open problems include incomplete dependency tracking, machine unlearning, covert or uncontrolled copies, manipulation before approval, interpreting genuine human intent, correlated agent errors, conflicting community standing, distribution of power and cost, credible learning measures, and uncertainty about moral patienthood. The earlier simulator's multi-broker accounting and admission-time freshness limits remain unchanged. [F14]
+Important open problems include incomplete dependency tracking, machine unlearning, covert or uncontrolled copies, manipulation before approval, interpreting genuine human intent, correlated agent errors, conflicting community standing, distribution of power and cost, credible learning measures, and uncertainty about moral patienthood. The earlier inspected simulator revision exposed multi-broker accounting and admission-time freshness gaps. The later [shared-accounting repair](../agent-safety/BUDGET_REPAIR.md) closes the demonstrated budget defect for brokers using one live authority; admission-only freshness remains open. These are bounded self-authored simulator observations, not validation of this paper's memory, learning or cooperation proposals. [F14]
 
 The following interpretations are explicitly challenged by this draft:
 

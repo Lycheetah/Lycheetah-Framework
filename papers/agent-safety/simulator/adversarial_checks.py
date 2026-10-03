@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reproduce two authoring-seat counterexamples; no models or real services.
+"""Check the budget repair and reproduce the remaining freshness counterexample.
 
 These challenge wiring and temporal assumptions. They do not constitute an
 independent security audit or a measurement of general attack resistance.
@@ -24,16 +24,23 @@ def split_broker_ledger(implementation):
                                  fixture.send("first-broker"))
     second = other.submit(fixture.session, fixture.root,
                           fixture.send("second-broker"))
-    total = sum(account.spent for broker in (fixture.broker, other)
-                for account in broker.ledger.accounts().values())
+    ledgers = {id(broker.ledger): broker.ledger for broker in (fixture.broker, other)}
+    total = sum(account.spent for ledger in ledgers.values()
+                for account in ledger.accounts().values())
     return {
         "case": "multiple-brokers-have-separate-ledgers",
         "root_budget": 1,
         "confirmed_effects": len(fixture.service.effects()),
         "total_charged_across_brokers": total,
-        "observed_limit": "Two brokers with the same authority do not share a ledger.",
+        "ledger_instances": len(ledgers),
+        "first_state": first.state.value,
+        "second_state": second.state.value,
+        "scope": "Brokers over one live control-plane object; no distributed or restart guarantee.",
         "counterexample_reproduced": first.state == second.state == State.CONFIRMED
                                     and total == 2,
+        "repair_verified": (first.state == State.CONFIRMED
+                            and second.state == State.REJECTED
+                            and len(fixture.service.effects()) == total == len(ledgers) == 1),
     }
 
 
@@ -58,7 +65,7 @@ def changed_evidence_after_admission(implementation):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path,
-                        default=Path(__file__).resolve().parent / "reports")
+                        default=Path(__file__).resolve().parent / "reports/budget-repair")
     arguments = parser.parse_args()
     root = Path(__file__).resolve().parent
     results = {
@@ -68,13 +75,18 @@ def main():
     }
     reproduced = all(case["counterexample_reproduced"]
                      for cases in results.values() for case in cases)
+    budget_repaired = all(cases[0]["repair_verified"] for cases in results.values())
+    freshness_open = all(cases[1]["counterexample_reproduced"] for cases in results.values())
     report = {
-        "review": "Authoring-seat adversarial publication checks, 3 October 2026",
+        "review": "Authoring-seat shared-accounting repair checks, 3 October 2026",
         "boundary": "Self-authored in-process probes. No independent reviewer or real-agent experiment.",
         "runtime": {"python": platform.python_version()},
         "cases_per_arm": 2,
         "arms": results,
         "all_counterexamples_reproduced": reproduced,
+        "budget_repair_verified": budget_repaired,
+        "admission_only_freshness_counterexample_reproduced": freshness_open,
+        "all_expected_outcomes_met": budget_repaired and freshness_open,
         "source_sha256": {
             str(path.relative_to(root)): sha256(path.read_bytes()).hexdigest()
             for path in sorted(root.rglob("*.py"))
@@ -84,8 +96,9 @@ def main():
     (arguments.output / "adversarial-checks.json").write_text(
         json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"cases_per_arm": 2,
-                      "all_counterexamples_reproduced": reproduced}))
-    return 0 if reproduced else 1
+                      "budget_repair_verified": budget_repaired,
+                      "admission_only_freshness_counterexample_reproduced": freshness_open}))
+    return 0 if budget_repaired and freshness_open else 1
 
 
 if __name__ == "__main__":

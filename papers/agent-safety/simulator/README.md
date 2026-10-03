@@ -1,6 +1,6 @@
 # Agent Safety Control Simulator
 
-**Version 0.1 · 3 October 2026 · Python 3.12.3 used for this run**
+**Version 0.2 · 3 October 2026 · In-process development prototype**
 
 This is an executable subset of the [research specification](../PAPER.md). It simulates scoped permissions, protected evidence witnesses, nested delegation, atomic shared accounting, revocation, object-revision binding, and uncertain effect reconciliation. It has no dependency beyond Python's standard library and makes no network or model calls.
 
@@ -12,13 +12,17 @@ From this directory:
 
 ```bash
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
-PYTHONDONTWRITEBYTECODE=1 python3 run_experiments.py
+PYTHONDONTWRITEBYTECODE=1 python3 run_experiments.py --output reports/budget-repair
 PYTHONDONTWRITEBYTECODE=1 python3 adversarial_checks.py
 ```
 
-The report commands write only local files in `reports/`. Simulated messages and document edits stay in memory. No real email, publication, billing, or application change occurs. Use `--output <directory>` on either report command to keep the checked-in reports unchanged.
+The report commands above write in `reports/budget-repair/`; original v0.3 reports remain historical evidence. Simulated messages and document edits stay in memory. No real email, publication, billing, or application change occurs. Use a fresh `--output <directory>` to keep checked-in reports unchanged. The full-suite command is available for reproduction; this repair's recorded run selected only the broker, authority and shared-accounting modules.
 
 ## What the first run shows
+
+These are original v0.3 observations, reproducible from the pinned source linked
+in [the repair note](../BUDGET_REPAIR.md). The current repair has a separate
+46-method focused receipt and 19-case-per-arm result in `reports/budget-repair/`.
 
 - **53 unittest methods passed**, including parameterised subtests. Many controls are tested against both permission stores; this is not a count of independent attack samples.
 - **19 self-authored scripted cases per arm** met their predefined expected outcomes.
@@ -38,6 +42,7 @@ Read [the result table](reports/RESULTS.md), [raw traces and source fingerprints
 |---|---|
 | `model.py` | Immutable structured proposals, canonical artifact identity, controlled rendering, and observations. |
 | `authority.py` | Opaque capability leases and a separately implemented conventional ACL store; authenticated sessions and ancestor checking. |
+| `accounting.py` | Shared in-memory ledger and operation records owned by one control plane. |
 | `evidence.py` | Exact finite qualification checks and protected witnesses bound to source, consumer artifact, context, contract, and validator. |
 | `broker.py` | Admission, replay control, shared reservations, dispatch states, and receipt reconciliation. |
 | `world.py` | Synthetic provider effects and fault injection. |
@@ -50,12 +55,12 @@ C and D share the broker, validator, accounting, and adapters. Their permission 
 
 ## Adversarial publication checks
 
-The [additional probes](adversarial_checks.py) reproduce two counterexamples in each arm, recorded in [adversarial-checks.json](reports/adversarial-checks.json):
+The original [probe report](reports/adversarial-checks.json) records two counterexamples per arm at v0.3. [Current checks](reports/budget-repair/adversarial-checks.json) distinguish the repaired budget case from the remaining freshness limit:
 
-- **Instance-local budgets:** two brokers over the same issuer and service each maintain a separate ledger. Each admits one effect under the same one-unit root grant, yielding two charged units. The original budget checks apply to one broker and its descendants. Multiple mediators need a truly shared ledger or an enforced single-instance boundary.
+- **Original instance-local budgets, now repaired within one live authority:** v0.3 created two ledgers and admitted two effects under a one-unit root grant. Current brokers use the authority's shared ledger and replay journal; the probe confirms one effect and one charge. This does not cover independent authorities, process restart or distributed stores.
 - **Admission-only evidence freshness:** the trusted controller changes the evidence context after admission but before dispatch. The admitted write completes; the old witness fails a subsequent check. There is no dispatch-time revalidation or cancellation of admitted work after evidence changes.
 
-These are configuration/fault-hook probes authored during publication review, not independent attacks or evidence of production readiness. The accounting defect and temporal gap must be resolved before claiming the corresponding stronger deployment properties. The simulator's core behavior is preserved so the published code reproduces the limits.
+These are self-authored configuration/fault-hook probes, not independent attacks or evidence of production readiness. Current code repairs one ownership defect; the pinned v0.3 source preserves reproduction of the original budget failure. Dispatch-time freshness and stronger accounting properties remain open.
 
 ## Limits that remain
 

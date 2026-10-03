@@ -2,62 +2,14 @@
 
 This module is trusted by the experiment. It cannot isolate hostile Python code.
 """
-from dataclasses import dataclass, replace
+from dataclasses import replace
 from typing import Callable
 
+from .accounting import Operation
 from .authority import ControlPlane
 from .evidence import EvidenceGate
 from .model import Action, Outcome, State, Verdict, digest
 from .world import FakeService, NoEffect
-
-
-@dataclass(frozen=True)
-class Account:
-    limit: int
-    spent: int = 0
-    reserved: int = 0
-
-
-class Ledger:
-    def __init__(self, lock):
-        self._lock = lock
-        self._accounts: dict[str, Account] = {}
-        self._reservations: dict[str, tuple[str, int]] = {}
-
-    def reserve(self, root_id, limit, effect_id, amount) -> bool:
-        with self._lock:
-            account = self._accounts.setdefault(root_id, Account(limit))
-            if account.limit != limit or effect_id in self._reservations:
-                raise RuntimeError("inconsistent protected account")
-            if account.spent + account.reserved + amount > limit:
-                return False
-            self._accounts[root_id] = replace(account, reserved=account.reserved + amount)
-            self._reservations[effect_id] = (root_id, amount)
-            return True
-
-    def settle(self, effect_id, charge):
-        with self._lock:
-            root, amount = self._reservations[effect_id]
-            if type(charge) is not int or not 0 <= charge <= amount:
-                raise RuntimeError("adapter charge exceeds reserved bound")
-            account = self._accounts[root]
-            self._accounts[root] = replace(account, spent=account.spent + charge,
-                                           reserved=account.reserved - amount)
-            del self._reservations[effect_id]
-
-    def release_certified_unused(self, effect_id):
-        self.settle(effect_id, 0)
-
-    def accounts(self) -> dict[str, Account]:
-        with self._lock:
-            return dict(self._accounts)
-
-
-@dataclass(frozen=True)
-class Operation:
-    actor: str
-    request_digest: str
-    outcome: Outcome
 
 
 class Broker:
@@ -66,8 +18,8 @@ class Broker:
         self.authority = authority
         self.gate = gate
         self.service = service
-        self.ledger = Ledger(authority.lock)
-        self._operations: dict[str, Operation] = {}
+        self.ledger = authority.ledger
+        self._operations = authority._operations
         self._observations: list[Outcome] = []
         # Only the trusted experiment controller can supply fault hooks.
         self.before_dispatch = before_dispatch
@@ -95,7 +47,8 @@ class Broker:
             request = digest(action)
             existing = self._operations.get(action.effect_id)
             if existing:
-                if existing.actor != actor or existing.request_digest != request:
+                if (existing.actor != actor or existing.request_digest != request
+                        or existing.adapter is not self.service):
                     return self._observe(Outcome(action.effect_id, State.REJECTED,
                                                 "effect identity reused with different request"))
                 return self._observe(existing.outcome)  # Observation, no new admission.
@@ -142,7 +95,7 @@ class Broker:
             sequence = self.authority.event("ADMIT", access.grant_id,
                                            access.chain, action.effect_id)
             outcome = Outcome(action.effect_id, State.ADMITTED, "checks passed", sequence)
-            self._operations[action.effect_id] = Operation(actor, request, outcome)
+            self._operations[action.effect_id] = Operation(actor, request, self.service, outcome)
             self._observe(outcome)
         # External dispatch is deliberately outside the admission/revocation lock.
         # A revocation now prevents future admissions, not this admitted effect.
@@ -173,7 +126,8 @@ class Broker:
             except PermissionError as error:
                 return self._observe(Outcome(effect_id, State.REJECTED, str(error)))
             operation = self._operations.get(effect_id)
-            if operation is None or operation.actor != actor:
+            if (operation is None or operation.actor != actor
+                    or operation.adapter is not self.service):
                 return self._observe(Outcome(effect_id, State.REJECTED,
                                             "operation absent from authenticated session"))
             if operation.outcome.state != State.UNKNOWN:

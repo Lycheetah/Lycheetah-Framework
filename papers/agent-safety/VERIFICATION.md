@@ -1,6 +1,6 @@
 # Verification Receipt
 
-**Packet:** Agent Safety Research · public working paper v0.3 · 3 October 2026
+**Historical packet receipt:** Agent Safety Research · public working paper v0.3 · 3 October 2026
 
 **Scope:** publication of the research packet, its paper-index entry, and a focused CI workflow in the public Lycheetah Framework repository. The author authorised backup, adversarial evaluation, and GitHub upload on 3 October 2026. A private pre-publication snapshot preserves the original 25 files; archive contents were checked against their SHA-256 manifest before publication preparation. No language-model experiment, participant study, paid model call, or real-service experiment is performed. GitHub publication is the explicitly authorised external effect.
 
@@ -42,3 +42,17 @@ The packet-local claim register preserves conditional and untested claims and re
 - Multi-broker shared accounting and dispatch-time evidence revalidation.
 
 Final artifact hashes are recorded in [artifact-manifest.json](simulator/reports/artifact-manifest.json). That manifest omits its own digest to avoid self-reference. Experimental source fingerprints are also preserved separately in the raw report.
+
+## Current v0.4 focused repair witness
+
+The counts and original report fingerprints above describe the v0.3 publication
+snapshot, not today's changed files. The [new repair note](BUDGET_REPAIR.md) records
+46 passing methods from the broker, authority and shared-accounting modules,
+19 scripted cases per arm with matching expected aggregates, and one repaired
+budget probe plus one still-reproduced freshness limit in each arm. Current Python
+fingerprints are retained in `simulator/reports/budget-repair/`; original reports
+remain unchanged and pinned to `c998df9f8118cdc4ca1e1d7659fd186d49d84bd7`.
+
+No full repository or complete simulator suite was run for this repair. No model
+or provider call, production integration, independent audit or peer review occurred.
+The new measured claim C22 is bounded to one live shared control plane.

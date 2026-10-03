@@ -394,6 +394,14 @@
       "sha256": "b36c6b506be2528b6d70e6fe90f7150e8b7f6e5c432d0278cf8e264df2788475",
       "inspection": "Local implementation review and focused CLI artifact-integrity checks.",
       "boundary": "Offline preparation and operator-recorded descriptive review; no provider calls or comparative model study."
+    },
+    {
+      "id": "X03",
+      "path": "papers/agent-safety/simulator/reports/budget-repair/adversarial-checks.json",
+      "revision": "CONTENT_ADDRESSED_AGENT_SAFETY_V0.4_REPORT",
+      "sha256": "690db6e5f5062536f5af1477598e4a564b92ffeae980ae42bdfeb194ac49cf73",
+      "inspection": "Two in-process probes per arm: bounded shared-accounting repair and retained freshness counterexample.",
+      "boundary": "Authoring-seat simulator report, not independent validation of the AI-futures proposals."
     }
   ]
 }

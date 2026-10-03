@@ -13,7 +13,7 @@ no new experiments or implementation results. [Packet and evidence boundaries](a
 ## Agent safety: authority, evidence, and recovery
 
 [From Constitutional Commitments to Testable Agent Controls](agent-safety/PAPER.md)
-— Mackenzie Conor James Clark · public working paper v0.3 · 3 October 2026.
+— Mackenzie Conor James Clark · working paper v0.4 · 3 October 2026.
 
 A bounded research specification and standard-library simulator, with 53
 self-authored unit tests, 19 scripted cases per comparison arm, and two further

@@ -10,6 +10,7 @@ from secrets import token_hex
 from threading import RLock
 from typing import Callable
 
+from .accounting import Ledger, Operation
 from .model import Action, ControlEvent, Scope, integer, text
 
 
@@ -37,6 +38,10 @@ class Grant:
 class ControlPlane:
     def __init__(self, now: Callable[[], int]):
         self.lock = RLock()
+        # Every broker using this authority shares one account and replay journal.
+        # These records do not survive replacement or restart of this object.
+        self.ledger = Ledger(self.lock)
+        self._operations: dict[str, Operation] = {}
         self.now = now
         self._sessions: dict[str, str] = {}
         self._events: list[ControlEvent] = []

@@ -38,7 +38,7 @@ learning, and the welfare indicators all require more than this document.
 ## Verification state
 
 **Highest gate passed: document and source-reference verification.** The paper
-contains 4,875 whitespace-delimited words, eight research tracks, three elementary arguments and three
+contains 4,911 whitespace-delimited words, eight research tracks, three elementary arguments and three
 proposed study designs. All 14 claim IDs are used and resolve to the register;
 their referenced source IDs resolve. The 23 local source hashes match the pinned
 public commit `c998df9f8118cdc4ca1e1d7659fd186d49d84bd7`. Six selected primary
@@ -75,3 +75,10 @@ present at the older pinned public revision. The development fixtures are author
 alongside the prompts, partial masking may reveal condition, instruction lengths
 differ and no matched-length control exists. No favorable role or naming result
 is asserted. Actual operator run metadata remains unauthenticated by the kit.
+
+## Later accounting repair reference
+
+F14 now distinguishes the earlier inspected revision from the later v0.4
+shared-authority repair. X03 pins the new probe report. This adds no evidence
+for the AI-futures memory, learning, cooperation or naming hypotheses. The
+remaining admission-time freshness gap stays visible.

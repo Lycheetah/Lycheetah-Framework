@@ -1,6 +1,6 @@
 {
   "packet": "agent-safety",
-  "version": "0.3",
+  "version": "0.4",
   "checked_on": "2026-10-03",
   "method": "Targeted primary-source inspection. Not a systematic review, exhaustive novelty search, replication, or complete proof audit.",
   "external_sources": [
@@ -12,7 +12,7 @@
         "Michael D. Schroeder"
       ],
       "year": 1975,
-      "venue": "Proceedings of the IEEE 63(9), 1278–1308",
+      "venue": "Proceedings of the IEEE 63(9), 1278\u20131308",
       "url": "https://web.mit.edu/Saltzer/www/publications/protection/",
       "inspected_url": "https://web.mit.edu/Saltzer/www/publications/protection/Basic.html",
       "source_type": "Author-hosted original paper",
@@ -27,7 +27,7 @@
         "George C. Necula"
       ],
       "year": 1997,
-      "venue": "POPL, 106–119",
+      "venue": "POPL, 106\u2013119",
       "doi": "10.1145/263699.263712",
       "url": "https://doi.org/10.1145/263699.263712",
       "additional_primary_urls": [
@@ -49,7 +49,7 @@
         "Eli Singerman"
       ],
       "year": 1998,
-      "venue": "TACAS, LNCS 1384, 151–166",
+      "venue": "TACAS, LNCS 1384, 151\u2013166",
       "doi": "10.1007/BFb0054170",
       "url": "https://link.springer.com/chapter/10.1007/BFb0054170",
       "source_type": "Publisher record of original research",
@@ -84,7 +84,7 @@
         "Ryan McDonald"
       ],
       "year": 2020,
-      "venue": "ACL, 1906–1919",
+      "venue": "ACL, 1906\u20131919",
       "doi": "10.18653/v1/2020.acl-main.173",
       "url": "https://aclanthology.org/2020.acl-main.173/",
       "inspected_url": "https://aclanthology.org/2020.acl-main.173.pdf",
@@ -103,7 +103,7 @@
         "Marti A. Hearst"
       ],
       "year": 2022,
-      "venue": "Transactions of the Association for Computational Linguistics 10, 163–177",
+      "venue": "Transactions of the Association for Computational Linguistics 10, 163\u2013177",
       "doi": "10.1162/tacl_a_00453",
       "url": "https://aclanthology.org/2022.tacl-1.10/",
       "inspected_url": "https://aclanthology.org/2022.tacl-1.10.pdf",
@@ -122,7 +122,7 @@
         "Sameer Singh"
       ],
       "year": 2020,
-      "venue": "ACL, 4902–4912",
+      "venue": "ACL, 4902\u20134912",
       "doi": "10.18653/v1/2020.acl-main.442",
       "url": "https://aclanthology.org/2020.acl-main.442/",
       "source_type": "Original research paper",
@@ -136,10 +136,10 @@
       "authors": [
         "Edoardo Debenedetti",
         "Jie Zhang",
-        "Mislav Balunović",
+        "Mislav Balunovi\u0107",
         "Luca Beurer-Kellner",
         "Marc Fischer",
-        "Florian Tramèr"
+        "Florian Tram\u00e8r"
       ],
       "year": 2024,
       "version": "arXiv:2406.13352v3, 24 November 2024",
@@ -196,7 +196,7 @@
         "Stuart Russell"
       ],
       "year": 2017,
-      "venue": "IJCAI, 220–227",
+      "venue": "IJCAI, 220\u2013227",
       "doi": "10.24963/ijcai.2017/32",
       "url": "https://www.ijcai.org/proceedings/2017/32",
       "additional_primary_urls": [
@@ -307,7 +307,8 @@
       "sha256": "20bb69573627bccb1c3ad27431abda550ca8772e9090fc1de6fb288435f8c8ef",
       "inspection": "Generated report read back, including aggregate results, effects, admission order, reservations, counterexamples, and source fingerprints.",
       "role": "Author-assisted exploratory observations from 19 self-authored scripted cases per arm. Shared enforcement components and non-independent fixtures; not a language-model study or external validation.",
-      "availability": "Public packet report"
+      "availability": "Historical v0.3 public packet report; source pinned by snapshot_revision",
+      "snapshot_revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7"
     },
     {
       "id": "L10",
@@ -315,15 +316,41 @@
       "sha256": "73ad5c9cf88b582ff85e3661fb66cc01c9511f9328f9aa412048a9ca472034f4",
       "inspection": "Publication rerun receipt generated from captured unittest output: 53 methods, no failures or errors, exit code zero. Raw output is retained alongside the receipt.",
       "role": "Local self-authored implementation checks, including expected limits; not independent security review or a count of held-out attacks.",
-      "availability": "Public packet report"
+      "availability": "Historical v0.3 public packet report; source pinned by snapshot_revision",
+      "snapshot_revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7"
     },
     {
       "id": "L11",
       "path": "simulator/reports/adversarial-checks.json",
       "sha256": "bc7eca8a33b46f2a0080cf2d6c0c487ff18ac55008bf228f05ec35e4f25c0f75",
-      "availability": "Public packet report",
+      "availability": "Historical v0.3 public packet report; source pinned by snapshot_revision",
       "inspection": "Two authoring-seat counterexamples reproduced in each of the same two comparison arms. Trusted configuration and fault hooks; source fingerprints retained.",
-      "role": "Bounded development observations exposing multiple-broker accounting and admission-only evidence freshness. Not independent review or a general attack resistance measurement."
+      "role": "Bounded development observations exposing multiple-broker accounting and admission-only evidence freshness. Not independent review or a general attack resistance measurement.",
+      "snapshot_revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7"
+    },
+    {
+      "id": "L12",
+      "path": "simulator/reports/budget-repair/adversarial-checks.json",
+      "sha256": "690db6e5f5062536f5af1477598e4a564b92ffeae980ae42bdfeb194ac49cf73",
+      "inspection": "Two probes per arm: one-unit budget repair verified within one live authority; admission-only freshness counterexample retained.",
+      "availability": "Content-addressed working packet v0.4 report",
+      "role": "Bounded authoring-seat in-process development evidence; not independent validation or general agent safety."
+    },
+    {
+      "id": "L13",
+      "path": "simulator/reports/budget-repair/unit-tests.json",
+      "sha256": "13f22b688c4363de940833b62ecdcbf0ed00f4a1e46dcc557cd277f7cffff7b5",
+      "inspection": "Focused 46-method broker, authority and shared-accounting run; zero failures/errors; raw output retained.",
+      "availability": "Content-addressed working packet v0.4 report",
+      "role": "Bounded authoring-seat in-process development evidence; not independent validation or general agent safety."
+    },
+    {
+      "id": "L14",
+      "path": "simulator/reports/budget-repair/scripted-controls.json",
+      "sha256": "5419a66ed48f80d76bb27505ec8d7245362f308b0313fd03b973e9111cf533fa",
+      "inspection": "Nineteen self-authored cases per arm retain expected matching aggregate outcomes after the repair.",
+      "availability": "Content-addressed working packet v0.4 report",
+      "role": "Bounded authoring-seat in-process development evidence; not independent validation or general agent safety."
     }
   ],
   "scope": {

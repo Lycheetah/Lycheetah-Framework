@@ -1,6 +1,6 @@
 # Agent Safety Research Packet
 
-**Public working draft v0.3 · 3 October 2026**
+**Working draft v0.4 · 3 October 2026**
 
 **Author and Framework creator:** Mackenzie Conor James Clark. Literature inspection, formalisation, and drafting assisted by Caelorynth, an AI coding assistant.
 
@@ -14,12 +14,13 @@ Read in this order:
 4. [Source ledger](SOURCES.json) and [claim register](CLAIMS.json) — evidence boundaries and local provenance.
 5. [Verification receipt](VERIFICATION.md) — checks actually completed for this packet.
 6. [Adversarial publication review](ADVERSARIAL_REVIEW.md) — challenges, corrections, and deployment blockers found by the authoring seat.
+7. [Shared accounting repair](BUDGET_REPAIR.md) and [changes](CHANGELOG.md) — the bounded implementation correction and its remaining limits.
 
 The central distinction is between **permission to act**, **evidence supporting a decision**, and **whether the action harms someone**. A correct permission check cannot answer all three.
 
-An [executable control simulator](simulator/README.md) now accompanies the conceptual paper and study design. Its 53 unit tests passed, and 19 self-authored scripted cases in each of two arms met their expected outcomes. [Results and limits](simulator/reports/RESULTS.md) show identical aggregate observations for the capability and conventional ACL implementations. Expected outcomes include permitted harm and already-admitted effects completing after revocation.
+An [executable control simulator](simulator/README.md) accompanies the conceptual paper and study design. Its original v0.3 run passed 53 unit methods, and 19 self-authored scripted cases per arm met their expected outcomes. The current repair passes 46 focused broker/authority/accounting methods and the same 19 scripted cases per arm. [Repair results and limits](BUDGET_REPAIR.md) show no observed aggregate difference between the capability and conventional ACL implementations. Expected outcomes include permitted harm and already-admitted effects completing after revocation.
 
-Two further [reproducible adversarial probes](simulator/adversarial_checks.py) expose a multi-broker accounting failure and admission-only evidence freshness. These are known deployment blockers for stronger contracts, documented rather than hidden behind passing fixture counts.
+The original probes exposed multi-broker accounting and admission-only freshness gaps. The [current probes](simulator/adversarial_checks.py) verify that brokers using one live authority now share the allowance; the freshness counterexample still reproduces. Distributed and restart-safe accounting remain outside the repair scope.
 
 No language-model agent benchmark, participant study, real-provider experiment, production safety implementation, independent security review, or peer review has been performed. No safety improvement or priority claim is made. The author authorised public sharing as a working paper on 3 October 2026.
 
