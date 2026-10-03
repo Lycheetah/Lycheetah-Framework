@@ -9,7 +9,7 @@ scipy>=1.10.0
 pandas>=1.5.0
 
 # Optional: Symbolic math (for CASCADE theoretical validation)
-sympy>=1.12
+sympy>=1.14.0
 
 # Optional: Visualization (for future dashboards)
 matplotlib>=3.7.0
