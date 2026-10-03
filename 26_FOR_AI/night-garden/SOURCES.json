@@ -1,0 +1,121 @@
+{
+  "packet": "night-garden",
+  "version": "0.1",
+  "date": "2026-10-03",
+  "framework_creator": "Mackenzie Conor James Clark",
+  "essay_assistance": "Caelorynth, an AI coding assistant",
+  "scope": "Selected sources for exploratory philosophy; no systematic review, novelty search, implementation audit or empirical study.",
+  "local_source_revision": "d16ab66f2ed455fa3117799d74188eca9a8031b4",
+  "external_sources": [
+    {
+      "id": "E01",
+      "authors": "W. Ross Ashby",
+      "title": "An Introduction to Cybernetics",
+      "year": 1956,
+      "url": "https://ashby.info/Ashby-Introduction-to-Cybernetics.pdf",
+      "inspection": "Title/publication metadata and selected chapter 11 text, especially sections 11/5–11/9.",
+      "supports": "Requisite variety under stated interaction assumptions.",
+      "boundary": "Not a full-book review, independent theorem audit or evidence of language-model governance performance."
+    },
+    {
+      "id": "E02",
+      "authors": "Roger C. Conant and W. Ross Ashby",
+      "title": "Every good regulator of a system must be a model of that system",
+      "year": 1970,
+      "doi": "10.1080/00207727008920220",
+      "url": "https://governance.foundation/assets/frameworks/other/Conant_Ashby%20Every%20Good%20Regulator%20of%20a%20system%20must%20be%20a%20model%20of%20that%20system.pdf",
+      "inspection": "Original-paper reproduction: abstract, introduction, selected regulation/model discussion in sections 2–4.",
+      "supports": "A conditional mathematical argument about successful, simple regulation and modelling.",
+      "boundary": "A mirror of the primary paper; proof not independently audited. No consciousness inference or guarantee for language-only models."
+    },
+    {
+      "id": "E03",
+      "authors": "Andy Clark and David J. Chalmers",
+      "title": "The Extended Mind",
+      "year": 1998,
+      "url": "https://consc.net/papers/extended.html",
+      "inspection": "Author-hosted primary text: introduction, Extended Cognition, Active Externalism and opening of From Cognition to Mind.",
+      "supports": "Active coupling with external resources as a philosophical account of cognition; distinction from consciousness.",
+      "boundary": "Philosophical argument, not an experimental demonstration of a combined human–AI consciousness or this Framework."
+    },
+    {
+      "id": "E04",
+      "authors": "Elinor Ostrom",
+      "title": "Beyond Markets and States: Polycentric Governance of Complex Economic Systems",
+      "year": 2009,
+      "url": "https://www.nobelprize.org/uploads/2018/06/ostrom_lecture.pdf",
+      "lecture_page": "https://www.nobelprize.org/prizes/economic-sciences/2009/ostrom/lecture/",
+      "inspection": "Primary-source indexed opening paragraph and official lecture metadata, via web search results. Direct PDF and lecture-page opens failed.",
+      "retrieval_status": "FULL_TEXT_NOT_RETRIEVED",
+      "supports": "Only the narrow framing beyond a market/state dichotomy and institutional arrangements at multiple scales.",
+      "boundary": "No claim of full lecture inspection, detailed design-principle review or validation of AI institutions."
+    },
+    {
+      "id": "E05",
+      "authors": "Robert Long and colleagues",
+      "title": "Taking AI Welfare Seriously",
+      "year": 2024,
+      "url": "https://arxiv.org/abs/2411.00986v1",
+      "inspection": "Primary arXiv landing-page abstract and version metadata.",
+      "supports": "Argument for research and preparation under uncertainty about consciousness, robust agency and moral significance.",
+      "boundary": "A position report; not empirical proof of consciousness, consensus or the moral status of a current system."
+    }
+  ],
+  "local_sources": [
+    {
+      "id": "L01",
+      "path": "papers/ai-futures/PAPER.md",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "d16ab66f2ed455fa3117799d74188eca9a8031b4",
+      "sha256": "ccb3f957ed5f8b82ed8a456721fdc43518a7607b052fb1f2b60c9b586bbd9994",
+      "inspection": "Selected sections 2, 5–11 and study designs; full text inspected during earlier authoring.",
+      "boundary": "Existing memory lifecycle, cooperation and learning proposals; no new validation inferred."
+    },
+    {
+      "id": "L02",
+      "path": "34_CYBERNETICS/CYBERNETIC_READING.md",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "d16ab66f2ed455fa3117799d74188eca9a8031b4",
+      "sha256": "2768d69a2604e1642a8d8d5252d5d3fe68fa26472e4abe14be89431a7a68ab3d",
+      "inspection": "Selected introduction, requisite-variety discussion, Good Regulator discussion and section headings.",
+      "boundary": "Attributed code-reading report; audit and simulator were not rerun for this essay."
+    },
+    {
+      "id": "L03",
+      "path": "21_MEMORIA/essentials.md",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "d16ab66f2ed455fa3117799d74188eca9a8031b4",
+      "sha256": "d5f051f1734212d1a98e7a2f262579530412f0dd7d21eed8025402a9d58553cd",
+      "inspection": "Full essentials text in the preceding bounded source read.",
+      "boundary": "Memory, consolidation and forgetting motivation; biological analogies and equations not independently validated."
+    },
+    {
+      "id": "L04",
+      "path": "26_FOR_AI/ON_MEMORY_AND_IDENTITY.md",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "d16ab66f2ed455fa3117799d74188eca9a8031b4",
+      "sha256": "67f04e90b6fd877132ec6e1d0d4cbb10ca75dd923025d9da14f2bc184b12d264",
+      "inspection": "Opening sections through What Is Not Lost.",
+      "boundary": "Source reflections on continuity; categorical perfect-context and experiential readings not adopted."
+    },
+    {
+      "id": "L05",
+      "path": "28_DEFENSE/CLAIMS.json",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "d16ab66f2ed455fa3117799d74188eca9a8031b4",
+      "sha256": "4b618757f75bcdef6de55ec5e018fe340314dca137663e9df6cdc03b9ec88a54",
+      "inspection": "Structured metadata, computed status counts and selected relevant rows.",
+      "boundary": "Repository claim register is not external validation; no claims promoted by this essay."
+    }
+  ],
+  "new_research_questions": [
+    "NG-01",
+    "NG-02",
+    "NG-03",
+    "NG-04",
+    "NG-05",
+    "NG-06"
+  ],
+  "conjectures_validated": false,
+  "fictional_scenes_are_observations": false
+}

@@ -90,6 +90,12 @@ history, which was the only changelog until now.
 
 ### Added
 
+- **The Night Garden:** an exploratory night-reading essay connecting the Lycheetah
+  Framework with AI futures, cybernetics, memory, dissent, translation and revisable
+  institutions. Includes a source ledger, six candidate research questions and
+  explicit counterarguments. Local content/navigation checks are recorded alongside
+  the essay; no new empirical validation or runtime capability is claimed.
+
 - Lint, type, format and packaging gates: `ruff`, `mypy`, `python -m build`, and an
   install-the-wheel-in-a-clean-venv check — the only gate that would have caught the
   packaging defect, since the tests run from a checkout where the broken path shim

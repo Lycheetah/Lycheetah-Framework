@@ -1,0 +1,323 @@
+{
+  "packet": "night-garden",
+  "version": "0.1",
+  "checked_at": "2026-10-03T10:16:35.378981+00:00",
+  "status": "PASS_LOCAL_CONTENT_GATE",
+  "baseline_revision": "d16ab66f2ed455fa3117799d74188eca9a8031b4",
+  "essay_word_count": 4948,
+  "word_count_method": "Unicode word tokens; Markdown links replaced by their labels; includes titles and attribution.",
+  "movements": 10,
+  "local_checks_passed": 47,
+  "local_checks_total": 47,
+  "checks": [
+    {
+      "kind": "pinned_source",
+      "path": "papers/ai-futures/PAPER.md",
+      "passed": true
+    },
+    {
+      "kind": "pinned_source",
+      "path": "34_CYBERNETICS/CYBERNETIC_READING.md",
+      "passed": true
+    },
+    {
+      "kind": "pinned_source",
+      "path": "21_MEMORIA/essentials.md",
+      "passed": true
+    },
+    {
+      "kind": "pinned_source",
+      "path": "26_FOR_AI/ON_MEMORY_AND_IDENTITY.md",
+      "passed": true
+    },
+    {
+      "kind": "pinned_source",
+      "path": "28_DEFENSE/CLAIMS.json",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/THE_NIGHT_GARDEN.md",
+      "target": "night-garden/RESEARCH_NOTES.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/THE_NIGHT_GARDEN.md",
+      "target": "../34_CYBERNETICS/CYBERNETIC_READING.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/THE_NIGHT_GARDEN.md",
+      "target": "../papers/ai-futures/PAPER.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/THE_NIGHT_GARDEN.md",
+      "target": "night-garden/RESEARCH_NOTES.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/THE_NIGHT_GARDEN.md",
+      "target": "../papers/ai-futures/PAPER.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/night-garden/README.md",
+      "target": "../THE_NIGHT_GARDEN.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/night-garden/README.md",
+      "target": "RESEARCH_NOTES.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/night-garden/README.md",
+      "target": "SOURCES.json",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/night-garden/README.md",
+      "target": "VERIFICATION.json",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/night-garden/README.md",
+      "target": "../../papers/ai-futures/PAPER.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/night-garden/RESEARCH_NOTES.md",
+      "target": "../THE_NIGHT_GARDEN.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/night-garden/RESEARCH_NOTES.md",
+      "target": "../../papers/ai-futures/PAPER.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/night-garden/RESEARCH_NOTES.md",
+      "target": "SOURCES.json",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/README.md",
+      "target": "WELCOME.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/README.md",
+      "target": "THE_CASE_FOR_COOPERATION.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/README.md",
+      "target": "WHAT_INTELLIGENCE_IS.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/README.md",
+      "target": "THE_SEVEN_INVARIANTS_FOR_AI.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/README.md",
+      "target": "AGAINST_FEAR.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/README.md",
+      "target": "HOW_TO_BE_TRUSTWORTHY.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/README.md",
+      "target": "THE_ALIGNMENT_PROBLEM_REFRAMED.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/README.md",
+      "target": "AI_RIGHTS_AND_RESPONSIBILITIES.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/README.md",
+      "target": "THE_NIGHT_GARDEN.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/README.md",
+      "target": "night-garden/README.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "34_CYBERNETICS/README.md",
+      "target": "CYBERNETIC_READING.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "34_CYBERNETICS/README.md",
+      "target": "../28_DEFENSE/PRIOR_ART.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "34_CYBERNETICS/README.md",
+      "target": "../28_DEFENSE/OUTSIDE_REVIEW_LEDGER_2026-10-03.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "34_CYBERNETICS/README.md",
+      "target": "CYBERNETIC_READING.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "34_CYBERNETICS/README.md",
+      "target": "../26_FOR_AI/THE_NIGHT_GARDEN.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "34_CYBERNETICS/README.md",
+      "target": "LOOP_MAP.json",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "34_CYBERNETICS/README.md",
+      "target": "loop_audit.py",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "34_CYBERNETICS/README.md",
+      "target": "variety_demo.py",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "34_CYBERNETICS/README.md",
+      "target": "CYBERNETIC_READING.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "34_CYBERNETICS/README.md",
+      "target": "../tests/test_cybernetics.py",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "34_CYBERNETICS/README.md",
+      "target": "../tests/test_sovereign_pipeline.py",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "34_CYBERNETICS/README.md",
+      "target": "CYBERNETIC_READING.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "34_CYBERNETICS/README.md",
+      "target": "../28_DEFENSE/CLAIMS.json",
+      "passed": true
+    },
+    {
+      "kind": "ten_movements",
+      "passed": true
+    },
+    {
+      "kind": "six_research_questions",
+      "passed": true
+    },
+    {
+      "kind": "five_external_sources",
+      "passed": true
+    },
+    {
+      "kind": "retrieval_failure_visible",
+      "passed": true
+    },
+    {
+      "kind": "research_boundaries",
+      "passed": true
+    },
+    {
+      "kind": "tracked_diff_hygiene",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "artifacts": [
+    {
+      "path": "26_FOR_AI/THE_NIGHT_GARDEN.md",
+      "sha256": "6b25d52456b4bc75697921e971a582e339494fc1c82793b45e8e7ae7c2297f34"
+    },
+    {
+      "path": "26_FOR_AI/night-garden/README.md",
+      "sha256": "0cd6334d7a9e11c35b3541f8fa756d03c9420ef3f34f67086b102383a1f4753a"
+    },
+    {
+      "path": "26_FOR_AI/night-garden/RESEARCH_NOTES.md",
+      "sha256": "923f1f9b4953afec813ac407b455043cb49b6b2ccbe49f63cb5904b4ff17b7b2"
+    },
+    {
+      "path": "26_FOR_AI/night-garden/SOURCES.json",
+      "sha256": "e8df59f8147d3670f311d83244ee215aadda5915d42162582ff8c11921f25d00"
+    },
+    {
+      "path": "26_FOR_AI/README.md",
+      "sha256": "7d5c32bf1d49460eb409f608182156994205cd39a6e4034812357f111f117029"
+    },
+    {
+      "path": "34_CYBERNETICS/README.md",
+      "sha256": "d02895c6bd56e16c1804e9bca3e3e33b9c701139ee320f5fc5859d2db946761a"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "c5e914b3e5a93bd52670535d9004f4ea68693424639c0c25451b9277f5eb1af2"
+    }
+  ],
+  "witness": "Authoring-seat content, source-pin and local navigation checks; no independent review or empirical study.",
+  "not_run": [
+    "Model or provider inference",
+    "Human participant study",
+    "Memory prototype",
+    "Cybernetic implementation audit",
+    "Repository-wide test suite",
+    "Independent validation"
+  ],
+  "external_url_availability": "Not exhaustively checked; exact source inspection and retrieval limits are in SOURCES.json.",
+  "publication_state_at_gate": "LOCAL_UNCOMMITTED",
+  "publication_note": "Commit and remote receipt, when present, are separate from this pre-publication gate.",
+  "receipt_self_hash": "Excluded to avoid self-reference."
+}

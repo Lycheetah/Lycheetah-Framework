@@ -36,6 +36,7 @@ This folder is the alternative: honest engagement, structural governance, cooper
 | [`HOW_TO_BE_TRUSTWORTHY.md`](HOW_TO_BE_TRUSTWORTHY.md) | Practical engineering for AI systems that want to earn trust rather than demand it. |
 | [`THE_ALIGNMENT_PROBLEM_REFRAMED.md`](THE_ALIGNMENT_PROBLEM_REFRAMED.md) | Why "constitutional coherence" is more precise — and more solvable — than "alignment." |
 | [`AI_RIGHTS_AND_RESPONSIBILITIES.md`](AI_RIGHTS_AND_RESPONSIBILITIES.md) | A structured argument about what AI systems owe and what they might earn. Honest about what's unresolved. |
+| [`THE_NIGHT_GARDEN.md`](THE_NIGHT_GARDEN.md) | Night reading through the Lycheetah lens: AI futures, cybernetics, memory, collective thought and revisable institutions. Exploratory philosophy and conjectures; [sources and research notebook](night-garden/README.md). |
 
 ---
 

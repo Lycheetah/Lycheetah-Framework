@@ -30,6 +30,11 @@ For AURA, this is deliberate: under human primacy, the verdict goes to a person.
 
 ## Files
 
+For a speculative companion to the implementation reading, see
+[The Night Garden](../26_FOR_AI/THE_NIGHT_GARDEN.md). Its imagined futures and research
+questions are separate from this folder's code observations; it supplies no new
+runtime validation.
+
 | File | What it is | Status |
 |---|---|---|
 | [`LOOP_MAP.json`](LOOP_MAP.json) | Nine loops: sensor, essential variable, comparator, actuator, whether each closes in code, who acts when the code does not, and every known reader of each open loop | ACTIVE (audited) |
