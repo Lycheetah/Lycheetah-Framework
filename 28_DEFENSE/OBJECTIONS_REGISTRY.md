@@ -228,6 +228,22 @@ Do not respond defensively. The objections below are not bad-faith by default; m
 
 ---
 
+## 16. "It's just cybernetics with new names."
+
+*Added 2026-10-03. Source: an outside AI-assisted review run by a new reader; rulings in [OUTSIDE_REVIEW_LEDGER_2026-10-03.md](OUTSIDE_REVIEW_LEDGER_2026-10-03.md).*
+
+**Pattern:** Prior-art collapse. The reader recognises the control-loop structure and files the whole framework under it.
+
+**Why it surfaces:** It is partly right. TRIAD's anchor–observe–correct cycle is a negative-feedback loop, and [PRIOR_ART.md](PRIOR_ART.md) said so before anyone asked.
+
+**Short:** "Partly, and we checked which part. Five of the nine mapped loops close in code; four only sense and hand the verdict to a person. 34_CYBERNETICS/ shows each one, audited against the source."
+
+**Medium:** Cybernetics is the right lineage for the loop structure, and the framework claims no novelty there. Wiener, Ashby, Beer and Pask are credited in [30_MAPS/LINEAGE_MAP.md](../30_MAPS/LINEAGE_MAP.md). Cybernetics does not supply three things: the content of the essential variables (AURA's seven invariants), the evidence-status discipline of the claims register, or an AI participant in the Two-Point Protocol. Pask's Conversation Theory is the nearest precedent for the last, and the lineage map now says so. The useful answer is not "it isn't cybernetics". It is "here is where each loop closes, and here is where it doesn't". [`loop_audit.py`](../34_CYBERNETICS/loop_audit.py) reads the syntax tree and fails if the map is wrong.
+
+**Link:** [34_CYBERNETICS/README.md](../34_CYBERNETICS/README.md) · [34_CYBERNETICS/CYBERNETIC_READING.md](../34_CYBERNETICS/CYBERNETIC_READING.md)
+
+---
+
 ## Patterns Not Yet Encountered
 
 This document is forward-looking. As objections surface that are not on this list, add them. Each addition: pattern observed, source (where seen), short response drafted, link added. Date and version each addition.
@@ -241,7 +257,7 @@ A defense-challenge issue with the label `objection-pattern` is the appropriate 
 - Not a script for arguments. Match register; do not paste responses verbatim into hostile threads — that signals defensiveness.
 - Not a replacement for engagement. Some objections are genuine and the right response is to update the framework, not deflect.
 - Not a hierarchy. A bad-faith Twitter dismissal and a thoughtful conference question may use the same words; treat them differently.
-- Not exhaustive. The 15 patterns above are the most common as of April 2026; the registry is meant to grow.
+- Not exhaustive. The 16 patterns above (15 as of April 2026, one added October 2026) are the most common seen so far; the registry is meant to grow.
 
 ---
 

@@ -124,10 +124,10 @@
   ],
 
   "claim_summary": {
-    "total": 60,
-    "ACTIVE": 37,
-    "SCAFFOLD": 14,
-    "CONJECTURE": 6,
+    "total": 71,
+    "ACTIVE": 52,
+    "SCAFFOLD": 12,
+    "CONJECTURE": 4,
     "RETRACTED": 3,
     "source": "28_DEFENSE/CLAIMS.json"
   },

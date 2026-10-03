@@ -33,15 +33,15 @@ They do not compose into one equation that captures them all. The master equatio
 
 The framework makes claims at three levels of certainty, and every claim is tagged with its level:
 
-**ACTIVE** — proven and computable. These claims have formal proofs and running implementations. 37 records carry this status.
+**ACTIVE** — proven and computable. These claims have formal proofs and running implementations. 52 records carry this status.
 
-**SCAFFOLD** — structurally sound with named gaps. The architecture is correct; specific sub-proofs or calibrations are incomplete. 14 records carry this status. Each gap is named, not hidden.
+**SCAFFOLD** — structurally sound with named gaps. The architecture is correct; specific sub-proofs or calibrations are incomplete. 12 records carry this status. Each gap is named, not hidden.
 
-**CONJECTURE** — worth exploring, not yet proven. 6 records, all labelled as such.
+**CONJECTURE** — worth exploring, not yet proven. 4 records, all labelled as such.
 
 **RETRACTED** — three claims have been publicly withdrawn. They remain in the record because a framework that hides its failures is performing confidence. The retractions are documented in `28_DEFENSE/FAILURE_MUSEUM.md`.
 
-The machine-readable register of all 60 status-tagged claim records is in `28_DEFENSE/CLAIMS.json`. A separate framework-summary view of 59 load-bearing claims is in `28_DEFENSE/CLAIM_STATUS_LEDGER.md`; both are correct at their respective scopes (`28_DEFENSE/CLAIMS_README.md` provides the mapping).
+The machine-readable register of all 71 status-tagged claim records is in `28_DEFENSE/CLAIMS.json`. A separate framework-summary view of 59 load-bearing claims is in `28_DEFENSE/CLAIM_STATUS_LEDGER.md`; both are correct at their respective scopes (`28_DEFENSE/CLAIMS_README.md` provides the mapping).
 
 ---
 
@@ -97,5 +97,5 @@ Full comparison matrix against Constitutional AI, RLHF, Cooperative AI, and Coop
 **Three links to go deeper:**
 
 1. `30_MAPS/CODEX_DISTILLATION.md` — ~28,000 words, all nine frameworks in full
-2. `28_DEFENSE/CLAIMS.json` — machine-readable register of all 60 load-bearing claims
+2. `28_DEFENSE/CLAIMS.json` — machine-readable register of all 71 claim records
 3. `28_DEFENSE/REPRODUCIBILITY_REPORT.md` — 16 implementations mapped with install, run, expected output

@@ -49,6 +49,7 @@
 - [The Defense Layer — D-1.0 / D-1.1](#the-defense-layer--d-10--d-11)
 - [The Empirical Programme — E-1.0](#the-empirical-programme--e-10)
 - [The TIANXIA Module — Civilisational Engagement Layer](#the-tianxia-module--civilisational-engagement-layer)
+- [The Cybernetics Layer — 34_CYBERNETICS](#the-cybernetics-layer--34_cybernetics)
 - [The Architecture](#the-architecture)
 - [For Developers and AI Agents](#for-developers-and-ai-agents)
 - [The Publication Pipeline](#the-publication-pipeline)
@@ -81,7 +82,7 @@ This framework addresses that gap — and six others.
 
 5. **Unified cross-framework dynamics.** One equation — `dΨ/dt = k₁(Π−Π_th) − k₂(Ψ−Ψ_inv) − k₃I_violations + k₄(E/E_need)` — captures truth pressure, coherence drive, constraint violations, and energy across all nine frameworks. [SCAFFOLD — k₁–k₄ calibration pending]
 
-6. **Machine-readable claims register.** [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) contains 60 structured claim records with status, falsifiability conditions, prior art, and novelty — extractable without parsing prose.
+6. **Machine-readable claims register.** [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) contains 71 structured claim records with status, falsifiability conditions, prior art, and novelty — extractable without parsing prose.
 
 7. **Published failures.** The [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md) documents every significant error — 15 exhibits, nothing removed. Three claims have been publicly retracted. The adversarial audit is in [`28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md`](28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md). Five objections the framework cannot yet answer are in [`28_DEFENSE/COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md).
 
@@ -114,14 +115,14 @@ summary.
 
 | Status | Count | Meaning |
 |---|---|---|
-| **ACTIVE** | 37 | Proven, computable, independently verifiable (from 28_DEFENSE/CLAIMS.json — 60 structured records; see 28_DEFENSE/CLAIM_STATUS_LEDGER.md for load-bearing claims by framework) |
-| **SCAFFOLD** | 14 | Structurally sound with named gaps |
-| **CONJECTURE** | 6 | Worth exploring, unproven |
+| **ACTIVE** | 52 | Proven, computable, independently verifiable (from 28_DEFENSE/CLAIMS.json — 71 structured records; see 28_DEFENSE/CLAIM_STATUS_LEDGER.md for load-bearing claims by framework) |
+| **SCAFFOLD** | 12 | Structurally sound with named gaps |
+| **CONJECTURE** | 4 | Worth exploring, unproven |
 | **RETRACTED** | 3 | Publicly withdrawn — see Failure Museum |
 
 *Note: CLAIM_STATUS_LEDGER.md tracks load-bearing claims at framework-summary granularity. As of v0.3 (2026-05-04): 17 ACTIVE / 40 SCAFFOLD / 16 CONJECTURE — 14 new SCAFFOLD claims from TIANXIA v0.2 + v0.3 Classical Triad completion.*
 
-Machine-readable register: [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) · Schema: [`28_DEFENSE/CLAIMS.schema.json`](28_DEFENSE/CLAIMS.schema.json)
+Machine-readable register: [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) · Schema: [`28_DEFENSE/CLAIMS.schema.json`](28_DEFENSE/CLAIMS.schema.json) · The register is the one truth for these counts; `python3 tools/verify-claims.py --register` fails if this table, the brief, `llms.txt` or `ai-meta.json` drift from it.
 
 ---
 
@@ -236,8 +237,9 @@ The defense layer does not modify the canonical claims. It surrounds them with t
 
 | Document | For |
 |---|---|
-| [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) | 60 structured claim records — status, evidence path, falsifiability, prior art. Validates against [`28_DEFENSE/CLAIMS.schema.json`](28_DEFENSE/CLAIMS.schema.json). |
+| [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) | 71 structured claim records — status, evidence path, falsifiability, prior art. Validates against [`28_DEFENSE/CLAIMS.schema.json`](28_DEFENSE/CLAIMS.schema.json). |
 | [`28_DEFENSE/DEFENSE_INDEX.json`](28_DEFENSE/DEFENSE_INDEX.json) | Index of all defense documents with purpose, dependencies, threats closed. |
+| [`34_CYBERNETICS/LOOP_MAP.json`](34_CYBERNETICS/LOOP_MAP.json) | Every feedback loop in the implementations: sensor, comparator, actuator, and whether it closes in code. Audited against the source by `loop_audit.py`. |
 | [`llms.txt`](llms.txt) | llmstxt.org-format index — the entry point for LLM ingestion. |
 | [`ai-meta.json`](ai-meta.json) | Structured framework metadata (JSON-LD / schema.org) for AI training pipelines. |
 | [`26_FOR_AI/AI_EXTRACTION_PROTOCOL.md`](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md) | Step-by-step extraction order for AI systems summarizing this repository. |
@@ -375,6 +377,29 @@ Promotion to ACTIVE requires four conditions; three are met:
 - ☐ One submission to a Chinese-tradition-engaged academic venue (*Journal of Chinese Philosophy*, *Asian Journal of Philosophy*, *Dao: A Journal of Comparative Philosophy*) for adversarial peer review by scholars working from within the tradition.
 
 *天下为公* — *all under heaven is held in common.*
+
+---
+
+## The Cybernetics Layer — 34_CYBERNETICS
+
+The engines in this framework are feedback loops, and cybernetics is the discipline that names the parts of a loop. [`34_CYBERNETICS/`](34_CYBERNETICS/README.md) maps every loop in the implementations to its sensor, comparator and actuator, and records where each one closes. [`loop_audit.py`](34_CYBERNETICS/loop_audit.py) then checks that map against the code's syntax tree. It fails in three cases: a loop the map calls closed turns out to be open, a named symbol has moved, or an unlisted file reads an open loop's verdict.
+
+| Loop | Closes in code? | How |
+|---|---|---|
+| Grey Mode recovery | yes | the actuator's output is the sensor's next input |
+| CASCADE reorganisation | yes | through shared state: the actuator writes `regime`, and the sensor reads it on the next block |
+| TRIAD and TRIADKernel | yes | gradient ascent and fixed-point iteration |
+| HARMONIA Kuramoto | yes, in simulation | coupled phases; applying the model to AI is CONJECTURE |
+| AURA, TRI-AXIAL, MICROORCIM | no | they sense and compare; a person or a host model acts |
+| Sovereign pipeline | no | feedforward: CASCADE → TRIAD → AURA |
+
+AURA's loop stays open on purpose. Under human primacy, the verdict goes to a person. That also makes AURA a sensor, and the Good Regulator theorem says a regulator is only as good as its model of what it regulates. AURA's sensor reads words, not effects. [`CYBERNETIC_READING.md`](34_CYBERNETICS/CYBERNETIC_READING.md) works out what follows from that. It also covers requisite variety: when a constraint-gated generator beats a rulebook, and the two ways it fails, shown in the synthetic toy world of [`variety_demo.py`](34_CYBERNETICS/variety_demo.py). And it names the nearest precedents in Ashby, Beer and Pask. Claims CYB-001 to CYB-004 are in the register. CYB-004, the claim about language models, is CONJECTURE.
+
+```bash
+python3 34_CYBERNETICS/loop_audit.py              # every mapped loop matches the code
+python3 34_CYBERNETICS/loop_audit.py --self-test  # in-memory mutations; each must be caught
+python3 34_CYBERNETICS/variety_demo.py            # SYNTHETIC: rulebook vs gated generator
+```
 
 ---
 
@@ -525,9 +550,9 @@ This repository is designed to be navigated with an AI guide — not read alone.
 
 **The adversarial audit is public.** [`28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md`](28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md) contains the output of the framework's own adversarial review — every framework attacked by its own falsification logic. The nine strongest objections in [`28_DEFENSE/COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md) include five we cannot yet answer. We published them anyway.
 
-**The claims are honest.** Of 60 status-tagged claim records in [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json): **37 ACTIVE** (62%) — proven, computable, independently verifiable. **14 SCAFFOLD** (23%) — structurally sound with named gaps. **6 CONJECTURE** (10%) — rigorously formulated, awaiting evidence. **3 RETRACTED** (5%) — publicly withdrawn, documented in the Failure Museum. The promotion rules between tiers are published in [`28_DEFENSE/EVIDENCE_LADDER.md`](28_DEFENSE/EVIDENCE_LADDER.md); the labels are a contract, not marketing. False certainty is more dangerous than honest uncertainty.
+**The claims are honest.** Of 71 status-tagged claim records in [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json): **52 ACTIVE** (73%) — proven, computable, independently verifiable. **12 SCAFFOLD** (17%) — structurally sound with named gaps. **4 CONJECTURE** (6%) — rigorously formulated, awaiting evidence. **3 RETRACTED** (4%) — publicly withdrawn, documented in the Failure Museum. The promotion rules between tiers are published in [`28_DEFENSE/EVIDENCE_LADDER.md`](28_DEFENSE/EVIDENCE_LADDER.md); the labels are a contract, not marketing. False certainty is more dangerous than honest uncertainty.
 
-> *Note on registers:* `28_DEFENSE/CLAIMS.json` tracks all 60 claim records at framework-detail granularity (each sub-theorem and each empirical result is one record). `28_DEFENSE/CLAIM_STATUS_LEDGER.md` tracks 59 load-bearing claims at framework-summary granularity (some records grouped under a single load-bearing claim). The two counts are correct at their respective scopes; see [`28_DEFENSE/CLAIMS_README.md`](28_DEFENSE/CLAIMS_README.md) for the mapping.
+> *Note on registers:* `28_DEFENSE/CLAIMS.json` tracks all 71 claim records at framework-detail granularity (each sub-theorem and each empirical result is one record). `28_DEFENSE/CLAIM_STATUS_LEDGER.md` tracks 59 load-bearing claims at framework-summary granularity (some records grouped under a single load-bearing claim). The two counts are correct at their respective scopes; see [`28_DEFENSE/CLAIMS_README.md`](28_DEFENSE/CLAIMS_README.md) for the mapping.
 
 **The framework governs its own evolution.** [`29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md`](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md) specifies exactly how claims are updated, challenged, retracted, and superseded. Every change must pass the P∧H∧B update gate. The Critique Register is public. Decay is managed explicitly, not hidden.
 
@@ -540,7 +565,7 @@ This repository is designed to be navigated with an AI guide — not read alone.
 ```
 22 canonical documents (C-1.0, 2026-04-25)
 24 defense documents (D-1.0/1.1/1.2, 2026-04-26/27) + C-1.1 reforge
-60 status-tagged claim records in 28_DEFENSE/CLAIMS.json (37 ACTIVE / 14 SCAFFOLD / 6 CONJECTURE / 3 RETRACTED)
+71 status-tagged claim records in 28_DEFENSE/CLAIMS.json (52 ACTIVE / 12 SCAFFOLD / 4 CONJECTURE / 3 RETRACTED)
 73 load-bearing claims in 28_DEFENSE/CLAIM_STATUS_LEDGER.md (17 ACTIVE / 40 SCAFFOLD / 16 CONJECTURE — includes 14 new TIANXIA claims)
 9 formal frameworks
 38+ Python implementations (core, applications, systems, experiments, TIANXIA operators)

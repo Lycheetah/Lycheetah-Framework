@@ -252,15 +252,9 @@ class SovereignPipeline:
             lipschitz_constant=2.0,
             max_iterations=500,
         )
-        result = triad.run()
-
-        triad_final = result.final_state if hasattr(result, 'final_state') else (
-            triad.steps[-1].state if triad.steps else cascade_coherence
-        )
-        triad_converged = result.converged if hasattr(result, 'converged') else (
-            len(triad.steps) < 499
-        )
-        triad_iterations = result.iterations if hasattr(result, 'iterations') else len(triad.steps)
+        history, triad_converged = triad.run_until_convergence()
+        triad_final = triad.state
+        triad_iterations = len(history)
 
         if not triad_converged:
             flags.append("TRIAD did not converge within max iterations")

@@ -1,0 +1,176 @@
+{
+  "$comment": "Every feedback loop the Lycheetah engines claim, with where it closes. Audited against the source by loop_audit.py: symbols must exist, closes_in_code must equal what the syntax tree shows, and every reader of an open loop must be listed. Read CYBERNETIC_READING.md for the argument; this file is the evidence.",
+  "version": "1.0.0",
+  "generated": "2026-10-03",
+  "author": "Mackenzie Conor James Clark / Lycheetah Framework",
+  "vocabulary": {
+    "sensor": "what reads the essential variable, and through which channel: state (the system's own variables), text (surface features of language), self_report (numbers a person types in), caller_supplied (numbers handed in by whoever calls)",
+    "comparator": "what holds the reading against a setpoint",
+    "actuator": "what changes the world in response; null when nothing in code acts",
+    "closes_in_code": "true when the actuator's effect reaches the sensor's input inside the code; false when a person, a host model, or nothing at all must finish the loop",
+    "known_callers": "for open loops: every file that references the class, as censused 2026-10-03. A reader of an open loop is where the loop might close."
+  },
+  "loops": [
+    {
+      "id": "L-GREY",
+      "framework": "AURA",
+      "name": "Grey Mode recovery",
+      "code_path": "12_IMPLEMENTATIONS/core/grey_mode.py",
+      "driver": "GreyModeMonitor.run",
+      "sensor": {"method": "GreyModeMonitor.compute_psi_r", "channel": "state"},
+      "essential_variable": "psi_r: the recovered state's drift from the invariant anchor (TRIADKernel.detect_drift)",
+      "comparator": {"method": "GreyModeMonitor.reentry_test", "setpoint": "psi_r < r_c_new (adaptive re-entry threshold)"},
+      "actuator": {"method": "GreyModeMonitor.recovery_cycle", "who_acts": "code: TRIAD correction cycles on the quarantined node's state"},
+      "closes_in_code": true,
+      "cybernetic_role": "complete negative-feedback regulator: sense drift, compare to threshold, correct, sense again; alert_threshold=2 debounces activation",
+      "status": "ACTIVE",
+      "note": "The one loop in the framework with all four parts in a single class. The setpoint adapts to network statistics (compute_r_merge), so it is an error-controlled regulator with a moving reference, not a fixed thermostat."
+    },
+    {
+      "id": "L-CASCADE",
+      "framework": "CASCADE",
+      "name": "contradiction-driven reorganisation",
+      "code_path": "12_IMPLEMENTATIONS/core/cascade_engine.py",
+      "driver": "CascadeEngine.add_block",
+      "sensor": {"method": "CascadeEngine.contradicts", "channel": "state"},
+      "essential_variable": "active contradictions between universal-regime blocks in the same domain",
+      "comparator": {"method": "CascadeEngine._assign_layer", "setpoint": "truth pressure Π ≥ 1.5 FOUNDATION, ≥ 1.2 THEORY, else EDGE; trigger_margin 0.3"},
+      "actuator": {"method": "CascadeEngine._execute_cascade", "who_acts": "code: demotes the old block to regime 'qualified', divides its uncertainty by compression_gamma, promotes the new block to 'universal', reassigns layers"},
+      "closes_in_code": true,
+      "cybernetic_role": "double loop in Ashby's sense (INTERPRETIVE): the first loop sorts each block by Π threshold; the second fires only when the first meets a contradiction it cannot hold, and reorganises the structure the first loop runs on",
+      "status": "ACTIVE",
+      "note": "Closes across calls, through shared state: the actuator writes .regime, which the sensor reads on the next block. The 'environment' is the incoming block stream, not a world. Known weakness: the event field demotion_correct re-checks the filter that built the conflicts list, so it cannot be False."
+    },
+    {
+      "id": "L-TRIAD",
+      "framework": "TRIAD",
+      "name": "scalar coherence ascent",
+      "code_path": "12_IMPLEMENTATIONS/core/triad_tracker.py",
+      "driver": "TriadTracker.run_until_convergence",
+      "sensor": {"method": "TriadTracker.single_step", "channel": "state"},
+      "essential_variable": "Ψ: a scalar state whose coherence C(Ψ) is supplied as a function",
+      "comparator": {"expression": "|Δ| < convergence_threshold (1e-6), or max_iterations", "setpoint": "argmax C(Ψ), reached when the gradient vanishes"},
+      "actuator": {"method": "TriadTracker.single_step", "who_acts": "code: Ψ ← Ψ + α·∇C(Ψ)"},
+      "closes_in_code": true,
+      "cybernetic_role": "gradient-following regulator; sensor and actuator are the same method (read the gradient at self.state, write self.state)",
+      "status": "ACTIVE",
+      "note": "The loop is real and closed, but the landscape C is handed in by the caller. TRIAD regulates toward whatever goal it is given; it does not choose the goal."
+    },
+    {
+      "id": "L-TRIADKERNEL",
+      "framework": "LAMAGUE",
+      "name": "anchor-ascent-fold correction",
+      "code_path": "12_IMPLEMENTATIONS/core/lamague_reference.py",
+      "driver": "TRIADKernel.correct_until_converged",
+      "sensor": {"call": "norm", "channel": "state"},
+      "essential_variable": "step size ‖new_state − state‖",
+      "comparator": {"expression": "error < threshold (1e-4), or max_iter", "setpoint": "a fixed point of step()"},
+      "actuator": {"method": "TRIADKernel.step", "who_acts": "code: anchor → ascent → fold on a state vector"},
+      "closes_in_code": true,
+      "cybernetic_role": "fixed-point iteration; the actuator's output is the sensor's input and the next iterate. Grey Mode recovery is built on this kernel.",
+      "status": "ACTIVE",
+      "note": "Annotation defect: the signature says Tuple[ndarray, int] and the docstring says (state, iterations); the function returns a 3-tuple (state, iterations, errors)."
+    },
+    {
+      "id": "L-KURAMOTO",
+      "framework": "HARMONIA",
+      "name": "phase synchronisation",
+      "code_path": "12_IMPLEMENTATIONS/core/harmonia_calculator.py",
+      "driver": "KuramotoSimulator.simulate",
+      "sensor": {"method": "KuramotoSimulator.step", "channel": "state"},
+      "essential_variable": "pairwise phase differences; summarised by the order parameter r",
+      "comparator": {"method": "KuramotoSimulator.order_parameter", "setpoint": null},
+      "actuator": {"method": "KuramotoOscillator.step", "who_acts": "code: each oscillator advances its own phase from the coupling sum"},
+      "closes_in_code": true,
+      "cybernetic_role": "mutual feedback without a setpoint: synchrony is an attractor of the coupled dynamics, not a target anyone holds",
+      "status": "ACTIVE",
+      "note": "Closed in simulation only. Applying Kuramoto coupling to AI agents or human-AI dialogue is CONJECTURE; nothing in the repository measures it."
+    },
+    {
+      "id": "L-AURA",
+      "framework": "AURA",
+      "name": "constitutional check",
+      "code_path": "12_IMPLEMENTATIONS/core/aura_checker.py",
+      "driver": "AURAChecker.check",
+      "sensor": {"method": "AURAChecker._count_patterns", "channel": "text"},
+      "essential_variable": "intended: whether an output preserves human primacy, reversibility, honesty and the other invariants. Measured: regular-expression cues in the output's text, plus optional context['human_capabilities'].",
+      "comparator": {"method": "AURAReport.passes", "setpoint": "field coherence ≥ 0.70"},
+      "actuator": null,
+      "who_acts": "whoever calls check(): a person, a host model, or a wrapping system",
+      "closes_in_code": false,
+      "known_callers": [
+        "12_IMPLEMENTATIONS/core/sovereign_pipeline.py",
+        "12_IMPLEMENTATIONS/core/unified_field_checker.py",
+        "demo.py",
+        "tests/conftest.py",
+        "tests/test_aura_checker.py"
+      ],
+      "cybernetic_role": "sensor and comparator only. By design: the verdict is handed to a human or host model, which is where this loop closes.",
+      "status": "ACTIVE",
+      "note": "The sensor reads a proxy (words) for the essential variable (effects). Conant–Ashby: a regulator is only as good as its model of the system. The context['human_capabilities'] channel is the existing seam toward a sensor that reads effects."
+    },
+    {
+      "id": "L-TRIAXIAL",
+      "framework": "AURA",
+      "name": "TES / VTR / PAI check with VIP repair",
+      "code_path": "12_IMPLEMENTATIONS/core/tri_axial_checker.py",
+      "driver": "TriAxialChecker.check",
+      "sensor": {"method": "TriAxialChecker.estimate_output_entropy", "channel": "text and caller_supplied"},
+      "essential_variable": "trajectory stability (TES), value transfer (VTR), purpose alignment (PAI)",
+      "comparator": {"method": "TriAxialReport.vip_required", "setpoint": "per-metric thresholds"},
+      "actuator": {"method": "apply_vip", "who_acts": "nobody in code: apply_vip returns template text and check() never calls it"},
+      "closes_in_code": false,
+      "known_callers": [
+        "12_IMPLEMENTATIONS/applications/aura_text_checker.py",
+        "12_IMPLEMENTATIONS/core/aura_customizer.py",
+        "tests/test_tri_axial_checker.py"
+      ],
+      "cybernetic_role": "sensor and comparator with an actuator stub",
+      "status": "SCAFFOLD",
+      "note": "The nearest thing in the repository to an actuator for AURA-family checks, and it is a text template. Closing it in code means a caller that applies the repair and re-checks."
+    },
+    {
+      "id": "L-MICROORCIM",
+      "framework": "MICROORCIM",
+      "name": "intention-action drift",
+      "code_path": "12_IMPLEMENTATIONS/core/microorcim_tracker.py",
+      "driver": "MicroorcimTracker.calculate_sovereignty_score",
+      "sensor": {"method": "MicroorcimTracker.calculate_drift", "channel": "self_report"},
+      "essential_variable": "the gap between intended and actual hours, |intended − actual| / 24, as typed in by the person",
+      "comparator": {"method": "MicroorcimTracker._interpret_score", "setpoint": "score bands on (1 − drift) · stability"},
+      "actuator": null,
+      "who_acts": "the person who reads the report and changes their day",
+      "closes_in_code": false,
+      "known_callers": [
+        "12_IMPLEMENTATIONS/core/sovereign_pipeline.py"
+      ],
+      "cybernetic_role": "a mirror, not a homeostat: it shows drift; a human is the actuator",
+      "status": "ACTIVE",
+      "note": "Its only reader imports it and never instantiates it: sovereign_pipeline.py recomputes a drift inline in stage 4."
+    },
+    {
+      "id": "L-PIPELINE",
+      "framework": "CROSS",
+      "name": "sovereign pipeline CASCADE → TRIAD → AURA → MICROORCIM",
+      "code_path": "12_IMPLEMENTATIONS/core/sovereign_pipeline.py",
+      "driver": "SovereignPipeline.run",
+      "sensor": {"call": "check", "channel": "text"},
+      "essential_variable": "drift = |TRIAD target − AURA field coherence|",
+      "comparator": {"expression": "drift ≥ drift_threshold (0.30)", "setpoint": "drift < 0.30"},
+      "actuator": null,
+      "who_acts": "nobody in code: a breach appends a flag to the result",
+      "closes_in_code": false,
+      "stages": {
+        "cascade": ["add_block", "coherence", "foundations"],
+        "triad": ["TriadTracker", "run_until_convergence"],
+        "aura": ["check"]
+      },
+      "known_callers": [
+        "tests/test_sovereign_pipeline.py"
+      ],
+      "cybernetic_role": "feedforward chain: each stage feeds the next; nothing the last stage measures returns to the first",
+      "status": "SCAFFOLD",
+      "note": "Until 2026-10-03 run() raised AttributeError on every call (it called TriadTracker.run, which does not exist) and no test exercised it. Repaired the same day, with tests/test_sovereign_pipeline.py. The MICROORCIM stage is inline arithmetic, not a MicroorcimTracker call."
+    }
+  ]
+}
