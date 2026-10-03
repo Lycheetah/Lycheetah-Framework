@@ -1,5 +1,20 @@
 # Papers
 
+## Agent safety: authority, evidence, and recovery
+
+[From Constitutional Commitments to Testable Agent Controls](agent-safety/PAPER.md)
+— Mackenzie Conor James Clark · public working paper v0.3 · 3 October 2026.
+
+A bounded research specification and standard-library simulator, with 53
+self-authored unit tests, 19 scripted cases per comparison arm, and two further
+counterexamples per arm. The conventional baseline matches the scripted results;
+multi-broker accounting and dispatch-time evidence freshness remain known limits.
+No general agent-safety, independent-review, peer-review, or superiority claim.
+[Packet and reproduction](agent-safety/README.md) ·
+[Adversarial review](agent-safety/ADVERSARIAL_REVIEW.md).
+
+---
+
 ## CASCADE: Self-Reorganizing Knowledge Structures via Truth Pressure and Coherence-Preserving Demotion
 
 **File:** `CASCADE_ARXIV.tex`
