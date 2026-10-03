@@ -4,6 +4,7 @@
 
     python3 tools/verify-claims.py            # full report
     python3 tools/verify-claims.py --quiet    # CI-shaped: baseline check only
+    python3 tools/verify-claims.py --register # do the claim counts agree everywhere?
 
 Built 2026-07-27, after a sweep found the framework's epistemic discipline was real
 but *fragmented*: a 56 KB falsification register, an empirical inventory classifying
@@ -21,7 +22,7 @@ only that a claim-bearing document declares its footing somewhere. A marked docu
 can still be wrong — it just cannot be silently wrong.
 """
 
-import os, re, sys, subprocess
+import json, os, re, sys, subprocess
 from collections import Counter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -32,7 +33,7 @@ QUIET = "--quiet" in sys.argv
 CLAIM_BEARING = (
     "papers/", "docs/", "28_DEFENSE/", "29_GOVERNANCE/",
     "11_MATHEMATICAL_FOUNDATIONS/", "23_NZ_AI_GOVERNANCE/",
-    "24_LAMAGUE_CROSS_CULTURAL/", "31_EMPIRICAL/", "32_TIANXIA/",
+    "24_LAMAGUE_CROSS_CULTURAL/", "31_EMPIRICAL/", "32_TIANXIA/", "34_CYBERNETICS/",
 )
 EXEMPT_DIRS = ("99_ARCHIVE/", "_PROPRIETARY/", "000_1404RawSourceTranslate/")
 MIN_BYTES = 3000            # below this it is a note, not an argument
@@ -145,5 +146,111 @@ def main():
     return 0
 
 
+# ── THE REGISTER AND ITS MIRRORS ─────────────────────────────────────────────────────
+# Added 2026-10-03, after an outside reader running an AI-assisted review found three
+# different claim totals within a few clicks: the README said 60, CLAIMS.json's own
+# `total_claims` field said 136, and its `claims` array held 67 records. The gate above
+# asks whether a document declares its footing; it could not see this, because every
+# one of those documents was marked. A count can be honestly labelled and still wrong.
+#
+# One truth: the `claims` array. Every surface that repeats a count is a mirror, and
+# every mirror is pinned here by the phrase that carries the number. A pinned phrase
+# that disappears is itself a failure: the text moved, so the pin must move with it.
+# "%STATUS" pins a rounded percentage of the total.
+CLAIMS_PATH = "28_DEFENSE/CLAIMS.json"
+META_PATH = "ai-meta.json"
+STATUSES = ("ACTIVE", "SCAFFOLD", "CONJECTURE", "RETRACTED")
+EITHER = r"(?:load-bearing claims|claim records)"
+MIRRORS = {
+    "README.md": [
+        (r"contains (\d+) structured claim records", ("total",)),
+        (r"The register holds (\d+) claim records", ("total",)),
+        (r"\| \*\*ACTIVE\*\* \| (\d+) \|", ("ACTIVE",)),
+        (r"\| \*\*SCAFFOLD\*\* \| (\d+) \|", ("SCAFFOLD",)),
+        (r"\| \*\*CONJECTURE\*\* \| (\d+) \|", ("CONJECTURE",)),
+        (r"\| \*\*RETRACTED\*\* \| (\d+) \|", ("RETRACTED",)),
+    ],
+    "llms.txt": [
+        (r"Total: (\d+) " + EITHER + r" \((\d+) ACTIVE, (\d+) SCAFFOLD, (\d+) CONJECTURE, "
+         r"(\d+) RETRACTED", ("total",) + STATUSES),
+        (r"All (\d+) " + EITHER, ("total",)),
+    ],
+    "FIVE_MINUTE_BRIEF.md": [
+        (r"register of all (\d+) status-tagged claim records", ("total",)),
+    ],
+}
+
+
+def check_register(root=ROOT):
+    """Return (truth, errors): the counts the register holds, and every disagreement."""
+    def read(rel):
+        with open(os.path.join(root, rel), encoding="utf-8") as fh:
+            return fh.read()
+
+    register = json.loads(read(CLAIMS_PATH))
+    claims = register["claims"]
+    truth = Counter(c["status_normalized"] for c in claims)
+    errors = [f"{CLAIMS_PATH}: {c['claim_id']} has status_normalized "
+              f"{c['status_normalized']!r}, outside {STATUSES}"
+              for c in claims if c["status_normalized"] not in STATUSES]
+    truth["total"] = len(claims)
+    for s in STATUSES:
+        truth["%" + s] = round(100 * truth[s] / len(claims))
+
+    if register.get("total_claims") != len(claims):
+        errors.append(f"{CLAIMS_PATH}: total_claims = {register.get('total_claims')}, "
+                      f"but the file holds {len(claims)} records")
+
+    pinned = 0
+    for rel, pins in MIRRORS.items():
+        text = read(rel)
+        for pattern, keys in pins:
+            matches = list(re.finditer(pattern, text))
+            if not matches:
+                errors.append(f"{rel}: pinned phrase not found /{pattern}/ — "
+                              f"the text moved; move the pin with it")
+            for m in matches:
+                pinned += 1
+                line = text.count("\n", 0, m.start()) + 1
+                for key, value in zip(keys, m.groups()):
+                    if int(value) != truth[key]:
+                        errors.append(f"{rel}:{line}: says {value} for {key}, "
+                                      f"the register holds {truth[key]}")
+
+    meta = json.loads(read(META_PATH))
+    summary = meta.get("claim_summary", {})
+    for key in ("total",) + STATUSES:
+        pinned += 1
+        if summary.get(key) != truth[key]:
+            errors.append(f"{META_PATH}: claim_summary.{key} = {summary.get(key)}, "
+                          f"the register holds {truth[key]}")
+    by_framework = Counter(c["framework"] for c in claims)
+    for fw in meta.get("frameworks", []):
+        pinned += 1
+        key = fw["name"].replace(" ", "_")
+        if fw.get("claim_count") != by_framework[key]:
+            errors.append(f"{META_PATH}: {fw['name']} claim_count = {fw.get('claim_count')}, "
+                          f"the register holds {by_framework[key]}")
+    truth["pinned"] = pinned
+    return truth, errors
+
+
+def register_main():
+    truth, errors = check_register()
+    print(f"\n\033[36m⊚ THE REGISTER AND ITS MIRRORS\033[0m  \033[2m{CLAIMS_PATH} holds "
+          f"{truth['total']} records: " + " · ".join(f"{truth[s]} {s}" for s in STATUSES)
+          + "\033[0m\n")
+    if errors:
+        for e in errors:
+            print(f"  \033[31m✗\033[0m {e}")
+        print(f"\n\033[31m✗ DRIFT\033[0m — {len(errors)} disagreement(s) across "
+              f"{truth['pinned']} pinned counts. Fix the mirror, never the register, "
+              f"unless the register is what is wrong.\n")
+        return 1
+    print(f"\033[32m✓ AGREED\033[0m — {truth['pinned']} pinned counts across "
+          f"{', '.join(MIRRORS)} and {META_PATH} match the register.\n")
+    return 0
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(register_main() if "--register" in sys.argv else main())

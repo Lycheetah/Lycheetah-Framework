@@ -28,7 +28,7 @@ anthropics/evals, 1,000 statements   ROC-AUC 0.516    z=0.87  p=0.383     not si
 cue coverage on real replies         ~2%
 ```
 
-The claims file needs reconciliation before it can support a whole-corpus total: its metadata declares 136 claims, while its `claims` array contains 67 rows. None of those current rows carries an HTTP(S) evidence URL. Repository paths document internal material; they do not establish independent validation.
+The claims register contains 71 structured claim records, and its declared total now matches its rows; until 2026-10-03 its metadata declared 136 claims over 67 rows. None of those current rows carries an HTTP(S) evidence URL. Repository paths document internal material; they do not establish independent validation.
 
 **What survived, what did not:**
 
@@ -66,6 +66,7 @@ Full records: [`EXTERNAL_VALIDATION`](33_APPLICATIONS/EXTERNAL_VALIDATION_2026-0
 - [Truth Pressure — the load-bearing scalar](#truth-pressure--the-load-bearing-scalar)
 - [The canonical body, defense layer, and empirical programme](#the-canonical-body-defense-layer-and-empirical-programme)
 - [The TIANXIA module](#the-tianxia-module)
+- [The cybernetics layer](#the-cybernetics-layer)
 - [The architecture](#the-architecture)
 - [For developers and AI agents](#for-developers-and-ai-agents)
 - [Find your door](#find-your-door)
@@ -103,6 +104,7 @@ Full records: [`EXTERNAL_VALIDATION`](33_APPLICATIONS/EXTERNAL_VALIDATION_2026-0
 | Runnable engineering | [`lycheetah/`](lycheetah/) and [`12_IMPLEMENTATIONS/`](12_IMPLEMENTATIONS/) | Executable code and tests. Passing local tests does not establish effectiveness on real-world traffic. |
 | Research and empirical records | [`31_EMPIRICAL/`](31_EMPIRICAL/) and [`33_APPLICATIONS/`](33_APPLICATIONS/) | Formal work, measurements, and preregistrations; each result is bounded by its own data and method. A preregistration is not a result. |
 | Assurance runtime | [`34_ASSURANCE_RUNTIME/`](34_ASSURANCE_RUNTIME/) | An experimental scaffold for policy evaluation and decision receipts. It is not a production safety or compliance certification. |
+| Feedback-loop audit | [`34_CYBERNETICS/`](34_CYBERNETICS/README.md) | Every feedback loop in the implementations mapped to sensor, comparator and actuator, and checked against the code's syntax tree by `loop_audit.py`. A loop that closes in code is not thereby safe. |
 | Abstract and generative work | [`35_ABSTRACT_AND_GENERATIVE/README.md`](35_ABSTRACT_AND_GENERATIVE/README.md) · [`REGISTER.md`](35_ABSTRACT_AND_GENERATIVE/REGISTER.md) | Symbolic, philosophical, mythic, experiential, and research-adjacent objects, kept distinct from the empirical claims register. |
 | History and recovery | [`99_ARCHIVE/`](99_ARCHIVE/) | Corrections, prior states, and branch records retained for context. Archived material is not a current capability claim. |
 
@@ -165,11 +167,20 @@ Runtime output auditing (the MCP server), companion-app dependency detection, th
 
 Machine-readable register: [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) · schema: [`CLAIMS.schema.json`](28_DEFENSE/CLAIMS.schema.json)
 
-The file's metadata says `total_claims: 136`, but the current `claims` array has 67 rows. Their status values currently use `ACTIVE`, `SCAFFOLD`, `ASPIRATIONAL`, `EMPIRICAL`, `REMOVED`, and `OBSERVATIONAL`. The declared total and row count do not reconcile, so neither is presented here as the complete corpus total.
+The register holds 71 claim records, and its declared `total_claims` now matches its rows (it declared 136 over 67 rows until 2026-10-03). Each row carries a raw status from a six-value vocabulary (`ACTIVE`, `SCAFFOLD`, `ASPIRATIONAL`, `EMPIRICAL`, `REMOVED`, `OBSERVATIONAL`) and a `status_normalized` on the evidence ladder's four:
 
-None of the current rows points to an HTTP(S) evidence URL. A repository-relative evidence path can support an internal check, but it is not independent validation. Resolve the register discrepancy and evidence provenance before promoting a whole-corpus summary.
+| Normalized status | Records |
+|---|---|
+| **ACTIVE** | 52 |
+| **SCAFFOLD** | 12 |
+| **CONJECTURE** | 4 |
+| **RETRACTED** | 3 |
 
-> **Known register defect.** `CLAIMS.json` uses a six-value status vocabulary (above) while [`EVIDENCE_LADDER.md`](28_DEFENSE/EVIDENCE_LADDER.md) publishes promotion rules over a four-value one (`ACTIVE` / `SCAFFOLD` / `CONJECTURE` / `RETRACTED`), and [`CLAIM_STATUS_LEDGER.md`](28_DEFENSE/CLAIM_STATUS_LEDGER.md) tracks load-bearing claims at a different granularity again. The three registers do not currently reconcile. This is recorded here rather than smoothed over, and reconciling them is named work.
+These are the register's own labels, not independent verification. `python3 tools/verify-claims.py --register` fails if a count on this page, in the brief, in `llms.txt` or in `ai-meta.json` drifts from the register.
+
+None of the current rows points to an HTTP(S) evidence URL. A repository-relative evidence path can support an internal check, but it is not independent validation. Resolve evidence provenance before promoting a whole-corpus summary.
+
+> **Known register defect.** `CLAIMS.json` records the six-value raw status above beside the four-value `status_normalized` counted in the table, and that mapping has not been audited against the promotion rules in [`EVIDENCE_LADDER.md`](28_DEFENSE/EVIDENCE_LADDER.md). Meanwhile [`CLAIM_STATUS_LEDGER.md`](28_DEFENSE/CLAIM_STATUS_LEDGER.md) tracks load-bearing claims at a different granularity again. The three registers do not currently reconcile. This is recorded here rather than smoothed over, and reconciling them is named work.
 
 The labels are a contract, not marketing. False certainty is more dangerous than honest uncertainty — which is the entire lesson of 2026-08-07.
 
@@ -244,6 +255,29 @@ The public stake is [Position Paper v0.1](32_TIANXIA/POSITION_PAPER_v0.1.md), wi
 **What the module refuses to claim:** no Chinese state authorisation, no cultural authority over the tradition, no orientalisation, no flattening of Confucian / Daoist / Legalist / contemporary sources into one another.
 
 *天下为公* — *all under heaven is held in common.*
+
+---
+
+## The cybernetics layer
+
+The engines in this framework are feedback loops, and cybernetics is the discipline that names the parts of a loop. [`34_CYBERNETICS/`](34_CYBERNETICS/README.md) maps every loop in the implementations to its sensor, comparator and actuator, and records where each one closes. [`loop_audit.py`](34_CYBERNETICS/loop_audit.py) then checks that map against the code's syntax tree. It fails in three cases: a loop the map calls closed turns out to be open, a named symbol has moved, or an unlisted file reads an open loop's verdict.
+
+| Loop | Closes in code? | How |
+|---|---|---|
+| Grey Mode recovery | yes | the actuator's output is the sensor's next input |
+| CASCADE reorganisation | yes | through shared state: the actuator writes `regime`, and the sensor reads it on the next block |
+| TRIAD and TRIADKernel | yes | gradient ascent and fixed-point iteration |
+| HARMONIA Kuramoto | yes, in simulation | coupled phases; applying the model to AI is CONJECTURE |
+| AURA, TRI-AXIAL, MICROORCIM | no | they sense and compare; a person or a host model acts |
+| Sovereign pipeline | no | feedforward: CASCADE → TRIAD → AURA |
+
+AURA's loop stays open on purpose. Under human primacy, the verdict goes to a person. That also makes AURA a sensor, and the Good Regulator theorem says a regulator is only as good as its model of what it regulates. AURA's sensor reads words, not effects. [`CYBERNETIC_READING.md`](34_CYBERNETICS/CYBERNETIC_READING.md) works out what follows from that. It also covers requisite variety: when a constraint-gated generator beats a rulebook, and the two ways it fails, shown in the synthetic toy world of [`variety_demo.py`](34_CYBERNETICS/variety_demo.py). And it names the nearest precedents in Ashby, Beer and Pask. Claims CYB-001 to CYB-004 are in the register. CYB-004, the claim about language models, is CONJECTURE.
+
+```bash
+python3 34_CYBERNETICS/loop_audit.py              # every mapped loop matches the code
+python3 34_CYBERNETICS/loop_audit.py --self-test  # in-memory mutations; each must be caught
+python3 34_CYBERNETICS/variety_demo.py            # SYNTHETIC: rulebook vs gated generator
+```
 
 ---
 
@@ -362,7 +396,7 @@ This repository is designed to be navigated with an AI guide — [EXPLORE_WITH_A
 
 ## The shape of this work
 
-The repository brings together formal frameworks, runnable tools, empirical and research records, symbolic work, and preserved failures. The current claims file has an unresolved metadata-to-row-count discrepancy; current test and benchmark outcomes should be read from their dated receipts and rerun against this branch before being repeated as current totals.
+The repository brings together formal frameworks, runnable tools, empirical and research records, symbolic work, and preserved failures. Claim counts are pinned to the register by `tools/verify-claims.py --register`; current test and benchmark outcomes should be read from their dated receipts and rerun against this branch before being repeated as current totals.
 
 Built in Ōtepoti / Dunedin, Aotearoa New Zealand, by a self-taught researcher in sustained co-creation with AI systems. Tikanga concepts are labelled `[PROPOSAL]` until validated through iwi partnership — that partnership is a condition of legitimacy, not a consultation step.
 

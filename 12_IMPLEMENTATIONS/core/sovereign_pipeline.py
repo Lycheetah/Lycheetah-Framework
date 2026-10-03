@@ -256,7 +256,7 @@ class SovereignPipeline:
         # (was incorrectly calling nonexistent triad.run())
         triad_steps, triad_converged = triad.run_until_convergence()
 
-        triad_final = triad_steps[-1].state if triad_steps else cascade_coherence
+        triad_final = triad.state
         triad_iterations = len(triad_steps)
 
         if not triad_converged:

@@ -99,11 +99,13 @@ facts about minds or the world.
 
 ## How certainty is recorded
 
-The current `28_DEFENSE/CLAIMS.json` metadata declares 136 claims, while its
-`claims` array contains 67 rows. Its status vocabulary and the separate
-load-bearing ledger use different scopes. The mismatch is unresolved; do not repeat
-either value as a complete corpus total. The current rows use `ACTIVE`,
-`SCAFFOLD`, `ASPIRATIONAL`, `EMPIRICAL`, `OBSERVATIONAL`, and `REMOVED`.
+`28_DEFENSE/CLAIMS.json` is the register of all 71 status-tagged claim records,
+and its declared total now matches its rows (until 2026-10-03 it declared 136 over
+67 rows). Each row carries a raw status (`ACTIVE`, `SCAFFOLD`, `ASPIRATIONAL`,
+`EMPIRICAL`, `OBSERVATIONAL`, `REMOVED`) and a normalized one on the evidence
+ladder. The separate load-bearing ledger uses a different scope and does not
+reconcile with it. `python tools/verify-claims.py --register` fails if a count
+repeated here drifts from the register.
 
 ## What the evidence does and does not establish
 

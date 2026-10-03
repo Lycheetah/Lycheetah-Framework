@@ -6,6 +6,11 @@ Claim coverage:
   [ACTIVE] sovereign property encodes four-floor conjunction
   [ACTIVE] to_dict / summary are well-formed
   [SCAFFOLD] Cross-engine coupling Ψ₀ = C is a design choice (exercised, not proven)
+
+The class at the end came from the master line. Until 2026-10-03 master's
+SovereignPipeline.run called TriadTracker.run(), which does not exist, and raised
+AttributeError on every call; 34_CYBERNETICS/loop_audit.py found it. Those checks prove
+the chain runs and its TRIAD stage reaches its target, not that the coupling is right.
 """
 
 import pytest
@@ -129,3 +134,22 @@ class TestSovereignPipelineRun:
         ])
         assert len(results) == 2
         assert all(isinstance(r, SovereignResult) for r in results)
+
+
+DECISION = "Here are three options. You decide; every step is reversible."
+
+
+@pytest.mark.scaffold
+class TestSovereignPipelineConverges:
+    def test_run_completes_with_no_blocks(self):
+        result = SovereignPipeline().run([], DECISION)
+        assert isinstance(result, SovereignResult)
+        assert result.triad_iterations >= 1
+        assert 0.0 <= result.sovereignty_score <= 1.0
+
+    def test_triad_stage_converges_to_its_target(self):
+        result = SovereignPipeline().run([], DECISION)
+        target = min(1.0, result.cascade_coherence + 0.15)
+        assert result.triad_converged
+        assert result.triad_final_state == pytest.approx(target, abs=1e-3)
+        assert result.intended_coherence == pytest.approx(target, abs=1e-3)

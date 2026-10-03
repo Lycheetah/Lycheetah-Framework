@@ -158,6 +158,62 @@ restoring forces, decay terms) is a system dynamics model.
 industrial processes. The Codex applies it to epistemic and ethical system state.
 **Rejection:** Nothing significant.
 
+### W. Ross Ashby (1903–1972)
+**Inheritance:** *Design for a Brain* (1952) and *An Introduction to Cybernetics* (1956).
+Ultrastability is a second loop that changes the parameters of the first when an
+essential variable leaves its bounds. CASCADE's reorganisation on contradiction has
+this double-loop shape (L-CASCADE in `34_CYBERNETICS/LOOP_MAP.json`). The law of
+requisite variety bounds what any gate can regulate. With Conant (1970), the Good
+Regulator theorem says a regulator is only as good as its model of what it regulates,
+and AURA's text sensor models wording, not effects.
+**Modification:** CASCADE's second loop applies one deterministic rule, where Ashby's
+homeostat searched at random. Constitutional gating applies requisite variety to a
+generator with a gate rather than to a fixed repertoire of responses (CYB-004, CONJECTURE).
+**Rejection:** Nothing of Ashby's. The framework declines the reading that CASCADE *is*
+a homeostat: the parallel is structural and is labelled INTERPRETIVE.
+
+### Stafford Beer (1926–2002)
+**Inheritance:** The Viable System Model (*Brain of the Firm*, 1972; *The Heart of
+Enterprise*, 1979) names five functions any viable system needs.
+`34_CYBERNETICS/CYBERNETIC_READING.md` §7 lays the framework's parts against them:
+- HARMONIA as System 2;
+- TRIAD as System 3;
+- the Failure Museum as System 3*;
+- CASCADE as System 4;
+- AURA's invariants with human primacy as System 5.
+
+**Modification:** It is used as a set of diagnostic questions, not as an architecture.
+Its sharpest question for the framework is: where is System 3* for AURA? Who audits
+whether AURA's passes track outcomes?
+**Rejection:** No fit is claimed. The VSM requires recursion and adequate variety
+channels between its systems, and neither is checked here.
+
+### Gordon Pask (1928–1996)
+**Inheritance:** Conversation Theory (*Conversation, Cognition and Learning*, 1975).
+Two participants reach a shared understanding through teachback, and the
+conversation, not either party, is the unit of analysis. This is the nearest
+precedent for the Two-Point Protocol.
+**Modification:** In the framework:
+- one participant is a language model;
+- turns can be gated by computable invariants (AURA);
+- an evidence-status ledger records how well each agreement is known.
+
+**Rejection:** Nothing significant. Whether the modifications matter is an empirical
+question, not yet tested.
+
+### Humberto Maturana (1928–2021) and Francisco Varela (1946–2001)
+**Inheritance:** *Autopoiesis and Cognition* (1980): the observer as part of the system,
+and structural coupling between a system and its medium. The Living Codex's
+self-revision loop runs from the Critique Register, through the P∧H∧B gate, to claim
+revision. Its regulated variable is the framework's own description of itself.
+**Modification:** That loop closes through the author, not inside the system.
+**Rejection:** Autopoiesis as a description of the framework. The framework does not
+produce the components that produce it; its author does.
+
+*Ashby, Beer, Pask, and Maturana and Varela were added 2026-10-03, prompted by an
+outside review (`28_DEFENSE/OUTSIDE_REVIEW_LEDGER_2026-10-03.md`). Works are cited from
+memory; see `34_CYBERNETICS/CYBERNETIC_READING.md` §10.*
+
 ---
 
 ## TRIBUTARY IV: COMPLEXITY SCIENCE
@@ -388,6 +444,17 @@ consciousness or about knowledge — it is a theory about what happens **between
 human and an AI when both are fully present in service of the Work**. That relational
 focus — the Two-Point Protocol as the primary unit of analysis — has no direct
 precedent in any of the tributaries above, though all of them feed into it.
+
+**Amendment, 2026-10-03.** "No direct precedent" overstated the case. Gordon Pask's
+Conversation Theory (1975) took the conversation between two participants as its unit
+of analysis half a century earlier, and it is the nearest precedent (Tributary III,
+above). What remains distinctive is narrower:
+- one participant is a language model;
+- turns can be gated by computable invariants;
+- agreements are recorded with an evidence status.
+
+The paragraph above is left as written, so the correction stays legible. See
+`28_DEFENSE/OUTSIDE_REVIEW_LEDGER_2026-10-03.md`.
 
 ---
 

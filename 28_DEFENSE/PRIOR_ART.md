@@ -207,6 +207,7 @@ TRIAD's genuine novelty:
 - **Lyapunov stability analysis** is standard mathematical prior art (Lyapunov 1892, LaSalle 1960). TRIAD applies it, does not invent it.
 
 - **The feedback control architecture** (Ao as setpoint, Φ↑ as actuator, Ψ_op as sensor) is Norbert Wiener's cybernetics (1948) and Ashby's requisite variety (1956). The cybernetics connection should be explicitly stated.
+  - *Stated, 2026-10-03:* [`34_CYBERNETICS/`](../34_CYBERNETICS/README.md) maps every loop in the implementations to its sensor, comparator and actuator, and audits where each one closes against the source. TRIAD's loop closes in code (L-TRIAD, L-TRIADKERNEL in `LOOP_MAP.json`). AURA's loop does not; it closes through a person. Requisite variety is worked through in `CYBERNETIC_READING.md` §4. Ashby's ultrastability, Beer's Viable System Model and Pask's Conversation Theory are added to [`30_MAPS/LINEAGE_MAP.md`](../30_MAPS/LINEAGE_MAP.md) Tributary III.
 
 ---
 

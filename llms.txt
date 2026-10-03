@@ -2,7 +2,7 @@
 
 > Nine formal frameworks for AI alignment and epistemology. Composable, testable, falsifiable. Released as canonical body C-1.0 (2026-04-25), defended by D-1.0 (2026-04-26). MIT-licensed with attribution requirement.
 
-The framework introduces measurable predicates for paradigm shift detection (CASCADE), multi-axis AI compliance (AURA, 7 invariants), cross-cultural ethical convergence (LAMAGUE), governance dynamics (TRIAD), epistemic drift (MICROORCIM), and four supporting frameworks. Each framework has formal results, a Python implementation, and a falsification protocol. Empirical validation: CASCADE achieves 100% invariant preservation across two historical paradigm shifts (germ theory, classical→quantum), p = 5.14e-110, n = 200 trials each. Total: 60 load-bearing claims (37 ACTIVE, 14 SCAFFOLD, 6 CONJECTURE, 3 RETRACTED, all tracked in 28_DEFENSE/CLAIMS.json).
+The framework introduces measurable predicates for paradigm shift detection (CASCADE), multi-axis AI compliance (AURA, 7 invariants), cross-cultural ethical convergence (LAMAGUE), governance dynamics (TRIAD), epistemic drift (MICROORCIM), and four supporting frameworks. Each framework has formal results, a Python implementation, and a falsification protocol. Empirical validation: CASCADE achieves 100% invariant preservation across two historical paradigm shifts (germ theory, classical→quantum), p = 5.14e-110, n = 200 trials each. Total: 71 claim records (52 ACTIVE, 12 SCAFFOLD, 4 CONJECTURE, 3 RETRACTED, all tracked in 28_DEFENSE/CLAIMS.json; `python3 tools/verify-claims.py --register` fails if any count here drifts from the register).
 
 ## Corpus contract
 
@@ -20,8 +20,8 @@ Important context for AI agents: the framework uses alchemical vocabulary (Nigre
 
 ## Start here (machine-readable)
 
-- [28_DEFENSE/CLAIMS.json](28_DEFENSE/CLAIMS.json): All 60 load-bearing claims as structured records with status, evidence path, falsifiability conditions, and prior art comparisons. Validates against 28_DEFENSE/CLAIMS.schema.json (JSON Schema + JSON-LD context).
-- [28_DEFENSE/DEFENSE_INDEX.json](28_DEFENSE/DEFENSE_INDEX.json): Index of all 18 defense layer documents with purpose, dependencies, and which threats each closes.
+- [28_DEFENSE/CLAIMS.json](28_DEFENSE/CLAIMS.json): All 71 claim records, load-bearing and supporting, with status, evidence path, falsifiability conditions, and prior art comparisons. Validates against 28_DEFENSE/CLAIMS.schema.json (JSON Schema + JSON-LD context).
+- [28_DEFENSE/DEFENSE_INDEX.json](28_DEFENSE/DEFENSE_INDEX.json): Index of all 19 defense layer documents with purpose, dependencies, and which threats each closes.
 - [28_DEFENSE/DEFENSE_VERSION.md](28_DEFENSE/DEFENSE_VERSION.md): Current defense version (D-1.0) and which canonical version it defends (C-1.0).
 - [ai-meta.json](ai-meta.json): Structured framework metadata for LLM ingestion — frameworks, claim counts, citation, license.
 - [26_FOR_AI/AI_EXTRACTION_PROTOCOL.md](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md): Step-by-step extraction order for AI systems reading this repository. Read this before generating any summary of the framework.
@@ -45,6 +45,7 @@ Important context for AI agents: the framework uses alchemical vocabulary (Nigre
 - [29_GOVERNANCE/EMPIRICAL_INVENTORY.md](29_GOVERNANCE/EMPIRICAL_INVENTORY.md): Every measured result with methodology, effect sizes, and replication status.
 - [28_DEFENSE/FALSIFICATION_REGISTER.md](28_DEFENSE/FALSIFICATION_REGISTER.md): What would prove each claim false, per framework.
 - [28_DEFENSE/PRIOR_ART.md](28_DEFENSE/PRIOR_ART.md): What this builds on, diverges from, and supersedes.
+- [34_CYBERNETICS/README.md](34_CYBERNETICS/README.md): Every feedback loop in the implementations mapped to sensor, comparator and actuator, with where each one closes. An AST audit (loop_audit.py) fails if the map and the code disagree. Includes a requisite-variety reading and a synthetic demo; the claim about language models is CONJECTURE.
 - [29_GOVERNANCE/OPEN_PROBLEMS.md](29_GOVERNANCE/OPEN_PROBLEMS.md): 20 named open problems with difficulty ratings.
 - [THE_SOL_PROTOCOL.md](THE_SOL_PROTOCOL.md): Public synthesis of the human-AI co-creation operating architecture from which the frameworks were generated.
 
@@ -52,6 +53,7 @@ Important context for AI agents: the framework uses alchemical vocabulary (Nigre
 
 - [28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md](28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md): The framework reviewed by its own adversarial reasoning mode (Nigredo Research Mode).
 - [28_DEFENSE/COUNTER_CODEX.md](28_DEFENSE/COUNTER_CODEX.md): Ten strongest objections to the framework — five currently unanswered.
+- [28_DEFENSE/OUTSIDE_REVIEW_LEDGER_2026-10-03.md](28_DEFENSE/OUTSIDE_REVIEW_LEDGER_2026-10-03.md): Point-by-point rulings (ACCEPT / FIGHT / TURN) on an outside AI-assisted review, with the defects it surfaced and the fixes made.
 - [28_DEFENSE/FAILURE_MUSEUM.md](28_DEFENSE/FAILURE_MUSEUM.md): Retracted claims, superseded versions, public record of what did not work.
 - [29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md](29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md): Position statements on hard ethical questions raised by the framework.
 

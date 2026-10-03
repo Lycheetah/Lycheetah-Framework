@@ -221,6 +221,18 @@
       "depends_on": ["D-II", "D-IV", "D-VII", "D-VIII"],
       "status": "pending",
       "vehicle": "Sonnet"
+    },
+    {
+      "doc_id": "D-OR-1",
+      "act": "OR",
+      "wave": 7,
+      "title": "Outside Review Ledger — 2026-10-03",
+      "filename": "28_DEFENSE/OUTSIDE_REVIEW_LEDGER_2026-10-03.md",
+      "purpose": "Point-by-point rulings (ACCEPT / FIGHT / TURN) on an outside AI-assisted review, with the defects it surfaced and the fixes made: claim counts pinned to the register, sovereign pipeline repaired, 34_CYBERNETICS loop audit.",
+      "threats_closed": [],
+      "depends_on": ["D-VI-A"],
+      "status": "completed",
+      "vehicle": "Opus"
     }
   ]
 }
