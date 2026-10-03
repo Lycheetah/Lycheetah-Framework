@@ -24,6 +24,8 @@ Documents in this folder default to `[CONJECTURE]` regardless of their internal 
 | `CONVERGENT_PATHS.md` | Notes on where the framework's trajectories converge with adjacent literatures | Exploratory; not a literature review |
 | `THE_HORIZON_QUESTION.md` | Speculative scaffolding around what the framework points toward | Mythic register; explicitly non-canonical |
 | `THE_MIRROR_QUESTION.md` | Speculative inquiry into reflexivity and self-application | Mythic register; explicitly non-canonical |
+| [Scientist role and naming trial](agent-role-hybridisation/SCIENTIST_PROMPT.md) | Lycheetah commitments, a scientist's job and a chosen operating name; one worked sample | Experimental candidate; no measured role/naming advantage or deployed agent |
+| [32 human-work role candidates](agent-role-hybridisation/README.md) | Copyable Lycheetah role prompts, optional operating names and authored worked artifacts | Experimental candidates; no independent agent runs or measured advantage |
 
 ## Reader Guidance
 

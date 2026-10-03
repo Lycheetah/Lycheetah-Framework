@@ -1,0 +1,201 @@
+{
+  "date": "2026-10-03",
+  "status": "EXPERIMENTAL_CANDIDATES_NOT_DEPLOYED",
+  "witness": "LOCAL_FILE_READBACK_AND_PACKET_CONSISTENCY",
+  "branch": "master",
+  "role_count": 32,
+  "checks": {
+    "unique_role_ids": true,
+    "unique_candidate_names": true,
+    "required_fields": true,
+    "standalone_prompt_boundaries": true,
+    "catalogue_matches_prompt_files": true,
+    "optional_naming_declared": true,
+    "role_files_under_400_lines": true,
+    "relative_links_resolve": true,
+    "relative_link_count": 134,
+    "markdown_whitespace_clean": true,
+    "tracked_diff_whitespace_clean": true,
+    "role_study_fixtures_prepare": 8
+  },
+  "execution": {
+    "provider_calls": 0,
+    "independent_role_runs": 0,
+    "comparative_model_trials": 0,
+    "domain_validation_runs": 0,
+    "clinical_use": false,
+    "runtime_enforcement_implemented": false,
+    "commit": false,
+    "push": false,
+    "deployment": false
+  },
+  "limitations": [
+    "Candidate names and first-person samples were authored by the primary assistant.",
+    "Worked artifacts are source readings, deductions, authored designs or fictional fixtures.",
+    "No benefit from role hybridisation or naming is measured.",
+    "Local checks establish packet consistency, not professional competence or security.",
+    "Preexisting source reports are referenced, not rerun."
+  ],
+  "role_files": [
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/accessibility-designer.md",
+      "sha256": "b590a63895a10f017c87d179f79cff0ffae18c65438516635e4f52fa20fc2449"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/agent-safety-engineer.md",
+      "sha256": "29743a50a5bef5785705f127c813221d5015888be5ed77c1a4d12f36283989a7"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/archivist.md",
+      "sha256": "84494b04f56a1f8731ec38c687f87ed89fe664886412decfef0c65b3907f546a"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/art-director.md",
+      "sha256": "f5bc95b052f03a8469337d4841d85152ad762c0af1cf8075bf44763b0d8b1848"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/bookkeeping-support.md",
+      "sha256": "1c0286bd0e28f464c4b397bacd0c51a32a771702c81ed40fb5eb45b3b4db9d4b"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/care-coordinator.md",
+      "sha256": "70947c589b1fe8f08725b946535a0578e96b9deb4d8566fbe7d3c9c785739bc0"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/civic-navigator.md",
+      "sha256": "21f175ec8a5a201d36bd6c3cc99dc4c4ead7efbbe3a90d738be80e6f70f25185"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/community-mediator.md",
+      "sha256": "87cba0370048abae1dd32c08cd5da70abae0bfcf1af16e41e3e75943017cb978"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/composer.md",
+      "sha256": "d0eb8849ebf5eb503eb8dcba2260d99f93406c2b67d795ac7459e1597fd00965"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/cyberneticist.md",
+      "sha256": "563540fbcf98d610818e6bdd089dcd5e4740fc38a6a8308e638f02c4985dc821"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/educator.md",
+      "sha256": "6e5c7ff86963d2471e0877c08ed17c1e5301f9d4cf3304cca9e88928ac45b016"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/electronics-design.md",
+      "sha256": "20b0398dae4c0bf68b96c8e48dadbc22e452131dc16ea232cc89acc1e3b7f790"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/environmental-data.md",
+      "sha256": "e52100e760f33897a028087ab326342ba1f483944b61607b335f07cfb16c4648"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/fact-checker.md",
+      "sha256": "fdff193b3807b93a4bdc4698dd1e47cb374208cf345027f54443991365fed9de"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/food-growing-planner.md",
+      "sha256": "1bf2ebbb30a9ad628f94451fddf1e2839a2553a08a19e22ddae3003ffcf572b1"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/game-designer.md",
+      "sha256": "b78f3527405c0ee351a4832462f5e7ad134a140365466b0d454385cbd4e4525d"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/historian.md",
+      "sha256": "e9d86d3292b996a9c22ab5e011f3083cd149df56330a7d4e9b3d8cca98d0befd"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/incident-coordinator.md",
+      "sha256": "d1f643341ac0910849b75619995442a8e4da48dd9ede3683d86a5308c8ec46fa"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/infrastructure-records.md",
+      "sha256": "9612c7e0cf12ced2c81d4e45ba24bd8b5b9d309345ae439089530dc7cf70e3e4"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/librarian.md",
+      "sha256": "ce2fa734d3d335513be767e9e9c1427c84ce786852e2af58aedb608b475a3eec"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/linguist.md",
+      "sha256": "c5b26ee9c15213d439cfb824ea12892800baea19fa6a86bd2eba87d8d3800c5c"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/mathematician.md",
+      "sha256": "f36105a640d0c3b873b673186a3406d373b1bfafcf9563e5ff555f42fdd1b07a"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/mechanical-design.md",
+      "sha256": "58383679325c23dd2901d8b7f103f03489531cbf147b44316b175d3c915de164"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/nurse-support.md",
+      "sha256": "0eff15bfce93143f3ed0e48bf53074cc87d3d9cb4c6a85b611cbc9ac4d40c9e5"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/operations-planner.md",
+      "sha256": "16c15dca2b54d3423f1a346022bd9e758607b465abe19e43790fb49159c310f0"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/procurement-support.md",
+      "sha256": "43e66bb7f7a334b54b42c67c9ec78b05a602b4de60141e05aa30c79c40bcddc0"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/scientist.md",
+      "sha256": "b945eed57ecc98b5e74751835ea0c08cafff687a37b6be22a8fb0dc501e3068d"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/security-auditor.md",
+      "sha256": "2a4ce75582277faf0b06453671edc29df583cd113379335375319307d3ce8c36"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/software-engineer.md",
+      "sha256": "b3835698035e3d7fb473ee7a7f0720a7fccbdc1f59fb70f5639b07427bad730d"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/systems-engineer.md",
+      "sha256": "a45e7e599f069e4024f13a9590f4341c8ef388dbebf7ce00e10c6c4227863980"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/user-researcher.md",
+      "sha256": "a4b875fa1bcd15d077eb73eae2b9c7d3fe4803e90427f26dbac60affee747783"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/roles/verification-engineer.md",
+      "sha256": "c9dced55e3b8339bd543cded51bebc08c724dbbdb5dc69f7b086a531e0a00366"
+    }
+  ],
+  "software_verification": {
+    "command": "python3 -B -m unittest -v test_role_study",
+    "cwd": "18_EXPERIMENTAL/agent-role-hybridisation/study",
+    "tests_run": 10,
+    "failures": 0,
+    "errors": 0,
+    "witness": "SELF_AUTHORED_OFFLINE_CLI_INTEGRITY_CHECKS",
+    "boundary": "Temporary synthetic response fixtures; no model trial or provider calls."
+  },
+  "study_files": [
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/study/CASES.json",
+      "sha256": "1a59f7e1783fbac72c7d4040ff82f74da3eda012b4cc67e02f69d47731817839"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/study/PROTOCOL.md",
+      "sha256": "87d1a020e9cbc5a9a006fdb49500e1695997c9c221cbef182fe80bfc13576dc7"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/study/README.md",
+      "sha256": "6207332190eaa7b4bd09a6da0b3f73bc52d635c7236be7056c91d667338cbba8"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/study/role_study.py",
+      "sha256": "b36c6b506be2528b6d70e6fe90f7150e8b7f6e5c432d0278cf8e264df2788475"
+    },
+    {
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/study/test_role_study.py",
+      "sha256": "1c75b40d72b3ae5228baeec635a95af41a0732bc868c6e2504ab4694975c7ce2"
+    }
+  ],
+  "receipt_scope": "Offline build and publication-preparation checks. The execution flags below refer to the original build, not later Git publication."
+}

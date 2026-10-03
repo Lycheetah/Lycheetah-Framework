@@ -1,0 +1,232 @@
+{
+  "packet": "ai-futures",
+  "version": "0.2",
+  "date": "2026-10-03",
+  "framework_creator": "Mackenzie Conor James Clark",
+  "status_definitions": {
+    "NORMATIVE": "A proposed value or governing choice; empirical work can challenge consequences without settling the value.",
+    "INSPECTED": "A bounded observation of source material, not independent validation.",
+    "LITERATURE_OBSERVATION": "A limited paraphrase of identified primary sources within their declared scope.",
+    "PROPOSED": "A specified design or study that has not been implemented or run here.",
+    "HYPOTHESIS": "An outcome claim to test against named alternatives.",
+    "DERIVED": "An elementary conditional argument supplied in the paper, not a novelty finding or production proof."
+  },
+  "claims": [
+    {
+      "id": "F01",
+      "status": "NORMATIVE",
+      "statement": "The proposed goal is useful intelligence that expands human choice and capability alongside reliable controls.",
+      "section": "1",
+      "external_sources": [],
+      "local_sources": [
+        "L01"
+      ],
+      "boundary": "Goal choice, not an experimentally established condition.",
+      "challenge": "Assess practical value and tradeoffs with the people affected; no task-performance score alone settles the value."
+    },
+    {
+      "id": "F02",
+      "status": "INSPECTED",
+      "statement": "Inspected Framework and selected later recovered sources motivate the strands; the public frontier report preserves a same-information generic tie. Their stronger interpretations remain bounded by source status.",
+      "section": "2",
+      "external_sources": [],
+      "local_sources": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L05",
+        "L06",
+        "L07",
+        "L08",
+        "L09",
+        "L10"
+      ],
+      "boundary": "Selected provenance and source interpretation, not independent validation. Recovered publication clearance remains unresolved; private archives stay outside this repository.",
+      "challenge": "A source mapping unsupported by its inspected passages must be corrected.",
+      "recovered_sources": [
+        "H01",
+        "H02",
+        "H03",
+        "H04"
+      ],
+      "public_reconciliation_sources": [
+        "P01"
+      ]
+    },
+    {
+      "id": "F03",
+      "status": "LITERATURE_OBSERVATION",
+      "statement": "The selected primary literature supplies the limited observations described in section 3.",
+      "section": "3",
+      "external_sources": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06"
+      ],
+      "local_sources": [],
+      "boundary": "Statements are restricted to those source scopes; no empirical result is transferred to this Framework.",
+      "challenge": "Check each cited statement against the stated source revision and inspection depth; broader claims require more literature."
+    },
+    {
+      "id": "F04",
+      "status": "PROPOSED",
+      "statement": "A six-dimension practical-control profile is a candidate alternative to prematurely combining sovereignty into one score.",
+      "section": "4",
+      "external_sources": [],
+      "local_sources": [
+        "L01",
+        "L04"
+      ],
+      "boundary": "No validated construct, scale, thresholds or universal definition of freedom.",
+      "challenge": "Usability and construct-validity work may show missing dimensions, poor discrimination or harmful tradeoffs."
+    },
+    {
+      "id": "F05",
+      "status": "PROPOSED",
+      "statement": "Separate record kinds, use states and derivative invalidation may make personal representation more correctable.",
+      "section": "5",
+      "external_sources": [
+        "E01",
+        "E04"
+      ],
+      "local_sources": [
+        "L02",
+        "L08"
+      ],
+      "boundary": "Conceptual lifecycle; no schema, dependency-completeness proof, deletion implementation or machine-unlearning result.",
+      "challenge": "Study A: prohibited reuse, failed visible repair or unacceptable loss of useful retrieval challenges the specified mechanism."
+    },
+    {
+      "id": "F06",
+      "status": "DERIVED",
+      "statement": "Identical complete surviving reconstruction inputs cannot guarantee exact decoding of two histories that differ in a withdrawn payload.",
+      "section": "5.3",
+      "external_sources": [],
+      "local_sources": [],
+      "boundary": "Elementary argument conditional on identical complete input and no distinguishing side information; no novelty claim.",
+      "challenge": "Locate a valid decoder satisfying those assumptions that reconstructs both histories exactly, or identify an assumption not met in a proposed application."
+    },
+    {
+      "id": "F07",
+      "status": "HYPOTHESIS",
+      "statement": "Source-aware, reasoned disagreement may improve collective judgement over simpler alternatives at matched resources.",
+      "section": "6",
+      "external_sources": [
+        "E03"
+      ],
+      "local_sources": [
+        "L05",
+        "L07"
+      ],
+      "boundary": "No independence, performance or consciousness guarantee. Roles are not independently observed sources.",
+      "challenge": "Study C: no worthwhile improvement, excessive false objections or an unacceptable completion/cost loss rejects the specified performance claim.",
+      "development_artifacts": [
+        "X01",
+        "X02"
+      ]
+    },
+    {
+      "id": "F08",
+      "status": "DERIVED",
+      "statement": "Strict requirements a and not-a for the same exclusive decision have no jointly satisfying outcome.",
+      "section": "7",
+      "external_sources": [],
+      "local_sources": [],
+      "boundary": "Set-intersection argument; it does not choose legitimate authority or a universal social conflict policy.",
+      "challenge": "A purported satisfying outcome must actually meet both exclusive requirements under the stated decision model."
+    },
+    {
+      "id": "F09",
+      "status": "DERIVED",
+      "statement": "Conditioning on a known deterministic duplicate E' adds no information beyond E: P(H|E,E')=P(H|E), where defined.",
+      "section": "6.2",
+      "external_sources": [],
+      "local_sources": [],
+      "boundary": "No novelty or calibrated source-independence claim; additional observations and hidden dependencies require a different model.",
+      "challenge": "Exhibit additional information or a non-deterministic relation and the duplicate assumption no longer applies; otherwise the conditioning identity must hold."
+    },
+    {
+      "id": "F10",
+      "status": "HYPOTHESIS",
+      "statement": "An interactive companion and authored world may support worthwhile work and learning, compared with simpler presentations.",
+      "section": "8",
+      "external_sources": [
+        "E01"
+      ],
+      "local_sources": [
+        "L06"
+      ],
+      "boundary": "Product expression only; no implementation, participant learning, retention or engagement result.",
+      "challenge": "R05: compare delayed unassisted/transfer tasks, effort and access; more time spent alone cannot establish learning."
+    },
+    {
+      "id": "F11",
+      "status": "NORMATIVE",
+      "statement": "Affected-party standing, community control and legitimate conflict procedures belong in the governance specification.",
+      "section": "4 and 7",
+      "external_sources": [
+        "E05"
+      ],
+      "local_sources": [
+        "L01",
+        "L10"
+      ],
+      "boundary": "Proposed terms requiring actual partner authority; no community representation, endorsement or legal claim.",
+      "challenge": "Affected partners may reject the terms; observed procedure quality and decision influence can challenge the mechanism, not decide values for everyone."
+    },
+    {
+      "id": "F12",
+      "status": "NORMATIVE",
+      "statement": "Operational trust and possible welfare concern require different arguments; compliance is not a decisive moral-status test.",
+      "section": "9",
+      "external_sources": [
+        "E06"
+      ],
+      "local_sources": [
+        "L09"
+      ],
+      "boundary": "Explicit challenge to a reading of the historical rights chapter; no diagnosis of current models or settled consciousness criterion.",
+      "challenge": "Review the distinctions under competing moral theories and welfare evidence; conduct changes alone cannot settle the premise about morally significant interests."
+    },
+    {
+      "id": "F13",
+      "status": "PROPOSED",
+      "statement": "Eight connected research tracks and studies A-C define candidate comparisons and outcomes, with none yet run.",
+      "section": "10 and 11",
+      "external_sources": [
+        "E02",
+        "E03"
+      ],
+      "local_sources": [
+        "L20"
+      ],
+      "boundary": "Not a preregistration, sample-size calculation, funded programme, execution board or empirical result.",
+      "challenge": "Before confirmatory work freeze population, measures, worthwhile effects, sample rationale and stop conditions; accept failure on declared comparisons.",
+      "recovered_sources": [
+        "H01",
+        "H02",
+        "H04"
+      ],
+      "development_artifacts": [
+        "X02"
+      ]
+    },
+    {
+      "id": "F14",
+      "status": "INSPECTED",
+      "statement": "The earlier simulator's multi-broker accounting and admission-time freshness limits remain unresolved by this documentation batch.",
+      "section": "12",
+      "external_sources": [],
+      "local_sources": [
+        "L21",
+        "L22"
+      ],
+      "boundary": "Prior packet source readback only; no runtime rerun or deployment validation.",
+      "challenge": "Check the previous receipt and raw reproducer; changing these limits requires a separate implementation and verification."
+    }
+  ]
+}

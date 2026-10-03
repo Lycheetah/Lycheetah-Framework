@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-03",
+  "version": "0.2",
+  "status": "RESEARCH_DRAFT_NOT_EMPIRICALLY_VALIDATED",
+  "branch": "master",
+  "observed_head": "21728e851c88944031587f55ac7fc2cfe27b38c6",
+  "paper_words": 4875,
+  "claims": 14,
+  "pinned_local_sources_verified_in_this_batch": 23,
+  "local_development_artifacts_verified": 2,
+  "checks": {
+    "claim_ids_and_source_references_resolve": true,
+    "paper_index_original_bytes_preserved": true,
+    "relative_links_resolve": true,
+    "relative_link_count": 23,
+    "tracked_diff_whitespace_clean": true
+  },
+  "execution": {
+    "provider_calls": 0,
+    "model_comparison_runs": 0,
+    "human_studies": 0,
+    "commit": false,
+    "push": false
+  },
+  "limits": [
+    "Authoring-seat review is not independent review.",
+    "Recovered-source archive publication clearance remains unresolved; no raw archives added.",
+    "The separate role CLI tests establish artifact integrity, not the paper hypotheses."
+  ],
+  "receipt_scope": "Offline build and publication-preparation checks. The execution flags below refer to the original build, not later Git publication."
+}

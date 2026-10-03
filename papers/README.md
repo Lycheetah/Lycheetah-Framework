@@ -1,5 +1,15 @@
 # Papers
 
+## AI futures: persistent and collective intelligence
+
+[Human Sovereignty in Persistent and Collective AI](ai-futures/PAPER.md)
+— Mackenzie Conor James Clark · working research draft v0.2 · 3 October 2026.
+
+A connected Framework research specification spanning memory, revisable knowledge,
+cooperation, disagreement, learning, community authority, AI welfare, and portable
+continuity. Includes three elementary arguments and three proposed study designs;
+no new experiments or implementation results. [Packet and evidence boundaries](ai-futures/README.md).
+
 ## Agent safety: authority, evidence, and recovery
 
 [From Constitutional Commitments to Testable Agent Controls](agent-safety/PAPER.md)

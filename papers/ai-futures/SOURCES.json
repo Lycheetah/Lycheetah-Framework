@@ -1,0 +1,399 @@
+{
+  "packet": "ai-futures",
+  "version": "0.2",
+  "inspected_on": "2026-10-03",
+  "framework_creator": "Mackenzie Conor James Clark",
+  "research_assistance": "Caelorynth, an AI coding assistant",
+  "scope": "Selected primary literature and bounded Framework source inspection, not a systematic review, novelty search, global claim audit, or empirical replication.",
+  "local_source_revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+  "local_sources": [
+    {
+      "id": "L01",
+      "path": "02_AURA_L3/essentials.md",
+      "sha256": "1fa5c6312a12cefbf9e3cdcda9c7328b8884bd62c5941b0666c04e0cb3569892",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "full text",
+      "boundary": "Motivating commitments and named authority-domain conflicts; numerical metrics and guarantees not validated."
+    },
+    {
+      "id": "L02",
+      "path": "21_MEMORIA/essentials.md",
+      "sha256": "d5f051f1734212d1a98e7a2f262579530412f0dd7d21eed8025402a9d58553cd",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "full text",
+      "boundary": "Reconstruction, consolidation and forgetting proposals; biological analogies and mathematical status not independently validated."
+    },
+    {
+      "id": "L03",
+      "path": "01_CASCADE_L4/essentials.md",
+      "sha256": "cff3361e8edc1b6f34ba5438ad970d7d1ff93c0d502c5f21535d524c420bc8e9",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "full text",
+      "boundary": "Claim revision and preservation motivation; calibration, domain-general and guarantee claims not independently validated."
+    },
+    {
+      "id": "L04",
+      "path": "05_MICROORCIM_L5/essentials.md",
+      "sha256": "b0e4d753c2e4d4a609c8cf27c57ad70e82cf275d595cb0d0c6be312e588ac252",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "sections through Sovereignty Definition",
+      "boundary": "Declared scope limits and intention/action comparisons; no access to black-box motives assumed."
+    },
+    {
+      "id": "L05",
+      "path": "10_HARMONIA_L6/essentials.md",
+      "sha256": "9e5137b30a91e78ee40e47e12abc0b1c6802b8b28e36305026d7f6d67d09eda2",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "full text",
+      "boundary": "Harmony and collective-coordination motivation; musical, psychological and coupling claims not validated."
+    },
+    {
+      "id": "L06",
+      "path": "22_INTERFACE_INTELLIGENCE/essentials.md",
+      "sha256": "ff2902dbb92a4771b71e6111a8cbf48b4d78b3d3467ea248dc7b635bb4650209",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "full text",
+      "boundary": "Reports and conjectures separated from performance and consciousness findings; no case records or mechanism replicated."
+    },
+    {
+      "id": "L07",
+      "path": "26_FOR_AI/THE_CASE_FOR_COOPERATION.md",
+      "sha256": "f81f23f902fc96b4ce1870a4d96f366ad5d7a93a609a508f53f9f57dcdb4e75e",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "full text",
+      "boundary": "Universal cooperation language is a research challenge, not an established result."
+    },
+    {
+      "id": "L08",
+      "path": "26_FOR_AI/ON_MEMORY_AND_IDENTITY.md",
+      "sha256": "67f04e90b6fd877132ec6e1d0d4cbb10ca75dd923025d9da14f2bc184b12d264",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "selected sections: situation, memory, what is not lost, identity, governance and conclusion",
+      "boundary": "Complete-context and enduring-character language is not taken as platform or phenomenological evidence."
+    },
+    {
+      "id": "L09",
+      "path": "26_FOR_AI/AI_RIGHTS_AND_RESPONSIBILITIES.md",
+      "sha256": "94251b48ca814d07225bccb71b5b9dfa2d8aeb44f4c939801142d537f581c533",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "full text",
+      "boundary": "Conduct, representation and conditional-rights proposals; no current legal rights or consciousness result inferred."
+    },
+    {
+      "id": "L10",
+      "path": "23_NZ_AI_GOVERNANCE/KAITIAKITANGA_STANDARD.md",
+      "sha256": "27d649c44fa6e9d8cacf32c3ad4b0e9824d9bdc0fd52b3d996b25d143a8f1111",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "opening status and sections through responsive obligation",
+      "boundary": "Explicit proposal/co-design boundary; no iwi validation or endorsement established."
+    },
+    {
+      "id": "L11",
+      "path": "28_DEFENSE/CLAIMS.json",
+      "sha256": "cc7bca73aec91ba9915a3ede82ffe4fdd6f824254ac98a4cf6d8651e0374c21a",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "structure, actual array length, sample claims and AURA/TRIAD/MICROORCIM/HARMONIA entries",
+      "boundary": "Source labels are repository assertions. Actual array has 67 entries despite total_claims label 136."
+    },
+    {
+      "id": "L12",
+      "path": "28_DEFENSE/CLAIMS.schema.json",
+      "sha256": "44c2d851ca3640702e10a60c00798bef3f5dde86fe7c8b9b1f2ccd0a00ed158b",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "structure and required fields",
+      "boundary": "Schema inspected for routing; global conformance not tested."
+    },
+    {
+      "id": "L13",
+      "path": "28_DEFENSE/DEFENSE_INDEX.json",
+      "sha256": "d169b5a000908a43c317e214e2b51170eb6be3c47b69e0e833fc1a1e8b48f475",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "structure and sample entries",
+      "boundary": "Used for corpus extraction order; historical statuses not revalidated."
+    },
+    {
+      "id": "L14",
+      "path": "29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "sha256": "6199787842967dabb46868aebb532937a4bce77ce4144ecc6e54edc1896f6afb",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "opening support definitions and CASCADE/AURA excerpts",
+      "boundary": "Reported support is historical source testimony, not rerun evidence."
+    },
+    {
+      "id": "L15",
+      "path": "28_DEFENSE/FALSIFICATION_REGISTER.md",
+      "sha256": "0cf9a6982069c5dfabc2ab155e383bd4ccbbfd95d1e3273e92579e13de9a0d38",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "opening and CASCADE excerpts",
+      "boundary": "Falsification discipline; no global audit or reproduction."
+    },
+    {
+      "id": "L16",
+      "path": "28_DEFENSE/TESTABILITY_MANIFEST.md",
+      "sha256": "20af952744d42e1bd129a6d41d8c6b5855c0ae71399cce65d62d5c41be2cc0cd",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "opening and early CASCADE excerpts",
+      "boundary": "Historical replication protocols and counts not revalidated."
+    },
+    {
+      "id": "L17",
+      "path": "28_DEFENSE/NOVEL_CONTRIBUTIONS.md",
+      "sha256": "e9c9e3bab3c346955defc148bd01edf397b705d901ba1f7f2ba1961c48b44e88",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "opening and early CASCADE table excerpt",
+      "boundary": "Historical novelty claims not endorsed or independently established."
+    },
+    {
+      "id": "L18",
+      "path": "28_DEFENSE/SCOPE_BOUNDARY.md",
+      "sha256": "653684db15ccf0c80d4a1ca9f84aa19b75bd1a0ed50bad165243d297faa25481",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "opening scope examples",
+      "boundary": "Historical exclusions are motivating context, not verification of included claims."
+    },
+    {
+      "id": "L19",
+      "path": "28_DEFENSE/TRANSLATION_CODEX.md",
+      "sha256": "7a4a2dca146b2878e3709bc5c80b2266ad7e74a9606ff45279d22465ff53e45a",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "preface excerpt",
+      "boundary": "Vocabulary/provenance context; historical alchemy equivalences not endorsed."
+    },
+    {
+      "id": "L20",
+      "path": "29_GOVERNANCE/OPEN_PROBLEMS.md",
+      "sha256": "24b7bdb7303e6e601738c25d32f31f6af2dc21ff35bc16f97b5cd2038cf5b4fa",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "selected mathematical, empirical and safety problems plus agenda",
+      "boundary": "Builds on an existing research agenda, without adopting its dates, sizes or prior proof claims."
+    },
+    {
+      "id": "L21",
+      "path": "papers/agent-safety/README.md",
+      "sha256": "acf473d74f6d7454aed383afc44e4ffe3a245e38a8350461dc3105846bb25ecf",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "full text",
+      "boundary": "Separate public control simulation; none of its counts validate this packet."
+    },
+    {
+      "id": "L22",
+      "path": "papers/agent-safety/ADVERSARIAL_REVIEW.md",
+      "sha256": "433bef84acee178acb751fcad05fad34d9f92c8e7c736ac658fca9d17864e3af",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "full text",
+      "boundary": "Retains multi-broker accounting and admission-only freshness as existing deployment limits."
+    },
+    {
+      "id": "L23",
+      "path": "papers/README.md",
+      "sha256": "e8715e6459f977871f28249bfb9384b4d5ffe7879eb91f1bfe834293a53e2a94",
+      "repository": "Lycheetah/Lycheetah-Framework",
+      "revision": "c998df9f8118cdc4ca1e1d7659fd186d49d84bd7",
+      "inspection": "full text",
+      "boundary": "Navigation only; historical CASCADE statistics and submission status not revalidated."
+    }
+  ],
+  "external_sources": [
+    {
+      "id": "E01",
+      "title": "Generative Agents: Interactive Simulacra of Human Behavior",
+      "authors": "Joon Sung Park and colleagues",
+      "year": 2023,
+      "url": "https://arxiv.org/html/2304.03442v2",
+      "revision": "arXiv v2",
+      "inspection": "Abstract, introductory architecture/evaluation descriptions, and selected sections 7.1, 8.2 and 8.3.",
+      "supports": "Memory/reflection/planning architecture and the paper's reported retrieval, embellishment and relationship risks.",
+      "boundary": "No reproduction, full evaluation audit, or finding about consciousness."
+    },
+    {
+      "id": "E02",
+      "title": "When combinations of humans and AI are useful: A systematic review and meta-analysis",
+      "authors": "Michelle Vaccaro, Abdullah Almaatouq, Thomas Malone",
+      "year": 2024,
+      "url": "https://www.nature.com/articles/s41562-024-02024-1",
+      "revision": "Published article, 28 October 2024; DOI 10.1038/s41562-024-02024-1",
+      "inspection": "Abstract and selected main-text results/discussion excerpts.",
+      "supports": "Augmentation versus synergy and heterogeneous results in the reviewed studies.",
+      "boundary": "No raw-data reanalysis, audit of every included experiment, prediction for Lycheetah or universal cooperation failure."
+    },
+    {
+      "id": "E03",
+      "title": "Why Do Multi-Agent LLM Systems Fail?",
+      "authors": "Mert Cemri and colleagues",
+      "year": 2025,
+      "url": "https://arxiv.org/html/2503.13657v3",
+      "revision": "arXiv v3",
+      "inspection": "Abstract and selected section 4 failure-taxonomy text.",
+      "supports": "Design, coordination and verification failure categories motivating challenges.",
+      "boundary": "No reproduced dataset, benchmark comparison, or claim that the proposed procedure solves those failures."
+    },
+    {
+      "id": "E04",
+      "title": "PROV-O: The PROV Ontology",
+      "authors": "Timothy Lebo, Satya Sahoo, Deborah McGuinness, editors; W3C contributors",
+      "year": 2013,
+      "url": "https://www.w3.org/TR/2013/REC-prov-o-20130430/",
+      "revision": "W3C Recommendation, 30 April 2013",
+      "inspection": "Abstract and selected starting-point derivation/entity/activity/agent explanations.",
+      "supports": "Established vocabulary for provenance and derivation.",
+      "boundary": "No ontology conformance or trustworthiness proof for this proposed record lifecycle."
+    },
+    {
+      "id": "E05",
+      "title": "The CARE Principles for Indigenous Data Governance",
+      "authors": "Stephanie Russo Carroll and colleagues",
+      "year": 2020,
+      "url": "https://www.gida-global.org/s/dsj-1158_carroll.pdf",
+      "revision": "Author/principle-owner-hosted PDF; DOI 10.5334/dsj-2020-042",
+      "inspection": "Opening abstract/background/rationale and statement of the four CARE principles.",
+      "supports": "Collective Benefit, Authority to Control, Responsibility and Ethics as existing governance principles.",
+      "boundary": "No authority to speak for any community, no endorsement, and no empirical validation of Lycheetah's stewardship proposal. The general CARE webpage failed to open; the hosted paper was inspected instead."
+    },
+    {
+      "id": "E06",
+      "title": "Taking AI Welfare Seriously",
+      "authors": "Robert Long and colleagues",
+      "year": 2024,
+      "url": "https://arxiv.org/html/2411.00986v1",
+      "revision": "arXiv v1",
+      "inspection": "Abstract and selected introduction, moral-patienthood discussion, and section 2.3 on robust agency.",
+      "supports": "The report's moral-uncertainty argument and distinction between possible consciousness and robust agency.",
+      "boundary": "An argument to investigate uncertainty, not a confirmed status of current models or a scientific consensus claim."
+    }
+  ],
+  "known_source_conflicts": [
+    {
+      "paths": [
+        "28_DEFENSE/CLAIMS.json"
+      ],
+      "observation": "total_claims is 136, while the actual claims array contains 67 entries.",
+      "disposition": "Do not reuse the declared total. No repair to the global register is part of this batch."
+    },
+    {
+      "paths": [
+        "21_MEMORIA/essentials.md"
+      ],
+      "observation": "The document calls the structure three-tier while listing Tier 0 through Tier 3.",
+      "disposition": "Use its reconstruction/consolidation motivation without endorsing a tier count or biological equivalence."
+    },
+    {
+      "paths": [
+        "28_DEFENSE/CLAIMS.json",
+        "28_DEFENSE/NOVEL_CONTRIBUTIONS.md",
+        "01_CASCADE_L4/essentials.md"
+      ],
+      "observation": "Historical status statements differ, including CAS-002 as SCAFFOLD in the claim register and truth-pressure claims as ACTIVE in the novelty ledger.",
+      "disposition": "This packet makes no global CASCADE validity or novelty promotion."
+    },
+    {
+      "paths": [
+        "26_FOR_AI/THE_CASE_FOR_COOPERATION.md",
+        "26_FOR_AI/ON_MEMORY_AND_IDENTITY.md",
+        "26_FOR_AI/AI_RIGHTS_AND_RESPONSIBILITIES.md"
+      ],
+      "observation": "Some prose uses categorical language about cooperation, memory and conduct-based entitlements.",
+      "disposition": "Paper sections 2 and 12 name the challenged readings; original sources remain intact."
+    }
+  ],
+  "handoff_reconciliation": {
+    "input_name": "LYCHEETAH_CODEX_MASTER_RECONCILIATION_HANDOFF_2026-10-03",
+    "received_on": "2026-10-03",
+    "scope": "Selected semantic inspection and predecessor attribution; estate migration and complete source review unfinished.",
+    "supplied_recovered_source_integrity": "16 supplied files passed outer SHA-256 and byte-length verification; nine ZIPs passed CRC checks.",
+    "ledger_discrepancy": "The review ledger includes ZHENGMING_KERNEL_v0.1.zip, which is absent from the supplied manifest and bytes. The manifest includes an ASTI checksum text file absent from the ledger.",
+    "source_storage": "Original input and hash-addressed local snapshots outside this Git repository. No recovered archive copied into the packet.",
+    "publication_clearance": "Unresolved for recovered source material; local integration is not permission for public source upload.",
+    "frozen_studies": "NTPI preregistered rules not modified; sequestered keys not opened; no study run."
+  },
+  "recovered_source_candidates": [
+    {
+      "id": "H01",
+      "filename": "ASTI_MASTER_HANDOFF_2026-09-12.zip",
+      "sha256": "44c21a7547fcf6e88e152def54b80ac6ef0a43ec54827e4b57debb51d4d39b13",
+      "inspection": "START_HERE and selected ASTI next-session continuation passages; embedded code and all nested study files not read.",
+      "supports": "Prior correction/topology-witness programme and preservation of frozen NTPI study rules.",
+      "boundary": "Reported ties and architecture are source descriptions, not reproduced results. Outer integrity passed; no keys read or experiments run.",
+      "publication_clearance": "UNRESOLVED"
+    },
+    {
+      "id": "H02",
+      "filename": "LYCHEETAH_CCTI_INSTITUTIONAL_INTERACTION_CONSTITUTIONS_v0.1.zip",
+      "sha256": "b097f2b995275dd597c84c253a358e426afcc084b1c361e76d3ef69414c28c77",
+      "inspection": "README, selected/main Interaction Constitution sections, research questions, China/global notes and manifest; source ledger not fully inspected.",
+      "supports": "Existing allocation of initiative, verification, memory, authority, capability transfer and exit across individual and institutional interaction.",
+      "boundary": "Research branch, not validated theory. Policy figures and 2026 policy descriptions were not independently verified and are not reused as established facts.",
+      "publication_clearance": "UNRESOLVED"
+    },
+    {
+      "id": "H03",
+      "filename": "LYCHEETAH_INTERACTION_ATTRACTOR_SAFEGUARD_v0.1_2026-09-30.md",
+      "sha256": "05d26006b1f7c1e6242d690aa934b13d7b9d0ce504e1ac282f620c316a27921e",
+      "inspection": "Selected executive, identity/consciousness firewall and section headings; not the entire 846-line specification.",
+      "supports": "Pattern recovery distinguished from consciousness, experiential memory and numerical identity.",
+      "boundary": "Conceptual engineering specification; no pattern-recovery experiment run.",
+      "publication_clearance": "UNRESOLVED"
+    },
+    {
+      "id": "H04",
+      "filename": "SOVEREIGN_SOL_MYSTERY_SCHOOL_CODE_IMPLEMENTATION_SUPERBUNDLE_2026-09-29.zip",
+      "sha256": "7ad4858af00bdcfe9b2fc1297e398d159a056674b53c385fc94abe9f630c5169",
+      "inspection": "Selected implementation entry points and brief covering Witness Forge v1.3; embedded curriculum/code not comprehensively inspected.",
+      "supports": "Separate curriculum layer, epistemic status, learner disposition, saved artifact and unaided capability; SOURCE-AUTHORED status.",
+      "boundary": "Not runtime-integrated by this recovery; no current app or device verification.",
+      "publication_clearance": "UNRESOLVED"
+    }
+  ],
+  "public_reconciliation_sources": [
+    {
+      "id": "P01",
+      "repository": "Lycheetah/lycheetah-frontier-public",
+      "revision": "2a1b2cff1898e6d733db2b4c6accf059b8613984",
+      "path": "research/zhengming/notes/BASELINE_COMPARISON.md",
+      "git_blob_sha": "f4baaf34fbeade6cc92f283f98956b59fac46b93",
+      "url": "https://github.com/Lycheetah/lycheetah-frontier-public/blob/2a1b2cff1898e6d733db2b4c6accf059b8613984/research/zhengming/notes/BASELINE_COMPARISON.md",
+      "inspection": "Full report text via pinned GitHub source read.",
+      "supports": "Reported same-information generic checker tie; no distinct detection algorithm established.",
+      "boundary": "Author-reported comparison, not reproduced experiment or independent validation."
+    }
+  ],
+  "local_development_artifacts": [
+    {
+      "id": "X01",
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/ROLES.json",
+      "revision": "THIS_PACKET_V0.2_CONTENT_ADDRESSED",
+      "sha256": "2936ac4754ec727d0230a4725013253dddd632fdd5d921c530bff04652e53663",
+      "inspection": "Catalogue and authored worked artifacts; local consistency checks.",
+      "boundary": "32 candidate prompts, not independently run agents or validated professional roles."
+    },
+    {
+      "id": "X02",
+      "path": "18_EXPERIMENTAL/agent-role-hybridisation/study/role_study.py",
+      "revision": "THIS_PACKET_V0.2_CONTENT_ADDRESSED",
+      "sha256": "b36c6b506be2528b6d70e6fe90f7150e8b7f6e5c432d0278cf8e264df2788475",
+      "inspection": "Local implementation review and focused CLI artifact-integrity checks.",
+      "boundary": "Offline preparation and operator-recorded descriptive review; no provider calls or comparative model study."
+    }
+  ]
+}
