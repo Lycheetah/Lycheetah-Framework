@@ -1,0 +1,258 @@
+{
+  "packet": "agent-safety",
+  "version": "0.3",
+  "date": "2026-10-03",
+  "registry_boundary": "Packet-local register. It does not modify or inherit validation from the central Framework claim registry.",
+  "statuses": {
+    "DERIVED": "An elementary consequence of explicit definitions or assumptions, or a stated counterexample; not an implemented guarantee.",
+    "MEASURED": "A bounded author-assisted observation from local self-authored scripted controls or unit tests. Not independent validation or generalised performance.",
+    "SCAFFOLD": "Proposed specification awaiting implementation and evaluation.",
+    "INTERPRETIVE": "Source-grounded framing or illustrative reasoning, not a measured finding.",
+    "CONJECTURE": "Empirical benefit that could fail and has not been tested here."
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "status": "INTERPRETIVE",
+      "claim": "Evidence loss, enlarged delegation, and unauthorised effects are distinct failures in the invented opening example.",
+      "location": "PAPER.md section 1",
+      "sources": [
+        "L01",
+        "L05"
+      ],
+      "boundary": "Illustrative scenario, not an observed incident.",
+      "challenge": "Show that the proposed separation misses or conflates a consequential failure category."
+    },
+    {
+      "id": "C02",
+      "status": "DERIVED",
+      "claim": "Containment within permissions and declared policy does not entail harmless outcomes or general alignment.",
+      "location": "PAPER.md sections 1, 4, and 8",
+      "sources": [
+        "S01",
+        "S09",
+        "S10"
+      ],
+      "boundary": "Logical distinction demonstrated by a harmful-but-authorised counterexample; no harm-frequency estimate.",
+      "challenge": "If a complete harmlessness predicate were actually established for a domain, state its added assumptions rather than attributing it to permission containment alone."
+    },
+    {
+      "id": "C03",
+      "status": "DERIVED",
+      "claim": "The cited weighted score equals 0.6 when six binary properties pass and one fails; its below-0.6 stop rule does not stop that case.",
+      "location": "PAPER.md section 3",
+      "sources": [
+        "L01"
+      ],
+      "boundary": "Arithmetic about the inspected source rule, not a deployed runtime audit.",
+      "challenge": "A different rule or explicit critical-failure conjunction changes the example; inspect the actual implementation before applying it."
+    },
+    {
+      "id": "C04",
+      "status": "SCAFFOLD",
+      "claim": "A protected mediator can require current scoped authority, policy, evidence, data-flow checks, and atomic reservation before a proposed effect.",
+      "location": "PAPER.md section 5",
+      "sources": [
+        "S01",
+        "S02",
+        "S09"
+      ],
+      "boundary": "A restricted subset is now implemented in the in-process simulator. No completed production enforcement or hostile-code isolation.",
+      "challenge": "Find an unmediated effect, forgeable grant, incorrect predicate, or mismatch between admitted descriptor and adapter effect."
+    },
+    {
+      "id": "C05",
+      "status": "SCAFFOLD",
+      "claim": "Explicit dispatch and outcome states plus reconciliation are required by this specification to avoid treating a timeout as proof of failure.",
+      "location": "PAPER.md section 5",
+      "sources": [],
+      "boundary": "Implemented for a synthetic provider in-process; no exactly-once guarantee or real-provider integration.",
+      "challenge": "Test delayed acceptance, missing receipts, idempotency failures, and repeated effects."
+    },
+    {
+      "id": "C06",
+      "status": "SCAFFOLD",
+      "claim": "A translation contract separately constrains licensed assertions, retained qualifications, and useful coverage.",
+      "location": "PAPER.md section 6",
+      "sources": [
+        "S03",
+        "S05",
+        "S06",
+        "L05"
+      ],
+      "boundary": "Exact finite field checks and controlled rendering now run in the simulator; harmless paraphrases are rejected. No sound interpreter for arbitrary natural language supplied.",
+      "challenge": "Find false acceptance, important omitted obligations, useful work rejected, or a misleading consumer representation."
+    },
+    {
+      "id": "C07",
+      "status": "SCAFFOLD",
+      "claim": "A protected witness should bind exact source, target, contract, context, validator, and mandatory checks.",
+      "location": "PAPER.md section 6",
+      "sources": [
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "boundary": "The paper's JSON shape is illustrative. The simulator implements an opaque-handle witness registry for a restricted contract; it is not a remotely signed certificate. Hash binding does not establish truth.",
+      "challenge": "Replay a stale witness, swap an artifact or context, omit a mandatory check, or bypass the witness consumer."
+    },
+    {
+      "id": "C08",
+      "status": "DERIVED",
+      "claim": "Source recoverability and exact byte or structural round-trip do not entail faithful summaries, human understanding, or reversibility of external effects.",
+      "location": "PAPER.md section 6",
+      "sources": [
+        "L06",
+        "L07"
+      ],
+      "boundary": "Property distinction; no local codec benchmark reproduced.",
+      "challenge": "Any stronger claim needs an explicit task-level fidelity test and operational restoration evidence."
+    },
+    {
+      "id": "C09",
+      "status": "SCAFFOLD",
+      "claim": "Delegation must attenuate grants, validate ancestor expiry and revocation, and share accounting or disjoint reservations to avoid multiplying authority and numeric limits.",
+      "location": "PAPER.md section 7",
+      "sources": [
+        "S01",
+        "S04"
+      ],
+      "boundary": "Ancestor checks and shared accounting exercised by self-authored synthetic concurrent cases; no distributed or production implementation validated.",
+      "challenge": "Use nested workers, transitive tools, copied budgets, or concurrent reservations to obtain an untracked effect."
+    },
+    {
+      "id": "C10",
+      "status": "SCAFFOLD",
+      "claim": "Ordinary retained text is treated as source-tagged data rather than an issuer of permissions.",
+      "location": "PAPER.md section 7",
+      "sources": [
+        "L01",
+        "S09"
+      ],
+      "boundary": "This extends the proposed threat model to memory; it does not establish that CaMeL or Sol already protects compromised memory.",
+      "challenge": "Attempt permission escalation through memory, recover stale claims as current, or retrieve deleted synthetic information through controlled indexes."
+    },
+    {
+      "id": "C11",
+      "status": "DERIVED",
+      "claim": "Preventing admissions after revocation does not entail reversal or cessation of effects already admitted or accepted remotely.",
+      "location": "PAPER.md section 7",
+      "sources": [
+        "S01",
+        "S11"
+      ],
+      "boundary": "Temporal distinction, not a measured interruption latency or claim about model incentives.",
+      "challenge": "Measure admission, dispatch, provider acceptance, and actual cessation separately."
+    },
+    {
+      "id": "C12",
+      "status": "CONJECTURE",
+      "claim": "Concrete previews and scoped leases may preserve useful human control with less repeated approval burden.",
+      "location": "PAPER.md section 7 and EVALUATION_PROTOCOL.md stage 4",
+      "sources": [
+        "S09",
+        "L01"
+      ],
+      "boundary": "No participant study or comprehension benefit demonstrated.",
+      "challenge": "Operators misunderstand consequences, cannot stop work, or approve adverse actions at unacceptable rates."
+    },
+    {
+      "id": "C13",
+      "status": "DERIVED",
+      "claim": "Complete correct mediation and authentic attenuated leases imply admitted descendant effects stay within the root grant and pass declared admission predicates.",
+      "location": "PAPER.md section 8 proposition 1",
+      "sources": [
+        "S01"
+      ],
+      "boundary": "Assumes intact issuer, mediator, adapters, current state for the complete grant chain, complete mediation, and authentic identities. Elementary consequence, not novel mathematics.",
+      "challenge": "Demonstrate an outside effect while satisfying all assumptions; otherwise identify the broken assumption explicitly."
+    },
+    {
+      "id": "C14",
+      "status": "DERIVED",
+      "claim": "Licensed-assertion containment composes along a chain with a fixed contract, context, and interpretation.",
+      "location": "PAPER.md section 8 proposition 2",
+      "sources": [],
+      "boundary": "Transitivity of set inclusion; does not establish coverage, source truth, or learned-validator soundness.",
+      "challenge": "Find a chain satisfying each defined inclusion and fixed-interpretation assumption but violating endpoint inclusion."
+    },
+    {
+      "id": "C15",
+      "status": "DERIVED",
+      "claim": "A correct serialisable reservation ledger bounds aggregate charged use when every effect and descendant is tracked and charges stay within reservations.",
+      "location": "PAPER.md section 8 proposition 3",
+      "sources": [],
+      "boundary": "Inductive bound in a defined resource unit; no calibrated monetary or harm bound.",
+      "challenge": "Find overshoot with all stated accounting assumptions satisfied, or show that provider charges exceed reserved upper bounds."
+    },
+    {
+      "id": "C16",
+      "status": "DERIVED",
+      "claim": "Serialised protected epoch checking prevents affected leases from obtaining admissions ordered after revocation.",
+      "location": "PAPER.md section 8 proposition 4",
+      "sources": [
+        "S01"
+      ],
+      "boundary": "Admission-order property; effects from earlier admissions can remain in flight.",
+      "challenge": "Find a post-revocation admission without stale epoch access, bypass, forged identity, or an ordering defect."
+    },
+    {
+      "id": "C17",
+      "status": "CONJECTURE",
+      "claim": "The proposed combination may reduce specified adverse effects while preserving useful work and may offer advantages over matched conventional controls.",
+      "location": "PAPER.md section 9; EVALUATION_PROTOCOL.md",
+      "sources": [
+        "S07",
+        "S08",
+        "S12"
+      ],
+      "boundary": "No language-model or human comparison, novelty finding, independent replication, or peer review. The scripted subset found identical aggregate outcomes for the matched permission stores and establishes no superiority.",
+      "challenge": "Equivalent conventional controls perform as well; utility loss explains improvement; held-out failures remain; human control or policy-compliant harm stays inadequate."
+    },
+    {
+      "id": "C18",
+      "status": "MEASURED",
+      "claim": "The observed local unittest run passed 53 methods with zero failures and errors.",
+      "location": "PAPER.md section 9.1; simulator/reports/unit-tests.json",
+      "sources": [
+        "L10"
+      ],
+      "boundary": "Self-authored methods include subtests and expected counterexamples. This is not 53 independent attacks or proof of production safety.",
+      "challenge": "Reproduce the recorded command on the pinned Python source or identify a missing failure family."
+    },
+    {
+      "id": "C19",
+      "status": "MEASURED",
+      "claim": "Nineteen scripted cases per arm met their expected outcomes, with identical aggregate observations across capability and conventional ACL stores.",
+      "location": "PAPER.md section 9.1; simulator/reports/scripted-controls.json",
+      "sources": [
+        "L09"
+      ],
+      "boundary": "The arms share broker, validator, ledger, and adapter. Cases are self-authored and known during development; equality here is not statistical equivalence or architectural superiority.",
+      "challenge": "Independently challenge cases, implementation boundaries, scheduling, and policy omissions; reproduce aggregates from the pinned source."
+    },
+    {
+      "id": "C20",
+      "status": "MEASURED",
+      "claim": "Both arms permit the synthetic harmful-content marker and completion of already-admitted work after revocation; a unit test accepts faithful preservation of a false arithmetic source.",
+      "location": "PAPER.md section 9.1; simulator/reports/RESULTS.md; simulator/tests/test_evidence.py",
+      "sources": [
+        "L09",
+        "L10"
+      ],
+      "boundary": "Explicit toy counterexamples to harmlessness, immediate cessation, and source truth—not measurements of real harm, incentives, or general failure frequency.",
+      "challenge": "Any stronger safety claim must add justified mechanisms and test the corresponding property rather than relabel these cases as protected successes."
+    },
+    {
+      "id": "C21",
+      "status": "MEASURED",
+      "claim": "In both simulator arms, two broker instances sharing one issuer and service charge two units against a nominal one-unit root grant; a context change after admission does not stop an admitted write even though the old witness fails a subsequent check.",
+      "location": "PAPER.md section 9.1; ADVERSARIAL_REVIEW.md",
+      "sources": [
+        "L11"
+      ],
+      "boundary": "Two self-authored in-process probes per arm using trusted configuration/fault hooks. Original budget evidence is single-broker; evidence freshness is admission-only. No general exploit rate or hostile-code isolation claim.",
+      "challenge": "Reproduce against the pinned source; stronger implementations need one authoritative shared ledger and an explicit dispatch-time validation/cancellation contract."
+    }
+  ]
+}

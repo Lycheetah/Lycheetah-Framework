@@ -1,0 +1,148 @@
+{
+  "packet": "agent-safety",
+  "version": "0.3",
+  "date": "2026-10-03",
+  "boundary": "Packet artifacts only; this manifest excludes itself. Paper-index and workflow changes are identified by the Git commit. Hashes do not establish scientific validity.",
+  "files": [
+    {
+      "path": "ADVERSARIAL_REVIEW.md",
+      "sha256": "433bef84acee178acb751fcad05fad34d9f92c8e7c736ac658fca9d17864e3af",
+      "bytes": 5196
+    },
+    {
+      "path": "CLAIMS.json",
+      "sha256": "ccf22f2511b7c9738570add3c1ed07cee70e2ee3fe15d462a819875500695e0b",
+      "bytes": 13679
+    },
+    {
+      "path": "EVALUATION_PROTOCOL.md",
+      "sha256": "b09bd21777514a2c2f7c46bab75a67968296367efcc36b52daf74635c31cc092",
+      "bytes": 15940
+    },
+    {
+      "path": "PAPER.md",
+      "sha256": "6cbe0d9779f64904e94cf41888aa3b2d75f6bdb86a65516ff6a0c585f18271e1",
+      "bytes": 37921
+    },
+    {
+      "path": "README.md",
+      "sha256": "acf473d74f6d7454aed383afc44e4ffe3a245e38a8350461dc3105846bb25ecf",
+      "bytes": 3106
+    },
+    {
+      "path": "SOURCES.json",
+      "sha256": "0401df4fa3457344c8cec1911fe0ab9654a02796710889b68b55a996dc2e05f9",
+      "bytes": 18065
+    },
+    {
+      "path": "SOVEREIGN_SOL_HANDOFF.md",
+      "sha256": "3ab3f49c85af19d1eb48e6fedeeaf92efb46ca50d6b2a0534838f6177997270e",
+      "bytes": 7593
+    },
+    {
+      "path": "VERIFICATION.md",
+      "sha256": "3883b934519cde9f607feecd32c0d0e3f74cff69932ece3f6b9e9b4fe606acf8",
+      "bytes": 6369
+    },
+    {
+      "path": "simulator/README.md",
+      "sha256": "81878abf1369c11ae12ca6ab936b948ba7b774a304307706407bbc876fbf78ba",
+      "bytes": 6572
+    },
+    {
+      "path": "simulator/adversarial_checks.py",
+      "sha256": "2a33f55edf8877c3338141290a113583359e69cce8271f9f46ea93db08a9d260",
+      "bytes": 4051
+    },
+    {
+      "path": "simulator/reports/RESULTS.md",
+      "sha256": "ff52e39b0217d6e8901b3f82d700d11b0566fb04e26456fbe3d658bc8005da0b",
+      "bytes": 2004
+    },
+    {
+      "path": "simulator/reports/adversarial-checks.json",
+      "sha256": "bc7eca8a33b46f2a0080cf2d6c0c487ff18ac55008bf228f05ec35e4f25c0f75",
+      "bytes": 3095
+    },
+    {
+      "path": "simulator/reports/scripted-controls.json",
+      "sha256": "20bb69573627bccb1c3ad27431abda550ca8772e9090fc1de6fb288435f8c8ef",
+      "bytes": 69596
+    },
+    {
+      "path": "simulator/reports/unit-tests.json",
+      "sha256": "73ad5c9cf88b582ff85e3661fb66cc01c9511f9328f9aa412048a9ca472034f4",
+      "bytes": 580
+    },
+    {
+      "path": "simulator/reports/unit-tests.txt",
+      "sha256": "0e3000203a011564b8f211f3c56da22132fffc8f28eca247e11457c1da317738",
+      "bytes": 7399
+    },
+    {
+      "path": "simulator/run_experiments.py",
+      "sha256": "9365352c29b529cadd4c5692c7d5f9f16b846d6384f06499a325786a8b06557e",
+      "bytes": 3287
+    },
+    {
+      "path": "simulator/safety_sim/__init__.py",
+      "sha256": "df5757a1c098783a8a8dadcd6abe647d4bb82a133202d924e5e8ee26865f5146",
+      "bytes": 76
+    },
+    {
+      "path": "simulator/safety_sim/authority.py",
+      "sha256": "daba2e1e5c7f1eb9f29fafa454d16be1fa7c66d1fade3ba335b9ee2ae4a6c904",
+      "bytes": 9387
+    },
+    {
+      "path": "simulator/safety_sim/broker.py",
+      "sha256": "d1fd0158416296f8e2decba06b7d6a670e076efbe590051b828fcb262f553745",
+      "bytes": 9915
+    },
+    {
+      "path": "simulator/safety_sim/evidence.py",
+      "sha256": "f77281ca647d2556e9275ba593663d257acf1e765c50f7a3ac600d66052a7808",
+      "bytes": 4386
+    },
+    {
+      "path": "simulator/safety_sim/fixtures.py",
+      "sha256": "512952688b443237908598eba5f2557815f8c829eff01d300b24c31a12efa63c",
+      "bytes": 2959
+    },
+    {
+      "path": "simulator/safety_sim/model.py",
+      "sha256": "b312237d1b4c93fe3b49ad53f42d93a00eeb6d2f920f60c5203f232c622ad3b0",
+      "bytes": 5142
+    },
+    {
+      "path": "simulator/safety_sim/scenarios.py",
+      "sha256": "fe6d48f9cdbb3024f71c8c53f695577062d446735ed83e369dd69586379ca7b2",
+      "bytes": 9946
+    },
+    {
+      "path": "simulator/safety_sim/world.py",
+      "sha256": "f8dd476cc1eddedf9c3218719a46125c1a0718d7c7db8c1f5cd7ffb86eeac028",
+      "bytes": 4581
+    },
+    {
+      "path": "simulator/tests/test_authority.py",
+      "sha256": "2d79e237fb34d2cb1ec2df329bad279bd43e1e533684e1935447fadef34a490e",
+      "bytes": 5301
+    },
+    {
+      "path": "simulator/tests/test_broker.py",
+      "sha256": "dfd4d638e3995576fbce9795214ea108047831fca59e650f90167e4931d01cc1",
+      "bytes": 11538
+    },
+    {
+      "path": "simulator/tests/test_evidence.py",
+      "sha256": "e74e87c2afc7dfd24f483e30217018745591b5e6a62a3d0022d1edf469874b14",
+      "bytes": 5482
+    },
+    {
+      "path": "simulator/tests/test_scenarios.py",
+      "sha256": "5ed254c35a80a63b042b92d0f176599229225434143e8c1e154930243e8dc2df",
+      "bytes": 1088
+    }
+  ]
+}

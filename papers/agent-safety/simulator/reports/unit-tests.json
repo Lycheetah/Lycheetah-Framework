@@ -1,0 +1,17 @@
+{
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v",
+  "working_directory": "papers/agent-safety/simulator",
+  "date": "2026-10-03",
+  "runtime": {
+    "python": "3.12.3",
+    "implementation": "CPython"
+  },
+  "test_methods_run": 53,
+  "reported_seconds": 0.066,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "exit_code": 0,
+  "raw_output": "unit-tests.txt",
+  "boundary": "Self-authored unit methods, including subtests and deliberate counterexamples. Not independent attack samples, external security review, or production certification."
+}

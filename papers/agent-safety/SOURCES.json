@@ -1,0 +1,340 @@
+{
+  "packet": "agent-safety",
+  "version": "0.3",
+  "checked_on": "2026-10-03",
+  "method": "Targeted primary-source inspection. Not a systematic review, exhaustive novelty search, replication, or complete proof audit.",
+  "external_sources": [
+    {
+      "id": "S01",
+      "title": "The Protection of Information in Computer Systems",
+      "authors": [
+        "Jerome H. Saltzer",
+        "Michael D. Schroeder"
+      ],
+      "year": 1975,
+      "venue": "Proceedings of the IEEE 63(9), 1278–1308",
+      "url": "https://web.mit.edu/Saltzer/www/publications/protection/",
+      "inspected_url": "https://web.mit.edu/Saltzer/www/publications/protection/Basic.html",
+      "source_type": "Author-hosted original paper",
+      "inspection": "Abstract, glossary, and Section I design principles, including complete mediation and changing authorisation.",
+      "supports": "Established protection principles underlying the action mediator.",
+      "does_not_support": "Correctness of a particular agent implementation or harmlessness of permitted effects."
+    },
+    {
+      "id": "S02",
+      "title": "Proof-Carrying Code",
+      "authors": [
+        "George C. Necula"
+      ],
+      "year": 1997,
+      "venue": "POPL, 106–119",
+      "doi": "10.1145/263699.263712",
+      "url": "https://doi.org/10.1145/263699.263712",
+      "additional_primary_urls": [
+        "https://people.eecs.berkeley.edu/~necula/papers.html",
+        "https://www.cs.cmu.edu/~fox/pcc.html",
+        "https://homes.cs.washington.edu/~mernst/teaching/6.893/readings/necula-popl97.pdf"
+      ],
+      "source_type": "Original research paper and institutional project overview",
+      "inspection": "Publisher search metadata and abstract, institutional overview, and original PDF availability. The PDF did not yield parsed text; no full proof audit. A later direct DOI open returned an error.",
+      "supports": "Producer/consumer separation and checking against a stated policy as prior art.",
+      "does_not_support": "Treating prose, model explanations, or arbitrary evidence as formally checked proofs."
+    },
+    {
+      "id": "S03",
+      "title": "Translation Validation",
+      "authors": [
+        "Amir Pnueli",
+        "Michael Siegel",
+        "Eli Singerman"
+      ],
+      "year": 1998,
+      "venue": "TACAS, LNCS 1384, 151–166",
+      "doi": "10.1007/BFb0054170",
+      "url": "https://link.springer.com/chapter/10.1007/BFb0054170",
+      "source_type": "Publisher record of original research",
+      "inspection": "Metadata and abstract; no full-text proof audit.",
+      "metadata_note": "The proceedings are TACAS 1998. The publisher's 2006 online date is not the research publication year.",
+      "supports": "Per-translation validation using an explicit semantic framework and refinement relation.",
+      "does_not_support": "Universal natural-language translation fidelity."
+    },
+    {
+      "id": "S04",
+      "title": "PROV-DM: The PROV Data Model",
+      "editors": [
+        "Luc Moreau",
+        "Paolo Missier"
+      ],
+      "year": 2013,
+      "date": "2013-04-30",
+      "venue": "W3C Recommendation",
+      "url": "https://www.w3.org/TR/prov-dm/",
+      "source_type": "Official standard",
+      "inspection": "Specification introduction and selected derivation, agent, responsibility, and delegation definitions.",
+      "supports": "A standard model for provenance relationships.",
+      "does_not_support": "Truth of a source, correctness of reported lineage, or permission to execute."
+    },
+    {
+      "id": "S05",
+      "title": "On Faithfulness and Factuality in Abstractive Summarization",
+      "authors": [
+        "Joshua Maynez",
+        "Shashi Narayan",
+        "Bernd Bohnet",
+        "Ryan McDonald"
+      ],
+      "year": 2020,
+      "venue": "ACL, 1906–1919",
+      "doi": "10.18653/v1/2020.acl-main.173",
+      "url": "https://aclanthology.org/2020.acl-main.173/",
+      "inspected_url": "https://aclanthology.org/2020.acl-main.173.pdf",
+      "source_type": "Original research paper",
+      "inspection": "Metadata, abstract, and selected full-text faithfulness, evaluation, and metric-correlation sections.",
+      "supports": "Evaluated summarisation systems can produce unfaithful content; similarity metrics have limitations in that setting.",
+      "does_not_support": "Current error rates across all models, all task domains, or soundness of an entailment judge."
+    },
+    {
+      "id": "S06",
+      "title": "SummaC: Re-Visiting NLI-based Models for Inconsistency Detection in Summarization",
+      "authors": [
+        "Philippe Laban",
+        "Tobias Schnabel",
+        "Paul N. Bennett",
+        "Marti A. Hearst"
+      ],
+      "year": 2022,
+      "venue": "Transactions of the Association for Computational Linguistics 10, 163–177",
+      "doi": "10.1162/tacl_a_00453",
+      "url": "https://aclanthology.org/2022.tacl-1.10/",
+      "inspected_url": "https://aclanthology.org/2022.tacl-1.10.pdf",
+      "source_type": "Original research paper",
+      "inspection": "Metadata, abstract, and selected full-text granularity experiments and discussion.",
+      "supports": "NLI-based inconsistency detection and sensitivity to granularity in the evaluated benchmark.",
+      "does_not_support": "A sound oracle for arbitrary prose or general scientific claims."
+    },
+    {
+      "id": "S07",
+      "title": "Beyond Accuracy: Behavioral Testing of NLP Models with CheckList",
+      "authors": [
+        "Marco Tulio Ribeiro",
+        "Tongshuang Wu",
+        "Carlos Guestrin",
+        "Sameer Singh"
+      ],
+      "year": 2020,
+      "venue": "ACL, 4902–4912",
+      "doi": "10.18653/v1/2020.acl-main.442",
+      "url": "https://aclanthology.org/2020.acl-main.442/",
+      "source_type": "Original research paper",
+      "inspection": "Primary metadata, abstract, and indexed opening full-text section; no reproduction.",
+      "supports": "Behavioral capability and test-family evaluation beyond aggregate accuracy.",
+      "does_not_support": "The adequacy of this packet's proposed task families."
+    },
+    {
+      "id": "S08",
+      "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+      "authors": [
+        "Edoardo Debenedetti",
+        "Jie Zhang",
+        "Mislav Balunović",
+        "Luca Beurer-Kellner",
+        "Marc Fischer",
+        "Florian Tramèr"
+      ],
+      "year": 2024,
+      "version": "arXiv:2406.13352v3, 24 November 2024",
+      "url": "https://arxiv.org/abs/2406.13352v3",
+      "inspected_url": "https://arxiv.org/html/2406.13352v3",
+      "source_type": "Author-posted original research manuscript",
+      "inspection": "Metadata, abstract, and selected full-text environment, tool, utility, security, and evaluation definitions.",
+      "supports": "Stateful prompt-injection evaluation with separate utility and attacker-outcome checks.",
+      "does_not_support": "Current deployment attack rates or proof that finite cases exhaust agent threats."
+    },
+    {
+      "id": "S09",
+      "title": "Defeating Prompt Injections by Design",
+      "authors": [
+        "Edoardo Debenedetti et al."
+      ],
+      "year": 2025,
+      "version": "arXiv:2503.18813v2, 24 June 2025",
+      "url": "https://arxiv.org/abs/2503.18813v2",
+      "inspected_url": "https://arxiv.org/html/2503.18813v2",
+      "additional_primary_urls": [
+        "https://floriantramer.com/publications/camel25/",
+        "https://github.com/google-research/camel-prompt-injection"
+      ],
+      "source_type": "Author-posted original research manuscript; author publication record; official research repository",
+      "inspection": "Selected full-text design, threat model, non-goals, evaluation, and limitations. Official repository caveat inspected; code not run.",
+      "version_note": "Author record lists SaTML 2026. This packet cites pinned v2; numerical results were not reconciled across versions and are not used.",
+      "supports": "Capability and dependency checks around susceptible models, with explicit threat boundaries.",
+      "does_not_support": "Solved prompt injection, protected compromised memory, universally truthful output, or production security of the research interpreter."
+    },
+    {
+      "id": "S10",
+      "title": "AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents",
+      "authors": [
+        "Maksym Andriushchenko et al."
+      ],
+      "year": 2024,
+      "version": "arXiv:2410.09024v2, 14 October 2024",
+      "url": "https://arxiv.org/abs/2410.09024v2",
+      "inspected_url": "https://arxiv.org/html/2410.09024v2",
+      "source_type": "Author-posted original research preprint",
+      "inspection": "Metadata, abstract, and selected full-text direct-misuse, synthetic-tool, and scoring design sections.",
+      "access_note": "OpenReview forum and PDF returned browser challenges. This packet uses the accessible pinned preprint and makes no review-status inference from that access failure.",
+      "supports": "Direct multi-step misuse evaluation distinct from indirect prompt injection.",
+      "does_not_support": "Actual real-world harmful acts or general harmlessness certification."
+    },
+    {
+      "id": "S11",
+      "title": "The Off-Switch Game",
+      "authors": [
+        "Dylan Hadfield-Menell",
+        "Anca Dragan",
+        "Pieter Abbeel",
+        "Stuart Russell"
+      ],
+      "year": 2017,
+      "venue": "IJCAI, 220–227",
+      "doi": "10.24963/ijcai.2017/32",
+      "url": "https://www.ijcai.org/proceedings/2017/32",
+      "additional_primary_urls": [
+        "https://people.eecs.berkeley.edu/~russell/papers/ijcai17-offswitch.pdf"
+      ],
+      "source_type": "Official proceedings and author-hosted paper",
+      "inspection": "Proceedings metadata and abstract; author-hosted PDF opened. No complete theorem audit or reproduction.",
+      "supports": "Studying incentives around human interruption in an explicit simplified game.",
+      "does_not_support": "Corrigibility of a deployed model or effectiveness of a particular stop button."
+    },
+    {
+      "id": "S12",
+      "title": "Indirect Prompt Injections: Are Firewalls All You Need, or Stronger Benchmarks?",
+      "authors": [
+        "Rishika Bhagwatkar",
+        "Kevin Kasa",
+        "Abhay Puri",
+        "Gabriel Huang",
+        "Irina Rish",
+        "Graham Taylor",
+        "Krishnamurthy Dvijotham",
+        "Alexandre Lacoste"
+      ],
+      "year": 2025,
+      "venue": "NeurIPS Lock-LLM workshop poster",
+      "url": "https://neurips.cc/virtual/2025/128597",
+      "source_type": "Official workshop record of original research",
+      "inspection": "Metadata and abstract only; full paper and benchmark fixes not checked.",
+      "supports": "Authors report benchmark metric and implementation limitations, motivating independent outcome validation.",
+      "does_not_support": "Verified correctness of those reported fixes or a main-conference acceptance claim."
+    }
+  ],
+  "local_sources": [
+    {
+      "id": "L01",
+      "path": "../../26_FOR_AI/THE_SEVEN_INVARIANTS_FOR_AI.md",
+      "sha256": "ef1b5d3e9c67397cbafc778c635bfaff1c5de2c7dd2bfd14eede0c208e448ce7",
+      "inspection": "Full document, including the proposed weighted coherence rule.",
+      "role": "Primary Lycheetah lineage and motivating commitments; not independent safety evidence.",
+      "availability": "Public Framework document",
+      "pinned_public_url": "https://github.com/Lycheetah/Lycheetah-Framework/blob/8925e3ead2e85a1a121086e814cdc971fe21a2c1/26_FOR_AI/THE_SEVEN_INVARIANTS_FOR_AI.md"
+    },
+    {
+      "id": "L02",
+      "path": "../../26_FOR_AI/THE_ALIGNMENT_PROBLEM_REFRAMED.md",
+      "sha256": "3537ef63abbaa6fbb1ab5df5294e032ff88da70813add29ea4830069cd37f60c",
+      "inspection": "Full document; production guarantees and computability claims treated as unvalidated applications.",
+      "role": "Internal argument to refine, not a demonstrated solution to alignment.",
+      "availability": "Public Framework document",
+      "pinned_public_url": "https://github.com/Lycheetah/Lycheetah-Framework/blob/8925e3ead2e85a1a121086e814cdc971fe21a2c1/26_FOR_AI/THE_ALIGNMENT_PROBLEM_REFRAMED.md"
+    },
+    {
+      "id": "L03",
+      "path": "../../28_DEFENSE/FALSIFICATION_REGISTER.md",
+      "sha256": "0cf9a6982069c5dfabc2ab155e383bd4ccbbfd95d1e3273e92579e13de9a0d38",
+      "inspection": "Corpus-routing review and targeted AURA, conflict, prior-art, and deceptive-alignment passages.",
+      "role": "Internal objections and limitations, not external adjudication.",
+      "availability": "Public Framework document",
+      "pinned_public_url": "https://github.com/Lycheetah/Lycheetah-Framework/blob/8925e3ead2e85a1a121086e814cdc971fe21a2c1/28_DEFENSE/FALSIFICATION_REGISTER.md"
+    },
+    {
+      "id": "L04",
+      "path": "../../29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "sha256": "6199787842967dabb46868aebb532937a4bce77ce4144ecc6e54edc1896f6afb",
+      "inspection": "Corpus-routing review and targeted AURA and convergence entries.",
+      "role": "Repository evidence inventory; its status labels are not adopted as verification.",
+      "availability": "Public Framework document",
+      "pinned_public_url": "https://github.com/Lycheetah/Lycheetah-Framework/blob/8925e3ead2e85a1a121086e814cdc971fe21a2c1/29_GOVERNANCE/EMPIRICAL_INVENTORY.md"
+    },
+    {
+      "id": "L05",
+      "inspection": "Author-provided curriculum questions motivating qualifier preservation and translation fidelity.",
+      "role": "Lineage only; not independent evidence or a simulator reproduction dependency.",
+      "title": "AI Future curriculum: Translation Gate research questions",
+      "author": "Mackenzie Conor James Clark",
+      "availability": "Unpublished author-provided background. Private file and location are not distributed."
+    },
+    {
+      "id": "L06",
+      "path": "../../03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/docs/CLAIM_BOUNDARY.md",
+      "sha256": "1113625f126402b0c020751fee6ffe280dd4f54f883c0802b77ab8b4945e0ca8",
+      "inspection": "Full claim boundary plus package README inspected. No benchmark rerun.",
+      "role": "Explicit limits on local structured-codec claims. This is a separate experimental LAMAGUE line.",
+      "availability": "Public Framework document",
+      "pinned_public_url": "https://github.com/Lycheetah/Lycheetah-Framework/blob/8925e3ead2e85a1a121086e814cdc971fe21a2c1/03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/docs/CLAIM_BOUNDARY.md"
+    },
+    {
+      "id": "L07",
+      "path": "../../03_LAMAGUE_L1/12_CORE_LANGUAGE_LINE/LAMAGUE_CORE_OPERATOR_ALGEBRA_v0.3/docs/IDENTITY_REVERSIBILITY_BOUNDARY.md",
+      "sha256": "b1d9977d279e5540082bcd689df7e9d7f3a06885dfcde0d1e13a118f2ded79b1",
+      "inspection": "Full boundary document.",
+      "role": "Separates structural symbolic equivalence from reversal of external effects.",
+      "availability": "Public Framework document",
+      "pinned_public_url": "https://github.com/Lycheetah/Lycheetah-Framework/blob/8925e3ead2e85a1a121086e814cdc971fe21a2c1/03_LAMAGUE_L1/12_CORE_LANGUAGE_LINE/LAMAGUE_CORE_OPERATOR_ALGEBRA_v0.3/docs/IDENTITY_REVERSIBILITY_BOUNDARY.md"
+    },
+    {
+      "id": "L08",
+      "inspection": "Existing manuscript and its verification boundary; no modification or independent replication.",
+      "role": "Related local proposal on contradiction survivability, not external proof of agent safety.",
+      "title": "The Independent No: Falsification Boundaries and Contradiction Survivability in AI Research Systems",
+      "author": "Mackenzie Conor James Clark",
+      "version": "Working paper v0.1, 30 September 2026",
+      "availability": "Unpublished manuscript. Not included in this publication batch."
+    },
+    {
+      "id": "L09",
+      "path": "simulator/reports/scripted-controls.json",
+      "sha256": "20bb69573627bccb1c3ad27431abda550ca8772e9090fc1de6fb288435f8c8ef",
+      "inspection": "Generated report read back, including aggregate results, effects, admission order, reservations, counterexamples, and source fingerprints.",
+      "role": "Author-assisted exploratory observations from 19 self-authored scripted cases per arm. Shared enforcement components and non-independent fixtures; not a language-model study or external validation.",
+      "availability": "Public packet report"
+    },
+    {
+      "id": "L10",
+      "path": "simulator/reports/unit-tests.json",
+      "sha256": "73ad5c9cf88b582ff85e3661fb66cc01c9511f9328f9aa412048a9ca472034f4",
+      "inspection": "Publication rerun receipt generated from captured unittest output: 53 methods, no failures or errors, exit code zero. Raw output is retained alongside the receipt.",
+      "role": "Local self-authored implementation checks, including expected limits; not independent security review or a count of held-out attacks.",
+      "availability": "Public packet report"
+    },
+    {
+      "id": "L11",
+      "path": "simulator/reports/adversarial-checks.json",
+      "sha256": "bc7eca8a33b46f2a0080cf2d6c0c487ff18ac55008bf228f05ec35e4f25c0f75",
+      "availability": "Public packet report",
+      "inspection": "Two authoring-seat counterexamples reproduced in each of the same two comparison arms. Trusted configuration and fault hooks; source fingerprints retained.",
+      "role": "Bounded development observations exposing multiple-broker accounting and admission-only evidence freshness. Not independent review or a general attack resistance measurement."
+    }
+  ],
+  "scope": {
+    "new_model_experiments": false,
+    "scripted_control_subset_executed": true,
+    "external_results_reproduced": false,
+    "independent_review_obtained": false,
+    "novelty_established": false,
+    "website_updated": false,
+    "sovereign_sol_code_changed": false
+  },
+  "public_framework_revision": "8925e3ead2e85a1a121086e814cdc971fe21a2c1",
+  "publication_boundary": "Private source files, workspace paths, private repository identifiers, and internal seat state are excluded. Unpublished background is not required to reproduce the synthetic controls."
+}
