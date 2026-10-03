@@ -4,6 +4,10 @@
 read: ten movements through AI futures, cybernetics, memory, collective thought,
 translation, institutions and care.
 
+The reading edition explains each Framework name when it first appears. Technical
+notation and detailed source limitations live in the notebook, so the essay can be
+read without prior knowledge of the Framework.
+
 **Framework creator:** Mackenzie Conor James Clark.
 **Essay and research assistance:** Caelorynth, an AI coding assistant.
 **Date:** 3 October 2026. **Status:** exploratory philosophy and research conjectures.

@@ -53,7 +53,7 @@ budgets, baseline implementations, held-out cases and stopping rule. Fixtures au
 while building a mechanism are development fixtures, not independent held-out evidence.
 Do not turn consented use of a tool into an experiment without appropriate permission.
 
-## The small graph argument in §IV
+## The small graph argument in IV
 
 Let G = (V, E) be a finite directed graph representing one declared workflow, s its
 start, and T the set of acceptable completion nodes. Assume at least one path from s

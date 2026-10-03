@@ -1,14 +1,14 @@
 {
   "packet": "night-garden",
-  "version": "0.1",
-  "checked_at": "2026-10-03T10:16:35.378981+00:00",
+  "version": "0.2-reading-edition",
+  "checked_at": "2026-10-03T10:37:20.622448+00:00",
   "status": "PASS_LOCAL_CONTENT_GATE",
-  "baseline_revision": "d16ab66f2ed455fa3117799d74188eca9a8031b4",
-  "essay_word_count": 4948,
+  "baseline_revision": "7b31620eeb89e01092d55281672cebb7b6f93402",
+  "essay_word_count": 4831,
   "word_count_method": "Unicode word tokens; Markdown links replaced by their labels; includes titles and attribution.",
   "movements": 10,
-  "local_checks_passed": 47,
-  "local_checks_total": 47,
+  "local_checks_passed": 57,
+  "local_checks_total": 57,
   "checks": [
     {
       "kind": "pinned_source",
@@ -50,7 +50,31 @@
     {
       "kind": "local_link",
       "file": "26_FOR_AI/THE_NIGHT_GARDEN.md",
+      "target": "night-garden/RESEARCH_NOTES.md",
+      "passed": true
+    },
+    {
+      "kind": "local_anchor",
+      "file": "26_FOR_AI/THE_NIGHT_GARDEN.md",
+      "target": "night-garden/RESEARCH_NOTES.md#the-small-graph-argument-in-iv",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/THE_NIGHT_GARDEN.md",
       "target": "../papers/ai-futures/PAPER.md",
+      "passed": true
+    },
+    {
+      "kind": "local_link",
+      "file": "26_FOR_AI/THE_NIGHT_GARDEN.md",
+      "target": "night-garden/RESEARCH_NOTES.md",
+      "passed": true
+    },
+    {
+      "kind": "local_anchor",
+      "file": "26_FOR_AI/THE_NIGHT_GARDEN.md",
+      "target": "night-garden/RESEARCH_NOTES.md#source-and-inspection-limits",
       "passed": true
     },
     {
@@ -264,11 +288,41 @@
       "passed": true
     },
     {
-      "kind": "retrieval_failure_visible",
+      "kind": "retrieval_failure_visible_in_notebook",
       "passed": true
     },
     {
       "kind": "research_boundaries",
+      "passed": true
+    },
+    {
+      "kind": "framework_name_highlighted_in_explanation",
+      "name": "AURA",
+      "passed": true
+    },
+    {
+      "kind": "framework_name_highlighted_in_explanation",
+      "name": "MICROORCIM",
+      "passed": true
+    },
+    {
+      "kind": "framework_name_highlighted_in_explanation",
+      "name": "MEMORIA",
+      "passed": true
+    },
+    {
+      "kind": "framework_name_highlighted_in_explanation",
+      "name": "CASCADE",
+      "passed": true
+    },
+    {
+      "kind": "framework_name_highlighted_in_explanation",
+      "name": "HARMONIA",
+      "passed": true
+    },
+    {
+      "kind": "framework_name_highlighted_in_explanation",
+      "name": "LAMAGUE",
       "passed": true
     },
     {
@@ -280,15 +334,15 @@
   "artifacts": [
     {
       "path": "26_FOR_AI/THE_NIGHT_GARDEN.md",
-      "sha256": "6b25d52456b4bc75697921e971a582e339494fc1c82793b45e8e7ae7c2297f34"
+      "sha256": "3d4edc57f4713d8f61cb20a40043853872a9c98aa3ece26c6b84cce2a155aee0"
     },
     {
       "path": "26_FOR_AI/night-garden/README.md",
-      "sha256": "0cd6334d7a9e11c35b3541f8fa756d03c9420ef3f34f67086b102383a1f4753a"
+      "sha256": "f57fe554b3e6547c0660a2704aa8beec77524e23665f24efb61ca4417d564477"
     },
     {
       "path": "26_FOR_AI/night-garden/RESEARCH_NOTES.md",
-      "sha256": "923f1f9b4953afec813ac407b455043cb49b6b2ccbe49f63cb5904b4ff17b7b2"
+      "sha256": "cf127795c211d5dd1636c06f25b51a1dabaadeb2143be381a2265087cb27b7d9"
     },
     {
       "path": "26_FOR_AI/night-garden/SOURCES.json",
@@ -304,7 +358,7 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "c5e914b3e5a93bd52670535d9004f4ea68693424639c0c25451b9277f5eb1af2"
+      "sha256": "b959cc1a542ee2ebf0da25605a9bc462693d76a1bd4b355008e8b4d1f7782b9f"
     }
   ],
   "witness": "Authoring-seat content, source-pin and local navigation checks; no independent review or empirical study.",
@@ -319,5 +373,19 @@
   "external_url_availability": "Not exhaustively checked; exact source inspection and retrieval limits are in SOURCES.json.",
   "publication_state_at_gate": "LOCAL_UNCOMMITTED",
   "publication_note": "Commit and remote receipt, when present, are separate from this pre-publication gate.",
-  "receipt_self_hash": "Excluded to avoid self-reference."
+  "receipt_self_hash": "Excluded to avoid self-reference.",
+  "previous_verification_revision": "7b31620eeb89e01092d55281672cebb7b6f93402",
+  "editorial_review": {
+    "reviewer": "Caelorynth, authoring AI seat",
+    "scope": "Whole essay read and revised for explanatory clarity, paragraph flow, unfamiliar terms and preservation of evidence boundaries.",
+    "changes": [
+      "Defined cybernetics with a thermostat example",
+      "Explained six Framework names on first use",
+      "Replaced graph notation with a concrete route example",
+      "Moved detailed source-retrieval limits to the linked notebook",
+      "Simplified dense passages and preserved fictional scenes"
+    ],
+    "independent_reader_test": "NOT_RUN",
+    "automatic_checks_are_readability_proof": false
+  }
 }

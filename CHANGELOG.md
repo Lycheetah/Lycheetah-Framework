@@ -54,6 +54,12 @@ history, which was the only changelog until now.
 
 ### Changed
 
+- **The Night Garden reading edition:** explained Framework names on first use,
+  shortened dense passages, and moved graph notation and detailed source limitations
+  into the companion notebook. Preserved the scenes, citations and research boundaries.
+  Highest witness: authoring-seat editorial review and local content/navigation checks;
+  readability has not been tested with independent readers.
+
 - **CI now runs the checks it claimed to run.** Three of four workflows could not
   have passed and one had never triggered:
   - `ci.yml` invoked `alexandria_agent.py` at the repository root; it lives in
