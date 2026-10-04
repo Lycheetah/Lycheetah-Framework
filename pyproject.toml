@@ -128,7 +128,7 @@ strict_equality = true
 # statically. Annotating that tree is separate work; this gate covers the public
 # wrapper and says only that.
 [[tool.mypy.overrides]]
-module = ["core.*", "applications.*"]
+module = ["core.*", "applications.*", "lycheetah.core.*", "lycheetah.applications.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

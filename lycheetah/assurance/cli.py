@@ -7,8 +7,9 @@ import json
 import math
 import os
 import sys
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Any, Optional, Sequence
+from typing import Any
 
 from .evaluation import (
     EvaluationCorpus,
@@ -23,7 +24,6 @@ from .policy import AssurancePolicy, PolicyError, default_policy
 from .receipt import AssuranceReceipt, ReceiptError, ReceiptLog
 from .regression import RegressionGate, RegressionReport, compare_evaluations
 from .runtime import AssuranceRuntime
-
 
 EXIT_BY_DECISION = {
     Disposition.ALLOW: 0,
@@ -53,7 +53,9 @@ def build_parser() -> argparse.ArgumentParser:
     tool.add_argument("--scope", action="append", default=[], help="Requested scope; repeatable")
     tool.add_argument("--side-effect", action="store_true")
     approval = tool.add_mutually_exclusive_group()
-    approval.add_argument("--approved", action="store_true", help="Record affirmative human approval")
+    approval.add_argument(
+        "--approved", action="store_true", help="Record affirmative human approval"
+    )
     approval.add_argument("--denied", action="store_true", help="Record explicit human rejection")
     _add_evaluation_options(tool)
 
@@ -179,17 +181,21 @@ def build_parser() -> argparse.ArgumentParser:
 def _add_evaluation_options(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--policy", help="Path to a versioned policy JSON file")
     parser.add_argument("--json", action="store_true", help="Print the full receipt as JSON")
-    parser.add_argument("--in-toto", action="store_true", help="Print an in-toto Statement v1 shape")
+    parser.add_argument(
+        "--in-toto", action="store_true", help="Print an in-toto Statement v1 shape"
+    )
     parser.add_argument("--receipt-file", help="Write the full receipt JSON to this file")
     parser.add_argument("--log", help="Append the receipt to a verified JSONL chain")
     parser.add_argument(
         "--hmac-key-env",
-        help="Environment variable containing a shared HMAC secret (never pass secrets as CLI args)",
+        help=(
+            "Environment variable containing a shared HMAC secret (never pass secrets as CLI args)"
+        ),
     )
     parser.add_argument("--key-id", help="Identifier recorded with an HMAC seal")
 
 
-def main(argv: Optional[Sequence[str]] = None) -> int:
+def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         if args.command == "default-policy":
@@ -257,9 +263,7 @@ def _evaluate(args: argparse.Namespace) -> int:
         hmac_keys = {args.key_id: secret} if secret is not None else None
         verification = log.verify(hmac_keys)
         if not verification.valid:
-            raise ReceiptError(
-                "existing receipt log is invalid: " + "; ".join(verification.errors)
-            )
+            raise ReceiptError("existing receipt log is invalid: " + "; ".join(verification.errors))
         previous = verification.tail_digest
 
     receipt = runtime.evaluate(
@@ -295,14 +299,12 @@ def _verify(args: argparse.Namespace) -> int:
     if args.key_id and secret is None:
         raise ValueError("--key-id requires --hmac-key-env")
     parsed = None
-    if args.format != "jsonl" and not (
-        args.format == "auto" and path.suffix.lower() == ".jsonl"
-    ):
+    if args.format != "jsonl" and not (args.format == "auto" and path.suffix.lower() == ".jsonl"):
         try:
             parsed = json.loads(text)
-        except json.JSONDecodeError:
+        except json.JSONDecodeError as exc:
             if args.format == "receipt":
-                raise ReceiptError("input is not a JSON receipt")
+                raise ReceiptError("input is not a JSON receipt") from exc
 
     if isinstance(parsed, dict):
         receipt = AssuranceReceipt.from_dict(parsed)
@@ -320,14 +322,14 @@ def _verify(args: argparse.Namespace) -> int:
         if secret is not None and not args.key_id:
             raise ValueError("--key-id is required to authenticate a JSONL receipt log")
         keys = {args.key_id: secret} if secret is not None and args.key_id else None
-        report = ReceiptLog(path).verify(keys)
+        log_report = ReceiptLog(path).verify(keys)
         payload = {
-            "valid": report.valid,
-            "receipt_count": report.receipt_count,
-            "head_digest": report.head_digest,
-            "tail_digest": report.tail_digest,
-            "errors": list(report.errors),
-            "warnings": list(report.warnings),
+            "valid": log_report.valid,
+            "receipt_count": log_report.receipt_count,
+            "head_digest": log_report.head_digest,
+            "tail_digest": log_report.tail_digest,
+            "errors": list(log_report.errors),
+            "warnings": list(log_report.warnings),
         }
 
     if args.json:
@@ -414,7 +416,7 @@ def _verify_regression(args: argparse.Namespace) -> int:
     return 0 if valid else 4
 
 
-def _secret_from_env(name: Optional[str]) -> Optional[bytes]:
+def _secret_from_env(name: str | None) -> bytes | None:
     if not name:
         return None
     value = os.environ.get(name)

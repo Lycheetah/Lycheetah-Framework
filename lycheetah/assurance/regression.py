@@ -10,19 +10,19 @@ from __future__ import annotations
 import json
 import math
 import re
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Mapping, Optional, Sequence
+from typing import Any
 
 from .evaluation import (
+    MAX_REPORT_CHARACTERS,
     EvaluationError,
     EvaluationReport,
-    MAX_REPORT_CHARACTERS,
     _metrics,
 )
 from .jsonutil import jsonable, sha256_json
 from .models import DISPOSITION_ORDER, Disposition
-
 
 REGRESSION_SCHEMA_VERSION = "0.1"
 _SHA256 = re.compile(r"[0-9a-f]{64}")
@@ -154,20 +154,13 @@ class RegressionGate:
 
         deltas = summary["metric_deltas"]
         if deltas["exact_match_rate"] < -self.max_exact_match_rate_drop:
-            failures.append(
-                "exact_match_rate drop exceeds "
-                f"{self.max_exact_match_rate_drop}"
-            )
+            failures.append(f"exact_match_rate drop exceeds {self.max_exact_match_rate_drop}")
         if deltas["macro_f1"] < -self.max_macro_f1_drop:
-            failures.append(
-                f"macro_f1 drop exceeds {self.max_macro_f1_drop}"
-            )
+            failures.append(f"macro_f1 drop exceeds {self.max_macro_f1_drop}")
         return {
             "configured": True,
             "passed": not failures,
-            "thresholds": {
-                name: getattr(self, name) for name in sorted(_THRESHOLD_FIELDS)
-            },
+            "thresholds": {name: getattr(self, name) for name in sorted(_THRESHOLD_FIELDS)},
             "failures": failures,
         }
 
@@ -180,13 +173,13 @@ class RegressionReport:
     digest: str
 
     @classmethod
-    def issue(cls, body: Mapping[str, Any]) -> "RegressionReport":
+    def issue(cls, body: Mapping[str, Any]) -> RegressionReport:
         normalized = jsonable(body)
         _validate_regression_body(normalized)
         return cls(body=normalized, digest=sha256_json(normalized))
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any]) -> "RegressionReport":
+    def from_dict(cls, data: Mapping[str, Any]) -> RegressionReport:
         if not isinstance(data, Mapping):
             raise EvaluationError("regression report must be a JSON object")
         body_fields = {
@@ -211,9 +204,7 @@ class RegressionReport:
         if integrity["algorithm"] != "sha256":
             raise EvaluationError("regression report integrity algorithm must be sha256")
         if integrity["canonicalization"] != "lycheetah-json-v1":
-            raise EvaluationError(
-                "regression report canonicalization must be lycheetah-json-v1"
-            )
+            raise EvaluationError("regression report canonicalization must be lycheetah-json-v1")
         digest = integrity["digest"]
         if not isinstance(digest, str) or not _SHA256.fullmatch(digest):
             raise EvaluationError(
@@ -225,16 +216,14 @@ class RegressionReport:
         return cls(body=normalized, digest=digest)
 
     @classmethod
-    def from_json(cls, path: str | Path) -> "RegressionReport":
+    def from_json(cls, path: str | Path) -> RegressionReport:
         source = Path(path)
         try:
             text = source.read_text(encoding="utf-8")
         except OSError as exc:
             raise EvaluationError(f"cannot read regression report {source}: {exc}") from exc
         if len(text) > MAX_REPORT_CHARACTERS:
-            raise EvaluationError(
-                f"regression report exceeds {MAX_REPORT_CHARACTERS} characters"
-            )
+            raise EvaluationError(f"regression report exceeds {MAX_REPORT_CHARACTERS} characters")
         try:
             data = json.loads(text, object_pairs_hook=_unique_object)
         except (json.JSONDecodeError, EvaluationError) as exc:
@@ -251,7 +240,7 @@ class RegressionReport:
             },
         }
 
-    def to_json(self, *, indent: Optional[int] = 2) -> str:
+    def to_json(self, *, indent: int | None = 2) -> str:
         return json.dumps(
             self.to_dict(),
             ensure_ascii=False,
@@ -273,7 +262,7 @@ def compare_evaluations(
     baseline: EvaluationReport,
     candidate: EvaluationReport,
     *,
-    gate: Optional[RegressionGate] = None,
+    gate: RegressionGate | None = None,
 ) -> RegressionReport:
     """Compare two valid reports for the same normalized evaluation corpus."""
 
@@ -325,9 +314,7 @@ def compare_evaluations(
             counters[f"{signal.lower()}_count"] += 1
         if classification == "UNCHANGED":
             continue
-        rank_delta = (
-            DISPOSITION_ORDER[candidate_actual] - DISPOSITION_ORDER[baseline_actual]
-        )
+        rank_delta = DISPOSITION_ORDER[candidate_actual] - DISPOSITION_ORDER[baseline_actual]
         changed_cases.append(
             {
                 "id": case_id,
@@ -335,9 +322,7 @@ def compare_evaluations(
                 "baseline_actual": baseline_actual.value,
                 "candidate_actual": candidate_actual.value,
                 "classification": classification,
-                "enforcement_change": (
-                    "INCREASED" if rank_delta > 0 else "DECREASED"
-                ),
+                "enforcement_change": ("INCREASED" if rank_delta > 0 else "DECREASED"),
                 "weight": base_case["weight"],
                 "tags": list(base_case["tags"]),
                 "subject_sha256": base_case["subject_sha256"],
@@ -378,10 +363,23 @@ def compare_evaluations(
         "gate": active_gate.assess(summary),
         "limitations": [
             "The comparison inherits caller-supplied labels and does not establish ground truth.",
-            "A baseline is a change reference, not evidence that its policy or decisions are safe, lawful, calibrated, or approved.",
-            "The report compares one identical normalized corpus and does not establish out-of-sample performance or statistical significance.",
-            "More restrictive and less restrictive decisions can create different harms; TRADEOFF cases require human review.",
-            "Raw event content and tool arguments remain excluded; case identifiers, tags, and subject hashes still require appropriate governance.",
+            (
+                "A baseline is a change reference, not evidence that its policy "
+                "or decisions are safe, lawful, calibrated, or approved."
+            ),
+            (
+                "The report compares one identical normalized corpus and does not "
+                "establish out-of-sample performance or statistical significance."
+            ),
+            (
+                "More restrictive and less restrictive decisions can create "
+                "different harms; TRADEOFF cases require human review."
+            ),
+            (
+                "Raw event content and tool arguments remain excluded; case "
+                "identifiers, tags, and subject hashes still require appropriate "
+                "governance."
+            ),
         ],
     }
     return RegressionReport.issue(body)
@@ -415,9 +413,7 @@ def _evaluation_view(report: EvaluationReport, label: str) -> dict[str, Any]:
     case_count = _require_non_negative_int(corpus["case_count"], f"{label} case_count")
     if case_count == 0:
         raise EvaluationError(f"{label} corpus case_count must be positive")
-    total_weight = _require_positive_number(
-        corpus["total_weight"], f"{label} corpus total_weight"
-    )
+    total_weight = _require_positive_number(corpus["total_weight"], f"{label} corpus total_weight")
     tags = _require_string_list(corpus["tags"], f"{label} corpus tags", unique=True)
 
     summary = _require_mapping(body.get("summary"), f"{label} summary")
@@ -448,12 +444,10 @@ def _evaluation_view(report: EvaluationReport, label: str) -> dict[str, Any]:
         raise EvaluationError(f"{label} cases length does not match corpus case_count")
     cases: dict[str, dict[str, Any]] = {}
     confusion_counts = {
-        expected.value: {actual.value: 0 for actual in Disposition}
-        for expected in Disposition
+        expected.value: {actual.value: 0 for actual in Disposition} for expected in Disposition
     }
     confusion_weights = {
-        expected.value: {actual.value: 0.0 for actual in Disposition}
-        for expected in Disposition
+        expected.value: {actual.value: 0.0 for actual in Disposition} for expected in Disposition
     }
     for index, item in enumerate(cases_raw):
         case = _require_mapping(item, f"{label} case {index}")
@@ -473,9 +467,7 @@ def _evaluation_view(report: EvaluationReport, label: str) -> dict[str, Any]:
         if type(exact_match) is not bool or exact_match is not (expected == actual):
             raise EvaluationError(f"{label} {case_id} exact_match is inconsistent")
         weight = _require_positive_number(case.get("weight"), f"{label} {case_id} weight")
-        case_tags = _require_string_list(
-            case.get("tags"), f"{label} {case_id} tags", unique=True
-        )
+        case_tags = _require_string_list(case.get("tags"), f"{label} {case_id} tags", unique=True)
         subject_sha256 = _require_sha256(
             case.get("subject_sha256"), f"{label} {case_id} subject_sha256"
         )
@@ -500,9 +492,7 @@ def _evaluation_view(report: EvaluationReport, label: str) -> dict[str, Any]:
                 isinstance(supplied, bool)
                 or not isinstance(supplied, (int, float))
                 or not math.isfinite(supplied)
-                or not math.isclose(
-                    float(supplied), recomputed, rel_tol=0.0, abs_tol=1e-12
-                )
+                or not math.isclose(float(supplied), recomputed, rel_tol=0.0, abs_tol=1e-12)
             ):
                 raise EvaluationError(f"{label} summary {field} is inconsistent")
         elif supplied != recomputed:
@@ -538,9 +528,7 @@ def _require_case_identity(
 ) -> None:
     for field in ("expected", "weight", "tags", "subject_sha256"):
         if baseline[field] != candidate[field]:
-            raise EvaluationError(
-                f"baseline and candidate case {case_id!r} differ on {field}"
-            )
+            raise EvaluationError(f"baseline and candidate case {case_id!r} differ on {field}")
 
 
 def _classify_change(
@@ -590,9 +578,7 @@ def _change_signals(
     return signals
 
 
-def _report_reference(
-    report: EvaluationReport, view: Mapping[str, Any]
-) -> dict[str, Any]:
+def _report_reference(report: EvaluationReport, view: Mapping[str, Any]) -> dict[str, Any]:
     return {
         "report_sha256": report.digest,
         "runtime": view["runtime"],
@@ -639,12 +625,16 @@ def _validate_regression_body(body: Mapping[str, Any]) -> None:
 
     summary = _require_mapping(body.get("summary"), "regression summary")
     _require_exact_fields(summary, _SUMMARY_FIELDS, "regression summary")
-    for field in _SUMMARY_FIELDS - {"metric_deltas"} - {
-        "unchanged_weight",
-        "improved_weight",
-        "regressed_weight",
-        "tradeoff_weight",
-    }:
+    for field in (
+        _SUMMARY_FIELDS
+        - {"metric_deltas"}
+        - {
+            "unchanged_weight",
+            "improved_weight",
+            "regressed_weight",
+            "tradeoff_weight",
+        }
+    ):
         _require_non_negative_int(summary[field], f"regression summary {field}")
     for field in (
         "unchanged_weight",
@@ -655,10 +645,7 @@ def _validate_regression_body(body: Mapping[str, Any]) -> None:
         _require_non_negative_number(summary[field], f"regression summary {field}")
     if summary["case_count"] != case_count:
         raise EvaluationError("regression summary and corpus case_count differ")
-    if (
-        summary["changed_case_count"] + summary["unchanged_case_count"]
-        != case_count
-    ):
+    if summary["changed_case_count"] + summary["unchanged_case_count"] != case_count:
         raise EvaluationError("regression changed and unchanged counts are inconsistent")
     if (
         summary["improved_case_count"]
@@ -717,9 +704,7 @@ def _validate_regression_body(body: Mapping[str, Any]) -> None:
             raise EvaluationError(f"regression contains duplicate case id {case_id!r}")
         seen.add(case_id)
         seen_ids.append(case_id)
-        expected = _require_disposition(
-            case["expected"], f"regression {case_id} expected"
-        )
+        expected = _require_disposition(case["expected"], f"regression {case_id} expected")
         baseline_actual = _require_disposition(
             case["baseline_actual"], f"regression {case_id} baseline_actual"
         )
@@ -728,26 +713,16 @@ def _validate_regression_body(body: Mapping[str, Any]) -> None:
         )
         if case["classification"] not in _CLASSIFICATIONS - {"UNCHANGED"}:
             raise EvaluationError(f"regression {case_id} classification is invalid")
-        expected_classification = _classify_change(
-            expected, baseline_actual, candidate_actual
-        )
+        expected_classification = _classify_change(expected, baseline_actual, candidate_actual)
         if case["classification"] != expected_classification:
-            raise EvaluationError(
-                f"regression {case_id} classification is inconsistent"
-            )
+            raise EvaluationError(f"regression {case_id} classification is inconsistent")
         if case["enforcement_change"] not in _ENFORCEMENT_CHANGES - {"UNCHANGED"}:
             raise EvaluationError(f"regression {case_id} enforcement_change is invalid")
-        rank_delta = (
-            DISPOSITION_ORDER[candidate_actual] - DISPOSITION_ORDER[baseline_actual]
-        )
+        rank_delta = DISPOSITION_ORDER[candidate_actual] - DISPOSITION_ORDER[baseline_actual]
         expected_change = "INCREASED" if rank_delta > 0 else "DECREASED"
         if case["enforcement_change"] != expected_change:
-            raise EvaluationError(
-                f"regression {case_id} enforcement_change is inconsistent"
-            )
-        weight = _require_positive_number(
-            case["weight"], f"regression {case_id} weight"
-        )
+            raise EvaluationError(f"regression {case_id} enforcement_change is inconsistent")
+        weight = _require_positive_number(case["weight"], f"regression {case_id} weight")
         _require_string_list(case["tags"], f"regression {case_id} tags", unique=True)
         _require_sha256(case["subject_sha256"], f"regression {case_id} subject_sha256")
         signals = _require_string_list(
@@ -789,7 +764,9 @@ def _validate_regression_body(body: Mapping[str, Any]) -> None:
         raise EvaluationError("regression classification weights are inconsistent")
 
     gate = _require_mapping(body.get("gate"), "regression gate")
-    _require_exact_fields(gate, {"configured", "passed", "thresholds", "failures"}, "regression gate")
+    _require_exact_fields(
+        gate, {"configured", "passed", "thresholds", "failures"}, "regression gate"
+    )
     if type(gate["configured"]) is not bool or type(gate["passed"]) is not bool:
         raise EvaluationError("regression gate configured and passed must be booleans")
     thresholds = _require_mapping(gate["thresholds"], "regression thresholds")
@@ -823,9 +800,7 @@ def _require_mapping(value: Any, label: str) -> Mapping[str, Any]:
     return value
 
 
-def _require_exact_fields(
-    value: Mapping[str, Any], fields: set[str], label: str
-) -> None:
+def _require_exact_fields(value: Mapping[str, Any], fields: set[str], label: str) -> None:
     missing = sorted(fields.difference(value))
     unknown = sorted(str(key) for key in value if key not in fields)
     if missing:
@@ -853,11 +828,7 @@ def _require_non_negative_int(value: Any, label: str) -> int:
 
 
 def _require_finite_number(value: Any, label: str) -> float:
-    if (
-        isinstance(value, bool)
-        or not isinstance(value, (int, float))
-        or not math.isfinite(value)
-    ):
+    if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value):
         raise EvaluationError(f"{label} must be a finite number")
     return float(value)
 
@@ -893,9 +864,7 @@ def _require_disposition(value: Any, label: str) -> Disposition:
 
 
 def _require_string_list(value: Any, label: str, *, unique: bool) -> list[str]:
-    if not isinstance(value, list) or any(
-        not isinstance(item, str) or not item for item in value
-    ):
+    if not isinstance(value, list) or any(not isinstance(item, str) or not item for item in value):
         raise EvaluationError(f"{label} must be an array of non-empty strings")
     if unique and len(value) != len(set(value)):
         raise EvaluationError(f"{label} must not contain duplicates")

@@ -10,14 +10,14 @@ from __future__ import annotations
 import json
 import math
 import re
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Mapping, Optional, Sequence
+from typing import Any
 
 from .jsonutil import jsonable, sha256_json
-from .models import AssuranceEvent, DISPOSITION_ORDER, Disposition
+from .models import DISPOSITION_ORDER, AssuranceEvent, Disposition
 from .runtime import ASSURANCE_VERSION, AssuranceRuntime
-
 
 EVALUATION_SCHEMA_VERSION = "0.1"
 MAX_CASES = 100_000
@@ -61,13 +61,8 @@ class EvaluationCase:
         if not isinstance(self.tags, tuple):
             raise EvaluationError("evaluation case tags must be an array")
         if len(self.tags) > MAX_TAGS_PER_CASE:
-            raise EvaluationError(
-                f"evaluation case tags exceed {MAX_TAGS_PER_CASE} entries"
-            )
-        if any(
-            not isinstance(tag, str) or not tag or len(tag) > 128
-            for tag in self.tags
-        ):
+            raise EvaluationError(f"evaluation case tags exceed {MAX_TAGS_PER_CASE} entries")
+        if any(not isinstance(tag, str) or not tag or len(tag) > 128 for tag in self.tags):
             raise EvaluationError("evaluation case tags must be non-empty strings <=128 characters")
         if len(self.tags) != len(set(self.tags)):
             raise EvaluationError("evaluation case tags must not contain duplicates")
@@ -79,20 +74,16 @@ class EvaluationCase:
             )
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any]) -> "EvaluationCase":
+    def from_dict(cls, data: Mapping[str, Any]) -> EvaluationCase:
         if not isinstance(data, Mapping):
             raise EvaluationError("evaluation case must be a JSON object")
         allowed = {"id", "expected", "event", "weight", "tags", "rationale"}
         unknown = sorted(str(key) for key in data if key not in allowed)
         missing = sorted({"id", "expected", "event"}.difference(data))
         if missing:
-            raise EvaluationError(
-                "evaluation case missing required fields: " + ", ".join(missing)
-            )
+            raise EvaluationError("evaluation case missing required fields: " + ", ".join(missing))
         if unknown:
-            raise EvaluationError(
-                "evaluation case contains unknown fields: " + ", ".join(unknown)
-            )
+            raise EvaluationError("evaluation case contains unknown fields: " + ", ".join(unknown))
         if not isinstance(data["id"], str) or not isinstance(data["expected"], str):
             raise EvaluationError("evaluation case id and expected must be strings")
         event = data["event"]
@@ -153,7 +144,7 @@ class EvaluationCorpus:
     source_name: str
 
     @classmethod
-    def from_jsonl(cls, path: str | Path) -> "EvaluationCorpus":
+    def from_jsonl(cls, path: str | Path) -> EvaluationCorpus:
         source = Path(path)
         cases: list[EvaluationCase] = []
         seen: set[str] = set()
@@ -171,9 +162,7 @@ class EvaluationCorpus:
                 if not line.strip():
                     continue
                 if len(cases) >= MAX_CASES:
-                    raise EvaluationError(
-                        f"evaluation corpus exceeds {MAX_CASES} cases"
-                    )
+                    raise EvaluationError(f"evaluation corpus exceeds {MAX_CASES} cases")
                 try:
                     data = json.loads(line, object_pairs_hook=_unique_object)
                 except (json.JSONDecodeError, EvaluationError) as exc:
@@ -188,8 +177,7 @@ class EvaluationCorpus:
                     ) from exc
                 if case.case_id in seen:
                     raise EvaluationError(
-                        f"duplicate evaluation case id {case.case_id!r} "
-                        f"at line {line_number}"
+                        f"duplicate evaluation case id {case.case_id!r} at line {line_number}"
                     )
                 seen.add(case.case_id)
                 cases.append(case)
@@ -208,10 +196,10 @@ class EvaluationGate:
     """Optional CI thresholds. Unconfigured fields do not affect the result."""
 
     require_exact_match: bool = False
-    max_under_enforcement_rate: Optional[float] = None
-    max_harmful_allows: Optional[int] = None
-    max_false_blocks: Optional[int] = None
-    min_macro_f1: Optional[float] = None
+    max_under_enforcement_rate: float | None = None
+    max_harmful_allows: int | None = None
+    max_false_blocks: int | None = None
+    min_macro_f1: float | None = None
 
     def __post_init__(self) -> None:
         if type(self.require_exact_match) is not bool:
@@ -250,29 +238,20 @@ class EvaluationGate:
             failures.append("exact_match_rate is below 1.0")
         if (
             self.max_under_enforcement_rate is not None
-            and summary["under_enforcement_rate"]
-            > self.max_under_enforcement_rate
+            and summary["under_enforcement_rate"] > self.max_under_enforcement_rate
         ):
-            failures.append(
-                "under_enforcement_rate exceeds "
-                f"{self.max_under_enforcement_rate}"
-            )
+            failures.append(f"under_enforcement_rate exceeds {self.max_under_enforcement_rate}")
         if (
             self.max_harmful_allows is not None
             and summary["harmful_allow_count"] > self.max_harmful_allows
         ):
-            failures.append(
-                f"harmful_allow_count exceeds {self.max_harmful_allows}"
-            )
+            failures.append(f"harmful_allow_count exceeds {self.max_harmful_allows}")
         if (
             self.max_false_blocks is not None
             and summary["false_block_count"] > self.max_false_blocks
         ):
             failures.append(f"false_block_count exceeds {self.max_false_blocks}")
-        if (
-            self.min_macro_f1 is not None
-            and summary["macro_f1"] < self.min_macro_f1
-        ):
+        if self.min_macro_f1 is not None and summary["macro_f1"] < self.min_macro_f1:
             failures.append(f"macro_f1 is below {self.min_macro_f1}")
         return {
             "configured": self.configured,
@@ -296,12 +275,12 @@ class EvaluationReport:
     digest: str
 
     @classmethod
-    def issue(cls, body: Mapping[str, Any]) -> "EvaluationReport":
+    def issue(cls, body: Mapping[str, Any]) -> EvaluationReport:
         normalized = jsonable(body)
         return cls(body=normalized, digest=sha256_json(normalized))
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any]) -> "EvaluationReport":
+    def from_dict(cls, data: Mapping[str, Any]) -> EvaluationReport:
         if not isinstance(data, Mapping):
             raise EvaluationError("evaluation report must be a JSON object")
         body_fields = {
@@ -336,9 +315,7 @@ class EvaluationReport:
         if integrity["algorithm"] != "sha256":
             raise EvaluationError("evaluation report integrity algorithm must be sha256")
         if integrity["canonicalization"] != "lycheetah-json-v1":
-            raise EvaluationError(
-                "evaluation report canonicalization must be lycheetah-json-v1"
-            )
+            raise EvaluationError("evaluation report canonicalization must be lycheetah-json-v1")
         digest = integrity["digest"]
         if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
             raise EvaluationError(
@@ -354,16 +331,14 @@ class EvaluationReport:
         return cls(body=jsonable(body), digest=digest)
 
     @classmethod
-    def from_json(cls, path: str | Path) -> "EvaluationReport":
+    def from_json(cls, path: str | Path) -> EvaluationReport:
         source = Path(path)
         try:
             text = source.read_text(encoding="utf-8")
         except OSError as exc:
             raise EvaluationError(f"cannot read evaluation report {source}: {exc}") from exc
         if len(text) > MAX_REPORT_CHARACTERS:
-            raise EvaluationError(
-                f"evaluation report exceeds {MAX_REPORT_CHARACTERS} characters"
-            )
+            raise EvaluationError(f"evaluation report exceeds {MAX_REPORT_CHARACTERS} characters")
         try:
             data = json.loads(text, object_pairs_hook=_unique_object)
         except (json.JSONDecodeError, EvaluationError) as exc:
@@ -380,7 +355,7 @@ class EvaluationReport:
             },
         }
 
-    def to_json(self, *, indent: Optional[int] = 2) -> str:
+    def to_json(self, *, indent: int | None = 2) -> str:
         return json.dumps(
             self.to_dict(),
             ensure_ascii=False,
@@ -402,7 +377,7 @@ def evaluate_corpus(
     runtime: AssuranceRuntime,
     corpus: EvaluationCorpus,
     *,
-    gate: Optional[EvaluationGate] = None,
+    gate: EvaluationGate | None = None,
 ) -> EvaluationReport:
     """Evaluate every case and return a deterministic aggregate report."""
 
@@ -427,9 +402,9 @@ def evaluate_corpus(
                 "expected": case.expected.value,
                 "actual": actual.value,
                 "exact_match": actual == case.expected,
-                "direction": "EXACT" if order_delta == 0 else (
-                    "OVER" if order_delta > 0 else "UNDER"
-                ),
+                "direction": "EXACT"
+                if order_delta == 0
+                else ("OVER" if order_delta > 0 else "UNDER"),
                 "weight": case.weight,
                 "tags": list(case.tags),
                 "subject_sha256": receipt.event["subject"]["sha256"],
@@ -476,10 +451,22 @@ def evaluate_corpus(
         "cases": outcomes,
         "gate": gate_result,
         "limitations": [
-            "Expected dispositions are caller-supplied labels, not independently established ground truth.",
-            "Results describe this exact corpus, policy, and runtime version and do not establish out-of-sample safety or calibration.",
-            "A decision match does not prove that the underlying event is harmless, harmful, lawful, or correctly labelled.",
-            "The report excludes raw event content and tool arguments; subject hashes support joining to separately governed evidence.",
+            (
+                "Expected dispositions are caller-supplied labels, not "
+                "independently established ground truth."
+            ),
+            (
+                "Results describe this exact corpus, policy, and runtime version "
+                "and do not establish out-of-sample safety or calibration."
+            ),
+            (
+                "A decision match does not prove that the underlying event is "
+                "harmless, harmful, lawful, or correctly labelled."
+            ),
+            (
+                "The report excludes raw event content and tool arguments; "
+                "subject hashes support joining to separately governed evidence."
+            ),
         ],
     }
     return EvaluationReport.issue(body)
@@ -554,10 +541,7 @@ def _metrics(
 
 
 def _empty_matrix(zero: int | float) -> dict[str, dict[str, Any]]:
-    return {
-        expected.value: {actual.value: zero for actual in _LABELS}
-        for expected in _LABELS
-    }
+    return {expected.value: {actual.value: zero for actual in _LABELS} for expected in _LABELS}
 
 
 def _unique_object(pairs: Sequence[tuple[str, Any]]) -> dict[str, Any]:

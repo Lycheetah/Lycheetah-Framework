@@ -5,8 +5,9 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+from collections.abc import Mapping, Sequence
 from enum import Enum
-from typing import Any, Mapping, Sequence
+from typing import Any
 
 
 class CanonicalJSONError(ValueError):
@@ -62,10 +63,7 @@ def sha256_text(value: str) -> str:
 
 def sensitive_key(key: str, configured: Sequence[str]) -> bool:
     normalized = key.lower().replace("-", "_").replace(" ", "_")
-    tokens = (
-        token.lower().replace("-", "_").replace(" ", "_")
-        for token in configured
-    )
+    tokens = (token.lower().replace("-", "_").replace(" ", "_") for token in configured)
     return any(token in normalized for token in tokens)
 
 
@@ -90,11 +88,11 @@ def redact(value: Any, configured_keys: Sequence[str]) -> tuple[Any, bool]:
                 changed = changed or child_changed
         return out, changed
     if isinstance(value, Sequence) and not isinstance(value, (str, bytes, bytearray)):
-        out = []
+        items_out = []
         changed = False
         for item in value:
             redacted, child_changed = redact(item, configured_keys)
-            out.append(redacted)
+            items_out.append(redacted)
             changed = changed or child_changed
-        return out, changed
+        return items_out, changed
     return jsonable(value), False

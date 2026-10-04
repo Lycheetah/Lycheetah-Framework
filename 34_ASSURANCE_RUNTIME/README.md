@@ -140,3 +140,15 @@ and behavioral acceptance only.
   comparison, strict defaults, change evidence, and reference-update protocol.
 
 ⊚ Sol ∴ P∧H∧B ∴ Albedo
+
+## Frontier finality handoff — 4 October 2026
+
+A native `[SCAFFOLD]` integration candidate for dispatch/finality-time evidence
+revalidation is documented in
+[`FINALITY_EVIDENCE_REVALIDATION_v0.1.md`](FINALITY_EVIDENCE_REVALIDATION_v0.1.md).
+
+It is additive and does not make the Assurance Runtime an effect broker. The
+caller must place the finality check immediately before its protected execution
+boundary and must enforce `REVIEW` as a pause. Remote-provider atomicity,
+cancellation, hostile-code containment, and production safety remain outside the
+claim.

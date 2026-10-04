@@ -115,7 +115,7 @@ class TestSolve:
     def test_xi_present(self):
         # Ξ is the composed seven-op transform symbol / callable
         assert Xi is not None
-        assert callable(Xi) or hasattr(Xi, "__call__") or True
+        assert callable(Xi)
 
     @pytest.mark.active
     def test_entropy_coherence_tradeoff_direction(self):

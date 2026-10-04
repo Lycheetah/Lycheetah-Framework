@@ -6,7 +6,6 @@ from typing import Any
 
 from .receipt import AssuranceReceipt
 
-
 STATEMENT_TYPE = "https://in-toto.io/Statement/v1"
 PREDICATE_TYPE = (
     "https://github.com/Lycheetah/Lycheetah-Framework/blob/master/"

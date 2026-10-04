@@ -7,14 +7,14 @@ import hmac
 import json
 import os
 import uuid
+from collections.abc import Iterable, Mapping
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Iterable, Mapping, Optional
+from typing import Any
 
 from .jsonutil import jsonable, sha256_json
 from .models import Disposition, Finding, capped_disposition, strongest
-
 
 SCHEMA_VERSION = "0.1"
 CANONICALIZATION = "lycheetah-json-v1"
@@ -37,8 +37,8 @@ class VerificationReport:
 class LogVerificationReport:
     valid: bool
     receipt_count: int
-    head_digest: Optional[str]
-    tail_digest: Optional[str]
+    head_digest: str | None
+    tail_digest: str | None
     errors: tuple[str, ...] = ()
     warnings: tuple[str, ...] = ()
 
@@ -70,12 +70,12 @@ class AssuranceReceipt:
         metrics: Mapping[str, Any],
         limitations: Iterable[str],
         trace_id: str,
-        previous_receipt_sha256: Optional[str] = None,
-        hmac_secret: Optional[bytes] = None,
-        hmac_key_id: Optional[str] = None,
-        issued_at: Optional[str] = None,
-        receipt_id: Optional[str] = None,
-    ) -> "AssuranceReceipt":
+        previous_receipt_sha256: str | None = None,
+        hmac_secret: bytes | None = None,
+        hmac_key_id: str | None = None,
+        issued_at: str | None = None,
+        receipt_id: str | None = None,
+    ) -> AssuranceReceipt:
         if hmac_secret is not None:
             if not isinstance(hmac_secret, bytes) or not hmac_secret:
                 raise ReceiptError("hmac_secret must be non-empty bytes")
@@ -105,9 +105,7 @@ class AssuranceReceipt:
             seal = {
                 "algorithm": "hmac-sha256",
                 "key_id": hmac_key_id,
-                "value": hmac.new(
-                    hmac_secret, digest.encode("ascii"), hashlib.sha256
-                ).hexdigest(),
+                "value": hmac.new(hmac_secret, digest.encode("ascii"), hashlib.sha256).hexdigest(),
             }
         return cls.from_dict(
             {
@@ -139,7 +137,7 @@ class AssuranceReceipt:
     def to_dict(self) -> dict[str, Any]:
         return {**self.body_dict(), "integrity": jsonable(self.integrity)}
 
-    def to_json(self, *, indent: Optional[int] = 2) -> str:
+    def to_json(self, *, indent: int | None = 2) -> str:
         return json.dumps(
             self.to_dict(),
             ensure_ascii=False,
@@ -154,16 +152,14 @@ class AssuranceReceipt:
         return str(self.integrity.get("digest", ""))
 
     @property
-    def previous_digest(self) -> Optional[str]:
+    def previous_digest(self) -> str | None:
         value = self.lineage.get("previous_receipt_sha256")
         return str(value) if value is not None else None
 
-    def verify(self, hmac_secret: Optional[bytes] = None) -> VerificationReport:
+    def verify(self, hmac_secret: bytes | None = None) -> VerificationReport:
         errors: list[str] = []
         warnings: list[str] = []
-        if hmac_secret is not None and (
-            not isinstance(hmac_secret, bytes) or not hmac_secret
-        ):
+        if hmac_secret is not None and (not isinstance(hmac_secret, bytes) or not hmac_secret):
             errors.append("HMAC verification secret must be non-empty bytes")
             hmac_secret = None
         if self.schema_version != SCHEMA_VERSION:
@@ -173,9 +169,7 @@ class AssuranceReceipt:
         if self.integrity.get("algorithm") != "sha256":
             errors.append("integrity.algorithm must be 'sha256'")
         if self.integrity.get("canonicalization") != CANONICALIZATION:
-            errors.append(
-                f"integrity.canonicalization must be {CANONICALIZATION!r}"
-            )
+            errors.append(f"integrity.canonicalization must be {CANONICALIZATION!r}")
         expected = sha256_json(self.body_dict())
         stored = self.digest
         if not hmac.compare_digest(expected, stored):
@@ -189,16 +183,13 @@ class AssuranceReceipt:
             )
             if finding.effective_disposition != expected_disposition:
                 errors.append(
-                    f"finding {finding.finding_id}: effective disposition violates "
-                    "evidence cap"
+                    f"finding {finding.finding_id}: effective disposition violates evidence cap"
                 )
             if finding.cap_reason != expected_cap_reason:
                 errors.append(
                     f"finding {finding.finding_id}: cap_reason does not match evidence cap"
                 )
-        expected_decision = strongest(
-            [finding.effective_disposition for finding in self.findings]
-        )
+        expected_decision = strongest([finding.effective_disposition for finding in self.findings])
         if self.decision != expected_decision:
             errors.append(
                 "receipt decision does not match strongest effective finding "
@@ -214,9 +205,7 @@ class AssuranceReceipt:
                 errors.append("unsupported receipt seal algorithm")
             elif not isinstance(seal.get("key_id"), str) or not seal.get("key_id"):
                 errors.append("HMAC seal key_id must be a non-empty string")
-            elif not isinstance(seal.get("value"), str) or not _is_sha256(
-                seal.get("value", "")
-            ):
+            elif not isinstance(seal.get("value"), str) or not _is_sha256(seal.get("value", "")):
                 errors.append("HMAC seal value must be 64 lowercase hexadecimal characters")
             elif hmac_secret is None:
                 warnings.append("HMAC seal present but no verification key was supplied")
@@ -240,7 +229,7 @@ class AssuranceReceipt:
         )
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any]) -> "AssuranceReceipt":
+    def from_dict(cls, data: Mapping[str, Any]) -> AssuranceReceipt:
         required = {
             "schema_version",
             "receipt_id",
@@ -293,7 +282,7 @@ class AssuranceReceipt:
             raise ReceiptError(f"invalid receipt: {exc}") from exc
 
     @classmethod
-    def from_json(cls, text: str) -> "AssuranceReceipt":
+    def from_json(cls, text: str) -> AssuranceReceipt:
         try:
             data = json.loads(text)
         except json.JSONDecodeError as exc:
@@ -329,14 +318,14 @@ class ReceiptLog:
         return receipts
 
     @property
-    def tail_digest(self) -> Optional[str]:
+    def tail_digest(self) -> str | None:
         receipts = self.read()
         return receipts[-1].digest if receipts else None
 
     def append(
         self,
         receipt: AssuranceReceipt,
-        hmac_keys: Optional[Mapping[str, bytes]] = None,
+        hmac_keys: Mapping[str, bytes] | None = None,
     ) -> None:
         report = self.verify(hmac_keys)
         if not report.valid:
@@ -374,7 +363,7 @@ class ReceiptLog:
 
     def verify(
         self,
-        hmac_keys: Optional[Mapping[str, bytes]] = None,
+        hmac_keys: Mapping[str, bytes] | None = None,
     ) -> LogVerificationReport:
         errors: list[str] = []
         warnings: list[str] = []
@@ -403,9 +392,7 @@ class ReceiptLog:
                     key_id = str(seal.get("key_id", ""))
                     secret = hmac_keys.get(key_id)
                     if secret is None:
-                        errors.append(
-                            f"line {index}: no HMAC key for key_id {key_id!r}"
-                        )
+                        errors.append(f"line {index}: no HMAC key for key_id {key_id!r}")
             report = receipt.verify(secret)
             errors.extend(f"line {index}: {item}" for item in report.errors)
             warnings.extend(f"line {index}: {item}" for item in report.warnings)
@@ -439,9 +426,7 @@ def load_receipt(path: str | Path) -> AssuranceReceipt:
 
 
 def _utc_now() -> str:
-    return datetime.now(timezone.utc).isoformat(timespec="milliseconds").replace(
-        "+00:00", "Z"
-    )
+    return datetime.now(timezone.utc).isoformat(timespec="milliseconds").replace("+00:00", "Z")
 
 
 def _is_sha256(value: str) -> bool:

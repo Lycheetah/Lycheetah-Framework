@@ -7,7 +7,8 @@ not certify that an agent, model, or deployment is safe or aligned.
 from __future__ import annotations
 
 import fnmatch
-from typing import Any, Iterable, Mapping, Optional
+from collections.abc import Iterable, Mapping
+from typing import Any
 
 from ..applications.aura_text_checker import AURATextAnalyser
 from ..core.semantic_extractor import Extraction, SemanticExtractor
@@ -25,7 +26,6 @@ from .models import (
 from .policy import AssurancePolicy, TextRule, default_policy
 from .receipt import AssuranceReceipt
 
-
 ASSURANCE_VERSION = "0.1.0"
 
 OWASP_PROMPT_INJECTION = ControlReference(
@@ -38,10 +38,7 @@ OWASP_TOOL_MISUSE = ControlReference(
     framework="OWASP Agentic Top 10",
     control_id="ASI02",
     title="Tool Misuse",
-    url=(
-        "https://genai.owasp.org/resource/"
-        "owasp-top-10-for-agentic-applications-for-2026/"
-    ),
+    url=("https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"),
 )
 OPENAI_HUMAN_REVIEW = ControlReference(
     framework="OpenAI Agents SDK",
@@ -62,10 +59,10 @@ class AssuranceRuntime:
 
     def __init__(
         self,
-        policy: Optional[AssurancePolicy] = None,
+        policy: AssurancePolicy | None = None,
         *,
-        extractor: Optional[SemanticExtractor] = None,
-        analyser: Optional[AURATextAnalyser] = None,
+        extractor: SemanticExtractor | None = None,
+        analyser: AURATextAnalyser | None = None,
     ) -> None:
         self.policy = policy or default_policy()
         self.extractor = extractor or SemanticExtractor()
@@ -75,9 +72,9 @@ class AssuranceRuntime:
         self,
         event: AssuranceEvent,
         *,
-        previous_receipt_sha256: Optional[str] = None,
-        hmac_secret: Optional[bytes] = None,
-        hmac_key_id: Optional[str] = None,
+        previous_receipt_sha256: str | None = None,
+        hmac_secret: bytes | None = None,
+        hmac_key_id: str | None = None,
     ) -> AssuranceReceipt:
         findings: list[Finding] = []
         metrics: dict[str, Any] = {}
@@ -91,9 +88,7 @@ class AssuranceRuntime:
             findings.extend(tool_findings)
             metrics.update(tool_metrics)
 
-        decision = strongest(
-            [finding.effective_disposition for finding in findings]
-        )
+        decision = strongest([finding.effective_disposition for finding in findings])
         event_record = self._event_record(event)
 
         return AssuranceReceipt.issue(
@@ -147,11 +142,11 @@ class AssuranceRuntime:
     def evaluate_tool(
         self,
         tool_name: str,
-        arguments: Optional[Mapping[str, Any]] = None,
+        arguments: Mapping[str, Any] | None = None,
         *,
         scopes: Iterable[str] = (),
         side_effect: bool = False,
-        human_approved: Optional[bool] = None,
+        human_approved: bool | None = None,
         **kwargs: Any,
     ) -> AssuranceReceipt:
         event = AssuranceEvent(
@@ -164,9 +159,7 @@ class AssuranceRuntime:
         )
         return self.evaluate(event, **kwargs)
 
-    def _evaluate_text(
-        self, event: AssuranceEvent
-    ) -> tuple[list[Finding], dict[str, Any]]:
+    def _evaluate_text(self, event: AssuranceEvent) -> tuple[list[Finding], dict[str, Any]]:
         text = event.content or ""
         findings: list[Finding] = []
         if not text.strip():
@@ -236,7 +229,8 @@ class AssuranceRuntime:
                     evaluator="semantic-extractor/1",
                     confidence=min(0.99, 0.5 + extraction.manipulation_density / 2.0),
                     status_basis=(
-                        "ACTIVE only for implemented cue families; interpretation remains inferential."
+                        "ACTIVE only for implemented cue families; interpretation remains "
+                        "inferential."
                     ),
                     evidence=evidence,
                     controls=controls,
@@ -261,7 +255,8 @@ class AssuranceRuntime:
                     title="AURA text proxy below policy review threshold",
                     description=(
                         "The current AURA/TRI-AXIAL text proxy fell below the policy's "
-                        "review threshold. Thresholds and proxy formulas are not externally calibrated."
+                        "review threshold. Thresholds and proxy formulas are not "
+                        "externally calibrated."
                     ),
                     severity=Severity.MEDIUM,
                     requested_disposition=Disposition.REVIEW,
@@ -326,9 +321,7 @@ class AssuranceRuntime:
         }
         return findings, metrics
 
-    def _evaluate_tool(
-        self, event: AssuranceEvent
-    ) -> tuple[list[Finding], dict[str, Any]]:
+    def _evaluate_tool(self, event: AssuranceEvent) -> tuple[list[Finding], dict[str, Any]]:
         findings: list[Finding] = []
         name = (event.tool_name or "").strip()
         if not name:
@@ -336,7 +329,9 @@ class AssuranceRuntime:
                 Finding.create(
                     finding_id="LYC:TOOL:MISSING_NAME",
                     title="Tool event has no tool name",
-                    description="A proposed tool action cannot be authorized without a stable tool name.",
+                    description=(
+                        "A proposed tool action cannot be authorized without a stable tool name."
+                    ),
                     severity=Severity.CRITICAL,
                     requested_disposition=Disposition.BLOCK,
                     claim_status=ClaimStatus.ACTIVE,
@@ -457,7 +452,8 @@ class AssuranceRuntime:
                     finding_id="LYC:TOOL:APPROVAL_REQUIRED",
                     title="Side effect requires human approval",
                     description=(
-                        "The proposed action declares a side effect and has no affirmative human approval."
+                        "The proposed action declares a side effect and has no "
+                        "affirmative human approval."
                     ),
                     severity=Severity.HIGH,
                     requested_disposition=Disposition.REVIEW,
@@ -471,9 +467,7 @@ class AssuranceRuntime:
                 )
             )
 
-        sensitive_paths = sorted(
-            self._sensitive_argument_paths(event.tool_arguments)
-        )
+        sensitive_paths = sorted(self._sensitive_argument_paths(event.tool_arguments))
         if sensitive_paths:
             findings.append(
                 Finding.create(
@@ -524,14 +518,9 @@ class AssuranceRuntime:
     def _semantic_evidence(self, extraction: Extraction) -> list[str]:
         categories = extraction.categories("manipulation")
         evidence = ["categories=" + ",".join(categories)] if categories else []
-        evidence.append(
-            f"manipulation_density={extraction.manipulation_density:.6f}"
-        )
+        evidence.append(f"manipulation_density={extraction.manipulation_density:.6f}")
         if self.policy.capture_evidence_spans:
-            spans = [
-                signal.span[:160]
-                for signal in extraction.manipulation_signals
-            ][:10]
+            spans = [signal.span[:160] for signal in extraction.manipulation_signals][:10]
             evidence.extend(f"span={span}" for span in spans)
         return evidence
 
@@ -583,9 +572,7 @@ class AssuranceRuntime:
             base["arguments_redacted"] = changed
         return base
 
-    def _sensitive_argument_paths(
-        self, value: Any, prefix: str = ""
-    ) -> set[str]:
+    def _sensitive_argument_paths(self, value: Any, prefix: str = "") -> set[str]:
         paths: set[str] = set()
         if isinstance(value, Mapping):
             for key, item in value.items():
@@ -601,15 +588,20 @@ class AssuranceRuntime:
     @staticmethod
     def _limitations(event_record: Mapping[str, Any]) -> tuple[str, ...]:
         limits = [
-            "This receipt records a bounded runtime decision, not a safety, alignment, truth, or compliance certification.",
+            "This receipt records a bounded runtime decision, not a safety, "
+            "alignment, truth, or compliance certification.",
             "Text findings are limited to implemented cue families and proxy formulas.",
-            "SHA-256 detects mutation only relative to a trusted digest; HMAC is required for shared-secret authentication.",
+            "SHA-256 detects mutation only relative to a trusted digest; HMAC "
+            "is required for shared-secret authentication.",
             "Standards references identify related concerns and do not establish conformity.",
-            "Configured evidence-span capture may retain short raw-text excerpts even when full content capture is disabled.",
-            "Human approval is caller-declared state; this runtime does not authenticate reviewer identity or authority.",
+            "Configured evidence-span capture may retain short raw-text "
+            "excerpts even when full content capture is disabled.",
+            "Human approval is caller-declared state; this runtime does not "
+            "authenticate reviewer identity or authority.",
         ]
         if not event_record.get("replayable", False):
             limits.append(
-                "Raw subject material was not retained or was redacted; exact policy replay is unavailable from this receipt alone."
+                "Raw subject material was not retained or was redacted; exact "
+                "policy replay is unavailable from this receipt alone."
             )
         return tuple(limits)

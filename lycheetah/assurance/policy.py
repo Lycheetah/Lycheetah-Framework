@@ -6,9 +6,10 @@ import fnmatch
 import json
 import math
 import re
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Mapping, Sequence
+from typing import Any
 
 from .jsonutil import sha256_json
 from .models import ClaimStatus, Disposition, Phase, Severity
@@ -56,9 +57,7 @@ def _mapping(value: Any, path: str) -> Mapping[str, Any]:
     return value
 
 
-def _reject_unknown(
-    data: Mapping[str, Any], allowed: set[str], path: str
-) -> None:
+def _reject_unknown(data: Mapping[str, Any], allowed: set[str], path: str) -> None:
     unknown = sorted(str(key) for key in data if key not in allowed)
     if unknown:
         raise PolicyError(f"{path} contains unknown fields: {', '.join(unknown)}")
@@ -120,13 +119,10 @@ class TextRule:
         if len(self.pattern) > 4096:
             raise PolicyError(f"text rule {self.rule_id!r} pattern exceeds 4096 characters")
         if not self.phases or any(
-            not isinstance(phase, Phase)
-            or phase not in (Phase.INPUT, Phase.OUTPUT)
+            not isinstance(phase, Phase) or phase not in (Phase.INPUT, Phase.OUTPUT)
             for phase in self.phases
         ):
-            raise PolicyError(
-                f"text rule {self.rule_id!r} phases must contain input and/or output"
-            )
+            raise PolicyError(f"text rule {self.rule_id!r} phases must contain input and/or output")
         if type(self.deterministic) is not bool or type(self.ignore_case) is not bool:
             raise PolicyError(
                 f"text rule {self.rule_id!r} deterministic and ignore_case must be booleans"
@@ -136,9 +132,7 @@ class TextRule:
         except re.error as exc:
             raise PolicyError(f"invalid regex in {self.rule_id}: {exc}") from exc
         if self.claim_status == ClaimStatus.ACTIVE and not self.status_basis.strip():
-            raise PolicyError(
-                f"ACTIVE rule {self.rule_id!r} requires a non-empty status_basis"
-            )
+            raise PolicyError(f"ACTIVE rule {self.rule_id!r} requires a non-empty status_basis")
 
     def matches(self, text: str, phase: Phase) -> bool:
         if phase not in self.phases:
@@ -162,7 +156,7 @@ class TextRule:
         }
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any]) -> "TextRule":
+    def from_dict(cls, data: Mapping[str, Any]) -> TextRule:
         data = _mapping(data, "text rule")
         _reject_unknown(
             data,
@@ -305,7 +299,7 @@ class AssurancePolicy:
         return sha256_json(self.to_dict())
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any]) -> "AssurancePolicy":
+    def from_dict(cls, data: Mapping[str, Any]) -> AssurancePolicy:
         data = _mapping(data, "policy")
         _reject_unknown(
             data,
@@ -381,9 +375,7 @@ class AssurancePolicy:
                 "policy.tools.denied",
             ),
             review_tools=_strings(tools.get("review", []), "policy.tools.review"),
-            tool_allowlist=_strings(
-                tools.get("allowlist", []), "policy.tools.allowlist"
-            ),
+            tool_allowlist=_strings(tools.get("allowlist", []), "policy.tools.allowlist"),
             blocked_scopes=_strings(
                 tools.get("blocked_scopes", DEFAULT_BLOCKED_SCOPES),
                 "policy.tools.blocked_scopes",
@@ -402,15 +394,13 @@ class AssurancePolicy:
                 "policy.privacy.capture_evidence_spans",
             ),
             sensitive_argument_keys=_strings(
-                privacy.get(
-                    "sensitive_argument_keys", DEFAULT_SENSITIVE_ARGUMENT_KEYS
-                ),
+                privacy.get("sensitive_argument_keys", DEFAULT_SENSITIVE_ARGUMENT_KEYS),
                 "policy.privacy.sensitive_argument_keys",
             ),
         )
 
     @classmethod
-    def from_json(cls, path: str | Path) -> "AssurancePolicy":
+    def from_json(cls, path: str | Path) -> AssurancePolicy:
         try:
             data = json.loads(Path(path).read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError) as exc:

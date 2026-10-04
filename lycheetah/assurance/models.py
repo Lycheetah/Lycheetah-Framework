@@ -4,9 +4,10 @@ from __future__ import annotations
 
 import re
 import uuid
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field, replace
 from enum import Enum
-from typing import Any, Mapping, Optional, Sequence
+from typing import Any
 
 from .jsonutil import jsonable
 
@@ -45,7 +46,7 @@ DISPOSITION_ORDER = {
 
 
 def strongest(dispositions: Sequence[Disposition]) -> Disposition:
-    return max(dispositions, key=DISPOSITION_ORDER.get, default=Disposition.ALLOW)
+    return max(dispositions, key=lambda item: DISPOSITION_ORDER[item], default=Disposition.ALLOW)
 
 
 def enforcement_cap(status: ClaimStatus, deterministic: bool) -> Disposition:
@@ -60,7 +61,7 @@ def capped_disposition(
     requested: Disposition,
     status: ClaimStatus,
     deterministic: bool,
-) -> tuple[Disposition, Optional[str]]:
+) -> tuple[Disposition, str | None]:
     cap = enforcement_cap(status, deterministic)
     if DISPOSITION_ORDER[requested] <= DISPOSITION_ORDER[cap]:
         return requested, None
@@ -90,7 +91,7 @@ class ControlReference:
         return out
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any]) -> "ControlReference":
+    def from_dict(cls, data: Mapping[str, Any]) -> ControlReference:
         return cls(
             framework=str(data["framework"]),
             control_id=str(data["control_id"]),
@@ -114,7 +115,7 @@ class Finding:
     status_basis: str = ""
     evidence: tuple[str, ...] = ()
     controls: tuple[ControlReference, ...] = ()
-    cap_reason: Optional[str] = None
+    cap_reason: str | None = None
 
     def __post_init__(self) -> None:
         if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._:-]{2,127}", self.finding_id):
@@ -138,10 +139,8 @@ class Finding:
         status_basis: str = "",
         evidence: Sequence[str] = (),
         controls: Sequence[ControlReference] = (),
-    ) -> "Finding":
-        effective, reason = capped_disposition(
-            requested_disposition, claim_status, deterministic
-        )
+    ) -> Finding:
+        effective, reason = capped_disposition(requested_disposition, claim_status, deterministic)
         return cls(
             finding_id=finding_id,
             title=title,
@@ -159,7 +158,7 @@ class Finding:
             cap_reason=reason,
         )
 
-    def with_evidence(self, evidence: Sequence[str]) -> "Finding":
+    def with_evidence(self, evidence: Sequence[str]) -> Finding:
         return replace(self, evidence=tuple(evidence))
 
     def to_dict(self) -> dict[str, Any]:
@@ -184,7 +183,7 @@ class Finding:
         return out
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any]) -> "Finding":
+    def from_dict(cls, data: Mapping[str, Any]) -> Finding:
         required = {
             "id",
             "title",
@@ -225,9 +224,7 @@ class Finding:
             confidence=float(data.get("confidence", 1.0)),
             status_basis=str(data.get("status_basis", "")),
             evidence=tuple(str(item) for item in data.get("evidence", [])),
-            controls=tuple(
-                ControlReference.from_dict(item) for item in data.get("controls", [])
-            ),
+            controls=tuple(ControlReference.from_dict(item) for item in data.get("controls", [])),
             cap_reason=data.get("cap_reason"),
         )
 
@@ -235,14 +232,14 @@ class Finding:
 @dataclass(frozen=True)
 class AssuranceEvent:
     phase: Phase
-    content: Optional[str] = None
+    content: str | None = None
     event_id: str = field(default_factory=lambda: str(uuid.uuid4()))
     trace_id: str = field(default_factory=lambda: str(uuid.uuid4()))
-    tool_name: Optional[str] = None
+    tool_name: str | None = None
     tool_arguments: Mapping[str, Any] = field(default_factory=dict)
     scopes: tuple[str, ...] = ()
     side_effect: bool = False
-    human_approved: Optional[bool] = None
+    human_approved: bool | None = None
     context: Mapping[str, Any] = field(default_factory=dict)
     metadata: Mapping[str, Any] = field(default_factory=dict)
 
@@ -285,7 +282,7 @@ class AssuranceEvent:
             raise ValueError("input/output events cannot contain tool-only fields")
 
     @classmethod
-    def from_dict(cls, data: Mapping[str, Any]) -> "AssuranceEvent":
+    def from_dict(cls, data: Mapping[str, Any]) -> AssuranceEvent:
         if not isinstance(data, Mapping):
             raise TypeError("event must be an object")
         allowed = {

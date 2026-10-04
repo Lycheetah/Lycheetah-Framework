@@ -16,7 +16,6 @@ from pathlib import Path
 from datetime import datetime
 from typing import Dict, List
 import argparse
-from typing import Dict, List
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))

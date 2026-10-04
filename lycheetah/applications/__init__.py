@@ -6,6 +6,10 @@ _CANONICAL = Path(__file__).resolve().parents[2] / "12_IMPLEMENTATIONS" / "appli
 if _CANONICAL.is_dir() and str(_CANONICAL) not in __path__:
     __path__.append(str(_CANONICAL))
 
-from .aura_text_checker import AURATextAnalyser, AURATextReport, InvariantResult
+from .aura_text_checker import (  # noqa: E402 -- canonical path must be registered first
+    AURATextAnalyser,
+    AURATextReport,
+    InvariantResult,
+)
 
 __all__ = ["AURATextAnalyser", "AURATextReport", "InvariantResult"]

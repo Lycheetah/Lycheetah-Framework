@@ -1,0 +1,36 @@
+{
+  "boundaries": [
+    "No seccomp profile.",
+    "No cgroup resource controller.",
+    "No independent security review.",
+    "No production credentials or real provider effects.",
+    "Linux namespace behavior can differ across distributions and kernels.",
+    "The Python user-visible runtime did not expose the same namespace capability as the container runtime."
+  ],
+  "container_observed_properties": [
+    "workspace-backed write persists",
+    "host root write denied",
+    "sibling /mnt data masked",
+    "ambient test secret absent from child environment",
+    "outbound IPv4 connection attempt blocked in empty network namespace",
+    "capability-dropped child cannot remount root writable",
+    "explicit environment value survives clean-env boundary",
+    "wall-clock timeout returns timed_out and kills namespace child"
+  ],
+  "deployment": "NOT_DEPLOYED",
+  "runs": [
+    {
+      "environment": "python_user_visible runtime",
+      "interpretation": "12 finality tests plus the static execution-cell availability test passed; 4 active namespace tests skipped because that runtime could not satisfy the active namespace probe.",
+      "result": "13 passed, 4 skipped"
+    },
+    {
+      "command": "python3 -m pytest -q tests/test_assurance_finality.py tests/test_assurance_execution_cell.py",
+      "environment": "container runtime with user/mount/PID/network namespace support",
+      "py_compile": "PASS",
+      "result": "17 passed"
+    }
+  ],
+  "schema": "LYCHEETAH-TOOL-EXECUTION-CELL-LOCAL-PROBE-0.1",
+  "status": "SYNTHETIC_ENGINEERING_VALIDATED"
+}
