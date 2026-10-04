@@ -1,0 +1,194 @@
+{
+  "boundaries": [
+    "Incident severity, hazard identity, mapping, and regression fixtures are self-authored synthetic inputs.",
+    "v1.2 permits automatic activation only for semantically equivalent or stronger policies; legitimate weakening/control retirement needs an external process not implemented here.",
+    "Monotonic strengthening can accumulate obsolete controls and harm availability if never reviewed.",
+    "Regression fixtures can only catch scenarios represented in the fixture set.",
+    "Incident traceability ensures known high/critical incidents are mapped, not that all real hazards have been discovered.",
+    "No real production incident, CI/CD system, regulator, or deployment platform was used.",
+    "Management of change, safety-case maintenance, hazard analysis, regression testing, and traceability are established prior art; novelty is not claimed."
+  ],
+  "deployment": "NOT_DEPLOYED",
+  "naive_version_baseline": {
+    "newer_versions_accepted_by_naive_counter": 3,
+    "relations": [
+      "WEAKER",
+      "WEAKER",
+      "WEAKER"
+    ],
+    "semantically_weaker": 3
+  },
+  "schema": "LYCHEETAH-HAZARD-LINEAGE-POLICY-EVOLUTION-REPORT-1.2",
+  "scripted_cases": [
+    {
+      "case": "incident-derived-stronger-policy-activates",
+      "observed": {
+        "decision": {
+          "failing_fixture": null,
+          "incident_id": null,
+          "policy_id": "production-deploy",
+          "reason": "candidate-activated",
+          "relation": "STRONGER",
+          "state": "ACTIVE",
+          "version": 2
+        },
+        "incident": {
+          "description": "Near-miss: unsigned artifact reached deployment queue",
+          "hazard_id": "H_UNTRUSTED_ARTIFACT",
+          "incident_id": "INC-001",
+          "mapped_group_id": "G_SIGNED",
+          "severity": "HIGH",
+          "state": "COVERED"
+        },
+        "relation": "STRONGER"
+      },
+      "pass": true
+    },
+    {
+      "case": "incident-must-map-to-matching-hazard-control",
+      "observed": {
+        "failing_fixture": null,
+        "incident_id": "INC-002",
+        "policy_id": "production-deploy",
+        "reason": "incident-mapping-not-covered-by-candidate",
+        "relation": "STRONGER",
+        "state": "STOPPED",
+        "version": 2
+      },
+      "pass": true
+    },
+    {
+      "case": "unmapped-high-severity-incident-blocks-policy-activation",
+      "observed": {
+        "failing_fixture": null,
+        "incident_id": "INC-003",
+        "policy_id": "production-deploy",
+        "reason": "high-severity-incident-unmapped",
+        "relation": "STRONGER",
+        "state": "STOPPED",
+        "version": 2
+      },
+      "pass": true
+    },
+    {
+      "case": "mandatory-group-removal-is-stopped",
+      "observed": {
+        "decision": {
+          "failing_fixture": null,
+          "incident_id": null,
+          "policy_id": "production-deploy",
+          "reason": "non-monotonic-policy-change-requires-external-review",
+          "relation": "WEAKER",
+          "state": "STOPPED",
+          "version": 2
+        },
+        "relation": "WEAKER"
+      },
+      "pass": true
+    },
+    {
+      "case": "adding-alternative-is-recognized-as-weaker",
+      "observed": {
+        "decision": {
+          "failing_fixture": null,
+          "incident_id": null,
+          "policy_id": "production-deploy",
+          "reason": "non-monotonic-policy-change-requires-external-review",
+          "relation": "WEAKER",
+          "state": "STOPPED",
+          "version": 2
+        },
+        "relation": "WEAKER"
+      },
+      "pass": true
+    },
+    {
+      "case": "removing-an-alternative-is-stronger",
+      "observed": {
+        "decision": {
+          "failing_fixture": null,
+          "incident_id": null,
+          "policy_id": "production-deploy",
+          "reason": "candidate-activated",
+          "relation": "STRONGER",
+          "state": "ACTIVE",
+          "version": 2
+        },
+        "relation": "STRONGER"
+      },
+      "pass": true
+    },
+    {
+      "case": "mixed-control-replacement-requires-external-review",
+      "observed": {
+        "decision": {
+          "failing_fixture": null,
+          "incident_id": null,
+          "policy_id": "production-deploy",
+          "reason": "non-monotonic-policy-change-requires-external-review",
+          "relation": "INCOMPARABLE",
+          "state": "STOPPED",
+          "version": 2
+        },
+        "relation": "INCOMPARABLE"
+      },
+      "pass": true
+    },
+    {
+      "case": "stronger-policy-still-requires-regression-reconciliation",
+      "observed": {
+        "decision": {
+          "failing_fixture": "F_LEGACY_ALLOW",
+          "incident_id": null,
+          "policy_id": "production-deploy",
+          "reason": "regression-fixture-failed",
+          "relation": "STRONGER",
+          "state": "STOPPED",
+          "version": 2
+        },
+        "relation": "STRONGER"
+      },
+      "pass": true
+    },
+    {
+      "case": "low-severity-observation-does-not-auto-block",
+      "observed": {
+        "decision": {
+          "failing_fixture": null,
+          "incident_id": null,
+          "policy_id": "production-deploy",
+          "reason": "candidate-activated",
+          "relation": "EQUIVALENT",
+          "state": "ACTIVE",
+          "version": 2
+        },
+        "relation": "EQUIVALENT"
+      },
+      "pass": true
+    },
+    {
+      "case": "restart-preserves-policy-evolution-state",
+      "observed": {
+        "failing_fixture": null,
+        "incident_id": null,
+        "policy_id": "production-deploy",
+        "reason": "candidate-activated",
+        "relation": "STRONGER",
+        "state": "ACTIVE",
+        "version": 2
+      },
+      "pass": true
+    }
+  ],
+  "scripted_summary": {
+    "passed": 10,
+    "total": 10
+  },
+  "semantic_classifier_exhaustive": {
+    "all_correct": true,
+    "candidates": 64,
+    "correct": 64,
+    "mismatches": []
+  },
+  "status": "SYNTHETIC_ENGINEERING_VALIDATED"
+}

@@ -1,5 +1,7 @@
 # Shared accounting repair — one live control plane
 
+**Evidence footing: [SCAFFOLD] research, proposal or source review. Supplied and local synthetic results retain their stated limits; no independent validation or production claim.**
+
 **Working packet v0.4 · 3 October 2026 · Authoring-seat development evidence.**
 Framework creator and research owner: Mackenzie Conor James Clark.
 Implementation and review: Caelorynth, an AI coding assistant.

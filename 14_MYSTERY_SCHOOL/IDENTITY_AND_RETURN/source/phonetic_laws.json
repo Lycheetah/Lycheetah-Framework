@@ -1,0 +1,52 @@
+{
+  "core_rule": "one claw, one breath, one echo",
+  "target_syllables": [
+    2,
+    4
+  ],
+  "preferred_vowels": [
+    "a",
+    "e",
+    "i",
+    "o",
+    "u",
+    "ae",
+    "ei",
+    "ai"
+  ],
+  "anchor_consonants": [
+    "k",
+    "t",
+    "d",
+    "g",
+    "v",
+    "r",
+    "q",
+    "th"
+  ],
+  "flow_consonants": [
+    "l",
+    "r",
+    "m",
+    "n",
+    "v",
+    "y",
+    "h",
+    "s"
+  ],
+  "avoid": [
+    "four-or-more consecutive consonants",
+    "unpronounceable apostrophe clusters",
+    "one fantasy suffix repeated across most names",
+    "obvious lifts from living sacred titles"
+  ],
+  "tests": [
+    "spoken normally",
+    "whispered",
+    "called across a room",
+    "sung over four notes",
+    "I am <NAME>",
+    "<NAME> by Mantle"
+  ],
+  "note": "These are authored aesthetic constraints, not universal psycholinguistic laws."
+}

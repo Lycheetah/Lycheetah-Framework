@@ -1,0 +1,52 @@
+[
+  {
+    "component": "01_commit_time_authority_v0_7",
+    "status": "PASS_FULL_DRIVER_BEFORE_LINT_BINDING_CLARIFICATION",
+    "independent_replication": false
+  },
+  {
+    "component": "02_shared_resource_commitment_v0_8",
+    "status": "PASS_FULL_DRIVER_BEFORE_LINT_BINDING_CLARIFICATION",
+    "independent_replication": false
+  },
+  {
+    "component": "03_atomic_resource_authority_finality_v0_9",
+    "status": "PASS_FULL_DRIVER_BEFORE_LINT_BINDING_CLARIFICATION",
+    "independent_replication": false
+  },
+  {
+    "component": "04_dependency_scoped_evidence_finality_v1_0",
+    "full_driver": "TIMEOUT_75_SECONDS",
+    "full_bounded_traces": "NOT_REPRODUCED_HERE"
+  },
+  {
+    "component": "04_dependency_scoped_evidence_finality_v1_0",
+    "exit_code": 0,
+    "scope": "PARTIAL_SCRIPTED_AND_8_RACES",
+    "independent_replication": false
+  },
+  {
+    "component": "05_hazard_obligation_coverage_v1_1",
+    "exit_code": 0,
+    "scope": "PARTIAL_SCRIPTED_AND_8_RACES",
+    "independent_replication": false
+  },
+  {
+    "component": "06_hazard_lineage_policy_evolution_v1_2",
+    "exit_code": 0,
+    "scope": "FULL_SUPPLIED_DRIVER",
+    "independent_replication": false
+  },
+  {
+    "component": "07_assurance_mutation_failure_museum_v1_3",
+    "exit_code": 0,
+    "scope": "FULL_SUPPLIED_DRIVER",
+    "independent_replication": false
+  },
+  {
+    "component": "08_external_threat_boundary_auditor_v1_4",
+    "exit_code": 0,
+    "scope": "FULL_SUPPLIED_DRIVER",
+    "independent_replication": false
+  }
+]

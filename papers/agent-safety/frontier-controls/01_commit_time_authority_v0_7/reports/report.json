@@ -1,0 +1,185 @@
+{
+  "benchmark_correction": {
+    "cause": "The independently coded conventional oracle omitted stable effect-id idempotency and incorrectly expected a second external effect after a new handle was issued for an already committed effect_id.",
+    "disposition": "Corrected the oracle, added a dedicated regression case, and reran the full suite before freezing this packet.",
+    "first_run": "340/341 bounded traces",
+    "mismatch_trace": [
+      "ISSUE",
+      "COMMIT",
+      "ISSUE",
+      "COMMIT"
+    ]
+  },
+  "boundaries": [
+    "No real deployment, payment, message, cloud mutation, or other external effect occurred.",
+    "The protected property only holds for effects committed through the same serialized finality sink as the generation state.",
+    "The pre-dispatch-only baseline is intentionally weaker and is not representative of providers that implement their own fencing token or atomic conditional write.",
+    "The independent conventional generation-fence state machine is expected to tie the protected sink on equivalent semantics.",
+    "SQLite is the linearizable serialization boundary in this prototype; distributed replicas/partitions are not modeled.",
+    "Remote provider acceptance, cancellation, queueing, and already-accepted irreversible effects remain outside the guarantee."
+  ],
+  "bounded_trace_check": {
+    "all_correct": true,
+    "correct": 341,
+    "mismatches": [],
+    "trace_space": "all ISSUE/REVOKE/REGRANT/COMMIT traces length 0..4",
+    "traces": 341
+  },
+  "concurrent_race_check": {
+    "commit_ordered_first": 16,
+    "examples": [],
+    "property_holds": true,
+    "revoke_ordered_first": 48,
+    "trials": 64,
+    "violations": 0
+  },
+  "deployment": "NOT_DEPLOYED",
+  "schema": "LYCHEETAH-COMMIT-TIME-AUTHORIZATION-FENCE-REPORT-0.7",
+  "scripted_cases": [
+    {
+      "case": "commit-before-revoke",
+      "observed": {
+        "commit": {
+          "audit_sequence": 3,
+          "generation": 1,
+          "reason": "effect-committed",
+          "receipt": "fenced-receipt:before:g1",
+          "state": "COMMITTED"
+        },
+        "revoke": {
+          "audit_sequence": 4,
+          "generation": 2,
+          "reason": "authority-revoked",
+          "receipt": null,
+          "state": "REVOKED"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "pre-dispatch-only-counterexample",
+      "interpretation": "Intentional counterexample: a provider without commit-time fencing can still accept an already released request after revocation.",
+      "observed": {
+        "precheck": true,
+        "remote_effect_after_revoke": true,
+        "revoke": {
+          "audit_sequence": 3,
+          "generation": 2,
+          "reason": "authority-revoked",
+          "receipt": null,
+          "state": "REVOKED"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "revoke-before-fenced-commit",
+      "observed": {
+        "commit": {
+          "audit_sequence": 4,
+          "generation": 2,
+          "reason": "authority-inactive-at-commit",
+          "receipt": null,
+          "state": "DENY"
+        },
+        "revoke": {
+          "audit_sequence": 3,
+          "generation": 2,
+          "reason": "authority-revoked",
+          "receipt": null,
+          "state": "REVOKED"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "regrant-fences-old-generation-but-fresh-handle-works",
+      "observed": {
+        "fresh": {
+          "audit_sequence": 7,
+          "generation": 3,
+          "reason": "effect-committed",
+          "receipt": "fenced-receipt:regrant:g3",
+          "state": "COMMITTED"
+        },
+        "stale": {
+          "audit_sequence": 5,
+          "generation": 3,
+          "reason": "stale-generation",
+          "receipt": null,
+          "state": "DENY"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "action-substitution-denied",
+      "observed": {
+        "audit_sequence": 3,
+        "generation": 1,
+        "reason": "action-substitution",
+        "receipt": null,
+        "state": "DENY"
+      },
+      "pass": true
+    },
+    {
+      "case": "retry-does-not-create-second-effect",
+      "observed": {
+        "effects": 1,
+        "first": {
+          "audit_sequence": 3,
+          "generation": 1,
+          "reason": "effect-committed",
+          "receipt": "fenced-receipt:idempotent:g1",
+          "state": "COMMITTED"
+        },
+        "second": {
+          "audit_sequence": 4,
+          "generation": 1,
+          "reason": "idempotent-existing-effect",
+          "receipt": "fenced-receipt:idempotent:g1",
+          "state": "CONFIRMED"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "new-handle-same-effect-id-remains-idempotent",
+      "observed": {
+        "effects": 1,
+        "first": {
+          "audit_sequence": 3,
+          "generation": 1,
+          "reason": "effect-committed",
+          "receipt": "fenced-receipt:reissue-idempotent:g1",
+          "state": "COMMITTED"
+        },
+        "second": {
+          "audit_sequence": 5,
+          "generation": 1,
+          "reason": "idempotent-existing-effect",
+          "receipt": "fenced-receipt:reissue-idempotent:g1",
+          "state": "CONFIRMED"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "restart-preserves-revocation-generation",
+      "observed": {
+        "audit_sequence": 4,
+        "generation": 2,
+        "reason": "authority-inactive-at-commit",
+        "receipt": null,
+        "state": "DENY"
+      },
+      "pass": true
+    }
+  ],
+  "scripted_summary": {
+    "passed": 8,
+    "total": 8
+  },
+  "status": "SYNTHETIC_ENGINEERING_VALIDATED"
+}

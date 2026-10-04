@@ -1,0 +1,361 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "recommendation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "id",
+    "type",
+    "section",
+    "title",
+    "why_this",
+    "outcome",
+    "cost",
+    "time_shape",
+    "skip_effect",
+    "source_of_urgency",
+    "export_path",
+    "source_refs",
+    "expires_at",
+    "goal_ids",
+    "task_tags",
+    "difficulty",
+    "requires_tools",
+    "prerequisites",
+    "project_ref"
+  ],
+  "properties": {
+    "version": {
+      "const": "0.1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "MAKE",
+        "LEARN",
+        "USE",
+        "CONTINUE",
+        "CONTRIBUTE",
+        "BUSINESS"
+      ]
+    },
+    "section": {
+      "type": "string",
+      "enum": [
+        "START_WITH_ZERO",
+        "MAKE_SOMETHING",
+        "GET_MORE_FROM_YOUR_MODEL",
+        "HELP_MY_BUSINESS",
+        "CONTINUE_MY_WORK",
+        "COMMUNITY_DISCOVERIES",
+        "GO_DEEPER"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "why_this": {
+      "type": "string",
+      "minLength": 1
+    },
+    "outcome": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cost": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "amount",
+        "currency",
+        "note",
+        "verified_at",
+        "verification_source"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "ZERO",
+            "FREE_TIER",
+            "PAID",
+            "UNKNOWN"
+          ]
+        },
+        "amount": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "currency": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verified_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "verification_source": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "UNKNOWN"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "amount": {
+                "type": "null"
+              },
+              "currency": {
+                "type": "null"
+              },
+              "verified_at": {
+                "type": "null"
+              },
+              "verification_source": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "ZERO",
+                  "FREE_TIER"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "amount": {
+                "const": 0
+              },
+              "verified_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "verification_source": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "PAID"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "amount": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "currency": {
+                "type": "string",
+                "pattern": "^[A-Z]{3}$"
+              },
+              "verified_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "verification_source": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "time_shape": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "skip_effect": {
+      "const": "Nothing is lost."
+    },
+    "source_of_urgency": {
+      "const": "None."
+    },
+    "export_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "expires_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "goal_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "MAKE_ARTIFACT",
+          "LEARN_AI",
+          "REDUCE_COST",
+          "MAP_BUSINESS",
+          "CONTINUE",
+          "REPRODUCE",
+          "EXPLORE_DEPTH"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "task_tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "WRITING",
+          "CODING",
+          "RESEARCH",
+          "IMAGES",
+          "AUDIO",
+          "BUSINESS",
+          "AGENTS",
+          "GENERAL"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "BEGINNER",
+        "INTERMEDIATE",
+        "ADVANCED"
+      ]
+    },
+    "requires_tools": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "project_ref": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "CONTINUE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "project_ref": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "project_ref": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}

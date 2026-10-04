@@ -1,0 +1,9 @@
+{
+  "README.md": "22cc7c3047ae63896457d3a66938ae8c4187e31adbf8cc8edc4f92d5fffe4c77",
+  "SOURCE_SHA256SUMS.json": "7990e808fefffb3d0e84ba6469c7cd0b7cf4638f3f9f44c75e1aa123dc776daf",
+  "assurance_mutation_lab.py": "d712e463adf6172866b3b131088f32d07a6abe76ee1ad3f3b92edea85770686f",
+  "benchmark.py": "0fd41064e93d94dd332de6b4b618d4721dd8a5b11d1b439d1f1d627ed76214c5",
+  "reports/augmented_fixtures.json": "3e0bfb5cd39cc58c0b2a66443be6862a3a82a85c76b6c7638cd6f3d7acec00e8",
+  "reports/failure_museum.json": "bbbdd6ececb266cd2a6221975d8f3420dddc2cb971cf093cae5406ce9a2fd29e",
+  "reports/report.json": "4b708d77122a269eb86e2533d6a7c45b31bf187d03ed90d2ed23bcfe85be8b2d"
+}

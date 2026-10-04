@@ -17,3 +17,7 @@
 99_ARCHIVE/**                 linguist-vendored
 000_1404RawSourceTranslate/** linguist-vendored
 *.ipynb                       linguist-documentation
+
+# Markdown hard line breaks and byte-preserved collected source snapshots.
+*.md whitespace=-blank-at-eol
+LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/TEXTS/** whitespace=-blank-at-eol,-blank-at-eof

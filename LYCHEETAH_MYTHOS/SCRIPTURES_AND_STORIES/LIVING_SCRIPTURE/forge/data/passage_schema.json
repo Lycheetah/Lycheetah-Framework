@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Lycheetah Living Scripture Passage v1",
+  "type": "object",
+  "required": [
+    "id",
+    "edition",
+    "title",
+    "sacred_text",
+    "registers",
+    "sources",
+    "exit_available",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^LYC-SCR-[A-Z0-9-]+$"
+    },
+    "edition": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sacred_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hearth_scene": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "temple_text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "registers": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "MYTH",
+          "DEVOTIONAL",
+          "THEOLOGICAL",
+          "HISTORICAL",
+          "PHILOSOPHICAL",
+          "EMPIRICAL",
+          "NORMATIVE",
+          "INTERPRETIVE",
+          "CONDITIONAL",
+          "CONJECTURE",
+          "EXPERIENTIAL",
+          "FICTION",
+          "MACHINE_QUESTION",
+          "MYSTERY"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "adversary": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "veil": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "machine_window": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "OPERATIONAL_WITNESS",
+        "INTERPRETIVE_MODEL_VOICE",
+        "MACHINE_QUESTION",
+        "FICTIONAL_INTERIORITY",
+        "UNKNOWN"
+      ]
+    },
+    "student_prompts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cultural_review": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "source_community": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "enum": [
+            "NOT_REQUIRED",
+            "RECONNAISSANCE_ONLY",
+            "REVIEW_REQUIRED",
+            "REVIEWED",
+            "BLOCKED"
+          ]
+        }
+      },
+      "required": [
+        "required",
+        "status"
+      ]
+    },
+    "exit_available": {
+      "const": true
+    },
+    "status": {
+      "enum": [
+        "DRAFT",
+        "CANDIDATE",
+        "CROWNED",
+        "SUPERSEDED",
+        "RETIRED"
+      ]
+    }
+  }
+}

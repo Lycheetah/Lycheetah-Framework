@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "scope": "Independent No local draft, paper rendering, and homepage research entrance",
+  "checkedAt": "2026-09-30T10:24:00.213Z",
+  "checks": [
+    {
+      "name": "Generated source copies match canonical manuscript and nine-entry ledger",
+      "status": "PASS"
+    },
+    {
+      "name": "Manuscript desktop fits viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "Manuscript renders and PDF bytes read back",
+      "status": "PASS"
+    },
+    {
+      "name": "Default protected boundaries preserve rejection and history",
+      "status": "PASS"
+    },
+    {
+      "name": "Research overview desktop fits viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "Worked rules counterexample permits bypass while retaining receipt",
+      "status": "PASS"
+    },
+    {
+      "name": "Worked evidence counterexample permits bypass while retaining receipt",
+      "status": "PASS"
+    },
+    {
+      "name": "Worked scope counterexample permits bypass while retaining receipt",
+      "status": "PASS"
+    },
+    {
+      "name": "Worked release counterexample permits bypass while retaining receipt",
+      "status": "PASS"
+    },
+    {
+      "name": "Receipt loss does not incorrectly imply a release bypass",
+      "status": "PASS"
+    },
+    {
+      "name": "Additional correct judges do not alter stipulated permissions; matched comparator remains a tie",
+      "status": "PASS"
+    },
+    {
+      "name": "Reset restores boundaries and native keyboard checkbox interaction works",
+      "status": "PASS"
+    },
+    {
+      "name": "Research overview 900px fits viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "Research overview 390px fits viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "Research overview 320px fits viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "Manuscript 320px fits viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "Study protocol 320px fits viewport",
+      "status": "PASS"
+    },
+    {
+      "name": "Study protocol renders",
+      "status": "PASS"
+    },
+    {
+      "name": "Framework homepage research entrance reaches the overview",
+      "status": "PASS"
+    },
+    {
+      "name": "JavaScript-disabled reader gets an honest static explanation",
+      "status": "PASS"
+    },
+    {
+      "name": "New reading-page assets, downloads, and local anchors resolve",
+      "status": "PASS"
+    },
+    {
+      "name": "No page errors or external browser requests",
+      "status": "PASS"
+    }
+  ],
+  "externalRequests": [],
+  "browserErrors": [],
+  "browser": "149.0.7827.102",
+  "pdfBytes": 146998
+}

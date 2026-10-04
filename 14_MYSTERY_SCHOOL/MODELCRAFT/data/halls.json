@@ -1,0 +1,89 @@
+{
+  "version": "0.1",
+  "halls": [
+    {
+      "id": "ASK",
+      "order": 1,
+      "technique_ids": [
+        "T01",
+        "T02"
+      ]
+    },
+    {
+      "id": "SHOW",
+      "order": 2,
+      "technique_ids": [
+        "T03",
+        "T04"
+      ]
+    },
+    {
+      "id": "FEED",
+      "order": 3,
+      "technique_ids": [
+        "T05",
+        "T06",
+        "T12",
+        "T19",
+        "T20"
+      ]
+    },
+    {
+      "id": "SPLIT",
+      "order": 4,
+      "technique_ids": [
+        "T07",
+        "T08",
+        "T09"
+      ]
+    },
+    {
+      "id": "CHECK",
+      "order": 5,
+      "technique_ids": [
+        "T10",
+        "T13",
+        "T14",
+        "T24"
+      ]
+    },
+    {
+      "id": "TOOL",
+      "order": 6,
+      "technique_ids": [
+        "T16"
+      ]
+    },
+    {
+      "id": "ROUTE",
+      "order": 7,
+      "technique_ids": [
+        "T15",
+        "T23"
+      ]
+    },
+    {
+      "id": "LOOP",
+      "order": 8,
+      "technique_ids": [
+        "T11"
+      ]
+    },
+    {
+      "id": "PERSIST",
+      "order": 9,
+      "technique_ids": [
+        "T17",
+        "T18",
+        "T22"
+      ]
+    },
+    {
+      "id": "HARNESS",
+      "order": 10,
+      "technique_ids": [
+        "T21"
+      ]
+    }
+  ]
+}

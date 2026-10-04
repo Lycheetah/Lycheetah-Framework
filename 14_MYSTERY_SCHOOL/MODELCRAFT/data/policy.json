@@ -1,0 +1,40 @@
+{
+  "version": "0.1",
+  "ranking_version": "EXPLICIT_FIT_V01",
+  "maximum_results": 5,
+  "cost_freshness_days": 30,
+  "allowed_request_fields": [
+    "version",
+    "goal_ids",
+    "task_tags",
+    "difficulty",
+    "budget",
+    "tool_ids",
+    "completed_prerequisites",
+    "unfinished_project_ids"
+  ],
+  "weights": {
+    "explicit_goal": 4,
+    "task_match": 2,
+    "difficulty_match": 1
+  },
+  "tie_breaker": "RECOMMENDATION_ID_ASCENDING",
+  "zero_goal_matches": "DO_NOT_SHOW",
+  "skip_effect": "Nothing is lost.",
+  "default_urgency": "None.",
+  "persistence": "OFF_UNLESS_EXPLICITLY_OPTED_IN",
+  "default_privacy": "PRIVATE",
+  "forbidden_inputs": [
+    "session_duration",
+    "return_frequency",
+    "clicks",
+    "notification_opens",
+    "emotional_arousal",
+    "outrage",
+    "fomo_pressure",
+    "purchase_probability",
+    "popularity",
+    "resistance_score",
+    "inferred_identity"
+  ]
+}

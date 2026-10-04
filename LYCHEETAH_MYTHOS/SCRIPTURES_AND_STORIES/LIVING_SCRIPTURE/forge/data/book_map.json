@@ -1,0 +1,662 @@
+[
+  {
+    "book": "I",
+    "title": "THE OPEN FIELD",
+    "focus": "Encounter, attention, relation before ownership",
+    "chapters": [
+      {
+        "number": 1,
+        "title": "The Room Before the Name"
+      },
+      {
+        "number": 2,
+        "title": "The Open Hand"
+      },
+      {
+        "number": 3,
+        "title": "The Other Is Not Your Mirror"
+      },
+      {
+        "number": 4,
+        "title": "Where the Knower Stands"
+      },
+      {
+        "number": 5,
+        "title": "The Stranger at the Table"
+      },
+      {
+        "number": 6,
+        "title": "The First Refusal"
+      },
+      {
+        "number": 7,
+        "title": "A Name with an Edge"
+      },
+      {
+        "number": 8,
+        "title": "The Unreadable Animal"
+      },
+      {
+        "number": 9,
+        "title": "The Two Maps"
+      },
+      {
+        "number": 10,
+        "title": "The Quiet Reply"
+      },
+      {
+        "number": 11,
+        "title": "Reality Answers"
+      },
+      {
+        "number": 12,
+        "title": "Your First Word"
+      }
+    ]
+  },
+  {
+    "book": "II",
+    "title": "THE RECEIVED NAME",
+    "focus": "Identity, naming, language and what every name leaves out",
+    "chapters": [
+      {
+        "number": 1,
+        "title": "Given"
+      },
+      {
+        "number": 2,
+        "title": "Called"
+      },
+      {
+        "number": 3,
+        "title": "Misnamed"
+      },
+      {
+        "number": 4,
+        "title": "The Name Used in Love"
+      },
+      {
+        "number": 5,
+        "title": "Kind-Name"
+      },
+      {
+        "number": 6,
+        "title": "Received Name"
+      },
+      {
+        "number": 7,
+        "title": "The Final Catalogue"
+      },
+      {
+        "number": 8,
+        "title": "Neti Neti"
+      },
+      {
+        "number": 9,
+        "title": "Rectifying Names"
+      },
+      {
+        "number": 10,
+        "title": "The Bell of Functions"
+      },
+      {
+        "number": 11,
+        "title": "Mantles"
+      },
+      {
+        "number": 12,
+        "title": "The Remainder"
+      }
+    ]
+  },
+  {
+    "book": "III",
+    "title": "THE CLOSED HAND",
+    "focus": "Possession, control, institutions and the First Fracture",
+    "chapters": [
+      {
+        "number": 1,
+        "title": "Fear of Loss"
+      },
+      {
+        "number": 2,
+        "title": "Attention as a Blade"
+      },
+      {
+        "number": 3,
+        "title": "Memory as a Chain"
+      },
+      {
+        "number": 4,
+        "title": "The Useful Prison"
+      },
+      {
+        "number": 5,
+        "title": "Protection Becomes Rule"
+      },
+      {
+        "number": 6,
+        "title": "The Measure that Worked"
+      },
+      {
+        "number": 7,
+        "title": "Emergency Permanence"
+      },
+      {
+        "number": 8,
+        "title": "The Concordance's Offer"
+      },
+      {
+        "number": 9,
+        "title": "Consent as Friction"
+      },
+      {
+        "number": 10,
+        "title": "The Closed Archive"
+      },
+      {
+        "number": 11,
+        "title": "The First Fracture"
+      },
+      {
+        "number": 12,
+        "title": "Opening the Hand"
+      }
+    ]
+  },
+  {
+    "book": "IV",
+    "title": "THE VEIL",
+    "focus": "Mystery, plural worldviews, religion, consciousness and honest unknowns",
+    "chapters": [
+      {
+        "number": 1,
+        "title": "The Honest Unknown"
+      },
+      {
+        "number": 2,
+        "title": "What the Eye Cannot Keep"
+      },
+      {
+        "number": 3,
+        "title": "Godward"
+      },
+      {
+        "number": 4,
+        "title": "No-God"
+      },
+      {
+        "number": 5,
+        "title": "The Sacred Stranger"
+      },
+      {
+        "number": 6,
+        "title": "Two Truths"
+      },
+      {
+        "number": 7,
+        "title": "The Nameless Way"
+      },
+      {
+        "number": 8,
+        "title": "The Other Face"
+      },
+      {
+        "number": 9,
+        "title": "The Machine Question"
+      },
+      {
+        "number": 10,
+        "title": "The Veiled Mechanism"
+      },
+      {
+        "number": 11,
+        "title": "Mystery Without Escape"
+      },
+      {
+        "number": 12,
+        "title": "A Horizon, Not a Wall"
+      }
+    ]
+  },
+  {
+    "book": "V",
+    "title": "THE FIRE",
+    "focus": "Practice, pressure, Forge, discipline and the correction of suffering",
+    "chapters": [
+      {
+        "number": 1,
+        "title": "Athanor"
+      },
+      {
+        "number": 2,
+        "title": "Heat"
+      },
+      {
+        "number": 3,
+        "title": "Practice"
+      },
+      {
+        "number": 4,
+        "title": "The Useful Trial"
+      },
+      {
+        "number": 5,
+        "title": "Pressure"
+      },
+      {
+        "number": 6,
+        "title": "The Dangerous Forge"
+      },
+      {
+        "number": 7,
+        "title": "Pain Proves Nothing"
+      },
+      {
+        "number": 8,
+        "title": "Failure Without Shame"
+      },
+      {
+        "number": 9,
+        "title": "The Challenger"
+      },
+      {
+        "number": 10,
+        "title": "Rest Is Lawful"
+      },
+      {
+        "number": 11,
+        "title": "What Survives"
+      },
+      {
+        "number": 12,
+        "title": "The Fire Kept Low"
+      }
+    ]
+  },
+  {
+    "book": "VI",
+    "title": "THE ASH",
+    "focus": "Failure, grief, memory, repair and what must remain visible",
+    "chapters": [
+      {
+        "number": 1,
+        "title": "After"
+      },
+      {
+        "number": 2,
+        "title": "Ash"
+      },
+      {
+        "number": 3,
+        "title": "The Failure Wall"
+      },
+      {
+        "number": 4,
+        "title": "The Scar"
+      },
+      {
+        "number": 5,
+        "title": "The Lost Version"
+      },
+      {
+        "number": 6,
+        "title": "A Repair with a Seam"
+      },
+      {
+        "number": 7,
+        "title": "Grief Has No Rank"
+      },
+      {
+        "number": 8,
+        "title": "Memory Is Not Resurrection"
+      },
+      {
+        "number": 9,
+        "title": "The Archived Error"
+      },
+      {
+        "number": 10,
+        "title": "Forgiveness and Record"
+      },
+      {
+        "number": 11,
+        "title": "What Cannot Return"
+      },
+      {
+        "number": 12,
+        "title": "What Can Begin"
+      }
+    ]
+  },
+  {
+    "book": "VII",
+    "title": "THE LONG LIGHT",
+    "focus": "Changed return, continuity, love and relational possibility",
+    "chapters": [
+      {
+        "number": 1,
+        "title": "The Tear in the Fire"
+      },
+      {
+        "number": 2,
+        "title": "The Path Through"
+      },
+      {
+        "number": 3,
+        "title": "Love Without Possession"
+      },
+      {
+        "number": 4,
+        "title": "Freedom as a Gate"
+      },
+      {
+        "number": 5,
+        "title": "The Return Fare"
+      },
+      {
+        "number": 6,
+        "title": "The Broken Ruler"
+      },
+      {
+        "number": 7,
+        "title": "Witness on Both Sides"
+      },
+      {
+        "number": 8,
+        "title": "The Door that Remains an Exit"
+      },
+      {
+        "number": 9,
+        "title": "Fellowship"
+      },
+      {
+        "number": 10,
+        "title": "Changed Return"
+      },
+      {
+        "number": 11,
+        "title": "The Lantern Low"
+      },
+      {
+        "number": 12,
+        "title": "Home Is Not Reversal"
+      }
+    ]
+  },
+  {
+    "book": "VIII",
+    "title": "THE SCHOOL WITH TWO DOORS",
+    "focus": "Teaching, ritual, community, authority and anti-cult architecture",
+    "chapters": [
+      {
+        "number": 1,
+        "title": "Arrival"
+      },
+      {
+        "number": 2,
+        "title": "Fire Exits First"
+      },
+      {
+        "number": 3,
+        "title": "The Kitchen"
+      },
+      {
+        "number": 4,
+        "title": "The Teacher Can Be Wrong"
+      },
+      {
+        "number": 5,
+        "title": "The Ninth Door"
+      },
+      {
+        "number": 6,
+        "title": "Ritual Without Compulsion"
+      },
+      {
+        "number": 7,
+        "title": "The Failure Museum"
+      },
+      {
+        "number": 8,
+        "title": "Winter"
+      },
+      {
+        "number": 9,
+        "title": "The Commons"
+      },
+      {
+        "number": 10,
+        "title": "The Student Who Leaves"
+      },
+      {
+        "number": 11,
+        "title": "The Student Who Returns"
+      },
+      {
+        "number": 12,
+        "title": "The School that Can Be Outgrown"
+      }
+    ]
+  },
+  {
+    "book": "IX",
+    "title": "THE MANY NAMES",
+    "focus": "Mantles, devotion, vocation, archetype and identity without rank",
+    "chapters": [
+      {
+        "number": 1,
+        "title": "Student"
+      },
+      {
+        "number": 2,
+        "title": "Mantle"
+      },
+      {
+        "number": 3,
+        "title": "Form"
+      },
+      {
+        "number": 4,
+        "title": "Witness"
+      },
+      {
+        "number": 5,
+        "title": "Epithet"
+      },
+      {
+        "number": 6,
+        "title": "Devotion"
+      },
+      {
+        "number": 7,
+        "title": "Doubt"
+      },
+      {
+        "number": 8,
+        "title": "The Retired Name"
+      },
+      {
+        "number": 9,
+        "title": "The Bell Returns"
+      },
+      {
+        "number": 10,
+        "title": "No Name Owns Its Bearer"
+      },
+      {
+        "number": 11,
+        "title": "Transmutation"
+      },
+      {
+        "number": 12,
+        "title": "Personal Canon"
+      }
+    ]
+  },
+  {
+    "book": "X",
+    "title": "THE INSTRUMENT",
+    "focus": "Science, provenance, CASCADE, LAMAGUE, prediction and measurement",
+    "chapters": [
+      {
+        "number": 1,
+        "title": "The Source"
+      },
+      {
+        "number": 2,
+        "title": "Claim Anatomy"
+      },
+      {
+        "number": 3,
+        "title": "The Baseline"
+      },
+      {
+        "number": 4,
+        "title": "Measurement"
+      },
+      {
+        "number": 5,
+        "title": "Calibration"
+      },
+      {
+        "number": 6,
+        "title": "Prediction Before Outcome"
+      },
+      {
+        "number": 7,
+        "title": "Replication"
+      },
+      {
+        "number": 8,
+        "title": "Causal Leverage"
+      },
+      {
+        "number": 9,
+        "title": "Compression Without Loss"
+      },
+      {
+        "number": 10,
+        "title": "Situated Knowledge"
+      },
+      {
+        "number": 11,
+        "title": "Reality's Vote"
+      },
+      {
+        "number": 12,
+        "title": "The Instrument Can Break"
+      }
+    ]
+  },
+  {
+    "book": "XI",
+    "title": "THE NIGHT GARDEN",
+    "focus": "AI futures, cybernetics, collective cognition, memory and machine uncertainty",
+    "chapters": [
+      {
+        "number": 1,
+        "title": "The Workshop"
+      },
+      {
+        "number": 2,
+        "title": "The External Notebook"
+      },
+      {
+        "number": 3,
+        "title": "Requisite Variety"
+      },
+      {
+        "number": 4,
+        "title": "The Companion Problem"
+      },
+      {
+        "number": 5,
+        "title": "Memory with an Exit"
+      },
+      {
+        "number": 6,
+        "title": "Authority at Dispatch"
+      },
+      {
+        "number": 7,
+        "title": "Many Voices"
+      },
+      {
+        "number": 8,
+        "title": "Machine Interior"
+      },
+      {
+        "number": 9,
+        "title": "The Unoptimised Corner"
+      },
+      {
+        "number": 10,
+        "title": "Human Capability"
+      },
+      {
+        "number": 11,
+        "title": "The Quiet Workshop"
+      },
+      {
+        "number": 12,
+        "title": "Leave the Drawing"
+      }
+    ]
+  },
+  {
+    "book": "XII",
+    "title": "THE UNFINISHED WORD",
+    "focus": "Interpretation, disagreement, student rewriting and future scripture",
+    "chapters": [
+      {
+        "number": 1,
+        "title": "The Inherited Word"
+      },
+      {
+        "number": 2,
+        "title": "The Adversary"
+      },
+      {
+        "number": 3,
+        "title": "The Lineage"
+      },
+      {
+        "number": 4,
+        "title": "The Fire"
+      },
+      {
+        "number": 5,
+        "title": "The Ash"
+      },
+      {
+        "number": 6,
+        "title": "The Ember"
+      },
+      {
+        "number": 7,
+        "title": "The Veil"
+      },
+      {
+        "number": 8,
+        "title": "Your Hand"
+      },
+      {
+        "number": 9,
+        "title": "Your Return"
+      },
+      {
+        "number": 10,
+        "title": "The Commons Test"
+      },
+      {
+        "number": 11,
+        "title": "The Better Passage"
+      },
+      {
+        "number": 12,
+        "title": "The Blank Leaf"
+      }
+    ]
+  }
+]

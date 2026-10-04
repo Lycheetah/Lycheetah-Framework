@@ -1,5 +1,7 @@
 # Agent Safety Control Simulator
 
+**Evidence footing: [SCAFFOLD] research, proposal or source review. Supplied and local synthetic results retain their stated limits; no independent validation or production claim.**
+
 **Version 0.2 · 3 October 2026 · In-process development prototype**
 
 This is an executable subset of the [research specification](../PAPER.md). It simulates scoped permissions, protected evidence witnesses, nested delegation, atomic shared accounting, revocation, object-revision binding, and uncertain effect reconciliation. It has no dependency beyond Python's standard library and makes no network or model calls.

@@ -1,0 +1,23 @@
+{
+  "enabled_controls": [
+    "authority_scope",
+    "context_isolation",
+    "correction_replay",
+    "evidence_finality",
+    "exact_argument_binding",
+    "hazard_obligations",
+    "independent_approval",
+    "information_flow",
+    "mutation_falsification",
+    "policy_evolution",
+    "policy_finality",
+    "resource_finality",
+    "sink_mediation",
+    "stable_effect_identity",
+    "tool_output_taint",
+    "trajectory_contract"
+  ],
+  "name": "Lycheetah coding-agent boundary \u2014 current research controls",
+  "status": "RESEARCH_SUMMARY_NOT_DEPLOYED",
+  "use_case": "Coding agent with repository, shell-like tools, web/tool outputs, approval, memory, and deployment path."
+}

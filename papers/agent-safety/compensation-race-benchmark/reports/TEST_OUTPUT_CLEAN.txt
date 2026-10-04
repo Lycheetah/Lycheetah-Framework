@@ -1,0 +1,10 @@
+test_atomic_commit_fence_refuses_stale_set_without_writes (test_benchmark.CompensationRaceTests.test_atomic_commit_fence_refuses_stale_set_without_writes) ... ok
+test_atomic_commit_fence_repairs_clean_set (test_benchmark.CompensationRaceTests.test_atomic_commit_fence_repairs_clean_set) ... ok
+test_precheck_race_overwrites_legitimate_update (test_benchmark.CompensationRaceTests.test_precheck_race_overwrites_legitimate_update) ... ok
+test_sequential_cas_can_leave_partial_repair (test_benchmark.CompensationRaceTests.test_sequential_cas_can_leave_partial_repair) ... ok
+test_stress (test_benchmark.CompensationRaceTests.test_stress) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.160s
+
+OK

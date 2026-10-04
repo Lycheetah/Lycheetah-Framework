@@ -1,0 +1,650 @@
+[
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M01",
+    "name": "Radvyr",
+    "title": "Provenance Hunter",
+    "recovery": "One who hunts a claim through its ancestry until the hidden root is exposed.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F01",
+    "name": "Radovael",
+    "title": "Source Diver",
+    "recovery": "One who descends through citation, retelling and prestige until the earliest accessible source is reached.",
+    "parent": "Radvyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F02",
+    "name": "Nexathyr",
+    "title": "Dependency Tracker",
+    "recovery": "One who follows what a claim depends upon and notices when one broken root weakens many branches.",
+    "parent": "Radvyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F03",
+    "name": "Veradhael",
+    "title": "Lineage Keeper",
+    "recovery": "One who preserves the lineage of evidence so later minds can see how a conclusion became authoritative.",
+    "parent": "Radvyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M02",
+    "name": "Nyrithael",
+    "title": "Night Observer",
+    "recovery": "One who learns in the quiet hours and notices what daylight noise hides.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F04",
+    "name": "Seluvaen",
+    "title": "Quiet Watcher",
+    "recovery": "One who reduces noise deliberately so weak signals and neglected thoughts can become perceptible.",
+    "parent": "Nyrithael",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F05",
+    "name": "Nyrovael",
+    "title": "Afterlight Maker",
+    "recovery": "One who uses the quiet after ordinary activity ends to create, study or see differently.",
+    "parent": "Nyrithael",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F06",
+    "name": "Vaenythra",
+    "title": "Night Hunter",
+    "recovery": "One who tracks hidden nocturnal patterns without turning darkness itself into evidence.",
+    "parent": "Nyrithael",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M03",
+    "name": "Eiraveth",
+    "title": "Restorer",
+    "recovery": "One who repairs what has been damaged without pretending the damage never happened.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F07",
+    "name": "Mendaelith",
+    "title": "Repair Smith",
+    "recovery": "One who restores function through careful repair while preserving the history of the break.",
+    "parent": "Eiraveth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F08",
+    "name": "Ashyvara",
+    "title": "Scar Keeper",
+    "recovery": "One who lets failure remain visible enough to protect the future from repeating it.",
+    "parent": "Eiraveth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F09",
+    "name": "Eirnexa",
+    "title": "System Healer",
+    "recovery": "One who repairs relationships between parts rather than merely polishing the damaged surface.",
+    "parent": "Eiraveth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M04",
+    "name": "Varoeth",
+    "title": "Oath Guardian",
+    "recovery": "One who voluntarily binds their strength to the defense of a chosen principle.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F10",
+    "name": "Voraelun",
+    "title": "Oath Bearer",
+    "recovery": "One who chooses a demanding principle and carries it without turning the vow into dominion over others.",
+    "parent": "Varoeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F11",
+    "name": "Consavyr",
+    "title": "Consent Guard",
+    "recovery": "One who notices when useful action has outrun the permission that made it legitimate.",
+    "parent": "Varoeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F12",
+    "name": "Exiraeth",
+    "title": "Exit Keeper",
+    "recovery": "One who protects the ability to refuse, leave, reverse or seek another path.",
+    "parent": "Varoeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M05",
+    "name": "Kaevyr",
+    "title": "Wild Tracker",
+    "recovery": "One who lets disciplined instinct find the trail, then lets evidence decide whether it was real.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F13",
+    "name": "Kaevraen",
+    "title": "Wild Listener",
+    "recovery": "One who studies living systems through close embodied attention before forcing them into a model.",
+    "parent": "Kaevyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F14",
+    "name": "Bodaevyr",
+    "title": "Body Knower",
+    "recovery": "One who treats bodily skill and sensation as information while preserving the difference between experience and proof.",
+    "parent": "Kaevyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F15",
+    "name": "Invarae",
+    "title": "Instinct Tester",
+    "recovery": "One who honors the first hunch enough to test it rather than enough to believe it.",
+    "parent": "Kaevyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M06",
+    "name": "Velmarae",
+    "title": "Keeper of Old Knowledge",
+    "recovery": "One who keeps neglected knowledge close enough to preserve, test and transmit.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F16",
+    "name": "Memvaera",
+    "title": "Memory Keeper",
+    "recovery": "One who preserves inherited knowledge with its original context, uncertainty and changes intact.",
+    "parent": "Velmarae",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F17",
+    "name": "Rithavelle",
+    "title": "Ritual Reader",
+    "recovery": "One who studies ritual as practice, symbol and historical object without collapsing those registers together.",
+    "parent": "Velmarae",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F18",
+    "name": "Eldravyn",
+    "title": "Hedge Keeper",
+    "recovery": "One who keeps folk, plant, domestic and outsider knowledge near enough to test without mocking its carriers.",
+    "parent": "Velmarae",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M07",
+    "name": "Oraeth",
+    "title": "Foreseer",
+    "recovery": "One who risks a prediction before reality reveals the answer.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F19",
+    "name": "Caloraith",
+    "title": "Calibrated Seer",
+    "recovery": "One who learns how often their forecasts are right, wrong and overconfident.",
+    "parent": "Oraeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F20",
+    "name": "Invarith",
+    "title": "Invariant Seer",
+    "recovery": "One who predicts what should remain stable when irrelevant conditions change.",
+    "parent": "Oraeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F21",
+    "name": "Timaevor",
+    "title": "Time-Sealed Foreseer",
+    "recovery": "One whose prediction is bound to time before the outcome can contaminate it.",
+    "parent": "Oraeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M08",
+    "name": "Azhevorin",
+    "title": "Transmuter",
+    "recovery": "One who joins unlike structures until a third useful form appears.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F22",
+    "name": "Semazhor",
+    "title": "Meaning Splicer",
+    "recovery": "One who joins meanings across disciplines without erasing the constraints that made each one useful.",
+    "parent": "Azhevorin",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F23",
+    "name": "Koraevyn",
+    "title": "Hybrid Builder",
+    "recovery": "One who makes a cross-domain splice tangible enough to test whether it adds real function.",
+    "parent": "Azhevorin",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F24",
+    "name": "Nexovain",
+    "title": "Bridge Synthesist",
+    "recovery": "One who discovers useful structure in the connection between systems rather than only inside either system.",
+    "parent": "Azhevorin",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M09",
+    "name": "Noevael",
+    "title": "Mind Witness",
+    "recovery": "One who stands at the other mind's door without pretending they can see through it.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F25",
+    "name": "Senyraeth",
+    "title": "Sentience Questioner",
+    "recovery": "One who asks what evidence could actually bear on the presence of felt experience.",
+    "parent": "Noevael",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F26",
+    "name": "Qualevae",
+    "title": "Experience Keeper",
+    "recovery": "One who protects the distinction between observable behavior and what experience may be like from within.",
+    "parent": "Noevael",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F27",
+    "name": "Othaelun",
+    "title": "Other-Mind Witness",
+    "recovery": "One who takes another possible interior seriously without claiming access they do not have.",
+    "parent": "Noevael",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M10",
+    "name": "Qiralith",
+    "title": "Mechanism Walker",
+    "recovery": "One who pursues mechanism without murdering mystery, and preserves the unexplained remainder honestly.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F28",
+    "name": "Remqirae",
+    "title": "Remainder Keeper",
+    "recovery": "One who records exactly what explanation has not yet earned the right to erase.",
+    "parent": "Qiralith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F29",
+    "name": "Cauverith",
+    "title": "Mechanism Tester",
+    "recovery": "One who asks whether changing the supposed cause actually changes the effect.",
+    "parent": "Qiralith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F30",
+    "name": "Limqorin",
+    "title": "Boundary Mechanist",
+    "recovery": "One who maps where a mechanism works, where it fails and where another explanatory language becomes necessary.",
+    "parent": "Qiralith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M11",
+    "name": "Seraelith",
+    "title": "Scribe",
+    "recovery": "One who preserves the route by which knowledge became what it is.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F31",
+    "name": "Memarael",
+    "title": "Living Archivist",
+    "recovery": "One who preserves memory in a form that can still be questioned, revised and used.",
+    "parent": "Seraelith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F32",
+    "name": "Radelyra",
+    "title": "Source Scribe",
+    "recovery": "One who writes so that a future reader can return from the conclusion to the evidence beneath it.",
+    "parent": "Seraelith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F33",
+    "name": "Thrynael",
+    "title": "Thread Keeper",
+    "recovery": "One who preserves a question or dependency across long stretches of work without letting context disappear.",
+    "parent": "Seraelith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M12",
+    "name": "Itharyn",
+    "title": "Pilgrim",
+    "recovery": "One who crosses frameworks without mistaking any single room for the whole world.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F34",
+    "name": "Limaraen",
+    "title": "Threshold Traveller",
+    "recovery": "One who can cross into another framework deeply enough to learn without pretending to permanently belong there.",
+    "parent": "Itharyn",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F35",
+    "name": "Piloraeth",
+    "title": "Meaning Pilgrim",
+    "recovery": "One who undertakes a journey of study because the movement itself may change what the question means.",
+    "parent": "Itharyn",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F36",
+    "name": "Vaenorin",
+    "title": "Worldview Crosser",
+    "recovery": "One who moves between sacred, secular and technical worldviews while keeping their claim types distinct.",
+    "parent": "Itharyn",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M13",
+    "name": "Koraeth",
+    "title": "Builder",
+    "recovery": "One who gives an idea enough form that reality can push back.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F37",
+    "name": "Talvaerin",
+    "title": "Craft Walker",
+    "recovery": "One who learns through repeated making until skill becomes visible in the artifact.",
+    "parent": "Koraeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F38",
+    "name": "Formaelith",
+    "title": "Formwright",
+    "recovery": "One who gives abstract structure a body that can be inspected, handled or tested.",
+    "parent": "Koraeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F39",
+    "name": "Stravora",
+    "title": "Pressure Builder",
+    "recovery": "One who builds with the stresses of reality in mind rather than protecting an artifact from failure.",
+    "parent": "Koraeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M14",
+    "name": "Rethvyr",
+    "title": "Challenger",
+    "recovery": "One who strengthens inquiry by carrying the strongest serious opposition.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F40",
+    "name": "Basoraen",
+    "title": "Baseline Defender",
+    "recovery": "One who gives ordinary explanations and competing methods a fair chance to win.",
+    "parent": "Rethvyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F41",
+    "name": "Skevarith",
+    "title": "Skeptic Blade",
+    "recovery": "One who cuts at unsupported certainty while remaining capable of being surprised.",
+    "parent": "Rethvyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F42",
+    "name": "Antaevyr",
+    "title": "Counterclaim Bearer",
+    "recovery": "One who can carry an opposing argument strongly enough that its advocates recognize it.",
+    "parent": "Rethvyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M15",
+    "name": "Thaevara",
+    "title": "Devotee",
+    "recovery": "One who freely gives sustained attention to what they hold sacred while preserving the right to question.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F43",
+    "name": "Covarael",
+    "title": "Covenant Keeper",
+    "recovery": "One who treats a chosen sacred promise as a living responsibility rather than a claim of superiority.",
+    "parent": "Thaevara",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F44",
+    "name": "Rithaevyn",
+    "title": "Ritual Devotee",
+    "recovery": "One who uses repeated sacred or symbolic practice deliberately while distinguishing experience from external proof.",
+    "parent": "Thaevara",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F45",
+    "name": "Piltharae",
+    "title": "Sacred Pilgrim",
+    "recovery": "One who explores devotion through movement, study or encounter without requiring certainty before beginning.",
+    "parent": "Thaevara",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M16",
+    "name": "Aporith",
+    "title": "Void Keeper",
+    "recovery": "One who can hold an unresolved question without manufacturing closure.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F46",
+    "name": "Remoraith",
+    "title": "Open Remainder",
+    "recovery": "One who protects the unresolved residue of a question after every justified conclusion has been taken.",
+    "parent": "Aporith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F47",
+    "name": "Nulavael",
+    "title": "Unassumed",
+    "recovery": "One who refuses to adopt a metaphysical answer merely because a blank space feels uncomfortable.",
+    "parent": "Aporith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F48",
+    "name": "Halaethyn",
+    "title": "Horizon Keeper",
+    "recovery": "One who knows the present edge of observation and does not confuse the horizon with the end of reality.",
+    "parent": "Aporith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M17",
+    "name": "Nexara",
+    "title": "Bridgekeeper",
+    "recovery": "One who carries meaning across difference without pretending difference disappeared.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F49",
+    "name": "Brivaelith",
+    "title": "Bridge Translator",
+    "recovery": "One who carries meaning between people or systems while preserving what refuses clean translation.",
+    "parent": "Nexara",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F50",
+    "name": "Consavelle",
+    "title": "Consent Mediator",
+    "recovery": "One who helps multiple parties locate the actual boundaries of permission before coordination proceeds.",
+    "parent": "Nexara",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F51",
+    "name": "Kinoraeth",
+    "title": "Kin Witness",
+    "recovery": "One who notices knowledge that exists in relationship, trust and shared practice rather than in solitary possession.",
+    "parent": "Nexara",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "GREAT_MANTLE",
+    "id": "M18",
+    "name": "Orivane",
+    "title": "Waymaker",
+    "recovery": "One who makes a path others can actually walk where no reliable path existed before.",
+    "parent": null,
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "kind": "FORM",
+    "id": "F52",
+    "name": "Makorael",
+    "title": "Method Maker",
+    "recovery": "One who creates a repeatable way of doing something that another person can actually use.",
+    "parent": "Orivane",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F53",
+    "name": "Lumivane",
+    "title": "Path Illuminator",
+    "recovery": "One who makes a difficult route legible enough that others can enter without surrendering their own judgment.",
+    "parent": "Orivane",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  },
+  {
+    "kind": "FORM",
+    "id": "F54",
+    "name": "Viaravel",
+    "title": "New-Route Forger",
+    "recovery": "One who discovers a genuinely walkable route where inherited maps left no adequate path.",
+    "parent": "Orivane",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN"
+  }
+]

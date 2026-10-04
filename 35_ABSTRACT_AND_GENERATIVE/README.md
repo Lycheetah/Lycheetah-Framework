@@ -181,3 +181,7 @@ This branch is not a retreat from rigor.
 It is where Lycheetah refuses the opposite mistake: throwing away everything that cannot yet be reduced to a benchmark.
 
 **The light you carry is not given; it is earned.**
+
+## Bring the ideas into use
+
+[Build Catalogue](BUILD_CATALOGUE/README.md) collects thirty-one proposed tools, games and interactions in seven parts, with sources, first slices and acceptance conditions. It is a build queue, not a release or validation claim.

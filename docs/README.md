@@ -1,5 +1,13 @@
 # Lycheetah website
 
+## Recovered research reading pages
+
+- [The Independent No overview](independent-no.html)
+- [Manuscript](research/independent-no-paper.html) · [Study protocol](research/independent-no-protocol.html) · [PDF](research/independent-no.pdf)
+- [Editable paper packet](../papers/independent-no/README.md) and [recovery note](../papers/independent-no/RECOVERY_NOTE.md)
+
+Recovered working drafts; publication source on master. Reading copies under research/ derive from the paper packet. The original browser witness is historical; it was not rerun during consolidation.
+
 Public pages for the Lycheetah method. Static HTML and CSS. GitHub Pages serves the `docs/` folder on `master`.
 
 ## Pages

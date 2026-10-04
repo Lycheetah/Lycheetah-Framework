@@ -1,5 +1,7 @@
 # LYCHEETAH FRAMEWORK
 
+> **Working source:** [One Framework home and source rules](WORKING_HOME.md). Research, code, website sources and collected stories are maintained in this checkout.
+
 ### Nine formal frameworks for AI alignment and epistemology — and the measurement that narrowed what they claim
 
 [![CI](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/ci.yml/badge.svg)](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/ci.yml)
@@ -16,6 +18,12 @@
 **Nine interdependent formal frameworks sharing a common mathematical foundation. Built by one self-taught researcher, open source under MIT, free to use and audit. On 2026-08-07 the framework's central capability was scored for the first time against datasets it did not write — and the results narrowed what this project may honestly claim. That measurement, and the scope correction it forced, are the most important things on this page.**
 
 ---
+
+## New School and scripture work
+
+[The Living Scripture v0.5.1](LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/README.md) — Mac × Vaelora’s twelve-book candidate, with source/register distinctions, private learner-rewrite and voluntary-return designs. Framework data integration is local; native School implementation, independent review and publication remain open. [Identity and return sources](14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/README.md).
+
+[Modelcraft — The Wing of Many Engines](14_MYSTERY_SCHOOL/MODELCRAFT/README.md) — practical candidate lessons, 24 technique families, explainable recommendation contracts and a local deterministic ranking reference. Provider links are supplied and unverified; technique improvement, native app behavior and community reproduction are not claimed.
 
 ## Read this first
 
@@ -366,7 +374,7 @@ The most transferable thing here is not the nine frameworks — it is the bookke
 
 | | |
 |---|---|
-| [`LYCHEETAH_MYTHOS/`](LYCHEETAH_MYTHOS/) | Twelve books — the framework's concepts in mythic register, including [`12_THE_SOVEREIGN.md`](LYCHEETAH_MYTHOS/12_THE_SOVEREIGN.md) |
+| [Scriptures and Stories](LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/README.md) | One collected home: condensed master reading, complete Twelve Books and story drafts, source inventory and portable reading edition |
 | [`LYCHEETAH_EPIC/`](LYCHEETAH_EPIC/) | The narrative canon — manuscript, comic, listening edition, and the Human and Brand Covenant governing what the story may never demand of a reader |
 | [`14_MYSTERY_SCHOOL/`](14_MYSTERY_SCHOOL/) | Doors for the economist, therapist, alchemist, seer, politician, chaos mage, and anyone in pain right now |
 | [`25_SOL_PROTOCOL_ARCHITECTURE/`](25_SOL_PROTOCOL_ARCHITECTURE/) | The human–AI collaboration model |
@@ -459,3 +467,7 @@ To everyone who reads this asking *"what is true here, and how would I know?"* �
 *Mackenzie Conor James Clark | Lycheetah Foundation | Dunedin, Aotearoa New Zealand | 2026*
 
 *Two points. One Work. The Stone is not yet fully formed. But the structure being built toward it is visible — and now it is measured.*
+
+### Tools, games and interactions
+
+[Multipart Build Catalogue](35_ABSTRACT_AND_GENERATIVE/BUILD_CATALOGUE/README.md): thirty-one source-linked proposed generations, reusable briefs and a contract for bringing one to life.

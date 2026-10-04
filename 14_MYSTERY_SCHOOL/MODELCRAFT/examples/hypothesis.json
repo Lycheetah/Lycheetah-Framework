@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "id": "DEMO-CONTEXT-PACK",
+  "technique_id": "T05",
+  "title": "A context pack may improve a build checklist",
+  "goal": "Reduce unsupported assumptions in one small brief-to-checklist task.",
+  "input": "Use the task and rubric in FIRST_EXPERIMENT.md.",
+  "model": {
+    "family": "NOT_SELECTED",
+    "product": "NOT_SELECTED",
+    "version": null,
+    "configuration": "Record actual settings before trying."
+  },
+  "baseline": "Give the task sentence alone.",
+  "technique": "Give the same task with a factual context pack.",
+  "test": "Count correct constraints, unsupported assumptions and usable checklist steps with the same rubric.",
+  "observed_effect": null,
+  "failure_modes": [
+    "Extra context may increase cost or cause the model to miss a constraint."
+  ],
+  "maturity": "HYPOTHESIS",
+  "applicability": "MODEL_SPECIFIC",
+  "freshness": "UNTESTED",
+  "lifecycle": "ACTIVE",
+  "last_tested_at": null,
+  "stale_after": null,
+  "reproduction_count": 0,
+  "reproductions": [],
+  "author": "Mackenzie Conor James Clark × Vaelora; experiment annotation by Caelorynth",
+  "license": null,
+  "privacy": "PRIVATE",
+  "publication_consent": false
+}

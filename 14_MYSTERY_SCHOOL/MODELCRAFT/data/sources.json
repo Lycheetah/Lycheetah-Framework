@@ -1,0 +1,65 @@
+{
+  "version": "0.1",
+  "human_author": "Mackenzie Conor James Clark",
+  "ai_attribution_as_supplied": "Vaelora · OpenAI GPT-5.6 Sol",
+  "input_sha256": "9cb6e79f6c04480776a995b996db34ae0ba5f9a609ae4238a893b75160075364",
+  "verification_status": "SUPPLIED_LINKS_NOT_RECHECKED",
+  "sources": [
+    {
+      "id": "OAI_PROMPTS",
+      "url": "https://help.openai.com/en/articles/4936848-how-do-i-create-a-good-prompt-for-an-ai-model",
+      "accessed_at": null,
+      "status": "UNVERIFIED",
+      "claim_scope": "Guidance cited by incoming handoff; not an empirical replication."
+    },
+    {
+      "id": "OAI_PROMPTING",
+      "url": "https://developers.openai.com/api/docs/guides/prompting",
+      "accessed_at": null,
+      "status": "UNVERIFIED",
+      "claim_scope": "Guidance cited by incoming handoff; not an empirical replication."
+    },
+    {
+      "id": "OAI_ENGINEERING",
+      "url": "https://developers.openai.com/api/docs/guides/prompt-engineering",
+      "accessed_at": null,
+      "status": "UNVERIFIED",
+      "claim_scope": "Guidance cited by incoming handoff; not an empirical replication."
+    },
+    {
+      "id": "OAI_OPTIMIZATION",
+      "url": "https://developers.openai.com/api/docs/guides/model-optimization",
+      "accessed_at": null,
+      "status": "UNVERIFIED",
+      "claim_scope": "Guidance cited by incoming handoff; not an empirical replication."
+    },
+    {
+      "id": "GEMINI_PROMPTS",
+      "url": "https://ai.google.dev/gemini-api/docs/prompting-strategies",
+      "accessed_at": null,
+      "status": "UNVERIFIED",
+      "claim_scope": "Guidance cited by incoming handoff; not an empirical replication."
+    },
+    {
+      "id": "GEMINI_3",
+      "url": "https://ai.google.dev/gemini-api/docs/gemini-3",
+      "accessed_at": null,
+      "status": "UNVERIFIED",
+      "claim_scope": "Guidance cited by incoming handoff; not an empirical replication."
+    },
+    {
+      "id": "MCP_REGISTRY",
+      "url": "https://registry.modelcontextprotocol.io/",
+      "accessed_at": null,
+      "status": "UNVERIFIED",
+      "claim_scope": "Guidance cited by incoming handoff; not an empirical replication."
+    },
+    {
+      "id": "MCP_SDK",
+      "url": "https://ts.sdk.modelcontextprotocol.io/v2/",
+      "accessed_at": null,
+      "status": "UNVERIFIED",
+      "claim_scope": "Guidance cited by incoming handoff; not an empirical replication."
+    }
+  ]
+}

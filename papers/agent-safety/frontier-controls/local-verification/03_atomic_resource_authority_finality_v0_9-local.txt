@@ -1,0 +1,10 @@
+Lycheetah Atomic Resource + Authority Finality Gate v0.9
+========================================================
+Scripted checks: 11/11
+Dual-write lost-dispatch counterexample: True
+Dual-write duplicate counterexample: True (2 effects)
+Revoke/commit races: 64 violations=0 split=32/32
+Thread brokers: committed=5/16 budget=5
+Process brokers: committed=6/20 budget=6 errors=0
+Bounded traces: 259/259
+Status: synthetic engineering validation; not deployed.

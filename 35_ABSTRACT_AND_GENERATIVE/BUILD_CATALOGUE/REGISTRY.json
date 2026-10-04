@@ -1,0 +1,258 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-04",
+  "status": "PROPOSED_CATALOGUE",
+  "owner": "Mackenzie Conor James Clark",
+  "framework": "Lycheetah Framework",
+  "description_source": "Markdown cards in this folder",
+  "entries": [
+    {
+      "id": "LYC-B001",
+      "title": "Witness Desk",
+      "form": "tool",
+      "file": "01_PRACTICAL_TOOLS.md",
+      "build_status": "PROPOSED",
+      "source": "34_ASSURANCE_RUNTIME/README.md"
+    },
+    {
+      "id": "LYC-B002",
+      "title": "Evidence Board",
+      "form": "tool",
+      "file": "01_PRACTICAL_TOOLS.md",
+      "build_status": "PROPOSED",
+      "source": "01_CASCADE_L4/"
+    },
+    {
+      "id": "LYC-B003",
+      "title": "Feedback Playground",
+      "form": "tool",
+      "file": "01_PRACTICAL_TOOLS.md",
+      "build_status": "PROPOSED",
+      "source": "34_CYBERNETICS/README.md"
+    },
+    {
+      "id": "LYC-B004",
+      "title": "Resonance Playground",
+      "form": "tool",
+      "file": "01_PRACTICAL_TOOLS.md",
+      "build_status": "PROPOSED",
+      "source": "12_IMPLEMENTATIONS/core/harmonia_calculator.py"
+    },
+    {
+      "id": "LYC-B005",
+      "title": "Goal and Change Journal",
+      "form": "tool",
+      "file": "01_PRACTICAL_TOOLS.md",
+      "build_status": "PROPOSED",
+      "source": "12_IMPLEMENTATIONS/core/microorcim_tracker.py"
+    },
+    {
+      "id": "LYC-B006",
+      "title": "Transformation Workshop",
+      "form": "tool",
+      "file": "01_PRACTICAL_TOOLS.md",
+      "build_status": "PROPOSED",
+      "source": "09_CHRYSOPOEIA_L4/"
+    },
+    {
+      "id": "LYC-B007",
+      "title": "Pattern Explorer",
+      "form": "tool",
+      "file": "01_PRACTICAL_TOOLS.md",
+      "build_status": "PROPOSED",
+      "source": "07_ANAMNESIS_L0/"
+    },
+    {
+      "id": "LYC-B008",
+      "title": "Resource Budget Bench",
+      "form": "tool",
+      "file": "01_PRACTICAL_TOOLS.md",
+      "build_status": "PROPOSED",
+      "source": "06_EARNED_LIGHT_L0/"
+    },
+    {
+      "id": "LYC-B009",
+      "title": "Decision Record Workbench",
+      "form": "tool",
+      "file": "02_LANGUAGES_MEMORY_AND_LEARNING.md",
+      "build_status": "PROPOSED",
+      "source": "03_LAMAGUE_L1/"
+    },
+    {
+      "id": "LYC-B010",
+      "title": "Protected Codec Workbench",
+      "form": "tool",
+      "file": "02_LANGUAGES_MEMORY_AND_LEARNING.md",
+      "build_status": "PROPOSED",
+      "source": "03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/src/lamague_codec.py"
+    },
+    {
+      "id": "LYC-B011",
+      "title": "Versioned Notebook",
+      "form": "tool",
+      "file": "02_LANGUAGES_MEMORY_AND_LEARNING.md",
+      "build_status": "PROPOSED",
+      "source": "21_MEMORIA/"
+    },
+    {
+      "id": "LYC-B012",
+      "title": "Negotiation Board",
+      "form": "tool",
+      "file": "02_LANGUAGES_MEMORY_AND_LEARNING.md",
+      "build_status": "PROPOSED",
+      "source": "32_TIANXIA/"
+    },
+    {
+      "id": "LYC-B013",
+      "title": "Modelcraft Experiment Bench",
+      "form": "tool",
+      "file": "02_LANGUAGES_MEMORY_AND_LEARNING.md",
+      "build_status": "PROPOSED",
+      "source": "14_MYSTERY_SCHOOL/MODELCRAFT/README.md"
+    },
+    {
+      "id": "LYC-B014",
+      "title": "Permission Heist",
+      "form": "game",
+      "file": "03_SYSTEMS_AND_TRANSFORMATION_GAMES.md",
+      "build_status": "PROPOSED",
+      "source": "papers/agent-safety/README.md"
+    },
+    {
+      "id": "LYC-B015",
+      "title": "Clockwork Colony",
+      "form": "game",
+      "file": "03_SYSTEMS_AND_TRANSFORMATION_GAMES.md",
+      "build_status": "PROPOSED",
+      "source": "34_CYBERNETICS/README.md"
+    },
+    {
+      "id": "LYC-B016",
+      "title": "Resonance Forge",
+      "form": "game",
+      "file": "03_SYSTEMS_AND_TRANSFORMATION_GAMES.md",
+      "build_status": "PROPOSED",
+      "source": "12_IMPLEMENTATIONS/core/harmonia_calculator.py"
+    },
+    {
+      "id": "LYC-B017",
+      "title": "Alchemical Foundry",
+      "form": "game",
+      "file": "03_SYSTEMS_AND_TRANSFORMATION_GAMES.md",
+      "build_status": "PROPOSED",
+      "source": "09_CHRYSOPOEIA_L4/"
+    },
+    {
+      "id": "LYC-B018",
+      "title": "Ember Engine",
+      "form": "game",
+      "file": "03_SYSTEMS_AND_TRANSFORMATION_GAMES.md",
+      "build_status": "PROPOSED",
+      "source": "06_EARNED_LIGHT_L0/"
+    },
+    {
+      "id": "LYC-B019",
+      "title": "Living Dungeon",
+      "form": "game",
+      "file": "04_ADVENTURE_AND_PROGRESSION_GAMES.md",
+      "build_status": "PROPOSED",
+      "source": "01_CASCADE_L4/"
+    },
+    {
+      "id": "LYC-B020",
+      "title": "Inheritance Roguelike",
+      "form": "game",
+      "file": "04_ADVENTURE_AND_PROGRESSION_GAMES.md",
+      "build_status": "PROPOSED",
+      "source": "21_MEMORIA/"
+    },
+    {
+      "id": "LYC-B021",
+      "title": "The Last Lantern",
+      "form": "game",
+      "file": "04_ADVENTURE_AND_PROGRESSION_GAMES.md",
+      "build_status": "PROPOSED",
+      "source": "05_MICROORCIM_L5/"
+    },
+    {
+      "id": "LYC-B022",
+      "title": "Ruins of Recognition",
+      "form": "game",
+      "file": "04_ADVENTURE_AND_PROGRESSION_GAMES.md",
+      "build_status": "PROPOSED",
+      "source": "07_ANAMNESIS_L0/"
+    },
+    {
+      "id": "LYC-B023",
+      "title": "Champion Expeditions",
+      "form": "game",
+      "file": "04_ADVENTURE_AND_PROGRESSION_GAMES.md",
+      "build_status": "PROPOSED",
+      "source": "LYCHEETAH_EPIC/"
+    },
+    {
+      "id": "LYC-B024",
+      "title": "Glyph Forge",
+      "form": "interaction",
+      "file": "05_SOCIAL_NARRATIVE_AND_WORLD_INTERACTIONS.md",
+      "build_status": "PROPOSED",
+      "source": "03_LAMAGUE_L1/"
+    },
+    {
+      "id": "LYC-B025",
+      "title": "Many Crowns",
+      "form": "game",
+      "file": "05_SOCIAL_NARRATIVE_AND_WORLD_INTERACTIONS.md",
+      "build_status": "PROPOSED",
+      "source": "32_TIANXIA/"
+    },
+    {
+      "id": "LYC-B026",
+      "title": "Maker Trials",
+      "form": "interaction",
+      "file": "05_SOCIAL_NARRATIVE_AND_WORLD_INTERACTIONS.md",
+      "build_status": "PROPOSED",
+      "source": "14_MYSTERY_SCHOOL/MODELCRAFT/README.md"
+    },
+    {
+      "id": "LYC-B027",
+      "title": "The Unnamed Atlas",
+      "form": "crossover",
+      "file": "06_CROSSOVERS_AND_NEW_GENERATIONS.md",
+      "build_status": "PROPOSED",
+      "source": "35_ABSTRACT_AND_GENERATIVE/DEEP_OBJECTS.md"
+    },
+    {
+      "id": "LYC-B028",
+      "title": "The False Beacon",
+      "form": "crossover",
+      "file": "06_CROSSOVERS_AND_NEW_GENERATIONS.md",
+      "build_status": "PROPOSED",
+      "source": "papers/agent-safety/frontier-controls/README.md"
+    },
+    {
+      "id": "LYC-B029",
+      "title": "The Scarred Archive",
+      "form": "crossover",
+      "file": "06_CROSSOVERS_AND_NEW_GENERATIONS.md",
+      "build_status": "PROPOSED",
+      "source": "21_MEMORIA/"
+    },
+    {
+      "id": "LYC-B030",
+      "title": "Living Siege",
+      "form": "crossover",
+      "file": "06_CROSSOVERS_AND_NEW_GENERATIONS.md",
+      "build_status": "PROPOSED",
+      "source": "LYCHEETAH_EPIC/"
+    },
+    {
+      "id": "LYC-B031",
+      "title": "Recovery Race Lab",
+      "form": "tool / crossover",
+      "file": "06_CROSSOVERS_AND_NEW_GENERATIONS.md",
+      "build_status": "PROPOSED",
+      "source": "papers/agent-safety/compensation-race-benchmark/README.md"
+    }
+  ]
+}

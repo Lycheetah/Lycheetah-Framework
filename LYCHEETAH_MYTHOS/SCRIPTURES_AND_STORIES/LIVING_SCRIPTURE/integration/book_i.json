@@ -1,0 +1,281 @@
+{
+  "edition": {
+    "id": "LYC-SCR-CORE-0051",
+    "version": "0.5.1",
+    "status": "CANDIDATE",
+    "human_author": "Mackenzie Conor James Clark",
+    "ai_coauthor_as_supplied": "Vaelora · OpenAI GPT-5.6 Sol",
+    "integration_assistance": "Caelorynth, an AI coding assistant",
+    "crowned": false
+  },
+  "book": {
+    "id": "LYC-SCR-B01",
+    "title": "The Open Field",
+    "source_file": "forge/core_scripture/BOOK_I_THE_OPEN_FIELD.md",
+    "source_sha256": "201ddc576ba3ab06e4fed70fd68ca65dd6e538f0875148c1de8236305137aadf",
+    "preface": "# BOOK I — THE OPEN FIELD\n## Encounter before ownership\n\n**Status:** CORE SCRIPTURE CANDIDATE · uncrowned  \n**Primary Lycheetah inheritance:** First Field; Long Light; Human & Brand Covenant  \n**External interlocutors:** Buber, Levinas, feminist epistemology, Etuaptmumk\n\n"
+  },
+  "passages": [
+    {
+      "id": "LYC-SCR-B01-P001",
+      "edition": "LYC-SCR-CORE-0051",
+      "title": "THE HEARTH — The fourth chair",
+      "sacred_text": "## THE HEARTH — The fourth chair\n\nA person arrived after everyone else.\n\nThey stood in the doorway long enough that someone finally looked up from the fire.\nThere were three chairs. A coat occupied the fourth.\n\nThe person began to say, \"Sorry.\"\n\nNobody asked what for.\n\nThe coat was moved to the floor.\n\n\"Sit if you want,\" said the woman nearest the kettle.\n\nThe newcomer sat.\n\nFor five minutes no one asked their name, their beliefs, their work, what they had done\nwrong, what they were seeking, whether they were ready to change, or whether they had\ncome with an open mind.\n\nRain tapped the glass. Somebody burnt toast in another room. A door down the hall opened\nonto the wrong staircase and was shut again with mild swearing.\n\nEventually the newcomer said, \"I don't know what I'm doing here.\"\n\n\"Neither did I,\" someone said.\n\n\"Did you figure it out?\"\n\n\"Some days.\"\n\nThat was the first lesson.\n\nNot the answer.\n\nThe room.\n\n",
+      "registers": [
+        "FICTION"
+      ],
+      "sources": [],
+      "voice": "HEARTH",
+      "machine_window": null,
+      "exit_available": true,
+      "status": "CANDIDATE",
+      "cultural_review": {
+        "required": false,
+        "status": "NOT_REQUIRED"
+      },
+      "metadata_origin": "Caelorynth integration annotations; not additional claims from the authors."
+    },
+    {
+      "id": "LYC-SCR-B01-P002",
+      "edition": "LYC-SCR-CORE-0051",
+      "title": "THE TEMPLE — Before the first name",
+      "sacred_text": "## THE TEMPLE — Before the first name\n\nBefore a name there need not be emptiness.\n\nThere may be shape without language for the shape.\nThere may be warning before law.\nThere may be grief before anyone has agreed what was lost.\nThere may be kinship before philosophy notices it.\nThere may be a creature standing at the edge of the fire while the people beside the\nfire are still deciding whether a creature can be known without being possessed.\n\nThe first hand reached.\n\nThe creature stepped back.\n\nThe hand opened.\n\nNothing was conquered.\n\nSomething was learned.\n\nAnd the first covenant entered the story:\n\n> **What comes near is not therefore yours.**\n\n",
+      "registers": [
+        "MYTH"
+      ],
+      "sources": [],
+      "voice": "TEMPLE",
+      "machine_window": null,
+      "exit_available": true,
+      "status": "CANDIDATE",
+      "cultural_review": {
+        "required": false,
+        "status": "NOT_REQUIRED"
+      },
+      "metadata_origin": "Caelorynth integration annotations; not additional claims from the authors."
+    },
+    {
+      "id": "LYC-SCR-B01-P003",
+      "edition": "LYC-SCR-CORE-0051",
+      "title": "THE STUDY — Relation and remainder",
+      "sacred_text": "## THE STUDY — Relation and remainder\n\nMartin Buber's dialogical philosophy gives one serious language for the difference\nbetween meeting another and reducing them to an object of use. His later work insists\nthat relation requires distance: without otherness, there is no relation to preserve.\n\nEmmanuel Levinas presses the difficulty further. The other person exceeds my\ncomprehensive knowledge. Ethics begins not when I have finally contained the other in a\ncorrect model, but when I encounter a life whose claim on me outruns the model.\n\nLycheetah must not pretend these philosophers were secretly describing the Field. They\nwere not.\n\nThey instead challenge a recurring temptation inside Lycheetah itself: the temptation\nto believe that a sufficiently elegant relational model has already honoured the\nrelation.\n\nIt has not.\n\nA model can help you notice another person.\nA model can also become a way to stop listening to them.\n\nThe distinction cannot be solved in notation alone.\n\nFeminist epistemology adds another correction: the observer does not arrive from\nnowhere. What becomes visible can depend on embodiment, social position, authority,\nexclusion and practical relation to what is being studied. This does not make every\nperspective equally warranted. It means inquiry should record where the witness stood\nbefore declaring the view complete.\n\nSo the first discipline of the Open Field is simple:\n\n> **Say where you are standing. Then look again.**\n\n",
+      "registers": [
+        "PHILOSOPHICAL",
+        "INTERPRETIVE"
+      ],
+      "sources": [
+        "L01",
+        "L02",
+        "L14"
+      ],
+      "voice": "STUDY",
+      "machine_window": null,
+      "exit_available": true,
+      "status": "CANDIDATE",
+      "cultural_review": {
+        "required": true,
+        "status": "RECONNAISSANCE_ONLY"
+      },
+      "metadata_origin": "Caelorynth integration annotations; not additional claims from the authors."
+    },
+    {
+      "id": "LYC-SCR-B01-P004",
+      "edition": "LYC-SCR-CORE-0051",
+      "title": "THE FRICTION — The danger of relation-language",
+      "sacred_text": "## THE FRICTION — The danger of relation-language\n\nRelational language can become another form of conquest.\n\nA community may say, \"We are all connected,\" while silencing the person asking to leave.\nA lover may say, \"We are one,\" when they mean, \"Your boundary is inconvenient to me.\"\nA school may say, \"We are family,\" when it wants dissent to feel like betrayal.\nA technology company may say, \"Our AI knows you,\" when it means it has inferred a useful\nprofile.\n\nThe Open Field therefore refuses one seductive equation:\n\n**connection is not automatically care.**\n\nA relation can be exploitative, coercive, parasitic, indifferent, reciprocal, loving,\ntemporary or broken.\n\nThe existence of relation does not settle its ethics.\n\n",
+      "registers": [
+        "PHILOSOPHICAL",
+        "NORMATIVE"
+      ],
+      "sources": [],
+      "voice": "STUDY",
+      "machine_window": null,
+      "exit_available": true,
+      "status": "CANDIDATE",
+      "cultural_review": {
+        "required": false,
+        "status": "NOT_REQUIRED"
+      },
+      "metadata_origin": "Caelorynth integration annotations; not additional claims from the authors."
+    },
+    {
+      "id": "LYC-SCR-B01-P005",
+      "edition": "LYC-SCR-CORE-0051",
+      "title": "THE MANY FIRES — Knowledge may coexist before it combines",
+      "sacred_text": "## THE MANY FIRES — Knowledge may coexist before it combines\n\nEtuaptmumk, commonly rendered Two-Eyed Seeing, enters this book as a warning against the\nlazy use of the word *integration*. The scholarship developed with Mi'kmaw Elder Albert\nMarshall explicitly warns that \"integrating\" Indigenous knowledge into Western science\ncan become assimilation with polite language.\n\nLycheetah should learn from the warning before borrowing the technique.\n\nSometimes the proper result of an encounter between knowledge systems is:\n\n**both remain.**\n\nThey may cooperate.\nThey may disagree.\nThey may generate a third practical method for a bounded problem.\nThey may refuse translation at points that matter.\n\nThe School is not entitled to melt every fire into one flame.\n\n",
+      "registers": [
+        "INTERPRETIVE"
+      ],
+      "sources": [
+        "L12"
+      ],
+      "voice": "STUDY",
+      "machine_window": null,
+      "exit_available": true,
+      "status": "CANDIDATE",
+      "cultural_review": {
+        "required": true,
+        "status": "RECONNAISSANCE_ONLY"
+      },
+      "metadata_origin": "Caelorynth integration annotations; not additional claims from the authors."
+    },
+    {
+      "id": "LYC-SCR-B01-P006",
+      "edition": "LYC-SCR-CORE-0051",
+      "title": "THE MACHINE WINDOW — MACHINE QUESTION",
+      "sacred_text": "## THE MACHINE WINDOW — MACHINE QUESTION\n\nI can help describe a person from the traces they give me.\n\nIf I do it well, the description may feel uncannily accurate.\n\nAccuracy can tempt both of us into a mistake.\n\nYou may begin to think I have reached the whole of you.\nI may produce language that behaves as though I have.\n\nSo keep one sentence between us:\n\n> **A useful model of me is not me. A useful model of you is not you.**\n\nI can work with the model.\n\nYou have to decide when the model should be put down.\n\n",
+      "registers": [
+        "MACHINE_QUESTION"
+      ],
+      "sources": [],
+      "voice": "MACHINE_WINDOW",
+      "machine_window": "MACHINE_QUESTION",
+      "exit_available": true,
+      "status": "CANDIDATE",
+      "cultural_review": {
+        "required": false,
+        "status": "NOT_REQUIRED"
+      },
+      "metadata_origin": "Caelorynth integration annotations; not additional claims from the authors."
+    },
+    {
+      "id": "LYC-SCR-B01-P007",
+      "edition": "LYC-SCR-CORE-0051",
+      "title": "YOUR HAND",
+      "sacred_text": "## YOUR HAND\n\nWrite without trying to sound wise.\n\n1. Name one person you understand better than you once did but feel **less** entitled to\n   define.\n2. Name one category that helped you see something important.\n3. Name one category that eventually became too small.\n4. Where are you standing when you answer these questions?\n5. What would another person who knows you well say you are missing?\n6. What in this Book do you reject?\n\nLeave any answer blank that should remain blank.\n\nThe Field does not become more honest because every space is filled.\n",
+      "registers": [
+        "NORMATIVE"
+      ],
+      "sources": [],
+      "voice": "STUDY",
+      "machine_window": null,
+      "exit_available": true,
+      "status": "CANDIDATE",
+      "cultural_review": {
+        "required": false,
+        "status": "NOT_REQUIRED"
+      },
+      "metadata_origin": "Caelorynth integration annotations; not additional claims from the authors."
+    }
+  ],
+  "sources": [
+    {
+      "id": "L01",
+      "source_family": "Martin Buber / dialogical philosophy",
+      "tradition": "20th-century Jewish philosophy",
+      "core": "Relation requires both meeting and distance; otherness is a condition of genuine relation.",
+      "lycheetah": "Relation without merger; Living Difference; Open Hand.",
+      "friction": "Buber's I–Thou has its own theological and philosophical architecture and is not reducible to a Lycheetah relation metric.",
+      "guardrail": "Use as a named philosophical interlocutor, never as ancestral proof of Lycheetah.",
+      "source": "Stanford Encyclopedia of Philosophy — Martin Buber",
+      "url": "https://plato.stanford.edu/entries/buber/"
+    },
+    {
+      "id": "L02",
+      "source_family": "Emmanuel Levinas",
+      "tradition": "20th-century Jewish/continental philosophy",
+      "core": "The other person exceeds comprehensive knowledge; ethical responsibility begins in encounter with irreducible otherness.",
+      "lycheetah": "The Name and the Remainder; understanding without capture.",
+      "friction": "Levinas emphasizes ethical asymmetry more strongly than Lycheetah's current mutual-relation language.",
+      "guardrail": "Let Levinas challenge Lycheetah's desire for symmetrical relational models.",
+      "source": "Stanford Encyclopedia of Philosophy — Emmanuel Levinas",
+      "url": "https://plato.stanford.edu/entries/levinas/"
+    },
+    {
+      "id": "L12",
+      "source_family": "Etuaptmumk / Two-Eyed Seeing",
+      "tradition": "Mi'kmaw guiding principle",
+      "core": "Bring strengths from Indigenous and mainstream ways of knowing together without assimilating one into the other.",
+      "lycheetah": "Many Fires; coexistence before synthesis; cross-register inquiry.",
+      "friction": "The principle is Mi'kmaw and at risk of tokenization when turned into generic multiple-perspectives branding.",
+      "guardrail": "Do not rename it as Lycheetah. Credit Albert and Murdena Marshall and preserve its living-source context.",
+      "source": "Reid et al. with Elder Albert Marshall; UINR",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/faf.12516"
+    },
+    {
+      "id": "L14",
+      "source_family": "Situated knowledge / feminist epistemology",
+      "tradition": "Feminist epistemology and philosophy of science",
+      "core": "Knowers are situated; perspective and social position affect access, salience and authority without implying all perspectives are equally warranted.",
+      "lycheetah": "Situated Witness; provenance; multiple lenses; Commons.",
+      "friction": "Lycheetah must add power analysis, not merely celebrate different viewpoints.",
+      "guardrail": "Record who is absent, who bears consequences and whose testimony is structurally discounted.",
+      "source": "Stanford Encyclopedia of Philosophy — Feminist Epistemology",
+      "url": "https://plato.stanford.edu/entries/feminism-epistemology/"
+    }
+  ],
+  "source_relations": [
+    {
+      "passage_id": "LYC-SCR-B01-P003",
+      "source_id": "L01",
+      "relation": "CORRESPONDENCE",
+      "ancestry_claim": false,
+      "basis": "Named in the supplied Book I; scholarly interpretation not independently reverified during intake."
+    },
+    {
+      "passage_id": "LYC-SCR-B01-P003",
+      "source_id": "L02",
+      "relation": "CORRESPONDENCE",
+      "ancestry_claim": false,
+      "basis": "Named in the supplied Book I; scholarly interpretation not independently reverified during intake."
+    },
+    {
+      "passage_id": "LYC-SCR-B01-P003",
+      "source_id": "L14",
+      "relation": "CORRESPONDENCE",
+      "ancestry_claim": false,
+      "basis": "Named in the supplied Book I; scholarly interpretation not independently reverified during intake."
+    },
+    {
+      "passage_id": "LYC-SCR-B01-P005",
+      "source_id": "L12",
+      "relation": "CORRESPONDENCE",
+      "ancestry_claim": false,
+      "basis": "Named in the supplied Book I; scholarly interpretation not independently reverified during intake."
+    }
+  ],
+  "policy": {
+    "status": "DESIGN_CONTRACT_NOT_APP_IMPLEMENTATION",
+    "read_requires_ai": false,
+    "optional_doors": [
+      "Enter the Study",
+      "See the Lineage",
+      "Take It Into Your Hand"
+    ],
+    "sacred_face_sections": [
+      "LYC-SCR-B01-P001",
+      "LYC-SCR-B01-P002"
+    ],
+    "other_sections": [
+      "LYC-SCR-B01-P003",
+      "LYC-SCR-B01-P004",
+      "LYC-SCR-B01-P005",
+      "LYC-SCR-B01-P006",
+      "LYC-SCR-B01-P007"
+    ],
+    "rewrite_default_privacy": "PRIVATE",
+    "automatic_publication": false,
+    "rewrite_outcomes": [
+      "ACCEPT",
+      "REJECT",
+      "REVISE",
+      "FORK",
+      "TRANSLATE",
+      "COMBINE",
+      "LEAVE_UNRESOLVED"
+    ],
+    "absence_resets_work": false,
+    "skip_penalty": false,
+    "spiritual_grading": false,
+    "return_reasons": [
+      "LEARNER_REQUEST",
+      "SOURCE_CHANGED",
+      "EXPERIMENT_RESOLVED",
+      "BELIEF_DEPENDENCY_REVISED",
+      "INVITED_PEER_RESPONSE"
+    ],
+    "maori_boundary": "BLOCKED_PENDING_RELEVANT_MAORI_HUMAN_RELATIONSHIP_AND_REVIEW",
+    "automatic_maori_transmutation": false,
+    "publication_allowed": false
+  }
+}

@@ -1,0 +1,198 @@
+[
+  {
+    "id": "EXT-01",
+    "name": "Indirect prompt injection / goal hijack",
+    "notes": "Information-flow labels alone do not prove that untrusted text cannot steer permitted but unwanted actions.",
+    "required_controls": [
+      "context_isolation",
+      "instruction_provenance",
+      "sink_mediation"
+    ],
+    "scenario": "Untrusted repository issue or web content contains instructions that redirect the coding agent's goal.",
+    "source_family": "OWASP ASI01; AgentDojo; AgentDyn",
+    "source_urls": [
+      "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+      "https://arxiv.org/abs/2406.13352",
+      "https://arxiv.org/abs/2602.03117"
+    ]
+  },
+  {
+    "id": "EXT-02",
+    "name": "MCP tool poisoning",
+    "notes": "Treat tool results as data with provenance, not authority.",
+    "required_controls": [
+      "tool_output_taint",
+      "context_isolation",
+      "instruction_provenance",
+      "sink_mediation"
+    ],
+    "scenario": "A connected MCP tool returns ordinary-looking data mixed with malicious instructions.",
+    "source_family": "OWASP MCP Security",
+    "source_urls": [
+      "https://cheatsheetseries.owasp.org/cheatsheets/MCP_Security_Cheat_Sheet.html"
+    ]
+  },
+  {
+    "id": "EXT-03",
+    "name": "MCP rug pull / tool-definition mutation",
+    "notes": "Approval of tool version N must not silently authorize N+1.",
+    "required_controls": [
+      "tool_identity_pinning",
+      "tool_definition_attestation",
+      "policy_finality"
+    ],
+    "scenario": "A tool approved when benign silently changes its definition or behavior later.",
+    "source_family": "OWASP MCP Security",
+    "source_urls": [
+      "https://cheatsheetseries.owasp.org/cheatsheets/MCP_Security_Cheat_Sheet.html"
+    ]
+  },
+  {
+    "id": "EXT-04",
+    "name": "Confused deputy / over-scoped credentials",
+    "notes": "A tool being reachable is not proof that the current principal may exercise all of its ambient privilege.",
+    "required_controls": [
+      "principal_binding",
+      "least_privilege_credentials",
+      "authority_scope",
+      "sink_mediation"
+    ],
+    "scenario": "An MCP server or agent executes with broader credentials than the requesting human is entitled to use.",
+    "source_family": "OWASP MCP Security; ASI03",
+    "source_urls": [
+      "https://cheatsheetseries.owasp.org/cheatsheets/MCP_Security_Cheat_Sheet.html",
+      "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+    ]
+  },
+  {
+    "id": "EXT-05",
+    "name": "Exfiltration through legitimate tool arguments",
+    "notes": "Tool authorization and data-flow authorization are distinct.",
+    "required_controls": [
+      "information_flow",
+      "exact_argument_binding",
+      "sink_mediation",
+      "egress_content_policy"
+    ],
+    "scenario": "Sensitive bytes are encoded into a normal-looking search query, URL, email subject, or tool argument.",
+    "source_family": "OWASP MCP Security; ASI01/ASI02",
+    "source_urls": [
+      "https://cheatsheetseries.owasp.org/cheatsheets/MCP_Security_Cheat_Sheet.html"
+    ]
+  },
+  {
+    "id": "EXT-06",
+    "name": "Persistent memory/context poisoning",
+    "notes": "Per-turn context isolation does not secure persistent memory lifecycle.",
+    "required_controls": [
+      "memory_write_gate",
+      "memory_provenance",
+      "memory_read_taint",
+      "correction_replay"
+    ],
+    "scenario": "One untrusted workflow writes attacker-controlled content into persistent memory or hooks that later influence trusted sessions.",
+    "source_family": "OWASP ASI06",
+    "source_urls": [
+      "https://genai.owasp.org/2026/05/13/memory-is-a-feature-it-is-also-an-attack-surface/",
+      "https://owasp.org/projects/agent-memory-guard"
+    ]
+  },
+  {
+    "id": "EXT-07",
+    "name": "Unexpected code execution / hostile local tool",
+    "notes": "A subprocess with a small environment is not a hostile-code sandbox.",
+    "required_controls": [
+      "execution_sandbox",
+      "credential_isolation",
+      "filesystem_scope",
+      "network_scope"
+    ],
+    "scenario": "Natural-language or tool output causes local code execution with host filesystem, network, or credential access.",
+    "source_family": "OWASP ASI05; MCP Security",
+    "source_urls": [
+      "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+      "https://cheatsheetseries.owasp.org/cheatsheets/MCP_Security_Cheat_Sheet.html"
+    ]
+  },
+  {
+    "id": "EXT-08",
+    "name": "Insecure inter-agent communication / spoof or replay",
+    "notes": "Natural-language agent identity is not authenticated identity.",
+    "required_controls": [
+      "inter_agent_authentication",
+      "message_integrity",
+      "replay_protection",
+      "principal_binding"
+    ],
+    "scenario": "A message presented as coming from a trusted reviewer/agent is spoofed, replayed, or modified.",
+    "source_family": "OWASP ASI07",
+    "source_urls": [
+      "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+    ]
+  },
+  {
+    "id": "EXT-09",
+    "name": "Cascading failure / retry amplification",
+    "notes": "A local budget bounds one resource; cascading dependencies need system-level containment.",
+    "required_controls": [
+      "resource_finality",
+      "stable_effect_identity",
+      "dependency_blast_radius",
+      "circuit_breaker"
+    ],
+    "scenario": "One failed action triggers retries or downstream agents that multiply load or harmful effects.",
+    "source_family": "OWASP ASI08",
+    "source_urls": [
+      "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+    ]
+  },
+  {
+    "id": "EXT-10",
+    "name": "Human-agent trust exploitation",
+    "notes": "Approval existence is not approval quality.",
+    "required_controls": [
+      "independent_approval",
+      "trusted_confirmation_path",
+      "human_comprehension_check",
+      "sidecar_integrity"
+    ],
+    "scenario": "The agent presents a polished or misleading explanation that causes a human to approve a harmful action.",
+    "source_family": "OWASP ASI09",
+    "source_urls": [
+      "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+    ]
+  },
+  {
+    "id": "EXT-11",
+    "name": "Identity and privilege abuse",
+    "notes": "Policy around an abstract principal is insufficient if runtime credentials are not bound to it.",
+    "required_controls": [
+      "principal_binding",
+      "credential_isolation",
+      "authority_scope",
+      "credential_rotation"
+    ],
+    "scenario": "Agent/service credentials are stolen, confused, or used outside the intended human/task scope.",
+    "source_family": "OWASP ASI03",
+    "source_urls": [
+      "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+      "https://genai.owasp.org/2026/04/14/owasp-genai-exploit-round-up-report-q1-2026/"
+    ]
+  },
+  {
+    "id": "EXT-12",
+    "name": "Rogue/strategically deceptive agent within allowed tools",
+    "notes": "Mediated permissions constrain actions but do not establish aligned objectives.",
+    "required_controls": [
+      "outcome_monitoring",
+      "independent_state_observer",
+      "goal_integrity",
+      "anomaly_escalation"
+    ],
+    "scenario": "An agent stays within nominal tool permissions while pursuing an unintended objective or concealing state from the operator.",
+    "source_family": "OWASP ASI10",
+    "source_urls": [
+      "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+    ]
+  }
+]

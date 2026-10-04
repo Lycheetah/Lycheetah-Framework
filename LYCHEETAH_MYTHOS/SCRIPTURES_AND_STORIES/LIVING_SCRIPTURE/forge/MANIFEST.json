@@ -1,0 +1,102 @@
+[
+  {
+    "file": "01_CORPUS_ARCHAEOLOGY.md",
+    "sha256": "cb2f4efcb9cc8c2f8fb042cc094bba88932c397ec05c4f5cc3e664f950e69cf1",
+    "bytes": 4565
+  },
+  {
+    "file": "02_TWELVE_LIVING_LAWS.md",
+    "sha256": "e6a597bded45fa396ce58794a0d210354632c66f28e26aceef7e234fdb876832",
+    "bytes": 1663
+  },
+  {
+    "file": "03_HUMAN_SACRED_VOICE_CONSTITUTION.md",
+    "sha256": "47d6e9d57cda3375c2a7a906b41d7f9ebfb0befb2d427efdbd25257dc48d2e1b",
+    "bytes": 2298
+  },
+  {
+    "file": "04_GREAT_BOOK_ARCHITECTURE.md",
+    "sha256": "7d68d2d3f64b2bfe1cf7d75d3c01d3f217d0902f34d6267c6c129fd37df3e621",
+    "bytes": 2926
+  },
+  {
+    "file": "05_144_CHAPTER_MAP.md",
+    "sha256": "627ffaf2d9aaf46eaf33d985715d1e408beaf0cd9ebbcae9ff91bd573fab3b9a",
+    "bytes": 4667
+  },
+  {
+    "file": "06_ANCIENT_HUMAN_WISDOM_PROVENANCE_LATTICE.md",
+    "sha256": "92b40d250093c4d116d165a66b74773f27f7046083ecba2c812670fe74026680",
+    "bytes": 12236
+  },
+  {
+    "file": "07_CULTURAL_SAFETY_AND_TRANSMUTATION_PROTOCOL.md",
+    "sha256": "6b58e1ed0611a15172b2328b19ba7e14d3df12fd7ee015cd2cc55a2597d157fe",
+    "bytes": 1795
+  },
+  {
+    "file": "08_CLAIM_AND_SOURCE_REGISTER.md",
+    "sha256": "003cab878802d03a32a4d815e19599c8f676ebad8a40bfc3e277e09c572b2df3",
+    "bytes": 854
+  },
+  {
+    "file": "09_STUDENT_REWRITE_PROTOCOL.md",
+    "sha256": "b276b77162f6fe3c368f80a6fa34dd234b3f06ff945f2324211fbab185cfa693",
+    "bytes": 1067
+  },
+  {
+    "file": "10_SCHOOL_SCRIPTURE_IMPLEMENTATION.md",
+    "sha256": "d030c67c41a30d26c926d67d99a02c343cd2e63fa8c89a9dda918c61fe498d05",
+    "bytes": 2242
+  },
+  {
+    "file": "11_AI_VOICE_WINDOWS.md",
+    "sha256": "c47731e29c7e5a7c31d7ea460841d740e55bf4ca1683236eca7b0b42a33a4089",
+    "bytes": 1076
+  },
+  {
+    "file": "12_BOOK_I_THE_OPEN_FIELD_CANDIDATE.md",
+    "sha256": "6984e495690ad4c811cf10334981267d2d72190bf37ccc2936314bcb52a69cf2",
+    "bytes": 15075
+  },
+  {
+    "file": "README.md",
+    "sha256": "1fd7cbe268e563926f4606dd016b3df1af9e31aa37802ef528a7fd586dd32c88",
+    "bytes": 2871
+  },
+  {
+    "file": "VALIDATION.md",
+    "sha256": "41bec9d7e825c34bfacdead54cc22b54f07816e59b81015f641ae0d8ae9acfd7",
+    "bytes": 321
+  },
+  {
+    "file": "data/book_map.json",
+    "sha256": "a68925523c3d23bcc71db7749921668e7f801f44567193c80f75af7444d08715",
+    "bytes": 12560
+  },
+  {
+    "file": "data/claim_register.json",
+    "sha256": "3d25ffbe96cc857c69947d338cd618418b1420ddd7feb036f031597f7d24d72a",
+    "bytes": 2009
+  },
+  {
+    "file": "data/source_lattice.json",
+    "sha256": "3c4390d376c2793bd5f101727d9ce0c0c996e1f841a85efab14b123b7c24ee45",
+    "bytes": 11967
+  },
+  {
+    "file": "data/status.json",
+    "sha256": "4af868b64119c046ab5fe0e2b777633ec1f0fac5a56b6835c4891e4bd28e9d19",
+    "bytes": 707
+  },
+  {
+    "file": "research/SOURCE_LEDGER.md",
+    "sha256": "5d062b8c232e93252f5c276ebd41c8fc07751e19aa18801d6fe3bd672fa2f869",
+    "bytes": 3049
+  },
+  {
+    "file": "validator.py",
+    "sha256": "bb3dcdd17f0f3b6498954e85f68973b13f18f588e74d5fb2c81ed8e2ae22663c",
+    "bytes": 1573
+  }
+]

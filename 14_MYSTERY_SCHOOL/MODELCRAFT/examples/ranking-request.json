@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "goal_ids": [
+    "LEARN_AI"
+  ],
+  "task_tags": [
+    "WRITING"
+  ],
+  "difficulty": "BEGINNER",
+  "budget": {
+    "kind": "ZERO",
+    "max_amount": 0,
+    "currency": null
+  },
+  "tool_ids": [],
+  "completed_prerequisites": [],
+  "unfinished_project_ids": []
+}

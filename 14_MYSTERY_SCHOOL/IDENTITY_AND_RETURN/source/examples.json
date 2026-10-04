@@ -1,0 +1,43 @@
+[
+  {
+    "receipt_version": "lycheetah.title-receipt.v0.1",
+    "title_name": "Radvyr",
+    "title_definition_version": "0.1",
+    "state": "EARNED",
+    "bearer_choice": true,
+    "witness_type": "ARTIFACT",
+    "evidence_uri": "artifact://provenance-trial/example",
+    "gate_id": "CASCADE.PROVENANCE.TRIAL.v1",
+    "roots": [
+      "RAD",
+      "THR",
+      "VER"
+    ],
+    "public_visibility": "PUBLIC",
+    "active": true,
+    "boundary": "Does not certify truthfulness, general expertise, or professional research credentials.",
+    "accepted_at": "2026-10-04T00:00:00+13:00",
+    "retired_at": null,
+    "personal_recovery": null
+  },
+  {
+    "receipt_version": "lycheetah.title-receipt.v0.1",
+    "title_name": "Godward",
+    "title_definition_version": "personal",
+    "state": "DECLARED",
+    "bearer_choice": true,
+    "witness_type": "SELF",
+    "evidence_uri": null,
+    "gate_id": null,
+    "roots": [
+      "THAE",
+      "DEV"
+    ],
+    "public_visibility": "PRIVATE",
+    "active": true,
+    "boundary": "Self-declared devotion; the School does not certify belief, sincerity, or theology.",
+    "accepted_at": "2026-10-04T00:00:00+13:00",
+    "retired_at": null,
+    "personal_recovery": "My chosen orientation toward God."
+  }
+]

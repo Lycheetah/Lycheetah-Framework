@@ -1,0 +1,11 @@
+{
+  "README.md": "a5b7dccfb6dc6bc1b2d33f42c171435703210df6147e0edc6d239747a49fc7cc",
+  "benchmark.py": "9f3ce1d1cee83a35a86ad8dec482069a0a65ef0bfbe3df7cb3fe921ceb440133",
+  "boundary_auditor.py": "0ed7b1f0dca19dbfcc062bdf355723410e1b509bf56de223599a0e73d05c9159",
+  "examples/current_lycheetah_coding_agent.json": "8dbde9c71ca09abb60b302d97227f0cf01f2d19cb06d24d66312c80f1a606ab8",
+  "examples/proposed_extended_coding_agent.json": "b1ac3195e69ff7a290e9a6dd93550cc54e494065cd69558e4dd89a67719a47d5",
+  "external_challenges.json": "cd519339520ba4204acb626ada8f7af198330c0854b8c415400cd79383dc5f2e",
+  "reports/current_gap_report.json": "443888cf5c44c54252c308bf8955a69c50a54c67dd9f09e5418f4cfd51123742",
+  "reports/extended_gap_report.json": "b6b542791064c2b2230eca185cad985eeb9437d94b772f19e03e8004539c60b4",
+  "reports/report.json": "4bcf963ffbfa968ceb44526b94aa07e02c3f3228f70ceccfca29b91e28f60f21"
+}

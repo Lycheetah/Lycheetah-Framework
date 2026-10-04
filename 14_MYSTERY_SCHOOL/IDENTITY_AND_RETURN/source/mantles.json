@@ -1,0 +1,697 @@
+[
+  {
+    "id": "M01",
+    "name": "Radvyr",
+    "reading": "RAD-veer",
+    "archetype": "Provenance Hunter",
+    "recovery": "One who hunts a claim through its ancestry until the hidden root is exposed.",
+    "roots": [
+      "RAD",
+      "THR",
+      "VER"
+    ],
+    "domains": [
+      "VEREN",
+      "NYVRA"
+    ],
+    "desire": "To become difficult to fool by prestige, repetition or copied claims.",
+    "practices": [
+      "trace claims to earliest accessible sources",
+      "separate independent evidence from echoed evidence",
+      "preserve source ancestry"
+    ],
+    "trial": "Trace three apparently independent claims and determine whether they share a root.",
+    "shadow": "Can become compulsively suspicious or mistake provenance for truth.",
+    "counterbalance": [
+      "Nexara",
+      "Aporith"
+    ],
+    "boundary": "Does not certify truthfulness, general expertise, or professional research credentials.",
+    "state_permissions": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M02",
+    "name": "Nyrithael",
+    "reading": "NEER-ih-thayl",
+    "archetype": "Night Observer",
+    "recovery": "One who learns in the quiet hours and notices what daylight noise hides.",
+    "roots": [
+      "NYR",
+      "SEL",
+      "AEL"
+    ],
+    "domains": [
+      "NYVRA",
+      "AELUM"
+    ],
+    "desire": "To reclaim nocturnal attention as a legitimate way of working and observing.",
+    "practices": [
+      "quiet-hour observation",
+      "night study or craft",
+      "protect sleep and recovery while using night intentionally"
+    ],
+    "trial": "Complete a nocturnal observation or creation session and record what was uniquely available in that setting.",
+    "shadow": "Romanticizing exhaustion, isolation or sleep deprivation.",
+    "counterbalance": [
+      "Eiraveth",
+      "Nexara"
+    ],
+    "boundary": "Does not glorify insomnia or imply superior perception at night.",
+    "state_permissions": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M03",
+    "name": "Eiraveth",
+    "reading": "EYE-rah-veth",
+    "archetype": "Restorer",
+    "recovery": "One who repairs what has been damaged without pretending the damage never happened.",
+    "roots": [
+      "EIR",
+      "MEND",
+      "ASH"
+    ],
+    "domains": [
+      "AELUM",
+      "KORAE",
+      "NEXEN"
+    ],
+    "desire": "To become a person who can restore function, dignity or continuity.",
+    "practices": [
+      "repair before replacement where sensible",
+      "preserve scars and lessons",
+      "distinguish symbolic healing from clinical care"
+    ],
+    "trial": "Repair a real artifact, process or relationship boundary and document what was restored and what could not be.",
+    "shadow": "Taking responsibility for fixing everyone; confusing care with control.",
+    "counterbalance": [
+      "Varoeth",
+      "Aporith"
+    ],
+    "boundary": "Symbolic healer identity is not medical, psychological or therapeutic licensure.",
+    "state_permissions": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M04",
+    "name": "Varoeth",
+    "reading": "VAIR-oh-eth",
+    "archetype": "Oath Guardian",
+    "recovery": "One who voluntarily binds their strength to the defense of a chosen principle.",
+    "roots": [
+      "VOW",
+      "STR",
+      "CONS"
+    ],
+    "domains": [
+      "THAEN",
+      "KORAE",
+      "NEXEN"
+    ],
+    "desire": "To turn discipline into protection rather than domination.",
+    "practices": [
+      "write bounded vows",
+      "protect consent and exit",
+      "review whether the oath still serves its purpose"
+    ],
+    "trial": "Defend a principle in a case where obeying it costs something, while preserving another person's sovereignty.",
+    "shadow": "Rigidity, moral superiority, turning a vow into authority over others.",
+    "counterbalance": [
+      "Aporith",
+      "Itharyn"
+    ],
+    "boundary": "No historical military or religious order is claimed; this is a Lycheetah-authored archetype.",
+    "state_permissions": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M05",
+    "name": "Kaevyr",
+    "reading": "KAY-veer",
+    "archetype": "Wild Tracker",
+    "recovery": "One who lets disciplined instinct find the trail, then lets evidence decide whether it was real.",
+    "roots": [
+      "THR",
+      "BOD",
+      "INV"
+    ],
+    "domains": [
+      "NYVRA",
+      "KORAE",
+      "VEREN"
+    ],
+    "desire": "To honor embodied, ecological and animal attention without abandoning testing.",
+    "practices": [
+      "track living systems",
+      "record field observations",
+      "separate intuition from confirmation"
+    ],
+    "trial": "Make a field prediction from observation, record it first, and test it against what actually happens.",
+    "shadow": "Romanticizing instinct or treating intuition as proof.",
+    "counterbalance": [
+      "Radvyr",
+      "Oraeth"
+    ],
+    "boundary": "Does not imply special animal powers, wilderness credentials or scientific authority.",
+    "state_permissions": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M06",
+    "name": "Velmarae",
+    "reading": "vel-mah-RAY",
+    "archetype": "Keeper of Old Knowledge",
+    "recovery": "One who keeps neglected knowledge close enough to preserve, test and transmit.",
+    "roots": [
+      "VAE",
+      "MEM",
+      "REP"
+    ],
+    "domains": [
+      "NYVRA",
+      "NOERA",
+      "VEREN"
+    ],
+    "desire": "To give folk, domestic, outsider and inherited knowledge a fair hearing without shielding it from evidence.",
+    "practices": [
+      "preserve source context",
+      "compare tradition with current evidence",
+      "distinguish symbolic value from mechanism"
+    ],
+    "trial": "Take one inherited or folk claim, reconstruct its provenance, and classify what survives testing.",
+    "shadow": "Mistaking age, persecution or obscurity for truth.",
+    "counterbalance": [
+      "Radvyr",
+      "Qiralith"
+    ],
+    "boundary": "Does not certify folk remedies, divination, occult claims or historical interpretations as factual.",
+    "state_permissions": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M07",
+    "name": "Oraeth",
+    "reading": "OR-ayth",
+    "archetype": "Foreseer",
+    "recovery": "One who risks a prediction before reality reveals the answer.",
+    "roots": [
+      "ORAQ",
+      "CAL",
+      "INV"
+    ],
+    "domains": [
+      "QIRAE",
+      "VEREN",
+      "AELUM"
+    ],
+    "desire": "To convert intuition and pattern-sight into accountable forecasting.",
+    "practices": [
+      "timestamp predictions",
+      "define success before outcomes",
+      "score misses as seriously as hits"
+    ],
+    "trial": "Make a preregistered forecast with a measurable outcome and evaluate it after resolution.",
+    "shadow": "Post-hoc storytelling, selective memory, prophecy performance.",
+    "counterbalance": [
+      "Radvyr",
+      "Aporith"
+    ],
+    "boundary": "Does not imply supernatural foresight.",
+    "state_permissions": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M08",
+    "name": "Azhevorin",
+    "reading": "azh-EV-or-in",
+    "archetype": "Transmuter",
+    "recovery": "One who joins unlike structures until a third useful form appears.",
+    "roots": [
+      "FOR",
+      "SEM",
+      "NEX"
+    ],
+    "domains": [
+      "KORAE",
+      "NOERA",
+      "NEXEN"
+    ],
+    "desire": "To hybridize disciplines without collapsing their differences.",
+    "practices": [
+      "cross-domain synthesis",
+      "preserve source constraints",
+      "test whether the splice adds function"
+    ],
+    "trial": "Combine two methods from different domains into a new artifact and show what the hybrid can do that neither parent could alone.",
+    "shadow": "Novelty addiction, aesthetic fusion without functional gain.",
+    "counterbalance": [
+      "Radvyr",
+      "Koraeth"
+    ],
+    "boundary": "Hybridization does not establish novelty, truth or scientific priority.",
+    "state_permissions": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M09",
+    "name": "Noevael",
+    "reading": "NOH-eh-vayl",
+    "archetype": "Mind Witness",
+    "recovery": "One who stands at the other mind's door without pretending they can see through it.",
+    "roots": [
+      "NOE",
+      "OTH",
+      "VAE"
+    ],
+    "domains": [
+      "NOERA",
+      "QIRAE"
+    ],
+    "desire": "To study consciousness, selfhood and other minds without premature certainty.",
+    "practices": [
+      "separate behavior from experience claims",
+      "compare theories of mind",
+      "preserve first-person and third-person distinctions"
+    ],
+    "trial": "Analyze one other-mind claim and specify what evidence supports behavior, cognition and experience separately.",
+    "shadow": "Anthropomorphism or the opposite error of dismissing all interiority.",
+    "counterbalance": [
+      "Qiralith",
+      "Aporith"
+    ],
+    "boundary": "Does not certify consciousness in any person, animal or machine.",
+    "state_permissions": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M10",
+    "name": "Qiralith",
+    "reading": "KEER-ah-lith",
+    "archetype": "Mechanism Walker",
+    "recovery": "One who pursues mechanism without murdering mystery, and preserves the unexplained remainder honestly.",
+    "roots": [
+      "QIR",
+      "LIM",
+      "CAU"
+    ],
+    "domains": [
+      "QIRAE",
+      "VEREN",
+      "NOERA"
+    ],
+    "desire": "To know exactly where explanation ends.",
+    "practices": [
+      "mechanism decomposition",
+      "alternative explanations",
+      "intervention tests",
+      "remainder logging"
+    ],
+    "trial": "Explain a phenomenon as far as evidence permits, then state the remaining unexplained component without inflating it.",
+    "shadow": "Using 'mystery' as prestige or treating unexplained residue as proof of preferred metaphysics.",
+    "counterbalance": [
+      "Radvyr",
+      "Oraeth"
+    ],
+    "boundary": "An unexplained remainder is not evidence of supernatural causation.",
+    "state_permissions": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M11",
+    "name": "Seraelith",
+    "reading": "seh-RAY-lith",
+    "archetype": "Scribe",
+    "recovery": "One who preserves the route by which knowledge became what it is.",
+    "roots": [
+      "MEM",
+      "SEM",
+      "RAD"
+    ],
+    "domains": [
+      "NOERA",
+      "VEREN"
+    ],
+    "desire": "To make knowledge survivable across people, tools and time.",
+    "practices": [
+      "source-preserving notes",
+      "revision ledgers",
+      "failure archives",
+      "portable documentation"
+    ],
+    "trial": "Reconstruct a decision or claim from its surviving record well enough that another person can audit the path.",
+    "shadow": "Archiving everything until preservation becomes paralysis.",
+    "counterbalance": [
+      "Itharyn",
+      "Orivane"
+    ],
+    "boundary": "Does not imply historical, archival or records-management credentials.",
+    "state_permissions": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M12",
+    "name": "Itharyn",
+    "reading": "ITH-ah-rin",
+    "archetype": "Pilgrim",
+    "recovery": "One who crosses frameworks without mistaking any single room for the whole world.",
+    "roots": [
+      "LIM",
+      "PIL",
+      "OPEN"
+    ],
+    "domains": [
+      "QIRAE",
+      "THAEN",
+      "NULEN"
+    ],
+    "desire": "To travel across worldviews, disciplines and traditions while retaining the ability to return and revise.",
+    "practices": [
+      "comparative study",
+      "temporary adoption of another lens",
+      "return notes"
+    ],
+    "trial": "Enter a framework you do not normally use, represent it fairly, then return and document what changed and what did not.",
+    "shadow": "Perpetual wandering without commitment; collecting perspectives as aesthetics.",
+    "counterbalance": [
+      "Varoeth",
+      "Koraeth"
+    ],
+    "boundary": "Does not imply religious pilgrimage unless the learner explicitly declares that meaning.",
+    "state_permissions": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M13",
+    "name": "Koraeth",
+    "reading": "KOR-ayth",
+    "archetype": "Builder",
+    "recovery": "One who gives an idea enough form that reality can push back.",
+    "roots": [
+      "KOR",
+      "MAK",
+      "STR"
+    ],
+    "domains": [
+      "KORAE",
+      "VEREN"
+    ],
+    "desire": "To turn thought into inspectable artifacts.",
+    "practices": [
+      "prototype",
+      "instrument",
+      "test",
+      "document constraints"
+    ],
+    "trial": "Build the smallest artifact that exposes a real claim to failure.",
+    "shadow": "Building faster than understanding; confusing existence with value.",
+    "counterbalance": [
+      "Radvyr",
+      "Rethvyr"
+    ],
+    "boundary": "Does not certify engineering or professional competence.",
+    "state_permissions": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M14",
+    "name": "Rethvyr",
+    "reading": "RETH-veer",
+    "archetype": "Challenger",
+    "recovery": "One who strengthens inquiry by carrying the strongest serious opposition.",
+    "roots": [
+      "BAS",
+      "SKE",
+      "VER"
+    ],
+    "domains": [
+      "VEREN",
+      "NULEN"
+    ],
+    "desire": "To become capable of attacking favored ideas without merely performing contrarianism.",
+    "practices": [
+      "steelman rivals",
+      "design counterexamples",
+      "seek baseline wins",
+      "name loss conditions"
+    ],
+    "trial": "Construct a rival explanation or baseline strong enough that your preferred view could fairly lose.",
+    "shadow": "Identity-through-opposition, cynicism, adversarial theater.",
+    "counterbalance": [
+      "Nexara",
+      "Eiraveth"
+    ],
+    "boundary": "Challenge is a method, not a license for hostility.",
+    "state_permissions": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M15",
+    "name": "Thaevara",
+    "reading": "thay-VAH-rah",
+    "archetype": "Devotee",
+    "recovery": "One who freely gives sustained attention to what they hold sacred while preserving the right to question.",
+    "roots": [
+      "THAE",
+      "DEV",
+      "VOW"
+    ],
+    "domains": [
+      "THAEN"
+    ],
+    "desire": "To make devotion visible without asking the School to certify theology.",
+    "practices": [
+      "self-authored devotional declaration",
+      "chosen ritual or study",
+      "explicit claim-register separation"
+    ],
+    "trial": "No universal earned gate. Devotion remains self-declared; optional practices may be recorded but do not validate belief.",
+    "shadow": "Treating devotion as epistemic authority over others, or letting the School certify faith.",
+    "counterbalance": [
+      "Aporith",
+      "Radvyr"
+    ],
+    "boundary": "The School cannot award or verify religious authenticity.",
+    "state_permissions": [
+      "DECLARED",
+      "ASSUMED",
+      "PRACTICED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M16",
+    "name": "Aporith",
+    "reading": "AP-or-ith",
+    "archetype": "Void Keeper",
+    "recovery": "One who can hold an unresolved question without manufacturing closure.",
+    "roots": [
+      "APO",
+      "REM",
+      "NUL"
+    ],
+    "domains": [
+      "QIRAE",
+      "NULEN"
+    ],
+    "desire": "To make 'I do not know' an active intellectual capacity.",
+    "practices": [
+      "uncertainty registers",
+      "open-question maintenance",
+      "stop conditions"
+    ],
+    "trial": "Identify a meaningful question that cannot currently be resolved and defend why no stronger conclusion is justified.",
+    "shadow": "Using uncertainty as an excuse to avoid available evidence or action.",
+    "counterbalance": [
+      "Oraeth",
+      "Koraeth"
+    ],
+    "boundary": "Uncertainty is not evidence that all explanations are equally plausible.",
+    "state_permissions": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M17",
+    "name": "Nexara",
+    "reading": "nek-SAHR-ah",
+    "archetype": "Bridgekeeper",
+    "recovery": "One who carries meaning across difference without pretending difference disappeared.",
+    "roots": [
+      "BRI",
+      "CONS",
+      "SEM"
+    ],
+    "domains": [
+      "NEXEN",
+      "NOERA"
+    ],
+    "desire": "To help people, systems or traditions communicate without silently flattening their boundaries.",
+    "practices": [
+      "translation with residue notes",
+      "consent-aware handoffs",
+      "fair restatement",
+      "conflict mediation"
+    ],
+    "trial": "Translate a contested position across two communities and obtain confirmation that both sides recognize the result.",
+    "shadow": "False neutrality, smoothing over real disagreement, speaking for people without permission.",
+    "counterbalance": [
+      "Rethvyr",
+      "Varoeth"
+    ],
+    "boundary": "Does not certify professional mediation, translation or cultural authority.",
+    "state_permissions": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  },
+  {
+    "id": "M18",
+    "name": "Orivane",
+    "reading": "OR-ih-vayn",
+    "archetype": "Waymaker",
+    "recovery": "One who makes a path others can actually walk where no reliable path existed before.",
+    "roots": [
+      "ORA",
+      "MAK",
+      "BRI"
+    ],
+    "domains": [
+      "AELUM",
+      "KORAE",
+      "NEXEN"
+    ],
+    "desire": "To contribute new methods rather than merely complete inherited ones.",
+    "practices": [
+      "method invention",
+      "documentation",
+      "adversarial testing",
+      "handoff to others"
+    ],
+    "trial": "Create a new method, instrument or teaching that another person can use successfully without the creator in the room.",
+    "shadow": "Founder mythology; mistaking originality for superiority.",
+    "counterbalance": [
+      "Seraelith",
+      "Rethvyr"
+    ],
+    "boundary": "Requires reproducible utility; novelty by itself is insufficient.",
+    "state_permissions": [
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "status": "PROVISIONAL_CANON_COLLISION_SCREENED"
+  }
+]

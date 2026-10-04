@@ -1,0 +1,233 @@
+{
+  "version": "0.1",
+  "sections": [
+    "START_WITH_ZERO",
+    "MAKE_SOMETHING",
+    "GET_MORE_FROM_YOUR_MODEL",
+    "HELP_MY_BUSINESS",
+    "CONTINUE_MY_WORK",
+    "COMMUNITY_DISCOVERIES",
+    "GO_DEEPER"
+  ],
+  "recommendations": [
+    {
+      "version": "0.1",
+      "id": "R01",
+      "type": "LEARN",
+      "section": "START_WITH_ZERO",
+      "title": "Plan a useful artifact with $0",
+      "why_this": "This local exercise matches a goal you explicitly selected.",
+      "outcome": "A one-page goal and acceptance checklist.",
+      "cost": {
+        "kind": "ZERO",
+        "amount": 0,
+        "currency": null,
+        "note": "Reading/planning or recording on paper costs no model/API fee. Any optional inference or hardware has separate costs.",
+        "verified_at": "2026-10-04T01:40:50.794919Z",
+        "verification_source": "LOCAL_EXERCISE_NO_REQUIRED_SERVICE"
+      },
+      "time_shape": "One sitting; stop whenever you choose.",
+      "skip_effect": "Nothing is lost.",
+      "source_of_urgency": "None.",
+      "export_path": "FIRST_EXPERIMENT.md",
+      "source_refs": [
+        "FIRST_EXPERIMENT.md"
+      ],
+      "expires_at": null,
+      "goal_ids": [
+        "REDUCE_COST",
+        "MAKE_ARTIFACT"
+      ],
+      "task_tags": [
+        "GENERAL"
+      ],
+      "difficulty": "BEGINNER",
+      "requires_tools": [],
+      "prerequisites": [],
+      "project_ref": null
+    },
+    {
+      "version": "0.1",
+      "id": "R02",
+      "type": "MAKE",
+      "section": "MAKE_SOMETHING",
+      "title": "Make a reusable context pack",
+      "why_this": "This local exercise matches a goal you explicitly selected.",
+      "outcome": "A portable brief containing facts, constraints and checks.",
+      "cost": {
+        "kind": "ZERO",
+        "amount": 0,
+        "currency": null,
+        "note": "Reading/planning or recording on paper costs no model/API fee. Any optional inference or hardware has separate costs.",
+        "verified_at": "2026-10-04T01:40:50.794919Z",
+        "verification_source": "LOCAL_EXERCISE_NO_REQUIRED_SERVICE"
+      },
+      "time_shape": "One sitting; stop whenever you choose.",
+      "skip_effect": "Nothing is lost.",
+      "source_of_urgency": "None.",
+      "export_path": "FIRST_EXPERIMENT.md",
+      "source_refs": [
+        "FIRST_EXPERIMENT.md"
+      ],
+      "expires_at": null,
+      "goal_ids": [
+        "MAKE_ARTIFACT"
+      ],
+      "task_tags": [
+        "WRITING",
+        "CODING",
+        "GENERAL"
+      ],
+      "difficulty": "BEGINNER",
+      "requires_tools": [],
+      "prerequisites": [],
+      "project_ref": null
+    },
+    {
+      "version": "0.1",
+      "id": "R03",
+      "type": "LEARN",
+      "section": "GET_MORE_FROM_YOUR_MODEL",
+      "title": "Compare two ways of asking",
+      "why_this": "This local exercise matches a goal you explicitly selected.",
+      "outcome": "A recorded comparison with a baseline and failure notes.",
+      "cost": {
+        "kind": "ZERO",
+        "amount": 0,
+        "currency": null,
+        "note": "Reading/planning or recording on paper costs no model/API fee. Any optional inference or hardware has separate costs.",
+        "verified_at": "2026-10-04T01:40:50.794919Z",
+        "verification_source": "LOCAL_EXERCISE_NO_REQUIRED_SERVICE"
+      },
+      "time_shape": "One sitting; stop whenever you choose.",
+      "skip_effect": "Nothing is lost.",
+      "source_of_urgency": "None.",
+      "export_path": "FIRST_EXPERIMENT.md",
+      "source_refs": [
+        "FIRST_EXPERIMENT.md"
+      ],
+      "expires_at": null,
+      "goal_ids": [
+        "LEARN_AI"
+      ],
+      "task_tags": [
+        "GENERAL",
+        "WRITING"
+      ],
+      "difficulty": "BEGINNER",
+      "requires_tools": [],
+      "prerequisites": [],
+      "project_ref": null
+    },
+    {
+      "version": "0.1",
+      "id": "R04",
+      "type": "BUSINESS",
+      "section": "HELP_MY_BUSINESS",
+      "title": "Map one task before automating it",
+      "why_this": "This local exercise matches a goal you explicitly selected.",
+      "outcome": "Inputs, outputs, risks, approval and a measurement plan.",
+      "cost": {
+        "kind": "ZERO",
+        "amount": 0,
+        "currency": null,
+        "note": "Reading/planning or recording on paper costs no model/API fee. Any optional inference or hardware has separate costs.",
+        "verified_at": "2026-10-04T01:40:50.794919Z",
+        "verification_source": "LOCAL_EXERCISE_NO_REQUIRED_SERVICE"
+      },
+      "time_shape": "One sitting; stop whenever you choose.",
+      "skip_effect": "Nothing is lost.",
+      "source_of_urgency": "None.",
+      "export_path": "BUSINESS_QUICK_START.md",
+      "source_refs": [
+        "BUSINESS_QUICK_START.md"
+      ],
+      "expires_at": null,
+      "goal_ids": [
+        "MAP_BUSINESS"
+      ],
+      "task_tags": [
+        "BUSINESS"
+      ],
+      "difficulty": "BEGINNER",
+      "requires_tools": [],
+      "prerequisites": [],
+      "project_ref": null
+    },
+    {
+      "version": "0.1",
+      "id": "R05",
+      "type": "CONTRIBUTE",
+      "section": "COMMUNITY_DISCOVERIES",
+      "title": "Prepare a private replication receipt",
+      "why_this": "This local exercise matches a goal you explicitly selected.",
+      "outcome": "An exportable draft that can record failure as well as support.",
+      "cost": {
+        "kind": "ZERO",
+        "amount": 0,
+        "currency": null,
+        "note": "Reading/planning or recording on paper costs no model/API fee. Any optional inference or hardware has separate costs.",
+        "verified_at": "2026-10-04T01:40:50.794919Z",
+        "verification_source": "LOCAL_EXERCISE_NO_REQUIRED_SERVICE"
+      },
+      "time_shape": "One sitting; stop whenever you choose.",
+      "skip_effect": "Nothing is lost.",
+      "source_of_urgency": "None.",
+      "export_path": "CONTRACTS.md",
+      "source_refs": [
+        "CONTRACTS.md"
+      ],
+      "expires_at": null,
+      "goal_ids": [
+        "REPRODUCE"
+      ],
+      "task_tags": [
+        "GENERAL",
+        "RESEARCH"
+      ],
+      "difficulty": "BEGINNER",
+      "requires_tools": [],
+      "prerequisites": [],
+      "project_ref": null
+    },
+    {
+      "version": "0.1",
+      "id": "R06",
+      "type": "LEARN",
+      "section": "GO_DEEPER",
+      "title": "Inspect a source and write your own response",
+      "why_this": "This local exercise matches a goal you explicitly selected.",
+      "outcome": "A reading and optional rewrite that you can disagree with.",
+      "cost": {
+        "kind": "ZERO",
+        "amount": 0,
+        "currency": null,
+        "note": "Reading/planning or recording on paper costs no model/API fee. Any optional inference or hardware has separate costs.",
+        "verified_at": "2026-10-04T01:40:50.794919Z",
+        "verification_source": "LOCAL_EXERCISE_NO_REQUIRED_SERVICE"
+      },
+      "time_shape": "One sitting; stop whenever you choose.",
+      "skip_effect": "Nothing is lost.",
+      "source_of_urgency": "None.",
+      "export_path": "../../LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/README.md",
+      "source_refs": [
+        "../../LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/README.md"
+      ],
+      "expires_at": null,
+      "goal_ids": [
+        "EXPLORE_DEPTH"
+      ],
+      "task_tags": [
+        "GENERAL",
+        "RESEARCH"
+      ],
+      "difficulty": "BEGINNER",
+      "requires_tools": [],
+      "prerequisites": [],
+      "project_ref": null
+    }
+  ],
+  "empty_section_policy": {
+    "CONTINUE_MY_WORK": "Show no suggestion until the learner explicitly supplies unfinished work; do not invent it."
+  }
+}

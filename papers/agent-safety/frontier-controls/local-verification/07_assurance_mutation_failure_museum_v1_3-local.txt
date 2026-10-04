@@ -1,0 +1,10 @@
+Lycheetah Assurance Mutation + Failure Museum Lab v1.3
+=====================================================
+Initial reference suite: 18 fixtures, reference failures=0
+Initial mutation score: 19/30 (63.3%)
+Surviving mutants -> Failure Museum: 11
+Mutation-generated fixtures added: 11
+Augmented mutation score: 30/30 (100.0%)
+Semantic non-equivalence check: 30/30 mutants have counterexamples
+Unresolved declared mutants: 0
+Status: synthetic engineering validation; not deployed.

@@ -1,0 +1,10 @@
+{
+  "README.md": "a880f50471869b1bacf603c1c782a14ac4d70a0fc2e7f215ade66acfcd7f4fa5",
+  "benchmark.py": "f84259c4a99df6a96ce3971d8aef4b650a3e97c981c3941b8ade586cf0e82acf",
+  "budgeted_adapter.py": "aa0f297eae1b8bff3029cd8f8fe8c23e885bd4e664baeed38d516c59e08c741f",
+  "commit_fence.py": "4eba390f92e9f3d9f5ea496b701d838a5ab323dc8c38b770dc6a5a525cb2903c",
+  "effect_finality_gate.py": "93e69517ddc06aec221770d33985edfa558ed074e25a4290ab92a2df1a5b03cf",
+  "reports/report.json": "a5ca149785a6c8031320153ad2007687bb2d2ac60f233d9340d574d70e89adf9",
+  "reserve_worker.py": "f7f7ea8a33eab077ee1ffb963da9af9264a250e87960d9cff8e94da0acde2e6f",
+  "resource_ledger.py": "b39836e0b0afd22a22cd4a7e5a7e86e9bf62d04ac04d4ed1eec8fffe69e3530e"
+}

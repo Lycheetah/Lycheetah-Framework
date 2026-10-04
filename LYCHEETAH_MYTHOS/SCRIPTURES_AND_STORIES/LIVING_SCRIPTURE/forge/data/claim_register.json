@@ -1,0 +1,69 @@
+{
+  "version": "0.4",
+  "registers": [
+    {
+      "id": "MYTH",
+      "meaning": "Authored symbolic or narrative truth; not external verification."
+    },
+    {
+      "id": "DEVOTIONAL",
+      "meaning": "Faith-oriented speech from a declared sacred orientation."
+    },
+    {
+      "id": "THEOLOGICAL",
+      "meaning": "Reasoning within or about a named religious tradition."
+    },
+    {
+      "id": "HISTORICAL",
+      "meaning": "Claims about events, texts or transmission requiring historical sources."
+    },
+    {
+      "id": "PHILOSOPHICAL",
+      "meaning": "Argument or conceptual position assessed by reasons and objections."
+    },
+    {
+      "id": "EMPIRICAL",
+      "meaning": "Claim answerable to observation or measurement."
+    },
+    {
+      "id": "NORMATIVE",
+      "meaning": "Value or design commitment."
+    },
+    {
+      "id": "INTERPRETIVE",
+      "meaning": "Proposed reading or connection."
+    },
+    {
+      "id": "CONDITIONAL",
+      "meaning": "Argument under stated assumptions."
+    },
+    {
+      "id": "CONJECTURE",
+      "meaning": "Proposed mechanism or consequence not yet established."
+    },
+    {
+      "id": "EXPERIENTIAL",
+      "meaning": "First-person or community experience within its scope."
+    },
+    {
+      "id": "FICTION",
+      "meaning": "Invented narrative world; cannot validate real-world claims."
+    },
+    {
+      "id": "MACHINE_QUESTION",
+      "meaning": "AI-framed question or perspective; not consciousness evidence."
+    },
+    {
+      "id": "MYSTERY",
+      "meaning": "Unresolved question deliberately left open."
+    }
+  ],
+  "invariants": [
+    "Fiction cannot upgrade a scientific claim.",
+    "Devotional force cannot upgrade historical certainty.",
+    "Machine first-person language cannot upgrade consciousness status.",
+    "Experiential testimony cannot be silently universalized.",
+    "Mystery cannot be used as evidence merely because it remains unexplained.",
+    "Old versions remain visible when a register changes."
+  ]
+}

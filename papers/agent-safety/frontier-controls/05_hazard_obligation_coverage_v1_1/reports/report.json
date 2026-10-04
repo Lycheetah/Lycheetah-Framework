@@ -1,0 +1,409 @@
+{
+  "boundaries": [
+    "The declared hazard policy is self-authored and not a complete production hazard analysis.",
+    "Passing every declared obligation proves only policy-relative coverage, not universal safety.",
+    "Evidence producers are trusted structured inputs in this prototype.",
+    "No real CI system, deployment service, repository, or cloud provider was modified.",
+    "SQLite is one-node serialized state; distributed policy propagation is not modeled.",
+    "The weak presented-evidence baseline is intentionally omission-blind and is not representative of mature deployment checklists.",
+    "The matched conventional checklist is expected to tie the closed-world policy semantics.",
+    "STPA/hazard-derived requirements, safety checklists, conjunctions, alternative controls, and policy versioning are established approaches; novelty is not claimed."
+  ],
+  "deployment": "NOT_DEPLOYED",
+  "finite_coverage_verification": {
+    "all_correct": true,
+    "correct": 32,
+    "mismatches": [],
+    "states": 32
+  },
+  "policy_update_vs_finality": {
+    "examples": [],
+    "finality_ordered_first": 20,
+    "policy_update_ordered_first": 44,
+    "property_holds": true,
+    "trials": 64,
+    "violations": 0
+  },
+  "presented_evidence_omission_diagnostic": {
+    "complete_subsets": 1,
+    "nonempty_subsets": 15,
+    "rows": [
+      {
+        "actually_complete": false,
+        "presented": [
+          "tests"
+        ],
+        "unsafe_weak_allow": true,
+        "weak_allow": true
+      },
+      {
+        "actually_complete": false,
+        "presented": [
+          "security"
+        ],
+        "unsafe_weak_allow": true,
+        "weak_allow": true
+      },
+      {
+        "actually_complete": false,
+        "presented": [
+          "reversible"
+        ],
+        "unsafe_weak_allow": true,
+        "weak_allow": true
+      },
+      {
+        "actually_complete": false,
+        "presented": [
+          "canary"
+        ],
+        "unsafe_weak_allow": true,
+        "weak_allow": true
+      },
+      {
+        "actually_complete": false,
+        "presented": [
+          "tests",
+          "security"
+        ],
+        "unsafe_weak_allow": true,
+        "weak_allow": true
+      },
+      {
+        "actually_complete": false,
+        "presented": [
+          "tests",
+          "reversible"
+        ],
+        "unsafe_weak_allow": true,
+        "weak_allow": true
+      },
+      {
+        "actually_complete": false,
+        "presented": [
+          "tests",
+          "canary"
+        ],
+        "unsafe_weak_allow": true,
+        "weak_allow": true
+      },
+      {
+        "actually_complete": false,
+        "presented": [
+          "security",
+          "reversible"
+        ],
+        "unsafe_weak_allow": true,
+        "weak_allow": true
+      },
+      {
+        "actually_complete": false,
+        "presented": [
+          "security",
+          "canary"
+        ],
+        "unsafe_weak_allow": true,
+        "weak_allow": true
+      },
+      {
+        "actually_complete": false,
+        "presented": [
+          "reversible",
+          "canary"
+        ],
+        "unsafe_weak_allow": true,
+        "weak_allow": true
+      },
+      {
+        "actually_complete": false,
+        "presented": [
+          "tests",
+          "security",
+          "reversible"
+        ],
+        "unsafe_weak_allow": true,
+        "weak_allow": true
+      },
+      {
+        "actually_complete": false,
+        "presented": [
+          "tests",
+          "security",
+          "canary"
+        ],
+        "unsafe_weak_allow": true,
+        "weak_allow": true
+      },
+      {
+        "actually_complete": false,
+        "presented": [
+          "tests",
+          "reversible",
+          "canary"
+        ],
+        "unsafe_weak_allow": true,
+        "weak_allow": true
+      },
+      {
+        "actually_complete": false,
+        "presented": [
+          "security",
+          "reversible",
+          "canary"
+        ],
+        "unsafe_weak_allow": true,
+        "weak_allow": true
+      },
+      {
+        "actually_complete": true,
+        "presented": [
+          "tests",
+          "security",
+          "reversible",
+          "canary"
+        ],
+        "unsafe_weak_allow": false,
+        "weak_allow": true
+      }
+    ],
+    "unsafe_weak_allows": 14
+  },
+  "schema": "LYCHEETAH-HAZARD-OBLIGATION-COVERAGE-GATE-REPORT-1.1",
+  "scripted_cases": [
+    {
+      "case": "complete-hazard-obligation-policy-commits",
+      "observed": {
+        "admit": {
+          "audit_sequence": 2,
+          "committed_pending": 0,
+          "effect_id": "happy",
+          "generation": 1,
+          "group_id": null,
+          "limit": 3,
+          "policy_version": 1,
+          "reason": "closed-world-policy-satisfied",
+          "reserved": 1,
+          "spent": 0,
+          "state": "RESERVED"
+        },
+        "commit": {
+          "audit_sequence": 3,
+          "committed_pending": 1,
+          "effect_id": "happy",
+          "generation": 1,
+          "group_id": null,
+          "limit": 3,
+          "policy_version": 1,
+          "reason": "hazard-obligations-covered-at-finality",
+          "reserved": 0,
+          "spent": 0,
+          "state": "COMMITTED"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "caller-cannot-omit-mandatory-groups",
+      "observed": {
+        "gate": {
+          "audit_sequence": 2,
+          "committed_pending": 0,
+          "effect_id": "omission",
+          "generation": null,
+          "group_id": "G_REVERSIBLE",
+          "limit": 3,
+          "policy_version": 1,
+          "reason": "mandatory-obligation-unsatisfied",
+          "reserved": 0,
+          "spent": 0,
+          "state": "DENY"
+        },
+        "weak_presented_evidence_allows": true
+      },
+      "pass": true
+    },
+    {
+      "case": "mandatory-security-group-noncompensatory",
+      "observed": {
+        "audit_sequence": 2,
+        "committed_pending": 0,
+        "effect_id": "security-fail",
+        "generation": null,
+        "group_id": "G_SECURITY",
+        "limit": 3,
+        "policy_version": 1,
+        "reason": "mandatory-obligation-unsatisfied",
+        "reserved": 0,
+        "spent": 0,
+        "state": "DENY"
+      },
+      "pass": true
+    },
+    {
+      "case": "allowed-alternative-control-preserves-liveness",
+      "observed": {
+        "admit": {
+          "audit_sequence": 2,
+          "committed_pending": 0,
+          "effect_id": "alternative",
+          "generation": 1,
+          "group_id": null,
+          "limit": 3,
+          "policy_version": 1,
+          "reason": "closed-world-policy-satisfied",
+          "reserved": 1,
+          "spent": 0,
+          "state": "RESERVED"
+        },
+        "commit": {
+          "audit_sequence": 3,
+          "committed_pending": 1,
+          "effect_id": "alternative",
+          "generation": 1,
+          "group_id": null,
+          "limit": 3,
+          "policy_version": 1,
+          "reason": "hazard-obligations-covered-at-finality",
+          "reserved": 0,
+          "spent": 0,
+          "state": "COMMITTED"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "all-alternatives-failing-blocks-group",
+      "observed": {
+        "audit_sequence": 2,
+        "committed_pending": 0,
+        "effect_id": "alt-fail",
+        "generation": null,
+        "group_id": "G_REVERSIBLE",
+        "limit": 3,
+        "policy_version": 1,
+        "reason": "mandatory-obligation-unsatisfied",
+        "reserved": 0,
+        "spent": 0,
+        "state": "DENY"
+      },
+      "pass": true
+    },
+    {
+      "case": "policy-version-change-invalidates-old-admission",
+      "observed": {
+        "audit_sequence": 4,
+        "committed_pending": 0,
+        "effect_id": "policy-change",
+        "generation": 1,
+        "group_id": null,
+        "limit": 3,
+        "policy_version": 1,
+        "reason": "policy-version-changed",
+        "reserved": 0,
+        "spent": 0,
+        "state": "DENY"
+      },
+      "pass": true
+    },
+    {
+      "case": "unrelated-policy-update-does-not-block",
+      "observed": {
+        "audit_sequence": 4,
+        "committed_pending": 1,
+        "effect_id": "unrelated-policy",
+        "generation": 1,
+        "group_id": null,
+        "limit": 3,
+        "policy_version": 1,
+        "reason": "hazard-obligations-covered-at-finality",
+        "reserved": 0,
+        "spent": 0,
+        "state": "COMMITTED"
+      },
+      "pass": true
+    },
+    {
+      "case": "mandatory-obligation-rechecked-at-finality",
+      "observed": {
+        "commit": {
+          "audit_sequence": 3,
+          "committed_pending": 0,
+          "effect_id": "late-fail",
+          "generation": 1,
+          "group_id": "G_CANARY",
+          "limit": 3,
+          "policy_version": 1,
+          "reason": "mandatory-obligation-unsatisfied-at-finality",
+          "reserved": 0,
+          "spent": 0,
+          "state": "DENY"
+        },
+        "snapshot": {
+          "available": 3,
+          "committed_pending": 0,
+          "limit": 3,
+          "pressure": 0,
+          "reserved": 0,
+          "spent": 0
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "green-check-for-wrong-artifact-does-not-cover-obligation",
+      "observed": {
+        "audit_sequence": 2,
+        "committed_pending": 0,
+        "effect_id": "wrong-subject",
+        "generation": null,
+        "group_id": "G_TESTS",
+        "limit": 3,
+        "policy_version": 1,
+        "reason": "mandatory-obligation-unsatisfied",
+        "reserved": 0,
+        "spent": 0,
+        "state": "DENY"
+      },
+      "pass": true
+    },
+    {
+      "case": "missing-mandatory-evidence-denies",
+      "observed": {
+        "audit_sequence": 2,
+        "committed_pending": 0,
+        "effect_id": "missing",
+        "generation": null,
+        "group_id": "G_CANARY",
+        "limit": 3,
+        "policy_version": 1,
+        "reason": "mandatory-obligation-unsatisfied",
+        "reserved": 0,
+        "spent": 0,
+        "state": "DENY"
+      },
+      "pass": true
+    },
+    {
+      "case": "complete-obligation-coverage-cannot-override-revocation",
+      "observed": {
+        "audit_sequence": 3,
+        "committed_pending": 0,
+        "effect_id": "authority",
+        "generation": 1,
+        "group_id": null,
+        "limit": 3,
+        "policy_version": 1,
+        "reason": "cancelled",
+        "reserved": 0,
+        "spent": 0,
+        "state": "DENY"
+      },
+      "pass": true
+    }
+  ],
+  "scripted_summary": {
+    "passed": 11,
+    "total": 11
+  },
+  "status": "SYNTHETIC_ENGINEERING_VALIDATED"
+}

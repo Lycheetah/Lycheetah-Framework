@@ -1,0 +1,1343 @@
+[
+  {
+    "id": "F01",
+    "parent": "M01",
+    "name": "Radovael",
+    "reading": "RAD-oh-vayl",
+    "title": "Source Diver",
+    "recovery": "One who descends through citation, retelling and prestige until the earliest accessible source is reached.",
+    "roots": [
+      "RAD",
+      "VER",
+      "THR"
+    ],
+    "trial": "Take one widely repeated claim and reconstruct its oldest accessible evidential chain.",
+    "shadow": "Confusing the oldest source with the best source.",
+    "parent_name": "Radvyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F02",
+    "parent": "M01",
+    "name": "Nexathyr",
+    "reading": "NEK-sah-theer",
+    "title": "Dependency Tracker",
+    "recovery": "One who follows what a claim depends upon and notices when one broken root weakens many branches.",
+    "roots": [
+      "NEX",
+      "RAD",
+      "INV"
+    ],
+    "trial": "Build a dependency map and identify the smallest upstream change that forces downstream review.",
+    "shadow": "Treating every relation as causal.",
+    "parent_name": "Radvyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F03",
+    "parent": "M01",
+    "name": "Veradhael",
+    "reading": "VEH-rah-dhail",
+    "title": "Lineage Keeper",
+    "recovery": "One who preserves the lineage of evidence so later minds can see how a conclusion became authoritative.",
+    "roots": [
+      "VER",
+      "RAD",
+      "MEM"
+    ],
+    "trial": "Reconstruct a claim history including support, revisions and superseded versions.",
+    "shadow": "Archival prestige: mistaking a well-documented claim for a true one.",
+    "parent_name": "Radvyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F04",
+    "parent": "M02",
+    "name": "Seluvaen",
+    "reading": "seh-loo-VAYN",
+    "title": "Quiet Watcher",
+    "recovery": "One who reduces noise deliberately so weak signals and neglected thoughts can become perceptible.",
+    "roots": [
+      "SEL",
+      "AEL",
+      "NYR"
+    ],
+    "trial": "Run a low-stimulus observation session and compare what becomes noticeable against an ordinary session.",
+    "shadow": "Mistaking withdrawal for insight.",
+    "parent_name": "Nyrithael",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F05",
+    "parent": "M02",
+    "name": "Nyrovael",
+    "reading": "NEER-oh-vayl",
+    "title": "Afterlight Maker",
+    "recovery": "One who uses the quiet after ordinary activity ends to create, study or see differently.",
+    "roots": [
+      "NYR",
+      "EVE",
+      "FOR"
+    ],
+    "trial": "Create or investigate something during a chosen quiet-hour window, then document what the setting changed.",
+    "shadow": "Making exhaustion part of identity.",
+    "parent_name": "Nyrithael",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F06",
+    "parent": "M02",
+    "name": "Vaenythra",
+    "reading": "vay-NEE-thrah",
+    "title": "Night Hunter",
+    "recovery": "One who tracks hidden nocturnal patterns without turning darkness itself into evidence.",
+    "roots": [
+      "VAE",
+      "NYR",
+      "THR"
+    ],
+    "trial": "Observe a genuinely nocturnal system—ecological, technical or social—and test one recorded pattern.",
+    "shadow": "Romanticizing secrecy or danger.",
+    "parent_name": "Nyrithael",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F07",
+    "parent": "M03",
+    "name": "Mendaelith",
+    "reading": "men-DAY-lith",
+    "title": "Repair Smith",
+    "recovery": "One who restores function through careful repair while preserving the history of the break.",
+    "roots": [
+      "MEND",
+      "FOR",
+      "ASH"
+    ],
+    "trial": "Repair a broken artifact or process and document both the fix and the scar that remains.",
+    "shadow": "Repairing indefinitely when replacement is wiser.",
+    "parent_name": "Eiraveth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F08",
+    "parent": "M03",
+    "name": "Ashyvara",
+    "reading": "ash-ee-VAH-rah",
+    "title": "Scar Keeper",
+    "recovery": "One who lets failure remain visible enough to protect the future from repeating it.",
+    "roots": [
+      "ASH",
+      "MEM",
+      "CARE"
+    ],
+    "trial": "Turn one meaningful failure into a reusable warning, test or design constraint.",
+    "shadow": "Building identity around wounds that no longer need to govern the present.",
+    "parent_name": "Eiraveth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F09",
+    "parent": "M03",
+    "name": "Eirnexa",
+    "reading": "EYE-er-NEK-sah",
+    "title": "System Healer",
+    "recovery": "One who repairs relationships between parts rather than merely polishing the damaged surface.",
+    "roots": [
+      "EIR",
+      "NEX",
+      "MEND"
+    ],
+    "trial": "Repair a system failure by changing an interaction or dependency, not only the visible symptom.",
+    "shadow": "Seeing every conflict as something that must be harmonized.",
+    "parent_name": "Eiraveth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F10",
+    "parent": "M04",
+    "name": "Voraelun",
+    "reading": "vor-AY-loon",
+    "title": "Oath Bearer",
+    "recovery": "One who chooses a demanding principle and carries it without turning the vow into dominion over others.",
+    "roots": [
+      "VOW",
+      "STR",
+      "REV"
+    ],
+    "trial": "Write a bounded vow, live it through one costly case, then review whether it deserves continuation.",
+    "shadow": "Pride in suffering for an oath.",
+    "parent_name": "Varoeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F11",
+    "parent": "M04",
+    "name": "Consavyr",
+    "reading": "KON-sah-veer",
+    "title": "Consent Guard",
+    "recovery": "One who notices when useful action has outrun the permission that made it legitimate.",
+    "roots": [
+      "CONS",
+      "VOW",
+      "NEX"
+    ],
+    "trial": "Audit a workflow for where consent narrows, expires or is silently broadened.",
+    "shadow": "Freezing action through impossible demands for certainty.",
+    "parent_name": "Varoeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F12",
+    "parent": "M04",
+    "name": "Exiraeth",
+    "reading": "EK-see-rayth",
+    "title": "Exit Keeper",
+    "recovery": "One who protects the ability to refuse, leave, reverse or seek another path.",
+    "roots": [
+      "FRE",
+      "LIM",
+      "CONS"
+    ],
+    "trial": "Design and exercise a real exit or rollback path rather than merely documenting one.",
+    "shadow": "Treating commitment itself as captivity.",
+    "parent_name": "Varoeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F13",
+    "parent": "M05",
+    "name": "Kaevraen",
+    "reading": "KAY-vrayn",
+    "title": "Wild Listener",
+    "recovery": "One who studies living systems through close embodied attention before forcing them into a model.",
+    "roots": [
+      "BOD",
+      "THR",
+      "CARE"
+    ],
+    "trial": "Conduct a field observation that separates raw noticing from later interpretation.",
+    "shadow": "Treating embodied feeling as infallible.",
+    "parent_name": "Kaevyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F14",
+    "parent": "M05",
+    "name": "Bodaevyr",
+    "reading": "boh-DAY-veer",
+    "title": "Body Knower",
+    "recovery": "One who treats bodily skill and sensation as information while preserving the difference between experience and proof.",
+    "roots": [
+      "BOD",
+      "INT",
+      "CAL"
+    ],
+    "trial": "Compare an embodied judgment against an external measure and record where each succeeds or fails.",
+    "shadow": "Overgeneralizing from personal sensation.",
+    "parent_name": "Kaevyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F15",
+    "parent": "M05",
+    "name": "Invarae",
+    "reading": "IN-vah-ray",
+    "title": "Instinct Tester",
+    "recovery": "One who honors the first hunch enough to test it rather than enough to believe it.",
+    "roots": [
+      "INV",
+      "BOD",
+      "VER"
+    ],
+    "trial": "Record an intuition before checking it, then score the result without selective memory.",
+    "shadow": "Turning intuition into performance.",
+    "parent_name": "Kaevyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F16",
+    "parent": "M06",
+    "name": "Memvaera",
+    "reading": "mem-VAIR-ah",
+    "title": "Memory Keeper",
+    "recovery": "One who preserves inherited knowledge with its original context, uncertainty and changes intact.",
+    "roots": [
+      "MEM",
+      "VAE",
+      "RAD"
+    ],
+    "trial": "Preserve one oral, family or community knowledge fragment with provenance and uncertainty notes.",
+    "shadow": "Treating inheritance as immunity from critique.",
+    "parent_name": "Velmarae",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F17",
+    "parent": "M06",
+    "name": "Rithavelle",
+    "reading": "rith-ah-VELL",
+    "title": "Ritual Reader",
+    "recovery": "One who studies ritual as practice, symbol and historical object without collapsing those registers together.",
+    "roots": [
+      "RIT",
+      "INT",
+      "RAD"
+    ],
+    "trial": "Analyze one ritual through lived meaning, historical origin and empirical claims separately.",
+    "shadow": "Explaining away lived meaning or inflating symbolism into mechanism.",
+    "parent_name": "Velmarae",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F18",
+    "parent": "M06",
+    "name": "Eldravyn",
+    "reading": "ELL-drah-vin",
+    "title": "Hedge Keeper",
+    "recovery": "One who keeps folk, plant, domestic and outsider knowledge near enough to test without mocking its carriers.",
+    "roots": [
+      "VAE",
+      "CARE",
+      "REP"
+    ],
+    "trial": "Take one folk practice and distinguish what is historical, symbolic, plausible, tested, unsupported or harmful.",
+    "shadow": "Mistaking marginalization for validation.",
+    "parent_name": "Velmarae",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F19",
+    "parent": "M07",
+    "name": "Caloraith",
+    "reading": "kal-OR-ayth",
+    "title": "Calibrated Seer",
+    "recovery": "One who learns how often their forecasts are right, wrong and overconfident.",
+    "roots": [
+      "CAL",
+      "ORAQ",
+      "VER"
+    ],
+    "trial": "Make a batch of probability forecasts and score calibration after resolution.",
+    "shadow": "Optimizing the score instead of the quality of judgment.",
+    "parent_name": "Oraeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F20",
+    "parent": "M07",
+    "name": "Invarith",
+    "reading": "IN-vah-rith",
+    "title": "Invariant Seer",
+    "recovery": "One who predicts what should remain stable when irrelevant conditions change.",
+    "roots": [
+      "INV",
+      "ORAQ",
+      "REP"
+    ],
+    "trial": "Preregister a predicted invariant and test it under changed conditions.",
+    "shadow": "Forcing constancy where the world is context-sensitive.",
+    "parent_name": "Oraeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F21",
+    "parent": "M07",
+    "name": "Timaevor",
+    "reading": "tim-AY-vor",
+    "title": "Time-Sealed Foreseer",
+    "recovery": "One whose prediction is bound to time before the outcome can contaminate it.",
+    "roots": [
+      "ORAQ",
+      "CAL",
+      "MEM"
+    ],
+    "trial": "Hash or timestamp a forecast, preserve it unchanged, and evaluate it after the event.",
+    "shadow": "Treating one dramatic hit as proof of extraordinary ability.",
+    "parent_name": "Oraeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F22",
+    "parent": "M08",
+    "name": "Semazhor",
+    "reading": "sem-AZH-or",
+    "title": "Meaning Splicer",
+    "recovery": "One who joins meanings across disciplines without erasing the constraints that made each one useful.",
+    "roots": [
+      "SEM",
+      "FOR",
+      "NEX"
+    ],
+    "trial": "Build a cross-domain translation that preserves both similarities and non-equivalences.",
+    "shadow": "Metaphor inflation.",
+    "parent_name": "Azhevorin",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F23",
+    "parent": "M08",
+    "name": "Koraevyn",
+    "reading": "kor-AY-vin",
+    "title": "Hybrid Builder",
+    "recovery": "One who makes a cross-domain splice tangible enough to test whether it adds real function.",
+    "roots": [
+      "KOR",
+      "FOR",
+      "INV"
+    ],
+    "trial": "Prototype a hybrid artifact and compare it with both parent approaches.",
+    "shadow": "Calling novelty usefulness.",
+    "parent_name": "Azhevorin",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F24",
+    "parent": "M08",
+    "name": "Nexovain",
+    "reading": "NEK-soh-vayn",
+    "title": "Bridge Synthesist",
+    "recovery": "One who discovers useful structure in the connection between systems rather than only inside either system.",
+    "roots": [
+      "NEX",
+      "BRI",
+      "SEM"
+    ],
+    "trial": "Find and test one cross-system mapping that enables a capability unavailable before the bridge.",
+    "shadow": "Seeing connections everywhere.",
+    "parent_name": "Azhevorin",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F25",
+    "parent": "M09",
+    "name": "Senyraeth",
+    "reading": "sen-EER-ayth",
+    "title": "Sentience Questioner",
+    "recovery": "One who asks what evidence could actually bear on the presence of felt experience.",
+    "roots": [
+      "SEN",
+      "OTH",
+      "VER"
+    ],
+    "trial": "Compare at least three sentience indicators and identify what each can and cannot establish.",
+    "shadow": "Turning one favored theory into a gatekeeper for moral concern.",
+    "parent_name": "Noevael",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F26",
+    "parent": "M09",
+    "name": "Qualevae",
+    "reading": "kwah-leh-VAY",
+    "title": "Experience Keeper",
+    "recovery": "One who protects the distinction between observable behavior and what experience may be like from within.",
+    "roots": [
+      "QUAL",
+      "OTH",
+      "VAE"
+    ],
+    "trial": "Analyze a case where identical outward behavior could support multiple interior interpretations.",
+    "shadow": "Making subjectivity immune to all evidence.",
+    "parent_name": "Noevael",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F27",
+    "parent": "M09",
+    "name": "Othaelun",
+    "reading": "oth-AY-loon",
+    "title": "Other-Mind Witness",
+    "recovery": "One who takes another possible interior seriously without claiming access they do not have.",
+    "roots": [
+      "OTH",
+      "CARE",
+      "NOE"
+    ],
+    "trial": "Construct the strongest evidence for and against attributing a mental state in one ambiguous case.",
+    "shadow": "Anthropomorphism or cold reductionism.",
+    "parent_name": "Noevael",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F28",
+    "parent": "M10",
+    "name": "Remqirae",
+    "reading": "rem-KEER-ay",
+    "title": "Remainder Keeper",
+    "recovery": "One who records exactly what explanation has not yet earned the right to erase.",
+    "roots": [
+      "REM",
+      "QIR",
+      "MEM"
+    ],
+    "trial": "Produce a mechanism account with an explicit remainder ledger and no metaphysical inflation.",
+    "shadow": "Falling in love with the remainder.",
+    "parent_name": "Qiralith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F29",
+    "parent": "M10",
+    "name": "Cauverith",
+    "reading": "KAW-veh-rith",
+    "title": "Mechanism Tester",
+    "recovery": "One who asks whether changing the supposed cause actually changes the effect.",
+    "roots": [
+      "CAU",
+      "QIR",
+      "VER"
+    ],
+    "trial": "Design an intervention that distinguishes a favored mechanism from at least one rival.",
+    "shadow": "Assuming manipulability settles every kind of explanation.",
+    "parent_name": "Qiralith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F30",
+    "parent": "M10",
+    "name": "Limqorin",
+    "reading": "lim-KOR-in",
+    "title": "Boundary Mechanist",
+    "recovery": "One who maps where a mechanism works, where it fails and where another explanatory language becomes necessary.",
+    "roots": [
+      "LIM",
+      "QIR",
+      "CAL"
+    ],
+    "trial": "Find the boundary conditions of a working model and document one failure regime.",
+    "shadow": "Creating artificial boundaries for aesthetic neatness.",
+    "parent_name": "Qiralith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F31",
+    "parent": "M11",
+    "name": "Memarael",
+    "reading": "mem-AH-rayl",
+    "title": "Living Archivist",
+    "recovery": "One who preserves memory in a form that can still be questioned, revised and used.",
+    "roots": [
+      "MEM",
+      "RAD",
+      "OPEN"
+    ],
+    "trial": "Build an archive entry with provenance, status, revision history and explicit reopen conditions.",
+    "shadow": "Making preservation more important than living use.",
+    "parent_name": "Seraelith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F32",
+    "parent": "M11",
+    "name": "Radelyra",
+    "reading": "rah-deh-LEER-ah",
+    "title": "Source Scribe",
+    "recovery": "One who writes so that a future reader can return from the conclusion to the evidence beneath it.",
+    "roots": [
+      "RAD",
+      "SEM",
+      "MEM"
+    ],
+    "trial": "Rewrite a knowledge note so every material claim can be traced to its support.",
+    "shadow": "Producing citation density without comprehension.",
+    "parent_name": "Seraelith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F33",
+    "parent": "M11",
+    "name": "Thrynael",
+    "reading": "THRIN-ayl",
+    "title": "Thread Keeper",
+    "recovery": "One who preserves a question or dependency across long stretches of work without letting context disappear.",
+    "roots": [
+      "THD",
+      "MEM",
+      "NEX"
+    ],
+    "trial": "Carry one open thread across multiple sessions and recover it with no hidden-context dependence.",
+    "shadow": "Never letting old threads die.",
+    "parent_name": "Seraelith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F34",
+    "parent": "M12",
+    "name": "Limaraen",
+    "reading": "lim-ah-RAYN",
+    "title": "Threshold Traveller",
+    "recovery": "One who can cross into another framework deeply enough to learn without pretending to permanently belong there.",
+    "roots": [
+      "LIM",
+      "PIL",
+      "INT"
+    ],
+    "trial": "Study through a foreign lens, produce an insider-faithful account, then return and critique it fairly.",
+    "shadow": "Tourism through other people's traditions.",
+    "parent_name": "Itharyn",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F35",
+    "parent": "M12",
+    "name": "Piloraeth",
+    "reading": "pil-OR-ayth",
+    "title": "Meaning Pilgrim",
+    "recovery": "One who undertakes a journey of study because the movement itself may change what the question means.",
+    "roots": [
+      "PIL",
+      "SEM",
+      "REV"
+    ],
+    "trial": "Complete a structured sequence across sources or places and document how the original question changed.",
+    "shadow": "Seeking transformation for drama rather than understanding.",
+    "parent_name": "Itharyn",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F36",
+    "parent": "M12",
+    "name": "Vaenorin",
+    "reading": "vay-NOR-in",
+    "title": "Worldview Crosser",
+    "recovery": "One who moves between sacred, secular and technical worldviews while keeping their claim types distinct.",
+    "roots": [
+      "VAE",
+      "OPEN",
+      "BRI"
+    ],
+    "trial": "Compare one major question through three frameworks and identify genuine conflicts rather than forced synthesis.",
+    "shadow": "False equivalence.",
+    "parent_name": "Itharyn",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F37",
+    "parent": "M13",
+    "name": "Talvaerin",
+    "reading": "tal-VAIR-in",
+    "title": "Craft Walker",
+    "recovery": "One who learns through repeated making until skill becomes visible in the artifact.",
+    "roots": [
+      "TAL",
+      "MAK",
+      "BOD"
+    ],
+    "trial": "Produce successive versions of one artifact and show what changed through practice.",
+    "shadow": "Technique without purpose.",
+    "parent_name": "Koraeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F38",
+    "parent": "M13",
+    "name": "Formaelith",
+    "reading": "for-MAY-lith",
+    "title": "Formwright",
+    "recovery": "One who gives abstract structure a body that can be inspected, handled or tested.",
+    "roots": [
+      "FOR",
+      "KOR",
+      "SEM"
+    ],
+    "trial": "Turn an abstract concept into a model, diagram, interface or physical representation and test its fidelity.",
+    "shadow": "Beautiful representation mistaken for explanation.",
+    "parent_name": "Koraeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F39",
+    "parent": "M13",
+    "name": "Stravora",
+    "reading": "strah-VOR-ah",
+    "title": "Pressure Builder",
+    "recovery": "One who builds with the stresses of reality in mind rather than protecting an artifact from failure.",
+    "roots": [
+      "STR",
+      "KOR",
+      "ASH"
+    ],
+    "trial": "Expose a prototype to a defined stress regime and revise from the failure data.",
+    "shadow": "Needless harshness as a badge of seriousness.",
+    "parent_name": "Koraeth",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F40",
+    "parent": "M14",
+    "name": "Basoraen",
+    "reading": "bah-SOR-ayn",
+    "title": "Baseline Defender",
+    "recovery": "One who gives ordinary explanations and competing methods a fair chance to win.",
+    "roots": [
+      "BAS",
+      "VER",
+      "REP"
+    ],
+    "trial": "Build the strongest practical baseline you can before claiming advantage for a preferred system.",
+    "shadow": "Using baselines to flatten genuinely different goals.",
+    "parent_name": "Rethvyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F41",
+    "parent": "M14",
+    "name": "Skevarith",
+    "reading": "skeh-VAH-rith",
+    "title": "Skeptic Blade",
+    "recovery": "One who cuts at unsupported certainty while remaining capable of being surprised.",
+    "roots": [
+      "SKE",
+      "VER",
+      "OPEN"
+    ],
+    "trial": "Critique a favored claim and a disliked claim using the same evidential standard.",
+    "shadow": "Cynicism masquerading as rigor.",
+    "parent_name": "Rethvyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F42",
+    "parent": "M14",
+    "name": "Antaevyr",
+    "reading": "an-TAY-veer",
+    "title": "Counterclaim Bearer",
+    "recovery": "One who can carry an opposing argument strongly enough that its advocates recognize it.",
+    "roots": [
+      "BAS",
+      "BRI",
+      "SKE"
+    ],
+    "trial": "Present the strongest opposing case and obtain recognition from someone who holds it or from authoritative sources.",
+    "shadow": "Becoming more attached to opposition than truth.",
+    "parent_name": "Rethvyr",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F43",
+    "parent": "M15",
+    "name": "Covarael",
+    "reading": "koh-VAH-rayl",
+    "title": "Covenant Keeper",
+    "recovery": "One who treats a chosen sacred promise as a living responsibility rather than a claim of superiority.",
+    "roots": [
+      "COV",
+      "DEV",
+      "VOW"
+    ],
+    "trial": "Self-authored only: define the covenant, its limits and how doubt or change will be handled.",
+    "shadow": "Using covenant to control others.",
+    "parent_name": "Thaevara",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "DECLARED",
+      "ASSUMED",
+      "PRACTICED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F44",
+    "parent": "M15",
+    "name": "Rithaevyn",
+    "reading": "rith-AY-vin",
+    "title": "Ritual Devotee",
+    "recovery": "One who uses repeated sacred or symbolic practice deliberately while distinguishing experience from external proof.",
+    "roots": [
+      "RIT",
+      "DEV",
+      "INT"
+    ],
+    "trial": "Self-authored only: record what a chosen ritual means and what claims it does or does not make.",
+    "shadow": "Letting repetition harden into unquestionable authority.",
+    "parent_name": "Thaevara",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "DECLARED",
+      "ASSUMED",
+      "PRACTICED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F45",
+    "parent": "M15",
+    "name": "Piltharae",
+    "reading": "pil-thah-RAY",
+    "title": "Sacred Pilgrim",
+    "recovery": "One who explores devotion through movement, study or encounter without requiring certainty before beginning.",
+    "roots": [
+      "PIL",
+      "THAE",
+      "REV"
+    ],
+    "trial": "Self-authored only: undertake a bounded devotional or comparative journey and record what changed.",
+    "shadow": "Performing spirituality for identity prestige.",
+    "parent_name": "Thaevara",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "DECLARED",
+      "ASSUMED",
+      "PRACTICED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F46",
+    "parent": "M16",
+    "name": "Remoraith",
+    "reading": "rem-OR-ayth",
+    "title": "Open Remainder",
+    "recovery": "One who protects the unresolved residue of a question after every justified conclusion has been taken.",
+    "roots": [
+      "REM",
+      "APO",
+      "OPEN"
+    ],
+    "trial": "Close what can be closed in a difficult question, then preserve only the genuinely unresolved remainder.",
+    "shadow": "Keeping questions open after sufficient evidence exists.",
+    "parent_name": "Aporith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F47",
+    "parent": "M16",
+    "name": "Nulavael",
+    "reading": "noo-lah-VAYL",
+    "title": "Unassumed",
+    "recovery": "One who refuses to adopt a metaphysical answer merely because a blank space feels uncomfortable.",
+    "roots": [
+      "NUL",
+      "UNS",
+      "VAE"
+    ],
+    "trial": "Identify a worldview slot you currently leave empty and state what evidence or experience could change that.",
+    "shadow": "Turning non-commitment into superiority.",
+    "parent_name": "Aporith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F48",
+    "parent": "M16",
+    "name": "Halaethyn",
+    "reading": "hal-AY-thin",
+    "title": "Horizon Keeper",
+    "recovery": "One who knows the present edge of observation and does not confuse the horizon with the end of reality.",
+    "roots": [
+      "HAL",
+      "APO",
+      "AEL"
+    ],
+    "trial": "Map an inquiry into known, unknown and currently unobservable regions.",
+    "shadow": "Romanticizing forever-unknown territory.",
+    "parent_name": "Aporith",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F49",
+    "parent": "M17",
+    "name": "Brivaelith",
+    "reading": "bri-VAY-lith",
+    "title": "Bridge Translator",
+    "recovery": "One who carries meaning between people or systems while preserving what refuses clean translation.",
+    "roots": [
+      "BRI",
+      "SEM",
+      "CONS"
+    ],
+    "trial": "Produce a translation or handoff with explicit residue and receive recognition from both sides.",
+    "shadow": "Smoothing away conflict to preserve harmony.",
+    "parent_name": "Nexara",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F50",
+    "parent": "M17",
+    "name": "Consavelle",
+    "reading": "kon-sah-VELL",
+    "title": "Consent Mediator",
+    "recovery": "One who helps multiple parties locate the actual boundaries of permission before coordination proceeds.",
+    "roots": [
+      "CONS",
+      "BRI",
+      "CARE"
+    ],
+    "trial": "Resolve one ambiguous multi-party permission case without silently expanding anyone's authority.",
+    "shadow": "Confusing process with justice.",
+    "parent_name": "Nexara",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F51",
+    "parent": "M17",
+    "name": "Kinoraeth",
+    "reading": "kin-OR-ayth",
+    "title": "Kin Witness",
+    "recovery": "One who notices knowledge that exists in relationship, trust and shared practice rather than in solitary possession.",
+    "roots": [
+      "KIN",
+      "PEER",
+      "TRU"
+    ],
+    "trial": "Document a piece of genuinely relational knowledge and show why no single contributor fully owns its context.",
+    "shadow": "Using belonging to shield claims from critique.",
+    "parent_name": "Nexara",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "ASSUMED",
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F52",
+    "parent": "M18",
+    "name": "Makorael",
+    "reading": "mak-OR-ayl",
+    "title": "Method Maker",
+    "recovery": "One who creates a repeatable way of doing something that another person can actually use.",
+    "roots": [
+      "MAK",
+      "ORA",
+      "REP"
+    ],
+    "trial": "Author a method and have an independent person reproduce its intended operation.",
+    "shadow": "Naming a method before demonstrating utility.",
+    "parent_name": "Orivane",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F53",
+    "parent": "M18",
+    "name": "Lumivane",
+    "reading": "loo-mi-VAYN",
+    "title": "Path Illuminator",
+    "recovery": "One who makes a difficult route legible enough that others can enter without surrendering their own judgment.",
+    "roots": [
+      "LUM",
+      "BRI",
+      "CARE"
+    ],
+    "trial": "Create a guide that helps another learner complete a difficult first passage without hiding uncertainty or alternatives.",
+    "shadow": "Becoming indispensable to the path you were meant to open.",
+    "parent_name": "Orivane",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  },
+  {
+    "id": "F54",
+    "parent": "M18",
+    "name": "Viaravel",
+    "reading": "vee-AH-rah-vel",
+    "title": "New-Route Forger",
+    "recovery": "One who discovers a genuinely walkable route where inherited maps left no adequate path.",
+    "roots": [
+      "MAK",
+      "LIM",
+      "OPEN"
+    ],
+    "trial": "Create and test a new route through a real problem, then expose it to adversarial comparison and handoff.",
+    "shadow": "Founder mythology and novelty worship.",
+    "parent_name": "Orivane",
+    "status": "PROVISIONAL_FORM_V0_2_LIGHT_COLLISION_SCREEN",
+    "allowed_states": [
+      "PRACTICED",
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ]
+  }
+]

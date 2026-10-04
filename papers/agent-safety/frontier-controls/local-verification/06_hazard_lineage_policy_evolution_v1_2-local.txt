@@ -1,0 +1,6 @@
+Lycheetah Hazard Lineage + Policy Evolution Gate v1.2
+=====================================================
+Scripted checks: 10/10
+Semantic classifier: 64/64
+Naive newer-version diagnostic: weaker accepted=3/3
+Status: synthetic engineering validation; not deployed.

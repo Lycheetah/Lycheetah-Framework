@@ -1,5 +1,7 @@
 # Agent Safety Research Packet
 
+**Evidence footing: [SCAFFOLD] research, proposal or source review. Supplied and local synthetic results retain their stated limits; no independent validation or production claim.**
+
 **Working draft v0.4 · 3 October 2026**
 
 **Author and Framework creator:** Mackenzie Conor James Clark. Literature inspection, formalisation, and drafting assisted by Caelorynth, an AI coding assistant.
@@ -24,4 +26,19 @@ The original probes exposed multi-broker accounting and admission-only freshness
 
 No language-model agent benchmark, participant study, real-provider experiment, production safety implementation, independent security review, or peer review has been performed. No safety improvement or priority claim is made. The author authorised public sharing as a working paper on 3 October 2026.
 
-This packet's public source home is the [Lycheetah Framework repository](https://github.com/Lycheetah/Lycheetah-Framework), under `papers/agent-safety/`. Its fixtures require only the standard library. Six inspected Framework references already exist publicly; two unpublished background sources are identified without distributing private files or workspace locations. The related Independent No manuscript remains separate and is not included in this publication batch. A private snapshot preserves the original draft.
+This packet's public source home is the [Lycheetah Framework repository](https://github.com/Lycheetah/Lycheetah-Framework), under `papers/agent-safety/`. Its fixtures require only the standard library. Six inspected Framework references already exist publicly; two unpublished background sources are identified without distributing private files or workspace locations. The related [Independent No manuscript](../independent-no/README.md) remains a separate research packet, recovered for the 4 October publication batch. A private snapshot preserves the original draft.
+
+## Frontier controls continuation — 4 October 2026
+
+A reconciled post-v0.4 frontier research line is prepared under
+`frontier-controls/`. The live v0.4 shared-accounting repair remains canonical
+for the bounded in-process multi-broker defect. The strongest immediate runtime
+candidate is dispatch/finality-time evidence revalidation, because the
+admission-only freshness counterexample documented above still reproduces.
+
+Frontier packets remain `SYNTHETIC_ENGINEERING_VALIDATED` / `NOT_DEPLOYED`
+unless their own evidence says otherwise.
+
+## Public compensation experiment
+
+[Compensation Race Benchmark](compensation-race-benchmark/README.md) illustrates stale rollback and partial repair in purpose-built SQLite fixtures. Conventional atomic fencing refuses a stale repair without writes. Its results do not establish novelty, production recovery or general agent safety.

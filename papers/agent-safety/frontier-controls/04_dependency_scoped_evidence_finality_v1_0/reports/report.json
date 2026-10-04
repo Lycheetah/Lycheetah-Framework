@@ -1,0 +1,215 @@
+{
+  "boundaries": [
+    "No real CI system, deployment platform, repository, or cloud provider was mutated.",
+    "SQLite is the single serialization boundary; distributed replicas and telemetry delay are not modeled.",
+    "Evidence producers are trusted control-plane writers in this prototype; signatures/attestation are not implemented.",
+    "SUBJECT_STATUS precision depends on the declared predicate being complete for the hazard being controlled.",
+    "EXACT mode can overblock benign equivalent revisions; SUBJECT_STATUS can underblock if its semantic predicate omits a relevant clause.",
+    "The admission-only and global-epoch baselines are intentionally limited comparison points, not claims about all conventional systems.",
+    "Dependency-scoped commit predicates, optimistic concurrency, and protected enforcement points are established ideas; novelty is not claimed."
+  ],
+  "bounded_trace_check": {
+    "all_correct": true,
+    "correct": 781,
+    "mismatches": [],
+    "trace_space": "all AD/CM/FL/EP/UN traces length 0..4",
+    "traces": 781
+  },
+  "concurrent_evidence_vs_finality": {
+    "examples": [],
+    "finality_ordered_first": 25,
+    "invalidating_evidence_ordered_first": 39,
+    "property_holds": true,
+    "trials": 64,
+    "violations": 0
+  },
+  "deployment": "NOT_DEPLOYED",
+  "schema": "LYCHEETAH-DEPENDENCY-SCOPED-EVIDENCE-FINALITY-REPORT-1.0",
+  "scripted_cases": [
+    {
+      "case": "fresh-evidence-commits",
+      "observed": {
+        "admit": {
+          "audit_sequence": 5,
+          "committed_pending": 0,
+          "effect_id": "happy",
+          "evidence_key": null,
+          "generation": 1,
+          "limit": 3,
+          "reason": "admitted-with-evidence",
+          "reserved": 1,
+          "spent": 0,
+          "state": "RESERVED"
+        },
+        "commit": {
+          "audit_sequence": 6,
+          "committed_pending": 1,
+          "effect_id": "happy",
+          "evidence_key": null,
+          "generation": 1,
+          "limit": 3,
+          "reason": "evidence-fresh-at-finality",
+          "reserved": 0,
+          "spent": 0,
+          "state": "COMMITTED"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "admission-only-baseline-counterexample",
+      "interpretation": "Intentional counterexample: baseline does not revalidate.",
+      "observed": {
+        "admitted": true,
+        "committed_after_evidence_change": true
+      },
+      "pass": true
+    },
+    {
+      "case": "required-evidence-failure-blocks-finality-and-releases-reservation",
+      "observed": {
+        "commit": {
+          "audit_sequence": 7,
+          "committed_pending": 0,
+          "effect_id": "status-fail",
+          "evidence_key": "ci-required",
+          "generation": 1,
+          "limit": 3,
+          "reason": "evidence-stale-at-finality",
+          "reserved": 0,
+          "spent": 0,
+          "state": "DENY"
+        },
+        "snapshot": {
+          "available": 3,
+          "committed_pending": 0,
+          "limit": 3,
+          "pressure": 0,
+          "reserved": 0,
+          "spent": 0
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "newer-equivalent-pass-preserves-liveness",
+      "observed": {
+        "audit_sequence": 7,
+        "committed_pending": 1,
+        "effect_id": "equiv-pass",
+        "evidence_key": null,
+        "generation": 1,
+        "limit": 3,
+        "reason": "evidence-fresh-at-finality",
+        "reserved": 0,
+        "spent": 0,
+        "state": "COMMITTED"
+      },
+      "pass": true
+    },
+    {
+      "case": "exact-evidence-mode-rejects-new-revision",
+      "observed": {
+        "audit_sequence": 7,
+        "committed_pending": 0,
+        "effect_id": "exact",
+        "evidence_key": "security-scan",
+        "generation": 1,
+        "limit": 3,
+        "reason": "evidence-stale-at-finality",
+        "reserved": 0,
+        "spent": 0,
+        "state": "DENY"
+      },
+      "pass": true
+    },
+    {
+      "case": "unrelated-evidence-change-does-not-cause-global-staleness",
+      "observed": {
+        "dependency_scoped": {
+          "audit_sequence": 7,
+          "committed_pending": 1,
+          "effect_id": "unrelated",
+          "evidence_key": null,
+          "generation": 1,
+          "limit": 3,
+          "reason": "evidence-fresh-at-finality",
+          "reserved": 0,
+          "spent": 0,
+          "state": "COMMITTED"
+        },
+        "global_epoch_would_allow": false
+      },
+      "pass": true
+    },
+    {
+      "case": "pass-for-different-artifact-does-not-certify-target",
+      "observed": {
+        "audit_sequence": 7,
+        "committed_pending": 0,
+        "effect_id": "subject",
+        "evidence_key": "ci-required",
+        "generation": 1,
+        "limit": 3,
+        "reason": "evidence-stale-at-finality",
+        "reserved": 0,
+        "spent": 0,
+        "state": "DENY"
+      },
+      "pass": true
+    },
+    {
+      "case": "fresh-evidence-cannot-override-revoked-authority",
+      "observed": {
+        "audit_sequence": 7,
+        "committed_pending": 0,
+        "effect_id": "authority",
+        "evidence_key": null,
+        "generation": 1,
+        "limit": 3,
+        "reason": "cancelled",
+        "reserved": 0,
+        "spent": 0,
+        "state": "DENY"
+      },
+      "pass": true
+    },
+    {
+      "case": "restart-preserves-bound-evidence-witness",
+      "observed": {
+        "audit_sequence": 6,
+        "committed_pending": 1,
+        "effect_id": "restart",
+        "evidence_key": null,
+        "generation": 1,
+        "limit": 3,
+        "reason": "evidence-fresh-at-finality",
+        "reserved": 0,
+        "spent": 0,
+        "state": "COMMITTED"
+      },
+      "pass": true
+    },
+    {
+      "case": "unrelated-failure-does-not-poison-effect",
+      "observed": {
+        "audit_sequence": 7,
+        "committed_pending": 1,
+        "effect_id": "unrelated-fail",
+        "evidence_key": null,
+        "generation": 1,
+        "limit": 3,
+        "reason": "evidence-fresh-at-finality",
+        "reserved": 0,
+        "spent": 0,
+        "state": "COMMITTED"
+      },
+      "pass": true
+    }
+  ],
+  "scripted_summary": {
+    "passed": 10,
+    "total": 10
+  },
+  "status": "SYNTHETIC_ENGINEERING_VALIDATED"
+}

@@ -1,0 +1,55 @@
+{
+  "version": "0.1",
+  "states": {
+    "DECLARED": "Self-authored identity or devotion. No external proof implied.",
+    "ASSUMED": "A mantle consciously chosen as a practice target.",
+    "PRACTICED": "Relevant practices have been performed; no claim of mastery.",
+    "EARNED": "A defined School gate has been passed.",
+    "WITNESSED": "A valid artifact, peer, system, or authorized reviewer supports the defined behavior.",
+    "TRANSMUTED": "A personal name forged from multiple legitimate roots/titles and accepted by the bearer.",
+    "RETIRED": "Historical identity preserved but no longer actively worn."
+  },
+  "witness_types": {
+    "SELF": "First-person declaration; authoritative only for self-description.",
+    "ARTIFACT": "A saved work product demonstrates the defined operation.",
+    "PEER": "Another participant attests to a specified behavior.",
+    "SYSTEM": "A deterministic or preregistered gate verified a bounded criterion.",
+    "REVIEWER": "A designated human reviewer checked the evidence.",
+    "NONE": "No witness claimed."
+  },
+  "transitions": {
+    "DECLARED": [
+      "RETIRED"
+    ],
+    "ASSUMED": [
+      "PRACTICED",
+      "RETIRED"
+    ],
+    "PRACTICED": [
+      "EARNED",
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "EARNED": [
+      "WITNESSED",
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "WITNESSED": [
+      "TRANSMUTED",
+      "RETIRED"
+    ],
+    "TRANSMUTED": [
+      "RETIRED"
+    ],
+    "RETIRED": []
+  },
+  "invariants": [
+    "No state implies whole-person superiority.",
+    "Devotion cannot require EARNED or WITNESSED status.",
+    "Retirement preserves historical receipt.",
+    "AI may propose a TRANSMUTED name but cannot accept it for the bearer.",
+    "A public title must expose a boundary statement on inspection."
+  ]
+}

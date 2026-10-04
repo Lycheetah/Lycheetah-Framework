@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-04T03:02:28.864159+00:00",
+  "reading_texts": 32,
+  "source_files": 60,
+  "condensed_words": 1849,
+  "master_words": 56200,
+  "changed_collected_texts_since_import": [
+    "night-garden",
+    "context-3",
+    "context-4",
+    "context-7",
+    "context-35",
+    "context-48"
+  ],
+  "legacy_originals_differing_from_import": [
+    "LYCHEETAH_MYTHOS/00_INDEX.md",
+    "LYCHEETAH_MYTHOS/README.md"
+  ],
+  "source_hashes": "recomputed from every collected file",
+  "master_anchors_and_collected_links": "PASS",
+  "browser_renderer": "markdown-it-py",
+  "outputs": {
+    "MASTER_SCRIPTURES_AND_STORIES.md": "046111928816bf7dc8c5374abfd63b5a93b2785d8846f1a3c089e0deade44545",
+    "MASTER_SCRIPTURES_AND_STORIES.html": "e1d9cc04d92f67f4cba57ef41e90e749c0a706957d306c26c646a236d7c71265",
+    "CONDENSED_READING.md": "53a1723c26a1c1306f059a91332797524360fce4b813305c347c65742f39366b"
+  },
+  "archive_round_trip": "PASS",
+  "commit": "NOT_RUN",
+  "publication": "NOT_RUN",
+  "browser_visual_witness": "NOT_RUN",
+  "ancient_source_research": "NOT_RUN"
+}

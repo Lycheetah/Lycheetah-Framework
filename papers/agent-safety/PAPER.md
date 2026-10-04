@@ -1,5 +1,7 @@
 # From Constitutional Commitments to Testable Agent Controls
 
+**Evidence footing: [SCAFFOLD] research, proposal or source review. Supplied and local synthetic results retain their stated limits; no independent validation or production claim.**
+
 ## Authority, Evidence, and Recovery at the Action Boundary
 
 **Mackenzie Conor James Clark · Lycheetah Framework · Dunedin, Aotearoa New Zealand**

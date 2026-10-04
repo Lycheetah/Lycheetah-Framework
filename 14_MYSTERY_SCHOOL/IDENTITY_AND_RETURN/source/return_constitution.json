@@ -1,0 +1,38 @@
+{
+  "version": "0.3",
+  "optimization_target": "meaningful_voluntary_return",
+  "forbidden_design": [
+    "punitive_streaks",
+    "daily_login_rewards",
+    "variable_ratio_loot",
+    "global_xp_rank",
+    "public_absolute_leaderboards",
+    "artificial_scarcity",
+    "guilt_notifications",
+    "companion_abandonment_language",
+    "engagement_maximizing_recommender",
+    "infinite_scroll_after_session_summary"
+  ],
+  "six_lanterns": [
+    "CURIOSITY",
+    "CONTINUITY",
+    "CAPABILITY",
+    "IDENTITY",
+    "BELONGING",
+    "CONTRIBUTION"
+  ],
+  "session_loop": [
+    "ARRIVE",
+    "CHOOSE",
+    "PRACTICE",
+    "WITNESS",
+    "INTEGRATE",
+    "EXIT"
+  ],
+  "return_message": "Your work is where you left it.",
+  "winter_mode": true,
+  "max_default_return_doors": 3,
+  "recommendation_explainability_required": true,
+  "skip_penalty_allowed": false,
+  "absence_resets_progress": false
+}

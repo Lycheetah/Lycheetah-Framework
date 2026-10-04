@@ -1,0 +1,24 @@
+{
+  "version": "0.4",
+  "authors": {
+    "human": "Mackenzie Conor James Clark",
+    "coauthor_ai": "Vaelora · OpenAI GPT-5.6 Sol"
+  },
+  "date": "2026-10-04",
+  "statuses": {
+    "source_corpus": "PRESERVED_ANCESTRY",
+    "twelve_living_laws": "PROPOSED",
+    "voice_constitution": "PROPOSED",
+    "book_architecture": "PROPOSED",
+    "144_chapter_map": "PROPOSED",
+    "provenance_lattice": "FIRST_RESEARCH_PASS",
+    "book_I_open_field": "CANDIDATE_SCRIPTURE_UNCROWNED"
+  },
+  "publication_claims": {
+    "systematic_review": false,
+    "tradition_expert_review": false,
+    "maori_partner_review": false,
+    "legal_clearance": false,
+    "empirical_validation_of_philosophical_synthesis": false
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "branch": "master",
+  "commit": "db36241ff1d88cf04f2cae4477db5d59e230d9ee",
+  "inspected_files": {
+    "34_ASSURANCE_RUNTIME/FRONTIER_REGISTER_2026-08-22.md": "2fcb56493b1dc28fbd48feeb93437c0758373f3a",
+    "34_ASSURANCE_RUNTIME/POLICY_REGRESSION_GATE.md": "df30b6f2e45b5d0841881e859a5aa3a4a91edb52",
+    "34_ASSURANCE_RUNTIME/README.md": "19e86233b40c4d401807209ceb1b74ce232f9e91",
+    "lycheetah/assurance/runtime.py": "382990cc6b6052d144914f83eb0d493f425eacce",
+    "papers/agent-safety/BUDGET_REPAIR.md": "0daf90a2ab47865f8808a6c2083216529e49877c",
+    "papers/agent-safety/CHANGELOG.md": "e4a806800dc678b1443f758d76b5d097a86c5bff",
+    "papers/agent-safety/README.md": "047d7b825d1e449380b31ea2167ce846673729a6",
+    "papers/agent-safety/VERIFICATION.md": "7381519aba27e0e267c2413d5457a6d9b6da3047"
+  },
+  "repository": "Lycheetah/Lycheetah-Framework"
+}

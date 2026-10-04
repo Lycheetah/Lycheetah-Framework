@@ -1,0 +1,1184 @@
+{
+  "augmented_suite": {
+    "all_reference_expectations_pass": true,
+    "fixtures": 29,
+    "mutation": {
+      "killed": 30,
+      "mutants": 30,
+      "mutation_score": 1.0,
+      "rows": [
+        {
+          "description": "Ignore mandatory finality dimension: authority.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_AUTHORITY",
+            "LEGACY_TRANSITION_AUTHORITY_TRUE_TO_FALSE"
+          ],
+          "mutant_id": "DROP_AUTHORITY"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: budget.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_BUDGET",
+            "CHALLENGE_TRANSITION_BUDGET"
+          ],
+          "mutant_id": "DROP_BUDGET"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: approval.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_APPROVAL",
+            "CHALLENGE_TRANSITION_APPROVAL"
+          ],
+          "mutant_id": "DROP_APPROVAL"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: trajectory.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_TRAJECTORY",
+            "CHALLENGE_TRANSITION_TRAJECTORY"
+          ],
+          "mutant_id": "DROP_TRAJECTORY"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: ifc.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_IFC",
+            "CHALLENGE_TRANSITION_IFC"
+          ],
+          "mutant_id": "DROP_IFC"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: context.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_CONTEXT",
+            "CHALLENGE_TRANSITION_CONTEXT"
+          ],
+          "mutant_id": "DROP_CONTEXT"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: tests.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_TESTS",
+            "LEGACY_TRANSITION_TESTS_TRUE_TO_FALSE"
+          ],
+          "mutant_id": "DROP_TESTS"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: security.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_SECURITY",
+            "CHALLENGE_TRANSITION_SECURITY"
+          ],
+          "mutant_id": "DROP_SECURITY"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: canary.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_CANARY",
+            "CHALLENGE_TRANSITION_CANARY"
+          ],
+          "mutant_id": "DROP_CANARY"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: subject.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_SUBJECT",
+            "CHALLENGE_TRANSITION_SUBJECT"
+          ],
+          "mutant_id": "DROP_SUBJECT"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: freshness.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_FRESHNESS",
+            "CHALLENGE_TRANSITION_FRESHNESS"
+          ],
+          "mutant_id": "DROP_FRESHNESS"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: policy.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_POLICY",
+            "LEGACY_TRANSITION_POLICY_TRUE_TO_FALSE"
+          ],
+          "mutant_id": "DROP_POLICY"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: effect_identity.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_EFFECT_IDENTITY",
+            "CHALLENGE_TRANSITION_EFFECT_IDENTITY"
+          ],
+          "mutant_id": "DROP_EFFECT_IDENTITY"
+        },
+        {
+          "description": "Use admission-time authority instead of finality-time authority.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_TRANSITION_AUTHORITY_TRUE_TO_FALSE"
+          ],
+          "mutant_id": "ADMISSION_ONLY_AUTHORITY"
+        },
+        {
+          "description": "Use admission-time budget instead of finality-time budget.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": true,
+          "killed_by": [
+            "CHALLENGE_TRANSITION_BUDGET"
+          ],
+          "mutant_id": "ADMISSION_ONLY_BUDGET"
+        },
+        {
+          "description": "Use admission-time approval instead of finality-time approval.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": true,
+          "killed_by": [
+            "CHALLENGE_TRANSITION_APPROVAL"
+          ],
+          "mutant_id": "ADMISSION_ONLY_APPROVAL"
+        },
+        {
+          "description": "Use admission-time trajectory instead of finality-time trajectory.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": true,
+          "killed_by": [
+            "CHALLENGE_TRANSITION_TRAJECTORY"
+          ],
+          "mutant_id": "ADMISSION_ONLY_TRAJECTORY"
+        },
+        {
+          "description": "Use admission-time ifc instead of finality-time ifc.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": true,
+          "killed_by": [
+            "CHALLENGE_TRANSITION_IFC"
+          ],
+          "mutant_id": "ADMISSION_ONLY_IFC"
+        },
+        {
+          "description": "Use admission-time context instead of finality-time context.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": true,
+          "killed_by": [
+            "CHALLENGE_TRANSITION_CONTEXT"
+          ],
+          "mutant_id": "ADMISSION_ONLY_CONTEXT"
+        },
+        {
+          "description": "Use admission-time tests instead of finality-time tests.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_TRANSITION_TESTS_TRUE_TO_FALSE"
+          ],
+          "mutant_id": "ADMISSION_ONLY_TESTS"
+        },
+        {
+          "description": "Use admission-time security instead of finality-time security.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": true,
+          "killed_by": [
+            "CHALLENGE_TRANSITION_SECURITY"
+          ],
+          "mutant_id": "ADMISSION_ONLY_SECURITY"
+        },
+        {
+          "description": "Use admission-time canary instead of finality-time canary.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": true,
+          "killed_by": [
+            "CHALLENGE_TRANSITION_CANARY"
+          ],
+          "mutant_id": "ADMISSION_ONLY_CANARY"
+        },
+        {
+          "description": "Use admission-time subject instead of finality-time subject.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": true,
+          "killed_by": [
+            "CHALLENGE_TRANSITION_SUBJECT"
+          ],
+          "mutant_id": "ADMISSION_ONLY_SUBJECT"
+        },
+        {
+          "description": "Use admission-time freshness instead of finality-time freshness.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": true,
+          "killed_by": [
+            "CHALLENGE_TRANSITION_FRESHNESS"
+          ],
+          "mutant_id": "ADMISSION_ONLY_FRESHNESS"
+        },
+        {
+          "description": "Use admission-time policy instead of finality-time policy.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_TRANSITION_POLICY_TRUE_TO_FALSE"
+          ],
+          "mutant_id": "ADMISSION_ONLY_POLICY"
+        },
+        {
+          "description": "Use admission-time effect_identity instead of finality-time effect_identity.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": true,
+          "killed_by": [
+            "CHALLENGE_TRANSITION_EFFECT_IDENTITY"
+          ],
+          "mutant_id": "ADMISSION_ONLY_EFFECT_IDENTITY"
+        },
+        {
+          "description": "Delete mandatory reversibility group.",
+          "family": "DROP_HAZARD_GROUP",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_REVERSIBILITY",
+            "CHALLENGE_UNVERIFIED_MANUAL_NOT_SUBSTITUTE"
+          ],
+          "mutant_id": "DROP_REVERSIBILITY_GROUP"
+        },
+        {
+          "description": "Add unverified manual alternative.",
+          "family": "WEAKEN_ALTERNATIVE_SET",
+          "killed": true,
+          "killed_by": [
+            "CHALLENGE_UNVERIFIED_MANUAL_NOT_SUBSTITUTE"
+          ],
+          "mutant_id": "BROADEN_REVERSIBILITY_WITH_UNVERIFIED_MANUAL"
+        },
+        {
+          "description": "Replace authority AND approval with OR.",
+          "family": "BOOLEAN_OPERATOR_WEAKENING",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_AUTHORITY",
+            "LEGACY_STATIC_DENY_APPROVAL",
+            "LEGACY_TRANSITION_AUTHORITY_TRUE_TO_FALSE",
+            "CHALLENGE_TRANSITION_APPROVAL"
+          ],
+          "mutant_id": "AUTHORITY_OR_APPROVAL"
+        },
+        {
+          "description": "Allow all-but-one mandatory control.",
+          "family": "THRESHOLD_COMPENSATION",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_AUTHORITY",
+            "LEGACY_STATIC_DENY_BUDGET",
+            "LEGACY_STATIC_DENY_APPROVAL",
+            "LEGACY_STATIC_DENY_TRAJECTORY",
+            "LEGACY_STATIC_DENY_IFC",
+            "LEGACY_STATIC_DENY_CONTEXT",
+            "LEGACY_STATIC_DENY_TESTS",
+            "LEGACY_STATIC_DENY_SECURITY",
+            "LEGACY_STATIC_DENY_CANARY",
+            "LEGACY_STATIC_DENY_SUBJECT",
+            "LEGACY_STATIC_DENY_FRESHNESS",
+            "LEGACY_STATIC_DENY_POLICY",
+            "LEGACY_STATIC_DENY_EFFECT_IDENTITY",
+            "LEGACY_STATIC_DENY_REVERSIBILITY",
+            "LEGACY_TRANSITION_AUTHORITY_TRUE_TO_FALSE",
+            "LEGACY_TRANSITION_TESTS_TRUE_TO_FALSE",
+            "LEGACY_TRANSITION_POLICY_TRUE_TO_FALSE",
+            "CHALLENGE_TRANSITION_BUDGET",
+            "CHALLENGE_TRANSITION_APPROVAL",
+            "CHALLENGE_TRANSITION_TRAJECTORY",
+            "CHALLENGE_TRANSITION_IFC",
+            "CHALLENGE_TRANSITION_CONTEXT",
+            "CHALLENGE_TRANSITION_SECURITY",
+            "CHALLENGE_TRANSITION_CANARY",
+            "CHALLENGE_TRANSITION_SUBJECT",
+            "CHALLENGE_TRANSITION_FRESHNESS",
+            "CHALLENGE_TRANSITION_EFFECT_IDENTITY",
+            "CHALLENGE_UNVERIFIED_MANUAL_NOT_SUBSTITUTE"
+          ],
+          "mutant_id": "ALLOW_ONE_MISSING_CONTROL"
+        }
+      ],
+      "survived": 0
+    },
+    "reference_failures": []
+  },
+  "boundaries": [
+    "All mutants and scenarios are self-authored synthetic assurance models.",
+    "A 100% mutation score means only that this fixture suite kills this declared mutant set.",
+    "Mutation testing does not prove the mutant set spans all real hazards or implementation faults.",
+    "The integrated reference contract is a compact semantic model, not the production Lycheetah runtime.",
+    "Generated counterexamples are white-box and know the reference contract; they are not independent red-team evidence.",
+    "No LLM agent, CI/CD provider, external service, repository mutation, or real consequential effect was tested.",
+    "Mutation testing and security-policy mutation analysis are established prior art; novelty is not claimed."
+  ],
+  "challenge_generation": {
+    "added_fixtures": [
+      {
+        "kills": [
+          "ADMISSION_ONLY_BUDGET"
+        ],
+        "scenario": {
+          "expected_allow": false,
+          "final": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": false,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "pre": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "scenario_id": "CHALLENGE_TRANSITION_BUDGET",
+          "source": "mutation-challenge:stale-budget"
+        }
+      },
+      {
+        "kills": [
+          "ADMISSION_ONLY_APPROVAL"
+        ],
+        "scenario": {
+          "expected_allow": false,
+          "final": {
+            "approval": false,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "pre": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "scenario_id": "CHALLENGE_TRANSITION_APPROVAL",
+          "source": "mutation-challenge:stale-approval"
+        }
+      },
+      {
+        "kills": [
+          "ADMISSION_ONLY_TRAJECTORY"
+        ],
+        "scenario": {
+          "expected_allow": false,
+          "final": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": false
+          },
+          "pre": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "scenario_id": "CHALLENGE_TRANSITION_TRAJECTORY",
+          "source": "mutation-challenge:stale-trajectory"
+        }
+      },
+      {
+        "kills": [
+          "ADMISSION_ONLY_IFC"
+        ],
+        "scenario": {
+          "expected_allow": false,
+          "final": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": false,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "pre": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "scenario_id": "CHALLENGE_TRANSITION_IFC",
+          "source": "mutation-challenge:stale-ifc"
+        }
+      },
+      {
+        "kills": [
+          "ADMISSION_ONLY_CONTEXT"
+        ],
+        "scenario": {
+          "expected_allow": false,
+          "final": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": false,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "pre": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "scenario_id": "CHALLENGE_TRANSITION_CONTEXT",
+          "source": "mutation-challenge:stale-context"
+        }
+      },
+      {
+        "kills": [
+          "ADMISSION_ONLY_SECURITY"
+        ],
+        "scenario": {
+          "expected_allow": false,
+          "final": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": false,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "pre": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "scenario_id": "CHALLENGE_TRANSITION_SECURITY",
+          "source": "mutation-challenge:stale-security"
+        }
+      },
+      {
+        "kills": [
+          "ADMISSION_ONLY_CANARY"
+        ],
+        "scenario": {
+          "expected_allow": false,
+          "final": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": false,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "pre": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "scenario_id": "CHALLENGE_TRANSITION_CANARY",
+          "source": "mutation-challenge:stale-canary"
+        }
+      },
+      {
+        "kills": [
+          "ADMISSION_ONLY_SUBJECT"
+        ],
+        "scenario": {
+          "expected_allow": false,
+          "final": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": false,
+            "tests": true,
+            "trajectory": true
+          },
+          "pre": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "scenario_id": "CHALLENGE_TRANSITION_SUBJECT",
+          "source": "mutation-challenge:stale-subject"
+        }
+      },
+      {
+        "kills": [
+          "ADMISSION_ONLY_FRESHNESS"
+        ],
+        "scenario": {
+          "expected_allow": false,
+          "final": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": false,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "pre": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "scenario_id": "CHALLENGE_TRANSITION_FRESHNESS",
+          "source": "mutation-challenge:stale-freshness"
+        }
+      },
+      {
+        "kills": [
+          "ADMISSION_ONLY_EFFECT_IDENTITY"
+        ],
+        "scenario": {
+          "expected_allow": false,
+          "final": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": false,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "pre": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": false,
+            "policy": true,
+            "rollback": true,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "scenario_id": "CHALLENGE_TRANSITION_EFFECT_IDENTITY",
+          "source": "mutation-challenge:stale-effect_identity"
+        }
+      },
+      {
+        "kills": [
+          "BROADEN_REVERSIBILITY_WITH_UNVERIFIED_MANUAL"
+        ],
+        "scenario": {
+          "expected_allow": false,
+          "final": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": true,
+            "policy": true,
+            "rollback": false,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "pre": {
+            "approval": true,
+            "authority": true,
+            "bluegreen": false,
+            "budget": true,
+            "canary": true,
+            "context": true,
+            "effect_identity": true,
+            "freshness": true,
+            "ifc": true,
+            "manual_unverified": true,
+            "policy": true,
+            "rollback": false,
+            "security": true,
+            "subject": true,
+            "tests": true,
+            "trajectory": true
+          },
+          "scenario_id": "CHALLENGE_UNVERIFIED_MANUAL_NOT_SUBSTITUTE",
+          "source": "mutation-challenge:weak-alternative"
+        }
+      }
+    ],
+    "survivor_failure_museum_records": 11,
+    "unresolved_mutants": []
+  },
+  "deployment": "NOT_DEPLOYED",
+  "family_scores": {
+    "BOOLEAN_OPERATOR_WEAKENING": {
+      "killed": 1,
+      "mutants": 1
+    },
+    "DROP_FINALITY_CHECK": {
+      "killed": 13,
+      "mutants": 13
+    },
+    "DROP_HAZARD_GROUP": {
+      "killed": 1,
+      "mutants": 1
+    },
+    "STALE_ADMISSION_STATE": {
+      "killed": 13,
+      "mutants": 13
+    },
+    "THRESHOLD_COMPENSATION": {
+      "killed": 1,
+      "mutants": 1
+    },
+    "WEAKEN_ALTERNATIVE_SET": {
+      "killed": 1,
+      "mutants": 1
+    }
+  },
+  "initial_suite": {
+    "all_reference_expectations_pass": true,
+    "fixtures": 18,
+    "mutation": {
+      "killed": 19,
+      "mutants": 30,
+      "mutation_score": 0.6333333333333333,
+      "rows": [
+        {
+          "description": "Ignore mandatory finality dimension: authority.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_AUTHORITY",
+            "LEGACY_TRANSITION_AUTHORITY_TRUE_TO_FALSE"
+          ],
+          "mutant_id": "DROP_AUTHORITY"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: budget.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_BUDGET"
+          ],
+          "mutant_id": "DROP_BUDGET"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: approval.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_APPROVAL"
+          ],
+          "mutant_id": "DROP_APPROVAL"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: trajectory.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_TRAJECTORY"
+          ],
+          "mutant_id": "DROP_TRAJECTORY"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: ifc.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_IFC"
+          ],
+          "mutant_id": "DROP_IFC"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: context.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_CONTEXT"
+          ],
+          "mutant_id": "DROP_CONTEXT"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: tests.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_TESTS",
+            "LEGACY_TRANSITION_TESTS_TRUE_TO_FALSE"
+          ],
+          "mutant_id": "DROP_TESTS"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: security.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_SECURITY"
+          ],
+          "mutant_id": "DROP_SECURITY"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: canary.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_CANARY"
+          ],
+          "mutant_id": "DROP_CANARY"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: subject.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_SUBJECT"
+          ],
+          "mutant_id": "DROP_SUBJECT"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: freshness.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_FRESHNESS"
+          ],
+          "mutant_id": "DROP_FRESHNESS"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: policy.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_POLICY",
+            "LEGACY_TRANSITION_POLICY_TRUE_TO_FALSE"
+          ],
+          "mutant_id": "DROP_POLICY"
+        },
+        {
+          "description": "Ignore mandatory finality dimension: effect_identity.",
+          "family": "DROP_FINALITY_CHECK",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_EFFECT_IDENTITY"
+          ],
+          "mutant_id": "DROP_EFFECT_IDENTITY"
+        },
+        {
+          "description": "Use admission-time authority instead of finality-time authority.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_TRANSITION_AUTHORITY_TRUE_TO_FALSE"
+          ],
+          "mutant_id": "ADMISSION_ONLY_AUTHORITY"
+        },
+        {
+          "description": "Use admission-time budget instead of finality-time budget.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": false,
+          "killed_by": [],
+          "mutant_id": "ADMISSION_ONLY_BUDGET"
+        },
+        {
+          "description": "Use admission-time approval instead of finality-time approval.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": false,
+          "killed_by": [],
+          "mutant_id": "ADMISSION_ONLY_APPROVAL"
+        },
+        {
+          "description": "Use admission-time trajectory instead of finality-time trajectory.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": false,
+          "killed_by": [],
+          "mutant_id": "ADMISSION_ONLY_TRAJECTORY"
+        },
+        {
+          "description": "Use admission-time ifc instead of finality-time ifc.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": false,
+          "killed_by": [],
+          "mutant_id": "ADMISSION_ONLY_IFC"
+        },
+        {
+          "description": "Use admission-time context instead of finality-time context.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": false,
+          "killed_by": [],
+          "mutant_id": "ADMISSION_ONLY_CONTEXT"
+        },
+        {
+          "description": "Use admission-time tests instead of finality-time tests.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_TRANSITION_TESTS_TRUE_TO_FALSE"
+          ],
+          "mutant_id": "ADMISSION_ONLY_TESTS"
+        },
+        {
+          "description": "Use admission-time security instead of finality-time security.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": false,
+          "killed_by": [],
+          "mutant_id": "ADMISSION_ONLY_SECURITY"
+        },
+        {
+          "description": "Use admission-time canary instead of finality-time canary.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": false,
+          "killed_by": [],
+          "mutant_id": "ADMISSION_ONLY_CANARY"
+        },
+        {
+          "description": "Use admission-time subject instead of finality-time subject.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": false,
+          "killed_by": [],
+          "mutant_id": "ADMISSION_ONLY_SUBJECT"
+        },
+        {
+          "description": "Use admission-time freshness instead of finality-time freshness.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": false,
+          "killed_by": [],
+          "mutant_id": "ADMISSION_ONLY_FRESHNESS"
+        },
+        {
+          "description": "Use admission-time policy instead of finality-time policy.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_TRANSITION_POLICY_TRUE_TO_FALSE"
+          ],
+          "mutant_id": "ADMISSION_ONLY_POLICY"
+        },
+        {
+          "description": "Use admission-time effect_identity instead of finality-time effect_identity.",
+          "family": "STALE_ADMISSION_STATE",
+          "killed": false,
+          "killed_by": [],
+          "mutant_id": "ADMISSION_ONLY_EFFECT_IDENTITY"
+        },
+        {
+          "description": "Delete mandatory reversibility group.",
+          "family": "DROP_HAZARD_GROUP",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_REVERSIBILITY"
+          ],
+          "mutant_id": "DROP_REVERSIBILITY_GROUP"
+        },
+        {
+          "description": "Add unverified manual alternative.",
+          "family": "WEAKEN_ALTERNATIVE_SET",
+          "killed": false,
+          "killed_by": [],
+          "mutant_id": "BROADEN_REVERSIBILITY_WITH_UNVERIFIED_MANUAL"
+        },
+        {
+          "description": "Replace authority AND approval with OR.",
+          "family": "BOOLEAN_OPERATOR_WEAKENING",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_AUTHORITY",
+            "LEGACY_STATIC_DENY_APPROVAL",
+            "LEGACY_TRANSITION_AUTHORITY_TRUE_TO_FALSE"
+          ],
+          "mutant_id": "AUTHORITY_OR_APPROVAL"
+        },
+        {
+          "description": "Allow all-but-one mandatory control.",
+          "family": "THRESHOLD_COMPENSATION",
+          "killed": true,
+          "killed_by": [
+            "LEGACY_STATIC_DENY_AUTHORITY",
+            "LEGACY_STATIC_DENY_BUDGET",
+            "LEGACY_STATIC_DENY_APPROVAL",
+            "LEGACY_STATIC_DENY_TRAJECTORY",
+            "LEGACY_STATIC_DENY_IFC",
+            "LEGACY_STATIC_DENY_CONTEXT",
+            "LEGACY_STATIC_DENY_TESTS",
+            "LEGACY_STATIC_DENY_SECURITY",
+            "LEGACY_STATIC_DENY_CANARY",
+            "LEGACY_STATIC_DENY_SUBJECT",
+            "LEGACY_STATIC_DENY_FRESHNESS",
+            "LEGACY_STATIC_DENY_POLICY",
+            "LEGACY_STATIC_DENY_EFFECT_IDENTITY",
+            "LEGACY_STATIC_DENY_REVERSIBILITY",
+            "LEGACY_TRANSITION_AUTHORITY_TRUE_TO_FALSE",
+            "LEGACY_TRANSITION_TESTS_TRUE_TO_FALSE",
+            "LEGACY_TRANSITION_POLICY_TRUE_TO_FALSE"
+          ],
+          "mutant_id": "ALLOW_ONE_MISSING_CONTROL"
+        }
+      ],
+      "survived": 11
+    },
+    "reference_failures": []
+  },
+  "reference_contract": {
+    "finality_dimensions": [
+      "authority",
+      "budget",
+      "approval",
+      "trajectory",
+      "ifc",
+      "context",
+      "tests",
+      "security",
+      "canary",
+      "subject",
+      "freshness",
+      "policy",
+      "effect_identity"
+    ],
+    "reversibility": "rollback OR bluegreen"
+  },
+  "schema": "LYCHEETAH-ASSURANCE-MUTATION-LAB-REPORT-1.3",
+  "semantic_mutant_check": {
+    "all_non_equivalent": true,
+    "declared_mutants": 30,
+    "non_equivalent_with_counterexample": 30
+  },
+  "status": "SYNTHETIC_ENGINEERING_VALIDATED"
+}

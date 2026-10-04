@@ -1,0 +1,367 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trick",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "id",
+    "technique_id",
+    "title",
+    "goal",
+    "input",
+    "model",
+    "baseline",
+    "technique",
+    "test",
+    "observed_effect",
+    "failure_modes",
+    "maturity",
+    "applicability",
+    "freshness",
+    "lifecycle",
+    "last_tested_at",
+    "stale_after",
+    "reproduction_count",
+    "reproductions",
+    "author",
+    "license",
+    "privacy",
+    "publication_consent"
+  ],
+  "properties": {
+    "version": {
+      "const": "0.1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "technique_id": {
+      "type": "string",
+      "enum": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20",
+        "T21",
+        "T22",
+        "T23",
+        "T24"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "goal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family",
+        "product",
+        "version",
+        "configuration"
+      ],
+      "properties": {
+        "family": {
+          "type": "string",
+          "minLength": 1
+        },
+        "product": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "configuration": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "baseline": {
+      "type": "string",
+      "minLength": 1
+    },
+    "technique": {
+      "type": "string",
+      "minLength": 1
+    },
+    "test": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observed_effect": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "failure_modes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "maturity": {
+      "type": "string",
+      "enum": [
+        "HYPOTHESIS",
+        "REPRODUCED_ONCE",
+        "REPRODUCED_MULTI_RUN",
+        "REPRODUCED_MULTI_USER"
+      ]
+    },
+    "applicability": {
+      "type": "string",
+      "enum": [
+        "MODEL_SPECIFIC",
+        "CROSS_MODEL"
+      ]
+    },
+    "freshness": {
+      "type": "string",
+      "enum": [
+        "UNTESTED",
+        "CURRENT",
+        "STALE"
+      ]
+    },
+    "lifecycle": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "FAILED_REPLICATION",
+        "RETIRED"
+      ]
+    },
+    "last_tested_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "stale_after": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "reproduction_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "reproductions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "run_id",
+          "runner_id",
+          "model_family",
+          "model_version",
+          "tested_at",
+          "result",
+          "fixture_ref",
+          "baseline_output_ref",
+          "technique_output_ref",
+          "evidence_refs",
+          "budget_control",
+          "baseline_cost",
+          "technique_cost",
+          "currency",
+          "baseline_latency_ms",
+          "technique_latency_ms"
+        ],
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "runner_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "model_family": {
+            "type": "string",
+            "minLength": 1
+          },
+          "model_version": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "tested_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "result": {
+            "type": "string",
+            "enum": [
+              "SUPPORT",
+              "FAIL",
+              "INCONCLUSIVE"
+            ]
+          },
+          "fixture_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "baseline_output_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "technique_output_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "budget_control": {
+            "type": "string",
+            "minLength": 1
+          },
+          "baseline_cost": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "technique_cost": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "currency": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "baseline_latency_ms": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "technique_latency_ms": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1
+    },
+    "license": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "privacy": {
+      "const": "PRIVATE"
+    },
+    "publication_consent": {
+      "const": false
+    }
+  }
+}

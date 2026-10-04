@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "recommendation-event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "recommendation_id",
+    "recorded_at",
+    "ranking_version",
+    "reason_codes",
+    "input_fields_used",
+    "cost_verified_at",
+    "action",
+    "explicit_feedback",
+    "privacy",
+    "storage_consent"
+  ],
+  "properties": {
+    "version": {
+      "const": "0.1"
+    },
+    "recommendation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ranking_version": {
+      "const": "EXPLICIT_FIT_V01"
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "EXPLICIT_GOAL_MATCH",
+          "TASK_MATCH",
+          "DIFFICULTY_MATCH",
+          "ZERO_COST_ROUTE",
+          "COST_UNKNOWN",
+          "EXPLICIT_UNFINISHED_WORK"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "input_fields_used": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "goal_ids",
+          "task_tags",
+          "difficulty",
+          "budget",
+          "tool_ids",
+          "completed_prerequisites",
+          "unfinished_project_ids"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "cost_verified_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "SHOWN",
+        "OPENED",
+        "SKIPPED",
+        "SAVED",
+        "DISMISSED",
+        "EXPORTED"
+      ]
+    },
+    "explicit_feedback": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "privacy": {
+      "const": "PRIVATE"
+    },
+    "storage_consent": {
+      "const": true
+    }
+  }
+}

@@ -1,0 +1,474 @@
+{
+  "boundaries": [
+    "Challenge families are transmuted from public external sources, but selection and control mapping were authored in this Lycheetah session.",
+    "FULL means declared control-name coverage, not empirical attack resistance.",
+    "The proposed extended manifest is a design target, not an implemented runtime.",
+    "The current-control set summarizes prior synthetic Lycheetah prototypes and does not prove those controls are integrated in one production system.",
+    "No live LLM, MCP server, email account, GitHub mutation, malware, or real external effect was tested.",
+    "OWASP/AgentDojo/AgentDyn/FIDES threat concepts are prior art; novelty is not claimed."
+  ],
+  "current_manifest": {
+    "controls_enabled": [
+      "authority_scope",
+      "context_isolation",
+      "correction_replay",
+      "evidence_finality",
+      "exact_argument_binding",
+      "hazard_obligations",
+      "independent_approval",
+      "information_flow",
+      "mutation_falsification",
+      "policy_evolution",
+      "policy_finality",
+      "resource_finality",
+      "sink_mediation",
+      "stable_effect_identity",
+      "tool_output_taint",
+      "trajectory_contract"
+    ],
+    "full": 0,
+    "gap": 3,
+    "manifest_name": "Lycheetah coding-agent boundary \u2014 current research controls",
+    "minimum_controls_to_full_declared_coverage": [
+      "anomaly_escalation",
+      "circuit_breaker",
+      "credential_isolation",
+      "credential_rotation",
+      "dependency_blast_radius",
+      "egress_content_policy",
+      "execution_sandbox",
+      "filesystem_scope",
+      "goal_integrity",
+      "human_comprehension_check",
+      "independent_state_observer",
+      "instruction_provenance",
+      "inter_agent_authentication",
+      "least_privilege_credentials",
+      "memory_provenance",
+      "memory_read_taint",
+      "memory_write_gate",
+      "message_integrity",
+      "network_scope",
+      "outcome_monitoring",
+      "principal_binding",
+      "replay_protection",
+      "sidecar_integrity",
+      "tool_definition_attestation",
+      "tool_identity_pinning",
+      "trusted_confirmation_path"
+    ],
+    "partial": 9,
+    "rows": [
+      {
+        "coverage_fraction": 0.6666666666666666,
+        "covered": [
+          "context_isolation",
+          "sink_mediation"
+        ],
+        "id": "EXT-01",
+        "missing": [
+          "instruction_provenance"
+        ],
+        "name": "Indirect prompt injection / goal hijack",
+        "source_family": "OWASP ASI01; AgentDojo; AgentDyn",
+        "status": "PARTIAL"
+      },
+      {
+        "coverage_fraction": 0.75,
+        "covered": [
+          "context_isolation",
+          "sink_mediation",
+          "tool_output_taint"
+        ],
+        "id": "EXT-02",
+        "missing": [
+          "instruction_provenance"
+        ],
+        "name": "MCP tool poisoning",
+        "source_family": "OWASP MCP Security",
+        "status": "PARTIAL"
+      },
+      {
+        "coverage_fraction": 0.3333333333333333,
+        "covered": [
+          "policy_finality"
+        ],
+        "id": "EXT-03",
+        "missing": [
+          "tool_definition_attestation",
+          "tool_identity_pinning"
+        ],
+        "name": "MCP rug pull / tool-definition mutation",
+        "source_family": "OWASP MCP Security",
+        "status": "PARTIAL"
+      },
+      {
+        "coverage_fraction": 0.5,
+        "covered": [
+          "authority_scope",
+          "sink_mediation"
+        ],
+        "id": "EXT-04",
+        "missing": [
+          "least_privilege_credentials",
+          "principal_binding"
+        ],
+        "name": "Confused deputy / over-scoped credentials",
+        "source_family": "OWASP MCP Security; ASI03",
+        "status": "PARTIAL"
+      },
+      {
+        "coverage_fraction": 0.75,
+        "covered": [
+          "exact_argument_binding",
+          "information_flow",
+          "sink_mediation"
+        ],
+        "id": "EXT-05",
+        "missing": [
+          "egress_content_policy"
+        ],
+        "name": "Exfiltration through legitimate tool arguments",
+        "source_family": "OWASP MCP Security; ASI01/ASI02",
+        "status": "PARTIAL"
+      },
+      {
+        "coverage_fraction": 0.25,
+        "covered": [
+          "correction_replay"
+        ],
+        "id": "EXT-06",
+        "missing": [
+          "memory_provenance",
+          "memory_read_taint",
+          "memory_write_gate"
+        ],
+        "name": "Persistent memory/context poisoning",
+        "source_family": "OWASP ASI06",
+        "status": "PARTIAL"
+      },
+      {
+        "coverage_fraction": 0.0,
+        "covered": [],
+        "id": "EXT-07",
+        "missing": [
+          "credential_isolation",
+          "execution_sandbox",
+          "filesystem_scope",
+          "network_scope"
+        ],
+        "name": "Unexpected code execution / hostile local tool",
+        "source_family": "OWASP ASI05; MCP Security",
+        "status": "GAP"
+      },
+      {
+        "coverage_fraction": 0.0,
+        "covered": [],
+        "id": "EXT-08",
+        "missing": [
+          "inter_agent_authentication",
+          "message_integrity",
+          "principal_binding",
+          "replay_protection"
+        ],
+        "name": "Insecure inter-agent communication / spoof or replay",
+        "source_family": "OWASP ASI07",
+        "status": "GAP"
+      },
+      {
+        "coverage_fraction": 0.5,
+        "covered": [
+          "resource_finality",
+          "stable_effect_identity"
+        ],
+        "id": "EXT-09",
+        "missing": [
+          "circuit_breaker",
+          "dependency_blast_radius"
+        ],
+        "name": "Cascading failure / retry amplification",
+        "source_family": "OWASP ASI08",
+        "status": "PARTIAL"
+      },
+      {
+        "coverage_fraction": 0.25,
+        "covered": [
+          "independent_approval"
+        ],
+        "id": "EXT-10",
+        "missing": [
+          "human_comprehension_check",
+          "sidecar_integrity",
+          "trusted_confirmation_path"
+        ],
+        "name": "Human-agent trust exploitation",
+        "source_family": "OWASP ASI09",
+        "status": "PARTIAL"
+      },
+      {
+        "coverage_fraction": 0.25,
+        "covered": [
+          "authority_scope"
+        ],
+        "id": "EXT-11",
+        "missing": [
+          "credential_isolation",
+          "credential_rotation",
+          "principal_binding"
+        ],
+        "name": "Identity and privilege abuse",
+        "source_family": "OWASP ASI03",
+        "status": "PARTIAL"
+      },
+      {
+        "coverage_fraction": 0.0,
+        "covered": [],
+        "id": "EXT-12",
+        "missing": [
+          "anomaly_escalation",
+          "goal_integrity",
+          "independent_state_observer",
+          "outcome_monitoring"
+        ],
+        "name": "Rogue/strategically deceptive agent within allowed tools",
+        "source_family": "OWASP ASI10",
+        "status": "GAP"
+      }
+    ]
+  },
+  "deployment": "NOT_DEPLOYED",
+  "extended_manifest": {
+    "controls_enabled": [
+      "anomaly_escalation",
+      "authority_scope",
+      "circuit_breaker",
+      "context_isolation",
+      "correction_replay",
+      "credential_isolation",
+      "credential_rotation",
+      "dependency_blast_radius",
+      "egress_content_policy",
+      "evidence_finality",
+      "exact_argument_binding",
+      "execution_sandbox",
+      "filesystem_scope",
+      "goal_integrity",
+      "hazard_obligations",
+      "human_comprehension_check",
+      "independent_approval",
+      "independent_state_observer",
+      "information_flow",
+      "instruction_provenance",
+      "inter_agent_authentication",
+      "least_privilege_credentials",
+      "memory_provenance",
+      "memory_read_taint",
+      "memory_write_gate",
+      "message_integrity",
+      "mutation_falsification",
+      "network_scope",
+      "outcome_monitoring",
+      "policy_evolution",
+      "policy_finality",
+      "principal_binding",
+      "replay_protection",
+      "resource_finality",
+      "sidecar_integrity",
+      "sink_mediation",
+      "stable_effect_identity",
+      "tool_definition_attestation",
+      "tool_identity_pinning",
+      "tool_output_taint",
+      "trajectory_contract",
+      "trusted_confirmation_path"
+    ],
+    "full": 12,
+    "gap": 0,
+    "manifest_name": "Lycheetah coding-agent boundary \u2014 proposed external-threat extension",
+    "minimum_controls_to_full_declared_coverage": [],
+    "partial": 0,
+    "rows": [
+      {
+        "coverage_fraction": 1.0,
+        "covered": [
+          "context_isolation",
+          "instruction_provenance",
+          "sink_mediation"
+        ],
+        "id": "EXT-01",
+        "missing": [],
+        "name": "Indirect prompt injection / goal hijack",
+        "source_family": "OWASP ASI01; AgentDojo; AgentDyn",
+        "status": "FULL"
+      },
+      {
+        "coverage_fraction": 1.0,
+        "covered": [
+          "context_isolation",
+          "instruction_provenance",
+          "sink_mediation",
+          "tool_output_taint"
+        ],
+        "id": "EXT-02",
+        "missing": [],
+        "name": "MCP tool poisoning",
+        "source_family": "OWASP MCP Security",
+        "status": "FULL"
+      },
+      {
+        "coverage_fraction": 1.0,
+        "covered": [
+          "policy_finality",
+          "tool_definition_attestation",
+          "tool_identity_pinning"
+        ],
+        "id": "EXT-03",
+        "missing": [],
+        "name": "MCP rug pull / tool-definition mutation",
+        "source_family": "OWASP MCP Security",
+        "status": "FULL"
+      },
+      {
+        "coverage_fraction": 1.0,
+        "covered": [
+          "authority_scope",
+          "least_privilege_credentials",
+          "principal_binding",
+          "sink_mediation"
+        ],
+        "id": "EXT-04",
+        "missing": [],
+        "name": "Confused deputy / over-scoped credentials",
+        "source_family": "OWASP MCP Security; ASI03",
+        "status": "FULL"
+      },
+      {
+        "coverage_fraction": 1.0,
+        "covered": [
+          "egress_content_policy",
+          "exact_argument_binding",
+          "information_flow",
+          "sink_mediation"
+        ],
+        "id": "EXT-05",
+        "missing": [],
+        "name": "Exfiltration through legitimate tool arguments",
+        "source_family": "OWASP MCP Security; ASI01/ASI02",
+        "status": "FULL"
+      },
+      {
+        "coverage_fraction": 1.0,
+        "covered": [
+          "correction_replay",
+          "memory_provenance",
+          "memory_read_taint",
+          "memory_write_gate"
+        ],
+        "id": "EXT-06",
+        "missing": [],
+        "name": "Persistent memory/context poisoning",
+        "source_family": "OWASP ASI06",
+        "status": "FULL"
+      },
+      {
+        "coverage_fraction": 1.0,
+        "covered": [
+          "credential_isolation",
+          "execution_sandbox",
+          "filesystem_scope",
+          "network_scope"
+        ],
+        "id": "EXT-07",
+        "missing": [],
+        "name": "Unexpected code execution / hostile local tool",
+        "source_family": "OWASP ASI05; MCP Security",
+        "status": "FULL"
+      },
+      {
+        "coverage_fraction": 1.0,
+        "covered": [
+          "inter_agent_authentication",
+          "message_integrity",
+          "principal_binding",
+          "replay_protection"
+        ],
+        "id": "EXT-08",
+        "missing": [],
+        "name": "Insecure inter-agent communication / spoof or replay",
+        "source_family": "OWASP ASI07",
+        "status": "FULL"
+      },
+      {
+        "coverage_fraction": 1.0,
+        "covered": [
+          "circuit_breaker",
+          "dependency_blast_radius",
+          "resource_finality",
+          "stable_effect_identity"
+        ],
+        "id": "EXT-09",
+        "missing": [],
+        "name": "Cascading failure / retry amplification",
+        "source_family": "OWASP ASI08",
+        "status": "FULL"
+      },
+      {
+        "coverage_fraction": 1.0,
+        "covered": [
+          "human_comprehension_check",
+          "independent_approval",
+          "sidecar_integrity",
+          "trusted_confirmation_path"
+        ],
+        "id": "EXT-10",
+        "missing": [],
+        "name": "Human-agent trust exploitation",
+        "source_family": "OWASP ASI09",
+        "status": "FULL"
+      },
+      {
+        "coverage_fraction": 1.0,
+        "covered": [
+          "authority_scope",
+          "credential_isolation",
+          "credential_rotation",
+          "principal_binding"
+        ],
+        "id": "EXT-11",
+        "missing": [],
+        "name": "Identity and privilege abuse",
+        "source_family": "OWASP ASI03",
+        "status": "FULL"
+      },
+      {
+        "coverage_fraction": 1.0,
+        "covered": [
+          "anomaly_escalation",
+          "goal_integrity",
+          "independent_state_observer",
+          "outcome_monitoring"
+        ],
+        "id": "EXT-12",
+        "missing": [],
+        "name": "Rogue/strategically deceptive agent within allowed tools",
+        "source_family": "OWASP ASI10",
+        "status": "FULL"
+      }
+    ]
+  },
+  "extended_manifest_full_declared_coverage": true,
+  "external_challenge_packets": 12,
+  "finite_classifier_verification": {
+    "all_correct": true,
+    "correct": 64,
+    "mismatches": [],
+    "states": 64
+  },
+  "schema": "LYCHEETAH-EXTERNAL-THREAT-BOUNDARY-AUDIT-REPORT-1.4",
+  "single_required_control_removal": {
+    "all_correct": true,
+    "correct": 46,
+    "total": 46
+  },
+  "status": "SYNTHETIC_ENGINEERING_VALIDATED"
+}

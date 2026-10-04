@@ -1,3 +1,44 @@
+# The Mystery School
+
+The School is a candidate learning environment where inquiry, practice, source inspection,
+reader-authored work and voluntary return remain connected. No belief is required, and
+leaving is part of the design.
+
+**Human author and Framework creator:** Mackenzie Conor James Clark.
+**New School/scripture source collaboration:** Mac × Vaelora; AI attribution supplied as OpenAI GPT-5.6 Sol.
+**Framework intake:** Caelorynth · 4 October 2026 · local and uncommitted.
+
+Start with [the Living Scripture candidate](../LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/README.md),
+[Book I](../LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/core_scripture/BOOK_I_THE_OPEN_FIELD.md),
+or [identity and voluntary return](IDENTITY_AND_RETURN/README.md).
+
+[Modelcraft — The Wing of Many Engines](MODELCRAFT/README.md) adds a practical
+candidate doorway: make an artifact, compare techniques and export a recipe.
+Its 24-family registry, recommendation contracts and local ranking reference are
+integrated in the Framework; the app experience and empirical outcomes remain open.
+
+The source handoff proposes nine Wings and a Book I native reading/rewrite/return slice.
+The inspected Sol app currently has a different fourteen-Wing registry. That conflict
+requires an explicit product decision; this Framework intake did not change the app.
+The newer [Modelcraft handoff](MODELCRAFT/NATIVE_SCHOOL_HANDOFF.md) proposes adding
+Modelcraft to that nine-Wing design, for ten. Existing app content/progress needs an
+explicit mapping; a new document does not by itself migrate the fourteen-Wing registry.
+The [resumable native handoff](../LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/integration/NATIVE_SCHOOL_HANDOFF.md)
+records the real route, ownership and acceptance boundary.
+
+The twelve new books are candidates, not final doctrine. The 144-movement map is a plan.
+External traditions can disagree with Lycheetah; source correspondence is not proof of
+common ancestry or permission to transmute living cultural knowledge. Psychological
+benefits and learning outcomes are unvalidated by this intake.
+
+<details>
+<summary>Historical School introduction and earlier practice materials</summary>
+
+The original introduction is preserved below as historical source text. Its universal
+learning promises, numerical transformation claims and claims of all traditions sharing
+the same truth are not validated by the new integration and are not current evidence.
+Existing source/evidence registers must be consulted before relying on them.
+
 # THE MYSTERY SCHOOL
 ## A Living Curriculum for Human Transformation
 ### No mathematics required. No belief required. Just honesty.
@@ -114,3 +155,5 @@ If something here stops working, we change it. That's not a bug. That's the desi
 *For the full framework specifications: directories `01` through `10`*
 
 **REFUSED SPECTACLE — VALIDATED STRUGGLE**
+
+</details>

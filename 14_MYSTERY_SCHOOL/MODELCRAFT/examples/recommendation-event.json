@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "recommendation_id": "R03",
+  "recorded_at": "2026-10-04T01:40:50.794919Z",
+  "ranking_version": "EXPLICIT_FIT_V01",
+  "reason_codes": [
+    "EXPLICIT_GOAL_MATCH",
+    "TASK_MATCH",
+    "DIFFICULTY_MATCH",
+    "ZERO_COST_ROUTE"
+  ],
+  "input_fields_used": [
+    "goal_ids",
+    "task_tags",
+    "difficulty",
+    "budget"
+  ],
+  "cost_verified_at": "2026-10-04T01:40:50.794919Z",
+  "action": "SKIPPED",
+  "explicit_feedback": null,
+  "privacy": "PRIVATE",
+  "storage_consent": true
+}

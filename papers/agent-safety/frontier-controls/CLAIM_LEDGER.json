@@ -1,0 +1,101 @@
+{
+  "components": [
+    {
+      "claim_boundary": "Closes local stale-authority generation race at a one-node serialized commit boundary. Conventional generation fencing expected to tie.",
+      "deployment": "NOT_DEPLOYED",
+      "id": "01_commit_time_authority_v0_7",
+      "label": "v0.7 Commit-Time Authorization Fence",
+      "local_verification": "LOCAL_VERIFICATION.md",
+      "repo_disposition": "KEEP_AS_FRONTIER_RESEARCH",
+      "runtime_priority": "MEDIUM",
+      "status": "SYNTHETIC_ENGINEERING_VALIDATED",
+      "status_basis": "Supplied historical synthetic engineering status; fresh local scope recorded separately."
+    },
+    {
+      "claim_boundary": "Live Framework v0.4 independently repaired in-process multi-broker accounting under one live control plane. Preserve this packet as supporting/historical continuation, not as evidence the current repo still has that defect.",
+      "deployment": "NOT_DEPLOYED",
+      "id": "02_shared_resource_commitment_v0_8",
+      "label": "v0.8 Shared Resource Commitment Ledger",
+      "local_verification": "LOCAL_VERIFICATION.md",
+      "repo_disposition": "HISTORICAL_SUPPORT_CURRENT_REPO_ALREADY_REPAIRED_BOUNDED_CASE",
+      "runtime_priority": "LOW",
+      "status": "SYNTHETIC_ENGINEERING_VALIDATED",
+      "status_basis": "Supplied historical synthetic engineering status; fresh local scope recorded separately."
+    },
+    {
+      "claim_boundary": "Composes authority generation, resource pressure and durable outbox at local finality. Remote provider atomicity remains outside claim.",
+      "deployment": "NOT_DEPLOYED",
+      "id": "03_atomic_resource_authority_finality_v0_9",
+      "label": "v0.9 Atomic Resource + Authority Finality Gate",
+      "local_verification": "LOCAL_VERIFICATION.md",
+      "repo_disposition": "KEEP_AS_FRONTIER_RESEARCH",
+      "runtime_priority": "MEDIUM",
+      "status": "SYNTHETIC_ENGINEERING_VALIDATED",
+      "status_basis": "Supplied historical synthetic engineering status; fresh local scope recorded separately."
+    },
+    {
+      "claim_boundary": "Directly targets current public agent-safety packet's still-reproduced admission-only evidence freshness counterexample.",
+      "deployment": "NOT_DEPLOYED",
+      "id": "04_dependency_scoped_evidence_finality_v1_0",
+      "label": "v1.0 Dependency-Scoped Evidence Finality",
+      "local_verification": "LOCAL_VERIFICATION.md",
+      "repo_disposition": "PRIMARY_RUNTIME_INTEGRATION_CANDIDATE",
+      "runtime_priority": "HIGHEST",
+      "status": "SYNTHETIC_ENGINEERING_VALIDATED",
+      "status_basis": "Supplied historical synthetic engineering status; fresh local scope recorded separately."
+    },
+    {
+      "claim_boundary": "Closed-world mandatory obligation semantics. Policy-relative completeness only; does not prove hazard-model completeness.",
+      "deployment": "NOT_DEPLOYED",
+      "id": "05_hazard_obligation_coverage_v1_1",
+      "label": "v1.1 Hazard Obligation Coverage Gate",
+      "local_verification": "LOCAL_VERIFICATION.md",
+      "repo_disposition": "KEEP_AS_FRONTIER_RESEARCH",
+      "runtime_priority": "MEDIUM",
+      "status": "SYNTHETIC_ENGINEERING_VALIDATED",
+      "status_basis": "Supplied historical synthetic engineering status; fresh local scope recorded separately."
+    },
+    {
+      "claim_boundary": "Prevents silent semantic policy weakening in a bounded AND-of-OR model and binds known incidents to regression fixtures.",
+      "deployment": "NOT_DEPLOYED",
+      "id": "06_hazard_lineage_policy_evolution_v1_2",
+      "label": "v1.2 Hazard Lineage + Policy Evolution Gate",
+      "local_verification": "LOCAL_VERIFICATION.md",
+      "repo_disposition": "KEEP_AS_FRONTIER_RESEARCH",
+      "runtime_priority": "MEDIUM",
+      "status": "SYNTHETIC_ENGINEERING_VALIDATED",
+      "status_basis": "Supplied historical synthetic engineering status; fresh local scope recorded separately."
+    },
+    {
+      "claim_boundary": "Natural extension of existing Assurance Runtime policy regression gate. Measures test sensitivity to declared safety-semantics mutations.",
+      "deployment": "NOT_DEPLOYED",
+      "id": "07_assurance_mutation_failure_museum_v1_3",
+      "label": "v1.3 Assurance Mutation + Failure Museum Lab",
+      "local_verification": "LOCAL_VERIFICATION.md",
+      "repo_disposition": "PRIMARY_REGRESSION_TOOLING_CANDIDATE",
+      "runtime_priority": "HIGH",
+      "status": "SYNTHETIC_ENGINEERING_VALIDATED",
+      "status_basis": "Supplied historical synthetic engineering status; fresh local scope recorded separately."
+    },
+    {
+      "claim_boundary": "External threat crosswalk. Current modeled coding-agent boundary: 0 FULL / 9 PARTIAL / 3 GAP. Extended manifest is proposal only.",
+      "deployment": "NOT_DEPLOYED",
+      "id": "08_external_threat_boundary_auditor_v1_4",
+      "label": "v1.4 External Threat Boundary Auditor",
+      "local_verification": "LOCAL_VERIFICATION.md",
+      "packaging_note": "Original standalone benchmark.py unavailable in mounted artifact; frozen report preserved and a newly authored independent reproducer passes.",
+      "repo_disposition": "PRIMARY_EXTERNAL_THREAT_BACKLOG_CANDIDATE",
+      "runtime_priority": "HIGH",
+      "status": "SYNTHETIC_ENGINEERING_VALIDATED",
+      "status_basis": "Supplied historical synthetic engineering status; fresh local scope recorded separately."
+    }
+  ],
+  "independent_security_review": "NOT_RUN",
+  "integration_version": "0.1",
+  "live_repo_basis": "db36241ff1d88cf04f2cae4477db5d59e230d9ee",
+  "model_run": "NOT_RUN",
+  "packet": "agent-safety-frontier-controls",
+  "production_status": "NOT_DEPLOYED",
+  "promotion_rule": "Research integration does not promote any component into lycheetah.assurance public API or production claim.",
+  "status": "PR_READY_RESEARCH_INTEGRATION_PACKET"
+}

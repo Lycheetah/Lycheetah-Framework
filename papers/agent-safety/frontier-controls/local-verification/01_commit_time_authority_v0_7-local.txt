@@ -1,0 +1,7 @@
+Lycheetah Commit-Time Authorization Fence v0.7
+==============================================
+Scripted cases: 8/8
+Bounded generation-fence traces: 341/341
+Concurrent commit/revoke races: 64 (violations=0)
+Race order split: commit-first=17, revoke-first=47
+Status: synthetic engineering validation; not deployed.

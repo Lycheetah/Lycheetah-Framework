@@ -32,3 +32,10 @@ jobs:
           python3 -m unittest discover -s tests -v
           python3 run_experiments.py --output "$RUNNER_TEMP/scripted-controls"
           python3 adversarial_checks.py --output "$RUNNER_TEMP/adversarial-checks"
+      - name: Public compensation race fixtures
+        working-directory: papers/agent-safety/compensation-race-benchmark
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python3 -m unittest discover -s tests -v
+          python3 -m compensation_race.benchmark --rounds 1000 --output "$RUNNER_TEMP/compensation-race.json"

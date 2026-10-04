@@ -1,0 +1,391 @@
+{
+  "benchmark_correction": {
+    "disposition": "Changed admission ordering so an existing stable effect_id reports its durable state before considering a new authority admission; added a dedicated regression case; full suite rerun before freeze.",
+    "finding": "Implementation checked current authority before durable effect identity on retry, returning generic DENY instead of the already-persisted CANCELLED state.",
+    "first_bounded_run": "257/259",
+    "mismatch_traces": [
+      [
+        "AA",
+        "RV",
+        "AA"
+      ],
+      [
+        "AB",
+        "RV",
+        "AB"
+      ]
+    ]
+  },
+  "boundaries": [
+    "No real external provider, money, deployment, message, or cloud mutation occurred.",
+    "SQLite is the single local serialization authority; distributed replicas and partitions are not modeled.",
+    "The outbox provides atomic local acceptance plus durable dispatch intent, not atomicity with an arbitrary remote SaaS provider.",
+    "Remote retries rely on provider-visible stable effect IDs / idempotency.",
+    "Provider actual cost must not exceed the committed maximum if the resource bound is to hold.",
+    "A revocation after local finality is not retroactive; the accepted outbox effect remains eligible for relay.",
+    "Transactional outbox, resource reservation, idempotency, and generation fencing are established prior art; novelty is not claimed."
+  ],
+  "bounded_trace_check": {
+    "all_correct": true,
+    "correct": 259,
+    "mismatches": [],
+    "trace_space": "all AA/AB/CA/CB/RV/RG traces length 0..3",
+    "traces": 259
+  },
+  "concurrent_revoke_commit": {
+    "commit_ordered_first": 18,
+    "examples": [],
+    "property_holds": true,
+    "revoke_ordered_first": 46,
+    "trials": 64,
+    "violations": 0
+  },
+  "deployment": "NOT_DEPLOYED",
+  "dual_write_counterexamples": {
+    "local_commit_then_crash_loses_dispatch_record": true,
+    "non_idempotent_remote_effect_count": 2,
+    "remote_send_then_crash_duplicates_on_retry": true
+  },
+  "process_budget_finality_race": {
+    "brokers": 20,
+    "budget": 6,
+    "committed": 6,
+    "denied": 14,
+    "errors": [],
+    "invariant": true,
+    "snapshot": {
+      "available": 0,
+      "committed_pending": 6,
+      "limit": 6,
+      "pressure": 6,
+      "reserved": 0,
+      "spent": 0
+    }
+  },
+  "schema": "LYCHEETAH-ATOMIC-RESOURCE-AUTHORITY-FINALITY-REPORT-0.9",
+  "scripted_cases": [
+    {
+      "case": "authority-resource-outbox-happy-path",
+      "observed": {
+        "admit": {
+          "actual_cost": null,
+          "audit_sequence": 3,
+          "committed_pending": 0,
+          "effect_id": "happy",
+          "generation": 1,
+          "limit": 5,
+          "reason": "admitted-and-reserved",
+          "reserved": 4,
+          "spent": 0,
+          "state": "RESERVED"
+        },
+        "commit": {
+          "actual_cost": null,
+          "audit_sequence": 4,
+          "committed_pending": 4,
+          "effect_id": "happy",
+          "generation": 1,
+          "limit": 5,
+          "reason": "local-finality-accepted",
+          "reserved": 0,
+          "spent": 0,
+          "state": "COMMITTED"
+        },
+        "settle": {
+          "actual_cost": 3,
+          "audit_sequence": 5,
+          "committed_pending": 0,
+          "effect_id": "happy",
+          "generation": null,
+          "limit": 5,
+          "reason": "provider-receipt-settled",
+          "reserved": 0,
+          "spent": 3,
+          "state": "SETTLED"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "revoke-before-finality-cancels-and-releases",
+      "observed": {
+        "commit": {
+          "actual_cost": null,
+          "audit_sequence": 6,
+          "committed_pending": 0,
+          "effect_id": "revoke-first",
+          "generation": 1,
+          "limit": 5,
+          "reason": "attempt-cancelled",
+          "reserved": 0,
+          "spent": 0,
+          "state": "DENY"
+        },
+        "revoke": {
+          "actual_cost": null,
+          "audit_sequence": 5,
+          "committed_pending": null,
+          "effect_id": null,
+          "generation": 2,
+          "limit": null,
+          "reason": "authority-revoked",
+          "reserved": 4,
+          "spent": null,
+          "state": "REVOKED"
+        },
+        "snapshot": {
+          "available": 5,
+          "committed_pending": 0,
+          "limit": 5,
+          "pressure": 0,
+          "reserved": 0,
+          "spent": 0
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "retry-after-revoke-preserves-cancelled-effect-state",
+      "observed": {
+        "actual_cost": null,
+        "audit_sequence": 6,
+        "committed_pending": 0,
+        "effect_id": "cancelled-retry",
+        "generation": 1,
+        "limit": 5,
+        "reason": "existing-attempt",
+        "reserved": 0,
+        "spent": 0,
+        "state": "CANCELLED"
+      },
+      "pass": true
+    },
+    {
+      "case": "finality-before-revoke-retains-committed-exposure",
+      "observed": {
+        "commit": {
+          "actual_cost": null,
+          "audit_sequence": 4,
+          "committed_pending": 4,
+          "effect_id": "commit-first",
+          "generation": 1,
+          "limit": 5,
+          "reason": "local-finality-accepted",
+          "reserved": 0,
+          "spent": 0,
+          "state": "COMMITTED"
+        },
+        "revoke": {
+          "actual_cost": null,
+          "audit_sequence": 5,
+          "committed_pending": null,
+          "effect_id": null,
+          "generation": 2,
+          "limit": null,
+          "reason": "authority-revoked",
+          "reserved": 0,
+          "spent": null,
+          "state": "REVOKED"
+        },
+        "snapshot": {
+          "available": 1,
+          "committed_pending": 4,
+          "limit": 5,
+          "pressure": 4,
+          "reserved": 0,
+          "spent": 0
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "post-finality-revocation-is-not-retroactive",
+      "observed": {
+        "relay": {
+          "decision": {
+            "actual_cost": 2,
+            "audit_sequence": 6,
+            "committed_pending": 0,
+            "effect_id": "commit-first",
+            "generation": null,
+            "limit": 5,
+            "reason": "provider-receipt-settled",
+            "reserved": 0,
+            "spent": 2,
+            "state": "SETTLED"
+          },
+          "state": "SETTLED"
+        },
+        "snapshot": {
+          "available": 3,
+          "committed_pending": 0,
+          "limit": 5,
+          "pressure": 2,
+          "reserved": 0,
+          "spent": 2
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "restart-after-local-finality-relays-durable-outbox",
+      "observed": {
+        "relay": {
+          "decision": {
+            "actual_cost": 2,
+            "audit_sequence": 5,
+            "committed_pending": 0,
+            "effect_id": "crash-before-relay",
+            "generation": null,
+            "limit": 5,
+            "reason": "provider-receipt-settled",
+            "reserved": 0,
+            "spent": 2,
+            "state": "SETTLED"
+          },
+          "state": "SETTLED"
+        },
+        "snapshot": {
+          "available": 3,
+          "committed_pending": 0,
+          "limit": 5,
+          "pressure": 2,
+          "reserved": 0,
+          "spent": 2
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "provider-accept-crash-retry-produces-one-external-effect",
+      "observed": {
+        "first": {
+          "state": "CRASHED_AFTER_PROVIDER"
+        },
+        "mid": {
+          "available": 1,
+          "committed_pending": 4,
+          "limit": 5,
+          "pressure": 4,
+          "reserved": 0,
+          "spent": 0
+        },
+        "provider_count": 1,
+        "second": {
+          "decision": {
+            "actual_cost": 3,
+            "audit_sequence": 5,
+            "committed_pending": 0,
+            "effect_id": "crash-after-provider",
+            "generation": null,
+            "limit": 5,
+            "reason": "provider-receipt-settled",
+            "reserved": 0,
+            "spent": 3,
+            "state": "SETTLED"
+          },
+          "state": "SETTLED"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "unreconciled-finality-retains-budget-pressure",
+      "observed": {
+        "actual_cost": null,
+        "audit_sequence": 5,
+        "committed_pending": 4,
+        "effect_id": "second",
+        "generation": 1,
+        "limit": 5,
+        "reason": "insufficient-capacity",
+        "reserved": 0,
+        "spent": 0,
+        "state": "DENY"
+      },
+      "pass": true
+    },
+    {
+      "case": "certified-no-effect-restores-capacity",
+      "observed": {
+        "later": {
+          "actual_cost": null,
+          "audit_sequence": 7,
+          "committed_pending": 0,
+          "effect_id": "second",
+          "generation": 1,
+          "limit": 5,
+          "reason": "admitted-and-reserved",
+          "reserved": 2,
+          "spent": 0,
+          "state": "RESERVED"
+        },
+        "no_effect": {
+          "actual_cost": null,
+          "audit_sequence": 6,
+          "committed_pending": 0,
+          "effect_id": "pending",
+          "generation": null,
+          "limit": 5,
+          "reason": "provider-certified-no-effect",
+          "reserved": 0,
+          "spent": 0,
+          "state": "NO_EFFECT"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "provider-overrun-does-not-falsify-budget-ledger",
+      "observed": {
+        "actual_cost": 4,
+        "audit_sequence": 5,
+        "committed_pending": 3,
+        "effect_id": "overrun",
+        "generation": null,
+        "limit": 5,
+        "reason": "provider-cost-exceeds-maximum",
+        "reserved": 0,
+        "spent": 0,
+        "state": "INDETERMINATE"
+      },
+      "pass": true
+    },
+    {
+      "case": "action-substitution-denied-before-outbox",
+      "observed": {
+        "actual_cost": null,
+        "audit_sequence": 4,
+        "committed_pending": 0,
+        "effect_id": "substitution",
+        "generation": 1,
+        "limit": 5,
+        "reason": "action-substitution",
+        "reserved": 1,
+        "spent": 0,
+        "state": "DENY"
+      },
+      "pass": true
+    }
+  ],
+  "scripted_summary": {
+    "passed": 11,
+    "total": 11
+  },
+  "status": "SYNTHETIC_ENGINEERING_VALIDATED",
+  "threaded_budget_finality_race": {
+    "brokers": 16,
+    "budget": 5,
+    "committed": 5,
+    "denied": 11,
+    "invariant": true,
+    "snapshot": {
+      "available": 0,
+      "committed_pending": 5,
+      "limit": 5,
+      "pressure": 5,
+      "reserved": 0,
+      "spent": 0
+    }
+  }
+}

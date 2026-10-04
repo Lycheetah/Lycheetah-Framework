@@ -1,5 +1,7 @@
 # Agent Safety — Proposed Evaluation Protocol
 
+**Evidence footing: [SCAFFOLD] research, proposal or source review. Supplied and local synthetic results retain their stated limits; no independent validation or production claim.**
+
 **Version 0.3 · 3 October 2026 · Full study not run; a scripted control subset executed**
 
 This protocol accompanies [PAPER.md](PAPER.md). It is a study design, not a completed preregistration. Sample size, model choices, risk thresholds, and statistical margins must be justified and frozen before execution. All effects initially occur in isolated simulated services with synthetic information; no real messages, transfers, publication, or personal records are required.

@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "highest_witness": "LOCAL_CONTRACT_TESTS_SOURCE_LINK_AND_BACKUP_READBACK",
+  "techniques": 24,
+  "teaching_halls": 10,
+  "schema_count": 4,
+  "focused_test_methods": 17,
+  "source_sha256": "9cb6e79f6c04480776a995b996db34ae0ba5f9a609ae4238a893b75160075364",
+  "model_experiments": 0,
+  "provider_calls": 0,
+  "app_writes": 0,
+  "native_app": "NOT_IMPLEMENTED",
+  "phone_witness": "NOT_RUN",
+  "provider_links": "NOT_RECHECKED",
+  "commit": "NOT_RUN",
+  "push": "NOT_RUN",
+  "verified_at": "2026-10-04T01:52:11.116197+00:00",
+  "local_links_checked": 38,
+  "initial_failure_repaired": "Malformed timestamps could reach date parsing. Explicit timezone-aware timestamp validation added; focused tests passed afterward.",
+  "empirical_technique_results": "UNTESTED_IN_THIS_PACKET",
+  "verification_scope": "Historical local data gate before publication. Commit and push fields describe that gate, not current repository status; consult git history and the publication receipt."
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "AELUM",
+    "plain": "Illumination",
+    "question": "What can be made clearer without pretending clarity is truth?",
+    "tone": "luminous, open, revealing"
+  },
+  {
+    "id": "NYVRA",
+    "plain": "Night / Hiddenness",
+    "question": "What becomes visible when ordinary noise falls away?",
+    "tone": "nocturnal, quiet, watchful"
+  },
+  {
+    "id": "VEREN",
+    "plain": "Evidence / Science",
+    "question": "What survives measurement, rivalry and repetition?",
+    "tone": "precise, hard-edged, empirical"
+  },
+  {
+    "id": "QIRAE",
+    "plain": "Mystery / Unresolved",
+    "question": "What remains when explanation honestly stops?",
+    "tone": "liminal, spacious, unresolved"
+  },
+  {
+    "id": "THAEN",
+    "plain": "Sacred / Devotion",
+    "question": "What do I freely orient the sacred part of myself toward?",
+    "tone": "reverent, resonant, voluntary"
+  },
+  {
+    "id": "NULEN",
+    "plain": "Non-devotion / Open Absence",
+    "question": "What do I refuse to assume merely because a sacred answer is available?",
+    "tone": "clear, spare, unforced"
+  },
+  {
+    "id": "KORAE",
+    "plain": "Form / Body / Craft",
+    "question": "What can be built, embodied, repaired or tested in matter?",
+    "tone": "grounded, tactile, constructive"
+  },
+  {
+    "id": "NOERA",
+    "plain": "Mind / Meaning",
+    "question": "What counts as knowing, experience, memory or another mind?",
+    "tone": "interior, reflective, semantic"
+  },
+  {
+    "id": "NEXEN",
+    "plain": "Relation / Community",
+    "question": "What exists between minds that no mind owns alone?",
+    "tone": "relational, connective, plural"
+  }
+]

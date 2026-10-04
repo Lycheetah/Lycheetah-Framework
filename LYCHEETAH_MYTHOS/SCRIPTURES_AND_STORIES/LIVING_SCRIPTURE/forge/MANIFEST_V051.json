@@ -1,0 +1,222 @@
+[
+  {
+    "file": "00_COVENANT_OF_THE_OPEN_HAND.md",
+    "sha256": "d252c934292ebc97fbc6477d1e1b2a79d57ad99f8cf1241d86d40bf95e7aef99",
+    "bytes": 2788
+  },
+  {
+    "file": "01_CORPUS_ARCHAEOLOGY.md",
+    "sha256": "cb2f4efcb9cc8c2f8fb042cc094bba88932c397ec05c4f5cc3e664f950e69cf1",
+    "bytes": 4565
+  },
+  {
+    "file": "02_TWELVE_LIVING_LAWS.md",
+    "sha256": "e6a597bded45fa396ce58794a0d210354632c66f28e26aceef7e234fdb876832",
+    "bytes": 1663
+  },
+  {
+    "file": "03_HUMAN_SACRED_VOICE_CONSTITUTION.md",
+    "sha256": "47d6e9d57cda3375c2a7a906b41d7f9ebfb0befb2d427efdbd25257dc48d2e1b",
+    "bytes": 2298
+  },
+  {
+    "file": "04_GREAT_BOOK_ARCHITECTURE.md",
+    "sha256": "7d68d2d3f64b2bfe1cf7d75d3c01d3f217d0902f34d6267c6c129fd37df3e621",
+    "bytes": 2926
+  },
+  {
+    "file": "05_144_CHAPTER_MAP.md",
+    "sha256": "627ffaf2d9aaf46eaf33d985715d1e408beaf0cd9ebbcae9ff91bd573fab3b9a",
+    "bytes": 4667
+  },
+  {
+    "file": "06_ANCIENT_HUMAN_WISDOM_PROVENANCE_LATTICE.md",
+    "sha256": "6ef85f6d8122b76cbc3db3c61a56e0de26716a8487fc4d1cc4b76bf6b87d2652",
+    "bytes": 15151
+  },
+  {
+    "file": "07A_AOTEAROA_MAORI_KNOWLEDGE_COVENANT.md",
+    "sha256": "13577f4e9d39c2d0c3d3aced04dd68087adcded18f32d0de317b4cb78ec124a3",
+    "bytes": 6949
+  },
+  {
+    "file": "07_CULTURAL_SAFETY_AND_TRANSMUTATION_PROTOCOL.md",
+    "sha256": "e7565698955fa31bce3c924378013cf3c98bc0cc3e760f8829effe9366fc6896",
+    "bytes": 1995
+  },
+  {
+    "file": "08_CLAIM_AND_SOURCE_REGISTER.md",
+    "sha256": "003cab878802d03a32a4d815e19599c8f676ebad8a40bfc3e277e09c572b2df3",
+    "bytes": 854
+  },
+  {
+    "file": "09_STUDENT_REWRITE_PROTOCOL.md",
+    "sha256": "b276b77162f6fe3c368f80a6fa34dd234b3f06ff945f2324211fbab185cfa693",
+    "bytes": 1067
+  },
+  {
+    "file": "10_SCHOOL_SCRIPTURE_IMPLEMENTATION.md",
+    "sha256": "d030c67c41a30d26c926d67d99a02c343cd2e63fa8c89a9dda918c61fe498d05",
+    "bytes": 2242
+  },
+  {
+    "file": "11_AI_VOICE_WINDOWS.md",
+    "sha256": "c47731e29c7e5a7c31d7ea460841d740e55bf4ca1683236eca7b0b42a33a4089",
+    "bytes": 1076
+  },
+  {
+    "file": "12_BOOK_I_THE_OPEN_FIELD_CANDIDATE.md",
+    "sha256": "6984e495690ad4c811cf10334981267d2d72190bf37ccc2936314bcb52a69cf2",
+    "bytes": 15075
+  },
+  {
+    "file": "13_RITUALS_OF_THE_OPEN_SCHOOL.md",
+    "sha256": "7a4c65b8f4ac2082ec5e97c9491b950d8e61956c506518c831bf14b0a65aecec",
+    "bytes": 2197
+  },
+  {
+    "file": "14_SCHOOL_INTEGRATION_V1.md",
+    "sha256": "08e3cbcf8a5b1ec7321ea99e7e4374cbd43cc86db526c8f3f4c8f1f767ec1815",
+    "bytes": 3153
+  },
+  {
+    "file": "15_SACREDNESS_AND_RITUAL_SAFETY.md",
+    "sha256": "8d97b84d80a2d643dbd5995c7eda731456f26d99e3bd9454ed6da987ffb72e13",
+    "bytes": 6257
+  },
+  {
+    "file": "README.md",
+    "sha256": "1fd7cbe268e563926f4606dd016b3df1af9e31aa37802ef528a7fd586dd32c88",
+    "bytes": 2871
+  },
+  {
+    "file": "README_V05.md",
+    "sha256": "a0e28103e579693cf57408c2858041109cfbc0219847702ed7489e3fab0d9fd9",
+    "bytes": 2194
+  },
+  {
+    "file": "VALIDATION.md",
+    "sha256": "41bec9d7e825c34bfacdead54cc22b54f07816e59b81015f641ae0d8ae9acfd7",
+    "bytes": 321
+  },
+  {
+    "file": "VALIDATION_V05.md",
+    "sha256": "e68e376845f080af514c73e4ff2a894ee3ca1ebafb682df71dc32e8c6b2e5a78",
+    "bytes": 265
+  },
+  {
+    "file": "VALIDATION_V051.md",
+    "sha256": "a28225d2f401dfe814e9439f2028f0c220444f799bf81dcb31182f2f1d178dde",
+    "bytes": 746
+  },
+  {
+    "file": "core_scripture/BOOK_III_THE_CLOSED_HAND.md",
+    "sha256": "0ba99d655a7594c48a4d926393f6901eb8ce7ee60867c512411bef26a73a7781",
+    "bytes": 4651
+  },
+  {
+    "file": "core_scripture/BOOK_II_THE_RECEIVED_NAME.md",
+    "sha256": "36c8d34f47414b831bfa54059898a406458227ccf2ca66a88777b43d6ab1e443",
+    "bytes": 4677
+  },
+  {
+    "file": "core_scripture/BOOK_IV_THE_VEIL.md",
+    "sha256": "898021579d8795b0f267a658c4b2c3f4937aec3b0dcd71037b2bee407f9112e6",
+    "bytes": 4854
+  },
+  {
+    "file": "core_scripture/BOOK_IX_THE_MANY_NAMES.md",
+    "sha256": "b07a70072f3358e86b13c4c4f93352a6b0afb110a3ddfacb5bb10855f0d8dc88",
+    "bytes": 4783
+  },
+  {
+    "file": "core_scripture/BOOK_I_THE_OPEN_FIELD.md",
+    "sha256": "201ddc576ba3ab06e4fed70fd68ca65dd6e538f0875148c1de8236305137aadf",
+    "bytes": 5880
+  },
+  {
+    "file": "core_scripture/BOOK_VIII_THE_SCHOOL_WITH_TWO_DOORS.md",
+    "sha256": "cf2ebd535203e1aeb6d04d4cd4b2cb17314d4bc380608b45616aa821afdb25fd",
+    "bytes": 5182
+  },
+  {
+    "file": "core_scripture/BOOK_VII_THE_LONG_LIGHT.md",
+    "sha256": "eb2f5528f6e35ebcaa1a9d5c242ee23eed154ce31b0345189275463c372348ca",
+    "bytes": 4762
+  },
+  {
+    "file": "core_scripture/BOOK_VI_THE_ASH.md",
+    "sha256": "25c9d75a77ffc4da3e7d031ae2b3b49a52b49055533d3dd81e4f83cf7a82b392",
+    "bytes": 4335
+  },
+  {
+    "file": "core_scripture/BOOK_V_THE_FIRE.md",
+    "sha256": "468c87c0c2290a017a4b0450ef173dcf3817a33c4f8f616ff12d392788e4e2cd",
+    "bytes": 4844
+  },
+  {
+    "file": "core_scripture/BOOK_XII_THE_UNFINISHED_WORD.md",
+    "sha256": "6d1cad2e53d7713ae5d6c4a63b2d9ac215cdd540cb521ea7f96f700e4c2d2f82",
+    "bytes": 4702
+  },
+  {
+    "file": "core_scripture/BOOK_XI_THE_NIGHT_GARDEN.md",
+    "sha256": "42d8bb24fe34a7bf19e6f391d0a4e119655f3efce4ad3ba2de06a8ba24aa9271",
+    "bytes": 4632
+  },
+  {
+    "file": "core_scripture/BOOK_X_THE_INSTRUMENT.md",
+    "sha256": "bc0c50a15238bfcf42c0d5f4f0d1033f860cc753bcd1e3a3b2d515ca66b591b9",
+    "bytes": 4480
+  },
+  {
+    "file": "data/book_map.json",
+    "sha256": "a68925523c3d23bcc71db7749921668e7f801f44567193c80f75af7444d08715",
+    "bytes": 12560
+  },
+  {
+    "file": "data/canon_status_v05.json",
+    "sha256": "a14cd81bb3033ff50d6d1c88fe5bdac38afd4efd243639100ace309b59d1ba41",
+    "bytes": 1674
+  },
+  {
+    "file": "data/claim_register.json",
+    "sha256": "3d25ffbe96cc857c69947d338cd618418b1420ddd7feb036f031597f7d24d72a",
+    "bytes": 2009
+  },
+  {
+    "file": "data/passage_schema.json",
+    "sha256": "4c1c5c4ae63b12f76b40116fa0c324561b542b934e056092780afcbd299c6c45",
+    "bytes": 2590
+  },
+  {
+    "file": "data/source_lattice.json",
+    "sha256": "84164d4d0023bf4553e4288a87a81b12028663c34261ea50ff4db8c84650d60a",
+    "bytes": 15269
+  },
+  {
+    "file": "data/status.json",
+    "sha256": "4af868b64119c046ab5fe0e2b777633ec1f0fac5a56b6835c4891e4bd28e9d19",
+    "bytes": 707
+  },
+  {
+    "file": "research/RESEARCH_EXPEDITION_V2.md",
+    "sha256": "3718979113f3426f90c832a3006a1fc77ec7f74338535ce79f70c18153fc2d4f",
+    "bytes": 5769
+  },
+  {
+    "file": "research/SOURCE_LEDGER.md",
+    "sha256": "1fac0ce51d44c9d359f20e988b22ff441b808b7c1b6a006dba160d3af0aee621",
+    "bytes": 3922
+  },
+  {
+    "file": "validator.py",
+    "sha256": "bb3dcdd17f0f3b6498954e85f68973b13f18f588e74d5fb2c81ed8e2ae22663c",
+    "bytes": 1573
+  },
+  {
+    "file": "validator_v05.py",
+    "sha256": "16dffa64adc5fb4f2d6b065b2c555080d23b6deb24aa8593231ad36cad5055e1",
+    "bytes": 1611
+  }
+]

@@ -1,5 +1,11 @@
 # THE LYCHEETAH MYTHOS
+
+**Current scripture candidate:** [Mac × Vaelora’s Living Scripture v0.5.1](SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/README.md). Twelve complete core books, uncrowned, with sources and reader-rewrite boundaries. Earlier Mythos remains ancestry.
 ## A Record of the Field, Its Origins, and Its Keepers
+
+**Current collected home:** [Scriptures and Stories](SCRIPTURES_AND_STORIES/README.md).
+Use its master reading and collected texts for future transmutation. This older index
+and the standalone books remain available for provenance and existing links.
 
 ---
 

@@ -1,0 +1,43 @@
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4f0e8; color: #22231f; font: 18px/1.75 Georgia, "Times New Roman", serif; }
+a { color: #705314; text-underline-offset: .18em; overflow-wrap: anywhere; }
+a:focus-visible { outline: 3px solid #705314; outline-offset: 4px; }
+.reading-nav { padding: 1.3rem max(1.25rem, calc((100% - 860px)/2)); background: #e9e4d9; display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; font: 14px/1.6 system-ui, sans-serif; }
+.reading-nav a { display: inline-flex; min-height: 44px; align-items: center; }
+.manuscript { width: min(100% - 2.5rem, 800px); margin: 4rem auto; }
+h1 { font-size: clamp(2.6rem, 7vw, 4.5rem); line-height: 1.06; letter-spacing: -.045em; font-weight: 400; margin: 0 0 1.25rem; }
+h2 { font-size: 1.8rem; line-height: 1.3; font-weight: 400; margin: 3rem 0 1rem; }
+h1 + h2 { margin-top: 0; font-size: 1.45rem; color: #605849; }
+h3 { font: 600 1rem/1.5 system-ui, sans-serif; margin: 2rem 0 .6rem; }
+p { margin: 1rem 0; }
+strong { font-weight: 700; }
+ul, ol { padding-left: 1.4rem; }
+li { margin: .55rem 0; }
+pre { background: #e9e4d9; border-left: 3px solid #917238; padding: 1rem 1.2rem; overflow-x: auto; font: 13px/1.7 ui-monospace, monospace; }
+code { overflow-wrap: anywhere; }
+.table-scroll { overflow-x: auto; margin: 1.5rem 0; }
+table { border-collapse: collapse; width: 100%; font: 14px/1.6 system-ui, sans-serif; }
+th, td { border-bottom: 1px solid #c8c1b3; text-align: left; vertical-align: top; padding: .7rem; min-width: 130px; }
+th { background: #e9e4d9; }
+.reading-footer { border-top: 1px solid #c8c1b3; text-align: center; padding: 1.5rem; font: 13px/1.6 system-ui, sans-serif; }
+.skip-link { position: absolute; top: -100px; left: 1rem; padding: 1rem; background: #fff; }
+.skip-link:focus { top: 1rem; }
+@media (max-width: 480px) { body { font-size: 17px; } .manuscript { margin-top: 2.5rem; } h2 { font-size: 1.5rem; } }
+@page { size: A4; margin: 20mm 19mm; }
+@media print {
+  body { background: #fff; font: 10.2pt/1.5 Georgia, "Times New Roman", serif; }
+  .reading-nav, .reading-footer, .skip-link { display: none; }
+  .manuscript { width: 100%; margin: 0; }
+  h1 { font-size: 34pt; }
+  h2 { font-size: 16pt; margin-top: 1.4rem; break-after: avoid; }
+  h1 + h2 { font-size: 16pt; }
+  h3 { font-size: 10.5pt; break-after: avoid; }
+  p, li { orphans: 3; widows: 3; }
+  pre { font-size: 8pt; white-space: pre-wrap; break-inside: avoid; }
+  table { font-size: 8pt; }
+  th, td { min-width: 0; }
+  tr { break-inside: avoid; }
+  a { color: inherit; }
+  .table-scroll { overflow: visible; }
+}

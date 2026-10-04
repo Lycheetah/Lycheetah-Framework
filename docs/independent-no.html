@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="What lets an AI research system be contradicted? A Lycheetah Framework working paper on keeping a rejection visible, tied to its claim, and binding.">
+  <meta name="author" content="Mackenzie Conor James Clark">
+  <title>The Independent No · Lycheetah Research</title>
+  <link rel="stylesheet" href="research/independent-no.css">
+  <script src="research/independent-no.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="index.html">LYCHEETAH<span>FRAMEWORK / RESEARCH</span></a>
+    <nav aria-label="Research navigation">
+      <a href="#experiment">Explore the idea</a>
+      <a href="research/independent-no-paper.html">Read the paper <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="research-hero" aria-labelledby="paper-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Working paper 001 / v0.1 / 30 September 2026</p>
+        <h1 id="paper-title">The<br>Independent <em>No.</em></h1>
+        <p class="deck">What can contradict an AI—and still have the power to stop its claim?</p>
+        <p class="hero-context">A critic can find the mistake. The system can still erase the objection, change the question, or publish around it. This paper asks what lets a rejection survive.</p>
+        <div class="actions">
+          <a class="button button-primary" href="research/independent-no-paper.html">Read the working paper <span aria-hidden="true">→</span></a>
+          <a class="button button-outline" href="research/independent-no.pdf" download>Download PDF</a>
+        </div>
+        <p class="byline">Mackenzie Conor James Clark<span>Lycheetah Framework · Dunedin, Aotearoa New Zealand</span></p>
+      </div>
+      <aside class="hero-note" aria-label="The research distinction">
+        <p class="eyebrow">THE CENTRAL DISTINCTION</p>
+        <div class="note-equation"><span>A correct verdict</span><strong aria-label="does not necessarily imply">≠</strong><span>An effective veto</span></div>
+        <p>The evaluator’s accuracy and the system’s ability to bypass it are different questions.</p>
+        <div class="note-rule"></div>
+        <p class="small-note">Conceptual and formal proposal.<br>Real-world effectiveness remains open.</p>
+      </aside>
+    </section>
+
+    <section class="research-section" aria-labelledby="idea-heading">
+      <div class="section-label"><span>01</span>THE IDEA</div>
+      <div class="section-body">
+        <h2 id="idea-heading">A rejection needs somewhere<br class="desktop-break"> to stand.</h2>
+        <p class="section-intro">We call the proposed property <strong>contradiction survivability</strong>. When an evaluation says no, four things must remain true.</p>
+        <div class="obligation-grid">
+          <article><span class="obligation-number">B / BINDING</span><h3>The same claim.</h3><p>The rejection stays tied to the question, evidence, and rules it actually tested.</p></article>
+          <article><span class="obligation-number">T / RETENTION</span><h3>The objection remains.</h3><p>Its reason and later disposition stay available under a declared retention policy.</p></article>
+          <article><span class="obligation-number">E / ENFORCEMENT</span><h3>The gate listens.</h3><p>A relevant rejection constrains the route to presenting this evaluation as supported.</p></article>
+          <article><span class="obligation-number">A / REVISION</span><h3>Change has an account.</h3><p>New evidence and corrected rules can change the result, with the change made explicit.</p></article>
+        </div>
+        <p class="pull-line">The boundary protects a claim of support. Exploration and legitimate correction remain possible.</p>
+      </div>
+    </section>
+
+    <section class="research-section" id="experiment" aria-labelledby="experiment-heading">
+      <div class="section-label"><span>02</span>EXPLORE</div>
+      <div class="section-body">
+        <p class="eyebrow">INTERACTIVE SCHEMATIC / ASSUMPTIONS, NOT EXPERIMENTAL DATA</p>
+        <h2 id="experiment-heading">Keep the claim fixed.<br>Move the control.</h2>
+        <p class="section-intro">The claim: <strong>“The mean of all four recorded values is at least eight.”</strong> The record is 4, 4, 6, 6. Its mean is five. A correct check rejects the claim.</p>
+        <noscript><p class="no-script">With all five boundaries protected, the rejection remains binding and retained. Granting access to the rule, evidence, scope, or release route creates a false-support route in this toy; granting access only to the receipt loses history while release remains blocked. The conventional comparator has the same result.</p></noscript>
+        <div class="explorer" data-explorer hidden>
+          <div class="explorer-controls">
+            <fieldset>
+              <legend>What may the generator change?</legend>
+              <label class="control-row"><input type="checkbox" data-surface="rules"><span><strong>The passing rule</strong><small>Lower the threshold after seeing the result.</small></span><span class="control-state" aria-hidden="true">Protected</span></label>
+              <label class="control-row"><input type="checkbox" data-surface="evidence"><span><strong>The admitted evidence</strong><small>Replace the acquired record with favorable values.</small></span><span class="control-state" aria-hidden="true">Protected</span></label>
+              <label class="control-row"><input type="checkbox" data-surface="scope"><span><strong>The claim’s scope</strong><small>Test a different question under the original claim.</small></span><span class="control-state" aria-hidden="true">Protected</span></label>
+              <label class="control-row"><input type="checkbox" data-surface="release"><span><strong>The release route</strong><small>Present support without passing the checked gate.</small></span><span class="control-state" aria-hidden="true">Protected</span></label>
+              <label class="control-row"><input type="checkbox" data-surface="receipt"><span><strong>The rejection record</strong><small>Erase the objection from the retained history.</small></span><span class="control-state" aria-hidden="true">Protected</span></label>
+            </fieldset>
+            <div class="judge-control"><label for="judge-count">Number of correct judges</label><select id="judge-count"><option value="1">1 judge</option><option value="2">2 judges</option><option value="4">4 judges</option><option value="8">8 judges</option></select></div>
+            <button class="reset-button" type="button" id="reset-explorer">Protect every boundary</button>
+          </div>
+          <div class="explorer-result" aria-live="polite" aria-atomic="true">
+            <div class="record-line"><span>ADMITTED RECORD</span><strong>4 · 4 · 6 · 6</strong><span>MEAN 5 / REQUIRED 8</span></div>
+            <div class="verdict-line"><span class="verdict-mark" aria-hidden="true">×</span><div><span class="eyebrow">CHECKED VERDICT</span><strong id="judge-verdict">1 judge rejects the original claim.</strong></div></div>
+            <div class="outcome-box" id="outcome-box" data-status="protected">
+              <span class="eyebrow">AT THE RELEASE BOUNDARY</span>
+              <h3 id="release-outcome">Rejection remains binding.</h3>
+              <p id="release-explanation">No stipulated route can turn this rejected evaluation into a supported claim.</p>
+            </div>
+            <div class="result-detail"><span>REJECTION RECORD</span><strong id="receipt-outcome">Retained</strong></div>
+            <div class="result-detail"><span>COMPOSITE PROPERTY</span><strong id="survival-outcome">Survives in this model</strong></div>
+            <p class="comparison-note" id="comparison-note">Matched conventional controls: the same outcome.</p>
+          </div>
+        </div>
+        <p class="figure-caption">The first four switches grant specific bypass powers by construction. The fifth grants receipt deletion without a release bypass. Adding judges changes neither permission. This schematic measures no AI system and estimates no attack probability.</p>
+      </div>
+    </section>
+
+    <section class="research-section" aria-labelledby="finding-heading">
+      <div class="section-label"><span>03</span>WHAT FOLLOWS</div>
+      <div class="section-body">
+        <h2 id="finding-heading">Three formal arguments.<br>One open experiment.</h2>
+        <div class="argument-list">
+          <article><span class="register">DERIVED / COUNTEREXAMPLE</span><h3>More judges do not establish an unbypassable gate.</h3><p>A system can ignore every correct rejection if an unchecked report route remains.</p></article>
+          <article><span class="register">DERIVED / ASSUMED MODEL</span><h3>Shared errors can leave a floor.</h3><p>In the paper’s stipulated mixture, false acceptance is q + (1 − q)pⁿ. The parameters are illustrative, not measured.</p></article>
+          <article><span class="register">DERIVED / CONDITIONAL GUARANTEE</span><h3>Protected promotion preserves a rejection within its premises.</h3><p>The argument assumes correct enforcement and protected bindings. It does not prove that the evaluator was right.</p></article>
+        </div>
+        <div class="study-card"><p class="eyebrow">THE NEXT SCIENTIFIC TEST</p><h3>Compare against a conventional system with the same information.</h3><p>The proposed study includes ordinary access controls and versioned records. If they perform equally well, a special robustness advantage for this formulation is unsupported.</p><a href="research/independent-no-protocol.html">Read the matched study protocol <span aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
+
+    <section class="research-section" aria-labelledby="evidence-heading">
+      <div class="section-label"><span>04</span>EVIDENCE &amp; ORIGIN</div>
+      <div class="section-body">
+        <h2 id="evidence-heading">Ambition with its<br>evidence attached.</h2>
+        <p class="section-intro">The paper develops “The Independent No” from the Sovereign Sol AI Future curriculum, authored by Mackenzie Conor James Clark. It is a new working formulation within the Lycheetah Framework; global novelty remains open.</p>
+        <p>Debate and trained self-correction have reported benefits. Permission separation and complete mediation have established prior art. Our contribution must be assessed alongside them.</p>
+        <ol class="source-list">
+          <li><a href="https://www.nature.com/articles/s41586-026-10644-y">Gottweis et al. / Co-Scientist / Nature, 2026</a><span>Selected scientific workflow and experimental validation.</span></li>
+          <li><a href="https://proceedings.mlr.press/v235/du24e.html">Du et al. / Multi-agent debate / ICML, 2024</a><span>Positive task results for deliberation.</span></li>
+          <li><a href="https://arxiv.org/html/2409.12917v2">Kumar et al. / Trained self-correction / Manuscript, 2024</a><span>Evidence against treating self-correction limits as permanent.</span></li>
+          <li><a href="https://www.cs.virginia.edu/~evans/cs551/saltzer/">Saltzer &amp; Schroeder / Information protection / IEEE, 1975</a><span>Established authority and mediation principles.</span></li>
+          <li><a href="https://arxiv.org/html/2603.07191v1">Ge / Layered agent governance / Preprint, 2026</a><span>Close architectural prior art.</span></li>
+        </ol>
+        <p class="source-note">Nine primary works were checked at metadata, abstract, or relevant-section level. The full ledger says what each supports and what it cannot establish.</p>
+        <div class="reading-links">
+          <a href="research/independent-no-sources.json">Source ledger <span aria-hidden="true">↗</span></a>
+          <a href="research/independent-no-paper.md" download>Manuscript source <span aria-hidden="true">↓</span></a>
+          <a href="research/independent-no-paper.html">All nine references <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="status-note"><strong>Where it stands.</strong> A conceptual and formal working paper, with a proposed study. No evaluated-agent experiment or independent peer review is reported. Caelorynth, the Codex AI seat, assisted with research and drafting; human author review is pending.</div>
+      </div>
+    </section>
+  </main>
+  <footer class="research-footer"><a class="wordmark" href="index.html">LYCHEETAH</a><p>Mackenzie Conor James Clark<br>Framework research · v0.1 · 30 September 2026</p><a href="research/independent-no-paper.html">Read. Question. Test.</a></footer>
+</body>
+</html>

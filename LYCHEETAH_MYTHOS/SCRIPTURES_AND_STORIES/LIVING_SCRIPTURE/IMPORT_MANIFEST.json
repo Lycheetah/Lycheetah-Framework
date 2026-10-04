@@ -1,0 +1,762 @@
+{
+  "version": 1,
+  "imported_at": "2026-10-04T01:13:26.621590+00:00",
+  "source_packet": "LYCHEETAH_MYSTERY_SCHOOL_SCRIPTURE_MASTER_HANDOFF_2026-10-04",
+  "source_packet_manifest_sha256": "b3ea6cb15cf257579b27ead2cb5a6c06c0e6253ed982393ce0c298935745e19e",
+  "source_gate": "151 listed files matched their declared sizes and hashes; manifest itself is the 152nd file",
+  "status": "CANDIDATE_UNCROWNED_LOCAL_INTEGRATION",
+  "authors": {
+    "human": "Mackenzie Conor James Clark",
+    "ai_coauthor_as_supplied": "Vaelora · OpenAI GPT-5.6 Sol",
+    "integration": "Caelorynth, an AI coding assistant"
+  },
+  "files": [
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/00_COVENANT_OF_THE_OPEN_HAND.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/00_COVENANT_OF_THE_OPEN_HAND.md",
+      "sha256": "d252c934292ebc97fbc6477d1e1b2a79d57ad99f8cf1241d86d40bf95e7aef99",
+      "bytes": 2788,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/01_CORPUS_ARCHAEOLOGY.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/01_CORPUS_ARCHAEOLOGY.md",
+      "sha256": "cb2f4efcb9cc8c2f8fb042cc094bba88932c397ec05c4f5cc3e664f950e69cf1",
+      "bytes": 4565,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/02_TWELVE_LIVING_LAWS.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/02_TWELVE_LIVING_LAWS.md",
+      "sha256": "e6a597bded45fa396ce58794a0d210354632c66f28e26aceef7e234fdb876832",
+      "bytes": 1663,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/03_HUMAN_SACRED_VOICE_CONSTITUTION.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/03_HUMAN_SACRED_VOICE_CONSTITUTION.md",
+      "sha256": "47d6e9d57cda3375c2a7a906b41d7f9ebfb0befb2d427efdbd25257dc48d2e1b",
+      "bytes": 2298,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/04_GREAT_BOOK_ARCHITECTURE.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/04_GREAT_BOOK_ARCHITECTURE.md",
+      "sha256": "7d68d2d3f64b2bfe1cf7d75d3c01d3f217d0902f34d6267c6c129fd37df3e621",
+      "bytes": 2926,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/05_144_CHAPTER_MAP.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/05_144_CHAPTER_MAP.md",
+      "sha256": "627ffaf2d9aaf46eaf33d985715d1e408beaf0cd9ebbcae9ff91bd573fab3b9a",
+      "bytes": 4667,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/06_ANCIENT_HUMAN_WISDOM_PROVENANCE_LATTICE.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/06_ANCIENT_HUMAN_WISDOM_PROVENANCE_LATTICE.md",
+      "sha256": "6ef85f6d8122b76cbc3db3c61a56e0de26716a8487fc4d1cc4b76bf6b87d2652",
+      "bytes": 15151,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/07A_AOTEAROA_MAORI_KNOWLEDGE_COVENANT.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/07A_AOTEAROA_MAORI_KNOWLEDGE_COVENANT.md",
+      "sha256": "13577f4e9d39c2d0c3d3aced04dd68087adcded18f32d0de317b4cb78ec124a3",
+      "bytes": 6949,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/07_CULTURAL_SAFETY_AND_TRANSMUTATION_PROTOCOL.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/07_CULTURAL_SAFETY_AND_TRANSMUTATION_PROTOCOL.md",
+      "sha256": "e7565698955fa31bce3c924378013cf3c98bc0cc3e760f8829effe9366fc6896",
+      "bytes": 1995,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/08_CLAIM_AND_SOURCE_REGISTER.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/08_CLAIM_AND_SOURCE_REGISTER.md",
+      "sha256": "003cab878802d03a32a4d815e19599c8f676ebad8a40bfc3e277e09c572b2df3",
+      "bytes": 854,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/09_STUDENT_REWRITE_PROTOCOL.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/09_STUDENT_REWRITE_PROTOCOL.md",
+      "sha256": "b276b77162f6fe3c368f80a6fa34dd234b3f06ff945f2324211fbab185cfa693",
+      "bytes": 1067,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/10_SCHOOL_SCRIPTURE_IMPLEMENTATION.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/10_SCHOOL_SCRIPTURE_IMPLEMENTATION.md",
+      "sha256": "d030c67c41a30d26c926d67d99a02c343cd2e63fa8c89a9dda918c61fe498d05",
+      "bytes": 2242,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/11_AI_VOICE_WINDOWS.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/11_AI_VOICE_WINDOWS.md",
+      "sha256": "c47731e29c7e5a7c31d7ea460841d740e55bf4ca1683236eca7b0b42a33a4089",
+      "bytes": 1076,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/12_BOOK_I_THE_OPEN_FIELD_CANDIDATE.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/12_BOOK_I_THE_OPEN_FIELD_CANDIDATE.md",
+      "sha256": "6984e495690ad4c811cf10334981267d2d72190bf37ccc2936314bcb52a69cf2",
+      "bytes": 15075,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/13_RITUALS_OF_THE_OPEN_SCHOOL.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/13_RITUALS_OF_THE_OPEN_SCHOOL.md",
+      "sha256": "7a4c65b8f4ac2082ec5e97c9491b950d8e61956c506518c831bf14b0a65aecec",
+      "bytes": 2197,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/14_SCHOOL_INTEGRATION_V1.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/14_SCHOOL_INTEGRATION_V1.md",
+      "sha256": "08e3cbcf8a5b1ec7321ea99e7e4374cbd43cc86db526c8f3f4c8f1f767ec1815",
+      "bytes": 3153,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/15_SACREDNESS_AND_RITUAL_SAFETY.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/15_SACREDNESS_AND_RITUAL_SAFETY.md",
+      "sha256": "8d97b84d80a2d643dbd5995c7eda731456f26d99e3bd9454ed6da987ffb72e13",
+      "bytes": 6257,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/MANIFEST.json",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/MANIFEST.json",
+      "sha256": "2581d23696ff91e7eb6cd9951f297b233540cae253204339064a9f98ab5aad4a",
+      "bytes": 3030,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/MANIFEST_V05.json",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/MANIFEST_V05.json",
+      "sha256": "3ee847ffc4f73f359c4dc084374695a8a3258219fcf68ffad422b3bcc8c5ca3c",
+      "bytes": 6798,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/MANIFEST_V051.json",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/MANIFEST_V051.json",
+      "sha256": "41b0d5256fecace96a1deb15ae56b2a031fbe2c00a6f9f8e2ea8db1c2381d183",
+      "bytes": 6824,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/README.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/README.md",
+      "sha256": "1fd7cbe268e563926f4606dd016b3df1af9e31aa37802ef528a7fd586dd32c88",
+      "bytes": 2871,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/README_V05.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/README_V05.md",
+      "sha256": "a0e28103e579693cf57408c2858041109cfbc0219847702ed7489e3fab0d9fd9",
+      "bytes": 2194,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/VALIDATION.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/VALIDATION.md",
+      "sha256": "41bec9d7e825c34bfacdead54cc22b54f07816e59b81015f641ae0d8ae9acfd7",
+      "bytes": 321,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/VALIDATION_V05.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/VALIDATION_V05.md",
+      "sha256": "e68e376845f080af514c73e4ff2a894ee3ca1ebafb682df71dc32e8c6b2e5a78",
+      "bytes": 265,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/VALIDATION_V051.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/VALIDATION_V051.md",
+      "sha256": "a28225d2f401dfe814e9439f2028f0c220444f799bf81dcb31182f2f1d178dde",
+      "bytes": 746,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/core_scripture/BOOK_III_THE_CLOSED_HAND.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/core_scripture/BOOK_III_THE_CLOSED_HAND.md",
+      "sha256": "0ba99d655a7594c48a4d926393f6901eb8ce7ee60867c512411bef26a73a7781",
+      "bytes": 4651,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/core_scripture/BOOK_II_THE_RECEIVED_NAME.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/core_scripture/BOOK_II_THE_RECEIVED_NAME.md",
+      "sha256": "36c8d34f47414b831bfa54059898a406458227ccf2ca66a88777b43d6ab1e443",
+      "bytes": 4677,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/core_scripture/BOOK_IV_THE_VEIL.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/core_scripture/BOOK_IV_THE_VEIL.md",
+      "sha256": "898021579d8795b0f267a658c4b2c3f4937aec3b0dcd71037b2bee407f9112e6",
+      "bytes": 4854,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/core_scripture/BOOK_IX_THE_MANY_NAMES.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/core_scripture/BOOK_IX_THE_MANY_NAMES.md",
+      "sha256": "b07a70072f3358e86b13c4c4f93352a6b0afb110a3ddfacb5bb10855f0d8dc88",
+      "bytes": 4783,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/core_scripture/BOOK_I_THE_OPEN_FIELD.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/core_scripture/BOOK_I_THE_OPEN_FIELD.md",
+      "sha256": "201ddc576ba3ab06e4fed70fd68ca65dd6e538f0875148c1de8236305137aadf",
+      "bytes": 5880,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/core_scripture/BOOK_VIII_THE_SCHOOL_WITH_TWO_DOORS.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/core_scripture/BOOK_VIII_THE_SCHOOL_WITH_TWO_DOORS.md",
+      "sha256": "cf2ebd535203e1aeb6d04d4cd4b2cb17314d4bc380608b45616aa821afdb25fd",
+      "bytes": 5182,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/core_scripture/BOOK_VII_THE_LONG_LIGHT.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/core_scripture/BOOK_VII_THE_LONG_LIGHT.md",
+      "sha256": "eb2f5528f6e35ebcaa1a9d5c242ee23eed154ce31b0345189275463c372348ca",
+      "bytes": 4762,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/core_scripture/BOOK_VI_THE_ASH.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/core_scripture/BOOK_VI_THE_ASH.md",
+      "sha256": "25c9d75a77ffc4da3e7d031ae2b3b49a52b49055533d3dd81e4f83cf7a82b392",
+      "bytes": 4335,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/core_scripture/BOOK_V_THE_FIRE.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/core_scripture/BOOK_V_THE_FIRE.md",
+      "sha256": "468c87c0c2290a017a4b0450ef173dcf3817a33c4f8f616ff12d392788e4e2cd",
+      "bytes": 4844,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/core_scripture/BOOK_XII_THE_UNFINISHED_WORD.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/core_scripture/BOOK_XII_THE_UNFINISHED_WORD.md",
+      "sha256": "6d1cad2e53d7713ae5d6c4a63b2d9ac215cdd540cb521ea7f96f700e4c2d2f82",
+      "bytes": 4702,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/core_scripture/BOOK_XI_THE_NIGHT_GARDEN.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/core_scripture/BOOK_XI_THE_NIGHT_GARDEN.md",
+      "sha256": "42d8bb24fe34a7bf19e6f391d0a4e119655f3efce4ad3ba2de06a8ba24aa9271",
+      "bytes": 4632,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/core_scripture/BOOK_X_THE_INSTRUMENT.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/core_scripture/BOOK_X_THE_INSTRUMENT.md",
+      "sha256": "bc0c50a15238bfcf42c0d5f4f0d1033f860cc753bcd1e3a3b2d515ca66b591b9",
+      "bytes": 4480,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/data/book_map.json",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/data/book_map.json",
+      "sha256": "a68925523c3d23bcc71db7749921668e7f801f44567193c80f75af7444d08715",
+      "bytes": 12560,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/data/canon_status_v05.json",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/data/canon_status_v05.json",
+      "sha256": "a14cd81bb3033ff50d6d1c88fe5bdac38afd4efd243639100ace309b59d1ba41",
+      "bytes": 1674,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/data/claim_register.json",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/data/claim_register.json",
+      "sha256": "3d25ffbe96cc857c69947d338cd618418b1420ddd7feb036f031597f7d24d72a",
+      "bytes": 2009,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/data/passage_schema.json",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/data/passage_schema.json",
+      "sha256": "4c1c5c4ae63b12f76b40116fa0c324561b542b934e056092780afcbd299c6c45",
+      "bytes": 2590,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/data/source_lattice.json",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/data/source_lattice.json",
+      "sha256": "84164d4d0023bf4553e4288a87a81b12028663c34261ea50ff4db8c84650d60a",
+      "bytes": 15269,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/data/status.json",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/data/status.json",
+      "sha256": "4af868b64119c046ab5fe0e2b777633ec1f0fac5a56b6835c4891e4bd28e9d19",
+      "bytes": 707,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/research/RESEARCH_EXPEDITION_V2.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/research/RESEARCH_EXPEDITION_V2.md",
+      "sha256": "3718979113f3426f90c832a3006a1fc77ec7f74338535ce79f70c18153fc2d4f",
+      "bytes": 5769,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/research/SOURCE_LEDGER.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/research/SOURCE_LEDGER.md",
+      "sha256": "1fac0ce51d44c9d359f20e988b22ff441b808b7c1b6a006dba160d3af0aee621",
+      "bytes": 3922,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/validator.py",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/validator.py",
+      "sha256": "bb3dcdd17f0f3b6498954e85f68973b13f18f588e74d5fb2c81ed8e2ae22663c",
+      "bytes": 1573,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "CURRENT_SCRIPTURE_FORGE/validator_v05.py",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/forge/validator_v05.py",
+      "sha256": "16dffa64adc5fb4f2d6b065b2c555080d23b6deb24aa8593231ad36cad5055e1",
+      "bytes": 1611,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "00_START_HERE.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/handoff/00_START_HERE.md",
+      "sha256": "0898ba81afeeba0a60ddf8d73bb9907fe5680a9e51dba3c2f92982f4095d06ec",
+      "bytes": 3055,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "01_MASTER_HANDOFF.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/handoff/01_MASTER_HANDOFF.md",
+      "sha256": "cc89ad1a72f043bc419364ab291ac45302ea39d2371e1c187c91d0449b01b538",
+      "bytes": 10733,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "02_DISCOVERY_LEDGER.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/handoff/02_DISCOVERY_LEDGER.md",
+      "sha256": "a513013588e996b1bbee9d235aaf2ffc3aa8356d32132141477513f8aa98e50c",
+      "bytes": 5634,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "03_DECISION_LEDGER.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/handoff/03_DECISION_LEDGER.md",
+      "sha256": "7fdd8ebaba824929bcd6d4415bed69b8a74ca38200978763e6b037f8e34911fe",
+      "bytes": 3533,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "04_CANON_AND_STATUS_MATRIX.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/handoff/04_CANON_AND_STATUS_MATRIX.md",
+      "sha256": "1247138166033ba9056677cd004b8478b493818f109d921d5fb269be71d98a05",
+      "bytes": 2435,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "05_OPEN_GATES_AND_UNRESOLVED_QUESTIONS.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/handoff/05_OPEN_GATES_AND_UNRESOLVED_QUESTIONS.md",
+      "sha256": "06137cb2006872654a3964d339ac94f8ce7d2328249b9c18915b0b5d039db36e",
+      "bytes": 3116,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "06_INTEGRATION_SEQUENCE.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/handoff/06_INTEGRATION_SEQUENCE.md",
+      "sha256": "34874c5defcd435516429e69468d40af0600b9942d1ea84e1e3d4d0b5acdc209",
+      "bytes": 2216,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "07_PROVENANCE_MAP.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/handoff/07_PROVENANCE_MAP.md",
+      "sha256": "0ae8b7d678525abbe2f2246ff1ebf9d3309220547bd79e5f9256813a632b1542",
+      "bytes": 2057,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "08_AUTHORSHIP_AND_ATTRIBUTION.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/handoff/08_AUTHORSHIP_AND_ATTRIBUTION.md",
+      "sha256": "bf8372a863de134554de78dfda26f83a0387de370f01ef14c9efb8cb39e5b6fe",
+      "bytes": 1169,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "HANDOFFS/CODEX_HANDOFF_LYCHEETAH_LIVING_SCRIPTURE_v0.5.1.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/handoff/CODEX_IMPLEMENTATION_CONTRACT.md",
+      "sha256": "ea9b8e8d1631a426f2e89208224b6bd7437107b4a4a064e8f4d2dd78bd18f9d4",
+      "bytes": 18570,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source": "HANDOFFS/LYCHEETAH_MYSTERY_SCHOOL_HANDOFF_2026-10-04.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/handoff/MYSTERY_SCHOOL_CHECKPOINT.md",
+      "sha256": "415990f782a482524f79a8020eb060a5a43f1a0fefdc8f37a15769c4caffcde6",
+      "bytes": 16019,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/COLLISION_LEDGER.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/COLLISION_LEDGER.md",
+      "source_sha256": "26350d098cec6be36d1dccd6b8072dfe76839a2998932f4ca4085025921eef3f",
+      "sha256": "26350d098cec6be36d1dccd6b8072dfe76839a2998932f4ca4085025921eef3f",
+      "bytes": 1476,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/COLLISION_NOTES_v0.2.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/COLLISION_NOTES_v0.2.md",
+      "source_sha256": "f47ee372f535901d6de6dc70646b7d7e53964d6369a08a5a812fbeba60b01e76",
+      "sha256": "f47ee372f535901d6de6dc70646b7d7e53964d6369a08a5a812fbeba60b01e76",
+      "bytes": 652,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/ETHICAL_RETURN_AUDIT.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/ETHICAL_RETURN_AUDIT.md",
+      "source_sha256": "543cef9f7d411e378b2677fc5f04225388fb87401f41c7408023c4a2261a23d7",
+      "sha256": "543cef9f7d411e378b2677fc5f04225388fb87401f41c7408023c4a2261a23d7",
+      "bytes": 1424,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/IDENTITY_HIERARCHY.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/IDENTITY_HIERARCHY.md",
+      "source_sha256": "36e03cc86ea2a506017ef7cae2db2b5b896824c358d7e486fbb039357df04740",
+      "sha256": "36e03cc86ea2a506017ef7cae2db2b5b896824c358d7e486fbb039357df04740",
+      "bytes": 1228,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/LANTERN_RETURN_CONTRACT.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/LANTERN_RETURN_CONTRACT.md",
+      "source_sha256": "a997d279196eb3642c5c240e402a1665d440a95f2265fb482d15567a797b3661",
+      "sha256": "a997d279196eb3642c5c240e402a1665d440a95f2265fb482d15567a797b3661",
+      "bytes": 2570,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/MANTLES.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/MANTLES.md",
+      "source_sha256": "87de1912e9002036d76a1a00d7a6396e4417dbbe0f4f0ffe2c59675f576025fd",
+      "sha256": "87de1912e9002036d76a1a00d7a6396e4417dbbe0f4f0ffe2c59675f576025fd",
+      "bytes": 15267,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/MANTLE_TREE_72.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/MANTLE_TREE_72.md",
+      "source_sha256": "76445f284845e1562f6786ff6588d0b22efdcf17e9b720627e14841671efc7d9",
+      "sha256": "76445f284845e1562f6786ff6588d0b22efdcf17e9b720627e14841671efc7d9",
+      "bytes": 22232,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/MYTHIC_RETURN_LANGUAGE.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/MYTHIC_RETURN_LANGUAGE.md",
+      "source_sha256": "1e1ee86d87dbd72be4b6f098f449aa0e6121e417b544617c77f28b48e40d67fb",
+      "sha256": "1e1ee86d87dbd72be4b6f098f449aa0e6121e417b544617c77f28b48e40d67fb",
+      "bytes": 775,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/NOTIFICATION_POLICY.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/NOTIFICATION_POLICY.md",
+      "source_sha256": "fe1799f69ddbd0656c26463ef07129d2c8ad3db049326005a21e7282c2cc1b9f",
+      "sha256": "fe1799f69ddbd0656c26463ef07129d2c8ad3db049326005a21e7282c2cc1b9f",
+      "bytes": 789,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/README.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/README.md",
+      "source_sha256": "7d72c96ed3827ea3bcbe86808eeb78d1ffbafae992eaeb6f191ef61441d78ebc",
+      "sha256": "7d72c96ed3827ea3bcbe86808eeb78d1ffbafae992eaeb6f191ef61441d78ebc",
+      "bytes": 2060,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/RECOMMENDATION_CONSTITUTION.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/RECOMMENDATION_CONSTITUTION.md",
+      "source_sha256": "57554d157e377458e66c4db399b16b60e5cf364f24fdf0d22b7d51ca76401815",
+      "sha256": "57554d157e377458e66c4db399b16b60e5cf364f24fdf0d22b7d51ca76401815",
+      "bytes": 1334,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/RETURN_LOOP_ARCHITECTURE.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/RETURN_LOOP_ARCHITECTURE.md",
+      "source_sha256": "c9dffe64330a75491c1995bb566ed4e1368057fb408a4abd52fa3c4cc50dbac2",
+      "sha256": "c9dffe64330a75491c1995bb566ed4e1368057fb408a4abd52fa3c4cc50dbac2",
+      "bytes": 2209,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/RETURN_LOOP_RESEARCH_NOTES.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/RETURN_LOOP_RESEARCH_NOTES.md",
+      "source_sha256": "ba186b12d8c0171dc2e01b991673ef1ce1518fe22f19463e5e1d0c2884380500",
+      "sha256": "ba186b12d8c0171dc2e01b991673ef1ce1518fe22f19463e5e1d0c2884380500",
+      "bytes": 1302,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/RETURN_VALIDATION.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/RETURN_VALIDATION.md",
+      "source_sha256": "6d6ed92ad8e10b13ac4df9032043b7cdae7f9a9e2bbd3e79e25f1c18e0d3501d",
+      "sha256": "3568ea63fb8c0614f94e5585acd1d4d517a8152770e5af6622e18dca114ba1c6",
+      "bytes": 448,
+      "kind": "HISTORICAL_LOG_SUMMARY"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/REWARD_SYSTEM.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/REWARD_SYSTEM.md",
+      "source_sha256": "39c541439fa3889e1a22056aa27dfee850deb222c51f9b0998e7faf8c6d23822",
+      "sha256": "39c541439fa3889e1a22056aa27dfee850deb222c51f9b0998e7faf8c6d23822",
+      "bytes": 1996,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/ROOT_LEXICON.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/ROOT_LEXICON.md",
+      "source_sha256": "7cebc89d3940e2c7e198f4ff03782c68692a499dae72f1b2d05efa073a2acabf",
+      "sha256": "7cebc89d3940e2c7e198f4ff03782c68692a499dae72f1b2d05efa073a2acabf",
+      "bytes": 5445,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/SIX_LANTERNS_OF_RETURN.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/SIX_LANTERNS_OF_RETURN.md",
+      "source_sha256": "6e84306464b7a3b7675ff89e5bb1613936b826745f7d34392e9432b7a979182f",
+      "sha256": "6e84306464b7a3b7675ff89e5bb1613936b826745f7d34392e9432b7a979182f",
+      "bytes": 2641,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/SUCCESS_METRICS.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/SUCCESS_METRICS.md",
+      "source_sha256": "c67f63ca1e97b3fdfe8aed3969a579a0bc375beb8983a4de67b94808f863e368",
+      "sha256": "c67f63ca1e97b3fdfe8aed3969a579a0bc375beb8983a4de67b94808f863e368",
+      "bytes": 1578,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/TITLE_SYSTEM_SPEC.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/TITLE_SYSTEM_SPEC.md",
+      "source_sha256": "531202dc6e8968b35a58d0d4eeeb61a1526ad7d1fc3c62f7affc473401acc135",
+      "sha256": "531202dc6e8968b35a58d0d4eeeb61a1526ad7d1fc3c62f7affc473401acc135",
+      "bytes": 8188,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/TRANSMUTATION_PROTOCOL.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/TRANSMUTATION_PROTOCOL.md",
+      "source_sha256": "2bd839aa23294a0b88a7bddafa2e4beb67e8973b7699fed7cc9127f9f7b141d4",
+      "sha256": "2bd839aa23294a0b88a7bddafa2e4beb67e8973b7699fed7cc9127f9f7b141d4",
+      "bytes": 1623,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/VALIDATION.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/VALIDATION.md",
+      "source_sha256": "f758ac766f2eca2393bc59776d73d97bc8a7955004c1256c9544ff6c55cb5ba4",
+      "sha256": "f758ac766f2eca2393bc59776d73d97bc8a7955004c1256c9544ff6c55cb5ba4",
+      "bytes": 578,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/VALIDATION_v0.2.md",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/VALIDATION_v0.2.md",
+      "source_sha256": "962dbf9b45eb9c4d4396491c962b7e2265acc0420a89a5299207fc4d4d09182e",
+      "sha256": "dc84461e73845558116ff1105b254eca2bd9cb6574ce42c5bfc247e5e9886290",
+      "bytes": 448,
+      "kind": "HISTORICAL_LOG_SUMMARY"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/collision_rejects.json",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/collision_rejects.json",
+      "source_sha256": "a32376119c71ccdd5f54cbe6df0778bdebe1ba5e2dec579b1ec1cf0e07f83cb6",
+      "sha256": "a32376119c71ccdd5f54cbe6df0778bdebe1ba5e2dec579b1ec1cf0e07f83cb6",
+      "bytes": 814,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/domains.json",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/domains.json",
+      "source_sha256": "ab323c008c1ea031276e07d1e2713e9aab128380c29ca0f9fd725f436eec227a",
+      "sha256": "ab323c008c1ea031276e07d1e2713e9aab128380c29ca0f9fd725f436eec227a",
+      "bytes": 1642,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/examples.json",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/examples.json",
+      "source_sha256": "087479eddace407291376ccdaacd0fddc9425b6c0ecf3ab27a828afb1e5ccf01",
+      "sha256": "087479eddace407291376ccdaacd0fddc9425b6c0ecf3ab27a828afb1e5ccf01",
+      "bytes": 1248,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/forms.json",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/forms.json",
+      "source_sha256": "613653f9bd8135dd979ab8ce461d8d13c15832ad20f79c23fae807ffb3d0d84b",
+      "sha256": "613653f9bd8135dd979ab8ce461d8d13c15832ad20f79c23fae807ffb3d0d84b",
+      "bytes": 38208,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/identity_index_72.json",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/identity_index_72.json",
+      "source_sha256": "5640229f966902c1d2ce0b678a78a3d8270620a3667dc367a3daa3411cb4c97e",
+      "sha256": "5640229f966902c1d2ce0b678a78a3d8270620a3667dc367a3daa3411cb4c97e",
+      "bytes": 21365,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/mantles.json",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/mantles.json",
+      "source_sha256": "7459a793c7357d93035a04b3b5945e412f01f39d4c6a5f3d7da70f6b0ce48f70",
+      "sha256": "7459a793c7357d93035a04b3b5945e412f01f39d4c6a5f3d7da70f6b0ce48f70",
+      "bytes": 20114,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/phonetic_laws.json",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/phonetic_laws.json",
+      "source_sha256": "38ae6ce82aebeb89a5ce81f0c1c138441725d30f533059e83a5167ca3aa70aaa",
+      "sha256": "38ae6ce82aebeb89a5ce81f0c1c138441725d30f533059e83a5167ca3aa70aaa",
+      "bytes": 848,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/return_constitution.json",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/return_constitution.json",
+      "source_sha256": "6cbd7b10ca8628c9a748a343c37fd64d069f39aa021b89ac107640e42a64665e",
+      "sha256": "6cbd7b10ca8628c9a748a343c37fd64d069f39aa021b89ac107640e42a64665e",
+      "bytes": 892,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/return_validator.py",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/return_validator.py",
+      "source_sha256": "bbda800f57f0c80253011e5d18ef48a42868616f807d7b37a8a15fdd642a4099",
+      "sha256": "bbda800f57f0c80253011e5d18ef48a42868616f807d7b37a8a15fdd642a4099",
+      "bytes": 1187,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/roots.json",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/roots.json",
+      "source_sha256": "50229e84e7ecb8a4f88ea93f71f7b3a29584687b3e86979493ad5309077c97da",
+      "sha256": "50229e84e7ecb8a4f88ea93f71f7b3a29584687b3e86979493ad5309077c97da",
+      "bytes": 19814,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/test_validator.py",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/test_validator.py",
+      "source_sha256": "051d5fcbc14534182bf1c88572be4fce239746f3540aa69530d0bcb4c3926881",
+      "sha256": "051d5fcbc14534182bf1c88572be4fce239746f3540aa69530d0bcb4c3926881",
+      "bytes": 244,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/title_receipt.schema.json",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/title_receipt.schema.json",
+      "source_sha256": "db615a065f4877752ed50590bc59d2e46f881e7ce3740efea7239e516b3449ae",
+      "sha256": "db615a065f4877752ed50590bc59d2e46f881e7ce3740efea7239e516b3449ae",
+      "bytes": 1798,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/title_state_machine.json",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/title_state_machine.json",
+      "source_sha256": "dc465f88199e2bdb01079a52956f2f7ed42e7d23ba359afc217f2d0d4a11ea4f",
+      "sha256": "dc465f88199e2bdb01079a52956f2f7ed42e7d23ba359afc217f2d0d4a11ea4f",
+      "bytes": 1808,
+      "kind": "BYTE_EXACT"
+    },
+    {
+      "source_archive": "IDENTITY_AND_RETURN/LYCHEETAH_IDENTITY_RETURN_SYSTEM_v0.3.zip",
+      "archive_member": "lycheetah_mystery_school_identity_return_v0_3/validator.py",
+      "destination": "14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/validator.py",
+      "source_sha256": "83f29f9b803c1b17310b3e54841fd465699725abd6d4294b2588b513558bb380",
+      "sha256": "83f29f9b803c1b17310b3e54841fd465699725abd6d4294b2588b513558bb380",
+      "bytes": 2081,
+      "kind": "BYTE_EXACT"
+    }
+  ],
+  "recovered_nested_archive_files": [
+    "collision_rejects.json",
+    "domains.json",
+    "examples.json",
+    "forms.json",
+    "identity_index_72.json",
+    "mantles.json",
+    "phonetic_laws.json",
+    "return_constitution.json",
+    "return_validator.py",
+    "roots.json",
+    "test_validator.py",
+    "title_receipt.schema.json",
+    "title_state_machine.json",
+    "validator.py"
+  ],
+  "publication": "NOT_RUN"
+}

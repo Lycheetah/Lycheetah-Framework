@@ -1,0 +1,148 @@
+{
+  "paper": "The Independent No",
+  "version": "0.1",
+  "status": "LOCAL_DRAFT",
+  "browser_checked_at": "2026-09-30T10:24:00.213Z",
+  "focused_checks": 22,
+  "pdf_pages": 10,
+  "artifacts": [
+    {
+      "path": "docs/CHANGELOG.md",
+      "bytes": 900,
+      "sha256": "6c6a5111882f3e4fc32d11d0bffd4542d8486a63db69a9195c22f90291c461af"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 1913,
+      "sha256": "a814528ed1ea629c479a79da787031e4a13f88e3ceab71775213a23e783e753f"
+    },
+    {
+      "path": "docs/independent-no.html",
+      "bytes": 12905,
+      "sha256": "323aa7d2bf3697ea47763c83e608f0f2a7d39e01cf196c4bb97928104a59cbf9"
+    },
+    {
+      "path": "docs/index.html",
+      "bytes": 25200,
+      "sha256": "1441ac6eb747ba4da109cfc6e34a3c6b99ddd0df2aef766743d0a42e4eb5f6ac"
+    },
+    {
+      "path": "docs/research/independent-no-paper.css",
+      "bytes": 2597,
+      "sha256": "0bfca7afaebbf5aa3a7bed123a402cd59d1114d997d8f859cd339597ce4f8780"
+    },
+    {
+      "path": "docs/research/independent-no-paper.html",
+      "bytes": 30666,
+      "sha256": "fdfafbe1e7431558791d447b334ac9c49c9ed6b39456888c650f3fbbe3459ae9"
+    },
+    {
+      "path": "docs/research/independent-no-paper.md",
+      "bytes": 27780,
+      "sha256": "c470d5f28ee7654ba0d245e580af9a9d7b1ebd41558fcf79c5cd5f5feb84f985"
+    },
+    {
+      "path": "docs/research/independent-no-protocol.html",
+      "bytes": 9118,
+      "sha256": "c329bacac411bd5283f32bcc852eae6629116bcd864938a9db529179f0961aa6"
+    },
+    {
+      "path": "docs/research/independent-no-sources.json",
+      "bytes": 6060,
+      "sha256": "24054e31eae9185be47e2951946b950e94943211abeebf6a5a39609d35c0a0c9"
+    },
+    {
+      "path": "docs/research/independent-no.css",
+      "bytes": 12454,
+      "sha256": "6a106434784df02260d6aa58b66b932b7dbdbfd661127a3fe3f2fa394aaecdd0"
+    },
+    {
+      "path": "docs/research/independent-no.js",
+      "bytes": 2543,
+      "sha256": "66f684223359d04f091277312bf30c4582eacab6df529283fef20929685aa2c5"
+    },
+    {
+      "path": "docs/research/independent-no.pdf",
+      "bytes": 146998,
+      "sha256": "4a3694afe9278629e6eeb8064d44fd20742d1a9e42698c2a5a821b0ad260ed08"
+    },
+    {
+      "path": "papers/README.md",
+      "bytes": 3567,
+      "sha256": "ba47d42a5d127e926d458ea096a06e78faf3088721fb02c768e3aa56491aba18"
+    },
+    {
+      "path": "papers/independent-no/CLAIMS.json",
+      "bytes": 3540,
+      "sha256": "68a00b34bbe84186ad3f88eb3f7deb7a9ad27c711953e77cde551d9f2d718cf7"
+    },
+    {
+      "path": "papers/independent-no/EVALUATION_PROTOCOL.md",
+      "bytes": 7366,
+      "sha256": "5796558e63bab7265f0b0286c61095e3b27a368e6ebb2e3534c7cc92c0a7cae8"
+    },
+    {
+      "path": "papers/independent-no/PAPER.md",
+      "bytes": 27780,
+      "sha256": "c470d5f28ee7654ba0d245e580af9a9d7b1ebd41558fcf79c5cd5f5feb84f985"
+    },
+    {
+      "path": "papers/independent-no/README.md",
+      "bytes": 1628,
+      "sha256": "12cdfff4182930c12da48bb67ed460f32a01b30c75d9e2898f1f9d307d15f72a"
+    },
+    {
+      "path": "papers/independent-no/SOURCES.json",
+      "bytes": 6060,
+      "sha256": "24054e31eae9185be47e2951946b950e94943211abeebf6a5a39609d35c0a0c9"
+    },
+    {
+      "path": "papers/independent-no/build.py",
+      "bytes": 2449,
+      "sha256": "549a44df1a84d9368071cc3dfec67255cf40ff050342e110ca0b329e1888dfa1"
+    },
+    {
+      "path": "papers/independent-no/witness/pdf-first-page.png",
+      "bytes": 203668,
+      "sha256": "cc11102caddef5c8c6f6ff2c340348dbe59ef2a508b48c88e9c4984430a60b20"
+    },
+    {
+      "path": "papers/independent-no/witness/pdf-last-page.png",
+      "bytes": 191374,
+      "sha256": "39c2bb9368214c8ea724b3574f1be5282e63e90e9e6f233f87cf3ae6d0176eaa"
+    },
+    {
+      "path": "papers/independent-no/witness/report.json",
+      "bytes": 2618,
+      "sha256": "c41b6f393eab3e2ff0967685b0d95d8a781ce1ffe1e66c1e94cc2496b2ef6164"
+    },
+    {
+      "path": "papers/independent-no/witness/website-desktop.png",
+      "bytes": 172406,
+      "sha256": "7e037461f83666cbe4a29a5389caba0cff394ac7afc689e50608c0de0229c214"
+    },
+    {
+      "path": "papers/independent-no/witness/website-explorer-desktop.png",
+      "bytes": 122428,
+      "sha256": "f10b681faa5d6bc8f4d64168392298837fce38a1e9708717c6d70a0c075c860a"
+    },
+    {
+      "path": "papers/independent-no/witness/website-explorer-mobile.png",
+      "bytes": 67199,
+      "sha256": "3337c531f3c44165a8e6a1f4ee09492b41e9af9169803ece015d0bd6359c9d19"
+    },
+    {
+      "path": "papers/independent-no/witness/website-mobile.png",
+      "bytes": 59925,
+      "sha256": "0cdd995893975186288138a84068743c18160d5eb4c2bc0d7aa83f4b331dca65"
+    },
+    {
+      "path": "papers/independent-no/witness.cjs",
+      "bytes": 9369,
+      "sha256": "8fa8fe2ddd04a4090c965f09889d1c35f8e8cd21fb8b9a0c81c54fa315253e8d"
+    }
+  ],
+  "publication": "Not performed",
+  "research_validation": "Formal proposal only; empirical evaluation and independent review remain open",
+  "frontier_usage": "Session meter and remaining quota not observable; usage unverified"
+}

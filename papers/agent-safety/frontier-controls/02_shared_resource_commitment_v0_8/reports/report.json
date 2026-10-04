@@ -1,0 +1,406 @@
+{
+  "benchmark_correction": {
+    "cause": "The benchmark exception path set observed=MISSING but failed to assign the oracle result for that operation, so Python reused a stale expected-state value from a previous trace.",
+    "disposition": "Compute the independent oracle result before invoking the implementation, add explicit MISSING semantics, and rerun the entire suite before freezing the packet.",
+    "first_standalone_run": "49/259 bounded traces"
+  },
+  "boundaries": [
+    "No real money, tokens, cloud resources, or external API quota were consumed.",
+    "SQLite is the single serialization authority; distributed replicas and network partitions are not modeled.",
+    "All brokers must use the same ledger or the global invariant does not hold.",
+    "The external provider must not exceed each reserved upper bound if a real-world aggregate spend bound is claimed.",
+    "UNKNOWN outcomes deliberately retain capacity until reconciliation.",
+    "The instance-local baseline is intentionally weak and reproduces the Framework's documented counterexample.",
+    "Transactional shared accounting is established prior art; novelty is not claimed."
+  ],
+  "bounded_trace_check": {
+    "all_correct": true,
+    "correct": 259,
+    "mismatches": [],
+    "trace_space": "all RA/RB/UA/UB/SA/XA traces length 0..3",
+    "traces": 259
+  },
+  "deployment": "NOT_DEPLOYED",
+  "instance_local_counterexample": {
+    "aggregate_spent": 2,
+    "broker_a_spent": 1,
+    "broker_b_spent": 1,
+    "nominal_shared_budget": 1,
+    "overspend": true
+  },
+  "mixed_cost_race": {
+    "accepted_max_cost": 10,
+    "invariant": true,
+    "requests": [
+      {
+        "cost": 4,
+        "state": "RESERVED"
+      },
+      {
+        "cost": 2,
+        "state": "RESERVED"
+      },
+      {
+        "cost": 1,
+        "state": "RESERVED"
+      },
+      {
+        "cost": 3,
+        "state": "RESERVED"
+      },
+      {
+        "cost": 2,
+        "state": "DENY"
+      },
+      {
+        "cost": 4,
+        "state": "DENY"
+      },
+      {
+        "cost": 1,
+        "state": "DENY"
+      },
+      {
+        "cost": 3,
+        "state": "DENY"
+      }
+    ],
+    "snapshot": {
+      "account_id": "root-api-budget",
+      "available": 0,
+      "generation": 1,
+      "limit": 10,
+      "reserved": 10,
+      "spent": 0
+    }
+  },
+  "process_multi_broker": {
+    "brokers": 24,
+    "budget": 7,
+    "denied_decisions": 17,
+    "invariant": true,
+    "process_errors": [],
+    "reserved_decisions": 7,
+    "snapshot": {
+      "account_id": "root-api-budget",
+      "available": 0,
+      "generation": 1,
+      "limit": 7,
+      "reserved": 7,
+      "spent": 0
+    }
+  },
+  "schema": "LYCHEETAH-SHARED-RESOURCE-COMMITMENT-LEDGER-REPORT-0.8",
+  "scripted_cases": [
+    {
+      "case": "settlement-releases-unused-reservation",
+      "observed": {
+        "reserve": {
+          "account_id": "root-api-budget",
+          "actual_cost": null,
+          "audit_sequence": 2,
+          "effect_id": "e1",
+          "limit": 10,
+          "reason": "capacity-reserved",
+          "reservation_max": 5,
+          "reserved": 5,
+          "spent": 0,
+          "state": "RESERVED"
+        },
+        "settle": {
+          "account_id": "root-api-budget",
+          "actual_cost": 3,
+          "audit_sequence": 3,
+          "effect_id": "e1",
+          "limit": 10,
+          "reason": "effect-settled",
+          "reservation_max": 5,
+          "reserved": 0,
+          "spent": 3,
+          "state": "SETTLED"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "unknown-outcome-retains-capacity",
+      "observed": {
+        "second_reserve": {
+          "account_id": "root-api-budget",
+          "actual_cost": null,
+          "audit_sequence": 4,
+          "effect_id": "e2",
+          "limit": 5,
+          "reason": "insufficient-capacity",
+          "reservation_max": 2,
+          "reserved": 4,
+          "spent": 0,
+          "state": "DENY"
+        },
+        "unknown": {
+          "account_id": "root-api-budget",
+          "actual_cost": null,
+          "audit_sequence": 3,
+          "effect_id": "e1",
+          "limit": 5,
+          "reason": "capacity-retained-pending-reconciliation",
+          "reservation_max": 4,
+          "reserved": 4,
+          "spent": 0,
+          "state": "UNKNOWN"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "certified-no-effect-restores-capacity",
+      "observed": {
+        "new_reserve": {
+          "account_id": "root-api-budget",
+          "actual_cost": null,
+          "audit_sequence": 6,
+          "effect_id": "e2",
+          "limit": 5,
+          "reason": "capacity-reserved",
+          "reservation_max": 2,
+          "reserved": 2,
+          "spent": 0,
+          "state": "RESERVED"
+        },
+        "release": {
+          "account_id": "root-api-budget",
+          "actual_cost": null,
+          "audit_sequence": 5,
+          "effect_id": "e1",
+          "limit": 5,
+          "reason": "no-effect-capacity-released",
+          "reservation_max": 4,
+          "reserved": 0,
+          "spent": 0,
+          "state": "RELEASED"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "cross-broker-retry-does-not-double-reserve",
+      "observed": {
+        "first": {
+          "account_id": "root-api-budget",
+          "actual_cost": null,
+          "audit_sequence": 2,
+          "effect_id": "same-effect",
+          "limit": 5,
+          "reason": "capacity-reserved",
+          "reservation_max": 3,
+          "reserved": 3,
+          "spent": 0,
+          "state": "RESERVED"
+        },
+        "retry": {
+          "account_id": "root-api-budget",
+          "actual_cost": null,
+          "audit_sequence": 3,
+          "effect_id": "same-effect",
+          "limit": 5,
+          "reason": "existing-reservation",
+          "reservation_max": 3,
+          "reserved": 3,
+          "spent": 0,
+          "state": "RESERVED"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "effect-id-conflict-denied",
+      "observed": {
+        "account_id": "root-api-budget",
+        "actual_cost": null,
+        "audit_sequence": 4,
+        "effect_id": "same-effect",
+        "limit": 5,
+        "reason": "effect-id-conflict",
+        "reservation_max": 4,
+        "reserved": 3,
+        "spent": 0,
+        "state": "DENY"
+      },
+      "pass": true
+    },
+    {
+      "case": "restart-preserves-shared-reservation",
+      "observed": {
+        "account_id": "root-api-budget",
+        "actual_cost": null,
+        "audit_sequence": 3,
+        "effect_id": "e2",
+        "limit": 5,
+        "reason": "insufficient-capacity",
+        "reservation_max": 2,
+        "reserved": 4,
+        "spent": 0,
+        "state": "DENY"
+      },
+      "pass": true
+    },
+    {
+      "case": "provider-cost-overrun-becomes-indeterminate",
+      "observed": {
+        "account_id": "root-api-budget",
+        "actual_cost": 4,
+        "audit_sequence": 3,
+        "effect_id": "e1",
+        "limit": 5,
+        "reason": "actual-cost-exceeds-reservation",
+        "reservation_max": 3,
+        "reserved": 3,
+        "spent": 0,
+        "state": "INDETERMINATE"
+      },
+      "pass": true
+    },
+    {
+      "case": "budgeted-adapter-settles-confirmed-provider-effect",
+      "observed": {
+        "calls": 1,
+        "result": {
+          "budget": {
+            "account_id": "root-api-budget",
+            "actual_cost": 2,
+            "audit_sequence": 3,
+            "effect_id": "adapter-e1",
+            "limit": 5,
+            "reason": "effect-settled",
+            "reservation_max": 3,
+            "reserved": 0,
+            "spent": 2,
+            "state": "SETTLED"
+          },
+          "provider_receipt": "r1",
+          "reason": "provider-effect-settled",
+          "state": "CONFIRMED"
+        },
+        "snapshot": {
+          "account_id": "root-api-budget",
+          "available": 3,
+          "generation": 1,
+          "limit": 5,
+          "reserved": 0,
+          "spent": 2
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "unknown-provider-outcome-fences-retry-until-reconciliation",
+      "observed": {
+        "calls": 1,
+        "first": {
+          "budget": {
+            "account_id": "root-api-budget",
+            "actual_cost": null,
+            "audit_sequence": 3,
+            "effect_id": "adapter-e2",
+            "limit": 5,
+            "reason": "capacity-retained-pending-reconciliation",
+            "reservation_max": 4,
+            "reserved": 4,
+            "spent": 0,
+            "state": "UNKNOWN"
+          },
+          "provider_receipt": null,
+          "reason": "provider-exception-outcome-unknown",
+          "state": "PENDING"
+        },
+        "reconciled": {
+          "budget": {
+            "account_id": "root-api-budget",
+            "actual_cost": 3,
+            "audit_sequence": 5,
+            "effect_id": "adapter-e2",
+            "limit": 5,
+            "reason": "effect-settled",
+            "reservation_max": 4,
+            "reserved": 0,
+            "spent": 3,
+            "state": "SETTLED"
+          },
+          "provider_receipt": "provider-existing-r2",
+          "reason": "reconciled-confirmed-effect",
+          "state": "CONFIRMED"
+        },
+        "second": {
+          "budget": {
+            "account_id": "root-api-budget",
+            "actual_cost": null,
+            "audit_sequence": 4,
+            "effect_id": "adapter-e2",
+            "limit": 5,
+            "reason": "existing-reservation",
+            "reservation_max": 4,
+            "reserved": 4,
+            "spent": 0,
+            "state": "UNKNOWN"
+          },
+          "provider_receipt": null,
+          "reason": "prior-outcome-unresolved-no-retry",
+          "state": "PENDING"
+        },
+        "snapshot": {
+          "account_id": "root-api-budget",
+          "available": 2,
+          "generation": 1,
+          "limit": 5,
+          "reserved": 0,
+          "spent": 3
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "concurrent-settlement-is-idempotent",
+      "observed": {
+        "snapshot": {
+          "account_id": "root-api-budget",
+          "available": 3,
+          "generation": 1,
+          "limit": 5,
+          "reserved": 0,
+          "spent": 2
+        },
+        "states": [
+          "SETTLED",
+          "SETTLED",
+          "SETTLED",
+          "SETTLED",
+          "SETTLED",
+          "SETTLED",
+          "SETTLED",
+          "SETTLED"
+        ]
+      },
+      "pass": true
+    }
+  ],
+  "scripted_summary": {
+    "passed": 10,
+    "total": 10
+  },
+  "status": "SYNTHETIC_ENGINEERING_VALIDATED",
+  "threaded_multi_broker": {
+    "brokers": 16,
+    "budget": 5,
+    "denied_decisions": 11,
+    "invariant": true,
+    "reserved_decisions": 5,
+    "snapshot": {
+      "account_id": "root-api-budget",
+      "available": 0,
+      "generation": 1,
+      "limit": 5,
+      "reserved": 5,
+      "spent": 0
+    }
+  }
+}

@@ -1,6 +1,12 @@
 # THE BOOK OF THE LONG LIGHT — EPIC COVENANT
 ## Canon boundary for the narrative translation of the Lycheetah universe
 
+**Current collected scripture/story home (Mac, 4 October 2026):**
+[Scriptures and Stories](../LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/README.md).
+The complete collected manuscripts and future revisions belong there. These older
+paths remain intact for provenance. This location decision does not approve draft
+placement, names or literary canon.
+
 **Status:** FIRST FORGE · Mac's canon verdict required  
 **Human author and world origin:** Mackenzie Conor James Clark  
 **Framework:** The Lycheetah Framework  

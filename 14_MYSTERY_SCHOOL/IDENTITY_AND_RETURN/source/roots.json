@@ -1,0 +1,578 @@
+[
+  {
+    "id": "AEL",
+    "domain": "AELUM",
+    "label": "illumination",
+    "gloss": "bringing something into clearer view",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "ORA",
+    "domain": "AELUM",
+    "label": "revelation",
+    "gloss": "making a hidden structure legible",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "LUM",
+    "domain": "AELUM",
+    "label": "steady light",
+    "gloss": "sustained attention without glare",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "EIR",
+    "domain": "AELUM",
+    "label": "gentle clarity",
+    "gloss": "clarity that does not coerce",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "SERA",
+    "domain": "AELUM",
+    "label": "calm radiance",
+    "gloss": "patient visible presence",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "ALEN",
+    "domain": "AELUM",
+    "label": "opening",
+    "gloss": "making room for perception",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "IRAE",
+    "domain": "AELUM",
+    "label": "spark",
+    "gloss": "first emergence of a useful distinction",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "AUR",
+    "domain": "AELUM",
+    "label": "orientation",
+    "gloss": "turning toward what is treated as luminous",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "NYR",
+    "domain": "NYVRA",
+    "label": "night",
+    "gloss": "wakefulness in quiet or darkness",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "VAE",
+    "domain": "NYVRA",
+    "label": "veil",
+    "gloss": "a boundary between visible and hidden",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "DUS",
+    "domain": "NYVRA",
+    "label": "dusk",
+    "gloss": "transition into reduced certainty",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "SEL",
+    "domain": "NYVRA",
+    "label": "silence",
+    "gloss": "attention made possible by reduced noise",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "MUR",
+    "domain": "NYVRA",
+    "label": "shadow",
+    "gloss": "partial visibility rather than evil",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "THR",
+    "domain": "NYVRA",
+    "label": "tracking",
+    "gloss": "following subtle traces",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "EVE",
+    "domain": "NYVRA",
+    "label": "afterlight",
+    "gloss": "attention that begins after ordinary activity ends",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "NOI",
+    "domain": "NYVRA",
+    "label": "nocturnal presence",
+    "gloss": "belonging in the hours others overlook",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "VER",
+    "domain": "VEREN",
+    "label": "tested claim",
+    "gloss": "a proposition exposed to correction",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "RAD",
+    "domain": "VEREN",
+    "label": "provenance root",
+    "gloss": "where a claim, source or dependency begins",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "MET",
+    "domain": "VEREN",
+    "label": "measurement",
+    "gloss": "operationalized contact with a variable",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "BAS",
+    "domain": "VEREN",
+    "label": "baseline",
+    "gloss": "the rival ordinary explanation or comparator",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "REP",
+    "domain": "VEREN",
+    "label": "replication",
+    "gloss": "recovery of an effect under renewed test",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "CAU",
+    "domain": "VEREN",
+    "label": "causal leverage",
+    "gloss": "change produced through intervention",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "CAL",
+    "domain": "VEREN",
+    "label": "calibration",
+    "gloss": "alignment between instrument and what it claims to measure",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "INV",
+    "domain": "VEREN",
+    "label": "invariant",
+    "gloss": "what survives controlled variation",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "QIR",
+    "domain": "QIRAE",
+    "label": "unexplained remainder",
+    "gloss": "what survives after known mechanism is exhausted",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "APO",
+    "domain": "QIRAE",
+    "label": "open problem",
+    "gloss": "a question preserved without forced closure",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "LIM",
+    "domain": "QIRAE",
+    "label": "threshold",
+    "gloss": "edge between explanatory regimes",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "REM",
+    "domain": "QIRAE",
+    "label": "remainder",
+    "gloss": "residue not yet accounted for",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "MIR",
+    "domain": "QIRAE",
+    "label": "mystery",
+    "gloss": "unresolved depth without supernatural promotion",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "EID",
+    "domain": "QIRAE",
+    "label": "unknown form",
+    "gloss": "pattern glimpsed but not yet securely classified",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "HAL",
+    "domain": "QIRAE",
+    "label": "horizon",
+    "gloss": "limit of current observation or theory",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "ORAQ",
+    "domain": "QIRAE",
+    "label": "oracle-risk",
+    "gloss": "a prediction that must be timestamped before outcome",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "THAE",
+    "domain": "THAEN",
+    "label": "sacred orientation",
+    "gloss": "chosen relation to what one treats as sacred",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "DEV",
+    "domain": "THAEN",
+    "label": "devotion",
+    "gloss": "voluntary enduring commitment",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "VOW",
+    "domain": "THAEN",
+    "label": "vow",
+    "gloss": "self-authored promise",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "RIT",
+    "domain": "THAEN",
+    "label": "ritual",
+    "gloss": "repeated symbolic act with declared meaning",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "COV",
+    "domain": "THAEN",
+    "label": "covenant",
+    "gloss": "mutual or sacred promise with boundaries",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "PIL",
+    "domain": "THAEN",
+    "label": "pilgrimage",
+    "gloss": "movement undertaken for meaning",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "REV",
+    "domain": "THAEN",
+    "label": "reverence",
+    "gloss": "careful regard without automatic truth status",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "ALT",
+    "domain": "THAEN",
+    "label": "altar-space",
+    "gloss": "a deliberately set-apart place or practice",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "NUL",
+    "domain": "NULEN",
+    "label": "non-assumption",
+    "gloss": "leaving a metaphysical slot unfilled",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "ABS",
+    "domain": "NULEN",
+    "label": "absence",
+    "gloss": "what is not present without inferring why",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "SKE",
+    "domain": "NULEN",
+    "label": "skepticism",
+    "gloss": "withholding assent pending sufficient reason",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "FRE",
+    "domain": "NULEN",
+    "label": "freedom from imposed frame",
+    "gloss": "permission not to adopt a worldview",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "QUI",
+    "domain": "NULEN",
+    "label": "quiet null",
+    "gloss": "choosing no declaration",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "UNS",
+    "domain": "NULEN",
+    "label": "unsettled",
+    "gloss": "not yet committed",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "ZER",
+    "domain": "NULEN",
+    "label": "zero-point",
+    "gloss": "starting without prestige or rank",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "OPEN",
+    "domain": "NULEN",
+    "label": "open stance",
+    "gloss": "remaining revisable without devotional commitment",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "KOR",
+    "domain": "KORAE",
+    "label": "structure",
+    "gloss": "arrangement that can bear load or meaning",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "FOR",
+    "domain": "KORAE",
+    "label": "form",
+    "gloss": "shape made usable",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "TAL",
+    "domain": "KORAE",
+    "label": "craft",
+    "gloss": "skill embodied through repeated making",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "MAK",
+    "domain": "KORAE",
+    "label": "making",
+    "gloss": "bringing an artifact into existence",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "BOD",
+    "domain": "KORAE",
+    "label": "embodiment",
+    "gloss": "knowledge expressed through body or material",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "STR",
+    "domain": "KORAE",
+    "label": "strength",
+    "gloss": "capacity to withstand relevant pressure",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "MEND",
+    "domain": "KORAE",
+    "label": "repair",
+    "gloss": "restoring function without erasing history",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "ASH",
+    "domain": "KORAE",
+    "label": "surviving remainder",
+    "gloss": "what remains useful after breakage or failure",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "NOE",
+    "domain": "NOERA",
+    "label": "knowing",
+    "gloss": "relation between mind and understanding",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "SEN",
+    "domain": "NOERA",
+    "label": "sentience question",
+    "gloss": "capacity for felt experience",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "MIRR",
+    "domain": "NOERA",
+    "label": "reflection",
+    "gloss": "mind observing its own representations",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "QUAL",
+    "domain": "NOERA",
+    "label": "subjective quality",
+    "gloss": "what experience is like from within",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "MEM",
+    "domain": "NOERA",
+    "label": "memory",
+    "gloss": "stored continuity that may or may not remain authoritative",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "SEM",
+    "domain": "NOERA",
+    "label": "meaning",
+    "gloss": "recoverable semantic content",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "INT",
+    "domain": "NOERA",
+    "label": "interpretation",
+    "gloss": "a model applied to an event or symbol",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "OTH",
+    "domain": "NOERA",
+    "label": "other-mind boundary",
+    "gloss": "evidence and uncertainty about another interior",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "NEX",
+    "domain": "NEXEN",
+    "label": "dependency",
+    "gloss": "a relation through which one thing changes another",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "KIN",
+    "domain": "NEXEN",
+    "label": "belonging",
+    "gloss": "chosen or inherited relation among people",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "BRI",
+    "domain": "NEXEN",
+    "label": "bridge",
+    "gloss": "translation or connection across difference",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "CONS",
+    "domain": "NEXEN",
+    "label": "consent",
+    "gloss": "permission that can be scoped or withdrawn",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "PEER",
+    "domain": "NEXEN",
+    "label": "peer witness",
+    "gloss": "attestation by another participant",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "THD",
+    "domain": "NEXEN",
+    "label": "thread",
+    "gloss": "a connection explicitly carried across contexts",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "TRU",
+    "domain": "NEXEN",
+    "label": "trust",
+    "gloss": "reliance under vulnerability",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  },
+  {
+    "id": "CARE",
+    "domain": "NEXEN",
+    "label": "care",
+    "gloss": "attention to another's flourishing without ownership",
+    "status": "CANON_V0_1",
+    "note": "Lycheetah-authored semantic root; resemblance to historical-language forms is not an etymology claim."
+  }
+]

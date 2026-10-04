@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Lycheetah Title Receipt v0.1",
+  "type": "object",
+  "required": [
+    "receipt_version",
+    "title_name",
+    "title_definition_version",
+    "state",
+    "bearer_choice",
+    "boundary"
+  ],
+  "properties": {
+    "receipt_version": {
+      "const": "lycheetah.title-receipt.v0.1"
+    },
+    "title_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title_definition_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "state": {
+      "enum": [
+        "DECLARED",
+        "ASSUMED",
+        "PRACTICED",
+        "EARNED",
+        "WITNESSED",
+        "TRANSMUTED",
+        "RETIRED"
+      ]
+    },
+    "bearer_choice": {
+      "type": "boolean"
+    },
+    "witness_type": {
+      "enum": [
+        "SELF",
+        "ARTIFACT",
+        "PEER",
+        "SYSTEM",
+        "REVIEWER",
+        "NONE"
+      ]
+    },
+    "evidence_uri": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "gate_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "roots": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "public_visibility": {
+      "enum": [
+        "PRIVATE",
+        "CONNECTIONS",
+        "PUBLIC"
+      ]
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "boundary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "accepted_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "retired_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "personal_recovery": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

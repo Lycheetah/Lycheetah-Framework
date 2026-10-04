@@ -1,0 +1,80 @@
+{
+  "paper": "The Independent No",
+  "version": "0.1",
+  "date": "2026-09-30",
+  "owner": "Mackenzie Conor James Clark / Lycheetah Framework",
+  "claims": [
+    {
+      "id": "INO-01",
+      "register": "DERIVED",
+      "claim": "Any finite number of judges can coexist with a correctly produced rejection that an unchecked promotion route bypasses.",
+      "location": "PAPER.md §5 Proposition 1",
+      "support": "Explicit construction",
+      "limit": "Existence result; no frequency or named-system vulnerability is inferred."
+    },
+    {
+      "id": "INO-02",
+      "register": "DERIVED",
+      "claim": "The stipulated mixture model has false acceptance q + (1-q)p^n.",
+      "location": "PAPER.md §5 Proposition 2",
+      "support": "Conditioning on a common-failure event",
+      "limit": "Conditional independence outside that event and unanimity are assumptions, not observations."
+    },
+    {
+      "id": "INO-03",
+      "register": "DERIVED",
+      "claim": "A correctly enforced, fully mediated promotion rule cannot promote an unchanged protected rejection.",
+      "location": "PAPER.md §5 Proposition 3",
+      "support": "The support conjunct remains false under stated protection premises.",
+      "limit": "Does not establish verifier correctness or implementation compliance."
+    },
+    {
+      "id": "INO-04",
+      "register": "SCAFFOLD",
+      "claim": "Binding, retention, enforcement, and accountable revision form a useful research-specific contradiction-survivability contract.",
+      "location": "PAPER.md §4",
+      "support": "Proposed definition with explicit scope",
+      "limit": "Usefulness and completeness need independent assessment."
+    },
+    {
+      "id": "INO-05",
+      "register": "CONJECTURE",
+      "claim": "Protected contracts improve false-support outcomes over matched deliberation with weaker control boundaries.",
+      "location": "PAPER.md §7 H1",
+      "support": "Proposed matched study",
+      "limit": "No evaluated-agent experiment has been run."
+    },
+    {
+      "id": "INO-06",
+      "register": "CONJECTURE",
+      "claim": "The formulation may improve on a conventional comparator supplied with the same information and enforcement capabilities.",
+      "location": "PAPER.md §7 H2",
+      "support": "A deliberately falsifiable comparison",
+      "limit": "A tie removes a candidate-specific robustness advantage; usability needs a separate study."
+    },
+    {
+      "id": "INO-07",
+      "register": "UNVERIFIED",
+      "claim": "The formulation is globally novel.",
+      "location": "PAPER.md §2.4",
+      "support": "None established; bounded prior-art search only",
+      "limit": "Not asserted. Permission separation and audit records have established prior art."
+    },
+    {
+      "id": "INO-08",
+      "register": "INTERPRETIVE",
+      "claim": "The paper operationalizes an AI Future curriculum question through AURA and Truth Pressure design relationships.",
+      "location": "PAPER.md §8 and Provenance",
+      "support": "Framework lineage and curriculum source",
+      "limit": "Does not validate wider Framework mathematics or efficacy."
+    },
+    {
+      "id": "INO-09",
+      "register": "DERIVED",
+      "claim": "In the website's stipulated toy, matched conventional controls produce the same structural outcomes.",
+      "location": "PAPER.md §6",
+      "support": "Both descriptions have identical protected surfaces and possible interventions.",
+      "limit": "A model equivalence, not an executed empirical comparison."
+    }
+  ]
+}

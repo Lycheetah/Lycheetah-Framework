@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ranking-request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "goal_ids",
+    "task_tags",
+    "difficulty",
+    "budget",
+    "tool_ids",
+    "completed_prerequisites",
+    "unfinished_project_ids"
+  ],
+  "properties": {
+    "version": {
+      "const": "0.1"
+    },
+    "goal_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "MAKE_ARTIFACT",
+          "LEARN_AI",
+          "REDUCE_COST",
+          "MAP_BUSINESS",
+          "CONTINUE",
+          "REPRODUCE",
+          "EXPLORE_DEPTH"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "task_tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "WRITING",
+          "CODING",
+          "RESEARCH",
+          "IMAGES",
+          "AUDIO",
+          "BUSINESS",
+          "AGENTS",
+          "GENERAL"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "BEGINNER",
+        "INTERMEDIATE",
+        "ADVANCED"
+      ]
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "max_amount",
+        "currency"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "ZERO",
+            "LIMITED",
+            "UNSPECIFIED"
+          ]
+        },
+        "max_amount": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "currency": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "tool_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "completed_prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "unfinished_project_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    }
+  }
+}

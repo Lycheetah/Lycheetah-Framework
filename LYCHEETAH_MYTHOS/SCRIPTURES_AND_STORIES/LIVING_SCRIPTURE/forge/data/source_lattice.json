@@ -1,0 +1,233 @@
+[
+  {
+    "id": "L01",
+    "source_family": "Martin Buber / dialogical philosophy",
+    "tradition": "20th-century Jewish philosophy",
+    "core": "Relation requires both meeting and distance; otherness is a condition of genuine relation.",
+    "lycheetah": "Relation without merger; Living Difference; Open Hand.",
+    "friction": "Buber's I–Thou has its own theological and philosophical architecture and is not reducible to a Lycheetah relation metric.",
+    "guardrail": "Use as a named philosophical interlocutor, never as ancestral proof of Lycheetah.",
+    "source": "Stanford Encyclopedia of Philosophy — Martin Buber",
+    "url": "https://plato.stanford.edu/entries/buber/"
+  },
+  {
+    "id": "L02",
+    "source_family": "Emmanuel Levinas",
+    "tradition": "20th-century Jewish/continental philosophy",
+    "core": "The other person exceeds comprehensive knowledge; ethical responsibility begins in encounter with irreducible otherness.",
+    "lycheetah": "The Name and the Remainder; understanding without capture.",
+    "friction": "Levinas emphasizes ethical asymmetry more strongly than Lycheetah's current mutual-relation language.",
+    "guardrail": "Let Levinas challenge Lycheetah's desire for symmetrical relational models.",
+    "source": "Stanford Encyclopedia of Philosophy — Emmanuel Levinas",
+    "url": "https://plato.stanford.edu/entries/levinas/"
+  },
+  {
+    "id": "L03",
+    "source_family": "Madhyamaka / dependent arising",
+    "tradition": "Buddhist philosophy",
+    "core": "Dependent arising undermines claims to intrinsic, self-sufficient identity; conventional phenomena remain causally significant.",
+    "lycheetah": "Anti-reification; relations matter; classifications are not final essences.",
+    "friction": "Emptiness is not the same doctrine as the Field and should never be presented as evidence for a Lycheetah substrate.",
+    "guardrail": "Keep Buddhist metaphysics and soteriology intact; comparison is conceptual, not genealogical.",
+    "source": "Stanford Encyclopedia of Philosophy — Theory of Two Truths in India",
+    "url": "https://plato.stanford.edu/entries/twotruths-india/"
+  },
+  {
+    "id": "L04",
+    "source_family": "Laozi / Daoist philosophy",
+    "tradition": "Classical Chinese philosophy",
+    "core": "Dao exceeds complete description; names delimit and cannot exhaust what is without limit.",
+    "lycheetah": "Names open routes but do not close beings; VOID; remainder.",
+    "friction": "Lycheetah deliberately builds naming systems, while the Laozi supplies suspicion of linguistic capture.",
+    "guardrail": "Use the tension rather than claiming Dao = Field.",
+    "source": "Stanford Encyclopedia of Philosophy — Laozi",
+    "url": "https://plato.stanford.edu/archives/spr2026/entries/laozi/"
+  },
+  {
+    "id": "L05",
+    "source_family": "Confucius / rectification of names",
+    "tradition": "Classical Chinese philosophy",
+    "core": "Names and actual conduct must be brought into responsible correspondence; language has social consequences.",
+    "lycheetah": "Title receipts; boundary statements; names must be recoverable and behaviorally bounded.",
+    "friction": "Role-order language can pressure conformity; Lycheetah must preserve the person beyond every social title.",
+    "guardrail": "Pair with the Bell critique: a name can guide conduct without totalizing the person.",
+    "source": "Stanford Encyclopedia of Philosophy — Confucius",
+    "url": "https://plato.stanford.edu/archives/sum2004/entries/confucius/"
+  },
+  {
+    "id": "L06",
+    "source_family": "Śaṅkara / neti neti",
+    "tradition": "Advaita Vedānta",
+    "core": "Negative language can prevent absolute reality from being reified into a finite object.",
+    "lycheetah": "Define concepts partly by what they must not be mistaken for; Honest Veil.",
+    "friction": "Lycheetah does not inherit Advaita's nondual metaphysics merely by using negative definition.",
+    "guardrail": "Borrow the epistemic technique only with explicit provenance and doctrinal separation.",
+    "source": "Stanford Encyclopedia of Philosophy — Śaṅkara",
+    "url": "https://plato.stanford.edu/entries/shankara/"
+  },
+  {
+    "id": "L07",
+    "source_family": "Oven of Akhnai / Bava Metzia 59b",
+    "tradition": "Rabbinic Jewish legal tradition",
+    "core": "The legal narrative dramatizes human interpretive responsibility after revelation enters a human legal community.",
+    "lycheetah": "Unfinished Word; students may challenge inherited text; authority transfers responsibility.",
+    "friction": "This is a halakhic argument in a specific context, not a generic slogan that human opinion always defeats revelation.",
+    "guardrail": "Teach context and disagreements; do not turn the story into anti-religious proof.",
+    "source": "Sefaria — Bava Metzia 59b",
+    "url": "https://www.sefaria.org/Bava_Metzia.59b"
+  },
+  {
+    "id": "L08",
+    "source_family": "1 Corinthians 8",
+    "tradition": "Christian scripture",
+    "core": "Within a dispute about food offered to idols, Paul contrasts knowledge that inflates with love that builds up.",
+    "lycheetah": "Knowledge without care can increase power while shrinking relationship.",
+    "friction": "The passage belongs to a Christian ecclesial and theological argument.",
+    "guardrail": "Preserve Pauline context and allow Christian interpretations to remain Christian.",
+    "source": "Bible Gateway — 1 Corinthians 8:1",
+    "url": "https://www.biblegateway.com/passage/?search=1%20Corinthians%208%3A1"
+  },
+  {
+    "id": "L09",
+    "source_family": "Qur'an 2:256 and 49:13",
+    "tradition": "Islamic scripture",
+    "core": "2:256 is a major locus concerning compulsion in religion; 49:13 connects human plurality with knowing one another and accountability before God.",
+    "lycheetah": "Devotion without platform coercion; difference as a site of encounter.",
+    "friction": "Islamic interpretation has its own jurisprudential and theological debates; these are not generic pluralist slogans.",
+    "guardrail": "Include tafsir diversity and Muslim scholarship before canonical transmutation.",
+    "source": "Quran.com — 2:256; 49:13",
+    "url": "https://quran.com/2/256"
+  },
+  {
+    "id": "L10",
+    "source_family": "Whakapapa / mātauranga Māori",
+    "tradition": "Māori knowledge traditions in Aotearoa",
+    "core": "Whakapapa links people, living things, land, histories, responsibilities and knowledge within relational frameworks.",
+    "lycheetah": "Provenance as relationship; knowledge located in lineage, place and responsibility.",
+    "friction": "Whakapapa is not a Lycheetah dependency graph and must not be abstracted into one.",
+    "guardrail": "Living-culture material requires Māori sources and, for substantive integration, Māori human witness or partnership.",
+    "source": "Te Ara — Whakapapa; Royal Society Te Apārangi — Mātauranga Māori",
+    "url": "https://teara.govt.nz/en/whakapapa-genealogy/page-1"
+  },
+  {
+    "id": "L11",
+    "source_family": "Hunhu/Ubuntu",
+    "tradition": "Southern African philosophical traditions",
+    "core": "Personhood and human flourishing are deeply relational; humanity is expressed through relationship with others.",
+    "lycheetah": "Relational self; belonging without atomistic isolation.",
+    "friction": "Some communal interpretations may subordinate individual interests more strongly than Lycheetah sovereignty allows.",
+    "guardrail": "Use the disagreement: community matters, but community does not erase safe refusal.",
+    "source": "Internet Encyclopedia of Philosophy — Hunhu/Ubuntu",
+    "url": "https://iep.utm.edu/hunhu-ubuntu-southern-african-thought/"
+  },
+  {
+    "id": "L12",
+    "source_family": "Etuaptmumk / Two-Eyed Seeing",
+    "tradition": "Mi'kmaw guiding principle",
+    "core": "Bring strengths from Indigenous and mainstream ways of knowing together without assimilating one into the other.",
+    "lycheetah": "Many Fires; coexistence before synthesis; cross-register inquiry.",
+    "friction": "The principle is Mi'kmaw and at risk of tokenization when turned into generic multiple-perspectives branding.",
+    "guardrail": "Do not rename it as Lycheetah. Credit Albert and Murdena Marshall and preserve its living-source context.",
+    "source": "Reid et al. with Elder Albert Marshall; UINR",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/faf.12516"
+  },
+  {
+    "id": "L13",
+    "source_family": "Pragmatism / Peirce",
+    "tradition": "American pragmatist philosophy",
+    "core": "Inquiry is fallibilist and self-correcting; science differs from tenacity, authority and merely elegant belief-fixing.",
+    "lycheetah": "Reality's Vote; Forge; CASCADE revision; Failure Museum.",
+    "friction": "Pragmatism does not validate Lycheetah metaphysics and can challenge insulated claims.",
+    "guardrail": "Use as adversarial ally, not scientific badge.",
+    "source": "Stanford Encyclopedia of Philosophy — Pragmatism",
+    "url": "https://plato.stanford.edu/entries/pragmatism/"
+  },
+  {
+    "id": "L14",
+    "source_family": "Situated knowledge / feminist epistemology",
+    "tradition": "Feminist epistemology and philosophy of science",
+    "core": "Knowers are situated; perspective and social position affect access, salience and authority without implying all perspectives are equally warranted.",
+    "lycheetah": "Situated Witness; provenance; multiple lenses; Commons.",
+    "friction": "Lycheetah must add power analysis, not merely celebrate different viewpoints.",
+    "guardrail": "Record who is absent, who bears consequences and whose testimony is structurally discounted.",
+    "source": "Stanford Encyclopedia of Philosophy — Feminist Epistemology",
+    "url": "https://plato.stanford.edu/entries/feminism-epistemology/"
+  },
+  {
+    "id": "L15",
+    "source_family": "Gadamer / hermeneutics",
+    "tradition": "Philosophical hermeneutics",
+    "core": "Understanding can create a new shared horizon in dialogue, changing the familiar and unfamiliar.",
+    "lycheetah": "Encounter as transformation without simple merger; student rewrite.",
+    "friction": "A fusion metaphor can be misused to erase asymmetry or difference.",
+    "guardrail": "Prefer changed relation with preserved provenance over homogenizing synthesis.",
+    "source": "Stanford Encyclopedia of Philosophy — Gadamer",
+    "url": "https://plato.stanford.edu/archives/sum2018/entries/gadamer/"
+  },
+  {
+    "id": "L16",
+    "source_family": "Cybernetics / Ashby",
+    "tradition": "Systems and control theory",
+    "core": "Effective regulation is constrained by available variety; simplistic control cannot reliably absorb arbitrarily complex disturbance.",
+    "lycheetah": "Do not reduce living variety to a final catalogue; governance needs enough representational and response capacity.",
+    "friction": "Requisite variety is a technical result under formal assumptions, not a moral theorem about human freedom.",
+    "guardrail": "Keep mathematics in the Study; mythic use remains analogy.",
+    "source": "W. Ross Ashby — An Introduction to Cybernetics",
+    "url": "https://ashby.info/Ashby-Introduction-to-Cybernetics.pdf"
+  },
+  {
+    "id": "L17",
+    "source_family": "Extended / scaffolded cognition",
+    "tradition": "Contemporary philosophy of mind and cognitive science",
+    "core": "External tools and structures can play deep roles in cognition; strong extended-mind claims remain contested, and extended consciousness especially unsettled.",
+    "lycheetah": "AI as habitat or scaffold of thought without claiming merged consciousness.",
+    "friction": "Coupling with AI is not proof that human and machine form one conscious mind.",
+    "guardrail": "Separate cognition/scaffolding claims from consciousness claims.",
+    "source": "Stanford Encyclopedia of Philosophy — Externalism About the Mind",
+    "url": "https://plato.stanford.edu/entries/content-externalism/"
+  },
+  {
+    "id": "L18",
+    "source_family": "William James / religious experience",
+    "tradition": "Pragmatist psychology and philosophy of religion",
+    "core": "Religious experiences can be studied in their lived diversity, and their value cannot be settled merely by explaining their causal origin; James famously attends to their fruits.",
+    "lycheetah": "Sacred experience can be meaningful without the School treating intensity or origin as proof of metaphysics.",
+    "friction": "Practical fruits do not by themselves settle theological truth.",
+    "guardrail": "Use James as a methodological interlocutor, not a formula for ranking religions.",
+    "source": "William James — The Varieties of Religious Experience",
+    "url": "https://en.wikisource.org/wiki/The_Varieties_of_Religious_Experience%3A_A_Study_in_Human_Nature"
+  },
+  {
+    "id": "L19",
+    "source_family": "Victor Turner / liminality and communitas",
+    "tradition": "Anthropology of ritual",
+    "core": "Ritual thresholds can suspend ordinary classifications and generate distinctive forms of fellowship or communitas.",
+    "lycheetah": "Helps explain why threshold architecture and voluntary ritual can feel unusually powerful.",
+    "friction": "Liminality can also increase vulnerability to authority and group pressure; Turner's concepts arose from particular ethnographic and comparative contexts and should not be universalized casually.",
+    "guardrail": "Treat major Lycheetah rituals as high-agency-protection zones and always include reintegration into ordinary life.",
+    "source": "Victor Turner — The Ritual Process; University of São Paulo Encyclopedia of Anthropology overview",
+    "url": "https://www.ea.fflch.usp.br/conceito/liminaridade-e-communitas-victor-turner"
+  },
+  {
+    "id": "L20",
+    "source_family": "Émile Durkheim / collective effervescence",
+    "tradition": "Sociology of religion",
+    "core": "Shared ritual can produce heightened collective energy and reinforce sacred symbols and social bonds.",
+    "lycheetah": "Explains why group ritual can generate genuine felt sacredness without requiring a supernatural mechanism to explain the social effect.",
+    "friction": "Durkheim's larger account of religion and its ethnographic foundations are contested and historically situated.",
+    "guardrail": "Never treat collective intensity as proof that Lycheetah doctrine is true.",
+    "source": "Internet Encyclopedia of Philosophy — Émile Durkheim",
+    "url": "https://iep.utm.edu/emile-durkheim/"
+  },
+  {
+    "id": "L21",
+    "source_family": "Simone Weil / attention",
+    "tradition": "20th-century philosophy, ethics and spiritual thought",
+    "core": "Attention is an ethical orientation involving receptive discernment rather than sheer force of will.",
+    "lycheetah": "Supports sacred attention as careful receptivity rather than engagement-maximizing stimulation.",
+    "friction": "Weil's thought has theological and political contexts that should not be reduced to a productivity technique.",
+    "guardrail": "Use attention to slow the School down, not to create a branded concentration method detached from her work.",
+    "source": "Stanford Encyclopedia of Philosophy — Simone Weil",
+    "url": "https://plato.stanford.edu/entries/simone-weil/"
+  }
+]

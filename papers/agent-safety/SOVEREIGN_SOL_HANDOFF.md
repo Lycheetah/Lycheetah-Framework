@@ -1,5 +1,7 @@
 # Sovereign Sol — Proposed Agent Safety Implementation Handoff
 
+**Evidence footing: [SCAFFOLD] research, proposal or source review. Supplied and local synthetic results retain their stated limits; no independent validation or production claim.**
+
 **3 October 2026 · Design proposal · App implementation not audited in this batch**
 
 This translates the [paper](PAPER.md) into a practical sequence for Sol's builder. It does not claim that any component is currently missing, implemented, or secure. Confirm each against the actual app before changing it. This research packet changes no Sovereign Sol files.

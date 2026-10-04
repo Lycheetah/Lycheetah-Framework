@@ -1,0 +1,9 @@
+{
+  "atomic_clean_successes": 1000,
+  "atomic_partial_repairs": 0,
+  "atomic_stale_refusals": 1000,
+  "rounds_per_case": 1000,
+  "sequential_partial_repairs": 1000,
+  "version": "lycheetah-compensation-race-benchmark/0.1",
+  "weak_precheck_overwrites": 1000
+}

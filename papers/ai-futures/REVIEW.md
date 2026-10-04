@@ -1,5 +1,7 @@
 # Authoring-seat review and verification
 
+**Evidence footing: [SCAFFOLD] research, proposal or source review. Supplied and local synthetic results retain their stated limits; no independent validation or production claim.**
+
 **3 October 2026 · AI Futures v0.2 · Caelorynth**
 
 This is review by the same AI seat that drafted the paper. It is not independent

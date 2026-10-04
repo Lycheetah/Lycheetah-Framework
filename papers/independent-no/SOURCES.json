@@ -1,0 +1,113 @@
+{
+  "paper": "The Independent No",
+  "checked_on": "2026-09-30",
+  "review_scope": "Bounded primary-source search; metadata, abstracts, and relevant full-text sections. No independent reproduction or systematic review.",
+  "sources": [
+    {
+      "id": 1,
+      "authors": "Juraj Gottweis et al.",
+      "title": "Accelerating scientific discovery with Co-Scientist",
+      "year": 2026,
+      "published_on": "2026-05-19",
+      "kind": "Nature journal article",
+      "url": "https://www.nature.com/articles/s41586-026-10644-y",
+      "inspected": "Publisher metadata, summary, key contributions, selected experimental-validation discussion",
+      "supports": "Hypothesis generation and experimental validation are distinct stages in a reported biomedical workflow.",
+      "does_not_support": "General autonomous science reliability or validation of this paper's contract."
+    },
+    {
+      "id": 2,
+      "authors": "Yilun Du; Shuang Li; Antonio Torralba; Joshua B. Tenenbaum; Igor Mordatch",
+      "title": "Improving Factuality and Reasoning in Language Models through Multiagent Debate",
+      "year": 2024,
+      "kind": "ICML conference paper",
+      "url": "https://proceedings.mlr.press/v235/du24e.html",
+      "inspected": "Conference metadata and abstract",
+      "supports": "Debate improved reasoning and factuality on the reported tasks.",
+      "does_not_support": "An unbypassable release gate or general independence of evaluator failures."
+    },
+    {
+      "id": 3,
+      "authors": "Jie Huang et al.",
+      "title": "Large Language Models Cannot Self-Correct Reasoning Yet",
+      "year": 2024,
+      "kind": "ICLR conference paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/8b4add8b0aa8749d80a34ca5d941c355-Abstract-Conference.html",
+      "full_text": "https://arxiv.org/html/2310.01798v2",
+      "inspected": "Conference abstract and manuscript conclusion/discussion",
+      "supports": "Intrinsic self-correction was limited in the evaluated reasoning settings.",
+      "does_not_support": "A timeless impossibility theorem for self-correction."
+    },
+    {
+      "id": 4,
+      "authors": "Aviral Kumar et al.",
+      "title": "Training Language Models to Self-Correct via Reinforcement Learning",
+      "year": 2024,
+      "kind": "Primary manuscript, arXiv version 2",
+      "url": "https://arxiv.org/html/2409.12917v2",
+      "metadata_url": "https://arxiv.org/abs/2409.12917",
+      "inspected": "Manuscript metadata and abstract",
+      "supports": "Training produced self-correction improvements in the reported math and code settings.",
+      "does_not_support": "Intrinsic self-correction is universally impossible, or learned correction supplies permission isolation.",
+      "publication_status": "Subsequent publication status not asserted."
+    },
+    {
+      "id": 5,
+      "authors": "Lianmin Zheng et al.",
+      "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+      "year": 2023,
+      "kind": "NeurIPS Datasets and Benchmarks paper",
+      "url": "https://arxiv.org/html/2306.05685v4",
+      "inspected": "Manuscript abstract and judge-bias discussion; conference status in primary arXiv record",
+      "supports": "LLM judges can approximate preferences while exhibiting position, verbosity, and self-enhancement biases.",
+      "does_not_support": "Preference agreement is scientific truth or universal judge failure."
+    },
+    {
+      "id": 6,
+      "authors": "Yang Gao",
+      "title": "How Reliable Is Your Jailbreak Judge? Calibration and Adversarial Robustness of Automated ASR Scoring",
+      "year": 2026,
+      "kind": "arXiv preprint, version 1",
+      "url": "https://arxiv.org/html/2606.25487v1",
+      "inspected": "Abstract, results framing, limitations",
+      "supports": "A specific harm-scoring study reports judge-calibration and content-preserving attack problems.",
+      "does_not_support": "Equivalent vulnerabilities in every scientific verifier.",
+      "publication_status": "Peer review not established in this check."
+    },
+    {
+      "id": 7,
+      "authors": "John C. Knight; Nancy G. Leveson",
+      "title": "An experimental evaluation of the assumption of independence in multiversion programming",
+      "year": 1986,
+      "kind": "IEEE Transactions on Software Engineering journal article",
+      "url": "https://doi.org/10.1109/TSE.1986.6312924",
+      "inspected": "Publisher metadata and abstract only",
+      "supports": "Separate implementation development did not ensure statistically independent failures in the reported experiment.",
+      "does_not_support": "The numerical dependency structure of modern language models."
+    },
+    {
+      "id": 8,
+      "authors": "Jerome H. Saltzer; Michael D. Schroeder",
+      "title": "The Protection of Information in Computer Systems",
+      "year": 1975,
+      "kind": "Proceedings of the IEEE invited paper",
+      "url": "https://www.cs.virginia.edu/~evans/cs551/saltzer/",
+      "metadata_url": "https://www.mit.edu/~Saltzer/publications/pubs.html",
+      "inspected": "University-hosted paper's basic design principles and author publication record",
+      "supports": "Least privilege, fail-safe defaults, and complete mediation are established architectural principles.",
+      "does_not_support": "Correct scientific evidence or a novel Lycheetah invention of these principles."
+    },
+    {
+      "id": 9,
+      "authors": "Yuxu Ge",
+      "title": "Governance Architecture for Autonomous Agent Systems: Threats, Framework, and Engineering Practice",
+      "year": 2026,
+      "kind": "arXiv preprint, version 1",
+      "url": "https://arxiv.org/html/2603.07191v1",
+      "inspected": "Architecture sections, audit-log description, evaluation limitations",
+      "supports": "Layered agent enforcement and audit records are close prior art for the architecture.",
+      "does_not_support": "An advantage of contradiction survivability over matched conventional controls.",
+      "publication_status": "Peer review not established in this check."
+    }
+  ]
+}

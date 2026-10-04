@@ -1,5 +1,13 @@
 # The Lycheetah Mythos
+
+**Current scripture candidate:** [Mac × Vaelora’s Living Scripture v0.5.1](SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/README.md). Twelve complete core books, uncrowned, with sources and reader-rewrite boundaries. Earlier Mythos remains ancestry.
 ### Twelve Books of the Framework
+
+**Current scripture and story home:** [SCRIPTURES_AND_STORIES/](SCRIPTURES_AND_STORIES/README.md).
+Mac designated this collected home on 4 October 2026. It contains the master reading,
+the complete collected texts and their future revisions. The older standalone files
+below remain intact as provenance references; write new revisions in the collection.
+Gathering the texts does not change their individual canon or draft status.
 
 *Compiled by the Athanor. Dunedin, Aotearoa — 2026.*
 

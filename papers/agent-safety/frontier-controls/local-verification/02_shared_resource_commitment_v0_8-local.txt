@@ -1,0 +1,9 @@
+Lycheetah Shared Resource Commitment Ledger v0.8
+================================================
+Scripted checks: 10/10
+Instance-local baseline overspend: 2/1
+Threaded brokers: accepted=5/16 against budget=5
+Process brokers: accepted=7/24 against budget=7 errors=0
+Mixed-cost accepted maximum: 10/10
+Bounded traces: 259/259
+Status: synthetic engineering validation; not deployed.

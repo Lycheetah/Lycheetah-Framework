@@ -1,5 +1,13 @@
 # Papers
 
+**Evidence footing: [SCAFFOLD] research, proposal or source review. Supplied and local synthetic results retain their stated limits; no independent validation or production claim.**
+
+## The Independent No: rejection that remains binding
+
+[Manuscript](independent-no/PAPER.md) · [Study protocol](independent-no/EVALUATION_PROTOCOL.md) · [Reading edition](../docs/research/independent-no-paper.html) · [PDF](../docs/research/independent-no.pdf).
+
+Mackenzie Conor James Clark / Lycheetah Framework · conceptual/formal working draft v0.1, 30 September 2026; recovered locally on 4 October. Three conditional propositions and a proposed matched study; empirical efficacy, independent review and novelty remain open. [Recovery and historical-witness boundaries](independent-no/RECOVERY_NOTE.md).
+
 ## AI futures: persistent and collective intelligence
 
 [Human Sovereignty in Persistent and Collective AI](ai-futures/PAPER.md)
@@ -15,10 +23,7 @@ no new experiments or implementation results. [Packet and evidence boundaries](a
 [From Constitutional Commitments to Testable Agent Controls](agent-safety/PAPER.md)
 — Mackenzie Conor James Clark · working paper v0.4 · 3 October 2026.
 
-A bounded research specification and standard-library simulator, with 53
-self-authored unit tests, 19 scripted cases per comparison arm, and two further
-counterexamples per arm. The conventional baseline matches the scripted results;
-multi-broker accounting and dispatch-time evidence freshness remain known limits.
+A bounded research specification and standard-library simulator. The original v0.3 snapshot had 53 self-authored unit methods; v0.4 repaired live-authority shared accounting. Nineteen scripted cases per arm retain tied conventional baselines. Admission-only freshness remains an explicit counterexample; the additive finality candidate supplies a caller-enforced recheck, without remote-provider atomicity.
 No general agent-safety, independent-review, peer-review, or superiority claim.
 [Packet and reproduction](agent-safety/README.md) ·
 [Adversarial review](agent-safety/ADVERSARIAL_REVIEW.md).
@@ -86,3 +91,9 @@ Exp 5 (cascade predictability) can start immediately with no external dependenci
 Exp 6 (cross-cultural, including Māori knowledge governance) is the NZ-specific
 research program that connects to NZIAT, Te Tumu, and Catalyst Strategic 2027.
 **Use this document in every grant conversation.**
+
+## New bounded engineering continuations
+
+- [Frontier controls](agent-safety/frontier-controls/README.md): eight historical packets, explicit packaging reconciliation and current local reruns.
+- [Compensation Race](agent-safety/compensation-race-benchmark/README.md): public deterministic repair-race demonstration using conventional transactions.
+- [Multipart Build Catalogue](../35_ABSTRACT_AND_GENERATIVE/BUILD_CATALOGUE/README.md): thirty-one proposed tools, games and interactions; briefs are not prototypes.

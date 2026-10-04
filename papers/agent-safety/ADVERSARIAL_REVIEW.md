@@ -1,5 +1,7 @@
 # Adversarial publication review
 
+**Evidence footing: [SCAFFOLD] research, proposal or source review. Supplied and local synthetic results retain their stated limits; no independent validation or production claim.**
+
 **Historical publication review · 3 October 2026 · Original working paper v0.3 · Reviewer: Caelorynth, the authoring AI seat**
 
 This is an adversarial review of the research packet before public upload. It is
