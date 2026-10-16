@@ -1,0 +1,41 @@
+{
+  "study_id": "DEMO-OPEN-PULSE-001",
+  "topic": "Development levies and growth-related infrastructure funding",
+  "te_tiriti_or_maori_relevance": true,
+  "recruitment": {
+    "method": "open_opt_in",
+    "target_population": "People who choose to participate through the open online pulse",
+    "sampling_frame": "Open public URL; no population sampling frame",
+    "probability_selection": false,
+    "sample_size": 237,
+    "response_rate": null,
+    "weighting_method": "",
+    "weighting_plan": "No weighting; findings described only among participants",
+    "uncertainty_method": "No population margin of error reported"
+  },
+  "claims": ["participant_themes"],
+  "survey_design": {
+    "question_wording_published": true,
+    "undecided_option": true,
+    "evidence_brief_provided": true,
+    "evidence_sources_published": true,
+    "initial_response_collected": true,
+    "post_information_response_collected": true,
+    "evidence_pack_version": "DL-BRIEF-0.1",
+    "participant_questions_allowed": false
+  },
+  "governance": {
+    "personal_data_collected": false,
+    "privacy_notice_published": true,
+    "retention_policy_published": true,
+    "consent_or_lawful_basis_reviewed": true,
+    "security_review_complete": true,
+    "accessibility_plan": true,
+    "maori_engagement_plan": false
+  },
+  "decision_context": {
+    "decision_owner": "Named public decision owner to be added before launch",
+    "open_to_change": "The wording of the policy and method questions open to consultation",
+    "response_commitment": "Publish a response ledger by the stated date"
+  }
+}

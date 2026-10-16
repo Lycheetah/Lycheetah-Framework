@@ -1,0 +1,144 @@
+{
+  "benchmark_id": "ANON-POLITICIAN-CASCADE-STRUCTURE-001",
+  "version": "0.1",
+  "purpose": "Check whether the current review-queue implementation follows its explicitly declared graph-traversal policy on small synthetic claim graphs.",
+  "label_origin": "Researcher-authored expected sets derived from the written traversal rule; not independently adjudicated labels and not ground truth about real-world materiality.",
+  "cases": [
+    {
+      "case_id": "SB-01",
+      "title": "Direct dependent",
+      "changed_block_id": "A",
+      "blocks": [
+        {"block_id": "A", "content": "Root claim", "claim_type": "empirical_hypothesis"},
+        {"block_id": "B", "content": "Depends on A", "claim_type": "empirical_hypothesis", "dependencies": ["A"]}
+      ],
+      "expected_affected": ["B"]
+    },
+    {
+      "case_id": "SB-02",
+      "title": "Transitive chain and unrelated node",
+      "changed_block_id": "A",
+      "blocks": [
+        {"block_id": "A", "content": "Root", "claim_type": "empirical_hypothesis"},
+        {"block_id": "B", "content": "Depends on A", "claim_type": "empirical_hypothesis", "dependencies": ["A"]},
+        {"block_id": "C", "content": "Depends on B", "claim_type": "policy_proposal", "dependencies": ["B"]},
+        {"block_id": "Z", "content": "Disconnected", "claim_type": "definition"}
+      ],
+      "expected_affected": ["B", "C"]
+    },
+    {
+      "case_id": "SB-03",
+      "title": "Branching and convergent dependency",
+      "changed_block_id": "A",
+      "blocks": [
+        {"block_id": "A", "content": "Root", "claim_type": "empirical_hypothesis"},
+        {"block_id": "B", "content": "Depends on A", "claim_type": "empirical_hypothesis", "dependencies": ["A"]},
+        {"block_id": "C", "content": "Also depends on A", "claim_type": "empirical_hypothesis", "dependencies": ["A"]},
+        {"block_id": "D", "content": "Depends on B and C", "claim_type": "policy_proposal", "dependencies": ["B", "C"]}
+      ],
+      "expected_affected": ["B", "C", "D"]
+    },
+    {
+      "case_id": "SB-04",
+      "title": "One-way contradiction link",
+      "changed_block_id": "A",
+      "blocks": [
+        {"block_id": "A", "content": "Claim A", "claim_type": "empirical_hypothesis"},
+        {"block_id": "B", "content": "B records a contradiction with A", "claim_type": "empirical_hypothesis", "contradicts": ["A"]}
+      ],
+      "expected_affected": ["B"]
+    },
+    {
+      "case_id": "SB-05",
+      "title": "Contradiction partner and its descendant",
+      "changed_block_id": "A",
+      "blocks": [
+        {"block_id": "A", "content": "Changed claim", "claim_type": "empirical_hypothesis"},
+        {"block_id": "B", "content": "Competing claim", "claim_type": "empirical_hypothesis", "contradicts": ["A"]},
+        {"block_id": "C", "content": "Policy depending on B", "claim_type": "policy_proposal", "dependencies": ["B"]}
+      ],
+      "expected_affected": ["B", "C"]
+    },
+    {
+      "case_id": "SB-06",
+      "title": "Closure through contradiction chain",
+      "changed_block_id": "A",
+      "blocks": [
+        {"block_id": "A", "content": "Claim A", "claim_type": "empirical_hypothesis"},
+        {"block_id": "B", "content": "B contradicts A", "claim_type": "empirical_hypothesis", "contradicts": ["A"]},
+        {"block_id": "C", "content": "C contradicts B", "claim_type": "empirical_hypothesis", "contradicts": ["B"]},
+        {"block_id": "D", "content": "D depends on C", "claim_type": "policy_proposal", "dependencies": ["C"]},
+        {"block_id": "Z", "content": "Unrelated", "claim_type": "definition"}
+      ],
+      "expected_affected": ["B", "C", "D"]
+    },
+    {
+      "case_id": "SB-07",
+      "title": "Multiple-parent dependent",
+      "changed_block_id": "A",
+      "blocks": [
+        {"block_id": "A", "content": "Parent A", "claim_type": "empirical_hypothesis"},
+        {"block_id": "B", "content": "Parent B", "claim_type": "empirical_hypothesis"},
+        {"block_id": "C", "content": "Depends on A and B", "claim_type": "policy_proposal", "dependencies": ["A", "B"]}
+      ],
+      "expected_affected": ["C"]
+    },
+    {
+      "case_id": "SB-08",
+      "title": "Unrelated claim remains out of queue",
+      "changed_block_id": "A",
+      "blocks": [
+        {"block_id": "A", "content": "Changed claim", "claim_type": "empirical_hypothesis"},
+        {"block_id": "B", "content": "Depends on A", "claim_type": "empirical_hypothesis", "dependencies": ["A"]},
+        {"block_id": "X", "content": "Unrelated hypothesis", "claim_type": "empirical_hypothesis"},
+        {"block_id": "Y", "content": "Depends on X", "claim_type": "policy_proposal", "dependencies": ["X"]}
+      ],
+      "expected_affected": ["B"]
+    },
+    {
+      "case_id": "SB-09",
+      "title": "Cycle terminates",
+      "changed_block_id": "A",
+      "blocks": [
+        {"block_id": "A", "content": "A depends on B", "claim_type": "empirical_hypothesis", "dependencies": ["B"]},
+        {"block_id": "B", "content": "B depends on A", "claim_type": "empirical_hypothesis", "dependencies": ["A"]}
+      ],
+      "expected_affected": ["B"]
+    },
+    {
+      "case_id": "SB-10",
+      "title": "Single-node graph has empty review set",
+      "changed_block_id": "A",
+      "blocks": [
+        {"block_id": "A", "content": "Only block", "claim_type": "normative_commitment", "status": "source_asserted"}
+      ],
+      "expected_affected": []
+    },
+    {
+      "case_id": "SB-11",
+      "title": "Normative root does not alter traversal semantics or auto-change status",
+      "changed_block_id": "F1",
+      "blocks": [
+        {"block_id": "F1", "content": "Human flourishing matters", "claim_type": "normative_commitment", "status": "source_asserted"},
+        {"block_id": "T1", "content": "An empirical hypothesis depends on F1 as a value constraint", "claim_type": "empirical_hypothesis", "dependencies": ["F1"], "status": "pending_review"},
+        {"block_id": "E1", "content": "A policy proposal depends on T1", "claim_type": "policy_proposal", "dependencies": ["T1"], "status": "pending_review"}
+      ],
+      "expected_affected": ["E1", "T1"],
+      "expected_unchanged_statuses": true
+    },
+    {
+      "case_id": "SB-12",
+      "title": "Complex dependency and contradiction closure",
+      "changed_block_id": "F",
+      "blocks": [
+        {"block_id": "F", "content": "Foundation premise", "claim_type": "empirical_hypothesis"},
+        {"block_id": "T", "content": "Theory depends on foundation", "claim_type": "empirical_hypothesis", "dependencies": ["F"]},
+        {"block_id": "H", "content": "Alternative hypothesis contradicts T", "claim_type": "empirical_hypothesis", "contradicts": ["T"]},
+        {"block_id": "P1", "content": "Proposal depends on T", "claim_type": "policy_proposal", "dependencies": ["T"]},
+        {"block_id": "P2", "content": "Alternative proposal depends on H", "claim_type": "policy_proposal", "dependencies": ["H"]},
+        {"block_id": "Z", "content": "Unconnected claim", "claim_type": "definition"}
+      ],
+      "expected_affected": ["H", "P1", "P2", "T"]
+    }
+  ]
+}

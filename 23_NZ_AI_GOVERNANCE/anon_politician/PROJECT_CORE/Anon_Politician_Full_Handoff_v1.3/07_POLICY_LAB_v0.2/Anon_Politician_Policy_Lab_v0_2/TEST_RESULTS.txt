@@ -1,0 +1,15 @@
+Anon Politician Policy Lab v0.2 — verified local checks
+Date: 16 October 2026 (Pacific/Auckland)
+
+1. Python unit tests: 16 passed, 0 failed.
+   - 11 inherited Policy Lab v0.1 invariants.
+   - 5 new evaluation-harness tests: blind mapping, incomplete-output rejection, dimension profiles without total/winner, and preservation of critical flags.
+2. Python bytecode compilation: policy_lab.py, prepare_blind_pack.py, aggregate_reviews.py, and evaluation tests passed.
+3. HTML static checks: required file input/export controls and local app-to-reviewer links present.
+4. Node.js JavaScript syntax checks: reviewer.html and Policy Lab app inline JavaScript passed `node --check`.
+5. Synthetic end-to-end test: dummy non-research text was passed through blind-pack preparation and aggregate profile generation. This confirms the data pipeline; it is not policy analysis and is not included as an empirical result.
+
+Not tested / not established:
+- Full manual browser interaction, file picker, download and print flows on a user's browser.
+- Any model-generated policy analysis or human review of such outputs.
+- Better factual accuracy, political fairness, representativeness, forecast calibration, or improved public policy.

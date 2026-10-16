@@ -78,6 +78,7 @@ These four stack. WOF is the annual gate. Three Worlds is per-output. Whakapapa 
 | **The Moana AI** | [CONJECTURE] | Collectively governed Pacific climate intelligence — NZ builds, Pacific owns | `MOANA_AI_SPECIFICATION.md` |
 | **Mātauranga Adversarial Probe** | [SCAFFOLD] | Where does AI confidence exceed accuracy on relational knowledge? Formal experimental protocol. | `MATAURANGA_ADVERSARIAL_PROBE.md` |
 | **Sovereign Ideas Expanded** | [MIXED] | 12 Aotearoa ideas at full depth — Taniwha as CASCADE, Haka protocol, Utu metric | `SOVEREIGN_IDEAS_EXPANDED.md` |
+| **Anon Politician** | [SCAFFOLD] | Democratic policy intelligence system: recurring citizen input, CASCADE evidence tracing, adversarial critique, and outcome tracking. Evolved from AURA Protocol and *The Politicians Door*. | [`anon_politician/`](anon_politician/README.md) |
 
 ### Start Here
 | File | What It Is |

@@ -1,0 +1,159 @@
+{
+  "case_id": "NZ-HOUSING-LEVIES-2026-01",
+  "title": "Housing growth and development levies",
+  "last_updated": "2026-10-16",
+  "policy_question": "How should growth-related infrastructure costs be allocated and disclosed so decision-makers can assess impacts on housing delivery, affordability, councils, existing ratepayers, developers and future residents?",
+  "decision_owner": "To be identified for the selected policy stage",
+  "authority_mode": "advisory",
+  "legal_basis": null,
+  "claims": [
+    {
+      "claim_id": "F-GOV-01",
+      "text": "The government intends to replace development contributions with a development-levies system as part of Going for Housing Growth.",
+      "claim_type": "factual",
+      "status": "supported",
+      "depends_on": [],
+      "source_ids": [
+        "S001"
+      ]
+    },
+    {
+      "claim_id": "F-GOV-02",
+      "text": "The proposed levy system covers water supply, wastewater, stormwater, transport, reserves and community infrastructure, with a separate levy for each service.",
+      "claim_type": "factual",
+      "status": "supported",
+      "depends_on": [],
+      "source_ids": [
+        "S001",
+        "S002"
+      ]
+    },
+    {
+      "claim_id": "F-GOV-03",
+      "text": "The proposed levy basis is expected growth and the aggregate forecast cost of infrastructure capacity across defined levy areas.",
+      "claim_type": "factual",
+      "status": "supported",
+      "depends_on": [
+        "F-GOV-02"
+      ],
+      "source_ids": [
+        "S001",
+        "S002"
+      ]
+    },
+    {
+      "claim_id": "F-CONSULT-01",
+      "text": "The Ministry records 56 submissions to the 2025–26 consultation from councils, developers, industry groups, Māori housing organisations and individuals.",
+      "claim_type": "factual",
+      "status": "supported",
+      "depends_on": [],
+      "source_ids": [
+        "S001"
+      ]
+    },
+    {
+      "claim_id": "F-CONSULT-02",
+      "text": "The Ministry reports councils strongly supported replacing development contributions while developer views were mixed; this is a summary of the submissions received, not a representative estimate of national public opinion.",
+      "claim_type": "factual",
+      "status": "supported",
+      "depends_on": [
+        "F-CONSULT-01"
+      ],
+      "source_ids": [
+        "S001"
+      ]
+    },
+    {
+      "claim_id": "F-GOV-04",
+      "text": "The Ministry says the Local Government (Infrastructure Funding) Amendment Bill is being prepared for introduction in the first quarter of 2027, with further input expected through the select committee process and later levy-methodology and disclosure consultation.",
+      "claim_type": "factual",
+      "status": "supported",
+      "depends_on": [],
+      "source_ids": [
+        "S001",
+        "S002"
+      ]
+    },
+    {
+      "claim_id": "H-INCIDENCE-01",
+      "text": "The economic burden of a levy may be distributed differently from the entity legally charged; this needs empirical analysis.",
+      "claim_type": "assumption",
+      "status": "proposed",
+      "depends_on": [
+        "F-GOV-02",
+        "F-GOV-03"
+      ],
+      "source_ids": []
+    },
+    {
+      "claim_id": "H-DELIVERY-01",
+      "text": "The levy design may affect project timing or feasibility under some conditions; direction and magnitude are unknown in this packet.",
+      "claim_type": "forecast",
+      "status": "unknown",
+      "depends_on": [
+        "F-GOV-02",
+        "F-GOV-03"
+      ],
+      "source_ids": []
+    },
+    {
+      "claim_id": "H-PUBLIC-01",
+      "text": "A structured record linking each public theme to a policy disposition may improve transparency about how public input was considered; this requires testing against current practice.",
+      "claim_type": "assumption",
+      "status": "proposed",
+      "depends_on": [
+        "F-CONSULT-01",
+        "F-CONSULT-02"
+      ],
+      "source_ids": []
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "S001",
+      "description": "MCERT official development-levies page, including consultation summaries and next steps",
+      "evidence_type": "fact",
+      "source_url": "https://www.mcert.govt.nz/our-work/local-government/local-government-policy/development-levies/",
+      "source_date": "accessed-2026-10-16",
+      "limitations": "Government description of proposed policy and its own summary of 56 submissions. These submissions are not a representative population sample; this page is not independent evaluation of impacts."
+    },
+    {
+      "evidence_id": "S002",
+      "description": "MCERT development levies technical questions and answers",
+      "evidence_type": "fact",
+      "source_url": "https://www.mcert.govt.nz/our-work/local-government/local-government-policy/development-levies/development-levies-system-technical-questions-and-answers/",
+      "source_date": "accessed-2026-10-16",
+      "limitations": "Official explanation of a proposed legal framework; verify against the bill and enacted law once available."
+    },
+    {
+      "evidence_id": "S003",
+      "description": "Treasury CBAx Tool",
+      "evidence_type": "fact",
+      "source_url": "https://www.treasury.govt.nz/information-and-services/public-sector-leadership/investment-management/investment-planning/treasurys-cbax-tool",
+      "source_date": "accessed-2026-10-16",
+      "limitations": "Documents an existing analytical baseline; does not validate the Anon Politician system."
+    },
+    {
+      "evidence_id": "S004",
+      "description": "Treasury Living Standards Framework",
+      "evidence_type": "fact",
+      "source_url": "https://www.treasury.govt.nz/information-and-services/nz-economy/higher-living-standards/our-living-standards-framework",
+      "source_date": "accessed-2026-10-16",
+      "limitations": "Framework for wellbeing analysis; not proof that a particular policy outcome will occur."
+    }
+  ],
+  "public_input": {
+    "status": "not collected by Anon Politician",
+    "sample_type": "not_set",
+    "responses_received": null,
+    "representative_claim": false,
+    "note": "Official source reports 56 submissions to the 2025–26 policy consultation, from several stakeholder categories. This is not a representative survey of New Zealanders; Anon Politician has collected no citizen responses."
+  },
+  "decision_status": "not recorded",
+  "safeguards": {
+    "ai_decision_authority": false,
+    "automatically_inferred_consensus": false,
+    "automatic_claim_deletion": false,
+    "policy_ranking": false
+  }
+}

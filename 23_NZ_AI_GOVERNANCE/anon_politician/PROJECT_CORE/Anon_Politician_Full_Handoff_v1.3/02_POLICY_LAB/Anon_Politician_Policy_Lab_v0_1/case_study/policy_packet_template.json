@@ -1,0 +1,91 @@
+{
+  "case_id": "NZ-HOUSING-LEVIES-2026-01",
+  "title": "Housing growth and development levies",
+  "last_updated": "2026-10-16",
+  "policy_question": "How should growth-related infrastructure costs be allocated and disclosed so decision-makers can assess impacts on housing delivery, affordability, councils, existing ratepayers, developers and future residents?",
+  "decision_owner": "To be identified for the selected policy stage",
+  "authority_mode": "advisory",
+  "legal_basis": null,
+  "claims": [
+    {
+      "claim_id": "F-GOV-01",
+      "text": "The Going for Housing Growth programme is organised around land/planning changes, infrastructure funding and incentives for councils/communities.",
+      "claim_type": "factual",
+      "status": "supported",
+      "depends_on": [],
+      "source_ids": ["S001"]
+    },
+    {
+      "claim_id": "F-GOV-02",
+      "text": "The government proposes replacing development contributions with development levies linked to growth-related capital costs.",
+      "claim_type": "factual",
+      "status": "supported",
+      "depends_on": [],
+      "source_ids": ["S001", "S002"]
+    },
+    {
+      "claim_id": "F-GOV-03",
+      "text": "The ministry says the development-levies bill is being prepared for introduction in Q1 2027 and further input is expected on methodologies/disclosure and through select committee.",
+      "claim_type": "factual",
+      "status": "supported",
+      "depends_on": [],
+      "source_ids": ["S001"]
+    },
+    {
+      "claim_id": "H-INCIDENCE-01",
+      "text": "The economic burden of a levy may be distributed differently from the entity legally charged; this needs empirical analysis.",
+      "claim_type": "assumption",
+      "status": "proposed",
+      "depends_on": ["F-GOV-02"],
+      "source_ids": []
+    },
+    {
+      "claim_id": "H-DELIVERY-01",
+      "text": "The levy design may affect project timing or feasibility under some conditions; direction and magnitude are unknown in this packet.",
+      "claim_type": "forecast",
+      "status": "unknown",
+      "depends_on": ["F-GOV-02"],
+      "source_ids": []
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "S001",
+      "description": "Going for Housing Growth programme and development-levy next steps",
+      "evidence_type": "fact",
+      "source_url": "https://www.hud.govt.nz/our-work/going-for-housing-growth-programme",
+      "source_date": "2026-10-16",
+      "limitations": "Official programme description; states policy intentions and next steps, not independent impact findings."
+    },
+    {
+      "evidence_id": "S002",
+      "description": "Official announcement about the development-levy system",
+      "evidence_type": "fact",
+      "source_url": "https://www.mcert.govt.nz/news/new-development-levies-system-to-support-housing-growth/",
+      "source_date": "2026-09-16",
+      "limitations": "Government announcement; verify exact legal requirements against the eventual bill and authoritative legal materials."
+    },
+    {
+      "evidence_id": "S003",
+      "description": "Select committee procedural guidance",
+      "evidence_type": "fact",
+      "source_url": "https://www3.parliament.nz/en/pb/sc/select-committee-faqs/",
+      "source_date": "accessed-2026-10-16",
+      "limitations": "General procedural guidance; check actual bill's terms and current committee instructions."
+    }
+  ],
+  "public_input": {
+    "status": "not collected",
+    "sample_type": "not_set",
+    "responses_received": null,
+    "representative_claim": false,
+    "note": "No citizen response data are included."
+  },
+  "decision_status": "not recorded",
+  "safeguards": {
+    "ai_decision_authority": false,
+    "automatically_inferred_consensus": false,
+    "automatic_claim_deletion": false,
+    "policy_ranking": false
+  }
+}

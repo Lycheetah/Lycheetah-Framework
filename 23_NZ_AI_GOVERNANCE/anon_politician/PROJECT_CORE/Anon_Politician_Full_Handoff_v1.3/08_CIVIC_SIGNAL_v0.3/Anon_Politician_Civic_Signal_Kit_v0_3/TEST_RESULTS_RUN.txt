@@ -1,0 +1,21 @@
+test_complete_declared_probability_design_still_requires_human_review (test_civic_signal_validator.CivicSignalValidatorTests.test_complete_declared_probability_design_still_requires_human_review) ... ok
+test_deliberative_panel_cannot_claim_population_estimate (test_civic_signal_validator.CivicSignalValidatorTests.test_deliberative_panel_cannot_claim_population_estimate) ... ok
+test_informed_preference_claim_without_information_step_is_error (test_civic_signal_validator.CivicSignalValidatorTests.test_informed_preference_claim_without_information_step_is_error) ... ok
+test_invalid_sample_size_errors (test_civic_signal_validator.CivicSignalValidatorTests.test_invalid_sample_size_errors) ... ok
+test_missing_decision_response_commitment_warns (test_civic_signal_validator.CivicSignalValidatorTests.test_missing_decision_response_commitment_warns) ... ok
+test_missing_maori_engagement_plan_warns_when_relevant (test_civic_signal_validator.CivicSignalValidatorTests.test_missing_maori_engagement_plan_warns_when_relevant) ... ok
+test_open_pulse_cannot_claim_national_consensus (test_civic_signal_validator.CivicSignalValidatorTests.test_open_pulse_cannot_claim_national_consensus) ... ok
+test_open_pulse_weighting_still_needs_caveat (test_civic_signal_validator.CivicSignalValidatorTests.test_open_pulse_weighting_still_needs_caveat) ... ok
+test_open_pulse_with_participant_claim_is_not_population_claim (test_civic_signal_validator.CivicSignalValidatorTests.test_open_pulse_with_participant_claim_is_not_population_claim) ... ok
+test_personal_data_requires_retention_policy (test_civic_signal_validator.CivicSignalValidatorTests.test_personal_data_requires_retention_policy) ... ok
+test_personal_data_without_privacy_notice_errors (test_civic_signal_validator.CivicSignalValidatorTests.test_personal_data_without_privacy_notice_errors) ... ok
+test_pre_post_comparison_requires_matched_steps (test_civic_signal_validator.CivicSignalValidatorTests.test_pre_post_comparison_requires_matched_steps) ... ok
+test_probability_sample_missing_frame_has_error (test_civic_signal_validator.CivicSignalValidatorTests.test_probability_sample_missing_frame_has_error) ... ok
+test_probability_sample_population_claim_needs_probability_selection (test_civic_signal_validator.CivicSignalValidatorTests.test_probability_sample_population_claim_needs_probability_selection) ... ok
+test_stakeholder_submissions_cannot_claim_representativeness (test_civic_signal_validator.CivicSignalValidatorTests.test_stakeholder_submissions_cannot_claim_representativeness) ... ok
+test_unknown_method_fails_early (test_civic_signal_validator.CivicSignalValidatorTests.test_unknown_method_fails_early) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.000s
+
+OK

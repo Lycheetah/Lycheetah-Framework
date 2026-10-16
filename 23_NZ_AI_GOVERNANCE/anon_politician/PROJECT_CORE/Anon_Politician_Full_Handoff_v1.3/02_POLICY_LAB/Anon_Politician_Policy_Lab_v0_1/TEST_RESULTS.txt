@@ -1,0 +1,19 @@
+Anon Politician Policy Lab v0.1 — QA record
+Date: 2026-10-16 (Pacific/Auckland)
+
+Automated unit tests
+- Command: python -m unittest discover -s tests -v
+- Result: 11 passed, 0 failed.
+- Covered: downstream dependency review; cycles terminate; unknown claim IDs fail safely; facts require sources; forecasts require limitations; open voluntary input cannot be labelled representative by default; AI cannot be the accountable decision-maker; summary does not emit a recommendation; sample policy packet validates and dependent hypotheses enter review.
+
+Static frontend checks
+- HTML parsed successfully.
+- DOM IDs checked for uniqueness; all unique.
+- Navigation section targets checked; all point to existing sections.
+- JavaScript syntax passes Node.js `--check`.
+
+Browser interaction test limitation
+- A headless Chromium browser-interaction smoke test was attempted but the environment blocked navigation to local file/localhost URLs with `ERR_BLOCKED_BY_ADMINISTRATOR`. Therefore, live browser interactions and screenshot QA could not be completed in this environment. The prototype should receive a manual browser test on the user's machine before being treated as a stable release.
+
+Interpretation
+These checks establish limited code/structure conformance only. They do not validate the underlying policy claims, representativeness of any public input, political neutrality, model efficacy, forecasts, or real-world governance outcomes.

@@ -1,0 +1,35 @@
+{
+  "study_id": "DEMO-INVALID-CONSENSUS-001",
+  "topic": "Development levies",
+  "recruitment": {
+    "method": "open_opt_in",
+    "target_population": "People who click the link",
+    "sampling_frame": "Public social media link",
+    "probability_selection": false,
+    "sample_size": 5000,
+    "response_rate": null,
+    "weighting_method": "Post-stratification to age and region",
+    "weighting_plan": "Weights age and region only",
+    "uncertainty_method": "A margin of error was calculated as if this were a random sample"
+  },
+  "claims": ["representative", "national_consensus", "population_estimate", "informed_preference"],
+  "survey_design": {
+    "question_wording_published": false,
+    "undecided_option": false,
+    "evidence_brief_provided": false,
+    "evidence_sources_published": false,
+    "initial_response_collected": true,
+    "post_information_response_collected": false
+  },
+  "governance": {
+    "personal_data_collected": true,
+    "privacy_notice_published": false,
+    "retention_policy_published": false,
+    "consent_or_lawful_basis_reviewed": false,
+    "security_review_complete": false,
+    "accessibility_plan": false,
+    "maori_engagement_plan": false
+  },
+  "te_tiriti_or_maori_relevance": true,
+  "decision_context": {}
+}

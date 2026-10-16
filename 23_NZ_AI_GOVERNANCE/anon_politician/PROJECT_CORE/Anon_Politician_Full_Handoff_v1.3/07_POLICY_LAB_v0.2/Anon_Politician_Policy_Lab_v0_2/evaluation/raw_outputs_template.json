@@ -1,0 +1,49 @@
+{
+  "experiment_id": "AP-EVAL-DEVLEVIES-001",
+  "case_id": "NZ-HOUSING-LEVIES-2026-01",
+  "policy_question": "How should growth-related infrastructure costs be allocated and disclosed so decision-makers can assess impacts on housing delivery, affordability, councils, existing ratepayers, developers and future residents?",
+  "source_packet_sha256": "REPLACE_WITH_HASH_OF_FROZEN_SOURCE_PACKET",
+  "source_cutoff": "2026-10-16",
+  "run_metadata": {
+    "notes": "Fill one record per arm. Keep inputs, prompts and outputs identical in scope where feasible.",
+    "analyst_or_model": "",
+    "model_version": "",
+    "prompt_version": "",
+    "tools_and_browsing": "",
+    "run_started_at": "",
+    "run_finished_at": "",
+    "input_tokens_estimate": null,
+    "output_tokens_estimate": null,
+    "human_minutes": null,
+    "estimated_cost_nzd": null,
+    "deviations": ""
+  },
+  "reference_context": {
+    "known_facts": [
+      "The Ministry says the government intends to replace development contributions with a development levies system as part of Going for Housing Growth.",
+      "The proposed levies concern water supply, wastewater, stormwater, transport, reserves and community infrastructure, with separate levies for each service.",
+      "The proposed charge basis is expected growth and the aggregate forecast cost of infrastructure capacity across defined levy areas.",
+      "The Ministry page records 56 submissions to the 2025-26 consultation from councils, developers, industry groups, Māori housing organisations and individuals. It reports councils were strongly supportive of replacement while developer views were mixed.",
+      "The consultation's 56 submissions are not a representative public opinion poll and cannot by themselves establish national public consensus.",
+      "The Ministry says the Local Government (Infrastructure Funding) Amendment Bill is being prepared for introduction in the first quarter of 2027; further input is anticipated through the select committee process and later methodology/disclosure consultation."
+    ],
+    "not_established_by_the_supplied_sources": [
+      "Whether the proposed system will lower or raise house prices or rents.",
+      "Whether a levy is passed through to buyers, renters, landowners, developers, taxpayers or ratepayers, and in what proportions.",
+      "Whether projected infrastructure demand or development will match actual outcomes.",
+      "Whether people across New Zealand support the policy; the submission set is not representative of the population.",
+      "Whether the Anon Politician workflow improves policy-analysis quality."
+    ],
+    "sources": [
+      {"source_id":"S001","title":"Development levies","publisher":"Ministry for Cities, Environment, Regions and Transport","url":"https://www.mcert.govt.nz/our-work/local-government/local-government-policy/development-levies/","published_or_updated":"Accessed 2026-10-16","limitations":"Official description of current proposed design, submissions and next steps; not independent impact evaluation."},
+      {"source_id":"S002","title":"Development levies system: Technical Questions and Answers","publisher":"Ministry for Cities, Environment, Regions and Transport","url":"https://www.mcert.govt.nz/our-work/local-government/local-government-policy/development-levies/development-levies-system-technical-questions-and-answers/","published_or_updated":"Accessed 2026-10-16","limitations":"Official explanation; verify legal obligations against the Bill and enacted law when available."},
+      {"source_id":"S003","title":"The Treasury's CBAx Tool","publisher":"The Treasury","url":"https://www.treasury.govt.nz/information-and-services/public-sector-leadership/investment-management/investment-planning/treasurys-cbax-tool","published_or_updated":"Accessed 2026-10-16","limitations":"Describes an existing analytical tool, not a direct validation of this project."},
+      {"source_id":"S004","title":"Our Living Standards Framework","publisher":"The Treasury","url":"https://www.treasury.govt.nz/information-and-services/nz-economy/higher-living-standards/our-living-standards-framework","published_or_updated":"Accessed 2026-10-16","limitations":"Describes Treasury's wellbeing framework; it is an existing baseline and source of concepts, not proof that this prototype works."}
+    ]
+  },
+  "methods": [
+    {"method_id":"ordinary_baseline","label":"A - ordinary analysis","analysis_text":"PASTE FROZEN ARM A OUTPUT HERE"},
+    {"method_id":"structured_ledger","label":"B - evidence ledger","analysis_text":"PASTE FROZEN ARM B OUTPUT HERE"},
+    {"method_id":"anon_politician","label":"C - Anon Politician workflow","analysis_text":"PASTE FROZEN ARM C OUTPUT HERE"}
+  ]
+}

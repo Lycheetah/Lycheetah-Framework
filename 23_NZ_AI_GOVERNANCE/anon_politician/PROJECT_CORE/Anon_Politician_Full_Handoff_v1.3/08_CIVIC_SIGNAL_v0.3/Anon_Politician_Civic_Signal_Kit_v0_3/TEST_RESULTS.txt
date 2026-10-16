@@ -1,0 +1,12 @@
+Anon Politician Civic Signal Integrity Kit v0.3 — Verification Results
+Date: 16 October 2026 (Pacific/Auckland)
+
+- Python unit tests: 16/16 passed.
+- Python CLI: the descriptive-only open-pulse example exits 0 and labels results as participant-only.
+- Python CLI: the intentionally invalid consensus-claim example exits 1 and flags unsupported population claims, missing privacy/security requirements, unsupported informed-preference claims, and governance gaps.
+- Python validator module compiles successfully.
+- Embedded JavaScript passes `node --check` syntax validation.
+- HTML static structure and referenced control IDs checked by the build script.
+- Headless Chromium smoke test did not complete in this environment (browser process stalled with DBus/zygote errors); interactive browser behaviour still requires manual testing in a normal browser.
+
+Interpretation: these are software conformance checks against declared metadata examples. They do not certify a real sample, prove the quality of a questionnaire, validate representativeness, or establish that Anon Politician improves governance.

@@ -1,0 +1,331 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lycheetah.example/anon-politician/cascade-block.schema.json",
+  "title": "Anon Politician CASCADE KnowledgeBlock",
+  "description": "Provisional schema. A block records a proposition or value commitment with provenance, evidence, scope, dependencies, and review history. It does not assert truth merely by being stored.",
+  "type": "object",
+  "required": [
+    "block_id",
+    "source_term",
+    "content",
+    "claim_type",
+    "status",
+    "provenance",
+    "scope",
+    "dependencies",
+    "evidence"
+  ],
+  "properties": {
+    "block_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_term": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Original term preserved from source material."
+    },
+    "content": {
+      "type": "string",
+      "minLength": 1,
+      "description": "A concise, auditable statement. Preserve the raw quote separately when needed."
+    },
+    "claim_type": {
+      "enum": [
+        "empirical_claim",
+        "empirical_hypothesis",
+        "normative_commitment",
+        "definition",
+        "policy_proposal",
+        "reported_result",
+        "methodological_rule",
+        "source_characterisation",
+        "model_output"
+      ]
+    },
+    "status": {
+      "enum": [
+        "source_asserted",
+        "pending_review",
+        "supported_within_scope",
+        "mixed_evidence",
+        "contradicted_within_scope",
+        "superseded",
+        "withdrawn",
+        "historical_only"
+      ]
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "domain"
+      ],
+      "properties": {
+        "domain": {
+          "type": "string"
+        },
+        "jurisdiction": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "population": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "time_horizon": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "source_kind",
+        "locator",
+        "captured_at"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string"
+        },
+        "source_kind": {
+          "enum": [
+            "primary_source",
+            "official_statistics",
+            "peer_reviewed_study",
+            "systematic_review",
+            "government_report",
+            "media_report",
+            "expert_opinion",
+            "conversation_transcript",
+            "model_output",
+            "other"
+          ]
+        },
+        "locator": {
+          "type": "string",
+          "description": "URL, page/line, section, timestamp, or other retrievable location."
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "content_hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "author_or_publisher": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "relationship",
+          "source_id",
+          "method"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "relationship": {
+            "enum": [
+              "supports",
+              "contradicts",
+              "qualifies",
+              "contextualises",
+              "replicates",
+              "fails_to_replicate"
+            ]
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "quality_notes": {
+            "type": "string"
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "independence_assessment": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "contradicts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "support_links": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "confidence": {
+      "type": "object",
+      "required": [
+        "label",
+        "basis"
+      ],
+      "properties": {
+        "label": {
+          "enum": [
+            "not_assessed",
+            "low",
+            "moderate",
+            "high"
+          ]
+        },
+        "basis": {
+          "type": "string"
+        },
+        "calibrated": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "last_reviewed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "reviewer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "next_review_trigger": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "event",
+          "timestamp",
+          "reason"
+        ],
+        "properties": {
+          "event": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "actor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "prior_status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "new_status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,4 @@
+experiment_id,case_id,arm,run_id,method_or_model,model_version,prompt_version,source_packet_sha256,source_cutoff,web_or_tool_access,run_started_at,run_finished_at,input_tokens_estimate,output_tokens_estimate,human_minutes,estimated_cost_nzd,raw_output_path,deviations,review_status
+AP-EVAL-DEVLEVIES-001,NZ-HOUSING-LEVIES-2026-01,A,fill,ordinary_analysis,fill,shared-task-v1,fill,2026-10-16,fill,fill,fill,fill,fill,fill,fill,fill,fill,not_started
+AP-EVAL-DEVLEVIES-001,NZ-HOUSING-LEVIES-2026-01,B,fill,structured_ledger,fill,ledger-prompt-v1,fill,2026-10-16,fill,fill,fill,fill,fill,fill,fill,fill,fill,not_started
+AP-EVAL-DEVLEVIES-001,NZ-HOUSING-LEVIES-2026-01,C,fill,anon_politician_workflow,fill,workflow-prompts-v1,fill,2026-10-16,fill,fill,fill,fill,fill,fill,fill,fill,fill,not_started

@@ -270,6 +270,7 @@ when someone makes a promise and keeps it.
 | The Three Worlds standard | `23_NZ_AI_GOVERNANCE/THREE_WORLDS_DISCLOSURE_STANDARD.md` |
 | The Whakapapa standard | `23_NZ_AI_GOVERNANCE/WHAKAPAPA_DISCLOSURE_STANDARD.md` |
 | The Matariki Audit | `23_NZ_AI_GOVERNANCE/MATARIKI_AUDIT_STANDARD.md` |
+| The democratic policy intelligence prototype | `23_NZ_AI_GOVERNANCE/anon_politician/` — Anon Politician v1.3 |
 | Full governance layer | `23_NZ_AI_GOVERNANCE/README.md` |
 | What the framework got wrong | `28_DEFENSE/FAILURE_MUSEUM.md` — read this before you quote us |
 | The mathematics (for advisors) | `11_MATHEMATICAL_FOUNDATIONS/` |

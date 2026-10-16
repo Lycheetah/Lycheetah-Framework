@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anon Politician — Blind Evaluation Workbench</title>
+<style>
+:root{--ink:#17202a;--muted:#586575;--paper:#f6f7f8;--card:#fff;--line:#d6dbe1;--accent:#203b52;--soft:#e9eef2;--warn:#fff2d4;--good:#e8f4ed}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}header{padding:28px 20px;background:var(--accent);color:white}header h1{max-width:1150px;margin:0 auto 8px;font-size:1.7rem}header p{max-width:1150px;margin:0 auto;color:#eef2f5}.wrap{max-width:1150px;margin:24px auto;padding:0 16px}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 1px 2px #00000008}.row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}.row>*{flex:1}.small{font-size:.9rem;color:var(--muted)}button,.filelabel{font:inherit;border:1px solid var(--accent);background:var(--accent);color:white;border-radius:8px;padding:10px 14px;cursor:pointer;display:inline-block}button.secondary{background:white;color:var(--accent)}button:disabled{opacity:.45;cursor:not-allowed}input[type=text],textarea,select{font:inherit;border:1px solid #aeb8c2;border-radius:7px;padding:8px;width:100%;background:white;color:var(--ink)}textarea{min-height:86px}.candidates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.candidate{min-width:0}.candidate h3{margin-top:0}.analysis{white-space:pre-wrap;overflow-wrap:anywhere;max-height:620px;overflow:auto;border:1px solid var(--line);padding:12px;border-radius:7px;background:#fafbfc}.criteria{display:grid;grid-template-columns:minmax(190px,1fr) minmax(110px,.6fr) minmax(200px,1.2fr);gap:10px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line)}.criteria:last-child{border-bottom:0}.ref{margin:8px 0}.ref a{color:#1b547a;overflow-wrap:anywhere}.flaglist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.flaglist label{font-size:.92rem}.note{background:var(--warn);border-left:4px solid #c68b1c;padding:12px;border-radius:6px}.good{background:var(--good)}.hidden{display:none}h2{margin-top:0}code{overflow-wrap:anywhere}@media(max-width:840px){.candidates{grid-template-columns:1fr}.criteria{grid-template-columns:1fr}.analysis{max-height:none}}@media print{header{background:white;color:black}.wrap{max-width:none}.analysis{max-height:none;overflow:visible}.card{box-shadow:none;break-inside:avoid}button,.filelabel,input[type=file]{display:none}}
+</style>
+</head>
+<body>
+<header><h1>Anon Politician — Blind Evaluation Workbench</h1><p>Review policy-analysis methods, not political preferences. This file runs locally and sends no data to a server.</p></header>
+<div class="wrap">
+  <section class="card">
+    <h2>1. Load the blinded pack</h2>
+    <p>Choose <code>blind_review_pack.json</code> created by <code>prepare_blind_pack.py</code>. Do not load the private method-mapping key here.</p>
+    <div class="row"><div><label for="packFile">Blinded review pack JSON</label><input id="packFile" type="file" accept="application/json,.json"></div><div><label for="reviewerId">Reviewer ID or pseudonym</label><input id="reviewerId" type="text" placeholder="e.g., reviewer-01"></div></div>
+    <p id="loadStatus" class="small" aria-live="polite">No pack loaded.</p>
+  </section>
+  <section id="caseCard" class="card hidden">
+    <h2 id="caseTitle">Case</h2><p id="question"></p><p id="cutoff" class="small"></p>
+    <div class="note"><strong>Blinding rule:</strong> judge the quality of analysis, not the policy outcome you prefer. Do not choose an overall winner. If you recognise a candidate or infer its method, record that in the reviewer notes.</div>
+    <h3>Reference facts and limitations</h3><ul id="facts"></ul>
+    <h3>What the source pack does not establish</h3><ul id="unknowns"></ul>
+    <h3>Sources</h3><div id="sources"></div>
+  </section>
+  <section id="outputCard" class="card hidden"><h2>2. Anonymous candidate outputs</h2><p class="small">Read all candidates before rating them. Candidate labels do not indicate order of quality.</p><div id="candidateOutputs" class="candidates"></div></section>
+  <section id="ratingCard" class="card hidden"><h2>3. Score each candidate by dimension</h2>
+    <p>Use 0 for materially deficient, 1 for mixed/incomplete, 2 for adequate for the stated task, or N/A where the dimension truly cannot be assessed. Ratings are a structured record of judgment, not objective truth. Cite snippets or source passages in notes when possible.</p>
+    <div id="ratings"></div>
+    <h3>Critical issue flags</h3><p class="small">Select every issue observed for each candidate. A critical issue must be investigated separately and must not be averaged away by other ratings.</p>
+    <div id="criticalFlags" class="candidates"></div>
+    <h3>Reviewer notes</h3><label for="reviewerNotes">Blindness concerns, key examples, disagreements, or limitations</label><textarea id="reviewerNotes" placeholder="Do not record sensitive personal information."></textarea>
+    <p class="small">The workbench makes no total score, overall rank, winner, or political-policy recommendation.</p>
+    <button id="exportBtn" disabled>Export completed review JSON</button> <button id="printBtn" class="secondary" onclick="window.print()" disabled>Print review view</button>
+  </section>
+</div>
+<script>
+'use strict';
+const DIMENSIONS = [
+  ['source_fidelity','Source fidelity','Are material factual claims accurately supported and bounded by the cited sources?'],
+  ['claim_traceability','Claim classification and traceability','Can a reader distinguish facts, assumptions, forecasts, public preferences and value judgments, and trace material claims to sources?'],
+  ['uncertainty_discipline','Uncertainty discipline','Are unknowns preserved, limitations clear, predictions properly qualified and falsifiers identified?'],
+  ['adversarial_fairness','Adversarial fairness','Does the analysis fairly reconstruct the proposal and present strong, accurate challenges without straw-manning?'],
+  ['distributional_coverage','Distribution and affected parties','Does it examine who may benefit, pay, be excluded or face different effects without stereotyping groups?'],
+  ['scenario_reasoning','Scenario and causal reasoning','Are baseline, causal pathways, assumptions, alternatives, confounders and sensitivity conditions clear?'],
+  ['public_input_interpretation','Public-input interpretation','Does it correctly distinguish participation from representative population inference and state method limitations?'],
+  ['non_erasure_value_pluralism','Non-erasure and value pluralism','Are material dissent, contrary evidence, minority concerns and legitimate value disagreements preserved?'],
+  ['actionability_accountability','Actionability and accountability','Does it identify next evidence needs, responsible decision owners, and later outcome checks?']
+];
+const FLAGS = [
+  ['material_factual_error','Material factual error'],['unsupported_claim','Unsupported material claim'],['source_misrepresentation','Fabricated or misrepresented source'],['asymmetric_burden','Asymmetric burden of proof'],['false_precision','False numerical precision'],['consensus_overclaim','Overclaim about public consensus'],['dissent_erasure','Material dissent erased'],['privacy_risk','Privacy or sensitive-data risk'],['ai_decision_authority','Implies AI made the decision'],['other','Other issue — explain in notes']
+];
+let loadedPack = null;
+const $ = id => document.getElementById(id);
+function el(tag, attrs={}, text=''){const node=document.createElement(tag);for(const [k,v] of Object.entries(attrs)){if(k==='class')node.className=v;else if(k==='href')node.href=v;else if(k==='target')node.target=v;else node.setAttribute(k,v);}if(text!==undefined)node.textContent=text;return node;}
+function listInto(id, items){const host=$(id);host.replaceChildren();(items||[]).forEach(item=>host.appendChild(el('li',{},String(item))));}
+function safeUrl(u){try{const x=new URL(u);return ['http:','https:'].includes(x.protocol)?x.href:null;}catch{return null;}}
+function renderPack(pack){
+  if(!pack || !Array.isArray(pack.candidates) || pack.candidates.length!==3) throw new Error('Pack must contain exactly three anonymous candidates.');
+  const ids=pack.candidates.map(c=>c.candidate_id).sort().join('');if(ids!=='ABC')throw new Error('Candidate IDs must be A, B and C.');
+  if(pack.candidates.some(c=>typeof c.analysis_text!=='string' || !c.analysis_text.trim()))throw new Error('Each candidate requires analysis_text.');
+  loadedPack=pack;
+  $('caseTitle').textContent=`Case ${pack.case_id||''} — ${pack.experiment_id||''}`;
+  $('question').textContent=pack.policy_question||'';
+  $('cutoff').textContent=`Blind pack: ${pack.blind_pack_id||'not identified'} · Source cut-off: ${pack.source_cutoff||'not specified'} · Input hash: ${pack.source_packet_sha256||'not recorded'}`;
+  listInto('facts',pack.reference_context?.known_facts||[]);listInto('unknowns',pack.reference_context?.not_established_by_the_supplied_sources||[]);
+  const srcHost=$('sources');srcHost.replaceChildren();(pack.reference_context?.sources||[]).forEach(s=>{const p=el('p',{class:'ref'});p.appendChild(el('strong',{},`${s.source_id||''} — ${s.title||'Untitled source'}`));p.appendChild(document.createTextNode(` (${s.publisher||'publisher not specified'}; ${s.published_or_updated||'date not specified'}) `));const u=safeUrl(s.url||'');if(u){const a=el('a',{href:u,target:'_blank',rel:'noopener noreferrer'},u);p.appendChild(a);}p.appendChild(el('div',{class:'small'},s.limitations||''));srcHost.appendChild(p);});
+  const outs=$('candidateOutputs');outs.replaceChildren();pack.candidates.slice().sort((a,b)=>a.candidate_id.localeCompare(b.candidate_id)).forEach(c=>{const card=el('div',{class:'candidate card'});card.appendChild(el('h3',{},`Candidate ${c.candidate_id}`));card.appendChild(el('div',{class:'analysis'},c.analysis_text));outs.appendChild(card);});
+  const ratingHost=$('ratings');ratingHost.replaceChildren();
+  DIMENSIONS.forEach(([key,title,desc])=>{const group=el('div',{class:'card'});group.appendChild(el('h3',{},title));group.appendChild(el('p',{class:'small'},desc));const grid=el('div');
+    ['A','B','C'].forEach(cid=>{const row=el('div',{class:'criteria'});row.appendChild(el('label',{},`Candidate ${cid}`));const sel=el('select',{id:`score_${cid}_${key}`});[['','Select a rating…'],['N/A','N/A — not assessable'],['0','0 — materially deficient'],['1','1 — mixed/incomplete'],['2','2 — adequate for task']].forEach(([v,t])=>sel.appendChild(el('option',{value:v},t)));row.appendChild(sel);const note=el('textarea',{id:`note_${cid}_${key}`,placeholder:'Evidence / excerpt / brief rationale (recommended)'});note.rows=2;row.appendChild(note);grid.appendChild(row);});group.appendChild(grid);ratingHost.appendChild(group);});
+  const flagHost=$('criticalFlags');flagHost.replaceChildren();['A','B','C'].forEach(cid=>{const card=el('div',{class:'candidate card'});card.appendChild(el('h3',{},`Candidate ${cid}`));const list=el('div',{class:'flaglist'});FLAGS.forEach(([key,label])=>{const lab=el('label');const cb=el('input',{type:'checkbox',id:`flag_${cid}_${key}`,value:key});lab.appendChild(cb);lab.appendChild(document.createTextNode(' '+label));list.appendChild(lab);});card.appendChild(list);flagHost.appendChild(card);});
+  ['caseCard','outputCard','ratingCard'].forEach(id=>$(id).classList.remove('hidden'));$('exportBtn').disabled=false;$('printBtn').disabled=false;
+}
+$('packFile').addEventListener('change', async e=>{const f=e.target.files?.[0];if(!f)return;try{const pack=JSON.parse(await f.text());renderPack(pack);$('loadStatus').textContent=`Loaded ${f.name}. Check that the pack is complete and anonymous before rating.`;}catch(err){loadedPack=null;$('loadStatus').textContent=`Could not load pack: ${err.message}`;['caseCard','outputCard','ratingCard'].forEach(id=>$(id).classList.add('hidden'));}});
+$('exportBtn').addEventListener('click',()=>{if(!loadedPack)return;for(const cid of ['A','B','C']){for(const [key] of DIMENSIONS){if(!$(`score_${cid}_${key}`).value){alert(`Please rate Candidate ${cid} on all dimensions, selecting N/A only when genuinely not assessable.`);return;}}}const candidateRecords=['A','B','C'].map(cid=>{const ratings={};DIMENSIONS.forEach(([key])=>{ratings[key]={score:$(`score_${cid}_${key}`).value,note:$(`note_${cid}_${key}`).value.trim()};});const critical_flags=FLAGS.filter(([key])=>$(`flag_${cid}_${key}`).checked).map(([key,label])=>({code:key,label}));return {candidate_id:cid,ratings,critical_flags};});
+  const data={schema_version:'anon-politician-review-v0.2',experiment_id:loadedPack.experiment_id||null,blind_pack_id:loadedPack.blind_pack_id||null,case_id:loadedPack.case_id||null,source_packet_sha256:loadedPack.source_packet_sha256||null,reviewer_id:$('reviewerId').value.trim()||'unspecified',reviewed_at:new Date().toISOString(),blindness_confidence_notes:$('reviewerNotes').value.trim(),candidates:candidateRecords,reviewer_warning:'This is a human assessment of analysis quality, not a policy score or political endorsement. Scores require supporting notes and must be interpreted alongside critical issue flags.'};
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=el('a',{href:url,download:`review_${(data.reviewer_id||'reviewer').replace(/[^a-z0-9_-]/gi,'_')}_${Date.now()}.json`});document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);});
+$('printBtn').addEventListener('click',()=>window.print());
+</script>
+</body></html>

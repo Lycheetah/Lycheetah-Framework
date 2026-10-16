@@ -1,0 +1,6 @@
+CASCADE audit kit v0.3 — unit test run
+Date: 2026-10-14 (Pacific/Auckland project context)
+Command: python -m unittest -v
+Result: 11 tests passed, 0 failures.
+Tests: direct/transitive dependency review; explicit contradiction partners and descendants; unrelated block exclusion; no automatic status changes; contradiction retention; decision audit trail; missing dependency rejection; non-empty rationale; valid status; cycle termination; self-dependency rejection.
+Scope note: these are software behaviour tests only. They do not validate claim truth, predictive accuracy, political neutrality, practical utility, or the AURA metrics.

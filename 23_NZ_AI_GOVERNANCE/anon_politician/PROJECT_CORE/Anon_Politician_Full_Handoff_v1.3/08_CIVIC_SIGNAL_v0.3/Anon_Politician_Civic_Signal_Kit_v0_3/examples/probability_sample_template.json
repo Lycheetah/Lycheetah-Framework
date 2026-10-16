@@ -1,0 +1,40 @@
+{
+  "study_id": "REPLACE-WITH-STUDY-ID",
+  "topic": "REPLACE-WITH-POLICY-QUESTION",
+  "te_tiriti_or_maori_relevance": true,
+  "recruitment": {
+    "method": "probability_sample",
+    "target_population": "Precisely define people/area/age/status and reference date",
+    "sampling_frame": "Describe source, coverage limitations and date",
+    "probability_selection": false,
+    "sample_size": 0,
+    "response_rate": null,
+    "nonresponse_assessment": "Describe planned or completed method",
+    "weighting_method": "Describe weights or state why none are applied",
+    "weighting_plan": "Explain variables, calibration margins, trimming, design effects and sensitivity checks",
+    "uncertainty_method": "State estimator, variance method, confidence interval method and design effects"
+  },
+  "claims": [],
+  "survey_design": {
+    "question_wording_published": false,
+    "undecided_option": true,
+    "evidence_brief_provided": false,
+    "evidence_sources_published": false,
+    "initial_response_collected": false,
+    "post_information_response_collected": false
+  },
+  "governance": {
+    "personal_data_collected": true,
+    "privacy_notice_published": false,
+    "retention_policy_published": false,
+    "consent_or_lawful_basis_reviewed": false,
+    "security_review_complete": false,
+    "accessibility_plan": false,
+    "maori_engagement_plan": false
+  },
+  "decision_context": {
+    "decision_owner": "",
+    "open_to_change": "",
+    "response_commitment": ""
+  }
+}

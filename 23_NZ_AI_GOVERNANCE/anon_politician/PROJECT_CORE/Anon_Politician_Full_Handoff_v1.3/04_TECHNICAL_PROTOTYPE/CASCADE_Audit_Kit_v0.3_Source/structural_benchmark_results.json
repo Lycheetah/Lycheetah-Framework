@@ -1,0 +1,223 @@
+{
+  "benchmark_id": "ANON-POLITICIAN-CASCADE-STRUCTURE-001",
+  "version": "0.1",
+  "run_timestamp_utc": "2026-10-14T08:38:11.330650+00:00",
+  "label_origin": "Researcher-authored expected sets derived from the written traversal rule; not independently adjudicated labels and not ground truth about real-world materiality.",
+  "cases_total": 12,
+  "cases_passed": 12,
+  "cases_failed": 0,
+  "false_positives_vs_declared_rule": 0,
+  "false_negatives_vs_declared_rule": 0,
+  "all_safety_invariants_met": true,
+  "details": [
+    {
+      "case_id": "SB-01",
+      "title": "Direct dependent",
+      "expected_affected": [
+        "B"
+      ],
+      "actual_affected": [
+        "B"
+      ],
+      "false_positives_vs_declared_rule": [],
+      "false_negatives_vs_declared_rule": [],
+      "statuses_unchanged": true,
+      "no_automatic_status_changes": true,
+      "review_flags_match_report": true,
+      "pass": true
+    },
+    {
+      "case_id": "SB-02",
+      "title": "Transitive chain and unrelated node",
+      "expected_affected": [
+        "B",
+        "C"
+      ],
+      "actual_affected": [
+        "B",
+        "C"
+      ],
+      "false_positives_vs_declared_rule": [],
+      "false_negatives_vs_declared_rule": [],
+      "statuses_unchanged": true,
+      "no_automatic_status_changes": true,
+      "review_flags_match_report": true,
+      "pass": true
+    },
+    {
+      "case_id": "SB-03",
+      "title": "Branching and convergent dependency",
+      "expected_affected": [
+        "B",
+        "C",
+        "D"
+      ],
+      "actual_affected": [
+        "B",
+        "C",
+        "D"
+      ],
+      "false_positives_vs_declared_rule": [],
+      "false_negatives_vs_declared_rule": [],
+      "statuses_unchanged": true,
+      "no_automatic_status_changes": true,
+      "review_flags_match_report": true,
+      "pass": true
+    },
+    {
+      "case_id": "SB-04",
+      "title": "One-way contradiction link",
+      "expected_affected": [
+        "B"
+      ],
+      "actual_affected": [
+        "B"
+      ],
+      "false_positives_vs_declared_rule": [],
+      "false_negatives_vs_declared_rule": [],
+      "statuses_unchanged": true,
+      "no_automatic_status_changes": true,
+      "review_flags_match_report": true,
+      "pass": true
+    },
+    {
+      "case_id": "SB-05",
+      "title": "Contradiction partner and its descendant",
+      "expected_affected": [
+        "B",
+        "C"
+      ],
+      "actual_affected": [
+        "B",
+        "C"
+      ],
+      "false_positives_vs_declared_rule": [],
+      "false_negatives_vs_declared_rule": [],
+      "statuses_unchanged": true,
+      "no_automatic_status_changes": true,
+      "review_flags_match_report": true,
+      "pass": true
+    },
+    {
+      "case_id": "SB-06",
+      "title": "Closure through contradiction chain",
+      "expected_affected": [
+        "B",
+        "C",
+        "D"
+      ],
+      "actual_affected": [
+        "B",
+        "C",
+        "D"
+      ],
+      "false_positives_vs_declared_rule": [],
+      "false_negatives_vs_declared_rule": [],
+      "statuses_unchanged": true,
+      "no_automatic_status_changes": true,
+      "review_flags_match_report": true,
+      "pass": true
+    },
+    {
+      "case_id": "SB-07",
+      "title": "Multiple-parent dependent",
+      "expected_affected": [
+        "C"
+      ],
+      "actual_affected": [
+        "C"
+      ],
+      "false_positives_vs_declared_rule": [],
+      "false_negatives_vs_declared_rule": [],
+      "statuses_unchanged": true,
+      "no_automatic_status_changes": true,
+      "review_flags_match_report": true,
+      "pass": true
+    },
+    {
+      "case_id": "SB-08",
+      "title": "Unrelated claim remains out of queue",
+      "expected_affected": [
+        "B"
+      ],
+      "actual_affected": [
+        "B"
+      ],
+      "false_positives_vs_declared_rule": [],
+      "false_negatives_vs_declared_rule": [],
+      "statuses_unchanged": true,
+      "no_automatic_status_changes": true,
+      "review_flags_match_report": true,
+      "pass": true
+    },
+    {
+      "case_id": "SB-09",
+      "title": "Cycle terminates",
+      "expected_affected": [
+        "B"
+      ],
+      "actual_affected": [
+        "B"
+      ],
+      "false_positives_vs_declared_rule": [],
+      "false_negatives_vs_declared_rule": [],
+      "statuses_unchanged": true,
+      "no_automatic_status_changes": true,
+      "review_flags_match_report": true,
+      "pass": true
+    },
+    {
+      "case_id": "SB-10",
+      "title": "Single-node graph has empty review set",
+      "expected_affected": [],
+      "actual_affected": [],
+      "false_positives_vs_declared_rule": [],
+      "false_negatives_vs_declared_rule": [],
+      "statuses_unchanged": true,
+      "no_automatic_status_changes": true,
+      "review_flags_match_report": true,
+      "pass": true
+    },
+    {
+      "case_id": "SB-11",
+      "title": "Normative root does not alter traversal semantics or auto-change status",
+      "expected_affected": [
+        "E1",
+        "T1"
+      ],
+      "actual_affected": [
+        "E1",
+        "T1"
+      ],
+      "false_positives_vs_declared_rule": [],
+      "false_negatives_vs_declared_rule": [],
+      "statuses_unchanged": true,
+      "no_automatic_status_changes": true,
+      "review_flags_match_report": true,
+      "pass": true
+    },
+    {
+      "case_id": "SB-12",
+      "title": "Complex dependency and contradiction closure",
+      "expected_affected": [
+        "H",
+        "P1",
+        "P2",
+        "T"
+      ],
+      "actual_affected": [
+        "H",
+        "P1",
+        "P2",
+        "T"
+      ],
+      "false_positives_vs_declared_rule": [],
+      "false_negatives_vs_declared_rule": [],
+      "statuses_unchanged": true,
+      "no_automatic_status_changes": true,
+      "review_flags_match_report": true,
+      "pass": true
+    }
+  ],
+  "interpretation": "Structural conformance only. This run does not estimate real-world materiality, factual accuracy, political neutrality, policy utility, or AURA metric validity."
+}
