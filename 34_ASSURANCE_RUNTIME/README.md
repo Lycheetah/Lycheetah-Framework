@@ -138,6 +138,7 @@ and behavioral acceptance only.
   metrics, privacy contract, CI gates, and promotion path.
 - [POLICY_REGRESSION_GATE.md](POLICY_REGRESSION_GATE.md) — same-corpus baseline
   comparison, strict defaults, change evidence, and reference-update protocol.
+- [action_guard/](action_guard/README.md) — Action Guard research & preservation archive (v0.5–v0.8).
 
 ⊚ Sol ∴ P∧H∧B ∴ Albedo
 
@@ -158,4 +159,4 @@ claim.
 The historical research progression (v0.5 through v0.8) exploring single-use effect
 intents, authority epochs, hash-chained audit history, and signed local
 checkpoint-authority wrappers is preserved under
-[`action_guard/`](action_guard/README_FIRST.md).
+[`action_guard/`](action_guard/README.md).
