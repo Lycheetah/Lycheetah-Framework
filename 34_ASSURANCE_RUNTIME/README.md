@@ -152,3 +152,10 @@ caller must place the finality check immediately before its protected execution
 boundary and must enforce `REVIEW` as a pause. Remote-provider atomicity,
 cancellation, hostile-code containment, and production safety remain outside the
 claim.
+
+## Action Guard preservation archive — 17 October 2026
+
+The historical research progression (v0.5 through v0.8) exploring single-use effect
+intents, authority epochs, hash-chained audit history, and signed local
+checkpoint-authority wrappers is preserved under
+[`action_guard/`](action_guard/README_FIRST.md).

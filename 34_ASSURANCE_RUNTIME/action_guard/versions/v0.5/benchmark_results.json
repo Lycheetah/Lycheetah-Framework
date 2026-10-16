@@ -1,0 +1,22 @@
+{
+  "title": "Lycheetah Action Guard v0.5 synthetic mutation benchmark",
+  "date": "2026-10-16",
+  "seed": 20261016,
+  "cases": 1000,
+  "threat": "post-approval mutation of one action-bearing field",
+  "baseline": "role/tool ACL; permits github.merge tool but does not bind approval to exact parameters",
+  "guard": "exact canonical action digest + actor + scope + expiry + authority epoch + replay protection",
+  "tampered_action_accepts": {
+    "baseline": 1000,
+    "guard": 0
+  },
+  "tampered_action_rejection_rate": {
+    "baseline": 0.0,
+    "guard": 1.0
+  },
+  "valid_exact_action_accepts": {
+    "baseline": 1000,
+    "guard": 1000
+  },
+  "result": "Synthetic deterministic benchmark only. Not an independent study or deployment result."
+}

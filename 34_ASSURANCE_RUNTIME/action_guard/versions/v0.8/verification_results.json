@@ -1,0 +1,85 @@
+{
+  "classification": "local prototype and synthetic verification; not independently audited or deployed",
+  "scope_limits": {
+    "credentials_used": 0,
+    "external_checkpoint_hosting": "separate local process tested; not deployed to a separate host/account",
+    "independent_security_review": false,
+    "live_github_calls": 0,
+    "provider_adapter": "request preview only; no HTTP transport",
+    "real_provider_effects": 0
+  },
+  "separate_process_checkpoint_smoke_test": {
+    "checkpoint_survived_process_restart": true,
+    "classification": "separate-process loopback smoke test",
+    "first_process_checkpoint_signature_valid": true,
+    "generation_after_restart": 1,
+    "generation_before_restart": 1,
+    "live_github_calls": 0,
+    "private_key_permissions_octal": "0o600",
+    "same_public_key_after_restart": true
+  },
+  "simulated_execution_demo": {
+    "approval_checkpointed": true,
+    "audit_checkpoint_status": {
+      "event_count": 4,
+      "generation": 5,
+      "last_seq": 4,
+      "synchronized": true
+    },
+    "bootstrap_checkpointed": true,
+    "classification": "local synthetic scenario; no live GitHub calls",
+    "effect_prepared_checkpointed": true,
+    "execution_status": "SUCCEEDED",
+    "final_effect_status": "SUCCEEDED",
+    "github_request_preview": {
+      "headers": {
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2026-03-10"
+      },
+      "json_body": {
+        "merge_method": "squash",
+        "sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "method": "PUT",
+      "url": "https://api.github.com/repos/Lycheetah/demo/pulls/17/merge"
+    },
+    "provider_called": true,
+    "provider_is_fake": true
+  },
+  "synthetic_action_benchmark": {
+    "action_mutation_trials": 1000,
+    "audit_chain_event_count": 2250,
+    "audit_chain_root_hash": "1cc5d073612798b087a8e372fad2f0008afe4dde45586e9d314609e692a577c7",
+    "audit_chain_valid_after_benchmark": true,
+    "classification": "synthetic local verification; not independent or production validation",
+    "concurrency_allowed": 25,
+    "concurrency_attempts": 200,
+    "concurrency_denied": 175,
+    "concurrency_errors": [],
+    "concurrency_rounds": 25,
+    "contenders_per_round": 8,
+    "exact_action_positive_controls": 100,
+    "exact_action_positive_controls_allowed": 100,
+    "guard_denial_reasons": {
+      "action_mismatch": 1000
+    },
+    "live_provider_calls": 0,
+    "mutated_fields": [
+      "repo",
+      "pull_request",
+      "head_sha",
+      "base_sha",
+      "merge_method"
+    ],
+    "persistent_guard_allowed_mutations": 0,
+    "persistent_guard_denied_mutations": 1000,
+    "role_tool_acl_baseline_allowed_mutations": 1000
+  },
+  "unit_tests": {
+    "command": "python -W error::ResourceWarning -m unittest -v test_action_guard_v07.py test_action_guard_v08.py",
+    "failed": 0,
+    "passed": 50,
+    "resource_warnings_are_errors": true
+  },
+  "version": "Lycheetah Action Guard v0.8"
+}
