@@ -1,0 +1,48 @@
+{
+  "version": "4.3",
+  "parent_artifact_version": "4.2",
+  "observed_upstream_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "scope_note": "Adds opt-in transactional same-host shared SQLite per-coordinator quotas; process-local behavior remains default; no cross-host quota guarantee.",
+  "files": {
+    "remote_anchor_http.py": {
+      "origin": "Inherited upstream-derived canonical JSON/transport helper from local reference harness; not asserted identical to current upstream source.",
+      "sha256": "0a002d054800fbfaed20b100c38f7333c934ff71f7a971aec3631bd49a61afe3"
+    },
+    "checkpoint_witness_quorum.py": {
+      "origin": "Inherited local quorum/witness helper, unchanged from v4.2 test harness.",
+      "sha256": "579912ffd00a744995ed23ab6ba0fae577df4cfb94618ae788165b4bb9dab5d6"
+    },
+    "spent_nonce_registry.py": {
+      "origin": "Inherited local spent-challenge registry helper, unchanged from v4.2 test harness.",
+      "sha256": "f187024703aa1375946053bdbacf2604cce73cf4c015732392bc8c6a457c19b5"
+    },
+    "registry_checkpoint_quorum.py": {
+      "origin": "Inherited local quorum-guarded registry dispatch code; not claimed to be current upstream source.",
+      "sha256": "4af7fa3579f09e78076a999d6796bbd09a820234c489a26b0946494073cb75ea"
+    },
+    "remote_witness_http.py": {
+      "origin": "Inherited mTLS witness service/client and local protocol harness, unchanged from v4.2.",
+      "sha256": "bf899cfa9888d20e2e3993c3fe773e920bf5085b093d24f41b1f706e39552f03"
+    },
+    "test_registry_checkpoint_quorum.py": {
+      "origin": "Retained quorum regression suite, unchanged from v4.2.",
+      "sha256": "1fafb33df827da7f83f1de6e39a6baa1308411970813df3421527f73164c1f3f"
+    },
+    "test_remote_witness_process.py": {
+      "origin": "v4.3 gateway/witness suite; adds two shared quota multi-gateway integration tests and lease TTL validation checks.",
+      "sha256": "14873c9392c7fb7dc7331edaae364006130e336b094728c9a5a20d43dfb588b7"
+    },
+    "registry_gateway_mtls.py": {
+      "origin": "v4.3 mTLS gateway; adds opt-in shared SQLite coordinator quota store while preserving v4.2 process-local defaults.",
+      "sha256": "c5129c3cf67d358b8b87e441509f47a7f57dd94b74450bb355deb8599da2607b"
+    },
+    "shared_coordinator_quota.py": {
+      "origin": "New v4.3 same-host, multi-process SQLite coordinator quota ledger with lease heartbeat and boot-ID handling.",
+      "sha256": "0036a631ffa18e78b2300a97178935280aeb73e1f1fe561f34d01dc224dcbb4a"
+    },
+    "test_shared_coordinator_quota.py": {
+      "origin": "New v4.3 tests for atomic cross-instance/process reservations, rate bucket persistence, leases, config mismatch, permissions and boot/clock behavior.",
+      "sha256": "09fc173fbff70208153737af83becd9391459117265fbc29082515b99cc4050e"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+test_baseline_coerces_non_string_title_and_description (__main__.PolicyParserContractTests.test_baseline_coerces_non_string_title_and_description) ... ok
+test_baseline_coerces_numeric_id_and_pattern (__main__.PolicyParserContractTests.test_baseline_coerces_numeric_id_and_pattern) ... ok
+test_candidate_preserves_defaults (__main__.PolicyParserContractTests.test_candidate_preserves_defaults) ... ok
+test_candidate_preserves_valid_strings (__main__.PolicyParserContractTests.test_candidate_preserves_valid_strings) ... ok
+test_candidate_rejects_missing_required_fields (__main__.PolicyParserContractTests.test_candidate_rejects_missing_required_fields) ... ok
+test_candidate_rejects_unknown_fields (__main__.PolicyParserContractTests.test_candidate_rejects_unknown_fields) ... ok
+test_candidate_rejects_wrong_types_for_all_text_fields (__main__.PolicyParserContractTests.test_candidate_rejects_wrong_types_for_all_text_fields) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.005s
+
+OK

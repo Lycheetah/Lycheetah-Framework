@@ -1,0 +1,7 @@
+{
+  "aliased_public_key_quorum": "ACCEPTED_BY_V3_2",
+  "boolean_guard_sequence": "ACCEPTED_BY_V3_2",
+  "boolean_max_byzantine": "ACCEPTED_BY_V3_2",
+  "boolean_sequence": "ACCEPTED_BY_V3_2",
+  "caller_constructed_freshness_summary": "ACCEPTED_BY_V3_2"
+}

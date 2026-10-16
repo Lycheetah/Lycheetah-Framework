@@ -1,0 +1,86 @@
+{
+  "version": "4.7",
+  "parent_artifact_version": "4.6",
+  "observed_upstream_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "upstream_modified": false,
+  "hosted_service_calls": 0,
+  "scope_note": "IPv6 prefix quota bucket, explicit IPv6 listener support, bracketed IPv6 Host authority; local source pins only.",
+  "files": {
+    "remote_anchor_http.py": {
+      "sha256": "0a002d054800fbfaed20b100c38f7333c934ff71f7a971aec3631bd49a61afe3",
+      "origin": "Retained local anchor helper; not asserted byte-identical to upstream."
+    },
+    "checkpoint_witness_quorum.py": {
+      "sha256": "579912ffd00a744995ed23ab6ba0fae577df4cfb94618ae788165b4bb9dab5d6",
+      "origin": "Retained local remote-witness/quorum helper."
+    },
+    "spent_nonce_registry.py": {
+      "sha256": "f187024703aa1375946053bdbacf2604cce73cf4c015732392bc8c6a457c19b5",
+      "origin": "Retained local spent-challenge registry helper."
+    },
+    "registry_checkpoint_quorum.py": {
+      "sha256": "4af7fa3579f09e78076a999d6796bbd09a820234c489a26b0946494073cb75ea",
+      "origin": "Retained local quorum-guarded registry helper."
+    },
+    "remote_witness_http.py": {
+      "sha256": "bf899cfa9888d20e2e3993c3fe773e920bf5085b093d24f41b1f706e39552f03",
+      "origin": "Retained local remote-witness mTLS HTTP implementation."
+    },
+    "registry_gateway_mtls.py": {
+      "sha256": "773c9c4dc1aadc79c85689b2f8e172c991a0acd32cc6ab85f55bd6e503ce14a6",
+      "origin": "v4.7 modified local reference: IPv6 bind and Host authority handling."
+    },
+    "shared_coordinator_quota.py": {
+      "sha256": "0036a631ffa18e78b2300a97178935280aeb73e1f1fe561f34d01dc224dcbb4a",
+      "origin": "Retained local same-host coordinator quota store."
+    },
+    "shared_ingress_quota.py": {
+      "sha256": "c519534ea6dd297a5ab70c813ad3056d2b02b714f7f8ca30b7430f82d696de13",
+      "origin": "v4.7 modified local reference: IPv6 prefix buckets and pinned semantics."
+    },
+    "test_registry_checkpoint_quorum.py": {
+      "sha256": "1fafb33df827da7f83f1de6e39a6baa1308411970813df3421527f73164c1f3f",
+      "origin": "Retained local quorum regression suite."
+    },
+    "test_remote_witness_process.py": {
+      "sha256": "9ea84215b38d17ec0279b45314c27a4d64e0aa027a03c703bf4d746f28cb94ed",
+      "origin": "Local gateway suite with v4.7 IPv6 mTLS and prefix regressions."
+    },
+    "test_shared_coordinator_quota.py": {
+      "sha256": "09fc173fbff70208153737af83becd9391459117265fbc29082515b99cc4050e",
+      "origin": "Retained local coordinator quota tests."
+    },
+    "test_shared_ingress_quota.py": {
+      "sha256": "966f472b1f0e36215473c73ad17ce5a951177bf5ced3fe46f7a142aa8dc756eb",
+      "origin": "Local shared ingress suite with v4.7 prefix regressions."
+    },
+    "shared_ingress_quota_v4_6_baseline_fixture.py": {
+      "sha256": "7cbb6576f381863f72fe68fec61e860accc85f41e59261a40c4e1d5b54bf424e",
+      "origin": "Preserved local v4.6 source fixture for exact-IP baseline comparison."
+    },
+    "differential_probe_v4.7.py": {
+      "sha256": "b65d879bcb86ac0d720b468e5f7c766fa32a739469024d77cd5ae3e35a485813",
+      "origin": "v4.7 paired local baseline differential probe."
+    },
+    "run_gateway_suite_v4.7.py": {
+      "sha256": "def286e944ce2ac0709a1053b0b946218ac47075c412a49b9e1b012447ce3678",
+      "origin": "Local gateway lifecycle runner."
+    },
+    "run_v4.7_tests.sh": {
+      "sha256": "3347933a581aed0f885864e2ff377b97e54cc7bef49d2de405c321f52dee55c8",
+      "origin": "Local reproducible test runner."
+    },
+    "API_CONTRACT_v4.7.md": {
+      "sha256": "cfc315640954712dc27500e15d0b0611cf173974619196df0b6de326d336b185",
+      "origin": "v4.7 API and behavior contract."
+    },
+    "THREAT_MODEL_v4.7.md": {
+      "sha256": "01366760889453c188e33026f919066351a0ba348d5c183b06eaad4a5a51609b",
+      "origin": "v4.7 threat model and limits."
+    },
+    "BASELINE_COMPARISON_v4.7.md": {
+      "sha256": "f937e62e3bbb0cf9ac5e77156d6c1f77ce0eb60caa6691e3064bbcee19d4dd2a",
+      "origin": "v4.6 versus v4.7 measured differential."
+    }
+  }
+}

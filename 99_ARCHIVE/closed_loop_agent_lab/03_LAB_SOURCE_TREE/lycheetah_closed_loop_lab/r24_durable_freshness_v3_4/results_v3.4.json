@@ -1,0 +1,14 @@
+{
+  "version": "3.4",
+  "combined_tests": 56,
+  "retained_v3_3_tests": 37,
+  "new_v3_4_tests": 19,
+  "known_limit_negative_controls": 1,
+  "baseline_v3_2_acceptance_cases_reproduced": 5,
+  "demo_passed": true,
+  "challenge_replay_rejected_without_rollback": true,
+  "challenge_replay_after_restoring_preconsume_snapshot": "ACCEPTED_KNOWN_LIMITATION",
+  "network_calls": 0,
+  "upstream_modified": false,
+  "real_refunds_created": 0
+}

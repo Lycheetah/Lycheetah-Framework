@@ -1,0 +1,23 @@
+{
+  "version": "4.1",
+  "standalone_archive": {
+    "path": "/mnt/data/lycheetah_bounded_mtls_ingress_v4.1.zip",
+    "bytes": 84037,
+    "sha256": "5e28c9a90a0c80e4398a610a8735252e735e42c1d9f0817104e8fcec2cc36b41"
+  },
+  "complete_archive": {
+    "path": "/mnt/data/lycheetah_closed_loop_agent_lab_v4.1.zip",
+    "bytes": 1800756,
+    "sha256": "7b00883a504cdc620b76a0c81f960b607509f33e62b87cec4e8f1c38bf98635a"
+  },
+  "source_pin_status": "PASS",
+  "compile_status": "PASS",
+  "retained_quorum_test_methods_passed": 38,
+  "bounded_gateway_and_witness_test_methods_passed": 44,
+  "combined_test_methods": 82,
+  "standalone_archive_crc_test": "PASS",
+  "complete_archive_crc_test": "PASS",
+  "hosted_service_calls": 0,
+  "upstream_modified": false,
+  "boundary": "Individual suite invocations passed. Sequential wrapper invocation was intermittently timed out in this environment and is explicitly documented. Local one-host reference harness only."
+}

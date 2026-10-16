@@ -1,0 +1,80 @@
+{
+  "model": "three-event bounded interleaving; CHECK must precede EFFECT in baseline",
+  "valid_schedules": 3,
+  "split_check_then_act": {
+    "violations": 1,
+    "records": [
+      {
+        "order": [
+          "CHECK",
+          "UPDATE_FALSE",
+          "EFFECT"
+        ],
+        "check_saw": "PASS",
+        "final_status": "FAIL",
+        "effect_applied": true,
+        "safety_violation": true
+      },
+      {
+        "order": [
+          "CHECK",
+          "EFFECT",
+          "UPDATE_FALSE"
+        ],
+        "check_saw": "PASS",
+        "final_status": "FAIL",
+        "effect_applied": true,
+        "safety_violation": false
+      },
+      {
+        "order": [
+          "UPDATE_FALSE",
+          "CHECK",
+          "EFFECT"
+        ],
+        "check_saw": "FAIL",
+        "final_status": "FAIL",
+        "effect_applied": false,
+        "safety_violation": false
+      }
+    ]
+  },
+  "atomic_condition_effect": {
+    "violations": 0,
+    "records": [
+      {
+        "order": [
+          "CHECK",
+          "UPDATE_FALSE",
+          "EFFECT"
+        ],
+        "effect_saw": "FAIL",
+        "final_status": "FAIL",
+        "effect_applied": false,
+        "safety_violation": false
+      },
+      {
+        "order": [
+          "CHECK",
+          "EFFECT",
+          "UPDATE_FALSE"
+        ],
+        "effect_saw": "PASS",
+        "final_status": "FAIL",
+        "effect_applied": true,
+        "safety_violation": false
+      },
+      {
+        "order": [
+          "UPDATE_FALSE",
+          "CHECK",
+          "EFFECT"
+        ],
+        "effect_saw": "FAIL",
+        "final_status": "FAIL",
+        "effect_applied": false,
+        "safety_violation": false
+      }
+    ]
+  }
+}

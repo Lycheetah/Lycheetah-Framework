@@ -1,0 +1,23 @@
+{
+  "version": "3.5",
+  "compiled": "PASS",
+  "focused_remote_test_methods": 15,
+  "focused_remote_test_result": "PASS",
+  "combined_test_methods": 71,
+  "combined_test_result": "PASS",
+  "baseline_v3_2_acceptance_cases_reproduced": 5,
+  "positive_defence_result": "Primary-ledger snapshot rollback rejected while spent-nonce registry remains current",
+  "negative_controls": [
+    "Retained v3.4 local-only snapshot rollback test shows replay is possible when its only ledger is rolled back.",
+    "Coordinated rollback of both primary and registry databases permits replay; this documents the need for a separately protected registry."
+  ],
+  "hosted_service_calls": 0,
+  "real_refunds_created": 0,
+  "upstream_modified": false,
+  "upstream_ci_run": false,
+  "limitations": [
+    "Registry service and primary verifier run on the same test host in this reference test.",
+    "No production non-rollbackable store is provisioned.",
+    "No upstream Lycheetah source files were changed."
+  ]
+}

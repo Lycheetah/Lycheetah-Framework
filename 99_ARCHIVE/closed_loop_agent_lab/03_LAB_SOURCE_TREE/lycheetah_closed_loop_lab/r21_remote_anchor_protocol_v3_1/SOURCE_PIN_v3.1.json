@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/Lycheetah/Lycheetah-Framework",
+  "branch": "master",
+  "observed_head_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "observed_on": "2026-10-17",
+  "paths_reviewed": [
+    "lycheetah/assurance/finality.py",
+    "lycheetah/assurance/receipt.py",
+    "lycheetah/assurance/models.py",
+    "lycheetah/assurance/policy.py",
+    "12_IMPLEMENTATIONS/applications/LYCHEETAH_GUARD_SETUP.md",
+    "12_IMPLEMENTATIONS/applications/lycheetah_guard_mcp.py",
+    "tests/test_assurance_finality.py",
+    "tests/test_assurance_receipt.py",
+    "tests/test_assurance_runtime.py"
+  ],
+  "upstream_changes_made": false,
+  "branch_or_pull_request_created": false,
+  "ci_run": false
+}

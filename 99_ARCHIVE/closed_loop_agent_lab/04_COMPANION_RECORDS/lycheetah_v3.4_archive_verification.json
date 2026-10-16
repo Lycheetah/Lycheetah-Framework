@@ -1,0 +1,35 @@
+{
+  "version": "3.4",
+  "archives": {
+    "lycheetah_closed_loop_agent_lab_v3.4.zip": {
+      "sha256": "2396338d65250d5cd23fbef3d141cfebc67fa4cc380c307e254ca0e81754bac5",
+      "size_bytes": 1201055,
+      "entries": 659,
+      "zip_integrity": "PASS"
+    },
+    "lycheetah_durable_freshness_challenge_v3.4.zip": {
+      "sha256": "32004e30f58758aaa9296bf0f6ab6196000ffbaecfa8abc1d8307bb9f44f33e4",
+      "size_bytes": 80850,
+      "entries": 34,
+      "zip_integrity": "PASS"
+    }
+  },
+  "local_tests": {
+    "count": 56,
+    "result": "PASS",
+    "negative_controls": 1,
+    "negative_control_description": "Restoring a whole pre-consumption SQLite snapshot with the same HMAC key re-enables challenge replay; this is an intentionally passing reproduction of a documented limitation."
+  },
+  "baseline_v3_2_cases_reproduced": 5,
+  "no_network_calls": true,
+  "upstream_modified": false,
+  "real_refunds_created": 0,
+  "observed_upstream_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "standalone_extraction_verification": {
+    "result": "PASS",
+    "test_methods": 56,
+    "demo": "PASS",
+    "frozen_v3_2_baseline_acceptance_cases_reproduced": 5,
+    "log": "lycheetah_v3.4_standalone_extracted_test.log"
+  }
+}

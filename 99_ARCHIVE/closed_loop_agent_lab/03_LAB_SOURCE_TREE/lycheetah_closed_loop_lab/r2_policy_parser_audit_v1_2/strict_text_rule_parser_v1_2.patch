@@ -1,0 +1,40 @@
+diff --git a/lycheetah/assurance/policy.py b/lycheetah/assurance/policy.py
+--- a/lycheetah/assurance/policy.py
++++ b/lycheetah/assurance/policy.py
+@@ -120,7 +120,8 @@ class TextRule:
+     ignore_case: bool = True
+ 
+     def __post_init__(self) -> None:
+-        if not isinstance(self.rule_id, str) or not isinstance(self.pattern, str):
+-            raise PolicyError("text rule id and pattern must be strings")
++        for field_name in ("rule_id", "pattern", "title", "description", "status_basis"):
++            if not isinstance(getattr(self, field_name), str):
++                raise PolicyError(f"text rule {field_name} must be a string")
+         if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._:-]{2,127}", self.rule_id):
+             raise PolicyError(f"invalid text rule id: {self.rule_id!r}")
+@@ -176,17 +178,20 @@ class TextRule:
+         )
+         if "id" not in data or "pattern" not in data:
+             raise PolicyError("text rule requires id and pattern")
+         phases = _strings(data.get("phases", ["input", "output"]), "text rule.phases")
++        for field_name in ("id", "pattern", "title", "description", "status_basis"):
++            if field_name in data and not isinstance(data[field_name], str):
++                raise PolicyError(f"text rule.{field_name} must be a string")
+         return cls(
+-            rule_id=str(data["id"]),
+-            pattern=str(data["pattern"]),
+-            title=str(data.get("title", data["id"])),
+-            description=str(data.get("description", "Policy text rule matched")),
++            rule_id=data["id"],
++            pattern=data["pattern"],
++            title=data.get("title", data["id"]),
++            description=data.get("description", "Policy text rule matched"),
+             phases=tuple(Phase(item) for item in phases),
+             requested_disposition=Disposition(data.get("requested_disposition", "REVIEW")),
+             claim_status=ClaimStatus(data.get("claim_status", "SCAFFOLD")),
+             deterministic=_boolean(data.get("deterministic", False), "text rule.deterministic"),
+             severity=Severity(data.get("severity", "MEDIUM")),
+-            status_basis=str(data.get("status_basis", "")),
++            status_basis=data.get("status_basis", ""),
+             ignore_case=_boolean(data.get("ignore_case", True), "text rule.ignore_case"),
+         )

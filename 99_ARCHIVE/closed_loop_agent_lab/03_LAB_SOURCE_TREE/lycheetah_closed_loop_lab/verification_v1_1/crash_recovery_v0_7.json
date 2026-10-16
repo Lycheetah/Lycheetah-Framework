@@ -1,0 +1,16 @@
+{
+  "suite": "crash_recovery_v0_7",
+  "status": "PASS",
+  "expected_test_methods": 26,
+  "elapsed_seconds": 25.152,
+  "detail": "exit_code=0",
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "-S",
+    "-m",
+    "unittest",
+    "-v",
+    "test_crash_recovery"
+  ],
+  "cwd": "/mnt/data/lycheetah_closed_loop_lab/authority_boundary_lab_v0_7"
+}

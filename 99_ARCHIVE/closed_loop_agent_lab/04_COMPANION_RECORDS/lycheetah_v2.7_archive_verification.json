@@ -1,0 +1,28 @@
+{
+  "artifact": "Lycheetah Closed-Loop Agent Lab v2.7",
+  "verification_date": "2026-10-17",
+  "archive_checks": {
+    "lycheetah_closed_loop_agent_lab_v2.7.zip": {
+      "exists": true,
+      "bytes": 776642,
+      "sha256": "9b8b00cc82726cbb2281262b60655d31196fb8f9761c428790f815f981775477",
+      "zip_test": "PASS",
+      "entries": 485
+    },
+    "lycheetah_transactional_reconciliation_queue_v2.7.zip": {
+      "exists": true,
+      "bytes": 77363,
+      "sha256": "f8b2db32e30809dac9bc0225dcd9546ca6582a1a6298e427810f6b3abd0eb27d",
+      "zip_test": "PASS",
+      "entries": 35
+    }
+  },
+  "focused_suite": "PASS_84_OF_84",
+  "cumulative_suite": "PASS_286_OF_286_IN_WATCHDOG_BOUNDED_INVOCATION",
+  "python_compilation": "PASS",
+  "loopback_smoke": "PASS",
+  "hosted_stripe_calls": 0,
+  "real_refunds_created": 0,
+  "upstream_repository_changed": false,
+  "production_certified": false
+}

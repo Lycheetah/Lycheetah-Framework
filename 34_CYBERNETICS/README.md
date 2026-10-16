@@ -42,6 +42,7 @@ runtime validation.
 | [`variety_demo.py`](variety_demo.py) | Ashby's law of requisite variety in a 24 × 24 toy world: a rulebook against constraint-gated generators | SYNTHETIC |
 | [`CYBERNETIC_READING.md`](CYBERNETIC_READING.md) | The argument: role mapping, ultrastability, requisite variety, the Good Regulator, second-order cybernetics, the Viable System Model, and what cybernetics does not give us | INTERPRETIVE, with each section marked |
 | [`../tests/test_cybernetics.py`](../tests/test_cybernetics.py) | The audit is clean and catches every mutation; the demo is deterministic and the Ashby bound holds | ACTIVE / CONJECTURE markers |
+| [`closed_loop_agent_lab/`](../99_ARCHIVE/closed_loop_agent_lab/README.md) | Closed-Loop Agent Lab & Cybernetics Research Vault (v1.0–v5.1): shared ingress quotas, durable outboxes, remote witnesses, and overflow state integrity | RUNNABLE LAB (54 tests passed in 99_ARCHIVE) |
 
 ## How to run
 

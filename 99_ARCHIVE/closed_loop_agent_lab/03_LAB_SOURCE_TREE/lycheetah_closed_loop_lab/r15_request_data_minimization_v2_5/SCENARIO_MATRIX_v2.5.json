@@ -1,0 +1,25 @@
+{
+  "version": "2.5",
+  "focus": "request-payload data minimisation and local ledger permissions",
+  "cases": [
+    {"case": "caller supplied customer email metadata", "expected": "reject before persistence or network"},
+    {"case": "caller supplied token-like metadata", "expected": "reject before persistence or network"},
+    {"case": "caller supplied free-text metadata", "expected": "reject before persistence or network"},
+    {"case": "non-object metadata", "expected": "reject before persistence"},
+    {"case": "success response containing arbitrary provider metadata", "expected": "only allow-listed recovery fields persisted"},
+    {"case": "fresh default request payload", "expected": "only internal operation ID metadata"},
+    {"case": "new database on POSIX", "expected": "0600 owner-only file mode"},
+    {"case": "database path is symlink", "expected": "configuration rejected"},
+    {"case": "per-connection in-memory database", "expected": "configuration rejected as non-durable"}
+  ],
+  "verification": {
+    "focused_test_methods": 81,
+    "combined_test_methods": 198,
+    "local_smoke": "PASS",
+    "python_compile": "PASS",
+    "hosted_stripe_calls": 0,
+    "real_refunds_created": 0,
+    "upstream_changed": false,
+    "production_certification": false
+  }
+}

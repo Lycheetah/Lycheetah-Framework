@@ -1,0 +1,80 @@
+{
+  "version": "3.5",
+  "cases": [
+    {
+      "id": "good-current-chain",
+      "expected": "accept-once",
+      "result": "PASS"
+    },
+    {
+      "id": "primary-ledger-snapshot-rollback-registry-current",
+      "expected": "reject-replay",
+      "result": "PASS"
+    },
+    {
+      "id": "coordinated-rollback-of-both-ledgers",
+      "expected": "negative-control-replay-demonstrated",
+      "result": "DOCUMENTED_LIMIT"
+    },
+    {
+      "id": "concurrent-consumers",
+      "expected": "exactly-one-accept",
+      "result": "PASS"
+    },
+    {
+      "id": "remote-commit-response-lost",
+      "expected": "fail-closed-and-burn-challenge",
+      "result": "PASS"
+    },
+    {
+      "id": "remote-registry-unavailable",
+      "expected": "fail-closed",
+      "result": "PASS"
+    },
+    {
+      "id": "bad-witness-reports",
+      "expected": "do-not-consume-remote-challenge",
+      "result": "PASS"
+    },
+    {
+      "id": "tampered-registry-row",
+      "expected": "fail-closed",
+      "result": "PASS"
+    },
+    {
+      "id": "tampered-server-response",
+      "expected": "reject-signature",
+      "result": "PASS"
+    },
+    {
+      "id": "wrong-client-key",
+      "expected": "reject-authentication",
+      "result": "PASS"
+    },
+    {
+      "id": "expired-at-registry",
+      "expected": "reject-consume",
+      "result": "PASS"
+    },
+    {
+      "id": "wrong-policy-envelope",
+      "expected": "reject-without-consuming",
+      "result": "PASS"
+    },
+    {
+      "id": "non-loopback-http",
+      "expected": "reject-configuration",
+      "result": "PASS"
+    },
+    {
+      "id": "registration-response-lost-before-commit",
+      "expected": "no-challenge-returned-new-challenge-works",
+      "result": "PASS"
+    },
+    {
+      "id": "registration-response-lost-after-commit",
+      "expected": "no-challenge-returned-new-challenge-works-orphan-pending-row",
+      "result": "PASS"
+    }
+  ]
+}

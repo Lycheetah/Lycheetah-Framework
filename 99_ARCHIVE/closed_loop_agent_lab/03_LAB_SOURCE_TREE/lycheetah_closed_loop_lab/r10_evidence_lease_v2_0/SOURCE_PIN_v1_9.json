@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/Lycheetah/Lycheetah-Framework",
+  "inspected_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "inspected_paths": [
+    {
+      "path": "lycheetah/assurance/finality.py",
+      "blob_sha": "dd97733d45c2261863d24a2a00800baf59fc8bac",
+      "url": "https://github.com/Lycheetah/Lycheetah-Framework/blob/8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65/lycheetah/assurance/finality.py"
+    },
+    {
+      "path": "tests/test_assurance_finality.py",
+      "blob_sha": "f139db66faa162cc1faa6b9cf8a8f89c51b9e08e",
+      "url": "https://github.com/Lycheetah/Lycheetah-Framework/blob/8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65/tests/test_assurance_finality.py"
+    }
+  ],
+  "note": "Default branch was rechecked during v2.0 work and still resolved to the pinned commit. These source files were inspected via the connected GitHub integration; the v2.0 prototype is separate and has not been applied upstream."
+}

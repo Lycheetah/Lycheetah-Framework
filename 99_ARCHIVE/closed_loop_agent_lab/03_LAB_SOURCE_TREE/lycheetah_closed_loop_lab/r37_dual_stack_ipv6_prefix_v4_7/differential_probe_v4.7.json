@@ -1,0 +1,28 @@
+{
+  "comparison": "preserved-v4.6-source-fixture-vs-v4.7-prefix-identity",
+  "addresses": {
+    "a": "2001:db8:1234:5678::1",
+    "b": "2001:db8:1234:5678:ffff:ffff:ffff:99",
+    "c": "2001:db8:1234:5679::1"
+  },
+  "v4_6": {
+    "peer_key_a": "2001:db8:1234:5678::1",
+    "peer_key_b": "2001:db8:1234:5678:ffff:ffff:ffff:99",
+    "peer_keys_equal": false,
+    "both_same_64_admitted": true,
+    "first_reason": null,
+    "second_reason": null
+  },
+  "v4_7": {
+    "peer_key_a": "ipv6:2001:db8:1234:5678::/64",
+    "peer_key_b": "ipv6:2001:db8:1234:5678::/64",
+    "same_64_equal": true,
+    "first_admitted": true,
+    "second_admitted": false,
+    "second_reason": "per-ip-connection-limit",
+    "different_64_admitted": true,
+    "different_64_reason": null,
+    "mapped_ipv4_alias_same_identity": true
+  },
+  "expected_delta_observed": true
+}

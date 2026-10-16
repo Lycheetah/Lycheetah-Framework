@@ -1,0 +1,49 @@
+{
+  "baseline_forgery_case": {
+    "case": "unkeyed_digest_witness_with_substituted_evidence_requirement_and_fake_receipt_digest",
+    "expected_under_current_semantics": "ACCEPT",
+    "observed": "ACCEPT",
+    "reason": "fresh-evidence-and-current-policy",
+    "security_interpretation": "provenance gap if witness input or storage is adversary-modifiable"
+  },
+  "defensive_reference": {
+    "concurrency_trials": 25,
+    "concurrent_finalizers_per_trial": 2,
+    "expected_successful_consumes_per_trial": 1,
+    "observed": "PASS",
+    "tested_controls": [
+      "HMAC body authentication",
+      "durable issuance ledger",
+      "trusted configured requirements",
+      "event and policy binding",
+      "expiry",
+      "single-use replay rejection",
+      "atomic SQLite consumption",
+      "persisted registry after object restart",
+      "evidence revalidation",
+      "fail-closed malformed input"
+    ],
+    "tests_passed": 16,
+    "tests_total": 16
+  },
+  "known_open_boundary": {
+    "case": "test_documented_external_provider_toctou_remains_open",
+    "meaning": "A separate evidence provider can mutate state just after returning a valid snapshot. The local database transaction cannot make a remote provider or external side effect atomic.",
+    "required_next_defense": "provider-side conditional lease/transaction/version precondition and a durable idempotent effect broker",
+    "result": "intentionally reproduced"
+  },
+  "limits": [
+    "This test mirrors acceptance-relevant upstream semantics from the inspected source; it does not import or execute the upstream package.",
+    "The issue depends on the threat model: if only a trusted in-process caller can supply witness objects and no untrusted persistence boundary exists, external forgery is not established.",
+    "The candidate verifier is illustrative, in-memory, and is not production ready. The action effect and nonce consumption are not transactionally coupled to a remote provider.",
+    "The admission receipt digest in current finality is carried as metadata but finalize does not verify it corresponds to an issued receipt.",
+    "The defended prototype uses a ToyRuntime contract; it is not wired to Lycheetah AssuranceRuntime.",
+    "SQLite ledger and HMAC key are assumed to be inside the trusted service boundary.",
+    "No production remote side effect was executed."
+  ],
+  "source_scope": "source-equivalent baseline semantics and standalone defensive reference; not full upstream package execution",
+  "title": "Lycheetah admission witness provenance: baseline vs defended reference prototype",
+  "upstream_blob_sha": "dd97733d45c2261863d24a2a00800baf59fc8bac",
+  "upstream_file": "lycheetah/assurance/finality.py",
+  "upstream_revision": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65"
+}

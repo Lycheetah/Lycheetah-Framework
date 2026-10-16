@@ -1,0 +1,31 @@
+diff --git a/lycheetah/assurance/policy.py b/lycheetah/assurance/policy.py
+--- a/lycheetah/assurance/policy.py
++++ b/lycheetah/assurance/policy.py
+@@ -177,17 +177,22 @@
+         )
+         if "id" not in data or "pattern" not in data:
+             raise PolicyError("text rule requires id and pattern")
++        if not isinstance(data["id"], str) or not isinstance(data["pattern"], str):
++            raise PolicyError("text rule id and pattern must be strings")
++        for field_name in ("title", "description", "status_basis"):
++            if field_name in data and not isinstance(data[field_name], str):
++                raise PolicyError(f"text rule {field_name} must be a string")
+         phases = _strings(data.get("phases", ["input", "output"]), "text rule.phases")
+         return cls(
+-            rule_id=str(data["id"]),
+-            pattern=str(data["pattern"]),
+-            title=str(data.get("title", data["id"])),
+-            description=str(data.get("description", "Policy text rule matched")),
++            rule_id=data["id"],
++            pattern=data["pattern"],
++            title=data.get("title", data["id"]),
++            description=data.get("description", "Policy text rule matched"),
+             phases=tuple(Phase(item) for item in phases),
+             requested_disposition=Disposition(data.get("requested_disposition", "REVIEW")),
+             claim_status=ClaimStatus(data.get("claim_status", "SCAFFOLD")),
+             deterministic=_boolean(data.get("deterministic", False), "text rule.deterministic"),
+             severity=Severity(data.get("severity", "MEDIUM")),
+-            status_basis=str(data.get("status_basis", "")),
++            status_basis=data.get("status_basis", ""),
+             ignore_case=_boolean(data.get("ignore_case", True), "text rule.ignore_case"),
+         )

@@ -1,0 +1,11 @@
+test_current_schema_has_open_nested_control_object (test_schema_parser_parity.TestSchemaParserParity.test_current_schema_has_open_nested_control_object) ... ok
+test_schema_catches_top_level_and_finding_mismatches (test_schema_parser_parity.TestSchemaParserParity.test_schema_catches_top_level_and_finding_mismatches) ... ok
+test_source_equivalent_parser_accepts_mutated_normalized_wire_forms (test_schema_parser_parity.TestSchemaParserParity.test_source_equivalent_parser_accepts_mutated_normalized_wire_forms) ... ok
+test_strict_candidate_rejects_each_mutation (test_schema_parser_parity.TestSchemaParserParity.test_strict_candidate_rejects_each_mutation) ... ok
+test_strict_candidate_schema_rejects_all_typed_mutations (test_schema_parser_parity.TestSchemaParserParity.test_strict_candidate_schema_rejects_all_typed_mutations) ... ok
+test_well_typed_unsigned_and_hmac_receipts_pass (test_schema_parser_parity.TestSchemaParserParity.test_well_typed_unsigned_and_hmac_receipts_pass) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.041s
+
+OK

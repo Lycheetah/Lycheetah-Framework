@@ -1,0 +1,32 @@
+{
+  "version": "4.4",
+  "date": "2026-10-17",
+  "archives": {
+    "lycheetah_shared_preauth_quota_v4.4.zip": {
+      "path": "/mnt/data/lycheetah_shared_preauth_quota_v4.4.zip",
+      "bytes": 136579,
+      "sha256": "8a91b8ba8fdc59faa73095a69b8af3cfa50734673b98cbd4dcab7d3a5b88dd19",
+      "crc_test": "PASS"
+    },
+    "lycheetah_closed_loop_agent_lab_v4.4.zip": {
+      "path": "/mnt/data/lycheetah_closed_loop_agent_lab_v4.4.zip",
+      "bytes": 2156259,
+      "sha256": "fb112b57fdc6a7314d2a2b7b3b4ec3011d9ef57facc2b69ec21698dbe9f82268",
+      "crc_test": "PASS"
+    }
+  },
+  "source_pin_status": "PASS",
+  "source_pins_verified": 14,
+  "python_compile_status": "PASS",
+  "test_methods_passed": {
+    "shared_ingress_store": 15,
+    "shared_coordinator_store": 13,
+    "retained_checkpoint_quorum": 38,
+    "remote_witness_and_gateway": 51
+  },
+  "combined_test_methods": 117,
+  "gateway_lifecycle": "PASS_NO_SURVIVING_NON_MAIN_THREADS",
+  "hosted_service_calls": 0,
+  "upstream_modified": false,
+  "boundary": "Same-host local SQLite quota authority only; reference artifact, no upstream CI or production deployment."
+}

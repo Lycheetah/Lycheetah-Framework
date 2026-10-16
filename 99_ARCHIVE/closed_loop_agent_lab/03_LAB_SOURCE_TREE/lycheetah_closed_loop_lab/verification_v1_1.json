@@ -1,0 +1,118 @@
+{
+  "version": "1.1",
+  "status": "PASS_SEPARATE_SUITES",
+  "tests_reported_across_completed_separate_suites": 166,
+  "suite_results": [
+    {
+      "suite": "legacy_v0_1_to_v0_6",
+      "status": "PASS",
+      "expected_test_methods": 66,
+      "elapsed_seconds": 14.872,
+      "detail": "exit_code=0",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/lycheetah_closed_loop_lab/run_all_tests.py"
+      ],
+      "cwd": "/mnt/data/lycheetah_closed_loop_lab"
+    },
+    {
+      "suite": "crash_recovery_v0_7",
+      "status": "PASS",
+      "expected_test_methods": 26,
+      "elapsed_seconds": 25.152,
+      "detail": "exit_code=0",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-S",
+        "-m",
+        "unittest",
+        "-v",
+        "test_crash_recovery"
+      ],
+      "cwd": "/mnt/data/lycheetah_closed_loop_lab/authority_boundary_lab_v0_7"
+    },
+    {
+      "suite": "trusted_catalog_v0_8",
+      "status": "PASS",
+      "expected_test_methods": 18,
+      "elapsed_seconds": 6.246,
+      "detail": "exit_code=0",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/mnt/data/lycheetah_closed_loop_lab/authority_boundary_lab_v0_8",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "/mnt/data/lycheetah_closed_loop_lab"
+    },
+    {
+      "suite": "catalog_issuance_v0_9",
+      "status": "PASS",
+      "expected_test_methods": 21,
+      "elapsed_seconds": 4.03,
+      "detail": "exit_code=0",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-S",
+        "-m",
+        "unittest",
+        "-v",
+        "test_tool_catalog"
+      ],
+      "cwd": "/mnt/data/lycheetah_closed_loop_lab/authority_boundary_lab_v0_9"
+    },
+    {
+      "suite": "crash_recovery_v0_9",
+      "status": "PASS",
+      "expected_test_methods": 28,
+      "elapsed_seconds": 19.152,
+      "detail": "exit_code=0",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-S",
+        "-m",
+        "unittest",
+        "-v",
+        "test_crash_recovery"
+      ],
+      "cwd": "/mnt/data/lycheetah_closed_loop_lab/authority_boundary_lab_v0_9"
+    },
+    {
+      "suite": "policy_parser_source_equivalent_fixture",
+      "status": "PASS",
+      "expected_test_methods": 7,
+      "elapsed_seconds": 4.834,
+      "detail": "exit_code=0",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "test_policy_parser.py"
+      ],
+      "cwd": "/mnt/data/lycheetah_closed_loop_lab/r2_policy_parser_audit"
+    }
+  ],
+  "checks": {
+    "all_suites_pass": true,
+    "parser_probe_count_is_24": true,
+    "baseline_accepts_21_invalid_types": true,
+    "candidate_rejects_all_24": true
+  },
+  "parser_comparison": {
+    "status": "SOURCE_EQUIVALENT_FIXTURE_NOT_UPSTREAM_INTEGRATION",
+    "malformed_type_cases": 24,
+    "baseline_accepts_invalid": 21,
+    "candidate_rejects_invalid": 24
+  },
+  "upstream_package_suite_run": false,
+  "public_repository_modified": false,
+  "limitations": [
+    "The per-suite test methods are authored local reference/harness tests, not model-efficacy measures.",
+    "The parser experiment uses a source-equivalent fixture; upstream patch/tests were not integrated because GitHub branch creation is read-only in this session.",
+    "The inspected upstream CI baseline has unresolved failed checks with unavailable logs.",
+    "No real provider, authenticated human reviewer, or production host was tested."
+  ]
+}

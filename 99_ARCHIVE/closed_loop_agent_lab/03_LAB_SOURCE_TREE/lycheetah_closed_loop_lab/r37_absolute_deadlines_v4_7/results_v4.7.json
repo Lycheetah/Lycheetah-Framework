@@ -1,0 +1,61 @@
+{
+  "version": "4.7",
+  "feature": "absolute_http_socket_deadline",
+  "suites": {
+    "shared_ingress_quota": {
+      "tests": 24,
+      "status": "PASS",
+      "log": "ingress_tests_v4.7_final.log"
+    },
+    "shared_coordinator_quota": {
+      "tests": 13,
+      "status": "PASS",
+      "log": "coordinator_tests_v4.7_final.log"
+    },
+    "checkpoint_quorum": {
+      "tests": 38,
+      "status": "PASS",
+      "log": "quorum_tests_v4.7_final.log"
+    },
+    "gateway_mtls_remote_witness": {
+      "tests": 56,
+      "status": "PASS",
+      "elapsed_seconds": 56.947,
+      "log": "gateway_background_v4.7.log",
+      "errors": 0,
+      "failures": 0,
+      "surviving_non_main_threads": []
+    }
+  },
+  "unique_test_methods_passed": 131,
+  "source_fingerprints_verified": 21,
+  "python_compile": "PASS",
+  "archive_integrity": "PASS_AFTER_BUILD",
+  "paired_http_slow_drip_probe": {
+    "baseline_version": "v4.6 local source copy",
+    "baseline_active_connection_at_1_227s": 1,
+    "baseline_bytes_dripped": 15,
+    "candidate_active_connection_at_0_971s": 0,
+    "candidate_bytes_dripped": 12,
+    "inter_byte_delay_ms": 80,
+    "request_idle_timeout_ms": 550,
+    "no_request_completed": true,
+    "no_registry_dispatch": true,
+    "hosted_api_calls": 0
+  },
+  "diagnostic_anomaly": {
+    "faulthandler_dump_after_seconds": 45,
+    "observed_stack": "handler dispatch awaiting fresh remote quorum head during a gateway request",
+    "eventual_suite_result": "PASS",
+    "implication": "socket deadline closes transport but does not cancel application/quorum work"
+  },
+  "non_claims": [
+    "no new TLS handshake improvement measured",
+    "not upstream CI",
+    "not production certification",
+    "socket deadline does not cancel business logic",
+    "no upstream source changes",
+    "no hosted service calls"
+  ],
+  "upstream_commit_observed": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65"
+}

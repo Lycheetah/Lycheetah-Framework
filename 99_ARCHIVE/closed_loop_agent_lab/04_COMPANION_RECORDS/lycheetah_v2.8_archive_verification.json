@@ -1,0 +1,18 @@
+{
+  "archive_verification": [
+    {
+      "path": "/mnt/data/lycheetah_closed_loop_agent_lab_v2.8.zip",
+      "bytes": 1112672,
+      "sha256": "d7daa2c5efe18684aaf4f7337df251086799616aa44e54a7dbd098ba24af67e6",
+      "zip_test": "PASS",
+      "members": 544
+    },
+    {
+      "path": "/mnt/data/lycheetah_trusted_reconciliation_worker_v2.8.zip",
+      "bytes": 155332,
+      "sha256": "d72d8a70aafd16ee9e163f0e6106ecf974f504eaec1001578c51cc4bc3b066f5",
+      "zip_test": "PASS",
+      "members": 39
+    }
+  ]
+}

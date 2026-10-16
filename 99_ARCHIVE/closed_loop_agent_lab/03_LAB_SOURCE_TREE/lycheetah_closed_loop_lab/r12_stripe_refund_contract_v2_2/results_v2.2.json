@@ -1,0 +1,15 @@
+{
+  "v2_2_specific_tests": 39,
+  "combined_retained_tests": 117,
+  "v2_2_test_suite_passed": true,
+  "combined_suite_passed": true,
+  "compiled_files": 4,
+  "scenario_count": 7,
+  "real_refunds_created": 0,
+  "upstream_repository_modified": false,
+  "full_upstream_package_suite_run": false,
+  "caller_supplied_payload_or_scope_match_booleans_used": false,
+  "refund_list_cursor_chain_validated": true,
+  "provider_api_calls": 0,
+  "scenario_runner_network_calls": 0
+}

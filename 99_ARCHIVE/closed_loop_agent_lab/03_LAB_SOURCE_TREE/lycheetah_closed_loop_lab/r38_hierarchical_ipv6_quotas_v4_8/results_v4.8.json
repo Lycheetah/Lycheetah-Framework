@@ -1,0 +1,85 @@
+{
+  "combined_test_methods": 143,
+  "differential_probe": {
+    "comparison": "preserved-v4.7-/64-baseline-vs-v4.8-configured-/56-aggregate",
+    "configuration": {
+      "aggregate_active_limit": 2,
+      "aggregate_prefix_length": 56,
+      "leaf_prefix_length": 64
+    },
+    "expected_delta_observed": true,
+    "same_parent_prefix_addresses": [
+      "2001:db8:1234:5601::1",
+      "2001:db8:1234:56fe::2",
+      "2001:db8:1234:56ab::3"
+    ],
+    "scope": "local deterministic store probe; not internet traffic/load test",
+    "v4_7_exact_leaf_bucket_baseline": {
+      "admitted_count": 3,
+      "outcomes": [
+        {
+          "admitted": true,
+          "ip": "2001:db8:1234:5601::1",
+          "reason": null
+        },
+        {
+          "admitted": true,
+          "ip": "2001:db8:1234:56fe::2",
+          "reason": null
+        },
+        {
+          "admitted": true,
+          "ip": "2001:db8:1234:56ab::3",
+          "reason": null
+        }
+      ]
+    },
+    "v4_8_hierarchical": {
+      "admitted_count": 2,
+      "independent_parent_prefix": {
+        "admitted": true,
+        "ip": "2001:db8:1234:5701::1",
+        "reason": null
+      },
+      "same_parent_prefix": [
+        {
+          "admitted": true,
+          "ip": "2001:db8:1234:5601::1",
+          "reason": null
+        },
+        {
+          "admitted": true,
+          "ip": "2001:db8:1234:56fe::2",
+          "reason": null
+        },
+        {
+          "admitted": false,
+          "ip": "2001:db8:1234:56ab::3",
+          "reason": "ipv6-aggregate-connection-limit"
+        }
+      ]
+    }
+  },
+  "gateway_lifecycle_failures": 0,
+  "gateway_shards": 15,
+  "gateway_surviving_non_main_threads": 0,
+  "hosted_service_calls": 0,
+  "limitations": [
+    "Local reference-artifact tests only; not upstream CI or production certification.",
+    "Aggregate prefix quotas are opt-in and can cause collateral rejection.",
+    "Application quotas do not prevent SYN floods or upstream link saturation.",
+    "Shared SQLite is same-host and same-PID-namespace infrastructure."
+  ],
+  "parent": "4.7",
+  "python_compile": "PASS",
+  "result": "PASS",
+  "source_pin_files_verified": 26,
+  "test_suites": {
+    "mtls_gateway": 59,
+    "registry_checkpoint_quorum": 38,
+    "shared_coordinator_quota": 13,
+    "shared_ingress_quota": 33
+  },
+  "upstream_modified": false,
+  "version": "4.8"
+}

@@ -1,0 +1,20 @@
+{
+  "version": "3.2",
+  "witness_count": 4,
+  "byzantine_fault_budget": 1,
+  "required_quorum": 3,
+  "scenarios": [
+    {"id": "Q01", "case": "Valid primary record, three matching witness votes", "expected": "ACCEPT", "test": "test_three_of_four_votes_create_valid_quorum"},
+    {"id": "Q02", "case": "Only two votes for a four-witness roster", "expected": "REJECT_INSUFFICIENT_QUORUM", "test": "test_two_votes_are_insufficient_for_four_witness_roster"},
+    {"id": "Q03", "case": "One key attempts conflicting vote after three honest witnesses locked branch", "expected": "REJECT_CONFLICTING_QUORUM", "test": "test_one_compromised_witness_cannot_make_a_conflicting_quorum"},
+    {"id": "Q04", "case": "Two keys double-sign conflicting checkpoints", "expected": "DETECT_SIGNED_EQUIVOCATION", "test": "test_two_compromised_witnesses_create_detectable_fork_evidence"},
+    {"id": "Q05", "case": "Restore local witness ledger while separate guard retains newest head", "expected": "REJECT_OLD_BRANCH", "test": "test_external_guard_surviving_local_ledger_restore_blocks_fork"},
+    {"id": "Q06", "case": "Previously valid old certificate shown as current", "expected": "REJECT_STALE_CHAIN", "test": "test_current_chain_rejects_previously_valid_but_stale_certificate"},
+    {"id": "Q07", "case": "Replay head report under a different client nonce", "expected": "REJECT_REPLAY", "test": "test_replayed_freshness_report_fails_new_challenge"},
+    {"id": "Q08", "case": "Two witnesses report sequence N and two report N+1", "expected": "NO_QUORUM_FAIL_CLOSED", "test": "test_two_two_freshness_split_has_no_quorum"},
+    {"id": "Q09", "case": "Three agree, one honest witness lags", "expected": "QUORUM_WITH_DISSENTER", "test": "test_three_matching_fresh_heads_tolerate_one_dissenting_witness"},
+    {"id": "Q10", "case": "Two competing heads race to one witness guard", "expected": "ONE_CAS_WINNER", "test": "test_concurrent_conflicting_heads_only_one_guard_cas_wins"},
+    {"id": "Q11", "case": "Valid certificate sequence skips parent sequence", "expected": "REJECT_CHAIN_GAP", "test": "test_certificate_chain_rejects_skipped_sequence"},
+    {"id": "Q12", "case": "Stored witness vote JSON modified", "expected": "REJECT_TAMPERED_LOCAL_VOTE", "test": "test_local_stored_vote_tampering_is_refused"}
+  ]
+}

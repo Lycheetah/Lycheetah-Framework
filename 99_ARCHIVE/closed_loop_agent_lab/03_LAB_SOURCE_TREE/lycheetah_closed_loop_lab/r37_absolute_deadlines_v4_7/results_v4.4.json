@@ -1,0 +1,69 @@
+{
+  "version": "4.4",
+  "date": "2026-10-17",
+  "scope": "Opt-in same-host shared SQLite pre-TLS ingress quotas across gateway processes: aggregate active sockets, per-peer active sockets, and global connection-rate tokens.",
+  "observed_upstream_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "upstream_status": "NOT_MODIFIED",
+  "hosted_service_calls": 0,
+  "source_pin_status": "PASS",
+  "source_pins_verified": 14,
+  "python_compile_status": "PASS",
+  "test_suites": {
+    "shared_ingress_store": {
+      "status": "PASS",
+      "test_methods": 15,
+      "run_seconds": 3.74,
+      "log": "ingress_tests_v4.4.log"
+    },
+    "shared_coordinator_store": {
+      "status": "PASS",
+      "test_methods": 13,
+      "run_seconds": 3.456,
+      "log": "coordinator_tests_v4.4.log"
+    },
+    "retained_checkpoint_quorum": {
+      "status": "PASS",
+      "test_methods": 38,
+      "run_seconds": 5.783,
+      "log": "quorum_tests_v4.4.log"
+    },
+    "remote_witness_and_gateway": {
+      "status": "PASS",
+      "test_methods": 51,
+      "run_seconds": 31.615,
+      "log": "gateway_tests_v4.4.log",
+      "lifecycle": {
+        "status": "PASS",
+        "surviving_non_main_threads": 0
+      }
+    }
+  },
+  "combined_test_methods": 117,
+  "v4_4_specific_test_methods": 17,
+  "cross_process_ingress_race": {
+    "processes": 2,
+    "shared_active_slots": 1,
+    "accepted": 1,
+    "denied": 1,
+    "status": "PASS"
+  },
+  "cross_gateway_shared_quota_checks": {
+    "tests": 2,
+    "status": "PASS"
+  },
+  "gateway_runner_lifecycle": {
+    "status": "PASS",
+    "tests": 51,
+    "surviving_non_main_threads": 0
+  },
+  "shared_ingress_scope": "Processes on one host using the exact same trusted local SQLite path and matching configuration. Not a multi-host/distributed quota service.",
+  "known_limits": [
+    "A request handler paused longer than the ingress lease TTL could resume after lease reclamation; this design is not a hard process-kill fence.",
+    "SQLite state is trusted local infrastructure; the quota store does not provide cryptographic database tamper resistance.",
+    "The feature is opt-in; omitting shared_ingress_quota_db_path retains process-local pre-TLS behavior.",
+    "All gateway replicas must use the same database path and matching active, per-IP, rate and TTL configuration.",
+    "Production CA/certificate rotation, reverse proxy, host firewall, cgroup/file-descriptor limits and distributed quota authority were not tested.",
+    "No upstream source mutation, pull request, upstream CI run or hosted service call occurred."
+  ],
+  "verification_boundary": "All results are from the local reference artifact. The source pin identifies the observed upstream base commit and hashes of local artifact files; it does not establish that this research code is byte-equivalent to upstream."
+}

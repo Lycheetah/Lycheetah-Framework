@@ -1,0 +1,84 @@
+{
+  "archives": {
+    "complete_lab": {
+      "bytes": 3423084,
+      "crc_test": "PASS",
+      "entries": 1627,
+      "path": "/mnt/data/lycheetah_closed_loop_agent_lab_v4.9.zip",
+      "sha256": "d1bf899fd4ed20425be534164badba1a28a839c27b8595623949d5fe692aa7c6"
+    },
+    "standalone": {
+      "bytes": 161471,
+      "crc_test": "PASS",
+      "entries": 57,
+      "path": "/mnt/data/lycheetah_ingress_hierarchical_attempt_quotas_v4.9.zip",
+      "sha256": "4c879aa41ae04cbe77882380ecafefd2f63929d388fcfc9066a21df339441ddb"
+    }
+  },
+  "artifact_version": "4.9",
+  "built_at_utc": "2026-10-16T21:15:35.174652+00:00",
+  "combined_test_methods": 153,
+  "differential_probe": {
+    "baseline": {
+      "noisy_peer_accepted": 5,
+      "noisy_peer_final_rejection": "connection-rate-limit",
+      "unrelated_peer_accepted": false,
+      "unrelated_peer_rejection": "connection-rate-limit"
+    },
+    "expected_delta_observed": true,
+    "result": "PASS",
+    "sha256": "2f2cb8e17ed69a492721dbead62a09639591ca60d53b74af32fb89d8687cac0e",
+    "tiered": {
+      "bucket_count": 2,
+      "global_tokens_approx": 2.001,
+      "noisy_peer_accepted": 2,
+      "noisy_peer_global_rate_denials": 0,
+      "noisy_peer_peer_rate_denials": 6,
+      "unrelated_peer_accepted": true,
+      "unrelated_peer_rejection": null
+    }
+  },
+  "full_runner_log": {
+    "digest": "4404382734b64f4c17e9326bec2d35d743ea7999caf5db518af72b62e19e9cab",
+    "path": "full_suite_v4.9.log"
+  },
+  "hosted_service_calls": 0,
+  "limitations": [
+    "Local reference artifact results, not upstream repository CI or production certification.",
+    "Local source fingerprints pin this artifact, not exact source equivalence to GitHub.",
+    "Shared SQLite authority is same-host and same-PID-namespace trusted local infrastructure.",
+    "Peer-prefix rate limits are network heuristics rather than authenticated identity and can cause collateral rejection behind NAT/shared IPv6 allocations.",
+    "The limiter is after TCP accept and does not mitigate SYN floods, network-link saturation or upstream connection pressure.",
+    "Optional rate caps are disabled by default and need deployment-specific traffic/fairness evaluation.",
+    "No upstream file, branch, or pull request was changed; no hosted service was called."
+  ],
+  "parent_artifact_version": "4.8",
+  "python_compile": "PASS",
+  "source_fingerprint_validation": "PASS: 31 exact local artifact fingerprints verified",
+  "test_suites": {
+    "coordinator": {
+      "log": "coordinator_v4.9.log",
+      "result": "PASS",
+      "test_methods": 13
+    },
+    "gateway": {
+      "lifecycle": "all zero errors/failures/surviving threads",
+      "log": "gateway_v4.9.log",
+      "result": "PASS",
+      "shards": 15,
+      "test_methods": 60
+    },
+    "ingress": {
+      "log": "focused_ingress_v4.9.log",
+      "result": "PASS",
+      "test_methods": 42
+    },
+    "quorum": {
+      "log": "quorum_v4.9.log",
+      "result": "PASS",
+      "test_methods": 38
+    }
+  },
+  "upstream_commit_observed": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "upstream_modified": false
+}

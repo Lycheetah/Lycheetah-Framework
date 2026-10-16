@@ -1,0 +1,10 @@
+{
+  "demo": "PASS",
+  "registry_and_client_anchor_restored": true,
+  "witness_stores_restored": false,
+  "pre_restore_quorum_sequence": 3,
+  "rollback_detected": true,
+  "reason": "external-quorum-ahead-of-local-head",
+  "hosted_network_calls": 0,
+  "trust_boundary": "witness stores are local per-witness SQLite files in this simulation; not independent remote domains"
+}

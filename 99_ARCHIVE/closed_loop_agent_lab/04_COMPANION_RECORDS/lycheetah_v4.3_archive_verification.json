@@ -1,0 +1,27 @@
+{
+  "version": "4.3",
+  "standalone_archive": {
+    "path": "/mnt/data/lycheetah_shared_coordinator_quota_v4.3.zip",
+    "bytes": 126780,
+    "sha256": "6f12406909e53944d53b13f7dbffe46ee7e71557f04113ebfed43bdb42b1064e",
+    "crc_test": "PASS"
+  },
+  "complete_archive": {
+    "path": "/mnt/data/lycheetah_closed_loop_agent_lab_v4.3.zip",
+    "bytes": 2018411,
+    "sha256": "92e02f847b21c3dfe8740f7b76f7ec51707025d5a21adcf667e30de3ce3b0a4d",
+    "crc_test": "PASS"
+  },
+  "source_pin_status": "PASS",
+  "source_pins_verified": 10,
+  "compile_status": "PASS",
+  "test_methods_passed": {
+    "shared_quota_store": 13,
+    "retained_quorum": 38,
+    "gateway_remote_witness": 49,
+    "total": 100
+  },
+  "hosted_service_calls": 0,
+  "upstream_modified": false,
+  "boundary": "Same-host SQLite coordination only; local reference test evidence, not production certification or cross-host quota."
+}

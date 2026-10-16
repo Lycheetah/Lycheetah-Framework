@@ -1,0 +1,24 @@
+test_stamped_action_runs_through_v07_fake_host_and_provider (test_tool_catalog.TrustedCatalogIntegrationTests.test_stamped_action_runs_through_v07_fake_host_and_provider) ... ok
+test_tampering_stamped_effect_type_cannot_dispatch (test_tool_catalog.TrustedCatalogIntegrationTests.test_tampering_stamped_effect_type_cannot_dispatch) ... ok
+test_bool_is_not_accepted_as_integer_amount (test_tool_catalog.TrustedCatalogTests.test_bool_is_not_accepted_as_integer_amount) ... ok
+test_catalog_field_mapping_is_immutable_after_digest (test_tool_catalog.TrustedCatalogTests.test_catalog_field_mapping_is_immutable_after_digest) ... ok
+test_catalog_freezes_caller_owned_nested_lists (test_tool_catalog.TrustedCatalogTests.test_catalog_freezes_caller_owned_nested_lists) ... ok
+test_declaration_only_projection_demonstrates_classification_downgrade (test_tool_catalog.TrustedCatalogTests.test_declaration_only_projection_demonstrates_classification_downgrade) ... ok
+test_invalid_currency_rejected (test_tool_catalog.TrustedCatalogTests.test_invalid_currency_rejected) ... ok
+test_model_cannot_downgrade_side_effect_classification (test_tool_catalog.TrustedCatalogTests.test_model_cannot_downgrade_side_effect_classification) ... ok
+test_model_cannot_supply_scopes_or_dispatcher (test_tool_catalog.TrustedCatalogTests.test_model_cannot_supply_scopes_or_dispatcher) ... ok
+test_mutation_classification_comes_from_catalog (test_tool_catalog.TrustedCatalogTests.test_mutation_classification_comes_from_catalog) ... ok
+test_nonpositive_amount_rejected (test_tool_catalog.TrustedCatalogTests.test_nonpositive_amount_rejected) ... ok
+test_operation_id_and_workspace_come_from_trusted_caller (test_tool_catalog.TrustedCatalogTests.test_operation_id_and_workspace_come_from_trusted_caller) ... ok
+test_policy_must_bind_exact_catalog_digest (test_tool_catalog.TrustedCatalogTests.test_policy_must_bind_exact_catalog_digest) ... ok
+test_read_classification_comes_from_catalog (test_tool_catalog.TrustedCatalogTests.test_read_classification_comes_from_catalog) ... ok
+test_registry_revision_change_breaks_old_policy_binding (test_tool_catalog.TrustedCatalogTests.test_registry_revision_change_breaks_old_policy_binding) ... ok
+test_same_proposal_is_deterministically_stamped_except_host_context (test_tool_catalog.TrustedCatalogTests.test_same_proposal_is_deterministically_stamped_except_host_context) ... ok
+test_unknown_and_missing_argument_fields_rejected (test_tool_catalog.TrustedCatalogTests.test_unknown_and_missing_argument_fields_rejected) ... ok
+test_unknown_tool_rejected (test_tool_catalog.TrustedCatalogTests.test_unknown_tool_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.984s
+
+OK
+v0.8 trusted catalog suite passed (18 tests)

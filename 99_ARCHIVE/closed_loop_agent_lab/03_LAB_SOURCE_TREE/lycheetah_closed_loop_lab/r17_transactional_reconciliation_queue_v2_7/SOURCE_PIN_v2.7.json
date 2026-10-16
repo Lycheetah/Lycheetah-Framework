@@ -1,0 +1,13 @@
+{
+  "artifact": "Lycheetah Closed-Loop Agent Lab v2.7",
+  "base_artifact": "Lycheetah Closed-Loop Agent Lab v2.6",
+  "upstream_repository": "https://github.com/Lycheetah/Lycheetah-Framework",
+  "upstream_commit_previously_inspected": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "change_scope": "local research reference only; no upstream files changed",
+  "local_base_path": "r16_webhook_reconciliation_v2_6/stripe_webhook_inbox.py",
+  "local_base_sha256": "a2ac6c773ce49162efc429674c45b4d1667855184a7e2ddf9015a0309624a6d1",
+  "new_local_path": "r17_transactional_reconciliation_queue_v2_7/stripe_webhook_inbox.py",
+  "new_local_sha256": "f1fba9009e50864300e5fef02c740665a55b7de0d3e6b2f3f540f3e7b2cfe307",
+  "production_certified": false,
+  "hosted_provider_tested": false
+}

@@ -1,0 +1,11 @@
+{
+  "version": "3.6",
+  "observed_upstream_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "status": "The retained upstream-derived quorum/freshness modules are source-pinned. v3.6 changes only the local registry simulator and adds test/docs artifacts; it does not modify the upstream repository.",
+  "retained_upstream_source_sha256": {
+    "remote_anchor_http.py": "0a002d054800fbfaed20b100c38f7333c934ff71f7a971aec3631bd49a61afe3",
+    "checkpoint_witness_quorum.py": "579912ffd00a744995ed23ab6ba0fae577df4cfb94618ae788165b4bb9dab5d6",
+    "durable_freshness_verifier.py": "da8f5ce6113ba82ef980dba72c632ce19e52bca5a6e07529145e89d2b2aa9336",
+    "baseline_v3_2/checkpoint_witness_quorum.py": "9a240f2e7cc8acbb4bd80e79959e35f6c21a2f5d7e4963f75654e52148c6a478"
+  }
+}

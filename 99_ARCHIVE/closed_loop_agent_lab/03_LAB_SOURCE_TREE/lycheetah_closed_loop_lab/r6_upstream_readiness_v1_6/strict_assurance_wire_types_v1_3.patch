@@ -1,0 +1,103 @@
+diff --git a/lycheetah/assurance/models.py b/lycheetah/assurance/models.py
+--- a/lycheetah/assurance/models.py
++++ b/lycheetah/assurance/models.py
+@@ -1,7 +1,8 @@
+ """Typed public models for the Lycheetah Assurance Runtime."""
+ 
+ from __future__ import annotations
+ 
++import math
+ import re
+ import uuid
+ from collections.abc import Mapping, Sequence
+@@ -91,10 +92,18 @@ class ControlReference:
+         return out
+ 
+     @classmethod
+     def from_dict(cls, data: Mapping[str, Any]) -> ControlReference:
++        if not isinstance(data, Mapping):
++            raise ValueError("control reference must be an object")
++        for name in ("framework", "control_id", "title"):
++            if name not in data:
++                raise ValueError(f"control reference missing required field: {name}")
++        for name in ("framework", "control_id", "title", "url"):
++            if name in data and not isinstance(data[name], str):
++                raise ValueError(f"control reference {name} must be a string")
+         return cls(
+-            framework=str(data["framework"]),
+-            control_id=str(data["control_id"]),
+-            title=str(data["title"]),
+-            url=str(data.get("url", "")),
++            framework=data["framework"],
++            control_id=data["control_id"],
++            title=data["title"],
++            url=data.get("url", ""),
+         )
+@@ -185,5 +194,7 @@ class Finding:
+     @classmethod
+     def from_dict(cls, data: Mapping[str, Any]) -> Finding:
++        if not isinstance(data, Mapping):
++            raise ValueError("finding must be an object")
+         required = {
+             "id",
+             "title",
+@@ -210,11 +221,25 @@ class Finding:
+         if not isinstance(data["evidence"], list) or not isinstance(data["controls"], list):
+             raise ValueError("finding evidence and controls must be arrays")
++        for name in ("id", "title", "description", "evaluator"):
++            if not isinstance(data[name], str):
++                raise ValueError(f"finding {name} must be a string")
++        if "status_basis" in data and not isinstance(data["status_basis"], str):
++            raise ValueError("finding status_basis must be a string")
+         if data.get("cap_reason") is not None and not isinstance(data["cap_reason"], str):
+             raise ValueError("finding cap_reason must be a string or null")
++        confidence = data["confidence"]
++        if (
++            isinstance(confidence, bool)
++            or not isinstance(confidence, (int, float))
++            or not math.isfinite(float(confidence))
++        ):
++            raise ValueError("finding confidence must be a finite number")
++        if any(not isinstance(item, str) for item in data["evidence"]):
++            raise ValueError("finding evidence must contain strings")
+         return cls(
+-            finding_id=str(data["id"]),
+-            title=str(data["title"]),
+-            description=str(data["description"]),
++            finding_id=data["id"],
++            title=data["title"],
++            description=data["description"],
+             severity=Severity(data["severity"]),
+             requested_disposition=Disposition(data["requested_disposition"]),
+             effective_disposition=Disposition(data["effective_disposition"]),
+@@ -221,9 +246,9 @@ class Finding:
+             claim_status=ClaimStatus(data["claim_status"]),
+             deterministic=data["deterministic"],
+-            evaluator=str(data["evaluator"]),
+-            confidence=float(data.get("confidence", 1.0)),
+-            status_basis=str(data.get("status_basis", "")),
+-            evidence=tuple(str(item) for item in data.get("evidence", [])),
++            evaluator=data["evaluator"],
++            confidence=float(confidence),
++            status_basis=data.get("status_basis", ""),
++            evidence=tuple(data["evidence"]),
+             controls=tuple(ControlReference.from_dict(item) for item in data.get("controls", [])),
+             cap_reason=data.get("cap_reason"),
+         )
+diff --git a/lycheetah/assurance/receipt.py b/lycheetah/assurance/receipt.py
+--- a/lycheetah/assurance/receipt.py
++++ b/lycheetah/assurance/receipt.py
+@@ -263,10 +263,12 @@ class AssuranceReceipt:
+         if not isinstance(data["receipt_id"], str) or not data["receipt_id"]:
+             raise ReceiptError("receipt_id must be a non-empty string")
+         if not isinstance(data["issued_at"], str) or not data["issued_at"]:
+             raise ReceiptError("issued_at must be a non-empty string")
++        if not isinstance(data["schema_version"], str):
++            raise ReceiptError("schema_version must be a string")
+         try:
+             return cls(
+-                schema_version=str(data["schema_version"]),
++                schema_version=data["schema_version"],
+                 receipt_id=str(data["receipt_id"]),
+                 issued_at=str(data["issued_at"]),
+                 runtime=jsonable(data["runtime"]),

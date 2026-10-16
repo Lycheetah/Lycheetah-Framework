@@ -1,0 +1,68 @@
+{
+  "version": "4.5",
+  "date": "2026-10-17",
+  "scope": "Process-bound shared same-host, same-PID-namespace pre-TLS ingress quotas; expired leases are reclaimed only after owner-process death is proven.",
+  "observed_upstream_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "upstream_status": "NOT_MODIFIED",
+  "hosted_service_calls": 0,
+  "source_pin_status": "PASS",
+  "source_pins_verified": 14,
+  "python_compile_status": "PASS",
+  "test_suites": {
+    "shared_ingress_store": {
+      "status": "PASS",
+      "test_methods": 20,
+      "run_seconds": 7.704,
+      "log": "ingress_tests_v4.5.log"
+    },
+    "shared_coordinator_quota": {
+      "status": "PASS",
+      "test_methods": 13,
+      "run_seconds": 3.237,
+      "log": "coordinator_tests_v4.5.log"
+    },
+    "checkpoint_quorum": {
+      "status": "PASS",
+      "test_methods": 38,
+      "run_seconds": 6.709,
+      "log": "quorum_tests_v4.5.log"
+    },
+    "remote_witness_and_mtls_gateway": {
+      "status": "PASS",
+      "test_methods": 51,
+      "run_seconds": 35.366,
+      "log": "gateway_tests_v4.5.log",
+      "lifecycle": {
+        "status": "PASS",
+        "surviving_non_main_threads": 0
+      }
+    }
+  },
+  "combined_test_methods": 122,
+  "extra_final_code_gateway_focus": {
+    "status": "PASS",
+    "test_methods": 2,
+    "run_seconds": 9.533,
+    "log": "final_gateway_focus_tests_v4.5.log",
+    "note": "These methods are already included in the 51-method gateway suite; not added to combined total."
+  },
+  "cross_process_ingress_race": {
+    "processes": 2,
+    "shared_active_slots": 1,
+    "accepted": 1,
+    "denied": 1,
+    "status": "PASS"
+  },
+  "lease_reclamation_rule": "TTL plus demonstrably dead/reused owner process; live or ambiguous owner retains slot.",
+  "namespace_binding": "PASS_LINUX_PID_NAMESPACE_IN_SHARED_CONFIG",
+  "schema_migration": "v4.4 schema-1 databases fail closed; no implicit migration",
+  "known_limits": [
+    "A live wedged process may hold capacity indefinitely until recovery/restart; availability is traded for avoiding unsafe TTL-only reclamation.",
+    "A resumed handler is not forcibly cancelled; this is lease/quota accounting protection, not a hard execution fence.",
+    "Linux /proc semantics required; same host and same PID namespace must share the exact trusted SQLite path and matching configuration.",
+    "The SQLite database and parent directory remain trusted local infrastructure and do not have cryptographic tamper resistance.",
+    "No multi-host/distributed quota service guarantee.",
+    "Full upstream package install and upstream CI were not run; no source files changed and no pull request was opened."
+  ],
+  "verification_boundary": "Local reference artifact tests, with separate suite invocations. Not production certification and not evidence of upstream equivalence."
+}

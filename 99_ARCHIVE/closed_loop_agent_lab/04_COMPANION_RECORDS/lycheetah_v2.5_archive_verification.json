@@ -1,0 +1,31 @@
+{
+  "workstream": "Stripe recovery v2.5 request data minimization",
+  "generated_at": "2026-10-17",
+  "focused_test_methods": 81,
+  "focused_tests": "PASS",
+  "combined_test_methods": 198,
+  "combined_tests": "PASS",
+  "local_smoke": "PASS",
+  "python_compile": "PASS",
+  "hosted_stripe_calls": 0,
+  "real_refunds_created": 0,
+  "upstream_source_changed": false,
+  "upstream_ci_run": false,
+  "production_certification": false,
+  "artifacts": [
+    {
+      "name": "lycheetah_stripe_request_data_minimization_v2.5.zip",
+      "sha256": "4828218e54cf0de904ad39392ef08f94177d3e302a0c1c52c9175779435c614c",
+      "size_bytes": 34580,
+      "zip_integrity": "PASS",
+      "file_count": 17
+    },
+    {
+      "name": "lycheetah_closed_loop_agent_lab_v2.5.zip",
+      "sha256": "66b0824cf6db6207d588981cae01925422b335f09cfb1aa3624c32c0a0aa55cd",
+      "size_bytes": 213589,
+      "zip_integrity": "PASS",
+      "file_count": 110
+    }
+  ]
+}

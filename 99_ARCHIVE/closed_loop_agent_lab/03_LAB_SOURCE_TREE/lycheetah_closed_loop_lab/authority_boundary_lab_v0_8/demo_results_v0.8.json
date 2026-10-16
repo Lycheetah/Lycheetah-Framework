@@ -1,0 +1,55 @@
+{
+  "integration_tests": [
+    {
+      "case": "stamped action through separate-process fake host/provider",
+      "external_effect": false,
+      "note": "One effect record was made in an isolated temporary SQLite fake provider.",
+      "result": "PASS"
+    },
+    {
+      "case": "side_effect classification changed after approval",
+      "external_effect": false,
+      "note": "The fake host rejected the mutated action before provider dispatch.",
+      "result": "PASS_DENIED"
+    },
+    {
+      "case": "registry revision differs from pinned policy digest",
+      "external_effect": false,
+      "note": "Catalog-policy binding rejected stale configuration.",
+      "result": "PASS_DENIED"
+    }
+  ],
+  "lab_version": "0.8",
+  "not_tested": [
+    "full actual Lycheetah MCP package execution",
+    "live model behavior",
+    "authenticated human approval UI",
+    "OS privilege isolation",
+    "real provider API",
+    "production deployment"
+  ],
+  "source_level_projection": {
+    "evidence_type": "bounded projection of current source branch; not execution of full MCP package",
+    "interpretation": "The declared side-effect flag controls one approval-review branch; a caller that falsely labels a mutation read-only can avoid that specific review finding. The server is documented as advisory, not a dispatcher.",
+    "result": "ALLOW",
+    "scenario": "refund_order declared side_effect=false with no other findings, no denied name or blocked scope"
+  },
+  "status": "R0 local prototype",
+  "trusted_catalog": {
+    "catalog_sha256": "049bed0374fcaecb3175d6d67d92bda94863377403932bddb20cc747b119b0c2",
+    "host_derived_fields": [
+      "side_effect",
+      "scopes",
+      "dispatcher_id",
+      "dispatcher_version",
+      "agent_id",
+      "workspace_id",
+      "operation_id"
+    ],
+    "model_proposal_fields": [
+      "tool_name",
+      "arguments"
+    ],
+    "tests_passed": 18
+  }
+}

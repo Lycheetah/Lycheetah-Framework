@@ -1,0 +1,19 @@
+{
+  "version": "3.7",
+  "archives": {
+    "lycheetah_registry_external_quorum_v3.7.zip": {
+      "path": "/mnt/data/lycheetah_registry_external_quorum_v3.7.zip",
+      "size_bytes": 75022,
+      "sha256": "1850192cd7d15e027de2690d3aa0887be5b50b2f38cc9747a8c40343427375b4",
+      "entry_count": 29,
+      "zip_test": "PASS"
+    },
+    "lycheetah_closed_loop_agent_lab_v3.7.zip": {
+      "path": "/mnt/data/lycheetah_closed_loop_agent_lab_v3.7.zip",
+      "size_bytes": 1506481,
+      "sha256": "ff6f7680405ef7cf7484acc83bfc158ccead4c4df344c562936fad6543d48a37",
+      "entry_count": 801,
+      "zip_test": "PASS"
+    }
+  }
+}

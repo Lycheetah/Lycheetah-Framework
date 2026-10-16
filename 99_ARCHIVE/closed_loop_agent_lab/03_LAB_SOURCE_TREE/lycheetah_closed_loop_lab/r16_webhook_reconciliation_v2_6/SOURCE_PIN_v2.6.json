@@ -1,0 +1,12 @@
+{
+  "artifact": "Lycheetah Closed-Loop Agent Lab v2.6",
+  "checked_on": "2026-10-17",
+  "upstream_repository": "https://github.com/Lycheetah/Lycheetah-Framework",
+  "upstream_default_branch": "master",
+  "upstream_commit_observed": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "upstream_source_changed": false,
+  "implementation_scope": "standalone local webhook inbox beside the v2.5 test-mode reference adapter",
+  "hosted_stripe_requests": 0,
+  "real_refunds": 0,
+  "production_certification_claimed": false
+}

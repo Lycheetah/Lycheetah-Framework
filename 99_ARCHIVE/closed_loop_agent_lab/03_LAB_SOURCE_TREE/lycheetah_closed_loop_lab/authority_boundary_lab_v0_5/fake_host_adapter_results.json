@@ -1,0 +1,52 @@
+{
+  "status": "SYNTHETIC_LOCAL_FAKE_HOST_PROVIDER_TESTS",
+  "suite_tests": 8,
+  "results": [
+    {
+      "case": "exact-approved-operation",
+      "outcome": "dispatch-once",
+      "real_provider": false
+    },
+    {
+      "case": "unapproved-proposal",
+      "outcome": "no-token-no-effect",
+      "real_provider": false
+    },
+    {
+      "case": "action-changed-after-approval",
+      "outcome": "denied-action-mismatch",
+      "real_provider": false
+    },
+    {
+      "case": "policy-changed-after-approval",
+      "outcome": "denied-policy-changed",
+      "real_provider": false
+    },
+    {
+      "case": "approval-revoked-before-dispatch",
+      "outcome": "denied-token-revoked",
+      "real_provider": false
+    },
+    {
+      "case": "timeout-after-provider-commit",
+      "outcome": "reconciled-by-operation-id-one-effect",
+      "real_provider": false
+    },
+    {
+      "case": "timeout-before-provider-commit",
+      "outcome": "unknown-stop-for-human-reconciliation-no-blind-retry",
+      "real_provider": false
+    },
+    {
+      "case": "eight-concurrent-replay-attempts",
+      "outcome": "one-provider-effect-seven-replay-denials",
+      "real_provider": false
+    }
+  ],
+  "limits": [
+    "FakeApprovalUI is not an authenticated human approval workflow.",
+    "FakeProvider state is in memory, not durable across process crash.",
+    "No live LLM, MCP client host or remote provider was exercised.",
+    "This does not demonstrate security beyond the authored scenarios."
+  ]
+}

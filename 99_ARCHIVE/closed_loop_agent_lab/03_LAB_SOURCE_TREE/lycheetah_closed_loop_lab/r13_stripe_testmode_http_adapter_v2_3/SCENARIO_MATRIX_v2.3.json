@@ -1,0 +1,28 @@
+{
+  "suite": "R13 Stripe Test-Mode HTTP Adapter v2.3",
+  "focused_test_methods": 51,
+  "retained_test_methods": 117,
+  "combined_test_methods": 168,
+  "external_api_calls": 0,
+  "live_mode_enabled": false,
+  "scenarios": [
+    {"name":"durable-intent-before-send","expected":"no provider call before row commit","tested":true},
+    {"name":"response-loss-after-provider-commit","expected":"same persisted key returns the same simulated refund; one effect","tested":true},
+    {"name":"response-loss-before-provider-execution","expected":"same key can safely be sent again within local cutoff","tested":true},
+    {"name":"stored-api-v1-500","expected":"do not blindly retry; reconcile","tested":true},
+    {"name":"stale-key-window","expected":"list/refund correlation only; no POST retry","tested":true},
+    {"name":"changed-payload-account-mode-or-version","expected":"reconcile before provider call","tested":true},
+    {"name":"modified-sqlite-request-or-success-state","expected":"HMAC verification fails; do not claim success","tested":true},
+    {"name":"redirect-to-other-host","expected":"redirect is not followed; no authorization forwarding","tested":true},
+    {"name":"incomplete-pagination-or-no-match","expected":"reconcile; absence is not proof of no effect","tested":true},
+    {"name":"pending-refund","expected":"wait for provider; do not claim terminal success","tested":true},
+    {"name":"multiple-correlated-refunds","expected":"reconcile","tested":true},
+    {"name":"two-same-key-concurrent-dispatches","expected":"simulator records exactly one effect","tested":true}
+  ],
+  "non_claims": [
+    "No real Stripe test-mode conformance has been performed.",
+    "No proof of Stripe's hosted idempotency race behavior, list consistency, Connect semantics, or webhook delivery.",
+    "No guarantee that Lycheetah authorization predicates are atomically enforced at Stripe commit.",
+    "No upstream repository changes or full upstream CI run."
+  ]
+}

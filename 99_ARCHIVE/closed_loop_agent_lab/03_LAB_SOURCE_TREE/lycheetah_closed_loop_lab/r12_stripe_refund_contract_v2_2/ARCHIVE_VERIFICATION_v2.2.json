@@ -1,0 +1,6 @@
+{
+  "standalone_archive_testzip": "PASS",
+  "full_lab_archive_testzip": "PASS",
+  "test_counts_at_packaging": {"v2_2_specific": 39, "combined_retained": 117},
+  "notes": "Exact external archive SHA-256 values are written beside the ZIP files after packaging; no live Stripe calls were made."
+}

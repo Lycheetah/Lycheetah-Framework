@@ -1,0 +1,10 @@
+v3.7 verification summary
+=========================
+Source pin check: PASS (3 pinned/inherited files)
+Python compilation: PASS
+Current focused suite: 38 test methods passed (see focused_registry_quorum_tests_v3.7.log)
+Rollback demonstration: PASS (registry + client anchor restore detected while witness stores remain current; 0 hosted calls)
+Retained v3.6 suite: 82 test methods passed in a separate invocation (see previous_v3_6_regression_clean.log)
+Total methods across the two separate suite invocations: 120
+
+Trust-domain limit: all local witness stores restored together is an explicit negative control; real independent remote witness services are not provisioned.

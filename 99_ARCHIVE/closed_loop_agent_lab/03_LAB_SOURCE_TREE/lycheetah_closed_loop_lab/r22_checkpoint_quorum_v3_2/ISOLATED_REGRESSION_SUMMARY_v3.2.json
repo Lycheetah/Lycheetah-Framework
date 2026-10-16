@@ -1,0 +1,43 @@
+{
+  "artifact": "Lycheetah Checkpoint Witness Quorum v3.2",
+  "mode": "separate isolated test-process invocations",
+  "groups": [
+    {
+      "name": "v3.2 checkpoint witness quorum",
+      "tests": 31,
+      "status": "PASS",
+      "log": "verification_logs_v3.2/01_v3_2_witness_quorum.log"
+    },
+    {
+      "name": "v3.1 external checkpoint",
+      "tests": 33,
+      "status": "PASS",
+      "log": "verification_logs_v3.2/02_v3_1_external_checkpoint.log"
+    },
+    {
+      "name": "v3.1 remote HTTP group 1",
+      "tests": 14,
+      "status": "PASS",
+      "log": "verification_logs_v3.2/03_v3_1_remote_group_1.log"
+    },
+    {
+      "name": "v3.1 remote HTTP group 2",
+      "tests": 14,
+      "status": "PASS",
+      "log": "verification_logs_v3.2/04_v3_1_remote_group_2.log"
+    },
+    {
+      "name": "v3.1 remote HTTP group 3",
+      "tests": 13,
+      "status": "PASS",
+      "log": "verification_logs_v3.2/05_v3_1_remote_group_3.log"
+    }
+  ],
+  "total_test_methods": 105,
+  "all_isolated_groups_passed": true,
+  "single_monolithic_run_claimed": false,
+  "full_upstream_ci_claimed": false,
+  "hosted_anchor_calls": 0,
+  "hosted_stripe_calls": 0,
+  "real_refunds_created": 0
+}

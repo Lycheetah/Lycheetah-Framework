@@ -1,0 +1,235 @@
+"""Trusted tool catalog + strict proposal stamping for the Lycheetah agent lab.
+
+Research scaffold, not an authorization service. The host must keep the catalog,
+policy file, action file, approval issuer and provider credentials outside the
+model's write/control boundary.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import re
+from dataclasses import dataclass
+from pathlib import Path
+from types import MappingProxyType
+from typing import Any, Mapping
+
+SCHEMA = "lycheetah-tool-catalog/0.1"
+TOOL_NAME_RE = re.compile(r"^[a-z][a-z0-9_]*(?:\.[a-z][a-z0-9_]*)*$")
+
+
+def canonical(value: Any) -> bytes:
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False, allow_nan=False).encode("utf-8")
+
+
+def sha256(value: Any) -> str:
+    return hashlib.sha256(canonical(value)).hexdigest()
+
+
+@dataclass(frozen=True)
+class Field:
+    kind: str
+    required: bool = True
+    choices: tuple[str, ...] = ()
+    minimum: int | None = None
+
+    def __post_init__(self) -> None:
+        if self.kind not in {"string", "int"}:
+            raise ValueError("field kind must be string or int")
+        if type(self.required) is not bool:
+            raise ValueError("field.required must be a boolean")
+        object.__setattr__(self, "choices", tuple(self.choices))
+        if any(not isinstance(choice, str) or not choice for choice in self.choices):
+            raise ValueError("field choices must be non-empty strings")
+        if self.minimum is not None and (type(self.minimum) is not int):
+            raise ValueError("field minimum must be an integer")
+
+    def to_dict(self) -> dict[str, Any]:
+        return {"kind": self.kind, "required": self.required, "choices": list(self.choices), "minimum": self.minimum}
+
+
+@dataclass(frozen=True)
+class ToolSpec:
+    name: str
+    dispatcher_id: str
+    dispatcher_version: str
+    side_effect: bool
+    scopes: tuple[str, ...]
+    fields: Mapping[str, Field]
+    description: str
+
+    def __post_init__(self) -> None:
+        # Freeze nested metadata as well as dataclass fields; a mutable dict/list
+        # here could change the live schema without changing the catalog digest.
+        if type(self.side_effect) is not bool:
+            raise ValueError("side_effect classification must be a boolean")
+        object.__setattr__(self, "scopes", tuple(self.scopes))
+        object.__setattr__(self, "fields", MappingProxyType(dict(self.fields)))
+        if any(not isinstance(scope, str) or not scope for scope in self.scopes):
+            raise ValueError("tool scopes must be non-empty strings")
+        if any(not isinstance(value, Field) for value in self.fields.values()):
+            raise ValueError("tool fields must contain Field specifications")
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "name": self.name,
+            "dispatcher_id": self.dispatcher_id,
+            "dispatcher_version": self.dispatcher_version,
+            "side_effect": self.side_effect,
+            "scopes": list(self.scopes),
+            "fields": {name: field.to_dict() for name, field in sorted(self.fields.items())},
+            "description": self.description,
+        }
+
+
+class ProposalError(ValueError):
+    pass
+
+
+class ToolCatalog:
+    def __init__(self, tools: tuple[ToolSpec, ...]):
+        mapping: dict[str, ToolSpec] = {}
+        for spec in tools:
+            if not TOOL_NAME_RE.fullmatch(spec.name):
+                raise ValueError(f"invalid canonical tool name: {spec.name!r}")
+            if spec.name in mapping:
+                raise ValueError(f"duplicate tool name: {spec.name}")
+            if not spec.dispatcher_id or not spec.dispatcher_version or not spec.scopes:
+                raise ValueError(f"incomplete trusted metadata for {spec.name}")
+            mapping[spec.name] = spec
+        self._tools = MappingProxyType(mapping)
+        self.revision = SCHEMA
+        self.digest = sha256({"schema": SCHEMA, "tools": [mapping[name].to_dict() for name in sorted(mapping)]})
+
+    def get(self, name: str) -> ToolSpec:
+        if not isinstance(name, str) or name not in self._tools:
+            raise ProposalError("unknown-tool")
+        return self._tools[name]
+
+    def stamp(
+        self,
+        proposal: Mapping[str, Any],
+        *,
+        operation_id: str,
+        agent_id: str,
+        workspace_id: str,
+    ) -> dict[str, Any]:
+        """Build an authoritative action from the minimal model proposal.
+
+        The model may choose a tool name and arguments. It may not classify effects,
+        choose scopes, select a dispatcher, name an agent/workspace, or choose the
+        operation ID. Those are supplied by this trusted host and catalog.
+        """
+        if not isinstance(proposal, Mapping) or set(proposal) != {"tool_name", "arguments"}:
+            raise ProposalError("proposal-schema-must-contain-only-tool_name-and-arguments")
+        tool_name = proposal["tool_name"]
+        if not isinstance(tool_name, str):
+            raise ProposalError("tool_name-must-be-string")
+        spec = self.get(tool_name)
+        arguments = proposal["arguments"]
+        if not isinstance(arguments, Mapping):
+            raise ProposalError("arguments-must-be-object")
+        unknown = set(arguments) - set(spec.fields)
+        missing = {name for name, field in spec.fields.items() if field.required and name not in arguments}
+        if unknown:
+            raise ProposalError("unknown-argument-fields:" + ",".join(sorted(unknown)))
+        if missing:
+            raise ProposalError("missing-argument-fields:" + ",".join(sorted(missing)))
+        self._validate_fields(spec, arguments)
+        if not all(isinstance(value, str) and value.strip() for value in (operation_id, agent_id, workspace_id)):
+            raise ProposalError("trusted-context-fields-must-be-non-empty-strings")
+        # Shape is intentionally compatible with the v0.7 single fake refund route.
+        # Side effect, scope and route are never copied from the model proposal.
+        return {
+            "agent_id": agent_id,
+            "operation_id": operation_id,
+            "tool_name": spec.name,
+            "arguments": dict(arguments),
+            "scopes": list(spec.scopes),
+            "workspace_id": workspace_id,
+            "dispatcher_id": spec.dispatcher_id,
+            "dispatcher_version": spec.dispatcher_version,
+            "side_effect": spec.side_effect,
+        }
+
+    @staticmethod
+    def _validate_fields(spec: ToolSpec, args: Mapping[str, Any]) -> None:
+        for key, field in spec.fields.items():
+            if key not in args:
+                continue
+            value = args[key]
+            if field.kind == "string":
+                if not isinstance(value, str) or not value.strip():
+                    raise ProposalError(f"invalid-field:{key}:expected-non-empty-string")
+            elif field.kind == "int":
+                # bool is a subclass of int in Python, but must not be an amount.
+                if type(value) is not int:
+                    raise ProposalError(f"invalid-field:{key}:expected-integer-not-bool")
+                if field.minimum is not None and value < field.minimum:
+                    raise ProposalError(f"invalid-field:{key}:below-minimum")
+            else:
+                raise ValueError(f"unsupported field kind in trusted catalog: {field.kind}")
+            if field.choices and value not in field.choices:
+                raise ProposalError(f"invalid-field:{key}:unsupported-choice")
+
+
+DEFAULT_CATALOG = ToolCatalog((
+    ToolSpec(
+        name="refund_order",
+        dispatcher_id="fake-provider.refund",
+        dispatcher_version="1",
+        side_effect=True,
+        scopes=("orders:refund",),
+        fields={
+            "order_id": Field("string"),
+            "amount_minor": Field("int", minimum=1),
+            "currency": Field("string", choices=("NZD", "USD")),
+        },
+        description="Issue a simulated refund; always consequential in this lab.",
+    ),
+    ToolSpec(
+        name="read_order",
+        dispatcher_id="fake-provider.order-read",
+        dispatcher_version="1",
+        side_effect=False,
+        scopes=("orders:read",),
+        fields={"order_id": Field("string")},
+        description="Read a simulated order; no side effect in this lab catalog.",
+    ),
+))
+
+
+def check_policy_catalog_binding(policy_path: str | Path, catalog: ToolCatalog = DEFAULT_CATALOG) -> dict[str, Any]:
+    try:
+        policy = json.loads(Path(policy_path).read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ProposalError("cannot-load-policy-file") from exc
+    if not isinstance(policy, dict):
+        raise ProposalError("policy-must-be-json-object")
+    if policy.get("tool_catalog_sha256") != catalog.digest:
+        raise ProposalError("policy-tool-catalog-digest-mismatch")
+    return policy
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Stamp a model proposal using trusted catalog metadata")
+    parser.add_argument("proposal_file")
+    parser.add_argument("policy_file")
+    parser.add_argument("output_action_file")
+    parser.add_argument("--operation-id", required=True, help="Host-generated stable operation identifier")
+    parser.add_argument("--agent-id", required=True, help="Trusted host identity for this agent session")
+    parser.add_argument("--workspace-id", required=True, help="Trusted isolated workspace identifier")
+    args = parser.parse_args()
+    check_policy_catalog_binding(args.policy_file)
+    proposal = json.loads(Path(args.proposal_file).read_text(encoding="utf-8"))
+    action = DEFAULT_CATALOG.stamp(proposal, operation_id=args.operation_id, agent_id=args.agent_id, workspace_id=args.workspace_id)
+    destination = Path(args.output_action_file)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(json.dumps(action, sort_keys=True, indent=2), encoding="utf-8")
+    print(json.dumps({"status":"stamped","tool_name":action["tool_name"],"side_effect_from_trusted_catalog":action["side_effect"],"catalog_sha256":DEFAULT_CATALOG.digest,"action_sha256":sha256(action)}, sort_keys=True))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

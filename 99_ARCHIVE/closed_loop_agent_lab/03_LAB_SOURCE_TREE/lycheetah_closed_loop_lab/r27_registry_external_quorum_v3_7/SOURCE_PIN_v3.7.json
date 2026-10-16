@@ -1,0 +1,21 @@
+{
+  "version": "3.7",
+  "observed_upstream_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "upstream_default_branch": "master",
+  "checked_during_this_research": true,
+  "status": "The GitHub ref API returned the observed master head above. The two retained helper files are byte-for-byte source pinned to the previously retrieved repository artifacts. spent_nonce_registry.py is the inherited local v3.6 harness implementation, not claimed as an upstream file at this hash. registry_checkpoint_quorum.py and tests are new local artifacts.",
+  "files": {
+    "remote_anchor_http.py": {
+      "origin": "inherited upstream-derived helper as present in local v3.6 pack",
+      "sha256": "0a002d054800fbfaed20b100c38f7333c934ff71f7a971aec3631bd49a61afe3"
+    },
+    "checkpoint_witness_quorum.py": {
+      "origin": "inherited upstream-derived helper as present in local v3.6 pack",
+      "sha256": "579912ffd00a744995ed23ab6ba0fae577df4cfb94618ae788165b4bb9dab5d6"
+    },
+    "spent_nonce_registry.py": {
+      "origin": "inherited local registry harness from v3.6; not asserted to be an upstream blob at this hash",
+      "sha256": "f187024703aa1375946053bdbacf2604cce73cf4c015732392bc8c6a457c19b5"
+    }
+  }
+}

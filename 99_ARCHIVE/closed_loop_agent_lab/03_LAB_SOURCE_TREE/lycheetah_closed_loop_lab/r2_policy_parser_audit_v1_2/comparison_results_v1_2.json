@@ -1,0 +1,244 @@
+{
+  "status": "SOURCE_EQUIVALENT_FIXTURE_NOT_UPSTREAM_INTEGRATION",
+  "source_url": "https://github.com/Lycheetah/Lycheetah-Framework/blob/master/lycheetah/assurance/policy.py",
+  "source_git_blob_sha": "913006991327ac40bf34e96fce591ca100334ca9",
+  "invalid_type_cases": 30,
+  "baseline_accepted_invalid_types": 27,
+  "candidate_rejected_invalid_types": 30,
+  "cases": [
+    {
+      "field": "id",
+      "value_repr": "None",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "id",
+      "value_repr": "True",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "id",
+      "value_repr": "17",
+      "source_equivalent_baseline": "REJECT:PolicyError",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "id",
+      "value_repr": "3.5",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "id",
+      "value_repr": "['x']",
+      "source_equivalent_baseline": "REJECT:PolicyError",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "id",
+      "value_repr": "{'x': 'y'}",
+      "source_equivalent_baseline": "REJECT:PolicyError",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "pattern",
+      "value_repr": "None",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "pattern",
+      "value_repr": "True",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "pattern",
+      "value_repr": "17",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "pattern",
+      "value_repr": "3.5",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "pattern",
+      "value_repr": "['x']",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "pattern",
+      "value_repr": "{'x': 'y'}",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "title",
+      "value_repr": "None",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "title",
+      "value_repr": "True",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "title",
+      "value_repr": "17",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "title",
+      "value_repr": "3.5",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "title",
+      "value_repr": "['x']",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "title",
+      "value_repr": "{'x': 'y'}",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "description",
+      "value_repr": "None",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "description",
+      "value_repr": "True",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "description",
+      "value_repr": "17",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "description",
+      "value_repr": "3.5",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "description",
+      "value_repr": "['x']",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "description",
+      "value_repr": "{'x': 'y'}",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "status_basis",
+      "value_repr": "None",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "status_basis",
+      "value_repr": "True",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "status_basis",
+      "value_repr": "17",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "status_basis",
+      "value_repr": "3.5",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "status_basis",
+      "value_repr": "['x']",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    },
+    {
+      "field": "status_basis",
+      "value_repr": "{'x': 'y'}",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate_v1_2": "REJECT:PolicyError"
+    }
+  ],
+  "valid_compatibility_cases": [
+    {
+      "payload": {
+        "id": "customer.rule-01",
+        "pattern": "\\bhello\\b"
+      },
+      "parser": "source_equivalent_baseline",
+      "status": "ACCEPT",
+      "title": "customer.rule-01",
+      "description": "Policy text rule matched",
+      "status_basis": ""
+    },
+    {
+      "payload": {
+        "id": "customer.rule-01",
+        "pattern": "\\bhello\\b"
+      },
+      "parser": "strict_candidate_v1_2",
+      "status": "ACCEPT",
+      "title": "customer.rule-01",
+      "description": "Policy text rule matched",
+      "status_basis": ""
+    },
+    {
+      "payload": {
+        "id": "customer.rule-01",
+        "pattern": "\\bhello\\b",
+        "title": "Title",
+        "description": "Description",
+        "status_basis": "Approved basis"
+      },
+      "parser": "source_equivalent_baseline",
+      "status": "ACCEPT",
+      "title": "Title",
+      "description": "Description",
+      "status_basis": "Approved basis"
+    },
+    {
+      "payload": {
+        "id": "customer.rule-01",
+        "pattern": "\\bhello\\b",
+        "title": "Title",
+        "description": "Description",
+        "status_basis": "Approved basis"
+      },
+      "parser": "strict_candidate_v1_2",
+      "status": "ACCEPT",
+      "title": "Title",
+      "description": "Description",
+      "status_basis": "Approved basis"
+    }
+  ],
+  "baseline_invalid_accept_rate": 0.9,
+  "candidate_invalid_reject_rate": 1.0
+}

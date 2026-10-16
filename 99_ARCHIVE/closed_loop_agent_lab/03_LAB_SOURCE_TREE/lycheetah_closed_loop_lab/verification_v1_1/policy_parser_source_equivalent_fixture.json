@@ -1,0 +1,12 @@
+{
+  "suite": "policy_parser_source_equivalent_fixture",
+  "status": "PASS",
+  "expected_test_methods": 7,
+  "elapsed_seconds": 4.834,
+  "detail": "exit_code=0",
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "test_policy_parser.py"
+  ],
+  "cwd": "/mnt/data/lycheetah_closed_loop_lab/r2_policy_parser_audit"
+}

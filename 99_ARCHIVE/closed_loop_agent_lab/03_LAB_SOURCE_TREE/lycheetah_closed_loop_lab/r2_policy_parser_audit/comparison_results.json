@@ -1,0 +1,130 @@
+{
+  "status": "SOURCE_EQUIVALENT_FIXTURE_NOT_UPSTREAM_INTEGRATION",
+  "source_url": "https://github.com/Lycheetah/Lycheetah-Framework/blob/master/lycheetah/assurance/policy.py",
+  "source_git_blob_sha": "913006991327ac40bf34e96fce591ca100334ca9",
+  "invalid_type_cases": 20,
+  "baseline_accepted_invalid_types": 17,
+  "candidate_rejected_invalid_types": 20,
+  "cases": [
+    {
+      "field": "id",
+      "value_repr": "None",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "id",
+      "value_repr": "True",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "id",
+      "value_repr": "17",
+      "source_equivalent_baseline": "REJECT:PolicyError",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "id",
+      "value_repr": "['ordinary']",
+      "source_equivalent_baseline": "REJECT:PolicyError",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "id",
+      "value_repr": "{'ordinary': 'value'}",
+      "source_equivalent_baseline": "REJECT:PolicyError",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "pattern",
+      "value_repr": "None",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "pattern",
+      "value_repr": "True",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "pattern",
+      "value_repr": "17",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "pattern",
+      "value_repr": "['ordinary']",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "pattern",
+      "value_repr": "{'ordinary': 'value'}",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "title",
+      "value_repr": "None",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "title",
+      "value_repr": "True",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "title",
+      "value_repr": "17",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "title",
+      "value_repr": "['ordinary']",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "title",
+      "value_repr": "{'ordinary': 'value'}",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "description",
+      "value_repr": "None",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "description",
+      "value_repr": "True",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "description",
+      "value_repr": "17",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "description",
+      "value_repr": "['ordinary']",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    },
+    {
+      "field": "description",
+      "value_repr": "{'ordinary': 'value'}",
+      "source_equivalent_baseline": "ACCEPT",
+      "strict_candidate": "REJECT:PolicyError"
+    }
+  ]
+}

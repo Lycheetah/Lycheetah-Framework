@@ -1,0 +1,35 @@
+{
+  "research_version": "v2.3",
+  "research_date": "2026-10-17",
+  "focused_test_methods": 51,
+  "focused_suite": "PASS",
+  "retained_test_methods": 117,
+  "retained_suite": "PASS",
+  "combined_test_methods": 168,
+  "combined_suite": "PASS",
+  "python_compile": "PASS",
+  "local_smoke": {
+    "first_action": "RECONCILE",
+    "recovery_action": "SUCCEEDED",
+    "provider_effect_count": 1,
+    "provider_post_calls": 2,
+    "persisted_state": "SUCCEEDED"
+  },
+  "network_boundary": {
+    "hosted_stripe_api_calls": 0,
+    "real_stripe_credentials_used": false,
+    "live_mode_keys_accepted": false,
+    "http_test_traffic": "loopback-only simulated Stripe contract"
+  },
+  "upstream": {
+    "repository_changed": false,
+    "pull_request_created": false,
+    "full_upstream_ci_run": false
+  },
+  "claims_not_made": [
+    "No claim of Stripe hosted-service conformance",
+    "No claim that local Lycheetah authorization/evidence is atomic with remote refund commit",
+    "No production certification",
+    "No protection against compromised application process or exposed local HMAC key"
+  ]
+}

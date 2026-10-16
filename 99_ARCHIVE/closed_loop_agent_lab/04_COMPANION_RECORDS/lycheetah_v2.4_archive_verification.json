@@ -1,0 +1,27 @@
+{
+  "version": "2.4",
+  "date": "2026-10-17",
+  "focused_test_methods": 76,
+  "combined_test_methods": 193,
+  "focused_test_log": "PASS (76 in 7.104 seconds)",
+  "combined_test_log": "PASS (193 in 16.401 seconds)",
+  "python_compile": "PASS",
+  "local_http_smoke": "PASS",
+  "hosted_stripe_api_calls": 0,
+  "real_refunds_created": 0,
+  "upstream_source_modified": false,
+  "archives": [
+    {
+      "path": "/mnt/data/lycheetah_closed_loop_agent_lab_v2.4.zip",
+      "sha256": "196bcc2e741ec0b1b1b50a5fe32392612ddfcc685a478bd862a067fde78fa3ef",
+      "files": 367,
+      "uncompressed_bytes": 1752573
+    },
+    {
+      "path": "/mnt/data/lycheetah_stripe_recovery_state_audit_v2.4.zip",
+      "sha256": "3678fd82b3954cd5e22248c5de70321b1b6c93eb95542c7a0a9555d8596450f2",
+      "files": 19,
+      "uncompressed_bytes": 162828
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "suite": "catalog_issuance_v0_9",
+  "status": "PASS",
+  "expected_test_methods": 21,
+  "elapsed_seconds": 4.03,
+  "detail": "exit_code=0",
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "-S",
+    "-m",
+    "unittest",
+    "-v",
+    "test_tool_catalog"
+  ],
+  "cwd": "/mnt/data/lycheetah_closed_loop_lab/authority_boundary_lab_v0_9"
+}

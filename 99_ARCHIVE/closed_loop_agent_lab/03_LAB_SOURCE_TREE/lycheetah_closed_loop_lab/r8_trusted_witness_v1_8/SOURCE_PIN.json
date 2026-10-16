@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/Lycheetah/Lycheetah-Framework",
+  "inspected_ref": "master",
+  "inspected_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "source_path": "lycheetah/assurance/finality.py",
+  "source_blob_sha": "dd97733d45c2261863d24a2a00800baf59fc8bac",
+  "related_tests": "tests/test_assurance_finality.py",
+  "guard_boundary_document": "12_IMPLEMENTATIONS/applications/LYCHEETAH_GUARD_SETUP.md",
+  "inspection_scope": "GitHub source files fetched via repository integration; no complete local checkout",
+  "repository_writes": false
+}

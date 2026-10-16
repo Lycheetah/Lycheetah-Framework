@@ -1,0 +1,9 @@
+{
+  "status": "PASS_SYNTHETIC_PATCH_CONTEXT_ONLY",
+  "target_files": [
+    "lycheetah/assurance/models.py",
+    "lycheetah/assurance/receipt.py"
+  ],
+  "changed": "lycheetah/assurance/models.py  | 47 ++++++++++++++++++++++++++++++++----------\n lycheetah/assurance/receipt.py |  4 +++-\n 2 files changed, 39 insertions(+), 12 deletions(-)",
+  "warning": "Not a full upstream checkout; no package tests run."
+}

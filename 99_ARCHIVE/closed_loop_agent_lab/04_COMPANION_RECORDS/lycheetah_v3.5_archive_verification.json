@@ -1,0 +1,37 @@
+{
+  "version": "3.5",
+  "archives": {
+    "lycheetah_external_spent_nonce_registry_v3.5.zip": {
+      "sha256": "fb4a3d351c368eb565aace4dd6b8cf453b1c97af9f77567295c74afe8bc1abbe",
+      "size_bytes": 102718,
+      "entries": 45,
+      "zip_integrity": "PASS"
+    },
+    "lycheetah_closed_loop_agent_lab_v3.5.zip": {
+      "sha256": "ee5a5d557f43bcbb22944fa45f1db6e800054931d774f913e9de22a24284f9c5",
+      "size_bytes": 1351859,
+      "entries": 745,
+      "zip_integrity": "PASS"
+    }
+  },
+  "verification": {
+    "source_pin": "PASS",
+    "python_compile": "PASS",
+    "focused_remote_test_methods": 15,
+    "focused_remote_tests": "PASS",
+    "combined_test_methods": 71,
+    "combined_test_result": "PASS",
+    "v3_2_baseline_acceptance_cases_reproduced": 5,
+    "primary_snapshot_rollback_with_current_registry": "REPLAY_REJECTED",
+    "coordinated_snapshot_rollback": "NEGATIVE_CONTROL_REPLAY_DEMONSTRATED",
+    "hosted_service_calls": 0,
+    "real_refunds_created": 0,
+    "upstream_modified": false,
+    "upstream_ci_run": false,
+    "limitations": [
+      "The registry simulator and primary verifier run on one local host.",
+      "No production anti-rollback storage service is integrated.",
+      "Coordinated restore of both ledgers can replay a challenge."
+    ]
+  }
+}

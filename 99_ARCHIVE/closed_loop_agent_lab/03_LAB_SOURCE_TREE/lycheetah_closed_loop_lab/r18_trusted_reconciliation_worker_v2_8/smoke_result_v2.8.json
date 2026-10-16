@@ -1,0 +1,18 @@
+{
+  "hosted_provider_calls": 0,
+  "http_status": 200,
+  "ingest_action": "INGESTED",
+  "ledger_state": "PROVIDER_SUCCEEDED",
+  "queue_state": "DONE",
+  "real_refunds_created": 0,
+  "worker_results": [
+    {
+      "action": "RECONCILED",
+      "event_id": "evt_v28_smoke_001",
+      "ledger_state": "PROVIDER_SUCCEEDED",
+      "operation_id": "op_v28_smoke_001",
+      "reason": "terminal-provider-state-recorded",
+      "refund_status": "succeeded"
+    }
+  ]
+}

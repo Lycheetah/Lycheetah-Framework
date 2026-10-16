@@ -1,0 +1,49 @@
+{
+  "status": "PASS_SEPARATE_LOCAL_CHECKS",
+  "upstream_package_tested": false,
+  "tests": [
+    {
+      "suite": "source_equivalent_candidate_unittest",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_all_json_string_fields_reject_wrong_types (test_strict_candidate.TestStrictCandidate.test_all_json_string_fields_reject_wrong_types) ... ok\ntest_baseline_is_not_accidentally_used_as_candidate (test_strict_candidate.TestStrictCandidate.test_baseline_is_not_accidentally_used_as_candidate) ... ok\ntest_direct_constructor_rejects_wrong_types_for_all_text_fields (test_strict_candidate.TestStrictCandidate.test_direct_constructor_rejects_wrong_types_for_all_text_fields) ... ok\ntest_existing_missing_optional_defaults_are_preserved (test_strict_candidate.TestStrictCandidate.test_existing_missing_optional_defaults_are_preserved) ... ok\ntest_source_equivalent_fixture_exposes_status_basis_coercion (test_strict_candidate.TestStrictCandidate.test_source_equivalent_fixture_exposes_status_basis_coercion) ... ok\ntest_valid_explicit_strings_round_trip (test_strict_candidate.TestStrictCandidate.test_valid_explicit_strings_round_trip) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.003s\n\nOK\n"
+    },
+    {
+      "suite": "source_equivalent_comparison",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"SOURCE_EQUIVALENT_FIXTURE_NOT_UPSTREAM_INTEGRATION\",\n  \"invalid_type_cases\": 30,\n  \"baseline_accepted_invalid_types\": 27,\n  \"candidate_rejected_invalid_types\": 30,\n  \"baseline_invalid_accept_rate\": 0.9,\n  \"candidate_invalid_reject_rate\": 1.0\n}\n",
+      "stderr": ""
+    },
+    {
+      "suite": "upstream_test_syntax_compile",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "suite": "synthetic_patch_context_check",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "suite": "synthetic_patch_apply",
+      "exit_code": 0,
+      "stdout": "diff --git a/lycheetah/assurance/policy.py b/lycheetah/assurance/policy.py\nindex c7d45f3..d063dd2 100644\n--- a/lycheetah/assurance/policy.py\n+++ b/lycheetah/assurance/policy.py\n@@ -110,8 +110,9 @@\n     ignore_case: bool = True\n \n     def __post_init__(self) -> None:\n-        if not isinstance(self.rule_id, str) or not isinstance(self.pattern, str):\n-            raise PolicyError(\"text rule id and pattern must be strings\")\n+        for field_name in (\"rule_id\", \"pattern\", \"title\", \"description\", \"status_basis\"):\n+            if not isinstance(getattr(self, field_name), str):\n+                raise PolicyError(f\"text rule {field_name} must be a string\")\n         if not re.fullmatch(r\"[A-Za-z0-9][A-Za-z0-9._:-]{2,127}\", self.rule_id):\n             raise PolicyError(f\"invalid text rule id: {self.rule_id!r}\")\n         if not self.pattern:\n@@ -178,16 +179,19 @@\n         if \"id\" not in data or \"pattern\" not in data:\n             raise PolicyError(\"text rule requires id and pattern\")\n         phases = _strings(data.get(\"phases\", [\"input\", \"output\"]), \"text rule.phases\")\n+        for field_name in (\"id\", \"pattern\", \"title\", \"description\", \"status_basis\"):\n+            if field_name in data and not isinstance(data[field_name], str):\n+                raise PolicyError(f\"text rule.{field_name} must be a string\")\n         return cls(\n-            rule_id=str(data[\"id\"]),\n-            pattern=str(data[\"pattern\"]),\n-            title=str(data.get(\"title\", data[\"id\"])),\n-            description=str(data.get(\"description\", \"Policy text rule matched\")),\n+            rule_id=data[\"id\"],\n+            pattern=data[\"pattern\"],\n+            title=data.get(\"title\", data[\"id\"]),\n+            description=data.get(\"description\", \"Policy text rule matched\"),\n             phases=tuple(Phase(item) for item in phases),\n             requested_disposition=Disposition(data.get(\"requested_disposition\", \"REVIEW\")),\n             claim_status=ClaimStatus(data.get(\"claim_status\", \"SCAFFOLD\")),\n             deterministic=_boolean(data.get(\"deterministic\", False), \"text rule.deterministic\"),\n             severity=Severity(data.get(\"severity\", \"MEDIUM\")),\n-            status_basis=str(data.get(\"status_basis\", \"\")),\n+            status_basis=data.get(\"status_basis\", \"\"),\n             ignore_case=_boolean(data.get(\"ignore_case\", True), \"text rule.ignore_case\"),\n         )\n",
+      "stderr": ""
+    },
+    {
+      "suite": "synthetic_patch_assertions",
+      "exit_code": 0,
+      "stdout": "required strict checks present",
+      "stderr": ""
+    },
+    {
+      "suite": "comparison_result_contract",
+      "exit_code": 0,
+      "stdout": "{\"baseline_accepted_invalid_types\": 27, \"candidate_rejected_invalid_types\": 30, \"invalid_type_cases\": 30}",
+      "stderr": ""
+    }
+  ],
+  "note": "Synthetic context check is not a full upstream checkout or package test."
+}

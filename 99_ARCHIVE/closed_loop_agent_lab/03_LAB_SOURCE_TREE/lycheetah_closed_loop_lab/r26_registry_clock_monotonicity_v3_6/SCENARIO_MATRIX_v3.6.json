@@ -1,0 +1,20 @@
+{
+  "version": "3.6",
+  "scenarios": [
+    {"id": "CLK-01", "name": "backward wall clock", "expected": "reject registry-clock-rollback", "test": "test_clock_floor_persists_and_detects_wall_clock_rollback"},
+    {"id": "CLK-02", "name": "expired challenge clock rewind", "expected": "reject registry-clock-rollback", "test": "test_expired_challenge_cannot_be_resurrected_by_clock_rollback"},
+    {"id": "CLK-03", "name": "clock state row tamper", "expected": "reject integrity failure", "test": "test_clock_high_water_tampering_fails_closed"},
+    {"id": "CLK-04", "name": "clock state delete", "expected": "SQL trigger refusal", "test": "test_clock_state_cannot_be_deleted_through_normal_sql"},
+    {"id": "REQ-01", "name": "live request ID tamper", "expected": "SQL trigger refusal", "test": "test_live_request_id_cannot_be_deleted_or_rewritten_from_sql"},
+    {"id": "REQ-02", "name": "stale request ID cleanup", "expected": "prune then reject old signed timestamp", "test": "test_stale_request_ids_are_pruned_and_old_signed_request_rejected_by_time"},
+    {"id": "REQ-03", "name": "same request ID replay", "expected": "client-request-replay", "test": "test_same_request_id_within_window_is_rejected"},
+    {"id": "REQ-04", "name": "window widening", "expected": "registry-clock-window-config-changed", "test": "test_replay_window_configuration_cannot_silently_widen"},
+    {"id": "CH-01", "name": "future challenge consumed early", "expected": "challenge-not-yet-valid", "test": "test_registered_future_challenge_is_not_valid_before_issue_time"},
+    {"id": "TX-01", "name": "clock sampling race", "expected": "one server-clock sample per transaction", "test": "test_request_handler_uses_one_clock_sample_per_transaction"},
+    {"id": "TX-02", "name": "monotonic forward time", "expected": "accepted and high-water advances", "test": "test_honest_monotonic_advancement_is_accepted"}
+  ],
+  "negative_controls": [
+    "Five frozen v3.2 acceptance cases remain reproducible by design.",
+    "Coordinated rollback of the primary and registry SQLite stores remains possible and is documented as outside the local prototype guarantee."
+  ]
+}

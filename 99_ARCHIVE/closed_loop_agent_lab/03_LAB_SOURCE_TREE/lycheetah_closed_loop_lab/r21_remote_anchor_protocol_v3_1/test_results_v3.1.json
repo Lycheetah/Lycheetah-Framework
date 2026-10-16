@@ -1,0 +1,40 @@
+{
+  "suite": "Lycheetah remote anchor protocol v3.1",
+  "recorded_test_groups": [
+    {
+      "name": "v3.0 checkpoint regression",
+      "tests": 33,
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "test_logs/legacy_checkpoint_suite.log"
+    },
+    {
+      "name": "remote HTTP group 1",
+      "tests": 14,
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "test_logs/remote_group1.log"
+    },
+    {
+      "name": "remote HTTP group 2",
+      "tests": 14,
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "test_logs/remote_group2.log"
+    },
+    {
+      "name": "remote HTTP group 3",
+      "tests": 13,
+      "status": "PASS",
+      "exit_code": 0,
+      "log": "test_logs/remote_group3.log"
+    }
+  ],
+  "total_unique_test_methods": 74,
+  "remote_http_test_methods": 41,
+  "upstream_modified": false,
+  "hosted_stripe_calls": 0,
+  "real_refunds": 0,
+  "production_remote_worm_anchor": false,
+  "notes": "Each group independently exited 0. Full suite and real remote deployment are not claimed."
+}

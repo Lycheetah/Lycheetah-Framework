@@ -1,0 +1,45 @@
+{
+  "version": "1.9",
+  "experiment": "durable-authorization-to-effect handoff",
+  "suite": {
+    "test_methods": 27,
+    "passed": 27,
+    "failed": 0,
+    "duration_seconds_reported": 0.551
+  },
+  "concurrency_stress": {
+    "independent_operation_races": 25,
+    "dispatch_calls": 50,
+    "expected_effects": 25,
+    "observed_effects": 25,
+    "result": "PASS"
+  },
+  "controlled_outcomes": {
+    "atomic_consume_and_outbox_insert": "PASS",
+    "pre_commit_crash_rolls_back": "PASS",
+    "lost_local_enqueue_ack_returns_same_operation": "PASS",
+    "remote_commit_response_loss_recovered_idempotently": "PASS",
+    "worker_restart_after_remote_commit_recovered": "PASS",
+    "provider_payload_mismatch_rejected": "PASS",
+    "persisted_outbox_payload_mutation_blocked_before_provider_call": "PASS",
+    "unsupported_non_idempotent_provider_routes_to_reconcile": "PASS",
+    "naive_non_idempotent_retry_duplicates_effect": "DEMONSTRATED",
+    "external_evidence_provider_toctou": "OPEN_AND_DEMONSTRATED"
+  },
+  "cross_iteration_regression": {
+    "v1_7_test_methods_passed": 5,
+    "v1_8_test_methods_passed": 16,
+    "v1_9_test_methods_passed": 27,
+    "total_test_methods_passed_across_reference_harnesses": 48
+  },
+  "not_run": [
+    "full upstream Lycheetah-Framework test suite",
+    "actual FinalityGate integration",
+    "real remote payment/deployment provider",
+    "process kill with OS-level abrupt termination",
+    "provider-side evidence lease or conditional transaction",
+    "multi-host or multi-region run",
+    "production key and database threat review"
+  ],
+  "scope_note": "Results are from local deterministic prototype tests. The provider-side database makes the simulated business effect and its idempotency record atomic; no guarantee is claimed for arbitrary remote systems."
+}

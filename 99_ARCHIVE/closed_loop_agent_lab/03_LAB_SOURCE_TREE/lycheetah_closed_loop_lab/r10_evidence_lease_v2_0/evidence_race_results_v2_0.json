@@ -1,0 +1,12 @@
+{
+  "counts": {
+    "lease_linearized_first": 121,
+    "update_linearized_first": 79
+  },
+  "experiment": "SQLite evidence-write vs atomic lease-acquisition race",
+  "invariant": "Either evidence mutation commits before lease and acquisition is denied, or lease commits before mutation and mutation is blocked.",
+  "result": "PASS",
+  "rounds": 200,
+  "scope": "Single-host, local SQLite reference implementation; not multi-host/provider integration evidence.",
+  "violations": []
+}

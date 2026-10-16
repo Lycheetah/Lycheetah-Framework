@@ -1,0 +1,22 @@
+{
+  "version": "4.0",
+  "scope": "Coordinator-facing mTLS ingress gateway for the local remote-witness/quorum reference harness.",
+  "source_pin_status": "PASS",
+  "pinned_files": 8,
+  "compile_status": "PASS",
+  "retained_quorum_test_methods_passed": 38,
+  "remote_witness_and_gateway_test_methods_passed": 39,
+  "total_test_methods_passed": 77,
+  "test_invocations": 2,
+  "hosted_service_calls": 0,
+  "upstream_modified": false,
+  "known_limits": [
+    "Four witness processes and coordinator share one host and administrator.",
+    "Ephemeral local CA/certificates; production issuance, rotation, revocation and secret distribution are not validated.",
+    "No production rate limiting, cross-host network validation or upstream CI run."
+  ],
+  "final_log_summaries": {
+    "retained_quorum_test_v4.0.log": "Ran 38 tests in 10.960s; OK",
+    "mtls_registry_gateway_test_v4.0.log": "Ran 39 tests in 26.349s; OK"
+  }
+}

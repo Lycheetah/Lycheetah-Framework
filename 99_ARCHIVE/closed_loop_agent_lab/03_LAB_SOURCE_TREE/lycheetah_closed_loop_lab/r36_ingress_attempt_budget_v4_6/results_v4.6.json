@@ -1,0 +1,50 @@
+{
+  "artifact_version": "4.6",
+  "parent_artifact_version": "4.5",
+  "upstream_commit_observed": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "upstream_modified": false,
+  "hosted_service_calls": 0,
+  "source_fingerprint_validation": "PASS: 16 exact local reference fingerprints",
+  "python_compile": "PASS",
+  "test_suites": {
+    "shared_ingress_quota": {
+      "tests": 24,
+      "result": "PASS",
+      "log": "ingress_tests_v4.6.log"
+    },
+    "shared_coordinator_quota": {
+      "tests": 13,
+      "result": "PASS",
+      "log": "coordinator_tests_v4.6.log"
+    },
+    "checkpoint_quorum": {
+      "tests": 38,
+      "result": "PASS",
+      "log": "quorum_tests_v4.6.log"
+    },
+    "gateway_mtls_and_remote_witness": {
+      "tests": 53,
+      "result": "PASS",
+      "log": "gateway_tests_v4.6.log",
+      "lifecycle_summary": "LIFECYCLE_SUMMARY tests=53 errors=0 failures=0 surviving_non_main_threads=[]"
+    }
+  },
+  "combined_test_methods": 128,
+  "baseline_delta_probe": "PASS: reproduced v4.5 free-denial token behavior and mapped-IPv4 alias; v4.6 charges denied attempts and canonicalizes mapped aliases",
+  "validation_anomaly": "First buffered full gateway-run command timed out while output was buffered at the shared-ingress rate integration test. That test and the preceding test passed isolated; an unbuffered gateway run passed all 53 methods in 27.022 seconds; then the final complete unbuffered all-suite runner passed all four suites (128 methods) with no surviving non-main threads. Cause of initial timeout remains unknown.",
+  "limitations": [
+    "Local reference artifact test results; not an upstream checkout CI run.",
+    "Source fingerprints pin this artifact and do not claim equivalence to current upstream source.",
+    "Quota database and parent directory remain trusted same-host infrastructure; scope is Linux /proc and same PID namespace.",
+    "Attempt rate tokens apply only after a TCP connection is accepted and reaches the application admission gate; this is not SYN-flood protection.",
+    "The current gateway binds numeric IPv4 only; mapped-IPv6 canonicalization is tested on the generic quota store and internal identity helper, not as an externally reachable bypass of that listener.",
+    "IPv6 address-rotation prefix quotas are not implemented.",
+    "No upstream files, branch, or pull request were changed; no hosted service was called."
+  ],
+  "complete_runner_invocation": {
+    "command": "./run_v4.6_tests.sh all",
+    "result": "PASS",
+    "log": "full_suite_v4.6.log",
+    "combined_methods": 128
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "duplicate_action": "DUPLICATE",
+  "duplicate_status": 200,
+  "first_action": "INGESTED",
+  "first_status": 200,
+  "hosted_stripe_requests": 0,
+  "real_refunds": 0,
+  "receiver": "loopback-only test HTTP receiver",
+  "reconciliation_action": "RETRIEVE_CURRENT_PROVIDER_STATE",
+  "refund_id_for_current_state_retrieval": "re_smoke_001",
+  "sensitive_raw_fields_persisted": false
+}

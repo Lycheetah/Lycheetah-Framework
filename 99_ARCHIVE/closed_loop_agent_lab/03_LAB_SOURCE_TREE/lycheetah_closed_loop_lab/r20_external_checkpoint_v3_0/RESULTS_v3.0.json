@@ -1,0 +1,57 @@
+{
+  "artifact": "Lycheetah Closed-Loop Agent Lab v3.0",
+  "scope": "External freshness / anti-rollback checkpoint reference implementation",
+  "focused_tests": {
+    "methods": 33,
+    "status": "PASS",
+    "log": "focused_tests_v3.0.log"
+  },
+  "compile": "PASS",
+  "cli_smoke_tests": "PASS_WITHIN_FOCUSED_SUITE",
+  "historical_groups": {
+    "R10": {
+      "methods": 49,
+      "status": "PASS_SEPARATE_INVOCATION"
+    },
+    "R11": {
+      "methods": 29,
+      "status": "PASS_SEPARATE_INVOCATION"
+    },
+    "R12": {
+      "methods": 39,
+      "status": "PASS_SEPARATE_INVOCATION"
+    },
+    "R15": {
+      "methods": 85,
+      "status": "PASS_SEPARATE_INVOCATION"
+    },
+    "R18": {
+      "methods": 121,
+      "status": "PRINTED_OK_BUT_PROCESS_DID_NOT_EXIT_CLEANLY_IN_LATEST_AGGREGATE_ATTEMPT"
+    },
+    "R19": {
+      "methods": 20,
+      "status": "PASS_SEPARATE_INVOCATION"
+    }
+  },
+  "fresh_monolithic_aggregate_pass_claimed": false,
+  "upstream_ci_claimed": false,
+  "upstream_source_modified": false,
+  "hosted_stripe_calls": 0,
+  "real_refunds_created": 0,
+  "verified_scenarios": [
+    "primary-only rollback to an older valid snapshot is detected while the latest anchor is intact",
+    "uncheckpointed state fails closed even when row-level HMACs remain valid",
+    "schema/data/anchor/approval tampering is rejected",
+    "exact-state approval cannot be replayed",
+    "two concurrent checkpoint attempts sharing a parent head yield a single CAS winner",
+    "read-only CLI verification works without operator approval key"
+  ],
+  "limitations": [
+    "SQLiteReferenceAnchor is a local reference implementation, not a remote independent monotonic service",
+    "coordinated rollback of primary and anchor files is not detectable by this local adapter",
+    "operator HMAC demonstrates possession of a secret key, not human identity or authority",
+    "checkpoint publication is an offline/maintenance operation and not transactionally coupled to continuous service writes",
+    "no full upstream Lycheetah package/CI run"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "artifact": "Lycheetah Closed-Loop Agent Lab v2.6",
+  "checked_on": "2026-10-17",
+  "checks": {
+    "full_upstream_ci_run": false,
+    "hosted_stripe_api_calls": 0,
+    "loopback_http_smoke": "PASS",
+    "production_certification_claimed": false,
+    "python_bytecode_compilation": "PASS",
+    "real_refunds_created": 0,
+    "upstream_repository_changed": false
+  },
+  "combined": {
+    "failed": 0,
+    "isolated_suite_results": [
+      {
+        "duration_seconds": 1.581,
+        "status": "PASS",
+        "suite": "R10 durable outbox/evidence lease",
+        "tests": 49
+      },
+      {
+        "duration_seconds": 0.153,
+        "status": "PASS",
+        "suite": "R11 provider contract",
+        "tests": 29
+      },
+      {
+        "duration_seconds": 0.005,
+        "status": "PASS",
+        "suite": "R12 Stripe refund policy",
+        "tests": 39
+      },
+      {
+        "duration_seconds": 6.761,
+        "status": "PASS",
+        "suite": "R15 Stripe HTTP adapter",
+        "tests": 85
+      },
+      {
+        "duration_seconds": 5.12,
+        "status": "PASS",
+        "suite": "R16 webhook inbox and loopback receiver",
+        "tests": 54
+      }
+    ],
+    "log": "combined_tests_v2.6.log",
+    "passed": 256,
+    "test_methods": 256
+  },
+  "focused": {
+    "failed": 0,
+    "log": "focused_tests_v2.6.log",
+    "passed": 54,
+    "test_methods": 54
+  },
+  "limitations": [
+    "Tests use synthetic fixtures and a loopback-only HTTP receiver.",
+    "Custom standard-library webhook verifier is a reference implementation, not a production replacement for Stripe SDK.",
+    "No hosted Stripe account or endpoint was exercised.",
+    "Webhook ingestion only triggers current-provider-state retrieval or manual reconciliation; it never marks the operation successful.",
+    "Minimal inbox records are HMAC-authenticated, not encrypted; retention, access control and key-rotation remain operational requirements."
+  ],
+  "smoke": {
+    "duplicate_action": "DUPLICATE",
+    "duplicate_status": 200,
+    "first_action": "INGESTED",
+    "first_status": 200,
+    "hosted_stripe_requests": 0,
+    "real_refunds": 0,
+    "receiver": "loopback-only test HTTP receiver",
+    "reconciliation_action": "RETRIEVE_CURRENT_PROVIDER_STATE",
+    "refund_id_for_current_state_retrieval": "re_smoke_001",
+    "sensitive_raw_fields_persisted": false
+  },
+  "status": "PASS_LOCAL_REFERENCE_TESTS"
+}

@@ -1,0 +1,14 @@
+{
+  "version": "3.3",
+  "baseline_findings_reproduced": 5,
+  "new_tests": 6,
+  "scenarios": [
+    {"id":"V33-01","case":"caller-constructed freshness summary","baseline":"ACCEPT","v3_3":"REJECT","test":"test_current_chain_rejects_caller_constructed_freshness_summary"},
+    {"id":"V33-02","case":"distinct witness IDs share one public key","baseline":"ACCEPT","v3_3":"REJECT","test":"test_witness_roster_rejects_aliased_public_keys"},
+    {"id":"V33-03","case":"Boolean certificate sequence with recomputed digest","baseline":"ACCEPT","v3_3":"REJECT","test":"test_certificate_rejects_boolean_sequence_even_with_recomputed_digest"},
+    {"id":"V33-04","case":"Boolean fault budget with recomputed digest","baseline":"ACCEPT","v3_3":"REJECT","test":"test_certificate_rejects_boolean_fault_budget_even_with_recomputed_digest"},
+    {"id":"V33-05","case":"Boolean threshold in certificate","baseline":"malformed-type","v3_3":"REJECT","test":"test_certificate_rejects_boolean_threshold"},
+    {"id":"V33-06","case":"Boolean sequence returned by pluggable CAS guard","baseline":"ACCEPT","v3_3":"REJECT","test":"test_attest_rejects_boolean_sequence_from_pluggable_guard"},
+    {"id":"V33-07","case":"valid chain matches internally verified raw fresh-head reports","baseline":"ACCEPT","v3_3":"ACCEPT","test":"test_current_chain_matches_live_fresh_head"}
+  ]
+}

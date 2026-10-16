@@ -1,0 +1,23 @@
+{
+  "version": "3.8",
+  "observed_upstream_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "scope_note": "Remote-process integration is a new local reference implementation based on the prior local v3.7 registry-quorum composition. No upstream files were changed.",
+  "files": {
+    "remote_anchor_http.py": {
+      "origin": "Inherited upstream-derived remote-anchor protocol helper; byte-pinned from the v3.7 lab.",
+      "sha256": "0a002d054800fbfaed20b100c38f7333c934ff71f7a971aec3631bd49a61afe3"
+    },
+    "checkpoint_witness_quorum.py": {
+      "origin": "Inherited upstream-derived checkpoint/quorum helper; byte-pinned from the v3.7 lab.",
+      "sha256": "579912ffd00a744995ed23ab6ba0fae577df4cfb94618ae788165b4bb9dab5d6"
+    },
+    "spent_nonce_registry.py": {
+      "origin": "Inherited local test harness implementation; pinned for reproducibility, not claimed as an upstream Git blob.",
+      "sha256": "f187024703aa1375946053bdbacf2604cce73cf4c015732392bc8c6a457c19b5"
+    },
+    "registry_checkpoint_quorum.py": {
+      "origin": "Inherited local v3.7 quorum wrapper; pinned for reproducibility, not claimed as an upstream Git blob.",
+      "sha256": "4af7fa3579f09e78076a999d6796bbd09a820234c489a26b0946494073cb75ea"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "status": "SOURCE_EQUIVALENT_FIXTURE_NOT_UPSTREAM_INTEGRATION",
+  "invalid_type_cases": 24,
+  "baseline_accepted_invalid_types": 21,
+  "candidate_rejected_invalid_types": 24
+}

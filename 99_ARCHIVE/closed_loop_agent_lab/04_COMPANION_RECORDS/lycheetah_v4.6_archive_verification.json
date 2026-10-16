@@ -1,0 +1,71 @@
+{
+  "artifact_version": "4.6",
+  "built_at_utc": "2026-10-16T19:27:48.599898+00:00",
+  "parent_artifact_version": "4.5",
+  "upstream_commit_observed": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "upstream_modified": false,
+  "hosted_service_calls": 0,
+  "source_fingerprint_validation": "PASS: 16 exact local reference fingerprints",
+  "python_compile": "PASS",
+  "differential_probe": {
+    "result": "PASS",
+    "sha256": "10e144be4467a8a4f8bdb811e22b4b64d9da32861a6a8d3e5dc480f8ca299f06",
+    "expected_delta_observed": true
+  },
+  "test_suites": {
+    "ingress_tests_v4.6.log": {
+      "tests": 24,
+      "result": "PASS",
+      "sha256": "70255905cb36f9d53f3db2f7b175cd1b1a5a7ec157ef9d5f7512b3dbe2e2f35f"
+    },
+    "coordinator_tests_v4.6.log": {
+      "tests": 13,
+      "result": "PASS",
+      "sha256": "e8b36cb6ac71e61bec4b53aadaa86a792ea0899a4c060c096d88f2aacf4a8c7c"
+    },
+    "quorum_tests_v4.6.log": {
+      "tests": 38,
+      "result": "PASS",
+      "sha256": "12fd1f9c2b6caaba238fb028643b070749de5ff24a8453176b34039bc02b0d9c"
+    },
+    "gateway_tests_v4.6.log": {
+      "tests": 53,
+      "result": "PASS",
+      "sha256": "00e1793fce716f0464c8b4c6bdd52c3f17369bc8da30afb5bc62fe6422ef450a",
+      "lifecycle_summary": "PASS"
+    }
+  },
+  "combined_test_methods": 128,
+  "complete_runner_invocation": {
+    "command": "./run_v4.6_tests.sh all",
+    "result": "PASS",
+    "sha256": "e62daa9f88e28b740f3a0019af50e662f726ad80c5f6fd003bd9e0bbe5d136e1",
+    "combined_methods": 128,
+    "lifecycle_summary": "PASS: zero errors, failures, or surviving non-main threads"
+  },
+  "limitations": [
+    "Local reference artifact results, not upstream repository CI or production certification.",
+    "Local source fingerprints pin this artifact, not exact source equivalence to GitHub.",
+    "Shared SQLite authority is same-host and same-PID-namespace trusted local infrastructure.",
+    "Attempt rate budget applies after TCP accept and does not mitigate SYN floods or upstream connection floods.",
+    "The current gateway binds IPv4 only; mapped IPv6 normalization is tested in the generic quota store and internal helper.",
+    "IPv6 prefix aggregation is not implemented.",
+    "No upstream file, branch, or pull request was changed; no hosted service was called."
+  ],
+  "archives": {
+    "standalone": {
+      "path": "/mnt/data/lycheetah_ingress_attempt_budget_v4.6.zip",
+      "bytes": 122764,
+      "sha256": "dd0c21e718041354b37feb10af43af93667002e6aae99bbb8e9c84c7cf17386b",
+      "entries": 35,
+      "crc_test": "PASS"
+    },
+    "complete_lab": {
+      "path": "/mnt/data/lycheetah_closed_loop_agent_lab_v4.6.zip",
+      "bytes": 2583613,
+      "sha256": "5419f8a7cc3a114859c6576b06dcba4a25e7b92183cc8a2114aeee32d2fee5e9",
+      "entries": 1235,
+      "crc_test": "PASS"
+    }
+  }
+}

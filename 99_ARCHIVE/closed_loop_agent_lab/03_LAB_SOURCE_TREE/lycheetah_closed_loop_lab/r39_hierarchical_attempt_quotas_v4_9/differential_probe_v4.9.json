@@ -1,0 +1,26 @@
+{
+  "baseline_v4_8": {
+    "noisy_peer_accepted": 5,
+    "noisy_peer_final_rejection": "connection-rate-limit",
+    "unrelated_peer_accepted": false,
+    "unrelated_peer_rejection": "connection-rate-limit"
+  },
+  "comparison": "v4.8 global-only attempt rate versus v4.9 per-peer bucket plus global budget",
+  "expected_delta_observed": true,
+  "limitations": [
+    "The global rate limit still bounds aggregate accepted attempts after source tiers pass.",
+    "Prefix buckets are network heuristics, not authenticated identity.",
+    "This is an isolated store comparison, not an Internet traffic test or upstream CI."
+  ],
+  "scenario": "one IPv4 peer makes eight rapid attempts, then an unrelated peer attempts once",
+  "scope": "local deterministic reference stores only; no live network or hosted service",
+  "tiered_v4_9": {
+    "bucket_count": 2,
+    "global_tokens_approx": 2.001,
+    "noisy_peer_accepted": 2,
+    "noisy_peer_global_rate_denials": 0,
+    "noisy_peer_peer_rate_denials": 6,
+    "unrelated_peer_accepted": true,
+    "unrelated_peer_rejection": null
+  }
+}

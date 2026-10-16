@@ -1,0 +1,9 @@
+Lycheetah v3.8 verification summary
+===================================
+Source pins: PASS (4 files)
+Python compilation: PASS
+Retained v3.7 quorum suite: 38 passed in a separate invocation
+Remote witness process suite: 17 passed in a separate invocation
+Combined total: 55 passing test methods
+No hosted services contacted; no upstream files changed.
+Boundary: four processes run on one host with local config/key material; not independent administrative trust domains.

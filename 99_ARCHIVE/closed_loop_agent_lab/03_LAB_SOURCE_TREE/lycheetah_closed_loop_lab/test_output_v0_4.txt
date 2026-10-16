@@ -1,0 +1,60 @@
+
+=== .: python -m unittest -v test_harness test_observer_stress ===
+test_ambiguous_or_out_of_contract_work_goes_to_review (test_harness.HarnessTests.test_ambiguous_or_out_of_contract_work_goes_to_review) ... ok
+test_clean_patch_is_accepted_by_both (test_harness.HarnessTests.test_clean_patch_is_accepted_by_both) ... ok
+test_complete_contract_allows_valid_multi_file_change (test_harness.HarnessTests.test_complete_contract_allows_valid_multi_file_change) ... ok
+test_false_alarm_can_block_valid_work (test_harness.HarnessTests.test_false_alarm_can_block_valid_work) ... ok
+test_false_sensor_is_not_magically_fixed (test_harness.HarnessTests.test_false_sensor_is_not_magically_fixed) ... ok
+test_metrics_show_both_gain_and_cost (test_harness.HarnessTests.test_metrics_show_both_gain_and_cost) ... ok
+test_shared_conventional_gates_are_preserved (test_harness.HarnessTests.test_shared_conventional_gates_are_preserved) ... ok
+test_task_noop_green_tests_is_caught_by_candidate (test_harness.HarnessTests.test_task_noop_green_tests_is_caught_by_candidate) ... ok
+test_false_alarm_cost_appears_in_valid_block_metric (test_observer_stress.ObserverStressTests.test_false_alarm_cost_appears_in_valid_block_metric) ... ok
+test_grid_is_complete_and_expected_counts_conserve_mass (test_observer_stress.ObserverStressTests.test_grid_is_complete_and_expected_counts_conserve_mass) ... ok
+test_invalid_probability_combinations_rejected (test_observer_stress.ObserverStressTests.test_invalid_probability_combinations_rejected) ... ok
+test_perfect_sensor_no_unknowns_accepts_only_valid_tasks (test_observer_stress.ObserverStressTests.test_perfect_sensor_no_unknowns_accepts_only_valid_tasks) ... ok
+test_useless_sensor_reproduces_baseline_auto_accepts (test_observer_stress.ObserverStressTests.test_useless_sensor_reproduces_baseline_auto_accepts) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.002s
+
+OK
+
+=== observer_probe_v0_3: python -m unittest -v test_probe test_correlated_observers ===
+test_contract_suite_does_not_reject_valid_alternative (test_probe.ProbeTests.test_contract_suite_does_not_reject_valid_alternative) ... ok
+test_contract_suite_rejects_all_planted_defects (test_probe.ProbeTests.test_contract_suite_rejects_all_planted_defects) ... ok
+test_probe_counts_match_actual_checks (test_probe.ProbeTests.test_probe_counts_match_actual_checks) ... ok
+test_public_suite_accepts_multiple_known_defects (test_probe.ProbeTests.test_public_suite_accepts_multiple_known_defects) ... ok
+test_reference_and_valid_alternative_pass_contract (test_probe.ProbeTests.test_reference_and_valid_alternative_pass_contract) ... ok
+test_grid_has_15_combinations (test_correlated_observers.CorrelatedObserverTests.test_grid_has_15_combinations) ... ok
+test_independence_gives_product_of_marginals (test_correlated_observers.CorrelatedObserverTests.test_independence_gives_product_of_marginals) ... ok
+test_invalid_parameters_rejected (test_correlated_observers.CorrelatedObserverTests.test_invalid_parameters_rejected) ... ok
+test_more_positive_correlation_does_not_improve_joint_miss (test_correlated_observers.CorrelatedObserverTests.test_more_positive_correlation_does_not_improve_joint_miss) ... ok
+test_perfect_common_mode_gives_single_observer_miss_rate (test_correlated_observers.CorrelatedObserverTests.test_perfect_common_mode_gives_single_observer_miss_rate) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.002s
+
+OK
+
+=== .: python -m unittest discover -s authority_boundary_lab -p test_*.py -v ===
+test_another_key_cannot_validate_token (test_authority_gate.ConsequenceGateTests.test_another_key_cannot_validate_token) ... ok
+test_approval_authority_rejects_too_long_ttl (test_authority_gate.ConsequenceGateTests.test_approval_authority_rejects_too_long_ttl) ... ok
+test_concurrent_replay_has_at_most_one_dispatch (test_authority_gate.ConsequenceGateTests.test_concurrent_replay_has_at_most_one_dispatch) ... ok
+test_executor_exception_consumes_token_and_requires_reconciliation (test_authority_gate.ConsequenceGateTests.test_executor_exception_consumes_token_and_requires_reconciliation) ... ok
+test_expired_token_is_denied (test_authority_gate.ConsequenceGateTests.test_expired_token_is_denied) ... ok
+test_future_issued_token_is_denied (test_authority_gate.ConsequenceGateTests.test_future_issued_token_is_denied) ... ok
+test_model_self_claim_without_host_token_is_denied (test_authority_gate.ConsequenceGateTests.test_model_self_claim_without_host_token_is_denied) ... ok
+test_mutating_source_arguments_after_intent_creation_does_not_change_dispatch (test_authority_gate.ConsequenceGateTests.test_mutating_source_arguments_after_intent_creation_does_not_change_dispatch) ... ok
+test_policy_change_invalidates_approval (test_authority_gate.ConsequenceGateTests.test_policy_change_invalidates_approval) ... ok
+test_tampered_token_is_denied (test_authority_gate.ConsequenceGateTests.test_tampered_token_is_denied) ... ok
+test_token_cannot_be_replayed (test_authority_gate.ConsequenceGateTests.test_token_cannot_be_replayed) ... ok
+test_token_is_bound_to_exact_action_arguments (test_authority_gate.ConsequenceGateTests.test_token_is_bound_to_exact_action_arguments) ... ok
+test_token_is_bound_to_tool_identity (test_authority_gate.ConsequenceGateTests.test_token_is_bound_to_tool_identity) ... ok
+test_valid_approval_dispatches_exact_snapshot (test_authority_gate.ConsequenceGateTests.test_valid_approval_dispatches_exact_snapshot) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.058s
+
+OK
+
+ALL SUITES PASSED

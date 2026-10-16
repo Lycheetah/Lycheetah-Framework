@@ -1,0 +1,13 @@
+{
+  "python_compile": "PASS",
+  "combined_unittest": "PASS",
+  "test_methods": 56,
+  "retained_v3_3_tests": 37,
+  "new_v3_4_tests": 19,
+  "known_limit_negative_controls": 1,
+  "demo": "PASS",
+  "baseline_reproduction": "PASS: five v3.2 acceptance cases reproduced",
+  "negative_control": "EXPECTED ACCEPT: pre-consumption SQLite snapshot restore permits challenge replay",
+  "hosted_network_calls": 0,
+  "upstream_changes": false
+}

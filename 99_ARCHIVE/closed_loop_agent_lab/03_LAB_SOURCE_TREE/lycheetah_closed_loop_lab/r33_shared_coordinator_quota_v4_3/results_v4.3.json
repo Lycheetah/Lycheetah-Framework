@@ -1,0 +1,48 @@
+{
+  "version": "4.3",
+  "scope": "Opt-in shared same-host SQLite quotas for authenticated coordinator requests in the mTLS gateway.",
+  "source_pin_status": "PASS",
+  "source_pins_verified": 10,
+  "python_compile_status": "PASS",
+  "test_suites": {
+    "shared_quota_store": {
+      "status": "PASS",
+      "test_methods": 13,
+      "run_seconds": 4.196,
+      "log": "shared_tests_v4.3.log"
+    },
+    "retained_quorum": {
+      "status": "PASS",
+      "test_methods": 38,
+      "run_seconds": 6.042,
+      "log": "quorum_tests_v4.3.log"
+    },
+    "gateway_remote_witness": {
+      "status": "PASS",
+      "test_methods": 49,
+      "run_seconds": 28.646,
+      "log": "gateway_tests_v4.3.log"
+    }
+  },
+  "combined_test_methods": 100,
+  "v4_3_specific_test_methods": 15,
+  "shared_quota_multiprocess_race": {
+    "processes": 2,
+    "active_slots": 1,
+    "accepted": 1,
+    "denied": 1,
+    "status": "PASS"
+  },
+  "shared_quota_scope": "Same-host processes sharing one local SQLite file and identical configuration; not cross-host/distributed.",
+  "hosted_service_calls": 0,
+  "upstream_modified": false,
+  "known_limits": [
+    "Pre-TLS global/per-IP connection bounds remain process-local.",
+    "Authenticated quotas begin after HTTP headers parse.",
+    "OS boot-ID change resets rate buckets and active leases because monotonic timestamps cannot be compared across boots.",
+    "SQLite quota state is trusted local infrastructure; filesystem protection is not cryptographic tamper resistance.",
+    "A long-running request whose lease heartbeat remains unavailable beyond TTL can outlive its quota lease; dispatch deadlines and monitoring are required.",
+    "No multi-host topology, production CA lifecycle, reverse proxy, OS-level FD cap or upstream CI was tested."
+  ],
+  "verification_boundary": "All evidence is from local reference code and local process/gateway tests. No hosted service or upstream repository was used for a live test."
+}

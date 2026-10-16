@@ -1,0 +1,60 @@
+{
+  "artifact": "Lycheetah Closed-Loop Agent Lab v2.7",
+  "checked_on": "2026-10-17",
+  "python_version": "3.13",
+  "run_mode": "watchdog-bounded cumulative run completed; individual suite logs retained",
+  "suite_results": [
+    {
+      "suite": "R10 evidence lease/durable outbox",
+      "test_methods": 49,
+      "status": "PASS"
+    },
+    {
+      "suite": "R11 provider contract",
+      "test_methods": 29,
+      "status": "PASS"
+    },
+    {
+      "suite": "R12 refund recovery policy",
+      "test_methods": 39,
+      "status": "PASS"
+    },
+    {
+      "suite": "R15 Stripe HTTP adapter",
+      "test_methods": 85,
+      "status": "PASS"
+    },
+    {
+      "suite": "R16 + R17 webhook inbox, receiver and queue",
+      "test_methods": 84,
+      "status": "PASS"
+    }
+  ],
+  "individually_passed_test_methods_sum": 286,
+  "focused_v2_7": {
+    "test_methods": 84,
+    "status": "PASS",
+    "duration_seconds": 6.472
+  },
+  "checks": {
+    "python_compile": "PASS",
+    "loopback_http_smoke": "PASS",
+    "archive_integrity": "PASS_AFTER_PACKAGING",
+    "hosted_stripe_api_calls": 0,
+    "real_refunds_created": 0,
+    "upstream_repository_changed": false,
+    "production_certification_claimed": false
+  },
+  "aggregate_runner": {
+    "status": "PASS",
+    "test_methods": 286,
+    "detail": "Latest watchdog-bounded invocation ran R10, R11, R12, R15 and R16+R17 in separate processes; all five groups passed. Earlier unbounded attempts had intermittent hangs in the retained R15 HTTP simulator."
+  },
+  "limitations": [
+    "Local SQLite and loopback HTTP only; no hosted Stripe account or endpoint exercised.",
+    "Reconciliation tasks must retrieve current provider state; webhook status is never treated as authoritative success.",
+    "HMAC detects mutation of existing rows but does not encrypt the database or prove whole-database non-deletion/rollback.",
+    "The queue is a single-host reference design; multi-host use needs a shared transactional authority.",
+    "Complete upstream Lycheetah test suite and CI were not run."
+  ]
+}

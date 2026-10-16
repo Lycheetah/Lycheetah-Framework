@@ -1,0 +1,30 @@
+{
+  "release": "Lycheetah Checkpoint Witness Quorum v3.2",
+  "checks": {
+    "lycheetah_closed_loop_agent_lab_v3.2.zip": {
+      "bytes": 1053804,
+      "sha256": "8bbe3529b7cf010333fed9fbeae264a7dca40d134d3c2dc39f6b750847dfc84f",
+      "zip_integrity": "PASS",
+      "python_bytecode_included": false,
+      "member_count": 626
+    },
+    "lycheetah_checkpoint_witness_quorum_v3.2.zip": {
+      "bytes": 45688,
+      "sha256": "b88c1dc7ae15abd7c3a5bef0378a46548b49add246731009d4b419e89ad18eef",
+      "zip_integrity": "PASS",
+      "python_bytecode_included": false,
+      "member_count": 25
+    }
+  },
+  "test_counts": {
+    "focused": 31,
+    "retained_v3_1": 74,
+    "total_test_methods": 105,
+    "invocation_count": 5
+  },
+  "verification_mode": "five separate test-process invocations; not monolithic",
+  "upstream_ci_claimed": false,
+  "hosted_anchor_calls": 0,
+  "hosted_stripe_calls": 0,
+  "real_refunds_created": 0
+}

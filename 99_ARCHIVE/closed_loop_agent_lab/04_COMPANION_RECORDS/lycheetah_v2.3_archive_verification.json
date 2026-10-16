@@ -1,0 +1,18 @@
+{
+  "lycheetah_closed_loop_agent_lab_v2.3.zip": {
+    "zip_test": "PASS",
+    "file_count": 346,
+    "bytes": 528592,
+    "sha256": "6a20f5900092a8009f2807aaaa0b87f43c066f022a9f7e83f3b6c6a64cbb3dc7"
+  },
+  "lycheetah_stripe_testmode_http_adapter_v2.3.zip": {
+    "zip_test": "PASS",
+    "file_count": 16,
+    "bytes": 32591,
+    "sha256": "c66642f7e235e8bc1a088a0adece39b416d15a46167eff1568a5dc94392947a5"
+  },
+  "focused_test_methods": 51,
+  "combined_test_methods": 168,
+  "hosted_stripe_calls": 0,
+  "live_mode_key_allowed": false
+}

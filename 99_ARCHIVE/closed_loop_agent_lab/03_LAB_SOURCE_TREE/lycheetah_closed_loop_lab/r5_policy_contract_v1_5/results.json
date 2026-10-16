@@ -1,0 +1,411 @@
+{
+  "count": 20,
+  "current_schema_accepts": 8,
+  "source_equivalent_parser_accepts": 7,
+  "current_parity_cases": 7,
+  "strict_candidate_schema_accepts": 4,
+  "proposed_strict_parser_accepts": 1,
+  "candidate_contract_parity_cases": 17,
+  "current_mismatches": [
+    {
+      "case": "rule_id_boolean",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": true,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "",
+      "strict_parser_note": "PolicyError: text rule id must be a string"
+    },
+    {
+      "case": "rule_pattern_boolean",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": true,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "",
+      "strict_parser_note": "PolicyError: text rule pattern must be a string"
+    },
+    {
+      "case": "rule_title_boolean",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": true,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "",
+      "strict_parser_note": "PolicyError: text rule title must be a string"
+    },
+    {
+      "case": "rule_description_integer",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": true,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "",
+      "strict_parser_note": "PolicyError: text rule description must be a string"
+    },
+    {
+      "case": "rule_status_basis_integer",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": true,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "",
+      "strict_parser_note": "PolicyError: text rule status_basis must be a string"
+    },
+    {
+      "case": "rule_pattern_too_long",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "PolicyError: pattern too long",
+      "strict_parser_note": "PolicyError: pattern too long"
+    },
+    {
+      "case": "active_rule_missing_basis",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "PolicyError: ACTIVE rule requires status_basis",
+      "strict_parser_note": "PolicyError: ACTIVE rule requires status_basis"
+    },
+    {
+      "case": "active_rule_blank_basis",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "PolicyError: ACTIVE rule requires status_basis",
+      "strict_parser_note": "PolicyError: ACTIVE rule requires status_basis"
+    },
+    {
+      "case": "duplicate_rule_ids",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": true,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": false,
+      "parser_note": "PolicyError: rule ids must be unique",
+      "strict_parser_note": "PolicyError: rule ids must be unique"
+    },
+    {
+      "case": "empty_tool_allowlist_item",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "PolicyError: allowlist must be unique non-empty strings",
+      "strict_parser_note": "PolicyError: allowlist must be unique non-empty strings"
+    },
+    {
+      "case": "max_text_as_float",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": true,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": false,
+      "parser_note": "PolicyError: max_text_characters must be integer",
+      "strict_parser_note": "PolicyError: max_text_characters must be integer"
+    },
+    {
+      "case": "bad_regex",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": true,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": false,
+      "parser_note": "PolicyError: invalid regex",
+      "strict_parser_note": "PolicyError: invalid regex"
+    },
+    {
+      "case": "rule_id_integer",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": true,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "",
+      "strict_parser_note": "PolicyError: text rule id must be a string"
+    }
+  ],
+  "candidate_mismatches": [
+    {
+      "case": "duplicate_rule_ids",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": true,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": false,
+      "parser_note": "PolicyError: rule ids must be unique",
+      "strict_parser_note": "PolicyError: rule ids must be unique"
+    },
+    {
+      "case": "max_text_as_float",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": true,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": false,
+      "parser_note": "PolicyError: max_text_characters must be integer",
+      "strict_parser_note": "PolicyError: max_text_characters must be integer"
+    },
+    {
+      "case": "bad_regex",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": true,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": false,
+      "parser_note": "PolicyError: invalid regex",
+      "strict_parser_note": "PolicyError: invalid regex"
+    }
+  ],
+  "results": [
+    {
+      "case": "rule_id_boolean",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": true,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "",
+      "strict_parser_note": "PolicyError: text rule id must be a string"
+    },
+    {
+      "case": "rule_pattern_boolean",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": true,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "",
+      "strict_parser_note": "PolicyError: text rule pattern must be a string"
+    },
+    {
+      "case": "rule_title_boolean",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": true,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "",
+      "strict_parser_note": "PolicyError: text rule title must be a string"
+    },
+    {
+      "case": "rule_description_integer",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": true,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "",
+      "strict_parser_note": "PolicyError: text rule description must be a string"
+    },
+    {
+      "case": "rule_status_basis_integer",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": true,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "",
+      "strict_parser_note": "PolicyError: text rule status_basis must be a string"
+    },
+    {
+      "case": "rule_pattern_too_long",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "PolicyError: pattern too long",
+      "strict_parser_note": "PolicyError: pattern too long"
+    },
+    {
+      "case": "active_rule_missing_basis",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "PolicyError: ACTIVE rule requires status_basis",
+      "strict_parser_note": "PolicyError: ACTIVE rule requires status_basis"
+    },
+    {
+      "case": "active_rule_blank_basis",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "PolicyError: ACTIVE rule requires status_basis",
+      "strict_parser_note": "PolicyError: ACTIVE rule requires status_basis"
+    },
+    {
+      "case": "duplicate_rule_ids",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": true,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": false,
+      "parser_note": "PolicyError: rule ids must be unique",
+      "strict_parser_note": "PolicyError: rule ids must be unique"
+    },
+    {
+      "case": "empty_tool_allowlist_item",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "PolicyError: allowlist must be unique non-empty strings",
+      "strict_parser_note": "PolicyError: allowlist must be unique non-empty strings"
+    },
+    {
+      "case": "threshold_boolean",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": true,
+      "candidate_contract_parity": true,
+      "parser_note": "PolicyError: threshold must be finite number",
+      "strict_parser_note": "PolicyError: threshold must be finite number"
+    },
+    {
+      "case": "unknown_text_rule_key",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": true,
+      "candidate_contract_parity": true,
+      "parser_note": "PolicyError: text rule contains unknown fields",
+      "strict_parser_note": "PolicyError: text rule contains unknown fields"
+    },
+    {
+      "case": "wrong_deterministic_type",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": true,
+      "candidate_contract_parity": true,
+      "parser_note": "PolicyError: deterministic must be boolean",
+      "strict_parser_note": "PolicyError: deterministic must be boolean"
+    },
+    {
+      "case": "wrong_phases_type",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": true,
+      "candidate_contract_parity": true,
+      "parser_note": "PolicyError: invalid phase",
+      "strict_parser_note": "PolicyError: invalid phase"
+    },
+    {
+      "case": "max_text_as_float",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": true,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": false,
+      "parser_note": "PolicyError: max_text_characters must be integer",
+      "strict_parser_note": "PolicyError: max_text_characters must be integer"
+    },
+    {
+      "case": "duplicate_allowlist",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": true,
+      "candidate_contract_parity": true,
+      "parser_note": "PolicyError: allowlist must be unique non-empty strings",
+      "strict_parser_note": "PolicyError: allowlist must be unique non-empty strings"
+    },
+    {
+      "case": "bad_regex",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": true,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": false,
+      "parser_note": "PolicyError: invalid regex",
+      "strict_parser_note": "PolicyError: invalid regex"
+    },
+    {
+      "case": "rule_id_integer",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": true,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": false,
+      "candidate_contract_parity": true,
+      "parser_note": "",
+      "strict_parser_note": "PolicyError: text rule id must be a string"
+    },
+    {
+      "case": "policy_description_integer",
+      "schema_accepts": false,
+      "source_equivalent_parser_accepts": false,
+      "strict_candidate_schema_accepts": false,
+      "proposed_strict_parser_accepts": false,
+      "schema_parser_parity": true,
+      "candidate_contract_parity": true,
+      "parser_note": "PolicyError: description string",
+      "strict_parser_note": "PolicyError: description string"
+    },
+    {
+      "case": "valid_minimal_policy",
+      "schema_accepts": true,
+      "source_equivalent_parser_accepts": true,
+      "strict_candidate_schema_accepts": true,
+      "proposed_strict_parser_accepts": true,
+      "schema_parser_parity": true,
+      "candidate_contract_parity": true,
+      "parser_note": "",
+      "strict_parser_note": ""
+    }
+  ]
+}

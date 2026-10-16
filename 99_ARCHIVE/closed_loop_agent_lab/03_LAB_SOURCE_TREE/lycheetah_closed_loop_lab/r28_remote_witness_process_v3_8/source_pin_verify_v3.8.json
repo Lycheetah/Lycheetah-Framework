@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "verified_files": 4,
+  "observed_upstream_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "note": "Pinned hashes are reproducibility checks. Local reference modules are not claimed to be upstream source files."
+}

@@ -1,0 +1,30 @@
+{
+  "version": "4.2",
+  "scope": "Authenticated coordinator dispatch fairness added to a local bounded mTLS gateway reference.",
+  "source_pin_status": "PASS",
+  "source_pins_verified": 8,
+  "python_compile_status": "PASS",
+  "retained_quorum_suite": {
+    "status": "PASS",
+    "test_methods": 38,
+    "run_seconds": 6.609
+  },
+  "gateway_witness_suite": {
+    "status": "PASS",
+    "test_methods": 47,
+    "run_seconds": 32.274
+  },
+  "combined_test_methods": 85,
+  "v4_2_specific_tests": 3,
+  "ambiguous_allowlisted_uri_san_cert_rejected": true,
+  "cross_coordinator_quota_isolation_tested": true,
+  "coordinator_identifier_exposed_in_snapshot": false,
+  "hosted_service_calls": 0,
+  "upstream_modified": false,
+  "known_limits": [
+    "Per-coordinator quotas are process-local and reset on restart.",
+    "Per-coordinator quotas begin after HTTP headers parse; slow-header protection remains the responsibility of pre-TLS connection bounds.",
+    "No production CA lifecycle, OS resource caps, multi-host topology, or upstream CI was tested."
+  ],
+  "harness_reliability_note": "First full gateway invocation timed out in inherited process restart path. Outage test now restores stopped subprocesses in finally; subsequent complete 47-test gateway run passed."
+}

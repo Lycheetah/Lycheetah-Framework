@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/Lycheetah/Lycheetah-Framework",
+  "branch_observed": "master",
+  "commit_observed": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "observed_date": "2026-10-17",
+  "method": "Public GitHub file fetch and source hashes; no complete local checkout used for this iteration.",
+  "relevant_upstream_files_inspected": {
+    "lycheetah/assurance/finality.py": "dd97733d45c2261863d24a2a00800baf59fc8bac",
+    "tests/test_assurance_finality.py": "f139db66faa162cc1faa6b9cf8a8f89c51b9e08e",
+    "lycheetah/assurance/models.py": "12895f2a7d3e66f4584040713dad131c154b80f0",
+    "lycheetah/assurance/receipt.py": "91f9ec4d7177480d259240a0899b8b54aff6f0e5"
+  },
+  "integration_status": "No upstream branch, commit, or pull request created; connected GitHub branch creation previously returned HTTP 403 Resource not accessible by integration."
+}

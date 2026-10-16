@@ -1,0 +1,19 @@
+{
+  "baseline": "v4.6 source copy with socket inactivity timeout only",
+  "candidate": "v4.7 local handler with absolute HTTP exchange deadline",
+  "baseline_observation": {
+    "elapsed_seconds": 1.227,
+    "bytes_dripped": 15,
+    "active_connection_at_observation": 1,
+    "active_after_client_close": 0
+  },
+  "v4_7_observation": {
+    "elapsed_seconds": 0.971,
+    "bytes_dripped": 12,
+    "active_connection_at_observation": 0,
+    "active_after_client_close": 0
+  },
+  "expected_delta": true,
+  "scope": "same-host mTLS HTTP header slow-drip experiment; no request body, registry dispatch, or hosted service",
+  "measurement_note": "Latest repeat; results are run-specific timing observations, not a deterministic performance guarantee."
+}

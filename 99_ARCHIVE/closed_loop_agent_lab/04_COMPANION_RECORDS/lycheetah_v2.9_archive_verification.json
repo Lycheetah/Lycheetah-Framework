@@ -1,0 +1,22 @@
+{
+  "archive_verification": [
+    {
+      "path": "/mnt/data/lycheetah_integrity_key_rotation_v2.9.zip",
+      "bytes": 38290,
+      "sha256": "921f823bb8b2a52798f24d305bfe346d10295bf1a102c833038f9d1919fd4300",
+      "zip_test": "PASS",
+      "members": 21,
+      "contains_pyc": false,
+      "contains_private_key_material": false
+    },
+    {
+      "path": "/mnt/data/lycheetah_closed_loop_agent_lab_v2.9.zip",
+      "bytes": 930828,
+      "sha256": "24013657914c2615afaa4715c150ccbf4d25c8998084ed67176621a10b0b3b54",
+      "zip_test": "PASS",
+      "members": 541,
+      "contains_pyc": false,
+      "contains_private_key_material": false
+    }
+  ]
+}

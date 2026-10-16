@@ -1,0 +1,21 @@
+{
+  "version": "3.8",
+  "standalone_archive": {
+    "path": "/mnt/data/lycheetah_registry_remote_witness_process_v3.8.zip",
+    "bytes": 75095,
+    "sha256": "aa6ba95c2987dfeb66b7339e52b130f2d788acf9ae43db855d2f3c37bb6919ec"
+  },
+  "complete_archive": {
+    "path": "/mnt/data/lycheetah_closed_loop_agent_lab_v3.8.zip",
+    "bytes": 1540857,
+    "sha256": "39b03226ebdaa347f6492a88f9ac9a5bb7d3ce8e75c96ffe320decd97706006d"
+  },
+  "source_pin_status": "PASS",
+  "compile_status": "PASS",
+  "retained_v3_7_test_methods_passed": 38,
+  "remote_process_test_methods_passed": 17,
+  "test_invocations": 2,
+  "no_hosted_service_calls": true,
+  "upstream_modified": false,
+  "boundary": "Four witness subprocesses on one host; not independent administrative trust domains."
+}

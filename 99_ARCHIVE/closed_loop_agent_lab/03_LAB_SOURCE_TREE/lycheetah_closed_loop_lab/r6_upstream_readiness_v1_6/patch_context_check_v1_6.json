@@ -1,0 +1,30 @@
+{
+  "purpose": "synthetic hunk/context smoke test only",
+  "results": [
+    {
+      "patch": "strict_assurance_wire_types_v1_3.patch",
+      "status": "PASS_SYNTHETIC_CONTEXT_ONLY",
+      "targets": [
+        "lycheetah/assurance/models.py",
+        "lycheetah/assurance/receipt.py"
+      ]
+    },
+    {
+      "patch": "receipt_contract_delta_v1_6.patch",
+      "status": "PASS_SYNTHETIC_CONTEXT_ONLY",
+      "targets": [
+        "lycheetah/assurance/models.py",
+        "lycheetah/assurance/receipt.py"
+      ]
+    },
+    {
+      "patch": "policy_type_guard_v1_6.patch",
+      "status": "PASS_SYNTHETIC_CONTEXT_ONLY",
+      "targets": [
+        "lycheetah/assurance/policy.py"
+      ]
+    }
+  ],
+  "all_pass": true,
+  "warning": "Does not prove applicability to a full repository checkout or passing package tests."
+}

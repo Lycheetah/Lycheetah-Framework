@@ -1,0 +1,135 @@
+{
+  "files": {
+    "API_CONTRACT_v4.9.md": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "4e817e7ebd96cbba576d368152f8e5d06c9da033384c9ce89d24dfcc41894c6a"
+    },
+    "BASELINE_COMPARISON_v4.9.md": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "9254806f73538ffa628e99a69ebbe166c9e390c5922468f95ff900db4555876c"
+    },
+    "CHANGELOG_v4.9.md": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "f1ef5bb0e657d540e78dfb3a623fb47350a25dd3cb289162f8db2bf8f182aae8"
+    },
+    "PACK_MANIFEST_v4.9.md": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "669e592a0d1c8f0f392b14cfa58053a2260b4267d70e0341854a8960db1d0149"
+    },
+    "README_v4.9.md": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "dc7878a60a975bab49537869a1bf16e74d4bf23d7bc618269ff8fdc9fa05a144"
+    },
+    "RESULTS_v4.9.md": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "8cbbdfb94ab4b37cc91f4e1c137967e165c774f17294a16d29ef2e0d7a0ed217"
+    },
+    "THREAT_MODEL_v4.9.md": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "3023f76cffa39a0c7a9b1df710ebf10ddbc99b90e6c2452708d98ed0b9338bb8"
+    },
+    "UPSTREAM_INTEGRATION_PLAN_v4.9.md": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "07711bce106b5e96bcecf1de30060b5a53ecf8eb594bd8995e0649ee8de7fcc0"
+    },
+    "UPSTREAM_NOTE_v4.9.md": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "fbb65aca4bf60c54c931eaa2d41c27b63b85f405ab33c9552f4f0d1916c37fca"
+    },
+    "checkpoint_witness_quorum.py": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "579912ffd00a744995ed23ab6ba0fae577df4cfb94618ae788165b4bb9dab5d6"
+    },
+    "differential_probe_v4.9.py": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "4fef5335778b90c2cdc30caa9217c0028c49b08233dd58f8dac6e6f7d6b751eb"
+    },
+    "generate_source_pin_v4.9.py": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "f065204276af5dad3ddf306d36ee74f2302af10da2bd171030876158dd484756"
+    },
+    "registry_checkpoint_quorum.py": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "4af7fa3579f09e78076a999d6796bbd09a820234c489a26b0946494073cb75ea"
+    },
+    "registry_gateway_mtls.py": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "186c7c18ae7641c024b88abc229ee4f4c10dbc1021be4c15acf4dc8c38b5cdad"
+    },
+    "remote_anchor_http.py": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "0a002d054800fbfaed20b100c38f7333c934ff71f7a971aec3631bd49a61afe3"
+    },
+    "remote_witness_http.py": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "bf899cfa9888d20e2e3993c3fe773e920bf5085b093d24f41b1f706e39552f03"
+    },
+    "run_gateway_shards_v4.9.sh": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "063562d4b0a519ced3a4efff1e13fc9c5abf7167e5771bde651fb299fbeadd19"
+    },
+    "run_gateway_suite_v4.9.py": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "edbdff8bd55bc7a53e37b87f45e62f36c9890aeca4b359fa39f6f71533560906"
+    },
+    "run_v4.9_tests.sh": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "132515da24907373ec9efed61ed74a2653346f5a11754ad815e0bb4937da53bf"
+    },
+    "shared_coordinator_quota.py": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "0036a631ffa18e78b2300a97178935280aeb73e1f1fe561f34d01dc224dcbb4a"
+    },
+    "shared_ingress_quota.py": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "a4f81832e5a9e41f9df6f4fbd7d94f6fb232586b675f6d1ffc30167e09aaa2ca"
+    },
+    "shared_ingress_quota_v4_5_baseline_fixture.py": {
+      "origin": "preserved local v4.5/v4.6/v4.7/v4.8 comparison fixture",
+      "sha256": "94c5e87abdcc254c69aab0c5f57fb7397528ccdf63008d98470b58f1155479ce"
+    },
+    "shared_ingress_quota_v4_6_baseline_fixture.py": {
+      "origin": "preserved local v4.5/v4.6/v4.7/v4.8 comparison fixture",
+      "sha256": "7cbb6576f381863f72fe68fec61e860accc85f41e59261a40c4e1d5b54bf424e"
+    },
+    "shared_ingress_quota_v4_7_baseline_fixture.py": {
+      "origin": "preserved local v4.5/v4.6/v4.7/v4.8 comparison fixture",
+      "sha256": "c519534ea6dd297a5ab70c813ad3056d2b02b714f7f8ca30b7430f82d696de13"
+    },
+    "shared_ingress_quota_v4_8_baseline_fixture.py": {
+      "origin": "preserved local v4.5/v4.6/v4.7/v4.8 comparison fixture",
+      "sha256": "32038be32e7c73d23f9c736fb4c753d22b9161617dbefec331f2df5c5d6578cd"
+    },
+    "spent_nonce_registry.py": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "f187024703aa1375946053bdbacf2604cce73cf4c015732392bc8c6a457c19b5"
+    },
+    "test_registry_checkpoint_quorum.py": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "1fafb33df827da7f83f1de6e39a6baa1308411970813df3421527f73164c1f3f"
+    },
+    "test_remote_witness_process.py": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "e10258152b392098e58314d46fff6662b79a9c9eb02918fb56150f295f8352db"
+    },
+    "test_shared_coordinator_quota.py": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "09fc173fbff70208153737af83becd9391459117265fbc29082515b99cc4050e"
+    },
+    "test_shared_ingress_quota.py": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "09efe196f6584f67f321f5d93df82fa6378a9a2c7910680213ba2bebc1613d28"
+    },
+    "verify_source_pins_v4.9.py": {
+      "origin": "v4.9 local reference code, tests, runner or documentation",
+      "sha256": "5273c398994352ffe42020fd6785973b0eb61b123b4b3c9b3a8a799380e3e9da"
+    }
+  },
+  "hosted_service_calls": 0,
+  "local_fingerprint_semantics": "Pins local artifact files only; does not assert byte identity to upstream GitHub.",
+  "observed_upstream_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "parent_artifact_version": "4.8",
+  "scope_note": "Optional per-peer and optional aggregate IPv6 attempt rate buckets atop global pre-authentication ingress budget.",
+  "upstream_modified": false,
+  "version": "4.9"
+}

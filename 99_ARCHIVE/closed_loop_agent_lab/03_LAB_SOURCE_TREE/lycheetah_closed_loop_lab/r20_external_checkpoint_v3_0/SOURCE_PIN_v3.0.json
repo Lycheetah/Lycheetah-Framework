@@ -1,0 +1,12 @@
+{
+  "artifact": "Lycheetah Closed-Loop Agent Lab v3.0",
+  "scope": "External monotonic checkpoint and rollback detection reference",
+  "observed_upstream_repository": "https://github.com/Lycheetah/Lycheetah-Framework",
+  "observed_upstream_default_branch": "master",
+  "observed_upstream_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "upstream_files_modified": false,
+  "basis": "v2.8 authenticated inbox/queue/operation ledger and v2.9 integrity-key rotation references copied into this artifact for reproducible local fixture testing",
+  "hosted_provider_calls": 0,
+  "real_refunds_created": 0,
+  "important_limit": "Local SQLite reference anchor requires independent protection; coordinated rollback of primary and anchor files is outside this adapter's guarantees"
+}

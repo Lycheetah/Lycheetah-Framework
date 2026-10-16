@@ -1,0 +1,44 @@
+{
+  "version": "2.0",
+  "experiment": "Evidence lease to close the snapshot-then-effect TOCTOU gap under a cooperating authority contract",
+  "local_regression_suite": {
+    "v1_9_compatibility_test_methods": 27,
+    "v2_0_focused_test_methods": 22,
+    "total_test_methods": 49,
+    "passed": 49,
+    "failed": 0,
+    "reported_duration_seconds": 1.53,
+    "note": "The inherited v1.9 test_external_evidence_can_change_after_dispatch_snapshot intentionally reproduces the legacy TOCTOU gap as a negative-control test; it passes by asserting the vulnerable outcome."
+  },
+  "concurrent_evidence_race": {
+    "rounds": 200,
+    "update_linearized_first": 79,
+    "lease_linearized_first": 121,
+    "invariant_violations": 0,
+    "result": "PASS",
+    "invariant": "Update-first must deny lease; lease-first must block evidence update while valid lease is active."
+  },
+  "additional_checks": {
+    "deterministic_snapshot_lease_interleavings": 30,
+    "python_compileall": "PASS",
+    "process_style_authority_and_provider_recreation": "PASS",
+    "response_lost_after_provider_commit": "PASS",
+    "committed_result_recovered_after_evidence_change": "PASS",
+    "tampered_or_mismatched_lease_rejected_before_effect": "PASS",
+    "action_and_operation_binding": "PASS",
+    "non_atomic_multi_requirement_issue": "REJECTED; NO PARTIAL LEASES",
+    "inflight_lock_persists_past_token_ttl": "PASS",
+    "expiry_between_claim_and_provider_validation": "PASS"
+  },
+  "not_established": [
+    "actual upstream Lycheetah FinalityGate integration",
+    "full upstream package test suite and CI",
+    "multi-host or multi-region consistency",
+    "real external evidence service honoring leases",
+    "real payment or deployment provider atomic idempotency",
+    "out-of-band evidence writes not routed through the lease authority",
+    "production clock skew, key management, or security review",
+    "authoritative fencing/recovery for an abandoned IN_FLIGHT remote call"
+  ],
+  "scope_note": "The lease protocol is executable and verified within a single-host SQLite reference implementation. Its TOCTOU guarantee depends on all relevant evidence writes honoring leases and the effect provider respecting the pinned in-flight lease through effect resolution. No upstream files were modified."
+}

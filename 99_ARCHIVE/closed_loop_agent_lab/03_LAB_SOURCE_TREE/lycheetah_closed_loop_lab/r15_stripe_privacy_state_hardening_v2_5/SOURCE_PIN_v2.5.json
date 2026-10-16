@@ -1,0 +1,31 @@
+{
+  "artifact": "Lycheetah Stripe Privacy and State Hardening v2.5",
+  "checked_on": "2026-10-17",
+  "upstream_repository": "https://github.com/Lycheetah/Lycheetah-Framework",
+  "upstream_commit_inspected": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "upstream_source_changed": false,
+  "implementation_scope": "local copy of R14 reference adapter; not upstream integrated",
+  "api_contract": "stripe-api-v1-refunds-test-adapter-2026-10-17-r2.5",
+  "provider_docs": [
+    "https://docs.stripe.com/api/idempotent_requests",
+    "https://docs.stripe.com/api/refunds",
+    "https://docs.stripe.com/api/refunds/list",
+    "https://docs.stripe.com/api"
+  ],
+  "test_counts": {
+    "focused": 85,
+    "combined": 202
+  },
+  "hosted_api_calls": 0,
+  "real_refunds": 0,
+  "local_file_sha256": {
+    "stripe_test_adapter.py": "a0ff58c6fe8f8a85275c9df453e1d43a1a34d1e5486dcdf6473c0ab9c97a2d7f",
+    "stripe_contract_simulator.py": "3002da5bced89021dc97c37282ac7990a720133cea384e26540ed3f79f58deda",
+    "test_stripe_test_adapter.py": "19612e31e99df0c01c4c13afb04285115a109cacbc9393d96731cc1bd4d16282",
+    "run_complete_tests_v2_5.py": "50959d9d265bde3c84876e1ef6124b76618a4c6f5721f7d6b19a0d26c6d2fb2e",
+    "run_local_smoke.py": "d37670c000533d8998443f1ced25465db71abc453894dd656f35c0c39251f6c4",
+    "RECOVERY_STATE_AUDIT_v2.5.md": "e7849b43996635a3a3abbbd47f6eedee2b3acd6cc37c301c013cc4957f911e31",
+    "RESULTS_v2.5.md": "303dc0c6fc4f94b1fed4b9db4de5cb52655bf80ede86feff4be49795a07e7cf9",
+    "PROVIDER_CONTRACT_SOURCES_v2.5.md": "6a6ebd253804af9c6114a600d8b44cbf4aef549e6c6f42acf8165526e24f1f76"
+  }
+}

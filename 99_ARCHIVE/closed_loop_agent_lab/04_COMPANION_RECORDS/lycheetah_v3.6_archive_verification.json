@@ -1,0 +1,30 @@
+{
+  "version": "3.6",
+  "archives": {
+    "lycheetah_registry_clock_monotonicity_v3.6.zip": {
+      "bytes": 131762,
+      "sha256": "e3c447e8ef1df70347883aca09de50c0baf69bd3daa2122cf3eeebc8ddc75231",
+      "zip_crc_test": "PASS",
+      "entries": 67,
+      "includes_v3_6_tests": true,
+      "includes_results": true
+    },
+    "lycheetah_closed_loop_agent_lab_v3.6.zip": {
+      "bytes": 1484957,
+      "sha256": "403e82bf2839ea17021a7556098cb108c10c4b4ff8502eaad17ca4ee953c7f40",
+      "zip_crc_test": "PASS",
+      "entries": 814,
+      "includes_v3_6_tests": true,
+      "includes_results": true
+    }
+  },
+  "verification": {
+    "source_pins": "PASS",
+    "python_compile": "PASS",
+    "combined_tests": "82 passed",
+    "focused_clock_tests": "11 passed",
+    "hosted_calls": 0,
+    "upstream_files_changed": false,
+    "upstream_ci_run": false
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "version": "2.4",
+  "date": "2026-10-17",
+  "python_runtime": "3.13",
+  "dependencies": "Python standard library only",
+  "focused_adapter_test_methods": 76,
+  "focused_seconds": 7.104,
+  "retained_plus_focused_test_methods": 193,
+  "combined_seconds": 16.401,
+  "python_compile": "PASS",
+  "local_http_smoke": "PASS",
+  "local_smoke": {
+    "test_mode_only": true,
+    "provider": "local simulator on loopback",
+    "first_action": "RECONCILE",
+    "recovery_action": "SUCCEEDED",
+    "provider_effect_count": 1,
+    "provider_post_calls": 2,
+    "persisted_state": "SUCCEEDED"
+  },
+  "hosted_stripe_api_calls": 0,
+  "real_refunds_created": 0,
+  "real_credentials_used": false,
+  "upstream_source_modified": false,
+  "full_upstream_ci_run": false,
+  "scope_note": "Tests exercise a local loopback simulator and retained project reference harnesses. No hosted Stripe conformance or production security is asserted."
+}

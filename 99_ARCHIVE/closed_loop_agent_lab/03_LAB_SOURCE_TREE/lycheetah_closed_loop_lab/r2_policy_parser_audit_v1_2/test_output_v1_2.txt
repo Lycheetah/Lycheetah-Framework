@@ -1,0 +1,11 @@
+test_all_json_string_fields_reject_wrong_types (test_strict_candidate.TestStrictCandidate.test_all_json_string_fields_reject_wrong_types) ... ok
+test_baseline_is_not_accidentally_used_as_candidate (test_strict_candidate.TestStrictCandidate.test_baseline_is_not_accidentally_used_as_candidate) ... ok
+test_direct_constructor_rejects_wrong_types_for_all_text_fields (test_strict_candidate.TestStrictCandidate.test_direct_constructor_rejects_wrong_types_for_all_text_fields) ... ok
+test_existing_missing_optional_defaults_are_preserved (test_strict_candidate.TestStrictCandidate.test_existing_missing_optional_defaults_are_preserved) ... ok
+test_source_equivalent_fixture_exposes_status_basis_coercion (test_strict_candidate.TestStrictCandidate.test_source_equivalent_fixture_exposes_status_basis_coercion) ... ok
+test_valid_explicit_strings_round_trip (test_strict_candidate.TestStrictCandidate.test_valid_explicit_strings_round_trip) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+OK

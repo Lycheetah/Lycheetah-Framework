@@ -1,0 +1,10 @@
+{
+  "status": "PASS_SEPARATE_SUITES",
+  "test_methods": 166,
+  "checks": {
+    "all_suites_pass": true,
+    "parser_probe_count_is_24": true,
+    "baseline_accepts_21_invalid_types": true,
+    "candidate_rejects_all_24": true
+  }
+}

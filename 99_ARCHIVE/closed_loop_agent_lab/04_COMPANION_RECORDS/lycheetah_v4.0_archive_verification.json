@@ -1,0 +1,23 @@
+{
+  "version": "4.0",
+  "standalone_archive": {
+    "path": "/mnt/data/lycheetah_mtls_registry_gateway_v4.0.zip",
+    "bytes": 83380,
+    "sha256": "92a32cb2e98f6f0c532d35488caab8a04325c04593f3ae1579591f4594da1593"
+  },
+  "complete_archive": {
+    "path": "/mnt/data/lycheetah_closed_loop_agent_lab_v4.0.zip",
+    "bytes": 1702199,
+    "sha256": "43e23c71b30fc560208e8c34184fe4c7e9ef48262c568b80df30ec8884847703"
+  },
+  "source_pin_status": "PASS",
+  "compile_status": "PASS",
+  "retained_quorum_test_methods_passed": 38,
+  "remote_witness_and_gateway_test_methods_passed": 39,
+  "total_test_methods_passed": 77,
+  "hosted_service_calls": 0,
+  "upstream_modified": false,
+  "boundary": "Local reference harness only; four witness processes and coordinator share one host/operator.",
+  "standalone_archive_crc_test": "PASS",
+  "complete_archive_crc_test": "PASS"
+}

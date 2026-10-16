@@ -1,0 +1,48 @@
+{
+  "as_of_date": "2026-10-17",
+  "compile_status": "PASS",
+  "new_rotation_suite": {
+    "count": 20,
+    "elapsed_seconds": 9.663,
+    "status": "PASS"
+  },
+  "note": "Legacy suites and the new v2.9 focused suite passed in separate invocations. One chained shell attempt intermittently stalled in the harness after prior groups; no monolithic combined pass is claimed. The focused v2.9 suite and all retained groups have standalone passing logs.",
+  "provider_calls": 0,
+  "real_refunds_created": 0,
+  "retained_groups": {
+    "R10 evidence lease/durable outbox": {
+      "count": 49,
+      "evidence": "group_r10.log",
+      "status": "PASS"
+    },
+    "R11 provider contract": {
+      "count": 29,
+      "evidence": "group_r11.log",
+      "status": "PASS"
+    },
+    "R12 refund recovery policy": {
+      "count": 39,
+      "evidence": "group_r12.log",
+      "status": "PASS"
+    },
+    "R15 Stripe HTTP adapter": {
+      "count": 85,
+      "evidence": "group_r15.log",
+      "status": "PASS"
+    },
+    "R16-R18 inbox/worker/queue": {
+      "count": 121,
+      "evidence": "group_r18.log",
+      "status": "PASS"
+    },
+    "R19 integrity key rotation": {
+      "count": 20,
+      "evidence": "focused_tests_v2.9.log",
+      "status": "PASS"
+    }
+  },
+  "single_monolithic_suite_claimed": false,
+  "status": "PASS_IN_SEPARATE_ISOLATED_RUNS",
+  "total_test_methods_across_isolated_runs": 343,
+  "upstream_changed": false
+}

@@ -1,0 +1,15 @@
+STATUS: SYNTHETIC_DETERMINISTIC_FIXTURE
+
+BASELINE
+  decisions: {'ACCEPT': 8, 'REVIEW': 0, 'BLOCK': 6}
+  invalid auto-accepts: 3 ['S03_green_no_effect', 'S04_collateral_edit', 'S05_unseen_semantic_regression']
+  valid cases sent to review: 0 []
+
+CANDIDATE
+  decisions: {'ACCEPT': 3, 'REVIEW': 3, 'BLOCK': 8}
+  invalid auto-accepts: 1 ['S05_unseen_semantic_regression']
+  valid cases sent to review: 2 ['S06_valid_multi_file', 'S12_unmachineable_goal']
+
+Candidate reclassified baseline misses: ['S03_green_no_effect', 'S04_collateral_edit']
+Fixture-only false-accept reduction fraction: 0.6666666666666666
+Full machine-readable report: /mnt/data/lycheetah_closed_loop_lab/results.json

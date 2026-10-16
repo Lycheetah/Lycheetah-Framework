@@ -1,0 +1,69 @@
+{
+  "status": "SOURCE_EQUIVALENT_FIXTURE_NOT_UPSTREAM_PACKAGE_TEST",
+  "inspected_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "source_blobs": {
+    "models.py": "12895f2a7d3e66f4584040713dad131c154b80f0",
+    "receipt.py": "91f9ec4d7177480d259240a0899b8b54aff6f0e5"
+  },
+  "cases": [
+    {
+      "case": "receipt schema_version string-to-number",
+      "baseline_accepts_mutation": true,
+      "mutation_normalizes_to_same_value": true,
+      "strict_candidate_rejects_mutation": true,
+      "candidate_error": "WireError: schema_version must be a string"
+    },
+    {
+      "case": "ControlReference title string-to-boolean",
+      "baseline_accepts_mutation": true,
+      "mutation_normalizes_to_same_value": true,
+      "strict_candidate_rejects_mutation": true,
+      "candidate_error": "WireError: control reference title must be a string"
+    },
+    {
+      "case": "Finding text/confidence/evidence coercion bundle",
+      "baseline_accepts_mutation": true,
+      "mutation_normalizes_to_same_value": true,
+      "strict_candidate_rejects_mutation": true,
+      "candidate_error": "WireError: finding title must be a string"
+    },
+    {
+      "case": "Finding title string-to-boolean",
+      "baseline_accepts_mutation": true,
+      "mutation_normalizes_to_same_value": true,
+      "strict_candidate_rejects_mutation": true,
+      "candidate_error": "WireError: finding title must be a string"
+    },
+    {
+      "case": "Finding confidence float-to-boolean",
+      "baseline_accepts_mutation": true,
+      "mutation_normalizes_to_same_value": true,
+      "strict_candidate_rejects_mutation": true,
+      "candidate_error": "WireError: finding confidence must be a finite number"
+    },
+    {
+      "case": "Finding status_basis string-to-null",
+      "baseline_accepts_mutation": true,
+      "mutation_normalizes_to_same_value": true,
+      "strict_candidate_rejects_mutation": true,
+      "candidate_error": "WireError: finding status_basis must be a string"
+    },
+    {
+      "case": "Finding evidence string-to-integer",
+      "baseline_accepts_mutation": true,
+      "mutation_normalizes_to_same_value": true,
+      "strict_candidate_rejects_mutation": true,
+      "candidate_error": "WireError: finding evidence must be an array of strings"
+    },
+    {
+      "case": "Finding evaluator string-to-integer",
+      "baseline_accepts_mutation": true,
+      "mutation_normalizes_to_same_value": true,
+      "strict_candidate_rejects_mutation": true,
+      "candidate_error": "WireError: finding evaluator must be a string"
+    }
+  ],
+  "mutations_accepted_and_normalized": 8,
+  "strict_rejections": 8,
+  "case_count": 8
+}

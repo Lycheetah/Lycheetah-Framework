@@ -1,0 +1,33 @@
+{
+  "atomic_reference": {
+    "claimed_contract_pass": true,
+    "effects_after_retry": 1,
+    "false_condition_denied": true,
+    "initial_action_accepted": true,
+    "provider_model": "atomic_conditional_reference",
+    "same_key_different_payload_conflicts": true,
+    "same_key_retry_replayed": true
+  },
+  "bounded_model": {
+    "atomic_condition_violations": 0,
+    "schedule_count": 3,
+    "split_check_violations": 1
+  },
+  "non_idempotent_negative_control": {
+    "durable_idempotency_contract_pass": false,
+    "effects_after_retry": 2,
+    "provider_model": "non_idempotent_negative_control",
+    "response_lost_after_first_effect": true
+  },
+  "scope": "local reference providers only; no real provider API called",
+  "split_check_negative_control": {
+    "accepted_using_stale_snapshot": true,
+    "atomic_condition_contract_pass": false,
+    "effect_count": 1,
+    "final_condition": {
+      "status": "FAIL",
+      "version": "v2"
+    },
+    "provider_model": "split_check_then_act_negative_control"
+  }
+}

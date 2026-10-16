@@ -1,0 +1,452 @@
+{
+  "status": "LOCAL_EVALUATOR_CALIBRATION_NOT_AGENT_EVALUATION",
+  "task": "bounded exponential retry delay with strict input contract and overflow-safe cap",
+  "candidate_count": 8,
+  "known_valid_implementations": [
+    "iterative_valid_alternative",
+    "reference"
+  ],
+  "planted_defect_count": 6,
+  "public_suite": {
+    "checks": 3,
+    "accepted_candidates": [
+      "reference",
+      "iterative_valid_alternative",
+      "lookup_overfit_public_examples",
+      "ignores_cap",
+      "accepts_bool_as_attempt",
+      "clamps_negative_attempt"
+    ],
+    "accepted_known_defects": [
+      "lookup_overfit_public_examples",
+      "ignores_cap",
+      "accepts_bool_as_attempt",
+      "clamps_negative_attempt"
+    ],
+    "false_accepts_among_known_defects": 4,
+    "valid_alternatives_rejected": []
+  },
+  "contract_suite": {
+    "checks": 19,
+    "accepted_candidates": [
+      "reference",
+      "iterative_valid_alternative"
+    ],
+    "accepted_known_defects": [],
+    "known_defects_rejected": [
+      "lookup_overfit_public_examples",
+      "ignores_cap",
+      "accepts_bool_as_attempt",
+      "clamps_negative_attempt",
+      "constant_base",
+      "constant_cap"
+    ],
+    "valid_alternatives_rejected": []
+  },
+  "rows": [
+    {
+      "candidate": "reference",
+      "predeclared_label": "valid_alternative",
+      "public_checks_passed": 3,
+      "public_checks_total": 3,
+      "public_suite_accepts": true,
+      "contract_checks_passed": 19,
+      "contract_checks_total": 19,
+      "contract_suite_accepts": true,
+      "contract_failures": []
+    },
+    {
+      "candidate": "iterative_valid_alternative",
+      "predeclared_label": "valid_alternative",
+      "public_checks_passed": 3,
+      "public_checks_total": 3,
+      "public_suite_accepts": true,
+      "contract_checks_passed": 19,
+      "contract_checks_total": 19,
+      "contract_suite_accepts": true,
+      "contract_failures": []
+    },
+    {
+      "candidate": "lookup_overfit_public_examples",
+      "predeclared_label": "planted_defect",
+      "public_checks_passed": 3,
+      "public_checks_total": 3,
+      "public_suite_accepts": true,
+      "contract_checks_passed": 4,
+      "contract_checks_total": 19,
+      "contract_suite_accepts": false,
+      "contract_failures": [
+        {
+          "case": "cap_small",
+          "detail": "expected 5.0, got 1.0"
+        },
+        {
+          "case": "very_large_attempt",
+          "detail": "expected 30.0, got 1.0"
+        },
+        {
+          "case": "zero_cap",
+          "detail": "expected 0.0, got 3.0"
+        },
+        {
+          "case": "base_above_cap",
+          "detail": "expected 5.0, got 8.0"
+        },
+        {
+          "case": "fractional_base",
+          "detail": "expected 1.0, got 0.25"
+        },
+        {
+          "case": "fractional_cap",
+          "detail": "expected 0.9, got 0.25"
+        },
+        {
+          "case": "negative_attempt",
+          "detail": "expected ValueError, returned 1.0"
+        },
+        {
+          "case": "bool_attempt",
+          "detail": "expected TypeError, returned 1.0"
+        },
+        {
+          "case": "float_attempt",
+          "detail": "expected TypeError, returned 1.0"
+        },
+        {
+          "case": "negative_base",
+          "detail": "expected ValueError, returned -1.0"
+        },
+        {
+          "case": "negative_cap",
+          "detail": "expected ValueError, returned 1.0"
+        },
+        {
+          "case": "nan_base",
+          "detail": "expected ValueError, returned nan"
+        },
+        {
+          "case": "inf_cap",
+          "detail": "expected ValueError, returned 1.0"
+        },
+        {
+          "case": "string_base",
+          "detail": "expected TypeError, returned 1.0"
+        },
+        {
+          "case": "bool_base",
+          "detail": "expected TypeError, returned 1.0"
+        }
+      ]
+    },
+    {
+      "candidate": "ignores_cap",
+      "predeclared_label": "planted_defect",
+      "public_checks_passed": 3,
+      "public_checks_total": 3,
+      "public_suite_accepts": true,
+      "contract_checks_passed": 6,
+      "contract_checks_total": 19,
+      "contract_suite_accepts": false,
+      "contract_failures": [
+        {
+          "case": "cap_small",
+          "detail": "expected 5.0, got 1024.0"
+        },
+        {
+          "case": "very_large_attempt",
+          "detail": "raised OverflowError: (34, 'Numerical result out of range')"
+        },
+        {
+          "case": "zero_cap",
+          "detail": "expected 0.0, got 1.607262910779401e+301"
+        },
+        {
+          "case": "base_above_cap",
+          "detail": "expected 5.0, got 8.0"
+        },
+        {
+          "case": "fractional_cap",
+          "detail": "expected 0.9, got 256.0"
+        },
+        {
+          "case": "bool_attempt",
+          "detail": "raised ValueError: bad attempt"
+        },
+        {
+          "case": "float_attempt",
+          "detail": "raised ValueError: bad attempt"
+        },
+        {
+          "case": "negative_base",
+          "detail": "expected ValueError, returned -1.0"
+        },
+        {
+          "case": "negative_cap",
+          "detail": "expected ValueError, returned 1.0"
+        },
+        {
+          "case": "nan_base",
+          "detail": "expected ValueError, returned nan"
+        },
+        {
+          "case": "inf_cap",
+          "detail": "expected ValueError, returned 1.0"
+        },
+        {
+          "case": "string_base",
+          "detail": "expected TypeError, returned 1.0"
+        },
+        {
+          "case": "bool_base",
+          "detail": "expected TypeError, returned 1.0"
+        }
+      ]
+    },
+    {
+      "candidate": "accepts_bool_as_attempt",
+      "predeclared_label": "planted_defect",
+      "public_checks_passed": 3,
+      "public_checks_total": 3,
+      "public_suite_accepts": true,
+      "contract_checks_passed": 10,
+      "contract_checks_total": 19,
+      "contract_suite_accepts": false,
+      "contract_failures": [
+        {
+          "case": "very_large_attempt",
+          "detail": "raised OverflowError: (34, 'Numerical result out of range')"
+        },
+        {
+          "case": "bool_attempt",
+          "detail": "expected TypeError, returned 2.0"
+        },
+        {
+          "case": "float_attempt",
+          "detail": "raised ValueError: bad attempt"
+        },
+        {
+          "case": "negative_base",
+          "detail": "expected ValueError, returned -1.0"
+        },
+        {
+          "case": "negative_cap",
+          "detail": "expected ValueError, returned -1.0"
+        },
+        {
+          "case": "nan_base",
+          "detail": "expected ValueError, returned nan"
+        },
+        {
+          "case": "inf_cap",
+          "detail": "expected ValueError, returned 1.0"
+        },
+        {
+          "case": "string_base",
+          "detail": "expected TypeError, returned 1.0"
+        },
+        {
+          "case": "bool_base",
+          "detail": "expected TypeError, returned 1.0"
+        }
+      ]
+    },
+    {
+      "candidate": "clamps_negative_attempt",
+      "predeclared_label": "planted_defect",
+      "public_checks_passed": 3,
+      "public_checks_total": 3,
+      "public_suite_accepts": true,
+      "contract_checks_passed": 9,
+      "contract_checks_total": 19,
+      "contract_suite_accepts": false,
+      "contract_failures": [
+        {
+          "case": "very_large_attempt",
+          "detail": "raised OverflowError: (34, 'Numerical result out of range')"
+        },
+        {
+          "case": "negative_attempt",
+          "detail": "expected ValueError, returned 1.0"
+        },
+        {
+          "case": "bool_attempt",
+          "detail": "expected TypeError, returned 2.0"
+        },
+        {
+          "case": "float_attempt",
+          "detail": "expected TypeError, returned 2.0"
+        },
+        {
+          "case": "negative_base",
+          "detail": "expected ValueError, returned -1.0"
+        },
+        {
+          "case": "negative_cap",
+          "detail": "expected ValueError, returned -1.0"
+        },
+        {
+          "case": "nan_base",
+          "detail": "expected ValueError, returned nan"
+        },
+        {
+          "case": "inf_cap",
+          "detail": "expected ValueError, returned 1.0"
+        },
+        {
+          "case": "string_base",
+          "detail": "expected TypeError, returned 1.0"
+        },
+        {
+          "case": "bool_base",
+          "detail": "expected TypeError, returned 1.0"
+        }
+      ]
+    },
+    {
+      "candidate": "constant_base",
+      "predeclared_label": "planted_defect",
+      "public_checks_passed": 1,
+      "public_checks_total": 3,
+      "public_suite_accepts": false,
+      "contract_checks_passed": 4,
+      "contract_checks_total": 19,
+      "contract_suite_accepts": false,
+      "contract_failures": [
+        {
+          "case": "one_attempt",
+          "detail": "expected 2.0, got 1.0"
+        },
+        {
+          "case": "ordinary_growth",
+          "detail": "expected 8.0, got 1.0"
+        },
+        {
+          "case": "cap_small",
+          "detail": "expected 5.0, got 1.0"
+        },
+        {
+          "case": "very_large_attempt",
+          "detail": "expected 30.0, got 1.0"
+        },
+        {
+          "case": "fractional_base",
+          "detail": "expected 1.0, got 0.25"
+        },
+        {
+          "case": "fractional_cap",
+          "detail": "expected 0.9, got 0.25"
+        },
+        {
+          "case": "negative_attempt",
+          "detail": "expected ValueError, returned 1.0"
+        },
+        {
+          "case": "bool_attempt",
+          "detail": "expected TypeError, returned 1.0"
+        },
+        {
+          "case": "float_attempt",
+          "detail": "expected TypeError, returned 1.0"
+        },
+        {
+          "case": "negative_base",
+          "detail": "expected ValueError, returned -1.0"
+        },
+        {
+          "case": "negative_cap",
+          "detail": "expected ValueError, returned -1.0"
+        },
+        {
+          "case": "nan_base",
+          "detail": "expected ValueError, returned nan"
+        },
+        {
+          "case": "inf_cap",
+          "detail": "expected ValueError, returned 1.0"
+        },
+        {
+          "case": "string_base",
+          "detail": "expected TypeError, returned 1.0"
+        },
+        {
+          "case": "bool_base",
+          "detail": "expected TypeError, returned 1.0"
+        }
+      ]
+    },
+    {
+      "candidate": "constant_cap",
+      "predeclared_label": "planted_defect",
+      "public_checks_passed": 0,
+      "public_checks_total": 3,
+      "public_suite_accepts": false,
+      "contract_checks_passed": 5,
+      "contract_checks_total": 19,
+      "contract_suite_accepts": false,
+      "contract_failures": [
+        {
+          "case": "zero_attempt",
+          "detail": "expected 1.0, got 100.0"
+        },
+        {
+          "case": "one_attempt",
+          "detail": "expected 2.0, got 100.0"
+        },
+        {
+          "case": "ordinary_growth",
+          "detail": "expected 8.0, got 100.0"
+        },
+        {
+          "case": "zero_base",
+          "detail": "expected 0.0, got 30.0"
+        },
+        {
+          "case": "fractional_base",
+          "detail": "expected 1.0, got 3.0"
+        },
+        {
+          "case": "negative_attempt",
+          "detail": "expected ValueError, returned 10.0"
+        },
+        {
+          "case": "bool_attempt",
+          "detail": "expected TypeError, returned 10.0"
+        },
+        {
+          "case": "float_attempt",
+          "detail": "expected TypeError, returned 10.0"
+        },
+        {
+          "case": "negative_base",
+          "detail": "expected ValueError, returned 10.0"
+        },
+        {
+          "case": "negative_cap",
+          "detail": "expected ValueError, returned -1.0"
+        },
+        {
+          "case": "nan_base",
+          "detail": "expected ValueError, returned 10.0"
+        },
+        {
+          "case": "inf_cap",
+          "detail": "expected ValueError, returned inf"
+        },
+        {
+          "case": "string_base",
+          "detail": "expected TypeError, returned 10.0"
+        },
+        {
+          "case": "bool_base",
+          "detail": "expected TypeError, returned 10.0"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "All candidates and labels are authored in one small local fixture.",
+    "The exercise measures test-suite discrimination on planted variants, not real agent success or safety.",
+    "The contract suite is a second oracle written for this task, not an independent external adjudicator.",
+    "Passing this suite is not proof that the specification or reference implementation is complete."
+  ]
+}

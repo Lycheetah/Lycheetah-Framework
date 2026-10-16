@@ -1,0 +1,18 @@
+{
+  "source": "Lycheetah/Lycheetah-Framework/examples/assurance/customer_support_policy.json",
+  "inspected_base_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "expected_git_blob_sha": "419d4894db9480ce6d850c2115f767fe09a237ad",
+  "actual_git_blob_sha": "419d4894db9480ce6d850c2115f767fe09a237ad",
+  "fixture_matches_source_blob": true,
+  "current_schema_accepts": true,
+  "source_equivalent_current_parser_accepts": true,
+  "candidate_schema_accepts": true,
+  "source_equivalent_strict_type_gate_accepts": true,
+  "current_parser_error": null,
+  "strict_parser_note": "",
+  "compatibility": "PASS",
+  "limitations": [
+    "The parser being invoked is the audited source-equivalent model, not the full upstream package.",
+    "This is one committed example policy; it is not a scan of user-held or production-stored records."
+  ]
+}

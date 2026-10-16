@@ -1,0 +1,45 @@
+{
+  "artifact": "Lycheetah Closed-Loop Agent Lab v3.0",
+  "created_utc": "not asserted; system project date 2026-10-17 Pacific/Auckland",
+  "focused_tests": {
+    "methods": 33,
+    "status": "PASS",
+    "log": "r20_external_checkpoint_v3_0/focused_tests_v3.0.log"
+  },
+  "compilation": "PASS",
+  "json_validation": "PASS",
+  "archives": [
+    {
+      "file": "lycheetah_closed_loop_agent_lab_v3.0.zip",
+      "path": "/mnt/data/lycheetah_closed_loop_agent_lab_v3.0.zip",
+      "sha256": "f7a06c2506e08a5ee97c23a3906df42dc470bf56ec7d3fa04e003135acab93c1",
+      "bytes": 925411,
+      "archive_entries": 534,
+      "archive_crc": "PASS",
+      "top_level_entries": [
+        "lycheetah_closed_loop_lab"
+      ]
+    },
+    {
+      "file": "lycheetah_external_checkpoint_v3.0.zip",
+      "path": "/mnt/data/lycheetah_external_checkpoint_v3.0.zip",
+      "sha256": "5ef2c38562f308bd9ab2f819481cfef78b1fc37ad8b8d24a0696821f900878d7",
+      "bytes": 52871,
+      "archive_entries": 26,
+      "archive_crc": "PASS",
+      "top_level_entries": [
+        "r20_external_checkpoint_v3_0"
+      ]
+    }
+  ],
+  "package_entry_counts": {
+    "full_historical_lab": 534,
+    "standalone_checkpoint_pack": 26
+  },
+  "limitations": [
+    "No fresh monolithic all-groups regression pass is claimed because the historical R18 process did not exit cleanly in latest cumulative diagnostic attempt.",
+    "No upstream Lycheetah source, branch, pull request, or CI run was changed or performed.",
+    "No hosted Stripe API calls and no real refunds were created.",
+    "SQLiteReferenceAnchor is a local reference store; coordinated rollback of primary and anchor files is outside its guarantees."
+  ]
+}

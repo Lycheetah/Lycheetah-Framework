@@ -1,0 +1,23 @@
+{
+  "research_version": "3.4",
+  "repository": "https://github.com/Lycheetah/Lycheetah-Framework",
+  "observed_default_branch": "master",
+  "observed_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "source_files": {
+    "remote_anchor_http.py": "0a002d054800fbfaed20b100c38f7333c934ff71f7a971aec3631bd49a61afe3",
+    "checkpoint_witness_quorum.py": "579912ffd00a744995ed23ab6ba0fae577df4cfb94618ae788165b4bb9dab5d6",
+    "durable_freshness_verifier.py": "da8f5ce6113ba82ef980dba72c632ce19e52bca5a6e07529145e89d2b2aa9336",
+    "test_checkpoint_witness_quorum.py": "a6a33cc99eef28a071b241f00cdcb4fe8d5a7f0d75571c72fa92ae5a0c29d791",
+    "test_durable_freshness_verifier.py": "aac19b74d3e68e70977fe273eda7065ed7f9a6160e32aac01bdc1f365f718715",
+    "reproduce_v3_2_findings.py": "7f3ab457763c3a3cfa41c4572c8cf7a345b313fdb81bbcc2081b5d7cee4d4123"
+  },
+  "frozen_baseline_files": {
+    "remote_anchor_http.py": "0a002d054800fbfaed20b100c38f7333c934ff71f7a971aec3631bd49a61afe3",
+    "checkpoint_witness_quorum.py": "9a240f2e7cc8acbb4bd80e79959e35f6c21a2f5d7e4963f75654e52148c6a478",
+    "test_checkpoint_witness_quorum.py": "f1002c9d2a197b09a41448a7853b138036432c364171d8dfd6bb0976be92ff41"
+  },
+  "upstream_modified": false,
+  "hosted_anchor_calls": 0,
+  "hosted_stripe_calls": 0,
+  "real_refunds_created": 0
+}

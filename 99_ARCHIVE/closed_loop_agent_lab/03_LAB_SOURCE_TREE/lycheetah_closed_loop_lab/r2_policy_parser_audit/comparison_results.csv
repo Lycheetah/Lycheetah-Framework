@@ -1,0 +1,25 @@
+field,value_repr,source_equivalent_baseline,strict_candidate
+id,None,ACCEPT,REJECT:PolicyError
+id,True,ACCEPT,REJECT:PolicyError
+id,17,REJECT:PolicyError,REJECT:PolicyError
+id,3.5,ACCEPT,REJECT:PolicyError
+id,['ordinary'],REJECT:PolicyError,REJECT:PolicyError
+id,{'ordinary': 'value'},REJECT:PolicyError,REJECT:PolicyError
+pattern,None,ACCEPT,REJECT:PolicyError
+pattern,True,ACCEPT,REJECT:PolicyError
+pattern,17,ACCEPT,REJECT:PolicyError
+pattern,3.5,ACCEPT,REJECT:PolicyError
+pattern,['ordinary'],ACCEPT,REJECT:PolicyError
+pattern,{'ordinary': 'value'},ACCEPT,REJECT:PolicyError
+title,None,ACCEPT,REJECT:PolicyError
+title,True,ACCEPT,REJECT:PolicyError
+title,17,ACCEPT,REJECT:PolicyError
+title,3.5,ACCEPT,REJECT:PolicyError
+title,['ordinary'],ACCEPT,REJECT:PolicyError
+title,{'ordinary': 'value'},ACCEPT,REJECT:PolicyError
+description,None,ACCEPT,REJECT:PolicyError
+description,True,ACCEPT,REJECT:PolicyError
+description,17,ACCEPT,REJECT:PolicyError
+description,3.5,ACCEPT,REJECT:PolicyError
+description,['ordinary'],ACCEPT,REJECT:PolicyError
+description,{'ordinary': 'value'},ACCEPT,REJECT:PolicyError

@@ -1,0 +1,77 @@
+{
+  "artifact_version": "4.9",
+  "combined_test_methods": 153,
+  "differential_probe": {
+    "baseline_v4_8": {
+      "noisy_peer_accepted": 5,
+      "noisy_peer_final_rejection": "connection-rate-limit",
+      "unrelated_peer_accepted": false,
+      "unrelated_peer_rejection": "connection-rate-limit"
+    },
+    "comparison": "v4.8 global-only attempt rate versus v4.9 per-peer bucket plus global budget",
+    "expected_delta_observed": true,
+    "limitations": [
+      "The global rate limit still bounds aggregate accepted attempts after source tiers pass.",
+      "Prefix buckets are network heuristics, not authenticated identity.",
+      "This is an isolated store comparison, not an Internet traffic test or upstream CI."
+    ],
+    "scenario": "one IPv4 peer makes eight rapid attempts, then an unrelated peer attempts once",
+    "scope": "local deterministic reference stores only; no live network or hosted service",
+    "tiered_v4_9": {
+      "bucket_count": 2,
+      "global_tokens_approx": 2.001,
+      "noisy_peer_accepted": 2,
+      "noisy_peer_global_rate_denials": 0,
+      "noisy_peer_peer_rate_denials": 6,
+      "unrelated_peer_accepted": true,
+      "unrelated_peer_rejection": null
+    }
+  },
+  "full_suite_log": "full_suite_v4.9.log",
+  "hosted_service_calls": 0,
+  "limitations": [
+    "Local reference artifact results only; not upstream CI or production certification.",
+    "Local source fingerprints pin this artifact, not byte identity with upstream GitHub.",
+    "IP prefixes are quota/fairness keys, not authenticated identity; NAT and shared IPv6 allocation can cause collateral rejection.",
+    "Shared SQLite authority is same-host and same-PID-namespace infrastructure, not distributed/global quota coordination.",
+    "Attempt-rate decisions happen after TCP accept and do not mitigate SYN floods, link saturation, or upstream firewall pressure.",
+    "The gateway configuration is opt-in and its operational impact requires deployment-specific traffic validation.",
+    "No upstream file, branch, or pull request was changed; no hosted service was called."
+  ],
+  "local_source_pins": {
+    "file_count": 31,
+    "status": "PASS"
+  },
+  "observed_upstream_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "parent_artifact_version": "4.8",
+  "python_compile": "PASS",
+  "test_suites": {
+    "checkpoint_quorum": {
+      "log": "quorum_v4.9.log",
+      "status": "PASS",
+      "test_methods": 38
+    },
+    "coordinator": {
+      "log": "coordinator_v4.9.log",
+      "status": "PASS",
+      "test_methods": 13
+    },
+    "gateway_lifecycle": {
+      "each_shard": {
+        "errors": 0,
+        "failures": 0,
+        "surviving_non_main_threads": []
+      },
+      "log": "gateway_v4.9.log",
+      "shards": 15,
+      "status": "PASS",
+      "test_methods": 60
+    },
+    "ingress": {
+      "log": "focused_ingress_v4.9.log",
+      "status": "PASS",
+      "test_methods": 42
+    }
+  },
+  "upstream_modified": false
+}

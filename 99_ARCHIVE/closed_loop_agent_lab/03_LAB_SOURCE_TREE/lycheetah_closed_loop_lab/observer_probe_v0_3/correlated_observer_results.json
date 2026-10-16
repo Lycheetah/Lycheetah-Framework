@@ -1,0 +1,132 @@
+{
+  "status": "ANALYTICAL_SENSITIVITY_NOT_EMPIRICAL",
+  "formula": "P(both miss) = p^2 + rho*p*(1-p)",
+  "assumptions": [
+    "Both observers have the same marginal miss rate p on invalid tasks.",
+    "rho is the correlation of their Bernoulli miss indicators conditional on an invalid task.",
+    "Acceptance requires both observers to miss the defect.",
+    "Expected counts use a hypothetical 2,000 invalid tasks; no task trials were run."
+  ],
+  "rows": [
+    {
+      "single_observer_miss_rate": 0.05,
+      "observer_error_correlation": 0.0,
+      "both_observers_miss_probability": 0.0025000000000000005,
+      "expected_false_accepts_per_2000_invalid_tasks": 5.000000000000001,
+      "independence_assumed_probability": 0.0025000000000000005,
+      "independence_assumption_underestimates_by_factor": 1.0
+    },
+    {
+      "single_observer_miss_rate": 0.05,
+      "observer_error_correlation": 0.25,
+      "both_observers_miss_probability": 0.014375,
+      "expected_false_accepts_per_2000_invalid_tasks": 28.75,
+      "independence_assumed_probability": 0.0025000000000000005,
+      "independence_assumption_underestimates_by_factor": 5.749999999999999
+    },
+    {
+      "single_observer_miss_rate": 0.05,
+      "observer_error_correlation": 0.5,
+      "both_observers_miss_probability": 0.026250000000000002,
+      "expected_false_accepts_per_2000_invalid_tasks": 52.50000000000001,
+      "independence_assumed_probability": 0.0025000000000000005,
+      "independence_assumption_underestimates_by_factor": 10.499999999999998
+    },
+    {
+      "single_observer_miss_rate": 0.05,
+      "observer_error_correlation": 0.75,
+      "both_observers_miss_probability": 0.038125000000000006,
+      "expected_false_accepts_per_2000_invalid_tasks": 76.25000000000001,
+      "independence_assumed_probability": 0.0025000000000000005,
+      "independence_assumption_underestimates_by_factor": 15.25
+    },
+    {
+      "single_observer_miss_rate": 0.05,
+      "observer_error_correlation": 1.0,
+      "both_observers_miss_probability": 0.05,
+      "expected_false_accepts_per_2000_invalid_tasks": 100.0,
+      "independence_assumed_probability": 0.0025000000000000005,
+      "independence_assumption_underestimates_by_factor": 19.999999999999996
+    },
+    {
+      "single_observer_miss_rate": 0.1,
+      "observer_error_correlation": 0.0,
+      "both_observers_miss_probability": 0.010000000000000002,
+      "expected_false_accepts_per_2000_invalid_tasks": 20.000000000000004,
+      "independence_assumed_probability": 0.010000000000000002,
+      "independence_assumption_underestimates_by_factor": 1.0
+    },
+    {
+      "single_observer_miss_rate": 0.1,
+      "observer_error_correlation": 0.25,
+      "both_observers_miss_probability": 0.0325,
+      "expected_false_accepts_per_2000_invalid_tasks": 65.0,
+      "independence_assumed_probability": 0.010000000000000002,
+      "independence_assumption_underestimates_by_factor": 3.2499999999999996
+    },
+    {
+      "single_observer_miss_rate": 0.1,
+      "observer_error_correlation": 0.5,
+      "both_observers_miss_probability": 0.05500000000000001,
+      "expected_false_accepts_per_2000_invalid_tasks": 110.00000000000001,
+      "independence_assumed_probability": 0.010000000000000002,
+      "independence_assumption_underestimates_by_factor": 5.5
+    },
+    {
+      "single_observer_miss_rate": 0.1,
+      "observer_error_correlation": 0.75,
+      "both_observers_miss_probability": 0.07750000000000001,
+      "expected_false_accepts_per_2000_invalid_tasks": 155.00000000000003,
+      "independence_assumed_probability": 0.010000000000000002,
+      "independence_assumption_underestimates_by_factor": 7.75
+    },
+    {
+      "single_observer_miss_rate": 0.1,
+      "observer_error_correlation": 1.0,
+      "both_observers_miss_probability": 0.1,
+      "expected_false_accepts_per_2000_invalid_tasks": 200.0,
+      "independence_assumed_probability": 0.010000000000000002,
+      "independence_assumption_underestimates_by_factor": 9.999999999999998
+    },
+    {
+      "single_observer_miss_rate": 0.2,
+      "observer_error_correlation": 0.0,
+      "both_observers_miss_probability": 0.04000000000000001,
+      "expected_false_accepts_per_2000_invalid_tasks": 80.00000000000001,
+      "independence_assumed_probability": 0.04000000000000001,
+      "independence_assumption_underestimates_by_factor": 1.0
+    },
+    {
+      "single_observer_miss_rate": 0.2,
+      "observer_error_correlation": 0.25,
+      "both_observers_miss_probability": 0.08000000000000002,
+      "expected_false_accepts_per_2000_invalid_tasks": 160.00000000000003,
+      "independence_assumed_probability": 0.04000000000000001,
+      "independence_assumption_underestimates_by_factor": 2.0
+    },
+    {
+      "single_observer_miss_rate": 0.2,
+      "observer_error_correlation": 0.5,
+      "both_observers_miss_probability": 0.12000000000000002,
+      "expected_false_accepts_per_2000_invalid_tasks": 240.00000000000006,
+      "independence_assumed_probability": 0.04000000000000001,
+      "independence_assumption_underestimates_by_factor": 3.0
+    },
+    {
+      "single_observer_miss_rate": 0.2,
+      "observer_error_correlation": 0.75,
+      "both_observers_miss_probability": 0.16000000000000003,
+      "expected_false_accepts_per_2000_invalid_tasks": 320.00000000000006,
+      "independence_assumed_probability": 0.04000000000000001,
+      "independence_assumption_underestimates_by_factor": 4.0
+    },
+    {
+      "single_observer_miss_rate": 0.2,
+      "observer_error_correlation": 1.0,
+      "both_observers_miss_probability": 0.20000000000000004,
+      "expected_false_accepts_per_2000_invalid_tasks": 400.00000000000006,
+      "independence_assumed_probability": 0.04000000000000001,
+      "independence_assumption_underestimates_by_factor": 5.0
+    }
+  ]
+}

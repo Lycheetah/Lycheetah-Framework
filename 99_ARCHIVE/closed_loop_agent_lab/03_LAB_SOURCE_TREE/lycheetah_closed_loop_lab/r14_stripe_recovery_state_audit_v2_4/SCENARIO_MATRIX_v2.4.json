@@ -1,0 +1,94 @@
+{
+  "version": "2.4",
+  "scenario_groups": [
+    {
+      "group": "state-machine",
+      "cases": [
+        "old READY dispatch cutoff",
+        "old UNKNOWN direct-dispatch cutoff",
+        "old CONFLICT direct-dispatch cutoff",
+        "IN_FLIGHT persisted before POST",
+        "IN_FLIGHT restart recovery",
+        "fresh UNKNOWN requires recover entrypoint",
+        "late timeout cannot downgrade SUCCEEDED",
+        "WAITING is re-polled",
+        "WAITING to SUCCEEDED",
+        "WAITING remains WAITING"
+      ]
+    },
+    {
+      "group": "preflight",
+      "cases": [
+        "Charge currency mismatch before POST",
+        "Charge not paid/captured before POST",
+        "Charge requested amount exceeds remaining balance",
+        "Charge already fully refunded",
+        "PaymentIntent success preflight",
+        "PaymentIntent not succeeded",
+        "explicit livemode false required",
+        "preflight transport loss blocks POST",
+        "mismatched target object and ID",
+        "expected currency and response currency are bound"
+      ]
+    },
+    {
+      "group": "integrity",
+      "cases": [
+        "SQLite row HMAC tampering",
+        "payload fingerprint mismatch",
+        "operation metadata substitution",
+        "success state/response tampering",
+        "state regression rejected",
+        "account scope mismatch",
+        "connected-account mismatch",
+        "API version mismatch",
+        "provider client_secret is not persisted",
+        "provider error message/URL is not persisted",
+        "HMAC authenticity is not mistaken for confidentiality"
+      ]
+    },
+    {
+      "group": "transport",
+      "cases": [
+        "redirect not followed",
+        "official host nonstandard port",
+        "malformed port",
+        "non-root URL",
+        "remote HTTP rejected",
+        "loopback HTTP opt-in",
+        "finite timeout required",
+        "API version control characters rejected",
+        "idempotency key control/whitespace rejected",
+        "target path injection rejected"
+      ]
+    },
+    {
+      "group": "provider-recovery",
+      "cases": [
+        "drop before execution",
+        "commit then response loss",
+        "same-key retry single simulated effect",
+        "cached 500 not blindly retried",
+        "same key different payload conflicts",
+        "expired key routes to reconciliation",
+        "no correlated refund is not proof of no effect",
+        "unique correlated refund success",
+        "multiple correlated refunds reconcile",
+        "malformed/incomplete/duplicate pagination",
+        "page budget is bounded",
+        "currency/status/target/metadata mismatch fails closed"
+      ]
+    }
+  ],
+  "verification": {
+    "focused_test_methods": 76,
+    "retained_plus_focused_test_methods": 193,
+    "local_smoke": "PASS",
+    "python_compile": "PASS",
+    "hosted_stripe_calls": 0,
+    "real_refunds_created": 0,
+    "upstream_changed": false,
+    "combined_seconds": 16.401,
+    "focused_seconds": 7.104
+  }
+}

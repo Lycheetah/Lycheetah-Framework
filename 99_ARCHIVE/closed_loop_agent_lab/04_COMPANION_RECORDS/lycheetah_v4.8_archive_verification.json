@@ -1,0 +1,66 @@
+{
+  "artifact_version": "4.8",
+  "built_at_utc": "2026-10-16T20:14:25.109882+00:00",
+  "parent_artifact_version": "4.7",
+  "upstream_commit_observed": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "upstream_modified": false,
+  "hosted_service_calls": 0,
+  "source_fingerprint_validation": "PASS: exact local artifact pins verified",
+  "python_compile": "PASS",
+  "differential_probe": {
+    "result": "PASS",
+    "expected_delta_observed": true,
+    "sha256": "80c80860254adf04415b1cf1946c1518900bc4975ac546ef1e14f2f35faeea46"
+  },
+  "test_suites": {
+    "ingress": {
+      "tests": 33,
+      "result": "PASS"
+    },
+    "coordinator": {
+      "tests": 13,
+      "result": "PASS"
+    },
+    "quorum": {
+      "tests": 38,
+      "result": "PASS"
+    },
+    "gateway": {
+      "tests": 59,
+      "shards": 15,
+      "result": "PASS",
+      "lifecycle": "all zero errors/failures/surviving threads"
+    }
+  },
+  "combined_test_methods": 143,
+  "complete_runner_invocation": {
+    "command": "./run_v4.8_tests.sh all",
+    "result": "PASS",
+    "sha256": "f1bed18b9cf414b7323ece2fd0fbe3463141cd60b345576a4a53e7fb717bafcf",
+    "combined_methods": 143
+  },
+  "limitations": [
+    "Local reference artifact results, not upstream repository CI or production certification.",
+    "Local source fingerprints pin this artifact, not exact source equivalence to GitHub.",
+    "Shared SQLite authority is same-host and same-PID-namespace trusted local infrastructure.",
+    "Aggregate IPv6 quota is optional; wider prefix policies can cause collateral rejection and do not create authenticated identity.",
+    "Attempt rate budget applies after TCP accept and does not mitigate SYN floods or upstream connection floods.",
+    "No upstream file, branch, or pull request was changed; no hosted service was called."
+  ],
+  "archives": {
+    "standalone": {
+      "path": "/mnt/data/lycheetah_ingress_hierarchical_ipv6_quotas_v4.8.zip",
+      "bytes": 138306,
+      "sha256": "70183d5e5c00a2b748228463be35aad67680aac37ff27c8fd4f0662563e6a965",
+      "entries": 37,
+      "crc_test": "PASS"
+    },
+    "complete_lab": {
+      "path": "/mnt/data/lycheetah_closed_loop_agent_lab_v4.8.zip",
+      "bytes": 2964100,
+      "sha256": "c6cccf9f38991446c49104400aa88bf825f303cab41a895d4554ab1006af285e",
+      "entries": 1408,
+      "crc_test": "PASS"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "scope": "local same-host SQLite reference comparison; not a load test",
+  "rate_budget": {
+    "v4.5": {
+      "first": "accepted",
+      "second_while_full": "active-connection-limit",
+      "third_while_full": "active-connection-limit",
+      "after_slot_release": "accepted"
+    },
+    "v4.6": {
+      "first": "accepted",
+      "second_while_full": "active-connection-limit",
+      "third_while_full": "connection-rate-limit",
+      "after_slot_release": "connection-rate-limit"
+    }
+  },
+  "mapped_ipv4_identity": {
+    "v4.5": {
+      "ipv4": "accepted",
+      "mapped_ipv6": "accepted",
+      "canonical_keys_equal": false
+    },
+    "v4.6": {
+      "ipv4": "accepted",
+      "mapped_ipv6": "per-ip-connection-limit",
+      "canonical_keys_equal": true
+    }
+  },
+  "expected_delta_observed": true
+}

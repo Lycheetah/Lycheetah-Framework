@@ -1,0 +1,5 @@
+Focused current worker/inbox suite: 121 passed.
+All historical grouped tests plus focused worker suite: 323 passed in the watchdog-bounded cumulative invocation.
+Python compile: PASS.
+Loopback HTTP smoke: PASS; hosted_provider_calls=0; real_refunds_created=0.
+See combined_tests_v2.8.log, focused_tests_v2.8.log, smoke_result_v2.8.json and RESULTS_v2.8.md.

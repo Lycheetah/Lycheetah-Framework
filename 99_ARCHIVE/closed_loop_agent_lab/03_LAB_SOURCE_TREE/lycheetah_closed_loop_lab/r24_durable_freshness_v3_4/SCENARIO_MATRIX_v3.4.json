@@ -1,0 +1,82 @@
+{
+  "version": "3.4",
+  "suite_test_methods": 56,
+  "baseline_v3_2_acceptance_reproductions": 5,
+  "scenarios": [
+    {
+      "id": "V34-01",
+      "case": "valid signed chain/current-head report",
+      "expected": "ACCEPT_AND_CONSUME",
+      "verified": true
+    },
+    {
+      "id": "V34-02",
+      "case": "reuse same challenge after successful verification",
+      "expected": "REJECT_ALREADY_CONSUMED",
+      "verified": true
+    },
+    {
+      "id": "V34-03",
+      "case": "two concurrent consumers",
+      "expected": "ONE_ACCEPT_ONLY",
+      "verified": true
+    },
+    {
+      "id": "V34-04",
+      "case": "verifier restarts with same ledger and key",
+      "expected": "CONSUMED_STATE_PERSISTS",
+      "verified": true
+    },
+    {
+      "id": "V34-05",
+      "case": "unissued nonce",
+      "expected": "REJECT",
+      "verified": true
+    },
+    {
+      "id": "V34-06",
+      "case": "expiry before verification",
+      "expected": "REJECT",
+      "verified": true
+    },
+    {
+      "id": "V34-07",
+      "case": "expiry while chain verification is running",
+      "expected": "REJECT_AT_FINAL_CONSUME",
+      "verified": true
+    },
+    {
+      "id": "V34-08",
+      "case": "roster or fault-budget change while challenge pending",
+      "expected": "REJECT_POLICY_CHANGED",
+      "verified": true
+    },
+    {
+      "id": "V34-09",
+      "case": "individual ledger-row edit without HMAC",
+      "expected": "REJECT_INTEGRITY_INVALID",
+      "verified": true
+    },
+    {
+      "id": "V34-10",
+      "case": "incompatible preexisting ledger schema",
+      "expected": "REJECT_SCHEMA_INCOMPATIBLE",
+      "verified": true
+    },
+    {
+      "id": "V34-11",
+      "case": "restore whole pre-consumption SQLite snapshot with same HMAC key",
+      "expected": "REPLAY_ACCEPTED_KNOWN_LIMITATION",
+      "verified": true,
+      "negative_control": true
+    },
+    {
+      "id": "V34-12",
+      "case": "same column names but missing nonce primary-key/nullability contract",
+      "expected": "REJECT_SCHEMA_INCOMPATIBLE",
+      "verified": true
+    }
+  ],
+  "external_calls": 0,
+  "upstream_changes": false
+}

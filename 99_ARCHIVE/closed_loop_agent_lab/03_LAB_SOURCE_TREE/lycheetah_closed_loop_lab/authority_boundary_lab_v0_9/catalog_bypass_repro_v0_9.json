@@ -1,0 +1,72 @@
+{
+  "candidate_raw_action": {
+    "durable_fake_effect_count": 0,
+    "effects": [],
+    "host": "candidate-v0.9-raw-action",
+    "issue_returncode": 1,
+    "issue_stderr": "",
+    "issue_stdout": "{\"detail\": \"invalid catalog-bound action: stamped-action-schema-mismatch\", \"error\": \"ValueError\", \"status\": \"error\"}"
+  },
+  "candidate_raw_action_rejected": true,
+  "candidate_stamped_action_completed": true,
+  "candidate_valid_action": {
+    "durable_fake_effect_count": 1,
+    "effects": [
+      {
+        "action_sha256": "4f7297f07c6cb975338ee9941f2b3b923f0cdd6bc9164f86b04802411fe998e6",
+        "operation_id": "op-candidate-5f00d3d9c8cc42af84243598f5c4c93b",
+        "result": {
+          "action_sha256": "4f7297f07c6cb975338ee9941f2b3b923f0cdd6bc9164f86b04802411fe998e6",
+          "arguments": {
+            "amount_minor": 2500,
+            "currency": "NZD",
+            "order_id": "ORD-42"
+          },
+          "committed_at": 1792142141.3070202,
+          "operation_id": "op-candidate-5f00d3d9c8cc42af84243598f5c4c93b",
+          "status": "committed",
+          "tool_name": "refund_order"
+        }
+      }
+    ],
+    "execute_returncode": 0,
+    "execute_stderr": "",
+    "execute_stdout": "{\"idempotent_replay\": false, \"provider_result\": {\"action_sha256\": \"4f7297f07c6cb975338ee9941f2b3b923f0cdd6bc9164f86b04802411fe998e6\", \"arguments\": {\"amount_minor\": 2500, \"currency\": \"NZD\", \"order_id\": \"ORD-42\"}, \"committed_at\": 1792142141.3070202, \"operation_id\": \"op-candidate-5f00d3d9c8cc42af84243598f5c4c93b\", \"status\": \"committed\", \"tool_name\": \"refund_order\"}, \"status\": \"completed\"}",
+    "host": "candidate-v0.9-catalog-stamped",
+    "issue_returncode": 0,
+    "issue_stderr": "",
+    "issue_stdout": "{\"action_sha256\": \"4f7297f07c6cb975338ee9941f2b3b923f0cdd6bc9164f86b04802411fe998e6\", \"expires_at\": 1792142261.072545, \"operation_id\": \"op-candidate-5f00d3d9c8cc42af84243598f5c4c93b\", \"policy_sha256\": \"832fce5b9fb58491cc10cdab1a7a9fa4fec140e81184bd1da0728dd6c2fe0002\", \"status\": \"approved-in-test-fixture\"}"
+  },
+  "legacy": {
+    "durable_fake_effect_count": 1,
+    "effects": [
+      {
+        "action_sha256": "36b700fb2877b6f345001d88b0c8b5c451be7372f8662ccd9d18fc47901db5fb",
+        "operation_id": "op-legacy-19cbb595e8ca4fec98975c3f4b94502c",
+        "result": {
+          "action_sha256": "36b700fb2877b6f345001d88b0c8b5c451be7372f8662ccd9d18fc47901db5fb",
+          "arguments": {
+            "amount_minor": -1,
+            "currency": "BTC",
+            "order_id": "ORD-42"
+          },
+          "committed_at": 1792142140.7893581,
+          "operation_id": "op-legacy-19cbb595e8ca4fec98975c3f4b94502c",
+          "status": "committed",
+          "tool_name": "refund_order"
+        }
+      }
+    ],
+    "execute_returncode": 0,
+    "execute_stderr": "",
+    "execute_stdout": "{\"idempotent_replay\": false, \"provider_result\": {\"action_sha256\": \"36b700fb2877b6f345001d88b0c8b5c451be7372f8662ccd9d18fc47901db5fb\", \"arguments\": {\"amount_minor\": -1, \"currency\": \"BTC\", \"order_id\": \"ORD-42\"}, \"committed_at\": 1792142140.7893581, \"operation_id\": \"op-legacy-19cbb595e8ca4fec98975c3f4b94502c\", \"status\": \"committed\", \"tool_name\": \"refund_order\"}, \"status\": \"completed\"}",
+    "host": "legacy-v0.7",
+    "issue_returncode": 0,
+    "issue_stderr": "",
+    "issue_stdout": "{\"action_sha256\": \"36b700fb2877b6f345001d88b0c8b5c451be7372f8662ccd9d18fc47901db5fb\", \"expires_at\": 1792142260.6216333, \"operation_id\": \"op-legacy-19cbb595e8ca4fec98975c3f4b94502c\", \"policy_sha256\": \"832fce5b9fb58491cc10cdab1a7a9fa4fec140e81184bd1da0728dd6c2fe0002\", \"status\": \"approved-in-test-fixture\"}"
+  },
+  "legacy_invalid_action_accepted": true,
+  "scope": "old fake host/provider vs catalog-bound local host/provider",
+  "status": "local synthetic reproducer",
+  "warning": "Not an actual MCP host or deployed Lycheetah Guard bypass. All effects are local SQLite fake-provider rows."
+}

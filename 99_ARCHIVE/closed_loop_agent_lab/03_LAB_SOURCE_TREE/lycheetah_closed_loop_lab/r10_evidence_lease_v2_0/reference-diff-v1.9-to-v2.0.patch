@@ -1,0 +1,89 @@
+--- a/r9_durable_action_outbox_v1_9/durable_action_broker.py
++++ b/r10_evidence_lease_v2_0/durable_action_broker.py
+@@ -159,6 +159,11 @@
+     pass
+ 
+ 
++class DefinitiveDispatchDenial(RuntimeError):
++    """A pre-effect condition failed, so this attempt is known not to have executed."""
++    pass
++
++
+ class DurableActionBroker:
+     """Trusted issuance + one-use admission + transactional local outbox.
+ 
+@@ -519,6 +524,56 @@
+                 con.close()
+             return BrokerResult(False,"persisted-action-digest-mismatch",operation_id,"RECONCILE")
+ 
++        # If the cooperating provider has a durable status lookup, reconcile a
++        # previously committed effect before rejecting on expired/revoked current
++        # evidence. This path must only confirm an already committed result; it
++        # never authorizes a new provider effect.
++        lookup = getattr(provider, "lookup", None)
++        if callable(lookup):
++            try:
++                cached_result = lookup(operation_id, action)
++            except DefinitiveDispatchDenial:
++                cached_result = None
++                lookup_conflict = True
++            except Exception:
++                cached_result = None
++                lookup_conflict = False
++            else:
++                lookup_conflict = False
++            if lookup_conflict:
++                con = self._connect()
++                try:
++                    con.execute("UPDATE outbox SET state='RECONCILE', last_error=?, updated_at=? WHERE operation_id=? AND state='IN_FLIGHT'",
++                                ("provider-idempotency-conflict",float(self.clock()),operation_id))
++                finally:
++                    con.close()
++                return BrokerResult(False,"provider-idempotency-conflict",operation_id,"RECONCILE")
++            if cached_result is not None:
++                valid_cached = (isinstance(cached_result, Mapping) and
++                                cached_result.get("operation_id") == operation_id and
++                                cached_result.get("request_sha256") == payload_sha and
++                                cached_result.get("accepted") is True)
++                if not valid_cached:
++                    con = self._connect()
++                    try:
++                        con.execute("UPDATE outbox SET state='RECONCILE', last_error=?, updated_at=? WHERE operation_id=? AND state='IN_FLIGHT'",
++                                    ("provider-status-record-invalid",float(self.clock()),operation_id))
++                    finally:
++                        con.close()
++                    return BrokerResult(False,"provider-status-record-invalid",operation_id,"RECONCILE")
++                con = self._connect()
++                try:
++                    con.execute("BEGIN IMMEDIATE")
++                    con.execute("UPDATE outbox SET state='DONE', result_json=?, last_error=NULL, updated_at=? WHERE operation_id=? AND state='IN_FLIGHT'",
++                                (canonical_bytes(dict(cached_result)).decode("utf-8"),float(self.clock()),operation_id))
++                    con.commit()
++                except sqlite3.Error:
++                    con.rollback()
++                    return BrokerResult(False,"provider-result-recovered-but-local-ack-failed",operation_id,"IN_FLIGHT")
++                finally:
++                    con.close()
++                return BrokerResult(True,"effect-confirmed-from-provider-record",operation_id,"DONE",True)
++
+         # Revalidate the saved authorization, policy and evidence immediately
+         # before dispatch. This narrows but cannot eliminate cross-system TOCTOU.
+         _, token_reason = self._verify_token(stored_token, action)
+@@ -563,6 +618,17 @@
+ 
+         try:
+             provider_result = provider.execute(operation_id, action)
++        except DefinitiveDispatchDenial as exc:
++            # Only adapters that can prove no provider-side effect occurred may
++            # raise this exception. A rejection after an ambiguous commit must
++            # stay on the unknown-outcome path below.
++            con = self._connect()
++            try:
++                con.execute("UPDATE outbox SET state='RECONCILE', last_error=?, updated_at=? WHERE operation_id=? AND state='IN_FLIGHT'",
++                            (type(exc).__name__,float(self.clock()),operation_id))
++            finally:
++                con.close()
++            return BrokerResult(False,"definitive-dispatch-denial",operation_id,"RECONCILE")
+         except Exception as exc:
+             # Ambiguous provider outcome is recoverable only by replaying the same
+             # idempotency key against a provider with the documented contract.

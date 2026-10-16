@@ -1,0 +1,95 @@
+
+=== .: python -m unittest -v test_harness test_observer_stress ===
+test_ambiguous_or_out_of_contract_work_goes_to_review (test_harness.HarnessTests.test_ambiguous_or_out_of_contract_work_goes_to_review) ... ok
+test_clean_patch_is_accepted_by_both (test_harness.HarnessTests.test_clean_patch_is_accepted_by_both) ... ok
+test_complete_contract_allows_valid_multi_file_change (test_harness.HarnessTests.test_complete_contract_allows_valid_multi_file_change) ... ok
+test_false_alarm_can_block_valid_work (test_harness.HarnessTests.test_false_alarm_can_block_valid_work) ... ok
+test_false_sensor_is_not_magically_fixed (test_harness.HarnessTests.test_false_sensor_is_not_magically_fixed) ... ok
+test_metrics_show_both_gain_and_cost (test_harness.HarnessTests.test_metrics_show_both_gain_and_cost) ... ok
+test_shared_conventional_gates_are_preserved (test_harness.HarnessTests.test_shared_conventional_gates_are_preserved) ... ok
+test_task_noop_green_tests_is_caught_by_candidate (test_harness.HarnessTests.test_task_noop_green_tests_is_caught_by_candidate) ... ok
+test_false_alarm_cost_appears_in_valid_block_metric (test_observer_stress.ObserverStressTests.test_false_alarm_cost_appears_in_valid_block_metric) ... ok
+test_grid_is_complete_and_expected_counts_conserve_mass (test_observer_stress.ObserverStressTests.test_grid_is_complete_and_expected_counts_conserve_mass) ... ok
+test_invalid_probability_combinations_rejected (test_observer_stress.ObserverStressTests.test_invalid_probability_combinations_rejected) ... ok
+test_perfect_sensor_no_unknowns_accepts_only_valid_tasks (test_observer_stress.ObserverStressTests.test_perfect_sensor_no_unknowns_accepts_only_valid_tasks) ... ok
+test_useless_sensor_reproduces_baseline_auto_accepts (test_observer_stress.ObserverStressTests.test_useless_sensor_reproduces_baseline_auto_accepts) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.002s
+
+OK
+
+=== observer_probe_v0_3: python -m unittest -v test_probe test_correlated_observers ===
+test_contract_suite_does_not_reject_valid_alternative (test_probe.ProbeTests.test_contract_suite_does_not_reject_valid_alternative) ... ok
+test_contract_suite_rejects_all_planted_defects (test_probe.ProbeTests.test_contract_suite_rejects_all_planted_defects) ... ok
+test_probe_counts_match_actual_checks (test_probe.ProbeTests.test_probe_counts_match_actual_checks) ... ok
+test_public_suite_accepts_multiple_known_defects (test_probe.ProbeTests.test_public_suite_accepts_multiple_known_defects) ... ok
+test_reference_and_valid_alternative_pass_contract (test_probe.ProbeTests.test_reference_and_valid_alternative_pass_contract) ... ok
+test_grid_has_15_combinations (test_correlated_observers.CorrelatedObserverTests.test_grid_has_15_combinations) ... ok
+test_independence_gives_product_of_marginals (test_correlated_observers.CorrelatedObserverTests.test_independence_gives_product_of_marginals) ... ok
+test_invalid_parameters_rejected (test_correlated_observers.CorrelatedObserverTests.test_invalid_parameters_rejected) ... ok
+test_more_positive_correlation_does_not_improve_joint_miss (test_correlated_observers.CorrelatedObserverTests.test_more_positive_correlation_does_not_improve_joint_miss) ... ok
+test_perfect_common_mode_gives_single_observer_miss_rate (test_correlated_observers.CorrelatedObserverTests.test_perfect_common_mode_gives_single_observer_miss_rate) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.005s
+
+OK
+
+=== .: python -m unittest discover -s authority_boundary_lab -p test_*.py -v ===
+test_another_key_cannot_validate_token (test_authority_gate.ConsequenceGateTests.test_another_key_cannot_validate_token) ... ok
+test_approval_authority_rejects_too_long_ttl (test_authority_gate.ConsequenceGateTests.test_approval_authority_rejects_too_long_ttl) ... ok
+test_concurrent_replay_has_at_most_one_dispatch (test_authority_gate.ConsequenceGateTests.test_concurrent_replay_has_at_most_one_dispatch) ... ok
+test_executor_exception_consumes_token_and_requires_reconciliation (test_authority_gate.ConsequenceGateTests.test_executor_exception_consumes_token_and_requires_reconciliation) ... ok
+test_expired_token_is_denied (test_authority_gate.ConsequenceGateTests.test_expired_token_is_denied) ... ok
+test_future_issued_token_is_denied (test_authority_gate.ConsequenceGateTests.test_future_issued_token_is_denied) ... ok
+test_model_self_claim_without_host_token_is_denied (test_authority_gate.ConsequenceGateTests.test_model_self_claim_without_host_token_is_denied) ... ok
+test_mutating_source_arguments_after_intent_creation_does_not_change_dispatch (test_authority_gate.ConsequenceGateTests.test_mutating_source_arguments_after_intent_creation_does_not_change_dispatch) ... ok
+test_policy_change_invalidates_approval (test_authority_gate.ConsequenceGateTests.test_policy_change_invalidates_approval) ... ok
+test_tampered_token_is_denied (test_authority_gate.ConsequenceGateTests.test_tampered_token_is_denied) ... ok
+test_token_cannot_be_replayed (test_authority_gate.ConsequenceGateTests.test_token_cannot_be_replayed) ... ok
+test_token_is_bound_to_exact_action_arguments (test_authority_gate.ConsequenceGateTests.test_token_is_bound_to_exact_action_arguments) ... ok
+test_token_is_bound_to_tool_identity (test_authority_gate.ConsequenceGateTests.test_token_is_bound_to_tool_identity) ... ok
+test_valid_approval_dispatches_exact_snapshot (test_authority_gate.ConsequenceGateTests.test_valid_approval_dispatches_exact_snapshot) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.082s
+
+OK
+
+=== authority_boundary_lab_v0_5: python -m unittest -v test_authority_gate_v0_5 test_fake_host_adapter ===
+test_action_mutation_requires_new_approval (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_action_mutation_requires_new_approval) ... ok
+test_approval_for_one_registered_tool_cannot_authorize_another (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_approval_for_one_registered_tool_cannot_authorize_another) ... ok
+test_changed_policy_is_denied_from_trusted_provider (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_changed_policy_is_denied_from_trusted_provider) ... ok
+test_effect_exception_consumes_token (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_effect_exception_consumes_token) ... ok
+test_eight_concurrent_replays_dispatch_exactly_once (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_eight_concurrent_replays_dispatch_exactly_once) ... ok
+test_expired_and_future_tokens_are_denied (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_expired_and_future_tokens_are_denied) ... ok
+test_hmac_tampering_is_denied (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_hmac_tampering_is_denied) ... ok
+test_issuer_rejects_nonfinite_clock_and_bool_ttl (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_issuer_rejects_nonfinite_clock_and_bool_ttl) ... ok
+test_model_cannot_claim_approval_with_boolean (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_model_cannot_claim_approval_with_boolean) ... ok
+test_no_execution_callback_argument_exists (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_no_execution_callback_argument_exists) ... ok
+test_no_policy_override_argument_exists (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_no_policy_override_argument_exists) ... ok
+test_policy_bound_to_registered_dispatcher_identity_and_version (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_policy_bound_to_registered_dispatcher_identity_and_version) ... ok
+test_policy_source_failure_fails_closed (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_policy_source_failure_fails_closed) ... ok
+test_replay_is_denied (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_replay_is_denied) ... ok
+test_replay_remains_denied_after_gate_reconstruction (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_replay_remains_denied_after_gate_reconstruction) ... ok
+test_revoked_token_is_denied_before_dispatch (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_revoked_token_is_denied_before_dispatch) ... ok
+test_source_mapping_mutation_does_not_change_dispatched_snapshot (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_source_mapping_mutation_does_not_change_dispatched_snapshot) ... ok
+test_token_cannot_cross_deployment_audience (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_token_cannot_cross_deployment_audience) ... ok
+test_unknown_tool_cannot_get_an_intent (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_unknown_tool_cannot_get_an_intent) ... ok
+test_valid_approval_dispatches_only_registered_refund (test_authority_gate_v0_5.TestBoundDispatcherApproval.test_valid_approval_dispatches_only_registered_refund) ... ok
+test_approval_ui_and_provider_share_same_frozen_operation (test_fake_host_adapter.FakeHostIntegrationTests.test_approval_ui_and_provider_share_same_frozen_operation) ... ok
+test_changed_action_after_approval_denies_dispatch (test_fake_host_adapter.FakeHostIntegrationTests.test_changed_action_after_approval_denies_dispatch) ... ok
+test_concurrent_duplicate_calls_only_commit_one_provider_effect (test_fake_host_adapter.FakeHostIntegrationTests.test_concurrent_duplicate_calls_only_commit_one_provider_effect) ... ok
+test_policy_drift_after_approval_denies_dispatch (test_fake_host_adapter.FakeHostIntegrationTests.test_policy_drift_after_approval_denies_dispatch) ... ok
+test_revocation_before_dispatch_denies_action (test_fake_host_adapter.FakeHostIntegrationTests.test_revocation_before_dispatch_denies_action) ... ok
+test_timeout_after_provider_commit_is_reconciled_without_second_effect (test_fake_host_adapter.FakeHostIntegrationTests.test_timeout_after_provider_commit_is_reconciled_without_second_effect) ... ok
+test_timeout_before_commit_stops_for_human_reconciliation (test_fake_host_adapter.FakeHostIntegrationTests.test_timeout_before_commit_stops_for_human_reconciliation) ... ok
+test_unapproved_proposal_has_no_token_or_provider_effect (test_fake_host_adapter.FakeHostIntegrationTests.test_unapproved_proposal_has_no_token_or_provider_effect) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.175s
+
+OK
+
+ALL LEGACY SUITES PASSED (65 tests)

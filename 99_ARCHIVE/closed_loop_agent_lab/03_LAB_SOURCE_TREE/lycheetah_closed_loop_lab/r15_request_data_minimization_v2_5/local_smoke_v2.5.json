@@ -1,0 +1,9 @@
+{
+  "test_mode_only": true,
+  "provider": "local simulator on loopback",
+  "first_action": "RECONCILE",
+  "recovery_action": "SUCCEEDED",
+  "provider_effect_count": 1,
+  "provider_post_calls": 2,
+  "persisted_state": "SUCCEEDED"
+}

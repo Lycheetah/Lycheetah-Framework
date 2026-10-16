@@ -1,0 +1,114 @@
+{
+  "files": {
+    "API_CONTRACT_v4.8.md": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "c7742900b8f92d7b555e36eb8d772158823f7d14ee5faa9ff6245557ca9da445"
+    },
+    "BASELINE_COMPARISON_v4.8.md": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "8b50ef496a931a85b7d30a37188f1244c5969d8d88f6389e80487a9f8fe4487f"
+    },
+    "CHANGELOG_v4.8.md": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "8186702027d289fcf799be28cea227959e7619d5cf75100b02b1f7ad4a73e6a0"
+    },
+    "PACK_MANIFEST_v4.8.md": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "4f299444ac5dfe5d3057cef9d8bbe0da3635f54ba811d103816ab6f398afd636"
+    },
+    "README_v4.8.md": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "1fe5150c9f75a8f7108c8bf83077831ea96d23a20e0c88008f8e0fbbcccd1097"
+    },
+    "THREAT_MODEL_v4.8.md": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "e79e60963574cff91d655e35d7cc8e35b6e8ae890a3dfea5c2288e2e61f966b1"
+    },
+    "UPSTREAM_INTEGRATION_PLAN_v4.8.md": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "0acd63cd2cdac018a9167ba9aa90aa79dbf4005301fc312c4d5ffe7f0fc1b72f"
+    },
+    "UPSTREAM_NOTE_v4.8.md": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "58b344db4f7b3e2d94206ff902bee941342ad3617aac02107a17906bf66dcc9f"
+    },
+    "checkpoint_witness_quorum.py": {
+      "origin": "Retained local reference/helper or test module; not asserted byte-identical to upstream.",
+      "sha256": "579912ffd00a744995ed23ab6ba0fae577df4cfb94618ae788165b4bb9dab5d6"
+    },
+    "differential_probe_v4.8.py": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "1ce81da6bece499148f0af7d2f4bbdf3177b6a6df45440c1b2571e7b99536006"
+    },
+    "registry_checkpoint_quorum.py": {
+      "origin": "Retained local reference/helper or test module; not asserted byte-identical to upstream.",
+      "sha256": "4af7fa3579f09e78076a999d6796bbd09a820234c489a26b0946494073cb75ea"
+    },
+    "registry_gateway_mtls.py": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "341591c098f2fc544db08d5ffc900208fb8fd2f792edf9c3da1fdb7b603fe22f"
+    },
+    "remote_anchor_http.py": {
+      "origin": "Retained local reference/helper or test module; not asserted byte-identical to upstream.",
+      "sha256": "0a002d054800fbfaed20b100c38f7333c934ff71f7a971aec3631bd49a61afe3"
+    },
+    "remote_witness_http.py": {
+      "origin": "Retained local reference/helper or test module; not asserted byte-identical to upstream.",
+      "sha256": "bf899cfa9888d20e2e3993c3fe773e920bf5085b093d24f41b1f706e39552f03"
+    },
+    "run_gateway_suite_v4.8.py": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "def286e944ce2ac0709a1053b0b946218ac47075c412a49b9e1b012447ce3678"
+    },
+    "run_v4.8_tests.sh": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "12e7c592ba2e15892ccc3bf3ac5d260d6dcddc40329ba449d6e6c05ac86781dc"
+    },
+    "shared_coordinator_quota.py": {
+      "origin": "Retained local reference/helper or test module; not asserted byte-identical to upstream.",
+      "sha256": "0036a631ffa18e78b2300a97178935280aeb73e1f1fe561f34d01dc224dcbb4a"
+    },
+    "shared_ingress_quota.py": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "75d80dda0f8455f2fe308be123fbb66d728590991b4958d374eaec4b3cfb09a6"
+    },
+    "shared_ingress_quota_v4_5_baseline_fixture.py": {
+      "origin": "Retained local reference/helper or test module; not asserted byte-identical to upstream.",
+      "sha256": "94c5e87abdcc254c69aab0c5f57fb7397528ccdf63008d98470b58f1155479ce"
+    },
+    "shared_ingress_quota_v4_6_baseline_fixture.py": {
+      "origin": "Retained local reference/helper or test module; not asserted byte-identical to upstream.",
+      "sha256": "7cbb6576f381863f72fe68fec61e860accc85f41e59261a40c4e1d5b54bf424e"
+    },
+    "shared_ingress_quota_v4_7_baseline_fixture.py": {
+      "origin": "Retained local reference/helper or test module; not asserted byte-identical to upstream.",
+      "sha256": "c519534ea6dd297a5ab70c813ad3056d2b02b714f7f8ca30b7430f82d696de13"
+    },
+    "spent_nonce_registry.py": {
+      "origin": "Retained local reference/helper or test module; not asserted byte-identical to upstream.",
+      "sha256": "f187024703aa1375946053bdbacf2604cce73cf4c015732392bc8c6a457c19b5"
+    },
+    "test_registry_checkpoint_quorum.py": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "1fafb33df827da7f83f1de6e39a6baa1308411970813df3421527f73164c1f3f"
+    },
+    "test_remote_witness_process.py": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "4820bfa6a3ace744ad2b9e30c1bc07a4427dbf70ed16ca91af09e4dd202ea50a"
+    },
+    "test_shared_coordinator_quota.py": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "09fc173fbff70208153737af83becd9391459117265fbc29082515b99cc4050e"
+    },
+    "test_shared_ingress_quota.py": {
+      "origin": "v4.8 local reference change, tests, source contract or integration documentation.",
+      "sha256": "5f63e027559df97e2569c303c8c732770c16a9775e560543fed8f5c03a009298"
+    }
+  },
+  "hosted_service_calls": 0,
+  "observed_upstream_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "parent_artifact_version": "4.7",
+  "scope_note": "Optional hierarchical IPv6 active quotas: leaf prefix plus wider aggregate prefix; local reference implementation only.",
+  "upstream_modified": false,
+  "version": "4.8"
+}

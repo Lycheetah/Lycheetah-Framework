@@ -1,0 +1,20 @@
+{
+  "research_date": "2026-10-17",
+  "provider": "Stripe",
+  "api_surface": "API v1 POST /v1/refunds",
+  "facts": [
+    {"id":"idempotency_saved_after_endpoint_begins","value":true,"source":"https://docs.stripe.com/api/idempotent_requests"},
+    {"id":"stored_results_include_500","value":true,"source":"https://docs.stripe.com/api/idempotent_requests"},
+    {"id":"parameter_mismatch_rejected","value":true,"source":"https://docs.stripe.com/api/idempotent_requests"},
+    {"id":"idempotency_key_max_chars","value":255,"source":"https://docs.stripe.com/api/idempotent_requests"},
+    {"id":"keys_may_be_pruned_after_hours","value":24,"source":"https://docs.stripe.com/api/idempotent_requests"},
+    {"id":"refund_list_supports_charge_filter","value":true,"source":"https://docs.stripe.com/api/refunds/list"},
+    {"id":"refund_list_supports_payment_intent_filter","value":true,"source":"https://docs.stripe.com/api/refunds/list"},
+    {"id":"refund_list_supports_cursor_pagination","value":true,"source":"https://docs.stripe.com/api/refunds/list"},
+    {"id":"refund_metadata_key_limit","value":50,"source":"https://docs.stripe.com/api/metadata"},
+    {"id":"refund_metadata_key_max_chars","value":40,"source":"https://docs.stripe.com/api/metadata"},
+    {"id":"refund_metadata_value_max_chars","value":500,"source":"https://docs.stripe.com/api/metadata"},
+    {"id":"refund_list_no_strong_absence_consistency_claim","value":"not documented in reviewed endpoint page; absence treated as inconclusive","source":"https://docs.stripe.com/api/refunds/list"}
+  ],
+  "not_tested": ["live API calls", "sandbox calls", "webhook delivery ordering", "account-specific connect routing", "production persistence", "repository integration"]
+}

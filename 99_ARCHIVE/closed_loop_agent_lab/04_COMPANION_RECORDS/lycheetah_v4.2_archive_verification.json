@@ -1,0 +1,23 @@
+{
+  "version": "4.2",
+  "standalone_archive": {
+    "path": "/mnt/data/lycheetah_authenticated_coordinator_fairness_v4.2.zip",
+    "bytes": 101845,
+    "sha256": "80422e6dd455c59ebdb1f8774ab4963156c09749396fdf42da6e4e990691b189",
+    "crc_test": "PASS"
+  },
+  "complete_archive": {
+    "path": "/mnt/data/lycheetah_closed_loop_agent_lab_v4.2.zip",
+    "bytes": 1890434,
+    "sha256": "2e17634971f46329919725e37407750edd05571fc1295a3aeb3a4159ac907676",
+    "crc_test": "PASS"
+  },
+  "source_pin_status": "PASS",
+  "compile_status": "PASS",
+  "quorum_test_methods_passed": 38,
+  "gateway_test_methods_passed": 47,
+  "combined_test_methods_passed": 85,
+  "hosted_service_calls": 0,
+  "upstream_modified": false,
+  "boundary": "Local one-host reference harness; per-coordinator quotas process-local; no production or upstream CI validation."
+}

@@ -1,0 +1,35 @@
+{
+  "version": "3.9",
+  "observed_upstream_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "scope_note": "TLS/mTLS extension of the v3.8 remote witness reference harness. The four remote processes and coordinator remain on one host; no upstream source was changed.",
+  "files": {
+    "remote_anchor_http.py": {
+      "origin": "Inherited upstream-derived helper pinned from v3.8 lab",
+      "sha256": "0a002d054800fbfaed20b100c38f7333c934ff71f7a971aec3631bd49a61afe3"
+    },
+    "checkpoint_witness_quorum.py": {
+      "origin": "Inherited upstream-derived helper pinned from v3.8 lab",
+      "sha256": "579912ffd00a744995ed23ab6ba0fae577df4cfb94618ae788165b4bb9dab5d6"
+    },
+    "spent_nonce_registry.py": {
+      "origin": "Inherited local test harness; not claimed as upstream source at this hash",
+      "sha256": "f187024703aa1375946053bdbacf2604cce73cf4c015732392bc8c6a457c19b5"
+    },
+    "registry_checkpoint_quorum.py": {
+      "origin": "Inherited local v3.7 quorum wrapper; not claimed as upstream source at this hash",
+      "sha256": "4af7fa3579f09e78076a999d6796bbd09a820234c489a26b0946494073cb75ea"
+    },
+    "test_registry_checkpoint_quorum.py": {
+      "origin": "Inherited local v3.8 checkpoint-quorum regression suite; not an upstream file",
+      "sha256": "1fafb33df827da7f83f1de6e39a6baa1308411970813df3421527f73164c1f3f"
+    },
+    "remote_witness_http.py": {
+      "origin": "Local v3.9 TLS/mTLS transport adaptation; not an upstream file.",
+      "sha256": "bf899cfa9888d20e2e3993c3fe773e920bf5085b093d24f41b1f706e39552f03"
+    },
+    "test_remote_witness_process.py": {
+      "origin": "Local v3.9 adapted regression suite for mTLS transport and restart lifecycle; not an upstream file.",
+      "sha256": "f512984cdfdafbdbd8fe5ce70abb481059b658c2f229d961499feea80a59e891"
+    }
+  }
+}

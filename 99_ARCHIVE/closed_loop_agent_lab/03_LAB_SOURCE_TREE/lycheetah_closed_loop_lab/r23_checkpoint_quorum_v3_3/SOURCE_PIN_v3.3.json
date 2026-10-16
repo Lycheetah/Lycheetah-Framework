@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/Lycheetah/Lycheetah-Framework",
+  "observed_default_branch": "master",
+  "observed_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "primary_record_verifier": "remote_anchor_http.py",
+  "primary_record_verifier_sha256": "0a002d054800fbfaed20b100c38f7333c934ff71f7a971aec3631bd49a61afe3",
+  "witness_quorum": "local Lycheetah reference code v3.3",
+  "upstream_modified": false,
+  "hosted_anchor_calls": 0,
+  "hosted_stripe_calls": 0,
+  "real_refunds_created": 0
+}

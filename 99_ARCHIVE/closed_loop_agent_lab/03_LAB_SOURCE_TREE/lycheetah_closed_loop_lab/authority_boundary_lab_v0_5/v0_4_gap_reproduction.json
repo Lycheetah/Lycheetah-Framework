@@ -1,0 +1,20 @@
+{
+  "status": "SYNTHETIC_REFERENCE_API_COUNTEREXAMPLE",
+  "approval_bound_to": {
+    "tool": "refund_order",
+    "action_sha256": "eab7d02d95f52041a9b8785279ad55bf2ceaf3a399792790a802cad37800e58d"
+  },
+  "result": "callback-ran",
+  "observed": [
+    {
+      "approved_tool_in_payload": "refund_order",
+      "callback_performed": "delete_every_account"
+    }
+  ],
+  "finding": "v0.4 gate authenticates the declared action but does not bind the separately supplied execution callback to that action",
+  "limits": [
+    "No external effect was performed; the callback only records a string.",
+    "This is a weakness in the local v0.4 reference API's guarantee, not proof of a live Lycheetah deployment vulnerability.",
+    "A trusted host could still pass the correct callback; the gate itself does not enforce that correspondence."
+  ]
+}

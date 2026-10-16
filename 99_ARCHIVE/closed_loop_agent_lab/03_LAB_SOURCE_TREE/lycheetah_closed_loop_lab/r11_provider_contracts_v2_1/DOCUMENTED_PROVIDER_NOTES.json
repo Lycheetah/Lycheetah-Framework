@@ -1,0 +1,51 @@
+{
+  "research_date": "2026-10-17",
+  "kind": "documentation-derived notes; not live conformance results",
+  "providers": [
+    {
+      "provider": "Stripe",
+      "api_family": "POST requests with Idempotency-Key; endpoint-specific behavior still needs review",
+      "documented": {
+        "stores_first_status_and_body": true,
+        "same_key_parameters_compared": true,
+        "keys_may_be_pruned_after_at_least_24_hours": true,
+        "concurrent_conflict_and_pre-execution_validation_cases_may_not_store_normal_idempotent_result": true
+      },
+      "source": "https://docs.stripe.com/api/idempotent_requests",
+      "not_established_by_this_source": [
+        "atomic validation of a Lycheetah-owned evidence predicate with the effect",
+        "that a generic operation lookup is authoritative after ambiguous timeout",
+        "unbounded idempotency key retention"
+      ]
+    },
+    {
+      "provider": "Amazon EC2",
+      "api_family": "Action-specific client-token idempotency",
+      "documented": {
+        "same_token_same_parameters_is_idempotent_for_supported_actions": true,
+        "parameter_mismatch_can_raise_IdempotentParameterMismatch": true,
+        "idempotency_scope_may_be_regional_or_zonal": true
+      },
+      "source": "https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html",
+      "not_established_by_this_source": [
+        "one universal key scope across all EC2 actions",
+        "atomic validation of a Lycheetah-owned evidence predicate with the effect"
+      ]
+    },
+    {
+      "provider": "Amazon ECS RunTask",
+      "api_family": "RunTask client token",
+      "documented": {
+        "same_token_same_parameters_replays_original_operation": true,
+        "different_parameters_can_raise_ConflictException": true,
+        "token_ttl_seconds": 86400,
+        "scope_is_cluster_specific": true
+      },
+      "source": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_Idempotency.html",
+      "not_established_by_this_source": [
+        "atomic validation of a Lycheetah-owned evidence predicate with task launch",
+        "lookup consistency for every ambiguity scenario"
+      ]
+    }
+  ]
+}

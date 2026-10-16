@@ -1,0 +1,16 @@
+{
+  "version": "3.6",
+  "focused_clock_test_methods": 11,
+  "combined_test_methods": 82,
+  "combined_process_status": "PASS",
+  "source_pin_status": "PASS",
+  "python_compile_status": "PASS",
+  "frozen_v3_2_counterexamples": "REPRODUCED_AS_EXPECTED_NEGATIVE_CONTROLS",
+  "local_freshness_demo": "PASS",
+  "primary_only_rollback_demo": "PASS",
+  "hosted_service_calls": 0,
+  "upstream_files_changed": false,
+  "upstream_ci_run": false,
+  "coordinated_rollback_of_primary_and_registry": "STILL_POSSIBLE_IF_BOTH_DATABASES_RESTORED_TO_A_VALID_OLDER_SNAPSHOT",
+  "clock_high_water_trust_boundary": "PERSISTED_IN_LOCAL_REGISTRY_SQLITE_AND_THEREFORE_ITSELF_RESTORABLE"
+}

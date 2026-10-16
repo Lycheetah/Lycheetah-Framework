@@ -1,0 +1,40 @@
+{
+  "version": "4.1",
+  "parent_artifact_version": "4.0",
+  "observed_upstream_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "scope_note": "Adds bounded process-local pre-TLS admission to the local coordinator mTLS gateway. No upstream source file changed.",
+  "files": {
+    "remote_anchor_http.py": {
+      "origin": "Inherited upstream-derived protocol helper from local v3.9 reference harness; not asserted identical to current upstream source.",
+      "sha256": "0a002d054800fbfaed20b100c38f7333c934ff71f7a971aec3631bd49a61afe3"
+    },
+    "checkpoint_witness_quorum.py": {
+      "origin": "Inherited local quorum/witness helper; test-harness component.",
+      "sha256": "579912ffd00a744995ed23ab6ba0fae577df4cfb94618ae788165b4bb9dab5d6"
+    },
+    "spent_nonce_registry.py": {
+      "origin": "Inherited local registry helper; test-harness component.",
+      "sha256": "f187024703aa1375946053bdbacf2604cce73cf4c015732392bc8c6a457c19b5"
+    },
+    "registry_checkpoint_quorum.py": {
+      "origin": "Inherited local quorum-guarded dispatcher; not claimed to be current upstream source.",
+      "sha256": "4af7fa3579f09e78076a999d6796bbd09a820234c489a26b0946494073cb75ea"
+    },
+    "remote_witness_http.py": {
+      "origin": "Inherited v3.9 mTLS witness service/client; local reference harness.",
+      "sha256": "bf899cfa9888d20e2e3993c3fe773e920bf5085b093d24f41b1f706e39552f03"
+    },
+    "test_registry_checkpoint_quorum.py": {
+      "origin": "Inherited quorum suite, retained without intended semantic changes.",
+      "sha256": "1fafb33df827da7f83f1de6e39a6baa1308411970813df3421527f73164c1f3f"
+    },
+    "test_remote_witness_process.py": {
+      "origin": "v4.1 gateway/witness tests, including five resource-admission tests.",
+      "sha256": "75e128ddd94097558e4a1ef6b26be554032d5471478a08abbd85fd5cf3607631"
+    },
+    "registry_gateway_mtls.py": {
+      "origin": "v4.1 modified coordinator mTLS gateway with bounded admission.",
+      "sha256": "15c19139945c068e72eccc2d47a16b5f912afa6d7134f6c640762a7073b10065"
+    }
+  }
+}

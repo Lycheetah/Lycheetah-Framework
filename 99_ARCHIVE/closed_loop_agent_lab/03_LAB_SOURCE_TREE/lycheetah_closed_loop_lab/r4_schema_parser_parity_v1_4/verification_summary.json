@@ -1,0 +1,15 @@
+{
+  "status": "PASS_LOCAL_SOURCE_EQUIVALENT",
+  "differential_cases": 20,
+  "modeled_parser_accepts": 18,
+  "current_schema_rejects": 10,
+  "strict_parser_rejects": 20,
+  "strict_schema_rejects": 20,
+  "original_hmacs_preserved_after_normalizing_wire_mutations": 8,
+  "unittest_summary": "6 tests in 0.041s",
+  "limits": [
+    "source-equivalent fixture, not upstream package",
+    "proposed upstream tests not run against full checkout",
+    "no upstream modifications"
+  ]
+}

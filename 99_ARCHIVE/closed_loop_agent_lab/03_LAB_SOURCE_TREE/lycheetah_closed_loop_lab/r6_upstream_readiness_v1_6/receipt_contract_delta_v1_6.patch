@@ -1,0 +1,31 @@
+diff --git a/lycheetah/assurance/models.py b/lycheetah/assurance/models.py
+--- a/lycheetah/assurance/models.py
++++ b/lycheetah/assurance/models.py
+@@ -98,6 +98,9 @@ class ControlReference:
+         for name in ("framework", "control_id", "title"):
+             if name not in data:
+                 raise ValueError(f"control reference missing required field: {name}")
++        unknown = set(data).difference({"framework", "control_id", "title", "url"})
++        if unknown:
++            raise ValueError(f"control reference contains unknown fields: {', '.join(sorted(unknown))}")
+         for name in ("framework", "control_id", "title", "url"):
+             if name in data and not isinstance(data[name], str):
+                 raise ValueError(f"control reference {name} must be a string")
+@@ -228,3 +231,3 @@ class Finding:
+-        if data.get("cap_reason") is not None and not isinstance(data["cap_reason"], str):
+-            raise ValueError("finding cap_reason must be a string or null")
++        if "cap_reason" in data and not isinstance(data["cap_reason"], str):
++            raise ValueError("finding cap_reason must be a string when present")
+         return cls(
+diff --git a/lycheetah/assurance/receipt.py b/lycheetah/assurance/receipt.py
+--- a/lycheetah/assurance/receipt.py
++++ b/lycheetah/assurance/receipt.py
+@@ -253,5 +253,8 @@ class AssuranceReceipt:
+         for key in ("runtime", "policy", "event", "metrics", "lineage", "integrity"):
+             if not isinstance(data[key], Mapping):
+                 raise ReceiptError(f"receipt {key} must be an object")
++        policy_sha256 = data["policy"].get("sha256")
++        if not isinstance(policy_sha256, str) or not _is_sha256(policy_sha256):
++            raise ReceiptError("receipt policy.sha256 must be 64 lowercase hexadecimal characters")
+         if not isinstance(data["findings"], list):
+             raise ReceiptError("receipt findings must be an array")

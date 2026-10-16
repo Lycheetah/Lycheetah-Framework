@@ -1,0 +1,83 @@
+{
+  "version": "3.7",
+  "scope": "local reference prototype only",
+  "roster": {
+    "witnesses": 4,
+    "max_byzantine": 1,
+    "threshold": 3
+  },
+  "cases": [
+    {
+      "id": "happy_path_register_consume",
+      "stimulus": "Authenticated registration then consumption through anchored dispatcher",
+      "expected": "Each state change receives a new sequence and current 3-of-4 quorum",
+      "classification": "defensive test"
+    },
+    {
+      "id": "primary_restore",
+      "stimulus": "Restore registry SQLite to earlier snapshot while witness stores remain current",
+      "expected": "Reject divergent live-state fingerprint",
+      "classification": "defensive test"
+    },
+    {
+      "id": "registry_and_client_restore",
+      "stimulus": "Restore primary registry and client anchor together while witness stores remain current",
+      "expected": "Reject because external quorum sequence is ahead",
+      "classification": "defensive test"
+    },
+    {
+      "id": "all_witnesses_restore",
+      "stimulus": "Restore registry, client anchor and every witness store to coordinated old snapshots",
+      "expected": "Old state can be accepted by the local reference model",
+      "classification": "explicit negative control / limitation"
+    },
+    {
+      "id": "two_of_four",
+      "stimulus": "Only two witnesses publish a candidate checkpoint",
+      "expected": "No quorum success; durable pending checkpoint can resume when quorum returns",
+      "classification": "defensive test"
+    },
+    {
+      "id": "split_heads",
+      "stimulus": "Two witnesses report each of two distinct heads",
+      "expected": "No head has quorum",
+      "classification": "defensive test"
+    },
+    {
+      "id": "direct_sql_mutation",
+      "stimulus": "Directly change protected registry row without checkpoint",
+      "expected": "Next guarded preflight fails closed",
+      "classification": "defensive test"
+    },
+    {
+      "id": "cached_response_tampering",
+      "stimulus": "Change response cache row directly",
+      "expected": "Signed 503 fail-closed and reconciliation required",
+      "classification": "defensive test"
+    },
+    {
+      "id": "after_commit_response_loss",
+      "stimulus": "Registry state commits then response is lost",
+      "expected": "State is checkpointed; caller gets outcome unknown rather than success",
+      "classification": "defensive test"
+    },
+    {
+      "id": "http_concurrency",
+      "stimulus": "Eight concurrent loopback HTTP registry requests",
+      "expected": "Serialized by file lock; every mutation receives a checkpoint",
+      "classification": "defensive test"
+    },
+    {
+      "id": "non_loopback_bind",
+      "stimulus": "Attempt to bind HTTP facade outside loopback",
+      "expected": "Refused",
+      "classification": "defensive test"
+    },
+    {
+      "id": "handler_exception_after_commit",
+      "stimulus": "Registry handler commits a state change, then raises unexpectedly before it returns",
+      "expected": "Generic signed 503 without exception details; pending intent recovers as outcome-unknown; exactly one state mutation",
+      "classification": "defensive test"
+    }
+  ]
+}

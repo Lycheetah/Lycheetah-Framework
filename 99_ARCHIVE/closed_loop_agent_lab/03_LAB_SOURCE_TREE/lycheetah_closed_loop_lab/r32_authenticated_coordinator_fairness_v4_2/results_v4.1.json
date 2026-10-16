@@ -1,0 +1,16 @@
+{
+  "version": "4.1",
+  "source_pin_status": "PASS",
+  "compile_status": "PASS",
+  "retained_quorum_suite": {"status": "PASS", "test_methods": 38, "run_seconds": 9.162},
+  "bounded_mtls_gateway_suite": {"status": "PASS", "test_methods": 44, "run_seconds": 29.789},
+  "combined_unique_test_methods": 82,
+  "v4_1_specific_admission_tests": 5,
+  "slow_header_burst_clients": 24,
+  "burst_active_connection_ceiling": 4,
+  "burst_checkpoint_mutations": 0,
+  "hosted_service_calls": 0,
+  "upstream_modified": false,
+  "sequential_wrapper_note": "Two suites pass when independently invoked; sequential runner intermittently timed out in this environment, documented as harness limitation.",
+  "boundary": "Local reference harness, one host/operator, no production deployment or independent trust domains."
+}

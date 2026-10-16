@@ -1,0 +1,67 @@
+
+=== v0.9 catalog + issuance integration ===
+test_host_issue_rejects_action_that_bypasses_catalog_stamping (test_tool_catalog.TrustedCatalogIntegrationTests.test_host_issue_rejects_action_that_bypasses_catalog_stamping) ... ok
+test_host_issue_rejects_side_effect_and_route_metadata_tampering (test_tool_catalog.TrustedCatalogIntegrationTests.test_host_issue_rejects_side_effect_and_route_metadata_tampering) ... ok
+test_host_rejects_policy_not_bound_to_catalog (test_tool_catalog.TrustedCatalogIntegrationTests.test_host_rejects_policy_not_bound_to_catalog) ... ok
+test_provider_rejects_catalog_tampering_before_opening_provider_or_authority_db (test_tool_catalog.TrustedCatalogIntegrationTests.test_provider_rejects_catalog_tampering_before_opening_provider_or_authority_db) ... ok
+test_stamped_action_runs_through_v09_catalog_bound_host_and_provider (test_tool_catalog.TrustedCatalogIntegrationTests.test_stamped_action_runs_through_v09_catalog_bound_host_and_provider) ... ok
+test_tampering_stamped_effect_type_cannot_dispatch (test_tool_catalog.TrustedCatalogIntegrationTests.test_tampering_stamped_effect_type_cannot_dispatch) ... ok
+test_bool_is_not_accepted_as_integer_amount (test_tool_catalog.TrustedCatalogTests.test_bool_is_not_accepted_as_integer_amount) ... ok
+test_catalog_field_mapping_is_immutable_after_digest (test_tool_catalog.TrustedCatalogTests.test_catalog_field_mapping_is_immutable_after_digest) ... ok
+test_declaration_only_projection_demonstrates_classification_downgrade (test_tool_catalog.TrustedCatalogTests.test_declaration_only_projection_demonstrates_classification_downgrade) ... ok
+test_invalid_currency_rejected (test_tool_catalog.TrustedCatalogTests.test_invalid_currency_rejected) ... ok
+test_model_cannot_downgrade_side_effect_classification (test_tool_catalog.TrustedCatalogTests.test_model_cannot_downgrade_side_effect_classification) ... ok
+test_model_cannot_supply_scopes_or_dispatcher (test_tool_catalog.TrustedCatalogTests.test_model_cannot_supply_scopes_or_dispatcher) ... ok
+test_mutation_classification_comes_from_catalog (test_tool_catalog.TrustedCatalogTests.test_mutation_classification_comes_from_catalog) ... ok
+test_nonpositive_amount_rejected (test_tool_catalog.TrustedCatalogTests.test_nonpositive_amount_rejected) ... ok
+test_operation_id_and_workspace_come_from_trusted_caller (test_tool_catalog.TrustedCatalogTests.test_operation_id_and_workspace_come_from_trusted_caller) ... ok
+test_policy_must_bind_exact_catalog_digest (test_tool_catalog.TrustedCatalogTests.test_policy_must_bind_exact_catalog_digest) ... ok
+test_read_classification_comes_from_catalog (test_tool_catalog.TrustedCatalogTests.test_read_classification_comes_from_catalog) ... ok
+test_registry_revision_change_breaks_old_policy_binding (test_tool_catalog.TrustedCatalogTests.test_registry_revision_change_breaks_old_policy_binding) ... ok
+test_same_proposal_is_deterministically_stamped_except_host_context (test_tool_catalog.TrustedCatalogTests.test_same_proposal_is_deterministically_stamped_except_host_context) ... ok
+test_unknown_and_missing_argument_fields_rejected (test_tool_catalog.TrustedCatalogTests.test_unknown_and_missing_argument_fields_rejected) ... ok
+test_unknown_tool_rejected (test_tool_catalog.TrustedCatalogTests.test_unknown_tool_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 2.272s
+
+OK
+PASS: catalog + issuance integration (expected 21 tests)
+
+=== v0.9 separate-process crash/recovery ===
+test_action_change_after_approval_is_denied (test_crash_recovery.CrashRecoveryTests.test_action_change_after_approval_is_denied) ... ok
+test_bad_key_denies_before_effect (test_crash_recovery.CrashRecoveryTests.test_bad_key_denies_before_effect) ... ok
+test_completed_operation_missing_provider_record_is_not_replayed (test_crash_recovery.CrashRecoveryTests.test_completed_operation_missing_provider_record_is_not_replayed) ... ok
+test_crash_after_claim_restarts_and_recovers_once (test_crash_recovery.CrashRecoveryTests.test_crash_after_claim_restarts_and_recovers_once) ... ok
+test_eight_processes_reusing_token_commit_one_effect (test_crash_recovery.CrashRecoveryTests.test_eight_processes_reusing_token_commit_one_effect) ... ok
+test_happy_path_commits_one_durable_effect (test_crash_recovery.CrashRecoveryTests.test_happy_path_commits_one_durable_effect) ... ok
+test_host_crash_after_provider_response_is_reconciled_after_restart (test_crash_recovery.CrashRecoveryTests.test_host_crash_after_provider_response_is_reconciled_after_restart) ... ok
+test_host_validates_stored_policy_catalog_binding_before_claim (test_crash_recovery.CrashRecoveryTests.test_host_validates_stored_policy_catalog_binding_before_claim) ... ok
+test_policy_change_after_claim_without_effect_stops_recovery (test_crash_recovery.CrashRecoveryTests.test_policy_change_after_claim_without_effect_stops_recovery) ... ok
+test_policy_change_before_claim_denies (test_crash_recovery.CrashRecoveryTests.test_policy_change_before_claim_denies) ... ok
+test_policy_update_is_required_before_issuing_new_approval (test_crash_recovery.CrashRecoveryTests.test_policy_update_is_required_before_issuing_new_approval) ... ok
+test_policy_update_waits_for_provider_fenced_commit (test_crash_recovery.CrashRecoveryTests.test_policy_update_waits_for_provider_fenced_commit) ... ok
+test_provider_authoritative_record_matches_approved_action_digest (test_crash_recovery.CrashRecoveryTests.test_provider_authoritative_record_matches_approved_action_digest) ... ok
+test_provider_crash_after_commit_is_found_not_duplicated (test_crash_recovery.CrashRecoveryTests.test_provider_crash_after_commit_is_found_not_duplicated) ... ok
+test_provider_crash_before_commit_retries_same_operation_id (test_crash_recovery.CrashRecoveryTests.test_provider_crash_before_commit_retries_same_operation_id) ... ok
+test_provider_effect_without_durable_claim_is_reported_as_conflict (test_crash_recovery.CrashRecoveryTests.test_provider_effect_without_durable_claim_is_reported_as_conflict) ... ok
+test_provider_policy_fence_rejects_stale_approval_after_policy_update (test_crash_recovery.CrashRecoveryTests.test_provider_policy_fence_rejects_stale_approval_after_policy_update) ... ok
+test_provider_refuses_same_id_with_different_payload (test_crash_recovery.CrashRecoveryTests.test_provider_refuses_same_id_with_different_payload) ... ok
+test_provider_validates_policy_catalog_binding_at_effect_boundary (test_crash_recovery.CrashRecoveryTests.test_provider_validates_policy_catalog_binding_at_effect_boundary) ... ok
+test_recover_cannot_dispatch_approval_that_was_never_claimed (test_crash_recovery.CrashRecoveryTests.test_recover_cannot_dispatch_approval_that_was_never_claimed) ... ok
+test_recovery_can_itself_crash_after_provider_response (test_crash_recovery.CrashRecoveryTests.test_recovery_can_itself_crash_after_provider_response) ... ok
+test_replay_after_completion_is_denied (test_crash_recovery.CrashRecoveryTests.test_replay_after_completion_is_denied) ... ok
+test_revocation_after_claim_but_before_effect_stops_recovery (test_crash_recovery.CrashRecoveryTests.test_revocation_after_claim_but_before_effect_stops_recovery) ... ok
+test_revocation_after_provider_effect_reconciles_fact (test_crash_recovery.CrashRecoveryTests.test_revocation_after_provider_effect_reconciles_fact) ... ok
+test_revocation_before_claim_denies_no_effect (test_crash_recovery.CrashRecoveryTests.test_revocation_before_claim_denies_no_effect) ... ok
+test_revocation_racing_with_provider_dispatch_is_linearized_by_fence (test_crash_recovery.CrashRecoveryTests.test_revocation_racing_with_provider_dispatch_is_linearized_by_fence) ... ok
+test_uncommitted_policy_file_edit_does_not_change_active_policy (test_crash_recovery.CrashRecoveryTests.test_uncommitted_policy_file_edit_does_not_change_active_policy) ... ok
+test_valid_token_is_durable_across_new_cli_process (test_crash_recovery.CrashRecoveryTests.test_valid_token_is_durable_across_new_cli_process) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 23.735s
+
+OK
+PASS: separate-process crash/recovery (expected 28 tests)
+
+v0.9 verification complete: 49 tests passed across two separate suite processes.

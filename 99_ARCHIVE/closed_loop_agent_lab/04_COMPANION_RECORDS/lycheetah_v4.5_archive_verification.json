@@ -1,0 +1,58 @@
+{
+  "artifact_version": "4.5",
+  "built_at_utc": "2026-10-16T19:10:25.627146+00:00",
+  "upstream_commit_observed": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "upstream_modified": false,
+  "hosted_service_calls": 0,
+  "source_fingerprint_validation": "PASS: 14 exact local reference fingerprints",
+  "python_compile": "PASS",
+  "test_suites": {
+    "ingress_tests_v4.5.log": {
+      "tests": 20,
+      "ok": true,
+      "sha256": "ed5339e079c6a2ec1f0daf9921fdb6c9635cd02650e0f34b17883fea1b8384d7"
+    },
+    "coordinator_tests_v4.5.log": {
+      "tests": 13,
+      "ok": true,
+      "sha256": "c05fe0de6e80e3e74bfa60fbe9d40551ca33a577ea7f3f953733c60af8d30d7c"
+    },
+    "quorum_tests_v4.5.log": {
+      "tests": 38,
+      "ok": true,
+      "sha256": "6c3d9e38805504093d47c93e38711cbe0f00968c24698e5eb0d111d8ec573c52"
+    },
+    "gateway_tests_v4.5.log": {
+      "tests": 51,
+      "ok": true,
+      "sha256": "96acc170912d924d9e5a6e81a611a030b0de4e87bba9029b2fea173e5a67381e",
+      "lifecycle_summary": "PASS"
+    }
+  },
+  "combined_tests": 122,
+  "extra_final_gateway_focus_tests": 2,
+  "extra_focus_counted_in_combined": false,
+  "archives": {
+    "standalone": {
+      "path": "/mnt/data/lycheetah_process_bound_ingress_v4.5.zip",
+      "bytes": 110430,
+      "sha256": "2bc635ee2aaf2d74ced25b9c434fc581e1e9b29e2699535b284ffebcbe4af68c",
+      "entries": 32,
+      "crc_test": "PASS"
+    },
+    "complete_lab": {
+      "path": "/mnt/data/lycheetah_closed_loop_agent_lab_v4.5.zip",
+      "bytes": 2383219,
+      "sha256": "172430835b606860236916bf91bee544902ccd2fb28b5060736292a2636b84c1",
+      "entries": 1136,
+      "crc_test": "PASS"
+    }
+  },
+  "limitations": [
+    "These are local reference artifact test results, not an upstream checkout CI run.",
+    "Local hashes pin this artifact and do not claim equivalence to upstream source.",
+    "Ingress quota scope is Linux /proc, same host, same PID namespace, exact trusted shared SQLite path.",
+    "A live but wedged process can pin capacity; a resumed handler is not forcibly fenced from arbitrary execution.",
+    "No source files, branch, or pull request were changed; no hosted service was called."
+  ]
+}

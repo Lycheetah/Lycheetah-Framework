@@ -1,0 +1,92 @@
+{
+  "version": "4.7",
+  "parent_artifact_version": "4.6",
+  "observed_upstream_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "scope_note": "Absolute HTTP exchange deadline reference implementation layered over v4.6 attempt-based quotas. Local fingerprints do not claim upstream source equivalence.",
+  "files": {
+    "remote_anchor_http.py": {
+      "origin": "Retained v4.3 local test harness; not asserted byte-identical to upstream.",
+      "sha256": "0a002d054800fbfaed20b100c38f7333c934ff71f7a971aec3631bd49a61afe3"
+    },
+    "checkpoint_witness_quorum.py": {
+      "origin": "Retained local remote-witness/quorum helper.",
+      "sha256": "579912ffd00a744995ed23ab6ba0fae577df4cfb94618ae788165b4bb9dab5d6"
+    },
+    "spent_nonce_registry.py": {
+      "origin": "Retained local spent-challenge registry helper.",
+      "sha256": "f187024703aa1375946053bdbacf2604cce73cf4c015732392bc8c6a457c19b5"
+    },
+    "registry_checkpoint_quorum.py": {
+      "origin": "Retained local quorum-guarded registry dispatch helper.",
+      "sha256": "4af7fa3579f09e78076a999d6796bbd09a820234c489a26b0946494073cb75ea"
+    },
+    "remote_witness_http.py": {
+      "origin": "Retained local mTLS remote-witness harness.",
+      "sha256": "bf899cfa9888d20e2e3993c3fe773e920bf5085b093d24f41b1f706e39552f03"
+    },
+    "test_registry_checkpoint_quorum.py": {
+      "origin": "Retained quorum tests.",
+      "sha256": "1fafb33df827da7f83f1de6e39a6baa1308411970813df3421527f73164c1f3f"
+    },
+    "test_remote_witness_process.py": {
+      "origin": "Retained remote-witness/gateway suite with v4.7 absolute HTTP exchange deadline regressions.",
+      "sha256": "d4b8be53a0cbb5267e2f4b93f074f1267bdec8d3e9c8cd575af42612335dda46"
+    },
+    "registry_gateway_mtls.py": {
+      "origin": "Local v4.7 reference gateway: absolute HTTP exchange deadline added over v4.6 quota behavior.",
+      "sha256": "ca39d4b4d51f806449f9f68eae599f160206818b0e58a0ccf4c4326f80d94af8"
+    },
+    "shared_coordinator_quota.py": {
+      "origin": "Retained v4.3 same-host coordinator quota store.",
+      "sha256": "0036a631ffa18e78b2300a97178935280aeb73e1f1fe561f34d01dc224dcbb4a"
+    },
+    "test_shared_coordinator_quota.py": {
+      "origin": "Retained coordinator quota tests.",
+      "sha256": "09fc173fbff70208153737af83becd9391459117265fbc29082515b99cc4050e"
+    },
+    "shared_ingress_quota.py": {
+      "origin": "v4.5 process-bound same-host shared ingress quota store; schema 2; reclaim only after proven process death.",
+      "sha256": "7cbb6576f381863f72fe68fec61e860accc85f41e59261a40c4e1d5b54bf424e"
+    },
+    "test_shared_ingress_quota.py": {
+      "origin": "v4.5 ingress tests for live paused owner, crashed-process reclaim, cross-owner release/renew, fork guard and old-schema rejection.",
+      "sha256": "507ef7eef607feb26f1b1c2de7bf0718fed3f4444deefec70d1213eca92f185c"
+    },
+    "run_gateway_suite_v4.6.py": {
+      "origin": "Local reproducibility/test runner; not asserted byte-identical to upstream.",
+      "sha256": "2ab5bacd0847e00e32d3c13a3b2413ff40e4f4b504f9f7cb5c2c9dc0db6914db"
+    },
+    "run_v4.6_tests.sh": {
+      "origin": "Local reproducibility/test runner; not asserted byte-identical to upstream.",
+      "sha256": "5d620fdd1b9a33ff462313262b710172a1e64541241c0c487449115b4ac87432"
+    },
+    "shared_ingress_quota_v4_5_baseline_fixture.py": {
+      "origin": "Preserved v4.5 source-equivalent baseline used only by the differential probe; not upstream code.",
+      "sha256": "94c5e87abdcc254c69aab0c5f57fb7397528ccdf63008d98470b58f1155479ce"
+    },
+    "differential_probe_v4.6.py": {
+      "origin": "Local paired experiment comparing preserved v4.5 and v4.6 implementations.",
+      "sha256": "55314249a1a2696fdb10133070c8b8e37757679019def2fd64f865ece7a7fe33"
+    },
+    "run_gateway_suite_v4.7.py": {
+      "origin": "Local lifecycle-aware test runner; not asserted byte-identical to upstream.",
+      "sha256": "2ab5bacd0847e00e32d3c13a3b2413ff40e4f4b504f9f7cb5c2c9dc0db6914db"
+    },
+    "run_v4.7_tests.sh": {
+      "origin": "Local reproducibility runner for v4.7; not asserted byte-identical to upstream.",
+      "sha256": "b38669930d93092e855cf074de6a13de895d818b76abef59448740de1257f85e"
+    },
+    "registry_gateway_mtls_v4_6_baseline.py": {
+      "origin": "Exact local copy of v4.6 gateway handler used only as a differential probe, not asserted byte-identical to upstream.",
+      "sha256": "a25050a79a86ba19132f99f6451d59b00f54b695b9aea08db89e6b7fd773b667"
+    },
+    "baseline_http_deadline_probe_v4.7.py": {
+      "origin": "Paired same-host mTLS HTTP slow-drip probe against preserved v4.6 handler and v4.7 candidate.",
+      "sha256": "07078efc3bb2c97e763a57da5a58b4c8bc74ff118a3da682b342806b1fa55241"
+    },
+    "verify_source_pins_v4.7.py": {
+      "origin": "Local source-fingerprint verifier for the v4.7 research artifact.",
+      "sha256": "6f1d1d0ae7b9e087728c0b172c788ddabbc6ffc2eb0185f1cdc717dc7fc65b02"
+    }
+  }
+}

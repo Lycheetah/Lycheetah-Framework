@@ -1,0 +1,68 @@
+{
+  "scenarios": [
+    {
+      "decision": {
+        "action": "RETRY_SAME_KEY",
+        "automated": true,
+        "matched_refund_id": null,
+        "reason": "inside-conservative-key-window; exact-same-request-only"
+      },
+      "name": "unknown-network-outcome-at-2h"
+    },
+    {
+      "decision": {
+        "action": "RECONCILE",
+        "automated": false,
+        "matched_refund_id": null,
+        "reason": "same-key-may-replay-stored-server-error; effect-state-not-inferred"
+      },
+      "name": "stored-500"
+    },
+    {
+      "decision": {
+        "action": "RECONCILE",
+        "automated": false,
+        "matched_refund_id": null,
+        "reason": "approaching-or-past-idempotency-pruning-window"
+      },
+      "name": "unknown-outcome-at-23h"
+    },
+    {
+      "decision": {
+        "action": "ACCEPT_SUCCEEDED",
+        "automated": false,
+        "matched_refund_id": "re_fixture_001",
+        "reason": "unique-correlated-refund-matches-payload"
+      },
+      "name": "unique-matching-success-after-listing"
+    },
+    {
+      "decision": {
+        "action": "RECONCILE",
+        "automated": false,
+        "matched_refund_id": null,
+        "reason": "no-correlated-refund-found; absence-is-not-proof-of-no-effect"
+      },
+      "name": "no-match-after-listing"
+    },
+    {
+      "decision": {
+        "action": "RECONCILE",
+        "automated": false,
+        "matched_refund_id": null,
+        "reason": "multiple-refunds-correlate-to-one-operation-id"
+      },
+      "name": "duplicate-operation-tags"
+    },
+    {
+      "decision": {
+        "action": "RECONCILE",
+        "automated": false,
+        "matched_refund_id": null,
+        "reason": "refund-list-pagination-incomplete"
+      },
+      "name": "listing-pagination-incomplete"
+    }
+  ],
+  "scope": "offline deterministic fixtures only; no Stripe SDK or API call"
+}

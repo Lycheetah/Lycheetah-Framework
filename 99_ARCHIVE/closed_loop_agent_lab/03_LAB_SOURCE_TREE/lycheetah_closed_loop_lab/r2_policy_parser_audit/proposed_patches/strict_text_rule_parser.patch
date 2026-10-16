@@ -1,0 +1,23 @@
+diff --git a/lycheetah/assurance/policy.py b/lycheetah/assurance/policy.py
+--- a/lycheetah/assurance/policy.py
++++ b/lycheetah/assurance/policy.py
+@@ -178,9 +178,15 @@
+         if "id" not in data or "pattern" not in data:
+             raise PolicyError("text rule requires id and pattern")
+         phases = _strings(data.get("phases", ["input", "output"]), "text rule.phases")
++        for field in ("id", "pattern"):
++            if not isinstance(data[field], str):
++                raise PolicyError(f"text rule.{field} must be a string")
++        for field in ("title", "description"):
++            if field in data and not isinstance(data[field], str):
++                raise PolicyError(f"text rule.{field} must be a string")
+         return cls(
+-            rule_id=str(data["id"]),
+-            pattern=str(data["pattern"]),
+-            title=str(data.get("title", data["id"])),
+-            description=str(data.get("description", "Policy text rule matched")),
++            rule_id=data["id"],
++            pattern=data["pattern"],
++            title=data.get("title", data["id"]),
++            description=data.get("description", "Policy text rule matched"),
+             phases=tuple(Phase(item) for item in phases),

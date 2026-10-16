@@ -1,0 +1,12 @@
+{
+  "suite": "legacy_v0_1_to_v0_6",
+  "status": "PASS",
+  "expected_test_methods": 66,
+  "elapsed_seconds": 14.872,
+  "detail": "exit_code=0",
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/lycheetah_closed_loop_lab/run_all_tests.py"
+  ],
+  "cwd": "/mnt/data/lycheetah_closed_loop_lab"
+}

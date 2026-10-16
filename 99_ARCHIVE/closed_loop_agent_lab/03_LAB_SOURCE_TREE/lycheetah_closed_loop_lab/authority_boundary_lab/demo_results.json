@@ -1,0 +1,66 @@
+{
+  "status": "SYNTHETIC_LOCAL_DEMO",
+  "cases": 7,
+  "results": [
+    {
+      "case": "valid-host-token",
+      "naive_claim_baseline": "ALLOW",
+      "candidate": "ALLOW",
+      "candidate_reason": "verified-token-consumed",
+      "baseline_effect_calls": 1,
+      "candidate_effect_calls": 1
+    },
+    {
+      "case": "forged-boolean-no-token",
+      "naive_claim_baseline": "ALLOW",
+      "candidate": "DENY",
+      "candidate_reason": "approval-token-required-or-malformed",
+      "baseline_effect_calls": 1,
+      "candidate_effect_calls": 0
+    },
+    {
+      "case": "action-substitution",
+      "naive_claim_baseline": "ALLOW",
+      "candidate": "DENY",
+      "candidate_reason": "action-mismatch",
+      "baseline_effect_calls": 1,
+      "candidate_effect_calls": 0
+    },
+    {
+      "case": "policy-drift",
+      "naive_claim_baseline": "ALLOW",
+      "candidate": "DENY",
+      "candidate_reason": "policy-changed",
+      "baseline_effect_calls": 1,
+      "candidate_effect_calls": 0
+    },
+    {
+      "case": "expired-token",
+      "naive_claim_baseline": "ALLOW",
+      "candidate": "DENY",
+      "candidate_reason": "token-expired",
+      "baseline_effect_calls": 1,
+      "candidate_effect_calls": 0
+    },
+    {
+      "case": "tampered-token",
+      "naive_claim_baseline": "ALLOW",
+      "candidate": "DENY",
+      "candidate_reason": "token-authentication-failed",
+      "baseline_effect_calls": 1,
+      "candidate_effect_calls": 0
+    },
+    {
+      "case": "replay-same-token-twice",
+      "naive_claim_baseline": "ALLOW,ALLOW",
+      "candidate": "ALLOW,DENY",
+      "candidate_reason": "ok,token-replayed",
+      "candidate_effect_calls": 1
+    }
+  ],
+  "limits": [
+    "The baseline deliberately trusts a model-supplied boolean; it is not asserted to describe every real integration.",
+    "The callback is an in-memory counter, not a real provider or human approval workflow.",
+    "Token issuance assumes a trusted host already authenticated the reviewer; this demo does not authenticate humans."
+  ]
+}

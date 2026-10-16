@@ -1,0 +1,24 @@
+{
+  "version": "3.0",
+  "focused_test_methods": 33,
+  "scenarios": [
+    {"id":"boot-no-anchor","expected":"NO_ANCHOR","observed":"PASS","safe_to_continue":false},
+    {"id":"fresh-checkpoint","expected":"MATCH","observed":"PASS","safe_to_continue":true},
+    {"id":"restore-primary-only-to-older-valid-snapshot","expected":"STALE_SNAPSHOT","observed":"PASS","safe_to_continue":false},
+    {"id":"valid-row-change-without-new-checkpoint","expected":"CHECKPOINT_MISMATCH","observed":"PASS","safe_to_continue":false},
+    {"id":"schema-drift","expected":"SCHEMA_CHANGED","observed":"PASS","safe_to_continue":false},
+    {"id":"primary-row-hmac-failure","expected":"PRIMARY_DATABASE_UNVERIFIED","observed":"PASS","safe_to_continue":false},
+    {"id":"anchor-record-edit","expected":"ANCHOR_UNVERIFIED","observed":"PASS","safe_to_continue":false},
+    {"id":"approval-bound-to-other-digest","expected":"REFUSE","observed":"PASS"},
+    {"id":"approval-expired-or-wrong-signer","expected":"REFUSE","observed":"PASS"},
+    {"id":"same-parent-two-appends-race","expected":"one-CAS-winner","observed":"PASS"},
+    {"id":"forged-snapshot-subdigest","expected":"REFUSE","observed":"PASS"},
+    {"id":"read-only-verification-without-operator-key","expected":"MATCH","observed":"PASS"}
+  ],
+  "uncovered_known_limitations": [
+    "coordinated rollback of both primary database and local SQLite reference anchor",
+    "production remote anchor implementation and durable ambiguous-append recovery",
+    "full upstream Lycheetah test suite/CI",
+    "provider-side atomicity with external side effects"
+  ]
+}
