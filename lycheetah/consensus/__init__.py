@@ -31,6 +31,12 @@ from core.psi_consensus import (  # noqa: E402
     PsiQOperator,
     build_consensus,
 )
+from core.sheaf_cohomology_factorial import (  # noqa: E402
+    CellularSheaf,
+    GraphHomologyCertificate,
+    RelativeObstructionCertificate,
+    SheafCohomologyCertificate,
+)
 
 from .arena import (  # noqa: E402
     AgentProposal,
@@ -42,11 +48,13 @@ __all__ = [
     "AdaptiveThresholds",
     "AgentNode",
     "AgentProposal",
+    "CellularSheaf",
     "ConsensusArena",
     "ConsensusResult",
     "DeliberationVerdict",
     "GossipProtocol",
     "GossipRound",
+    "GraphHomologyCertificate",
     "GreyModeMonitor",
     "GreyModeStatus",
     "IsolationRecord",
@@ -56,6 +64,8 @@ __all__ = [
     "PsiConsensus",
     "PsiQOperator",
     "RecoveryResult",
+    "RelativeObstructionCertificate",
+    "SheafCohomologyCertificate",
     "TriggerEvent",
     "build_consensus",
 ]

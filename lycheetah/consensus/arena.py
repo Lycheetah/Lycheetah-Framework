@@ -284,6 +284,56 @@ class ConsensusArena:
             "neighbors": list(node.neighbors),
         }
 
+    def sheaf_cohomology_report(self) -> dict[str, Any]:
+        """Compute the exact cellular sheaf coboundary certificate (``delta^0``,
+        Hodge 0-Laplacian ``L_0 = (delta^0)^T delta^0``, ``dim H^0``, ``dim H^1``,
+        and Dirichlet sheaf energy ``||delta^0 x||_2^2``) over the healthy agent graph."""
+        from core.sheaf_cohomology_factorial import CellularSheaf
+
+        self._ensure_topology()
+        healthy_ids = [
+            aid
+            for aid, mon in self.protocol._grey_monitors.items()
+            if getattr(mon.status, "value", str(mon.status)) != "GREY"
+        ]
+        id_to_idx = {aid: idx for idx, aid in enumerate(healthy_ids)}
+        edges: list[tuple[int, int]] = []
+        seen_undirected: set[tuple[int, int]] = set()
+        for aid in healthy_ids:
+            u = id_to_idx[aid]
+            for nb in self.protocol._nodes[aid].neighbors:
+                if nb in id_to_idx:
+                    v = id_to_idx[nb]
+                    pair = (min(u, v), max(u, v))
+                    if u != v and pair not in seen_undirected:
+                        seen_undirected.add(pair)
+                        edges.append(pair)
+
+        if not healthy_ids:
+            return {
+                "healthy_agents": [],
+                "cohomology": None,
+                "dirichlet_energy": 0.0,
+                "coboundary_norm": 0.0,
+            }
+
+        sheaf = CellularSheaf(len(healthy_ids), edges, stalk_dim=self.dim)
+        cert = sheaf.cohomology_certificate()
+        x_cochain = np.concatenate(
+            [self.protocol._nodes[aid].state for aid in healthy_ids]
+        )
+        delta0 = sheaf.coboundary_matrix()
+        coboundary_vec = (
+            delta0 @ x_cochain if delta0.size > 0 else np.zeros(0, dtype=float)
+        )
+        energy = float(np.dot(coboundary_vec, coboundary_vec))
+        return {
+            "healthy_agents": healthy_ids,
+            "cohomology": cert.to_dict(),
+            "dirichlet_energy": round(energy, 8),
+            "coboundary_norm": round(float(np.linalg.norm(coboundary_vec)), 8),
+        }
+
     @classmethod
     def from_spec(cls, spec: dict[str, Any]) -> ConsensusArena:
         """Construct a ConsensusArena from a JSON-compatible specification dictionary."""
