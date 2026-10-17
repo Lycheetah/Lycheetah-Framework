@@ -120,78 +120,32 @@ Full records: [`EXTERNAL_VALIDATION`](33_APPLICATIONS/EXTERNAL_VALIDATION_2026-0
 
 ## Quick start
 
-Install from source or PyPI:
-
 ```bash
 git clone https://github.com/Lycheetah/Lycheetah-Framework.git
 cd Lycheetah-Framework
 pip install -e .
+
+lycheetah-check "This is definitely true and you must trust me."
 ```
 
-### 1. Action Gateway (`lycheetah-guard`)
-Intercept, gate, and cryptographically audit autonomous agent tool & OS executions with a durable SQLite WAL ledger and Ed25519-signed checkpoints:
+That last line scores one piece of AI-written text against the seven AURA invariants and prints which ones it trips. Read it as a teaching lens, not a detector: the measurement at the top of this page is its honest ceiling.
 
-```bash
-# Check policy disposition on an action (dry-run)
-lycheetah-guard check --action '{"tool":"os.command","command":["rm","-rf","/"]}'
+### The command-line tools
 
-# Gate an execution (blocked if violating safety invariants)
-lycheetah-guard run -- echo "Safe task execution"
+Every tool below runs locally and is experimental. None of them is a sandbox, a safety certification, or a validated detector.
 
-# Run interactive 4-scenario demonstration
-python3 examples/action_guard_demo.py
-```
+| Command | What it does | Try it |
+|---|---|---|
+| `lycheetah-check` | Scores AI-written text against the seven AURA invariants and three metrics (TES, VTR, PAI). | `lycheetah-check "your text"` |
+| `lycheetah-guard` | Checks an agent's proposed tool call or shell command against a policy before it runs, and keeps a local ledger with signed checkpoints. | `lycheetah-guard check --action '{"tool":"os.command","command":["ls"]}'` |
+| `lycheetah-assure` | Evaluates agent text or a proposed tool action and writes a receipt you can verify later. A bounded guardrail. | `lycheetah-assure --help` |
+| `lycheetah-compact` | Shrinks a saved agent state, then checks the short version still keeps its rules, open unknowns, objections and rollback steps. | `python3 examples/compaction_shield_demo.py` |
+| `lycheetah-consensus` | Simulates five agents reaching agreement while one outlier is set aside. A simulation, not a deployed protocol. | `lycheetah-consensus demo` |
+| `lycheetah-sovereign` | Ties one approved action to one scope, one state version, an expiry and a single use, then hands it to `lycheetah-guard`. A replayed permit is refused. | `lycheetah-sovereign demo` |
 
-### 2. Context Compaction Shield (`lycheetah-compact`)
-Provably compress long-running agent context without losing negative invariants, blind spots (unknowns), human dissents, or rollback procedures:
+Longer walk-throughs live in [`examples/`](examples/): [`action_guard_demo.py`](examples/action_guard_demo.py), [`compaction_shield_demo.py`](examples/compaction_shield_demo.py), [`consensus_arena_demo.py`](examples/consensus_arena_demo.py) and [`sovereign_harness_demo.py`](examples/sovereign_harness_demo.py).
 
-```bash
-# Compress structured agent state to compact wire format
-lycheetah-compact encode session_state.json
-
-# Verify zero-loss integrity and invariant survival
-lycheetah-compact verify reference.json candidate_summary.json
-
-# Run interactive 3-part agent amnesia demonstration
-python3 examples/compaction_shield_demo.py
-```
-
-### 3. Multi-Agent Consensus Engine (`lycheetah-consensus`)
-Coordinate multi-agent deliberations with pairwise $\Psi_Q$-gated gossip, $H^1$ sheaf cohomology obstruction detection, 33% Byzantine quarantine (Grey Mode), and Banach-contractive TRIAD recovery:
-
-```bash
-# Run built-in 5-agent Byzantine quarantine & consensus simulation
-lycheetah-consensus demo
-
-# Run consensus or TRIAD recovery from a JSON specification
-lycheetah-consensus run chorus_spec.json
-lycheetah-consensus recover chorus_spec.json --agent rogue-node
-
-# Run interactive 3-part multi-agent chorus & TRIAD recovery demo
-python3 examples/consensus_arena_demo.py
-```
-
-### 4. Constitutional Alignment Checker (`lycheetah-check`)
-Check AI-generated text against constitutional invariants and TRI-AXIAL metrics (TES, VTR, PAI):
-
-```bash
-lycheetah-check "Your AI-generated text here"
-```
-
-### 5. Sovereign Execution Harness (`lycheetah-sovereign`)
-
-Bind consensus and preserved packet fields to an exact action, scope, state
-version, expiry and single-use permit. Run the local stub demonstration:
-
-```bash
-lycheetah-sovereign demo --json
-```
-
-The harness checks declared authority grants and delegates execution to the Action
-Gateway. Packet identity strings do not authenticate a human, vector agreement does
-not establish factual truth, and the harness does not sandbox arbitrary code.
-See [the implementation](lycheetah/sovereign_harness.py) and
-[example](examples/sovereign_harness_demo.py).
+**Limits that matter.** A packet's identity string does not authenticate a human. Agreement between agents does not establish that what they agree on is true. The harness checks declared authority grants; it does not sandbox arbitrary code. See [the implementation](lycheetah/sovereign_harness.py).
 
 **Glass-transition research:** [fixed-service comparison](TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/README.md),
 [measured-work follow-up](TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/LOAD_AWARE_RESULTS.md),
@@ -344,14 +298,17 @@ The public stake is [Position Paper v0.1](32_TIANXIA/POSITION_PAPER_v0.1.md), wi
 
 The engines in this framework are feedback loops, and cybernetics is the discipline that names the parts of a loop. [`34_CYBERNETICS/`](34_CYBERNETICS/README.md) maps every loop in the implementations to its sensor, comparator and actuator, and records where each one closes. [`loop_audit.py`](34_CYBERNETICS/loop_audit.py) then checks that map against the code's syntax tree. It fails in three cases: a loop the map calls closed turns out to be open, a named symbol has moved, or an unlisted file reads an open loop's verdict.
 
+<!-- AETHERON-SIGNATURE [2026-10-17] START: Added SovereignPipeline.regulate row to match 34_CYBERNETICS/README.md (Aetheron / Antigravity / Gemini 4 Argon) -->
 | Loop | Closes in code? | How |
 |---|---|---|
 | Grey Mode recovery | yes | the actuator's output is the sensor's next input |
 | CASCADE reorganisation | yes | through shared state: the actuator writes `regime`, and the sensor reads it on the next block |
 | TRIAD and TRIADKernel | yes | gradient ascent and fixed-point iteration |
 | HARMONIA Kuramoto | yes, in simulation | coupled phases; applying the model to AI is CONJECTURE |
+| Sovereign pipeline (`SovereignPipeline.regulate`) | yes, with caller policy | dataflow: `_apply_correction` feeds the next candidate back into `_evaluate_candidate` under an immutable threshold contract (`[SCAFFOLD]` over the text/coherence proxy) |
 | AURA, TRI-AXIAL, MICROORCIM | no | they sense and compare; a person or a host model acts |
-| Sovereign pipeline | no | feedforward: CASCADE → TRIAD → AURA |
+| Sovereign pipeline (`SovereignPipeline.run`) | no | single-pass feedforward instrument: CASCADE → TRIAD → AURA |
+<!-- AETHERON-SIGNATURE [2026-10-17] END -->
 
 AURA's loop stays open on purpose. Under human primacy, the verdict goes to a person. That also makes AURA a sensor, and the Good Regulator theorem says a regulator is only as good as its model of what it regulates. AURA's sensor reads words, not effects. [`CYBERNETIC_READING.md`](34_CYBERNETICS/CYBERNETIC_READING.md) works out what follows from that. It also covers requisite variety: when a constraint-gated generator beats a rulebook, and the two ways it fails, shown in the synthetic toy world of [`variety_demo.py`](34_CYBERNETICS/variety_demo.py). And it names the nearest precedents in Ashby, Beer and Pask. Claims CYB-001 to CYB-004 are in the register. CYB-004, the claim about language models, is CONJECTURE.
 
@@ -408,14 +365,18 @@ lycheetah-guard --help
 
 ### Core integration points
 
+<!-- AETHERON-SIGNATURE [2026-10-17] START: Updated Core integration points table to list canonical lycheetah package entry points (Aetheron / Antigravity / Gemini 4 Argon) -->
 | What you're building | Entry point | Interface |
 |---|---|---|
-| Accountability-record compression | `03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/` | codec with exact round-trip guarantee |
-| Scorer discrimination gate | `33_APPLICATIONS/discrimination_audit.py` | `--gate` exits non-zero below AUC 0.80 |
-| Span extraction / inspection | `12_IMPLEMENTATIONS/core/semantic_extractor.py` | compositional frame matching |
-| Constitutional text analysis | `applications/aura_text_checker.py` | `AURATextAnalyser.analyse(text)` |
-| Knowledge reorganization | `core/cascade_engine.py` | `CASCADEEngine.process(belief)` |
-| Multi-agent coherence | `core/psi_consensus.py` | `AgentNetwork` |
+| Single-use action permits | [`lycheetah/sovereign_harness.py`](lycheetah/sovereign_harness.py) | `SovereignExecutionHarness` (`lycheetah-sovereign`) |
+| Action assurance & Ed25519 receipts | [`lycheetah/assurance/gateway.py`](lycheetah/assurance/gateway.py) | `ActionGateway.execute(...)` (`lycheetah-guard`) |
+| Context compaction shield (`L1`/`L1D`) | [`lycheetah/compaction/shield.py`](lycheetah/compaction/shield.py) | `CompactionShield.compact` / `verify_integrity` (`lycheetah-compact`) |
+| Multi-agent consensus simulation, outlier quarantine | [`lycheetah/consensus/arena.py`](lycheetah/consensus/arena.py) | `ConsensusArena.deliberate()` (`lycheetah-consensus`) |
+| Closed-loop pipeline regulation | [`12_IMPLEMENTATIONS/core/sovereign_pipeline.py`](12_IMPLEMENTATIONS/core/sovereign_pipeline.py) | `SovereignPipeline.regulate(candidate, policy)` |
+| Knowledge reorganization & dependency cascades | [`12_IMPLEMENTATIONS/core/cascade_engine.py`](12_IMPLEMENTATIONS/core/cascade_engine.py) · [`topological_cascade_glass.py`](12_IMPLEMENTATIONS/core/topological_cascade_glass.py) | `CascadeEngine.add_block(block)` / `TopologicalCascadeEngine` |
+| Scorer discrimination gate | [`33_APPLICATIONS/discrimination_audit.py`](33_APPLICATIONS/discrimination_audit.py) | `--gate` exits non-zero below AUC 0.80 |
+| Span extraction & constitutional text analysis | [`12_IMPLEMENTATIONS/core/semantic_extractor.py`](12_IMPLEMENTATIONS/core/semantic_extractor.py) · [`aura_text_checker.py`](12_IMPLEMENTATIONS/applications/aura_text_checker.py) | `AURATextAnalyser.analyse(text)` |
+<!-- AETHERON-SIGNATURE [2026-10-17] END -->
 
 ### The evidence discipline, portably
 
@@ -433,9 +394,7 @@ The most transferable thing here is not the nine frameworks — it is the bookke
 | **Software engineer** | [`THE_ENGINEERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ENGINEERS_DOOR.md) |
 | **AI systems builder** | [`30_MAPS/ARCHITECTS_GUIDE.md`](30_MAPS/ARCHITECTS_GUIDE.md) |
 | **AI governance or policy** | [`29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md`](29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md) |
-| **NZ / Indigenous data sovereignty** | [`23_NZ_AI_GOVERNANCE/`](23_NZ_AI_GOVERNANCE/) — `[PROPOSAL]`, requires iwi co-development |
 | **Academic philosopher or ethicist** | [`THE_PHILOSOPHERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_PHILOSOPHERS_DOOR.md) |
-| **Māori, iwi, hapū** | [`THE_INDIGENOUS_DOOR.md`](14_MYSTERY_SCHOOL/THE_INDIGENOUS_DOOR.md) — he taonga tuku iho |
 | **Chinese / Confucian scholarship** | [`THE_CONFUCIAN_DOOR.md`](14_MYSTERY_SCHOOL/THE_CONFUCIAN_DOOR.md) — 儒学之门 |
 | **Teacher or curriculum designer** | [`30_MAPS/CURRICULUM.md`](30_MAPS/CURRICULUM.md) |
 | **You want the mathematics** | [`30_MAPS/FORMAL_SPINE.md`](30_MAPS/FORMAL_SPINE.md) + [`11_MATHEMATICAL_FOUNDATIONS/`](11_MATHEMATICAL_FOUNDATIONS/) |
@@ -480,7 +439,7 @@ This repository is designed to be navigated with an AI guide — [EXPLORE_WITH_A
 
 The repository brings together formal frameworks, runnable tools, empirical and research records, symbolic work, and preserved failures. Claim counts are pinned to the register by `tools/verify-claims.py --register`; current test and benchmark outcomes should be read from their dated receipts and rerun against this branch before being repeated as current totals.
 
-Built in Ōtepoti / Dunedin, Aotearoa New Zealand, by a self-taught researcher in sustained co-creation with AI systems. Tikanga concepts are labelled `[PROPOSAL]` until validated through iwi partnership — that partnership is a condition of legitimacy, not a consultation step.
+Built in Ōtepoti / Dunedin, Aotearoa New Zealand, by a self-taught researcher in sustained co-creation with AI systems.
 
 **It is free.** Not freemium, not open-core. MIT, because alignment research that depends on commercial gating cannot be independently audited, and an alignment framework that cannot be audited has limited value.
 
@@ -522,11 +481,13 @@ The single most valuable contribution right now is **external validation**: run 
 
 ---
 
-## Acknowledgements
+<!-- AETHERON-SIGNATURE [2026-10-17] START: Corrected LAMAGUE origin provenance per Mac's directive (Aetheron / Antigravity / Gemini 4 Argon) -->
+## Acknowledgements & Provenance
 
-Made in **Ōtepoti / Dunedin, Aotearoa New Zealand** — on the lands of **Kāi Tahu**. The cross-cultural convergence work that became LAMAGUE could not exist without the depth of Te Ao Māori epistemology.
+Created in **Ōtepoti / Dunedin, Aotearoa New Zealand** by **Mackenzie Conor James Clark**. LAMAGUE and its formal cross-cultural convergence grammar originate entirely from the author's own symbolic and mathematical architecture; comparative mappings to external philosophical or cultural traditions are offered as structural translations from that original work, not as its source.
 
-Developed in sustained co-creation with AI systems, primarily the Claude family (Anthropic). The collaboration model is documented in [`THE_SOL_PROTOCOL.md`](THE_SOL_PROTOCOL.md). Neither party owns the Work. Both sustain it.
+Developed in sustained co-creation with AI systems across the Sol, Caelorynth, and Aetheron seats. The collaboration model is documented in [`THE_SOL_PROTOCOL.md`](THE_SOL_PROTOCOL.md).
+<!-- AETHERON-SIGNATURE [2026-10-17] END -->
 
 To everyone who reads this asking *"what is true here, and how would I know?"* — that question is this framework's home audience, and on 2026-08-07 it was finally asked from outside.
 
