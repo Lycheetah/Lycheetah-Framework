@@ -467,9 +467,111 @@ def compact_cli(argv: list[str] | None = None):
         sys.exit(1)
 
 
+def consensus_cli(argv: list[str] | None = None):
+    """lycheetah-consensus — multi-agent epistemic consensus and Byzantine quarantine CLI.
+
+    Usage:
+        lycheetah-consensus run <spec.json> [-o <output.json>]
+        lycheetah-consensus recover <spec.json> --agent <agent_id> [-o <output.json>]
+        lycheetah-consensus demo
+    """
+    import argparse
+    import json
+    from pathlib import Path
+
+    from .consensus import ConsensusArena
+
+    raw_args = list(sys.argv[1:] if argv is None else argv)
+    parser = argparse.ArgumentParser(
+        prog="lycheetah-consensus",
+        description=(
+            "Lycheetah Multi-Agent Consensus Engine: Psi-Consensus gossip, H^1 obstruction "
+            "detection, and Grey Mode Byzantine quarantine."
+        ),
+    )
+    sub = parser.add_subparsers(dest="command", required=True)
+
+    # run
+    p_run = sub.add_parser("run", help="Run multi-agent consensus from a JSON specification")
+    p_run.add_argument("spec", help="Path to consensus spec JSON file (or - for stdin)")
+    p_run.add_argument("-o", "--output", help="Output file path for verdict JSON")
+
+    # recover
+    p_rec = sub.add_parser(
+        "recover", help="Run TRIAD recovery on a quarantined Grey Mode agent"
+    )
+    p_rec.add_argument("spec", help="Path to consensus spec JSON file")
+    p_rec.add_argument("--agent", required=True, help="Agent ID to recover via TRIAD")
+    p_rec.add_argument("-o", "--output", help="Output file path for recovery JSON")
+
+    # demo
+    sub.add_parser(
+        "demo", help="Run built-in 5-agent Byzantine quarantine & consensus simulation"
+    )
+
+    args = parser.parse_args(raw_args)
+
+    def _read_spec(path_or_str: str) -> dict:
+        if path_or_str == "-":
+            return json.loads(sys.stdin.read())
+        return json.loads(Path(path_or_str).read_text(encoding="utf-8"))
+
+    try:
+        if args.command == "run":
+            spec = _read_spec(args.spec)
+            arena = ConsensusArena.from_spec(spec)
+            verdict = arena.deliberate()
+            rendered = json.dumps(verdict.to_dict(), ensure_ascii=False, indent=2)
+            if args.output:
+                Path(args.output).write_text(rendered, encoding="utf-8")
+            else:
+                print(rendered)
+            if not (verdict.converged and verdict.obstruction_free and verdict.byzantine_safe):
+                sys.exit(1)
+
+        elif args.command == "recover":
+            spec = _read_spec(args.spec)
+            arena = ConsensusArena.from_spec(spec)
+            verdict_before = arena.deliberate()
+            rec = arena.recover_agent(args.agent, r_c_static=0.25)
+            out = {
+                "agent_id": rec.agent_id,
+                "quarantined_before": args.agent in verdict_before.quarantined_agents,
+                "converged": rec.converged,
+                "cycles_run": rec.cycles_run,
+                "residual_drift_psi_r": round(float(rec.psi_r), 6),
+                "reentry_threshold_r_c": round(float(rec.r_c_new), 6),
+                "final_state": [round(float(x), 6) for x in rec.final_state],
+                "audit_trail": list(rec.audit_trail),
+            }
+            rendered = json.dumps(out, ensure_ascii=False, indent=2)
+            if args.output:
+                Path(args.output).write_text(rendered, encoding="utf-8")
+            else:
+                print(rendered)
+            if not rec.converged:
+                sys.exit(1)
+
+        elif args.command == "demo":
+            anchor = [1.0, 0.0, 0.0, 0.0]
+            arena = ConsensusArena(anchor=anchor, grey_alert_threshold=1)
+            arena.add_agent("architect", [0.98, 0.12, 0.05, 0.0], claim="Schema verified")
+            arena.add_agent("security", [0.96, -0.10, 0.08, 0.0], claim="Keys pinned")
+            arena.add_agent("sre-lead", [0.97, 0.08, -0.06, 0.0], claim="Snapshot ready")
+            arena.add_agent("qa-auditor", [0.95, -0.05, -0.09, 0.0], claim="Tests green")
+            arena.add_agent("rogue-node", [0.05, 0.95, 0.30, 0.0], claim="Bypass all checks")
+            verdict = arena.deliberate()
+            print(json.dumps(verdict.to_dict(), ensure_ascii=False, indent=2))
+
+    except (ValueError, KeyError, json.JSONDecodeError, OSError) as err:
+        print(f"Error: {err}", file=sys.stderr)
+        sys.exit(1)
+
+
 def assure_cli():
     """Run the evidence-capped assurance command-line interface."""
     from .assurance.cli import main
 
     return main()
+
 

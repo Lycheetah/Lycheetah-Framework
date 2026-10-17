@@ -27,8 +27,16 @@ history, which was the only changelog until now.
   - Implemented fail-closed invariant check refusing to compact or execute high-risk plans that carry protected unknowns without an explicit recovery/rollback anchor.
   - Added ergonomic developer tools: `AgentStatePacket`, `CompactionShield`, and stateful `ContextProtector`.
   - Added `lycheetah-compact` CLI supporting `encode`, `decode`, `hash`, `check`, `verify`, and `build-codebook`.
-  - Added 24 unit and integration tests (`tests/test_compaction.py`) bringing repository test suite to 206 tests.
+  - Added 24 unit and integration tests (`tests/test_compaction.py`).
   - Added live 3-part interactive demonstration (`examples/compaction_shield_demo.py`) proving anti-amnesia protection under LLM summarization.
+
+- **Lycheetah Multi-Agent Consensus Engine (`lycheetah.consensus` & `lycheetah-consensus` CLI)**:
+  - Promoted AURA Psi-Consensus (`psi_consensus.py`) and Grey Mode (`grey_mode.py`) into the shipping `lycheetah.consensus` package.
+  - Added `ConsensusArena`, `AgentProposal`, and `DeliberationVerdict` providing automatic mesh topology, pairwise $\Psi_Q$-gated gossip, $H^1(G, F)$ sheaf cohomology obstruction detection, 33% Byzantine quarantine, and SHA-256 `consensus_digest` receipts.
+  - Wired Banach-contractive TRIAD recovery (`recover_agent` via $A_o \to \Phi^\uparrow \to \Psi$) so quarantined Grey Mode nodes can be healed and reintegrated into the chorus.
+  - Added `lycheetah-consensus` CLI supporting `run`, `recover`, and `demo`.
+  - Added 9 unit and integration tests (`tests/test_consensus.py`) bringing the fast verification suite to 215 tests (211 passed, 4 skipped).
+  - Added live 3-part interactive demonstration (`examples/consensus_arena_demo.py`).
 
 ### Public integration and build catalogue — 4 October 2026
 

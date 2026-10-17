@@ -51,6 +51,7 @@ lycheetah-web   = "lycheetah.cli:web_demo_cli"
 lycheetah-guard = "lycheetah.cli:guard_cli"
 lycheetah-assure = "lycheetah.cli:assure_cli"
 lycheetah-compact = "lycheetah.cli:compact_cli"
+lycheetah-consensus = "lycheetah.cli:consensus_cli"
 
 [project.urls]
 Homepage      = "https://github.com/Lycheetah/Lycheetah-Framework"
@@ -71,6 +72,7 @@ packages = [
     "lycheetah.applications",
     "lycheetah.assurance",
     "lycheetah.compaction",
+    "lycheetah.consensus",
 ]
 
 [tool.setuptools.package-dir]

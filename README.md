@@ -156,7 +156,22 @@ lycheetah-compact verify reference.json candidate_summary.json
 python3 examples/compaction_shield_demo.py
 ```
 
-### 3. Constitutional Alignment Checker (`lycheetah-check`)
+### 3. Multi-Agent Consensus Engine (`lycheetah-consensus`)
+Coordinate multi-agent deliberations with pairwise $\Psi_Q$-gated gossip, $H^1$ sheaf cohomology obstruction detection, 33% Byzantine quarantine (Grey Mode), and Banach-contractive TRIAD recovery:
+
+```bash
+# Run built-in 5-agent Byzantine quarantine & consensus simulation
+lycheetah-consensus demo
+
+# Run consensus or TRIAD recovery from a JSON specification
+lycheetah-consensus run chorus_spec.json
+lycheetah-consensus recover chorus_spec.json --agent rogue-node
+
+# Run interactive 3-part multi-agent chorus & TRIAD recovery demo
+python3 examples/consensus_arena_demo.py
+```
+
+### 4. Constitutional Alignment Checker (`lycheetah-check`)
 Check AI-generated text against constitutional invariants and TRI-AXIAL metrics (TES, VTR, PAI):
 
 ```bash
