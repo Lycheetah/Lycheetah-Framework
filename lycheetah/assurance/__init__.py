@@ -59,10 +59,46 @@ from .regression import (
     RegressionReport,
     compare_evaluations,
 )
+from .action_guard import (
+    AUDIT_GENESIS,
+    Decision,
+    PersistentActionGuard,
+    action_digest,
+    canonical_action,
+)
+from .checkpoint_authority import (
+    CheckpointConflict,
+    CheckpointError,
+    CheckpointHTTPClient,
+    CheckpointHTTPServer,
+    CheckpointStore,
+    make_server,
+    verify_envelope,
+)
+from .checkpointed_workflow import CheckpointedWorkflow, OperationReceipt, WorkflowBlocked
+from .gateway import ActionGateway, CommandExecutor, ExecutionResult, GateDecision
 from .runtime import ASSURANCE_VERSION, AssuranceRuntime
 
 __all__ = [
     "ASSURANCE_VERSION",
+    "AUDIT_GENESIS",
+    "ActionGateway",
+    "CheckpointConflict",
+    "CheckpointError",
+    "CheckpointHTTPClient",
+    "CheckpointHTTPServer",
+    "CheckpointStore",
+    "CheckpointedWorkflow",
+    "CommandExecutor",
+    "Decision",
+    "GateDecision",
+    "OperationReceipt",
+    "PersistentActionGuard",
+    "WorkflowBlocked",
+    "action_digest",
+    "canonical_action",
+    "make_server",
+    "verify_envelope",
     "EVALUATION_SCHEMA_VERSION",
     "EXECUTION_CELL_VERSION",
     "FINALITY_VERSION",
