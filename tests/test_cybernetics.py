@@ -22,7 +22,14 @@ def _load(name):
 loop_audit = _load("loop_audit")
 variety_demo = _load("variety_demo")
 
-CLOSED_IN_CODE = {"L-GREY", "L-CASCADE", "L-TRIAD", "L-TRIADKERNEL", "L-KURAMOTO"}
+CLOSED_IN_CODE = {
+    "L-GREY",
+    "L-CASCADE",
+    "L-TRIAD",
+    "L-TRIADKERNEL",
+    "L-KURAMOTO",
+    "L-PIPELINE-REGULATOR",
+}
 
 
 @pytest.fixture(scope="module")

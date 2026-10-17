@@ -157,7 +157,49 @@ class TestTRIADKernel:
         final_drift = k.detect_drift(final)
         assert final_drift <= initial_drift + 1e-9
         assert n_iter >= 1
-        assert len(errors) >= 1
+        assert len(errors) == n_iter
+        assert all(isinstance(e, float) for e in errors)
+
+    @pytest.mark.active
+    def test_first_step_convergence_returns_one_completed_iteration(self):
+        k = self._kernel()
+        state = k.anchor.copy()
+        # With large threshold, the very first step satisfies error < threshold
+        final, n_iter, errors = k.correct_until_converged(state, threshold=10.0, max_iter=50)
+        assert n_iter == 1
+        assert len(errors) == 1
+        assert final.shape == state.shape
+
+    @pytest.mark.active
+    def test_budget_exhaustion_returns_max_iter_equal_to_errors_len(self):
+        k = self._kernel()
+        state = np.array([0.1, 0.8, 0.1])
+        state = state / np.linalg.norm(state)
+        final, n_iter, errors = k.correct_until_converged(state, threshold=1e-15, max_iter=6)
+        assert n_iter == 6
+        assert len(errors) == 6
+
+    @pytest.mark.active
+    def test_zero_budget_returns_zero_iterations_and_preserves_input(self):
+        k = self._kernel()
+        state = np.array([0.3, 0.4, 0.5])
+        orig = state.copy()
+        final, n_iter, errors = k.correct_until_converged(state, threshold=1e-4, max_iter=0)
+        assert n_iter == 0
+        assert errors == []
+        assert np.allclose(final, orig)
+        assert final is not state
+
+    @pytest.mark.active
+    def test_invalid_budget_and_threshold_raise_value_error(self):
+        k = self._kernel()
+        state = np.array([1.0, 0.0, 0.0])
+        for bad_iter in (-1, -10, True, False, 1.5, "10"):
+            with pytest.raises(ValueError):
+                k.correct_until_converged(state, max_iter=bad_iter)
+        for bad_thresh in (0.0, -1e-4, float("nan"), float("inf"), True):
+            with pytest.raises(ValueError):
+                k.correct_until_converged(state, threshold=bad_thresh)
 
 
 # ── EnergyLedger ──────────────────────────────────────────────────────────────

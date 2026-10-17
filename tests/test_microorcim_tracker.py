@@ -195,3 +195,55 @@ class TestReportDetails:
         n0 = len(tracker.history)
         tracker.close_day()
         assert len(tracker.history) == n0 + 1
+
+
+class TestStatelessPrimitivesAndUnitParity:
+    @pytest.mark.active
+    def test_stateless_compute_drift_unit_and_daily_parity(self, tracker):
+        from microorcim_tracker import compute_drift, compute_sovereignty
+
+        # Daily path (24h normalization): |4 - 3| / 24
+        tracker.add_intention("focus", 4.0)
+        tracker.add_actual("focus", 3.0)
+        daily_drift, _ = tracker.calculate_drift()
+        assert daily_drift == pytest.approx(compute_drift(4.0, 3.0, interval=24.0))
+        assert daily_drift == pytest.approx(MicroorcimTracker.compute_drift(4.0, 3.0, interval=24.0))
+
+        # Coherence path (unit interval = 1.0): preserves |intended - actual|
+        coherence_drift = compute_drift(0.85, 0.65, interval=1.0)
+        assert coherence_drift == pytest.approx(0.20)
+        assert MicroorcimTracker.compute_drift(0.85, 0.65) == pytest.approx(0.20)
+        assert coherence_drift == pytest.approx(daily_drift * 24.0 * 0.20)
+
+        # Sovereignty parity
+        tracker.record_stability_event("deep", 360)  # 360 / 1440 = 0.25
+        rep = tracker.calculate_sovereignty_score()
+        assert rep["sovereignty_score"] == pytest.approx(
+            compute_sovereignty(rep["drift"], rep["stability"])
+        )
+
+    @pytest.mark.active
+    def test_stateless_primitives_reject_invalid_and_non_finite(self):
+        from microorcim_tracker import compute_drift, compute_sovereignty
+
+        for bad in (float("nan"), float("inf"), float("-inf"), True, "0.5"):
+            with pytest.raises(ValueError):
+                compute_drift(bad, 0.5)
+            with pytest.raises(ValueError):
+                compute_drift(0.5, bad)
+            with pytest.raises(ValueError):
+                compute_sovereignty(bad, 0.5)
+            with pytest.raises(ValueError):
+                compute_sovereignty(0.1, bad)
+
+        for bad_interval in (0.0, -1.0, float("nan"), float("inf"), False):
+            with pytest.raises(ValueError):
+                compute_drift(0.8, 0.5, interval=bad_interval)
+
+        with pytest.raises(ValueError):
+            compute_sovereignty(-0.1, 0.5)
+        with pytest.raises(ValueError):
+            compute_sovereignty(0.1, 1.5)
+        with pytest.raises(ValueError):
+            compute_sovereignty(0.1, -0.1)
+

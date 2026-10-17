@@ -83,6 +83,16 @@ MUTATIONS = [
      "engine.add_block(block)",
      "engine.add_block(block); self.aura_checker.check(decision_text, context)",
      "L-PIPELINE", "spans stages"),
+    ("cut the sovereign regulator's policy actuator out of its loop",
+     "12_IMPLEMENTATIONS/core/sovereign_pipeline.py",
+     "candidate = self._apply_correction(policy, evaluation, candidate)",
+     "candidate = self._apply_correction_cut(policy, evaluation, candidate)",
+     "L-PIPELINE-REGULATOR", "closes_in_code"),
+    ("break the sovereign regulator's feedback edge into its sensor",
+     "12_IMPLEMENTATIONS/core/sovereign_pipeline.py",
+     "evaluation = self._evaluate_candidate(candidate, pass_index=step_idx + 1)",
+     "evaluation = self._evaluate_candidate(raw_candidate, pass_index=step_idx + 1)",
+     "L-PIPELINE-REGULATOR", "closes_in_code"),
 ]
 
 

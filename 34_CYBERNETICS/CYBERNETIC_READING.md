@@ -56,13 +56,14 @@ The channel decides what the loop can know. A loop that senses text can regulate
 | L-KURAMOTO | HARMONIA | state | **yes**, in simulation | Shared state: each oscillator writes `.phase`, which the coupling sum reads |
 | L-AURA | AURA | text | no | Whoever calls `check()`: a person, a host model, a wrapping system |
 | L-TRIAXIAL | AURA TES/VTR/PAI | text, caller_supplied | no | Nobody in code. `apply_vip` returns template text, and `check()` never calls it |
-| L-MICROORCIM | MICROORCIM | self_report | no | The person who reads the score and changes their day |
-| L-PIPELINE | CASCADE → TRIAD → AURA | text | no | Nobody. A breach appends a flag to the result |
+| L-MICROORCIM | MICROORCIM | self_report | no | The person who reads the daily score and changes their day (while `compute_drift`/`compute_sovereignty` provide shared stateless primitives) |
+| L-PIPELINE | CASCADE → TRIAD → AURA (single-pass `run`) | text | no | Nobody. A breach appends a flag to the result |
+| L-PIPELINE-REGULATOR | `SovereignPipeline.regulate` | text, state | **yes**, via caller policy | Dataflow: `_apply_correction`'s candidate output is passed to `_evaluate_candidate` inside the bounded loop in `regulate` |
 
 **DERIVED:** the framework holds two kinds of thing under one family of names:
 
-- **Regulators that act on their own state.** Grey Mode, CASCADE, TRIAD and Kuramoto.
-- **Instruments that report to a person.** AURA, TRI-AXIAL and MICROORCIM.
+- **Regulators that act on their own state (or candidate inputs).** Grey Mode, CASCADE, TRIAD, Kuramoto, and `SovereignPipeline.regulate`.
+- **Instruments that report to a person.** AURA, TRI-AXIAL, MICROORCIM's daily tracker, and single-pass `SovereignPipeline.run`.
 
 Both are legitimate. A reader is misled only when an instrument is described as if it were a regulator.
 
@@ -90,7 +91,7 @@ The second loop changes the ground the first loop stands on. That is the ultrast
 
 - **The environment is a stream of blocks, not a world.** CASCADE's "essential variable" is internal consistency between the blocks it holds. Nothing outside the representation pushes back. This is why benchmark results on CASCADE's own block encodings do not count as external validation (ledger point 7).
 - **The step change is deterministic.** Ashby's second loop searched at random through parameter settings. CASCADE's applies one fixed rule. It is closer to a rule-governed reorganisation than to ultrastable search.
-- **The second loop's self-check cannot fail.** The event field `demotion_correct` re-checks the same filter that built the list of conflicts, so it is always true. A second loop whose own audit cannot say no is still a loop, but it has no witness.
+- **The second loop's self-check now verifies postconditions against pre-cascade value snapshots.** Previously `demotion_correct` re-checked the same filter that built the list of conflicts, so it could not fail. `_verify_cascade_postconditions` now snapshots pre-mutation state by value and checks target qualification, retention, threshold-consistent layer assignment, and contradiction resolution (`tests/test_cascade_engine.py`).
 
 **What this reading buys:** a precise question to ask of any belief-revision engine. Does its reorganisation fire on the failure of its first loop, or on something else? For CASCADE, MEASURED: it fires on contradiction, which is the first loop's failure to hold two blocks at once.
 
@@ -246,22 +247,17 @@ A table like this is a way to ask questions, not an answer. Its sharpest questio
 
 ## §8 The pipeline finding
 
-**MEASURED**, then repaired.
+**MEASURED**, then repaired, with both single-pass and bounded-regulator entry points.
 
-`12_IMPLEMENTATIONS/core/sovereign_pipeline.py` chains CASCADE → TRIAD → AURA → a MICROORCIM-style drift check. On 2026-10-03, building the loop audit showed that:
+`12_IMPLEMENTATIONS/core/sovereign_pipeline.py` chains CASCADE → TRIAD → AURA → MICROORCIM (using the stateless `MicroorcimTracker.compute_drift` and `compute_sovereignty` primitives with `interval=1.0`). On 2026-10-03, building the loop audit showed that:
 
 - **`run()` raised `AttributeError` on every call.** It called `TriadTracker.run`, which does not exist.
 - **No test exercised it.**
 
-It now calls `run_until_convergence`. [`tests/test_sovereign_pipeline.py`](../tests/test_sovereign_pipeline.py) runs it end to end and checks that the TRIAD stage converges to its target.
+It now exposes two explicitly mapped entry points:
 
-Even repaired, the pipeline is **feedforward**. AURA measures drift between TRIAD's target and the field coherence, and a breach appends a flag. Nothing feeds that drift back into TRIAD's target or CASCADE's blocks. Closing it would mean:
-
-- feeding AURA's measured drift back as a correction to TRIAD's target;
-- re-running until the drift falls below threshold or a budget is spent;
-- refusing visibly when the budget runs out.
-
-That is §4's honest gate in pipeline form. **SCAFFOLD.** The audit's self-test wires exactly this edge in memory and confirms it would be detected, so the map cannot silently fall out of date when someone builds it.
+1. **`SovereignPipeline.run` (`L-PIPELINE`, open in code):** The single-pass feedforward instrument. AURA and MICROORCIM measure drift between TRIAD's target and the field coherence, and a breach appends a flag without mutating caller inputs.
+2. **`SovereignPipeline.regulate` (`L-PIPELINE-REGULATOR`, closed in code, SCAFFOLD):** Evaluates candidate inputs against the pipeline's configured unrounded floors (`coherence_floor` and strict `drift < drift_threshold`), invokes a caller-supplied correction policy (`_apply_correction`) on failure for at most `budget - 1` steps, re-evaluates the updated candidate (`_evaluate_candidate`), and refuses visibly (`accepted=False`) when the policy is missing, errors, produces non-finite values, or exhausts the finite evaluation budget. Because its sensors read internal block coherence and surface text features, `regulate` steers the implemented coherence/text-score proxy only; it does not establish factual truth, real-world effects, or external constitutional authority.
 
 ---
 

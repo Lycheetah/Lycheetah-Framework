@@ -39,7 +39,7 @@
       "closes_in_code": true,
       "cybernetic_role": "double loop in Ashby's sense (INTERPRETIVE): the first loop sorts each block by Π threshold; the second fires only when the first meets a contradiction it cannot hold, and reorganises the structure the first loop runs on",
       "status": "ACTIVE",
-      "note": "Closes across calls, through shared state: the actuator writes .regime, which the sensor reads on the next block. The 'environment' is the incoming block stream, not a world. Known weakness: the event field demotion_correct re-checks the filter that built the conflicts list, so it cannot be False."
+      "note": "Closes across calls, through shared state: the actuator writes .regime, which the sensor reads on the next block. The 'environment' is the incoming block stream, not a world. Postcondition _verify_cascade_postconditions compares post-cascade store state against value-snapshotted pre-state to verify target qualification, retention, threshold-consistent layer assignment, and contradiction resolution."
     },
     {
       "id": "L-TRIAD",
@@ -69,7 +69,7 @@
       "closes_in_code": true,
       "cybernetic_role": "fixed-point iteration; the actuator's output is the sensor's input and the next iterate. Grey Mode recovery is built on this kernel.",
       "status": "ACTIVE",
-      "note": "Annotation defect: the signature says Tuple[ndarray, int] and the docstring says (state, iterations); the function returns a 3-tuple (state, iterations, errors)."
+      "note": "Returns Tuple[np.ndarray, int, List[float]] as (converged_state, completed_iterations, error_history), where completed_iterations == len(error_history) across first-step convergence, multi-step convergence, zero budget, and budget exhaustion."
     },
     {
       "id": "L-KURAMOTO",
@@ -144,16 +144,17 @@
       "closes_in_code": false,
       "known_callers": [
         "12_IMPLEMENTATIONS/core/sovereign_pipeline.py",
-        "tests/test_microorcim_tracker.py"
+        "tests/test_microorcim_tracker.py",
+        "tests/test_sovereign_pipeline.py"
       ],
       "cybernetic_role": "a mirror, not a homeostat: it shows drift; a human is the actuator",
       "status": "ACTIVE",
-      "note": "Its only production reader imports it and never instantiates it: sovereign_pipeline.py recomputes a drift inline in stage 4."
+      "note": "The stateful MicroorcimTracker instance is a daily self-report logger (interval=24.0 hours). Both MicroorcimTracker and SovereignPipeline call the shared stateless primitives compute_drift / compute_sovereignty (with interval=1.0 for unitless pipeline coherence and zero disk writes)."
     },
     {
       "id": "L-PIPELINE",
       "framework": "CROSS",
-      "name": "sovereign pipeline CASCADE → TRIAD → AURA → MICROORCIM",
+      "name": "sovereign pipeline CASCADE → TRIAD → AURA → MICROORCIM (single-pass)",
       "code_path": "12_IMPLEMENTATIONS/core/sovereign_pipeline.py",
       "driver": "SovereignPipeline.run",
       "sensor": {"call": "check", "channel": "text"},
@@ -172,7 +173,22 @@
       ],
       "cybernetic_role": "feedforward chain: each stage feeds the next; nothing the last stage measures returns to the first",
       "status": "SCAFFOLD",
-      "note": "Until 2026-10-03 run() raised AttributeError on every call (it called TriadTracker.run, which does not exist) and no test exercised it. Repaired the same day, with tests/test_sovereign_pipeline.py. The MICROORCIM stage is inline arithmetic, not a MicroorcimTracker call."
+      "note": "Single-pass feedforward instrument. Stage 4 calls MicroorcimTracker.compute_drift(..., interval=1.0) and MicroorcimTracker.compute_sovereignty(...) without instantiating the daily persistent tracker."
+    },
+    {
+      "id": "L-PIPELINE-REGULATOR",
+      "framework": "CROSS",
+      "name": "bounded sovereign pipeline regulator",
+      "code_path": "12_IMPLEMENTATIONS/core/sovereign_pipeline.py",
+      "driver": "SovereignPipeline.regulate",
+      "sensor": {"method": "SovereignPipeline._evaluate_candidate", "channel": "text and state"},
+      "essential_variable": "implemented coherence and text-score proxy: unrounded cascade_coherence, triad_converged, unrounded aura_field_coherence, and unrounded drift = |TRIAD target − AURA field coherence|",
+      "comparator": {"method": "SovereignPipeline._compare_floors", "setpoint": "unrounded cascade_coherence >= coherence_floor, triad_converged, unrounded aura_field_coherence >= coherence_floor, and strict unrounded drift < drift_threshold"},
+      "actuator": {"method": "SovereignPipeline._apply_correction", "who_acts": "code: invokes caller-supplied correction policy on failed pass to produce updated candidate inputs"},
+      "closes_in_code": true,
+      "cybernetic_role": "bounded error-controlled regulator over the implemented coherence/text-score proxy: sense via _evaluate_candidate, compare unrounded readings via _compare_floors, invoke caller policy via _apply_correction, and re-evaluate until floors hold or the finite evaluation budget is exhausted",
+      "status": "SCAFFOLD",
+      "note": "Closes in code through dataflow inside SovereignPipeline.regulate, conditional on a caller-supplied correction policy. Regulates the implemented CASCADE/TRIAD/AURA/MICROORCIM coherence and text-score proxy only; refuses visibly on missing policy, policy error, non-finite readings, or budget exhaustion. Does not establish factual truth, real-world effects, or external constitutional authority."
     }
   ]
 }

@@ -1,6 +1,6 @@
 """
-MICROORCIM Tracker — Daily Sovereignty Measurement
-===================================================
+MICROORCIM Tracker — Daily Sovereignty Measurement & Stateless Drift Primitive
+===============================================================================
 
 Implements real-time drift tracking and sovereignty scoring.
 
@@ -11,17 +11,30 @@ Where:
     ρ_drift = |intended − actual| / Δt
     ρ_stability = measure of phase-lock duration and consistency
 
+Architectural distinction (Stateless Primitive vs. Daily Persistent Logger):
+    1. Stateless equation (`compute_drift`, `compute_sovereignty` /
+       `MicroorcimTracker.compute_drift`, `MicroorcimTracker.compute_sovereignty`):
+       Pure, side-effect-free functions with an explicit positive normalization
+       interval `interval = Δt > 0` and zero filesystem writes:
+         - Daily hours path uses `interval = 24.0` (hours per day).
+         - Unitless coherence path (`SovereignPipeline`) uses `interval = 1.0`,
+           preserving `|intended − actual|`.
+    2. Stateful daily CLI logger (`MicroorcimTracker` instance):
+       Persists daily human self-reports to `data_dir` (default `~/.microorcim/`)
+       and delegates its numerical calculations to the shared stateless primitives.
+
 Example: If I plan 4 hours and spend 3h, ρ_drift = |4−3|/24h = 0.042 per hour.
 Measured against daily budget: sovereignty_score = (1 − 0.042) · [stability metric]
 
 Status: ACTIVE equation
-Implementation: Daily CLI tracker with history persistence
+Implementation: Stateless primitives + Daily CLI tracker with history persistence
 Author: Mackenzie Clark (Lycheetah Foundation)
 Date: March 2026
 """
 
 import json
 import datetime
+import math
 import sys
 from pathlib import Path
 from typing import List, Dict, Tuple, Optional
@@ -32,8 +45,68 @@ if sys.stdout.encoding.lower() not in ('utf-8', 'utf8'):
     sys.stdout.reconfigure(encoding='utf-8')
 
 
+def compute_drift(intended: float, actual: float, interval: float = 1.0) -> float:
+    """
+    Stateless MICROORCIM drift primitive: ρ_drift = |intended − actual| / interval.
+
+    Args:
+        intended: Target value (e.g., intended hours or intended coherence).
+        actual: Achieved value (e.g., actual hours or measured coherence).
+        interval: Positive normalization interval Δt (default 1.0 for unitless
+            coherence; 24.0 for daily hours).
+
+    Returns:
+        Non-negative normalized drift float.
+
+    Raises:
+        ValueError: If any input is boolean, non-numeric, non-finite, or interval <= 0.
+    """
+    for name, val in (("intended", intended), ("actual", actual), ("interval", interval)):
+        if isinstance(val, bool) or not isinstance(val, (int, float)):
+            raise ValueError(f"{name} must be a finite real number, got {val!r}")
+        if not math.isfinite(float(val)):
+            raise ValueError(f"{name} must be finite, got {val!r}")
+    if float(interval) <= 0.0:
+        raise ValueError(f"interval must be strictly positive (> 0), got {interval!r}")
+    return abs(float(intended) - float(actual)) / float(interval)
+
+
+def compute_sovereignty(drift: float, stability: float) -> float:
+    """
+    Stateless MICROORCIM sovereignty score primitive:
+        S = clamp((1 − min(drift, 1.0)) · stability, 0.0, 1.0)
+
+    Args:
+        drift: Non-negative drift ρ_drift.
+        stability: Stability factor ρ_stability ∈ [0, 1].
+
+    Returns:
+        Sovereignty score in [0.0, 1.0].
+
+    Raises:
+        ValueError: If drift or stability is boolean, non-numeric, non-finite,
+            drift < 0, or stability outside [0, 1].
+    """
+    for name, val in (("drift", drift), ("stability", stability)):
+        if isinstance(val, bool) or not isinstance(val, (int, float)):
+            raise ValueError(f"{name} must be a finite real number, got {val!r}")
+        if not math.isfinite(float(val)):
+            raise ValueError(f"{name} must be finite, got {val!r}")
+    d = float(drift)
+    s = float(stability)
+    if d < 0.0:
+        raise ValueError(f"drift must be non-negative, got {drift!r}")
+    if not (0.0 <= s <= 1.0):
+        raise ValueError(f"stability must be in [0.0, 1.0], got {stability!r}")
+    score = (1.0 - min(d, 1.0)) * s
+    return max(0.0, min(1.0, score))
+
+
 class MicroorcimTracker:
     """Track and measure daily sovereignty through drift and stability."""
+
+    compute_drift = staticmethod(compute_drift)
+    compute_sovereignty = staticmethod(compute_sovereignty)
 
     def __init__(self, data_dir: Optional[Path] = None):
         """
@@ -147,8 +220,8 @@ class MicroorcimTracker:
                 intended = intention_map[name]["intended_hours"]
                 actual_h = actual["actual_hours"]
 
-                # ρ_drift = |intended − actual| / day_length (24 hours)
-                drift = abs(intended - actual_h) / 24.0
+                # ρ_drift = |intended − actual| / day_length (24 hours) via shared primitive
+                drift = compute_drift(intended, actual_h, interval=24.0)
 
                 drifts.append({
                     "name": name,
@@ -204,12 +277,12 @@ class MicroorcimTracker:
         drift, drift_details = self.calculate_drift()
         stability, stability_details = self.calculate_stability()
 
-        # Sovereignty = (1 − drift) · stability
-        sovereignty = (1.0 - drift) * stability
+        # Sovereignty = (1 − drift) · stability via shared primitive
+        sovereignty = compute_sovereignty(drift, stability)
 
         return {
             "date": str(datetime.date.today()),
-            "sovereignty_score": max(0.0, min(1.0, sovereignty)),
+            "sovereignty_score": sovereignty,
             "drift": drift,
             "drift_details": drift_details,
             "stability": stability,

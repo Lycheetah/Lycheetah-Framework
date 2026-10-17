@@ -368,3 +368,130 @@ class TestReset:
         assert len(engine.cascade_events) == 0
         assert len(engine.coherence_trace) == 0
         assert engine.step == 0
+
+
+# ── Independent postconditions & planted diagnostic failures ──────────────────
+
+class TestCascadeIndependentPostconditions:
+    @pytest.mark.active
+    def test_healthy_cascade_passes_all_postcondition_diagnostics(self, simple_blocks):
+        engine = CascadeEngine()
+        for block in simple_blocks:
+            engine.add_block(block)
+        assert len(engine.cascade_events) == 1
+        ev = engine.cascade_events[0]
+        assert ev["demotion_correct"] is True
+        diag = ev["demotion_diagnostics"]
+        assert diag["pre_state_valid"] is True
+        assert diag["targets_qualified_and_retained"] is True
+        assert diag["layers_consistent_with_thresholds"] is True
+        assert diag["target_contradictions_resolved"] is True
+
+    @pytest.mark.active
+    def test_qualified_high_pressure_block_legitimately_retains_foundation(self):
+        """Qualification and numeric layer demotion are distinct: high-Π qualified block stays FOUNDATION."""
+        engine = CascadeEngine()
+        # Π = (0.9 * 2.5) / 0.5 = 4.5; after /0.85 compression, S ≈ 0.588, Π ≈ 3.825 >= 1.5 (FOUNDATION)
+        old_high = KnowledgeBlock(
+            id="old_high", content="", domain="d", paradigm="p1",
+            evidence_strength=0.9, explanatory_power=2.5, uncertainty=0.5,
+        )
+        new_higher = KnowledgeBlock(
+            id="new_higher", content="", domain="d", paradigm="p2",
+            evidence_strength=0.99, explanatory_power=3.0, uncertainty=0.1,
+        )
+        engine.add_block(old_high)
+        ev = engine.add_block(new_higher)
+        assert ev is not None
+        assert engine.blocks["old_high"].regime == "qualified"
+        assert engine.blocks["old_high"].layer == "FOUNDATION"
+        assert ev["demotion_correct"] is True
+
+    @pytest.mark.active
+    def test_unrelated_lower_margin_contradictions_reported_separately(self):
+        """Lower-margin contradictions in another domain do not falsify targeted demotion_correct."""
+        engine = CascadeEngine(trigger_margin=0.5)
+        # Unrelated domain with a small-margin contradiction (no cascade)
+        u1 = KnowledgeBlock(
+            id="u1", content="", domain="other", paradigm="a",
+            evidence_strength=0.7, explanatory_power=2.0, uncertainty=0.5,
+        )
+        u2 = KnowledgeBlock(
+            id="u2", content="", domain="other", paradigm="b",
+            evidence_strength=0.75, explanatory_power=2.0, uncertainty=0.5,
+        )
+        engine.add_block(u1)
+        assert engine.add_block(u2) is None
+        assert len(engine.active_contradictions()) == 1
+
+        # Targeted cascade in domain 'main'
+        m1 = KnowledgeBlock(
+            id="m1", content="", domain="main", paradigm="old",
+            evidence_strength=0.5, explanatory_power=1.2, uncertainty=0.5,
+        )
+        m2 = KnowledgeBlock(
+            id="m2", content="", domain="main", paradigm="new",
+            evidence_strength=0.95, explanatory_power=2.5, uncertainty=0.1,
+        )
+        engine.add_block(m1)
+        ev = engine.add_block(m2)
+        assert ev is not None
+        assert ev["demotion_correct"] is True
+        assert ("u1", "u2") in ev["unresolved_contradictions"]
+
+    @pytest.mark.active
+    def test_skipping_qualification_makes_diagnostic_fail(self):
+        """Planted defect: if target block is left universal, demotion_correct must be False."""
+        engine = CascadeEngine()
+        old = KnowledgeBlock(
+            id="old", content="", domain="d", paradigm="p1",
+            evidence_strength=0.5, explanatory_power=1.5, uncertainty=0.5,
+        )
+        new = KnowledgeBlock(
+            id="new", content="", domain="d", paradigm="p2",
+            evidence_strength=0.95, explanatory_power=2.5, uncertainty=0.1,
+        )
+        engine.add_block(old)
+        orig_verify = engine._verify_cascade_postconditions
+
+        def verify_after_planted_unqualified(new_block, pre_snapshots, trigger_pre_pi):
+            # Simulate a broken Phase 2 that failed to qualify the old block
+            engine.blocks["old"].regime = "universal"
+            return orig_verify(new_block, pre_snapshots, trigger_pre_pi)
+
+        engine._verify_cascade_postconditions = verify_after_planted_unqualified
+        ev = engine.add_block(new)
+        assert ev is not None
+        assert ev["demotion_diagnostics"]["targets_qualified_and_retained"] is False
+        assert ev["demotion_diagnostics"]["target_contradictions_resolved"] is False
+        assert ev["demotion_correct"] is False
+
+    @pytest.mark.active
+    def test_skipping_layer_reassignment_makes_diagnostic_fail(self):
+        """Planted defect: if layer reassignment is skipped after Π drops across threshold, diagnostic fails."""
+        engine = CascadeEngine()
+        # Π = (0.76 * 1.0) / 0.5 = 1.52 >= 1.5 (FOUNDATION).
+        # After /0.85 compression: S = 0.5882, Π ≈ 1.292 -> should be THEORY.
+        old = KnowledgeBlock(
+            id="old", content="", domain="d", paradigm="p1",
+            evidence_strength=0.76, explanatory_power=1.0, uncertainty=0.5,
+        )
+        new = KnowledgeBlock(
+            id="new", content="", domain="d", paradigm="p2",
+            evidence_strength=0.95, explanatory_power=2.5, uncertainty=0.1,
+        )
+        engine.add_block(old)
+        assert old.layer == "FOUNDATION"
+        orig_verify = engine._verify_cascade_postconditions
+
+        def verify_with_stale_layer(new_block, pre_snapshots, trigger_pre_pi):
+            # Simulate skipping _assign_layer(old) so old stays in FOUNDATION despite Π < 1.5
+            engine.blocks["old"].layer = "FOUNDATION"
+            return orig_verify(new_block, pre_snapshots, trigger_pre_pi)
+
+        engine._verify_cascade_postconditions = verify_with_stale_layer
+        ev = engine.add_block(new)
+        assert ev is not None
+        assert ev["demotion_diagnostics"]["layers_consistent_with_thresholds"] is False
+        assert ev["demotion_correct"] is False
+

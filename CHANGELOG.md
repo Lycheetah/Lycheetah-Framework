@@ -34,6 +34,21 @@ history, which was the only changelog until now.
   exceeds the isolated calibration; the experiment note names that next model hinge.
 - Local and uncommitted; external/cross-seat review and publication remain pending.
 
+### Batch B — Cybernetic Foundation Repairs (`12_IMPLEMENTATIONS/core/` & `34_CYBERNETICS/`) — 17 October 2026
+
+- **Stateless MICROORCIM Primitives (`12_IMPLEMENTATIONS/core/microorcim_tracker.py`)**:
+  - Extracted pure, side-effect-free `compute_drift(intended, actual, interval=1.0)` and `compute_sovereignty(drift, stability)` primitives (also exposed as `MicroorcimTracker` static methods) with explicit positive normalization intervals (`interval=24.0` for daily hours vs. `interval=1.0` for unitless pipeline coherence) and strict finite-input validation.
+  - Wired both `MicroorcimTracker` and `SovereignPipeline` to call the shared primitives so `SovereignPipeline` never instantiates the daily `~/.microorcim` logger or rescales coherence by 24.
+- **Bounded Sovereign Pipeline Regulator (`12_IMPLEMENTATIONS/core/sovereign_pipeline.py`)**:
+  - Preserved `SovereignPipeline.run` (`L-PIPELINE`) as the single-pass feedforward instrument while cloning caller-owned `KnowledgeBlock` inputs so neither `run` nor multi-pass regulation mutates caller state.
+  - Added `SovereignPipeline.regulate` (`L-PIPELINE-REGULATOR`), `RegulationCandidate`, `PassEvaluation`, `RegulationResult`, and `deterministic_repair_policy` providing bounded closed-loop regulation over the implemented coherence/text-score proxy using unrounded boundary comparisons (`cascade_coherence >= coherence_floor`, `triad_converged`, `aura_field_coherence >= coherence_floor`, strict `drift < drift_threshold`), caller-supplied corrective policy invocation (`<= budget - 1` corrections), and visible refusal on missing policy, policy failure, non-finite data, or budget/no-op/cycle exhaustion.
+- **Independent CASCADE Postconditions (`12_IMPLEMENTATIONS/core/cascade_engine.py`)**:
+  - Replaced the tautological post-mutation `demotion_correct` recheck with `_verify_cascade_postconditions`, snapshotting pre-cascade state by value and independently verifying target qualification, retention, threshold-consistent layer assignment, and contradiction resolution (`demotion_diagnostics` and `unresolved_contradictions`).
+- **TRIADKernel Iteration Count & Type Alignment (`12_IMPLEMENTATIONS/core/lamague_reference.py`)**:
+  - Tightened `TRIADKernel.correct_until_converged` annotation to `Tuple[np.ndarray, int, List[float]]`, validated `max_iter >= 0` and finite `threshold > 0`, and made returned iteration counts equal completed correction steps (`iterations == len(errors)`) across first-step convergence (`1`), budget exhaustion (`max_iter`), and zero budget (`0`).
+- **Cybernetic Loop Map, AST Audit & Claims (`34_CYBERNETICS/`, `28_DEFENSE/CLAIMS.json`)**:
+  - Added `L-PIPELINE-REGULATOR` to `34_CYBERNETICS/LOOP_MAP.json` (10 mapped loops: 6 closed in code, 4 open) and added two negative mutation witnesses to `34_CYBERNETICS/loop_audit.py`.
+
 ### Autonomous Agent Tools Landfall — 17 October 2026
 
 - **Lycheetah Action Gateway (`lycheetah.assurance` & `lycheetah-guard` CLI)**:

@@ -122,14 +122,16 @@ class CascadeEngine:
     
     # ── Layer assignment ──
     
-    def _assign_layer(self, block: KnowledgeBlock):
-        pi = block.truth_pressure
+    def _expected_layer_for_pi(self, pi: float) -> str:
+        """Expected layer for a truth-pressure value under documented thresholds."""
         if pi >= self.foundation_threshold:
-            block.layer = "FOUNDATION"
+            return "FOUNDATION"
         elif pi >= self.theory_threshold:
-            block.layer = "THEORY"
-        else:
-            block.layer = "EDGE"
+            return "THEORY"
+        return "EDGE"
+
+    def _assign_layer(self, block: KnowledgeBlock):
+        block.layer = self._expected_layer_for_pi(block.truth_pressure)
     
     # ── Contradiction detection ──
     
@@ -201,12 +203,80 @@ class CascadeEngine:
         self.coherence_trace.append((self.step, self.coherence()))
         return event
     
+    def _verify_cascade_postconditions(
+        self,
+        new_block: KnowledgeBlock,
+        pre_snapshots: Dict[str, Dict],
+        trigger_pre_pi: float,
+    ) -> Dict[str, bool]:
+        """
+        Verify non-vacuous postconditions for the specific conflicts acted upon,
+        comparing post-cascade store state against pre-mutation value snapshots.
+        """
+        pre_state_valid = bool(pre_snapshots) and all(
+            snap["regime"] == "universal"
+            and snap["domain"] == new_block.domain
+            and snap["paradigm"] != new_block.paradigm
+            and trigger_pre_pi > snap["truth_pressure"] + self.trigger_margin
+            for snap in pre_snapshots.values()
+        )
+
+        targets_qualified_and_retained = bool(pre_snapshots) and all(
+            cid in self.blocks
+            and self.blocks[cid].regime == "qualified"
+            and self.blocks[cid].uncertainty > snap["uncertainty"]
+            for cid, snap in pre_snapshots.items()
+        )
+
+        # Qualification and numeric layer demotion are distinct: a qualified high-Π
+        # block legitimately retains FOUNDATION if its post-compression Π >= threshold.
+        layers_consistent_with_thresholds = (
+            bool(pre_snapshots)
+            and new_block.id in self.blocks
+            and self.blocks[new_block.id].regime == "universal"
+            and self.blocks[new_block.id].layer == "FOUNDATION"
+            and all(
+                cid in self.blocks
+                and self.blocks[cid].layer == self._expected_layer_for_pi(self.blocks[cid].truth_pressure)
+                for cid in pre_snapshots
+            )
+        )
+
+        active_pair_set = {frozenset((a, b)) for a, b in self.active_contradictions()}
+        target_contradictions_resolved = bool(pre_snapshots) and all(
+            cid in self.blocks
+            and frozenset((new_block.id, cid)) not in active_pair_set
+            and not self.contradicts(new_block, self.blocks[cid])
+            for cid in pre_snapshots
+        )
+
+        return {
+            "pre_state_valid": pre_state_valid,
+            "targets_qualified_and_retained": targets_qualified_and_retained,
+            "layers_consistent_with_thresholds": layers_consistent_with_thresholds,
+            "target_contradictions_resolved": target_contradictions_resolved,
+        }
+
     def _execute_cascade(self, new_block: KnowledgeBlock, 
                           conflicts: List[KnowledgeBlock]) -> Dict:
         """Four-phase cascade reorganization."""
         pre_c = self.coherence()
         pre_i = self.information_content()
         pre_h = self.total_entropy()
+
+        # Snapshot pre-cascade state by value (never by mutable object alias)
+        trigger_pre_pi = float(new_block.truth_pressure)
+        pre_snapshots = {
+            old.id: {
+                "regime": str(old.regime),
+                "truth_pressure": float(old.truth_pressure),
+                "uncertainty": float(old.uncertainty),
+                "layer": str(old.layer),
+                "domain": str(old.domain),
+                "paradigm": str(old.paradigm),
+            }
+            for old in conflicts
+        }
         
         # Phase 1: CONFLICT IDENTIFICATION (already done)
         
@@ -230,6 +300,12 @@ class CascadeEngine:
         post_c = self.coherence()
         post_i = self.information_content()
         post_h = self.total_entropy()
+
+        diagnostics = self._verify_cascade_postconditions(
+            new_block=new_block,
+            pre_snapshots=pre_snapshots,
+            trigger_pre_pi=trigger_pre_pi,
+        )
         
         event = {
             "step": self.step,
@@ -243,9 +319,9 @@ class CascadeEngine:
             "coherence_preserved": post_c >= pre_c - 1e-10,
             "info_preserved": post_i >= pre_i - 1e-10,
             "entropy_preserved": post_h >= pre_h - 1e-10,
-            "demotion_correct": all(
-                new_block.truth_pressure > c.truth_pressure for c in conflicts
-            ),
+            "demotion_diagnostics": diagnostics,
+            "unresolved_contradictions": self.active_contradictions(),
+            "demotion_correct": all(diagnostics.values()),
         }
         self.cascade_events.append(event)
         return event

@@ -16,15 +16,16 @@ This folder answers with code first and prose second. The rulings on every point
 
 **A loop regulates only where it closes.** A sensor that reads, a comparator that judges and no actuator that acts make a measurement, not a regulator. That is not a defect, but it must not be described as one.
 
-Five of the nine loops the framework's implementations claim close in code:
+Six of the ten loops the framework's implementations claim close in code:
 
 - Grey Mode recovery
 - CASCADE reorganisation
 - TRIAD
 - TRIADKernel
 - HARMONIA's Kuramoto simulation
+- Sovereign pipeline bounded regulator (`SovereignPipeline.regulate`, conditional on a caller-supplied correction policy over the implemented coherence/text-score proxy)
 
-Four do not: the AURA constitutional check, the TRI-AXIAL check, the MICROORCIM tracker and the sovereign pipeline. Each of these senses and compares, then hands its verdict to a person or a host model, and that person or model is where the loop closes.
+Four do not: the AURA constitutional check, the TRI-AXIAL check, the MICROORCIM daily tracker and the single-pass sovereign pipeline (`SovereignPipeline.run`). Each of these senses and compares, then hands its verdict to a person or a host model, and that person or model is where the loop closes.
 
 For AURA, this is deliberate: under human primacy, the verdict goes to a person. It also means AURA is a sensor. A sensor is only as good as what it reads, and AURA reads words. [`CYBERNETIC_READING.md`](CYBERNETIC_READING.md) §5 works out what follows from that, and names the seam already in the code that leads toward a sensor that reads effects.
 
@@ -37,7 +38,7 @@ runtime validation.
 
 | File | What it is | Status |
 |---|---|---|
-| [`LOOP_MAP.json`](LOOP_MAP.json) | Nine loops: sensor, essential variable, comparator, actuator, whether each closes in code, who acts when the code does not, and every known reader of each open loop | ACTIVE (audited) |
+| [`LOOP_MAP.json`](LOOP_MAP.json) | Ten loops: sensor, essential variable, comparator, actuator, whether each closes in code, who acts when the code does not, and every known reader of each open loop | ACTIVE (audited) |
 | [`loop_audit.py`](loop_audit.py) | Reads the syntax tree of the implementations and checks the map against it. Never imports or runs the audited code | ACTIVE |
 | [`variety_demo.py`](variety_demo.py) | Ashby's law of requisite variety in a 24 × 24 toy world: a rulebook against constraint-gated generators | SYNTHETIC |
 | [`CYBERNETIC_READING.md`](CYBERNETIC_READING.md) | The argument: role mapping, ultrastability, requisite variety, the Good Regulator, second-order cybernetics, the Viable System Model, and what cybernetics does not give us | INTERPRETIVE, with each section marked |
@@ -65,15 +66,17 @@ python3 -m pytest tests/test_cybernetics.py -q
 
    It then compares the computed answer with `closes_in_code`.
 3. **Every reader of an open loop is listed.** All Python files in the repository are censused by syntax tree, with strings and comments ignored. Any file that references an open loop's class must appear in that loop's `known_callers`, because a reader is the place where an open loop might close without anyone noticing.
-4. **The pipeline stays feedforward.** If any stage's output feeds an earlier stage inside a loop, the map is wrong and the audit says so.
+4. **The single-pass pipeline stays feedforward.** If any stage's output feeds an earlier stage inside a loop in `SovereignPipeline.run`, the map is wrong and the audit says so.
 
-The self-test applies five mutations to an in-memory copy of the source and requires each one to be caught. The source on disk is never touched. The five mutations:
+The self-test applies seven mutations to an in-memory copy of the source and requires each one to be caught. The source on disk is never touched. The seven mutations:
 
 - cut Grey Mode's actuator;
 - rename its sensor;
 - move CASCADE's state write;
 - inject an unlisted reader of AURA;
-- wire a feedback edge into the pipeline.
+- wire a feedback edge into the single-pass pipeline (`L-PIPELINE`);
+- cut the sovereign regulator's policy actuator (`L-PIPELINE-REGULATOR`);
+- break the sovereign regulator's feedback edge into its sensor (`L-PIPELINE-REGULATOR`).
 
 A gate means nothing until it has been seen to fail.
 
@@ -82,19 +85,19 @@ A gate means nothing until it has been seen to fail.
 These limits are also printed in `loop_audit.py`:
 
 - **Calls are matched by name.** Dynamic dispatch, callbacks and `getattr` are invisible to it.
-- **A closed loop can still regulate the wrong variable.** Closure is structure, not correctness. TRIAD closes perfectly on whatever landscape it is handed.
+- **A closed loop can still regulate the wrong variable.** Closure is structure, not correctness. TRIAD closes perfectly on whatever landscape it is handed, and `SovereignPipeline.regulate` steers the implemented coherence/text-score proxy rather than real-world outcomes.
 - **"Open" is a design fact, not a defect.** AURA is open on purpose.
 - **A loop nobody mapped is invisible.** The audit checks the map against the code; it does not discover loops.
 
-## What building this found
+## What building this found (and Batch B repairs)
 
 These findings came out of doing the work, not out of the review:
 
-- **The sovereign pipeline was dead.** `SovereignPipeline.run` called `TriadTracker.run`, which does not exist, so every call raised `AttributeError`, and no test exercised it. It is repaired, with [`tests/test_sovereign_pipeline.py`](../tests/test_sovereign_pipeline.py). It is still feedforward (SCAFFOLD).
+- **The sovereign pipeline was dead, then feedforward, and now exposes both a single-pass instrument and a bounded regulator.** `SovereignPipeline.run` (`L-PIPELINE`) remains the single-pass feedforward instrument. `SovereignPipeline.regulate` (`L-PIPELINE-REGULATOR`, SCAFFOLD) evaluates unrounded readings against configured floors, invokes a caller-supplied correction policy on failure across a finite evaluation budget, and refuses visibly when the policy is missing, fails, or exhausts its budget.
 - **The claim counts had drifted.** The README said 60, the register's own `total_claims` said 136, and the register held 67 records. The register is now the one truth: `python3 tools/verify-claims.py --register` pins every count that repeats it, and was seen failing on the old data before anything was fixed.
-- **CASCADE's `demotion_correct` cannot fail.** The event field re-checks the same filter that built the list it is checking.
-- **TRIADKernel's return annotation is wrong.** `correct_until_converged` is annotated and documented as returning a 2-tuple; it returns `(state, iterations, errors)`.
-- **The pipeline does not use MicroorcimTracker.** It is the pipeline's only import of the class, and it is never instantiated; stage 4 recomputes a drift inline.
+- **CASCADE's `demotion_correct` was tautological (repaired in Batch B).** The event field previously re-checked the same filter that built the conflicts list. `_verify_cascade_postconditions` now snapshots pre-cascade state by value and independently verifies target qualification, retention, threshold-consistent layer assignment, and contradiction resolution (`tests/test_cascade_engine.py`).
+- **TRIADKernel's iteration count and return annotation were inconsistent (repaired in Batch B).** `correct_until_converged` now carries `Tuple[np.ndarray, int, List[float]]` and returns `(state, completed_iterations, errors)` with `completed_iterations == len(errors)` across first-step convergence, multi-step convergence, zero budget, and budget exhaustion (`tests/test_lamague_reference.py`).
+- **The pipeline imported `MicroorcimTracker` without calling it (repaired in Batch B).** `microorcim_tracker.py` now exposes stateless `compute_drift` and `compute_sovereignty` primitives with explicit positive normalization intervals (`interval=24.0` for the daily tracker; `interval=1.0` for unitless pipeline coherence with zero filesystem writes), called by both `MicroorcimTracker` and `SovereignPipeline`.
 
 ## What this folder does not claim
 
@@ -109,7 +112,7 @@ These findings came out of doing the work, not out of the review:
 |---|---|---|
 | CYB-001 | Grey Mode recovery is a complete closed regulator in code | ACTIVE |
 | CYB-002 | CASCADE closes through shared state; the ultrastability reading is interpretive | ACTIVE (structure) |
-| CYB-003 | AURA, TRI-AXIAL and MICROORCIM are open in code; the pipeline is feedforward | ACTIVE |
+| CYB-003 | AURA, TRI-AXIAL, MICROORCIM daily logger, and single-pass `SovereignPipeline.run` are open in code; `SovereignPipeline.regulate` closes in code over the implemented proxy via a caller-supplied policy with finite-budget refusal | ACTIVE |
 | CYB-004 | Invariant-gated regulation meets requisite variety only with adequate generator variety and a non-proxy sensor | CONJECTURE |
 
 Full records: [`28_DEFENSE/CLAIMS.json`](../28_DEFENSE/CLAIMS.json).

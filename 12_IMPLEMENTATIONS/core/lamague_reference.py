@@ -175,23 +175,45 @@ class TRIADKernel:
     def correct_until_converged(self,
                                initial_state: np.ndarray,
                                threshold: float = 1e-4,
-                               max_iter: int = 1000) -> Tuple[np.ndarray, int, list]:
+                               max_iter: int = 1000) -> Tuple[np.ndarray, int, List[float]]:
         """
-        Iterate TRIAD until convergence
+        Iterate TRIAD until convergence.
+
+        Args:
+            initial_state: Starting state vector.
+            threshold: Strict step-size convergence threshold (> 0, finite).
+            max_iter: Maximum correction steps to execute (integer >= 0).
 
         Returns:
-            (converged_state, num_iterations, error_history)
+            (converged_state, completed_iterations, error_history) where
+            `completed_iterations == len(error_history)` across all paths:
+            - zero budget (`max_iter == 0`) -> `(initial_state.copy(), 0, [])`
+            - first-step convergence -> `(new_state, 1, [e_1])`
+            - budget exhaustion -> `(state, max_iter, errors)`
         """
-        state = initial_state
-        errors = []
+        if isinstance(max_iter, bool) or not isinstance(max_iter, int) or max_iter < 0:
+            raise ValueError(f"max_iter must be a non-negative integer, got {max_iter!r}")
+        if (
+            isinstance(threshold, bool)
+            or not isinstance(threshold, (int, float))
+            or not np.isfinite(float(threshold))
+            or float(threshold) <= 0.0
+        ):
+            raise ValueError(f"threshold must be a positive finite float, got {threshold!r}")
+
+        state = np.array(initial_state, dtype=float, copy=True)
+        errors: List[float] = []
+
+        if max_iter == 0:
+            return state, 0, errors
 
         for i in range(max_iter):
             new_state = self.step(state)
-            error = np.linalg.norm(new_state - state)
+            error = float(np.linalg.norm(new_state - state))
             errors.append(error)
 
             if error < threshold:
-                return new_state, i, errors
+                return new_state, i + 1, errors
 
             state = new_state
 
