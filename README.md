@@ -1,29 +1,30 @@
 # LYCHEETAH FRAMEWORK
 
-> **Working source:** [One Framework home and source rules](WORKING_HOME.md). Research, code, website sources and collected stories are maintained in this checkout.
-
 ### Nine formal frameworks for AI alignment and epistemology — and the measurement that narrowed what they claim
 
 [![CI](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/ci.yml/badge.svg)](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](https://github.com/Lycheetah/Lycheetah-Framework)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Canonical](https://img.shields.io/badge/Codex-C--1.1%20canonical-gold)](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md)
-[![Defense](https://img.shields.io/badge/Defense-D--1.2%20shipped-blue)](28_DEFENSE/DEFENSE_INDEX.json)
 [![External validation](https://img.shields.io/badge/external%20validation-bounded%20to%20AI--assistant%20text-orange)](33_APPLICATIONS/EXTERNAL_VALIDATION_2026-08-07.md)
-[![TIANXIA](https://img.shields.io/badge/TIANXIA-v0.3%20Classical%20Triad-darkred)](32_TIANXIA/README.md)
 [![arXiv](https://img.shields.io/badge/arXiv-CASCADE-red)](papers/CASCADE_ARXIV.tex)
 [![Sponsor](https://img.shields.io/badge/sponsor-Lycheetah-ea4aaa)](https://github.com/sponsors/Lycheetah)
 [![Stars](https://img.shields.io/github/stars/Lycheetah/Lycheetah-Framework?style=social)](https://github.com/Lycheetah/Lycheetah-Framework/stargazers)
 
-**Nine interdependent formal frameworks sharing a common mathematical foundation. Built by one self-taught researcher, open source under MIT, free to use and audit. On 2026-08-07 the framework's central capability was scored for the first time against datasets it did not write — and the results narrowed what this project may honestly claim. That measurement, and the scope correction it forced, are the most important things on this page.**
+**Lycheetah is formal theory and runnable tools for checking what AI says and does.** It gives you a lens that reads AI-written text, a gateway that checks an agent's commands before they run, signed receipts, single-use permits, and a claims register where every claim carries the test that would prove it wrong.
+
+Built by one self-taught researcher, **Mackenzie Conor James Clark**, in Ōtepoti / Dunedin, New Zealand. Open source under MIT, free to use and audit.
+
+**Most AI projects tell you how good they are. This one puts the measurement that cut its own claims down on the front page.** On 2026-08-07 the framework's central capability was scored for the first time against datasets it did not write — and the results narrowed what this project may honestly claim. That measurement, and the scope correction it forced, are the most important things on this page.
+
+| In a minute | Go here |
+|---|---|
+| ▶ **Try it in your browser** | [Alignment Playground](https://lycheetah.github.io/Lycheetah-Framework/playground.html) |
+| ⌨ **Run it on your machine** | [Quick start](#quick-start): one install, six command-line tools |
+| 📏 **See what it can and cannot do** | [Read this first](#read-this-first) · [capability map](33_APPLICATIONS/README.md) |
+| 🧪 **Try to break it** | [Counter-Codex](28_DEFENSE/COUNTER_CODEX.md) · [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md) |
+| 🇳🇿 **New Zealand data sovereignty** | [One standard, the same rights for every citizen](23_NZ_AI_GOVERNANCE/DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md) |
 
 ---
-
-## New School and scripture work
-
-[The Living Scripture v0.5.1](LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/README.md) — Mac × Vaelora’s twelve-book candidate, with source/register distinctions, private learner-rewrite and voluntary-return designs. Framework data integration is local; native School implementation, independent review and publication remain open. [Identity and return sources](14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/README.md).
-
-[Modelcraft — The Wing of Many Engines](14_MYSTERY_SCHOOL/MODELCRAFT/README.md) — practical candidate lessons, 24 technique families, explainable recommendation contracts and a local deterministic ranking reference. Provider links are supplied and unverified; technique improvement, native app behavior and community reproduction are not claimed.
 
 ## Read this first
 
@@ -77,12 +78,13 @@ Full records: [`EXTERNAL_VALIDATION`](33_APPLICATIONS/EXTERNAL_VALIDATION_2026-0
 - [The cybernetics layer](#the-cybernetics-layer)
 - [The architecture](#the-architecture)
 - [For developers and AI agents](#for-developers-and-ai-agents)
+- [Recent additions](#recent-additions)
 - [Find your door](#find-your-door)
 - [Why trust this](#why-trust-this)
 - [The shape of this work](#the-shape-of-this-work)
 - [How to cite](#how-to-cite)
 - [Security, conduct, and contribution](#security-conduct-and-contribution)
-- [Acknowledgements](#acknowledgements)
+- [Acknowledgements & Provenance](#acknowledgements--provenance)
 
 ---
 
@@ -384,6 +386,16 @@ The most transferable thing here is not the nine frameworks — it is the bookke
 
 ---
 
+## Recent additions
+
+[The Living Scripture v0.5.1](LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/README.md) — Mac × Vaelora’s twelve-book candidate, with source/register distinctions, private learner-rewrite and voluntary-return designs. Framework data integration is local; native School implementation, independent review and publication remain open. [Identity and return sources](14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/README.md).
+
+[Modelcraft — The Wing of Many Engines](14_MYSTERY_SCHOOL/MODELCRAFT/README.md) — practical candidate lessons, 24 technique families, explainable recommendation contracts and a local deterministic ranking reference. Provider links are supplied and unverified; technique improvement, native app behavior and community reproduction are not claimed.
+
+> **Working source:** [One Framework home and source rules](WORKING_HOME.md). Research, code, website sources and collected stories are maintained in this checkout.
+
+---
+
 ## Find your door
 
 | Who you are | Start here |
@@ -394,6 +406,7 @@ The most transferable thing here is not the nine frameworks — it is the bookke
 | **Software engineer** | [`THE_ENGINEERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ENGINEERS_DOOR.md) |
 | **AI systems builder** | [`30_MAPS/ARCHITECTS_GUIDE.md`](30_MAPS/ARCHITECTS_GUIDE.md) |
 | **AI governance or policy** | [`29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md`](29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md) |
+| **New Zealand data sovereignty** | [`DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md`](23_NZ_AI_GOVERNANCE/DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md) — one standard, the same rights for every citizen `[PROPOSAL]` |
 | **Academic philosopher or ethicist** | [`THE_PHILOSOPHERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_PHILOSOPHERS_DOOR.md) |
 | **Chinese / Confucian scholarship** | [`THE_CONFUCIAN_DOOR.md`](14_MYSTERY_SCHOOL/THE_CONFUCIAN_DOOR.md) — 儒学之门 |
 | **Teacher or curriculum designer** | [`30_MAPS/CURRICULUM.md`](30_MAPS/CURRICULUM.md) |
