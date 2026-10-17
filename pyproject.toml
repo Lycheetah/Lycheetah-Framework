@@ -50,6 +50,7 @@ lycheetah-check = "lycheetah.cli:check_alignment_cli"
 lycheetah-web   = "lycheetah.cli:web_demo_cli"
 lycheetah-guard = "lycheetah.cli:guard_cli"
 lycheetah-assure = "lycheetah.cli:assure_cli"
+lycheetah-compact = "lycheetah.cli:compact_cli"
 
 [project.urls]
 Homepage      = "https://github.com/Lycheetah/Lycheetah-Framework"
@@ -69,6 +70,7 @@ packages = [
     "lycheetah.core",
     "lycheetah.applications",
     "lycheetah.assurance",
+    "lycheetah.compaction",
 ]
 
 [tool.setuptools.package-dir]

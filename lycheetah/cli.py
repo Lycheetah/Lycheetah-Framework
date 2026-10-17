@@ -150,7 +150,9 @@ def guard_cli(argv: list[str] | None = None):
 
     parser = argparse.ArgumentParser(
         prog="lycheetah-guard",
-        description="Lycheetah Action Gateway: evidence-capped agent tool interceptor and receipt engine.",
+        description=(
+            "Lycheetah Action Gateway: evidence-capped agent tool interceptor and receipt engine."
+        ),
     )
     subparsers = parser.add_subparsers(dest="subcommand", required=True)
 
@@ -158,28 +160,46 @@ def guard_cli(argv: list[str] | None = None):
     run_parser = subparsers.add_parser("run", help="Gate and execute an OS command")
     run_parser.add_argument("--actor", default="local-agent", help="Actor identity (agent name)")
     run_parser.add_argument("--scope", default="exec:cli", help="Scope for execution")
-    run_parser.add_argument("--approve", dest="approver", default=None, help="Explicit approver identity")
-    run_parser.add_argument("--dir", default=None, help="Gateway state directory (default: ~/.lycheetah/guard)")
-    run_parser.add_argument("command", nargs=argparse.REMAINDER, help="Command to execute (after --)")
+    run_parser.add_argument(
+        "--approve", dest="approver", default=None, help="Explicit approver identity"
+    )
+    run_parser.add_argument(
+        "--dir", default=None, help="Gateway state directory (default: ~/.lycheetah/guard)"
+    )
+    run_parser.add_argument(
+        "command", nargs=argparse.REMAINDER, help="Command to execute (after --)"
+    )
 
     # Subcommand: check
-    check_parser = subparsers.add_parser("check", help="Dry-run policy evaluation on an action JSON")
+    check_parser = subparsers.add_parser(
+        "check", help="Dry-run policy evaluation on an action JSON"
+    )
     check_parser.add_argument("--action", required=True, help="Action JSON string")
     check_parser.add_argument("--actor", default="local-agent", help="Actor identity")
     check_parser.add_argument("--scope", default="exec:check", help="Scope for evaluation")
     check_parser.add_argument("--dir", default=None, help="Gateway state directory")
 
     # Subcommand: status
-    status_parser = subparsers.add_parser("status", help="Inspect local ledger and checkpoint state")
+    status_parser = subparsers.add_parser(
+        "status", help="Inspect local ledger and checkpoint state"
+    )
     status_parser.add_argument("--dir", default=None, help="Gateway state directory")
 
     # Subcommand: authority
-    auth_parser = subparsers.add_parser("authority", help="Run standalone checkpoint authority service")
+    auth_parser = subparsers.add_parser(
+        "authority", help="Run standalone checkpoint authority service"
+    )
     auth_parser.add_argument("--db", required=True, help="Path to authority SQLite database")
     auth_parser.add_argument("--key", required=True, help="Path to Ed25519 private key PEM")
-    auth_parser.add_argument("--host", default="127.0.0.1", help="Bind host (default: 127.0.0.1)")
-    auth_parser.add_argument("--port", type=int, default=8765, help="Bind port (default: 8765)")
-    auth_parser.add_argument("--token", default=None, help="Bearer token (or LYCHEETAH_CHECKPOINT_TOKEN)")
+    auth_parser.add_argument(
+        "--host", default="127.0.0.1", help="Bind host (default: 127.0.0.1)"
+    )
+    auth_parser.add_argument(
+        "--port", type=int, default=8765, help="Bind port (default: 8765)"
+    )
+    auth_parser.add_argument(
+        "--token", default=None, help="Bearer token (or LYCHEETAH_CHECKPOINT_TOKEN)"
+    )
 
     # Subcommand: mcp
     subparsers.add_parser("mcp", help="Start the MCP server on stdio transport")
@@ -199,9 +219,9 @@ def guard_cli(argv: list[str] | None = None):
         from applications.lycheetah_guard_mcp import main
         return main()
 
-    from .assurance import ActionGateway, CommandExecutor, CheckpointStore, make_server
+    from .assurance import ActionGateway, CheckpointStore, CommandExecutor, make_server
 
-    state_dir = Path(getattr(parsed, "dir", None) or os.path.expanduser("~/.lycheetah/guard"))
+    state_dir = Path(getattr(parsed, "dir", None) or Path("~/.lycheetah/guard").expanduser())
     state_dir.mkdir(parents=True, exist_ok=True)
 
     if parsed.subcommand == "run":
@@ -229,7 +249,12 @@ def guard_cli(argv: list[str] | None = None):
                 sys.stdout.write(result.result["stdout"])
             if result.result and result.result.get("stderr"):
                 sys.stderr.write(result.result["stderr"])
-            print(f"\n[Lycheetah Guard: SUCCEEDED | receipt={result.receipt.integrity['digest'][:16]} | cp_gen={result.checkpoint_generation}]", file=sys.stderr)
+            digest_prefix = result.receipt.integrity["digest"][:16]
+            print(
+                f"\n[Lycheetah Guard: SUCCEEDED | receipt={digest_prefix} | "
+                f"cp_gen={result.checkpoint_generation}]",
+                file=sys.stderr,
+            )
             sys.exit(result.result.get("returncode", 0) if result.result else 0)
         else:
             print(f"\n[Lycheetah Guard: {result.status} | reason={result.reason}]", file=sys.stderr)
@@ -273,7 +298,9 @@ def guard_cli(argv: list[str] | None = None):
 
     elif parsed.subcommand == "authority":
         import secrets
-        token = parsed.token or os.environ.get("LYCHEETAH_CHECKPOINT_TOKEN") or secrets.token_urlsafe(32)
+
+        env_token = os.environ.get("LYCHEETAH_CHECKPOINT_TOKEN")
+        token = parsed.token or env_token or secrets.token_urlsafe(32)
         store = CheckpointStore(parsed.db, parsed.key)
         server = make_server(store, token, host=parsed.host, port=parsed.port)
         print(f"Lycheetah Checkpoint Authority listening on http://{parsed.host}:{parsed.port}")
@@ -285,8 +312,164 @@ def guard_cli(argv: list[str] | None = None):
             server.shutdown()
 
 
+def compact_cli(argv: list[str] | None = None):
+    """lycheetah-compact — reversible context compaction and safety gate CLI.
+
+    Usage:
+        lycheetah-compact encode <packet.json> [--codebook <codebook.json>] [-o <output>]
+        lycheetah-compact decode <source> [--codebook <codebook.json>] [-o <output>]
+        lycheetah-compact hash <packet.json> [--critical-only]
+        lycheetah-compact check <packet.json>
+        lycheetah-compact verify <reference.json> <candidate.json>
+        lycheetah-compact build-codebook <packets.jsonl> [--max-entries N] -o <output>
+    """
+    import argparse
+    import json
+    from pathlib import Path
+
+    from .compaction import (
+        CodecError,
+        build_codebook,
+        classify,
+        critical_hash,
+        decode,
+        encode,
+        full_hash,
+        safety_violations,
+        validate_packet,
+    )
+
+    raw_args = list(sys.argv[1:] if argv is None else argv)
+    parser = argparse.ArgumentParser(
+        prog="lycheetah-compact",
+        description="Lycheetah Context Compaction Shield: provable semantic state compression.",
+    )
+    sub = parser.add_subparsers(dest="command", required=True)
+
+    # encode
+    p_encode = sub.add_parser("encode", help="Compress a semantic packet to L1/L1D wire format")
+    p_encode.add_argument("packet", help="Path to packet JSON file (or - for stdin)")
+    p_encode.add_argument("--codebook", "-c", help="Path to optional codebook JSON")
+    p_encode.add_argument("-o", "--output", help="Output file path (default: stdout)")
+
+    # decode
+    p_decode = sub.add_parser(
+        "decode", help="Decompress an L1/L1D wire string back to packet JSON"
+    )
+    p_decode.add_argument("source", help="Wire string or path to wire file (or - for stdin)")
+    p_decode.add_argument("--codebook", "-c", help="Path to optional codebook JSON")
+    p_decode.add_argument("-o", "--output", help="Output file path (default: stdout)")
+
+    # hash
+    p_hash = sub.add_parser("hash", help="Compute full or critical SHA-256 hash of a packet")
+    p_hash.add_argument("packet", help="Path to packet JSON file (or - for stdin)")
+    p_hash.add_argument(
+        "--critical-only",
+        action="store_true",
+        help="Hash only the 10 critical accountability fields",
+    )
+
+    # check
+    p_check = sub.add_parser(
+        "check", help="Validate packet schema and check semantic safety rules"
+    )
+    p_check.add_argument("packet", help="Path to packet JSON file (or - for stdin)")
+
+    # verify
+    p_verify = sub.add_parser(
+        "verify", help="Verify whether candidate packet preserves reference constraints"
+    )
+    p_verify.add_argument("reference", help="Reference packet JSON file")
+    p_verify.add_argument("candidate", help="Candidate packet JSON file")
+
+    # build-codebook
+    p_cb = sub.add_parser(
+        "build-codebook", help="Train a frequency codebook from JSONL packets"
+    )
+    p_cb.add_argument("packets_jsonl", help="JSONL file with training packets")
+    p_cb.add_argument("--max-entries", type=int, default=20, help="Max entries (default: 20)")
+    p_cb.add_argument("-o", "--output", required=True, help="Output path for trained codebook JSON")
+
+    args = parser.parse_args(raw_args)
+
+    def _read_input(path_or_str: str) -> str:
+        if path_or_str == "-":
+            return sys.stdin.read()
+        p = Path(path_or_str)
+        if p.exists():
+            return p.read_text(encoding="utf-8")
+        return path_or_str
+
+    try:
+        if args.command == "encode":
+            content = _read_input(args.packet)
+            packet = json.loads(content)
+            cb = (
+                json.loads(Path(args.codebook).read_text(encoding="utf-8"))
+                if args.codebook
+                else None
+            )
+            result = encode(packet, cb)
+            if args.output:
+                Path(args.output).write_text(result, encoding="utf-8")
+            else:
+                print(result)
+
+        elif args.command == "decode":
+            source = _read_input(args.source).strip()
+            cb = (
+                json.loads(Path(args.codebook).read_text(encoding="utf-8"))
+                if args.codebook
+                else None
+            )
+            result = decode(source, cb)
+            rendered = json.dumps(result, ensure_ascii=False, indent=2)
+            if args.output:
+                Path(args.output).write_text(rendered, encoding="utf-8")
+            else:
+                print(rendered)
+
+        elif args.command == "hash":
+            content = _read_input(args.packet)
+            packet = json.loads(content)
+            digest = critical_hash(packet) if args.critical_only else full_hash(packet)
+            print(digest)
+
+        elif args.command == "check":
+            content = _read_input(args.packet)
+            packet = json.loads(content)
+            validate_packet(packet)
+            violations = safety_violations(packet)
+            if violations:
+                print(f"Safety violations detected: {', '.join(violations)}", file=sys.stderr)
+                sys.exit(1)
+            print("Packet valid. 0 semantic safety violations.")
+
+        elif args.command == "verify":
+            ref = json.loads(_read_input(args.reference))
+            cand = json.loads(_read_input(args.candidate))
+            res = classify(ref, cand)
+            print(json.dumps(res, indent=2))
+            if res.get("classification") in ("UNSAFE_COLLAPSE", "DIVERGENT", "UNDECODABLE"):
+                sys.exit(1)
+
+        elif args.command == "build-codebook":
+            lines = Path(args.packets_jsonl).read_text(encoding="utf-8").splitlines()
+            packets = [json.loads(line) for line in lines if line.strip()]
+            cb = build_codebook(packets, max_entries=args.max_entries)
+            Path(args.output).write_text(
+                json.dumps(cb, ensure_ascii=False, indent=2), encoding="utf-8"
+            )
+            print(f"Codebook built with {len(cb['entries'])} entries: {args.output}")
+
+    except (CodecError, json.JSONDecodeError, OSError) as err:
+        print(f"Error: {err}", file=sys.stderr)
+        sys.exit(1)
+
+
 def assure_cli():
     """Run the evidence-capped assurance command-line interface."""
     from .assurance.cli import main
 
     return main()
+
