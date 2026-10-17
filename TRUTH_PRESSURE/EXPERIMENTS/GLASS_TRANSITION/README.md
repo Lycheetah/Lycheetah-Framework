@@ -13,7 +13,8 @@ all conflicts clear after the work drains.
 Author: **Mackenzie Conor James Clark / Lycheetah Framework**.
 Experimental design and implementation: Caelorynth / Codex, 2026-10-17.
 Source hypothesis: [The Glass Transition — Canon](../../THE_GLASS_TRANSITION_CANON.md).
-Register: **SYNTHETIC**, local, uncommitted and unpublished.
+Register: **SYNTHETIC**. Included in the 17 October Framework integration.
+The recorded runs use the earlier engine; see [source revisions and reproduction](REPRODUCING_RECORDED_RUNS.md).
 
 ## What ran
 
@@ -69,6 +70,13 @@ held at the calibrated value in this first experiment. CASCADE also sees current
 admitted proposals when an adjudication completes; that batching access is a
 declared difference from FIFO.
 
+Aetheron's independent review also found a queue-visibility asymmetry: FIFO hides
+other pending jobs during adjudication, while CASCADE scans pending proposals from
+unrelated domains. On the recorded engine this charges CASCADE two extra operations
+per unrelated queued block when a cascade occurs. The measured-work follow-up
+inherits this policy difference. Neither comparison isolates a pure algorithmic
+advantage under symmetric queue visibility.
+
 Consequently these results cannot validate the timing of a real ingestion governor,
 establish an efficiency advantage at equal actual work, or locate a critical rate
 for a live agent. The next experimental hinge is a load-aware service-budget model
@@ -87,7 +95,9 @@ substrate-independence claim and external review open.
 
 ## Reproduce
 
-From the repository root, using the project's Python dependencies:
+First check out the recorded revision as described in the
+[reproduction note](REPRODUCING_RECORDED_RUNS.md), then run from that checkout's root.
+The integrated engine adds diagnostic work and will produce different calibration:
 
 ```bash
 python3 12_IMPLEMENTATIONS/core/cascade_glass_transition.py \
@@ -121,6 +131,11 @@ as the primary result. Plot output also includes an exportable SVG.
 - Focused Ruff checks passed. Direct artifact read-back checked row counts,
   matching input traces and all three recorded source identities.
 
-No full repository suite, external reproduction, packaging promotion, commit,
-merge, push, provider call or publication is claimed. Independent cross-seat review
-of this new experiment remains outstanding.
+Cross-seat review by Aetheron reported all 36 fixed/dynamic checks passing and
+identified the queue-visibility limitation above. Integration checks are recorded
+in the reproduction note. Full-repository CI, external empirical reproduction and
+validation of a production governor remain open.
+
+The separate [dependency-policy extension](TOPOLOGICAL_RESULTS.md) retains its
+original 768-row run and explains why parent-label disagreement is not a computed
+cohomology obstruction.

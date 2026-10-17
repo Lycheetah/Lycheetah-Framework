@@ -178,6 +178,27 @@ Check AI-generated text against constitutional invariants and TRI-AXIAL metrics 
 lycheetah-check "Your AI-generated text here"
 ```
 
+### 5. Sovereign Execution Harness (`lycheetah-sovereign`)
+
+Bind consensus and preserved packet fields to an exact action, scope, state
+version, expiry and single-use permit. Run the local stub demonstration:
+
+```bash
+lycheetah-sovereign demo --json
+```
+
+The harness checks declared authority grants and delegates execution to the Action
+Gateway. Packet identity strings do not authenticate a human, vector agreement does
+not establish factual truth, and the harness does not sandbox arbitrary code.
+See [the implementation](lycheetah/sovereign_harness.py) and
+[example](examples/sovereign_harness_demo.py).
+
+**Glass-transition research:** [fixed-service comparison](TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/README.md),
+[measured-work follow-up](TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/LOAD_AWARE_RESULTS.md),
+and [dependency-policy extension](TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/TOPOLOGICAL_RESULTS.md).
+These preserve 2,496 synthetic rows and their recorded source revisions. They do
+not establish a general glass law or validate a production ingestion governor.
+
 > **Packaging note.** Releases up to and including 1.0.0 shipped a wheel whose console scripts raised `ModuleNotFoundError` — the implementation directories were never packaged. The current unreleased branch maps the canonical implementation tree into the wheel and checks the built distribution in clean virtual environments. See [`CHANGELOG.md`](CHANGELOG.md).
 
 **Try it in your browser:** [Alignment Playground →](https://lycheetah.github.io/Lycheetah-Framework/playground.html). Read it as a demonstration of *what the framework looks for* — it shows extracted spans, which is genuinely useful as a teaching tool. It is not a detector; see the measurement above.

@@ -14,18 +14,14 @@ mechanistic capabilities that test and expose the structural limits of 0-hop CAS
    longer identical across topologies: perturbing a ``star`` hub triggers an O(N)
    downstream fan-out, separating ``star``, ``balanced``, ``chain``, and ``diamond``.
 
-2. **Topological Premise Frustration (`diamond` multi-parent DAGs, H^1 != 0)**:
-   In single-parent trees (``chain``, ``star``, ``balanced``; first Betti number b_1 = 0),
-   every concept has at most one parent premise, so after arrivals stop and the queue
-   drains, all conflicts resolve (``drained_g == 0``).
-   In a multi-parent ``diamond`` DAG (b_1 > 0, where synthesis concepts depend on two
-   parent concepts), independent paradigm quenching on the two parent branches creates
-   a coboundary defect (``paradigm(gov(p_1)) != paradigm(gov(p_2))``). While a concept's
-   foundational parents are paradigm-split, neither paradigm in the child concept has
-   unfrustrated universal authority to qualify the other, and Universal blocks in the
-   child concept remain in premise contradiction with their discordant parent even after
-   the service queue completely drains (``drained_backlog == 0``, ``drained_g > 0``).
-   Compatible overload (``compatible=True``) still produces ``g == 0`` everywhere.
+2. **Declared multi-parent conflict policy**:
+   When a child's governing parents have different paradigm labels, this simulator
+   deliberately suspends local adjudication and counts child/parent disagreement
+   in ``g``. Persistent conflict after drain is therefore a consequence of that
+   policy, not independent evidence for a glass law. The selected tree runs drain
+   to zero; the selected multi-parent runs can retain conflict. No sheaf, boundary
+   matrix, cohomology group or first Betti number is computed here. In particular,
+   two parents feeding one child form an undirected tree, not a cycle.
 
 3. **Snapshot-at-Start Causality & Work-Coupled Service Timing (`tau = W_actual / mu`)**:
    Fixes two idealized assumptions in the v1 fixed-budget baseline:
@@ -74,7 +70,7 @@ def parents_v2(size: int, topology: str) -> tuple[tuple[int, ...], ...]:
     - ``star``:     1-parent hub-and-spoke rooted at 0 (b_1 = 0, max hub out-degree = N-1)
     - ``balanced``: 1-parent binary tree (b_1 = 0)
     - ``diamond``:  multi-parent DAG where roots {0, 1} feed dual-parent synthesis nodes
-                    (b_1 > 0, creating topological frustration cycles when parents split)
+                    (parent-label disagreement is handled by an explicit model policy)
     """
     _count(size, "concepts", 2)
     if topology not in TOPOLOGIES_V2:
@@ -159,9 +155,8 @@ class TopologicalCascadeEngine(WorkMeterEngine):
     def is_premise_frustrated(self, block: KnowledgeBlock) -> bool:
         """Return True iff ``block`` is universal and its parent domains hold split paradigms.
 
-        In sheaf-theoretic terms, let s(u) be the governing paradigm on parent domain u.
-        For a child block w with parents P(w), the coboundary defect on the premise cone is
-        non-zero iff exists p_1, p_2 in P(w) such that s(p_1) != s(p_2).
+        This is a label comparison under the declared premise policy. It does not
+        compute a cohomology obstruction.
         """
         if not self.propagate_dependencies or block.regime != "universal":
             return False
@@ -190,7 +185,7 @@ class TopologicalCascadeEngine(WorkMeterEngine):
             gov = self.governing_block(p_dom)
             if gov is not None:
                 gov_paradigms.add(gov.paradigm)
-        # Frustration requires a multi-parent split (coboundary defect != 0)
+        # The declared policy requires disagreement among multiple parent labels.
         if len(gov_paradigms) < 2:
             return False
         return any(p != block.paradigm for p in gov_paradigms)
@@ -201,8 +196,7 @@ class TopologicalCascadeEngine(WorkMeterEngine):
         self._assign_layer(block)
         self.blocks[block.id] = block
 
-        # If this domain's multi-parent foundation is currently split (H^1 != 0),
-        # neither paradigm has coherent foundation authority to qualify the other.
+        # The model explicitly suspends adjudication while parent labels disagree.
         premise_split = self.is_premise_frustrated(block)
 
         conflicts = []
@@ -677,7 +671,7 @@ def run_frontier_comparison(
     processing_rate: float = 64.0,
     topologies: tuple[str, ...] = TOPOLOGIES_V2,
 ) -> dict:
-    """Run a side-by-side frontier experiment testing all three Option 1 theorems."""
+    """Run finite synthetic comparisons of dependency work and service policies."""
     calibrations = {}
     rows = []
     for topology in topologies:
@@ -731,7 +725,7 @@ def run_frontier_comparison(
                     )
                     rows.append(row)
 
-    # Summarize the three theorems
+    # Summarize finite model observations; these are not mathematical theorems.
     tree_drained_g = [
         r["drained_g"]
         for r in rows
@@ -783,6 +777,14 @@ def run_frontier_comparison(
     return {
         "schema": "lycheetah.topological-cascade-glass.v2",
         "register": "SYNTHETIC",
+        "claim_status": "finite model observations; legacy theorem keys do not denote proofs",
+        "time_unit": "virtual work units divided by processing rate, not wall-clock seconds",
+        "limitations": [
+            "parent-label disagreement is a programmed policy, not a computed H1 obstruction",
+            "snapshot modes also change cross-domain queue visibility",
+            "three sequential arms are not a full factorial separation",
+            "work calibration depends on the exact cascade_engine source revision",
+        ],
         "author": "Mackenzie Conor James Clark / Lycheetah Framework",
         "calibrations": calibrations,
         "theorems": {

@@ -3,7 +3,7 @@
   "author": "Mackenzie Conor James Clark / Lycheetah Framework",
   "implementer": "Caelorynth / Codex",
   "base_commit": "f8e30c99aef4797aa363b3d077b1f029d0ab16b7",
-  "working_state": "local uncommitted candidate; independent cross-seat review pending",
+  "working_state": "integrated; recorded outputs remain pinned to their original engine",
   "checks": {
     "focused_tests_passed": 20,
     "ruff_files_listed": 3,
@@ -31,8 +31,8 @@
     },
     {
       "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/README.md",
-      "bytes": 6639,
-      "sha256": "66c63579bcade210a7dd269665065bf80f7f734d2930052462500e2e43ad3e33"
+      "bytes": 7651,
+      "sha256": "462307a1bad6e44bc1462cc2bb9c48b8d43e045a6f4520f1b3973fc0da6438ac"
     },
     {
       "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/plot_results.py",
@@ -61,12 +61,24 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 18789,
-      "sha256": "bdcddf773fc373ff9269957780705dfaa0b4b95a7b023bf41504bc944df8e322"
+      "bytes": 22922,
+      "sha256": "d20cb0f3d1ddf7eee947e384f90c7fa19427e27cac6415c85129b6f64ab6952f"
     }
   ],
   "documentation_refresh": {
-    "reason": "Link the separately recorded v2 result and add its changelog entry",
-    "original_source_protocol_results_and_figures_unchanged": 8
+    "reason": "record integration, historical source pins and queue-visibility limitation; preserve source, protocols, data and figures"
+  },
+  "recorded_experiment_revision": "87daa86173a507232afc8c4c87d9a500a4b809c5",
+  "cross_seat_review": {
+    "seat": "Aetheron / Antigravity",
+    "reported_fixed_and_dynamic_tests_passed": 36,
+    "finding": "asymmetric visibility of unrelated pending proposals; disclosed in reports"
+  },
+  "integration_checks": {
+    "selected_tests_passed": 228,
+    "test_files": 13,
+    "ruff_changed_python_files": 23,
+    "audit_mutations_caught": 7,
+    "audit_mutations_planted": 7
   }
 }

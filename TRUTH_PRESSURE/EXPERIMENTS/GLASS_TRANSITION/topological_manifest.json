@@ -1,0 +1,70 @@
+{
+  "schema": "lycheetah.topological-glass.artifacts.v1",
+  "author": "Mackenzie Conor James Clark / Lycheetah Framework",
+  "implementer": "Aetheron / Antigravity",
+  "reviewer": "Caelorynth / Codex",
+  "register": "SYNTHETIC",
+  "recorded_source_revision": "60a77da683f07534cabd91b5c9133ab2b7de3552",
+  "recorded_rows": 768,
+  "recorded_sources": [
+    {
+      "path": "12_IMPLEMENTATIONS/core/cascade_engine.py",
+      "revision": "60a77da683f07534cabd91b5c9133ab2b7de3552",
+      "bytes": 26995,
+      "sha256": "25c9f81d29c4d423914ae120b9b1fca46d075b7dad07bf7d0d904b5bcfeaa92c"
+    },
+    {
+      "path": "12_IMPLEMENTATIONS/core/cascade_glass_transition.py",
+      "revision": "60a77da683f07534cabd91b5c9133ab2b7de3552",
+      "bytes": 19811,
+      "sha256": "90e7fd10f383e51b4693b1990f29c2fe23123a5f8f7941340c090f8f7e448a71"
+    },
+    {
+      "path": "12_IMPLEMENTATIONS/core/topological_cascade_glass.py",
+      "revision": "60a77da683f07534cabd91b5c9133ab2b7de3552",
+      "bytes": 33909,
+      "sha256": "030f5406bde8f16f851a1480c7897c44d3c15014de06da3ffe40fc5a34dd6219"
+    },
+    {
+      "path": "tests/test_topological_cascade_glass.py",
+      "revision": "60a77da683f07534cabd91b5c9133ab2b7de3552",
+      "bytes": 9865,
+      "sha256": "efc405d1aaa741ccdd5539eeca6689bc14c06ef9984aee97f7f6159245a8e26e"
+    }
+  ],
+  "files": [
+    {
+      "path": "12_IMPLEMENTATIONS/core/topological_cascade_glass.py",
+      "bytes": 33896,
+      "sha256": "1d3349b640161c02f938f8ccf7ed31012507ac5b38bb71b1f34fb0f5436713c4"
+    },
+    {
+      "path": "tests/test_topological_cascade_glass.py",
+      "bytes": 8334,
+      "sha256": "ce78f671b7c8733609e11f3a059f23320d56e0b20de4cd7ccb77c47f601fe49f"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/topological_recorded.json",
+      "bytes": 948522,
+      "sha256": "95bedbf5eb1bebf8f3907559656c8ca59cd4ccfe13f3f98523f345c71c7ce202"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/TOPOLOGICAL_RESULTS.md",
+      "bytes": 2904,
+      "sha256": "f59b39b6fc0828b50f28f65f2108dc29f93155bf1c89c56a1daeb7b7e9ca0164"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/REPRODUCING_RECORDED_RUNS.md",
+      "bytes": 3475,
+      "sha256": "3e7d3f4a414cfc8b38922253586878c0b94c29908789613f8f6810ab1fd78b33"
+    }
+  ],
+  "claim_boundary": "Historical theorem/b1 labels are not proofs; explicit parent-label policy; no cohomology computation; three sequential arms with queue-visibility confounding.",
+  "integration_checks": {
+    "selected_tests_passed": 228,
+    "test_files": 13,
+    "ruff_changed_python_files": 23,
+    "audit_mutations_caught": 7,
+    "audit_mutations_planted": 7
+  }
+}

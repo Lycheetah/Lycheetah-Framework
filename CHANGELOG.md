@@ -9,6 +9,24 @@ history, which was the only changelog until now.
 
 ## [Unreleased]
 
+### Frontier integration and cross-seat review — 17 October 2026
+
+- Added `SovereignExecutionHarness` and the `lycheetah-sovereign demo` CLI, binding
+  consensus/context witnesses to an exact action, scope, state version, expiry and
+  durable single-use permit. Empty authority grants and read-only grants used for
+  deployment fail before consuming the permit. Declared identity metadata is not
+  external human authentication; the harness is not an OS sandbox.
+- Added Aetheron's experimental dependency propagation model and preserved its
+  original 768-row result. Corrected the claim register: programmed parent-label
+  conflict and finite tests do not establish cohomology or glass-law theorems.
+  Snapshot and queue-visibility changes remain confounded in the three-arm design.
+- Preserved the original experiment revisions and documented why the new CASCADE
+  diagnostics change work calibration. Recorded data have not been relabelled as
+  results from the integrated engine.
+- Included the regulation callback threshold/trace fix and the harness authority
+  scope fix found through cross-seat review. See the experiment reproduction note
+  for integrated checks and source identities.
+
 ### Load-aware snapshot/commit falsifier — 17 October 2026
 
 - Added a separate measured-work CASCADE/FIFO model with frozen service snapshots,
@@ -19,7 +37,8 @@ history, which was the only changelog until now.
   and cost correction; this remains synthetic evidence, not a validated glass law.
 - Sixteen focused checks passed, including a deliberately false work receipt and
   a cut-commit witness. Added raw JSON/CSV, comparison figure and result limits.
-- Local and uncommitted; independent review and publication remain pending.
+- Aetheron's cross-seat check passed alongside v1; queue-visibility limitations
+  and exact recorded source revisions are documented with the results.
 
 ### CASCADE synthetic glass-transition experiment — 17 October 2026
 
@@ -32,7 +51,8 @@ history, which was the only changelog until now.
 - The result is a finite fixed-service model. It does not validate a general glass
   law, real-time governor, factual truth or a sharp phase transition. Loaded work
   exceeds the isolated calibration; the experiment note names that next model hinge.
-- Local and uncommitted; external/cross-seat review and publication remain pending.
+- Included with the measured-work follow-up and its cross-seat review; external
+  empirical validation remains open.
 
 ### Batch B — Cybernetic Foundation Repairs (`12_IMPLEMENTATIONS/core/` & `34_CYBERNETICS/`) — 17 October 2026
 

@@ -1,24 +1,8 @@
-"""Frontier verification tests for Topological & Work-Coupled Glass Transition (Batch A2).
+"""Finite model checks for dependency propagation and service timing.
 
-Proves three falsifiable theorems on top of Batch A:
-1. Theorem 1 (Topological Cascade Cost Separation):
-   Perturbing the root hub of a star DAG triggers an O(N) downstream dependency wave,
-   separating hub vs. leaf work and separating chain, balanced, star, and diamond
-   topologies (which all had identical work=25 in 0-hop CascadeEngine).
-2. Theorem 2 (Cohomological Premise Frustration / Quenched Glass State):
-   - Single-parent trees (b_1 = 0: chain, star, balanced) always relax to drained_g == 0
-     once arrivals stop and the service queue drains.
-   - Multi-parent diamond DAGs (b_1 > 0) exhibit quenched topological frustration
-     (drained_g > 0 at drained_backlog == 0) when parent branches lock into opposing
-     paradigms, and automatically self-heal to drained_g == 0 as soon as a coherent
-     parent update resolves the coboundary split.
-   - Compatible overload (compatible=True) still has mean_g == final_g == drained_g == 0.
-3. Theorem 3 (Snapshot Causality & Work-Coupled Service Timing):
-   - Eliminating completion-time lookahead (snapshot_fixed) prevents CASCADE from
-     qualifying proposals that arrived after service started.
-   - Coupling service duration to actual reorganization work (snapshot_work_coupled)
-     stretches completion times under high contradictory load while preserving exact
-     trace reproducibility.
+These fixtures exercise the declared parent-label policy. They establish neither
+a general glass law nor a cohomology theorem. Work counts depend on the core
+engine revision; the isolated zero-hop calibration supplies the independent base.
 """
 
 from __future__ import annotations
@@ -33,7 +17,7 @@ sys.path.insert(
 )
 
 from cascade_engine import KnowledgeBlock
-from cascade_glass_transition import Arrival
+from cascade_glass_transition import Arrival, calibrate
 from topological_cascade_glass import (
     TopologicalCascadeEngine,
     arrival_trace_v2,
@@ -47,13 +31,11 @@ from topological_cascade_glass import (
 )
 
 
-def test_theorem_1_dependency_propagation_separates_hub_vs_leaf_and_topologies():
-    """In 0-hop mode every node in every topology costs 25 work units.
-    With dependency propagation enabled, flipping the hub of a 12-node star graph
-    propagates across all 11 children (47 work units vs 25 for a leaf), and mean
-    calibration work separates across star, balanced, chain, and diamond."""
+def test_dependency_propagation_separates_hub_vs_leaf_and_topologies():
+    """The star hub adds two metered operations per child to the zero-hop base."""
+    baseline = calibrate(12, "star", 64.0).mean_work
     cal_star_0hop = calibrate_v2(12, "star", 64.0, propagate_dependencies=False)
-    assert set(cal_star_0hop.work_samples) == {25}
+    assert set(cal_star_0hop.work_samples) == {baseline}
 
     cal_star = calibrate_v2(12, "star", 64.0, propagate_dependencies=True)
     cal_balanced = calibrate_v2(12, "balanced", 64.0, propagate_dependencies=True)
@@ -61,11 +43,11 @@ def test_theorem_1_dependency_propagation_separates_hub_vs_leaf_and_topologies()
     cal_diamond = calibrate_v2(12, "diamond", 64.0, propagate_dependencies=True)
 
     # Star hub (concept-0) cascades to 11 spokes; leaves (concept-1..11) cascade to 0.
-    assert cal_star.work_samples[0] == 47
-    assert all(w == 25 for w in cal_star.work_samples[1:])
+    assert cal_star.work_samples[0] == baseline + 2 * 11
+    assert all(w == baseline for w in cal_star.work_samples[1:])
 
-    # Chain root (concept-0) cascades down all 11 descendants sequentially; leaf costs 25.
-    assert cal_chain.work_samples[0] > cal_chain.work_samples[-1] == 25
+    # A chain root traverses descendants; a leaf pays the zero-hop base.
+    assert cal_chain.work_samples[0] > cal_chain.work_samples[-1] == baseline
 
     # Topologies now have distinct mean reorganization work and tau_reorg!
     mean_works = {
@@ -77,11 +59,8 @@ def test_theorem_1_dependency_propagation_separates_hub_vs_leaf_and_topologies()
     assert len(mean_works) == 4
 
 
-def test_theorem_2_trees_always_drain_to_zero_while_diamond_quenches_and_heals():
-    """Single-parent trees (b_1 = 0) cannot sustain multi-parent coboundary frustration,
-    so drained_g == 0 after queue drain. Multi-parent diamond DAGs (b_1 > 0) trap child
-    domains in quenched frustration (drained_g > 0) when roots split, and heal to 0
-    when a root realignment restores premise coherence."""
+def test_selected_trees_drain_and_multi_parent_policy_retains_then_resolves_conflict():
+    """Exercise the explicit parent-disagreement policy on selected fixtures."""
     for tree_topo in ("chain", "star", "balanced"):
         cal = calibrate_v2(6, tree_topo, 64.0)
         trace = arrival_trace_v2(6, tree_topo, 0, 4.0 / cal.tau, 36, compatible=False)
@@ -90,8 +69,8 @@ def test_theorem_2_trees_always_drain_to_zero_while_diamond_quenches_and_heals()
             assert row["drained_backlog"] == 0
             assert row["drained_g"] == 0.0
 
-    # Construct an explicit 3-node diamond {0, 1} -> 2 where root-0 flips to paradigm 'b'
-    # while root-1 stays in paradigm 'a'.
+    # A three-node two-parent DAG is an undirected tree. It still triggers the
+    # programmed policy when parent labels disagree; no graph cycle is required.
     engine = initial_store_v2(3, "diamond", propagate_dependencies=True)
     assert parents_v2(3, "diamond") == ((), (), (0, 1))
     assert glass_fraction_v2(engine) == 0.0
@@ -111,7 +90,7 @@ def test_theorem_2_trees_always_drain_to_zero_while_diamond_quenches_and_heals()
     assert engine.governing_block("concept-0").paradigm == "b"
     assert engine.governing_block("concept-1").paradigm == "a"
 
-    # Concept-2 now has discordant parents (coboundary defect != 0) -> quenched frustration!
+    # The child now has discordant parent labels under the declared policy.
     assert engine.is_premise_frustrated(engine.blocks["anchor-2"]) is True
     assert glass_fraction_v2(engine) > 0.0
 
@@ -164,7 +143,7 @@ def test_compatible_overload_remains_zero_glass_even_on_diamond_dag():
             assert row["drained_g"] == 0.0
 
 
-def test_theorem_3_snapshot_causality_blocks_mid_service_lookahead():
+def test_snapshot_causality_blocks_mid_service_lookahead():
     """Verify that snapshot_fixed prevents a service job started at t=0.001*tau from
     qualifying a stronger proposal that arrives mid-service at t=0.5*tau."""
     cal = calibrate_v2(2, "chain", 64.0)

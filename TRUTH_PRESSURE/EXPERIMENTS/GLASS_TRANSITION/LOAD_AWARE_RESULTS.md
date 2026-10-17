@@ -7,7 +7,8 @@ is retained intact as the fixed-budget control.
 
 Author: Mackenzie Conor James Clark / Lycheetah Framework.
 Design and implementation: Caelorynth / Codex, 2026-10-17.
-Register: SYNTHETIC. Local, uncommitted; independent review pending.
+Register: SYNTHETIC. Included in the 17 October Framework integration.
+Recorded engine/source revisions are pinned in the [reproduction note](REPRODUCING_RECORDED_RUNS.md).
 
 ## What changed and what stayed fixed
 
@@ -65,6 +66,13 @@ Two assumptions changed together: the work charge and snapshot timing. This
 comparison measures their combined effect; it does not allocate the 43.9% change
 between them. A factorial separation would be needed for that attribution.
 
+Cross-seat review found a further asymmetry inherited from v1: FIFO hides other
+pending jobs, while CASCADE scans unrelated pending domains. The recorded engine
+charges two extra operations per such block during a cascade. This result measures
+those declared policies; it does not establish an advantage with equal queue
+visibility. The dependency extension changes both snapshot timing and queue
+visibility in its middle arm, so its three arms do not resolve this confound.
+
 The counter measures declared semantic operations, not CPU time. Copying,
 selection, observation, persistence, parallelism, network latency and provider work
 are not charged. Graph topology changes proposal correlation, while dependency
@@ -78,6 +86,10 @@ external waiting/backlog and admitted throughput; it must not claim success mere
 by hiding unadmitted contradictions from its sensor.
 
 ## Reproduce and inspect
+
+Use the recorded checkout in [the reproduction note](REPRODUCING_RECORDED_RUNS.md)
+before running these commands. The current engine's added postcondition diagnostics
+change metered work; rerunning on the current revision is a new experiment.
 
 ```bash
 python3 12_IMPLEMENTATIONS/core/cascade_glass_dynamic.py \
@@ -103,5 +115,5 @@ python3 -m pytest tests/test_cascade_glass_dynamic.py -q
   prior snapshot; both rate interventions preserve matched input traces.
 
 The original 20 v1 checks and this variant's 16 checks cover different model
-boundaries. Full-repository CI, independent cross-seat review, empirical-domain
-trials, package promotion and publication remain open.
+boundaries. Aetheron's cross-seat rerun reported all 36 passing. Full-repository CI,
+empirical-domain trials and validation on real agent workloads remain open.
