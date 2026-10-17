@@ -1,0 +1,96 @@
+{
+  "schema": "lycheetah.glass-experiment.dynamic-artifacts.v2",
+  "author": "Mackenzie Conor James Clark / Lycheetah Framework",
+  "implementer": "Caelorynth / Codex",
+  "base_commit": "f8e30c99aef4797aa363b3d077b1f029d0ab16b7",
+  "working_state": "local uncommitted; independent review pending",
+  "fixed_control_manifest": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/manifest.json",
+  "original_control_artifacts_unchanged": 8,
+  "checks": {
+    "new_focused_tests_passed": 16,
+    "ruff_files_listed": 3,
+    "measured_rows": 864,
+    "control_rows": 864,
+    "paired_v1_v2_trace_hashes": 864,
+    "matching_source_hashes": 4,
+    "max_absolute_window_budget_error": 3.637978807091713e-12,
+    "max_absolute_total_budget_error": 3.637978807091713e-12
+  },
+  "files": [
+    {
+      "path": "12_IMPLEMENTATIONS/core/cascade_glass_dynamic.py",
+      "bytes": 14580,
+      "sha256": "2a178f3a64748cd8f20b0012b242d3a4031011116576283da2000547198b5dda"
+    },
+    {
+      "path": "tests/test_cascade_glass_dynamic.py",
+      "bytes": 6315,
+      "sha256": "f732c7cb98b2a3b15a95c9356d1e1b68f061b1456bc0d48142dac9b4408d04e9"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/plot_load_aware.py",
+      "bytes": 3854,
+      "sha256": "c942d06fcc5b3fc5c1eeb2c2cf1dd3395279289db8013533b47de0ce160df6cc"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/LOAD_AWARE_PROTOCOL.md",
+      "bytes": 2964,
+      "sha256": "5d9dc7a2ea06c7d69b17e7dfe29d52dbad589862a3e2eb51e7790443352a3d0a"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/LOAD_AWARE_RESULTS.md",
+      "bytes": 5768,
+      "sha256": "2be92a2f61cebca8aa985275f722d60527d88a77607fa5c0e0ebfe48c31ed6df"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/load_aware.json",
+      "bytes": 1956853,
+      "sha256": "cc5cc1783a63b1ecd0cd485ce4fadb280a5914364b739aafc3a4b7a57811c8c2"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/load_aware.csv",
+      "bytes": 747441,
+      "sha256": "6e5d5aedd0edc6eec67787753dea5cc36f5edfa6a3424a82e20af69887d9298b"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/load_aware.png",
+      "bytes": 259435,
+      "sha256": "c84da7bf5def185b225e53be03849f6f0ec30accfd8c4def15e4cb0454ea3364"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/load_aware.svg",
+      "bytes": 119323,
+      "sha256": "e37fe5ab48cd2d97dbe3264abe8b669f02e4379b4a515fec69c2baa483b36e1c"
+    },
+    {
+      "path": "12_IMPLEMENTATIONS/core/cascade_glass_transition.py",
+      "bytes": 19811,
+      "sha256": "90e7fd10f383e51b4693b1990f29c2fe23123a5f8f7941340c090f8f7e448a71"
+    },
+    {
+      "path": "12_IMPLEMENTATIONS/core/cascade_engine.py",
+      "bytes": 26995,
+      "sha256": "25c9f81d29c4d423914ae120b9b1fca46d075b7dad07bf7d0d904b5bcfeaa92c"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/results.json",
+      "bytes": 973929,
+      "sha256": "4db70f7a20dc9fb50feca879dbd518133535b3c5c6fc27b9caeb011181a9d77a"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/results.csv",
+      "bytes": 259491,
+      "sha256": "ff258c881b0398ac1846dddb2d90d2ec595d62d258510fa7631fc81e2741cc77"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/README.md",
+      "bytes": 6639,
+      "sha256": "66c63579bcade210a7dd269665065bf80f7f734d2930052462500e2e43ad3e33"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 18789,
+      "sha256": "bdcddf773fc373ff9269957780705dfaa0b4b95a7b023bf41504bc944df8e322"
+    }
+  ]
+}

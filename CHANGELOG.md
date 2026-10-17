@@ -9,6 +9,31 @@ history, which was the only changelog until now.
 
 ## [Unreleased]
 
+### Load-aware snapshot/commit falsifier — 17 October 2026
+
+- Added a separate measured-work CASCADE/FIFO model with frozen service snapshots,
+  delayed partial commits, preservation of later arrivals, and explicit in-flight
+  work accounting. The earlier fixed-service source/data remain the control.
+- Ran a second matched 864-row sweep. The observed CASCADE conflict-reduction
+  advantage shrinks from 9.80 to 5.49 percentage points under the combined timing
+  and cost correction; this remains synthetic evidence, not a validated glass law.
+- Sixteen focused checks passed, including a deliberately false work receipt and
+  a cut-commit witness. Added raw JSON/CSV, comparison figure and result limits.
+- Local and uncommitted; independent review and publication remain pending.
+
+### CASCADE synthetic glass-transition experiment — 17 October 2026
+
+- Added an executable comparison of CASCADE batch adjudication and FIFO pairwise
+  adjudication, with independent work calibration, a full arrival/processing
+  intervention grid, compatible-overload controls and separate drain recovery.
+- Recorded 864 synthetic runs, a fixed protocol, complete JSON/CSV rows, source
+  hashes and a standalone scientific figure. Twenty focused tests passed, including
+  deliberately disabled actuation and calibration failure witnesses.
+- The result is a finite fixed-service model. It does not validate a general glass
+  law, real-time governor, factual truth or a sharp phase transition. Loaded work
+  exceeds the isolated calibration; the experiment note names that next model hinge.
+- Local and uncommitted; external/cross-seat review and publication remain pending.
+
 ### Autonomous Agent Tools Landfall — 17 October 2026
 
 - **Lycheetah Action Gateway (`lycheetah.assurance` & `lycheetah-guard` CLI)**:

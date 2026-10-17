@@ -1,0 +1,72 @@
+{
+  "schema": "lycheetah.glass-experiment.artifacts.v1",
+  "author": "Mackenzie Conor James Clark / Lycheetah Framework",
+  "implementer": "Caelorynth / Codex",
+  "base_commit": "f8e30c99aef4797aa363b3d077b1f029d0ab16b7",
+  "working_state": "local uncommitted candidate; independent cross-seat review pending",
+  "checks": {
+    "focused_tests_passed": 20,
+    "ruff_files_listed": 3,
+    "ruff_version": "ruff 0.17.1",
+    "primary_json_rows": 864,
+    "primary_csv_rows": 864,
+    "matched_pairs": 432,
+    "source_identities_read_back": 3
+  },
+  "files": [
+    {
+      "path": "12_IMPLEMENTATIONS/core/cascade_glass_transition.py",
+      "bytes": 19811,
+      "sha256": "90e7fd10f383e51b4693b1990f29c2fe23123a5f8f7941340c090f8f7e448a71"
+    },
+    {
+      "path": "tests/test_cascade_glass_transition.py",
+      "bytes": 7060,
+      "sha256": "7de444a58615a810858312c4bcbd531b003dd109f34e8ae6d5e28ce80b66ebe6"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/PROTOCOL.md",
+      "bytes": 5711,
+      "sha256": "2f7760fb9924cbf1d3861ec210e9082e1900b45136b2c4fc3cce07728ab36ea2"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/README.md",
+      "bytes": 6639,
+      "sha256": "66c63579bcade210a7dd269665065bf80f7f734d2930052462500e2e43ad3e33"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/plot_results.py",
+      "bytes": 3948,
+      "sha256": "babe27e7efb885a18ec7904afba898fbc1c444603017282144e84a6245a71dd7"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/results.json",
+      "bytes": 973929,
+      "sha256": "4db70f7a20dc9fb50feca879dbd518133535b3c5c6fc27b9caeb011181a9d77a"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/results.csv",
+      "bytes": 259491,
+      "sha256": "ff258c881b0398ac1846dddb2d90d2ec595d62d258510fa7631fc81e2741cc77"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/results.png",
+      "bytes": 215812,
+      "sha256": "b4d65d2db9746a15092dab8dd1722a90676bf2230d0db27e6888e80efa8d10c3"
+    },
+    {
+      "path": "TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/results.svg",
+      "bytes": 111785,
+      "sha256": "eede572a65ac984e62ab5ee79cc49df45f7edd146e00ca7312be9d7acf861384"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 18789,
+      "sha256": "bdcddf773fc373ff9269957780705dfaa0b4b95a7b023bf41504bc944df8e322"
+    }
+  ],
+  "documentation_refresh": {
+    "reason": "Link the separately recorded v2 result and add its changelog entry",
+    "original_source_protocol_results_and_figures_unchanged": 8
+  }
+}
