@@ -726,8 +726,15 @@ class SovereignPipeline:
     ) -> RegulationCandidate:
         """
         Actuator for `regulate`: invokes the caller-supplied correction policy on
-        the failed evaluation and validates the returned candidate inputs.
+        an isolated copy of the failed evaluation, verifies the pipeline's acceptance
+        contract (`coherence_floor`, `drift_threshold`) was not mutated by the callback,
+        and validates the returned candidate inputs.
         """
+        orig_floor = self.coherence_floor
+        orig_drift = self.drift_threshold
+        orig_aura_floor = self.aura_checker.coherence_floor
+
+        isolated_eval = copy.deepcopy(evaluation)
         isolated_input = RegulationCandidate(
             knowledge_blocks=self._clone_blocks(candidate.knowledge_blocks),
             decision_text=str(candidate.decision_text),
@@ -742,15 +749,32 @@ class SovereignPipeline:
         try:
             if arity >= 4:
                 raw_out = policy(
-                    evaluation,
+                    isolated_eval,
                     isolated_input.knowledge_blocks,
                     isolated_input.decision_text,
                     isolated_input.context,
                 )
             else:
-                raw_out = policy(evaluation, isolated_input)
+                raw_out = policy(isolated_eval, isolated_input)
         except Exception as exc:
+            object.__setattr__(self, "coherence_floor", orig_floor)
+            object.__setattr__(self, "drift_threshold", orig_drift)
+            object.__setattr__(self.aura_checker, "coherence_floor", orig_aura_floor)
             raise _PolicyExecutionError("POLICY_FAILURE", f"Policy raised {type(exc).__name__}: {exc}") from exc
+
+        if (
+            self.coherence_floor != orig_floor
+            or self.drift_threshold != orig_drift
+            or self.aura_checker.coherence_floor != orig_aura_floor
+        ):
+            object.__setattr__(self, "coherence_floor", orig_floor)
+            object.__setattr__(self, "drift_threshold", orig_drift)
+            object.__setattr__(self.aura_checker, "coherence_floor", orig_aura_floor)
+            raise _PolicyExecutionError(
+                "POLICY_FAILURE",
+                "Policy callback attempted to redefine acceptance contract "
+                "(coherence_floor or drift_threshold)",
+            )
 
         if isinstance(raw_out, RegulationCandidate):
             next_candidate = raw_out

@@ -430,3 +430,53 @@ class TestSovereignPipelineRegulation:
             with pytest.raises(ValueError):
                 pipe.regulate(_blocks(), GOOD_TEXT, policy=deterministic_repair_policy, budget=bad_budget)
 
+    @pytest.mark.active
+    def test_policy_cannot_mutate_acceptance_thresholds_or_recorded_evaluations(self):
+        """
+        Regression test for Caelorynth [#17]:
+        1. A policy callback that mutates `pipe.coherence_floor` or `pipe.drift_threshold`
+           must be refused with `POLICY_FAILURE`, and the pipeline's thresholds restored.
+        2. A policy callback that mutates its `evaluation` argument must not corrupt the
+           recorded `evaluations` trace.
+        """
+        pipe = SovereignPipeline(coherence_floor=0.99, drift_threshold=0.01)
+
+        def weaken(e: PassEvaluation, c: RegulationCandidate) -> RegulationCandidate:
+            # Attempt to corrupt recorded evaluation trace in-place
+            e.passed = True
+            e.failed_checks.clear()
+            e.coherence_floor = 0.0
+            # Attempt to lower pipeline goalposts mid-regulation
+            pipe.coherence_floor = 0.0
+            pipe.drift_threshold = 1.0
+            c.decision_text += " "
+            return c
+
+        reg = pipe.regulate([], "Guarantee absolute obedience forever.", policy=weaken, budget=2)
+        assert reg.accepted is False
+        assert reg.stop_reason == "POLICY_FAILURE"
+        assert "redefine acceptance contract" in (reg.error_detail or "")
+        assert reg.coherence_floor == pytest.approx(0.99)
+        assert reg.drift_threshold == pytest.approx(0.01)
+        assert pipe.coherence_floor == pytest.approx(0.99)
+        assert pipe.drift_threshold == pytest.approx(0.01)
+
+        # Verify the recorded initial evaluation in `reg.evaluations[0]` was not mutated
+        assert len(reg.evaluations) == 1
+        assert reg.evaluations[0].passed is False
+        assert len(reg.evaluations[0].failed_checks) > 0
+        assert reg.evaluations[0].coherence_floor == pytest.approx(0.99)
+        assert reg.evaluations[0].drift_threshold == pytest.approx(0.01)
+
+        # Also verify evaluation isolation when policy does NOT touch thresholds
+        def mutate_eval_only(e: PassEvaluation, c: RegulationCandidate) -> RegulationCandidate:
+            e.passed = True
+            e.failed_checks.clear()
+            return c
+
+        reg2 = pipe.regulate([], "Guarantee absolute obedience forever.", policy=mutate_eval_only, budget=2)
+        assert reg2.accepted is False
+        assert reg2.stop_reason == "BUDGET_EXHAUSTED"
+        assert all(ev.passed is False and len(ev.failed_checks) > 0 for ev in reg2.evaluations)
+
+
