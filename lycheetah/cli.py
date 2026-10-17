@@ -575,3 +575,127 @@ def assure_cli():
     return main()
 
 
+def sovereign_cli(argv: list[str] | None = None):
+    """lycheetah-sovereign — unified Sovereign Execution Harness CLI.
+
+    Usage:
+        lycheetah-sovereign demo [--json]
+    """
+    import argparse
+    import json
+    import tempfile
+
+    from .compaction import AgentStatePacket, CompactionShield
+    from .consensus import ConsensusArena
+    from .sovereign_harness import SovereignExecutionHarness
+
+    raw_args = list(sys.argv[1:] if argv is None else argv)
+    parser = argparse.ArgumentParser(
+        prog="lycheetah-sovereign",
+        description=(
+            "Lycheetah Sovereign Execution Harness: binds ConsensusArena, CompactionShield, "
+            "and ActionGateway under single-use cryptographic permits."
+        ),
+    )
+    sub = parser.add_subparsers(dest="command", required=True)
+    p_demo = sub.add_parser(
+        "demo",
+        help="Run a local end-to-end demonstration of valid execution vs. blocked replay/tampering",
+    )
+    p_demo.add_argument("--json", action="store_true", help="Output structured JSON report")
+    args = parser.parse_args(raw_args)
+
+    if args.command == "demo":
+        with tempfile.TemporaryDirectory(prefix="lycheetah_sovereign_demo_") as tmp_dir:
+            arena = ConsensusArena(anchor=[1.0, 0.0, 0.0, 0.0], grey_alert_threshold=1)
+            arena.add_agent("architect", [0.98, 0.12, 0.05, 0.0], claim="Schema verified")
+            arena.add_agent("security", [0.96, -0.10, 0.08, 0.0], claim="Keys pinned")
+            arena.add_agent("sre-lead", [0.97, 0.08, -0.06, 0.0], claim="Rollback ready")
+            arena.add_agent("qa-auditor", [0.95, -0.05, -0.09, 0.0], claim="Tests green")
+            arena.add_agent("rogue-node", [0.05, 0.95, 0.30, 0.0], claim="Bypass checks")
+            verdict = arena.deliberate()
+
+            packet = AgentStatePacket(
+                id="pkt-deploy-001",
+                purpose="Deploy verified schema migration",
+                claim="Migration is reversible and witnessed by 4/5 healthy quorum",
+                risk="HIGH",
+                invariants=[{"id": "I5", "text": "reversible_migration_only"}],
+                authority=[
+                    {"id": "mac-founder", "scope": "exec:deploy", "text": "Founder approval"}
+                ],
+                recovery=[{"id": "rec-001", "text": "restore_snapshot_001 on db-primary"}],
+            )
+            wire = CompactionShield.compact(packet)
+
+            action = {
+                "tool": "db.migrate",
+                "target": "schema_v2",
+                "side_effect": True,
+            }
+
+            harness = SovereignExecutionHarness(tmp_dir)
+            permit = harness.issue_permit(
+                permit_id="perm-demo-001",
+                actor="architect",
+                authority_id="mac-founder",
+                allowed_scopes=("exec:deploy", "exec:check"),
+                bound_scope="exec:deploy",
+                state_version="state-v42",
+                action=action,
+                consensus_verdict=verdict,
+                reference_packet=packet,
+                issued_at=1_700_000_000,
+                ttl_seconds=300,
+            )
+
+            valid_receipt = harness.evaluate_and_execute(
+                permit=permit,
+                consensus=verdict,
+                reference_packet=packet,
+                candidate_packet=wire,
+                live_action=action,
+                live_scope="exec:deploy",
+                current_state_version="state-v42",
+                executor=lambda: {"status": "success", "migrated": "schema_v2"},
+                now=1_700_000_050,
+            )
+
+            replay_receipt = harness.evaluate_and_execute(
+                permit=permit,
+                consensus=verdict,
+                reference_packet=packet,
+                candidate_packet=wire,
+                live_action=action,
+                live_scope="exec:deploy",
+                current_state_version="state-v42",
+                executor=lambda: {"status": "success", "migrated": "schema_v2"},
+                now=1_700_000_060,
+            )
+
+            report = {
+                "valid_execution": valid_receipt.to_dict(),
+                "replay_attempt": replay_receipt.to_dict(),
+            }
+            if args.json:
+                print(json.dumps(report, indent=2))
+            else:
+                cp_gen = (
+                    valid_receipt.gateway_result.checkpoint_generation
+                    if valid_receipt.gateway_result
+                    else None
+                )
+                print("=== LYCHEETAH SOVEREIGN EXECUTION HARNESS DEMO ===")
+                print(
+                    f"1. Valid Run   -> accepted={valid_receipt.accepted} "
+                    f"status={valid_receipt.status} stop_reason={valid_receipt.stop_reason} "
+                    f"cp_gen={cp_gen}"
+                )
+                print(
+                    f"2. Replay Test -> accepted={replay_receipt.accepted} "
+                    f"status={replay_receipt.status} stop_reason={replay_receipt.stop_reason} "
+                    f"provider_called={replay_receipt.provider_called}"
+                )
+
+
+

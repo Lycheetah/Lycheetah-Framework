@@ -79,4 +79,23 @@ def sol_assess(text: str, context: str = "") -> str:
     return SolSelfProtocol().assess_full(text, context)
 
 
-__all__ = ["__version__", "check", "sol_assess"]
+from .sovereign_harness import (  # noqa: E402
+    EPISTEMIC_BOUNDARIES,
+    HARNESS_SCHEMA_VERSION,
+    PermitNonceStore,
+    SovereignExecutionHarness,
+    SovereignExecutionPermit,
+    SovereignWitnessReceipt,
+)
+
+__all__ = [
+    "EPISTEMIC_BOUNDARIES",
+    "HARNESS_SCHEMA_VERSION",
+    "PermitNonceStore",
+    "SovereignExecutionHarness",
+    "SovereignExecutionPermit",
+    "SovereignWitnessReceipt",
+    "__version__",
+    "check",
+    "sol_assess",
+]
