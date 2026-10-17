@@ -9,6 +9,27 @@ history, which was the only changelog until now.
 
 ## [Unreleased]
 
+### Autonomous Agent Tools Landfall — 17 October 2026
+
+- **Lycheetah Action Gateway (`lycheetah.assurance` & `lycheetah-guard` CLI)**:
+  - Added deterministic, evidence-capped tool gating for autonomous agents (`ALLOW`, `REVIEW`, `BLOCK`).
+  - Implemented durable SQLite WAL ledger (`PersistentActionGuard`) preventing replay attacks, duplicate executions, and unapproved mutations.
+  - Added monotonic Ed25519-signed external checkpoint authority (`CheckpointAuthority`, `CheckpointStore`, `make_server`) with loopback proxy bypass.
+  - Added fail-closed workflow wrapper (`CheckpointedWorkflow`) anchoring all actions in verifiable audit chains.
+  - Added `lycheetah-guard` CLI with subcommands: `run`, `check`, `status`, `authority`, and `mcp`.
+  - Added 10 comprehensive unit and integration tests (`tests/test_assurance_action_guard.py`) bringing assurance test suite to 182 tests.
+  - Added live 4-scenario interactive demonstration (`examples/action_guard_demo.py`).
+
+- **Lycheetah Context Compaction Shield (`lycheetah.compaction` & `lycheetah-compact` CLI)**:
+  - Promoted Tier-1.1 Lamague reversible semantic packet codec (`03_LAMAGUE_L1`) into the primary `lycheetah.compaction` package.
+  - Guaranteed 36/36 exact round-trip preservation of 10 critical accountability fields (`purpose`, `claim`, `unknowns`, `invariants`, `authority`, `participants`, `affectedParties`, `dissent`, `valueFlow`, `recovery`).
+  - Added SHA-256 `critical_hash` allowing third parties to mathematically verify zero loss of safety constraints under context window compaction.
+  - Implemented fail-closed invariant check refusing to compact or execute high-risk plans that carry protected unknowns without an explicit recovery/rollback anchor.
+  - Added ergonomic developer tools: `AgentStatePacket`, `CompactionShield`, and stateful `ContextProtector`.
+  - Added `lycheetah-compact` CLI supporting `encode`, `decode`, `hash`, `check`, `verify`, and `build-codebook`.
+  - Added 24 unit and integration tests (`tests/test_compaction.py`) bringing repository test suite to 206 tests.
+  - Added live 3-part interactive demonstration (`examples/compaction_shield_demo.py`) proving anti-amnesia protection under LLM summarization.
+
 ### Public integration and build catalogue — 4 October 2026
 
 - Added thirty-one proposed tools, games and interactions in a seven-part Build Catalogue, with stable IDs, source boundaries, first slices and observable acceptance. No new game or tool prototype is implied by these briefs.

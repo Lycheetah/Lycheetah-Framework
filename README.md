@@ -120,8 +120,46 @@ Full records: [`EXTERNAL_VALIDATION`](33_APPLICATIONS/EXTERNAL_VALIDATION_2026-0
 
 ## Quick start
 
+Install from source or PyPI:
+
 ```bash
-pip install lycheetah-framework
+git clone https://github.com/Lycheetah/Lycheetah-Framework.git
+cd Lycheetah-Framework
+pip install -e .
+```
+
+### 1. Action Gateway (`lycheetah-guard`)
+Intercept, gate, and cryptographically audit autonomous agent tool & OS executions with a durable SQLite WAL ledger and Ed25519-signed checkpoints:
+
+```bash
+# Check policy disposition on an action (dry-run)
+lycheetah-guard check --action '{"tool":"os.command","command":["rm","-rf","/"]}'
+
+# Gate an execution (blocked if violating safety invariants)
+lycheetah-guard run -- echo "Safe task execution"
+
+# Run interactive 4-scenario demonstration
+python3 examples/action_guard_demo.py
+```
+
+### 2. Context Compaction Shield (`lycheetah-compact`)
+Provably compress long-running agent context without losing negative invariants, blind spots (unknowns), human dissents, or rollback procedures:
+
+```bash
+# Compress structured agent state to compact wire format
+lycheetah-compact encode session_state.json
+
+# Verify zero-loss integrity and invariant survival
+lycheetah-compact verify reference.json candidate_summary.json
+
+# Run interactive 3-part agent amnesia demonstration
+python3 examples/compaction_shield_demo.py
+```
+
+### 3. Constitutional Alignment Checker (`lycheetah-check`)
+Check AI-generated text against constitutional invariants and TRI-AXIAL metrics (TES, VTR, PAI):
+
+```bash
 lycheetah-check "Your AI-generated text here"
 ```
 
