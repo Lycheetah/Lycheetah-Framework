@@ -1,0 +1,11 @@
+{
+  "execution": "COMPLETED_VERIFIED",
+  "observations": {
+    "sample.txt": "MATCH",
+    "notes/research.txt": "MATCH"
+  },
+  "witness": "ANCHORED",
+  "check": "MATCH",
+  "auto_retry": false,
+  "evidence_type": "POST_CRASH_OBSERVATION_NOT_COMMIT_ATTESTATION"
+}

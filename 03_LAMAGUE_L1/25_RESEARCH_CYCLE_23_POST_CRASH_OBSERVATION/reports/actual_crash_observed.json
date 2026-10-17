@@ -1,0 +1,11 @@
+{
+  "execution": "FAILED_OR_PARTIAL",
+  "observations": {
+    "sample.txt": "MATCH",
+    "notes/research.txt": "ABSENT"
+  },
+  "witness": "ANCHORED",
+  "check": "MATCH",
+  "auto_retry": false,
+  "evidence_type": "POST_CRASH_OBSERVATION_NOT_COMMIT_ATTESTATION"
+}

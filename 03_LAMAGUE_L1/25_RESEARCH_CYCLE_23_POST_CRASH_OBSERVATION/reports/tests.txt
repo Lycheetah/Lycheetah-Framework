@@ -1,0 +1,13 @@
+test_crash (test_cycle23.Cycle23Tests.test_crash) ... ok
+test_duplicate (test_cycle23.Cycle23Tests.test_duplicate) ... ok
+test_grant_tamper (test_cycle23.Cycle23Tests.test_grant_tamper) ... ok
+test_normal (test_cycle23.Cycle23Tests.test_normal) ... ok
+test_rollback (test_cycle23.Cycle23Tests.test_rollback) ... ok
+test_tamper (test_cycle23.Cycle23Tests.test_tamper) ... ok
+test_truncated (test_cycle23.Cycle23Tests.test_truncated) ... ok
+test_unapproved (test_cycle23.Cycle23Tests.test_unapproved) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 3.294s
+
+OK
