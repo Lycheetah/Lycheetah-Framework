@@ -419,6 +419,150 @@ class TestPermitBindingContracts:
         )
         assert r_wrong_auth.accepted is False
         assert r_wrong_auth.stop_reason == "AUTHORITY_NOT_IN_PACKET"
+        rec_wrong = harness.nonce_store.get_permit_record("perm-wrong-auth")
+        assert rec_wrong is not None and rec_wrong["status"] == "ISSUED"
+
+    def test_empty_malformed_and_read_only_authority_grants_refused_without_nonce_burn(
+        self, tmp_path: Path
+    ):
+        harness = SovereignExecutionHarness(tmp_path)
+        verdict = _make_healthy_verdict()
+        action = _make_action()
+
+        # 1. Counterexample #21-A: packet.authority=[] with authority_id='unlisted-approver'
+        pkt_empty = _make_reference_packet(risk="HIGH")
+        pkt_empty.authority = []
+        permit_empty = harness.issue_permit(
+            permit_id="perm-empty-auth",
+            actor="architect",
+            authority_id="unlisted-approver",
+            allowed_scopes=("exec:deploy",),
+            bound_scope="exec:deploy",
+            state_version="s1",
+            action=action,
+            consensus_verdict=verdict,
+            reference_packet=pkt_empty,
+            issued_at=1_700_000_000,
+            ttl_seconds=300,
+        )
+        r_empty = harness.evaluate_and_execute(
+            permit=permit_empty,
+            consensus=verdict,
+            reference_packet=pkt_empty,
+            candidate_packet=pkt_empty,
+            live_action=action,
+            live_scope="exec:deploy",
+            current_state_version="s1",
+            executor=lambda: pytest.fail("must not run on empty packet.authority"),
+            now=1_700_000_010,
+        )
+        assert r_empty.accepted is False
+        assert r_empty.stop_reason == "AUTHORITY_NOT_IN_PACKET"
+        assert r_empty.provider_called is False
+        rec_empty = harness.nonce_store.get_permit_record("perm-empty-auth")
+        assert rec_empty is not None and rec_empty["status"] == "ISSUED"
+
+        # 2. Counterexample #21-B: holder authorized only for exec:read cannot authorize exec:deploy
+        pkt_readonly = _make_reference_packet(risk="HIGH")
+        pkt_readonly.authority = [
+            {"id": "mac-founder", "scope": "exec:read", "text": "Read-only human grant"}
+        ]
+        permit_readonly = harness.issue_permit(
+            permit_id="perm-readonly-escalate",
+            actor="architect",
+            authority_id="mac-founder",
+            allowed_scopes=("exec:deploy",),
+            bound_scope="exec:deploy",
+            state_version="s1",
+            action=action,
+            consensus_verdict=verdict,
+            reference_packet=pkt_readonly,
+            issued_at=1_700_000_000,
+            ttl_seconds=300,
+        )
+        r_readonly = harness.evaluate_and_execute(
+            permit=permit_readonly,
+            consensus=verdict,
+            reference_packet=pkt_readonly,
+            candidate_packet=pkt_readonly,
+            live_action=action,
+            live_scope="exec:deploy",
+            current_state_version="s1",
+            executor=lambda: pytest.fail("must not escalate exec:read grant to exec:deploy"),
+            now=1_700_000_010,
+        )
+        assert r_readonly.accepted is False
+        assert r_readonly.stop_reason == "AUTHORITY_SCOPE_MISMATCH"
+        assert r_readonly.provider_called is False
+        rec_ro = harness.nonce_store.get_permit_record("perm-readonly-escalate")
+        assert rec_ro is not None and rec_ro["status"] == "ISSUED"
+
+        # 3. Blank/whitespace-only scope grant or malformed candidate authority entry must refuse without nonce burn
+        pkt_blank_scope = _make_reference_packet(risk="HIGH")
+        pkt_blank_scope.authority = [
+            {"id": "mac-founder", "scope": "   ", "text": "Blank scope grant"}
+        ]
+        permit_malformed = harness.issue_permit(
+            permit_id="perm-malformed-auth",
+            actor="architect",
+            authority_id="mac-founder",
+            allowed_scopes=("exec:deploy",),
+            bound_scope="exec:deploy",
+            state_version="s1",
+            action=action,
+            consensus_verdict=verdict,
+            reference_packet=pkt_blank_scope,
+            issued_at=1_700_000_000,
+            ttl_seconds=300,
+        )
+        r_malformed = harness.evaluate_and_execute(
+            permit=permit_malformed,
+            consensus=verdict,
+            reference_packet=pkt_blank_scope,
+            candidate_packet=pkt_blank_scope,
+            live_action=action,
+            live_scope="exec:deploy",
+            current_state_version="s1",
+            executor=lambda: pytest.fail("must not run on blank-scope authority entry"),
+            now=1_700_000_010,
+        )
+        assert r_malformed.accepted is False
+        assert r_malformed.stop_reason == "AUTHORITY_NOT_IN_PACKET"
+        assert r_malformed.provider_called is False
+        rec_mal = harness.nonce_store.get_permit_record("perm-malformed-auth")
+        assert rec_mal is not None and rec_mal["status"] == "ISSUED"
+
+        # 4. Explicit low-risk no-authority execution still works when authority_id=None
+        pkt_low = _make_reference_packet(risk="LOW")
+        pkt_low.authority = []
+        low_action = {"tool": "metrics.read", "target": "health", "side_effect": False}
+        permit_low = harness.issue_permit(
+            permit_id="perm-low-no-auth",
+            actor="architect",
+            authority_id=None,
+            allowed_scopes=("exec:read",),
+            bound_scope="exec:read",
+            state_version="s1",
+            action=low_action,
+            consensus_verdict=verdict,
+            reference_packet=pkt_low,
+            issued_at=1_700_000_000,
+            ttl_seconds=300,
+        )
+        r_low = harness.evaluate_and_execute(
+            permit=permit_low,
+            consensus=verdict,
+            reference_packet=pkt_low,
+            candidate_packet=pkt_low,
+            live_action=low_action,
+            live_scope="exec:read",
+            current_state_version="s1",
+            executor=lambda: {"status": "success", "ok": True},
+            now=1_700_000_010,
+        )
+        assert r_low.accepted is True
+        assert r_low.stop_reason == "EXECUTED"
+        assert r_low.provider_called is True
 
 
 class TestConsensusCompactionAndGatewayFailures:

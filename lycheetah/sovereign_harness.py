@@ -36,6 +36,9 @@ Epistemic & Scientific Boundaries
   reasoning.
 - `SovereignWitnessReceipt` proves local enforcement across the configured
   harness and SQLite ledgers; it is not an OS-kernel sandbox.
+- `authority_id` and `packet.authority` validate declared packet grant metadata
+  and exact scope binding; identity strings alone do not establish externally
+  authenticated human approval.
 """
 
 from __future__ import annotations
@@ -72,6 +75,7 @@ EPISTEMIC_BOUNDARIES: tuple[str, ...] = (
     "zero_h1_proves_pairwise_vector_agreement_not_factual_correctness",
     "compaction_shield_proves_10_accountability_fields_not_lossless_reasoning",
     "sovereign_permit_binds_local_gateway_and_nonce_ledger_not_os_kernel",
+    "declared_authority_grants_validate_packet_scope_binding_not_external_identity_auth",
 )
 
 HarnessStatus = Literal["SUCCEEDED", "FAILED", "UNKNOWN", "DENIED", "BLOCKED"]
@@ -438,16 +442,44 @@ class SovereignExecutionHarness:
             return None, str(exc)
 
     @staticmethod
-    def _extract_authorized_holders(packet: AgentStatePacket) -> set[str]:
-        """Extract declared authority holders from `AgentStatePacket.authority`."""
-        holders: set[str] = set()
+    def _extract_authority_grants(packet: AgentStatePacket) -> dict[str, set[str]]:
+        """Extract typed `{holder_id: {allowed_scope, ...}}` grants from `packet.authority`.
+
+        Only entries that specify both a non-empty holder identifier (`id`, `holder`,
+        `approver`, `authority_id`, or `actor`) and an explicit non-empty `scope` (str)
+        or `scopes` / `allowed_scopes` (sequence of str) are usable grants. Malformed or
+        scopeless entries grant nothing.
+        """
+        grants: dict[str, set[str]] = {}
+        if not isinstance(packet.authority, list):
+            return grants
         for entry in packet.authority:
-            if isinstance(entry, dict):
-                for key in ("holder", "id", "approver", "authority_id", "actor"):
-                    val = entry.get(key)
-                    if isinstance(val, str) and val.strip():
-                        holders.add(val.strip())
-        return holders
+            if not isinstance(entry, dict):
+                continue
+            holders: list[str] = []
+            for key in ("holder", "id", "approver", "authority_id", "actor"):
+                val = entry.get(key)
+                if isinstance(val, str) and val.strip():
+                    holders.append(val.strip())
+            if not holders:
+                continue
+
+            entry_scopes: set[str] = set()
+            raw_scope = entry.get("scope")
+            if isinstance(raw_scope, str) and raw_scope.strip():
+                entry_scopes.add(raw_scope.strip())
+            for list_key in ("scopes", "allowed_scopes"):
+                raw_list = entry.get(list_key)
+                if isinstance(raw_list, (list, tuple, set)):
+                    for item in raw_list:
+                        if isinstance(item, str) and item.strip():
+                            entry_scopes.add(item.strip())
+            if not entry_scopes:
+                continue
+
+            for h in holders:
+                grants.setdefault(h, set()).update(entry_scopes)
+        return grants
 
     def _build_receipt(
         self,
@@ -826,26 +858,38 @@ class SovereignExecutionHarness:
                 gateway_result=None,
             )
 
-        authorized_holders = self._extract_authorized_holders(cand_obj)
-        if (
-            permit.authority_id is not None
-            and authorized_holders
-            and permit.authority_id not in authorized_holders
-        ):
-            return self._build_receipt(
-                accepted=False,
-                status="DENIED",
-                stop_reason="AUTHORITY_NOT_IN_PACKET",
-                provider_called=False,
-                permit=permit,
-                live_action_hash=live_act_hash,
-                live_scope=live_scope,
-                live_state_version=current_state_version,
-                evaluated_at=eval_now,
-                consensus_summary=consensus_summary,
-                compaction_summary=compaction_summary,
-                gateway_result=None,
-            )
+        authority_grants = self._extract_authority_grants(cand_obj)
+        if permit.authority_id is not None:
+            if permit.authority_id not in authority_grants:
+                return self._build_receipt(
+                    accepted=False,
+                    status="DENIED",
+                    stop_reason="AUTHORITY_NOT_IN_PACKET",
+                    provider_called=False,
+                    permit=permit,
+                    live_action_hash=live_act_hash,
+                    live_scope=live_scope,
+                    live_state_version=current_state_version,
+                    evaluated_at=eval_now,
+                    consensus_summary=consensus_summary,
+                    compaction_summary=compaction_summary,
+                    gateway_result=None,
+                )
+            if live_scope not in authority_grants[permit.authority_id]:
+                return self._build_receipt(
+                    accepted=False,
+                    status="DENIED",
+                    stop_reason="AUTHORITY_SCOPE_MISMATCH",
+                    provider_called=False,
+                    permit=permit,
+                    live_action_hash=live_act_hash,
+                    live_scope=live_scope,
+                    live_state_version=current_state_version,
+                    evaluated_at=eval_now,
+                    consensus_summary=consensus_summary,
+                    compaction_summary=compaction_summary,
+                    gateway_result=None,
+                )
 
         # Pre-check gateway policy disposition BEFORE consuming the single-use permit
         disposition, _findings = self.gateway.evaluate_policy(
