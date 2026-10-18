@@ -9,6 +9,18 @@ history, which was the only changelog until now.
 
 ## [Unreleased]
 
+### LAMAGUE language guide and synthesis — 18 October 2026
+
+- Replaced the language folder's mixed historical introduction with a current
+  guide to its formal, visual, spoken, conversational, packet and runtime lines.
+- Added `03_LAMAGUE_L1/LAMAGUE_SYNTHESIS.md`, connecting the root canon,
+  operator contracts, glyphs and seals, dialogue and perspective, compression,
+  model-decoding pilot, temporal evidence and the wider research extensions.
+- Distinguished dated software results, the operator-run pilot, open defects
+  and unrun human studies; removed unsupported production/universal-validation
+  claims from the folder's entry point. Linked the full language from the main
+  README and SXP-L guide. Documentation only; original releases are unchanged.
+
 ### Core engine reading guide — 18 October 2026
 
 - Added `12_IMPLEMENTATIONS/core/README.md`, explaining all 29 modules by job,

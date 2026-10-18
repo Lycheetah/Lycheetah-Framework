@@ -13,6 +13,11 @@ The ambition: meaning should survive the journey between minds, and losses
 should be visible. Current evidence covers restricted software behaviour;
 human comprehension and fluent speech remain research questions.
 
+SXP-L is one part of the wider language programme. Read the
+[LAMAGUE guide](../README.md) and [full synthesis](../LAMAGUE_SYNTHESIS.md) for
+the formal CORE, native glyphs, spoken encoding, packet codec, runtime research
+and the distinctions between their grammars and evidence.
+
 | Read or run | Purpose |
 |---|---|
 | [Current v2.0 source](v2.0/README.md) | Four-format comprehension instrument and reproducibility commands |

@@ -23,6 +23,7 @@ the first time. Those results narrowed its claims; the measurements remain below
 | ▶ **Try it in your browser** | [Alignment Playground](https://lycheetah.github.io/Lycheetah-Framework/playground.html) |
 | ⌨ **Run it on your machine** | [Quick start](#quick-start) · [command-line tools](#the-command-line-tools) |
 | 🧪 **Explore the latest research** | [Earned Trust](papers/agent-safety/earned-trust/README.md) · [Hybrid Gateway](papers/ai-futures/hybrid-gateway/README.md) · [SXP-L](03_LAMAGUE_L1/26_SXP_L_RESEARCH/README.md) |
+| 📖 **Explore the whole LAMAGUE language** | [Language guide](03_LAMAGUE_L1/README.md) · [Synthesis: formal, visual, spoken and conversational lines](03_LAMAGUE_L1/LAMAGUE_SYNTHESIS.md) |
 | 📏 **See what it can and cannot do** | [Read this first](#read-this-first) · [capability map](33_APPLICATIONS/README.md) |
 | 🧪 **Try to break it** | [Counter-Codex](28_DEFENSE/COUNTER_CODEX.md) · [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md) |
 | 🇳🇿 **New Zealand data sovereignty** | [One standard, the same rights for every citizen](23_NZ_AI_GOVERNANCE/DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md) |
