@@ -68,10 +68,16 @@ SPEC_CONSTANTS = {
 #: reported "NO DIVERGENCE DETECTED" while checking nothing. These are the bindings
 #: that actually exist; add a row when a constant gains a home in code.
 DRIFT_CHECKS = [
-    ("lambda_compress", "12_IMPLEMENTATIONS/core/chrysopoeia_engine.py",
-     r"LAMBDA_COMPRESS\s*=\s*([0-9]*\.?[0-9]+)"),
-    ("truth_pressure_critical", "12_IMPLEMENTATIONS/core/calibrate_master_equation.py",
-     r"pi_threshold\s*:\s*float\s*=\s*([0-9]*\.?[0-9]+)"),
+    (
+        "lambda_compress",
+        "12_IMPLEMENTATIONS/core/chrysopoeia_engine.py",
+        r"LAMBDA_COMPRESS\s*=\s*([0-9]*\.?[0-9]+)",
+    ),
+    (
+        "truth_pressure_critical",
+        "12_IMPLEMENTATIONS/core/calibrate_master_equation.py",
+        r"pi_threshold\s*:\s*float\s*=\s*([0-9]*\.?[0-9]+)",
+    ),
 ]
 
 #: Spec constants with no implementation to drift from. Reported as such rather than
@@ -80,13 +86,28 @@ UNBOUND_CONSTANTS = ["golden_ratio_inverse", "cos_pi_7"]
 
 # Gap checklist — patterns are root-relative and glob-expanded
 GAP_CHECKLIST = {
-    "k1_k4_calibration": ("12_IMPLEMENTATIONS/cascade_simulation_results.json", "Calibration results file is present"),
+    "k1_k4_calibration": (
+        "12_IMPLEMENTATIONS/cascade_simulation_results.json",
+        "Calibration results file is present",
+    ),
     "unit_tests": ("tests/test_*.py", "At least one test file is present"),
     "ci_workflow": (".github/workflows/ci.yml", "CI workflow file is present"),
-    "12_week_curriculum": ("14_MYSTERY_SCHOOL/**/12_WEEK_*.md", "Owner-approved curriculum source is present"),
-    "domain_experiments_2plus": ("12_IMPLEMENTATIONS/experiments/domain_*.py", "Domain experiment files are present"),
-    "lamague_duplication_resolved": ("03_LAMAGUE_L1/**/*LAMAGUE_COMPLETE.md", "LAMAGUE reference document is present"),
-    "mystery_school_cascade_resolved": ("14_MYSTERY_SCHOOL/**/*.py", "Mystery School Python files are present"),
+    "12_week_curriculum": (
+        "14_MYSTERY_SCHOOL/**/12_WEEK_*.md",
+        "Owner-approved curriculum source is present",
+    ),
+    "domain_experiments_2plus": (
+        "12_IMPLEMENTATIONS/experiments/domain_*.py",
+        "Domain experiment files are present",
+    ),
+    "lamague_duplication_resolved": (
+        "03_LAMAGUE_L1/**/*LAMAGUE_COMPLETE.md",
+        "LAMAGUE reference document is present",
+    ),
+    "mystery_school_cascade_resolved": (
+        "14_MYSTERY_SCHOOL/**/*.py",
+        "Mystery School Python files are present",
+    ),
     "arxiv_contact_email": ("papers/CASCADE_ARXIV.tex", "CASCADE paper draft is present"),
 }
 
@@ -100,6 +121,7 @@ MISSING_SPEC_GAPS = {
 # ===========================
 # 2a — HEALTH CHECK
 # ===========================
+
 
 def health_check() -> Tuple[Dict[str, Any], str]:
     """
@@ -185,6 +207,7 @@ def health_check() -> Tuple[Dict[str, Any], str]:
 # 2b — DRIFT AUDIT
 # ===========================
 
+
 def drift_audit() -> Tuple[Dict[str, Any], str]:
     """
     Check spec-vs-code alignment for known constants.
@@ -218,7 +241,11 @@ def drift_audit() -> Tuple[Dict[str, Any], str]:
         checks_run += 1
         code_val = float(match.group(1))
         if abs(spec_val - code_val) > 0.001:
-            divergence[name] = {"spec": spec_val, "code": code_val, "diff": abs(spec_val - code_val)}
+            divergence[name] = {
+                "spec": spec_val,
+                "code": code_val,
+                "diff": abs(spec_val - code_val),
+            }
             report_lines.append(
                 f"  ⚠ {name:26s} — DIVERGENCE: spec={spec_val}, code={code_val} ({rel_path})"
             )
@@ -261,6 +288,7 @@ def drift_audit() -> Tuple[Dict[str, Any], str]:
 # 2c — GAP REPORT
 # ===========================
 
+
 def gap_report() -> Tuple[Dict[str, str], str]:
     """
     Hard-coded gap checklist against known P0/P1 gaps.
@@ -283,9 +311,7 @@ def gap_report() -> Tuple[Dict[str, str], str]:
 
         if gap_name in MISSING_SPEC_GAPS:
             status[gap_name] = "MISSING_SPEC"
-            report_lines.append(
-                f"  · {gap_name:40s} — MISSING_SPEC: {MISSING_SPEC_GAPS[gap_name]}"
-            )
+            report_lines.append(f"  · {gap_name:40s} — MISSING_SPEC: {MISSING_SPEC_GAPS[gap_name]}")
             continue
 
         if matches:
@@ -300,8 +326,7 @@ def gap_report() -> Tuple[Dict[str, str], str]:
     red_count = sum(1 for v in status.values() if v == "RED")
     missing_spec_count = sum(1 for v in status.values() if v == "MISSING_SPEC")
     report_lines.append(
-        f"Result: {green_count} PRESENT, {red_count} MISSING, "
-        f"{missing_spec_count} MISSING_SPEC"
+        f"Result: {green_count} PRESENT, {red_count} MISSING, {missing_spec_count} MISSING_SPEC"
     )
     report_lines.append("")
 
@@ -312,6 +337,7 @@ def gap_report() -> Tuple[Dict[str, str], str]:
 # 2d — SCAFFOLD NEW DOMAIN
 # ===========================
 
+
 def scaffold_new_domain(domain_name: str, description: str = "") -> str:
     """
     Generate a new domain experiment file from the germ_theory template.
@@ -320,15 +346,21 @@ def scaffold_new_domain(domain_name: str, description: str = "") -> str:
     Returns:
         path to created file
     """
-    template = f'''"""
-Domain Dataset: {domain_name}
-{"=" * (len(domain_name) + 17)}
-
-{description or "Domain experiment for CASCADE validation."}
-
-All evidence scores are judgment-based encodings.
-This experiment tests CASCADE's structural behavior.
-"""
+    if not isinstance(domain_name, str) or not re.fullmatch(
+        r"[A-Za-z][A-Za-z0-9_ -]*", domain_name
+    ):
+        raise ValueError(
+            "domain name must start with a letter and use letters, digits, spaces, _ or -"
+        )
+    if not isinstance(description, str):
+        raise ValueError("description must be text")
+    header = (
+        f"Domain Dataset: {domain_name}\n\n"
+        f"{description or 'Domain experiment for CASCADE validation.'}\n\n"
+        "All evidence scores are judgment-based encodings.\n"
+        "This experiment tests CASCADE's structural behavior."
+    )
+    template = f'''{header!r}
 
 from core.cascade_engine import KnowledgeBlock, DomainExperiment, CascadeEngine
 from typing import List, Tuple
@@ -375,7 +407,8 @@ if __name__ == "__main__":
     experiments_dir.mkdir(parents=True, exist_ok=True)
 
     file_path = experiments_dir / f"domain_{domain_name.lower().replace(' ', '_')}.py"
-    file_path.write_text(template)
+    with file_path.open("x", encoding="utf-8") as output:
+        output.write(template)
 
     return str(file_path)
 
@@ -383,6 +416,7 @@ if __name__ == "__main__":
 # ===========================
 # MAIN CLI
 # ===========================
+
 
 def main():
     """CLI interface."""

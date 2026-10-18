@@ -1,0 +1,52 @@
+test_bad_capability_extra_field_denied (test_enforced_boundary.BoundaryTests.test_bad_capability_extra_field_denied) ... ok
+test_capability_reissued_for_wrong_action_rejected (test_enforced_boundary.BoundaryTests.test_capability_reissued_for_wrong_action_rejected) ... ok
+test_capability_swapped_dispatch_seq_denied (test_enforced_boundary.BoundaryTests.test_capability_swapped_dispatch_seq_denied) ... ok
+test_capability_swapped_effect_id_denied (test_enforced_boundary.BoundaryTests.test_capability_swapped_effect_id_denied) ... ok
+test_capability_unknown_key_id_denied (test_enforced_boundary.BoundaryTests.test_capability_unknown_key_id_denied) ... ok
+test_challenge_after_dispatch_reservation_cannot_revoke_signed_delivery (test_enforced_boundary.BoundaryTests.test_challenge_after_dispatch_reservation_cannot_revoke_signed_delivery) ... ok
+test_concurrent_signed_replay_exactly_one_write (test_enforced_boundary.BoundaryTests.test_concurrent_signed_replay_exactly_one_write) ... ok
+test_direct_capability_theft_negative_control (test_enforced_boundary.BoundaryTests.test_direct_capability_theft_negative_control) ... ok
+test_direct_expired_token_denied (test_enforced_boundary.BoundaryTests.test_direct_expired_token_denied) ... ok
+test_direct_future_token_denied (test_enforced_boundary.BoundaryTests.test_direct_future_token_denied) ... ok
+test_direct_key_compromise_negative_control (test_enforced_boundary.BoundaryTests.test_direct_key_compromise_negative_control) ... ok
+test_direct_missing_capability_denied (test_enforced_boundary.BoundaryTests.test_direct_missing_capability_denied) ... ok
+test_direct_subject_swap_denied (test_enforced_boundary.BoundaryTests.test_direct_subject_swap_denied) ... ok
+test_direct_substituted_action_denied (test_enforced_boundary.BoundaryTests.test_direct_substituted_action_denied) ... ok
+test_direct_unsigned_http_denied (test_enforced_boundary.BoundaryTests.test_direct_unsigned_http_denied) ... ok
+test_direct_wrong_signing_key_denied (test_enforced_boundary.BoundaryTests.test_direct_wrong_signing_key_denied) ... ok
+test_false_authoritative_evidence_negative_control (test_enforced_boundary.BoundaryTests.test_false_authoritative_evidence_negative_control) ... ok
+test_gateway_changed_action_denied (test_enforced_boundary.BoundaryTests.test_gateway_changed_action_denied) ... ok
+test_gateway_happy_path (test_enforced_boundary.BoundaryTests.test_gateway_happy_path) ... ok
+test_gateway_lost_response_preserves_unknown (test_enforced_boundary.BoundaryTests.test_gateway_lost_response_preserves_unknown) ... ok
+test_gateway_no_remote_arbitrary_destination (test_enforced_boundary.BoundaryTests.test_gateway_no_remote_arbitrary_destination) ... ok
+test_gateway_repeat_refused_even_after_success (test_enforced_boundary.BoundaryTests.test_gateway_repeat_refused_even_after_success) ... ok
+test_gateway_revoked_denied (test_enforced_boundary.BoundaryTests.test_gateway_revoked_denied) ... ok
+test_gateway_source_challenged_denied (test_enforced_boundary.BoundaryTests.test_gateway_source_challenged_denied) ... ok
+test_gateway_stale_evidence_denied_and_no_provider_effect (test_enforced_boundary.BoundaryTests.test_gateway_stale_evidence_denied_and_no_provider_effect) ... ok
+test_http_duplicate_keys_denied (test_enforced_boundary.BoundaryTests.test_http_duplicate_keys_denied) ... ok
+test_http_oversized_rejected (test_enforced_boundary.BoundaryTests.test_http_oversized_rejected) ... ok
+test_json_parser_disallows_nan (test_enforced_boundary.BoundaryTests.test_json_parser_disallows_nan) ... ok
+test_key_strength_check (test_enforced_boundary.BoundaryTests.test_key_strength_check) ... ok
+test_nonroot_subprocess_cannot_read_private_key_but_can_reach_endpoint (test_enforced_boundary.BoundaryTests.test_nonroot_subprocess_cannot_read_private_key_but_can_reach_endpoint) ... ok
+test_provider_action_allowlist_independent (test_enforced_boundary.BoundaryTests.test_provider_action_allowlist_independent) ... ok
+test_provider_amount_limit_independent (test_enforced_boundary.BoundaryTests.test_provider_amount_limit_independent) ... ok
+test_provider_noninteger_amount_denied (test_enforced_boundary.BoundaryTests.test_provider_noninteger_amount_denied) ... ok
+test_revoked_signer_before_delivery_fails_even_after_reserve (test_enforced_boundary.BoundaryTests.test_revoked_signer_before_delivery_fails_even_after_reserve) ... ok
+test_revoked_signer_denied (test_enforced_boundary.BoundaryTests.test_revoked_signer_denied) ... ok
+test_same_effect_different_sequence_denied_after_commit (test_enforced_boundary.BoundaryTests.test_same_effect_different_sequence_denied_after_commit) ... ok
+test_signed_replay_idempotent (test_enforced_boundary.BoundaryTests.test_signed_replay_idempotent) ... ok
+test_unsigned_replay_denied_even_after_commit (test_enforced_boundary.BoundaryTests.test_unsigned_replay_denied_even_after_commit) ... ok
+test_nobody_cannot_claim_identity_in_body (test_socket_gateway.UnixGatewayTests.test_nobody_cannot_claim_identity_in_body) ... ok
+test_nobody_cannot_dispatch_changed_action (test_socket_gateway.UnixGatewayTests.test_nobody_cannot_dispatch_changed_action) ... ok
+test_nobody_cannot_dispatch_unknown_effect (test_socket_gateway.UnixGatewayTests.test_nobody_cannot_dispatch_unknown_effect) ... ok
+test_nobody_challenged_source_pauses (test_socket_gateway.UnixGatewayTests.test_nobody_challenged_source_pauses) ... ok
+test_nobody_peer_authorized_effect_runs (test_socket_gateway.UnixGatewayTests.test_nobody_peer_authorized_effect_runs) ... ok
+test_nobody_repeat_request_does_not_duplicate (test_socket_gateway.UnixGatewayTests.test_nobody_repeat_request_does_not_duplicate) ... ok
+test_nobody_revoked_actor_pauses (test_socket_gateway.UnixGatewayTests.test_nobody_revoked_actor_pauses) ... ok
+test_nobody_uid_mapped_to_wrong_actor_denied (test_socket_gateway.UnixGatewayTests.test_nobody_uid_mapped_to_wrong_actor_denied) ... ok
+test_unrecognized_root_peer_denied (test_socket_gateway.UnixGatewayTests.test_unrecognized_root_peer_denied) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 34.642s
+
+OK

@@ -1,0 +1,231 @@
+{
+  "schema": "lycheetah.intake-suite-results.v1",
+  "python": "3.12",
+  "environment": "Linux, ordinary-user host run; loopback permitted",
+  "source_manifest": "../../RESEARCH_INTAKE_2026-10-18_SOURCE_MANIFEST.json",
+  "jobs": [
+    {
+      "tests_run": 264,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "expected_failures": [],
+      "unexpected_successes": [],
+      "job": "hybrid-v1.2",
+      "expected_tests": 264,
+      "exit_code": 0,
+      "count_matches": true,
+      "passed_without_skips": true
+    },
+    {
+      "tests_run": 20,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "expected_failures": [],
+      "unexpected_successes": [],
+      "job": "earned-001",
+      "expected_tests": 20,
+      "exit_code": 0,
+      "count_matches": true,
+      "passed_without_skips": true
+    },
+    {
+      "tests_run": 29,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "expected_failures": [],
+      "unexpected_successes": [],
+      "job": "earned-002",
+      "expected_tests": 29,
+      "exit_code": 0,
+      "count_matches": true,
+      "passed_without_skips": true
+    },
+    {
+      "tests_run": 50,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "expected_failures": [],
+      "unexpected_successes": [],
+      "job": "earned-003",
+      "expected_tests": 50,
+      "exit_code": 0,
+      "count_matches": true,
+      "passed_without_skips": true
+    },
+    {
+      "tests_run": 38,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "expected_failures": [],
+      "unexpected_successes": [],
+      "job": "earned-004",
+      "expected_tests": 38,
+      "exit_code": 0,
+      "count_matches": true,
+      "passed_without_skips": true
+    },
+    {
+      "tests_run": 42,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "expected_failures": [],
+      "unexpected_successes": [],
+      "job": "earned-005",
+      "expected_tests": 42,
+      "exit_code": 0,
+      "count_matches": true,
+      "passed_without_skips": true
+    },
+    {
+      "tests_run": 59,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "expected_failures": [],
+      "unexpected_successes": [],
+      "job": "earned-006",
+      "expected_tests": 59,
+      "exit_code": 0,
+      "count_matches": true,
+      "passed_without_skips": true
+    },
+    {
+      "tests_run": 47,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "expected_failures": [],
+      "unexpected_successes": [],
+      "job": "earned-007",
+      "expected_tests": 47,
+      "exit_code": 0,
+      "count_matches": true,
+      "passed_without_skips": true
+    },
+    {
+      "tests_run": 46,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "expected_failures": [],
+      "unexpected_successes": [],
+      "job": "earned-008",
+      "expected_tests": 46,
+      "exit_code": 0,
+      "count_matches": true,
+      "passed_without_skips": true
+    },
+    {
+      "tests_run": 47,
+      "failures": [],
+      "errors": [],
+      "skipped": [
+        [
+          "test_enforced_boundary.BoundaryTests.test_nonroot_subprocess_cannot_read_private_key_but_can_reach_endpoint",
+          "requires root to drop UID"
+        ],
+        [
+          "test_socket_gateway.UnixGatewayTests.test_nobody_cannot_claim_identity_in_body",
+          "UID drop requires root"
+        ],
+        [
+          "test_socket_gateway.UnixGatewayTests.test_nobody_cannot_dispatch_changed_action",
+          "UID drop requires root"
+        ],
+        [
+          "test_socket_gateway.UnixGatewayTests.test_nobody_cannot_dispatch_unknown_effect",
+          "UID drop requires root"
+        ],
+        [
+          "test_socket_gateway.UnixGatewayTests.test_nobody_challenged_source_pauses",
+          "UID drop requires root"
+        ],
+        [
+          "test_socket_gateway.UnixGatewayTests.test_nobody_peer_authorized_effect_runs",
+          "UID drop requires root"
+        ],
+        [
+          "test_socket_gateway.UnixGatewayTests.test_nobody_repeat_request_does_not_duplicate",
+          "UID drop requires root"
+        ],
+        [
+          "test_socket_gateway.UnixGatewayTests.test_nobody_revoked_actor_pauses",
+          "UID drop requires root"
+        ],
+        [
+          "test_socket_gateway.UnixGatewayTests.test_nobody_uid_mapped_to_wrong_actor_denied",
+          "UID drop requires root"
+        ]
+      ],
+      "expected_failures": [],
+      "unexpected_successes": [],
+      "job": "earned-009",
+      "expected_tests": 47,
+      "exit_code": 0,
+      "count_matches": true,
+      "passed_without_skips": false
+    },
+    {
+      "tests_run": 4,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "expected_failures": [],
+      "unexpected_successes": [],
+      "job": "native-004",
+      "expected_tests": 4,
+      "exit_code": 0,
+      "count_matches": true,
+      "passed_without_skips": true
+    },
+    {
+      "tests_run": 4,
+      "failures": [
+        "test_real_framework_bridge_candidate.IntegrationAgainstRealFramework.test_even_distinct_origins_cannot_validate_ground_truth",
+        "test_real_framework_bridge_candidate.IntegrationAgainstRealFramework.test_normal_two_origins"
+      ],
+      "errors": [],
+      "skipped": [],
+      "expected_failures": [],
+      "unexpected_successes": [],
+      "job": "native-005",
+      "expected_tests": 4,
+      "exit_code": 1,
+      "count_matches": true,
+      "passed_without_skips": false
+    },
+    {
+      "tests_run": 12,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "expected_failures": [],
+      "unexpected_successes": [],
+      "job": "sxp-v2.0",
+      "expected_tests": 12,
+      "exit_code": 0,
+      "count_matches": true,
+      "passed_without_skips": true
+    },
+    {
+      "tests_run": 71,
+      "failures": [],
+      "errors": [],
+      "skipped": [],
+      "expected_failures": [],
+      "unexpected_successes": [],
+      "job": "sxp-v1.9-inherited",
+      "expected_tests": 71,
+      "exit_code": 0,
+      "count_matches": true,
+      "passed_without_skips": true
+    }
+  ],
+  "interpretation": "Exact method counts, skips and failures. No independent field validation."
+}

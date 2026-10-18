@@ -4,6 +4,23 @@ The package is [SCAFFOLD]: useful for evaluation and integration work, not a
 certification that an AI system is safe, aligned, truthful, or compliant.
 """
 
+from .action_guard import (
+    AUDIT_GENESIS,
+    Decision,
+    PersistentActionGuard,
+    action_digest,
+    canonical_action,
+)
+from .checkpoint_authority import (
+    CheckpointConflict,
+    CheckpointError,
+    CheckpointHTTPClient,
+    CheckpointHTTPServer,
+    CheckpointStore,
+    make_server,
+    verify_envelope,
+)
+from .checkpointed_workflow import CheckpointedWorkflow, OperationReceipt, WorkflowBlocked
 from .evaluation import (
     EVALUATION_SCHEMA_VERSION,
     EvaluationCase,
@@ -32,6 +49,7 @@ from .finality import (
     FinalityResult,
     MappingEvidenceStore,
 )
+from .gateway import ActionGateway, CommandExecutor, ExecutionResult, GateDecision
 from .in_toto import to_in_toto_statement
 from .models import (
     AssuranceEvent,
@@ -59,51 +77,17 @@ from .regression import (
     RegressionReport,
     compare_evaluations,
 )
-from .action_guard import (
-    AUDIT_GENESIS,
-    Decision,
-    PersistentActionGuard,
-    action_digest,
-    canonical_action,
-)
-from .checkpoint_authority import (
-    CheckpointConflict,
-    CheckpointError,
-    CheckpointHTTPClient,
-    CheckpointHTTPServer,
-    CheckpointStore,
-    make_server,
-    verify_envelope,
-)
-from .checkpointed_workflow import CheckpointedWorkflow, OperationReceipt, WorkflowBlocked
-from .gateway import ActionGateway, CommandExecutor, ExecutionResult, GateDecision
 from .runtime import ASSURANCE_VERSION, AssuranceRuntime
 
 __all__ = [
     "ASSURANCE_VERSION",
     "AUDIT_GENESIS",
-    "ActionGateway",
-    "CheckpointConflict",
-    "CheckpointError",
-    "CheckpointHTTPClient",
-    "CheckpointHTTPServer",
-    "CheckpointStore",
-    "CheckpointedWorkflow",
-    "CommandExecutor",
-    "Decision",
-    "GateDecision",
-    "OperationReceipt",
-    "PersistentActionGuard",
-    "WorkflowBlocked",
-    "action_digest",
-    "canonical_action",
-    "make_server",
-    "verify_envelope",
     "EVALUATION_SCHEMA_VERSION",
     "EXECUTION_CELL_VERSION",
     "FINALITY_VERSION",
     "OTEL_EVENT_NAME",
     "REGRESSION_SCHEMA_VERSION",
+    "ActionGateway",
     "AdmissionResult",
     "AdmissionWitness",
     "AssuranceEvent",
@@ -112,8 +96,16 @@ __all__ = [
     "AssuranceRuntime",
     "BoundEvidence",
     "CellAvailability",
+    "CheckpointConflict",
+    "CheckpointError",
+    "CheckpointHTTPClient",
+    "CheckpointHTTPServer",
+    "CheckpointStore",
+    "CheckpointedWorkflow",
     "ClaimStatus",
+    "CommandExecutor",
     "ControlReference",
+    "Decision",
     "Disposition",
     "EvaluationCase",
     "EvaluationCorpus",
@@ -126,11 +118,15 @@ __all__ = [
     "ExecutionCell",
     "ExecutionCellResult",
     "ExecutionCellSpec",
+    "ExecutionResult",
     "FinalityGate",
     "FinalityResult",
     "Finding",
+    "GateDecision",
     "LogVerificationReport",
     "MappingEvidenceStore",
+    "OperationReceipt",
+    "PersistentActionGuard",
     "Phase",
     "PolicyError",
     "ReceiptError",
@@ -140,12 +136,17 @@ __all__ = [
     "Severity",
     "TextRule",
     "VerificationReport",
+    "WorkflowBlocked",
+    "action_digest",
     "add_receipt_event",
+    "canonical_action",
     "capped_disposition",
     "compare_evaluations",
     "default_policy",
     "enforcement_cap",
     "evaluate_corpus",
+    "make_server",
     "otel_event_attributes",
     "to_in_toto_statement",
+    "verify_envelope",
 ]

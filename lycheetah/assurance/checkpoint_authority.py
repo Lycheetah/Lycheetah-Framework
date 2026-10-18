@@ -3,19 +3,21 @@
 A separate service and SQLite store monotonically advancing signed checkpoints for
 one or more audit journals using Ed25519 signatures.
 """
+
 from __future__ import annotations
 
 import base64
-from hashlib import sha256
-from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import hmac
 import json
 import os
-from pathlib import Path
 import secrets
 import sqlite3
 import threading
 import time
+from contextlib import suppress
+from hashlib import sha256
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote, unquote, urlparse
@@ -132,19 +134,15 @@ class CheckpointStore:
                 )
                 fd = os.open(tmp, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
                 try:
-                    with open(fd, "wb") as f:
+                    with os.fdopen(fd, "wb") as f:
                         f.write(pem)
-                    os.replace(tmp, self.key_path)
+                    tmp.replace(self.key_path)
                 finally:
                     if tmp.exists():
-                        try:
+                        with suppress(OSError):
                             tmp.unlink()
-                        except OSError:
-                            pass
-            try:
+            with suppress(OSError):
                 self.key_path.chmod(0o600)
-            except OSError:
-                pass
 
     def _load_private_key(self) -> Ed25519PrivateKey:
         with self._key_lock:
@@ -155,9 +153,13 @@ class CheckpointStore:
             return key
 
     def public_key_bytes(self) -> bytes:
-        return self._load_private_key().public_key().public_bytes(
-            encoding=serialization.Encoding.Raw,
-            format=serialization.PublicFormat.Raw,
+        return (
+            self._load_private_key()
+            .public_key()
+            .public_bytes(
+                encoding=serialization.Encoding.Raw,
+                format=serialization.PublicFormat.Raw,
+            )
         )
 
     @staticmethod
@@ -196,9 +198,7 @@ class CheckpointStore:
         from .action_guard import AUDIT_GENESIS
 
         prior_root = (
-            AUDIT_GENESIS
-            if prior_anchor is None
-            else prior_anchor.get("root_hash", AUDIT_GENESIS)
+            AUDIT_GENESIS if prior_anchor is None else prior_anchor.get("root_hash", AUDIT_GENESIS)
         )
         if prior_root == CHECKPOINT_GENESIS:
             prior_root = AUDIT_GENESIS
@@ -291,7 +291,8 @@ class CheckpointStore:
         with self._connect() as db:
             db.execute("BEGIN IMMEDIATE")
             row = db.execute(
-                "SELECT * FROM checkpoint_history WHERE journal_id=? ORDER BY generation DESC LIMIT 1",
+                "SELECT * FROM checkpoint_history WHERE journal_id=? "
+                "ORDER BY generation DESC LIMIT 1",
                 (journal_id,),
             ).fetchone()
             if row is not None:
@@ -326,11 +327,14 @@ class CheckpointStore:
             proposed_anchor = {"event_count": count, "last_seq": last_seq, "root_hash": root_hash}
             self._verify_extension(prior_anchor, proposed_anchor, events)
             cur = db.execute(
-                "INSERT INTO checkpoint_history(journal_id,event_count,last_seq,root_hash,issued_at,envelope_hash,envelope_json) "
+                "INSERT INTO checkpoint_history("
+                "journal_id,event_count,last_seq,root_hash,issued_at,envelope_hash,envelope_json) "
                 "VALUES(?,?,?,?,?,?,?)",
                 (journal_id, count, last_seq, root_hash, now, "", ""),
             )
-            generation = int(cur.lastrowid)
+            if cur.lastrowid is None:
+                raise RuntimeError("checkpoint INSERT did not return a row id")
+            generation = cur.lastrowid
             envelope_core = {
                 "format": FORMAT,
                 "generation": generation,
@@ -377,7 +381,7 @@ def make_server(
         server_version = "LycheetahCheckpoint/1.0"
         sys_version = ""
 
-        def log_message(self, _format: str, *args: Any) -> None:
+        def log_message(self, _format: str, *_args: Any) -> None:
             return
 
         def _json(self, code: int, obj: dict[str, Any]) -> None:

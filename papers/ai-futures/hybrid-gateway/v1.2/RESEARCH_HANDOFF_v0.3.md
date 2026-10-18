@@ -1,0 +1,13 @@
+# Handoff v0.3 — next Lycheetah research session
+
+1. Run the 54 tests and inspect v0.2 synthetic cases and both Failure Museums. Avoid claiming a neural model was tested: only HTTP fixture transport and mocked completions have run.
+2. Obtain explicit owner approval for a small real-model trial. Run `demo_live_inbox.py --model YOUR_INSTALLED_LOCAL_MODEL` against **fictional data only**. Record raw model identifier/version, prompt hash, schema compliance rate, supported/unsupported extraction rates, false fields, false dates, precision and recall against human labels, latency, token use, and failures. **Keep source text out of public logs.**
+3. Increase domain-validator coverage beyond exactly `Refunds allowed within X days.` and test systematic paraphrases, negation, exceptions, footnotes, multi-policy documents, malicious instructions, OCR noise, and ambiguous temporal qualifiers. Do not silently fall back to lexical substring matching.
+4. Pass **actual canonical** `CascadeEngine` and `KnowledgeBlock` classes from `Lycheetah/Lycheetah-Framework/12_IMPLEMENTATIONS/core/cascade_engine.py` to `diagnose_with_cascade`. Use clearly justified evidence-weight inputs, verify ledger remains unchanged, preserve divergences between CASCADE heuristic output and bitemporal citations, and benchmark false contradictions across overlapping scope/date; do not equate CASCADE's symbolic coherence score with calibrated factual correctness.
+5. Introduce authenticated reviewer workflow, durable source+ledger registry and independently pinned event heads. Preserve no-effect behavior until external assurance + action guard integration is fully tested with finality-time permission checks.
+6. Evaluate against real held-out versions with independent labels and a competitive time-aware retrieval baseline (including VersionRAG-style and graph-index methods). Publish false-allow, false-abstain, stale-answer, wrong-scope, citation alignment, cost and latency metrics.
+7. If committing to remote GitHub, preserve original `Lycheetah-Framework` master and propose `research/hybrid-intelligence-architecture` with folder `research/hybrid-intelligence`. This session created **no branch, commit, PR or deployment**.
+
+**Do not claim:** solved hallucinations, prompt-injection protection, authenticated human approval, production safety, independent validation, complete CASCADE/neural integration or model weight updates.
+
+**Architectural spine:** neural proposal → immutable source binding → domain evidence check → trusted review → bitemporal ledger → read-only CASCADE diagnostic → approved external action gateway [future].

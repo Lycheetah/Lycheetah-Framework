@@ -1,0 +1,38 @@
+{
+  "001": {
+    "return_code": 0,
+    "tests": 20,
+    "passed": true,
+    "tail": "\n----------------------------------------------------------------------\nRan 20 tests in 0.006s\n\nOK\n"
+  },
+  "002": {
+    "return_code": 0,
+    "tests": 29,
+    "passed": true,
+    "tail": "ack\n/usr/lib/python3.13/threading.py:307: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f52951798a0>\n  return self._lock.__exit__(*args)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/threading.py:307: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f5295179d50>\n  return self._lock.__exit__(*args)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/threading.py:307: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f529517a020>\n  return self._lock.__exit__(*args)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/threading.py:307: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f529517a110>\n  return self._lock.__exit__(*args)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/threading.py:307: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f5295179c60>\n  return self._lock.__exit__(*args)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/threading.py:307: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f5295179f30>\n  return self._lock.__exit__(*args)\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n----------------------------------------------------------------------\nRan 29 tests in 1.853s\n\nOK\n"
+  },
+  "003": {
+    "return_code": 0,
+    "tests": 50,
+    "passed": true,
+    "tail": "\n----------------------------------------------------------------------\nRan 50 tests in 3.654s\n\nOK\n"
+  },
+  "004": {
+    "return_code": 0,
+    "tests": 38,
+    "passed": true,
+    "tail": "\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/traceback.py:267: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7efee4d60c70>\n  while tb is not None:\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/traceback.py:267: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7efee4d60d60>\n  while tb is not None:\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/traceback.py:267: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7efee4d60e50>\n  while tb is not None:\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/traceback.py:267: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7efee4d60f40>\n  while tb is not None:\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/traceback.py:267: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7efee4d61030>\n  while tb is not None:\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n/usr/lib/python3.13/traceback.py:267: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7efee4d61120>\n  while tb is not None:\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n----------------------------------------------------------------------\nRan 38 tests in 1.763s\n\nOK\n"
+  },
+  "005": {
+    "return_code": 0,
+    "tests": 42,
+    "passed": true,
+    "tail": "\n----------------------------------------------------------------------\nRan 42 tests in 0.010s\n\nOK\n"
+  },
+  "006": {
+    "return_code": 0,
+    "tests": 59,
+    "passed": true,
+    "tail": "\n----------------------------------------------------------------------\nRan 59 tests in 0.101s\n\nOK\n"
+  }
+}

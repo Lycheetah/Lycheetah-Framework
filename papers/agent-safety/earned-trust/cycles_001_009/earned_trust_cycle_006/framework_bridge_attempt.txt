@@ -1,0 +1,53 @@
+======================================================================
+ERROR: test_common_origin_with_two_signers (test_real_framework_bridge_candidate.IntegrationAgainstRealFramework.test_common_origin_with_two_signers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/earned_trust_cycle_005/test_real_framework_bridge_candidate.py", line 14, in test_common_origin_with_two_signers
+    self.assertEqual(self.run_case(common_origin=True)['decision'],'REVIEW')
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/earned_trust_cycle_005/test_real_framework_bridge_candidate.py", line 10, in run_case
+    return run_real_framework_path(Path(td),**opts)
+  File "/mnt/data/earned_trust_cycle_005/real_framework_bridge_candidate.py", line 21, in run_real_framework_path
+    from lycheetah.assurance.models import AssuranceEvent, Phase
+ModuleNotFoundError: No module named 'lycheetah'
+
+======================================================================
+ERROR: test_even_distinct_origins_cannot_validate_ground_truth (test_real_framework_bridge_candidate.IntegrationAgainstRealFramework.test_even_distinct_origins_cannot_validate_ground_truth)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/earned_trust_cycle_005/test_real_framework_bridge_candidate.py", line 18, in test_even_distinct_origins_cannot_validate_ground_truth
+    v=self.run_case(wrong_world_fact=True);self.assertEqual(v['decision'],'CONFIRMED');self.assertFalse(v['ground_truth_correct'])
+  File "/mnt/data/earned_trust_cycle_005/test_real_framework_bridge_candidate.py", line 10, in run_case
+    return run_real_framework_path(Path(td),**opts)
+  File "/mnt/data/earned_trust_cycle_005/real_framework_bridge_candidate.py", line 21, in run_real_framework_path
+    from lycheetah.assurance.models import AssuranceEvent, Phase
+ModuleNotFoundError: No module named 'lycheetah'
+
+======================================================================
+ERROR: test_normal_two_origins (test_real_framework_bridge_candidate.IntegrationAgainstRealFramework.test_normal_two_origins)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/earned_trust_cycle_005/test_real_framework_bridge_candidate.py", line 12, in test_normal_two_origins
+    v=self.run_case();self.assertEqual(v['decision'],'CONFIRMED');self.assertEqual(v['guard_status'],'SUCCEEDED')
+  File "/mnt/data/earned_trust_cycle_005/test_real_framework_bridge_candidate.py", line 10, in run_case
+    return run_real_framework_path(Path(td),**opts)
+  File "/mnt/data/earned_trust_cycle_005/real_framework_bridge_candidate.py", line 21, in run_real_framework_path
+    from lycheetah.assurance.models import AssuranceEvent, Phase
+ModuleNotFoundError: No module named 'lycheetah'
+
+======================================================================
+ERROR: test_stale_evidence_aborts_before_dispatch (test_real_framework_bridge_candidate.IntegrationAgainstRealFramework.test_stale_evidence_aborts_before_dispatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/earned_trust_cycle_005/test_real_framework_bridge_candidate.py", line 16, in test_stale_evidence_aborts_before_dispatch
+    v=self.run_case(stale_before_finality=True);self.assertEqual(v['decision'],'REVIEW');self.assertEqual(v['guard_status'],'PREPARED')
+  File "/mnt/data/earned_trust_cycle_005/test_real_framework_bridge_candidate.py", line 10, in run_case
+    return run_real_framework_path(Path(td),**opts)
+  File "/mnt/data/earned_trust_cycle_005/real_framework_bridge_candidate.py", line 21, in run_real_framework_path
+    from lycheetah.assurance.models import AssuranceEvent, Phase
+ModuleNotFoundError: No module named 'lycheetah'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.007s
+
+FAILED (errors=4)

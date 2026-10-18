@@ -79,9 +79,19 @@ def sol_assess(text: str, context: str = "") -> str:
     return SolSelfProtocol().assess_full(text, context)
 
 
+from .handoff import (  # noqa: E402
+    HANDOFF_SCHEMA_VERSION,
+    HandoffCapsule,
+    HandoffError,
+    HandoffResult,
+    VerificationVerdict,
+    create_capsule,
+    verify_handoff,
+)
 from .sovereign_harness import (  # noqa: E402
     EPISTEMIC_BOUNDARIES,
     HARNESS_SCHEMA_VERSION,
+    PERMIT_SCHEMA_VERSION,
     PermitNonceStore,
     SovereignExecutionHarness,
     SovereignExecutionPermit,
@@ -90,12 +100,20 @@ from .sovereign_harness import (  # noqa: E402
 
 __all__ = [
     "EPISTEMIC_BOUNDARIES",
+    "HANDOFF_SCHEMA_VERSION",
     "HARNESS_SCHEMA_VERSION",
+    "PERMIT_SCHEMA_VERSION",
+    "HandoffCapsule",
+    "HandoffError",
+    "HandoffResult",
     "PermitNonceStore",
     "SovereignExecutionHarness",
     "SovereignExecutionPermit",
     "SovereignWitnessReceipt",
+    "VerificationVerdict",
     "__version__",
     "check",
+    "create_capsule",
     "sol_assess",
+    "verify_handoff",
 ]

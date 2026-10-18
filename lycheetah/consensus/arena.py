@@ -179,9 +179,7 @@ class ConsensusArena:
 
     def _ensure_topology(self) -> None:
         """If no explicit neighbor edges were declared on any node, connect a full mesh."""
-        has_any_edge = any(
-            bool(node.neighbors) for node in self.protocol._nodes.values()
-        )
+        has_any_edge = any(bool(node.neighbors) for node in self.protocol._nodes.values())
         if not has_any_edge and len(self.protocol._nodes) > 1:
             all_ids = list(self.protocol._nodes.keys())
             for aid, node in self.protocol._nodes.items():
@@ -199,9 +197,7 @@ class ConsensusArena:
         byzantine_safe = (len(quarantined) / n_total <= (1.0 / 3.0)) if n_total > 0 else False
 
         consensus_list = (
-            [float(x) for x in raw.consensus_vector]
-            if raw.consensus_vector is not None
-            else None
+            [float(x) for x in raw.consensus_vector] if raw.consensus_vector is not None else None
         )
 
         digest_payload = {
@@ -213,9 +209,7 @@ class ConsensusArena:
             "quarantined_agents": quarantined,
             "final_drift": round(float(raw.final_drift), 6),
             "consensus_vector": (
-                [round(float(x), 6) for x in consensus_list]
-                if consensus_list is not None
-                else None
+                [round(float(x), 6) for x in consensus_list] if consensus_list is not None else None
             ),
         }
         digest = _sha256_hex(digest_payload)
@@ -319,13 +313,9 @@ class ConsensusArena:
 
         sheaf = CellularSheaf(len(healthy_ids), edges, stalk_dim=self.dim)
         cert = sheaf.cohomology_certificate()
-        x_cochain = np.concatenate(
-            [self.protocol._nodes[aid].state for aid in healthy_ids]
-        )
+        x_cochain = np.concatenate([self.protocol._nodes[aid].state for aid in healthy_ids])
         delta0 = sheaf.coboundary_matrix()
-        coboundary_vec = (
-            delta0 @ x_cochain if delta0.size > 0 else np.zeros(0, dtype=float)
-        )
+        coboundary_vec = delta0 @ x_cochain if delta0.size > 0 else np.zeros(0, dtype=float)
         energy = float(np.dot(coboundary_vec, coboundary_vec))
         return {
             "healthy_agents": healthy_ids,

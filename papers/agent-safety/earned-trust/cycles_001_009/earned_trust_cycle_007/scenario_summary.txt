@@ -1,0 +1,18 @@
+{
+  "description": "20 locally authored scenario fixtures, no provider effects",
+  "n": 20,
+  "allowed": 8,
+  "paused": 12,
+  "false_world_confirmations": 1,
+  "by_reason": {
+    "locally-dispatchable": 8,
+    "stale-governance": 3,
+    "source-challenged": 1,
+    "revoked": 1,
+    "approval-invalid": 2,
+    "evidence-stale": 2,
+    "action-substitution": 1,
+    "bad-witness-seal": 1,
+    "missing-witness": 1
+  }
+}

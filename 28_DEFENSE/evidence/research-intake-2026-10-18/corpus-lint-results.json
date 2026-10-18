@@ -1,0 +1,909 @@
+{
+  "status": "FAILED_PREEXISTING",
+  "exit_code": 1,
+  "python_files_examined": 638,
+  "findings_count": 45,
+  "all_finding_sources_unchanged": true,
+  "findings": [
+    {
+      "cell": null,
+      "code": "B904",
+      "end_location": {
+        "column": 75,
+        "row": 319
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/src/bridge_v0_2.py",
+      "fix": null,
+      "location": {
+        "column": 13,
+        "row": 319
+      },
+      "message": "Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling",
+      "name": "raise-without-from-inside-except",
+      "noqa_row": 319,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/raise-without-from-inside-except",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F403",
+      "end_location": {
+        "column": 22,
+        "row": 4
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 1,
+        "row": 4
+      },
+      "message": "`from cycle23 import *` used; unable to detect undefined names",
+      "name": "undefined-local-with-import-star",
+      "noqa_row": 4,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 16,
+        "row": 8
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 6,
+        "row": 8
+      },
+      "message": "`experiment` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 8,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 75,
+        "row": 10
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 65,
+        "row": 10
+      },
+      "message": "`experiment` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 10,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 56,
+        "row": 12
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 45,
+        "row": 12
+      },
+      "message": "`create_case` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 12,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 88,
+        "row": 12
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 75,
+        "row": 12
+      },
+      "message": "`build_binding` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 12,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 40,
+        "row": 16
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 27,
+        "row": 16
+      },
+      "message": "`EvidenceError` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 16,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 60,
+        "row": 16
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 42,
+        "row": 16
+      },
+      "message": "`observe_and_append` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 16,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 95,
+        "row": 19
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 77,
+        "row": 19
+      },
+      "message": "`observe_and_append` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 19,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 40,
+        "row": 21
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 27,
+        "row": 21
+      },
+      "message": "`EvidenceError` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 21,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 53,
+        "row": 21
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 42,
+        "row": 21
+      },
+      "message": "`read_events` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 21,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 65,
+        "row": 24
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 47,
+        "row": 24
+      },
+      "message": "`observe_and_append` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 24,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 34,
+        "row": 25
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 27,
+        "row": 25
+      },
+      "message": "`Refusal` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 25,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 50,
+        "row": 25
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 36,
+        "row": 25
+      },
+      "message": "`witness_action` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 25,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 90,
+        "row": 28
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 72,
+        "row": 28
+      },
+      "message": "`observe_and_append` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 28,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 167,
+        "row": 28
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 149,
+        "row": 28
+      },
+      "message": "`observe_and_append` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 28,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 232,
+        "row": 28
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 218,
+        "row": 28
+      },
+      "message": "`witness_action` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 28,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 324,
+        "row": 28
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 310,
+        "row": 28
+      },
+      "message": "`witness_action` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 28,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 95,
+        "row": 31
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 77,
+        "row": 31
+      },
+      "message": "`observe_and_append` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 31,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 40,
+        "row": 32
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 27,
+        "row": 32
+      },
+      "message": "`EvidenceError` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 32,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 60,
+        "row": 32
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 42,
+        "row": 32
+      },
+      "message": "`observe_and_append` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 32,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 65,
+        "row": 35
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 47,
+        "row": 35
+      },
+      "message": "`observe_and_append` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 35,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 40,
+        "row": 36
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 27,
+        "row": 36
+      },
+      "message": "`EvidenceError` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 36,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "F405",
+      "end_location": {
+        "column": 53,
+        "row": 36
+      },
+      "filename": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "fix": null,
+      "location": {
+        "column": 42,
+        "row": 36
+      },
+      "message": "`read_events` may be undefined, or defined from star imports",
+      "name": "undefined-local-with-import-star-usage",
+      "noqa_row": 36,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/undefined-local-with-import-star-usage",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 28,
+        "row": 61
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.6/run_verification.py",
+      "fix": null,
+      "location": {
+        "column": 21,
+        "row": 61
+      },
+      "message": "Function definition does not bind loop variable `barrier`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 61,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 31,
+        "row": 62
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.6/run_verification.py",
+      "fix": null,
+      "location": {
+        "column": 25,
+        "row": 62
+      },
+      "message": "Function definition does not bind loop variable `guards`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 62,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 59,
+        "row": 62
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.6/run_verification.py",
+      "fix": null,
+      "location": {
+        "column": 58,
+        "row": 62
+      },
+      "message": "Function definition does not bind loop variable `r`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 62,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 81,
+        "row": 62
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.6/run_verification.py",
+      "fix": null,
+      "location": {
+        "column": 70,
+        "row": 62
+      },
+      "message": "Function definition does not bind loop variable `approval_id`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 62,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 37,
+        "row": 64
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.6/run_verification.py",
+      "fix": null,
+      "location": {
+        "column": 26,
+        "row": 64
+      },
+      "message": "Function definition does not bind loop variable `result_lock`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 64,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 46,
+        "row": 64
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.6/run_verification.py",
+      "fix": null,
+      "location": {
+        "column": 39,
+        "row": 64
+      },
+      "message": "Function definition does not bind loop variable `results`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 64,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 37,
+        "row": 66
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.6/run_verification.py",
+      "fix": null,
+      "location": {
+        "column": 26,
+        "row": 66
+      },
+      "message": "Function definition does not bind loop variable `result_lock`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 66,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 28,
+        "row": 61
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.7/run_verification.py",
+      "fix": null,
+      "location": {
+        "column": 21,
+        "row": 61
+      },
+      "message": "Function definition does not bind loop variable `barrier`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 61,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 31,
+        "row": 62
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.7/run_verification.py",
+      "fix": null,
+      "location": {
+        "column": 25,
+        "row": 62
+      },
+      "message": "Function definition does not bind loop variable `guards`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 62,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 59,
+        "row": 62
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.7/run_verification.py",
+      "fix": null,
+      "location": {
+        "column": 58,
+        "row": 62
+      },
+      "message": "Function definition does not bind loop variable `r`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 62,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 81,
+        "row": 62
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.7/run_verification.py",
+      "fix": null,
+      "location": {
+        "column": 70,
+        "row": 62
+      },
+      "message": "Function definition does not bind loop variable `approval_id`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 62,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 37,
+        "row": 64
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.7/run_verification.py",
+      "fix": null,
+      "location": {
+        "column": 26,
+        "row": 64
+      },
+      "message": "Function definition does not bind loop variable `result_lock`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 64,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 46,
+        "row": 64
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.7/run_verification.py",
+      "fix": null,
+      "location": {
+        "column": 39,
+        "row": 64
+      },
+      "message": "Function definition does not bind loop variable `results`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 64,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 37,
+        "row": 66
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.7/run_verification.py",
+      "fix": null,
+      "location": {
+        "column": 26,
+        "row": 66
+      },
+      "message": "Function definition does not bind loop variable `result_lock`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 66,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 28,
+        "row": 61
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.8/run_verification_v07.py",
+      "fix": null,
+      "location": {
+        "column": 21,
+        "row": 61
+      },
+      "message": "Function definition does not bind loop variable `barrier`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 61,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 31,
+        "row": 62
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.8/run_verification_v07.py",
+      "fix": null,
+      "location": {
+        "column": 25,
+        "row": 62
+      },
+      "message": "Function definition does not bind loop variable `guards`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 62,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 59,
+        "row": 62
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.8/run_verification_v07.py",
+      "fix": null,
+      "location": {
+        "column": 58,
+        "row": 62
+      },
+      "message": "Function definition does not bind loop variable `r`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 62,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 81,
+        "row": 62
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.8/run_verification_v07.py",
+      "fix": null,
+      "location": {
+        "column": 70,
+        "row": 62
+      },
+      "message": "Function definition does not bind loop variable `approval_id`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 62,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 37,
+        "row": 64
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.8/run_verification_v07.py",
+      "fix": null,
+      "location": {
+        "column": 26,
+        "row": 64
+      },
+      "message": "Function definition does not bind loop variable `result_lock`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 64,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 46,
+        "row": 64
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.8/run_verification_v07.py",
+      "fix": null,
+      "location": {
+        "column": 39,
+        "row": 64
+      },
+      "message": "Function definition does not bind loop variable `results`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 64,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    },
+    {
+      "cell": null,
+      "code": "B023",
+      "end_location": {
+        "column": 37,
+        "row": 66
+      },
+      "filename": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.8/run_verification_v07.py",
+      "fix": null,
+      "location": {
+        "column": 26,
+        "row": 66
+      },
+      "message": "Function definition does not bind loop variable `result_lock`",
+      "name": "function-uses-loop-variable",
+      "noqa_row": 66,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/function-uses-loop-variable",
+      "source_unchanged_from_head": true
+    }
+  ]
+}

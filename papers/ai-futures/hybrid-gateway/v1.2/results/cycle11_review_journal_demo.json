@@ -1,0 +1,30 @@
+{
+  "interpretation": "local software behavior, not model accuracy or observed human performance",
+  "v1_0_rejected": {
+    "journal_entries_after_restart": 0,
+    "journal_head": null,
+    "journal_invalid_entries": [],
+    "journal_valid_approvals": 0,
+    "journal_valid_rejections": 0,
+    "knowledge_events_after_restart": 0,
+    "ui_disposition": "REJECTED"
+  },
+  "v1_1_approved": {
+    "journal_entries_after_restart": 1,
+    "journal_head": "sha256:7c12b02de7566fbd0ed6a90568741774635424357df22afb13e73c636405ed10",
+    "journal_invalid_entries": [],
+    "journal_valid_approvals": 1,
+    "journal_valid_rejections": 0,
+    "knowledge_events_after_restart": 1,
+    "ui_disposition": "APPROVED"
+  },
+  "v1_1_rejected": {
+    "journal_entries_after_restart": 1,
+    "journal_head": "sha256:abb468db7db6a0892bcda2db16c457350c3df61065a3624131e9ccff3da6eadc",
+    "journal_invalid_entries": [],
+    "journal_valid_approvals": 0,
+    "journal_valid_rejections": 1,
+    "knowledge_events_after_restart": 0,
+    "ui_disposition": "REJECTED"
+  }
+}

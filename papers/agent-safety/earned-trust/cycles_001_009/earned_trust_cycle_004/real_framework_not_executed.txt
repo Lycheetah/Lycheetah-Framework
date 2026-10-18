@@ -1,0 +1,54 @@
+======================================================================
+ERROR: test_changed_provider_condition_after_guard_dispatch (test_framework_bridge_candidate.RealFrameworkBridgeCandidate.test_changed_provider_condition_after_guard_dispatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/earned_trust_cycle_004/test_framework_bridge_candidate.py", line 18, in test_changed_provider_condition_after_guard_dispatch
+    v=self._run(stale_after_dispatch=True)
+  File "/mnt/data/earned_trust_cycle_004/test_framework_bridge_candidate.py", line 10, in _run
+    return run_simulated_refund(Path(tmp),**kwargs)
+  File "/mnt/data/earned_trust_cycle_004/framework_bridge_candidate.py", line 24, in run_simulated_refund
+    from lycheetah.assurance.models import AssuranceEvent, Phase
+ModuleNotFoundError: No module named 'lycheetah'
+
+======================================================================
+ERROR: test_legitimate_receipt_and_observation (test_framework_bridge_candidate.RealFrameworkBridgeCandidate.test_legitimate_receipt_and_observation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/earned_trust_cycle_004/test_framework_bridge_candidate.py", line 12, in test_legitimate_receipt_and_observation
+    self.assertEqual(self._run()['result'],'CONFIRMED')
+                     ~~~~~~~~~^^
+  File "/mnt/data/earned_trust_cycle_004/test_framework_bridge_candidate.py", line 10, in _run
+    return run_simulated_refund(Path(tmp),**kwargs)
+  File "/mnt/data/earned_trust_cycle_004/framework_bridge_candidate.py", line 24, in run_simulated_refund
+    from lycheetah.assurance.models import AssuranceEvent, Phase
+ModuleNotFoundError: No module named 'lycheetah'
+
+======================================================================
+ERROR: test_signed_own_record_disagrees_with_lab_oracle (test_framework_bridge_candidate.RealFrameworkBridgeCandidate.test_signed_own_record_disagrees_with_lab_oracle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/earned_trust_cycle_004/test_framework_bridge_candidate.py", line 22, in test_signed_own_record_disagrees_with_lab_oracle
+    self.assertEqual(self._run(false_world_fact=True)['result'],'CONFLICT')
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/earned_trust_cycle_004/test_framework_bridge_candidate.py", line 10, in _run
+    return run_simulated_refund(Path(tmp),**kwargs)
+  File "/mnt/data/earned_trust_cycle_004/framework_bridge_candidate.py", line 24, in run_simulated_refund
+    from lycheetah.assurance.models import AssuranceEvent, Phase
+ModuleNotFoundError: No module named 'lycheetah'
+
+======================================================================
+ERROR: test_stale_evidence_before_finality (test_framework_bridge_candidate.RealFrameworkBridgeCandidate.test_stale_evidence_before_finality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/earned_trust_cycle_004/test_framework_bridge_candidate.py", line 14, in test_stale_evidence_before_finality
+    v=self._run(stale_before_finality=True)
+  File "/mnt/data/earned_trust_cycle_004/test_framework_bridge_candidate.py", line 10, in _run
+    return run_simulated_refund(Path(tmp),**kwargs)
+  File "/mnt/data/earned_trust_cycle_004/framework_bridge_candidate.py", line 24, in run_simulated_refund
+    from lycheetah.assurance.models import AssuranceEvent, Phase
+ModuleNotFoundError: No module named 'lycheetah'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.006s
+
+FAILED (errors=4)

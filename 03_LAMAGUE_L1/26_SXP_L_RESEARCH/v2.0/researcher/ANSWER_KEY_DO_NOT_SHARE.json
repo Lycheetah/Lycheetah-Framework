@@ -1,0 +1,322 @@
+[
+  {
+    "id": "F01",
+    "block": 0,
+    "question_type": "subject",
+    "answer": "maka",
+    "semantic_subject": "maka",
+    "semantic_object": "nara",
+    "semantic_status": "proposal",
+    "verb": "liva"
+  },
+  {
+    "id": "F02",
+    "block": 0,
+    "question_type": "subject",
+    "answer": "nara",
+    "semantic_subject": "nara",
+    "semantic_object": "maka",
+    "semantic_status": "proposal",
+    "verb": "luma"
+  },
+  {
+    "id": "F03",
+    "block": 0,
+    "question_type": "subject",
+    "answer": "sela",
+    "semantic_subject": "sela",
+    "semantic_object": "maka",
+    "semantic_status": "proposal",
+    "verb": "rava"
+  },
+  {
+    "id": "F04",
+    "block": 0,
+    "question_type": "subject",
+    "answer": "maka",
+    "semantic_subject": "maka",
+    "semantic_object": "vera",
+    "semantic_status": "proposal",
+    "verb": "liva"
+  },
+  {
+    "id": "F05",
+    "block": 1,
+    "question_type": "object",
+    "answer": "nara",
+    "semantic_subject": "maka",
+    "semantic_object": "nara",
+    "semantic_status": "proposal",
+    "verb": "luma"
+  },
+  {
+    "id": "F06",
+    "block": 1,
+    "question_type": "object",
+    "answer": "sela",
+    "semantic_subject": "nara",
+    "semantic_object": "sela",
+    "semantic_status": "proposal",
+    "verb": "rava"
+  },
+  {
+    "id": "F07",
+    "block": 1,
+    "question_type": "object",
+    "answer": "sela",
+    "semantic_subject": "maka",
+    "semantic_object": "sela",
+    "semantic_status": "proposal",
+    "verb": "liva"
+  },
+  {
+    "id": "F08",
+    "block": 1,
+    "question_type": "object",
+    "answer": "sela",
+    "semantic_subject": "vera",
+    "semantic_object": "sela",
+    "semantic_status": "proposal",
+    "verb": "luma"
+  },
+  {
+    "id": "F09",
+    "block": 2,
+    "question_type": "status",
+    "answer": "proposal",
+    "semantic_subject": "maka",
+    "semantic_object": "sela",
+    "semantic_status": "proposal",
+    "verb": "rava"
+  },
+  {
+    "id": "F10",
+    "block": 2,
+    "question_type": "status",
+    "answer": "proposal",
+    "semantic_subject": "sela",
+    "semantic_object": "nara",
+    "semantic_status": "proposal",
+    "verb": "liva"
+  },
+  {
+    "id": "F11",
+    "block": 2,
+    "question_type": "status",
+    "answer": "proposal",
+    "semantic_subject": "sela",
+    "semantic_object": "vera",
+    "semantic_status": "proposal",
+    "verb": "luma"
+  },
+  {
+    "id": "F12",
+    "block": 2,
+    "question_type": "status",
+    "answer": "proposal",
+    "semantic_subject": "vera",
+    "semantic_object": "sela",
+    "semantic_status": "proposal",
+    "verb": "rava"
+  },
+  {
+    "id": "F13",
+    "block": 3,
+    "question_type": "subject",
+    "answer": "sela",
+    "semantic_subject": "sela",
+    "semantic_object": "maka",
+    "semantic_status": "proposal",
+    "verb": "liva"
+  },
+  {
+    "id": "F14",
+    "block": 3,
+    "question_type": "subject",
+    "answer": "nara",
+    "semantic_subject": "nara",
+    "semantic_object": "maka",
+    "semantic_status": "proposal",
+    "verb": "luma"
+  },
+  {
+    "id": "F15",
+    "block": 3,
+    "question_type": "subject",
+    "answer": "sela",
+    "semantic_subject": "sela",
+    "semantic_object": "vera",
+    "semantic_status": "proposal",
+    "verb": "rava"
+  },
+  {
+    "id": "F16",
+    "block": 3,
+    "question_type": "subject",
+    "answer": "vera",
+    "semantic_subject": "vera",
+    "semantic_object": "maka",
+    "semantic_status": "proposal",
+    "verb": "liva"
+  },
+  {
+    "id": "F17",
+    "block": 4,
+    "question_type": "object",
+    "answer": "nara",
+    "semantic_subject": "maka",
+    "semantic_object": "nara",
+    "semantic_status": "proposal",
+    "verb": "luma"
+  },
+  {
+    "id": "F18",
+    "block": 4,
+    "question_type": "object",
+    "answer": "maka",
+    "semantic_subject": "nara",
+    "semantic_object": "maka",
+    "semantic_status": "proposal",
+    "verb": "rava"
+  },
+  {
+    "id": "F19",
+    "block": 4,
+    "question_type": "object",
+    "answer": "maka",
+    "semantic_subject": "sela",
+    "semantic_object": "maka",
+    "semantic_status": "proposal",
+    "verb": "liva"
+  },
+  {
+    "id": "F20",
+    "block": 4,
+    "question_type": "object",
+    "answer": "vera",
+    "semantic_subject": "maka",
+    "semantic_object": "vera",
+    "semantic_status": "proposal",
+    "verb": "luma"
+  },
+  {
+    "id": "F21",
+    "block": 5,
+    "question_type": "status",
+    "answer": "proposal",
+    "semantic_subject": "maka",
+    "semantic_object": "nara",
+    "semantic_status": "proposal",
+    "verb": "rava"
+  },
+  {
+    "id": "F22",
+    "block": 5,
+    "question_type": "status",
+    "answer": "proposal",
+    "semantic_subject": "nara",
+    "semantic_object": "sela",
+    "semantic_status": "proposal",
+    "verb": "liva"
+  },
+  {
+    "id": "F23",
+    "block": 5,
+    "question_type": "status",
+    "answer": "proposal",
+    "semantic_subject": "maka",
+    "semantic_object": "sela",
+    "semantic_status": "proposal",
+    "verb": "luma"
+  },
+  {
+    "id": "F24",
+    "block": 5,
+    "question_type": "status",
+    "answer": "proposal",
+    "semantic_subject": "vera",
+    "semantic_object": "sela",
+    "semantic_status": "proposal",
+    "verb": "rava"
+  },
+  {
+    "id": "F25",
+    "block": 6,
+    "question_type": "status",
+    "answer": "utterance",
+    "semantic_subject": "maka",
+    "semantic_object": "nara",
+    "semantic_status": "utterance",
+    "verb": "liva"
+  },
+  {
+    "id": "F26",
+    "block": 6,
+    "question_type": "status",
+    "answer": "utterance",
+    "semantic_subject": "nara",
+    "semantic_object": "maka",
+    "semantic_status": "utterance",
+    "verb": "luma"
+  },
+  {
+    "id": "F27",
+    "block": 6,
+    "question_type": "status",
+    "answer": "utterance",
+    "semantic_subject": "sela",
+    "semantic_object": "vera",
+    "semantic_status": "utterance",
+    "verb": "rava"
+  },
+  {
+    "id": "F28",
+    "block": 6,
+    "question_type": "status",
+    "answer": "utterance",
+    "semantic_subject": "vera",
+    "semantic_object": "sela",
+    "semantic_status": "utterance",
+    "verb": "liva"
+  },
+  {
+    "id": "F29",
+    "block": 7,
+    "question_type": "status",
+    "answer": "utterance",
+    "semantic_subject": "maka",
+    "semantic_object": "nara",
+    "semantic_status": "utterance",
+    "verb": "luma"
+  },
+  {
+    "id": "F30",
+    "block": 7,
+    "question_type": "status",
+    "answer": "utterance",
+    "semantic_subject": "nara",
+    "semantic_object": "maka",
+    "semantic_status": "utterance",
+    "verb": "rava"
+  },
+  {
+    "id": "F31",
+    "block": 7,
+    "question_type": "status",
+    "answer": "utterance",
+    "semantic_subject": "sela",
+    "semantic_object": "vera",
+    "semantic_status": "utterance",
+    "verb": "liva"
+  },
+  {
+    "id": "F32",
+    "block": 7,
+    "question_type": "status",
+    "answer": "utterance",
+    "semantic_subject": "vera",
+    "semantic_object": "sela",
+    "semantic_status": "utterance",
+    "verb": "luma"
+  }
+]

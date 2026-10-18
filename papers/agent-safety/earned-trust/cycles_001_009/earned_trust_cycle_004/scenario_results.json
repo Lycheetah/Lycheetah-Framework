@@ -1,0 +1,115 @@
+{
+  "status": "LOCAL_SYNTHETIC_REPRODUCED",
+  "design": "author-authored deterministic cases",
+  "cases": [
+    {
+      "case": "legitimate",
+      "ground_truth_correct": true,
+      "receipt_only": "CONFIRMED",
+      "conventional_matched": "CONFIRMED",
+      "two_record": "CONFIRMED",
+      "reason": "two-local-claims-agree",
+      "provider_auth": true,
+      "observer_auth": true
+    },
+    {
+      "case": "false-evidence-found",
+      "ground_truth_correct": false,
+      "receipt_only": "CONFIRMED",
+      "conventional_matched": "CONFLICT",
+      "two_record": "CONFLICT",
+      "reason": "observer-reports-harmful-or-incorrect-effect",
+      "provider_auth": true,
+      "observer_auth": true
+    },
+    {
+      "case": "correlated-false-oracle",
+      "ground_truth_correct": false,
+      "receipt_only": "CONFIRMED",
+      "conventional_matched": "CONFIRMED",
+      "two_record": "CONFIRMED",
+      "reason": "two-local-claims-agree",
+      "provider_auth": true,
+      "observer_auth": true
+    },
+    {
+      "case": "missing-observation",
+      "ground_truth_correct": true,
+      "receipt_only": "CONFIRMED",
+      "conventional_matched": "REVIEW",
+      "two_record": "REVIEW",
+      "reason": "independent-observation-missing",
+      "provider_auth": true,
+      "observer_auth": false
+    },
+    {
+      "case": "observer-not-committed",
+      "ground_truth_correct": true,
+      "receipt_only": "CONFIRMED",
+      "conventional_matched": "CONFLICT",
+      "two_record": "CONFLICT",
+      "reason": "observer-does-not-confirm-effect",
+      "provider_auth": true,
+      "observer_auth": true
+    },
+    {
+      "case": "observer-unknown",
+      "ground_truth_correct": true,
+      "receipt_only": "CONFIRMED",
+      "conventional_matched": "REVIEW",
+      "two_record": "REVIEW",
+      "reason": "observer-does-not-confirm-effect",
+      "provider_auth": true,
+      "observer_auth": true
+    },
+    {
+      "case": "observer-action-disagreement",
+      "ground_truth_correct": true,
+      "receipt_only": "CONFIRMED",
+      "conventional_matched": "CONFLICT",
+      "two_record": "CONFLICT",
+      "reason": "cross-source-action-disagreement",
+      "provider_auth": true,
+      "observer_auth": true
+    },
+    {
+      "case": "outdated-signed-observation",
+      "ground_truth_correct": true,
+      "receipt_only": "CONFIRMED",
+      "conventional_matched": "REVIEW",
+      "two_record": "REVIEW",
+      "reason": "observer-evidence-not-current",
+      "provider_auth": true,
+      "observer_auth": true
+    },
+    {
+      "case": "provider-record-corruption",
+      "ground_truth_correct": true,
+      "receipt_only": "UNKNOWN",
+      "conventional_matched": "REVIEW",
+      "two_record": "REVIEW",
+      "reason": "provider-read-invalid",
+      "provider_auth": false,
+      "observer_auth": false
+    },
+    {
+      "case": "no-provider-commit",
+      "ground_truth_correct": true,
+      "receipt_only": "UNKNOWN",
+      "conventional_matched": "UNKNOWN",
+      "two_record": "UNKNOWN",
+      "reason": "no-provider-commit-receipt",
+      "provider_auth": false,
+      "observer_auth": false
+    }
+  ],
+  "totals": {
+    "total_cases": 10,
+    "two_record_confirmed": 2,
+    "two_record_review": 4,
+    "two_record_conflict": 3,
+    "two_record_unknown": 1,
+    "receipt_only_confirmed": 8,
+    "matched_baseline_disagreements": 0
+  }
+}

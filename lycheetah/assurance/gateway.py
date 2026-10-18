@@ -6,20 +6,20 @@ Binds agent tool execution to:
 3. Monotonic Ed25519-signed external checkpoints.
 4. Tamper-evident Assurance Receipts.
 """
+
 from __future__ import annotations
 
-from dataclasses import dataclass
-from hashlib import sha256
 import json
-from pathlib import Path
 import subprocess
 import time
-from typing import Any, Callable, Literal
+from collections.abc import Callable
+from dataclasses import dataclass
+from hashlib import sha256
+from pathlib import Path
+from typing import Any, Literal
 
-from .action_guard import Decision, PersistentActionGuard, action_digest, canonical_action
+from .action_guard import PersistentActionGuard, action_digest
 from .checkpoint_authority import (
-    CHECKPOINT_GENESIS,
-    CheckpointError,
     CheckpointHTTPClient,
     CheckpointStore,
 )
@@ -174,6 +174,9 @@ class ActionGateway:
         approver_id: str | None = None,
     ) -> tuple[Disposition, tuple[Finding, ...]]:
         """Evaluate action dictionary against versioned assurance policy."""
+        # The policy evaluates action/scope; this argument is API metadata and
+        # does not authenticate an identity. Keep the keyword-compatible API.
+        _ = actor
         # Static check for destructive system commands
         cmd_val = action.get("command", "")
         if isinstance(cmd_val, list):
@@ -227,9 +230,7 @@ class ActionGateway:
     ) -> GateDecision:
         """Propose an action: check policy, register single-use approval, prepare effect."""
         digest = action_digest(action)
-        disposition, findings = self.evaluate_policy(
-            action, scope, actor, approver_id=approver_id
-        )
+        disposition, findings = self.evaluate_policy(action, scope, actor, approver_id=approver_id)
 
         if disposition == Disposition.BLOCK:
             return GateDecision(
@@ -358,10 +359,10 @@ class ActionGateway:
         provider_called = True
         try:
             raw_result = executor()
-            outcome: Literal["success", "failure"] = (
+            outcome: Literal["success", "failure", "unknown"] = (
                 "success" if raw_result.get("status") == "success" else "failure"
             )
-            status_text: Literal["SUCCEEDED", "FAILED"] = (
+            status_text: Literal["SUCCEEDED", "FAILED", "UNKNOWN"] = (
                 "SUCCEEDED" if outcome == "success" else "FAILED"
             )
             result_details = raw_result

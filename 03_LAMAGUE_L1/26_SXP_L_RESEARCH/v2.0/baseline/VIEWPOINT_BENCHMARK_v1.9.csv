@@ -1,0 +1,81 @@
+case,frame,outer_speaker,prior_speaker,inner,expected_mi,expected_ti,independent_agrees,naive_outer_correct,status
+1,soraviko,nara,maka,mi liva ti,maka,nara,True,False,synthetic_fixture
+1,tumerako,nara,maka,mi liva ti,nara,maka,True,True,synthetic_fixture
+2,soraviko,nara,maka,ti liva mi,maka,nara,True,False,synthetic_fixture
+2,tumerako,nara,maka,ti liva mi,nara,maka,True,True,synthetic_fixture
+3,soraviko,nara,maka,mi liva mi,maka,nara,True,False,synthetic_fixture
+3,tumerako,nara,maka,mi liva mi,nara,maka,True,True,synthetic_fixture
+4,soraviko,nara,maka,ti liva ti,maka,nara,True,False,synthetic_fixture
+4,tumerako,nara,maka,ti liva ti,nara,maka,True,True,synthetic_fixture
+5,soraviko,nara,maka,mi liva gonape sela dimotu,maka,nara,True,False,synthetic_fixture
+5,tumerako,nara,maka,mi liva gonape sela dimotu,nara,maka,True,True,synthetic_fixture
+6,soraviko,nara,maka,gonape sela dimotu liva ti,maka,nara,True,False,synthetic_fixture
+6,tumerako,nara,maka,gonape sela dimotu liva ti,nara,maka,True,True,synthetic_fixture
+7,soraviko,nara,maka,ti liva gonape sela dimotu,maka,nara,True,False,synthetic_fixture
+7,tumerako,nara,maka,ti liva gonape sela dimotu,nara,maka,True,True,synthetic_fixture
+8,soraviko,nara,maka,gonape sela dimotu liva mi,maka,nara,True,False,synthetic_fixture
+8,tumerako,nara,maka,gonape sela dimotu liva mi,nara,maka,True,True,synthetic_fixture
+9,soraviko,nara,maka,mi luma ti,maka,nara,True,False,synthetic_fixture
+9,tumerako,nara,maka,mi luma ti,nara,maka,True,True,synthetic_fixture
+10,soraviko,nara,maka,ti luma mi,maka,nara,True,False,synthetic_fixture
+10,tumerako,nara,maka,ti luma mi,nara,maka,True,True,synthetic_fixture
+11,soraviko,nara,maka,mi luma mi,maka,nara,True,False,synthetic_fixture
+11,tumerako,nara,maka,mi luma mi,nara,maka,True,True,synthetic_fixture
+12,soraviko,nara,maka,ti luma ti,maka,nara,True,False,synthetic_fixture
+12,tumerako,nara,maka,ti luma ti,nara,maka,True,True,synthetic_fixture
+13,soraviko,nara,maka,mi luma gonape sela dimotu,maka,nara,True,False,synthetic_fixture
+13,tumerako,nara,maka,mi luma gonape sela dimotu,nara,maka,True,True,synthetic_fixture
+14,soraviko,nara,maka,gonape sela dimotu luma ti,maka,nara,True,False,synthetic_fixture
+14,tumerako,nara,maka,gonape sela dimotu luma ti,nara,maka,True,True,synthetic_fixture
+15,soraviko,nara,maka,ti luma gonape sela dimotu,maka,nara,True,False,synthetic_fixture
+15,tumerako,nara,maka,ti luma gonape sela dimotu,nara,maka,True,True,synthetic_fixture
+16,soraviko,nara,maka,gonape sela dimotu luma mi,maka,nara,True,False,synthetic_fixture
+16,tumerako,nara,maka,gonape sela dimotu luma mi,nara,maka,True,True,synthetic_fixture
+17,soraviko,nara,maka,mi rava ti,maka,nara,True,False,synthetic_fixture
+17,tumerako,nara,maka,mi rava ti,nara,maka,True,True,synthetic_fixture
+18,soraviko,nara,maka,ti rava mi,maka,nara,True,False,synthetic_fixture
+18,tumerako,nara,maka,ti rava mi,nara,maka,True,True,synthetic_fixture
+19,soraviko,nara,maka,mi rava mi,maka,nara,True,False,synthetic_fixture
+19,tumerako,nara,maka,mi rava mi,nara,maka,True,True,synthetic_fixture
+20,soraviko,nara,maka,ti rava ti,maka,nara,True,False,synthetic_fixture
+20,tumerako,nara,maka,ti rava ti,nara,maka,True,True,synthetic_fixture
+21,soraviko,nara,maka,mi rava gonape sela dimotu,maka,nara,True,False,synthetic_fixture
+21,tumerako,nara,maka,mi rava gonape sela dimotu,nara,maka,True,True,synthetic_fixture
+22,soraviko,nara,maka,gonape sela dimotu rava ti,maka,nara,True,False,synthetic_fixture
+22,tumerako,nara,maka,gonape sela dimotu rava ti,nara,maka,True,True,synthetic_fixture
+23,soraviko,nara,maka,ti rava gonape sela dimotu,maka,nara,True,False,synthetic_fixture
+23,tumerako,nara,maka,ti rava gonape sela dimotu,nara,maka,True,True,synthetic_fixture
+24,soraviko,nara,maka,gonape sela dimotu rava mi,maka,nara,True,False,synthetic_fixture
+24,tumerako,nara,maka,gonape sela dimotu rava mi,nara,maka,True,True,synthetic_fixture
+25,soraviko,nara,maka,mi liva ti,maka,nara,True,False,synthetic_fixture
+25,tumerako,nara,maka,mi liva ti,nara,maka,True,True,synthetic_fixture
+26,soraviko,nara,maka,ti liva mi,maka,nara,True,False,synthetic_fixture
+26,tumerako,nara,maka,ti liva mi,nara,maka,True,True,synthetic_fixture
+27,soraviko,nara,maka,mi liva mi,maka,nara,True,False,synthetic_fixture
+27,tumerako,nara,maka,mi liva mi,nara,maka,True,True,synthetic_fixture
+28,soraviko,nara,maka,ti liva ti,maka,nara,True,False,synthetic_fixture
+28,tumerako,nara,maka,ti liva ti,nara,maka,True,True,synthetic_fixture
+29,soraviko,nara,maka,mi liva gonape sela dimotu,maka,nara,True,False,synthetic_fixture
+29,tumerako,nara,maka,mi liva gonape sela dimotu,nara,maka,True,True,synthetic_fixture
+30,soraviko,nara,maka,gonape sela dimotu liva ti,maka,nara,True,False,synthetic_fixture
+30,tumerako,nara,maka,gonape sela dimotu liva ti,nara,maka,True,True,synthetic_fixture
+31,soraviko,nara,maka,ti liva gonape sela dimotu,maka,nara,True,False,synthetic_fixture
+31,tumerako,nara,maka,ti liva gonape sela dimotu,nara,maka,True,True,synthetic_fixture
+32,soraviko,nara,maka,gonape sela dimotu liva mi,maka,nara,True,False,synthetic_fixture
+32,tumerako,nara,maka,gonape sela dimotu liva mi,nara,maka,True,True,synthetic_fixture
+33,soraviko,nara,maka,mi luma ti,maka,nara,True,False,synthetic_fixture
+33,tumerako,nara,maka,mi luma ti,nara,maka,True,True,synthetic_fixture
+34,soraviko,nara,maka,ti luma mi,maka,nara,True,False,synthetic_fixture
+34,tumerako,nara,maka,ti luma mi,nara,maka,True,True,synthetic_fixture
+35,soraviko,nara,maka,mi luma mi,maka,nara,True,False,synthetic_fixture
+35,tumerako,nara,maka,mi luma mi,nara,maka,True,True,synthetic_fixture
+36,soraviko,nara,maka,ti luma ti,maka,nara,True,False,synthetic_fixture
+36,tumerako,nara,maka,ti luma ti,nara,maka,True,True,synthetic_fixture
+37,soraviko,nara,maka,mi luma gonape sela dimotu,maka,nara,True,False,synthetic_fixture
+37,tumerako,nara,maka,mi luma gonape sela dimotu,nara,maka,True,True,synthetic_fixture
+38,soraviko,nara,maka,gonape sela dimotu luma ti,maka,nara,True,False,synthetic_fixture
+38,tumerako,nara,maka,gonape sela dimotu luma ti,nara,maka,True,True,synthetic_fixture
+39,soraviko,nara,maka,ti luma gonape sela dimotu,maka,nara,True,False,synthetic_fixture
+39,tumerako,nara,maka,ti luma gonape sela dimotu,nara,maka,True,True,synthetic_fixture
+40,soraviko,nara,maka,gonape sela dimotu luma mi,maka,nara,True,False,synthetic_fixture
+40,tumerako,nara,maka,gonape sela dimotu luma mi,nara,maka,True,True,synthetic_fixture

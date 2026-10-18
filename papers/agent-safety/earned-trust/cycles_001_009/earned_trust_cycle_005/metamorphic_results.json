@@ -1,0 +1,11 @@
+{
+  "status": "SYNTHETIC_DETERMINISTIC",
+  "seed": 1956,
+  "cases": 1000,
+  "matched_baseline_disagreements": 0,
+  "order_invariance_failures": 0,
+  "mismatched_action_confirmations": 0,
+  "single_root_confirmations": 0,
+  "confirmations_total": 723,
+  "recorded_counterexamples": []
+}

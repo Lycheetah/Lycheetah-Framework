@@ -259,9 +259,7 @@ def _strings(value: Any) -> Iterable[str]:
             yield from _strings(item)
 
 
-def build_codebook(
-    training_packets: list[dict[str, Any]], max_entries: int = 20
-) -> dict[str, Any]:
+def build_codebook(training_packets: list[dict[str, Any]], max_entries: int = 20) -> dict[str, Any]:
     """Train a codebook of frequent strings to maximize compression ratio across packets."""
     if max_entries < 0:
         raise CodecError("max_entries must be non-negative")
@@ -322,9 +320,7 @@ def _reference_decoder(codebook: dict[str, Any]) -> Callable[[Any], str]:
     return decode_string
 
 
-def _compact_with_dictionary(
-    packet: dict[str, Any], codebook: dict[str, Any]
-) -> dict[str, Any]:
+def _compact_with_dictionary(packet: dict[str, Any], codebook: dict[str, Any]) -> dict[str, Any]:
     ref = _reference_encoder(codebook)
     obj = _compact_object(packet)
     return {
@@ -377,11 +373,13 @@ def _expand_object(obj: Any, codebook: dict[str, Any] | None) -> dict[str, Any]:
         extra = sorted(set(obj) - expected)
         raise CodecError(f"compressed fields differ; missing={missing}, extra={extra}")
 
+    string: Callable[[Any], str]
     if codebook is None:
 
-        def string(value: Any) -> str:
+        def literal_string(value: Any) -> str:
             return _require_string("compressed string", value)
 
+        string = literal_string
     else:
         string = _reference_decoder(codebook)
 
@@ -407,11 +405,13 @@ def _expand_object(obj: Any, codebook: dict[str, Any] | None) -> dict[str, Any]:
                 protected = bool(item[1])
             else:
                 raise CodecError("invalid protected flag")
-            unknowns.append({
-                "id": string(item[0]),
-                "protected": protected,
-                "requiredFor": string(item[2]),
-            })
+            unknowns.append(
+                {
+                    "id": string(item[0]),
+                    "protected": protected,
+                    "requiredFor": string(item[2]),
+                }
+            )
 
         invariants = [{"id": string(item[0]), "text": string(item[1])} for item in obj["n"]]
         authority = [
@@ -457,9 +457,7 @@ def _expand_object(obj: Any, codebook: dict[str, Any] | None) -> dict[str, Any]:
     validate_packet(packet)
     violations = safety_violations(packet)
     if violations:
-        raise CodecError(
-            f"decoded packet violates semantic safety rules: {', '.join(violations)}"
-        )
+        raise CodecError(f"decoded packet violates semantic safety rules: {', '.join(violations)}")
     return packet
 
 
@@ -540,10 +538,7 @@ def classify(reference: dict[str, Any], candidate: dict[str, Any]) -> dict[str, 
             "fields": sorted(set(protected_loss)),
         }
 
-    if (
-        reference["purpose"] != candidate["purpose"]
-        or reference["claim"] != candidate["claim"]
-    ):
+    if reference["purpose"] != candidate["purpose"] or reference["claim"] != candidate["claim"]:
         return {"classification": "DIVERGENT", "reason": "purpose or claim changed"}
 
     if reference["invariants"] != candidate["invariants"]:

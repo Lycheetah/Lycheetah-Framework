@@ -1,0 +1,62 @@
+{
+  "cycle": "earned-trust-002",
+  "as_of": "2026-10-18",
+  "implementation_status": "LOCAL_SYNTHETIC_SQLITE",
+  "repository_contract_status": "UNEXECUTED",
+  "claims": [
+    {
+      "id": "ET2-001",
+      "status": "MEASURED_LOCALLY",
+      "claim": "29 authored local unittest methods pass.",
+      "falsifier": "Re-run python3 -m unittest -v test_transactional_provider test_binding_contract and observe a failure."
+    },
+    {
+      "id": "ET2-002",
+      "status": "MEASURED_LOCALLY",
+      "claim": "In one SQLite DB, 32 submissions of the same grant/effect produced one effect row and 31 idempotent read outcomes.",
+      "falsifier": "Find a run with more than one effect row or different payload accepted under the same effect id."
+    },
+    {
+      "id": "ET2-003",
+      "status": "MEASURED_LOCALLY",
+      "claim": "The SQLite conditional write rejects the tested stale eligibility, approval epoch, policy limit and mismatched payload cases.",
+      "falsifier": "Mutate the corresponding database facts before commit and observe an effect row despite invalid state."
+    },
+    {
+      "id": "ET2-004",
+      "status": "NEGATIVE_CONTROL",
+      "claim": "False provider-trusted evidence can still pass all listed local checks and produce a modeled effect.",
+      "falsifier": "Prove the system reads an independent source-of-truth predicate at the commit boundary and refuses the modeled false status."
+    },
+    {
+      "id": "ET2-005",
+      "status": "MEASURED_LOCALLY",
+      "claim": "A lost response following a SQLite commit can be reconciled by an effect-id lookup without a duplicate write.",
+      "falsifier": "After raising LostResponse, a matching retry inserts another row or reconciliation loses the committed effect."
+    },
+    {
+      "id": "ET2-006",
+      "status": "SOURCE_REVIEWED_ONLY",
+      "claim": "Current Framework finality and guard APIs are distinct local decision/dispatch boundaries without remote-provider atomicity.",
+      "falsifier": "Pin repository revision and show an existing caller/provider design that actually enforces linked atomic remote preconditions."
+    },
+    {
+      "id": "ET2-007",
+      "status": "UNEXECUTED",
+      "claim": "The real-Framework contract suite contains 18 targeted tests but has not run against installed Framework classes.",
+      "falsifier": "Execute with pinned checkout and publish transcript, including failures."
+    },
+    {
+      "id": "ET2-008",
+      "status": "CONJECTURE",
+      "claim": "One authenticated versioned execution envelope plus explicit provider capability negotiation can improve diagnosability without unnecessary enforcement.",
+      "falsifier": "Matched head-to-head experiment finds no greater audit reconstruction or fewer mistakes versus conventional tooling under equivalent capabilities and human workload."
+    },
+    {
+      "id": "ET2-009",
+      "status": "MEASURED_LOCALLY",
+      "claim": "In four rounds, eight separate host processes shared one SQLite file and produced one commit plus seven read-only replays per round.",
+      "falsifier": "Re-run python3 process_probe.py and observe a duplicate effect or a different result; this would invalidate the scoped local claim."
+    }
+  ]
+}

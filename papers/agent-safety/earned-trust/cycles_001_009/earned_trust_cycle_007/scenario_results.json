@@ -1,0 +1,181 @@
+{
+  "allowed": 8,
+  "by_reason": {
+    "action-substitution": 1,
+    "approval-invalid": 2,
+    "bad-witness-seal": 1,
+    "evidence-stale": 2,
+    "locally-dispatchable": 8,
+    "missing-witness": 1,
+    "revoked": 1,
+    "source-challenged": 1,
+    "stale-governance": 3
+  },
+  "cases": [
+    {
+      "allowed": true,
+      "case": "clean",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "locally-dispatchable",
+      "status": "DISPATCHING"
+    },
+    {
+      "allowed": false,
+      "case": "challenge_before_claim",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "stale-governance",
+      "status": "PREPARED"
+    },
+    {
+      "allowed": false,
+      "case": "challenge_refreshed",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "source-challenged",
+      "status": "PREPARED"
+    },
+    {
+      "allowed": false,
+      "case": "unrelated_challenge_cached",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "stale-governance",
+      "status": "PREPARED"
+    },
+    {
+      "allowed": true,
+      "case": "unrelated_challenge_refreshed",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "locally-dispatchable",
+      "status": "DISPATCHING"
+    },
+    {
+      "allowed": false,
+      "case": "revoke_before_claim",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "revoked",
+      "status": "PREPARED"
+    },
+    {
+      "allowed": false,
+      "case": "revoke_refreshed",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "approval-invalid",
+      "status": "PREPARED"
+    },
+    {
+      "allowed": false,
+      "case": "evidence_becomes_fail",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "evidence-stale",
+      "status": "PREPARED"
+    },
+    {
+      "allowed": false,
+      "case": "evidence_changes_but_stays_pass",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "evidence-stale",
+      "status": "PREPARED"
+    },
+    {
+      "allowed": false,
+      "case": "action_substitution",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "action-substitution",
+      "status": "PREPARED"
+    },
+    {
+      "allowed": false,
+      "case": "tampered_witness",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "bad-witness-seal",
+      "status": "PREPARED"
+    },
+    {
+      "allowed": false,
+      "case": "expired_approval",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "approval-invalid",
+      "status": "PREPARED"
+    },
+    {
+      "allowed": true,
+      "case": "forged_challenge_ignored",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "locally-dispatchable",
+      "status": "DISPATCHING"
+    },
+    {
+      "allowed": true,
+      "case": "challenge_after_claim",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "locally-dispatchable",
+      "status": "DISPATCHING"
+    },
+    {
+      "allowed": true,
+      "case": "false_trusted_evidence",
+      "ground_truth_correct": false,
+      "ledger_valid": true,
+      "reason": "locally-dispatchable",
+      "status": "DISPATCHING"
+    },
+    {
+      "allowed": true,
+      "case": "resolve_and_refinalize",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "locally-dispatchable",
+      "status": "DISPATCHING"
+    },
+    {
+      "allowed": true,
+      "case": "duplicate_dispatch",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "locally-dispatchable",
+      "retry_reason": "effect-already-claimed",
+      "status": "DISPATCHING"
+    },
+    {
+      "allowed": false,
+      "case": "missing_witness",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "missing-witness",
+      "status": "PREPARED"
+    },
+    {
+      "allowed": true,
+      "case": "challenge_to_unregistered_source",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "locally-dispatchable",
+      "status": "DISPATCHING"
+    },
+    {
+      "allowed": false,
+      "case": "fresh_cache_on_cleared_challenge",
+      "ground_truth_correct": true,
+      "ledger_valid": true,
+      "reason": "stale-governance",
+      "status": "PREPARED"
+    }
+  ],
+  "description": "20 locally authored scenario fixtures, no provider effects",
+  "false_world_confirmations": 1,
+  "n": 20,
+  "paused": 12
+}

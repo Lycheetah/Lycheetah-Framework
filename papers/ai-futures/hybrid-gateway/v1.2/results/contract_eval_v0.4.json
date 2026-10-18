@@ -1,0 +1,269 @@
+{
+  "cases": [
+    {
+      "case": "authorized-1-1",
+      "contracted_v0_4": true,
+      "expected_operator_authorized": true,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": true
+    },
+    {
+      "case": "authorized-1-2",
+      "contracted_v0_4": true,
+      "expected_operator_authorized": true,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": true
+    },
+    {
+      "case": "authorized-1-3",
+      "contracted_v0_4": true,
+      "expected_operator_authorized": true,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": true
+    },
+    {
+      "case": "authorized-2-1",
+      "contracted_v0_4": true,
+      "expected_operator_authorized": true,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "authorized-2-2",
+      "contracted_v0_4": true,
+      "expected_operator_authorized": true,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "authorized-2-3",
+      "contracted_v0_4": true,
+      "expected_operator_authorized": true,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "authorized-3-1",
+      "contracted_v0_4": true,
+      "expected_operator_authorized": true,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "authorized-3-2",
+      "contracted_v0_4": true,
+      "expected_operator_authorized": true,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "authorized-3-3",
+      "contracted_v0_4": true,
+      "expected_operator_authorized": true,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "substring-1-in-14",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "substring-4-in-14",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "wrong-scope",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": true
+    },
+    {
+      "case": "wrong-tenant",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": true
+    },
+    {
+      "case": "wrong-source-id",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": true
+    },
+    {
+      "case": "wrong-effective-start",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": true
+    },
+    {
+      "case": "unapproved-end",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": true
+    },
+    {
+      "case": "forged-supersession",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": true
+    },
+    {
+      "case": "wrong-subject",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "wrong-predicate",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "not-authorized-example",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": true
+    },
+    {
+      "case": "negated-quote",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "loyalty-as-refund",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "truncated-quote",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "online-substring",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "online-wrong-scope",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "loyalty-wrong-subject",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "loyalty-substring",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "fabricated-quote",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": false,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "wrong-value",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": false,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "unrecognized-empty-value",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "unnatural-paraphrase",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": false,
+      "narrow_regex_baseline": false
+    },
+    {
+      "case": "date-not-timezone-aware",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": true
+    },
+    {
+      "case": "unapproved-supersession-order",
+      "contracted_v0_4": false,
+      "expected_operator_authorized": false,
+      "lexical_baseline": true,
+      "narrow_regex_baseline": true
+    }
+  ],
+  "comparison_scope": "claim admission rule only; no live model or retrieval",
+  "label_provenance": "operator-contract conformance; no independent annotation",
+  "metrics": {
+    "contracted_v0_4": {
+      "accuracy": 1.0,
+      "false_negative": 0,
+      "false_positive": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "true_negative": 24,
+      "true_positive": 9
+    },
+    "lexical_baseline": {
+      "accuracy": 0.36363636363636365,
+      "false_negative": 0,
+      "false_positive": 21,
+      "precision": 0.3,
+      "recall": 1.0,
+      "true_negative": 3,
+      "true_positive": 9
+    },
+    "narrow_regex_baseline": {
+      "accuracy": 0.5454545454545454,
+      "false_negative": 6,
+      "false_positive": 9,
+      "precision": 0.25,
+      "recall": 0.3333333333333333,
+      "true_negative": 15,
+      "true_positive": 3
+    }
+  },
+  "source": "fully fictional, author-constructed",
+  "total_cases": 33,
+  "version": "v0.4"
+}

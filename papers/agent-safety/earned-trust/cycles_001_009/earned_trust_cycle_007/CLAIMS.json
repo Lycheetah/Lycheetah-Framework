@@ -1,0 +1,16 @@
+{
+  "schema": "earned-trust-research-claims-v1",
+  "cycle": "007",
+  "status": "LOCAL_SYNTHETIC_ENGINEERING_TESTED",
+  "framework_integration": "NOT_EXECUTED_IMPORT_ERROR",
+  "claims": [
+    {"id":"ET-007-001","status":"LOCAL_TESTED","claim":"Cooperating SQLite clients observe one serialized order between challenge and dispatch claim.","evidence":"test_dispatch_fence.py; test_process_challenge_race.py","falsifier":"An accepted dispatch with an unresolved matching challenge committed earlier in the same DB."},
+    {"id":"ET-007-002","status":"LOCAL_TESTED","claim":"An exact-action, revision-bound snapshot is rejected after relevant governance/evidence/authority changes.","evidence":"test_dispatch_fence.py","falsifier":"Stale or substituted state is allowed with its old witness."},
+    {"id":"ET-007-003","status":"LOCAL_TESTED","claim":"Configured witness ancestry is expanded to upstream source ancestors.","evidence":"test_transitive_dependency_challenge","falsifier":"Witness-only dependencies allow a claim after an unresolved challenge to a configured ancestor."},
+    {"id":"ET-007-004","status":"NEGATIVE_CONTROL_REPRODUCED","claim":"Accepted C006 challenge without relay to distinct C007 ledger does not prevent dispatch.","evidence":"test_governance_mirror.test_unmirrored_challenge_is_an_actual_gap","falsifier":"Without mirror and without any shared authority, the C007 ledger learns the C006 challenge and denies."},
+    {"id":"ET-007-005","status":"NEGATIVE_CONTROL_REPRODUCED","claim":"False trusted PASS evidence can produce a locally permitted dispatch claim.","evidence":"test_false_trusted_evidence_negative_control; run_scenarios.py","falsifier":"The gate correctly infers real-world falsehood using only the intentionally false fixture record."},
+    {"id":"ET-007-006","status":"LOCAL_TESTED","claim":"An already claimed local dispatch is not retroactively canceled by a later challenge.","evidence":"test_challenge_after_dispatch_does_not_magic_rollback","falsifier":"Later challenge undoes the historical dispatch state or claims remote reversal."},
+    {"id":"ET-007-007","status":"NOT_EXECUTED","claim":"Native Lycheetah FinalityGate and ActionGuard work together under the specified handoff.","evidence":"real_framework_attempt.txt (ModuleNotFoundError)","falsifier":"Actual pinned checkout fails the explicit sequential contract tests or shows a handoff counterexample."},
+    {"id":"ET-007-008","status":"NOT_CLAIMED","claim":"This approach is novel, externally validated, or superior to mature conditional SQL controls.","evidence":"No independent benchmark; standard SQLite transaction methods used","falsifier":"Conduct an independently designed matched-control comparison."}
+  ]
+}

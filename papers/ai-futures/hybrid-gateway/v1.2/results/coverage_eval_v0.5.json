@@ -1,0 +1,285 @@
+{
+  "method": "author-constructed contract-conformance exercise, not a model quality eval",
+  "version": "v0.5",
+  "case_count": 32,
+  "group_summary": {
+    "complete": {
+      "n": 8,
+      "legacy_accepted": 8,
+      "v05_ready": 8
+    },
+    "missing": {
+      "n": 8,
+      "legacy_accepted": 8,
+      "v05_ready": 0
+    },
+    "duplicate": {
+      "n": 8,
+      "legacy_accepted": 8,
+      "v05_ready": 0
+    },
+    "unexpected": {
+      "n": 8,
+      "legacy_accepted": 0,
+      "v05_ready": 0
+    }
+  },
+  "cases": [
+    {
+      "id": "complete_base",
+      "family": "complete",
+      "expected_plan_complete": true,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": true,
+      "v05_disposition": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "complete_renamed",
+      "family": "complete",
+      "expected_plan_complete": true,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": true,
+      "v05_disposition": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "complete_both",
+      "family": "complete",
+      "expected_plan_complete": true,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": true,
+      "v05_disposition": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "complete_reversed",
+      "family": "complete",
+      "expected_plan_complete": true,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": true,
+      "v05_disposition": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "complete_subplan_refund",
+      "family": "complete",
+      "expected_plan_complete": true,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": true,
+      "v05_disposition": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "complete_subplan_loyalty",
+      "family": "complete",
+      "expected_plan_complete": true,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": true,
+      "v05_disposition": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "complete_empty_plan",
+      "family": "complete",
+      "expected_plan_complete": true,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": true,
+      "v05_disposition": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "complete_reordered",
+      "family": "complete",
+      "expected_plan_complete": true,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": true,
+      "v05_disposition": "READY_FOR_REVIEW"
+    },
+    {
+      "id": "missing_no_values",
+      "family": "missing",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_MISSING"
+    },
+    {
+      "id": "missing_refund_missing",
+      "family": "missing",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_MISSING"
+    },
+    {
+      "id": "missing_loyalty_missing",
+      "family": "missing",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_MISSING"
+    },
+    {
+      "id": "missing_missing_both",
+      "family": "missing",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_MISSING"
+    },
+    {
+      "id": "missing_omit_only",
+      "family": "missing",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_MISSING"
+    },
+    {
+      "id": "missing_omit_refund",
+      "family": "missing",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_MISSING"
+    },
+    {
+      "id": "missing_omit_loyalty",
+      "family": "missing",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_MISSING"
+    },
+    {
+      "id": "missing_subplan_empty",
+      "family": "missing",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_MISSING"
+    },
+    {
+      "id": "duplicate_0",
+      "family": "duplicate",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_DUPLICATE"
+    },
+    {
+      "id": "duplicate_1",
+      "family": "duplicate",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_DUPLICATE"
+    },
+    {
+      "id": "duplicate_2",
+      "family": "duplicate",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_DUPLICATE"
+    },
+    {
+      "id": "duplicate_3",
+      "family": "duplicate",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_DUPLICATE"
+    },
+    {
+      "id": "duplicate_4",
+      "family": "duplicate",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_DUPLICATE"
+    },
+    {
+      "id": "duplicate_5",
+      "family": "duplicate",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_DUPLICATE"
+    },
+    {
+      "id": "duplicate_6",
+      "family": "duplicate",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_DUPLICATE"
+    },
+    {
+      "id": "duplicate_7",
+      "family": "duplicate",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": true,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_DUPLICATE"
+    },
+    {
+      "id": "extra_0",
+      "family": "unexpected",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": false,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_UNEXPECTED"
+    },
+    {
+      "id": "extra_1",
+      "family": "unexpected",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": false,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_UNEXPECTED"
+    },
+    {
+      "id": "extra_2",
+      "family": "unexpected",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": false,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_UNEXPECTED"
+    },
+    {
+      "id": "extra_3",
+      "family": "unexpected",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": false,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_UNEXPECTED"
+    },
+    {
+      "id": "extra_4",
+      "family": "unexpected",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": false,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_UNEXPECTED"
+    },
+    {
+      "id": "extra_5",
+      "family": "unexpected",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": false,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_UNEXPECTED"
+    },
+    {
+      "id": "extra_6",
+      "family": "unexpected",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": false,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_UNEXPECTED"
+    },
+    {
+      "id": "extra_7",
+      "family": "unexpected",
+      "expected_plan_complete": false,
+      "legacy_staging_accepted": false,
+      "v05_ready_for_review": false,
+      "v05_disposition": "REVIEW_UNEXPECTED"
+    }
+  ]
+}

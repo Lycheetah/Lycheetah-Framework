@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SXP-L v1.9 · Natural Reference Lab</title><style>
+:root{color-scheme:dark;--bg:#0a1015;--panel:#142028;--panel2:#182832;--ink:#e7f6f4;--muted:#a5c4c2;--accent:#81eac8;--border:#2c4a4b;--gold:#efcc8d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 18% 0%,#19383c 0%,transparent 46%),var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.52}main{max-width:1060px;margin:auto;padding:30px 18px 65px}h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.05;letter-spacing:-.045em;margin:.2em 0}.eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.16em;color:var(--accent)}h2{margin:0 0 12px;font-size:1.2rem}p{color:var(--muted)}strong{color:var(--ink)}.lede{font-size:1.14rem;max-width:720px}.tag{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:5px 10px;color:var(--muted);font-size:.75rem;margin:5px 6px 5px 0}.layout{display:grid;grid-template-columns:.88fr 1.12fr;gap:16px;margin-top:26px}.panel{border:1px solid var(--border);background:linear-gradient(155deg,var(--panel),#101b22);border-radius:16px;padding:23px}.panel.sub{background:var(--panel2)}label{color:var(--muted);font-size:.84rem;font-weight:650;display:block;margin:15px 0 6px}select,button{border:1px solid #43706b;background:#12292c;color:var(--ink);padding:12px 11px;border-radius:9px;font:inherit;cursor:pointer;width:100%}select:focus,button:focus-visible{outline:2px solid var(--accent)}button{font-weight:700}button:hover{background:#1b4441}.choices{display:grid;grid-template-columns:1fr 1fr;gap:9px}.choices button{font-size:.9rem}.choices button.active{border-color:var(--accent);color:var(--accent);background:#183c38}code,pre{font: .89rem/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;color:#b8f7e3}pre{margin:0}.textblock{border-left:3px solid var(--accent);padding:10px 13px;background:#0c171e;border-radius:7px}.meaning{font-size:1.2rem;color:var(--ink);margin:14px 0}.note{font-size:.83rem;color:var(--muted)}.warning{border-left:3px solid var(--gold);padding:8px 14px;background:#30291e;color:#f4e1c1;border-radius:6px;font-size:.88rem}hr{border:0;border-top:1px solid var(--border);margin:22px 0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.small{font-size:.79rem}#result{min-height:2em;font-weight:600;color:var(--accent)}.quiz button{margin:5px 0}.quiz button.good{border-color:var(--accent)}.footer{font-size:.85rem;margin-top:26px}#download{margin-top:15px}@media(max-width:760px){.layout,.grid3{grid-template-columns:1fr}main{padding-top:24px}.panel{padding:17px}}
+</style></head><body><main>
+<div class="eyebrow">LYCHEETAH · LAMAGUE · SXP-L / v1.9</div><h1>The Natural Reference Lab</h1><p class="lede">Two short viewpoint markers. One important question: <strong>whose “I” is it?</strong> Explore exactly how the same words change meaning when the speaker's perspective changes.</p>
+<div><span class="tag">Offline · no uploads</span><span class="tag">Bounded grammar subset</span><span class="tag">Original mi liva ti preserved</span></div>
+<div class="layout"><section class="panel"><h2>Compose the clarification</h2><p class="small">First, Maka says to Nara: <strong>mi liva ti</strong> — I love you. Now Nara asks Maka to clarify whether a different meaning was intended.</p>
+<label>Viewpoint for the proposed interpretation</label><div class="choices"><button type="button" id="source" class="active">soraviko<br><small>Original speaker</small></button><button type="button" id="current">tumerako<br><small>Current questioner</small></button></div>
+<label for="subject">Subject inside proposed meaning</label><select id="subject"><option value="mi">mi — local I</option><option value="ti">ti — local you</option><option value="sela">Sela — explicitly named</option></select>
+<label for="verb">Verb</label><select id="verb"><option value="luma">luma — miss</option><option value="liva">liva — love</option><option value="rava">rava — reconnect with</option></select>
+<label for="object">Object inside proposed meaning</label><select id="object"><option value="ti">ti — local you</option><option value="mi">mi — local I</option><option value="sela">Sela — explicitly named</option></select>
+<button type="button" id="download">Export example .sxp19 file</button></section>
+<section class="panel sub"><h2>Semantic inspector</h2><p class="note">Current utterance: Nara → Maka. Referenced original turn: Maka → Nara.</p><div class="textblock"><code id="native" aria-live="polite"></code></div><p class="meaning" id="english" aria-live="polite"></p><p class="note" id="bound"></p><h2>Reversible v1.8 expansion</h2><div class="textblock"><code id="expanded"></code></div><p class="warning">This is a <strong>proposed interpretation</strong>, not a claim that Maka intended it. The source utterance remains on record. No language statement grants executable authority.</p></section></div>
+<div class="grid3" style="margin-top:16px"><section class="panel"><h2>1. Scope</h2><p>Only <code>kelunaro</code> can introduce these viewpoint frames in v1.9, and only for three simple verbs.</p></section><section class="panel"><h2>2. Recovery</h2><p>The compact wording expands into the inherited explicit-name grammar. Keep the original source to recover which binder was chosen.</p></section><section class="panel"><h2>3. Honesty</h2><p>Nested quotations, sarcasm, and unresolved third-person references are outside this small subset—not silently inferred.</p></section></div>
+<section class="panel quiz" style="margin-top:16px"><h2>Reading challenge</h2><p>In a conversation where Maka originally addressed Nara, Nara now asks Maka to clarify: <code>tumerako mi luma ti</code>. Who is missing whom?</p><div class="choices"><button type="button" data-answer="wrong">Maka misses Nara</button><button type="button" data-answer="right">Nara misses Maka</button></div><p id="result" role="status"></p></section>
+<p class="footer">Research prototype, not a verified speech recognizer or natural-language comprehension benchmark. No network requests, no real-world actions. <strong>Mi liva ti</strong> remains the original expression.</p>
+</main><script>
+'use strict';
+const $=id=>document.getElementById(id);let frame='soraviko';
+const PERSON={source:['maka','nara'],current:['nara','maka']};
+function asName(value,roles){return value==='mi'?roles[0]:value==='ti'?roles[1]:value;}
+function expand(value,roles){return 'gonape '+asName(value,roles)+' dimotu';}
+function update(){
+ const roles=PERSON[frame==='soraviko'?'source':'current'];
+ const s=$('subject').value,o=$('object').value,v=$('verb').value;
+ const subj=asName(s,roles),obj=asName(o,roles);
+ const inner=`${frame} ${s==='sela'?'gonape sela dimotu':s} ${v} ${o==='sela'?'gonape sela dimotu':o} devora`;
+ const speech=`mi kelunaro gonape taba dimotu bakumo ${inner} tesavo devora`;
+ const expanded=`mi kelunaro gonape taba dimotu bakumo ${expand(s,roles)} ${v} ${expand(o,roles)} devora tesavo devora`;
+ const cap=name=>name[0].toUpperCase()+name.slice(1);
+ const words={liva:'loves',luma:'misses',rava:'reconnects with'};
+ $('native').textContent=`nara > maka : ${speech}`;
+ $('expanded').textContent=`nara > maka : ${expanded}`;
+ $('english').textContent=`Nara asks: “Did you mean that ${cap(subj)} ${words[v]} ${cap(obj)}?”`;
+ $('bound').textContent=`Inside this hypothetical frame: mi → ${roles[0]} · ti → ${roles[1]}`;
+ $('download').onclick=()=>{
+   const txt=`people maka nara sela\nmaka > nara : mi liva ti devora\nnara > maka : ${speech}\n`;
+   const a=document.createElement('a');const u=URL.createObjectURL(new Blob([txt],{type:'text/plain;charset=utf-8'}));
+   a.href=u;a.download='sxpl_v19_reference_example.sxp19';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);
+ };
+}
+for(const kind of ['source','current'])$(kind).addEventListener('click',()=>{frame=kind==='source'?'soraviko':'tumerako';for(const k of ['source','current'])$(k).classList.toggle('active',k===kind);update();});
+for(const id of ['subject','verb','object'])$(id).addEventListener('change',update);
+for(const b of document.querySelectorAll('[data-answer]'))b.addEventListener('click',()=>{$('result').textContent=b.dataset.answer==='right'?'Correct. Current-questioner binding makes mi = Nara, ti = Maka.':'Not quite. Tumerako uses the current questioner’s perspective: mi = Nara.';});
+update();
+</script></body></html>

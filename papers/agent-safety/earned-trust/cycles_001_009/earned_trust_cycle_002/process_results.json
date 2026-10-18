@@ -1,0 +1,35 @@
+{
+  "status": "SYNTHETIC_LOCAL_MULTIPROCESS",
+  "rounds": 4,
+  "workers_per_round": 8,
+  "observations": [
+    {
+      "round": 1,
+      "COMMITTED": 1,
+      "IDEMPOTENT_REPLAY": 7,
+      "effect_count": 1
+    },
+    {
+      "round": 2,
+      "COMMITTED": 1,
+      "IDEMPOTENT_REPLAY": 7,
+      "effect_count": 1
+    },
+    {
+      "round": 3,
+      "COMMITTED": 1,
+      "IDEMPOTENT_REPLAY": 7,
+      "effect_count": 1
+    },
+    {
+      "round": 4,
+      "COMMITTED": 1,
+      "IDEMPOTENT_REPLAY": 7,
+      "effect_count": 1
+    }
+  ],
+  "notes": [
+    "All processes use one physical host SQLite database per round.",
+    "Not a distributed database, service API, model agent, or independent security test."
+  ]
+}

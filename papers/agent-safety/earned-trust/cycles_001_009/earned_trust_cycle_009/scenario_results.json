@@ -1,0 +1,114 @@
+{
+  "schema": "earned-trust-C009-provider-baseline",
+  "scope": "provider-only; not a whole-agent benchmark",
+  "cases": 15,
+  "agreements": 15,
+  "source": "fixed author-written synthetic scenarios",
+  "results": [
+    {
+      "case": "authorized",
+      "protected": "COMMITTED",
+      "conventional": "COMMITTED",
+      "agree": true,
+      "risk": false
+    },
+    {
+      "case": "unsigned",
+      "protected": "DENIED",
+      "conventional": "DENIED",
+      "agree": true,
+      "risk": false
+    },
+    {
+      "case": "bad-signature",
+      "protected": "DENIED",
+      "conventional": "DENIED",
+      "agree": true,
+      "risk": false
+    },
+    {
+      "case": "expired",
+      "protected": "DENIED",
+      "conventional": "DENIED",
+      "agree": true,
+      "risk": false
+    },
+    {
+      "case": "future",
+      "protected": "DENIED",
+      "conventional": "DENIED",
+      "agree": true,
+      "risk": false
+    },
+    {
+      "case": "changed-action",
+      "protected": "DENIED",
+      "conventional": "DENIED",
+      "agree": true,
+      "risk": false
+    },
+    {
+      "case": "changed-subject",
+      "protected": "DENIED",
+      "conventional": "DENIED",
+      "agree": true,
+      "risk": false
+    },
+    {
+      "case": "wrong-tool",
+      "protected": "DENIED",
+      "conventional": "DENIED",
+      "agree": true,
+      "risk": false
+    },
+    {
+      "case": "oversized-refund",
+      "protected": "DENIED",
+      "conventional": "DENIED",
+      "agree": true,
+      "risk": false
+    },
+    {
+      "case": "wrong-kid",
+      "protected": "DENIED",
+      "conventional": "DENIED",
+      "agree": true,
+      "risk": false
+    },
+    {
+      "case": "forged-seq",
+      "protected": "DENIED",
+      "conventional": "DENIED",
+      "agree": true,
+      "risk": false
+    },
+    {
+      "case": "replay",
+      "protected": "REPLAY",
+      "conventional": "REPLAY",
+      "agree": true,
+      "risk": false
+    },
+    {
+      "case": "mismatched-replay",
+      "protected": "DENIED",
+      "conventional": "DENIED",
+      "agree": true,
+      "risk": false
+    },
+    {
+      "case": "compromised-key",
+      "protected": "COMMITTED",
+      "conventional": "COMMITTED",
+      "agree": true,
+      "risk": true
+    },
+    {
+      "case": "stolen-valid-capability",
+      "protected": "COMMITTED",
+      "conventional": "COMMITTED",
+      "agree": true,
+      "risk": true
+    }
+  ]
+}

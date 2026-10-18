@@ -1,0 +1,62 @@
+{
+  "cases": {
+    "action_amount_swapped": {
+      "code": "ACTION_BINDING_MISMATCH",
+      "effect_count": 0,
+      "ledger_valid": true,
+      "local_ground_truth": true,
+      "receipt_verified": null
+    },
+    "changed_evidence": {
+      "code": "EVIDENCE_UNSATISFIED",
+      "effect_count": 0,
+      "ledger_valid": true,
+      "local_ground_truth": true,
+      "receipt_verified": null
+    },
+    "changed_policy": {
+      "code": "POLICY_REVISION_CHANGED",
+      "effect_count": 0,
+      "ledger_valid": true,
+      "local_ground_truth": true,
+      "receipt_verified": null
+    },
+    "false_source_still_passes": {
+      "code": "COMMITTED",
+      "effect_count": 1,
+      "ledger_valid": true,
+      "local_ground_truth": false,
+      "receipt_verified": true
+    },
+    "forged_token_body": {
+      "code": "INVALID_TOKEN_AUTH",
+      "effect_count": 0,
+      "ledger_valid": true,
+      "local_ground_truth": true,
+      "receipt_verified": null
+    },
+    "lost_response_then_readback": {
+      "code": "RESPONSE_LOST_AFTER_COMMIT",
+      "effect_count": 1,
+      "ledger_valid": true,
+      "local_ground_truth": true,
+      "receipt_verified": true
+    },
+    "revoked_actor": {
+      "code": "REVOKED",
+      "effect_count": 0,
+      "ledger_valid": true,
+      "local_ground_truth": true,
+      "receipt_verified": null
+    },
+    "valid_approved_action": {
+      "code": "COMMITTED",
+      "effect_count": 1,
+      "ledger_valid": true,
+      "local_ground_truth": true,
+      "receipt_verified": true
+    }
+  },
+  "count": 8,
+  "status": "LOCAL_LAB_ONLY"
+}

@@ -1,12 +1,12 @@
 # LYCHEETAH FRAMEWORK
 
-### Nine formal frameworks for AI alignment and epistemology — and the measurement that narrowed what they claim
+### Runnable tools and research for accountable AI
 
 [![CI](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/ci.yml/badge.svg)](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](https://github.com/Lycheetah/Lycheetah-Framework)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![External validation](https://img.shields.io/badge/external%20validation-bounded%20to%20AI--assistant%20text-orange)](33_APPLICATIONS/EXTERNAL_VALIDATION_2026-08-07.md)
-[![arXiv](https://img.shields.io/badge/arXiv-CASCADE-red)](papers/CASCADE_ARXIV.tex)
+[![Working paper](https://img.shields.io/badge/working%20paper-CASCADE-red)](papers/CASCADE_ARXIV.tex)
 [![Sponsor](https://img.shields.io/badge/sponsor-Lycheetah-ea4aaa)](https://github.com/sponsors/Lycheetah)
 [![Stars](https://img.shields.io/github/stars/Lycheetah/Lycheetah-Framework?style=social)](https://github.com/Lycheetah/Lycheetah-Framework/stargazers)
 
@@ -14,15 +14,37 @@
 
 Built by one self-taught researcher, **Mackenzie Conor James Clark**, in Ōtepoti / Dunedin, New Zealand. Open source under MIT, free to use and audit.
 
-**Most AI projects tell you how good they are. This one puts the measurement that cut its own claims down on the front page.** On 2026-08-07 the framework's central capability was scored for the first time against datasets it did not write — and the results narrowed what this project may honestly claim. That measurement, and the scope correction it forced, are the most important things on this page.
+The project keeps its evidence and failures beside its tools. On 2026-08-07 its
+text-scoring capability was measured against externally authored datasets for
+the first time. Those results narrowed its claims; the measurements remain below.
 
 | In a minute | Go here |
 |---|---|
 | ▶ **Try it in your browser** | [Alignment Playground](https://lycheetah.github.io/Lycheetah-Framework/playground.html) |
-| ⌨ **Run it on your machine** | [Quick start](#quick-start): one install, six command-line tools |
+| ⌨ **Run it on your machine** | [Quick start](#quick-start) · [command-line tools](#the-command-line-tools) |
+| 🧪 **Explore the latest research** | [Earned Trust](papers/agent-safety/earned-trust/README.md) · [Hybrid Gateway](papers/ai-futures/hybrid-gateway/README.md) · [SXP-L](03_LAMAGUE_L1/26_SXP_L_RESEARCH/README.md) |
 | 📏 **See what it can and cannot do** | [Read this first](#read-this-first) · [capability map](33_APPLICATIONS/README.md) |
 | 🧪 **Try to break it** | [Counter-Codex](28_DEFENSE/COUNTER_CODEX.md) · [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md) |
 | 🇳🇿 **New Zealand data sovereignty** | [One standard, the same rights for every citizen](23_NZ_AI_GOVERNANCE/DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md) |
+
+---
+
+## New research — 18 October 2026
+
+Three research lines now have readable source homes, preserved release history
+and dated integration reviews. **All are experimental.** Their software checks
+and known failures do not establish production safety or human performance.
+
+| Research question | Start here | Evidence boundary |
+|---|---|---|
+| What survives between approving an agent action and observing its effect? | [Earned Trust: nine cycles](papers/agent-safety/earned-trust/README.md) | Synthetic execution controls, successful counterattacks and native bridge checks |
+| How should new evidence revise what an AI system remembers? | [Hybrid Gateway v1.2](papers/ai-futures/hybrid-gateway/README.md) | 264 reproduced software tests; strong temporal SQL baseline ties |
+| Can meaning, uncertainty and perspective survive a shared human/AI language? | [SXP-L v2.0](03_LAMAGUE_L1/26_SXP_L_RESEARCH/README.md) | 83 focused tests; eight inherited defects reproduced; no human participants |
+
+[Integration audit](28_DEFENSE/RELEASE_AUDIT_2026-10-18.md) ·
+[preserved-source manifest](28_DEFENSE/RESEARCH_INTAKE_2026-10-18_SOURCE_MANIFEST.json).
+These research lines keep their own version numbers and do not replace the
+installed runtime or the other LAMAGUE language lines.
 
 ---
 
@@ -139,11 +161,16 @@ Every tool below runs locally and is experimental. None of them is a sandbox, a 
 | Command | What it does | Try it |
 |---|---|---|
 | `lycheetah-check` | Scores AI-written text against the seven AURA invariants and three metrics (TES, VTR, PAI). | `lycheetah-check "your text"` |
-| `lycheetah-guard` | Checks an agent's proposed tool call or shell command against a policy before it runs, and keeps a local ledger with signed checkpoints. | `lycheetah-guard check --action '{"tool":"os.command","command":["ls"]}'` |
+| `lycheetah-guard` | Records a proposal, checks declared policy and keeps a local ledger with signed checkpoints. The `check` command does not execute the proposed action. | `lycheetah-guard check --action '{"tool":"os.command","command":["ls"]}'` |
 | `lycheetah-assure` | Evaluates agent text or a proposed tool action and writes a receipt you can verify later. A bounded guardrail. | `lycheetah-assure --help` |
 | `lycheetah-compact` | Shrinks a saved agent state, then checks the short version still keeps its rules, open unknowns, objections and rollback steps. | `python3 examples/compaction_shield_demo.py` |
 | `lycheetah-consensus` | Simulates five agents reaching agreement while one outlier is set aside. A simulation, not a deployed protocol. | `lycheetah-consensus demo` |
 | `lycheetah-sovereign` | Ties one approved action to one scope, one state version, an expiry and a single use, then hands it to `lycheetah-guard`. A replayed permit is refused. | `lycheetah-sovereign demo` |
+| `lycheetah-handoff` | Compares a declared task with a receiving agent's report. Checksums detect changes; the tool does not observe files or authenticate the report. | `lycheetah-handoff --help` |
+| `lycheetah-sol` | Inspects text with the historical Sol protocol's heuristics and companion hooks. Its scores do not verify behaviour or a person's mental state. | `lycheetah-sol --help` |
+| `lycheetah-cascade` | Runs CASCADE knowledge-organization examples and evaluator inputs. The domain stories are toy demonstrations. | `lycheetah-cascade --help` |
+| `lycheetah-alexandria` | Checks library source health, drift and named gaps; scaffolds new domain files. Requires a source checkout. | `lycheetah-alexandria --help` |
+| `lycheetah-web` | Starts the local Flask text-scoring demonstration; requires the `web` extra. | `lycheetah-web --help` |
 
 Longer walk-throughs live in [`examples/`](examples/): [`action_guard_demo.py`](examples/action_guard_demo.py), [`compaction_shield_demo.py`](examples/compaction_shield_demo.py), [`consensus_arena_demo.py`](examples/consensus_arena_demo.py) and [`sovereign_harness_demo.py`](examples/sovereign_harness_demo.py).
 

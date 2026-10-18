@@ -1,0 +1,114 @@
+{
+  "historical_zip": "earned_trust_cycles_001_007_complete.zip",
+  "cycles_checked": 7,
+  "selected_synthetic_tests_passed": 285,
+  "default_modules_with_import_errors": [
+    4,
+    5
+  ],
+  "real_framework_integration": "NOT_EXECUTED",
+  "raw": [
+    {
+      "cycle": 1,
+      "default_selection": {
+        "exit_code": 0,
+        "test_methods": 20,
+        "tail": "----------------------------------------------------------------------\nRan 20 tests in 0.005s\n\nOK\n"
+      },
+      "synthetic_selected": {
+        "exit_code": 0,
+        "test_methods": 20,
+        "tail": "----------------------------------------------------------------------\nRan 20 tests in 0.005s\n\nOK\n"
+      },
+      "real_framework_test_modules_excluded": []
+    },
+    {
+      "cycle": 2,
+      "default_selection": {
+        "exit_code": 0,
+        "test_methods": 29,
+        "tail": "oc to get the object allocation traceback\n/usr/lib/python3.13/threading.py:303: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fed9479de40>\n  def __enter__(self):\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n----------------------------------------------------------------------\nRan 29 tests in 0.289s\n\nOK\n"
+      },
+      "synthetic_selected": {
+        "exit_code": 0,
+        "test_methods": 29,
+        "tail": "oc to get the object allocation traceback\n/usr/lib/python3.13/threading.py:303: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7fed9479de40>\n  def __enter__(self):\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n----------------------------------------------------------------------\nRan 29 tests in 0.289s\n\nOK\n"
+      },
+      "real_framework_test_modules_excluded": []
+    },
+    {
+      "cycle": 3,
+      "default_selection": {
+        "exit_code": 0,
+        "test_methods": 50,
+        "tail": "----------------------------------------------------------------------\nRan 50 tests in 0.583s\n\nOK\n"
+      },
+      "synthetic_selected": {
+        "exit_code": 0,
+        "test_methods": 50,
+        "tail": "----------------------------------------------------------------------\nRan 50 tests in 0.583s\n\nOK\n"
+      },
+      "real_framework_test_modules_excluded": []
+    },
+    {
+      "cycle": 4,
+      "default_selection": {
+        "exit_code": 1,
+        "test_methods": 42,
+        "tail": "ath(tmp),**kwargs)\n  File \"/tmp/tmpjwm015fr/earned_trust_cycle_004/framework_bridge_candidate.py\", line 24, in run_simulated_refund\n    from lycheetah.assurance.models import AssuranceEvent, Phase\nModuleNotFoundError: No module named 'lycheetah'\n\n----------------------------------------------------------------------\nRan 42 tests in 0.596s\n\nFAILED (errors=4)\n"
+      },
+      "synthetic_selected": {
+        "exit_code": 0,
+        "test_methods": 38,
+        "tail": "e object allocation traceback\n/usr/lib/python3.13/json/encoder.py:252: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f31ab6aad40>\n  _iterencode = c_make_encoder(\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n----------------------------------------------------------------------\nRan 38 tests in 0.617s\n\nOK\n"
+      },
+      "real_framework_test_modules_excluded": [
+        "test_framework_bridge_candidate"
+      ]
+    },
+    {
+      "cycle": 5,
+      "default_selection": {
+        "exit_code": 1,
+        "test_methods": 46,
+        "tail": "d),**opts)\n  File \"/tmp/tmpjwm015fr/earned_trust_cycle_005/real_framework_bridge_candidate.py\", line 21, in run_real_framework_path\n    from lycheetah.assurance.models import AssuranceEvent, Phase\nModuleNotFoundError: No module named 'lycheetah'\n\n----------------------------------------------------------------------\nRan 46 tests in 0.013s\n\nFAILED (errors=4)\n"
+      },
+      "synthetic_selected": {
+        "exit_code": 0,
+        "test_methods": 42,
+        "tail": "----------------------------------------------------------------------\nRan 42 tests in 0.008s\n\nOK\n"
+      },
+      "real_framework_test_modules_excluded": [
+        "test_real_framework_bridge_candidate"
+      ]
+    },
+    {
+      "cycle": 6,
+      "default_selection": {
+        "exit_code": 0,
+        "test_methods": 59,
+        "tail": "----------------------------------------------------------------------\nRan 59 tests in 0.068s\n\nOK\n"
+      },
+      "synthetic_selected": {
+        "exit_code": 0,
+        "test_methods": 59,
+        "tail": "----------------------------------------------------------------------\nRan 59 tests in 0.068s\n\nOK\n"
+      },
+      "real_framework_test_modules_excluded": []
+    },
+    {
+      "cycle": 7,
+      "default_selection": {
+        "exit_code": 0,
+        "test_methods": 47,
+        "tail": "----------------------------------------------------------------------\nRan 47 tests in 10.651s\n\nOK\n"
+      },
+      "synthetic_selected": {
+        "exit_code": 0,
+        "test_methods": 47,
+        "tail": "----------------------------------------------------------------------\nRan 47 tests in 10.651s\n\nOK\n"
+      },
+      "real_framework_test_modules_excluded": []
+    }
+  ]
+}

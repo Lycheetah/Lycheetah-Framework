@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "tests_run": 54,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "method": "Python stdlib unittest; synthetic fixtures; loopback HTTP test double; no actual LLM"
+}

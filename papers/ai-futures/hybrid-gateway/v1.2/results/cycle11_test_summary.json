@@ -1,0 +1,11 @@
+{
+  "cycle": "v1.1",
+  "date_nz": "2026-10-18",
+  "inherited_tests": 224,
+  "additional_tests": 30,
+  "total_tests": 254,
+  "result": "passed",
+  "runner": "python -m unittest discover -s tests -q",
+  "evidence_level": "internal synthetic unit, HTTP and database regression tests",
+  "no_claims": ["independent model performance", "human reviewer identity", "production security certification", "canonical CASCADE runtime execution"]
+}

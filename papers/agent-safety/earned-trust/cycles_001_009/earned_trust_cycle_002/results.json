@@ -1,0 +1,73 @@
+{
+  "evidence_status": "SYNTHETIC_LOCAL_SQLITE",
+  "cases": [
+    {
+      "case": "stable_authorized",
+      "admission_snapshot": "READY",
+      "commit": "COMMITTED",
+      "effect_count": 1,
+      "independent_truth_eligible": true,
+      "reconciliation": "RECONCILED_COMMITTED"
+    },
+    {
+      "case": "revoke_after_snapshot",
+      "admission_snapshot": "READY",
+      "commit": "REVOKED",
+      "effect_count": 0,
+      "independent_truth_eligible": true,
+      "reconciliation": "NOT_FOUND"
+    },
+    {
+      "case": "evidence_revoked_after_snapshot",
+      "admission_snapshot": "READY",
+      "commit": "EVIDENCE_NOT_PASS",
+      "effect_count": 0,
+      "independent_truth_eligible": false,
+      "reconciliation": "NOT_FOUND"
+    },
+    {
+      "case": "max_policy_reduced",
+      "admission_snapshot": "READY",
+      "commit": "POLICY_LIMIT",
+      "effect_count": 0,
+      "independent_truth_eligible": true,
+      "reconciliation": "NOT_FOUND"
+    },
+    {
+      "case": "evidence_status_failed",
+      "admission_snapshot": "READY",
+      "commit": "EVIDENCE_NOT_PASS",
+      "effect_count": 0,
+      "independent_truth_eligible": true,
+      "reconciliation": "NOT_FOUND"
+    },
+    {
+      "case": "authority_is_wrong",
+      "admission_snapshot": "READY",
+      "commit": "COMMITTED",
+      "effect_count": 1,
+      "independent_truth_eligible": false,
+      "reconciliation": "RECONCILED_COMMITTED"
+    },
+    {
+      "case": "commit_reply_lost",
+      "admission_snapshot": "READY",
+      "commit": "RESPONSE_LOST_AFTER_COMMIT",
+      "effect_count": 1,
+      "independent_truth_eligible": true,
+      "reconciliation": "RECONCILED_COMMITTED"
+    }
+  ],
+  "concurrency": {
+    "workers_submissions": 32,
+    "committed_responses": 1,
+    "idempotent_replay_responses": 31,
+    "effect_count": 1
+  },
+  "limitations": [
+    "A single SQLite database implements all simulated provider checks",
+    "No authentic external payments, data producers, processes, authentication, or network",
+    "True eligibility is an independent modeled oracle, not a provider sensor",
+    "This tests no actual Lycheetah runtime modules; run run_framework_contract.py inside the real repo"
+  ]
+}

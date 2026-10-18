@@ -2,6 +2,17 @@
 
 **Evidence footing: [SCAFFOLD] research, proposal or source review. Supplied and local synthetic results retain their stated limits; no independent validation or production claim.**
 
+## Latest research intakes — 18 October 2026
+
+| Line | Question | Entry point |
+|---|---|---|
+| Earned Trust, cycles 001–009 | Permission, evidence and provider effects | [Source and integration review](agent-safety/earned-trust/README.md) |
+| Hybrid Gateway v1.2 | Time-aware knowledge revision and durable review decisions | [Source and integration review](ai-futures/hybrid-gateway/README.md) |
+| SXP-L v2.0 | Restricted language, perspective repair and a pre-human-data study instrument | [LAMAGUE research branch](../03_LAMAGUE_L1/26_SXP_L_RESEARCH/README.md) |
+
+Original artifacts and failed checks remain accessible. Test totals describe
+software conformance on authored fixtures, not real-world agent safety.
+
 ## The Independent No: rejection that remains binding
 
 [Manuscript](independent-no/PAPER.md) · [Study protocol](independent-no/EVALUATION_PROTOCOL.md) · [Reading edition](../docs/research/independent-no-paper.html) · [PDF](../docs/research/independent-no.pdf).

@@ -1,0 +1,40 @@
+{
+  "schema": "SXP-L-reference-1.9",
+  "native_sha256": "52e45672b343294458efa66e7d7103e2e68ea7c2985a1f0c417e2d46e66d579b",
+  "expanded_v18_sha256": "06f054a10403b497943e9973fc546ad3ebfdc2942865a0480231c5864c8804c4",
+  "legacy_sha256": "3d4d4b3fbe54f23805c7cb3ad1be01e122fe8304fcd070ff0f429daedc3519cc",
+  "bindings": [
+    {
+      "turn": 2,
+      "reference_turn": 1,
+      "reference_id": "taba",
+      "frame": "soraviko",
+      "frame_kind": "source_turn",
+      "inner_original": "mi luma ti devora",
+      "inner_expanded": "gonape maka dimotu luma gonape nara dimotu devora",
+      "bound_mi": "maka",
+      "bound_ti": "nara",
+      "proposed_not_asserted": true,
+      "speech_authenticated": false,
+      "authorizes": false
+    },
+    {
+      "turn": 3,
+      "reference_turn": 1,
+      "reference_id": "taba",
+      "frame": "tumerako",
+      "frame_kind": "current_turn",
+      "inner_original": "mi luma ti devora",
+      "inner_expanded": "gonape nara dimotu luma gonape maka dimotu devora",
+      "bound_mi": "nara",
+      "bound_ti": "maka",
+      "proposed_not_asserted": true,
+      "speech_authenticated": false,
+      "authorizes": false
+    }
+  ],
+  "unverified_speech": true,
+  "authorizes": false,
+  "loss_if_expanded_only": "binder choice and authored short words cannot be recovered; keep .sxp19 and sidecar",
+  "loss_if_legacy_only": "binder and repair semantics cannot be recovered; keep all artifacts"
+}

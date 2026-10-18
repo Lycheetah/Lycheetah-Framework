@@ -3,13 +3,14 @@
 SQLite-backed durable state providing single-use approvals, fail-closed dispatch claims,
 authority epochs, and hash-chained audit trails.
 """
+
 from __future__ import annotations
 
+import json
+import sqlite3
 from dataclasses import dataclass
 from hashlib import sha256
-import json
 from pathlib import Path
-import sqlite3
 from typing import Any, Literal
 
 Outcome = Literal["success", "failure", "unknown"]
@@ -104,7 +105,9 @@ class PersistentActionGuard:
                 CREATE INDEX IF NOT EXISTS effects_status_idx ON effects(status);
                 CREATE INDEX IF NOT EXISTS audit_effect_idx ON audit(effect_id, seq);
             """)
-            audit_columns = {row["name"] for row in c.execute("PRAGMA table_info(audit)").fetchall()}
+            audit_columns = {
+                row["name"] for row in c.execute("PRAGMA table_info(audit)").fetchall()
+            }
             legacy_audit = "prev_hash" not in audit_columns or "event_hash" not in audit_columns
             if "prev_hash" not in audit_columns:
                 c.execute("ALTER TABLE audit ADD COLUMN prev_hash TEXT")
@@ -186,15 +189,16 @@ class PersistentActionGuard:
             details or {}, sort_keys=True, separators=(",", ":"), ensure_ascii=False
         )
         previous = c.execute("SELECT event_hash FROM audit ORDER BY seq DESC LIMIT 1").fetchone()
-        prev_hash = (
-            previous["event_hash"] if previous and previous["event_hash"] else AUDIT_GENESIS
-        )
+        prev_hash = previous["event_hash"] if previous and previous["event_hash"] else AUDIT_GENESIS
         cur = c.execute(
-            "INSERT INTO audit(at,actor,approval_id,effect_id,event,reason,details_json,prev_hash,event_hash) "
+            "INSERT INTO audit("
+            "at,actor,approval_id,effect_id,event,reason,details_json,prev_hash,event_hash) "
             "VALUES(?,?,?,?,?,?,?,?,?)",
             (at, actor, approval_id, effect_id, event, reason, details_json, prev_hash, ""),
         )
-        seq = int(cur.lastrowid)
+        if cur.lastrowid is None:
+            raise RuntimeError("audit INSERT did not return a row id")
+        seq = cur.lastrowid
         event_hash = cls._audit_hash(
             seq, at, actor, approval_id, effect_id, event, reason, details_json, prev_hash
         )
@@ -252,14 +256,13 @@ class PersistentActionGuard:
                 expected_anchor.get("event_count") != prefix_count
                 or expected_anchor.get("last_seq") != prefix_last_seq
                 or expected_anchor.get("root_hash") != prefix_root
+            ) and not (
+                expected_anchor.get("event_count") == 0
+                and expected_anchor.get("last_seq") is None
+                and expected_anchor.get("root_hash") == AUDIT_GENESIS
+                and prefix_count == 0
             ):
-                if not (
-                    expected_anchor.get("event_count") == 0
-                    and expected_anchor.get("last_seq") is None
-                    and expected_anchor.get("root_hash") == AUDIT_GENESIS
-                    and prefix_count == 0
-                ):
-                    valid, reason = False, "external_anchor_mismatch"
+                valid, reason = False, "external_anchor_mismatch"
         return {
             "valid": valid,
             "reason": reason,
@@ -269,9 +272,7 @@ class PersistentActionGuard:
             "root_hash": root_hash,
         }
 
-    def verify_audit_chain(
-        self, expected_anchor: dict[str, Any] | None = None
-    ) -> dict[str, Any]:
+    def verify_audit_chain(self, expected_anchor: dict[str, Any] | None = None) -> dict[str, Any]:
         """Verify internal event integrity; optionally compare with a separately stored anchor."""
         with self._connect() as c:
             return self._verify_audit_chain(c, expected_anchor)
@@ -456,9 +457,9 @@ class PersistentActionGuard:
                 for row in c.execute("SELECT actor,epoch FROM authority").fetchall()
             }
             for actor in set(authority_rows) | set(revocation_epochs):
-                actual = authority_rows.get(actor, 0)
-                expected = revocation_epochs.get(actor, 0)
-                if actual != expected:
+                actual_epoch = authority_rows.get(actor, 0)
+                expected_epoch = revocation_epochs.get(actor, 0)
+                if actual_epoch != expected_epoch:
                     return {
                         "valid": False,
                         "reason": "authority_table_event_mismatch",
@@ -677,7 +678,9 @@ class PersistentActionGuard:
                 return Decision(False, reason)
             try:
                 c.execute(
-                    "INSERT INTO effects(effect_id,approval_id,actor,action_json,action_hash,scope,status,created_at,updated_at) "
+                    "INSERT INTO effects("
+                    "effect_id,approval_id,actor,action_json,action_hash,scope,"
+                    "status,created_at,updated_at) "
                     "VALUES(?,?,?,?,?,?,?,?,?)",
                     (
                         effect_id,
@@ -789,11 +792,14 @@ class PersistentActionGuard:
                     "UPDATE effects SET status='CANCELLED',updated_at=?,reason=? WHERE effect_id=?",
                     (now, reason, effect_id),
                 )
-                self._audit(c, now, e["actor"], e["approval_id"], effect_id, "EFFECT_CANCELLED", reason)
+                self._audit(
+                    c, now, e["actor"], e["approval_id"], effect_id, "EFFECT_CANCELLED", reason
+                )
                 c.execute("COMMIT")
                 return Decision(False, reason, effect_id, "CANCELLED")
             c.execute(
-                "UPDATE effects SET status='DISPATCHING',updated_at=? WHERE effect_id=? AND status='PREPARED'",
+                "UPDATE effects SET status='DISPATCHING',updated_at=? "
+                "WHERE effect_id=? AND status='PREPARED'",
                 (now, effect_id),
             )
             self._audit(

@@ -1,0 +1,14 @@
+{
+  "total": 22,
+  "passed": 22,
+  "counts": {
+    "NORMAL": 2,
+    "STOP": 13,
+    "UNKNOWN": 2,
+    "CONFIRMED": 1,
+    "NOT_RETROACTIVE": 1,
+    "FALSE_EVIDENCE_PASSED": 1,
+    "BYPASS": 1,
+    "SPLIT_STORE_GAP": 1
+  }
+}

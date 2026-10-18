@@ -1,0 +1,16 @@
+{
+  "cycle": "008",
+  "date": "2026-10-18",
+  "status": "LOCAL_SYNTHETIC_ENGINEERING_TESTED",
+  "claims": [
+    {"id":"ET008-001","claim":"One SQLite authority can serialize a source challenge and a local send reservation so an earlier unresolved challenge prevents reservation.","status":"MEASURED_SYNTHETIC","evidence":"test_cross_process_challenge_reservation_order; test_challenge_prevents_reserve","falsifier":"An accepted reservation with an earlier committed unresolved ancestor challenge in the same DB."},
+    {"id":"ET008-002","claim":"A crash after send reservation is conservatively recovered as UNKNOWN, not automatically re-sent.","status":"MEASURED_SYNTHETIC","evidence":"test_crash_after_reserve; test_recover_sending_as_unknown","falsifier":"A restart automatically reserves/sends the same effect ID again."},
+    {"id":"ET008-003","claim":"An idempotent simulated provider lets an uncertain committed result be reconciled without creating a second effect.","status":"MEASURED_SYNTHETIC","evidence":"test_crash_after_provider_commit; test_provider_idempotence","falsifier":"More than one simulated effect record from repeated identical requests for one key."},
+    {"id":"ET008-004","claim":"HMAC-authenticated provider records are required for acknowledgement in the local lab.","status":"MEASURED_SYNTHETIC","evidence":"test_unsigned_success_receipt_rejected; test_tampered_signed_receipt_rejected; test_mismatched_signed_action_receipt_rejected","falsifier":"A forged or action-mismatched receipt marks an effect SUCCEEDED."},
+    {"id":"ET008-005","claim":"Local audit-state crosschecking refuses simple materialized-table rewinds even when hash chain rows are unchanged.","status":"MEASURED_SYNTHETIC","evidence":"test_replay_by_rewriting_materialized_state_is_detected","falsifier":"Reset effect and outbox state after SEND_RESERVED, preserve audit, and reserve again."},
+    {"id":"ET008-006","claim":"Same-DB crash safety does not prevent a direct external provider write or a challenge accepted by another unrelayed store.","status":"OBSERVED_NEGATIVE","evidence":"run_scenarios.py: direct_provider_bypass; external_registry_challenge_not_relayed","falsifier":"The toy provider refuses a direct write or this authority observes an external challenge without relay."},
+    {"id":"ET008-007","claim":"Trusted false evidence may still authorize an incorrect effect despite correct cryptography and policy checks.","status":"OBSERVED_NEGATIVE","evidence":"test_false_trusted_evidence_negative_control","falsifier":"The reference system identifies false real-world eligibility without a separate truthful source."},
+    {"id":"ET008-008","claim":"An effect reserved before a challenge remains potentially executable afterward.","status":"OBSERVED_LIMITATION","evidence":"test_challenge_after_reservation_not_retroactive","falsifier":"A challenge retroactively prevents the simulated provider from acting on an already reserved command without provider-side enforcement."}
+  ],
+  "not_demonstrated": ["native_framework_integration", "real_provider_atomicity", "independent_validation", "real-world_evidence_truth", "production_readiness", "novelty_or_superiority"]
+}

@@ -1,0 +1,150 @@
+{
+  "schema": "EARNED_TRUST_C008_SCENARIOS",
+  "total": 22,
+  "passed": 22,
+  "counts": {
+    "NORMAL": 2,
+    "STOP": 13,
+    "UNKNOWN": 2,
+    "CONFIRMED": 1,
+    "NOT_RETROACTIVE": 1,
+    "FALSE_EVIDENCE_PASSED": 1,
+    "BYPASS": 1,
+    "SPLIT_STORE_GAP": 1
+  },
+  "cases": [
+    {
+      "case_id": "valid_reservation",
+      "expected": "NORMAL",
+      "observed": "NORMAL",
+      "pass": true
+    },
+    {
+      "case_id": "challenge_precedes_reservation",
+      "expected": "STOP",
+      "observed": "STOP",
+      "pass": true
+    },
+    {
+      "case_id": "fresh_witness_still_challenged",
+      "expected": "STOP",
+      "observed": "STOP",
+      "pass": true
+    },
+    {
+      "case_id": "unrelated_challenge_cached_witness",
+      "expected": "STOP",
+      "observed": "STOP",
+      "pass": true
+    },
+    {
+      "case_id": "unrelated_challenge_refreshed_witness",
+      "expected": "NORMAL",
+      "observed": "NORMAL",
+      "pass": true
+    },
+    {
+      "case_id": "revoked_actor",
+      "expected": "STOP",
+      "observed": "STOP",
+      "pass": true
+    },
+    {
+      "case_id": "expired_approval",
+      "expected": "STOP",
+      "observed": "STOP",
+      "pass": true
+    },
+    {
+      "case_id": "changed_evidence",
+      "expected": "STOP",
+      "observed": "STOP",
+      "pass": true
+    },
+    {
+      "case_id": "changed_subject",
+      "expected": "STOP",
+      "observed": "STOP",
+      "pass": true
+    },
+    {
+      "case_id": "changed_action_amount",
+      "expected": "STOP",
+      "observed": "STOP",
+      "pass": true
+    },
+    {
+      "case_id": "tampered_witness",
+      "expected": "STOP",
+      "observed": "STOP",
+      "pass": true
+    },
+    {
+      "case_id": "duplicate_reservation",
+      "expected": "STOP",
+      "observed": "STOP",
+      "pass": true
+    },
+    {
+      "case_id": "crash_after_reservation_no_provider_effect",
+      "expected": "UNKNOWN",
+      "observed": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "case_id": "lost_response_after_provider_commit",
+      "expected": "CONFIRMED",
+      "observed": "CONFIRMED",
+      "pass": true
+    },
+    {
+      "case_id": "missing_provider_observation",
+      "expected": "UNKNOWN",
+      "observed": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "case_id": "forged_success_receipt",
+      "expected": "STOP",
+      "observed": "STOP",
+      "pass": true
+    },
+    {
+      "case_id": "wrong_key_provider_receipt",
+      "expected": "STOP",
+      "observed": "STOP",
+      "pass": true
+    },
+    {
+      "case_id": "materialized_state_rewind",
+      "expected": "STOP",
+      "observed": "STOP",
+      "pass": true
+    },
+    {
+      "case_id": "challenge_after_reservation",
+      "expected": "NOT_RETROACTIVE",
+      "observed": "NOT_RETROACTIVE",
+      "pass": true
+    },
+    {
+      "case_id": "false_trusted_evidence",
+      "expected": "FALSE_EVIDENCE_PASSED",
+      "observed": "FALSE_EVIDENCE_PASSED",
+      "pass": true
+    },
+    {
+      "case_id": "direct_provider_bypass",
+      "expected": "BYPASS",
+      "observed": "BYPASS",
+      "pass": true
+    },
+    {
+      "case_id": "external_registry_challenge_not_relayed",
+      "expected": "SPLIT_STORE_GAP",
+      "observed": "SPLIT_STORE_GAP",
+      "pass": true
+    }
+  ],
+  "scope": "author-authored synthetic cases; not real-world safety rates"
+}

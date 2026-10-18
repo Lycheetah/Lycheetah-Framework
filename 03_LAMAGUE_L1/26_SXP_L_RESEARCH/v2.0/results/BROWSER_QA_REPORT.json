@@ -1,0 +1,29 @@
+{
+  "type": "synthetic software QA only",
+  "reports": [
+    {
+      "cohort": "A",
+      "exports": 32,
+      "errors": [],
+      "correct_synthetic": 32
+    },
+    {
+      "cohort": "B",
+      "exports": 32,
+      "errors": [],
+      "correct_synthetic": 0
+    },
+    {
+      "cohort": "C",
+      "exports": 32,
+      "errors": [],
+      "correct_synthetic": 0
+    },
+    {
+      "cohort": "D",
+      "exports": 32,
+      "errors": [],
+      "correct_synthetic": 0
+    }
+  ]
+}

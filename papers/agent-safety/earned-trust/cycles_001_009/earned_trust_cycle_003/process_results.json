@@ -1,0 +1,59 @@
+{
+  "independent_rounds": 4,
+  "observations": [
+    {
+      "audit": {
+        "event_count": 1,
+        "reason": "ok",
+        "root_hash": "7c8060ce9af8500362ba6cf19b6dc26ee0a8aa9e9d9c5788af05a353bb66034f",
+        "valid": true
+      },
+      "committed": 1,
+      "effect_rows": 1,
+      "idempotent_replay": 7,
+      "other": [],
+      "round": 1
+    },
+    {
+      "audit": {
+        "event_count": 1,
+        "reason": "ok",
+        "root_hash": "7c8060ce9af8500362ba6cf19b6dc26ee0a8aa9e9d9c5788af05a353bb66034f",
+        "valid": true
+      },
+      "committed": 1,
+      "effect_rows": 1,
+      "idempotent_replay": 7,
+      "other": [],
+      "round": 2
+    },
+    {
+      "audit": {
+        "event_count": 1,
+        "reason": "ok",
+        "root_hash": "7c8060ce9af8500362ba6cf19b6dc26ee0a8aa9e9d9c5788af05a353bb66034f",
+        "valid": true
+      },
+      "committed": 1,
+      "effect_rows": 1,
+      "idempotent_replay": 7,
+      "other": [],
+      "round": 3
+    },
+    {
+      "audit": {
+        "event_count": 1,
+        "reason": "ok",
+        "root_hash": "7c8060ce9af8500362ba6cf19b6dc26ee0a8aa9e9d9c5788af05a353bb66034f",
+        "valid": true
+      },
+      "committed": 1,
+      "effect_rows": 1,
+      "idempotent_replay": 7,
+      "other": [],
+      "round": 4
+    }
+  ],
+  "processes_per_round": 8,
+  "status": "SYNTHETIC_LOCAL_SQLITE_ONLY"
+}

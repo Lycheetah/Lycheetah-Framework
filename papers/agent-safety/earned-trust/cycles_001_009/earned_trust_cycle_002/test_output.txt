@@ -1,0 +1,85 @@
+test_approval_revocation_before_write (test_transactional_provider.ProviderTest.test_approval_revocation_before_write) ... ok
+test_collision_same_effect_id_other_payload (test_transactional_provider.ProviderTest.test_collision_same_effect_id_other_payload) ... ok
+test_concurrent_distinct_intents_one_grant (test_transactional_provider.ProviderTest.test_concurrent_distinct_intents_one_grant) ... ok
+test_concurrent_workers_exactly_once (test_transactional_provider.ProviderTest.test_concurrent_workers_exactly_once) ... /usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aece50>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aecf40>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aed030>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aed120>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aed210>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aed300>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aed3f0>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aed4e0>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aed5d0>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aed6c0>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aed7b0>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aed8a0>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aedd50>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aee020>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aee110>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aedc60>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/lib/python3.13/threading.py:139: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x7f42a3aedf30>
+  return _CRLock(*args, **kwargs)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_double_dispatch (test_transactional_provider.ProviderTest.test_double_dispatch) ... ok
+test_early (test_transactional_provider.ProviderTest.test_early) ... ok
+test_eligibility_between_preview_and_commit (test_transactional_provider.ProviderTest.test_eligibility_between_preview_and_commit) ... ok
+test_evidence_missing_or_failed (test_transactional_provider.ProviderTest.test_evidence_missing_or_failed) ... ok
+test_exact_version_rejects_benign_revision (test_transactional_provider.ProviderTest.test_exact_version_rejects_benign_revision) ... ok
+test_expired (test_transactional_provider.ProviderTest.test_expired) ... ok
+test_invalid_amount (test_transactional_provider.ProviderTest.test_invalid_amount) ... ok
+test_new_effect_id_cannot_reuse_approval (test_transactional_provider.ProviderTest.test_new_effect_id_cannot_reuse_approval) ... ok
+test_no_actual_provider_guarantees (test_transactional_provider.ProviderTest.test_no_actual_provider_guarantees) ... ok
+test_no_approval (test_transactional_provider.ProviderTest.test_no_approval) ... ok
+test_policy_change_after_preview (test_transactional_provider.ProviderTest.test_policy_change_after_preview) ... ok
+test_provider_response_lost_after_write (test_transactional_provider.ProviderTest.test_provider_response_lost_after_write) ... ok
+test_provider_response_lost_before_write (test_transactional_provider.ProviderTest.test_provider_response_lost_before_write) ... ok
+test_replay_after_revoke_is_read_not_write (test_transactional_provider.ProviderTest.test_replay_after_revoke_is_read_not_write) ... ok
+test_stale_evidence_truth_gap_survives (test_transactional_provider.ProviderTest.test_stale_evidence_truth_gap_survives) ... ok
+test_valid (test_transactional_provider.ProviderTest.test_valid) ... ok
+test_wrong_amount (test_transactional_provider.ProviderTest.test_wrong_amount) ... ok
+test_wrong_scope (test_transactional_provider.ProviderTest.test_wrong_scope) ... ok
+test_wrong_subject (test_transactional_provider.ProviderTest.test_wrong_subject) ... ok
+test_bool_amount_rejected (test_binding_contract.BindingTest.test_bool_amount_rejected) ... ok
+test_exact_match (test_binding_contract.BindingTest.test_exact_match) ... ok
+test_extra_fields_rejected (test_binding_contract.BindingTest.test_extra_fields_rejected) ... ok
+test_guard_substitution (test_binding_contract.BindingTest.test_guard_substitution) ... ok
+test_missing_fields_rejected (test_binding_contract.BindingTest.test_missing_fields_rejected) ... ok
+test_provider_substitution (test_binding_contract.BindingTest.test_provider_substitution) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.585s
+
+OK

@@ -1,0 +1,11 @@
+{
+  "version": "v0.6",
+  "date": "2026-10-18",
+  "test_count": 120,
+  "passed": true,
+  "baseline_inherited": 95,
+  "new": 25,
+  "evaluation": "self-authored fixtures only",
+  "live_model_run": false,
+  "canonical_cascade_run": false
+}

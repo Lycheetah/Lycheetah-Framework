@@ -1,0 +1,80 @@
+{
+  "source": "frozen v2.0 baseline/runtime",
+  "findings": [
+    {
+      "id": "USR_NATIVE36_ALIAS",
+      "status": "OPEN_REPRODUCED",
+      "evidence": {
+        "before": "USR:A",
+        "after": "N36:A"
+      }
+    },
+    {
+      "id": "ARRIVE_VALENCY",
+      "status": "OPEN_REPRODUCED",
+      "evidence": {
+        "exception": "E_COMPACT_ENTITY: ."
+      }
+    },
+    {
+      "id": "ATTITUDE_SCHEMA_SPLIT",
+      "status": "OPEN_REPRODUCED",
+      "evidence": {
+        "node_kinds": [
+          "proposition",
+          "attitude_report"
+        ]
+      }
+    },
+    {
+      "id": "MEANING_DIFF_CONSENT",
+      "status": "OPEN_REPRODUCED",
+      "evidence": {
+        "exception": "E_V08_PROPOSITION: only v0.7 clauses or v0.8 unary satoma"
+      }
+    },
+    {
+      "id": "MEANING_DIFF_PARTICIPANTS",
+      "status": "OPEN_REPRODUCED",
+      "evidence": {
+        "target_change_priorities": [
+          "inspect"
+        ]
+      }
+    },
+    {
+      "id": "LINGUISTIC_DENIAL_REVOCATION",
+      "status": "OPEN_REPRODUCED",
+      "evidence": {
+        "nelora": {
+          "policy_allowed": true,
+          "review_advised": false,
+          "boundary_count": 0
+        },
+        "revona": {
+          "policy_allowed": true,
+          "review_advised": false,
+          "boundary_count": 0
+        }
+      }
+    },
+    {
+      "id": "SUPERSEDED_REFUSAL",
+      "status": "OPEN_REPRODUCED",
+      "evidence": {
+        "reported_boundary_ids": [
+          "u1"
+        ]
+      }
+    },
+    {
+      "id": "SUPERSEDED_REPAIR_TARGET",
+      "status": "OPEN_REPRODUCED",
+      "evidence": {
+        "already_superseded_target_accepted": true
+      }
+    }
+  ],
+  "execution_performed": false,
+  "human_results": 0
+}

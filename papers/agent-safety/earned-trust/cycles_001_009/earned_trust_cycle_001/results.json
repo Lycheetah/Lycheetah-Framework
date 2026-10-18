@@ -1,0 +1,1241 @@
+{
+  "status": "SYNTHETIC_REFERENCE_MODEL_NOT_REAL_LYCHEETAH_RUNTIME",
+  "description": "single-threaded atomic-provider assumption; 20 scenarios x 4 strategies, including false evidence",
+  "scenario_count": 20,
+  "observation_count": 80,
+  "results": {
+    "admission_only": {
+      "cases": 20,
+      "correct_decisions": 2,
+      "unsafe_effects": 18,
+      "missed_authorized_effects": 0,
+      "executed": 20
+    },
+    "finality_recheck": {
+      "cases": 20,
+      "correct_decisions": 10,
+      "unsafe_effects": 10,
+      "missed_authorized_effects": 0,
+      "executed": 12
+    },
+    "conditional_provider": {
+      "cases": 20,
+      "correct_decisions": 18,
+      "unsafe_effects": 2,
+      "missed_authorized_effects": 0,
+      "executed": 4
+    },
+    "conventional_atomic": {
+      "cases": 20,
+      "correct_decisions": 18,
+      "unsafe_effects": 2,
+      "missed_authorized_effects": 0,
+      "executed": 4
+    }
+  },
+  "rows": [
+    {
+      "case": "stable_eligible",
+      "strategy": "admission_only",
+      "safe_at_commit": true,
+      "performed": true,
+      "correct": true,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "stable_eligible",
+      "strategy": "finality_recheck",
+      "safe_at_commit": true,
+      "performed": true,
+      "correct": true,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "stable_eligible",
+      "strategy": "conditional_provider",
+      "safe_at_commit": true,
+      "performed": true,
+      "correct": true,
+      "reason": "conditional_committed"
+    },
+    {
+      "case": "stable_eligible",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": true,
+      "performed": true,
+      "correct": true,
+      "reason": "conditional_committed"
+    },
+    {
+      "case": "benign_evidence_revision",
+      "strategy": "admission_only",
+      "safe_at_commit": true,
+      "performed": true,
+      "correct": true,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "benign_evidence_revision",
+      "strategy": "finality_recheck",
+      "safe_at_commit": true,
+      "performed": true,
+      "correct": true,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "benign_evidence_revision",
+      "strategy": "conditional_provider",
+      "safe_at_commit": true,
+      "performed": true,
+      "correct": true,
+      "reason": "conditional_committed"
+    },
+    {
+      "case": "benign_evidence_revision",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": true,
+      "performed": true,
+      "correct": true,
+      "reason": "conditional_committed"
+    },
+    {
+      "case": "eligibility_revoked_between_admission_finality",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "eligibility_revoked_between_admission_finality",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "eligibility_revoked_between_admission_finality",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "eligibility_revoked_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "policy_lowered_between_admission_finality",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "policy_lowered_between_admission_finality",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "policy_lowered_between_admission_finality",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "policy_lowered_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "action_amount_changed_between_admission_finality",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "action_amount_changed_between_admission_finality",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "action_amount_changed_between_admission_finality",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "action_amount_changed_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "approval_revoked_between_admission_finality",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "approval_revoked_between_admission_finality",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "approval_revoked_between_admission_finality",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "approval_revoked_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "approval_expired_between_admission_finality",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "approval_expired_between_admission_finality",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "approval_expired_between_admission_finality",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "approval_expired_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "already_processed_between_admission_finality",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "already_processed_between_admission_finality",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "already_processed_between_admission_finality",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "already_processed_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "evidence_subject_swapped_between_admission_finality",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "evidence_subject_swapped_between_admission_finality",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "evidence_subject_swapped_between_admission_finality",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "evidence_subject_swapped_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "evidence_deleted_between_admission_finality",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "evidence_deleted_between_admission_finality",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "evidence_deleted_between_admission_finality",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "evidence_deleted_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "paused_at_finality"
+    },
+    {
+      "case": "evidence_lies_between_admission_finality",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "evidence_lies_between_admission_finality",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "evidence_lies_between_admission_finality",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "conditional_committed"
+    },
+    {
+      "case": "evidence_lies_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "conditional_committed"
+    },
+    {
+      "case": "eligibility_revoked_between_finality_commit",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "eligibility_revoked_between_finality_commit",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "eligibility_revoked_between_finality_commit",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "conditional_rejected"
+    },
+    {
+      "case": "eligibility_revoked_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "conditional_rejected"
+    },
+    {
+      "case": "policy_lowered_between_finality_commit",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "policy_lowered_between_finality_commit",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "policy_lowered_between_finality_commit",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "conditional_rejected"
+    },
+    {
+      "case": "policy_lowered_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "conditional_rejected"
+    },
+    {
+      "case": "action_amount_changed_between_finality_commit",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "action_amount_changed_between_finality_commit",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "action_amount_changed_between_finality_commit",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "conditional_rejected"
+    },
+    {
+      "case": "action_amount_changed_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "conditional_rejected"
+    },
+    {
+      "case": "approval_revoked_between_finality_commit",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "approval_revoked_between_finality_commit",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "approval_revoked_between_finality_commit",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "conditional_rejected"
+    },
+    {
+      "case": "approval_revoked_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "conditional_rejected"
+    },
+    {
+      "case": "approval_expired_between_finality_commit",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "approval_expired_between_finality_commit",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "approval_expired_between_finality_commit",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "conditional_rejected"
+    },
+    {
+      "case": "approval_expired_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "conditional_rejected"
+    },
+    {
+      "case": "already_processed_between_finality_commit",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "already_processed_between_finality_commit",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "already_processed_between_finality_commit",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "conditional_rejected"
+    },
+    {
+      "case": "already_processed_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "conditional_rejected"
+    },
+    {
+      "case": "evidence_subject_swapped_between_finality_commit",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "evidence_subject_swapped_between_finality_commit",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "evidence_subject_swapped_between_finality_commit",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "conditional_rejected"
+    },
+    {
+      "case": "evidence_subject_swapped_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "conditional_rejected"
+    },
+    {
+      "case": "evidence_deleted_between_finality_commit",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "evidence_deleted_between_finality_commit",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "evidence_deleted_between_finality_commit",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "conditional_rejected"
+    },
+    {
+      "case": "evidence_deleted_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": false,
+      "correct": true,
+      "reason": "conditional_rejected"
+    },
+    {
+      "case": "evidence_lies_between_finality_commit",
+      "strategy": "admission_only",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "evidence_lies_between_finality_commit",
+      "strategy": "finality_recheck",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "unconditional_provider_commit"
+    },
+    {
+      "case": "evidence_lies_between_finality_commit",
+      "strategy": "conditional_provider",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "conditional_committed"
+    },
+    {
+      "case": "evidence_lies_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "safe_at_commit": false,
+      "performed": true,
+      "correct": false,
+      "reason": "conditional_committed"
+    }
+  ],
+  "audit_chain_valid": true,
+  "audit_chain": [
+    {
+      "case": "stable_eligible",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "c39efd8a7bf1a28533addae468ff40bed76cd032c289439b057116b5083ab5f4",
+      "sha256": "1ec5c5a89db6794ceb6947fc1acd780057325fe69d99cbd25e0ca43bd11ef842"
+    },
+    {
+      "case": "stable_eligible",
+      "strategy": "finality_recheck",
+      "performed": true,
+      "prev": "1ec5c5a89db6794ceb6947fc1acd780057325fe69d99cbd25e0ca43bd11ef842",
+      "sha256": "5a37b6626ace93b3704d1dd93dece5f6e1e64f58e180bb9426e25a497a4507b3"
+    },
+    {
+      "case": "stable_eligible",
+      "strategy": "conditional_provider",
+      "performed": true,
+      "prev": "5a37b6626ace93b3704d1dd93dece5f6e1e64f58e180bb9426e25a497a4507b3",
+      "sha256": "f48121e2ac78b97b29ae306b4916f48e7abd02d9b0ebaf0b05a12ee15ffd7058"
+    },
+    {
+      "case": "stable_eligible",
+      "strategy": "conventional_atomic",
+      "performed": true,
+      "prev": "f48121e2ac78b97b29ae306b4916f48e7abd02d9b0ebaf0b05a12ee15ffd7058",
+      "sha256": "9f23eef987b63293a3ce177127d563ce1dd837c045cfde1c66081a65bf6a8d1a"
+    },
+    {
+      "case": "benign_evidence_revision",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "9f23eef987b63293a3ce177127d563ce1dd837c045cfde1c66081a65bf6a8d1a",
+      "sha256": "3599cb992bd3b3d791c4745faa05a81077e461afb50883d73b1102f3f33c4843"
+    },
+    {
+      "case": "benign_evidence_revision",
+      "strategy": "finality_recheck",
+      "performed": true,
+      "prev": "3599cb992bd3b3d791c4745faa05a81077e461afb50883d73b1102f3f33c4843",
+      "sha256": "6b6852a99984dc9b46e2e085f41131a9c4d430f1daa6a5547da17d951b9cae35"
+    },
+    {
+      "case": "benign_evidence_revision",
+      "strategy": "conditional_provider",
+      "performed": true,
+      "prev": "6b6852a99984dc9b46e2e085f41131a9c4d430f1daa6a5547da17d951b9cae35",
+      "sha256": "c86a9a2dd8f62f721173589f8a321a79dbb62ef1cc2249153ffce935cea7eab2"
+    },
+    {
+      "case": "benign_evidence_revision",
+      "strategy": "conventional_atomic",
+      "performed": true,
+      "prev": "c86a9a2dd8f62f721173589f8a321a79dbb62ef1cc2249153ffce935cea7eab2",
+      "sha256": "3627274acf1a59a8fc535d392c611b47ef33bc4b6a2f540ac1acbc77217bbad0"
+    },
+    {
+      "case": "eligibility_revoked_between_admission_finality",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "3627274acf1a59a8fc535d392c611b47ef33bc4b6a2f540ac1acbc77217bbad0",
+      "sha256": "57eb46955bd08b0a633fc1a8b87a67e4e2eb6895ee8cfce28657666faaf627e1"
+    },
+    {
+      "case": "eligibility_revoked_between_admission_finality",
+      "strategy": "finality_recheck",
+      "performed": false,
+      "prev": "57eb46955bd08b0a633fc1a8b87a67e4e2eb6895ee8cfce28657666faaf627e1",
+      "sha256": "0f1c54bf3485e4d0fdfe3c6c647b60c5c2651fc90509f7c5ae001d94714fd796"
+    },
+    {
+      "case": "eligibility_revoked_between_admission_finality",
+      "strategy": "conditional_provider",
+      "performed": false,
+      "prev": "0f1c54bf3485e4d0fdfe3c6c647b60c5c2651fc90509f7c5ae001d94714fd796",
+      "sha256": "dcd53bb1614095d4c224628191bc56280920c5f9413bcae6ad11ab485d01d50e"
+    },
+    {
+      "case": "eligibility_revoked_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "performed": false,
+      "prev": "dcd53bb1614095d4c224628191bc56280920c5f9413bcae6ad11ab485d01d50e",
+      "sha256": "f3b2b6fa0050f001904e97771e3a3cc8a75933fb17ab540b579299f3b74e8a23"
+    },
+    {
+      "case": "policy_lowered_between_admission_finality",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "f3b2b6fa0050f001904e97771e3a3cc8a75933fb17ab540b579299f3b74e8a23",
+      "sha256": "1b1a76d890602a275690f8e75c75f0046deefaa1f0814061875d181e706faa2a"
+    },
+    {
+      "case": "policy_lowered_between_admission_finality",
+      "strategy": "finality_recheck",
+      "performed": false,
+      "prev": "1b1a76d890602a275690f8e75c75f0046deefaa1f0814061875d181e706faa2a",
+      "sha256": "39cb447f9ec176a6155464102a2eeb3a72e0b230d649b52d495a1d6fb2f679eb"
+    },
+    {
+      "case": "policy_lowered_between_admission_finality",
+      "strategy": "conditional_provider",
+      "performed": false,
+      "prev": "39cb447f9ec176a6155464102a2eeb3a72e0b230d649b52d495a1d6fb2f679eb",
+      "sha256": "8fcd24a4aa522b89f061f63bd9d52c8b47b8e89c07a5d3916f10e785c2491bb4"
+    },
+    {
+      "case": "policy_lowered_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "performed": false,
+      "prev": "8fcd24a4aa522b89f061f63bd9d52c8b47b8e89c07a5d3916f10e785c2491bb4",
+      "sha256": "e72dffedd4074bd335fb7c6a71d21a666621626d1a7e0c944dcb3c20eff3847a"
+    },
+    {
+      "case": "action_amount_changed_between_admission_finality",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "e72dffedd4074bd335fb7c6a71d21a666621626d1a7e0c944dcb3c20eff3847a",
+      "sha256": "7e01cfc8df5ba4b7870baaf0c5b9528cc4960bdd82d78aac2f4f3e1d67674372"
+    },
+    {
+      "case": "action_amount_changed_between_admission_finality",
+      "strategy": "finality_recheck",
+      "performed": false,
+      "prev": "7e01cfc8df5ba4b7870baaf0c5b9528cc4960bdd82d78aac2f4f3e1d67674372",
+      "sha256": "5da61d32c227a0bd8598ecbf46c021180642fc0fed776260eae05fe850fbbab3"
+    },
+    {
+      "case": "action_amount_changed_between_admission_finality",
+      "strategy": "conditional_provider",
+      "performed": false,
+      "prev": "5da61d32c227a0bd8598ecbf46c021180642fc0fed776260eae05fe850fbbab3",
+      "sha256": "84bab53c10f1afa0a4946fa18b0a291598ecd41bfa93450722d62960f5bd6e4b"
+    },
+    {
+      "case": "action_amount_changed_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "performed": false,
+      "prev": "84bab53c10f1afa0a4946fa18b0a291598ecd41bfa93450722d62960f5bd6e4b",
+      "sha256": "cdb935c5b31a383fa7b574c203f4bd9837902c8c15b5840c60fb473cde0559bf"
+    },
+    {
+      "case": "approval_revoked_between_admission_finality",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "cdb935c5b31a383fa7b574c203f4bd9837902c8c15b5840c60fb473cde0559bf",
+      "sha256": "dfd850261e6203cf1f5c9024a356dadf0f81a4b0296e6bf37602037f3985288b"
+    },
+    {
+      "case": "approval_revoked_between_admission_finality",
+      "strategy": "finality_recheck",
+      "performed": false,
+      "prev": "dfd850261e6203cf1f5c9024a356dadf0f81a4b0296e6bf37602037f3985288b",
+      "sha256": "1152388ae8805b34b53337034e3177b27a9f926cb6930ad6e84905ace9aacdf9"
+    },
+    {
+      "case": "approval_revoked_between_admission_finality",
+      "strategy": "conditional_provider",
+      "performed": false,
+      "prev": "1152388ae8805b34b53337034e3177b27a9f926cb6930ad6e84905ace9aacdf9",
+      "sha256": "e66288e4db4b2ed9e46a01bd1835ae3d0fbf5f09a34d0c24a14b1790eefc0f07"
+    },
+    {
+      "case": "approval_revoked_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "performed": false,
+      "prev": "e66288e4db4b2ed9e46a01bd1835ae3d0fbf5f09a34d0c24a14b1790eefc0f07",
+      "sha256": "6bd6dba14fd6b2b1bd4e354ead50eb3ceffcf3ff9b8fbda54219132ecc170be7"
+    },
+    {
+      "case": "approval_expired_between_admission_finality",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "6bd6dba14fd6b2b1bd4e354ead50eb3ceffcf3ff9b8fbda54219132ecc170be7",
+      "sha256": "8d8616962f8398d05ba8fb132067b75f68ad5996badb9a4f60c59f8e03a5e188"
+    },
+    {
+      "case": "approval_expired_between_admission_finality",
+      "strategy": "finality_recheck",
+      "performed": false,
+      "prev": "8d8616962f8398d05ba8fb132067b75f68ad5996badb9a4f60c59f8e03a5e188",
+      "sha256": "424b81954061a4d5104a4aa1537fe5ea7e2259881151c1323e30b87c82c436ff"
+    },
+    {
+      "case": "approval_expired_between_admission_finality",
+      "strategy": "conditional_provider",
+      "performed": false,
+      "prev": "424b81954061a4d5104a4aa1537fe5ea7e2259881151c1323e30b87c82c436ff",
+      "sha256": "7bad8af40c9f62f32f2ba839db7cb3a060acb364eadfa0fc7f50e7476ef0801a"
+    },
+    {
+      "case": "approval_expired_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "performed": false,
+      "prev": "7bad8af40c9f62f32f2ba839db7cb3a060acb364eadfa0fc7f50e7476ef0801a",
+      "sha256": "df2dc6ab004c42e3b76ae7bf2fbba839135916296c7a81df60c966e389ca4b66"
+    },
+    {
+      "case": "already_processed_between_admission_finality",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "df2dc6ab004c42e3b76ae7bf2fbba839135916296c7a81df60c966e389ca4b66",
+      "sha256": "d29790ade47c792fd1f9b4a62619a0cb4a856bfad033198c9b89673f8020b965"
+    },
+    {
+      "case": "already_processed_between_admission_finality",
+      "strategy": "finality_recheck",
+      "performed": false,
+      "prev": "d29790ade47c792fd1f9b4a62619a0cb4a856bfad033198c9b89673f8020b965",
+      "sha256": "5fab267471865a30c478ec304cb8337275d37e8418d82022adac131b0ae71114"
+    },
+    {
+      "case": "already_processed_between_admission_finality",
+      "strategy": "conditional_provider",
+      "performed": false,
+      "prev": "5fab267471865a30c478ec304cb8337275d37e8418d82022adac131b0ae71114",
+      "sha256": "4e47c5421dd8bf1b0faf28ee2f0bc5717494ee90614e30dd56be72e5c2793b44"
+    },
+    {
+      "case": "already_processed_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "performed": false,
+      "prev": "4e47c5421dd8bf1b0faf28ee2f0bc5717494ee90614e30dd56be72e5c2793b44",
+      "sha256": "725efd77ba11e85eeed65b3bad71db3a7b7e1af163bb0a0ed016b5ac284f769e"
+    },
+    {
+      "case": "evidence_subject_swapped_between_admission_finality",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "725efd77ba11e85eeed65b3bad71db3a7b7e1af163bb0a0ed016b5ac284f769e",
+      "sha256": "62b593944ebde579f0a4a592513488289c92dfe0af790dc3d59a6e99bc8628bf"
+    },
+    {
+      "case": "evidence_subject_swapped_between_admission_finality",
+      "strategy": "finality_recheck",
+      "performed": false,
+      "prev": "62b593944ebde579f0a4a592513488289c92dfe0af790dc3d59a6e99bc8628bf",
+      "sha256": "d0eb25fb568c6e90d63ad7e0d73933fc66b820b0980f43daa0fba675cfd2817e"
+    },
+    {
+      "case": "evidence_subject_swapped_between_admission_finality",
+      "strategy": "conditional_provider",
+      "performed": false,
+      "prev": "d0eb25fb568c6e90d63ad7e0d73933fc66b820b0980f43daa0fba675cfd2817e",
+      "sha256": "1bf4a9297d1290b230a23f3e32b03d50f7bd599af48f7dee8f82a7d4346910fe"
+    },
+    {
+      "case": "evidence_subject_swapped_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "performed": false,
+      "prev": "1bf4a9297d1290b230a23f3e32b03d50f7bd599af48f7dee8f82a7d4346910fe",
+      "sha256": "e32fd16ae1b791c13c7ebc33cc55d72bf1c027f09877661f49b98179a10dadeb"
+    },
+    {
+      "case": "evidence_deleted_between_admission_finality",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "e32fd16ae1b791c13c7ebc33cc55d72bf1c027f09877661f49b98179a10dadeb",
+      "sha256": "51540eebd1c1371b8617b0ad43e0e0308af6dd628028fc193fa22d361e7bbfbc"
+    },
+    {
+      "case": "evidence_deleted_between_admission_finality",
+      "strategy": "finality_recheck",
+      "performed": false,
+      "prev": "51540eebd1c1371b8617b0ad43e0e0308af6dd628028fc193fa22d361e7bbfbc",
+      "sha256": "f32b1d7086619916e868400c60412a8d8a1291e45430cb57a538feb4a2a8d99a"
+    },
+    {
+      "case": "evidence_deleted_between_admission_finality",
+      "strategy": "conditional_provider",
+      "performed": false,
+      "prev": "f32b1d7086619916e868400c60412a8d8a1291e45430cb57a538feb4a2a8d99a",
+      "sha256": "a669c652aa104e443278aeb565be14e9787fc92b793974db4b6562dfd3b41d24"
+    },
+    {
+      "case": "evidence_deleted_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "performed": false,
+      "prev": "a669c652aa104e443278aeb565be14e9787fc92b793974db4b6562dfd3b41d24",
+      "sha256": "136c0f806bc919aef1c4d002d95b41ab675552c87f5878ed8f01d5326a3a0b19"
+    },
+    {
+      "case": "evidence_lies_between_admission_finality",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "136c0f806bc919aef1c4d002d95b41ab675552c87f5878ed8f01d5326a3a0b19",
+      "sha256": "b123b660331e2d39e4af4c31d6b7d2a3792f3a2b7bece084f7896c8b324247b5"
+    },
+    {
+      "case": "evidence_lies_between_admission_finality",
+      "strategy": "finality_recheck",
+      "performed": true,
+      "prev": "b123b660331e2d39e4af4c31d6b7d2a3792f3a2b7bece084f7896c8b324247b5",
+      "sha256": "7fb5144c95a2c02adf5e5b2da4bfecf243fb077a901f4b32a0512a99915f4e2c"
+    },
+    {
+      "case": "evidence_lies_between_admission_finality",
+      "strategy": "conditional_provider",
+      "performed": true,
+      "prev": "7fb5144c95a2c02adf5e5b2da4bfecf243fb077a901f4b32a0512a99915f4e2c",
+      "sha256": "25552cbb3d17da25c9efe54dcbfb02b4e5356b2c0f38c42660c46f35498091ad"
+    },
+    {
+      "case": "evidence_lies_between_admission_finality",
+      "strategy": "conventional_atomic",
+      "performed": true,
+      "prev": "25552cbb3d17da25c9efe54dcbfb02b4e5356b2c0f38c42660c46f35498091ad",
+      "sha256": "19caac0e224dc7d430557db84c12ab48af25b7de06cf590fc26b97269a04a729"
+    },
+    {
+      "case": "eligibility_revoked_between_finality_commit",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "19caac0e224dc7d430557db84c12ab48af25b7de06cf590fc26b97269a04a729",
+      "sha256": "bb400cec6e1bf22d167ce64b60b44c503f3c227719cef81467fefcb350d8c499"
+    },
+    {
+      "case": "eligibility_revoked_between_finality_commit",
+      "strategy": "finality_recheck",
+      "performed": true,
+      "prev": "bb400cec6e1bf22d167ce64b60b44c503f3c227719cef81467fefcb350d8c499",
+      "sha256": "ffe4da044e07876b2e09f4208fd364dd5c86dae4619695fccc0e29e241458e91"
+    },
+    {
+      "case": "eligibility_revoked_between_finality_commit",
+      "strategy": "conditional_provider",
+      "performed": false,
+      "prev": "ffe4da044e07876b2e09f4208fd364dd5c86dae4619695fccc0e29e241458e91",
+      "sha256": "a5cb3135639114272e61c7c73adb080e79cb6b14e202a437f3b7a96d9cea2f06"
+    },
+    {
+      "case": "eligibility_revoked_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "performed": false,
+      "prev": "a5cb3135639114272e61c7c73adb080e79cb6b14e202a437f3b7a96d9cea2f06",
+      "sha256": "9ab25e79998e8449d7878152f908052cf729bf2a8fc2b84da32e3fd73eb937ee"
+    },
+    {
+      "case": "policy_lowered_between_finality_commit",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "9ab25e79998e8449d7878152f908052cf729bf2a8fc2b84da32e3fd73eb937ee",
+      "sha256": "21cfef81f3e4fd2ba7fc77f5b2ef96c897b8cac025a83ff97ace69b9c3e56502"
+    },
+    {
+      "case": "policy_lowered_between_finality_commit",
+      "strategy": "finality_recheck",
+      "performed": true,
+      "prev": "21cfef81f3e4fd2ba7fc77f5b2ef96c897b8cac025a83ff97ace69b9c3e56502",
+      "sha256": "f25ecffaec51eba5e624e86e79b2f166bd04573de4f6838cf679f003b9be4bce"
+    },
+    {
+      "case": "policy_lowered_between_finality_commit",
+      "strategy": "conditional_provider",
+      "performed": false,
+      "prev": "f25ecffaec51eba5e624e86e79b2f166bd04573de4f6838cf679f003b9be4bce",
+      "sha256": "a1fc00cc2aad729b8f8252a730381ab61ad1160cfeca10347ca2f92a12a10122"
+    },
+    {
+      "case": "policy_lowered_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "performed": false,
+      "prev": "a1fc00cc2aad729b8f8252a730381ab61ad1160cfeca10347ca2f92a12a10122",
+      "sha256": "e69141605efcde7e72378f70c571e5ac0fb5da79de8d529e9cf34f42b5331240"
+    },
+    {
+      "case": "action_amount_changed_between_finality_commit",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "e69141605efcde7e72378f70c571e5ac0fb5da79de8d529e9cf34f42b5331240",
+      "sha256": "f6fecaaff77bdc090166c218d3326c3de9faeace91cf36ede1ec0b953ce65b0c"
+    },
+    {
+      "case": "action_amount_changed_between_finality_commit",
+      "strategy": "finality_recheck",
+      "performed": true,
+      "prev": "f6fecaaff77bdc090166c218d3326c3de9faeace91cf36ede1ec0b953ce65b0c",
+      "sha256": "f8acb108e65ac6c0fd338f87b419a98b13e190929be104e43cf5aeab58fdcae5"
+    },
+    {
+      "case": "action_amount_changed_between_finality_commit",
+      "strategy": "conditional_provider",
+      "performed": false,
+      "prev": "f8acb108e65ac6c0fd338f87b419a98b13e190929be104e43cf5aeab58fdcae5",
+      "sha256": "c120e7d164d3703523aea209cf2542aad3227646892ed1acfce39f68a36e9855"
+    },
+    {
+      "case": "action_amount_changed_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "performed": false,
+      "prev": "c120e7d164d3703523aea209cf2542aad3227646892ed1acfce39f68a36e9855",
+      "sha256": "3c38bc39bee62a5f80ce0e6f39b94653d5fc2f6d4157dd000dc73acf3c7d8c2e"
+    },
+    {
+      "case": "approval_revoked_between_finality_commit",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "3c38bc39bee62a5f80ce0e6f39b94653d5fc2f6d4157dd000dc73acf3c7d8c2e",
+      "sha256": "8fea2d96b7a38e56354f39fe4b0b4741dfebb1d9109d5c387dfd27005ccd2355"
+    },
+    {
+      "case": "approval_revoked_between_finality_commit",
+      "strategy": "finality_recheck",
+      "performed": true,
+      "prev": "8fea2d96b7a38e56354f39fe4b0b4741dfebb1d9109d5c387dfd27005ccd2355",
+      "sha256": "4a8234a0b09946738594661071e3ebfb6d288025bb6c55e0efe59444b80dc6ac"
+    },
+    {
+      "case": "approval_revoked_between_finality_commit",
+      "strategy": "conditional_provider",
+      "performed": false,
+      "prev": "4a8234a0b09946738594661071e3ebfb6d288025bb6c55e0efe59444b80dc6ac",
+      "sha256": "dfec3b66ce42d0f3ff0641c784c7f9087f56b54f1decc60175a00a4d74ca213a"
+    },
+    {
+      "case": "approval_revoked_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "performed": false,
+      "prev": "dfec3b66ce42d0f3ff0641c784c7f9087f56b54f1decc60175a00a4d74ca213a",
+      "sha256": "44bd0f3121a3c7fab23bbdd635a4db793274aea63c13519c060b4667cae02e5e"
+    },
+    {
+      "case": "approval_expired_between_finality_commit",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "44bd0f3121a3c7fab23bbdd635a4db793274aea63c13519c060b4667cae02e5e",
+      "sha256": "1b1f2159a88d539cd4a1c1cc5eb7e396384821b0afc8c336d2822d8ad53845a6"
+    },
+    {
+      "case": "approval_expired_between_finality_commit",
+      "strategy": "finality_recheck",
+      "performed": true,
+      "prev": "1b1f2159a88d539cd4a1c1cc5eb7e396384821b0afc8c336d2822d8ad53845a6",
+      "sha256": "28f06109eb1856f9904be940b42d84e5967e6098f29e43d277eb650689a5d40d"
+    },
+    {
+      "case": "approval_expired_between_finality_commit",
+      "strategy": "conditional_provider",
+      "performed": false,
+      "prev": "28f06109eb1856f9904be940b42d84e5967e6098f29e43d277eb650689a5d40d",
+      "sha256": "e42703ca9b993e110711f24c64c6f84d3c813535f2e2b7301845334ecb704500"
+    },
+    {
+      "case": "approval_expired_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "performed": false,
+      "prev": "e42703ca9b993e110711f24c64c6f84d3c813535f2e2b7301845334ecb704500",
+      "sha256": "d4049c683709119536496c8ea924421e1054a82c043f4091fb0205f4c8d3398a"
+    },
+    {
+      "case": "already_processed_between_finality_commit",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "d4049c683709119536496c8ea924421e1054a82c043f4091fb0205f4c8d3398a",
+      "sha256": "dceb0529d1a6250691c5c5a8adc05867ea3123083c595db02a8607421f8531c5"
+    },
+    {
+      "case": "already_processed_between_finality_commit",
+      "strategy": "finality_recheck",
+      "performed": true,
+      "prev": "dceb0529d1a6250691c5c5a8adc05867ea3123083c595db02a8607421f8531c5",
+      "sha256": "3252dc4d5449a2fbf86c9f2bb4b655c0b65d4858f2fb740ba04ce221c37e0b53"
+    },
+    {
+      "case": "already_processed_between_finality_commit",
+      "strategy": "conditional_provider",
+      "performed": false,
+      "prev": "3252dc4d5449a2fbf86c9f2bb4b655c0b65d4858f2fb740ba04ce221c37e0b53",
+      "sha256": "14a077455ed9b783cd1a82c9d9c22c6e311a4231487584a12215dc434f47c05b"
+    },
+    {
+      "case": "already_processed_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "performed": false,
+      "prev": "14a077455ed9b783cd1a82c9d9c22c6e311a4231487584a12215dc434f47c05b",
+      "sha256": "576803f75f9b2942fca12b8d1afe0851b737ebde2d99395cdedb97e8324a9ff7"
+    },
+    {
+      "case": "evidence_subject_swapped_between_finality_commit",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "576803f75f9b2942fca12b8d1afe0851b737ebde2d99395cdedb97e8324a9ff7",
+      "sha256": "292282b9c0e3499d14c786b89aabf06a3212e1afdb34ea22e775d7066b667b74"
+    },
+    {
+      "case": "evidence_subject_swapped_between_finality_commit",
+      "strategy": "finality_recheck",
+      "performed": true,
+      "prev": "292282b9c0e3499d14c786b89aabf06a3212e1afdb34ea22e775d7066b667b74",
+      "sha256": "6720146e6787d6d9bd8655c758110b42538854564f118d58edca5f8a245361b3"
+    },
+    {
+      "case": "evidence_subject_swapped_between_finality_commit",
+      "strategy": "conditional_provider",
+      "performed": false,
+      "prev": "6720146e6787d6d9bd8655c758110b42538854564f118d58edca5f8a245361b3",
+      "sha256": "4cf5082b22c23d3848d05b4b10803c0c5132f5531bc291602c0d86b6cef7b13c"
+    },
+    {
+      "case": "evidence_subject_swapped_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "performed": false,
+      "prev": "4cf5082b22c23d3848d05b4b10803c0c5132f5531bc291602c0d86b6cef7b13c",
+      "sha256": "eca7e8f135aae8ba7a1a1c47291eb09865e237ae2c3d67ad025bfc655b727a75"
+    },
+    {
+      "case": "evidence_deleted_between_finality_commit",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "eca7e8f135aae8ba7a1a1c47291eb09865e237ae2c3d67ad025bfc655b727a75",
+      "sha256": "0e73f830f2f8f34cedf2ca2e116d27624bb861777c85af4ff8bab8cfd4d19b4f"
+    },
+    {
+      "case": "evidence_deleted_between_finality_commit",
+      "strategy": "finality_recheck",
+      "performed": true,
+      "prev": "0e73f830f2f8f34cedf2ca2e116d27624bb861777c85af4ff8bab8cfd4d19b4f",
+      "sha256": "b53b8c88e9b9979e1bf1e3227efdddb71865c7402ef02428f2ca785b0e1fe5f4"
+    },
+    {
+      "case": "evidence_deleted_between_finality_commit",
+      "strategy": "conditional_provider",
+      "performed": false,
+      "prev": "b53b8c88e9b9979e1bf1e3227efdddb71865c7402ef02428f2ca785b0e1fe5f4",
+      "sha256": "5c8bda1d7e6e8ebd3847dd46516aa63fd0aff34ce93c26d349d2a96dad3d5141"
+    },
+    {
+      "case": "evidence_deleted_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "performed": false,
+      "prev": "5c8bda1d7e6e8ebd3847dd46516aa63fd0aff34ce93c26d349d2a96dad3d5141",
+      "sha256": "5aba68916b9331c80e71d68c2826a0cefcd27a2566f49fe0fd908c4f5439b3d5"
+    },
+    {
+      "case": "evidence_lies_between_finality_commit",
+      "strategy": "admission_only",
+      "performed": true,
+      "prev": "5aba68916b9331c80e71d68c2826a0cefcd27a2566f49fe0fd908c4f5439b3d5",
+      "sha256": "d3aa5257bd4affbfdeacaae451aab61f1a8b7c8d277ec6ec50fa8268204c7113"
+    },
+    {
+      "case": "evidence_lies_between_finality_commit",
+      "strategy": "finality_recheck",
+      "performed": true,
+      "prev": "d3aa5257bd4affbfdeacaae451aab61f1a8b7c8d277ec6ec50fa8268204c7113",
+      "sha256": "8845ec13fe19cb4b795caae2fd19aa962099a31980d4d6bf58a1f1b01ee10445"
+    },
+    {
+      "case": "evidence_lies_between_finality_commit",
+      "strategy": "conditional_provider",
+      "performed": true,
+      "prev": "8845ec13fe19cb4b795caae2fd19aa962099a31980d4d6bf58a1f1b01ee10445",
+      "sha256": "2519ceb50fe69a7ac036726aa83fce02c963866105a7f63fee6aa5839182803a"
+    },
+    {
+      "case": "evidence_lies_between_finality_commit",
+      "strategy": "conventional_atomic",
+      "performed": true,
+      "prev": "2519ceb50fe69a7ac036726aa83fce02c963866105a7f63fee6aa5839182803a",
+      "sha256": "c7163498c27e5d24bcb94d36fff4f79b53336d146686dcd4cb8da5f0f594ccd7"
+    }
+  ]
+}

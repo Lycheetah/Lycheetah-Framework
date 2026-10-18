@@ -1,0 +1,174 @@
+{
+  "status": "LOCAL_SYNTHETIC",
+  "cases": [
+    {
+      "name": "separate-crm-and-bank",
+      "ground_truth_correct": true,
+      "naive_signed_quorum": "CONFIRMED",
+      "provenance_gate": "CONFIRMED",
+      "matched_conventional": "CONFIRMED",
+      "reason": "independent-declared-paths-agree",
+      "distinct_paths": 2,
+      "signed_witnesses": 2
+    },
+    {
+      "name": "same-origin-two-signatures",
+      "ground_truth_correct": true,
+      "naive_signed_quorum": "CONFIRMED",
+      "provenance_gate": "REVIEW",
+      "matched_conventional": "REVIEW",
+      "reason": "common-origin-or-insufficient-independent-evidence",
+      "distinct_paths": 1,
+      "signed_witnesses": 2
+    },
+    {
+      "name": "same-controller-different-originals",
+      "ground_truth_correct": true,
+      "naive_signed_quorum": "CONFIRMED",
+      "provenance_gate": "REVIEW",
+      "matched_conventional": "REVIEW",
+      "reason": "common-origin-or-insufficient-independent-evidence",
+      "distinct_paths": 1,
+      "signed_witnesses": 2
+    },
+    {
+      "name": "three-signers-two-origins",
+      "ground_truth_correct": true,
+      "naive_signed_quorum": "CONFIRMED",
+      "provenance_gate": "CONFIRMED",
+      "matched_conventional": "CONFIRMED",
+      "reason": "independent-declared-paths-agree",
+      "distinct_paths": 2,
+      "signed_witnesses": 3
+    },
+    {
+      "name": "three-genuinely-disjoint-origins",
+      "ground_truth_correct": true,
+      "naive_signed_quorum": "CONFIRMED",
+      "provenance_gate": "CONFIRMED",
+      "matched_conventional": "CONFIRMED",
+      "reason": "independent-declared-paths-agree",
+      "distinct_paths": 3,
+      "signed_witnesses": 3
+    },
+    {
+      "name": "two-sources-agree-on-false-evidence",
+      "ground_truth_correct": false,
+      "naive_signed_quorum": "CONFIRMED",
+      "provenance_gate": "CONFIRMED",
+      "matched_conventional": "CONFIRMED",
+      "reason": "independent-declared-paths-agree",
+      "distinct_paths": 2,
+      "signed_witnesses": 2
+    },
+    {
+      "name": "recorded-negative-evidence",
+      "ground_truth_correct": true,
+      "naive_signed_quorum": "CONFLICT",
+      "provenance_gate": "CONFLICT",
+      "matched_conventional": "CONFLICT",
+      "reason": "authenticated-negative-or-contradiction",
+      "distinct_paths": 0,
+      "signed_witnesses": 2
+    },
+    {
+      "name": "missing-outcome-observation",
+      "ground_truth_correct": true,
+      "naive_signed_quorum": "REVIEW",
+      "provenance_gate": "REVIEW",
+      "matched_conventional": "REVIEW",
+      "reason": "witness-uncertainty",
+      "distinct_paths": 0,
+      "signed_witnesses": 2
+    },
+    {
+      "name": "old-timestamp",
+      "ground_truth_correct": true,
+      "naive_signed_quorum": "REVIEW",
+      "provenance_gate": "REVIEW",
+      "matched_conventional": "REVIEW",
+      "reason": "stale-or-future",
+      "distinct_paths": 0,
+      "signed_witnesses": 0
+    },
+    {
+      "name": "old-revision",
+      "ground_truth_correct": true,
+      "naive_signed_quorum": "REVIEW",
+      "provenance_gate": "REVIEW",
+      "matched_conventional": "REVIEW",
+      "reason": "witness-revision-not-current",
+      "distinct_paths": 0,
+      "signed_witnesses": 2
+    },
+    {
+      "name": "provider-proof-absent",
+      "ground_truth_correct": true,
+      "naive_signed_quorum": "REVIEW",
+      "provenance_gate": "REVIEW",
+      "matched_conventional": "REVIEW",
+      "reason": "provider-proof-not-verified",
+      "distinct_paths": 0,
+      "signed_witnesses": 0
+    },
+    {
+      "name": "signature-corruption",
+      "ground_truth_correct": true,
+      "naive_signed_quorum": "REVIEW",
+      "provenance_gate": "REVIEW",
+      "matched_conventional": "REVIEW",
+      "reason": "invalid-authentication",
+      "distinct_paths": 0,
+      "signed_witnesses": 0
+    },
+    {
+      "name": "action-substitution",
+      "ground_truth_correct": true,
+      "naive_signed_quorum": "REVIEW",
+      "provenance_gate": "REVIEW",
+      "matched_conventional": "REVIEW",
+      "reason": "different-subject",
+      "distinct_paths": 0,
+      "signed_witnesses": 1
+    },
+    {
+      "name": "replayed-signer",
+      "ground_truth_correct": true,
+      "naive_signed_quorum": "CONFIRMED",
+      "provenance_gate": "REVIEW",
+      "matched_conventional": "REVIEW",
+      "reason": "duplicate-signer",
+      "distinct_paths": 0,
+      "signed_witnesses": 2
+    },
+    {
+      "name": "no-current-readback",
+      "ground_truth_correct": true,
+      "naive_signed_quorum": "REVIEW",
+      "provenance_gate": "REVIEW",
+      "matched_conventional": "REVIEW",
+      "reason": "current-witness-readback-unavailable",
+      "distinct_paths": 0,
+      "signed_witnesses": 2
+    },
+    {
+      "name": "underspecified-independent-quorum",
+      "ground_truth_correct": true,
+      "naive_signed_quorum": "CONFIRMED",
+      "provenance_gate": "REVIEW",
+      "matched_conventional": "REVIEW",
+      "reason": "common-origin-or-insufficient-independent-evidence",
+      "distinct_paths": 2,
+      "signed_witnesses": 2
+    }
+  ],
+  "totals": {
+    "cases": 16,
+    "naive_confirmed": 8,
+    "provenance_confirmed": 4,
+    "provenance_review": 11,
+    "provenance_conflict": 1,
+    "matched_control_disagreements": 0,
+    "false_truth_confirmed": 1
+  }
+}

@@ -2,6 +2,22 @@
 ## Start Here. Read In Order.
 ### Lycheetah Framework · Mackenzie Conor James Clark
 
+## Current executable research
+
+**[SCAFFOLD] Experimental; no universal language or alignment claim.**
+
+[SXP-L v0.1–v2.0](26_SXP_L_RESEARCH/README.md) now has a separate research
+home with preserved original archives, runnable v2.0 source, a pre-human-data
+study instrument and an integration review. Eight early defects reproduce in
+its inherited runtime. The [independent early audit](SXP-L_LAMAGUE_INDEPENDENT_AUDIT_v0.1_to_v1.0.md)
+remains applicable.
+
+SXP-L does not replace CORE, RUNTIME, PACKET or Native-36. Their numbering is
+independent. The original corpus descriptions below include historical claims;
+their words “proven” or “validated” are not a new independent verification by
+this integration review. Current executable evidence and its limits are recorded
+in each line's release and review documents.
+
 ---
 
 ## WHAT THIS FOLDER IS

@@ -22,6 +22,7 @@ only that a claim-bearing document declares its footing somewhere. A marked docu
 can still be wrong — it just cannot be silently wrong.
 """
 
+import importlib.util
 import json, os, re, sys, subprocess
 from collections import Counter
 
@@ -62,6 +63,23 @@ VOCABULARIES = {
 }
 COMPILED = {k: re.compile(v) for k, v in VOCABULARIES.items()}
 
+
+def frozen_research_footing(root=ROOT):
+    """Inherit a reviewed archive's status only after exact byte verification.
+
+    This preserves historical documents without adding retroactive status labels
+    inside their original manifests. It grants no truth or validation status.
+    Any missing, extra or altered source file fails the entire gate.
+    """
+    script = os.path.join(os.path.dirname(__file__), "verify_research_intake.py")
+    spec = importlib.util.spec_from_file_location("research_intake_integrity", script)
+    if spec is None or spec.loader is None:
+        raise ValueError("research integrity checker could not be loaded")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    from pathlib import Path
+    return module.verify(Path(root))
+
 # The count of unmarked claim-bearing documents on the day this gate was written.
 # It exists so the gate blocks REGRESSION today instead of staying red forever.
 # Lower it whenever the real number drops. Never raise it.
@@ -90,6 +108,14 @@ def main():
         print("verify-claims: no tracked markdown found — is this a git repo?")
         return 2
 
+    try:
+        intake = frozen_research_footing()
+    except (OSError, ValueError, KeyError, TypeError) as error:
+        print(f"verify-claims: frozen research integrity FAILED: {error}")
+        return 2
+    inherited = intake["file_footing"]
+    inherited_count = 0
+
     marked, unmarked, exempt_small, per_vocab = [], [], 0, Counter()
 
     for f in files:
@@ -110,11 +136,17 @@ def main():
         if hits:
             marked.append(f)
             per_vocab.update(hits)
+        elif f in inherited:
+            marked.append(f)
+            inherited_count += 1
         else:
             unmarked.append((size, f))
 
     total = len(marked) + len(unmarked)
     unmarked.sort(reverse=True)
+    print(f"Research intake: {intake['files_checked']} exact files checked; "
+          f"{inherited_count} historical documents inherit experimental footing "
+          "from their reviewed entry points.")
 
     if not QUIET:
         print(f"\n\033[36m⊚ CLAIM-BEARING DOCUMENTS\033[0m  "

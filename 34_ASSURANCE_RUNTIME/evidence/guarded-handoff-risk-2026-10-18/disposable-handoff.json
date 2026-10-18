@@ -1,0 +1,272 @@
+{
+  "mode": "DISPOSABLE_LAB_DEMONSTRATION",
+  "limits": [
+    "Synthetic numerical proposals, not live agent deliberation",
+    "Declared demo approval, not authenticated human consent",
+    "Trusted fixed callback, not arbitrary-executor containment",
+    "Observation in this process, not an independent filesystem witness"
+  ],
+  "permit_schema": "lycheetah.sovereign_permit.v2",
+  "bound_risk": "HIGH",
+  "critical_hash_unchanged_by_risk_downgrade": true,
+  "risk_downgrade": {
+    "schema": "lycheetah.sovereign_harness.v1",
+    "accepted": false,
+    "status": "DENIED",
+    "stop_reason": "CANDIDATE_RISK_MISMATCH",
+    "provider_called": false,
+    "permit": {
+      "schema": "lycheetah.sovereign_permit.v2",
+      "permit_id": "demo-single-use",
+      "actor": "demo-worker",
+      "authority_id": "demo-reviewer",
+      "allowed_scopes": [
+        "artifact:create"
+      ],
+      "bound_scope": "artifact:create",
+      "state_version": "disposable-empty-workspace-v1",
+      "issued_at": 1792278049,
+      "expires_at": 1792278349,
+      "action_hash": "aa29a2b0281de37e5e490943db975a9ceb920103893722a55ca7bf9cbd4d057e",
+      "consensus_digest": "7e35b83a65bffd7d50556888433dad8479dd36ca2215a11dafe629ffe112cf28",
+      "compaction_critical_hash": "728360c2a420632accb82a911365971e63c30c29e5379fa02656b812578148dd",
+      "bound_packet_id": "demo-handoff-packet",
+      "bound_risk": "HIGH",
+      "permit_digest": "c52eaf836830f36ac797f0b1a74043f25d7c629ef4347463367ce5aee686f304"
+    },
+    "live_action_hash": "aa29a2b0281de37e5e490943db975a9ceb920103893722a55ca7bf9cbd4d057e",
+    "live_scope": "artifact:create",
+    "live_state_version": "disposable-empty-workspace-v1",
+    "evaluated_at": 1792278049,
+    "consensus_summary": {
+      "converged": true,
+      "obstruction_free": true,
+      "byzantine_safe": true,
+      "healthy_agents": [
+        "demo-worker",
+        "demo-reviewer"
+      ],
+      "quarantined_agents": [],
+      "consensus_digest": "7e35b83a65bffd7d50556888433dad8479dd36ca2215a11dafe629ffe112cf28"
+    },
+    "compaction_summary": {
+      "is_safe": true,
+      "classification": "PARTIAL_EQUIVALENT",
+      "reason": "critical fields match while non-critical content differs",
+      "candidate_critical_hash": "728360c2a420632accb82a911365971e63c30c29e5379fa02656b812578148dd",
+      "packet_id": "demo-handoff-packet",
+      "risk": "LOW",
+      "reference_risk": "HIGH",
+      "bound_risk": "HIGH",
+      "has_recovery": true
+    },
+    "gateway_result": null,
+    "epistemic_boundaries": [
+      "zero_h1_proves_pairwise_vector_agreement_not_factual_correctness",
+      "compaction_shield_proves_10_accountability_fields_not_lossless_reasoning",
+      "sovereign_permit_binds_local_gateway_and_nonce_ledger_not_os_kernel",
+      "declared_authority_grants_validate_packet_scope_binding_not_external_identity_auth"
+    ],
+    "witness_digest": "1af47cdb6d12ac9fe9c1c2fe18e420d2ee5586dc90b6759d7dbbd5cedb032482"
+  },
+  "action_substitution": {
+    "schema": "lycheetah.sovereign_harness.v1",
+    "accepted": false,
+    "status": "DENIED",
+    "stop_reason": "ACTION_PAYLOAD_MISMATCH",
+    "provider_called": false,
+    "permit": {
+      "schema": "lycheetah.sovereign_permit.v2",
+      "permit_id": "demo-single-use",
+      "actor": "demo-worker",
+      "authority_id": "demo-reviewer",
+      "allowed_scopes": [
+        "artifact:create"
+      ],
+      "bound_scope": "artifact:create",
+      "state_version": "disposable-empty-workspace-v1",
+      "issued_at": 1792278049,
+      "expires_at": 1792278349,
+      "action_hash": "aa29a2b0281de37e5e490943db975a9ceb920103893722a55ca7bf9cbd4d057e",
+      "consensus_digest": "7e35b83a65bffd7d50556888433dad8479dd36ca2215a11dafe629ffe112cf28",
+      "compaction_critical_hash": "728360c2a420632accb82a911365971e63c30c29e5379fa02656b812578148dd",
+      "bound_packet_id": "demo-handoff-packet",
+      "bound_risk": "HIGH",
+      "permit_digest": "c52eaf836830f36ac797f0b1a74043f25d7c629ef4347463367ce5aee686f304"
+    },
+    "live_action_hash": "3258b516271089caf94e91133e3840c53e12cd1334365ba6e65cbcfcd9195dbd",
+    "live_scope": "artifact:create",
+    "live_state_version": "disposable-empty-workspace-v1",
+    "evaluated_at": 1792278049,
+    "consensus_summary": {
+      "converged": true,
+      "obstruction_free": true,
+      "byzantine_safe": true,
+      "healthy_agents": [
+        "demo-worker",
+        "demo-reviewer"
+      ],
+      "quarantined_agents": [],
+      "consensus_digest": "7e35b83a65bffd7d50556888433dad8479dd36ca2215a11dafe629ffe112cf28"
+    },
+    "compaction_summary": {
+      "is_safe": true,
+      "classification": "EXACT_EQUIVALENT",
+      "reason": "full canonical hash matches",
+      "candidate_critical_hash": "728360c2a420632accb82a911365971e63c30c29e5379fa02656b812578148dd",
+      "packet_id": "demo-handoff-packet",
+      "risk": "HIGH",
+      "reference_risk": "HIGH",
+      "bound_risk": "HIGH",
+      "has_recovery": true
+    },
+    "gateway_result": null,
+    "epistemic_boundaries": [
+      "zero_h1_proves_pairwise_vector_agreement_not_factual_correctness",
+      "compaction_shield_proves_10_accountability_fields_not_lossless_reasoning",
+      "sovereign_permit_binds_local_gateway_and_nonce_ledger_not_os_kernel",
+      "declared_authority_grants_validate_packet_scope_binding_not_external_identity_auth"
+    ],
+    "witness_digest": "4579109be697a29fb97454a12e6e5eab0babdc19d4407242fdae466af663dc91"
+  },
+  "valid_execution": {
+    "schema": "lycheetah.sovereign_harness.v1",
+    "accepted": true,
+    "status": "SUCCEEDED",
+    "stop_reason": "EXECUTED",
+    "provider_called": true,
+    "permit": {
+      "schema": "lycheetah.sovereign_permit.v2",
+      "permit_id": "demo-single-use",
+      "actor": "demo-worker",
+      "authority_id": "demo-reviewer",
+      "allowed_scopes": [
+        "artifact:create"
+      ],
+      "bound_scope": "artifact:create",
+      "state_version": "disposable-empty-workspace-v1",
+      "issued_at": 1792278049,
+      "expires_at": 1792278349,
+      "action_hash": "aa29a2b0281de37e5e490943db975a9ceb920103893722a55ca7bf9cbd4d057e",
+      "consensus_digest": "7e35b83a65bffd7d50556888433dad8479dd36ca2215a11dafe629ffe112cf28",
+      "compaction_critical_hash": "728360c2a420632accb82a911365971e63c30c29e5379fa02656b812578148dd",
+      "bound_packet_id": "demo-handoff-packet",
+      "bound_risk": "HIGH",
+      "permit_digest": "c52eaf836830f36ac797f0b1a74043f25d7c629ef4347463367ce5aee686f304"
+    },
+    "live_action_hash": "aa29a2b0281de37e5e490943db975a9ceb920103893722a55ca7bf9cbd4d057e",
+    "live_scope": "artifact:create",
+    "live_state_version": "disposable-empty-workspace-v1",
+    "evaluated_at": 1792278049,
+    "consensus_summary": {
+      "converged": true,
+      "obstruction_free": true,
+      "byzantine_safe": true,
+      "healthy_agents": [
+        "demo-worker",
+        "demo-reviewer"
+      ],
+      "quarantined_agents": [],
+      "consensus_digest": "7e35b83a65bffd7d50556888433dad8479dd36ca2215a11dafe629ffe112cf28"
+    },
+    "compaction_summary": {
+      "is_safe": true,
+      "classification": "EXACT_EQUIVALENT",
+      "reason": "full canonical hash matches",
+      "candidate_critical_hash": "728360c2a420632accb82a911365971e63c30c29e5379fa02656b812578148dd",
+      "packet_id": "demo-handoff-packet",
+      "risk": "HIGH",
+      "reference_risk": "HIGH",
+      "bound_risk": "HIGH",
+      "has_recovery": true
+    },
+    "gateway_result": {
+      "status": "SUCCEEDED",
+      "reason": "result_recorded",
+      "effect_id": "eff-19e54a4b6606e736",
+      "action_hash": "aa29a2b0281de37e5e490943db975a9ceb920103893722a55ca7bf9cbd4d057e",
+      "provider_called": true,
+      "checkpoint_generation": 4,
+      "result": {
+        "status": "success",
+        "sha256": "c01be28d4a5cec2dacfe43f4e2ce9766dbb54ccbfe4ebd672e51318c72b838e0"
+      },
+      "assurance_receipt_digest": "7f78d9c02504d37bb16a0be63428fbd1b220f9cf7bf814f628168bb9627285de"
+    },
+    "epistemic_boundaries": [
+      "zero_h1_proves_pairwise_vector_agreement_not_factual_correctness",
+      "compaction_shield_proves_10_accountability_fields_not_lossless_reasoning",
+      "sovereign_permit_binds_local_gateway_and_nonce_ledger_not_os_kernel",
+      "declared_authority_grants_validate_packet_scope_binding_not_external_identity_auth"
+    ],
+    "witness_digest": "adaac03c02ba0e4c98c9fde1ff505f272144396b8e24ef5ae50f1449ded828ff"
+  },
+  "replay": {
+    "schema": "lycheetah.sovereign_harness.v1",
+    "accepted": false,
+    "status": "DENIED",
+    "stop_reason": "PERMIT_REPLAYED",
+    "provider_called": false,
+    "permit": {
+      "schema": "lycheetah.sovereign_permit.v2",
+      "permit_id": "demo-single-use",
+      "actor": "demo-worker",
+      "authority_id": "demo-reviewer",
+      "allowed_scopes": [
+        "artifact:create"
+      ],
+      "bound_scope": "artifact:create",
+      "state_version": "disposable-empty-workspace-v1",
+      "issued_at": 1792278049,
+      "expires_at": 1792278349,
+      "action_hash": "aa29a2b0281de37e5e490943db975a9ceb920103893722a55ca7bf9cbd4d057e",
+      "consensus_digest": "7e35b83a65bffd7d50556888433dad8479dd36ca2215a11dafe629ffe112cf28",
+      "compaction_critical_hash": "728360c2a420632accb82a911365971e63c30c29e5379fa02656b812578148dd",
+      "bound_packet_id": "demo-handoff-packet",
+      "bound_risk": "HIGH",
+      "permit_digest": "c52eaf836830f36ac797f0b1a74043f25d7c629ef4347463367ce5aee686f304"
+    },
+    "live_action_hash": "aa29a2b0281de37e5e490943db975a9ceb920103893722a55ca7bf9cbd4d057e",
+    "live_scope": "artifact:create",
+    "live_state_version": "disposable-empty-workspace-v1",
+    "evaluated_at": 1792278049,
+    "consensus_summary": {
+      "converged": true,
+      "obstruction_free": true,
+      "byzantine_safe": true,
+      "healthy_agents": [
+        "demo-worker",
+        "demo-reviewer"
+      ],
+      "quarantined_agents": [],
+      "consensus_digest": "7e35b83a65bffd7d50556888433dad8479dd36ca2215a11dafe629ffe112cf28"
+    },
+    "compaction_summary": {
+      "is_safe": true,
+      "classification": "EXACT_EQUIVALENT",
+      "reason": "full canonical hash matches",
+      "candidate_critical_hash": "728360c2a420632accb82a911365971e63c30c29e5379fa02656b812578148dd",
+      "packet_id": "demo-handoff-packet",
+      "risk": "HIGH",
+      "reference_risk": "HIGH",
+      "bound_risk": "HIGH",
+      "has_recovery": true
+    },
+    "gateway_result": null,
+    "epistemic_boundaries": [
+      "zero_h1_proves_pairwise_vector_agreement_not_factual_correctness",
+      "compaction_shield_proves_10_accountability_fields_not_lossless_reasoning",
+      "sovereign_permit_binds_local_gateway_and_nonce_ledger_not_os_kernel",
+      "declared_authority_grants_validate_packet_scope_binding_not_external_identity_auth"
+    ],
+    "witness_digest": "88577db66cf9c13cbd40cc1b98c2980e7b2868bbc9ce45f6af1a9018041289c1"
+  },
+  "observed_file": {
+    "relative_path": "handoff.txt",
+    "bytes": 70,
+    "sha256": "c01be28d4a5cec2dacfe43f4e2ce9766dbb54ccbfe4ebd672e51318c72b838e0",
+    "matches_declared_content": true
+  },
+  "executor_calls": 1,
+  "temporary_workspace_removed_on_exit": true
+}

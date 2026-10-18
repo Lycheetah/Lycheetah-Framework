@@ -1,0 +1,22 @@
+{
+  "cases": 14,
+  "corpus_digest": "sha256:a1adf1ba9402a2dc74861293261ccaae839c36290502198d471a611f22c7cfd3",
+  "correct_negative_abstentions": 5,
+  "exact_document_matches": 5,
+  "exact_match_rate": 0.35714285714285715,
+  "f1": 0.0,
+  "false_negative": 9,
+  "false_positive": 0,
+  "missed_positive_documents": 9,
+  "negative_abstention_rate": 1.0,
+  "negative_cases": 5,
+  "note": "Only externally sourced, independently frozen labels yield an external benchmark.",
+  "positive_cases": 9,
+  "positive_document_coverage": 0.0,
+  "precision": 0.0,
+  "predictions_digest": "sha256:1665476744e072063314b7331924bd2077b13362dc2e326e19c02a83d53ecfa3",
+  "recall": 0.0,
+  "total_review_minutes": 0.0,
+  "true_positive": 0,
+  "wrong_field_or_scope_candidates": 0
+}

@@ -1,0 +1,29 @@
+{
+  "dataset": "Hand-authored fictional merchant-policy change scenarios; not held-out or independent",
+  "status": "INTERNAL_SYNTHETIC",
+  "created": "2026-10-18",
+  "cases": [
+    {"id":"q01_current", "effective":"02-15", "known":"02-20", "expect":"21", "kind":"ANSWER"},
+    {"id":"q02_historical", "effective":"01-20", "known":"02-20", "expect":"14", "kind":"ANSWER"},
+    {"id":"q03_late_past_reassessment", "effective":"02-05", "known":"02-20", "expect":"21", "kind":"ANSWER"},
+    {"id":"q04_as_pre_discovery", "effective":"02-05", "known":"02-05", "expect":"14", "kind":"ANSWER"},
+    {"id":"q05_prior_while_future_exists", "effective":"01-25", "known":"02-28", "expect":"14", "kind":"ANSWER"},
+    {"id":"q06_disagreement", "effective":"03-05", "known":"03-05", "expect":null, "kind":"ABSTAIN_CONFLICT"},
+    {"id":"q07_disagreement_past", "effective":"02-15", "known":"03-05", "expect":null, "kind":"ABSTAIN_CONFLICT"},
+    {"id":"q08_disagreement_before_seen", "effective":"03-05", "known":"02-28", "expect":"21", "kind":"ANSWER"},
+    {"id":"q09_disputed_doc_withdrawn", "effective":"03-13", "known":"03-13", "expect":"21", "kind":"ANSWER"},
+    {"id":"q10_disputed_doc_still_valid_historically", "effective":"03-10", "known":"03-13", "expect":null, "kind":"ABSTAIN_CONFLICT"},
+    {"id":"q11_retraction_known", "effective":"03-21", "known":"03-21", "expect":"14", "kind":"ANSWER"},
+    {"id":"q12_retraction_not_yet_known", "effective":"03-21", "known":"03-19", "expect":"21", "kind":"ANSWER"},
+    {"id":"q13_retraction_prior", "effective":"03-14", "known":"03-21", "expect":"21", "kind":"ANSWER"},
+    {"id":"q14_future_effective", "effective":"04-05", "known":"04-05", "expect":"30", "kind":"ANSWER"},
+    {"id":"q15_future_version_pre_effective", "effective":"03-25", "known":"03-25", "expect":"14", "kind":"ANSWER"},
+    {"id":"q16_future_version_withdrawn", "effective":"04-20", "known":"04-20", "expect":"14", "kind":"ANSWER"},
+    {"id":"q17_future_version_withdrawn_unknown", "effective":"04-20", "known":"04-11", "expect":"30", "kind":"ANSWER"},
+    {"id":"q18_wrong_tenant", "effective":"03-25", "known":"03-25", "tenant":"shop-Z", "expect":null, "kind":"ABSTAIN_NO_EVIDENCE"},
+    {"id":"q19_alternative_scope", "effective":"03-25", "known":"03-25", "scope":"in-store", "expect":"45", "kind":"ANSWER"},
+    {"id":"q20_unknown_scope", "effective":"03-25", "known":"03-25", "scope":"wholesale", "expect":null, "kind":"ABSTAIN_NO_EVIDENCE"},
+    {"id":"q21_other_tenant", "effective":"03-25", "known":"03-25", "tenant":"shop-B", "expect":"7", "kind":"ANSWER"},
+    {"id":"q22_other_tenant_earlier_unknown", "effective":"01-15", "known":"01-15", "tenant":"shop-B", "expect":null, "kind":"ABSTAIN_NO_EVIDENCE"}
+  ]
+}

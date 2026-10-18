@@ -42,3 +42,11 @@ unless their own evidence says otherwise.
 ## Public compensation experiment
 
 [Compensation Race Benchmark](compensation-race-benchmark/README.md) illustrates stale rollback and partial repair in purpose-built SQLite fixtures. Conventional atomic fencing refuses a stale repair without writes. Its results do not establish novelty, production recovery or general agent safety.
+
+## Earned Trust — nine-cycle continuation
+
+[Earned Trust](earned-trust/README.md) preserves cycles 001–009 as experimental
+research, including credential-compromise counterexamples, late challenges and
+matched conventional baselines. Its dated integration review distinguishes
+locally rerun methods, privileged checks not reproduced here, original native
+bridge failures and a separate fixture correction. The raw cycles are unchanged.

@@ -1,0 +1,11 @@
+{
+  "experiment": "same structured inputs, synthetic four-case query benchmark",
+  "counts": {
+    "naive_latest_known": 2,
+    "sql_temporal": 4,
+    "gateway": 4
+  },
+  "n_cases": 4,
+  "finding": "fairer SQL baseline ties ledger; weak latest-known comparator does not",
+  "not_measured": "neural extraction, external accuracy, production latency"
+}
