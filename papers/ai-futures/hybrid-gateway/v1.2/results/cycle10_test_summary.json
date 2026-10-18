@@ -1,0 +1,19 @@
+{
+  "release": "v1.0",
+  "date": "2026-10-18",
+  "source_release": "v0.9",
+  "test_command": "python -m unittest discover -s tests -q",
+  "passed": 224,
+  "prior_passed": 190,
+  "new_tests": 34,
+  "baseline": {
+    "four_case_naive": 2,
+    "four_case_sql": 4,
+    "four_case_gateway": 4
+  },
+  "live_model_tested": false,
+  "real_human_reviewed": false,
+  "canonical_cascade_executed": false,
+  "production_deployed": false,
+  "github_push": false
+}

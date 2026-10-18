@@ -1,0 +1,42 @@
+{
+  "schema_note": "Exploratory local claims; does not modify Lycheetah-Framework/28_DEFENSE/CLAIMS.json",
+  "date": "2026-10-18",
+  "status": "SYNTHETIC_ONLY",
+  "claims": [
+    {
+      "id": "ET-001",
+      "claim": "A finality recheck still admits post-check mutation in a non-conditional provider model.",
+      "evidence": "earned_trust_probe.py; results.json; test_finality_does_not_cover_later_revoke",
+      "status": "MEASURED_IN_AUTHORED_SYNTHETIC_MODEL",
+      "falsifier": "Run the documented model and find finality_recheck refuses all eight observable post-finality mutations while retaining the same modeled provider behavior."
+    },
+    {
+      "id": "ET-002",
+      "claim": "Atomic provider-side checking blocks modeled stale, unapproved or replayed effects when the provider possesses accurate controlling state.",
+      "evidence": "results.json; test_provider_catches_all_observable_stale_cases",
+      "status": "CONDITIONAL_SYNTHETIC",
+      "falsifier": "A case with correct authoritative state and a correctly modeled provider atomic transaction yields an unauthorized effect."
+    },
+    {
+      "id": "ET-003",
+      "claim": "The matched conventional atomic arm has identical decisions to the Lycheetah-inspired reference arm on this corpus.",
+      "evidence": "results.json; test_conventional_baseline_parity",
+      "status": "MEASURED_IN_AUTHORED_SYNTHETIC_MODEL",
+      "falsifier": "Any listed authored case produces a different performed result across the two arms."
+    },
+    {
+      "id": "ET-004",
+      "claim": "False evidence can lead to harmful execution even when atomic conditional enforcement succeeds on the reported predicate.",
+      "evidence": "results.json; test_false_evidence_cannot_be_fixed_by_atomicity",
+      "status": "MEASURED_NEGATIVE_CONTROL_IN_AUTHORED_SYNTHETIC_MODEL",
+      "falsifier": "The model can observe and reject the hidden ground-truth flip using only its defined evidence channel."
+    },
+    {
+      "id": "ET-005",
+      "claim": "An unanchored local hash chain detects field mutation but not removal of a terminal suffix without an expected external head.",
+      "evidence": "test_audit_chain_detects_payload_flip; test_audit_chain_detects_truncation_only_with_external_anchor",
+      "status": "MEASURED_IN_AUTHORED_SYNTHETIC_MODEL",
+      "falsifier": "The verifier can detect truncation of the terminal entry without an external reference or sequence expectation."
+    }
+  ]
+}

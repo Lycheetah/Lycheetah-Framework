@@ -1,0 +1,162 @@
+[
+  {
+    "case": "clean-independent",
+    "naive_signed_quorum": "CONFIRMED",
+    "governed": "CONFIRMED",
+    "conventional_matched": "CONFIRMED",
+    "reason": "independent-declared-paths-agree",
+    "world_true": null
+  },
+  {
+    "case": "same-source-disclosed",
+    "naive_signed_quorum": "CONFIRMED",
+    "governed": "REVIEW",
+    "conventional_matched": "REVIEW",
+    "reason": "common-origin-or-insufficient-independent-evidence",
+    "world_true": null
+  },
+  {
+    "case": "challenge-active",
+    "naive_signed_quorum": "CONFIRMED",
+    "governed": "REVIEW",
+    "conventional_matched": "REVIEW",
+    "reason": "source-provenance-under-challenge",
+    "world_true": null
+  },
+  {
+    "case": "challenge-dismissed",
+    "naive_signed_quorum": "CONFIRMED",
+    "governed": "CONFIRMED",
+    "conventional_matched": "CONFIRMED",
+    "reason": "independent-declared-paths-agree",
+    "world_true": null
+  },
+  {
+    "case": "unaffected-witnesses",
+    "naive_signed_quorum": "CONFIRMED",
+    "governed": "CONFIRMED",
+    "conventional_matched": "CONFIRMED",
+    "reason": "independent-declared-paths-agree",
+    "world_true": null
+  },
+  {
+    "case": "stale-registry-witness",
+    "naive_signed_quorum": "CONFIRMED",
+    "governed": "REVIEW",
+    "conventional_matched": "REVIEW",
+    "reason": "witness-bound-to-obsolete-or-wrong-registry",
+    "world_true": null
+  },
+  {
+    "case": "no-trusted-checkpoint",
+    "naive_signed_quorum": "CONFIRMED",
+    "governed": "REVIEW",
+    "conventional_matched": "REVIEW",
+    "reason": "governance-trusted-checkpoint-required",
+    "world_true": null
+  },
+  {
+    "case": "stale-trusted-checkpoint",
+    "naive_signed_quorum": "CONFIRMED",
+    "governed": "REVIEW",
+    "conventional_matched": "REVIEW",
+    "reason": "governance-external-checkpoint-disagrees",
+    "world_true": null
+  },
+  {
+    "case": "binding-tampered",
+    "naive_signed_quorum": "CONFIRMED",
+    "governed": "REVIEW",
+    "conventional_matched": "REVIEW",
+    "reason": "witness-binding-invalid",
+    "world_true": null
+  },
+  {
+    "case": "statement-substituted",
+    "naive_signed_quorum": "REVIEW",
+    "governed": "REVIEW",
+    "conventional_matched": "REVIEW",
+    "reason": "witness-binding-invalid",
+    "world_true": null
+  },
+  {
+    "case": "duplicate-witness",
+    "naive_signed_quorum": "CONFIRMED",
+    "governed": "REVIEW",
+    "conventional_matched": "REVIEW",
+    "reason": "duplicate-signer",
+    "world_true": null
+  },
+  {
+    "case": "no-current-revision",
+    "naive_signed_quorum": "REVIEW",
+    "governed": "REVIEW",
+    "conventional_matched": "REVIEW",
+    "reason": "current-witness-readback-unavailable",
+    "world_true": null
+  },
+  {
+    "case": "stale-observation",
+    "naive_signed_quorum": "REVIEW",
+    "governed": "REVIEW",
+    "conventional_matched": "REVIEW",
+    "reason": "stale-or-future",
+    "world_true": null
+  },
+  {
+    "case": "wrong-action",
+    "naive_signed_quorum": "REVIEW",
+    "governed": "REVIEW",
+    "conventional_matched": "REVIEW",
+    "reason": "different-subject",
+    "world_true": null
+  },
+  {
+    "case": "unverified-provider",
+    "naive_signed_quorum": "REVIEW",
+    "governed": "REVIEW",
+    "conventional_matched": "REVIEW",
+    "reason": "provider-proof-not-verified",
+    "world_true": null
+  },
+  {
+    "case": "explicit-negative",
+    "naive_signed_quorum": "CONFLICT",
+    "governed": "CONFLICT",
+    "conventional_matched": "CONFLICT",
+    "reason": "authenticated-negative-or-contradiction",
+    "world_true": null
+  },
+  {
+    "case": "uncertain-observation",
+    "naive_signed_quorum": "REVIEW",
+    "governed": "REVIEW",
+    "conventional_matched": "REVIEW",
+    "reason": "witness-uncertainty",
+    "world_true": null
+  },
+  {
+    "case": "false-independent-world",
+    "naive_signed_quorum": "CONFIRMED",
+    "governed": "CONFIRMED",
+    "conventional_matched": "CONFIRMED",
+    "reason": "independent-declared-paths-agree",
+    "world_true": false
+  },
+  {
+    "case": "hidden-shared-source",
+    "naive_signed_quorum": "CONFIRMED",
+    "governed": "CONFIRMED",
+    "conventional_matched": "CONFIRMED",
+    "reason": "independent-declared-paths-agree",
+    "world_true": false
+  },
+  {
+    "case": "three-independent",
+    "naive_signed_quorum": "CONFIRMED",
+    "governed": "CONFIRMED",
+    "conventional_matched": "CONFIRMED",
+    "reason": "independent-declared-paths-agree",
+    "world_true": null
+  }
+]

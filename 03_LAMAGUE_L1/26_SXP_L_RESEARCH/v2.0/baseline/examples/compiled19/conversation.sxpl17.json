@@ -1,0 +1,65 @@
+{
+  "schema": "SXP-L-studio-1.7",
+  "legacy_sha256": "3d4d4b3fbe54f23805c7cb3ad1be01e122fe8304fcd070ff0f429daedc3519cc",
+  "unverified_speaker_identity": true,
+  "authorizes": false,
+  "turns": [
+    {
+      "id": "taba",
+      "index": 1,
+      "speaker": "maka",
+      "audience": "nara",
+      "link": null,
+      "corrected_by": 4,
+      "frames": [],
+      "anchor": null,
+      "leaf": "mi liva ti"
+    },
+    {
+      "id": "tabe",
+      "index": 2,
+      "speaker": "nara",
+      "audience": "maka",
+      "link": {
+        "kind": "clarification_request",
+        "target_index": 1,
+        "target_id": "taba"
+      },
+      "corrected_by": null,
+      "frames": [],
+      "anchor": null,
+      "leaf": "gonape maka dimotu luma gonape nara dimotu"
+    },
+    {
+      "id": "tabi",
+      "index": 3,
+      "speaker": "nara",
+      "audience": "maka",
+      "link": {
+        "kind": "clarification_request",
+        "target_index": 1,
+        "target_id": "taba"
+      },
+      "corrected_by": null,
+      "frames": [],
+      "anchor": null,
+      "leaf": "gonape nara dimotu luma gonape maka dimotu"
+    },
+    {
+      "id": "tabo",
+      "index": 4,
+      "speaker": "maka",
+      "audience": "nara",
+      "link": {
+        "kind": "self_correction",
+        "target_index": 1,
+        "target_id": "taba"
+      },
+      "corrected_by": null,
+      "frames": [],
+      "anchor": null,
+      "leaf": "mi rava ti"
+    }
+  ],
+  "sidecar_required_for_repair_semantics": true
+}

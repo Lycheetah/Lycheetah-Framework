@@ -3,12 +3,14 @@
 Every mutation is bracketed by a signed external checkpoint. The workflow refuses
 to act if its journal is ahead of, behind, or inconsistent with the external receipt.
 """
+
 from __future__ import annotations
 
+from collections.abc import Iterator
 from contextlib import contextmanager
 from dataclasses import dataclass
 from threading import RLock
-from typing import Any, Iterator
+from typing import Any
 
 from .action_guard import AUDIT_GENESIS, Decision, PersistentActionGuard
 from .checkpoint_authority import CheckpointError, CheckpointHTTPClient, CheckpointStore
@@ -120,9 +122,7 @@ class CheckpointedWorkflow:
         consistency = self.guard.verify_state_consistency()
         current_anchor = self.guard.audit_anchor() if audit_status["valid"] else None
         synchronized = (
-            audit_status["valid"]
-            and consistency["valid"]
-            and current_anchor == trusted_anchor
+            audit_status["valid"] and consistency["valid"] and current_anchor == trusted_anchor
         )
         return {
             "synchronized": synchronized,

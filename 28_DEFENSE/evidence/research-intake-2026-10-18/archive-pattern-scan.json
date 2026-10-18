@@ -1,0 +1,23 @@
+{
+  "unique_archives": 20,
+  "members_read": 1639,
+  "text_lines_examined": 127514,
+  "pattern_counts": {
+    "openai-style key": 0,
+    "nvidia nvapi": 0,
+    "github PAT": 0,
+    "aws access key": 0,
+    "slack token": 0,
+    "google api key": 0,
+    "anthropic key": 0,
+    "private key block": 0,
+    "db url with password": 0,
+    "bearer token": 0,
+    "assigned secret": 0,
+    "date of birth": 0,
+    "full legal name": 0,
+    "home path": 0,
+    "private constitution marker": 0
+  },
+  "flagged_locations": {}
+}

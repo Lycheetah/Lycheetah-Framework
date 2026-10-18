@@ -21,11 +21,14 @@ Resolves two structural boundaries documented in ``topological_cascade_glass.py`
      cellular sheaf is trivializable by parallel transport from the root, so
      ``dim H^0(G; F) = d``, ``dim H^1(G; F) = 0``, and ``lambda_min(L_0) = 0`` for all
      orthogonal restriction maps. On a true cycle (`diamond_cycle`, `b_1(G) >= 1`),
-     non-trivial cycle holonomy yields ``dim H^0(G; F) = 0`` and ``lambda_min(L_0) > 0``
-     with zero boundary pinning.
+     the root values lie in the common fixed subspace of all cycle transports.
+     ``dim H^0 = 0`` and positive-definite ``L_0`` require that this common fixed
+     subspace is zero. Nonidentity holonomy alone is insufficient (a reflection
+     retains a fixed direction). These statements require invertible restrictions;
+     the constructor also accepts general finite square maps for numerical study.
    - **Relative Boundary-Pinned Obstruction Certificate (`H^1(G, B; F) = coker(delta^0_I)`)**:
      Partitions ``delta^0 = [delta^0_B, delta^0_I]`` between boundary/parent vertices ``B``
-     and interior/child vertices ``I = V \\ B``, computing the exact Moore-Penrose harmonic
+     and interior/child vertices ``I = V \\ B``, computing an SVD-truncated harmonic
      residual ``O_{H^1}(x_B) = ||(I - delta^0_I (delta^0_I)^+) delta^0_B x_B||_2``.
 
 2. **Full 2x2x2 Orthogonal Factorial (`Timing x Queue-Scope x Duration-Coupling`)**:
@@ -81,6 +84,27 @@ FACTORIAL_CELLS: tuple[tuple[str, str, str], ...] = tuple(
 SVD_TOL = 1e-9
 
 
+def _svd_parts(
+    matrix: np.ndarray, atol: float, rtol: float
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, float]:
+    """One per-operator cutoff for numerical rank, inverse and projections.
+
+    These are floating-point certificates of the truncated operator, not exact
+    algebraic ranks for arbitrary ill-conditioned data.
+    """
+    if not np.all(np.isfinite(matrix)):
+        raise ValueError("operator entries must be finite")
+    u, singular, vh = np.linalg.svd(matrix, full_matrices=False)
+    cutoff = max(atol, rtol * float(singular[0]) if singular.size else 0.0)
+    return u, singular, vh, singular > cutoff, cutoff
+
+
+def _svd_inverse(
+    u: np.ndarray, singular: np.ndarray, vh: np.ndarray, keep: np.ndarray
+) -> np.ndarray:
+    return (vh[keep].T / singular[keep]) @ u[:, keep].T
+
+
 def parents_v3(size: int, topology: str) -> tuple[tuple[int, ...], ...]:
     """Return parent concept indices for ``0..size-1``, including ``diamond_cycle``.
 
@@ -114,7 +138,7 @@ def parents_v3(size: int, topology: str) -> tuple[tuple[int, ...], ...]:
 
 @dataclass(frozen=True)
 class GraphHomologyCertificate:
-    """Exact simplicial 1-complex homology invariants computed from ``partial_1``."""
+    """Graph homology dimensions computed using the recorded numerical cutoff."""
 
     num_vertices: int
     num_edges: int
@@ -123,6 +147,7 @@ class GraphHomologyCertificate:
     b1_cycles: int
     euler_characteristic: int
     singular_values: tuple[float, ...]
+    svd_cutoff: float = 0.0
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -133,12 +158,14 @@ class GraphHomologyCertificate:
             "b1_cycles": self.b1_cycles,
             "euler_characteristic": self.euler_characteristic,
             "singular_values": [round(float(s), 8) for s in self.singular_values],
+            "svd_cutoff": self.svd_cutoff,
+            "rank_basis": "SVD_CUTOFF",
         }
 
 
 @dataclass(frozen=True)
 class SheafCohomologyCertificate:
-    """Exact cellular sheaf cohomology & Hodge Laplacian certificate over ``G = (V, E)``."""
+    """Numerical cellular sheaf certificate over the recorded SVD subspaces."""
 
     stalk_dim: int
     num_vertices: int
@@ -153,6 +180,9 @@ class SheafCohomologyCertificate:
     laplacian_lambda_min: float
     laplacian_spectral_gap: float
     holonomy_obstructed: bool
+    svd_cutoff: float = 0.0
+    singular_values: tuple[float, ...] = ()
+    global_sections_reduced: bool = False
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -169,6 +199,11 @@ class SheafCohomologyCertificate:
             "laplacian_lambda_min": round(float(self.laplacian_lambda_min), 8),
             "laplacian_spectral_gap": round(float(self.laplacian_spectral_gap), 8),
             "holonomy_obstructed": self.holonomy_obstructed,
+            "global_sections_reduced": self.global_sections_reduced,
+            "svd_cutoff": self.svd_cutoff,
+            "singular_values": list(self.singular_values),
+            "rank_basis": "SVD_CUTOFF",
+            "laplacian_spectrum_basis": "retained_singular_values_squared",
         }
 
 
@@ -184,6 +219,8 @@ class RelativeObstructionCertificate:
     optimal_interior_state: tuple[float, ...]
     harmonic_residual_vector: tuple[float, ...]
     obstructed: bool
+    svd_cutoff: float = 0.0
+    numerical_interior_rank: int = 0
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -193,10 +230,11 @@ class RelativeObstructionCertificate:
             "harmonic_obstruction_norm": round(float(self.harmonic_obstruction_norm), 8),
             "dirichlet_energy": round(float(self.dirichlet_energy), 8),
             "optimal_interior_state": [round(float(x), 8) for x in self.optimal_interior_state],
-            "harmonic_residual_vector": [
-                round(float(x), 8) for x in self.harmonic_residual_vector
-            ],
+            "harmonic_residual_vector": [round(float(x), 8) for x in self.harmonic_residual_vector],
             "obstructed": self.obstructed,
+            "svd_cutoff": self.svd_cutoff,
+            "numerical_interior_rank": self.numerical_interior_rank,
+            "rank_basis": "SVD_CUTOFF",
         }
 
 
@@ -217,6 +255,8 @@ class CellularSheaf:
         *,
         tail_restrictions: dict[tuple[int, int], np.ndarray] | None = None,
         head_restrictions: dict[tuple[int, int], np.ndarray] | None = None,
+        svd_atol: float = SVD_TOL,
+        svd_rtol: float = SVD_TOL,
     ) -> None:
         if num_vertices < 1:
             raise ValueError("num_vertices must be >= 1")
@@ -225,6 +265,12 @@ class CellularSheaf:
         self.num_vertices = num_vertices
         self.edges: tuple[tuple[int, int], ...] = tuple(edges)
         self.stalk_dim = stalk_dim
+        if not all(math.isfinite(value) and value >= 0 for value in (svd_atol, svd_rtol)):
+            raise ValueError("SVD tolerances must be finite and nonnegative")
+        if svd_atol == 0 and svd_rtol == 0:
+            raise ValueError("at least one SVD tolerance must be positive")
+        self.svd_atol = float(svd_atol)
+        self.svd_rtol = float(svd_rtol)
         eye = np.eye(stalk_dim, dtype=float)
         self.tail_restrictions: dict[tuple[int, int], np.ndarray] = {}
         self.head_restrictions: dict[tuple[int, int], np.ndarray] = {}
@@ -232,7 +278,7 @@ class CellularSheaf:
             if not (0 <= u < num_vertices and 0 <= v < num_vertices) or u == v:
                 raise ValueError(f"invalid directed edge: ({u}, {v})")
             t_map = (
-                 np.asarray(tail_restrictions[(u, v)], dtype=float)
+                np.asarray(tail_restrictions[(u, v)], dtype=float)
                 if tail_restrictions and (u, v) in tail_restrictions
                 else eye.copy()
             )
@@ -243,6 +289,8 @@ class CellularSheaf:
             )
             if t_map.shape != (stalk_dim, stalk_dim) or h_map.shape != (stalk_dim, stalk_dim):
                 raise ValueError("restriction maps must have shape (stalk_dim, stalk_dim)")
+            if not np.all(np.isfinite(t_map)) or not np.all(np.isfinite(h_map)):
+                raise ValueError("restriction maps must contain finite values")
             self.tail_restrictions[(u, v)] = t_map
             self.head_restrictions[(u, v)] = h_map
 
@@ -277,13 +325,9 @@ class CellularSheaf:
     def graph_homology(self) -> GraphHomologyCertificate:
         """Compute exact Betti numbers ``b_0(G)`` and ``b_1(G)`` via SVD of ``partial_1``."""
         partial_1 = self.incidence_matrix()
-        if partial_1.size == 0:
-            s_vals: tuple[float, ...] = ()
-            rank = 0
-        else:
-            s = np.linalg.svd(partial_1, compute_uv=False)
-            s_vals = tuple(float(val) for val in s)
-            rank = int(np.sum(s > SVD_TOL))
+        _, s, _, keep, cutoff = _svd_parts(partial_1, self.svd_atol, self.svd_rtol)
+        s_vals = tuple(float(val) for val in s)
+        rank = int(np.count_nonzero(keep))
         b0 = self.num_vertices - rank
         b1 = len(self.edges) - rank
         return GraphHomologyCertificate(
@@ -294,6 +338,7 @@ class CellularSheaf:
             b1_cycles=b1,
             euler_characteristic=self.num_vertices - len(self.edges),
             singular_values=s_vals,
+            svd_cutoff=cutoff,
         )
 
     def coboundary_matrix(self) -> np.ndarray:
@@ -314,24 +359,22 @@ class CellularSheaf:
         return delta0.T @ delta0
 
     def cohomology_certificate(self) -> SheafCohomologyCertificate:
-        """Compute exact ``dim H^0(G; F)``, ``dim H^1(G; F)``, and ``L_0`` spectrum."""
+        """Compute numerical dimensions and the retained squared-singular spectrum.
+
+        ``holonomy_obstructed`` retains its legacy meaning: no nonzero global
+        sections under this cutoff. A partial reduction has a separate flag.
+        """
         gh = self.graph_homology()
         d = self.stalk_dim
         delta0 = self.coboundary_matrix()
-        if delta0.size == 0:
-            rank = 0
-        else:
-            s = np.linalg.svd(delta0, compute_uv=False)
-            rank = int(np.sum(s > SVD_TOL))
+        _, s, _, keep, cutoff = _svd_parts(delta0, self.svd_atol, self.svd_rtol)
+        rank = int(np.count_nonzero(keep))
         dim_c0 = d * self.num_vertices
         dim_c1 = d * len(self.edges)
         dim_h0 = dim_c0 - rank
         dim_h1 = dim_c1 - rank
-        lap = delta0.T @ delta0
-        eigvals = np.linalg.eigvalsh(lap)
-        eigvals = np.maximum(0.0, eigvals)
-        lambda_min = float(eigvals[0]) if eigvals.size > 0 else 0.0
-        pos_eigs = eigvals[eigvals > SVD_TOL]
+        pos_eigs = np.sort(np.square(s[keep]))
+        lambda_min = float(pos_eigs[0]) if rank == dim_c0 and pos_eigs.size else 0.0
         spectral_gap = float(pos_eigs[0]) if pos_eigs.size > 0 else 0.0
         return SheafCohomologyCertificate(
             stalk_dim=d,
@@ -347,6 +390,9 @@ class CellularSheaf:
             laplacian_lambda_min=lambda_min,
             laplacian_spectral_gap=spectral_gap,
             holonomy_obstructed=(dim_h0 == 0),
+            global_sections_reduced=(dim_h0 < d * gh.b0_components),
+            svd_cutoff=cutoff,
+            singular_values=tuple(float(value) for value in s),
         )
 
     def project_1_cochain(self, z: np.ndarray) -> dict[str, Any]:
@@ -356,16 +402,13 @@ class CellularSheaf:
         z_vec = np.asarray(z, dtype=float).reshape(-1)
         if z_vec.size != delta0.shape[0]:
             raise ValueError(f"expected 1-cochain of length {delta0.shape[0]}, got {z_vec.size}")
-        if delta0.size == 0:
-            z_exact = np.zeros_like(z_vec)
-        else:
-            pinv = np.linalg.pinv(delta0, rcond=SVD_TOL)
-            z_exact = delta0 @ (pinv @ z_vec)
+        if not np.all(np.isfinite(z_vec)):
+            raise ValueError("1-cochain values must be finite")
+        u, s, _, keep, cutoff = _svd_parts(delta0, self.svd_atol, self.svd_rtol)
+        z_exact = u[:, keep] @ (u[:, keep].T @ z_vec)
         z_harm = z_vec - z_exact
         harm_norm = float(np.linalg.norm(z_harm))
-        coclosed_residual = (
-            float(np.linalg.norm(delta0.T @ z_harm)) if delta0.size > 0 else 0.0
-        )
+        coclosed_residual = float(np.linalg.norm(delta0.T @ z_harm)) if delta0.size > 0 else 0.0
         orthogonality_error = float(abs(np.dot(z_exact, z_harm)))
         return {
             "harmonic_norm": harm_norm,
@@ -375,6 +418,10 @@ class CellularSheaf:
             "obstructed": harm_norm > 1e-6,
             "z_exact": z_exact,
             "z_harmonic": z_harm,
+            "svd_cutoff": cutoff,
+            "numerical_rank": int(np.count_nonzero(keep)),
+            "singular_values": s.tolist(),
+            "rank_basis": "SVD_CUTOFF",
         }
 
     def relative_obstruction(
@@ -394,6 +441,13 @@ class CellularSheaf:
         b_Check = sorted(boundary_states.keys())
         if not b_Check:
             raise ValueError("boundary_states must be non-empty")
+        if any(
+            not isinstance(v, int) or isinstance(v, bool) or not 0 <= v < self.num_vertices
+            for v in b_Check
+        ):
+            raise ValueError("boundary vertices must be valid integer vertex indices")
+        if not math.isfinite(tol) or tol < 0:
+            raise ValueError("obstruction tolerance must be finite and nonnegative")
         b_set = set(b_Check)
         i_vertices = [v for v in range(self.num_vertices) if v not in b_set]
 
@@ -408,20 +462,17 @@ class CellularSheaf:
         x_b = np.concatenate(
             [np.asarray(boundary_states[v], dtype=float).reshape(d) for v in b_Check]
         )
+        if not np.all(np.isfinite(x_b)):
+            raise ValueError("boundary states must contain finite values")
         delta_b = delta0[:, b_cols]
         rhs = delta_b @ x_b
 
-        if not i_cols or delta0.shape[0] == 0:
-            x_i_opt = np.zeros(0, dtype=float)
-            r_rel = rhs
-            rank_i = 0
-        else:
-            delta_i = delta0[:, i_cols]
-            s_i = np.linalg.svd(delta_i, compute_uv=False)
-            rank_i = int(np.sum(s_i > SVD_TOL))
-            pinv_i = np.linalg.pinv(delta_i, rcond=SVD_TOL)
-            x_i_opt = -(pinv_i @ rhs)
-            r_rel = rhs + (delta_i @ x_i_opt)
+        delta_i = delta0[:, i_cols]
+        u_i, s_i, vh_i, keep_i, cutoff_i = _svd_parts(delta_i, self.svd_atol, self.svd_rtol)
+        rank_i = int(np.count_nonzero(keep_i))
+        pinv_i = _svd_inverse(u_i, s_i, vh_i, keep_i)
+        x_i_opt = -(pinv_i @ rhs)
+        r_rel = rhs + (delta_i @ x_i_opt)
 
         dim_rel_h1 = delta0.shape[0] - rank_i
         obs_norm = float(np.linalg.norm(r_rel))
@@ -434,6 +485,8 @@ class CellularSheaf:
             optimal_interior_state=tuple(float(v) for v in x_i_opt),
             harmonic_residual_vector=tuple(float(v) for v in r_rel),
             obstructed=(obs_norm > tol),
+            svd_cutoff=cutoff_i,
+            numerical_interior_rank=rank_i,
         )
 
 
@@ -522,16 +575,12 @@ class SheafCascadeEngine(TopologicalCascadeEngine):
         if len(p_domains) < 2:
             return False
         parent_blocks = [
-            gov
-            for p_dom in p_domains
-            if (gov := self.governing_block(p_dom)) is not None
+            gov for p_dom in p_domains if (gov := self.governing_block(p_dom)) is not None
         ]
         if len(parent_blocks) < 2:
             return False
         k = len(parent_blocks)
-        sheaf = CellularSheaf(
-            k + 1, [(idx, k) for idx in range(k)], stalk_dim=self.stalk_dim
-        )
+        sheaf = CellularSheaf(k + 1, [(idx, k) for idx in range(k)], stalk_dim=self.stalk_dim)
         boundary_states = {
             idx: paradigm_stalk_vector(gov.paradigm, self.stalk_dim)
             for idx, gov in enumerate(parent_blocks)
@@ -572,11 +621,7 @@ class SheafCascadeEngine(TopologicalCascadeEngine):
 
         sheaf = CellularSheaf(len(domains), edges, stalk_dim=self.stalk_dim)
         cohom = sheaf.cohomology_certificate()
-        x_global = (
-            np.concatenate(state_blocks)
-            if state_blocks
-            else np.zeros(0, dtype=float)
-        )
+        x_global = np.concatenate(state_blocks) if state_blocks else np.zeros(0, dtype=float)
         delta0 = sheaf.coboundary_matrix()
         coboundary_vec = delta0 @ x_global if delta0.size > 0 else np.zeros(0, dtype=float)
         dirichlet_energy = float(np.dot(coboundary_vec, coboundary_vec))
@@ -601,9 +646,7 @@ def initial_store_v3(
     stalk_dim: int = 2,
 ) -> SheafCascadeEngine:
     graph = parents_v3(size, topology)
-    engine = SheafCascadeEngine(
-        propagate_dependencies=propagate_dependencies, stalk_dim=stalk_dim
-    )
+    engine = SheafCascadeEngine(propagate_dependencies=propagate_dependencies, stalk_dim=stalk_dim)
     for index in range(size):
         engine.add_block(
             KnowledgeBlock(
@@ -636,9 +679,7 @@ def calibrate_v3(
     graph = parents_v3(size, topology)
     samples: list[int] = []
     for concept in range(size):
-        engine = initial_store_v3(
-            size, topology, propagate_dependencies=propagate_dependencies
-        )
+        engine = initial_store_v3(size, topology, propagate_dependencies=propagate_dependencies)
         proposal = KnowledgeBlock(
             id=f"probe-{concept}",
             content="independent calibration perturbation",
@@ -752,9 +793,7 @@ def _adjudicate_orthogonal(
                 hidden[key] = engine.blocks.pop(key)
     try:
         candidates = [
-            b
-            for b in engine.blocks.values()
-            if b.domain == domain and b.regime == "universal"
+            b for b in engine.blocks.values() if b.domain == domain and b.regime == "universal"
         ]
         winner = max(candidates, key=lambda block: (block.truth_pressure, block.id))
         engine.work = 0
@@ -1009,9 +1048,7 @@ def compute_yates_factorial_effects(
     }
 
 
-def verify_tree_vs_cycle_sheaf_theorems(
-    size: int = 8, stalk_dim: int = 2
-) -> dict[str, Any]:
+def verify_tree_vs_cycle_sheaf_theorems(size: int = 8, stalk_dim: int = 2) -> dict[str, Any]:
     """Verify the linear-algebraic sheaf cohomology theorems across all 5 topologies."""
     results: dict[str, Any] = {}
     flip = -np.eye(stalk_dim, dtype=float)
@@ -1054,9 +1091,7 @@ def run_sheaf_and_factorial_study(
         cal = calibrate_v3(concepts, topology, processing_rate, propagate_dependencies=True)
         for seed, load in itertools.product(seeds, loads):
             rate = load / cal.tau
-            trace = arrival_trace_v3(
-                concepts, topology, seed, rate, proposals, compatible=False
-            )
+            trace = arrival_trace_v3(concepts, topology, seed, rate, proposals, compatible=False)
             trace_hash = hashlib.sha256(
                 json.dumps(
                     [
@@ -1123,20 +1158,14 @@ def run_sheaf_and_factorial_study(
         cell_cascade_minus_fifo_g[cell] = statistics.mean(
             c["mean_g"] - f["mean_g"] for c, f in zip(cas_rows, fifo_rows)
         )
-        cell_cascade_drain[cell] = statistics.mean(
-            r["drain_duration"] for r in cas_rows
-        )
+        cell_cascade_drain[cell] = statistics.mean(r["drain_duration"] for r in cas_rows)
 
     factorial_summary = {
         "high_load_level": high_load_target,
         "cells": {
             f"{t}__{q}__{d}": {
-                "cascade_loaded_to_calibrated_work": round(
-                    cell_cascade_work_ratio[(t, q, d)], 6
-                ),
-                "cascade_minus_fifo_mean_g": round(
-                    cell_cascade_minus_fifo_g[(t, q, d)], 6
-                ),
+                "cascade_loaded_to_calibrated_work": round(cell_cascade_work_ratio[(t, q, d)], 6),
+                "cascade_minus_fifo_mean_g": round(cell_cascade_minus_fifo_g[(t, q, d)], 6),
                 "cascade_drain_duration": round(cell_cascade_drain[(t, q, d)], 6),
             }
             for (t, q, d) in FACTORIAL_CELLS
@@ -1150,8 +1179,7 @@ def run_sheaf_and_factorial_study(
             for k, v in compute_yates_factorial_effects(cell_cascade_minus_fifo_g).items()
         },
         "effects_on_cascade_drain_duration": {
-            k: round(v, 6)
-            for k, v in compute_yates_factorial_effects(cell_cascade_drain).items()
+            k: round(v, 6) for k, v in compute_yates_factorial_effects(cell_cascade_drain).items()
         },
     }
 

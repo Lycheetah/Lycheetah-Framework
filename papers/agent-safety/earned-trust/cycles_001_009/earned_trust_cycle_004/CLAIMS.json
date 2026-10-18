@@ -1,0 +1,14 @@
+{
+  "project":"Lycheetah Earned Trust",
+  "cycle":"004",
+  "date":"2026-10-18",
+  "status":"LOCAL_SYNTHETIC_ONLY",
+  "claims":[
+    {"id":"ET-C4-001","status":"LOCAL_TESTED","claim":"Current separately signed observer records and provider receipts are cross-bound before CONFIRMED in the authored fixture suite.","evidence":"test_independent_witness.py; scenario_results.json","falsifier":"CONFIRMED with a missing, stale, mismatched or invalid observer record"},
+    {"id":"ET-C4-002","status":"LOCAL_TESTED","claim":"A known false provider claim can be flagged when the lab observer contradicts it.","evidence":"run_scenarios.py false-evidence-found","falsifier":"False-evidence-found fixture returns CONFIRMED"},
+    {"id":"ET-C4-003","status":"NEGATIVE_CONTROL","claim":"Correlated false assertions can still result in CONFIRMED.","evidence":"run_scenarios.py correlated-false-oracle","falsifier":"Correlated-false-oracle fixture does not return CONFIRMED"},
+    {"id":"ET-C4-004","status":"LOCAL_TESTED","claim":"A plain conventional baseline equipped with the same controls agrees in ten scripted scenarios.","evidence":"conventional_baseline.py; scenario_results.json","falsifier":"Any differing disposition on fixed scenarios"},
+    {"id":"ET-C4-005","status":"NOT_EXECUTED","claim":"Integration tests requiring actual lycheetah package have not run.","evidence":"real_framework_not_executed.txt","falsifier":"Captured execution of 18+4 real-module tests with pinned repository commit"}
+  ],
+  "excluded_claims":["production security","independent source truth","human identity authentication","live provider atomicity","novelty","empirical superiority"]
+}

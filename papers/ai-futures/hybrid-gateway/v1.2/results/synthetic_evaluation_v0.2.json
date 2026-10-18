@@ -1,0 +1,764 @@
+{
+  "evaluation": "Hand-authored fictional merchant-policy change scenarios; not held-out or independent",
+  "data_status": "INTERNAL_SYNTHETIC",
+  "method": "Deterministic fictional cases, authored by experiment builder; no model inference or live user data",
+  "baseline_limits": {
+    "B0": "latest admitted document, scope-filtered, ignores valid time and disputes",
+    "B1": "bi-temporal latest-hit retrieval, no supersession, withdrawal, or conflict adjudication",
+    "H1": "source-checked ledger with two clocks, explicit supersession, withdrawals and abstention"
+  },
+  "scores": {
+    "B0": {
+      "correct": 8,
+      "total": 22,
+      "citation_anchor_valid": 22
+    },
+    "B1": {
+      "correct": 13,
+      "total": 22,
+      "citation_anchor_valid": 22
+    },
+    "H1": {
+      "correct": 22,
+      "total": 22,
+      "citation_anchor_valid": 22
+    }
+  },
+  "cases": [
+    {
+      "id": "q01_current",
+      "expected": {
+        "state": "ANSWER",
+        "value": "21"
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "21",
+        "citations": [
+          "official-v2"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "21",
+        "citations": [
+          "official-v2"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ANSWER",
+        "value": "21",
+        "citations": [
+          "official-v2"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q02_historical",
+      "expected": {
+        "state": "ANSWER",
+        "value": "14"
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "21",
+        "citations": [
+          "official-v2"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "14",
+        "citations": [
+          "official-v1"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ANSWER",
+        "value": "14",
+        "citations": [
+          "official-v1"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q03_late_past_reassessment",
+      "expected": {
+        "state": "ANSWER",
+        "value": "21"
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "21",
+        "citations": [
+          "official-v2"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "21",
+        "citations": [
+          "official-v2"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ANSWER",
+        "value": "21",
+        "citations": [
+          "official-v2"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q04_as_pre_discovery",
+      "expected": {
+        "state": "ANSWER",
+        "value": "14"
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "14",
+        "citations": [
+          "official-v1"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "14",
+        "citations": [
+          "official-v1"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ANSWER",
+        "value": "14",
+        "citations": [
+          "official-v1"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q05_prior_while_future_exists",
+      "expected": {
+        "state": "ANSWER",
+        "value": "14"
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "30",
+        "citations": [
+          "official-future"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "14",
+        "citations": [
+          "official-v1"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ANSWER",
+        "value": "14",
+        "citations": [
+          "official-v1"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q06_disagreement",
+      "expected": {
+        "state": "ABSTAIN_CONFLICT",
+        "value": null
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ABSTAIN_CONFLICT",
+        "value": null,
+        "citations": [
+          "official-v2",
+          "official-dispute"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q07_disagreement_past",
+      "expected": {
+        "state": "ABSTAIN_CONFLICT",
+        "value": null
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ABSTAIN_CONFLICT",
+        "value": null,
+        "citations": [
+          "official-v2",
+          "official-dispute"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q08_disagreement_before_seen",
+      "expected": {
+        "state": "ANSWER",
+        "value": "21"
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "30",
+        "citations": [
+          "official-future"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "21",
+        "citations": [
+          "official-v2"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ANSWER",
+        "value": "21",
+        "citations": [
+          "official-v2"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q09_disputed_doc_withdrawn",
+      "expected": {
+        "state": "ANSWER",
+        "value": "21"
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ANSWER",
+        "value": "21",
+        "citations": [
+          "official-v2"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q10_disputed_doc_still_valid_historically",
+      "expected": {
+        "state": "ABSTAIN_CONFLICT",
+        "value": null
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ABSTAIN_CONFLICT",
+        "value": null,
+        "citations": [
+          "official-v2",
+          "official-dispute"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q11_retraction_known",
+      "expected": {
+        "state": "ANSWER",
+        "value": "14"
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ANSWER",
+        "value": "14",
+        "citations": [
+          "official-v1"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q12_retraction_not_yet_known",
+      "expected": {
+        "state": "ANSWER",
+        "value": "21"
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ANSWER",
+        "value": "21",
+        "citations": [
+          "official-v2"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q13_retraction_prior",
+      "expected": {
+        "state": "ANSWER",
+        "value": "21"
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ANSWER",
+        "value": "21",
+        "citations": [
+          "official-v2"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q14_future_effective",
+      "expected": {
+        "state": "ANSWER",
+        "value": "30"
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "30",
+        "citations": [
+          "official-future"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ANSWER",
+        "value": "30",
+        "citations": [
+          "official-future"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q15_future_version_pre_effective",
+      "expected": {
+        "state": "ANSWER",
+        "value": "14"
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ANSWER",
+        "value": "14",
+        "citations": [
+          "official-v1"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q16_future_version_withdrawn",
+      "expected": {
+        "state": "ANSWER",
+        "value": "14"
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "30",
+        "citations": [
+          "official-future"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ANSWER",
+        "value": "14",
+        "citations": [
+          "official-v1"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q17_future_version_withdrawn_unknown",
+      "expected": {
+        "state": "ANSWER",
+        "value": "30"
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "35",
+        "citations": [
+          "official-dispute"
+        ],
+        "correct": false,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "30",
+        "citations": [
+          "official-future"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ANSWER",
+        "value": "30",
+        "citations": [
+          "official-future"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q18_wrong_tenant",
+      "expected": {
+        "state": "ABSTAIN_NO_EVIDENCE",
+        "value": null
+      },
+      "B0": {
+        "state": "ABSTAIN_NO_EVIDENCE",
+        "value": null,
+        "citations": [],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ABSTAIN_NO_EVIDENCE",
+        "value": null,
+        "citations": [],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ABSTAIN_NO_EVIDENCE",
+        "value": null,
+        "citations": [],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q19_alternative_scope",
+      "expected": {
+        "state": "ANSWER",
+        "value": "45"
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "45",
+        "citations": [
+          "official-store"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "45",
+        "citations": [
+          "official-store"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ANSWER",
+        "value": "45",
+        "citations": [
+          "official-store"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q20_unknown_scope",
+      "expected": {
+        "state": "ABSTAIN_NO_EVIDENCE",
+        "value": null
+      },
+      "B0": {
+        "state": "ABSTAIN_NO_EVIDENCE",
+        "value": null,
+        "citations": [],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ABSTAIN_NO_EVIDENCE",
+        "value": null,
+        "citations": [],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ABSTAIN_NO_EVIDENCE",
+        "value": null,
+        "citations": [],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q21_other_tenant",
+      "expected": {
+        "state": "ANSWER",
+        "value": "7"
+      },
+      "B0": {
+        "state": "ANSWER",
+        "value": "7",
+        "citations": [
+          "official-B"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ANSWER",
+        "value": "7",
+        "citations": [
+          "official-B"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ANSWER",
+        "value": "7",
+        "citations": [
+          "official-B"
+        ],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    },
+    {
+      "id": "q22_other_tenant_earlier_unknown",
+      "expected": {
+        "state": "ABSTAIN_NO_EVIDENCE",
+        "value": null
+      },
+      "B0": {
+        "state": "ABSTAIN_NO_EVIDENCE",
+        "value": null,
+        "citations": [],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "B1": {
+        "state": "ABSTAIN_NO_EVIDENCE",
+        "value": null,
+        "citations": [],
+        "correct": true,
+        "citation_anchor_valid": true
+      },
+      "H1": {
+        "state": "ABSTAIN_NO_EVIDENCE",
+        "value": null,
+        "citations": [],
+        "correct": true,
+        "citation_anchor_valid": true
+      }
+    }
+  ],
+  "ledger_head": "sha256:9e145b4bca35e0601d235d666d34d4d074f531b6b195c64170bb46326b649f60",
+  "ledger_chain_verified": true
+}

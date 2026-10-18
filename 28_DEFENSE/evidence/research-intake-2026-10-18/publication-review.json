@@ -1,0 +1,37 @@
+{
+  "schema": "lycheetah.publication-review.v1",
+  "destination": "Lycheetah/Lycheetah-Framework",
+  "visibility": "PUBLIC",
+  "base": "d4a65ff64efa0a512c5c07ca64f6ec76242dd775",
+  "delivery": "research branch and draft pull request",
+  "merge_authorized": false,
+  "scanner_self_test_planted_credentials": 5,
+  "added_text_lines": 42989,
+  "files_with_added_text": 480,
+  "changed_files": 505,
+  "binary_files": 24,
+  "credential_pattern_dispositions": {
+    "demo_password_examples": {
+      "count": 2,
+      "status": "DOCUMENTED_PUBLIC_EXAMPLES_NOT_LIVE_CREDENTIALS",
+      "files": [
+        "papers/ai-futures/hybrid-gateway/v1.2/README.md",
+        "papers/ai-futures/hybrid-gateway/v1.2/RESEARCH_HANDOFF_v1.1.md"
+      ]
+    },
+    "creator_attribution": {
+      "count": 11,
+      "status": "REQUIRED_PUBLIC_ATTRIBUTION_BY_OWNER"
+    },
+    "other_credential_patterns": 0,
+    "private_home_paths": 0,
+    "private_constitution_references": 0,
+    "birth_dates": 0
+  },
+  "archive_scan": "archive-pattern-scan.json",
+  "limitations": [
+    "Repository-wide lint and claims-footing failures predate this batch.",
+    "Synthetic research and software tests are not independent field validation.",
+    "Original native Cycle 005 failures and eight SXP-L defects remain visible."
+  ]
+}

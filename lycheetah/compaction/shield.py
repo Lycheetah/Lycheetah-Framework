@@ -208,6 +208,14 @@ class CompactionShield:
                 "candidate_critical_hash": cand_crit_hash,
             }
 
+        if isinstance(reference, str):
+            return {
+                "is_safe": False,
+                "classification": "UNDECODABLE",
+                "reason": "reference digest must contain exactly 64 characters",
+                "candidate_critical_hash": cand_crit_hash,
+            }
+
         # Case 2: reference is an AgentStatePacket or dict
         ref_dict = reference.to_dict() if isinstance(reference, AgentStatePacket) else reference
         res = classify(ref_dict, cand_dict)
@@ -269,11 +277,13 @@ class ContextProtector:
         self, unknown_id: str, required_for: str, protected: bool = True
     ) -> ContextProtector:
         """Add an unresolved question, dependency, or blind spot."""
-        self.unknowns.append({
-            "id": unknown_id,
-            "protected": protected,
-            "requiredFor": required_for,
-        })
+        self.unknowns.append(
+            {
+                "id": unknown_id,
+                "protected": protected,
+                "requiredFor": required_for,
+            }
+        )
         return self
 
     def add_recovery(self, recovery_id: str, text: str) -> ContextProtector:
@@ -312,12 +322,14 @@ class ContextProtector:
         self, source: str, recipient: str, consent: str, kind: str
     ) -> ContextProtector:
         """Record a transfer of authority, resources, or credentials."""
-        self.value_flow.append({
-            "source": source,
-            "recipient": recipient,
-            "consent": consent,
-            "kind": kind,
-        })
+        self.value_flow.append(
+            {
+                "source": source,
+                "recipient": recipient,
+                "consent": consent,
+                "kind": kind,
+            }
+        )
         return self
 
     def set_claim(self, claim: str) -> ContextProtector:

@@ -1,0 +1,14 @@
+{
+  "source_revision": "d4a65ff64efa0a512c5c07ca64f6ec76242dd775",
+  "source_sha256": "a62180df1690fb9bac93e405c1f06a7a5d41470c4422de4e277472bd675faada",
+  "regression": "test_candidate_risk_downgrade_cannot_waive_authority",
+  "pytest_exit": 1,
+  "counts": {
+    "tests": 1,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 0
+  },
+  "expected_failure_observed": true,
+  "live_source_modified": false
+}

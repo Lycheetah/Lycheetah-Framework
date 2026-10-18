@@ -6,8 +6,8 @@ Verifies:
    (`parents_v3(4, "diamond_cycle")`, `b_1 = 1`).
 2. Intrinsic cycle holonomy theorem: on any tree (`b_1 = 0`), every orthogonal
    cellular sheaf has `dim H^0 = d`, `dim H^1 = 0`, and `lambda_min(L_0) = 0`,
-   whereas on a cycle (`b_1 >= 1`), non-trivial holonomy yields `dim H^0 = 0` and
-   `lambda_min(L_0) > 0` without pinning any boundary vertices.
+   whereas cycle transports with no common nonzero fixed vector yield
+   `dim H^0 = 0` and `lambda_min(L_0) > 0` without boundary pinning.
 3. Exact Euler-Poincare identity `dim H^0 - dim H^1 == d * (b_0 - b_1)` and Hodge
    1-cochain decomposition `C^1 = im(delta^0) (+) ker((delta^0)^T)`.
 4. Relative boundary-pinned cohomology `H^1(G, B; F) = coker(delta^0_I)` via
@@ -25,9 +25,7 @@ import sys
 import numpy as np
 import pytest
 
-sys.path.insert(
-    0, str(Path(__file__).resolve().parents[1] / "12_IMPLEMENTATIONS" / "core")
-)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "12_IMPLEMENTATIONS" / "core"))
 
 from cascade_engine import KnowledgeBlock
 from sheaf_cohomology_factorial import (
@@ -55,9 +53,7 @@ def test_graph_homology_distinguishes_3node_v_tree_from_4node_diamond_cycle():
     assert hom_3.b0_components == 1
     assert hom_3.b1_cycles == 0
 
-    sheaf_4node_cycle = CellularSheaf.from_parent_graph(
-        parents_v3(4, "diamond_cycle"), stalk_dim=2
-    )
+    sheaf_4node_cycle = CellularSheaf.from_parent_graph(parents_v3(4, "diamond_cycle"), stalk_dim=2)
     hom_4 = sheaf_4node_cycle.graph_homology()
     assert hom_4.num_vertices == 4
     assert hom_4.num_edges == 4
@@ -96,9 +92,7 @@ def test_intrinsic_cycle_holonomy_theorem_trees_vs_diamond_cycle():
             edge: (minus_eye if idx % 2 == 0 else ortho_rot)
             for idx, edge in enumerate(base_sheaf.edges)
         }
-        twisted_tree = CellularSheaf.from_parent_graph(
-            graph, stalk_dim=d, twisted_edges=twists
-        )
+        twisted_tree = CellularSheaf.from_parent_graph(graph, stalk_dim=d, twisted_edges=twists)
         cert = twisted_tree.cohomology_certificate()
         assert cert.b1_graph == 0
         assert cert.dim_h0_global_sections == d
@@ -262,9 +256,7 @@ def test_run_sheaf_and_factorial_study_smoke():
     )
     assert result["row_count"] == 1 * 2 * 2 * 8 * 2
     assert (
-        result["sheaf_cohomology_theorems"]["star"]["twisted_last_edge"][
-            "holonomy_obstructed"
-        ]
+        result["sheaf_cohomology_theorems"]["star"]["twisted_last_edge"]["holonomy_obstructed"]
         is False
     )
     assert (
@@ -299,3 +291,92 @@ def test_consensus_arena_sheaf_cohomology_report_tracks_dirichlet_energy_drop():
     assert after["dirichlet_energy"] < before["dirichlet_energy"] * 1e-2
     assert after["dirichlet_energy"] < 1e-3
     assert after["coboundary_norm"] < 0.025
+
+
+def test_nonidentity_reflection_retains_a_fixed_global_direction():
+    sheaf = CellularSheaf.from_parent_graph(
+        parents_v3(4, "diamond_cycle"),
+        stalk_dim=2,
+        twisted_edges={(2, 3): np.diag([1.0, -1.0])},
+    )
+    cert = sheaf.cohomology_certificate()
+    assert cert.dim_h0_global_sections == 1
+    assert cert.dim_h1_cohomology == 1
+    assert cert.laplacian_lambda_min == 0
+    assert cert.holonomy_obstructed is False
+    assert cert.global_sections_reduced is True
+
+
+def test_rank_and_projection_use_the_same_relative_svd_cutoff():
+    scale = np.diag([1e12, 1.0])
+    sheaf = CellularSheaf(
+        2,
+        [(0, 1)],
+        stalk_dim=2,
+        tail_restrictions={(0, 1): scale},
+        head_restrictions={(0, 1): scale},
+    )
+    cert = sheaf.cohomology_certificate()
+    projection = sheaf.project_1_cochain(np.array([0.0, 1.0]))
+    assert cert.coboundary_rank == 1
+    assert projection["numerical_rank"] == cert.coboundary_rank
+    assert projection["svd_cutoff"] == cert.svd_cutoff
+    assert cert.dim_h1_cohomology == 1
+    assert projection["harmonic_norm"] == pytest.approx(1.0)
+    assert cert.to_dict()["rank_basis"] == "SVD_CUTOFF"
+
+
+def test_relative_dimension_and_inverse_share_the_interior_mask():
+    scale = np.diag([1e12, 1.0])
+    sheaf = CellularSheaf(
+        2,
+        [(0, 1)],
+        stalk_dim=2,
+        tail_restrictions={(0, 1): scale},
+        head_restrictions={(0, 1): scale},
+    )
+    relative = sheaf.relative_obstruction({0: [0.0, 1.0]})
+    assert relative.numerical_interior_rank == 1
+    assert relative.dim_relative_h1 == 1
+    assert relative.harmonic_obstruction_norm == pytest.approx(1.0)
+
+
+def test_explicit_absolute_only_cutoff_retains_the_small_direction():
+    scale = np.diag([1e12, 1.0])
+    sheaf = CellularSheaf(
+        2,
+        [(0, 1)],
+        stalk_dim=2,
+        tail_restrictions={(0, 1): scale},
+        head_restrictions={(0, 1): scale},
+        svd_rtol=0.0,
+    )
+    cert = sheaf.cohomology_certificate()
+    assert cert.coboundary_rank == 2
+    assert cert.dim_h1_cohomology == 0
+    assert sheaf.project_1_cochain(np.array([0.0, 1.0]))["harmonic_norm"] < 1e-12
+
+
+@pytest.mark.parametrize("value", [math.nan, math.inf, -math.inf])
+def test_nonfinite_sheaf_inputs_are_rejected(value):
+    with pytest.raises(ValueError, match="finite"):
+        CellularSheaf(2, [(0, 1)], tail_restrictions={(0, 1): np.diag([value, 1.0])})
+    sheaf = CellularSheaf(2, [(0, 1)])
+    with pytest.raises(ValueError, match="finite"):
+        sheaf.project_1_cochain(np.array([value, 0.0]))
+    with pytest.raises(ValueError, match="finite"):
+        sheaf.relative_obstruction({0: [value, 0.0]})
+
+
+def test_edgeless_relative_solution_retains_interior_dimensions():
+    sheaf = CellularSheaf(3, [], stalk_dim=2)
+    cert = sheaf.relative_obstruction({0: [1.0, 0.0]})
+    assert len(cert.optimal_interior_state) == 4
+    assert cert.harmonic_obstruction_norm == 0
+
+
+@pytest.mark.parametrize("vertex", [-1, 2, True])
+def test_invalid_boundary_vertices_are_rejected(vertex):
+    sheaf = CellularSheaf(2, [(0, 1)])
+    with pytest.raises(ValueError, match="vertex"):
+        sheaf.relative_obstruction({vertex: [1.0, 0.0]})

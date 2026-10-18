@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+from importlib import metadata
 from pathlib import Path
 import subprocess
 import sys
@@ -14,11 +15,11 @@ def require(condition: bool, message: str) -> None:
         raise RuntimeError(message)
 
 
-def console(name: str) -> subprocess.CompletedProcess[str]:
+def console(name: str, *arguments: str) -> subprocess.CompletedProcess[str]:
     executable = Path(sys.executable).parent / name
     require(executable.is_file(), f"missing console script: {executable}")
     return subprocess.run(
-        [str(executable)],
+        [str(executable), *arguments],
         check=False,
         capture_output=True,
         text=True,
@@ -37,6 +38,26 @@ def main() -> int:
     require(AssuranceRuntime().evaluate_tool("order.read", {}).verify().valid, "receipt failed")
     require(EvaluationGate(max_harmful_allows=0).configured, "evaluation API failed")
     require(RegressionGate().max_regressed_cases == 0, "regression API failed")
+
+    scripts = sorted(
+        entry.name
+        for entry in metadata.distribution("lycheetah-framework").entry_points
+        if entry.group == "console_scripts"
+    )
+    require(len(scripts) >= 4, "installed distribution has fewer than the original four scripts")
+    for name in scripts:
+        result = console(name, "--help")
+        require(result.returncode == 0, f"{name} --help failed: {result.stderr}")
+
+    # The domain modules must be shipped, rather than found through a checkout.
+    for domain in ("quantum", "germ"):
+        result = console("lycheetah-cascade", "demo", "--domain", domain)
+        require(result.returncode == 0, result.stderr or result.stdout)
+    source_only = console("lycheetah-alexandria", "health")
+    require(
+        source_only.returncode == 2 and "source checkout" in source_only.stderr,
+        "Alexandria's source-only boundary must fail visibly outside a checkout",
+    )
 
     require(web_demo.FLASK_AVAILABLE is False, "base wheel unexpectedly contains Flask")
     require(web_demo.app is None, "web app should be unavailable without Flask")
@@ -61,6 +82,10 @@ def main() -> int:
                 "base_api": True,
                 "evaluation_api": True,
                 "regression_api": True,
+                "console_script_count": len(scripts),
+                "console_scripts": scripts,
+                "domain_demos": 2,
+                "alexandria_source_boundary": True,
                 "web_extra_boundary": True,
                 "mcp_extra_boundary": True,
             },

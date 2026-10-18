@@ -1,0 +1,55 @@
+test_f_tampered_receipt_pauses_all_new_effects (test_authenticated_provider.FailClosedLedgerMutations.test_f_tampered_receipt_pauses_all_new_effects) ... ok
+test_g_tampered_audit_pauses_all_new_effects (test_authenticated_provider.FailClosedLedgerMutations.test_g_tampered_audit_pauses_all_new_effects) ... ok
+test_h_second_clean_effect_is_allowed (test_authenticated_provider.FailClosedLedgerMutations.test_h_second_clean_effect_is_allowed) ... ok
+test_a_signed_receipt_links_to_real_local_effect_and_audit (test_authenticated_provider.LedgerHardening.test_a_signed_receipt_links_to_real_local_effect_and_audit) ... ok
+test_b_stored_action_tamper_detected (test_authenticated_provider.LedgerHardening.test_b_stored_action_tamper_detected) ... ok
+test_c_stored_audit_tamper_detected (test_authenticated_provider.LedgerHardening.test_c_stored_audit_tamper_detected) ... ok
+test_d_historic_anchor_does_not_reject_legitimate_append (test_authenticated_provider.LedgerHardening.test_d_historic_anchor_does_not_reject_legitimate_append) ... ok
+test_e_historic_anchor_detects_recomputed_chain_alteration (test_authenticated_provider.LedgerHardening.test_e_historic_anchor_detects_recomputed_chain_alteration) ... ok
+test_01_authenticated_commit (test_authenticated_provider.SignedProviderContract.test_01_authenticated_commit) ... ok
+test_02_no_token (test_authenticated_provider.SignedProviderContract.test_02_no_token) ... ok
+test_03_bad_token_mac (test_authenticated_provider.SignedProviderContract.test_03_bad_token_mac) ... ok
+test_04_modified_authorization_body (test_authenticated_provider.SignedProviderContract.test_04_modified_authorization_body) ... ok
+test_05_wrong_authority_key (test_authenticated_provider.SignedProviderContract.test_05_wrong_authority_key) ... ok
+test_06_key_id_swap (test_authenticated_provider.SignedProviderContract.test_06_key_id_swap) ... ok
+test_07_new_field_in_token (test_authenticated_provider.SignedProviderContract.test_07_new_field_in_token) ... ok
+test_08_action_amount_swap (test_authenticated_provider.SignedProviderContract.test_08_action_amount_swap) ... ok
+test_09_action_subject_swap (test_authenticated_provider.SignedProviderContract.test_09_action_subject_swap) ... ok
+test_10_action_scope_swap (test_authenticated_provider.SignedProviderContract.test_10_action_scope_swap) ... ok
+test_11_invalid_amount_boolean (test_authenticated_provider.SignedProviderContract.test_11_invalid_amount_boolean) ... ok
+test_12_extra_action_field (test_authenticated_provider.SignedProviderContract.test_12_extra_action_field) ... ok
+test_13_token_not_yet_valid (test_authenticated_provider.SignedProviderContract.test_13_token_not_yet_valid) ... ok
+test_14_token_expired (test_authenticated_provider.SignedProviderContract.test_14_token_expired) ... ok
+test_15_grant_expired (test_authenticated_provider.SignedProviderContract.test_15_grant_expired) ... ok
+test_16_revoke_precommit (test_authenticated_provider.SignedProviderContract.test_16_revoke_precommit) ... ok
+test_17_evidence_fails (test_authenticated_provider.SignedProviderContract.test_17_evidence_fails) ... ok
+test_18_ineligible_status_pass (test_authenticated_provider.SignedProviderContract.test_18_ineligible_status_pass) ... ok
+test_19_benign_revision_is_still_stale_in_exact_mode (test_authenticated_provider.SignedProviderContract.test_19_benign_revision_is_still_stale_in_exact_mode) ... ok
+test_20_policy_revision_is_stale (test_authenticated_provider.SignedProviderContract.test_20_policy_revision_is_stale) ... ok
+test_21_policy_cap (test_authenticated_provider.SignedProviderContract.test_21_policy_cap) ... ok
+test_22_false_evidence_negative_control (test_authenticated_provider.SignedProviderContract.test_22_false_evidence_negative_control) ... ok
+test_23_idempotent_same_token (test_authenticated_provider.SignedProviderContract.test_23_idempotent_same_token) ... ok
+test_24_idempotent_after_revoke_and_expiry (test_authenticated_provider.SignedProviderContract.test_24_idempotent_after_revoke_and_expiry) ... ok
+test_25_same_effect_different_signed_intent_rejected (test_authenticated_provider.SignedProviderContract.test_25_same_effect_different_signed_intent_rejected) ... ok
+test_26_same_grant_different_effect_id_rejected (test_authenticated_provider.SignedProviderContract.test_26_same_grant_different_effect_id_rejected) ... ok
+test_27_response_lost_after_commit_and_authoritative_reconciliation (test_authenticated_provider.SignedProviderContract.test_27_response_lost_after_commit_and_authoritative_reconciliation) ... ok
+test_28_receipt_tampering_rejected (test_authenticated_provider.SignedProviderContract.test_28_receipt_tampering_rejected) ... ok
+test_29_receipt_rejects_wrong_key (test_authenticated_provider.SignedProviderContract.test_29_receipt_rejects_wrong_key) ... ok
+test_30_receipt_rejects_wrong_action (test_authenticated_provider.SignedProviderContract.test_30_receipt_rejects_wrong_action) ... ok
+test_31_receipt_rejects_wrong_token (test_authenticated_provider.SignedProviderContract.test_31_receipt_rejects_wrong_token) ... ok
+test_32_token_mac_cannot_be_reused_as_provider_proof (test_authenticated_provider.SignedProviderContract.test_32_token_mac_cannot_be_reused_as_provider_proof) ... ok
+test_33_audit_chain_verified (test_authenticated_provider.SignedProviderContract.test_33_audit_chain_verified) ... ok
+test_34_audit_mutation_detected (test_authenticated_provider.SignedProviderContract.test_34_audit_mutation_detected) ... ok
+test_35_truncation_detected_with_external_anchor (test_authenticated_provider.SignedProviderContract.test_35_truncation_detected_with_external_anchor) ... ok
+test_36_empty_ledger_has_genesis (test_authenticated_provider.SignedProviderContract.test_36_empty_ledger_has_genesis) ... ok
+test_37_duplicate_wire_keys_rejected (test_authenticated_provider.SignedProviderContract.test_37_duplicate_wire_keys_rejected) ... ok
+test_38_nonfinite_wire_rejected (test_authenticated_provider.SignedProviderContract.test_38_nonfinite_wire_rejected) ... ok
+test_39_concurrent_32_thread_submission_one_effect (test_authenticated_provider.SignedProviderContract.test_39_concurrent_32_thread_submission_one_effect) ... ok
+test_40_wrong_approval_even_if_signed (test_authenticated_provider.SignedProviderContract.test_40_wrong_approval_even_if_signed) ... ok
+test_41_replay_old_proof_for_different_action_does_not_validate (test_authenticated_provider.SignedProviderContract.test_41_replay_old_proof_for_different_action_does_not_validate) ... ok
+test_42_claims_proof_is_local_not_external (test_authenticated_provider.SignedProviderContract.test_42_claims_proof_is_local_not_external) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 1.487s
+
+OK

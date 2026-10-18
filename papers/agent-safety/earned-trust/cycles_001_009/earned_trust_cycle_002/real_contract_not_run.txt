@@ -1,0 +1,1 @@
+REQUIRES REAL FRAMEWORK CHECKOUT OR INSTALL; NO TESTS RUN. Execute from the Lycheetah-Framework root with PYTHONPATH=. Import error: No module named 'lycheetah'

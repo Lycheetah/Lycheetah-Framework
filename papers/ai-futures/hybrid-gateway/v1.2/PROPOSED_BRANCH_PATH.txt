@@ -1,0 +1,7 @@
+Repository: Lycheetah/Lycheetah-Framework
+Suggested branch: research/hybrid-intelligence-architecture
+Suggested directory: research/hybrid-intelligence/
+Status: Proposed only. No GitHub branch or commit has been created by this handoff.
+
+Start from master and verify current CASCADE, Assurance Runtime and Action Guard APIs.
+Read HYBRID_INTELLIGENCE_RESEARCH_CHARTER_v0.1.md before implementation.

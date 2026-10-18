@@ -1,0 +1,75 @@
+{
+  "title": "Earned Trust Cycle 003 claim register",
+  "version": "0.1.0",
+  "date": "2026-10-18",
+  "claim_count": 7,
+  "claims": [
+    {
+      "id": "ET003-001",
+      "claim": "Domain-separated HMAC binds synthetic issuer token and local commit receipt to canonical action and identifiers.",
+      "status": "SYNTHETIC_ENGINEERING_TESTED",
+      "evidence": [
+        "test_authenticated_provider.py",
+        "test_output.txt"
+      ],
+      "falsifier": "Change an action field or token body without a valid MAC and observe an accepted new effect."
+    },
+    {
+      "id": "ET003-002",
+      "claim": "Single shared SQLite file gives idempotent one-effect behavior for one exact signed intent under tested local concurrency.",
+      "status": "SYNTHETIC_ENGINEERING_TESTED",
+      "evidence": [
+        "process_results.json",
+        "test_authenticated_provider.py"
+      ],
+      "falsifier": "Under tested conditions produce two effect rows or two COMMITTED responses for the same effect and grant."
+    },
+    {
+      "id": "ET003-003",
+      "claim": "Simulated post-commit response loss can be reconciled using a local authenticated receipt without a second commit.",
+      "status": "SYNTHETIC_ENGINEERING_TESTED",
+      "evidence": [
+        "attack_results.json",
+        "test_authenticated_provider.py"
+      ],
+      "falsifier": "Lose a response then observe missing local receipt or duplicate effect after identical replay."
+    },
+    {
+      "id": "ET003-004",
+      "claim": "Constructed ledger modifications and historical prefix rewrites are detected when an independently held anchor is supplied.",
+      "status": "SYNTHETIC_ENGINEERING_TESTED",
+      "evidence": [
+        "test_authenticated_provider.py"
+      ],
+      "falsifier": "Tamper with ledger or rewrite its prefix while preserving presented anchor and still pass local integrity checks."
+    },
+    {
+      "id": "ET003-005",
+      "claim": "A false trusted source record may still produce a cryptographically valid local commitment receipt.",
+      "status": "NEGATIVE_CONTROL_OBSERVED",
+      "evidence": [
+        "attack_results.json",
+        "test_authenticated_provider.py"
+      ],
+      "falsifier": "Under same authored false-truth scenario the commit is refused based on a source independent from the trusted status record."
+    },
+    {
+      "id": "ET003-006",
+      "claim": "Real Lycheetah Framework integration and remote provider commit correctness are unverified.",
+      "status": "NOT_TESTED",
+      "evidence": [
+        "real_framework_attempt.txt"
+      ],
+      "falsifier": "Execute import-based contract suite against pinned Framework checkout and conduct a real external provider integration test with independent observations."
+    },
+    {
+      "id": "ET003-007",
+      "claim": "The experiment is superior to a conventional conditional transaction and authorization baseline.",
+      "status": "UNSUPPORTED_NOT_CLAIMED",
+      "evidence": [
+        "RESEARCH_REPORT.md"
+      ],
+      "falsifier": "Independent matched evaluation may show no difference, or worse results, relative to conventional implementation."
+    }
+  ]
+}

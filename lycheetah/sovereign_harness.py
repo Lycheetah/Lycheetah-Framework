@@ -22,6 +22,7 @@ preserved context to:
 - the exact canonical action digest (`action_hash`),
 - the proposing actor and explicit human/checkpoint authority (`authority_id`),
 - the authorized scope set and bound target scope (`allowed_scopes`, `bound_scope`),
+- the issuing reference packet's declared risk (`bound_risk`),
 - the pinned environment/state version (`state_version`),
 - the validity window (`issued_at`, `expires_at`), and
 - a persistent SQLite single-use replay ledger (`PermitNonceStore`).
@@ -60,6 +61,7 @@ from .assurance import (
     action_digest,
 )
 from .compaction import (
+    VALID_RISKS,
     AgentStatePacket,
     CodecError,
     CompactionShield,
@@ -70,6 +72,7 @@ from .consensus import (
 )
 
 HARNESS_SCHEMA_VERSION = "lycheetah.sovereign_harness.v1"
+PERMIT_SCHEMA_VERSION = "lycheetah.sovereign_permit.v2"
 
 EPISTEMIC_BOUNDARIES: tuple[str, ...] = (
     "zero_h1_proves_pairwise_vector_agreement_not_factual_correctness",
@@ -91,7 +94,12 @@ def _sha256_hex(value: Any) -> str:
 
 @dataclass(frozen=True)
 class SovereignExecutionPermit:
-    """Single-use cryptographic permit binding consensus and context to a specific action."""
+    """Single-use local permit binding consensus, context and admission risk.
+
+    ``bound_risk=None`` represents a legacy v1 permit for inspection only. Its
+    original payload/digest can still be reproduced, but registration, claiming
+    and execution refuse it. New issuance requires an explicit reference risk.
+    """
 
     permit_id: str
     actor: str
@@ -106,10 +114,11 @@ class SovereignExecutionPermit:
     compaction_critical_hash: str
     bound_packet_id: str
     permit_digest: str
+    bound_risk: str | None = None
 
     def _payload_without_digest(self) -> dict[str, Any]:
-        return {
-            "schema": HARNESS_SCHEMA_VERSION,
+        payload = {
+            "schema": HARNESS_SCHEMA_VERSION if self.bound_risk is None else PERMIT_SCHEMA_VERSION,
             "permit_id": self.permit_id,
             "actor": self.actor,
             "authority_id": self.authority_id,
@@ -123,6 +132,17 @@ class SovereignExecutionPermit:
             "compaction_critical_hash": self.compaction_critical_hash,
             "bound_packet_id": self.bound_packet_id,
         }
+        if self.bound_risk is not None:
+            payload["bound_risk"] = self.bound_risk
+        return payload
+
+    def risk_binding_error(self) -> str | None:
+        """Return an admission error for missing or invalid risk bindings."""
+        if self.bound_risk is None:
+            return "PERMIT_RISK_UNBOUND"
+        if not isinstance(self.bound_risk, str) or self.bound_risk not in VALID_RISKS:
+            return "PERMIT_RISK_INVALID"
+        return None
 
     def compute_digest(self) -> str:
         """Compute canonical SHA-256 digest over all bound permit fields."""
@@ -142,6 +162,7 @@ class SovereignExecutionPermit:
         consensus_digest: str,
         compaction_critical_hash: str,
         bound_packet_id: str,
+        bound_risk: str,
         issued_at: int | None = None,
         ttl_seconds: int = 300,
     ) -> SovereignExecutionPermit:
@@ -156,6 +177,8 @@ class SovereignExecutionPermit:
             raise ValueError("state_version must be a non-empty string")
         if not bound_packet_id or not isinstance(bound_packet_id, str):
             raise ValueError("bound_packet_id must be a non-empty string")
+        if not isinstance(bound_risk, str) or bound_risk not in VALID_RISKS:
+            raise ValueError(f"bound_risk must be one of {sorted(VALID_RISKS)}")
         if isinstance(ttl_seconds, bool) or not isinstance(ttl_seconds, int) or ttl_seconds <= 0:
             raise ValueError("ttl_seconds must be a positive integer")
 
@@ -180,6 +203,7 @@ class SovereignExecutionPermit:
             compaction_critical_hash=compaction_critical_hash,
             bound_packet_id=bound_packet_id,
             permit_digest="",
+            bound_risk=bound_risk,
         )
         return cls(
             permit_id=temp.permit_id,
@@ -195,6 +219,7 @@ class SovereignExecutionPermit:
             compaction_critical_hash=temp.compaction_critical_hash,
             bound_packet_id=temp.bound_packet_id,
             permit_digest=temp.compute_digest(),
+            bound_risk=temp.bound_risk,
         )
 
     def to_dict(self) -> dict[str, Any]:
@@ -297,6 +322,9 @@ class PermitNonceStore:
 
     def register_permit(self, permit: SovereignExecutionPermit) -> None:
         """Record a newly issued permit. Raises ValueError if `permit_id` already exists."""
+        risk_error = permit.risk_binding_error()
+        if risk_error is not None:
+            raise ValueError(f"Cannot register permit: {risk_error}; reissue from reference packet")
         if permit.permit_digest != permit.compute_digest():
             raise ValueError("Cannot register permit with invalid permit_digest")
         with self._connect() as conn:
@@ -328,10 +356,13 @@ class PermitNonceStore:
             )
             conn.commit()
 
-    def claim_single_use(
-        self, permit: SovereignExecutionPermit, now: int
-    ) -> tuple[bool, str]:
+    def claim_single_use(self, permit: SovereignExecutionPermit, now: int) -> tuple[bool, str]:
         """Atomically mark a permit as CONSUMED. Rejects unknown, tampered, or replayed permits."""
+        risk_error = permit.risk_binding_error()
+        if risk_error is not None:
+            return False, risk_error
+        if permit.permit_digest != permit.compute_digest():
+            return False, "PERMIT_DIGEST_TAMPERED"
         with self._connect() as conn:
             row = conn.execute(
                 "SELECT permit_digest, status FROM sovereign_permits WHERE permit_id = ?",
@@ -380,9 +411,7 @@ class SovereignExecutionHarness:
         self.base_dir = Path(base_dir)
         self.base_dir.mkdir(parents=True, exist_ok=True)
         self.gateway = ActionGateway.open_local(self.base_dir, policy=policy)
-        self.nonce_store = PermitNonceStore(
-            self.base_dir / "ledger" / "sovereign_permits.sqlite3"
-        )
+        self.nonce_store = PermitNonceStore(self.base_dir / "ledger" / "sovereign_permits.sqlite3")
         self.require_human_authority_for_high_risk = require_human_authority_for_high_risk
 
     def issue_permit(
@@ -417,6 +446,7 @@ class SovereignExecutionHarness:
             consensus_digest=consensus_verdict.consensus_digest,
             compaction_critical_hash=pkt.critical_hash,
             bound_packet_id=pkt.id,
+            bound_risk=pkt.risk,
             issued_at=issued_at,
             ttl_seconds=ttl_seconds,
         )
@@ -549,11 +579,7 @@ class SovereignExecutionHarness:
         eval_now = int(time.time()) if now is None else int(now)
         live_act_hash = action_digest(live_action)
 
-        verdict = (
-            consensus.deliberate()
-            if isinstance(consensus, ConsensusArena)
-            else consensus
-        )
+        verdict = consensus.deliberate() if isinstance(consensus, ConsensusArena) else consensus
         consensus_summary = {
             "converged": verdict.converged,
             "obstruction_free": verdict.obstruction_free,
@@ -568,9 +594,7 @@ class SovereignExecutionHarness:
             if isinstance(reference_packet, AgentStatePacket)
             else AgentStatePacket.from_dict(reference_packet)
         )
-        cand_obj, decode_err = self._resolve_candidate_packet(
-            candidate_packet, codebook=codebook
-        )
+        cand_obj, decode_err = self._resolve_candidate_packet(candidate_packet, codebook=codebook)
         if cand_obj is None:
             compaction_summary: dict[str, Any] = {
                 "is_safe": False,
@@ -601,6 +625,8 @@ class SovereignExecutionHarness:
             "candidate_critical_hash": integrity.get("candidate_critical_hash"),
             "packet_id": cand_obj.id,
             "risk": cand_obj.risk,
+            "reference_risk": ref_obj.risk,
+            "bound_risk": permit.bound_risk,
             "has_recovery": bool(cand_obj.recovery),
         }
 
@@ -650,10 +676,7 @@ class SovereignExecutionHarness:
                 compaction_summary=compaction_summary,
                 gateway_result=None,
             )
-        if (
-            permit.actor in verdict.quarantined_agents
-            or permit.actor not in verdict.healthy_agents
-        ):
+        if permit.actor in verdict.quarantined_agents or permit.actor not in verdict.healthy_agents:
             return self._build_receipt(
                 accepted=False,
                 status="DENIED",
@@ -746,12 +769,20 @@ class SovereignExecutionHarness:
                 gateway_result=None,
             )
 
-        # ── GATE 3: PERMIT BINDING (Action payload, Scope, State version, Expiry, Authority) ──
-        if permit.permit_digest != permit.compute_digest():
+        # ── GATE 3: PERMIT BINDING (Risk, Action, Scope, State, Expiry, Authority) ──
+        risk_error = permit.risk_binding_error()
+        if risk_error is None:
+            if permit.permit_digest != permit.compute_digest():
+                risk_error = "PERMIT_DIGEST_TAMPERED"
+            elif ref_obj.risk != permit.bound_risk:
+                risk_error = "REFERENCE_RISK_MISMATCH"
+            elif cand_obj.risk != permit.bound_risk:
+                risk_error = "CANDIDATE_RISK_MISMATCH"
+        if risk_error is not None:
             return self._build_receipt(
                 accepted=False,
                 status="DENIED",
-                stop_reason="PERMIT_DIGEST_TAMPERED",
+                stop_reason=risk_error,
                 provider_called=False,
                 permit=permit,
                 live_action_hash=live_act_hash,
@@ -840,7 +871,7 @@ class SovereignExecutionHarness:
 
         if (
             self.require_human_authority_for_high_risk
-            and cand_obj.risk in ("HIGH", "CRITICAL")
+            and permit.bound_risk in ("HIGH", "CRITICAL")
             and permit.authority_id is None
         ):
             return self._build_receipt(
@@ -976,6 +1007,7 @@ class SovereignExecutionHarness:
 __all__ = [
     "EPISTEMIC_BOUNDARIES",
     "HARNESS_SCHEMA_VERSION",
+    "PERMIT_SCHEMA_VERSION",
     "PermitNonceStore",
     "SovereignExecutionHarness",
     "SovereignExecutionPermit",

@@ -34,6 +34,7 @@ dependencies = [
     "numpy>=1.24",
     "scipy>=1.10",
     "networkx>=3.0",
+    "cryptography>=41",
 ]
 
 [project.optional-dependencies]
@@ -53,6 +54,10 @@ lycheetah-assure = "lycheetah.cli:assure_cli"
 lycheetah-compact = "lycheetah.cli:compact_cli"
 lycheetah-consensus = "lycheetah.cli:consensus_cli"
 lycheetah-sovereign = "lycheetah.cli:sovereign_cli"
+lycheetah-handoff = "lycheetah.cli:handoff_cli"
+lycheetah-sol = "lycheetah.cli:sol_cli"
+lycheetah-alexandria = "lycheetah.cli:alexandria_cli"
+lycheetah-cascade = "lycheetah.cli:cascade_cli"
 
 [project.urls]
 Homepage      = "https://github.com/Lycheetah/Lycheetah-Framework"
@@ -71,6 +76,7 @@ packages = [
     "lycheetah",
     "lycheetah.core",
     "lycheetah.applications",
+    "lycheetah.experiments",
     "lycheetah.assurance",
     "lycheetah.compaction",
     "lycheetah.consensus",
@@ -80,6 +86,7 @@ packages = [
 "lycheetah" = "lycheetah"
 "lycheetah.core" = "12_IMPLEMENTATIONS/core"
 "lycheetah.applications" = "12_IMPLEMENTATIONS/applications"
+"lycheetah.experiments" = "12_IMPLEMENTATIONS/experiments"
 
 [tool.setuptools.package-data]
 "lycheetah" = ["py.typed"]
@@ -120,6 +127,14 @@ ignore = [
 # a diff nobody can review, against files whose current shape is deliberate.
 exclude = ["*"]
 
+[tool.ruff.lint.per-file-ignores]
+# Exact frozen source, verified by tools/verify_research_intake.py. Preserve the
+# 15 supplied exception-chaining / immediate-loop-closure style findings rather
+# than rewriting the research record. Syntax and undefined-name gates still run.
+"papers/agent-safety/earned-trust/cycles_001_009/**" = ["B023", "B904"]
+"papers/ai-futures/hybrid-gateway/v1.2/**" = ["B023", "B904"]
+"03_LAMAGUE_L1/26_SXP_L_RESEARCH/v2.0/**" = ["B023", "B904"]
+
 [tool.mypy]
 files = ["lycheetah"]
 python_version = "3.10"
@@ -133,7 +148,7 @@ strict_equality = true
 # statically. Annotating that tree is separate work; this gate covers the public
 # wrapper and says only that.
 [[tool.mypy.overrides]]
-module = ["core.*", "applications.*", "lycheetah.core.*", "lycheetah.applications.*"]
+module = ["core.*", "applications.*", "experiments.*", "lycheetah.core.*", "lycheetah.applications.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

@@ -1,0 +1,61 @@
+test_bad_challenge_reason_rejected (test_governed_registry.GovernanceTests.test_bad_challenge_reason_rejected) ... ok
+test_binding_mac_tampering_denied (test_governed_registry.GovernanceTests.test_binding_mac_tampering_denied) ... ok
+test_challenge_at_intermediate_source_freezes_only_descendants (test_governed_registry.GovernanceTests.test_challenge_at_intermediate_source_freezes_only_descendants) ... ok
+test_challenge_requires_auditor_role (test_governed_registry.GovernanceTests.test_challenge_requires_auditor_role) ... ok
+test_challenge_requires_valid_hmac (test_governed_registry.GovernanceTests.test_challenge_requires_valid_hmac) ... ok
+test_dispute_does_not_freeze_unrelated_paths (test_governed_registry.GovernanceTests.test_dispute_does_not_freeze_unrelated_paths) ... ok
+test_duplicate_challenge_denied (test_governed_registry.GovernanceTests.test_duplicate_challenge_denied) ... ok
+test_duplicate_observations_still_rejected (test_governed_registry.GovernanceTests.test_duplicate_observations_still_rejected) ... ok
+test_duplicate_signer_denied (test_governed_registry.GovernanceTests.test_duplicate_signer_denied) ... ok
+test_false_independent_sources_still_confirm (test_governed_registry.GovernanceTests.test_false_independent_sources_still_confirm) ... ok
+test_false_registry_can_be_governed_into_existence (test_governed_registry.GovernanceTests.test_false_registry_can_be_governed_into_existence)
+Approvals validate process, not actual data lineage. ... ok
+test_genesis_is_self_consistent (test_governed_registry.GovernanceTests.test_genesis_is_self_consistent) ... ok
+test_history_entry_tamper_denied (test_governed_registry.GovernanceTests.test_history_entry_tamper_denied) ... ok
+test_history_replay_after_change (test_governed_registry.GovernanceTests.test_history_replay_after_change) ... ok
+test_history_truncation_denied_with_external_anchor (test_governed_registry.GovernanceTests.test_history_truncation_denied_with_external_anchor) ... ok
+test_invalid_genealogy_only_from_patch_does_not_change_current_state (test_governed_registry.GovernanceTests.test_invalid_genealogy_only_from_patch_does_not_change_current_state) ... ok
+test_materialized_graph_tamper_denied (test_governed_registry.GovernanceTests.test_materialized_graph_tamper_denied) ... ok
+test_missing_freshness_readback_denied (test_governed_registry.GovernanceTests.test_missing_freshness_readback_denied) ... ok
+test_no_external_anchor_is_not_confirmed (test_governed_registry.GovernanceTests.test_no_external_anchor_is_not_confirmed) ... ok
+test_no_open_dispute_cannot_resolve (test_governed_registry.GovernanceTests.test_no_open_dispute_cannot_resolve) ... ok
+test_observation_action_substitution_denied (test_governed_registry.GovernanceTests.test_observation_action_substitution_denied) ... ok
+test_old_checkpoint_rejected_after_patch (test_governed_registry.GovernanceTests.test_old_checkpoint_rejected_after_patch) ... ok
+test_old_witness_bound_to_old_registry_rejected (test_governed_registry.GovernanceTests.test_old_witness_bound_to_old_registry_rejected) ... ok
+test_one_witness_does_not_confirm (test_governed_registry.GovernanceTests.test_one_witness_does_not_confirm) ... ok
+test_operator_signature_from_wrong_role_rejected (test_governed_registry.GovernanceTests.test_operator_signature_from_wrong_role_rejected) ... ok
+test_patch_detects_copy_of_source (test_governed_registry.GovernanceTests.test_patch_detects_copy_of_source) ... ok
+test_patch_distinct_reviewer_orgs_required (test_governed_registry.GovernanceTests.test_patch_distinct_reviewer_orgs_required) ... ok
+test_patch_rejected_when_self_controller_reviews (test_governed_registry.GovernanceTests.test_patch_rejected_when_self_controller_reviews) ... ok
+test_patch_rejects_cycle (test_governed_registry.GovernanceTests.test_patch_rejects_cycle) ... ok
+test_patch_rejects_unknown_dependency (test_governed_registry.GovernanceTests.test_patch_rejects_unknown_dependency) ... ok
+test_patch_two_reviewers_required (test_governed_registry.GovernanceTests.test_patch_two_reviewers_required) ... ok
+test_remediation_after_patch_can_resolve (test_governed_registry.GovernanceTests.test_remediation_after_patch_can_resolve) ... ok
+test_remediation_requires_patch_after_challenge (test_governed_registry.GovernanceTests.test_remediation_requires_patch_after_challenge) ... ok
+test_reorder_signed_approvers_same_head (test_governed_registry.GovernanceTests.test_reorder_signed_approvers_same_head) ... ok
+test_resolution_releases_path_with_cosignatures (test_governed_registry.GovernanceTests.test_resolution_releases_path_with_cosignatures) ... ok
+test_resolution_requires_two_reviewers (test_governed_registry.GovernanceTests.test_resolution_requires_two_reviewers) ... ok
+test_revocation_is_explicit_and_not_automatic_truth_assessment (test_governed_registry.GovernanceTests.test_revocation_is_explicit_and_not_automatic_truth_assessment) ... ok
+test_signature_over_mutated_fields_rejected (test_governed_registry.GovernanceTests.test_signature_over_mutated_fields_rejected) ... ok
+test_signed_dispute_freezes_dependent_path (test_governed_registry.GovernanceTests.test_signed_dispute_freezes_dependent_path) ... ok
+test_signers_from_distinct_paths_confirm (test_governed_registry.GovernanceTests.test_signers_from_distinct_paths_confirm) ... ok
+test_stale_operation_replayed_denied (test_governed_registry.GovernanceTests.test_stale_operation_replayed_denied) ... ok
+test_swap_bound_statement_denied (test_governed_registry.GovernanceTests.test_swap_bound_statement_denied) ... FAIL
+test_wrong_provider_receipt_denied (test_governed_registry.GovernanceTests.test_wrong_provider_receipt_denied) ... ok
+
+======================================================================
+FAIL: test_swap_bound_statement_denied (test_governed_registry.GovernanceTests.test_swap_bound_statement_denied)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/earned_trust_cycle_006/test_governed_registry.py", line 156, in test_swap_bound_statement_denied
+    self.assertEqual(self.verdict(evidence).reason, "witness-bound-to-obsolete-or-wrong-registry")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'witness-binding-invalid' != 'witness-bound-to-obsolete-or-wrong-registry'
+- witness-binding-invalid
++ witness-bound-to-obsolete-or-wrong-registry
+
+
+----------------------------------------------------------------------
+Ran 43 tests in 0.034s
+
+FAILED (failures=1)

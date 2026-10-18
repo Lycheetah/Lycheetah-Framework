@@ -1,0 +1,14 @@
+{
+  "schema": "earned-trust-claim-register/v1",
+  "cycle": 9,
+  "evidence_status": "LOCAL_SYNTHETIC",
+  "claims": [
+    {"id":"ET-009-01","status":"TESTED_LOCAL","claim":"A UID-65534 subprocess without gateway secrets cannot directly commit through the protected HTTP API.","test":"test_nonroot_subprocess_cannot_read_private_key_but_can_reach_endpoint","falsifier":"A direct unsigned or forged untrusted HTTP request returns a new committed effect."},
+    {"id":"ET-009-02","status":"TESTED_LOCAL","claim":"The Unix gateway binds a caller to a kernel-provided UID and permits a previously approved exact action.","test":"test_nobody_peer_authorized_effect_runs","falsifier":"A mapped unapproved UID or unapproved effect reaches the provider."},
+    {"id":"ET-009-03","status":"TESTED_LOCAL","claim":"Thirty-two concurrent signed requests for one effect ID create exactly one local provider row.","test":"test_concurrent_signed_replay_exactly_one_write","falsifier":"Two rows or more than one created=True response."},
+    {"id":"ET-009-04","status":"TESTED_NEGATIVE","claim":"A compromised issuer HMAC secret can authorize an effect never approved by the dispatch ledger.","test":"test_direct_key_compromise_negative_control","falsifier":"The provider refuses a correctly keyed forged capability in this threat model."},
+    {"id":"ET-009-05","status":"TESTED_NEGATIVE","claim":"Post-reservation source challenges do not undo existing signed provider capability rights.","test":"test_challenge_after_dispatch_reservation_cannot_revoke_signed_delivery","falsifier":"The provider atomically checks a newer governance fence and refuses the effect."},
+    {"id":"ET-009-06","status":"TESTED_LOCAL","claim":"Fifteen fixed synthetic provider-level scenarios match a separately written conventional HMAC+SQLite implementation.","test":"run_scenarios.py","falsifier":"Any matched scenario has a different provider-level outcome."},
+    {"id":"ET-009-07","status":"NOT_EXECUTED","claim":"Real-framework AssuranceRuntime/FinalityGate/PersistentActionGuard native integration.","test":"run_actual_framework_contract.py","falsifier":"Running under a pinned real repo checkout surfaces an incorrect or incompatible contract."}
+  ]
+}

@@ -26,6 +26,7 @@ desktop.ini
 # Temp
 *.tmp
 *.log
+!papers/agent-safety/earned-trust/cycles_001_009/earned_trust_cycle_009/full_tests.log
 .agent_state/
 
 # Proprietary — never enters this repo, and so can never reach the PUBLIC remote

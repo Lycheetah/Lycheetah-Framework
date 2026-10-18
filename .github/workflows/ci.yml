@@ -126,16 +126,9 @@ jobs:
           print('wheel OK — lycheetah.check() ->', round(report.alignment_percent, 1))
           "
           /tmp/wheelcheck/bin/lycheetah-check "smoke test" > /dev/null
-          # Every declared console script, not just the one that happened to work.
-          # lycheetah-guard shipped broken from 1.0.0 because nothing invoked it.
-          # --help is enough: it proves the entry point resolves and the module
-          # imports without the optional mcp extra.
-          /tmp/wheelcheck/bin/lycheetah-check --help > /dev/null
-          /tmp/wheelcheck/bin/lycheetah-web   --help > /dev/null
-          /tmp/wheelcheck/bin/lycheetah-guard --help > /dev/null
-          /tmp/wheelcheck/bin/lycheetah-assure --help > /dev/null
+          # Enumerate installed metadata, check every declared script, exercise
+          # both shipped domain demos and the source-only Alexandria boundary.
           /tmp/wheelcheck/bin/python "$GITHUB_WORKSPACE/tools/verify_base_distribution.py"
-          echo "base wheel and console scripts OK — all 4 resolve and run"
 
           wheel_path="$(find "$GITHUB_WORKSPACE/dist" -maxdepth 1 -name '*.whl' -print -quit)"
           python -m venv /tmp/lycheetah-wheel-all
@@ -191,6 +184,9 @@ jobs:
 
       - name: Every claim-bearing document declares its footing
         run: python tools/verify-claims.py --quiet
+
+      - name: Frozen research source identities and entry-point status
+        run: python tools/verify_research_intake.py
 
       - name: Internal links resolve
         run: python tools/verify-links.py

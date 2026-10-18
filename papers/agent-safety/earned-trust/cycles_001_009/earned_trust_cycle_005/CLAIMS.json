@@ -1,0 +1,63 @@
+{
+  "project": "Earned Trust Cycle 005",
+  "date": "2026-10-18",
+  "evidence_basis": "locally authored deterministic synthetic tests; no external validation",
+  "claims": [
+    {
+      "id": "ET005-001",
+      "status": "MEASURED_LOCAL",
+      "claim": "The Python provenance gate passed 42 local tests.",
+      "evidence": "test_results.txt",
+      "falsifier": "Run the indicated unittest command in a clean compatible environment and reproduce a failing case."
+    },
+    {
+      "id": "ET005-002",
+      "status": "MEASURED_LOCAL",
+      "claim": "Of 16 authored scenarios, naive signature counting confirmed 8; provenance gate confirmed 4, reviewed 11, and flagged one conflict.",
+      "evidence": "scenarios.json",
+      "falsifier": "Run run_scenarios.py and obtain different decisions or totals."
+    },
+    {
+      "id": "ET005-003",
+      "status": "MEASURED_LOCAL",
+      "claim": "A conventional equal-controls decision function matched every one of the 16 provenance-gate decisions.",
+      "evidence": "scenarios.json",
+      "falsifier": "Find a scenario in the recorded corpus where decisions differ."
+    },
+    {
+      "id": "ET005-008",
+      "status": "MEASURED_LOCAL",
+      "claim": "A seeded 1,000-case synthetic order/mutation comparison produced zero baseline disagreements, no reversed-order result changes and no mismatched-action or single-root confirmations.",
+      "evidence": "metamorphic_results.json",
+      "falsifier": "Run metamorphic_probe.py with seed 1956 and reproduce a nonzero anomaly count."
+    },
+    {
+      "id": "ET005-004",
+      "status": "COUNTEREXAMPLE",
+      "claim": "Two signed witnesses sharing a declared original root do not meet a 2-disjoint-source policy.",
+      "evidence": "test_provenance_gate.py",
+      "falsifier": "Construct a verified claim pair rooted in the same source that nevertheless passes the declared disjoint-root policy."
+    },
+    {
+      "id": "ET005-005",
+      "status": "COUNTEREXAMPLE",
+      "claim": "Two genuinely distinct declared roots can affirm a deliberately false fixture claim, and misregistered roots can fool the provenance gate.",
+      "evidence": "test_provenance_gate.py, scenarios.json",
+      "falsifier": "Demonstrate the current code rejects those exact fixtures when evaluated without changing their declared metadata."
+    },
+    {
+      "id": "ET005-006",
+      "status": "UNVERIFIED_HYPOTHESIS",
+      "claim": "With externally audited source topology, a provenance gate can catch meaningful common-source duplication at acceptable false-review cost.",
+      "evidence": "NONE \u2014 study needed",
+      "falsifier": "Preregister and run third-party-designed evidence cases; fail if no benefit over matched conventional comparator or false-review cost exceeds a declared threshold."
+    },
+    {
+      "id": "ET005-007",
+      "status": "NOT_EXECUTED",
+      "claim": "Real Lycheetah Action Guard, FinalityGate and Assurance Runtime integration remains unverified in this container.",
+      "evidence": "actual_framework_execution.txt",
+      "falsifier": "Execute import-based contract tests against the pinned installed real Framework and preserve passing output."
+    }
+  ]
+}

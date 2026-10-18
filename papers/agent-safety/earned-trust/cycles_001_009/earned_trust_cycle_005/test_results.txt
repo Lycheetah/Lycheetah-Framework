@@ -1,0 +1,47 @@
+test_both_independent_but_false_still_confirm (test_provenance_gate.ProvenanceTests.test_both_independent_but_false_still_confirm) ... ok
+test_common_root_is_not_independent (test_provenance_gate.ProvenanceTests.test_common_root_is_not_independent) ... ok
+test_current_revision_must_be_int_not_bool (test_provenance_gate.ProvenanceTests.test_current_revision_must_be_int_not_bool) ... ok
+test_current_revision_required (test_provenance_gate.ProvenanceTests.test_current_revision_required) ... ok
+test_duplicate_signer_fails (test_provenance_gate.ProvenanceTests.test_duplicate_signer_fails) ... ok
+test_duplicate_source_rejected (test_provenance_gate.ProvenanceTests.test_duplicate_source_rejected) ... ok
+test_excess_witnesses_fail (test_provenance_gate.ProvenanceTests.test_excess_witnesses_fail) ... ok
+test_extra_fields_fail (test_provenance_gate.ProvenanceTests.test_extra_fields_fail) ... ok
+test_fake_signer_fails (test_provenance_gate.ProvenanceTests.test_fake_signer_fails) ... ok
+test_future_evidence_fails (test_provenance_gate.ProvenanceTests.test_future_evidence_fails) ... ok
+test_independent_bank_and_crm_confirm (test_provenance_gate.ProvenanceTests.test_independent_bank_and_crm_confirm) ... ok
+test_legitimate_key_holder_can_attest_false_information (test_provenance_gate.ProvenanceTests.test_legitimate_key_holder_can_attest_false_information) ... ok
+test_malformed_envelope_fails (test_provenance_gate.ProvenanceTests.test_malformed_envelope_fails) ... ok
+test_mismatched_action_refused (test_provenance_gate.ProvenanceTests.test_mismatched_action_refused) ... ok
+test_mismatched_effect_refused (test_provenance_gate.ProvenanceTests.test_mismatched_effect_refused) ... ok
+test_mismatched_token_refused (test_provenance_gate.ProvenanceTests.test_mismatched_token_refused) ... ok
+test_missing_provider_proof_fails (test_provenance_gate.ProvenanceTests.test_missing_provider_proof_fails) ... ok
+test_missing_source_rejected (test_provenance_gate.ProvenanceTests.test_missing_source_rejected) ... ok
+test_missing_witnesses_fail (test_provenance_gate.ProvenanceTests.test_missing_witnesses_fail) ... ok
+test_network_and_bank_confirm (test_provenance_gate.ProvenanceTests.test_network_and_bank_confirm) ... ok
+test_no_automatic_relaxation_of_min (test_provenance_gate.ProvenanceTests.test_no_automatic_relaxation_of_min) ... ok
+test_not_committed_conflicts (test_provenance_gate.ProvenanceTests.test_not_committed_conflicts) ... ok
+test_one_false_witness_conflicts (test_provenance_gate.ProvenanceTests.test_one_false_witness_conflicts) ... ok
+test_registry_misclassification_can_fake_independence (test_provenance_gate.ProvenanceTests.test_registry_misclassification_can_fake_independence) ... ok
+test_same_controller_with_different_roots_is_not_independent (test_provenance_gate.ProvenanceTests.test_same_controller_with_different_roots_is_not_independent) ... ok
+test_shared_ancestor_detected_transitively (test_provenance_gate.ProvenanceTests.test_shared_ancestor_detected_transitively) ... ok
+test_signer_requires_upstream_lineage (test_provenance_gate.ProvenanceTests.test_signer_requires_upstream_lineage) ... ok
+test_source_cycle_rejected (test_provenance_gate.ProvenanceTests.test_source_cycle_rejected) ... ok
+test_stale_evidence_fails (test_provenance_gate.ProvenanceTests.test_stale_evidence_fails) ... ok
+test_stale_revision_fails (test_provenance_gate.ProvenanceTests.test_stale_revision_fails) ... ok
+test_tampered_body_fails (test_provenance_gate.ProvenanceTests.test_tampered_body_fails) ... ok
+test_tampered_hmac_fails (test_provenance_gate.ProvenanceTests.test_tampered_hmac_fails) ... ok
+test_three_distinct_roots_with_min3 (test_provenance_gate.ProvenanceTests.test_three_distinct_roots_with_min3) ... ok
+test_three_with_common_pair_can_still_have_two_independent (test_provenance_gate.ProvenanceTests.test_three_with_common_pair_can_still_have_two_independent) ... ok
+test_transitive_controllers_include_original (test_provenance_gate.ProvenanceTests.test_transitive_controllers_include_original) ... ok
+test_two_distinct_roots_with_min3 (test_provenance_gate.ProvenanceTests.test_two_distinct_roots_with_min3) ... ok
+test_uncertainty_requires_review (test_provenance_gate.ProvenanceTests.test_uncertainty_requires_review) ... ok
+test_weak_signer_key_rejected (test_provenance_gate.ProvenanceTests.test_weak_signer_key_rejected) ... ok
+test_deliberately_false_independent_consensus_still_confirmed (test_baseline_consistency.MatchedControls.test_deliberately_false_independent_consensus_still_confirmed) ... ok
+test_disagreement_is_not_automatic_block (test_baseline_consistency.MatchedControls.test_disagreement_is_not_automatic_block) ... ok
+test_matched_conventional_same_scenarios (test_baseline_consistency.MatchedControls.test_matched_conventional_same_scenarios) ... ok
+test_naive_quorum_overconfirms (test_baseline_consistency.MatchedControls.test_naive_quorum_overconfirms) ... ok
+
+----------------------------------------------------------------------
+Ran 42 tests in 0.020s
+
+OK

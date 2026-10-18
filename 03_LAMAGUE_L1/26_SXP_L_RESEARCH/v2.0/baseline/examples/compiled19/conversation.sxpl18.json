@@ -1,0 +1,64 @@
+{
+  "schema": "SXP-L-repair-1.8",
+  "native_sha256": "06f054a10403b497943e9973fc546ad3ebfdc2942865a0480231c5864c8804c4",
+  "studio_sha256": "0711bb31328e2ebfd88c24cd14a5b302cc1bbcad4b0931b64425970b7b26e097",
+  "legacy_sha256": "3d4d4b3fbe54f23805c7cb3ad1be01e122fe8304fcd070ff0f429daedc3519cc",
+  "inherited_sidecar_sha256": "216b37e183dd79d3d8e17c9deb4ff5e4e332cd822c50c3e3ac9e5083ca67dafd",
+  "all_speech_unauthenticated": true,
+  "authorizes": false,
+  "linguistic_authorization_never_equals_host_capability": true,
+  "semantic_loss_if_legacy_only": [
+    "turn 2: clarification_request",
+    "turn 3: clarification_request",
+    "turn 4: self_correction"
+  ],
+  "turns": [
+    {
+      "speaker": "maka",
+      "audience": "nara",
+      "utterance": "mi liva ti devora",
+      "turn": 1,
+      "kind": "ordinary_utterance",
+      "speech_act_status": "speaker_claim_unverified"
+    },
+    {
+      "speaker": "nara",
+      "audience": "maka",
+      "utterance": "gonape maka dimotu luma gonape nara dimotu devora",
+      "turn": 2,
+      "kind": "clarification_request",
+      "root": "kelunaro",
+      "target_index": 1,
+      "target_id": "taba",
+      "embedded_proposition": "gonape maka dimotu luma gonape nara dimotu devora",
+      "speech_act_status": "speaker_claim_unverified",
+      "embedded_is_asserted": false
+    },
+    {
+      "speaker": "nara",
+      "audience": "maka",
+      "utterance": "gonape nara dimotu luma gonape maka dimotu devora",
+      "turn": 3,
+      "kind": "clarification_request",
+      "root": "kelunaro",
+      "target_index": 1,
+      "target_id": "taba",
+      "embedded_proposition": "gonape nara dimotu luma gonape maka dimotu devora",
+      "speech_act_status": "speaker_claim_unverified",
+      "embedded_is_asserted": false
+    },
+    {
+      "speaker": "maka",
+      "audience": "nara",
+      "utterance": "mi rava ti devora",
+      "turn": 4,
+      "kind": "self_correction",
+      "root": "remakivo",
+      "target_index": 1,
+      "target_id": "taba",
+      "embedded_proposition": "mi rava ti devora",
+      "speech_act_status": "speaker_claim_unverified",
+      "embedded_is_asserted": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+test_admission_snapshot_not_permit (test_earned_trust_probe.ProbeTests.test_admission_snapshot_not_permit) ... ok
+test_audit_chain_detects_payload_flip (test_earned_trust_probe.ProbeTests.test_audit_chain_detects_payload_flip) ... ok
+test_audit_chain_detects_truncation_only_with_external_anchor (test_earned_trust_probe.ProbeTests.test_audit_chain_detects_truncation_only_with_external_anchor) ... ok
+test_benign_evidence_revision_allowed (test_earned_trust_probe.ProbeTests.test_benign_evidence_revision_allowed) ... ok
+test_changed_action_requires_reapproval (test_earned_trust_probe.ProbeTests.test_changed_action_requires_reapproval) ... ok
+test_conditional_commit_covers_later_revoke (test_earned_trust_probe.ProbeTests.test_conditional_commit_covers_later_revoke) ... ok
+test_conventional_baseline_parity (test_earned_trust_probe.ProbeTests.test_conventional_baseline_parity) ... ok
+test_conventional_matches_same_observable_boundary (test_earned_trust_probe.ProbeTests.test_conventional_matches_same_observable_boundary) ... ok
+test_false_evidence_cannot_be_fixed_by_atomicity (test_earned_trust_probe.ProbeTests.test_false_evidence_cannot_be_fixed_by_atomicity) ... ok
+test_finality_does_not_cover_later_revoke (test_earned_trust_probe.ProbeTests.test_finality_does_not_cover_later_revoke) ... ok
+test_four_controls (test_earned_trust_probe.ProbeTests.test_four_controls) ... ok
+test_initial_permission (test_earned_trust_probe.ProbeTests.test_initial_permission) ... ok
+test_invalid_amount_rejected (test_earned_trust_probe.ProbeTests.test_invalid_amount_rejected) ... ok
+test_policy_change_after_finality (test_earned_trust_probe.ProbeTests.test_policy_change_after_finality) ... ok
+test_provider_catches_all_observable_stale_cases (test_earned_trust_probe.ProbeTests.test_provider_catches_all_observable_stale_cases) ... ok
+test_provider_idempotency (test_earned_trust_probe.ProbeTests.test_provider_idempotency) ... ok
+test_replay_after_finality (test_earned_trust_probe.ProbeTests.test_replay_after_finality) ... ok
+test_reporting_counts (test_earned_trust_probe.ProbeTests.test_reporting_counts) ... ok
+test_subject_swap_after_finality (test_earned_trust_probe.ProbeTests.test_subject_swap_after_finality) ... ok
+test_twenty_cases (test_earned_trust_probe.ProbeTests.test_twenty_cases) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.013s
+
+OK

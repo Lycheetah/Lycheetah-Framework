@@ -160,3 +160,21 @@ The historical research progression (v0.5 through v0.8) exploring single-use eff
 intents, authority epochs, hash-chained audit history, and signed local
 checkpoint-authority wrappers is preserved under
 [`action_guard/`](action_guard/README.md).
+
+## Guarded handoff admission — 18 October 2026
+
+The local [bound-risk candidate](GUARDED_HANDOFF_ADMISSION_v0.1.md) adds declared
+risk to new sovereign permit payloads and compares both reference and receiving
+packet risk before admission. It preserves the codec's ten critical fields and
+existing ledger rows, while refusing execution of legacy unbound permits.
+Focused runtime tests and a disposable handoff demonstration have run; the
+[release audit](../28_DEFENSE/RELEASE_AUDIT_2026-10-18.md) records their scope. The note
+also maps existing signed-grant, descriptor publisher and crash-observation code
+to the human-approval and actual-effect boundaries needed for a useful handoff.
+
+## Earned Trust research archive
+
+[Nine Earned Trust cycles](../papers/agent-safety/earned-trust/README.md) explore
+provider commit, signed observation, source lineage and crash recovery. Their
+integration review records native bridge checks and a separate fixture repair.
+The synthetic research code is not merged into this runtime.

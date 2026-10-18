@@ -1,5 +1,9 @@
 # AI Futures: Persistent and Collective Intelligence
 
+**New executable research:** [Hybrid Gateway v1.2](hybrid-gateway/README.md)
+explores evidence-governed, time-aware knowledge revision and durable review
+decisions. Its software results remain distinct from this paper's hypotheses.
+
 **Working research draft v0.2 · 3 October 2026 · Not empirically validated.**
 
 **Framework creator and research owner:** Mackenzie Conor James Clark.

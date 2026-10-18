@@ -9,6 +9,60 @@ history, which was the only changelog until now.
 
 ## [Unreleased]
 
+### LAMAGUE language guide and synthesis — 18 October 2026
+
+- Replaced the language folder's mixed historical introduction with a current
+  guide to its formal, visual, spoken, conversational, packet and runtime lines.
+- Added `03_LAMAGUE_L1/LAMAGUE_SYNTHESIS.md`, connecting the root canon,
+  operator contracts, glyphs and seals, dialogue and perspective, compression,
+  model-decoding pilot, temporal evidence and the wider research extensions.
+- Distinguished dated software results, the operator-run pilot, open defects
+  and unrun human studies; removed unsupported production/universal-validation
+  claims from the folder's entry point. Linked the full language from the main
+  README and SXP-L guide. Documentation only; original releases are unchanged.
+
+### Core engine reading guide — 18 October 2026
+
+- Added `12_IMPLEMENTATIONS/core/README.md`, explaining all 29 modules by job,
+  their Python entry points, storage side effects and research boundaries.
+- Linked the guide from the implementation overview and corrected its stale
+  CASCADE example and blanket proof/validation wording. Documentation only.
+
+### Research release integration and audit — 18 October 2026
+
+- Preserved Earned Trust cycles 001–009, Hybrid Gateway v1.2 and the SXP-L
+  v0.1–v2.0 handoff in distinct research homes. The 444 original/copied release
+  files have a checked provenance manifest; all 20 SXP-L ZIPs remain intact.
+- Reproduced 264 gateway tests and 83 focused SXP-L tests. Recorded nine
+  privileged Earned Trust checks as skipped here, rather than counting them as
+  reproduced passes. Published eight open inherited SXP-L defect reproducers.
+- Executed previously unrun native Earned Trust bridges: Cycle 004 passed four
+  tests; original Cycle 005 had two failures. A separate fixture correction
+  aligns approval IDs and passes five boundary-aware tests, retaining the
+  original failure and the provider's refusal rule.
+- Hardened declared handoff comparison, corrected misleading verification
+  labels and removed manufactured authority/recovery defaults. Added portable
+  Sol/CASCADE wrappers and an explicit source-checkout boundary for Alexandria.
+- Corrected the sheaf holonomy claim and unified numerical rank/projection
+  cutoffs. Historical experiment rows remain unchanged. See the dated release
+  audit for actual gate results and open scientific limitations.
+
+### Guarded handoff risk binding — 18 October 2026
+
+- New sovereign permits bind the issuing reference packet's declared risk into
+  a versioned v2 permit payload. Both reference and incoming candidate risk must
+  match before nonce consumption, and the high-risk authority rule uses that
+  bound value.
+- Legacy unbound permits remain representable for inspection but are refused
+  for new registration, claim and execution. Existing SQLite rows and the codec's
+  ten-field critical projection remain unchanged. Low-level permit issuance now
+  requires `bound_risk`; high-level harness issuance derives it from its reference.
+- Added the admission/legacy contract and source-grounded signed-grant/publisher
+  integration boundaries in `34_ASSURANCE_RUNTIME/GUARDED_HANDOFF_ADMISSION_v0.1.md`.
+  Synthetic runtime/regression checks and a disposable handoff demonstration
+  followed the initial source review. Authenticated human consent and restricted
+  physical effects remain separate integration work.
+
 ### Frontier integration and cross-seat review — 17 October 2026
 
 - Added `SovereignExecutionHarness` and the `lycheetah-sovereign demo` CLI, binding
