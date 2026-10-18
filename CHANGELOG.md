@@ -9,6 +9,13 @@ history, which was the only changelog until now.
 
 ## [Unreleased]
 
+### Core engine reading guide — 18 October 2026
+
+- Added `12_IMPLEMENTATIONS/core/README.md`, explaining all 29 modules by job,
+  their Python entry points, storage side effects and research boundaries.
+- Linked the guide from the implementation overview and corrected its stale
+  CASCADE example and blanket proof/validation wording. Documentation only.
+
 ### Research release integration and audit — 18 October 2026
 
 - Preserved Earned Trust cycles 001–009, Hybrid Gateway v1.2 and the SXP-L
