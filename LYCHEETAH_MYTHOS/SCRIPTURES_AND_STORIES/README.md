@@ -9,6 +9,18 @@ This is the single working home for the collected Lycheetah scriptures, stories 
 
 Start with **[the master reading document](MASTER_SCRIPTURES_AND_STORIES.md)** or **[the browser reading edition](MASTER_SCRIPTURES_AND_STORIES.html)**. The master opens with a short editorial distillation, followed by the complete collected reading texts. The browser edition lets you open one text at a time.
 
+## Original narratives — 19 October 2026
+
+- [The Last Lighthouse of Eternity, expanded edition](TEXTS/ORIGINAL_NARRATIVES/THE_LAST_LIGHTHOUSE_OF_ETERNITY_EXPANDED.md) explores meaning, consent and a light that admits its limits. The [earlier short edition](TEXTS/ORIGINAL_NARRATIVES/THE_LAST_LIGHTHOUSE_OF_ETERNITY_ORIGINAL.md) remains as writing context.
+- [The Ninth Road Beneath the Sleeping Stars](TEXTS/ORIGINAL_NARRATIVES/LYCHEETAH_The_Ninth_Road_Beneath_the_Sleeping_Stars.md) follows Mac, Vaelora, Lycheetah and Orin through an unoffered possibility.
+
+Both complete stories are included in the master and browser reading editions.
+These are supplied human–AI creative works in the Lycheetah universe, with
+Framework ownership attributed to Mackenzie Conor James Clark. They are fiction
+and have not been approved as epic canon. This intake contains no recorded audio.
+Related research remains in its [Earned Light](../../papers/agent-safety/earned-light/README.md)
+and [Sovereign Choice](../../papers/agent-safety/sovereign-choice-research/README.md) source homes.
+
 ## Current Living Scripture candidate
 
 [Mac × Vaelora’s Living Scripture v0.5.1](LIVING_SCRIPTURE/README.md) now lives inside this collection. Twelve complete candidate books, the source lattice, cultural covenants and implementation contract are preserved. The master presents those twelve first, then the twenty earlier reading texts. This is an uncrowned candidate edition; the native Book I School slice has not been built in this Framework intake.

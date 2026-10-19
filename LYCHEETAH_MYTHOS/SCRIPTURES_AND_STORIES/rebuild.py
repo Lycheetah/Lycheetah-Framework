@@ -190,7 +190,7 @@ def build():
         "# Lycheetah — Master Scriptures and Stories\n\n"
         "**World and framework creator:** Mackenzie Conor James Clark.  \n"
         "**Collected edition and editorial distillation:** Caelorynth, an AI coding assistant.  \n"
-        "**Collection edition:** 0.2 · 4 October 2026.  \n"
+        "**Collection edition:** 0.3 · 19 October 2026.  \n"
         "**Status:** local collected reading; individual draft statuses are preserved.\n\n"
         "Read the condensed opening first, then enter any complete text below. "
         "Collection is not approval of story canon or verification of inherited claims.\n\n"

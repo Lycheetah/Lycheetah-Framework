@@ -1,0 +1,25 @@
+{
+  "schema": "lycheetah-file-manifest-sha256-v1",
+  "entries": {
+    "README.md": "46c3d8f4864919f43f1f38e27a73a3b8f86b0ffd2e24953175ac49db5443e736",
+    "code/attested_gateway.py": "c14f8c7e58461131632446cb971271e7e3e7886779b01b8cca5041291aa9651d",
+    "code/choice_ledger.py": "1150b06ae55ca3e28e1494efc40295f28383d1df65c74f18c3249241475a3d42",
+    "code/choice_surface.py": "34c5f139f6a763b5b7742a63bcc23dab8b7c6fda7c7137029c4b15bc5761a1f8",
+    "docs/SOVEREIGN_POSSIBILITY_CHARTER_v0.6.md": "ea922f81d9d809b801c7d6e1799baad578c2b868f1fec963362e8e6623fdcf10",
+    "docs/THREAT_MODEL_AND_FINDINGS.md": "dd965b48bd5cdc196d634ad5e19f543a2ea022f6bf0e39d9fff0b17e69aafe03",
+    "evidence/forge_iv_upstream_regression_log.txt": "c0a9cb51c60a6b0b9759430c24aa07de22c5d23ebcb0dbba31a98d5cc65b2589",
+    "evidence/forge_v_regression_log.txt": "44e29ef19da9ef33b94869ff07c9378e6978c415471cb6f4f979bded06c92294",
+    "evidence/forge_vi_test_log.txt": "ea8796eefa77c3b390eebeb2d4842d167a5f8db3d831cb0f354b10a1a74dbdf4",
+    "evidence/research_status.json": "ee971a4a05e18d3bf0a11988422a104e04516e7c82b196293a6bbc3ccb315dc2",
+    "evidence/verification.json": "bb5c6b6521f08fac2bbd80ae1addfbc3d1914452740af41e9d80e76731a0312b",
+    "lineage/FORGE_V_COMPLETE.zip": "378de239543f485533ce4b2932c634fd524279893cc9cce8f864aa5bcb4ab394",
+    "prototype/sovereign_possibility_lab.html": "60ab0cc8cd1d224dcb5b103941816ac159e9447efb20ece8b07d921c527d25e0",
+    "requirements.txt": "32aa809461c33e2eb2a40fd3801a7299587c79d86b6a927c94c9f49cbefa13d4",
+    "run_verification.py": "a8d37d26f227bcfc2fac7b8a5c66545bd84b71ad4304513d61318f9be8a1e0a1",
+    "tests/test_attested_gateway.py": "ef28c4843de3f254a6b71dbe02add9875b05968ae0b4898a1cc5b0b527a6b2fa",
+    "tests/test_choice_surface.py": "d609c2ffd811da5188e754fc18799b1dabf002cdd83756994086d2dd3452a669",
+    "upstream_mirror/LICENSE": "68ed1a5a69ae392d6f6d84223adcdf8c0910cf1b0a0025a33577b8e72ba4253a",
+    "upstream_mirror/papers/agent-safety/frontier-controls/01_commit_time_authority_v0_7/commit_fence.py": "eab1c14f9ea4ef222d8406e4fd3b05d3a182f268bf4e2df3b9b649357370255a",
+    "upstream_mirror/papers/agent-safety/frontier-controls/research_support.py": "6b7b0a562b801cf31e996fda2cfa728d2e80ec3bc9e81576524f094b3bc30cdd"
+  }
+}

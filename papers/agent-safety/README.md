@@ -45,6 +45,12 @@ unless their own evidence says otherwise.
 
 ## Earned Trust — nine-cycle continuation
 
+Related October 19 intakes: [Earned Light Forges I–VII](earned-light/README.md)
+and [Sovereign Choice Forges II–VIII](sovereign-choice-research/README.md).
+Their [integration review](../../28_DEFENSE/RELEASE_AUDIT_2026-10-19.md)
+records local checks, preserved failures and conventional-baseline ties.
+Neither replaces the live harness or proves production safety or free will.
+
 [Earned Trust](earned-trust/README.md) preserves cycles 001–009 as experimental
 research, including credential-compromise counterexamples, late challenges and
 matched conventional baselines. Its dated integration review distinguishes

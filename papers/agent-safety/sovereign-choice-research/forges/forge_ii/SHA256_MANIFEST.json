@@ -1,0 +1,49 @@
+{
+  "package": "Lycheetah Sovereign Choice Protocol v0.1",
+  "files": {
+    "README.md": {
+      "sha256": "8e331245f0e9b870d864726e0d92bc5343c83e351e911e3c002c5ca6c3bb9c61",
+      "bytes": 5028
+    },
+    "counterfactual_lab.py": {
+      "sha256": "d92dee8d56f7447b6f5ea74be87e5734338ba59314df650057207777d4ccb222",
+      "bytes": 4511
+    },
+    "counterfactual_results.json": {
+      "sha256": "aef2304e236c3ba056fac71afa2c12a15c5a18c8bc1c6757b54a747705f127ff",
+      "bytes": 3201
+    },
+    "demo.py": {
+      "sha256": "0abcaf7cd3f448ddb0092cb714236b8eaf95e8b73ffe04c0e28ba784692656f1",
+      "bytes": 1933
+    },
+    "docs/CLAIMS_REGISTER.md": {
+      "sha256": "1995e326422f22de32b10dd91979704bf8a2a4a9f1aa61acf82729bd126440f1",
+      "bytes": 2464
+    },
+    "docs/FRAMEWORK_INTEGRATION_PATH.md": {
+      "sha256": "e369ee627435b82ca9a1d71a0dff6c62a7d6af7c043a77f5da938f0078b1ce41",
+      "bytes": 4272
+    },
+    "docs/LYCHEETAH_FREE_WILL_SOVEREIGNTY_MICROORCIM_CHARTER_v0.1.md": {
+      "sha256": "18a2b10c1c9cd4bdef6c8a834b36d60385e4fa8cd6f13b9d95bc410a771bb1a6",
+      "bytes": 24367
+    },
+    "docs/SOVEREIGN_CHOICE_ADDENDUM_v0.2.md": {
+      "sha256": "759ef103745a662a7fd0b92b59215da9a9ddf78e7a2910a9f4e4bf3d473a58bd",
+      "bytes": 9743
+    },
+    "docs/THREAT_MODEL_AND_LIMITS.md": {
+      "sha256": "6e0d7504b0a3f2baf82bdc7d52e96933ef8bad144804b1283802f0caa2e4cfe0",
+      "bytes": 3995
+    },
+    "sovereign_choice.py": {
+      "sha256": "4629a6ad9ed3b40e872a48267b498eb9be880dda860f49ba3f1f359019685a2c",
+      "bytes": 16303
+    },
+    "tests/test_sovereign_choice.py": {
+      "sha256": "f273235b9ad0b78d17f6fbe94d9bef9d3b3928b878fb7e20800b1dd55f3271f2",
+      "bytes": 10992
+    }
+  }
+}

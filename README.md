@@ -33,6 +33,13 @@ the first time. Those results narrowed its claims; the measurements remain below
 
 ## New research — 18 October 2026
 
+**19 October additions:** [Earned Light Forges I–VII](papers/agent-safety/earned-light/README.md)
+and [Sovereign Choice Forges II–VIII](papers/agent-safety/sovereign-choice-research/README.md)
+explore revisable permission, recovery and future choice. The
+[Sovereign Will charters](35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/README.md)
+remain philosophical proposals; [two complete stories](LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/README.md#original-narratives--19-october-2026)
+give those questions a fictional form. [Reproduction and limits](28_DEFENSE/RELEASE_AUDIT_2026-10-19.md).
+
 Three research lines now have readable source homes, preserved release history
 and dated integration reviews. **All are experimental.** Their software checks
 and known failures do not establish production safety or human performance.

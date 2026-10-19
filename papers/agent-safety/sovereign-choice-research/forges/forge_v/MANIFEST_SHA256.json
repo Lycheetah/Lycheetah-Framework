@@ -1,0 +1,86 @@
+{
+  "archive": "Lycheetah Sovereign Choice Forge V v0.1",
+  "date": "2026-10-18",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2583,
+      "sha256": "521e13a7454172653655151613f49f46bbf6dc3ff27fadb17ccb14a84b985bff"
+    },
+    {
+      "path": "choice_ledger.py",
+      "bytes": 11910,
+      "sha256": "1150b06ae55ca3e28e1494efc40295f28383d1df65c74f18c3249241475a3d42"
+    },
+    {
+      "path": "compare_crash_window.py",
+      "bytes": 4645,
+      "sha256": "089796241bd3ed2e68fad0ca531069fe667a5db22d78b5ab445f97d1b981c0b9"
+    },
+    {
+      "path": "comparison_results.json",
+      "bytes": 727,
+      "sha256": "7f05210c61ce325033772fd736fd13e00788fe5a2d3a7fe465c8d152edc549fd"
+    },
+    {
+      "path": "docs/RESEARCH_FINDINGS.md",
+      "bytes": 8298,
+      "sha256": "e74bb3db4415f1969fa0c879163bba75bc4604accd3268b565633a1037e7a409"
+    },
+    {
+      "path": "docs/SOVEREIGN_WILL_CHARTER_v0.5.md",
+      "bytes": 7319,
+      "sha256": "62dc798c211ccf47b972046a107886d272626dac5fd209bf154ec74566d176a9"
+    },
+    {
+      "path": "epistemic_boundary.py",
+      "bytes": 1000,
+      "sha256": "eb51cdad0306a60cf4b8411a45f575296be7be1c4e1da02d75ad6b0132cf83c4"
+    },
+    {
+      "path": "lineage/FORGE_IV_COMPLETE.zip",
+      "bytes": 84017,
+      "sha256": "04532e28e1584001cd00548aaeec4ee368db5656e309011ea581d7ee8b07fb8f"
+    },
+    {
+      "path": "prototype/sovereign_choice_lab.html",
+      "bytes": 9184,
+      "sha256": "642115548df48c9cd95f1355649b6664fa32c20d536d4437178a5283d1df6b48"
+    },
+    {
+      "path": "results.json",
+      "bytes": 1596,
+      "sha256": "3d25fa1daf12f9b0d12bf933c2a8761f2277a1862a283b8b3f23413ae53941cc"
+    },
+    {
+      "path": "run_verification.py",
+      "bytes": 3107,
+      "sha256": "10426101a5d3389550f5b1b0f49cf92ff81019e9b5fd9ad31c383aceefa05cb6"
+    },
+    {
+      "path": "tests/test_choice_ledger.py",
+      "bytes": 12131,
+      "sha256": "a373363cabf0ed3e3a8022d52b943a7d001673cd6a40e904a5aa76cf398fd1db"
+    },
+    {
+      "path": "upstream_mirror/LICENSE",
+      "bytes": 1084,
+      "sha256": "68ed1a5a69ae392d6f6d84223adcdf8c0910cf1b0a0025a33577b8e72ba4253a"
+    },
+    {
+      "path": "upstream_mirror/papers/agent-safety/frontier-controls/01_commit_time_authority_v0_7/commit_fence.py",
+      "bytes": 17378,
+      "sha256": "eab1c14f9ea4ef222d8406e4fd3b05d3a182f268bf4e2df3b9b649357370255a"
+    },
+    {
+      "path": "upstream_mirror/papers/agent-safety/frontier-controls/research_support.py",
+      "bytes": 671,
+      "sha256": "6b7b0a562b801cf31e996fda2cfa728d2e80ec3bc9e81576524f094b3bc30cdd"
+    },
+    {
+      "path": "verification_log.txt",
+      "bytes": 7533,
+      "sha256": "96cce7a40b77fd297d04c37b30f4bbe1cb729fd0412d18031863d8249fd73251"
+    }
+  ]
+}

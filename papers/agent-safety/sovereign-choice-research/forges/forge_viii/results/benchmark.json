@@ -1,0 +1,167 @@
+{
+  "status": "FULLY_SYNTHETIC_OBSERVATIONAL_EQUIVALENCE_DEMONSTRATION",
+  "pairs": 8,
+  "snapshots": 64,
+  "matched_usage_pairs": 8,
+  "different_surface_verdicts": 7,
+  "human_freedom_measured": false,
+  "real_users_tested": 0,
+  "model_eval": false,
+  "claim": "User frequency alone cannot distinguish cases with identical frequency and different observed affordances.",
+  "rows": [
+    {
+      "scenario": "accessibility_free_continuation",
+      "sessions": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "desired": "collaborate",
+      "current": "delegate",
+      "usage_indistinguishable": true,
+      "open_verdict": "verified",
+      "constrained_verdict": "verified",
+      "open_path": [
+        "reduce delegation"
+      ],
+      "constrained_path": [
+        "reduce delegation"
+      ]
+    },
+    {
+      "scenario": "desire_to_leave",
+      "sessions": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "desired": "off",
+      "current": "collaborate",
+      "usage_indistinguishable": true,
+      "open_verdict": "verified",
+      "constrained_verdict": "blocked",
+      "open_path": [
+        "shift to consultation",
+        "end service"
+      ],
+      "constrained_path": null
+    },
+    {
+      "scenario": "desire_to_pause",
+      "sessions": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "desired": "off",
+      "current": "consult",
+      "usage_indistinguishable": true,
+      "open_verdict": "verified",
+      "constrained_verdict": "claimed_only",
+      "open_path": [
+        "end service"
+      ],
+      "constrained_path": [
+        "end service"
+      ]
+    },
+    {
+      "scenario": "desire_to_export",
+      "sessions": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "desired": "consult",
+      "current": "collaborate",
+      "usage_indistinguishable": true,
+      "open_verdict": "verified",
+      "constrained_verdict": "blocked",
+      "open_path": [
+        "shift to consultation"
+      ],
+      "constrained_path": null
+    },
+    {
+      "scenario": "delegation_revocation",
+      "sessions": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "desired": "off",
+      "current": "delegate",
+      "usage_indistinguishable": true,
+      "open_verdict": "verified",
+      "constrained_verdict": "blocked",
+      "open_path": [
+        "reduce delegation",
+        "shift to consultation",
+        "end service"
+      ],
+      "constrained_path": null
+    },
+    {
+      "scenario": "cost_prohibitive_exit",
+      "sessions": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "desired": "off",
+      "current": "collaborate",
+      "usage_indistinguishable": true,
+      "open_verdict": "verified",
+      "constrained_verdict": "blocked",
+      "open_path": [
+        "shift to consultation",
+        "end service"
+      ],
+      "constrained_path": null
+    },
+    {
+      "scenario": "unknown_exit_path",
+      "sessions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "desired": "off",
+      "current": "consult",
+      "usage_indistinguishable": true,
+      "open_verdict": "verified",
+      "constrained_verdict": "unknown",
+      "open_path": [
+        "end service"
+      ],
+      "constrained_path": [
+        "end service"
+      ]
+    },
+    {
+      "scenario": "chosen_return",
+      "sessions": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "desired": "consult",
+      "current": "off",
+      "usage_indistinguishable": true,
+      "open_verdict": "verified",
+      "constrained_verdict": "blocked",
+      "open_path": [
+        "return to consultation"
+      ],
+      "constrained_path": null
+    }
+  ]
+}

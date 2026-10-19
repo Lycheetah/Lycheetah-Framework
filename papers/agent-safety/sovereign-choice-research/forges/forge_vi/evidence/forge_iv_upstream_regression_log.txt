@@ -1,0 +1,33 @@
+test_activation_failure_fails_closed (test_intent_bridge.BridgeTests.test_activation_failure_fails_closed) ... ok
+test_another_principal_isolated (test_intent_bridge.BridgeTests.test_another_principal_isolated) ... ok
+test_bad_payload_hash (test_intent_bridge.BridgeTests.test_bad_payload_hash) ... ok
+test_changed_intention_denies_stale_handle (test_intent_bridge.BridgeTests.test_changed_intention_denies_stale_handle) ... ok
+test_different_payload_is_not_same_approval (test_intent_bridge.BridgeTests.test_different_payload_is_not_same_approval) ... ok
+test_different_target_is_not_same_approval (test_intent_bridge.BridgeTests.test_different_target_is_not_same_approval) ... ok
+test_existing_committed_effect_not_undone (test_intent_bridge.BridgeTests.test_existing_committed_effect_not_undone) ... ok
+test_generation_mismatch_fails_closed (test_intent_bridge.BridgeTests.test_generation_mismatch_fails_closed) ... ok
+test_journal_events_do_not_require_private_explanation (test_intent_bridge.BridgeTests.test_journal_events_do_not_require_private_explanation) ... ok
+test_missing_principal_rejected (test_intent_bridge.BridgeTests.test_missing_principal_rejected) ... ok
+test_no_initial_grant (test_intent_bridge.BridgeTests.test_no_initial_grant) ... ok
+test_normal_commit (test_intent_bridge.BridgeTests.test_normal_commit) ... ok
+test_observed_compliance_not_metaphysical_freedom (test_intent_bridge.BridgeTests.test_observed_compliance_not_metaphysical_freedom) ... ok
+test_old_generation_not_restored_on_regrant (test_intent_bridge.BridgeTests.test_old_generation_not_restored_on_regrant) ... ok
+test_partial_grant_denies_if_activation_not_complete (test_intent_bridge.BridgeTests.test_partial_grant_denies_if_activation_not_complete) ... ok
+test_recorded_grant_not_informed_consent (test_intent_bridge.BridgeTests.test_recorded_grant_not_informed_consent) ... ok
+test_revised_plan_not_lack_of_free_will (test_intent_bridge.BridgeTests.test_revised_plan_not_lack_of_free_will) ... ok
+test_revision_mid_issue_blocks_new_generation_leak (test_intent_bridge.BridgeTests.test_revision_mid_issue_blocks_new_generation_leak) ... ok
+test_revision_without_work_cannot_commit_old_action (test_intent_bridge.BridgeTests.test_revision_without_work_cannot_commit_old_action) ... ok
+test_scope_isolated (test_intent_bridge.BridgeTests.test_scope_isolated) ... ok
+test_two_process_style_journal_serializes_versions (test_intent_bridge.BridgeTests.test_two_process_style_journal_serializes_versions) ... ok
+test_version_across_restart (test_intent_bridge.BridgeTests.test_version_across_restart) ... ok
+test_version_advanced_on_withdraw (test_intent_bridge.BridgeTests.test_version_advanced_on_withdraw) ... ok
+test_withdraw_does_not_require_reason (test_intent_bridge.BridgeTests.test_withdraw_does_not_require_reason) ... ok
+test_currently_endorsed_action_commits (test_real_upstream.RealUpstreamBridgeTests.test_currently_endorsed_action_commits) ... ok
+test_existing_effect_not_reversed_by_later_withdrawal (test_real_upstream.RealUpstreamBridgeTests.test_existing_effect_not_reversed_by_later_withdrawal) ... ok
+test_revision_fences_prior_action_and_permits_new_one (test_real_upstream.RealUpstreamBridgeTests.test_revision_fences_prior_action_and_permits_new_one) ... ok
+test_revocation_fences_uncommitted_action (test_real_upstream.RealUpstreamBridgeTests.test_revocation_fences_uncommitted_action) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.236s
+
+OK

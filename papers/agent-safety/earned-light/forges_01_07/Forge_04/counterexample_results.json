@@ -1,0 +1,17 @@
+{
+  "equivalence_class_spoof": {
+    "truthful_meaningful_count": 1,
+    "falsely_claimed_count": 20,
+    "recognized_by_engine": false
+  },
+  "independence_spoof": {
+    "truthful_independent_count": 0,
+    "falsely_claimed_count": 1,
+    "recognized_by_engine": false
+  },
+  "attention_overload": {
+    "claimed_distinct_outcomes": 30,
+    "attention_cost_modeled": false
+  },
+  "note": "All values are manufactured examples. There is no human study or objective ground truth inference."
+}

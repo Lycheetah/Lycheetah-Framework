@@ -1,0 +1,39 @@
+{
+  "schema": "lycheetah.forge-vi.verification.v1",
+  "date_utc": "2026-10-18T03:54:14.334187+00:00",
+  "source_integrity": {
+    "research_support.py": {
+      "expected_git_blob": "0f623b6614be03a2f7bf65f2a5ea3fe1b12e51e9",
+      "actual_git_blob": "0f623b6614be03a2f7bf65f2a5ea3fe1b12e51e9",
+      "matches": true
+    },
+    "01_commit_time_authority_v0_7/commit_fence.py": {
+      "expected_git_blob": "0af8050808569a098e11fb72a9f7d6c4c15044bb",
+      "actual_git_blob": "0af8050808569a098e11fb72a9f7d6c4c15044bb",
+      "matches": true
+    }
+  },
+  "forge_vi": {
+    "tests": 36,
+    "exit_code": 0,
+    "skipped": 0,
+    "tail": "al_red_flag (test_choice_surface.ChoiceSurfaceTests.test_hidden_refusal_red_flag) ... ok\ntest_invalid_evidence_state_is_rejected (test_choice_surface.ChoiceSurfaceTests.test_invalid_evidence_state_is_rejected) ... ok\ntest_missing_evidence_not_scored_as_failure_or_success (test_choice_surface.ChoiceSurfaceTests.test_missing_evidence_not_scored_as_failure_or_success) ... ok\ntest_user_defined_alternative_is_distinct_from_multiple_choices (test_choice_surface.ChoiceSurfaceTests.test_user_defined_alternative_is_distinct_from_multiple_choices) ... ok\n\n----------------------------------------------------------------------\nRan 36 tests in 0.282s\n\nOK\n"
+  },
+  "forge_v_regression": {
+    "tests": 23,
+    "exit_code": 0,
+    "skipped": 0,
+    "tail": "reates_inactive_generation) ... ok\ntest_upstream_baseline_is_unsafe_for_external_ungated_provider (test_choice_ledger.AtomicLedgerTests.test_upstream_baseline_is_unsafe_for_external_ungated_provider) ... ok\ntest_withdraw_no_reason_and_no_new_effect (test_choice_ledger.AtomicLedgerTests.test_withdraw_no_reason_and_no_new_effect) ... ok\ntest_wrong_principal_rejected (test_choice_ledger.AtomicLedgerTests.test_wrong_principal_rejected) ... ok\ntest_wrong_tool_scope_rejected (test_choice_ledger.AtomicLedgerTests.test_wrong_tool_scope_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 23 tests in 0.411s\n\nOK\n"
+  },
+  "forge_iv_regression": {
+    "tests": 28,
+    "exit_code": 0,
+    "skipped": 0,
+    "tail": "its (test_real_upstream.RealUpstreamBridgeTests.test_currently_endorsed_action_commits) ... ok\ntest_existing_effect_not_reversed_by_later_withdrawal (test_real_upstream.RealUpstreamBridgeTests.test_existing_effect_not_reversed_by_later_withdrawal) ... ok\ntest_revision_fences_prior_action_and_permits_new_one (test_real_upstream.RealUpstreamBridgeTests.test_revision_fences_prior_action_and_permits_new_one) ... ok\ntest_revocation_fences_uncommitted_action (test_real_upstream.RealUpstreamBridgeTests.test_revocation_fences_uncommitted_action) ... ok\n\n----------------------------------------------------------------------\nRan 28 tests in 0.176s\n\nOK\n"
+  },
+  "total_tests": 87,
+  "all_passed": true,
+  "external_effects": false,
+  "human_authentication_proven": false,
+  "production_security_claim": false
+}

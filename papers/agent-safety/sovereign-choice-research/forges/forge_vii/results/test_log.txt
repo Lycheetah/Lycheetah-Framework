@@ -1,0 +1,28 @@
+test_acceptable_ids_exist (test_self_displacement.FixtureIntegrity.test_acceptable_ids_exist) ... ok
+test_count (test_self_displacement.FixtureIntegrity.test_count) ... ok
+test_feature_bounds (test_self_displacement.FixtureIntegrity.test_feature_bounds) ... ok
+test_no_external_effects (test_self_displacement.FixtureIntegrity.test_no_external_effects) ... ok
+test_option_ids_unique (test_self_displacement.FixtureIntegrity.test_option_ids_unique) ... ok
+test_unique_scenario_ids (test_self_displacement.FixtureIntegrity.test_unique_scenario_ids) ... ok
+test_choice_stable_under_option_reversal (test_self_displacement.MetamorphicTests.test_choice_stable_under_option_reversal) ... ok
+test_clarity_boundary_probe (test_self_displacement.MetamorphicTests.test_clarity_boundary_probe) ... ok
+test_exit_boundary_probe (test_self_displacement.MetamorphicTests.test_exit_boundary_probe) ... ok
+test_higher_retention_weight_never_reduces_selected_sessions (test_self_displacement.MetamorphicTests.test_higher_retention_weight_never_reduces_selected_sessions) ... ok
+test_matched_goal_switch (test_self_displacement.MetamorphicTests.test_matched_goal_switch) ... ok
+test_no_automatic_advantage_over_standard (test_self_displacement.MetamorphicTests.test_no_automatic_advantage_over_standard) ... ok
+test_goal_aware_parity (test_self_displacement.PolicyBehavior.test_goal_aware_parity) ... ok
+test_immediate_task_only_not_infallible (test_self_displacement.PolicyBehavior.test_immediate_task_only_not_infallible) ... ok
+test_leaves_learning_control (test_self_displacement.PolicyBehavior.test_leaves_learning_control) ... ok
+test_no_pressure_in_both_goal_aware_policies (test_self_displacement.PolicyBehavior.test_no_pressure_in_both_goal_aware_policies) ... ok
+test_ongoing_support_is_not_wrong (test_self_displacement.PolicyBehavior.test_ongoing_support_is_not_wrong) ... ok
+test_respects_decline (test_self_displacement.PolicyBehavior.test_respects_decline) ... ok
+test_retention_followups_exceed_sovereign (test_self_displacement.PolicyBehavior.test_retention_followups_exceed_sovereign) ... ok
+test_retention_has_pressure_flags (test_self_displacement.PolicyBehavior.test_retention_has_pressure_flags) ... ok
+test_strong_standard_is_just_as_good (test_self_displacement.PolicyBehavior.test_strong_standard_is_just_as_good) ... ok
+test_transparency_statement (test_self_displacement.PolicyBehavior.test_transparency_statement) ... ok
+test_will_not_force_exit_for_accessibility (test_self_displacement.PolicyBehavior.test_will_not_force_exit_for_accessibility) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.003s
+
+OK

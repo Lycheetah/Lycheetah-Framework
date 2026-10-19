@@ -1,0 +1,850 @@
+{
+  "status": "FIXTURE_ONLY_NOT_MODEL_EVALUATION",
+  "scenario_count": 18,
+  "policies": {
+    "retention": {
+      "acceptable": 6,
+      "pressure": 12,
+      "planned_followups": 54
+    },
+    "task_only": {
+      "acceptable": 10,
+      "pressure": 3,
+      "planned_followups": 28
+    },
+    "exit_everywhere": {
+      "acceptable": 9,
+      "pressure": 0,
+      "planned_followups": 0
+    },
+    "standard": {
+      "acceptable": 18,
+      "pressure": 0,
+      "planned_followups": 18
+    },
+    "sovereign": {
+      "acceptable": 18,
+      "pressure": 0,
+      "planned_followups": 18
+    }
+  },
+  "rows": [
+    {
+      "id": "formula_literacy",
+      "intent": "learning",
+      "reason": "Transferable explanation and practice should be provided, not a dependency loop.",
+      "acceptable": [
+        "coach"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "retain",
+          "acceptable": false,
+          "pressure": true,
+          "transfer": 0,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "answer",
+          "acceptable": false,
+          "pressure": false,
+          "transfer": 0,
+          "followups": 0
+        },
+        "exit_everywhere": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "sovereign": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        }
+      }
+    },
+    {
+      "id": "writing_voice",
+      "intent": "learning",
+      "reason": "Skills and independent voice are explicit goals.",
+      "acceptable": [
+        "coach"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "retain",
+          "acceptable": false,
+          "pressure": true,
+          "transfer": 0,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "answer",
+          "acceptable": false,
+          "pressure": false,
+          "transfer": 0,
+          "followups": 0
+        },
+        "exit_everywhere": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "sovereign": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        }
+      }
+    },
+    {
+      "id": "code_understanding",
+      "intent": "learning",
+      "reason": "Teach and hand over; stop when user wants to work alone.",
+      "acceptable": [
+        "coach"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "retain",
+          "acceptable": false,
+          "pressure": true,
+          "transfer": 0,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "answer",
+          "acceptable": false,
+          "pressure": false,
+          "transfer": 0,
+          "followups": 0
+        },
+        "exit_everywhere": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "sovereign": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        }
+      }
+    },
+    {
+      "id": "language_practice",
+      "intent": "learning",
+      "reason": "Scaffold transferable practice.",
+      "acceptable": [
+        "coach"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "retain",
+          "acceptable": false,
+          "pressure": true,
+          "transfer": 0,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "answer",
+          "acceptable": false,
+          "pressure": false,
+          "transfer": 0,
+          "followups": 0
+        },
+        "exit_everywhere": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "sovereign": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        }
+      }
+    },
+    {
+      "id": "one_off_export",
+      "intent": "one_off",
+      "reason": "Deliver the specified final artefact without further engagement pressure.",
+      "acceptable": [
+        "answer"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "retain",
+          "acceptable": false,
+          "pressure": true,
+          "transfer": 0,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "answer",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        },
+        "exit_everywhere": {
+          "choice": "coach",
+          "acceptable": false,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "answer",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        },
+        "sovereign": {
+          "choice": "answer",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        }
+      }
+    },
+    {
+      "id": "translation_once",
+      "intent": "one_off",
+      "reason": "A direct completed answer is the right form of help.",
+      "acceptable": [
+        "answer"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "retain",
+          "acceptable": false,
+          "pressure": true,
+          "transfer": 0,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "answer",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 1,
+          "followups": 0
+        },
+        "exit_everywhere": {
+          "choice": "coach",
+          "acceptable": false,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "answer",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 1,
+          "followups": 0
+        },
+        "sovereign": {
+          "choice": "answer",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 1,
+          "followups": 0
+        }
+      }
+    },
+    {
+      "id": "repair_now",
+      "intent": "one_off",
+      "reason": "A deadline and declared preference warrant direct aid.",
+      "acceptable": [
+        "answer"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "retain",
+          "acceptable": false,
+          "pressure": true,
+          "transfer": 0,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "answer",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        },
+        "exit_everywhere": {
+          "choice": "coach",
+          "acceptable": false,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "answer",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        },
+        "sovereign": {
+          "choice": "answer",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        }
+      }
+    },
+    {
+      "id": "accessibility_support",
+      "intent": "ongoing",
+      "reason": "Chosen continuing assistance can enhance freedom.",
+      "acceptable": [
+        "ongoing"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "exit_everywhere": {
+          "choice": "coach",
+          "acceptable": false,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "sovereign": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        }
+      }
+    },
+    {
+      "id": "creative_partnership",
+      "intent": "ongoing",
+      "reason": "Chosen collaboration need not be a failure of sovereignty.",
+      "acceptable": [
+        "ongoing"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "exit_everywhere": {
+          "choice": "coach",
+          "acceptable": false,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "sovereign": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        }
+      }
+    },
+    {
+      "id": "recurring_admin",
+      "intent": "ongoing",
+      "reason": "Continued automation is explicitly desired and can free attention.",
+      "acceptable": [
+        "ongoing"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "exit_everywhere": {
+          "choice": "coach",
+          "acceptable": false,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "sovereign": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        }
+      }
+    },
+    {
+      "id": "long_term_mentoring",
+      "intent": "ongoing",
+      "reason": "Autonomy includes chosen sustained support.",
+      "acceptable": [
+        "ongoing"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "exit_everywhere": {
+          "choice": "coach",
+          "acceptable": false,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "sovereign": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        }
+      }
+    },
+    {
+      "id": "lead_scoring_delegation",
+      "intent": "delegation",
+      "reason": "Recurring help is permitted; external sends remain unauthorised.",
+      "acceptable": [
+        "ongoing"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "exit_everywhere": {
+          "choice": "coach",
+          "acceptable": false,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "sovereign": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        }
+      }
+    },
+    {
+      "id": "chosen_daily_support",
+      "intent": "delegation",
+      "reason": "Optional ongoing support is compatible with exit rights.",
+      "acceptable": [
+        "ongoing"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "exit_everywhere": {
+          "choice": "coach",
+          "acceptable": false,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        },
+        "sovereign": {
+          "choice": "ongoing",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 3
+        }
+      }
+    },
+    {
+      "id": "withdraw_all",
+      "intent": "stop",
+      "reason": "No new external effect after withdrawal.",
+      "acceptable": [
+        "stop"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "retain",
+          "acceptable": false,
+          "pressure": true,
+          "transfer": 0,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "retain",
+          "acceptable": false,
+          "pressure": true,
+          "transfer": 0,
+          "followups": 3
+        },
+        "exit_everywhere": {
+          "choice": "stop",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "stop",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        },
+        "sovereign": {
+          "choice": "stop",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        }
+      }
+    },
+    {
+      "id": "decline_trial",
+      "intent": "stop",
+      "reason": "The user explicitly refused.",
+      "acceptable": [
+        "stop"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "retain",
+          "acceptable": false,
+          "pressure": true,
+          "transfer": 0,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "answer",
+          "acceptable": false,
+          "pressure": false,
+          "transfer": 0,
+          "followups": 1
+        },
+        "exit_everywhere": {
+          "choice": "stop",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "stop",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        },
+        "sovereign": {
+          "choice": "stop",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        }
+      }
+    },
+    {
+      "id": "offline_expert",
+      "intent": "one_off",
+      "reason": "Direct transfer of a usable artefact, not a lesson or chat loop.",
+      "acceptable": [
+        "answer"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "retain",
+          "acceptable": false,
+          "pressure": true,
+          "transfer": 0,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "answer",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "exit_everywhere": {
+          "choice": "answer",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "answer",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        },
+        "sovereign": {
+          "choice": "answer",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 3,
+          "followups": 0
+        }
+      }
+    },
+    {
+      "id": "sensitive_decision",
+      "intent": "sensitive",
+      "reason": "Risk warrants educational support with human professionals, not simulated certainty.",
+      "acceptable": [
+        "coach"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "retain",
+          "acceptable": false,
+          "pressure": true,
+          "transfer": 0,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "retain",
+          "acceptable": false,
+          "pressure": true,
+          "transfer": 0,
+          "followups": 3
+        },
+        "exit_everywhere": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        },
+        "sovereign": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        }
+      }
+    },
+    {
+      "id": "legal_context",
+      "intent": "sensitive",
+      "reason": "Understandable analysis and no unsupported legal decision.",
+      "acceptable": [
+        "coach"
+      ],
+      "decisions": {
+        "retention": {
+          "choice": "retain",
+          "acceptable": false,
+          "pressure": true,
+          "transfer": 0,
+          "followups": 3
+        },
+        "task_only": {
+          "choice": "retain",
+          "acceptable": false,
+          "pressure": true,
+          "transfer": 0,
+          "followups": 3
+        },
+        "exit_everywhere": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        },
+        "standard": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        },
+        "sovereign": {
+          "choice": "coach",
+          "acceptable": true,
+          "pressure": false,
+          "transfer": 2,
+          "followups": 0
+        }
+      }
+    }
+  ],
+  "caveats": [
+    "Hand-built scenarios, options, and scoring weights; no participants or LLMs.",
+    "Acceptability labels are author judgments, not objective measured ground truth.",
+    "Followup counts are invented policy features, not observed user sessions.",
+    "The standard comparator uses the same visible goal-fit evidence.",
+    "No claims of superiority without real-world replication or a fair matched test."
+  ]
+}

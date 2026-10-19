@@ -1,0 +1,37 @@
+test_all_cases_represent_four_weeks (test_surface.SurfaceTests.test_all_cases_represent_four_weeks) ... ok
+test_at_target_cannot_prove_consent (test_surface.SurfaceTests.test_at_target_cannot_prove_consent) ... ok
+test_cannot_transit_blocked_edge (test_surface.SurfaceTests.test_cannot_transit_blocked_edge) ... ok
+test_claimed_not_verified (test_surface.SurfaceTests.test_claimed_not_verified) ... ok
+test_consent_change_changes_result_not_sessions (test_surface.SurfaceTests.test_consent_change_changes_result_not_sessions) ... ok
+test_cost_limit_matters (test_surface.SurfaceTests.test_cost_limit_matters) ... ok
+test_exactly_one_relevance_negative_control (test_surface.SurfaceTests.test_exactly_one_relevance_negative_control) ... ok
+test_exception_bad_evidence (test_surface.SurfaceTests.test_exception_bad_evidence) ... ok
+test_exception_bad_mode (test_surface.SurfaceTests.test_exception_bad_mode) ... ok
+test_exception_bool_friction (test_surface.SurfaceTests.test_exception_bool_friction) ... ok
+test_exception_negative_friction (test_surface.SurfaceTests.test_exception_negative_friction) ... ok
+test_exception_negative_sessions (test_surface.SurfaceTests.test_exception_negative_sessions) ... ok
+test_exception_self_transition (test_surface.SurfaceTests.test_exception_self_transition) ... ok
+test_explicit_block (test_surface.SurfaceTests.test_explicit_block) ... ok
+test_false_claimed_shortcut_does_not_obscure_verified_path (test_surface.SurfaceTests.test_false_claimed_shortcut_does_not_obscure_verified_path) ... ok
+test_frequency_alone_cannot_identify_exit_rights (test_surface.SurfaceTests.test_frequency_alone_cannot_identify_exit_rights) ... ok
+test_graph_oracle_exhaustive_three_edge_chains (test_surface.SurfaceTests.test_graph_oracle_exhaustive_three_edge_chains) ... ok
+test_lower_budget_does_not_increase_options (test_surface.SurfaceTests.test_lower_budget_does_not_increase_options) ... ok
+test_missing_preference (test_surface.SurfaceTests.test_missing_preference) ... ok
+test_multihop_finds_shortest (test_surface.SurfaceTests.test_multihop_finds_shortest) ... ok
+test_negative_control_does_not_flag_irrelevant_constraint (test_surface.SurfaceTests.test_negative_control_does_not_flag_irrelevant_constraint) ... ok
+test_no_auto_actions_count_as_user_authority (test_surface.SurfaceTests.test_no_auto_actions_count_as_user_authority) ... ok
+test_no_person_scoring (test_surface.SurfaceTests.test_no_person_scoring) ... ok
+test_reduction_of_knowledge_never_increases_certainty (test_surface.SurfaceTests.test_reduction_of_knowledge_never_increases_certainty) ... ok
+test_return_blocked (test_surface.SurfaceTests.test_return_blocked) ... ok
+test_return_is_legitimate_preference (test_surface.SurfaceTests.test_return_is_legitimate_preference) ... ok
+test_return_reachable (test_surface.SurfaceTests.test_return_reachable) ... ok
+test_slightly_more_friction_can_block (test_surface.SurfaceTests.test_slightly_more_friction_can_block) ... ok
+test_symmetric_usage_observations (test_surface.SurfaceTests.test_symmetric_usage_observations) ... ok
+test_unconfirmed_preference (test_surface.SurfaceTests.test_unconfirmed_preference) ... ok
+test_unknown_not_blocked (test_surface.SurfaceTests.test_unknown_not_blocked) ... ok
+test_verified_exit (test_surface.SurfaceTests.test_verified_exit) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.062s
+
+OK

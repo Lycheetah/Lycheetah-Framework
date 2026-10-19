@@ -1,0 +1,28 @@
+test_after_commit_withdrawal_does_not_undo_history (test_choice_ledger.AtomicLedgerTests.test_after_commit_withdrawal_does_not_undo_history) ... ok
+test_altered_message_is_not_endorsed (test_choice_ledger.AtomicLedgerTests.test_altered_message_is_not_endorsed) ... ok
+test_altered_recipient_is_not_endorsed (test_choice_ledger.AtomicLedgerTests.test_altered_recipient_is_not_endorsed) ... ok
+test_exact_endorsed_action_commits (test_choice_ledger.AtomicLedgerTests.test_exact_endorsed_action_commits) ... ok
+test_existing_upstream_audit_contains_choice_events (test_choice_ledger.AtomicLedgerTests.test_existing_upstream_audit_contains_choice_events) ... ok
+test_failed_grant_rolls_back_authority_and_journal (test_choice_ledger.AtomicLedgerTests.test_failed_grant_rolls_back_authority_and_journal) ... ok
+test_failed_withdraw_rolls_back_both (test_choice_ledger.AtomicLedgerTests.test_failed_withdraw_rolls_back_both) ... ok
+test_fence_manual_regrant_not_considered_valid_choice (test_choice_ledger.AtomicLedgerTests.test_fence_manual_regrant_not_considered_valid_choice) ... ok
+test_hash_change_from_mutated_action_arguments_is_denied (test_choice_ledger.AtomicLedgerTests.test_hash_change_from_mutated_action_arguments_is_denied) ... ok
+test_multi_thread_revisions_are_serial_and_gapless (test_choice_ledger.AtomicLedgerTests.test_multi_thread_revisions_are_serial_and_gapless) ... ok
+test_multiple_simultaneous_commit_attempts_one_effect (test_choice_ledger.AtomicLedgerTests.test_multiple_simultaneous_commit_attempts_one_effect) ... ok
+test_no_grant_denies (test_choice_ledger.AtomicLedgerTests.test_no_grant_denies) ... ok
+test_process_revision_serialization (test_choice_ledger.AtomicLedgerTests.test_process_revision_serialization) ... ok
+test_records_are_metadata_only_not_message_content (test_choice_ledger.AtomicLedgerTests.test_records_are_metadata_only_not_message_content) ... ok
+test_regrant_after_withdraw_requires_new_handle (test_choice_ledger.AtomicLedgerTests.test_regrant_after_withdraw_requires_new_handle) ... ok
+test_revision_fences_previously_issued_action (test_choice_ledger.AtomicLedgerTests.test_revision_fences_previously_issued_action) ... ok
+test_revocation_holds_write_lock_until_atomic_commit (test_choice_ledger.AtomicLedgerTests.test_revocation_holds_write_lock_until_atomic_commit) ... ok
+test_substituted_untrusted_action_class_rejected (test_choice_ledger.AtomicLedgerTests.test_substituted_untrusted_action_class_rejected) ... ok
+test_unknown_withdrawal_creates_inactive_generation (test_choice_ledger.AtomicLedgerTests.test_unknown_withdrawal_creates_inactive_generation) ... ok
+test_upstream_baseline_is_unsafe_for_external_ungated_provider (test_choice_ledger.AtomicLedgerTests.test_upstream_baseline_is_unsafe_for_external_ungated_provider) ... ok
+test_withdraw_no_reason_and_no_new_effect (test_choice_ledger.AtomicLedgerTests.test_withdraw_no_reason_and_no_new_effect) ... ok
+test_wrong_principal_rejected (test_choice_ledger.AtomicLedgerTests.test_wrong_principal_rejected) ... ok
+test_wrong_tool_scope_rejected (test_choice_ledger.AtomicLedgerTests.test_wrong_tool_scope_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.401s
+
+OK

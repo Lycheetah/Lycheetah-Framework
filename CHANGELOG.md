@@ -9,6 +9,25 @@ history, which was the only changelog until now.
 
 ## [Unreleased]
 
+### Earned Light, Sovereign Will and original narratives — 19 October 2026
+
+- Imported two research/story handoffs with a 225-file provenance manifest,
+  retaining Forge code, failures, historical results, charters and seven source
+  ZIPs. Added guides and working temporary-copy replay commands; the original
+  Sovereign Choice extracted tree lacks the nested ZIPs its old runners expect.
+- Reproduced 207 Earned Light and 207 Sovereign Choice test executions, with
+  historical overlap explicitly stated. The latter includes separate Forge
+  II/III checks omitted by the original 142-test replay. Two deliberately broken
+  controls failed as expected. These are authored local fixtures, without a
+  production safety, free-will or independent-validation claim.
+- Registered the expanded and earlier Lighthouse stories and Ninth Road in the
+  existing stories collection; rebuilt its Markdown, browser and portable ZIP
+  editions. Linked the philosophical proposals and engineering research from
+  their existing parent guides. Fiction remains distinct from research and
+  unapproved as epic canon. Eleven local Chromium reader checks passed and
+  desktop/390px screenshots were inspected; no physical-device or outside-reader
+  result is claimed. See `28_DEFENSE/RELEASE_AUDIT_2026-10-19.md`.
+
 ### LAMAGUE handover research preview — 18–19 October 2026
 
 - Added an own-task form to the offline page, exporting readable handovers and

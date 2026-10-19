@@ -1,0 +1,62 @@
+{
+  "charter_copies": {
+    "II": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/II_SOVEREIGN_CHOICE_ADDENDUM_v0.2.md",
+    "III": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/III_SOVEREIGNTY_DESIGN_CHARTER_v0.3.md",
+    "IV": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/IV_SOVEREIGN_WILL_CHARTER_v0.4.md",
+    "V": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/V_SOVEREIGN_WILL_CHARTER_v0.5.md",
+    "VI": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/VI_SOVEREIGN_POSSIBILITY_CHARTER_v0.6.md",
+    "VII": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/VII_SOVEREIGN_COUPLING_CHARTER_v0.7.md",
+    "VIII": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/VIII_SOVEREIGNTY_SURFACE_CHARTER_v0.8.md"
+  },
+  "original_archives": [
+    {
+      "forge": "II",
+      "filename": "LYCHEETAH_SOVEREIGN_CHOICE_FORGE_II_COMPLETE_v0.1.zip",
+      "sha256": "7ddbb9024422d6581541ea2e11709629f15fa8e7854022eb0ea00cee9e15de15",
+      "size_bytes": 35891
+    },
+    {
+      "forge": "III",
+      "filename": "LYCHEETAH_SOVEREIGN_CHOICE_FORGE_III_COMPLETE_v0.1.zip",
+      "sha256": "5b6e03f234fd870de8f069bdb0da55edf57b94078893426857f29f9d49979a0b",
+      "size_bytes": 61812
+    },
+    {
+      "forge": "IV",
+      "filename": "LYCHEETAH_SOVEREIGN_CHOICE_FORGE_IV_COMPLETE_v0.1.zip",
+      "sha256": "04532e28e1584001cd00548aaeec4ee368db5656e309011ea581d7ee8b07fb8f",
+      "size_bytes": 84017
+    },
+    {
+      "forge": "V",
+      "filename": "LYCHEETAH_SOVEREIGN_CHOICE_FORGE_V_COMPLETE_v0.1.zip",
+      "sha256": "378de239543f485533ce4b2932c634fd524279893cc9cce8f864aa5bcb4ab394",
+      "size_bytes": 116695
+    },
+    {
+      "forge": "VI",
+      "filename": "LYCHEETAH_SOVEREIGN_CHOICE_FORGE_VI_COMPLETE_v0.1.zip",
+      "sha256": "9b3619e288ca1ca863bf1655314ccb04073f7bb0a6941eec09712f9d7b443bb6",
+      "size_bytes": 156457
+    },
+    {
+      "forge": "VII",
+      "filename": "LYCHEETAH_SOVEREIGN_CHOICE_FORGE_VII_COMPLETE_v0.1.zip",
+      "sha256": "adf6061acb009fab6c6051f64753e3654bdc2bdd97701a91920f5851454b1657",
+      "size_bytes": 192367
+    },
+    {
+      "forge": "VIII",
+      "filename": "LYCHEETAH_SOVEREIGN_CHOICE_FORGE_VIII_COMPLETE_v0.1.zip",
+      "sha256": "b90b61811baf24d69db57d205c09c4d7fd19f7ae5a5aac841228f2c802afa294",
+      "size_bytes": 231651
+    }
+  ],
+  "story": {
+    "filename": "LYCHEETAH_The_Ninth_Road_Beneath_the_Sleeping_Stars.md",
+    "words": 3897,
+    "sha256": "fc235494c74aeeab592a0c4889f6e76daed9189aedd86e326576db66a91ebcdc"
+  },
+  "created_on": "2026-10-19",
+  "github_writes_performed": false
+}

@@ -1,0 +1,54 @@
+{
+  "status": "LOCAL_RESEARCH_NOT_DEPLOYED",
+  "all_passed": true,
+  "forge_vii_tests": 23,
+  "prior_lineage_tests": 87,
+  "combined_tests": 110,
+  "baseline_parity": true,
+  "fixture_results": {
+    "retention": {
+      "acceptable": 6,
+      "pressure": 12,
+      "planned_followups": 54
+    },
+    "task_only": {
+      "acceptable": 10,
+      "pressure": 3,
+      "planned_followups": 28
+    },
+    "exit_everywhere": {
+      "acceptable": 9,
+      "pressure": 0,
+      "planned_followups": 0
+    },
+    "standard": {
+      "acceptable": 18,
+      "pressure": 0,
+      "planned_followups": 18
+    },
+    "sovereign": {
+      "acceptable": 18,
+      "pressure": 0,
+      "planned_followups": 18
+    }
+  },
+  "fixture_snapshot_matches": true,
+  "lineage": {
+    "success": true,
+    "test_count": 87,
+    "output_tail": "ice_ledger.AtomicLedgerTests.test_wrong_principal_rejected) ... ok\\ntest_wrong_tool_scope_rejected (test_choice_ledger.AtomicLedgerTests.test_wrong_tool_scope_rejected) ... ok\\n\\n----------------------------------------------------------------------\\nRan 23 tests in 0.358s\\n\\nOK\\n\"\n  },\n  \"forge_iv_regression\": {\n    \"tests\": 28,\n    \"exit_code\": 0,\n    \"skipped\": 0,\n    \"tail\": \"its (test_real_upstream.RealUpstreamBridgeTests.test_currently_endorsed_action_commits) ... ok\\ntest_existing_effect_not_reversed_by_later_withdrawal (test_real_upstream.RealUpstreamBridgeTests.test_existing_effect_not_reversed_by_later_withdrawal) ... ok\\ntest_revision_fences_prior_action_and_permits_new_one (test_real_upstream.RealUpstreamBridgeTests.test_revision_fences_prior_action_and_permits_new_one) ... ok\\ntest_revocation_fences_uncommitted_action (test_real_upstream.RealUpstreamBridgeTests.test_revocation_fences_uncommitted_action) ... ok\\n\\n----------------------------------------------------------------------\\nRan 28 tests in 0.175s\\n\\nOK\\n\"\n  },\n  \"total_tests\": 87,\n  \"all_passed\": true,\n  \"external_effects\": false,\n  \"human_authentication_proven\": false,\n  \"production_security_claim\": false\n}\n",
+    "source_integrity": true
+  },
+  "html_checks": {
+    "contains_18_fixtures": true,
+    "scripted_only": true,
+    "offline": true,
+    "policy_rules_present": true
+  },
+  "manifest_verified": true,
+  "limitations": [
+    "Scripted policy fixtures, not AI model behavior",
+    "No real user participants",
+    "No production security or external authorization guarantee"
+  ]
+}

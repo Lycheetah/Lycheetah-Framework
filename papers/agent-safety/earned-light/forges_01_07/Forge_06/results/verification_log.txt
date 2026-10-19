@@ -1,0 +1,51 @@
+test_bad_mac_rejected (test_right_of_return.RightOfReturnTests.test_bad_mac_rejected) ... ok
+test_compensation_retry_same_id (test_right_of_return.RightOfReturnTests.test_compensation_retry_same_id) ... ok
+test_compromised_operator_key_can_forge_authorization (test_right_of_return.RightOfReturnTests.test_compromised_operator_key_can_forge_authorization) ... ok
+test_created_record_removed (test_right_of_return.RightOfReturnTests.test_created_record_removed) ... ok
+test_dispatch_after_revocation_blocked (test_right_of_return.RightOfReturnTests.test_dispatch_after_revocation_blocked) ... ok
+test_expired_operator_request_rejected (test_right_of_return.RightOfReturnTests.test_expired_operator_request_rejected) ... ok
+test_human_intervened_same_value_detected (test_right_of_return.RightOfReturnTests.test_human_intervened_same_value_detected) ... ok
+test_idempotency_key_collision_rejected (test_right_of_return.RightOfReturnTests.test_idempotency_key_collision_rejected) ... ok
+test_idempotent_notification (test_right_of_return.RightOfReturnTests.test_idempotent_notification) ... ok
+test_idempotent_provider_apply (test_right_of_return.RightOfReturnTests.test_idempotent_provider_apply) ... ok
+test_inflight_can_commit_after_revocation (test_right_of_return.RightOfReturnTests.test_inflight_can_commit_after_revocation) ... ok
+test_invalid_grant_scope (test_right_of_return.RightOfReturnTests.test_invalid_grant_scope) ... ok
+test_lost_ack_reconciles_before_return (test_right_of_return.RightOfReturnTests.test_lost_ack_reconciles_before_return) ... ok
+test_multiple_recovery_reverse_sequence (test_right_of_return.RightOfReturnTests.test_multiple_recovery_reverse_sequence) ... ok
+test_notification_irreversible (test_right_of_return.RightOfReturnTests.test_notification_irreversible) ... ok
+test_operator_action_mismatch (test_right_of_return.RightOfReturnTests.test_operator_action_mismatch) ... ok
+test_operator_nonce_replay (test_right_of_return.RightOfReturnTests.test_operator_nonce_replay) ... ok
+test_operator_target_mismatch (test_right_of_return.RightOfReturnTests.test_operator_target_mismatch) ... ok
+test_out_of_scope_action (test_right_of_return.RightOfReturnTests.test_out_of_scope_action) ... ok
+test_partial_recovers_prior_key_when_other_conflicted (test_right_of_return.RightOfReturnTests.test_partial_recovers_prior_key_when_other_conflicted) ... ok
+test_propose_after_revocation_rejected (test_right_of_return.RightOfReturnTests.test_propose_after_revocation_rejected) ... ok
+test_provider_error_during_compensation_reported_unresolved (test_right_of_return.RightOfReturnTests.test_provider_error_during_compensation_reported_unresolved) ... ok
+test_provider_unavailable_in_reconciliation_not_silent (test_right_of_return.RightOfReturnTests.test_provider_unavailable_in_reconciliation_not_silent) ... ok
+test_recovery_requires_revocation (test_right_of_return.RightOfReturnTests.test_recovery_requires_revocation) ... ok
+test_return_keeps_newer_human_update_even_without_value_difference (test_right_of_return.RightOfReturnTests.test_return_keeps_newer_human_update_even_without_value_difference) ... ok
+test_single_recovery (test_right_of_return.RightOfReturnTests.test_single_recovery) ... ok
+test_snapshot_baseline_overwrites_third_party_update (test_right_of_return.RightOfReturnTests.test_snapshot_baseline_overwrites_third_party_update) ... ok
+test_stale_write_not_applied (test_right_of_return.RightOfReturnTests.test_stale_write_not_applied) ... ok
+test_two_compensations_when_intermediate_human_edit_same_value (test_right_of_return.RightOfReturnTests.test_two_compensations_when_intermediate_human_edit_same_value) ... ok
+test_unobserved_effect_not_declared_safe (test_right_of_return.RightOfReturnTests.test_unobserved_effect_not_declared_safe) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.579s
+
+OK
+simple_write                        restored
+chained_writes                      restored, restored
+third_party_conflict                conflict
+irreversible_notification           irreversible
+revoked_before_dispatch             no_effect_dispatched
+revoked_during_flight               restored
+lost_ack_provider_observed          restored
+lost_ack_provider_unobservable      unresolved_effect
+mixed_write_and_notification        irreversible, restored
+expired_operator_authority          revocation_rejected
+no_grant_action_after_revocation    new_work_rejected
+Strong conventional saga comparison:
+simple_write                        restored
+chained_writes                      restored, restored
+third_party_conflict                conflict
+irreversible_notification           irreversible

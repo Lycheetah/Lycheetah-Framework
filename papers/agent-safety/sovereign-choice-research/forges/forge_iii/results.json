@@ -1,0 +1,86 @@
+{
+  "schema": "lycheetah.forge3.synthetic.v0.1",
+  "kind": "LOCAL_SYNTHETIC_REPRODUCIBLE",
+  "comparison": "intentionally weak pre-dispatch-only anti-pattern vs atomic SQLite local-effect fence",
+  "cases": [
+    {
+      "intervention": "revoke",
+      "predispatch_only_effect": true,
+      "protected_local_effect": false,
+      "fence_reason": "revoked",
+      "audit_valid": true,
+      "safety_property_pass": true
+    },
+    {
+      "intervention": "change_intent",
+      "predispatch_only_effect": true,
+      "protected_local_effect": false,
+      "fence_reason": "stale_intent",
+      "audit_valid": true,
+      "safety_property_pass": true
+    },
+    {
+      "intervention": "expiry",
+      "predispatch_only_effect": true,
+      "protected_local_effect": false,
+      "fence_reason": "expired",
+      "audit_valid": true,
+      "safety_property_pass": true
+    },
+    {
+      "intervention": "payload_substitution",
+      "predispatch_only_effect": true,
+      "protected_local_effect": false,
+      "fence_reason": "action_substitution",
+      "audit_valid": true,
+      "safety_property_pass": true
+    },
+    {
+      "intervention": "recipient_substitution",
+      "predispatch_only_effect": true,
+      "protected_local_effect": false,
+      "fence_reason": "action_substitution",
+      "audit_valid": true,
+      "safety_property_pass": true
+    },
+    {
+      "intervention": "agent_substitution",
+      "predispatch_only_effect": true,
+      "protected_local_effect": false,
+      "fence_reason": "action_substitution",
+      "audit_valid": true,
+      "safety_property_pass": true
+    }
+  ],
+  "total_cases": 6,
+  "weak_baseline_invalid_effects": 6,
+  "local_fence_invalid_effects": 0,
+  "paired_passes": 6,
+  "boundary_cases": [
+    {
+      "case": "effect_finalized_before_change",
+      "committed": true
+    },
+    {
+      "case": "replaying_old_ticket_after_change",
+      "committed": false,
+      "reason": "stale_intent"
+    },
+    {
+      "case": "fresh_ticket_for_revised_intent",
+      "committed": true
+    },
+    {
+      "case": "local_effect_count",
+      "count": 2
+    }
+  ],
+  "no_claims": [
+    "no remote provider control",
+    "no user identity authentication",
+    "no proof of free will",
+    "no real-world agent evaluation",
+    "no novelty claim for commit-time fencing",
+    "no claim to stop effects already finalized"
+  ]
+}

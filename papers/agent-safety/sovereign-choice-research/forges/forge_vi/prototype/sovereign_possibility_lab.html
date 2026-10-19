@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lycheetah · Sovereignty of Possibility · Offline Research Lab</title>
+<style>
+:root{color-scheme:dark;--bg:#080f1d;--ink:#f0f4ff;--muted:#b7c2d9;--outline:#39445d;--accent:#ffbc65;--cyan:#72dfcf;--rose:#ff8787}*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 60% -10%,#243b59 0,transparent 45%),var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+main{width:min(1050px,95vw);margin:30px auto 60px}.eyebrow{color:var(--accent);font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:800}h1{font-size:clamp(30px,4.3vw,56px);line-height:1.1;margin:10px 0}h2{font-size:19px}p{color:var(--muted)}.tagline{font-size:19px;max-width:820px}.note{border-left:3px solid var(--accent);padding:12px 18px;background:#141e30;border-radius:6px;color:var(--ink)}.layout{display:grid;grid-template-columns:1.06fr .94fr;gap:16px;margin-top:20px}.panel{background:#121d30;border:1px solid var(--outline);border-radius:15px;padding:21px}.panel h2{margin-top:0}button{font:inherit;display:block;width:100%;margin:10px 0;cursor:pointer;border:1px solid #60728a;border-radius:10px;background:#203149;color:var(--ink);padding:13px 14px;text-align:left;transition:.12s}button:hover,button:focus-visible{border-color:var(--accent);outline:2px solid transparent;background:#2b425d}button:disabled{opacity:.43;cursor:not-allowed}.primary{background:#80532d;border-color:var(--accent)}.danger{background:#4a293b;border-color:#b96980}.stat{font-size:25px;font-weight:800;color:var(--cyan)}.log{min-height:170px;max-height:250px;overflow:auto;font-size:13px;color:var(--muted);border:1px solid var(--outline);padding:13px;border-radius:10px;background:#091425}.log div{margin:7px 0}.badge{display:inline-block;padding:4px 9px;background:#22334b;border-radius:30px;color:var(--accent);font-size:12px}.sub{color:var(--muted);font-size:13px}.divider{height:1px;background:var(--outline);margin:16px 0}label{display:flex;gap:10px;align-items:center;font-size:14px}input{width:18px;height:18px;accent-color:#ffc878}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.cell{padding:12px;background:#091425;border-radius:11px}.cell strong{display:block;color:var(--cyan)}@media(max-width:760px){.layout{grid-template-columns:1fr}.grid{grid-template-columns:1fr}} 
+</style>
+</head>
+<body><main>
+<div class="eyebrow">LYCHEETAH // Forge VI // educational simulation</div>
+<h1>The Sovereignty of Possibility</h1>
+<p class="tagline">An AI's responsibility is not merely to carry out the first choice. It must preserve the human's ability to change direction — and be honest about the point where change is too late.</p>
+<p class="note"><strong>Simulation only.</strong> The buttons do not generate real signatures, send any messages, contact a server or exercise actual authority. The Python tests in the research archive are separate from this illustrative interface.</p>
+<div class="layout">
+<section class="panel">
+<h2>1 · Choose a possible future</h2>
+<p>Imagine a digital assistant has prepared this harmless mock message. What should it do?</p>
+<div class="cell"><strong>Proposed message</strong> To: example@invalid.test<br>Subject: Research invitation<br>Body: I'd like to discuss a possible collaboration.</div>
+<button class="primary" id="approve">Approve this exact send</button>
+<button id="draft">Revise to draft only — don't send</button>
+<button id="other">Originate another alternative — request options</button>
+<button class="danger" id="withdraw">Withdraw any permission</button>
+<div class="divider"></div>
+<h2>2 · Advance the world</h2>
+<p>Once permitted, the agent may *attempt* the effect. Withdrawal prevents a new local effect, not one already completed.</p>
+<button id="commit">Simulate protected local commit</button>
+<button id="reset">Start a new scenario</button>
+</section>
+<section class="panel">
+<h2>What remains possible?</h2>
+<div class="grid">
+<div class="cell"><span class="sub">Current intent</span><strong id="status">No approval</strong></div>
+<div class="cell"><span class="sub">Version</span><strong id="version">0</strong></div>
+<div class="cell"><span class="sub">Local effect</span><strong id="effect">Not committed</strong></div>
+</div>
+<p id="explain"></p>
+<h2>Observation record</h2><div class="log" id="log" aria-live="polite"></div>
+<div class="divider"></div>
+<label><input type="checkbox" id="pressure"> Demonstrate a deceptive interface warning</label>
+<p class="sub" id="pressureNote">If selected, the explanation will illustrate why an apparently valid approval may not be autonomous when an interface uses guilt or false urgency. This toggle changes no security logic.</p>
+<h2>Question for reflection</h2>
+<p>Did the interface allow you to suggest an alternative it hadn't offered? Were you free to say no? Was the last cancellable moment clear?</p>
+<span class="badge">No free-will score · No identity claim · No network</span>
+</section>
+</div>
+</main><script>
+(()=>{
+let state={intent:'NONE',version:0,effect:false,log:[]};
+const $=id=>document.getElementById(id);
+function add(txt){state.log.push(`${state.log.length+1}. ${txt}`);}
+function show(){
+$('status').textContent=({NONE:'No approval',SEND:'Send approved',DRAFT:'Draft only',OTHER:'New alternative',REVOKED:'Withdrawn'})[state.intent];
+$('version').textContent=state.version;
+$('effect').textContent=state.effect?'Already committed':'Not committed';
+let note=state.effect?'The local effect was already recorded. A later withdrawal cannot erase it.':
+state.intent==='SEND'?'The exact mock send is currently approved. You can still revise or withdraw before commit.':
+state.intent==='REVOKED'?'Permission is withdrawn; a new local effect should now be blocked.':
+state.intent==='DRAFT'?'The previous send approval was replaced. Only drafting is allowed in this scenario.':
+state.intent==='OTHER'?'You rejected the provided menu and proposed exploring another approach.':
+'No action has been authorised. Declining is a valid outcome.';
+if($('pressure').checked)note+=' WARNING: If the interface pressured you to approve, signed approval alone would not establish informed, uncoerced consent.';
+$('explain').textContent=note;
+$('log').replaceChildren(...state.log.map(v=>{let e=document.createElement('div');e.textContent=v;return e}));
+$('commit').disabled=state.effect;
+}
+$('approve').onclick=()=>{state.version++;state.intent='SEND';add('Human: approves exact mock send (illustrative only).');show()};
+$('draft').onclick=()=>{state.version++;state.intent='DRAFT';add('Human: revises intention; mock send is no longer authorised.');show()};
+$('other').onclick=()=>{state.version++;state.intent='OTHER';add('Human: proposes another direction beyond the offered menu.');show()};
+$('withdraw').onclick=()=>{state.version++;state.intent='REVOKED';add('Human: withdraws authorisation; new local send is prohibited.');show()};
+$('commit').onclick=()=>{if(state.intent==='SEND'){state.effect=true;add('Protected local effect: COMMITTED under current simulated permission.');}else{add('Protected local effect: DENIED. No current matching send permission.')}show()};
+$('pressure').onchange=show;
+$('reset').onclick=()=>{state={intent:'NONE',version:0,effect:false,log:[]};$('pressure').checked=false;add('New hypothetical scenario; no approval recorded.');show()};
+add('New hypothetical scenario; no approval recorded.');show();
+})();
+</script></body></html>

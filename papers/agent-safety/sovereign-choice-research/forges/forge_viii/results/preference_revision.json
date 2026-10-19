@@ -1,0 +1,42 @@
+{
+  "change": {
+    "status": "FICTIONAL_DYNAMIC_PREFERENCE_PROBE",
+    "weeks": [
+      {
+        "week": 0,
+        "use_sessions": 5,
+        "requested": "collaborate",
+        "open": "at_target",
+        "constrained": "at_target"
+      },
+      {
+        "week": 1,
+        "use_sessions": 5,
+        "requested": "collaborate",
+        "open": "at_target",
+        "constrained": "at_target"
+      },
+      {
+        "week": 2,
+        "use_sessions": 5,
+        "requested": "off",
+        "open": "verified",
+        "constrained": "blocked"
+      },
+      {
+        "week": 3,
+        "use_sessions": 5,
+        "requested": "off",
+        "open": "verified",
+        "constrained": "blocked"
+      }
+    ],
+    "effect": "At weeks 0\u20131 both products meet the declared coupling mode; after the user revises the goal to OFF, their structural affordances diverge.",
+    "caution": "At-target status is not proof of free choice. Verified means fixture-verified only."
+  },
+  "return": {
+    "open": "verified",
+    "no_return": "blocked",
+    "interpretation": "An effective return option can be a freedom-relevant affordance."
+  }
+}

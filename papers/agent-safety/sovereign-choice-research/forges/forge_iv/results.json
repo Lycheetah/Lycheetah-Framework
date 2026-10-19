@@ -1,0 +1,27 @@
+{
+  "research_date": "2026-10-18",
+  "environment": "local isolated sandbox",
+  "python_version": "3.13.5",
+  "test_result": {
+    "run_count": 28,
+    "contract_passed": 24,
+    "upstream_skipped": 4,
+    "failures": 0,
+    "errors": 0,
+    "note": "24 tests run using synthetic FakeFence; upstream import tests not run"
+  },
+  "demo": {
+    "note": "Simulation using FakeFence, not original GitHub upstream or real mail provider",
+    "old_intention": 1,
+    "current_intention": 2,
+    "original_action_after_revision": "DENY",
+    "new_action_in_local_simulation": "COMMITTED",
+    "observed_plan_adherence": false,
+    "human_free_will": "UNRESOLVED",
+    "consent_authenticated": false,
+    "external_effects": 0
+  },
+  "external_effects_executed": 0,
+  "upstream_integration_verified": false,
+  "working_source": "Lycheetah/Lycheetah-Framework GitHub master checked via connector; code not mounted in local Python runtime"
+}

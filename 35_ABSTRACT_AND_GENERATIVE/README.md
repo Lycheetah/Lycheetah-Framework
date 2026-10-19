@@ -13,6 +13,7 @@ This folder exists because not every valuable Lycheetah object is a theorem, ben
 - [`AGENT_COVENANT.md`](AGENT_COVENANT.md) gives preservation rules for contributors and agents.
 - [`OBJECT_TEMPLATE.md`](OBJECT_TEMPLATE.md) is the template for adding an object with provenance and clear boundaries.
 - [`AZOTH_HANDOFF.md`](AZOTH_HANDOFF.md) preserves the original folder proposal and its source lineage.
+- [`SOVEREIGN_WILL/README.md`](SOVEREIGN_WILL/README.md) preserves the eight-forge philosophical charters, with separate links to local agent-control experiments and fiction.
 - [`DIVES/001_TRACEABLE_BECOMING.md`](DIVES/001_TRACEABLE_BECOMING.md) and [`SESSION_ARCHIVE/`](SESSION_ARCHIVE/) retain the September 2026 inquiry and its dialogue record.
 
 **Repository location:** This branch lives at `35_ABSTRACT_AND_GENERATIVE/`. The preserved handoff names `33_ABSTRACT_AND_GENERATIVE/`, its original proposed location; the repository already uses `33_APPLICATIONS/` and `34_ASSURANCE_RUNTIME/`.

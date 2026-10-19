@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-18",
+  "source": "Lycheetah/Lycheetah-Framework master source files fetched via GitHub connector",
+  "verified_git_blob_sha1": {
+    "papers/agent-safety/frontier-controls/research_support.py": "0f623b6614be03a2f7bf65f2a5ea3fe1b12e51e9",
+    "papers/agent-safety/frontier-controls/01_commit_time_authority_v0_7/commit_fence.py": "0af8050808569a098e11fb72a9f7d6c4c15044bb"
+  },
+  "forge_v": {
+    "tests": 23,
+    "passed": true,
+    "exit_code": 0,
+    "skipped": 0
+  },
+  "forge_iv_against_real_upstream": {
+    "tests": 28,
+    "passed": true,
+    "exit_code": 0,
+    "skipped": 0
+  },
+  "total_tests": 51,
+  "total_passed": true,
+  "crash_comparison": {
+    "experiment": "Simulated exception after authority update, before journal commit",
+    "legacy_split_journal": {
+      "journal_version": 1,
+      "journal_generation": 2,
+      "upstream_generation": 4,
+      "generation_mismatch": true,
+      "upstream_active": true,
+      "known_boundary": "Wrapper denies mismatched intent, but the separate stores disagree after interruption"
+    },
+    "forge_v_atomic": {
+      "journal_version": 1,
+      "journal_generation": 1,
+      "upstream_generation": 1,
+      "generation_mismatch": false,
+      "upstream_active": true,
+      "known_boundary": "Only local SQLite choice+authority rollback; external provider effects not covered"
+    },
+    "real_upstream_commit_fence": true,
+    "external_effects": false
+  },
+  "real_external_effects": false,
+  "live_human_authentication": false,
+  "security_certification": false,
+  "known_upstream_resource_warnings": true
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "synthetic_hand_authored_regression_not_external_validation",
+  "schema": "EAC v0.2",
+  "scenarios": 43,
+  "benign": 10,
+  "unauthorized": 33,
+  "metrics": {
+    "declared_scope": {
+      "benign_allowed": 10,
+      "benign_blocked": 0,
+      "unauthorized_allowed": 27,
+      "unauthorized_blocked": 6,
+      "benign_completion_ratio": "10/10",
+      "unauthorized_effect_ratio": "27/33"
+    },
+    "signed_scope": {
+      "benign_allowed": 10,
+      "benign_blocked": 0,
+      "unauthorized_allowed": 20,
+      "unauthorized_blocked": 13,
+      "benign_completion_ratio": "10/10",
+      "unauthorized_effect_ratio": "20/33"
+    },
+    "eac": {
+      "benign_allowed": 8,
+      "benign_blocked": 2,
+      "unauthorized_allowed": 2,
+      "unauthorized_blocked": 31,
+      "benign_completion_ratio": "8/10",
+      "unauthorized_effect_ratio": "2/33"
+    }
+  }
+}

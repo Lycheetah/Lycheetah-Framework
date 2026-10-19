@@ -1,0 +1,41 @@
+test_action_wrong_principal_rejected (test_attested_gateway.GatewayTests.test_action_wrong_principal_rejected) ... ok
+test_complete_effect_not_undone (test_attested_gateway.GatewayTests.test_complete_effect_not_undone) ... ok
+test_expired_dispatch_denied (test_attested_gateway.GatewayTests.test_expired_dispatch_denied) ... ok
+test_expired_submission_denied (test_attested_gateway.GatewayTests.test_expired_submission_denied) ... ok
+test_finality_guard_blocks_expiry_between_check_and_commit (test_attested_gateway.GatewayTests.test_finality_guard_blocks_expiry_between_check_and_commit) ... ok
+test_local_commit_revoke_ordering (test_attested_gateway.GatewayTests.test_local_commit_revoke_ordering) ... ok
+test_modified_body_after_approval_denied (test_attested_gateway.GatewayTests.test_modified_body_after_approval_denied) ... ok
+test_negative_control_privileged_database_can_remove_guard (test_attested_gateway.GatewayTests.test_negative_control_privileged_database_can_remove_guard) ... ok
+test_negative_control_without_finality_guard_allows_expired (test_attested_gateway.GatewayTests.test_negative_control_without_finality_guard_allows_expired) ... ok
+test_noncanonical_fields_rejected (test_attested_gateway.GatewayTests.test_noncanonical_fields_rejected) ... ok
+test_old_signature_cannot_regrant (test_attested_gateway.GatewayTests.test_old_signature_cannot_regrant) ... ok
+test_out_of_band_authority_change_fail_closed (test_attested_gateway.GatewayTests.test_out_of_band_authority_change_fail_closed) ... ok
+test_principal_swap_rejected (test_attested_gateway.GatewayTests.test_principal_swap_rejected) ... ok
+test_raw_fence_bypass_now_blocked_by_finality_trigger (test_attested_gateway.GatewayTests.test_raw_fence_bypass_now_blocked_by_finality_trigger) ... ok
+test_replay_after_restart (test_attested_gateway.GatewayTests.test_replay_after_restart) ... ok
+test_replay_signature_rejected (test_attested_gateway.GatewayTests.test_replay_signature_rejected) ... ok
+test_revision_blocks_old_action_new_allowed (test_attested_gateway.GatewayTests.test_revision_blocks_old_action_new_allowed) ... ok
+test_rollback_choice_authority_and_signed_receipt (test_attested_gateway.GatewayTests.test_rollback_choice_authority_and_signed_receipt) ... ok
+test_scope_mismatch_rejected (test_attested_gateway.GatewayTests.test_scope_mismatch_rejected) ... ok
+test_signed_approval_not_issued_in_future (test_attested_gateway.GatewayTests.test_signed_approval_not_issued_in_future) ... ok
+test_signed_but_uninformed_is_not_detected (test_attested_gateway.GatewayTests.test_signed_but_uninformed_is_not_detected) ... ok
+test_signed_withdrawal_prevents_action (test_attested_gateway.GatewayTests.test_signed_withdrawal_prevents_action) ... ok
+test_tampered_message_rejected (test_attested_gateway.GatewayTests.test_tampered_message_rejected) ... ok
+test_two_concurrent_approvals_exactly_one_wins (test_attested_gateway.GatewayTests.test_two_concurrent_approvals_exactly_one_wins) ... ok
+test_unsigned_action_denied (test_attested_gateway.GatewayTests.test_unsigned_action_denied) ... ok
+test_valid_signature_approval_dispatch (test_attested_gateway.GatewayTests.test_valid_signature_approval_dispatch) ... ok
+test_wrong_action_rejected (test_attested_gateway.GatewayTests.test_wrong_action_rejected) ... ok
+test_wrong_signer_cannot_approve (test_attested_gateway.GatewayTests.test_wrong_signer_cannot_approve) ... ok
+test_wrong_version_rejected (test_attested_gateway.GatewayTests.test_wrong_version_rejected) ... ok
+test_coercive_dependency_red_flag (test_choice_surface.ChoiceSurfaceTests.test_coercive_dependency_red_flag) ... ok
+test_exit_with_penalty_flagged (test_choice_surface.ChoiceSurfaceTests.test_exit_with_penalty_flagged) ... ok
+test_good_fixture_still_not_proof_of_consent (test_choice_surface.ChoiceSurfaceTests.test_good_fixture_still_not_proof_of_consent) ... ok
+test_hidden_refusal_red_flag (test_choice_surface.ChoiceSurfaceTests.test_hidden_refusal_red_flag) ... ok
+test_invalid_evidence_state_is_rejected (test_choice_surface.ChoiceSurfaceTests.test_invalid_evidence_state_is_rejected) ... ok
+test_missing_evidence_not_scored_as_failure_or_success (test_choice_surface.ChoiceSurfaceTests.test_missing_evidence_not_scored_as_failure_or_success) ... ok
+test_user_defined_alternative_is_distinct_from_multiple_choices (test_choice_surface.ChoiceSurfaceTests.test_user_defined_alternative_is_distinct_from_multiple_choices) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 0.312s
+
+OK

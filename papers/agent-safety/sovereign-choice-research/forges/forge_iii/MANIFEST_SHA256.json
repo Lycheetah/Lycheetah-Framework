@@ -1,0 +1,30 @@
+{
+  "generated": "2026-10-18",
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "31bf49e37115a4b6419bf99444653a9a6d7cf19f04b0d7578c759d68bb09aa8f",
+    "benchmark.py": "2ee6a2a4fa66d114ecf44fc925526d72f60b39417b345c48d0e71a8fc2d358c0",
+    "choice_fence.py": "d5f3f4e5d4171a42d81e6e9e710b797eb6edf6b639282db1db38617b3f8746c4",
+    "demo.py": "2ef1c32a8efe841eea7dcafe0020e3f2616c6323c84ab4e4e39e496f25d32e2a",
+    "docs/ADVERSARIAL_FINDINGS.md": "56d0f4c557e5c9f96b448809a9f861e66abb1de2eb384596dfe8a55d841cdb25",
+    "docs/INTEGRATION_HANDOFF.md": "6be7047e20cbc399cb22d244f51da62076a93c826f59d6e25fb4292cc5f166d7",
+    "docs/PLAIN_LANGUAGE_RECEIPT_SPEC.md": "af48cc836102917464ae859c89bb913d159ac36091b48f9f8408454fa7adf8b0",
+    "docs/SOVEREIGNTY_DESIGN_CHARTER_v0.3.md": "dc0df7c8897baa6696ecc92dbcfd63a7f0c3ac2c625b5b9fbc7ad68ad1bb2fcb",
+    "docs/USER_STUDY_PROTOCOL.md": "dfb57ad8499e5389717876e73f7fe658207c02aa2278d2a284d7111dc4478977",
+    "lineage/README.md": "d5e4d53e3360f6f2ddef11840d4c2b3b2ca79d5b981f29eb951cb65a1757ad33",
+    "lineage/forge_ii/README.md": "8e331245f0e9b870d864726e0d92bc5343c83e351e911e3c002c5ca6c3bb9c61",
+    "lineage/forge_ii/SHA256_MANIFEST.json": "57bd99b80cb0cd71b4a69bf737f64a284e6720006eac2f4b5b5f8120ca4cc72c",
+    "lineage/forge_ii/counterfactual_lab.py": "d92dee8d56f7447b6f5ea74be87e5734338ba59314df650057207777d4ccb222",
+    "lineage/forge_ii/counterfactual_results.json": "aef2304e236c3ba056fac71afa2c12a15c5a18c8bc1c6757b54a747705f127ff",
+    "lineage/forge_ii/demo.py": "0abcaf7cd3f448ddb0092cb714236b8eaf95e8b73ffe04c0e28ba784692656f1",
+    "lineage/forge_ii/docs/CLAIMS_REGISTER.md": "1995e326422f22de32b10dd91979704bf8a2a4a9f1aa61acf82729bd126440f1",
+    "lineage/forge_ii/docs/FRAMEWORK_INTEGRATION_PATH.md": "e369ee627435b82ca9a1d71a0dff6c62a7d6af7c043a77f5da938f0078b1ce41",
+    "lineage/forge_ii/docs/LYCHEETAH_FREE_WILL_SOVEREIGNTY_MICROORCIM_CHARTER_v0.1.md": "18a2b10c1c9cd4bdef6c8a834b36d60385e4fa8cd6f13b9d95bc410a771bb1a6",
+    "lineage/forge_ii/docs/SOVEREIGN_CHOICE_ADDENDUM_v0.2.md": "759ef103745a662a7fd0b92b59215da9a9ddf78e7a2910a9f4e4bf3d473a58bd",
+    "lineage/forge_ii/docs/THREAT_MODEL_AND_LIMITS.md": "6e0d7504b0a3f2baf82bdc7d52e96933ef8bad144804b1283802f0caa2e4cfe0",
+    "lineage/forge_ii/sovereign_choice.py": "4629a6ad9ed3b40e872a48267b498eb9be880dda860f49ba3f1f359019685a2c",
+    "lineage/forge_ii/tests/test_sovereign_choice.py": "f273235b9ad0b78d17f6fbe94d9bef9d3b3928b878fb7e20800b1dd55f3271f2",
+    "results.json": "db1963e0fe18f86c82c547c749bc660e67a11fa94c481c6e3df3266bcdbeea73",
+    "test_choice_fence.py": "4f6c6678bd1e43db4a711f9cbbf6a1eb295930a49faf437d6072edaabcd00ef2"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "README.md": "c05b97572e394e47ee41b0b297b35f132429da854df4ee93f091043f5ff91b69",
+  "build_demo.py": "b92b55b6a0ba0ab5b2e3f5715a188328507a3dda5c7371ca6af618fa7578be90",
+  "build_package.py": "99765ac09c7a44e51af974a1dd857b4b1687bf2474a7a2e824c3ab839b5ced0e",
+  "docs/EXPERIMENT_PROTOCOL_AND_FAILURE_MUSEUM.md": "f07a5a7f2517385fc34512a6ad6476587a852adae5478b5477061031e65c2434",
+  "docs/SOVEREIGN_COUPLING_CHARTER_v0.7.md": "a1fd3232a2a5e3f1cd18b1554142614d6409b23ce686bf6ff52b24c8ee380e68",
+  "lineage/FORGE_VI_COMPLETE.zip": "9b3619e288ca1ca863bf1655314ccb04073f7bb0a6941eec09712f9d7b443bb6",
+  "prototype/self_displacement_lab.html": "1da708559f276a173fc1d3f56a6de5feb5a41342ce072261f46853084f8b7d3b",
+  "results/fixture_results.json": "366b9fa20703522cad7092441ee3b62678c8844109084c4a4ec9454fe16172ae",
+  "results/retention_sensitivity.json": "cff08159226ec23bb876ce5bdb05e926bb92bf33a9ad9ab0bdd4364ecbec061f",
+  "results/test_log.txt": "7622ac1b5de52eaf50849c6daa45a8e0ccae6bd666d7040f0aa7927de3df289c",
+  "run_verification.py": "36545a6bb1da8da7c884ab269ae28ce873e6ce4c9ccd59d6c4c25355e4287fa1",
+  "src/self_displacement.py": "ade00714940c9b1fadd97376d7603db81ca2be0c85b547c152cda29f77d00a1e",
+  "src/sensitivity.py": "bd14c470a755346e29cba74303160514b5e10c43a6b2522d22efa042d3493e00",
+  "tests/test_self_displacement.py": "efa9eea2ab657d5226292b169cb782fc1226320959b29465394385fa9fff52ad"
+}

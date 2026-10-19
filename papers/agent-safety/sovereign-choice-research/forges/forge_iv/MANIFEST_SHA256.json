@@ -1,0 +1,18 @@
+{
+  "schema": "lycheetah-forge4-integrity-v1",
+  "digests": {
+    "README.md": "33815a849c003b4b149c5d5815e3360915bf20e125554769ba1cb65247f72baa",
+    "RESEARCH_STATUS.md": "5fa18896fc0c78b9785bb02a4e174dcdb689c4f07ef3bd3d2fdc00267229bdb6",
+    "demo.py": "29ceac3a260b6b684f84c4b6e7b9eafca0afbf713bce69eaee4c477a0ddee435",
+    "docs/INTEGRATION_LIMITS_AND_HANDOFF.md": "04610dda7d2bae9e39da6d1f28ac5fb920baf8404e9e0c3a6eef88e2bb59a88e",
+    "docs/SOVEREIGN_WILL_CHARTER_v0.4.md": "acbcfff025e7bcb66a260193ea7cc7e810c3546ca3eed03ec12337f0f89266ec",
+    "epistemic_boundary.py": "eb51cdad0306a60cf4b8411a45f575296be7be1c4e1da02d75ad6b0132cf83c4",
+    "intent_bridge.py": "be3af87e445d0fb667160687100ce3b092cfc7bb4d43c294610c1403be345152",
+    "lineage/FORGE_III_COMPLETE.zip": "5b6e03f234fd870de8f069bdb0da55edf57b94078893426857f29f9d49979a0b",
+    "prototype/sovereign_choice_demo.html": "aca557be2295cc0a8910cc3d0b53f8489118c3c96fcd49ae981e35768fbb4e36",
+    "results.json": "b6e3c544c7b8eb6198a1908473aec73df9b6b6e141c0579ab6fe97378cac8ae3",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_intent_bridge.py": "97cc4071da3135654c09b958ab291e2aa302a2f4b72db867e1baf9e02cf49ff5",
+    "tests/test_real_upstream.py": "27579dc3afe2d1f14e674b6a966e7c56f6aabf726f0c56cd3c4b9e9534846be9"
+  }
+}

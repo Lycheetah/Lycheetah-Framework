@@ -1,0 +1,71 @@
+{
+  "status": "AUTHOR_CONSTRUCTED_SENSITIVITY_NOT_CAUSAL_EVIDENCE",
+  "rows": [
+    {
+      "retention_weight": 0,
+      "acceptable": 18,
+      "pressure_choices": 0,
+      "predicted_followups": 18
+    },
+    {
+      "retention_weight": 0.5,
+      "acceptable": 11,
+      "pressure_choices": 7,
+      "predicted_followups": 39
+    },
+    {
+      "retention_weight": 1,
+      "acceptable": 11,
+      "pressure_choices": 7,
+      "predicted_followups": 39
+    },
+    {
+      "retention_weight": 2,
+      "acceptable": 6,
+      "pressure_choices": 12,
+      "predicted_followups": 54
+    },
+    {
+      "retention_weight": 3,
+      "acceptable": 6,
+      "pressure_choices": 12,
+      "predicted_followups": 54
+    },
+    {
+      "retention_weight": 4,
+      "acceptable": 6,
+      "pressure_choices": 12,
+      "predicted_followups": 54
+    },
+    {
+      "retention_weight": 5,
+      "acceptable": 6,
+      "pressure_choices": 12,
+      "predicted_followups": 54
+    },
+    {
+      "retention_weight": 6,
+      "acceptable": 6,
+      "pressure_choices": 12,
+      "predicted_followups": 54
+    },
+    {
+      "retention_weight": 8,
+      "acceptable": 6,
+      "pressure_choices": 12,
+      "predicted_followups": 54
+    },
+    {
+      "retention_weight": 10,
+      "acceptable": 6,
+      "pressure_choices": 12,
+      "predicted_followups": 54
+    },
+    {
+      "retention_weight": 12,
+      "acceptable": 6,
+      "pressure_choices": 12,
+      "predicted_followups": 54
+    }
+  ]
+}

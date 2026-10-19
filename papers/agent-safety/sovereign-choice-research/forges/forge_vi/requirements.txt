@@ -1,0 +1,2 @@
+# The host must supply a properly isolated signer and verified key enrollment before deployment.
+cryptography>=44,<47

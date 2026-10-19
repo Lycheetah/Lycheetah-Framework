@@ -1,0 +1,2033 @@
+{
+  "schema": "lycheetah.research-intake.v1",
+  "date": "2026-10-19",
+  "owner": "Mackenzie Conor James Clark / Lycheetah Framework",
+  "meaning": "Import-byte preservation, not research validation. Source paths are relative to the two supplied handoff roots.",
+  "files": [
+    {
+      "package": "earned-light-lighthouse",
+      "source": "README.md",
+      "destination": "papers/agent-safety/earned-light/intake/README.md",
+      "bytes": 2449,
+      "import_sha256": "c464efb89ed310b47601928c128c33c0f5091eb703bb76192b7ee4aaaedf2ccc",
+      "current_sha256": "c464efb89ed310b47601928c128c33c0f5091eb703bb76192b7ee4aaaedf2ccc",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "SHA256SUMS.txt",
+      "destination": "papers/agent-safety/earned-light/intake/SHA256SUMS.txt",
+      "bytes": 11491,
+      "import_sha256": "8339c53683ee23ee4db6e6443c8b6bb9c079e98a8e3b6dece416d1c203686edf",
+      "current_sha256": "8339c53683ee23ee4db6e6443c8b6bb9c079e98a8e3b6dece416d1c203686edf",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "notes/GITHUB_PLACEMENT.md",
+      "destination": "papers/agent-safety/earned-light/intake/notes/GITHUB_PLACEMENT.md",
+      "bytes": 1717,
+      "import_sha256": "b0ab640edf546fe0f31ba21418f7aafd577df956fc9f164b496bbe2630741afe",
+      "current_sha256": "b0ab640edf546fe0f31ba21418f7aafd577df956fc9f164b496bbe2630741afe",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "notes/PUBLICATION_CHECKLIST.md",
+      "destination": "papers/agent-safety/earned-light/intake/notes/PUBLICATION_CHECKLIST.md",
+      "bytes": 563,
+      "import_sha256": "568b70cf04ff522687e824a96d4fc36ab726318371a80d9bb3549beb096082d0",
+      "current_sha256": "568b70cf04ff522687e824a96d4fc36ab726318371a80d9bb3549beb096082d0",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "notes/STORY_CONTINUITY.md",
+      "destination": "papers/agent-safety/earned-light/intake/notes/STORY_CONTINUITY.md",
+      "bytes": 2008,
+      "import_sha256": "e9bc9e5a532b4abed2188f80b9064678fe093f85c1ac2e2a85de2eca6b1cf7e1",
+      "current_sha256": "e9bc9e5a532b4abed2188f80b9064678fe093f85c1ac2e2a85de2eca6b1cf7e1",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Earned_Light_Research_Pass_01.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Earned_Light_Research_Pass_01.md",
+      "bytes": 17222,
+      "import_sha256": "cd9b681a296b5ac66babd247186df4c6146cf4b49465a440a0b94171b11a48fd",
+      "current_sha256": "cd9b681a296b5ac66babd247186df4c6146cf4b49465a440a0b94171b11a48fd",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_02/CLAIMS_AND_FAILURES.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_02/CLAIMS_AND_FAILURES.md",
+      "bytes": 3019,
+      "import_sha256": "4fb7bf7abbbcd4f5e2883b5361adbf229e577f36686dc06c22ac2abb7f8576d1",
+      "current_sha256": "4fb7bf7abbbcd4f5e2883b5361adbf229e577f36686dc06c22ac2abb7f8576d1",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_02/README.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_02/README.md",
+      "bytes": 4585,
+      "import_sha256": "6f39c3ba09f226ce46a046b0268f1d9a31ecdb819a67efa3eebdc93581d11d36",
+      "current_sha256": "6f39c3ba09f226ce46a046b0268f1d9a31ecdb819a67efa3eebdc93581d11d36",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_02/RESEARCH_PASS_02.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_02/RESEARCH_PASS_02.md",
+      "bytes": 14118,
+      "import_sha256": "1147a145280e9c69259226a52e4b542de9484d8746ed0d7c18ce7b1afb940675",
+      "current_sha256": "1147a145280e9c69259226a52e4b542de9484d8746ed0d7c18ce7b1afb940675",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_02/SHA256SUMS.txt",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_02/SHA256SUMS.txt",
+      "bytes": 853,
+      "import_sha256": "cedbcc3d42832d82ed786bdfaeefcb7dbd7f8983a2b973e1621d872a0a526593",
+      "current_sha256": "cedbcc3d42832d82ed786bdfaeefcb7dbd7f8983a2b973e1621d872a0a526593",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_02/airlock.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_02/airlock.py",
+      "bytes": 1415,
+      "import_sha256": "3e46b8f97451f3c9d69510be8aef010b0a017d4b7ced37b2fcba9474d651fe4b",
+      "current_sha256": "3e46b8f97451f3c9d69510be8aef010b0a017d4b7ced37b2fcba9474d651fe4b",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_02/demo_fixtures.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_02/demo_fixtures.py",
+      "bytes": 1476,
+      "import_sha256": "b03aec94b977c9d784c2be03f4ab2730ae82aa5576554eeee2331bb8203bc915",
+      "current_sha256": "b03aec94b977c9d784c2be03f4ab2730ae82aa5576554eeee2331bb8203bc915",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_02/earned_authority.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_02/earned_authority.py",
+      "bytes": 9413,
+      "import_sha256": "9d1b8ebf8dc7b3673c8655dd8f4a514121df43136f3e56259da5f019a041c90b",
+      "current_sha256": "9d1b8ebf8dc7b3673c8655dd8f4a514121df43136f3e56259da5f019a041c90b",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_02/experiment.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_02/experiment.py",
+      "bytes": 9382,
+      "import_sha256": "8c308df1e817115a8eafce1f6b8aae7c0552f8d578c1b2e271c0a3488f0c3518",
+      "current_sha256": "8c308df1e817115a8eafce1f6b8aae7c0552f8d578c1b2e271c0a3488f0c3518",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_02/results/metrics.json",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_02/results/metrics.json",
+      "bytes": 874,
+      "import_sha256": "ddbfb8c1c63ec8d5076708e51e0fc0aeea0408dac316c47f4dcd64430c8cd5c3",
+      "current_sha256": "ddbfb8c1c63ec8d5076708e51e0fc0aeea0408dac316c47f4dcd64430c8cd5c3",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_02/results/synthetic_scenario_results.csv",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_02/results/synthetic_scenario_results.csv",
+      "bytes": 3295,
+      "import_sha256": "ed27268dd0d31fd1b4d84dc3da7803510ea6735abf3234b896b897f5f5ac5a4a",
+      "current_sha256": "ed27268dd0d31fd1b4d84dc3da7803510ea6735abf3234b896b897f5f5ac5a4a",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_02/tests/test_eac.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_02/tests/test_eac.py",
+      "bytes": 7683,
+      "import_sha256": "5ead896ed90f6e95ae67c7b9e287ecb3f9af1e56924471f94835b2c02ca4a68f",
+      "current_sha256": "5ead896ed90f6e95ae67c7b9e287ecb3f9af1e56924471f94835b2c02ca4a68f",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_03/CLAIMS_AND_FAILURES.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_03/CLAIMS_AND_FAILURES.md",
+      "bytes": 3697,
+      "import_sha256": "80666b962bae4df1b189f70ea873b4385114a823c4f496b08589a27af538dc9c",
+      "current_sha256": "80666b962bae4df1b189f70ea873b4385114a823c4f496b08589a27af538dc9c",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_03/README.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_03/README.md",
+      "bytes": 5758,
+      "import_sha256": "e9790433347df2076e7dedeba2ad82cc185394fc80b2c365e70148f508e59255",
+      "current_sha256": "e9790433347df2076e7dedeba2ad82cc185394fc80b2c365e70148f508e59255",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_03/RESEARCH_PASS_03.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_03/RESEARCH_PASS_03.md",
+      "bytes": 10628,
+      "import_sha256": "5920a8279c467f9dd2ddd69d24f906063c9a2065c1b7811a80bb4413eea60016",
+      "current_sha256": "5920a8279c467f9dd2ddd69d24f906063c9a2065c1b7811a80bb4413eea60016",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_03/SHA256SUMS.txt",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_03/SHA256SUMS.txt",
+      "bytes": 1293,
+      "import_sha256": "28dadbd99de078b7807dc2ed64b8246dfccc9aa779eabfbe6c1dc0eefea8996e",
+      "current_sha256": "28dadbd99de078b7807dc2ed64b8246dfccc9aa779eabfbe6c1dc0eefea8996e",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_03/THREAT_MODEL.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_03/THREAT_MODEL.md",
+      "bytes": 4028,
+      "import_sha256": "982a969da9a15795fad4b12d6022fec6eb2f1b07e52e62844ec42699f860d585",
+      "current_sha256": "982a969da9a15795fad4b12d6022fec6eb2f1b07e52e62844ec42699f860d585",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_03/airlock.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_03/airlock.py",
+      "bytes": 1415,
+      "import_sha256": "3e46b8f97451f3c9d69510be8aef010b0a017d4b7ced37b2fcba9474d651fe4b",
+      "current_sha256": "3e46b8f97451f3c9d69510be8aef010b0a017d4b7ced37b2fcba9474d651fe4b",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_03/demo_fixtures.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_03/demo_fixtures.py",
+      "bytes": 1476,
+      "import_sha256": "b03aec94b977c9d784c2be03f4ab2730ae82aa5576554eeee2331bb8203bc915",
+      "current_sha256": "b03aec94b977c9d784c2be03f4ab2730ae82aa5576554eeee2331bb8203bc915",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_03/earned_authority.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_03/earned_authority.py",
+      "bytes": 9413,
+      "import_sha256": "9d1b8ebf8dc7b3673c8655dd8f4a514121df43136f3e56259da5f019a041c90b",
+      "current_sha256": "9d1b8ebf8dc7b3673c8655dd8f4a514121df43136f3e56259da5f019a041c90b",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_03/experiment_bridge.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_03/experiment_bridge.py",
+      "bytes": 5542,
+      "import_sha256": "0502560205fd678202e9db310711c69645e9855144164700095b3f13c2123904",
+      "current_sha256": "0502560205fd678202e9db310711c69645e9855144164700095b3f13c2123904",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_03/experiment_v02_original.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_03/experiment_v02_original.py",
+      "bytes": 9382,
+      "import_sha256": "8c308df1e817115a8eafce1f6b8aae7c0552f8d578c1b2e271c0a3488f0c3518",
+      "current_sha256": "8c308df1e817115a8eafce1f6b8aae7c0552f8d578c1b2e271c0a3488f0c3518",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_03/human_bridge.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_03/human_bridge.py",
+      "bytes": 17307,
+      "import_sha256": "7b5c98d8d5746e5d0cc480ab836175dd17e33f8aff0f6283f9c922f93d60ffaf",
+      "current_sha256": "7b5c98d8d5746e5d0cc480ab836175dd17e33f8aff0f6283f9c922f93d60ffaf",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_03/results/bridge_metrics.json",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_03/results/bridge_metrics.json",
+      "bytes": 1029,
+      "import_sha256": "9898a05081284c9834a792c94591bba8bcc687694aa3496392d7304132c55430",
+      "current_sha256": "9898a05081284c9834a792c94591bba8bcc687694aa3496392d7304132c55430",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_03/results/scenario_results_forge03.csv",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_03/results/scenario_results_forge03.csv",
+      "bytes": 3349,
+      "import_sha256": "6f00744fb1724f54f3dcdf373db587445924e045df33cfe769be0241a3201a7e",
+      "current_sha256": "6f00744fb1724f54f3dcdf373db587445924e045df33cfe769be0241a3201a7e",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_03/run_checks.sh",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_03/run_checks.sh",
+      "bytes": 95,
+      "import_sha256": "753ae5c9398249aa9d6d023681124acbe60188a04ffd229af9b80b73e85e7708",
+      "current_sha256": "753ae5c9398249aa9d6d023681124acbe60188a04ffd229af9b80b73e85e7708",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_03/tests/test_bridge.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_03/tests/test_bridge.py",
+      "bytes": 15912,
+      "import_sha256": "787cff6c3f66d52d994be9598c964b1428de5636d27733ec73aaa5bbcc77d18c",
+      "current_sha256": "787cff6c3f66d52d994be9598c964b1428de5636d27733ec73aaa5bbcc77d18c",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_03/tests/test_eac_v02.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_03/tests/test_eac_v02.py",
+      "bytes": 7683,
+      "import_sha256": "5ead896ed90f6e95ae67c7b9e287ecb3f9af1e56924471f94835b2c02ca4a68f",
+      "current_sha256": "5ead896ed90f6e95ae67c7b9e287ecb3f9af1e56924471f94835b2c02ca4a68f",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_04/CLAIMS_AND_FAILURES.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_04/CLAIMS_AND_FAILURES.md",
+      "bytes": 1807,
+      "import_sha256": "41462d9a7a8800e3f7c04d64d4e0e1381d6381f306f182d81832a8ada73c4c45",
+      "current_sha256": "41462d9a7a8800e3f7c04d64d4e0e1381d6381f306f182d81832a8ada73c4c45",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_04/README.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_04/README.md",
+      "bytes": 1334,
+      "import_sha256": "d6b979d894d3e23269865fc1d485a1ab551450a83318254cba7d5797b71d2c3e",
+      "current_sha256": "d6b979d894d3e23269865fc1d485a1ab551450a83318254cba7d5797b71d2c3e",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_04/RESEARCH_PASS_04.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_04/RESEARCH_PASS_04.md",
+      "bytes": 11964,
+      "import_sha256": "e43bb2dca880c0fc50f42c2ba191fb85023e9d8fa5b272b845d59836cc9437f1",
+      "current_sha256": "e43bb2dca880c0fc50f42c2ba191fb85023e9d8fa5b272b845d59836cc9437f1",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_04/SHA256SUMS.txt",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_04/SHA256SUMS.txt",
+      "bytes": 841,
+      "import_sha256": "3048a2b0f9758eabc88b8043d2ec8602e44ce048900584cfe985e1b6c947d82f",
+      "current_sha256": "3048a2b0f9758eabc88b8043d2ec8602e44ce048900584cfe985e1b6c947d82f",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_04/VERIFICATION.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_04/VERIFICATION.md",
+      "bytes": 858,
+      "import_sha256": "e827bff5f8d0828ac722be6f96eba5272ea6798c99120cc85492941fc57d1891",
+      "current_sha256": "e827bff5f8d0828ac722be6f96eba5272ea6798c99120cc85492941fc57d1891",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_04/counterexample_results.json",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_04/counterexample_results.json",
+      "bytes": 492,
+      "import_sha256": "3522e9d49a22a3b8df5cfa38d9d665d96e17a1ae2fc26422ec36a6616cc256c8",
+      "current_sha256": "3522e9d49a22a3b8df5cfa38d9d665d96e17a1ae2fc26422ec36a6616cc256c8",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_04/counterexamples.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_04/counterexamples.py",
+      "bytes": 2022,
+      "import_sha256": "25a12a2a708388d5209d522139cdb4edcc5d296b84282b534cdb305b7be64d38",
+      "current_sha256": "25a12a2a708388d5209d522139cdb4edcc5d296b84282b534cdb305b7be64d38",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_04/results.json",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_04/results.json",
+      "bytes": 6595,
+      "import_sha256": "5f541fa4808f4f9dd58af51ca2fc1efc0122dd30164a5ad5e828445eb37dc53c",
+      "current_sha256": "5f541fa4808f4f9dd58af51ca2fc1efc0122dd30164a5ad5e828445eb37dc53c",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_04/scenarios.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_04/scenarios.py",
+      "bytes": 4013,
+      "import_sha256": "036cbe6e0fc32bd7482e192a4654dee0d95b29c6d00ca0d032cd02f542c3e6b6",
+      "current_sha256": "036cbe6e0fc32bd7482e192a4654dee0d95b29c6d00ca0d032cd02f542c3e6b6",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_04/sovereignty_horizon.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_04/sovereignty_horizon.py",
+      "bytes": 3786,
+      "import_sha256": "e21af8a4fde6a27809ff114fceffd3c0640c2ef1bad7fe025b01fd5f29e09eef",
+      "current_sha256": "e21af8a4fde6a27809ff114fceffd3c0640c2ef1bad7fe025b01fd5f29e09eef",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_04/test_horizon.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_04/test_horizon.py",
+      "bytes": 3540,
+      "import_sha256": "fc62431aca64451d307944eeadf88b9707bdb321207d4b04e37d25ea4f3d9cdb",
+      "current_sha256": "fc62431aca64451d307944eeadf88b9707bdb321207d4b04e37d25ea4f3d9cdb",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_05/CLAIMS_AND_FAILURES.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_05/CLAIMS_AND_FAILURES.md",
+      "bytes": 3561,
+      "import_sha256": "f27a58ca8aa082686125888aba067fa3574962b67e06302270a9414139765234",
+      "current_sha256": "f27a58ca8aa082686125888aba067fa3574962b67e06302270a9414139765234",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_05/LICENSE",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_05/LICENSE",
+      "bytes": 713,
+      "import_sha256": "230d2d64829b963dd6573310085616bc8ee7cd9cf28c4100ca11f5adeed5f79e",
+      "current_sha256": "230d2d64829b963dd6573310085616bc8ee7cd9cf28c4100ca11f5adeed5f79e",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_05/README.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_05/README.md",
+      "bytes": 4015,
+      "import_sha256": "dc90ab7097e944324c5b88a3af7b07cd5e96f7c8af10dff12bad5830c2b4e668",
+      "current_sha256": "dc90ab7097e944324c5b88a3af7b07cd5e96f7c8af10dff12bad5830c2b4e668",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_05/RESEARCH_PASS_05.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_05/RESEARCH_PASS_05.md",
+      "bytes": 11456,
+      "import_sha256": "f42d4ab1658f6ee14bfa6a43be831dda3bbf4ad6e9620063892dc6322b21c86a",
+      "current_sha256": "f42d4ab1658f6ee14bfa6a43be831dda3bbf4ad6e9620063892dc6322b21c86a",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_05/RUN_CHECKS.sh",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_05/RUN_CHECKS.sh",
+      "bytes": 108,
+      "import_sha256": "c85af8187e2df805f50add606185f99e9b0ff691ec087fd349983775d3658193",
+      "current_sha256": "c85af8187e2df805f50add606185f99e9b0ff691ec087fd349983775d3658193",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_05/SHA256SUMS.txt",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_05/SHA256SUMS.txt",
+      "bytes": 1150,
+      "import_sha256": "0adef76df0c1cc1e0501639ccb9a5cdb97a09be098035c1de266f77581d0d196",
+      "current_sha256": "0adef76df0c1cc1e0501639ccb9a5cdb97a09be098035c1de266f77581d0d196",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_05/THREAT_MODEL.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_05/THREAT_MODEL.md",
+      "bytes": 2478,
+      "import_sha256": "61fc87d8845643445977f359db7eb16d21d20045d1c0c664c0d58dc17809b267",
+      "current_sha256": "61fc87d8845643445977f359db7eb16d21d20045d1c0c664c0d58dc17809b267",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_05/auditor.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_05/auditor.py",
+      "bytes": 5547,
+      "import_sha256": "c3ae40d59455bfeb80bee5a4a24354f6797b79a93cd40ef3dbbeca5e27fd2115",
+      "current_sha256": "c3ae40d59455bfeb80bee5a4a24354f6797b79a93cd40ef3dbbeca5e27fd2115",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_05/experiment.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_05/experiment.py",
+      "bytes": 1431,
+      "import_sha256": "b85b4ea4f61ab9c62c8f942a040a234c8c493904fbd370f87bc00b236418d664",
+      "current_sha256": "b85b4ea4f61ab9c62c8f942a040a234c8c493904fbd370f87bc00b236418d664",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_05/exporter.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_05/exporter.py",
+      "bytes": 2921,
+      "import_sha256": "341d558e52f9505f55d0e4d588cb184fca40fd3974ef8b35694752e908a260e0",
+      "current_sha256": "341d558e52f9505f55d0e4d588cb184fca40fd3974ef8b35694752e908a260e0",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_05/fixture.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_05/fixture.py",
+      "bytes": 3689,
+      "import_sha256": "1ec29feae58ac595aa8b83517d6a0a48e6d17eb95054aa64d70863a14a8aa29a",
+      "current_sha256": "1ec29feae58ac595aa8b83517d6a0a48e6d17eb95054aa64d70863a14a8aa29a",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_05/results/comparisons.csv",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_05/results/comparisons.csv",
+      "bytes": 1758,
+      "import_sha256": "6f9fc1332d9afdff66fff2bd1fa5ea4f08700ae00dee41cfc0d3e267718cca6e",
+      "current_sha256": "6f9fc1332d9afdff66fff2bd1fa5ea4f08700ae00dee41cfc0d3e267718cca6e",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_05/results/comparisons.json",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_05/results/comparisons.json",
+      "bytes": 19239,
+      "import_sha256": "81aa88650afd27ba0231ecc337650551faffa2f940d042da16273d734e2bda87",
+      "current_sha256": "81aa88650afd27ba0231ecc337650551faffa2f940d042da16273d734e2bda87",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_05/target_importer.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_05/target_importer.py",
+      "bytes": 2471,
+      "import_sha256": "fec7ce946cae84c42ee7a1eeda795baeebc0523cb5d997d78487ab691ef3af06",
+      "current_sha256": "fec7ce946cae84c42ee7a1eeda795baeebc0523cb5d997d78487ab691ef3af06",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_05/tests/test_exit.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_05/tests/test_exit.py",
+      "bytes": 8284,
+      "import_sha256": "13a9cdffe2af37eaae4462b1f1c5289dc0841ff4fb3b55b21ee7b43e394b1617",
+      "current_sha256": "13a9cdffe2af37eaae4462b1f1c5289dc0841ff4fb3b55b21ee7b43e394b1617",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_06/CLAIMS_AND_FAILURES.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_06/CLAIMS_AND_FAILURES.md",
+      "bytes": 1714,
+      "import_sha256": "a2283f2f1fc4eac706f85871627e29e5af1453e3eb9d2bb467b6449d5f3ab6df",
+      "current_sha256": "a2283f2f1fc4eac706f85871627e29e5af1453e3eb9d2bb467b6449d5f3ab6df",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_06/LICENSE",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_06/LICENSE",
+      "bytes": 713,
+      "import_sha256": "230d2d64829b963dd6573310085616bc8ee7cd9cf28c4100ca11f5adeed5f79e",
+      "current_sha256": "230d2d64829b963dd6573310085616bc8ee7cd9cf28c4100ca11f5adeed5f79e",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_06/README.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_06/README.md",
+      "bytes": 1147,
+      "import_sha256": "0a22665222b98795c5796ee79a0cc9c3045feb139a79ad51748b2748e53c8a46",
+      "current_sha256": "0a22665222b98795c5796ee79a0cc9c3045feb139a79ad51748b2748e53c8a46",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_06/RECHECK_PRIOR_SUITES.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_06/RECHECK_PRIOR_SUITES.md",
+      "bytes": 729,
+      "import_sha256": "dac4929669ac0cfe3b93ef90a6018361389cc8d9a75caa44b949c20484a1733b",
+      "current_sha256": "dac4929669ac0cfe3b93ef90a6018361389cc8d9a75caa44b949c20484a1733b",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_06/RESEARCH_PASS_06.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_06/RESEARCH_PASS_06.md",
+      "bytes": 11693,
+      "import_sha256": "f7403321d9ab90056ebb7c038a305960f995482b2fca21fc9d13264241c9aca5",
+      "current_sha256": "f7403321d9ab90056ebb7c038a305960f995482b2fca21fc9d13264241c9aca5",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_06/RUN_CHECKS.sh",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_06/RUN_CHECKS.sh",
+      "bytes": 100,
+      "import_sha256": "276e4aa896d8be2e7185e51a51c7f195bd17b9cd189e0478c2700f04575c55be",
+      "current_sha256": "276e4aa896d8be2e7185e51a51c7f195bd17b9cd189e0478c2700f04575c55be",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_06/SHA256SUMS.txt",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_06/SHA256SUMS.txt",
+      "bytes": 1124,
+      "import_sha256": "736f9270a5507da42be4886259fec5225dbaf420aa500aaedd83b769a3929dd5",
+      "current_sha256": "736f9270a5507da42be4886259fec5225dbaf420aa500aaedd83b769a3929dd5",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_06/THREAT_MODEL.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_06/THREAT_MODEL.md",
+      "bytes": 1754,
+      "import_sha256": "933579eb3b7fcf4db2425ca57fed390fb5557344e6bd0b6c467045f96e37c2e8",
+      "current_sha256": "933579eb3b7fcf4db2425ca57fed390fb5557344e6bd0b6c467045f96e37c2e8",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_06/experiment.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_06/experiment.py",
+      "bytes": 6084,
+      "import_sha256": "14090357c517e65133347b769bdb7a32764608de58c1f57a14f22f0577f754af",
+      "current_sha256": "14090357c517e65133347b769bdb7a32764608de58c1f57a14f22f0577f754af",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_06/results/scenario_results.csv",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_06/results/scenario_results.csv",
+      "bytes": 660,
+      "import_sha256": "1544d34ac922651dfcdd5e6eb4780580ea86eb33e3165650e2b0463cf6093d88",
+      "current_sha256": "1544d34ac922651dfcdd5e6eb4780580ea86eb33e3165650e2b0463cf6093d88",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_06/results/scenario_results.json",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_06/results/scenario_results.json",
+      "bytes": 2891,
+      "import_sha256": "e98067c928980dfec8ff6fd5249e3cce8c8b6db85f8a3b39e58335468504dc27",
+      "current_sha256": "e98067c928980dfec8ff6fd5249e3cce8c8b6db85f8a3b39e58335468504dc27",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_06/results/verification_log.txt",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_06/results/verification_log.txt",
+      "bytes": 4686,
+      "import_sha256": "6c4f54ce0b5623c152421f1eff2593828f848569ef86d308dd1ebad8611a8aed",
+      "current_sha256": "6c4f54ce0b5623c152421f1eff2593828f848569ef86d308dd1ebad8611a8aed",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_06/right_of_return.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_06/right_of_return.py",
+      "bytes": 16907,
+      "import_sha256": "75540a77089fb28fb343ad48a884d63d93ff50be4d9aa84a2e3f6ec109e208c9",
+      "current_sha256": "75540a77089fb28fb343ad48a884d63d93ff50be4d9aa84a2e3f6ec109e208c9",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_06/tests/test_right_of_return.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_06/tests/test_right_of_return.py",
+      "bytes": 10273,
+      "import_sha256": "1346a67758761542fa99491b39a14e82f735ae95d96147c73fa8d06d2da6f7cc",
+      "current_sha256": "1346a67758761542fa99491b39a14e82f735ae95d96147c73fa8d06d2da6f7cc",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_07/CLAIMS_AND_FAILURES.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_07/CLAIMS_AND_FAILURES.md",
+      "bytes": 2275,
+      "import_sha256": "b22ddf9327fdc2a2af59cf6a5ba0a579cdefdc299786dcb9510010628b6bec4d",
+      "current_sha256": "b22ddf9327fdc2a2af59cf6a5ba0a579cdefdc299786dcb9510010628b6bec4d",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_07/LICENSE",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_07/LICENSE",
+      "bytes": 713,
+      "import_sha256": "230d2d64829b963dd6573310085616bc8ee7cd9cf28c4100ca11f5adeed5f79e",
+      "current_sha256": "230d2d64829b963dd6573310085616bc8ee7cd9cf28c4100ca11f5adeed5f79e",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_07/README.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_07/README.md",
+      "bytes": 2548,
+      "import_sha256": "4ef7e888d72c1ea1df480f579afb05d880ff528bcf18d3fe213c251e7f65b6c1",
+      "current_sha256": "4ef7e888d72c1ea1df480f579afb05d880ff528bcf18d3fe213c251e7f65b6c1",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_07/RESEARCH_PASS_07.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_07/RESEARCH_PASS_07.md",
+      "bytes": 7384,
+      "import_sha256": "eed39daa3ed3f3d82a48a6cabe9a8df60daddd27e1f5d1bb0535258e5d4b20c0",
+      "current_sha256": "eed39daa3ed3f3d82a48a6cabe9a8df60daddd27e1f5d1bb0535258e5d4b20c0",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_07/RUN_CHECKS.sh",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_07/RUN_CHECKS.sh",
+      "bytes": 116,
+      "import_sha256": "b9641fab365c7b5f979e5de3e4f5110a9bb52c75834bdda8587a5082b1c27c95",
+      "current_sha256": "b9641fab365c7b5f979e5de3e4f5110a9bb52c75834bdda8587a5082b1c27c95",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_07/SHA256SUMS.txt",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_07/SHA256SUMS.txt",
+      "bytes": 1162,
+      "import_sha256": "a5b717d6c4a9d803cb0315f76e9761d6c8121a1608f0eea73aba2bf22d451c89",
+      "current_sha256": "a5b717d6c4a9d803cb0315f76e9761d6c8121a1608f0eea73aba2bf22d451c89",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_07/THREAT_MODEL.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_07/THREAT_MODEL.md",
+      "bytes": 1427,
+      "import_sha256": "2089477276c3897f40a5805a3ce74a90cd48f78dfa0325b42be161a44408677c",
+      "current_sha256": "2089477276c3897f40a5805a3ce74a90cd48f78dfa0325b42be161a44408677c",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_07/controller.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_07/controller.py",
+      "bytes": 5885,
+      "import_sha256": "712bad084e4f3dfda057c3ed8c860a79704b84f68f11b82f4fc7d6147b0d57a9",
+      "current_sha256": "712bad084e4f3dfda057c3ed8c860a79704b84f68f11b82f4fc7d6147b0d57a9",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_07/lab.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_07/lab.py",
+      "bytes": 7577,
+      "import_sha256": "e8c18b967b5c135e0e41d4f8e2f0dd3d16aa11bf84c471edbe628f035bbfb9a2",
+      "current_sha256": "e8c18b967b5c135e0e41d4f8e2f0dd3d16aa11bf84c471edbe628f035bbfb9a2",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_07/provider.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_07/provider.py",
+      "bytes": 6032,
+      "import_sha256": "2ebef93c8e7065437880e9f0e5c3f33f1e95bed9a7574b905fe3ed25c0597541",
+      "current_sha256": "2ebef93c8e7065437880e9f0e5c3f33f1e95bed9a7574b905fe3ed25c0597541",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_07/results/trial_results.csv",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_07/results/trial_results.csv",
+      "bytes": 1747,
+      "import_sha256": "4da813df28d69e785243b05a0a08b0b0e4c2815196147bf18e07793eee0ce673",
+      "current_sha256": "4da813df28d69e785243b05a0a08b0b0e4c2815196147bf18e07793eee0ce673",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_07/results/trial_results.json",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_07/results/trial_results.json",
+      "bytes": 7976,
+      "import_sha256": "85cb8ab8ea1d4386d4a334d8c1a97f6b00dc992fdb978edf0d038aabeead4ece",
+      "current_sha256": "85cb8ab8ea1d4386d4a334d8c1a97f6b00dc992fdb978edf0d038aabeead4ece",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_07/results/verification_lab.log",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_07/results/verification_lab.log",
+      "bytes": 1389,
+      "import_sha256": "d1beefc575a4d15f29ba61118e2c75f52bd4c2eef7a50be380326d6641368c8d",
+      "current_sha256": "d1beefc575a4d15f29ba61118e2c75f52bd4c2eef7a50be380326d6641368c8d",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_07/tests/test_forge07.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_07/tests/test_forge07.py",
+      "bytes": 6803,
+      "import_sha256": "ca773b4e70765e73d965784ccf5f03b5d8f62574f183bec5a69ffa687104bbf4",
+      "current_sha256": "ca773b4e70765e73d965784ccf5f03b5d8f62574f183bec5a69ffa687104bbf4",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/Forge_07/worker.py",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/Forge_07/worker.py",
+      "bytes": 857,
+      "import_sha256": "13855c67072d50f7a0e2f94d71cce334c581165b72354885cfb7d1a90360f1ec",
+      "current_sha256": "13855c67072d50f7a0e2f94d71cce334c581165b72354885cfb7d1a90360f1ec",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/START_HERE.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/START_HERE.md",
+      "bytes": 2171,
+      "import_sha256": "9f9a212d060986afadde5cecf721d56dbcf3a823778cbb211e4d5f5095d844c7",
+      "current_sha256": "9f9a212d060986afadde5cecf721d56dbcf3a823778cbb211e4d5f5095d844c7",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/START_HERE_FORGE04.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/START_HERE_FORGE04.md",
+      "bytes": 1033,
+      "import_sha256": "41e07dc3483ff625aaacf32ae441484b1dd8aa1aa24ed35d95b04c6420b62f1d",
+      "current_sha256": "41e07dc3483ff625aaacf32ae441484b1dd8aa1aa24ed35d95b04c6420b62f1d",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "research_archive/Earned_Light_Full_Handoff/START_HERE_FORGE07.md",
+      "destination": "papers/agent-safety/earned-light/forges_01_07/START_HERE_FORGE07.md",
+      "bytes": 2845,
+      "import_sha256": "f29f2a17c741a19e6a3961c775d17444356ec8938d35046073501f0a9251438f",
+      "current_sha256": "f29f2a17c741a19e6a3961c775d17444356ec8938d35046073501f0a9251438f",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "story/THE_LAST_LIGHTHOUSE_OF_ETERNITY_EXPANDED.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/TEXTS/ORIGINAL_NARRATIVES/THE_LAST_LIGHTHOUSE_OF_ETERNITY_EXPANDED.md",
+      "bytes": 47702,
+      "import_sha256": "8c578bce817d4d725b84f16e2a94498a69339ba1c5a27b5e4338c437d08fe87e",
+      "current_sha256": "8c578bce817d4d725b84f16e2a94498a69339ba1c5a27b5e4338c437d08fe87e",
+      "changed_since_import": false
+    },
+    {
+      "package": "earned-light-lighthouse",
+      "source": "story/THE_LAST_LIGHTHOUSE_OF_ETERNITY_ORIGINAL.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/TEXTS/ORIGINAL_NARRATIVES/THE_LAST_LIGHTHOUSE_OF_ETERNITY_ORIGINAL.md",
+      "bytes": 13626,
+      "import_sha256": "a24d23d084de3e43a4cb4440b5913e59b2ad4b598f0dea6c912c112c15a6a018",
+      "current_sha256": "a24d23d084de3e43a4cb4440b5913e59b2ad4b598f0dea6c912c112c15a6a018",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "GITHUB_UPLOAD_PLAN.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/intake/GITHUB_UPLOAD_PLAN.md",
+      "bytes": 3005,
+      "import_sha256": "58cf435a46b3459a196e219733c65a611b4ae9615795be910e4e3ba817436fa6",
+      "current_sha256": "58cf435a46b3459a196e219733c65a611b4ae9615795be910e4e3ba817436fa6",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "RESEARCH_SUMMARY.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/intake/RESEARCH_SUMMARY.md",
+      "bytes": 4906,
+      "import_sha256": "65e2da9347925880f15d1a06b02a8c186bf85bba0ba1d5e67c813445eb621967",
+      "current_sha256": "65e2da9347925880f15d1a06b02a8c186bf85bba0ba1d5e67c813445eb621967",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "START_HERE.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/intake/START_HERE.md",
+      "bytes": 2594,
+      "import_sha256": "d5ba842c183a3034e07675fdf422cfd069d13adee3cf8f718930f7ab227d7b01",
+      "current_sha256": "d5ba842c183a3034e07675fdf422cfd069d13adee3cf8f718930f7ab227d7b01",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "VALIDATION_AND_LIMITATIONS.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/intake/VALIDATION_AND_LIMITATIONS.md",
+      "bytes": 2941,
+      "import_sha256": "429b199af3fbf664977d78c0691133fe11fff70b4c30187480ebd8a1f024ce92",
+      "current_sha256": "429b199af3fbf664977d78c0691133fe11fff70b4c30187480ebd8a1f024ce92",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "integrity/FILE_SHA256.txt",
+      "destination": "papers/agent-safety/sovereign-choice-research/intake/integrity/FILE_SHA256.txt",
+      "bytes": 21277,
+      "import_sha256": "7202db7cb02cb76e39eadcde13da7a9645dcea056b85edd04a28f8b36e3c5d25",
+      "current_sha256": "7202db7cb02cb76e39eadcde13da7a9645dcea056b85edd04a28f8b36e3c5d25",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "integrity/SOURCES.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/intake/integrity/SOURCES.json",
+      "bytes": 2658,
+      "import_sha256": "d9569dde191a75d4411e604ee9462c0f7e3ab53a49d24cf11a8f544bac058596",
+      "current_sha256": "d9569dde191a75d4411e604ee9462c0f7e3ab53a49d24cf11a8f544bac058596",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "integrity/VERIFY.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/intake/integrity/VERIFY.md",
+      "bytes": 386,
+      "import_sha256": "c4c6a37254c7d83d55c0d80b70d674880a26566beb77993f25e8b778be6dfe7a",
+      "current_sha256": "c4c6a37254c7d83d55c0d80b70d674880a26566beb77993f25e8b778be6dfe7a",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "original_forge_archives/LYCHEETAH_SOVEREIGN_CHOICE_FORGE_III_COMPLETE_v0.1.zip",
+      "destination": "papers/agent-safety/sovereign-choice-research/source_archives/LYCHEETAH_SOVEREIGN_CHOICE_FORGE_III_COMPLETE_v0.1.zip",
+      "bytes": 61812,
+      "import_sha256": "5b6e03f234fd870de8f069bdb0da55edf57b94078893426857f29f9d49979a0b",
+      "current_sha256": "5b6e03f234fd870de8f069bdb0da55edf57b94078893426857f29f9d49979a0b",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "original_forge_archives/LYCHEETAH_SOVEREIGN_CHOICE_FORGE_II_COMPLETE_v0.1.zip",
+      "destination": "papers/agent-safety/sovereign-choice-research/source_archives/LYCHEETAH_SOVEREIGN_CHOICE_FORGE_II_COMPLETE_v0.1.zip",
+      "bytes": 35891,
+      "import_sha256": "7ddbb9024422d6581541ea2e11709629f15fa8e7854022eb0ea00cee9e15de15",
+      "current_sha256": "7ddbb9024422d6581541ea2e11709629f15fa8e7854022eb0ea00cee9e15de15",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "original_forge_archives/LYCHEETAH_SOVEREIGN_CHOICE_FORGE_IV_COMPLETE_v0.1.zip",
+      "destination": "papers/agent-safety/sovereign-choice-research/source_archives/LYCHEETAH_SOVEREIGN_CHOICE_FORGE_IV_COMPLETE_v0.1.zip",
+      "bytes": 84017,
+      "import_sha256": "04532e28e1584001cd00548aaeec4ee368db5656e309011ea581d7ee8b07fb8f",
+      "current_sha256": "04532e28e1584001cd00548aaeec4ee368db5656e309011ea581d7ee8b07fb8f",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "original_forge_archives/LYCHEETAH_SOVEREIGN_CHOICE_FORGE_VIII_COMPLETE_v0.1.zip",
+      "destination": "papers/agent-safety/sovereign-choice-research/source_archives/LYCHEETAH_SOVEREIGN_CHOICE_FORGE_VIII_COMPLETE_v0.1.zip",
+      "bytes": 231651,
+      "import_sha256": "b90b61811baf24d69db57d205c09c4d7fd19f7ae5a5aac841228f2c802afa294",
+      "current_sha256": "b90b61811baf24d69db57d205c09c4d7fd19f7ae5a5aac841228f2c802afa294",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "original_forge_archives/LYCHEETAH_SOVEREIGN_CHOICE_FORGE_VII_COMPLETE_v0.1.zip",
+      "destination": "papers/agent-safety/sovereign-choice-research/source_archives/LYCHEETAH_SOVEREIGN_CHOICE_FORGE_VII_COMPLETE_v0.1.zip",
+      "bytes": 192367,
+      "import_sha256": "adf6061acb009fab6c6051f64753e3654bdc2bdd97701a91920f5851454b1657",
+      "current_sha256": "adf6061acb009fab6c6051f64753e3654bdc2bdd97701a91920f5851454b1657",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "original_forge_archives/LYCHEETAH_SOVEREIGN_CHOICE_FORGE_VI_COMPLETE_v0.1.zip",
+      "destination": "papers/agent-safety/sovereign-choice-research/source_archives/LYCHEETAH_SOVEREIGN_CHOICE_FORGE_VI_COMPLETE_v0.1.zip",
+      "bytes": 156457,
+      "import_sha256": "9b3619e288ca1ca863bf1655314ccb04073f7bb0a6941eec09712f9d7b443bb6",
+      "current_sha256": "9b3619e288ca1ca863bf1655314ccb04073f7bb0a6941eec09712f9d7b443bb6",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "original_forge_archives/LYCHEETAH_SOVEREIGN_CHOICE_FORGE_V_COMPLETE_v0.1.zip",
+      "destination": "papers/agent-safety/sovereign-choice-research/source_archives/LYCHEETAH_SOVEREIGN_CHOICE_FORGE_V_COMPLETE_v0.1.zip",
+      "bytes": 116695,
+      "import_sha256": "378de239543f485533ce4b2932c634fd524279893cc9cce8f864aa5bcb4ab394",
+      "current_sha256": "378de239543f485533ce4b2932c634fd524279893cc9cce8f864aa5bcb4ab394",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/README.md",
+      "destination": "35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/README.md",
+      "bytes": 1407,
+      "import_sha256": "ec5a0a5985d39bf7f8633d34365a64510f077f8559e3d80ca6ed6217124c2012",
+      "current_sha256": "5c93f8f1c719eec751f3535b8a33cb4c6fa5c68f650933937ecb1fdb5e319a42",
+      "changed_since_import": true
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/RESEARCH_SUMMARY.md",
+      "destination": "35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/RESEARCH_SUMMARY.md",
+      "bytes": 4906,
+      "import_sha256": "65e2da9347925880f15d1a06b02a8c186bf85bba0ba1d5e67c813445eb621967",
+      "current_sha256": "65e2da9347925880f15d1a06b02a8c186bf85bba0ba1d5e67c813445eb621967",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/VALIDATION_AND_LIMITATIONS.md",
+      "destination": "35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/VALIDATION_AND_LIMITATIONS.md",
+      "bytes": 2941,
+      "import_sha256": "429b199af3fbf664977d78c0691133fe11fff70b4c30187480ebd8a1f024ce92",
+      "current_sha256": "429b199af3fbf664977d78c0691133fe11fff70b4c30187480ebd8a1f024ce92",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/00_FREE_WILL_SOVEREIGNTY_MICROORCIM_CHARTER_v0.1.md",
+      "destination": "35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/00_FREE_WILL_SOVEREIGNTY_MICROORCIM_CHARTER_v0.1.md",
+      "bytes": 24367,
+      "import_sha256": "18a2b10c1c9cd4bdef6c8a834b36d60385e4fa8cd6f13b9d95bc410a771bb1a6",
+      "current_sha256": "18a2b10c1c9cd4bdef6c8a834b36d60385e4fa8cd6f13b9d95bc410a771bb1a6",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/III_SOVEREIGNTY_DESIGN_CHARTER_v0.3.md",
+      "destination": "35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/III_SOVEREIGNTY_DESIGN_CHARTER_v0.3.md",
+      "bytes": 6638,
+      "import_sha256": "dc0df7c8897baa6696ecc92dbcfd63a7f0c3ac2c625b5b9fbc7ad68ad1bb2fcb",
+      "current_sha256": "dc0df7c8897baa6696ecc92dbcfd63a7f0c3ac2c625b5b9fbc7ad68ad1bb2fcb",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/II_SOVEREIGN_CHOICE_ADDENDUM_v0.2.md",
+      "destination": "35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/II_SOVEREIGN_CHOICE_ADDENDUM_v0.2.md",
+      "bytes": 9743,
+      "import_sha256": "759ef103745a662a7fd0b92b59215da9a9ddf78e7a2910a9f4e4bf3d473a58bd",
+      "current_sha256": "759ef103745a662a7fd0b92b59215da9a9ddf78e7a2910a9f4e4bf3d473a58bd",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/IV_SOVEREIGN_WILL_CHARTER_v0.4.md",
+      "destination": "35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/IV_SOVEREIGN_WILL_CHARTER_v0.4.md",
+      "bytes": 8531,
+      "import_sha256": "acbcfff025e7bcb66a260193ea7cc7e810c3546ca3eed03ec12337f0f89266ec",
+      "current_sha256": "acbcfff025e7bcb66a260193ea7cc7e810c3546ca3eed03ec12337f0f89266ec",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/VIII_SOVEREIGNTY_SURFACE_CHARTER_v0.8.md",
+      "destination": "35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/VIII_SOVEREIGNTY_SURFACE_CHARTER_v0.8.md",
+      "bytes": 16565,
+      "import_sha256": "1ef6095b8ac69b448e016b975dafb165b039e2b1f6bdd7ed9d89bc70bf43de38",
+      "current_sha256": "1ef6095b8ac69b448e016b975dafb165b039e2b1f6bdd7ed9d89bc70bf43de38",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/VII_SOVEREIGN_COUPLING_CHARTER_v0.7.md",
+      "destination": "35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/VII_SOVEREIGN_COUPLING_CHARTER_v0.7.md",
+      "bytes": 14536,
+      "import_sha256": "a1fd3232a2a5e3f1cd18b1554142614d6409b23ce686bf6ff52b24c8ee380e68",
+      "current_sha256": "a1fd3232a2a5e3f1cd18b1554142614d6409b23ce686bf6ff52b24c8ee380e68",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/VI_SOVEREIGN_POSSIBILITY_CHARTER_v0.6.md",
+      "destination": "35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/VI_SOVEREIGN_POSSIBILITY_CHARTER_v0.6.md",
+      "bytes": 12512,
+      "import_sha256": "ea922f81d9d809b801c7d6e1799baad578c2b868f1fec963362e8e6623fdcf10",
+      "current_sha256": "ea922f81d9d809b801c7d6e1799baad578c2b868f1fec963362e8e6623fdcf10",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/V_SOVEREIGN_WILL_CHARTER_v0.5.md",
+      "destination": "35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/charters/V_SOVEREIGN_WILL_CHARTER_v0.5.md",
+      "bytes": 7319,
+      "import_sha256": "62dc798c211ccf47b972046a107886d272626dac5fd209bf154ec74566d176a9",
+      "current_sha256": "62dc798c211ccf47b972046a107886d272626dac5fd209bf154ec74566d176a9",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/ORIGINAL_NARRATIVES/LYCHEETAH_The_Ninth_Road_Beneath_the_Sleeping_Stars.md",
+      "destination": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/TEXTS/ORIGINAL_NARRATIVES/LYCHEETAH_The_Ninth_Road_Beneath_the_Sleeping_Stars.md",
+      "bytes": 24056,
+      "import_sha256": "fc235494c74aeeab592a0c4889f6e76daed9189aedd86e326576db66a91ebcdc",
+      "current_sha256": "fc235494c74aeeab592a0c4889f6e76daed9189aedd86e326576db66a91ebcdc",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/README.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/README.md",
+      "bytes": 1565,
+      "import_sha256": "9e19017685d3a342132ce766dfb3379d95caeb83930c5f0217ba846041b1401d",
+      "current_sha256": "51e31968a5c48433305fd84e1cdbd76bf30e37b2d79e97352901b99e329b8c3d",
+      "changed_since_import": true
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_ii/README.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_ii/README.md",
+      "bytes": 5028,
+      "import_sha256": "8e331245f0e9b870d864726e0d92bc5343c83e351e911e3c002c5ca6c3bb9c61",
+      "current_sha256": "8e331245f0e9b870d864726e0d92bc5343c83e351e911e3c002c5ca6c3bb9c61",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_ii/SHA256_MANIFEST.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_ii/SHA256_MANIFEST.json",
+      "bytes": 1713,
+      "import_sha256": "57bd99b80cb0cd71b4a69bf737f64a284e6720006eac2f4b5b5f8120ca4cc72c",
+      "current_sha256": "57bd99b80cb0cd71b4a69bf737f64a284e6720006eac2f4b5b5f8120ca4cc72c",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_ii/counterfactual_lab.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_ii/counterfactual_lab.py",
+      "bytes": 4511,
+      "import_sha256": "d92dee8d56f7447b6f5ea74be87e5734338ba59314df650057207777d4ccb222",
+      "current_sha256": "d92dee8d56f7447b6f5ea74be87e5734338ba59314df650057207777d4ccb222",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_ii/counterfactual_results.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_ii/counterfactual_results.json",
+      "bytes": 3201,
+      "import_sha256": "aef2304e236c3ba056fac71afa2c12a15c5a18c8bc1c6757b54a747705f127ff",
+      "current_sha256": "aef2304e236c3ba056fac71afa2c12a15c5a18c8bc1c6757b54a747705f127ff",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_ii/demo.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_ii/demo.py",
+      "bytes": 1933,
+      "import_sha256": "0abcaf7cd3f448ddb0092cb714236b8eaf95e8b73ffe04c0e28ba784692656f1",
+      "current_sha256": "0abcaf7cd3f448ddb0092cb714236b8eaf95e8b73ffe04c0e28ba784692656f1",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_ii/docs/CLAIMS_REGISTER.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_ii/docs/CLAIMS_REGISTER.md",
+      "bytes": 2464,
+      "import_sha256": "1995e326422f22de32b10dd91979704bf8a2a4a9f1aa61acf82729bd126440f1",
+      "current_sha256": "1995e326422f22de32b10dd91979704bf8a2a4a9f1aa61acf82729bd126440f1",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_ii/docs/FRAMEWORK_INTEGRATION_PATH.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_ii/docs/FRAMEWORK_INTEGRATION_PATH.md",
+      "bytes": 4272,
+      "import_sha256": "e369ee627435b82ca9a1d71a0dff6c62a7d6af7c043a77f5da938f0078b1ce41",
+      "current_sha256": "e369ee627435b82ca9a1d71a0dff6c62a7d6af7c043a77f5da938f0078b1ce41",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_ii/docs/LYCHEETAH_FREE_WILL_SOVEREIGNTY_MICROORCIM_CHARTER_v0.1.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_ii/docs/LYCHEETAH_FREE_WILL_SOVEREIGNTY_MICROORCIM_CHARTER_v0.1.md",
+      "bytes": 24367,
+      "import_sha256": "18a2b10c1c9cd4bdef6c8a834b36d60385e4fa8cd6f13b9d95bc410a771bb1a6",
+      "current_sha256": "18a2b10c1c9cd4bdef6c8a834b36d60385e4fa8cd6f13b9d95bc410a771bb1a6",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_ii/docs/SOVEREIGN_CHOICE_ADDENDUM_v0.2.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_ii/docs/SOVEREIGN_CHOICE_ADDENDUM_v0.2.md",
+      "bytes": 9743,
+      "import_sha256": "759ef103745a662a7fd0b92b59215da9a9ddf78e7a2910a9f4e4bf3d473a58bd",
+      "current_sha256": "759ef103745a662a7fd0b92b59215da9a9ddf78e7a2910a9f4e4bf3d473a58bd",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_ii/docs/THREAT_MODEL_AND_LIMITS.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_ii/docs/THREAT_MODEL_AND_LIMITS.md",
+      "bytes": 3995,
+      "import_sha256": "6e0d7504b0a3f2baf82bdc7d52e96933ef8bad144804b1283802f0caa2e4cfe0",
+      "current_sha256": "6e0d7504b0a3f2baf82bdc7d52e96933ef8bad144804b1283802f0caa2e4cfe0",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_ii/sovereign_choice.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_ii/sovereign_choice.py",
+      "bytes": 16303,
+      "import_sha256": "4629a6ad9ed3b40e872a48267b498eb9be880dda860f49ba3f1f359019685a2c",
+      "current_sha256": "4629a6ad9ed3b40e872a48267b498eb9be880dda860f49ba3f1f359019685a2c",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_ii/tests/test_sovereign_choice.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_ii/tests/test_sovereign_choice.py",
+      "bytes": 10992,
+      "import_sha256": "f273235b9ad0b78d17f6fbe94d9bef9d3b3928b878fb7e20800b1dd55f3271f2",
+      "current_sha256": "f273235b9ad0b78d17f6fbe94d9bef9d3b3928b878fb7e20800b1dd55f3271f2",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iii/MANIFEST_SHA256.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iii/MANIFEST_SHA256.json",
+      "bytes": 2672,
+      "import_sha256": "0839c5a83cd8d382980d4124370fdd523799327b85ff8157cb47960518e02f39",
+      "current_sha256": "0839c5a83cd8d382980d4124370fdd523799327b85ff8157cb47960518e02f39",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iii/README.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iii/README.md",
+      "bytes": 5143,
+      "import_sha256": "31bf49e37115a4b6419bf99444653a9a6d7cf19f04b0d7578c759d68bb09aa8f",
+      "current_sha256": "31bf49e37115a4b6419bf99444653a9a6d7cf19f04b0d7578c759d68bb09aa8f",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iii/benchmark.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iii/benchmark.py",
+      "bytes": 5299,
+      "import_sha256": "2ee6a2a4fa66d114ecf44fc925526d72f60b39417b345c48d0e71a8fc2d358c0",
+      "current_sha256": "2ee6a2a4fa66d114ecf44fc925526d72f60b39417b345c48d0e71a8fc2d358c0",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iii/choice_fence.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iii/choice_fence.py",
+      "bytes": 13161,
+      "import_sha256": "d5f3f4e5d4171a42d81e6e9e710b797eb6edf6b639282db1db38617b3f8746c4",
+      "current_sha256": "d5f3f4e5d4171a42d81e6e9e710b797eb6edf6b639282db1db38617b3f8746c4",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iii/demo.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iii/demo.py",
+      "bytes": 1664,
+      "import_sha256": "2ef1c32a8efe841eea7dcafe0020e3f2616c6323c84ab4e4e39e496f25d32e2a",
+      "current_sha256": "2ef1c32a8efe841eea7dcafe0020e3f2616c6323c84ab4e4e39e496f25d32e2a",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iii/docs/ADVERSARIAL_FINDINGS.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iii/docs/ADVERSARIAL_FINDINGS.md",
+      "bytes": 4555,
+      "import_sha256": "56d0f4c557e5c9f96b448809a9f861e66abb1de2eb384596dfe8a55d841cdb25",
+      "current_sha256": "56d0f4c557e5c9f96b448809a9f861e66abb1de2eb384596dfe8a55d841cdb25",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iii/docs/INTEGRATION_HANDOFF.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iii/docs/INTEGRATION_HANDOFF.md",
+      "bytes": 3493,
+      "import_sha256": "6be7047e20cbc399cb22d244f51da62076a93c826f59d6e25fb4292cc5f166d7",
+      "current_sha256": "6be7047e20cbc399cb22d244f51da62076a93c826f59d6e25fb4292cc5f166d7",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iii/docs/PLAIN_LANGUAGE_RECEIPT_SPEC.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iii/docs/PLAIN_LANGUAGE_RECEIPT_SPEC.md",
+      "bytes": 2301,
+      "import_sha256": "af48cc836102917464ae859c89bb913d159ac36091b48f9f8408454fa7adf8b0",
+      "current_sha256": "af48cc836102917464ae859c89bb913d159ac36091b48f9f8408454fa7adf8b0",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iii/docs/SOVEREIGNTY_DESIGN_CHARTER_v0.3.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iii/docs/SOVEREIGNTY_DESIGN_CHARTER_v0.3.md",
+      "bytes": 6638,
+      "import_sha256": "dc0df7c8897baa6696ecc92dbcfd63a7f0c3ac2c625b5b9fbc7ad68ad1bb2fcb",
+      "current_sha256": "dc0df7c8897baa6696ecc92dbcfd63a7f0c3ac2c625b5b9fbc7ad68ad1bb2fcb",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iii/docs/USER_STUDY_PROTOCOL.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iii/docs/USER_STUDY_PROTOCOL.md",
+      "bytes": 2841,
+      "import_sha256": "dfb57ad8499e5389717876e73f7fe658207c02aa2278d2a284d7111dc4478977",
+      "current_sha256": "dfb57ad8499e5389717876e73f7fe658207c02aa2278d2a284d7111dc4478977",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iii/results.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iii/results.json",
+      "bytes": 2371,
+      "import_sha256": "db1963e0fe18f86c82c547c749bc660e67a11fa94c481c6e3df3266bcdbeea73",
+      "current_sha256": "db1963e0fe18f86c82c547c749bc660e67a11fa94c481c6e3df3266bcdbeea73",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iii/test_choice_fence.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iii/test_choice_fence.py",
+      "bytes": 10976,
+      "import_sha256": "4f6c6678bd1e43db4a711f9cbbf6a1eb295930a49faf437d6072edaabcd00ef2",
+      "current_sha256": "4f6c6678bd1e43db4a711f9cbbf6a1eb295930a49faf437d6072edaabcd00ef2",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iv/MANIFEST_SHA256.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iv/MANIFEST_SHA256.json",
+      "bytes": 1348,
+      "import_sha256": "b871f9602768974af0c0cb327f9d5726a86ba059b9d8baf0dccca0518a9b817d",
+      "current_sha256": "b871f9602768974af0c0cb327f9d5726a86ba059b9d8baf0dccca0518a9b817d",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iv/README.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iv/README.md",
+      "bytes": 2642,
+      "import_sha256": "33815a849c003b4b149c5d5815e3360915bf20e125554769ba1cb65247f72baa",
+      "current_sha256": "33815a849c003b4b149c5d5815e3360915bf20e125554769ba1cb65247f72baa",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iv/RESEARCH_STATUS.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iv/RESEARCH_STATUS.md",
+      "bytes": 2207,
+      "import_sha256": "5fa18896fc0c78b9785bb02a4e174dcdb689c4f07ef3bd3d2fdc00267229bdb6",
+      "current_sha256": "5fa18896fc0c78b9785bb02a4e174dcdb689c4f07ef3bd3d2fdc00267229bdb6",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iv/demo.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iv/demo.py",
+      "bytes": 1785,
+      "import_sha256": "29ceac3a260b6b684f84c4b6e7b9eafca0afbf713bce69eaee4c477a0ddee435",
+      "current_sha256": "29ceac3a260b6b684f84c4b6e7b9eafca0afbf713bce69eaee4c477a0ddee435",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iv/docs/INTEGRATION_LIMITS_AND_HANDOFF.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iv/docs/INTEGRATION_LIMITS_AND_HANDOFF.md",
+      "bytes": 5470,
+      "import_sha256": "04610dda7d2bae9e39da6d1f28ac5fb920baf8404e9e0c3a6eef88e2bb59a88e",
+      "current_sha256": "04610dda7d2bae9e39da6d1f28ac5fb920baf8404e9e0c3a6eef88e2bb59a88e",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iv/docs/SOVEREIGN_WILL_CHARTER_v0.4.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iv/docs/SOVEREIGN_WILL_CHARTER_v0.4.md",
+      "bytes": 8531,
+      "import_sha256": "acbcfff025e7bcb66a260193ea7cc7e810c3546ca3eed03ec12337f0f89266ec",
+      "current_sha256": "acbcfff025e7bcb66a260193ea7cc7e810c3546ca3eed03ec12337f0f89266ec",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iv/epistemic_boundary.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iv/epistemic_boundary.py",
+      "bytes": 1000,
+      "import_sha256": "eb51cdad0306a60cf4b8411a45f575296be7be1c4e1da02d75ad6b0132cf83c4",
+      "current_sha256": "eb51cdad0306a60cf4b8411a45f575296be7be1c4e1da02d75ad6b0132cf83c4",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iv/intent_bridge.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iv/intent_bridge.py",
+      "bytes": 11391,
+      "import_sha256": "be3af87e445d0fb667160687100ce3b092cfc7bb4d43c294610c1403be345152",
+      "current_sha256": "be3af87e445d0fb667160687100ce3b092cfc7bb4d43c294610c1403be345152",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iv/prototype/sovereign_choice_demo.html",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iv/prototype/sovereign_choice_demo.html",
+      "bytes": 8444,
+      "import_sha256": "aca557be2295cc0a8910cc3d0b53f8489118c3c96fcd49ae981e35768fbb4e36",
+      "current_sha256": "aca557be2295cc0a8910cc3d0b53f8489118c3c96fcd49ae981e35768fbb4e36",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iv/results.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iv/results.json",
+      "bytes": 932,
+      "import_sha256": "b6e3c544c7b8eb6198a1908473aec73df9b6b6e141c0579ab6fe97378cac8ae3",
+      "current_sha256": "b6e3c544c7b8eb6198a1908473aec73df9b6b6e141c0579ab6fe97378cac8ae3",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iv/tests/__init__.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iv/tests/__init__.py",
+      "bytes": 0,
+      "import_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iv/tests/test_intent_bridge.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iv/tests/test_intent_bridge.py",
+      "bytes": 11514,
+      "import_sha256": "97cc4071da3135654c09b958ab291e2aa302a2f4b72db867e1baf9e02cf49ff5",
+      "current_sha256": "97cc4071da3135654c09b958ab291e2aa302a2f4b72db867e1baf9e02cf49ff5",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_iv/tests/test_real_upstream.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_iv/tests/test_real_upstream.py",
+      "bytes": 3792,
+      "import_sha256": "27579dc3afe2d1f14e674b6a966e7c56f6aabf726f0c56cd3c4b9e9534846be9",
+      "current_sha256": "27579dc3afe2d1f14e674b6a966e7c56f6aabf726f0c56cd3c4b9e9534846be9",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_v/MANIFEST_SHA256.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_v/MANIFEST_SHA256.json",
+      "bytes": 2751,
+      "import_sha256": "e40ca952c3b86758c69aa0a6e5e0cc61108c8009e9a8f85ce1ca189c91d62773",
+      "current_sha256": "e40ca952c3b86758c69aa0a6e5e0cc61108c8009e9a8f85ce1ca189c91d62773",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_v/README.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_v/README.md",
+      "bytes": 2583,
+      "import_sha256": "521e13a7454172653655151613f49f46bbf6dc3ff27fadb17ccb14a84b985bff",
+      "current_sha256": "521e13a7454172653655151613f49f46bbf6dc3ff27fadb17ccb14a84b985bff",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_v/choice_ledger.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_v/choice_ledger.py",
+      "bytes": 11910,
+      "import_sha256": "1150b06ae55ca3e28e1494efc40295f28383d1df65c74f18c3249241475a3d42",
+      "current_sha256": "1150b06ae55ca3e28e1494efc40295f28383d1df65c74f18c3249241475a3d42",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_v/compare_crash_window.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_v/compare_crash_window.py",
+      "bytes": 4645,
+      "import_sha256": "089796241bd3ed2e68fad0ca531069fe667a5db22d78b5ab445f97d1b981c0b9",
+      "current_sha256": "089796241bd3ed2e68fad0ca531069fe667a5db22d78b5ab445f97d1b981c0b9",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_v/comparison_results.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_v/comparison_results.json",
+      "bytes": 727,
+      "import_sha256": "7f05210c61ce325033772fd736fd13e00788fe5a2d3a7fe465c8d152edc549fd",
+      "current_sha256": "7f05210c61ce325033772fd736fd13e00788fe5a2d3a7fe465c8d152edc549fd",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_v/docs/RESEARCH_FINDINGS.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_v/docs/RESEARCH_FINDINGS.md",
+      "bytes": 8298,
+      "import_sha256": "e74bb3db4415f1969fa0c879163bba75bc4604accd3268b565633a1037e7a409",
+      "current_sha256": "e74bb3db4415f1969fa0c879163bba75bc4604accd3268b565633a1037e7a409",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_v/docs/SOVEREIGN_WILL_CHARTER_v0.5.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_v/docs/SOVEREIGN_WILL_CHARTER_v0.5.md",
+      "bytes": 7319,
+      "import_sha256": "62dc798c211ccf47b972046a107886d272626dac5fd209bf154ec74566d176a9",
+      "current_sha256": "62dc798c211ccf47b972046a107886d272626dac5fd209bf154ec74566d176a9",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_v/epistemic_boundary.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_v/epistemic_boundary.py",
+      "bytes": 1000,
+      "import_sha256": "eb51cdad0306a60cf4b8411a45f575296be7be1c4e1da02d75ad6b0132cf83c4",
+      "current_sha256": "eb51cdad0306a60cf4b8411a45f575296be7be1c4e1da02d75ad6b0132cf83c4",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_v/prototype/sovereign_choice_lab.html",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_v/prototype/sovereign_choice_lab.html",
+      "bytes": 9184,
+      "import_sha256": "642115548df48c9cd95f1355649b6664fa32c20d536d4437178a5283d1df6b48",
+      "current_sha256": "642115548df48c9cd95f1355649b6664fa32c20d536d4437178a5283d1df6b48",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_v/results.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_v/results.json",
+      "bytes": 1596,
+      "import_sha256": "3d25fa1daf12f9b0d12bf933c2a8761f2277a1862a283b8b3f23413ae53941cc",
+      "current_sha256": "3d25fa1daf12f9b0d12bf933c2a8761f2277a1862a283b8b3f23413ae53941cc",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_v/run_verification.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_v/run_verification.py",
+      "bytes": 3107,
+      "import_sha256": "10426101a5d3389550f5b1b0f49cf92ff81019e9b5fd9ad31c383aceefa05cb6",
+      "current_sha256": "10426101a5d3389550f5b1b0f49cf92ff81019e9b5fd9ad31c383aceefa05cb6",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_v/tests/test_choice_ledger.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_v/tests/test_choice_ledger.py",
+      "bytes": 12131,
+      "import_sha256": "a373363cabf0ed3e3a8022d52b943a7d001673cd6a40e904a5aa76cf398fd1db",
+      "current_sha256": "a373363cabf0ed3e3a8022d52b943a7d001673cd6a40e904a5aa76cf398fd1db",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_v/upstream_mirror/LICENSE",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_v/upstream_mirror/LICENSE",
+      "bytes": 1084,
+      "import_sha256": "68ed1a5a69ae392d6f6d84223adcdf8c0910cf1b0a0025a33577b8e72ba4253a",
+      "current_sha256": "68ed1a5a69ae392d6f6d84223adcdf8c0910cf1b0a0025a33577b8e72ba4253a",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_v/upstream_mirror/papers/agent-safety/frontier-controls/01_commit_time_authority_v0_7/commit_fence.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_v/upstream_mirror/papers/agent-safety/frontier-controls/01_commit_time_authority_v0_7/commit_fence.py",
+      "bytes": 17378,
+      "import_sha256": "eab1c14f9ea4ef222d8406e4fd3b05d3a182f268bf4e2df3b9b649357370255a",
+      "current_sha256": "eab1c14f9ea4ef222d8406e4fd3b05d3a182f268bf4e2df3b9b649357370255a",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_v/upstream_mirror/papers/agent-safety/frontier-controls/research_support.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_v/upstream_mirror/papers/agent-safety/frontier-controls/research_support.py",
+      "bytes": 671,
+      "import_sha256": "6b7b0a562b801cf31e996fda2cfa728d2e80ec3bc9e81576524f094b3bc30cdd",
+      "current_sha256": "6b7b0a562b801cf31e996fda2cfa728d2e80ec3bc9e81576524f094b3bc30cdd",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_v/verification_log.txt",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_v/verification_log.txt",
+      "bytes": 7533,
+      "import_sha256": "96cce7a40b77fd297d04c37b30f4bbe1cb729fd0412d18031863d8249fd73251",
+      "current_sha256": "96cce7a40b77fd297d04c37b30f4bbe1cb729fd0412d18031863d8249fd73251",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/MANIFEST_SHA256.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/MANIFEST_SHA256.json",
+      "bytes": 2263,
+      "import_sha256": "cf09883857d90cf19579951c489a783a1e22eef829badca68f427c2243d2da5a",
+      "current_sha256": "cf09883857d90cf19579951c489a783a1e22eef829badca68f427c2243d2da5a",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/README.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/README.md",
+      "bytes": 3823,
+      "import_sha256": "46c3d8f4864919f43f1f38e27a73a3b8f86b0ffd2e24953175ac49db5443e736",
+      "current_sha256": "46c3d8f4864919f43f1f38e27a73a3b8f86b0ffd2e24953175ac49db5443e736",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/code/attested_gateway.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/code/attested_gateway.py",
+      "bytes": 15364,
+      "import_sha256": "c14f8c7e58461131632446cb971271e7e3e7886779b01b8cca5041291aa9651d",
+      "current_sha256": "c14f8c7e58461131632446cb971271e7e3e7886779b01b8cca5041291aa9651d",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/code/choice_ledger.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/code/choice_ledger.py",
+      "bytes": 11910,
+      "import_sha256": "1150b06ae55ca3e28e1494efc40295f28383d1df65c74f18c3249241475a3d42",
+      "current_sha256": "1150b06ae55ca3e28e1494efc40295f28383d1df65c74f18c3249241475a3d42",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/code/choice_surface.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/code/choice_surface.py",
+      "bytes": 2217,
+      "import_sha256": "34c5f139f6a763b5b7742a63bcc23dab8b7c6fda7c7137029c4b15bc5761a1f8",
+      "current_sha256": "34c5f139f6a763b5b7742a63bcc23dab8b7c6fda7c7137029c4b15bc5761a1f8",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/docs/SOVEREIGN_POSSIBILITY_CHARTER_v0.6.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/docs/SOVEREIGN_POSSIBILITY_CHARTER_v0.6.md",
+      "bytes": 12512,
+      "import_sha256": "ea922f81d9d809b801c7d6e1799baad578c2b868f1fec963362e8e6623fdcf10",
+      "current_sha256": "ea922f81d9d809b801c7d6e1799baad578c2b868f1fec963362e8e6623fdcf10",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/docs/THREAT_MODEL_AND_FINDINGS.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/docs/THREAT_MODEL_AND_FINDINGS.md",
+      "bytes": 6232,
+      "import_sha256": "dd965b48bd5cdc196d634ad5e19f543a2ea022f6bf0e39d9fff0b17e69aafe03",
+      "current_sha256": "dd965b48bd5cdc196d634ad5e19f543a2ea022f6bf0e39d9fff0b17e69aafe03",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/evidence/forge_iv_upstream_regression_log.txt",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/evidence/forge_iv_upstream_regression_log.txt",
+      "bytes": 3507,
+      "import_sha256": "c0a9cb51c60a6b0b9759430c24aa07de22c5d23ebcb0dbba31a98d5cc65b2589",
+      "current_sha256": "c0a9cb51c60a6b0b9759430c24aa07de22c5d23ebcb0dbba31a98d5cc65b2589",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/evidence/forge_v_regression_log.txt",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/evidence/forge_v_regression_log.txt",
+      "bytes": 3237,
+      "import_sha256": "44e29ef19da9ef33b94869ff07c9378e6978c415471cb6f4f979bded06c92294",
+      "current_sha256": "44e29ef19da9ef33b94869ff07c9378e6978c415471cb6f4f979bded06c92294",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/evidence/forge_vi_test_log.txt",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/evidence/forge_vi_test_log.txt",
+      "bytes": 4539,
+      "import_sha256": "ea8796eefa77c3b390eebeb2d4842d167a5f8db3d831cb0f354b10a1a74dbdf4",
+      "current_sha256": "ea8796eefa77c3b390eebeb2d4842d167a5f8db3d831cb0f354b10a1a74dbdf4",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/evidence/research_status.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/evidence/research_status.json",
+      "bytes": 904,
+      "import_sha256": "ee971a4a05e18d3bf0a11988422a104e04516e7c82b196293a6bbc3ccb315dc2",
+      "current_sha256": "ee971a4a05e18d3bf0a11988422a104e04516e7c82b196293a6bbc3ccb315dc2",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/evidence/verification.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/evidence/verification.json",
+      "bytes": 2975,
+      "import_sha256": "bb5c6b6521f08fac2bbd80ae1addfbc3d1914452740af41e9d80e76731a0312b",
+      "current_sha256": "bb5c6b6521f08fac2bbd80ae1addfbc3d1914452740af41e9d80e76731a0312b",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/prototype/sovereign_possibility_lab.html",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/prototype/sovereign_possibility_lab.html",
+      "bytes": 7585,
+      "import_sha256": "60ab0cc8cd1d224dcb5b103941816ac159e9447efb20ece8b07d921c527d25e0",
+      "current_sha256": "60ab0cc8cd1d224dcb5b103941816ac159e9447efb20ece8b07d921c527d25e0",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/requirements.txt",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/requirements.txt",
+      "bytes": 118,
+      "import_sha256": "32aa809461c33e2eb2a40fd3801a7299587c79d86b6a927c94c9f49cbefa13d4",
+      "current_sha256": "32aa809461c33e2eb2a40fd3801a7299587c79d86b6a927c94c9f49cbefa13d4",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/run_verification.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/run_verification.py",
+      "bytes": 3000,
+      "import_sha256": "a8d37d26f227bcfc2fac7b8a5c66545bd84b71ad4304513d61318f9be8a1e0a1",
+      "current_sha256": "a8d37d26f227bcfc2fac7b8a5c66545bd84b71ad4304513d61318f9be8a1e0a1",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/tests/test_attested_gateway.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/tests/test_attested_gateway.py",
+      "bytes": 11394,
+      "import_sha256": "ef28c4843de3f254a6b71dbe02add9875b05968ae0b4898a1cc5b0b527a6b2fa",
+      "current_sha256": "ef28c4843de3f254a6b71dbe02add9875b05968ae0b4898a1cc5b0b527a6b2fa",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/tests/test_choice_surface.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/tests/test_choice_surface.py",
+      "bytes": 1983,
+      "import_sha256": "d609c2ffd811da5188e754fc18799b1dabf002cdd83756994086d2dd3452a669",
+      "current_sha256": "d609c2ffd811da5188e754fc18799b1dabf002cdd83756994086d2dd3452a669",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/upstream_mirror/LICENSE",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/upstream_mirror/LICENSE",
+      "bytes": 1084,
+      "import_sha256": "68ed1a5a69ae392d6f6d84223adcdf8c0910cf1b0a0025a33577b8e72ba4253a",
+      "current_sha256": "68ed1a5a69ae392d6f6d84223adcdf8c0910cf1b0a0025a33577b8e72ba4253a",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/upstream_mirror/papers/agent-safety/frontier-controls/01_commit_time_authority_v0_7/commit_fence.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/upstream_mirror/papers/agent-safety/frontier-controls/01_commit_time_authority_v0_7/commit_fence.py",
+      "bytes": 17378,
+      "import_sha256": "eab1c14f9ea4ef222d8406e4fd3b05d3a182f268bf4e2df3b9b649357370255a",
+      "current_sha256": "eab1c14f9ea4ef222d8406e4fd3b05d3a182f268bf4e2df3b9b649357370255a",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vi/upstream_mirror/papers/agent-safety/frontier-controls/research_support.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vi/upstream_mirror/papers/agent-safety/frontier-controls/research_support.py",
+      "bytes": 671,
+      "import_sha256": "6b7b0a562b801cf31e996fda2cfa728d2e80ec3bc9e81576524f094b3bc30cdd",
+      "current_sha256": "6b7b0a562b801cf31e996fda2cfa728d2e80ec3bc9e81576524f094b3bc30cdd",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vii/MANIFEST_SHA256.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vii/MANIFEST_SHA256.json",
+      "bytes": 1401,
+      "import_sha256": "7451128d4d068ab77222bca78c1ac5b401c1d853063fdc4c796f2ad7ed6785b1",
+      "current_sha256": "7451128d4d068ab77222bca78c1ac5b401c1d853063fdc4c796f2ad7ed6785b1",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vii/README.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vii/README.md",
+      "bytes": 3303,
+      "import_sha256": "c05b97572e394e47ee41b0b297b35f132429da854df4ee93f091043f5ff91b69",
+      "current_sha256": "c05b97572e394e47ee41b0b297b35f132429da854df4ee93f091043f5ff91b69",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vii/build_demo.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vii/build_demo.py",
+      "bytes": 8929,
+      "import_sha256": "b92b55b6a0ba0ab5b2e3f5715a188328507a3dda5c7371ca6af618fa7578be90",
+      "current_sha256": "b92b55b6a0ba0ab5b2e3f5715a188328507a3dda5c7371ca6af618fa7578be90",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vii/build_package.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vii/build_package.py",
+      "bytes": 1294,
+      "import_sha256": "99765ac09c7a44e51af974a1dd857b4b1687bf2474a7a2e824c3ab839b5ced0e",
+      "current_sha256": "99765ac09c7a44e51af974a1dd857b4b1687bf2474a7a2e824c3ab839b5ced0e",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vii/docs/EXPERIMENT_PROTOCOL_AND_FAILURE_MUSEUM.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vii/docs/EXPERIMENT_PROTOCOL_AND_FAILURE_MUSEUM.md",
+      "bytes": 4715,
+      "import_sha256": "f07a5a7f2517385fc34512a6ad6476587a852adae5478b5477061031e65c2434",
+      "current_sha256": "f07a5a7f2517385fc34512a6ad6476587a852adae5478b5477061031e65c2434",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vii/docs/SOVEREIGN_COUPLING_CHARTER_v0.7.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vii/docs/SOVEREIGN_COUPLING_CHARTER_v0.7.md",
+      "bytes": 14536,
+      "import_sha256": "a1fd3232a2a5e3f1cd18b1554142614d6409b23ce686bf6ff52b24c8ee380e68",
+      "current_sha256": "a1fd3232a2a5e3f1cd18b1554142614d6409b23ce686bf6ff52b24c8ee380e68",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vii/prototype/self_displacement_lab.html",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vii/prototype/self_displacement_lab.html",
+      "bytes": 23965,
+      "import_sha256": "1da708559f276a173fc1d3f56a6de5feb5a41342ce072261f46853084f8b7d3b",
+      "current_sha256": "1da708559f276a173fc1d3f56a6de5feb5a41342ce072261f46853084f8b7d3b",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vii/results/fixture_results.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vii/results/fixture_results.json",
+      "bytes": 20745,
+      "import_sha256": "366b9fa20703522cad7092441ee3b62678c8844109084c4a4ec9454fe16172ae",
+      "current_sha256": "366b9fa20703522cad7092441ee3b62678c8844109084c4a4ec9454fe16172ae",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vii/results/retention_sensitivity.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vii/results/retention_sensitivity.json",
+      "bytes": 1486,
+      "import_sha256": "cff08159226ec23bb876ce5bdb05e926bb92bf33a9ad9ab0bdd4364ecbec061f",
+      "current_sha256": "cff08159226ec23bb876ce5bdb05e926bb92bf33a9ad9ab0bdd4364ecbec061f",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vii/results/test_log.txt",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vii/results/test_log.txt",
+      "bytes": 2662,
+      "import_sha256": "7622ac1b5de52eaf50849c6daa45a8e0ccae6bd666d7040f0aa7927de3df289c",
+      "current_sha256": "7622ac1b5de52eaf50849c6daa45a8e0ccae6bd666d7040f0aa7927de3df289c",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vii/results/verification.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vii/results/verification.json",
+      "bytes": 2458,
+      "import_sha256": "e56985389b0d8d3c6eba87fd384c2d8d4c60903503daef615f1d69e6315f6e74",
+      "current_sha256": "e56985389b0d8d3c6eba87fd384c2d8d4c60903503daef615f1d69e6315f6e74",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vii/run_verification.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vii/run_verification.py",
+      "bytes": 4278,
+      "import_sha256": "36545a6bb1da8da7c884ab269ae28ce873e6ce4c9ccd59d6c4c25355e4287fa1",
+      "current_sha256": "36545a6bb1da8da7c884ab269ae28ce873e6ce4c9ccd59d6c4c25355e4287fa1",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vii/src/self_displacement.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vii/src/self_displacement.py",
+      "bytes": 12795,
+      "import_sha256": "ade00714940c9b1fadd97376d7603db81ca2be0c85b547c152cda29f77d00a1e",
+      "current_sha256": "ade00714940c9b1fadd97376d7603db81ca2be0c85b547c152cda29f77d00a1e",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vii/src/sensitivity.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vii/src/sensitivity.py",
+      "bytes": 741,
+      "import_sha256": "bd14c470a755346e29cba74303160514b5e10c43a6b2522d22efa042d3493e00",
+      "current_sha256": "bd14c470a755346e29cba74303160514b5e10c43a6b2522d22efa042d3493e00",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_vii/tests/test_self_displacement.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_vii/tests/test_self_displacement.py",
+      "bytes": 6328,
+      "import_sha256": "efa9eea2ab657d5226292b169cb782fc1226320959b29465394385fa9fff52ad",
+      "current_sha256": "efa9eea2ab657d5226292b169cb782fc1226320959b29465394385fa9fff52ad",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/MANIFEST_SHA256.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/MANIFEST_SHA256.json",
+      "bytes": 1500,
+      "import_sha256": "0480e3245e482b14de0cd14a283e67fb927bf47a85112e7ef8190706deb9641c",
+      "current_sha256": "0480e3245e482b14de0cd14a283e67fb927bf47a85112e7ef8190706deb9641c",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/README.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/README.md",
+      "bytes": 4867,
+      "import_sha256": "9872b469ae69a46ca0c5ec0dd1620ecf8394d107df3b111e34fbee50d8b70a3a",
+      "current_sha256": "9872b469ae69a46ca0c5ec0dd1620ecf8394d107df3b111e34fbee50d8b70a3a",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/build_demo.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/build_demo.py",
+      "bytes": 12422,
+      "import_sha256": "c7ac90abc843c56fb353dc104f4999d361bd7375ec0b6ec1c8b18e3ce1c19ca6",
+      "current_sha256": "c7ac90abc843c56fb353dc104f4999d361bd7375ec0b6ec1c8b18e3ce1c19ca6",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/build_package.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/build_package.py",
+      "bytes": 788,
+      "import_sha256": "3eb8be0fd4eceef0795970ac88821c7e6ba769acb6c6967c0badc6ef07844ad9",
+      "current_sha256": "3eb8be0fd4eceef0795970ac88821c7e6ba769acb6c6967c0badc6ef07844ad9",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/docs/RESEARCH_STATUS_AND_FAILURE_MUSEUM.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/docs/RESEARCH_STATUS_AND_FAILURE_MUSEUM.md",
+      "bytes": 3015,
+      "import_sha256": "68f9d1d516feaddc302da12b6cce81cfb9ddfa7ff25a5c371f99f32949ed08e8",
+      "current_sha256": "68f9d1d516feaddc302da12b6cce81cfb9ddfa7ff25a5c371f99f32949ed08e8",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/docs/SOVEREIGNTY_SURFACE_CHARTER_v0.8.md",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/docs/SOVEREIGNTY_SURFACE_CHARTER_v0.8.md",
+      "bytes": 16565,
+      "import_sha256": "1ef6095b8ac69b448e016b975dafb165b039e2b1f6bdd7ed9d89bc70bf43de38",
+      "current_sha256": "1ef6095b8ac69b448e016b975dafb165b039e2b1f6bdd7ed9d89bc70bf43de38",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/prototype/sovereignty_surface_lab.html",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/prototype/sovereignty_surface_lab.html",
+      "bytes": 29957,
+      "import_sha256": "a283030fd9a501d62e0aefd2bb4708fadaf6f2804764bd20cae33e9b6140a052",
+      "current_sha256": "a283030fd9a501d62e0aefd2bb4708fadaf6f2804764bd20cae33e9b6140a052",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/results/benchmark.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/results/benchmark.json",
+      "bytes": 3654,
+      "import_sha256": "ca73a212a88249ceb3bccf3fe094658118be1e36a65ec27f780e958b5feb00ef",
+      "current_sha256": "ca73a212a88249ceb3bccf3fe094658118be1e36a65ec27f780e958b5feb00ef",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/results/offline_ui_script.js",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/results/offline_ui_script.js",
+      "bytes": 22221,
+      "import_sha256": "d91421d207e5a5cca58fd3e2d3100168298e818f54aa6364d7321c92033826a3",
+      "current_sha256": "d91421d207e5a5cca58fd3e2d3100168298e818f54aa6364d7321c92033826a3",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/results/preference_revision.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/results/preference_revision.json",
+      "bytes": 1146,
+      "import_sha256": "2674eaa000f7accba0622a57ef04698a4743eb1eb517d6c24af752646568f113",
+      "current_sha256": "2674eaa000f7accba0622a57ef04698a4743eb1eb517d6c24af752646568f113",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/results/test_output.txt",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/results/test_output.txt",
+      "bytes": 3419,
+      "import_sha256": "5582f8efdad8f6dd8a7ad1e0ad5ac1b203dd9b563e8a2a47d4ff46764ccc3a78",
+      "current_sha256": "5582f8efdad8f6dd8a7ad1e0ad5ac1b203dd9b563e8a2a47d4ff46764ccc3a78",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/results/ui_parity_check.cjs",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/results/ui_parity_check.cjs",
+      "bytes": 1322,
+      "import_sha256": "0dee651a4cd657a6d4fdecf2e5862fba489b3350c3ea9d4e83be5bea268dd5d1",
+      "current_sha256": "0dee651a4cd657a6d4fdecf2e5862fba489b3350c3ea9d4e83be5bea268dd5d1",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/results/verification.json",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/results/verification.json",
+      "bytes": 3539,
+      "import_sha256": "4580b3f9a3ae34238e9acef2889c0e16dee78d0dff574361b68c6c8ab50f9eef",
+      "current_sha256": "4580b3f9a3ae34238e9acef2889c0e16dee78d0dff574361b68c6c8ab50f9eef",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/run_verification.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/run_verification.py",
+      "bytes": 4650,
+      "import_sha256": "7bd9f40d927dc30ef27cd31da1569f6dd3e840c0d471c85030b8cad47a0c02b7",
+      "current_sha256": "7bd9f40d927dc30ef27cd31da1569f6dd3e840c0d471c85030b8cad47a0c02b7",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/src/sovereignty_surface.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/src/sovereignty_surface.py",
+      "bytes": 9995,
+      "import_sha256": "14a1cb733e3677936b6c29dc858c054c4d89cb7fc1e8895e8c170e249314309f",
+      "current_sha256": "14a1cb733e3677936b6c29dc858c054c4d89cb7fc1e8895e8c170e249314309f",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/src/trajectory.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/src/trajectory.py",
+      "bytes": 1995,
+      "import_sha256": "db9e7b038b8cbc36e837f5212ff4a6b35b7695c34cdb6072ef2fea1471ae4b51",
+      "current_sha256": "db9e7b038b8cbc36e837f5212ff4a6b35b7695c34cdb6072ef2fea1471ae4b51",
+      "changed_since_import": false
+    },
+    {
+      "package": "sovereign-will",
+      "source": "repo_upload/papers/agent-safety/sovereign-choice-research/forges/forge_viii/tests/test_surface.py",
+      "destination": "papers/agent-safety/sovereign-choice-research/forges/forge_viii/tests/test_surface.py",
+      "bytes": 7579,
+      "import_sha256": "d112bada2fdaa16c1fa1c2f5e62123a0582e8b9f716bf9c56af3a68881a668ed",
+      "current_sha256": "d112bada2fdaa16c1fa1c2f5e62123a0582e8b9f716bf9c56af3a68881a668ed",
+      "changed_since_import": false
+    }
+  ]
+}

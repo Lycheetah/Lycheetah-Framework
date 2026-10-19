@@ -1,0 +1,17 @@
+{
+  "README.md": "9872b469ae69a46ca0c5ec0dd1620ecf8394d107df3b111e34fbee50d8b70a3a",
+  "build_demo.py": "c7ac90abc843c56fb353dc104f4999d361bd7375ec0b6ec1c8b18e3ce1c19ca6",
+  "docs/RESEARCH_STATUS_AND_FAILURE_MUSEUM.md": "68f9d1d516feaddc302da12b6cce81cfb9ddfa7ff25a5c371f99f32949ed08e8",
+  "docs/SOVEREIGNTY_SURFACE_CHARTER_v0.8.md": "1ef6095b8ac69b448e016b975dafb165b039e2b1f6bdd7ed9d89bc70bf43de38",
+  "lineage/FORGE_VII_COMPLETE.zip": "adf6061acb009fab6c6051f64753e3654bdc2bdd97701a91920f5851454b1657",
+  "prototype/sovereignty_surface_lab.html": "a283030fd9a501d62e0aefd2bb4708fadaf6f2804764bd20cae33e9b6140a052",
+  "results/benchmark.json": "ca73a212a88249ceb3bccf3fe094658118be1e36a65ec27f780e958b5feb00ef",
+  "results/offline_ui_script.js": "d91421d207e5a5cca58fd3e2d3100168298e818f54aa6364d7321c92033826a3",
+  "results/preference_revision.json": "2674eaa000f7accba0622a57ef04698a4743eb1eb517d6c24af752646568f113",
+  "results/test_output.txt": "5582f8efdad8f6dd8a7ad1e0ad5ac1b203dd9b563e8a2a47d4ff46764ccc3a78",
+  "results/ui_parity_check.cjs": "0dee651a4cd657a6d4fdecf2e5862fba489b3350c3ea9d4e83be5bea268dd5d1",
+  "run_verification.py": "7bd9f40d927dc30ef27cd31da1569f6dd3e840c0d471c85030b8cad47a0c02b7",
+  "src/sovereignty_surface.py": "14a1cb733e3677936b6c29dc858c054c4d89cb7fc1e8895e8c170e249314309f",
+  "src/trajectory.py": "db9e7b038b8cbc36e837f5212ff4a6b35b7695c34cdb6072ef2fea1471ae4b51",
+  "tests/test_surface.py": "d112bada2fdaa16c1fa1c2f5e62123a0582e8b9f716bf9c56af3a68881a668ed"
+}

@@ -1,0 +1,48 @@
+trial complete: write before_reserve
+trial complete: write after_reserve_before_send
+trial complete: write after_commit_before_ack
+trial complete: write after_ack_before_return
+trial complete: write none
+comp trial complete: write after_compensation_before_ack
+comp trial complete: write after_compensation_ack
+no-query trial complete: write
+trial complete: notify before_reserve
+trial complete: notify after_reserve_before_send
+trial complete: notify after_commit_before_ack
+trial complete: notify after_ack_before_return
+trial complete: notify none
+comp trial complete: notify after_compensation_before_ack
+comp trial complete: notify after_compensation_ack
+no-query trial complete: notify
+{
+  "trials": 16,
+  "categories": {
+    "irreversible": 5,
+    "not_dispatched": 2,
+    "restored": 5,
+    "unresolved_effect": 4
+  },
+  "comparison": [
+    {
+      "baseline": "durable_outbox_idempotent",
+      "first_killed": true,
+      "second_completed": true,
+      "effects": 1,
+      "distinct_operation_ids": 1
+    },
+    {
+      "baseline": "naive_nonidempotent_retry",
+      "first_killed": true,
+      "second_completed": true,
+      "effects": 2,
+      "distinct_operation_ids": 1
+    }
+  ],
+  "provider_restart": {
+    "dispatch_crashed": true,
+    "during_outage": "unresolved_effect",
+    "after_provider_restart": "restored",
+    "remote_effects": 1,
+    "compensations": 1
+  }
+}

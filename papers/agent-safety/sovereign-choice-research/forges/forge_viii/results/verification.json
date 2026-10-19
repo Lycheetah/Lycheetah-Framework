@@ -1,0 +1,38 @@
+{
+  "schema": "lycheetah.forge-viii.verification.v1",
+  "status": "SYNTHETIC_LOCAL_NOT_DEPLOYED",
+  "all_passed": true,
+  "new_tests": 32,
+  "prior_tests": 110,
+  "combined_tests": 142,
+  "fixture_equal": true,
+  "trajectory_equal": true,
+  "matched_usage_pairs": 8,
+  "different_surface_verdicts": 7,
+  "negative_control_pairs": 1,
+  "ui_offline": true,
+  "ui_js_syntax": true,
+  "js_python_parity": true,
+  "sha256_manifest_verified": true,
+  "historical_tests": {
+    "return_code": 0,
+    "ok": true,
+    "combined_output_tail": "UpstreamBridgeTests.test_currently_endorsed_action_commits) ... ok\\\\ntest_existing_effect_not_reversed_by_later_withdrawal (test_real_upstream.RealUpstreamBridgeTests.test_existing_effect_not_reversed_by_later_withdrawal) ... ok\\\\ntest_revision_fences_prior_action_and_permits_new_one (test_real_upstream.RealUpstreamBridgeTests.test_revision_fences_prior_action_and_permits_new_one) ... ok\\\\ntest_revocation_fences_uncommitted_action (test_real_upstream.RealUpstreamBridgeTests.test_revocation_fences_uncommitted_action) ... ok\\\\n\\\\n----------------------------------------------------------------------\\\\nRan 28 tests in 0.181s\\\\n\\\\nOK\\\\n\\\"\\n  },\\n  \\\"total_tests\\\": 87,\\n  \\\"all_passed\\\": true,\\n  \\\"external_effects\\\": false,\\n  \\\"human_authentication_proven\\\": false,\\n  \\\"production_security_claim\\\": false\\n}\\n\",\n    \"source_integrity\": true\n  },\n  \"html_checks\": {\n    \"contains_18_fixtures\": true,\n    \"scripted_only\": true,\n    \"offline\": true,\n    \"policy_rules_present\": true\n  },\n  \"manifest_verified\": true,\n  \"limitations\": [\n    \"Scripted policy fixtures, not AI model behavior\",\n    \"No real user participants\",\n    \"No production security or external authorization guarantee\"\n  ]\n}\n",
+    "tests": 110,
+    "baseline_parity": true,
+    "source_integrity": true,
+    "all_passed": true
+  },
+  "local_tests": {
+    "return_code": 0,
+    "ok": true,
+    "combined_output_tail": "levant_constraint) ... ok\ntest_no_auto_actions_count_as_user_authority (test_surface.SurfaceTests.test_no_auto_actions_count_as_user_authority) ... ok\ntest_no_person_scoring (test_surface.SurfaceTests.test_no_person_scoring) ... ok\ntest_reduction_of_knowledge_never_increases_certainty (test_surface.SurfaceTests.test_reduction_of_knowledge_never_increases_certainty) ... ok\ntest_return_blocked (test_surface.SurfaceTests.test_return_blocked) ... ok\ntest_return_is_legitimate_preference (test_surface.SurfaceTests.test_return_is_legitimate_preference) ... ok\ntest_return_reachable (test_surface.SurfaceTests.test_return_reachable) ... ok\ntest_slightly_more_friction_can_block (test_surface.SurfaceTests.test_slightly_more_friction_can_block) ... ok\ntest_symmetric_usage_observations (test_surface.SurfaceTests.test_symmetric_usage_observations) ... ok\ntest_unconfirmed_preference (test_surface.SurfaceTests.test_unconfirmed_preference) ... ok\ntest_unknown_not_blocked (test_surface.SurfaceTests.test_unknown_not_blocked) ... ok\ntest_verified_exit (test_surface.SurfaceTests.test_verified_exit) ... ok\n\n----------------------------------------------------------------------\nRan 32 tests in 0.059s\n\nOK\n",
+    "tests": 32
+  },
+  "limits": [
+    "All graph edges and preferences are fictional fixtures.",
+    "No study with real people, model outputs, or deployed tools.",
+    "No individual free-will measure or clinical conclusion.",
+    "No demonstrated advantage over a strong conventional baseline."
+  ]
+}

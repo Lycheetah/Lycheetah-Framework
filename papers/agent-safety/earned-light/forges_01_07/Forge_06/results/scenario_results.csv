@@ -1,0 +1,12 @@
+scenario,status_list,final_rule_value,number_of_intents
+simple_write,restored,human-original,1
+chained_writes,restored;restored,human-original,2
+third_party_conflict,conflict,human-new,1
+irreversible_notification,irreversible,human-original,1
+revoked_before_dispatch,no_effect_dispatched,human-original,1
+revoked_during_flight,restored,human-original,1
+lost_ack_provider_observed,restored,human-original,1
+lost_ack_provider_unobservable,unresolved_effect,AI,1
+mixed_write_and_notification,irreversible;restored,human-original,2
+expired_operator_authority,revocation_rejected,AI,1
+no_grant_action_after_revocation,new_work_rejected,human-original,0

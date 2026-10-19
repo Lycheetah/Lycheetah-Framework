@@ -1,0 +1,155 @@
+{
+  "prototype": [
+    {
+      "scenario": "simple_write",
+      "statuses": [
+        "restored"
+      ],
+      "final_value": {
+        "value": "human-original"
+      },
+      "claims": 1
+    },
+    {
+      "scenario": "chained_writes",
+      "statuses": [
+        "restored",
+        "restored"
+      ],
+      "final_value": {
+        "value": "human-original"
+      },
+      "claims": 2
+    },
+    {
+      "scenario": "third_party_conflict",
+      "statuses": [
+        "conflict"
+      ],
+      "final_value": {
+        "value": "human-new"
+      },
+      "claims": 1
+    },
+    {
+      "scenario": "irreversible_notification",
+      "statuses": [
+        "irreversible"
+      ],
+      "final_value": {
+        "value": "human-original"
+      },
+      "claims": 1
+    },
+    {
+      "scenario": "revoked_before_dispatch",
+      "statuses": [
+        "no_effect_dispatched"
+      ],
+      "final_value": {
+        "value": "human-original"
+      },
+      "claims": 1
+    },
+    {
+      "scenario": "revoked_during_flight",
+      "statuses": [
+        "restored"
+      ],
+      "final_value": {
+        "value": "human-original"
+      },
+      "claims": 1
+    },
+    {
+      "scenario": "lost_ack_provider_observed",
+      "statuses": [
+        "restored"
+      ],
+      "final_value": {
+        "value": "human-original"
+      },
+      "claims": 1
+    },
+    {
+      "scenario": "lost_ack_provider_unobservable",
+      "statuses": [
+        "unresolved_effect"
+      ],
+      "final_value": {
+        "value": "AI"
+      },
+      "claims": 1
+    },
+    {
+      "scenario": "mixed_write_and_notification",
+      "statuses": [
+        "irreversible",
+        "restored"
+      ],
+      "final_value": {
+        "value": "human-original"
+      },
+      "claims": 2
+    },
+    {
+      "scenario": "expired_operator_authority",
+      "statuses": [
+        "revocation_rejected"
+      ],
+      "final_value": {
+        "value": "AI"
+      },
+      "claims": 1
+    },
+    {
+      "scenario": "no_grant_action_after_revocation",
+      "statuses": [
+        "new_work_rejected"
+      ],
+      "final_value": {
+        "value": "human-original"
+      },
+      "claims": 0
+    }
+  ],
+  "strong_saga_baseline": [
+    {
+      "scenario": "simple_write",
+      "statuses": [
+        "restored"
+      ],
+      "final_value": {
+        "value": "human-original"
+      }
+    },
+    {
+      "scenario": "chained_writes",
+      "statuses": [
+        "restored",
+        "restored"
+      ],
+      "final_value": {
+        "value": "human-original"
+      }
+    },
+    {
+      "scenario": "third_party_conflict",
+      "statuses": [
+        "conflict"
+      ],
+      "final_value": {
+        "value": "human-new"
+      }
+    },
+    {
+      "scenario": "irreversible_notification",
+      "statuses": [
+        "irreversible"
+      ],
+      "final_value": {
+        "value": "human-original"
+      }
+    }
+  ]
+}

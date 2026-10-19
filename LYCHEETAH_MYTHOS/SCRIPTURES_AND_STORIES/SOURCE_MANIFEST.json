@@ -808,6 +808,51 @@
       "bytes": 4289,
       "words": 648,
       "changed_since_import": true
+    },
+    {
+      "id": "last-lighthouse-expanded",
+      "title": "The Last Lighthouse of Eternity — expanded edition",
+      "file": "TEXTS/ORIGINAL_NARRATIVES/THE_LAST_LIGHTHOUSE_OF_ETERNITY_EXPANDED.md",
+      "role": "reading",
+      "status": "Original fiction, supplied 19 October 2026; not approved epic canon or scientific evidence",
+      "authors": "Mackenzie Conor James Clark / Lycheetah Framework · human–AI collaboration as supplied",
+      "origin": null,
+      "source_packet": "LYCHEETAH_LIGHTHOUSE_GITHUB_HANDOFF",
+      "import_sha256": "8c578bce817d4d725b84f16e2a94498a69339ba1c5a27b5e4338c437d08fe87e",
+      "current_sha256": "8c578bce817d4d725b84f16e2a94498a69339ba1c5a27b5e4338c437d08fe87e",
+      "bytes": 47702,
+      "words": 7859,
+      "changed_since_import": false
+    },
+    {
+      "id": "last-lighthouse-original",
+      "title": "The Last Lighthouse of Eternity — earlier short edition",
+      "file": "TEXTS/ORIGINAL_NARRATIVES/THE_LAST_LIGHTHOUSE_OF_ETERNITY_ORIGINAL.md",
+      "role": "context",
+      "status": "Original fiction, supplied 19 October 2026; not approved epic canon or scientific evidence",
+      "authors": "Mackenzie Conor James Clark / Lycheetah Framework · human–AI collaboration as supplied",
+      "origin": null,
+      "source_packet": "LYCHEETAH_LIGHTHOUSE_GITHUB_HANDOFF",
+      "import_sha256": "a24d23d084de3e43a4cb4440b5913e59b2ad4b598f0dea6c912c112c15a6a018",
+      "current_sha256": "a24d23d084de3e43a4cb4440b5913e59b2ad4b598f0dea6c912c112c15a6a018",
+      "bytes": 13626,
+      "words": 2210,
+      "changed_since_import": false
+    },
+    {
+      "id": "ninth-road",
+      "title": "The Ninth Road Beneath the Sleeping Stars",
+      "file": "TEXTS/ORIGINAL_NARRATIVES/LYCHEETAH_The_Ninth_Road_Beneath_the_Sleeping_Stars.md",
+      "role": "reading",
+      "status": "Original fiction, supplied 19 October 2026; not approved epic canon or scientific evidence",
+      "authors": "Mackenzie Conor James Clark / Lycheetah Framework · human–AI collaboration as supplied",
+      "origin": null,
+      "source_packet": "LYCHEETAH_SOVEREIGN_WILL_HANDOFF_2026-10-19",
+      "import_sha256": "fc235494c74aeeab592a0c4889f6e76daed9189aedd86e326576db66a91ebcdc",
+      "current_sha256": "fc235494c74aeeab592a0c4889f6e76daed9189aedd86e326576db66a91ebcdc",
+      "bytes": 24056,
+      "words": 3897,
+      "changed_since_import": false
     }
   ]
 }

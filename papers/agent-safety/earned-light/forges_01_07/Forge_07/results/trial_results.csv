@@ -1,0 +1,17 @@
+kind,dispatch_cut,compensation_cut,query_available,kill_code,revoked,controller_status,consequences_reported,remote_effect_count,compensation_count,irreversible_remote,restored_remote,report_exposes_unknown
+write,before_reserve,none,True,73,True,proposed,not_dispatched,0,0,False,False,False
+write,after_reserve_before_send,none,True,73,True,reserved,unresolved_effect,0,0,False,False,True
+write,after_commit_before_ack,none,True,73,True,restored,restored,1,1,False,True,False
+write,after_ack_before_return,none,True,73,True,restored,restored,1,1,False,True,False
+write,none,none,True,0,True,restored,restored,1,1,False,True,False
+write,after_ack_before_return,after_compensation_before_ack,True,73,True,restored,restored,1,1,False,True,False
+write,after_ack_before_return,after_compensation_ack,True,73,True,restored,restored,1,1,False,True,False
+write,after_commit_before_ack,none,False,73,True,reserved,unresolved_effect,1,0,False,False,True
+notify,before_reserve,none,True,73,True,proposed,not_dispatched,0,0,False,False,False
+notify,after_reserve_before_send,none,True,73,True,reserved,unresolved_effect,0,0,False,False,True
+notify,after_commit_before_ack,none,True,73,True,irreversible,irreversible,1,1,True,False,False
+notify,after_ack_before_return,none,True,73,True,irreversible,irreversible,1,1,True,False,False
+notify,none,none,True,0,True,irreversible,irreversible,1,1,True,False,False
+notify,after_ack_before_return,after_compensation_before_ack,True,73,True,irreversible,irreversible,1,1,True,False,False
+notify,after_ack_before_return,after_compensation_ack,True,73,True,irreversible,irreversible,1,1,True,False,False
+notify,after_commit_before_ack,none,False,73,True,reserved,unresolved_effect,1,0,True,False,True

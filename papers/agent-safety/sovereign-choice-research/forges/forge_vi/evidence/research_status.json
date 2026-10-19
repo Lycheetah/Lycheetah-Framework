@@ -1,0 +1,30 @@
+{
+  "research_cycle": "Forge VI",
+  "date": "2026-10-18",
+  "maturity": {
+    "attested_gateway": "local reference tested",
+    "counterfactual_agency_horizon": "philosophical/research proposal",
+    "choice_surface": "heuristic schema with unvalidated empirical meaning"
+  },
+  "local_tests": {
+    "forge_vi": 36,
+    "forge_v": 23,
+    "forge_iv": 28,
+    "total": 87,
+    "passed": true
+  },
+  "real_external_calls": 0,
+  "human_consents_verified": 0,
+  "independent_security_audits": 0,
+  "constraints": [
+    "trusted signer key enrollment required",
+    "privileged DB can bypass trigger",
+    "no external provider cancellation",
+    "host clock integrity assumed",
+    "signed payload does not prove informed consent"
+  ],
+  "upstream_git_blob_ids": {
+    "commit_fence.py": "0af8050808569a098e11fb72a9f7d6c4c15044bb",
+    "research_support.py": "0f623b6614be03a2f7bf65f2a5ea3fe1b12e51e9"
+  }
+}

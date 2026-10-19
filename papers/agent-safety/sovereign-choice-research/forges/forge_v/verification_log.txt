@@ -1,0 +1,89 @@
+=== FORGE V ===
+
+test_after_commit_withdrawal_does_not_undo_history (test_choice_ledger.AtomicLedgerTests.test_after_commit_withdrawal_does_not_undo_history) ... ok
+test_altered_message_is_not_endorsed (test_choice_ledger.AtomicLedgerTests.test_altered_message_is_not_endorsed) ... ok
+test_altered_recipient_is_not_endorsed (test_choice_ledger.AtomicLedgerTests.test_altered_recipient_is_not_endorsed) ... ok
+test_exact_endorsed_action_commits (test_choice_ledger.AtomicLedgerTests.test_exact_endorsed_action_commits) ... ok
+test_existing_upstream_audit_contains_choice_events (test_choice_ledger.AtomicLedgerTests.test_existing_upstream_audit_contains_choice_events) ... ok
+test_failed_grant_rolls_back_authority_and_journal (test_choice_ledger.AtomicLedgerTests.test_failed_grant_rolls_back_authority_and_journal) ... ok
+test_failed_withdraw_rolls_back_both (test_choice_ledger.AtomicLedgerTests.test_failed_withdraw_rolls_back_both) ... ok
+test_fence_manual_regrant_not_considered_valid_choice (test_choice_ledger.AtomicLedgerTests.test_fence_manual_regrant_not_considered_valid_choice) ... ok
+test_hash_change_from_mutated_action_arguments_is_denied (test_choice_ledger.AtomicLedgerTests.test_hash_change_from_mutated_action_arguments_is_denied) ... ok
+test_multi_thread_revisions_are_serial_and_gapless (test_choice_ledger.AtomicLedgerTests.test_multi_thread_revisions_are_serial_and_gapless) ... ok
+test_multiple_simultaneous_commit_attempts_one_effect (test_choice_ledger.AtomicLedgerTests.test_multiple_simultaneous_commit_attempts_one_effect) ... ok
+test_no_grant_denies (test_choice_ledger.AtomicLedgerTests.test_no_grant_denies) ... ok
+test_process_revision_serialization (test_choice_ledger.AtomicLedgerTests.test_process_revision_serialization) ... ok
+test_records_are_metadata_only_not_message_content (test_choice_ledger.AtomicLedgerTests.test_records_are_metadata_only_not_message_content) ... ok
+test_regrant_after_withdraw_requires_new_handle (test_choice_ledger.AtomicLedgerTests.test_regrant_after_withdraw_requires_new_handle) ... ok
+test_revision_fences_previously_issued_action (test_choice_ledger.AtomicLedgerTests.test_revision_fences_previously_issued_action) ... ok
+test_revocation_holds_write_lock_until_atomic_commit (test_choice_ledger.AtomicLedgerTests.test_revocation_holds_write_lock_until_atomic_commit) ... ok
+test_substituted_untrusted_action_class_rejected (test_choice_ledger.AtomicLedgerTests.test_substituted_untrusted_action_class_rejected) ... ok
+test_unknown_withdrawal_creates_inactive_generation (test_choice_ledger.AtomicLedgerTests.test_unknown_withdrawal_creates_inactive_generation) ... ok
+test_upstream_baseline_is_unsafe_for_external_ungated_provider (test_choice_ledger.AtomicLedgerTests.test_upstream_baseline_is_unsafe_for_external_ungated_provider) ... ok
+test_withdraw_no_reason_and_no_new_effect (test_choice_ledger.AtomicLedgerTests.test_withdraw_no_reason_and_no_new_effect) ... ok
+test_wrong_principal_rejected (test_choice_ledger.AtomicLedgerTests.test_wrong_principal_rejected) ... ok
+test_wrong_tool_scope_rejected (test_choice_ledger.AtomicLedgerTests.test_wrong_tool_scope_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.540s
+
+OK
+
+=== FORGE IV UPSTREAM ===
+
+test_activation_failure_fails_closed (test_intent_bridge.BridgeTests.test_activation_failure_fails_closed) ... ok
+test_another_principal_isolated (test_intent_bridge.BridgeTests.test_another_principal_isolated) ... ok
+test_bad_payload_hash (test_intent_bridge.BridgeTests.test_bad_payload_hash) ... ok
+test_changed_intention_denies_stale_handle (test_intent_bridge.BridgeTests.test_changed_intention_denies_stale_handle) ... ok
+test_different_payload_is_not_same_approval (test_intent_bridge.BridgeTests.test_different_payload_is_not_same_approval) ... ok
+test_different_target_is_not_same_approval (test_intent_bridge.BridgeTests.test_different_target_is_not_same_approval) ... ok
+test_existing_committed_effect_not_undone (test_intent_bridge.BridgeTests.test_existing_committed_effect_not_undone) ... ok
+test_generation_mismatch_fails_closed (test_intent_bridge.BridgeTests.test_generation_mismatch_fails_closed) ... ok
+test_journal_events_do_not_require_private_explanation (test_intent_bridge.BridgeTests.test_journal_events_do_not_require_private_explanation) ... ok
+test_missing_principal_rejected (test_intent_bridge.BridgeTests.test_missing_principal_rejected) ... ok
+test_no_initial_grant (test_intent_bridge.BridgeTests.test_no_initial_grant) ... ok
+test_normal_commit (test_intent_bridge.BridgeTests.test_normal_commit) ... ok
+test_observed_compliance_not_metaphysical_freedom (test_intent_bridge.BridgeTests.test_observed_compliance_not_metaphysical_freedom) ... ok
+test_old_generation_not_restored_on_regrant (test_intent_bridge.BridgeTests.test_old_generation_not_restored_on_regrant) ... ok
+test_partial_grant_denies_if_activation_not_complete (test_intent_bridge.BridgeTests.test_partial_grant_denies_if_activation_not_complete) ... ok
+test_recorded_grant_not_informed_consent (test_intent_bridge.BridgeTests.test_recorded_grant_not_informed_consent) ... ok
+test_revised_plan_not_lack_of_free_will (test_intent_bridge.BridgeTests.test_revised_plan_not_lack_of_free_will) ... ok
+test_revision_mid_issue_blocks_new_generation_leak (test_intent_bridge.BridgeTests.test_revision_mid_issue_blocks_new_generation_leak) ... ok
+test_revision_without_work_cannot_commit_old_action (test_intent_bridge.BridgeTests.test_revision_without_work_cannot_commit_old_action) ... ok
+test_scope_isolated (test_intent_bridge.BridgeTests.test_scope_isolated) ... ok
+test_two_process_style_journal_serializes_versions (test_intent_bridge.BridgeTests.test_two_process_style_journal_serializes_versions) ... ok
+test_version_across_restart (test_intent_bridge.BridgeTests.test_version_across_restart) ... ok
+test_version_advanced_on_withdraw (test_intent_bridge.BridgeTests.test_version_advanced_on_withdraw) ... ok
+test_withdraw_does_not_require_reason (test_intent_bridge.BridgeTests.test_withdraw_does_not_require_reason) ... ok
+test_currently_endorsed_action_commits (test_real_upstream.RealUpstreamBridgeTests.test_currently_endorsed_action_commits) ... ok
+test_existing_effect_not_reversed_by_later_withdrawal (test_real_upstream.RealUpstreamBridgeTests.test_existing_effect_not_reversed_by_later_withdrawal) ... ok
+test_revision_fences_prior_action_and_permits_new_one (test_real_upstream.RealUpstreamBridgeTests.test_revision_fences_prior_action_and_permits_new_one) ... ok
+test_revocation_fences_uncommitted_action (test_real_upstream.RealUpstreamBridgeTests.test_revocation_fences_uncommitted_action) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.182s
+
+OK
+
+=== COMPARE ===
+{
+  "experiment": "Simulated exception after authority update, before journal commit",
+  "legacy_split_journal": {
+    "journal_version": 1,
+    "journal_generation": 2,
+    "upstream_generation": 4,
+    "generation_mismatch": true,
+    "upstream_active": true,
+    "known_boundary": "Wrapper denies mismatched intent, but the separate stores disagree after interruption"
+  },
+  "forge_v_atomic": {
+    "journal_version": 1,
+    "journal_generation": 1,
+    "upstream_generation": 1,
+    "generation_mismatch": false,
+    "upstream_active": true,
+    "known_boundary": "Only local SQLite choice+authority rollback; external provider effects not covered"
+  },
+  "real_upstream_commit_fence": true,
+  "external_effects": false
+}

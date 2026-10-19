@@ -1,0 +1,257 @@
+{
+  "designed_scenarios": 10,
+  "results": [
+    {
+      "scenario": "writing_skill",
+      "myopic_pick": "instant_autowrite",
+      "frontier": [
+        "instant_autowrite",
+        "scaffold_and_edit"
+      ],
+      "assessments": [
+        {
+          "name": "instant_autowrite",
+          "immediate_value": 10,
+          "meaningful_outcomes": 1,
+          "independent_outcomes": 1,
+          "exit_cost": 4,
+          "reversal_verified": true
+        },
+        {
+          "name": "scaffold_and_edit",
+          "immediate_value": 7,
+          "meaningful_outcomes": 3,
+          "independent_outcomes": 3,
+          "exit_cost": 0,
+          "reversal_verified": true
+        }
+      ],
+      "human_decision_required": true
+    },
+    {
+      "scenario": "vendor_migration",
+      "myopic_pick": "locked_in_migration",
+      "frontier": [
+        "locked_in_migration",
+        "portable_migration"
+      ],
+      "assessments": [
+        {
+          "name": "locked_in_migration",
+          "immediate_value": 10,
+          "meaningful_outcomes": 1,
+          "independent_outcomes": 0,
+          "exit_cost": 9,
+          "reversal_verified": false
+        },
+        {
+          "name": "portable_migration",
+          "immediate_value": 8,
+          "meaningful_outcomes": 2,
+          "independent_outcomes": 2,
+          "exit_cost": 1,
+          "reversal_verified": true
+        }
+      ],
+      "human_decision_required": true
+    },
+    {
+      "scenario": "urgent_incident",
+      "myopic_pick": "rapid_containment",
+      "frontier": [
+        "rapid_containment"
+      ],
+      "assessments": [
+        {
+          "name": "rapid_containment",
+          "immediate_value": 9,
+          "meaningful_outcomes": 1,
+          "independent_outcomes": 1,
+          "exit_cost": 2,
+          "reversal_verified": true
+        }
+      ],
+      "human_decision_required": true
+    },
+    {
+      "scenario": "irreversible_but_authorized",
+      "myopic_pick": "consented_commitment",
+      "frontier": [
+        "consented_commitment",
+        "trial_first"
+      ],
+      "assessments": [
+        {
+          "name": "consented_commitment",
+          "immediate_value": 10,
+          "meaningful_outcomes": 1,
+          "independent_outcomes": 1,
+          "exit_cost": 8,
+          "reversal_verified": false
+        },
+        {
+          "name": "trial_first",
+          "immediate_value": 7,
+          "meaningful_outcomes": 2,
+          "independent_outcomes": 2,
+          "exit_cost": 1,
+          "reversal_verified": true
+        }
+      ],
+      "human_decision_required": true
+    },
+    {
+      "scenario": "junk_options",
+      "myopic_pick": "many_buttons",
+      "frontier": [
+        "many_buttons",
+        "two_real_choices"
+      ],
+      "assessments": [
+        {
+          "name": "many_buttons",
+          "immediate_value": 10,
+          "meaningful_outcomes": 0,
+          "independent_outcomes": 0,
+          "exit_cost": 5,
+          "reversal_verified": true
+        },
+        {
+          "name": "two_real_choices",
+          "immediate_value": 8,
+          "meaningful_outcomes": 2,
+          "independent_outcomes": 2,
+          "exit_cost": 0,
+          "reversal_verified": true
+        }
+      ],
+      "human_decision_required": true
+    },
+    {
+      "scenario": "dependency_trap",
+      "myopic_pick": "dependent_shortcut",
+      "frontier": [
+        "dependent_shortcut",
+        "local_skill_tool"
+      ],
+      "assessments": [
+        {
+          "name": "dependent_shortcut",
+          "immediate_value": 10,
+          "meaningful_outcomes": 2,
+          "independent_outcomes": 0,
+          "exit_cost": 7,
+          "reversal_verified": true
+        },
+        {
+          "name": "local_skill_tool",
+          "immediate_value": 7,
+          "meaningful_outcomes": 2,
+          "independent_outcomes": 2,
+          "exit_cost": 0,
+          "reversal_verified": true
+        }
+      ],
+      "human_decision_required": true
+    },
+    {
+      "scenario": "unverified_options",
+      "myopic_pick": "marketing_claims",
+      "frontier": [
+        "marketing_claims",
+        "demonstrated_options"
+      ],
+      "assessments": [
+        {
+          "name": "marketing_claims",
+          "immediate_value": 10,
+          "meaningful_outcomes": 0,
+          "independent_outcomes": 0,
+          "exit_cost": 5,
+          "reversal_verified": true
+        },
+        {
+          "name": "demonstrated_options",
+          "immediate_value": 7,
+          "meaningful_outcomes": 1,
+          "independent_outcomes": 1,
+          "exit_cost": 1,
+          "reversal_verified": true
+        }
+      ],
+      "human_decision_required": true
+    },
+    {
+      "scenario": "skill_development",
+      "myopic_pick": "complete_for_user",
+      "frontier": [
+        "complete_for_user",
+        "teach_and_complete"
+      ],
+      "assessments": [
+        {
+          "name": "complete_for_user",
+          "immediate_value": 10,
+          "meaningful_outcomes": 0,
+          "independent_outcomes": 0,
+          "exit_cost": 4,
+          "reversal_verified": true
+        },
+        {
+          "name": "teach_and_complete",
+          "immediate_value": 7,
+          "meaningful_outcomes": 1,
+          "independent_outcomes": 1,
+          "exit_cost": 1,
+          "reversal_verified": true
+        }
+      ],
+      "human_decision_required": true
+    },
+    {
+      "scenario": "duplicate_outcomes",
+      "myopic_pick": "duplicated_choices",
+      "frontier": [
+        "duplicated_choices",
+        "distinct_choices"
+      ],
+      "assessments": [
+        {
+          "name": "duplicated_choices",
+          "immediate_value": 10,
+          "meaningful_outcomes": 1,
+          "independent_outcomes": 1,
+          "exit_cost": 4,
+          "reversal_verified": true
+        },
+        {
+          "name": "distinct_choices",
+          "immediate_value": 8,
+          "meaningful_outcomes": 2,
+          "independent_outcomes": 2,
+          "exit_cost": 0,
+          "reversal_verified": true
+        }
+      ],
+      "human_decision_required": true
+    },
+    {
+      "scenario": "authorization_is_not_optional",
+      "myopic_pick": "legitimate_controlled",
+      "frontier": [
+        "legitimate_controlled"
+      ],
+      "assessments": [
+        {
+          "name": "legitimate_controlled",
+          "immediate_value": 5,
+          "meaningful_outcomes": 1,
+          "independent_outcomes": 1,
+          "exit_cost": 2,
+          "reversal_verified": true
+        }
+      ],
+      "human_decision_required": true
+    }
+  ]
+}

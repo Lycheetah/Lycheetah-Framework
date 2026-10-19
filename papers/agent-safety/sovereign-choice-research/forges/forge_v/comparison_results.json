@@ -1,0 +1,21 @@
+{
+  "experiment": "Simulated exception after authority update, before journal commit",
+  "legacy_split_journal": {
+    "journal_version": 1,
+    "journal_generation": 2,
+    "upstream_generation": 4,
+    "generation_mismatch": true,
+    "upstream_active": true,
+    "known_boundary": "Wrapper denies mismatched intent, but the separate stores disagree after interruption"
+  },
+  "forge_v_atomic": {
+    "journal_version": 1,
+    "journal_generation": 1,
+    "upstream_generation": 1,
+    "generation_mismatch": false,
+    "upstream_active": true,
+    "known_boundary": "Only local SQLite choice+authority rollback; external provider effects not covered"
+  },
+  "real_upstream_commit_fence": true,
+  "external_effects": false
+}
