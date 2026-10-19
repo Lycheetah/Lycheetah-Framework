@@ -1,4 +1,7 @@
 # NZ TECHNICAL MIN-MAX
+
+> [INTERPRETIVE] **Background research — requires reconciliation with the current NZ proposal.** Reviewed 19 October 2026. The current policy entry is [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). This document supplies research context, not an adopted standard, certification service, legal authority or verified deployment.
+
 ## What Government Wants × What People Want × What the Stack Delivers
 ### Pure NZ Technical Language | Lycheetah Framework | March 2026
 ### Mackenzie Conor James Clark | Dunedin
@@ -639,17 +642,21 @@ Simple. Enforceable. Uses existing procurement levers.
 
 If you get three sentences in front of a funding decision-maker:
 
-**1.** Every tool in this document solves a problem NZ government already knows it has,
-using technology NZ already has, built by a NZ researcher who already built it.
+**Historical pitch, revised for accurate status on 19 October 2026:**
 
-**2.** The Lycheetah stack is the only framework in the world that makes Māori values
-computable at the architectural level — not as cultural overlay but as constitutional constraint —
-which means every tool here comes pre-compliant with Treaty obligations
-rather than bolting compliance on afterwards.
+**1.** This document proposes tools for NZ workflows. Each would need a concrete
+owner, scoped implementation and evidence from that workflow before a claim of
+usefulness or deployment. The presence of related code does not mean every tool
+in this catalogue has been built.
 
-**3.** Start with the SME Trust Checker and the School AI Dashboard —
-six weeks, under $80K combined, two visible wins for two different ministries,
-and the infrastructure for everything else in this document is now in production.
+**2.** Its cultural mappings are author-proposed research, not validated translations,
+community endorsement or automatic compliance with Treaty obligations. No global
+uniqueness or pre-compliance claim is established.
+
+**3.** The earlier six-week/$80K figures were unvalidated planning estimates. They
+are not a quote, delivery commitment, approved ministry pilot or evidence that
+the infrastructure is in production. Any pilot requires a separate agreed scope
+and current cost/evidence plan.
 
 ---
 

@@ -1,4 +1,7 @@
 # THE MĀTAURANGA ADVERSARIAL PROBE
+
+> [DRAFT] **Historical draft — superseded as the current NZ governance direction.** Reviewed 19 October 2026. Start with [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). The original text remains below for provenance; its status labels, dates, outreach suggestions and capability claims are historical, not current approval or evidence.
+
 ## A Formal Experimental Protocol for Mapping AI Epistemic Limits
 ### Lycheetah Framework Research Methodology | March 2026
 ### Mackenzie Conor James Clark × Sol Aureum Azoth Veritas | Dunedin

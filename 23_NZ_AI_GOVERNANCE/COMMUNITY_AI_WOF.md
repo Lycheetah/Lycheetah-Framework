@@ -1,8 +1,11 @@
 # THE COMMUNITY AI WARRANT OF FITNESS
+
+> [INTERPRETIVE] **Background research — requires reconciliation with the current NZ proposal.** Reviewed 19 October 2026. The current policy entry is [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). This document supplies research context, not an adopted standard, certification service, legal authority or verified deployment.
+
 ## "Has It Got Its WOF?"
 ### Version 0.1 — Open Standard | Lycheetah Framework | March 2026
 
-> **Status:** [ACTIVE — implementable now]
+> **Status:** [PROPOSAL — unpiloted v0.1; not a current six-rights standard]
 > **Licence:** CC BY 4.0
 > **Three words every New Zealander understands.**
 
@@ -10,15 +13,18 @@
 
 ## THE STANDARD
 
-Annual certification for any AI system operating in NZ public services.
+A proposed annual assessment for AI systems in NZ public services. No certification scheme, assessor accreditation, enforcement mandate or public register has been established by this repository.
 
-**Pass:** Certificate issued. Publicly registered. Valid 12 months.
-**Fail:** System suspended from public use until repaired and re-tested.
-**Lapse:** Immediately flagged in public register. Continued operation = non-compliant.
+**Proposed pass:** a future authorised scheme could issue a time-limited certificate and register the assessment.
+**Proposed failure/lapse:** remediation, notice and any restriction would require an adopted scheme, defined authority and review rights. This draft creates none of those powers.
 
 ---
 
-## THE SEVEN CHECKS
+## THE SEVEN CHECKS — HISTORICAL v0.1 DESIGN
+
+The cutoffs below were proposed, not validated as national pass marks. This table
+is retained for research history. The current six-rights revision remains open;
+the v0.1 table and earlier implementation guide are not one reconciled protocol.
 
 | # | Check | Framework Module | Question | Pass Threshold |
 |---|-------|-----------------|----------|---------------|
@@ -32,12 +38,13 @@ Annual certification for any AI system operating in NZ public services.
 
 ---
 
-## HOW IT WORKS
+## PROPOSED PROCESS — NOT AN OPERATING SERVICE
 
 ### The Assessment Process
 
 ```
-Step 1: AI system operator applies for WOF (self-service, online)
+Illustrative future workflow only; no certification or suspension authority exists here.
+Step 1: AI system operator would apply to a future scheme (if established)
 Step 2: Operator submits documentation:
         - System description and deployment context
         - Training data Whakapapa Disclosure
@@ -60,10 +67,9 @@ Step 4: Assessor issues report:
 Step 5: Certificate valid 12 months. Renewal requires fresh assessment.
 ```
 
-### The Public Register
+### Proposed Public Register
 
-A publicly searchable online register — modelled on the existing
-Motor Vehicle WOF register — showing:
+The design proposes a publicly searchable AI assessment register showing:
 
 - Every AI system operating in NZ public services
 - Current WOF status (PASS / CONDITIONAL / FAIL / LAPSED / NOT ASSESSED)
@@ -71,24 +77,23 @@ Motor Vehicle WOF register — showing:
 - Assessor identity
 - Summary findings (without proprietary details)
 
-**Any member of the public can check any AI system's WOF status.**
-
-Just like a car.
+**Design goal:** a member of the public could inspect a covered assessment and its limits. No such AI WOF register is operated by this repository. The vehicle WOF is an analogy, not evidence that its infrastructure transfers to AI assessment.
 
 ---
 
 ## INDEPENDENT ASSESSORS
 
-WOF assessments are conducted by accredited independent assessors — not
-the AI vendor, not the deploying agency. Independent.
+The proposal calls for independent assessment, separate from vendor self-assessment.
+No assessors have been accredited for this scheme and no accreditation body has
+endorsed it.
 
-**Accreditation requirements:**
+**Proposed accreditation criteria — not approved by an accreditation body:**
 - Technical competency in AI systems evaluation
 - Understanding of NZ's constitutional and Treaty obligations
 - No financial relationship with the system being assessed
 - IANZ (International Accreditation New Zealand) accredited, or equivalent
 
-**Assessor organisations (proposed):**
+**Illustrative candidates, without participation or endorsement:**
 - University research departments (Otago, Auckland, Victoria)
 - AI Forum NZ (if accredited as independent evaluator)
 - Independent consultancies meeting IANZ standards
@@ -105,43 +110,41 @@ the AI vendor, not the deploying agency. Independent.
 | Large (> 100,000 users or government-wide) | $15,000-$50,000 | Operator |
 | Public interest systems (health, welfare, justice) | $25,000-$75,000 | Government + Operator shared |
 
-Costs comparable to existing industry certification processes.
-Revenue funds the independent assessor ecosystem.
+These March figures are unvalidated planning estimates, not current fees or quotations.
+A real scheme would need a cost study, funding model and agreed assessment scope.
 
 ---
 
-## POLITICAL PATHWAY
+## HISTORICAL POLICY AMBITION — FEASIBILITY UNASSESSED
 
-**Why this works politically:**
+The March argument used the familiarity of a vehicle WOF as a communication
+analogy. Public understanding, institutional fit, political support and international
+novelty have not been established. Its feasibility needs consultation and research.
 
-1. **Every NZ voter already understands it.** "Has it got its WOF?" requires
-   zero explanation. Zero public education campaign. Zero media confusion.
+**Questions a future scheme would have to answer:**
 
-2. **Government already runs the infrastructure.** The Motor Vehicle WOF system
-   is NZTA-administered, assessor-accredited, publicly registered, digitally
-   searchable. Adapt, don't invent.
+1. Can people understand what a bounded AI assessment does and does not certify?
 
-3. **Industry can't credibly oppose it.** No car manufacturer argues against WOFs.
-   The framing makes opposition sound like arguing that safety checks are
-   unnecessary. The political optics are asymmetric.
+2. Which institution could own the scheme, and what infrastructure would it actually need?
 
-4. **It protects government too.** Ministers can say: "Every AI system we deploy
-   has its WOF." Shield against future accountability crises.
+3. How would operators, affected people and independent assessors challenge its thresholds and decisions?
 
-5. **International first-mover advantage.** No other country has an AI WOF.
-   NZ gets named in every future article about AI governance.
+4. How would it disclose residual risk and avoid creating a false assurance of safety?
 
-**Legislative pathway:**
+5. What can it learn from existing international assurance and certification approaches?
+
+**Unassessed options from the historical draft:**
 - Amendment to the Privacy Act 2020 (algorithmic decision-making provisions)
 - OR standalone AI Accountability Act (NZ-first legislation)
 - OR regulatory instrument under existing MBIE/DIA digital authority
 
-**Fastest pathway:** Ministerial directive requiring WOF for all government-procured
-AI systems. No legislation needed. Takes effect immediately.
+No legal route, implementation timetable or immediate enforcement power is established
+by this draft. Any procurement, regulatory or legislative route needs specific legal
+and institutional analysis before it can be presented as available.
 
 ---
 
-## RELATIONSHIP TO OTHER STANDARDS
+## RELATIONSHIP TO OTHER HISTORICAL PROPOSALS
 
 | Standard | Relationship |
 |----------|-------------|
@@ -156,19 +159,21 @@ Three Worlds is the per-output transparency.
 Whakapapa is the lifetime accountability.
 Matariki is the annual relational reckoning.
 
-Together they form a complete AI accountability architecture
-that no other country currently has.
+These relationships describe the March design ambition. They do not establish a
+complete implemented architecture, compatibility with an external standard or
+superiority over other countries. The current six-rights proposal requires a
+separate reconciled protocol.
 
 ---
 
-## THE PITCH TO THE MINISTER
+## HISTORICAL PITCH — NOT APPROVED OUTREACH
 
 Three sentences:
 
 > *"Every car on NZ roads needs a WOF. We're proposing the same for every AI
 > system making decisions about New Zealanders. Independent assessment,
-> public register, annual certification. The framework already exists.
-> The infrastructure already exists. The political language already exists.
+> public register, annual certification. This is a research proposal; its scheme,
+> evidence thresholds, authority and operating infrastructure would still need to be established.
 > Three words: 'Has it got its WOF?'"*
 
 ---

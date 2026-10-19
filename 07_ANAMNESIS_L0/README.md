@@ -1,23 +1,29 @@
-# ANAMNESIS — Mathematical Epistemology
+# ANAMNESIS — discovery and recurrence
 
-**Axiom:** BEACON · **Status:** Active — philosophical publication pending
+**Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
+**Guide refreshed:** 19 October 2026.  
+**Status:** Philosophical and research-adjacent inquiry; metaphysical interpretations are unestablished.
 
-We remember, we do not invent. The core claim: mathematical structures are discovered, not created — evidenced by the fact that independent investigators across cultures and centuries find the same structures with zero contact between them.
+ANAMNESIS asks what recurring mathematical structures and independent discoveries can tell us about knowledge. Shared patterns can motivate questions and comparisons. They do not uniquely establish a collective memory, a soul theory, cultural equivalence or one explanation of how discovery occurs.
 
-## Core idea
+## Read this line
 
-Named after Plato's concept that learning is remembering what the soul already knows. ANAMNESIS formalizes this: if the same mathematical structure is found independently by Pythagoreans, Islamic geometers, Indian mathematicians, and 20th-century category theorists — the most parsimonious explanation is that the structure pre-exists its discoverers.
+- [ANAMNESIS_COMPLETE.md](ANAMNESIS_COMPLETE.md): the detailed foundational source.
+- [essentials.md](essentials.md): the shorter source introduction.
+- [Current whole-framework synthesis](../13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md): where this line fits now.
+- [Core engine guide](../12_IMPLEMENTATIONS/core/README.md): executable models, APIs and limitations.
 
-This is not mysticism. It is the same reasoning that leads physicists to say electrons "exist" rather than "are convenient fictions" — the convergence of independent measurements points at something real.
+## Current connections
 
-## Application to the framework
+Keep historical sources, contact, attribution and alternative explanations visible. Creative or philosophical value is a different register from empirical confirmation.
 
-The appearance of φ⁻¹ ≈ 0.618 (golden ratio) and cos(π/7) ≈ 0.9010 (heptagonal geometry) in the framework's dynamics is evidence of the same kind — these are constraints imposed by the mathematical structure of the domain, not choices made by the designer.
+[Abstract and Generative register](../35_ABSTRACT_AND_GENERATIVE/README.md) · [Cross-cultural research](../24_LAMAGUE_CROSS_CULTURAL/README.md).
 
-## Files
+## Evidence and source ownership
 
-- `ANAMNESIS_COMPLETE.md` — full epistemological argument, cross-cultural convergence data, formal treatment
-
-## Next
-
-Philosophical publication · connection to mathematical Platonism literature
+The detailed source texts retain their historical vocabulary, arguments and
+status labels. This guide does not certify all of those statements. Use the
+particular model's assumptions, dated experiments and [claim/evidence records](../28_DEFENSE/CLAIMS_README.md)
+when assessing a claim. A successful check in another workstream does not
+validate this one. These source paths remain in place; no historical manuscript
+or implementation has been deleted or silently replaced by a generated summary.

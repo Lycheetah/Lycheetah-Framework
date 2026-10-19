@@ -2,6 +2,10 @@
 
 **Evidence footing: [SCAFFOLD] research, proposal or source review. Supplied and local synthetic results retain their stated limits; no independent validation or production claim.**
 
+## Current corpus synthesis
+
+[Lycheetah now](../13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md) explains how the newer research, tools, language branches and creative work fit together. The May synthesis preprints below are preserved snapshots, not current capability summaries.
+
 ## Latest research intakes — 18–19 October 2026
 
 | Line | Question | Entry point |

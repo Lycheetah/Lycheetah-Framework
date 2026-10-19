@@ -1,28 +1,29 @@
-# EARNED LIGHT — Consciousness Thermodynamics
+# Earned Light — energy, persistence and meaning
 
-**Axiom:** HEALER · **Status:** Active — empirical validation pending
+**Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
+**Guide refreshed:** 19 October 2026.  
+**Status:** The consciousness-thermodynamics interpretation remains conjectural.
 
-Consciousness is a dissipative structure. Sustained clarity requires ongoing energy input — not because consciousness is fragile, but because it operates far from equilibrium, the same way a flame is real but goes out without fuel.
+This foundational line uses energy flow and sustained complexity as a model and analogy for maintaining clarity. Thermodynamic facts about physical systems do not by themselves establish a quantitative theory of consciousness, a clinical intervention or a validated personal-energy score.
 
-## Core idea
+## Read this line
 
-Derived from non-equilibrium thermodynamics (Prigogine). The key insight: stable complex order in an open system requires continuous energy flow through it, not just stored energy. This reframes "why is clarity so hard to maintain" — it's not a personal failing, it's physics.
+- [Earned_Light_COMPLETE.md](Earned_Light_COMPLETE.md): the detailed foundational source.
+- [essentials.md](essentials.md): the shorter source introduction.
+- [Current whole-framework synthesis](../13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md): where this line fits now.
+- [Core engine guide](../12_IMPLEMENTATIONS/core/README.md): executable models, APIs and limitations.
 
-## Key quantities
+## Current connections
 
-- **E_available:** consciousness capacity currently accessible
-- **E_needed:** capacity required by current demands
-- **Ratio E_avail/E_need:** enters the master equation directly
-- When ratio < 1: the system cannot maintain its current complexity level → simplification is adaptive, not retreat
+The newer Earned Light Forges I–VII concern permission, portability and recovery. They share philosophical lineage; their local software tests do not validate this older consciousness model.
 
-## Files
+[Agent-control forges](../papers/agent-safety/earned-light/README.md) · [Stories and reading editions](../LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/README.md).
 
-- `Earned_Light_COMPLETE.md` — full thermodynamic model, energy budgeting protocols, phase transitions
+## Evidence and source ownership
 
-## Why it matters
-
-Most productivity and mental health frameworks treat sustained clarity as a willpower problem. EARNED LIGHT says it's an energy accounting problem — different interventions, different predictions, better outcomes.
-
-## Next
-
-Empirical validation of energy constants · connection to circadian biology
+The detailed source texts retain their historical vocabulary, arguments and
+status labels. This guide does not certify all of those statements. Use the
+particular model's assumptions, dated experiments and [claim/evidence records](../28_DEFENSE/CLAIMS_README.md)
+when assessing a claim. A successful check in another workstream does not
+validate this one. These source paths remain in place; no historical manuscript
+or implementation has been deleted or silently replaced by a generated summary.

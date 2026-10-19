@@ -1,4 +1,7 @@
 # THE PITCH
+
+> [DRAFT] **Historical draft — superseded as the current NZ governance direction.** Reviewed 19 October 2026. Start with [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). The original text remains below for provenance; its status labels, dates, outreach suggestions and capability claims are historical, not current approval or evidence.
+
 ## The Words To Say — Every Context, Every Audience
 ### Mackenzie Conor James Clark | Lycheetah Foundation | March 2026
 ### Status: [SCAFFOLD] — Pitch document. Claims about what the framework can do: [ACTIVE] where standards are specified; [SCAFFOLD] where adoption is proposed; [PROPOSAL] where tikanga framings await iwi validation.

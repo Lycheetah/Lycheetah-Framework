@@ -1,4 +1,7 @@
 # CASCADE APPLIED TO AOTEAROA
+
+> [INTERPRETIVE] **Background research — requires reconciliation with the current NZ proposal.** Reviewed 19 October 2026. The current policy entry is [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). This document supplies research context, not an adopted standard, certification service, legal authority or verified deployment.
+
 ## The Mathematics Working on NZ-Specific Problems
 ### Mackenzie Conor James Clark | Lycheetah Foundation | March 2026
 

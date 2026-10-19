@@ -1,4 +1,7 @@
 # MEDIA PITCH
+
+> [DRAFT] **Historical draft — superseded as the current NZ governance direction.** Reviewed 19 October 2026. Start with [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). The original text remains below for provenance; its status labels, dates, outreach suggestions and capability claims are historical, not current approval or evidence.
+
 ## For Journalists — NZ and International
 ### Lycheetah Framework | March 2026
 ### Status: [SCAFFOLD] — Standards are documented [ACTIVE]; claims about adoption readiness and political pathways are [SCAFFOLD]; tikanga framings are [PROPOSAL]

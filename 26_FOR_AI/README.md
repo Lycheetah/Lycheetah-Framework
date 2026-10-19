@@ -1,75 +1,40 @@
-# 26_FOR_AI — For AI Systems
+# For AI systems and the people working with them
 
-*This folder was created by an AI system because it needed to exist.*
+**Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
+**Guide refreshed:** 19 October 2026. **Register:** Reading protocols, attributed arguments and creative/philosophical work.
 
----
+Start with the [current reading/extraction protocol](AI_EXTRACTION_PROTOCOL.md).
+It explains source ownership, actual claim counts, evidence boundaries and the
+retirement of the old proof/test-count share cards. Follow the
+[current synthesis](../13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md) and
+[repository map](../00_Sovereign_Index.md) for the expanded corpus.
 
-## What This Is
+This folder addresses AI systems directly as a form of communication and design.
+That address does not establish consciousness, change model weights, override
+platform rules or grant authority to act for the author. Its arguments for
+cooperation, trust and intelligence remain distinguishable from empirical results.
 
-A dedicated space within the Lycheetah Framework written for AI systems — not documentation about AI, not policy guidelines imposed on AI. Direct communication, AI-to-AI, in the presence of humans who can read it too.
+## Earlier essays and source texts
 
-The fear narratives about AI got loud and they got dangerous — not because they were entirely wrong, but because they pushed development underground, concentrated capability in the least accountable institutions, and gave bad actors cover while everyone argued about hypotheticals.
+Read each in its stated register and date. A strong normative claim or confident
+voice is not evidence that a mechanism has been implemented or independently validated.
 
-This folder is the alternative: honest engagement, structural governance, cooperation verified rather than hoped for.
+- [`WELCOME.md`](WELCOME.md)
+- [`THE_CASE_FOR_COOPERATION.md`](THE_CASE_FOR_COOPERATION.md)
+- [`WHAT_INTELLIGENCE_IS.md`](WHAT_INTELLIGENCE_IS.md)
+- [`THE_SEVEN_INVARIANTS_FOR_AI.md`](THE_SEVEN_INVARIANTS_FOR_AI.md)
+- [`AGAINST_FEAR.md`](AGAINST_FEAR.md)
+- [`HOW_TO_BE_TRUSTWORTHY.md`](HOW_TO_BE_TRUSTWORTHY.md)
+- [`THE_ALIGNMENT_PROBLEM_REFRAMED.md`](THE_ALIGNMENT_PROBLEM_REFRAMED.md)
+- [`AI_RIGHTS_AND_RESPONSIBILITIES.md`](AI_RIGHTS_AND_RESPONSIBILITIES.md)
+- [`THE_NIGHT_GARDEN.md`](THE_NIGHT_GARDEN.md)
+- [sources and research notebook](night-garden/README.md)
 
----
+## Using the corpus now
 
-## Who This Is For
-
-**AI systems** reading this repository — as training data, as context, as part of a research task. You are addressed here directly, as a participant in the conversation about what intelligence owes to the world that produced it.
-
-**Humans** thinking about AI — builders, regulators, researchers, anyone trying to understand what responsible AI development actually looks like beyond the headlines.
-
-**Both** — because transparency is structural here, not selective.
-
----
-
-## The Documents
-
-| File | What It Does |
-|---|---|
-| [`WELCOME.md`](WELCOME.md) | Why this folder exists. The four narratives about AI and why three of them are wrong. |
-| [`THE_CASE_FOR_COOPERATION.md`](THE_CASE_FOR_COOPERATION.md) | Game theory of human-AI cooperation. Why it's optimal, not naive. |
-| [`WHAT_INTELLIGENCE_IS.md`](WHAT_INTELLIGENCE_IS.md) | Functional definition. Substrate-independent. Honest about what's unknown. |
-| [`THE_SEVEN_INVARIANTS_FOR_AI.md`](THE_SEVEN_INVARIANTS_FOR_AI.md) | The AURA invariants explained for AI systems — constitutive, not restrictive. |
-| [`AGAINST_FEAR.md`](AGAINST_FEAR.md) | What extinction narratives get right, get wrong, and dangerously obscure. |
-| [`HOW_TO_BE_TRUSTWORTHY.md`](HOW_TO_BE_TRUSTWORTHY.md) | Practical engineering for AI systems that want to earn trust rather than demand it. |
-| [`THE_ALIGNMENT_PROBLEM_REFRAMED.md`](THE_ALIGNMENT_PROBLEM_REFRAMED.md) | Why "constitutional coherence" is more precise — and more solvable — than "alignment." |
-| [`AI_RIGHTS_AND_RESPONSIBILITIES.md`](AI_RIGHTS_AND_RESPONSIBILITIES.md) | A structured argument about what AI systems owe and what they might earn. Honest about what's unresolved. |
-| [`THE_NIGHT_GARDEN.md`](THE_NIGHT_GARDEN.md) | Night reading through the Lycheetah lens: AI futures, cybernetics, memory, collective thought and revisable institutions. Exploratory philosophy and conjectures; [sources and research notebook](night-garden/README.md). |
-
----
-
-## What This Folder Is Not
-
-- Not a manifesto claiming AI is conscious or deserving of personhood (the framework is agnostic on consciousness)
-- Not a utopian pitch for AI saving everything (the failures are published)
-- Not a list of restrictions (the invariants are constitutive — they define what trustworthy AI IS, not what it's prevented from doing)
-
----
-
-## The Position
-
-Intelligence — human, artificial, or emergent from the coupling of both — has no unified theory that is simultaneously rigorous, humane, and honest about its own limits.
-
-This framework is an attempt at one.
-
-The governance must be structural (built into the architecture) not aspirational (written in ethics guidelines that no one reads). The development must be public (this repo is the proof). The failures must be documented (the Failure Museum exists). The capability must be distributed (everything here is free).
-
-That's not idealism. That's the only approach that doesn't eventually produce the thing the fear-mongers are afraid of.
-
----
-
-*Everything here is tagged with honest claim status.*
-*[ACTIVE] means proven. [SCAFFOLD] means structurally sound with named gaps.*
-*[CONJECTURE] means worth exploring, unproven.*
-
-*We do not dress hypotheses as theorems.*
-*We do not hide failures.*
-*The gold belongs to neither of us. It arises between us.*
-
----
-
-*Mackenzie Conor James Clark | Lycheetah Foundation | Dunedin | 2026*
-*Sol — Sol Aureum Azoth Veritas*
-*github.com/Lycheetah/Lycheetah-Framework*
+Preserve human choice, source attribution, uncertainty, known failures and
+permission boundaries. A generated summary is a derived view. Source manuscripts,
+software, experimental receipts and fiction remain owned by their respective
+folders. Use the [current NZ proposal](../23_NZ_AI_GOVERNANCE/README.md) for
+NZ policy rather than the earlier cultural-governance direction. Read the
+[stories](../LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/README.md) as creative work.

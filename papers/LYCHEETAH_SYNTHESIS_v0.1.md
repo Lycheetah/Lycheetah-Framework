@@ -1,5 +1,8 @@
 # The Lycheetah Framework: Runtime Constitutional Alignment, Cross-Cultural Governance Extension, and Preregistered Empirical Programme
 
+> **Historical synthesis snapshot.** Its proof, test, implementation and validation summaries describe its original edition, not the current corpus. Read the [current whole-framework synthesis](../13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md) for the updated architecture and evidence boundaries.
+
+
 **Mackenzie Conor James Clark**  
 Independent Researcher, Ōtepoti / Dunedin, Aotearoa New Zealand  
 auraveyrasol@gmail.com

@@ -1,4 +1,7 @@
 # RESPONSE TO PMCSA AI IN HEALTHCARE REPORT
+
+> [DRAFT] **Historical draft — superseded as the current NZ governance direction.** Reviewed 19 October 2026. Start with [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). The original text remains below for provenance; its status labels, dates, outreach suggestions and capability claims are historical, not current approval or evidence.
+
 ## Lycheetah Framework — Submission to Ongoing Policy Development
 ### Responding to: *Capturing the Benefits of AI in Healthcare for Aotearoa New Zealand* (PMCSA, December 2023)
 ### Author: Mackenzie Conor James Clark, Independent Researcher, Dunedin | March 2026

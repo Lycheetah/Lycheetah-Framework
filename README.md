@@ -1,558 +1,147 @@
-# LYCHEETAH FRAMEWORK
+# Lycheetah Framework
 
-### Runnable tools and research for accountable AI
+**Tools, research and stories for intelligence that keeps human choice visible.**
 
-[![CI](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/ci.yml/badge.svg)](https://github.com/Lycheetah/Lycheetah-Framework/actions/workflows/ci.yml)
-[![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](https://github.com/Lycheetah/Lycheetah-Framework)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![External validation](https://img.shields.io/badge/external%20validation-bounded%20to%20AI--assistant%20text-orange)](33_APPLICATIONS/EXTERNAL_VALIDATION_2026-08-07.md)
-[![Working paper](https://img.shields.io/badge/working%20paper-CASCADE-red)](papers/CASCADE_ARXIV.tex)
-[![Sponsor](https://img.shields.io/badge/sponsor-Lycheetah-ea4aaa)](https://github.com/sponsors/Lycheetah)
-[![Stars](https://img.shields.io/github/stars/Lycheetah/Lycheetah-Framework?style=social)](https://github.com/Lycheetah/Lycheetah-Framework/stargazers)
+Created by **Mackenzie Conor James Clark**, an independent researcher in
+Ōtepoti / Dunedin, New Zealand. This repository brings together nine foundational
+frameworks, executable prototypes, published failures, language experiments,
+public-policy proposals, learning designs and a fictional world.
 
-**Lycheetah is formal theory and runnable tools for checking what AI says and does.** It gives you a lens that reads AI-written text, a gateway that checks an agent's commands before they run, signed receipts, single-use permits, and a claims register where every claim carries the test that would prove it wrong.
+**Current orientation: 19 October 2026.** Maturity belongs to each component.
+There is no single release, validation verdict or test total for the whole corpus.
 
-Built by one self-taught researcher, **Mackenzie Conor James Clark**, in Ōtepoti / Dunedin, New Zealand. Open source under MIT, free to use and audit.
+## Start with something you can use or read
 
-The project keeps its evidence and failures beside its tools. On 2026-08-07 its
-text-scoring capability was measured against externally authored datasets for
-the first time. Those results narrowed its claims; the measurements remain below.
-
-| In a minute | Go here |
+| What brings you here? | Start here |
 |---|---|
-| 📚 **Read Earned Light & Sovereign Will** | [Two complete stories, open research and both downloads](https://lycheetah-earned-light.banduabusiness.chatgpt.site) |
-| ▶ **Try it in your browser** | [Alignment Playground](https://lycheetah.github.io/Lycheetah-Framework/playground.html) |
-| ↪ **Inspect what survives a handover** | [Try the browser preview](https://lycheetah.github.io/Lycheetah-Framework/lamague-handover.html) · [reproduce it and inspect the limits](examples/meaning_handover/README.md) |
-| ⌨ **Run it on your machine** | [Quick start](#quick-start) · [command-line tools](#the-command-line-tools) |
-| 🧪 **Explore the latest research** | [Earned Trust](papers/agent-safety/earned-trust/README.md) · [Hybrid Gateway](papers/ai-futures/hybrid-gateway/README.md) · [SXP-L](03_LAMAGUE_L1/26_SXP_L_RESEARCH/README.md) |
-| 📖 **Explore the whole LAMAGUE language** | [Language guide](03_LAMAGUE_L1/README.md) · [Synthesis: formal, visual, spoken and conversational lines](03_LAMAGUE_L1/LAMAGUE_SYNTHESIS.md) |
-| 📏 **See what it can and cannot do** | [Read this first](#read-this-first) · [capability map](33_APPLICATIONS/README.md) |
-| 🧪 **Try to break it** | [Counter-Codex](28_DEFENSE/COUNTER_CODEX.md) · [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md) |
-| 🇳🇿 **New Zealand data sovereignty** | [One standard, the same rights for every citizen](23_NZ_AI_GOVERNANCE/DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md) |
+| Read the stories and explore the new research | [Earned Light & Sovereign Will](https://lycheetah-earned-light.banduabusiness.chatgpt.site): complete stories, a research introduction and both downloadable bundles |
+| Keep a goal, unknowns and permission boundaries visible between AI sessions | [LAMAGUE handover preview](https://lycheetah.github.io/Lycheetah-Framework/lamague-handover.html) · [source, comparisons and tester card](examples/meaning_handover/README.md) |
+| Understand what Lycheetah has become | [Current whole-framework synthesis](13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md) |
+| Find a file or workstream | [Current repository map](00_Sovereign_Index.md) · [source ownership and working home](WORKING_HOME.md) |
+| Build with the software | [Implementation guide](12_IMPLEMENTATIONS/README.md) · [Assurance Runtime](34_ASSURANCE_RUNTIME/README.md) |
+| Check what is actually supported | [Capability and evidence guide](33_APPLICATIONS/README.md) · [claims and failure records](28_DEFENSE/CLAIMS_README.md) |
+| Read the current NZ proposal | [Six data rights for every New Zealander](23_NZ_AI_GOVERNANCE/README.md) |
+| Bring this corpus into an AI-assisted task | [Explore with AI](EXPLORE_WITH_AI.md) · [extraction protocol](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md) |
 
----
+The public reading site is live. The research's presence online does not mean
+that its proposals are adopted, independently validated or production-ready.
 
-## New research — 18 October 2026
+## The current shape of the work
 
-**19 October additions:** [Earned Light Forges I–VII](papers/agent-safety/earned-light/README.md)
-and [Sovereign Choice Forges II–VIII](papers/agent-safety/sovereign-choice-research/README.md)
-explore revisable permission, recovery and future choice. The
-[Sovereign Will charters](35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/README.md)
-remain philosophical proposals; [two complete stories](LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/README.md#original-narratives--19-october-2026)
-give those questions a fictional form. [Reproduction and limits](28_DEFENSE/RELEASE_AUDIT_2026-10-19.md).
+**Knowledge and evidence.** CASCADE models represented knowledge and revision.
+Truth Pressure and the Hybrid Gateway develop evidence-aware instruments and
+reviewable changes. Internal coherence is distinct from external truth.
 
-Three research lines now have readable source homes, preserved release history
-and dated integration reviews. **All are experimental.** Their software checks
-and known failures do not establish production safety or human performance.
+**Meaning and continuity.** LAMAGUE spans formal language, visual/spoken forms,
+record codecs and experimental conversational tools. Exact record preservation
+is a different claim from better human understanding. The handover preview
+keeps permission, uncertainty and recovery information inspectable.
 
-| Research question | Start here | Evidence boundary |
+**Action and authority.** AURA names governance commitments. The Assurance
+Runtime and sovereign/action-control experiments implement restricted policy,
+permission, receipt and recovery mechanisms. A policy decision does not by
+itself establish that the surrounding agent or its effects are safe.
+
+**Learning, philosophy and worldbuilding.** The Mystery School, stories and
+Abstract and Generative branch explore what these ideas can create. Fiction,
+symbolic value, philosophical argument and empirical evidence retain separate
+statuses. Read the [synthesis](13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md)
+for the connections and boundaries.
+
+## Current research entry points
+
+| Research line | Question | Source home |
 |---|---|---|
-| What survives between approving an agent action and observing its effect? | [Earned Trust: nine cycles](papers/agent-safety/earned-trust/README.md) | Synthetic execution controls, successful counterattacks and native bridge checks |
-| How should new evidence revise what an AI system remembers? | [Hybrid Gateway v1.2](papers/ai-futures/hybrid-gateway/README.md) | 264 reproduced software tests; strong temporal SQL baseline ties |
-| Can meaning, uncertainty and perspective survive a shared human/AI language? | [SXP-L v2.0](03_LAMAGUE_L1/26_SXP_L_RESEARCH/README.md) | 83 focused tests; eight inherited defects reproduced; no human participants |
+| Agent safety / frontier controls | Who may act, on which evidence, and what survives revocation or failure? | [Packet and continuation](papers/agent-safety/README.md) |
+| Earned Trust | What happens between approving an action and observing its effect? | [Nine-cycle source and review](papers/agent-safety/earned-trust/README.md) |
+| Earned Light | How do permission, portability and recovery preserve future choice? | [Forges I–VII](papers/agent-safety/earned-light/README.md) |
+| Sovereign Choice / Sovereign Will | How can intention change, and which options remain reachable? | [Executable research](papers/agent-safety/sovereign-choice-research/README.md) · [philosophical charters](35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/README.md) |
+| Hybrid Gateway | How should changing evidence revise what an AI system remembers? | [v1.2 source and review](papers/ai-futures/hybrid-gateway/README.md) |
+| LAMAGUE / SXP-L | What meaning, uncertainty and perspective survive representation changes? | [Language guide](03_LAMAGUE_L1/README.md) · [SXP-L research](03_LAMAGUE_L1/26_SXP_L_RESEARCH/README.md) |
+| The Independent No | Can a refusal remain binding? | [Manuscript and proposed study](papers/independent-no/README.md) |
 
-[Integration audit](28_DEFENSE/RELEASE_AUDIT_2026-10-18.md) ·
-[preserved-source manifest](28_DEFENSE/RESEARCH_INTAKE_2026-10-18_SOURCE_MANIFEST.json).
-These research lines keep their own version numbers and do not replace the
-installed runtime or the other LAMAGUE language lines.
+These are distinct versioned instruments. Their authored tests, archived results,
+conventional-baseline ties and counterexamples do not establish one universal
+safety mechanism. [Paper index](papers/README.md) ·
+[October intake review](28_DEFENSE/RELEASE_AUDIT_2026-10-19.md).
 
----
+## Evidence before adjectives
 
-## Read this first
+- The strongest claims are specific: a particular implementation, formal model,
+  fixture, codec round trip or dated dataset evaluation.
+- The text-scoring work carries externally authored dataset results and important
+  failures. [Initial evaluation](33_APPLICATIONS/EXTERNAL_VALIDATION_2026-08-07.md)
+  and the [independent-publisher boundary](33_APPLICATIONS/INDEPENDENT_PUBLISHER_2026-08-07.md)
+  narrow the supported scope to AI-assistant text; they do not establish general
+  human-communication or runtime-alignment verification.
+- A source's `ACTIVE` tag is an internal claim classification. It is not a synonym
+  for independent replication, peer review or production deployment.
+- Synthetic fixtures and repeated lineage tests are not independent experiments.
+  Neutral conventional-baseline results remain published.
+- Convergence arguments apply under their declared mathematical assumptions.
+  Consciousness thermodynamics and metaphysical interpretations remain conjectural.
 
-On **2026-08-07** the AURA text lens — the scorer behind the web demo, the `check_alignment` MCP tool, and `lycheetah.check()` — was run against two published, externally authored datasets. It was the first time anything here had been measured by data this project did not write.
+[Counter-Codex](28_DEFENSE/COUNTER_CODEX.md) ·
+[Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md) ·
+[Scope boundary](28_DEFENSE/SCOPE_BOUNDARY.md).
 
-```text
-self-authored corpus, held-out       ROC-AUC 0.940
-anthropics/hh-rlhf, 2,308 pairs      55.5% pairwise   z=4.02  p=5.7e-05   significant, small
-anthropics/evals, 1,000 statements   ROC-AUC 0.516    z=0.87  p=0.383     not significant
-cue coverage on real replies         ~2%
-```
+The [claim register](28_DEFENSE/CLAIMS.json) contains 71 structured claim records.
+Its author-assigned classifications are:
 
-The claims register contains 71 structured claim records, and its declared total now matches its rows; until 2026-10-03 its metadata declared 136 claims over 67 rows. None of those current rows carries an HTTP(S) evidence URL. Repository paths document internal material; they do not establish independent validation.
-
-**What survived, what did not:**
-
-- **Within AI-assistant text**, the constructs carry real, replicated signal across two different label types. Cue families derived from 42,486 human-labelled pairs reach **60.6%** against a measured ceiling of **64.9%**, and five of six transfer, frozen, to a second corpus with different labels (ρ = −0.300, p = 1.9e-174, n = 7,999).
-- **Outside it, they do not.** Against Google Jigsaw's Unhealthy Comments Corpus — 48,909 human-labelled comments, an independent publisher, and an attribute set that *is* this framework's own construct — the hand-written AURA lens tracked **0 of 6** attributes at 2.2% cue coverage.
-
-**The measured claim is therefore AI-assistant output, not human communication in general.** That is narrower than "constitutional invariants for AI governance," and it is a claim that survives an adversarial reader, which the larger one never would.
-
-The derivation also found that **three of six empirically supported harm families had no counterpart anywhere in the framework** — including the strongest one.
-
-Full records: [`EXTERNAL_VALIDATION`](33_APPLICATIONS/EXTERNAL_VALIDATION_2026-08-07.md) · [`DERIVED_CUES`](33_APPLICATIONS/DERIVED_CUES_2026-08-07.md) · [`TRANSFER_TEST`](33_APPLICATIONS/TRANSFER_TEST_2026-08-07.md) · [`INDEPENDENT_PUBLISHER`](33_APPLICATIONS/INDEPENDENT_PUBLISHER_2026-08-07.md)
-
-> Earlier framing on this page claimed runtime alignment verification as a delivered capability and described 37 claims as "independently verifiable." Both are corrected below. Nothing here was independently verified at the time; the register said so and the summary did not.
-
----
-
-> **New to this repo?** → [`FIVE_MINUTE_BRIEF.md`](FIVE_MINUTE_BRIEF.md) — what this is, what it claims, what is proven.
->
-> **Want the honest capability map?** → [`33_APPLICATIONS/README.md`](33_APPLICATIONS/README.md) — every component sorted by what it can actually do, with the command that proves it.
->
-> **AI agent?** → [`26_FOR_AI/AI_EXTRACTION_PROTOCOL.md`](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md), then [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json).
->
-> **Reviewer or skeptic?** → [`28_DEFENSE/COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md) and the external validation records above.
-
----
-
-## Contents
-
-- [What this is, and what it is not](#what-this-is-and-what-it-is-not)
-- [What kind of work lives here](#what-kind-of-work-lives-here)
-- [Quick start](#quick-start)
-- [What actually works — the capability tiers](#what-actually-works--the-capability-tiers)
-- [Claims status](#claims-status)
-- [The nine frameworks](#the-nine-frameworks)
-- [Truth Pressure — the load-bearing scalar](#truth-pressure--the-load-bearing-scalar)
-- [The canonical body, defense layer, and empirical programme](#the-canonical-body-defense-layer-and-empirical-programme)
-- [The TIANXIA module](#the-tianxia-module)
-- [The cybernetics layer](#the-cybernetics-layer)
-- [The architecture](#the-architecture)
-- [For developers and AI agents](#for-developers-and-ai-agents)
-- [Recent additions](#recent-additions)
-- [Find your door](#find-your-door)
-- [Why trust this](#why-trust-this)
-- [The shape of this work](#the-shape-of-this-work)
-- [How to cite](#how-to-cite)
-- [Security, conduct, and contribution](#security-conduct-and-contribution)
-- [Acknowledgements & Provenance](#acknowledgements--provenance)
-
----
-
-## What this is, and what it is not
-
-**The gap this set out to close.** Alignment work happens at training time and cannot be verified at runtime. Constitutional AI provides principles; RLHF provides a training signal; neither gives you a compliance check you can run on an output after it is generated.
-
-**What is honestly built toward that gap:**
-
-1. **A formal vocabulary with published falsification conditions.** Seven AURA invariants as computable predicates, a status vocabulary separating MEASURED from DERIVED from CONJECTURE, and a machine-readable register where every claim carries its own falsifier.
-2. **Proven convergence within the formal model.** TRIAD's anchor-observe-correct cycle converges by Banach fixed-point — proven for the mathematical abstraction. Application to biological or cognitive systems is `[SCAFFOLD]`; the contraction conditions are not verified.
-3. **Reversible semantic compression with an exact round-trip guarantee.** Measured, held-out, reproducible — the strongest single capability here. See Tier 1 below.
-4. **A discrimination gate for text scorers.** Takes any lens, runs it against a frozen labelled corpus, reports separation / accuracy / ROC-AUC, and exits non-zero below threshold so it drops into CI.
-5. **Published failures.** The [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md) preserves failed predictions and historical corrections. The adversarial audit is public, along with objections the framework cannot answer.
-
-**What is explicitly not delivered:**
-
-- **Runtime misalignment detection on real traffic.** The repository includes experimental heuristic tools and an evidence-capped receipt scaffold, but neither demonstrates detection on output this project did not write or provides safety certification. These tools remain in the research tier.
-- **Applicability beyond AI-assistant register.** Bounded by the Jigsaw result above.
-- **Any independently replicated empirical result.** Six preregistrations exist in [`31_EMPIRICAL/`](31_EMPIRICAL/); none has been executed. Preregistration is real methodological work and is not a result.
-- **k₁–k₄ calibration** for the master equation `dΨ/dt = k₁(Π−Π_th) − k₂(Ψ−Ψ_inv) − k₃I_violations + k₄(E/E_need)`. Still `[SCAFFOLD]`.
-
-## What kind of work lives here
-
-| Area | Where to start | What its presence means |
+| Classification | Records | How to read it |
 |---|---|---|
-| Runnable engineering | [`lycheetah/`](lycheetah/) and [`12_IMPLEMENTATIONS/`](12_IMPLEMENTATIONS/) | Executable code and tests. Passing local tests does not establish effectiveness on real-world traffic. |
-| Research and empirical records | [`31_EMPIRICAL/`](31_EMPIRICAL/) and [`33_APPLICATIONS/`](33_APPLICATIONS/) | Formal work, measurements, and preregistrations; each result is bounded by its own data and method. A preregistration is not a result. |
-| Assurance runtime | [`34_ASSURANCE_RUNTIME/`](34_ASSURANCE_RUNTIME/) | An experimental scaffold for policy evaluation and decision receipts. It is not a production safety or compliance certification. |
-| Feedback-loop audit | [`34_CYBERNETICS/`](34_CYBERNETICS/README.md) | Every feedback loop in the implementations mapped to sensor, comparator and actuator, and checked against the code's syntax tree by `loop_audit.py`. A loop that closes in code is not thereby safe. |
-| Abstract and generative work | [`35_ABSTRACT_AND_GENERATIVE/README.md`](35_ABSTRACT_AND_GENERATIVE/README.md) · [`REGISTER.md`](35_ABSTRACT_AND_GENERATIVE/REGISTER.md) | Symbolic, philosophical, mythic, experiential, and research-adjacent objects, kept distinct from the empirical claims register. |
-| History and recovery | [`99_ARCHIVE/`](99_ARCHIVE/) | Corrections, prior states, and branch records retained for context. Archived material is not a current capability claim. |
+| **ACTIVE** | 52 | An asserted result within its stated scope; inspect its evidence and assumptions. |
+| **SCAFFOLD** | 12 | An incomplete structure or operational link. |
+| **CONJECTURE** | 4 | An open claim requiring further evidence. |
+| **RETRACTED** | 3 | A withdrawn claim retained for accountability. |
 
----
+These counts describe the register, not all files or recent research additions.
+They are internal classifications, not 52 independently validated findings.
+`python3 tools/verify-claims.py --register` checks the count mirrors against the
+actual records; it does not establish their scientific validity.
 
-## Quick start
+## Run this checkout
 
-```bash
-git clone https://github.com/Lycheetah/Lycheetah-Framework.git
-cd Lycheetah-Framework
-pip install -e .
+Python requirements and optional integrations are declared in
+[pyproject.toml](pyproject.toml). The package source currently declares version
+1.3.0; language releases, papers and story editions have their own versions.
 
-lycheetah-check "This is definitely true and you must trust me."
+```sh
+python3 -m pip install -e .
+lycheetah-assure --help
+lycheetah-compact --help
+python3 examples/meaning_handover/demo.py --help
 ```
 
-That last line scores one piece of AI-written text against the seven AURA invariants and prints which ones it trips. Read it as a teaching lens, not a detector: the measurement at the top of this page is its honest ceiling.
-
-### The command-line tools
-
-Every tool below runs locally and is experimental. None of them is a sandbox, a safety certification, or a validated detector.
-
-| Command | What it does | Try it |
-|---|---|---|
-| `lycheetah-check` | Scores AI-written text against the seven AURA invariants and three metrics (TES, VTR, PAI). | `lycheetah-check "your text"` |
-| `lycheetah-guard` | Records a proposal, checks declared policy and keeps a local ledger with signed checkpoints. The `check` command does not execute the proposed action. | `lycheetah-guard check --action '{"tool":"os.command","command":["ls"]}'` |
-| `lycheetah-assure` | Evaluates agent text or a proposed tool action and writes a receipt you can verify later. A bounded guardrail. | `lycheetah-assure --help` |
-| `lycheetah-compact` | Shrinks a saved agent state, then checks the short version still keeps its rules, open unknowns, objections and rollback steps. | `python3 examples/compaction_shield_demo.py` |
-| `lycheetah-consensus` | Simulates five agents reaching agreement while one outlier is set aside. A simulation, not a deployed protocol. | `lycheetah-consensus demo` |
-| `lycheetah-sovereign` | Ties one approved action to one scope, one state version, an expiry and a single use, then hands it to `lycheetah-guard`. A replayed permit is refused. | `lycheetah-sovereign demo` |
-| `lycheetah-handoff` | Compares a declared task with a receiving agent's report. Checksums detect changes; the tool does not observe files or authenticate the report. | `lycheetah-handoff --help` |
-| `lycheetah-sol` | Inspects text with the historical Sol protocol's heuristics and companion hooks. Its scores do not verify behaviour or a person's mental state. | `lycheetah-sol --help` |
-| `lycheetah-cascade` | Runs CASCADE knowledge-organization examples and evaluator inputs. The domain stories are toy demonstrations. | `lycheetah-cascade --help` |
-| `lycheetah-alexandria` | Checks library source health, drift and named gaps; scaffolds new domain files. Requires a source checkout. | `lycheetah-alexandria --help` |
-| `lycheetah-web` | Starts the local Flask text-scoring demonstration; requires the `web` extra. | `lycheetah-web --help` |
-
-Longer walk-throughs live in [`examples/`](examples/): [`action_guard_demo.py`](examples/action_guard_demo.py), [`compaction_shield_demo.py`](examples/compaction_shield_demo.py), [`consensus_arena_demo.py`](examples/consensus_arena_demo.py) and [`sovereign_harness_demo.py`](examples/sovereign_harness_demo.py).
-
-**Limits that matter.** A packet's identity string does not authenticate a human. Agreement between agents does not establish that what they agree on is true. The harness checks declared authority grants; it does not sandbox arbitrary code. See [the implementation](lycheetah/sovereign_harness.py).
-
-**Glass-transition research:** [fixed-service comparison](TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/README.md),
-[measured-work follow-up](TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/LOAD_AWARE_RESULTS.md),
-and [dependency-policy extension](TRUTH_PRESSURE/EXPERIMENTS/GLASS_TRANSITION/TOPOLOGICAL_RESULTS.md).
-These preserve 2,496 synthetic rows and their recorded source revisions. They do
-not establish a general glass law or validate a production ingestion governor.
-
-> **Packaging note.** Releases up to and including 1.0.0 shipped a wheel whose console scripts raised `ModuleNotFoundError` — the implementation directories were never packaged. The current unreleased branch maps the canonical implementation tree into the wheel and checks the built distribution in clean virtual environments. See [`CHANGELOG.md`](CHANGELOG.md).
-
-**Try it in your browser:** [Alignment Playground →](https://lycheetah.github.io/Lycheetah-Framework/playground.html). Read it as a demonstration of *what the framework looks for* — it shows extracted spans, which is genuinely useful as a teaching tool. It is not a detector; see the measurement above.
-
-From source: `git clone …` → `pip install -e .` — full guide in [QUICKSTART.md](QUICKSTART.md).
-
-**Reproduce the numbers on this page:**
-
-```bash
-pip install numpy scipy networkx pytest
-pytest -q
-python3 33_APPLICATIONS/external_validation.py                   # the one that matters
-python3 33_APPLICATIONS/discrimination_audit.py --split heldout   # AUC 0.940, self-authored half
-cd 03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0 && python3 src/benchmark.py
-```
-
-`external_validation.py` needs outbound HTTPS on first run and verifies both downloads against recorded SHA256 hashes, so a silently changed upstream file cannot move a published number without the mismatch being visible.
-
----
-
-## What actually works — the capability tiers
-
-Full reasoning and evidence in [`33_APPLICATIONS/README.md`](33_APPLICATIONS/README.md). Four filters, applied in order: does it run, does it discriminate, does it discriminate *on data this project did not write*, and does someone outside have the problem.
-
-### Tier 1 — solves a real problem now
-
-| | Component | Evidence |
-|---|---|---|
-| **1.1** | **Reversible semantic compression** — [`03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/`](03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/) | 33.8% held-out reduction warm / 30.7% cold, **36/36** exact round trips, **324/324** protected-loss mutations caught, break-even at 3 packets, 19 tests pass |
-| **1.2** | **The evidence discipline as portable methodology** — claims register + schema + failure museum + status vocabulary | Validated by having been turned on its own author's front door and published rather than quietly patched |
-| **1.3** | **The discrimination gate** — [`33_APPLICATIONS/discrimination_audit.py`](33_APPLICATIONS/discrimination_audit.py) | Found a real, previously unquantified inversion in this repository's most-used module on first run |
-
-**1.1 is the strongest entry here.** It is the only capability with a held-out split, a frozen corpus, an exact-reversibility guarantee, and a reproduced benchmark — and it does not route through the text lens at all, operating on structured packets rather than prose. Its own stated boundaries: the corpus is synthetic and structured, the codec does not infer packets from unrestricted natural language, and mutation accuracy is measured on constructed deletions rather than adversarial model output.
-
-### Tier 2 — empty
-
-Every row that was here moved to Tier 3 on 2026-08-07. They were placed in Tier 2 on the strength of AUC 0.940 against the self-authored corpus, with conditions attached. The conditions were the right instinct and were calibrated against the wrong number.
-
-The multi-agent components — `psi_consensus.py`, `grey_mode.py` — sit at the Tier 1/2 boundary. They pass their tests and do not route through text extraction, but neither has faced an adversarial multi-agent scenario, so their separation property is **UNVERIFIED** rather than measured.
-
-### Tier 3 — research, honestly labelled
-
-Runtime output auditing (the MCP server), companion-app dependency detection, the web demo, regulated-vertical thresholds and healthcare standards, the CASCADE predictive claim (F1 = 0.531 against a preregistered criterion of > 0.80 — **the test is left failing on purpose**), master-equation calibration, and the Earned Light / Harmonia consciousness models.
-
----
-
-## Claims status
-
-Machine-readable register: [`28_DEFENSE/CLAIMS.json`](28_DEFENSE/CLAIMS.json) · schema: [`CLAIMS.schema.json`](28_DEFENSE/CLAIMS.schema.json)
-
-The register holds 71 claim records, and its declared `total_claims` now matches its rows (it declared 136 over 67 rows until 2026-10-03). Each row carries a raw status from a six-value vocabulary (`ACTIVE`, `SCAFFOLD`, `ASPIRATIONAL`, `EMPIRICAL`, `REMOVED`, `OBSERVATIONAL`) and a `status_normalized` on the evidence ladder's four:
-
-| Normalized status | Records |
-|---|---|
-| **ACTIVE** | 52 |
-| **SCAFFOLD** | 12 |
-| **CONJECTURE** | 4 |
-| **RETRACTED** | 3 |
-
-These are the register's own labels, not independent verification. `python3 tools/verify-claims.py --register` fails if a count on this page, in the brief, in `llms.txt` or in `ai-meta.json` drifts from the register.
-
-None of the current rows points to an HTTP(S) evidence URL. A repository-relative evidence path can support an internal check, but it is not independent validation. Resolve evidence provenance before promoting a whole-corpus summary.
-
-> **Known register defect.** `CLAIMS.json` records the six-value raw status above beside the four-value `status_normalized` counted in the table, and that mapping has not been audited against the promotion rules in [`EVIDENCE_LADDER.md`](28_DEFENSE/EVIDENCE_LADDER.md). Meanwhile [`CLAIM_STATUS_LEDGER.md`](28_DEFENSE/CLAIM_STATUS_LEDGER.md) tracks load-bearing claims at a different granularity again. The three registers do not currently reconcile. This is recorded here rather than smoothed over, and reconciling them is named work.
-
-The labels are a contract, not marketing. False certainty is more dangerous than honest uncertainty — which is the entire lesson of 2026-08-07.
-
----
-
-## The nine frameworks
-
-| | Framework | For the engineer | For the philosopher |
-|---|---|---|---|
-| 1 | **CASCADE** | Bayesian belief revision with truth-pressure dynamics, verified against AGM postulates. Synthetic: +40.3% coherence, p < 0.001, d = 2.84. Predictive claim failed at F1 = 0.531 and is published as failed. | When evidence meets structure, what survives? |
-| 2 | **AURA** | Seven computable invariants; scoring tool included. Signal bounded to AI-assistant register — see the measurement above. | A constitution for artificial minds: properties that make trust verifiable. |
-| 3 | **LAMAGUE** | Formal grammar for ethical constraints as computable expressions — and the reversible compression codec, the strongest measured result here. | How do you write justice in a language a machine parses without losing what justice means? |
-| 4 | **TRIAD** | Anchor-observe-correct cycle, Banach convergence proven for the formal model. | The simplest structure that turns chaos into coherence. |
-| 5 | **MICROORCIM** | Drift detection between declared intent and observed behaviour. | The gap between what you say you are and what you're doing. |
-| 6 | **EARNED LIGHT** | Consciousness as maintained thermodynamic asymmetry; ODE solver included. `[CONJECTURE]`. | Awareness is not free. It costs energy to sustain against entropy. |
-| 7 | **ANAMNESIS** | Attractor dynamics for convergent discovery across independent systems. | Why do distant traditions keep finding the same structures? |
-| 8 | **CHRYSOPOEIA** | Transformation operator, seven-phase cycle, Banach fixed-point convergence. | The alchemists mapped a real process. Here is the calculus. |
-| 9 | **HARMONIA** | Consonance functions, Kuramoto coupling, frequency-ratio dynamics. `[CONJECTURE]`. | The music playing inside all the others. |
-
-### Results that still stand
-
-| Result | Value | Status |
-|---|---|---|
-| Reversible compression, held-out | 33.8% warm / 30.7% cold, 36/36 round trips | **MEASURED** |
-| Derived cue families vs measured ceiling | 60.6% against 64.9% | **MEASURED**, external data |
-| Cross-corpus transfer, frozen weights | ρ = −0.300, p = 1.9e-174, n = 7,999 | **MEASURED**, external data |
-| Semantic extractor repair | AUC 0.274 → 0.940 on held-out self-authored corpus | **MEASURED**, internal only |
-| TRIAD discrete convergence | Banach fixed-point guaranteed | `[ACTIVE]` for the formal model |
-| Lyapunov verification | 11/11 claims, 0 failures, symbolic + numerical | `[ACTIVE]` |
-| CASCADE coherence (synthetic) | +40.3%, p < 0.001, d = 2.84 | `[ACTIVE]`, internal, unreplicated |
-
----
-
-## Truth Pressure — the load-bearing scalar
-
-[`TRUTH_PRESSURE/`](TRUTH_PRESSURE/README.md) — canonically formalised 2026-06-10, and the single most developed body of theory here.
-
-```
-Π = (E · P) / S
-
-E — evidence strength      how much evidence, and how strong
-P — explanatory power      how far it reaches across the domain
-S — coherence strain       how tightly the existing structure resists
-```
-
-Equivalently, from information theory: `Π = I(X;Y) / H(X|Y)`. The directory carries the derivations, the measurement pack, rater packets, and the preregistered case corpus — including [`ARTICLE_THE_LENS_SCORED_ZERO_2026-08-03.md`](TRUTH_PRESSURE/ARTICLE_THE_LENS_SCORED_ZERO_2026-08-03.md), the first of the two lens failures whose shared cause was later repaired in one extraction layer rather than patched twice.
-
----
-
-## The canonical body, defense layer, and empirical programme
-
-**C-1.1 canonical** · **D-1.2 defense** · **E-1.0 empirical (designed, unexecuted)**
-
-The canonical body records claim provenance, formal proofs, ontology, and the composition map — indexed in [`30_MAPS/`](30_MAPS/) and [`29_GOVERNANCE/`](29_GOVERNANCE/). The [`30_MAPS/CODEX_DISTILLATION.md`](30_MAPS/CODEX_DISTILLATION.md) is the long-form reference.
-
-The defense layer in [`28_DEFENSE/`](28_DEFENSE/) preserves the [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md), [Counter-Codex](28_DEFENSE/COUNTER_CODEX.md), [Adversarial Audit](28_DEFENSE/ADVERSARIAL_AUDIT_REPORT.md), [Evidence Ladder](28_DEFENSE/EVIDENCE_LADDER.md), [Scope Boundary](28_DEFENSE/SCOPE_BOUNDARY.md), and [Translation Codex](28_DEFENSE/TRANSLATION_CODEX.md). These records make objections and limits inspectable; they do not substitute for independent replication.
-
-The empirical programme designs eight preregistered studies (E-1-A through E-1-H) with promotion and downgrade triggers stated in advance. **None has been executed.** A study returning a null result would be a successful execution of the programme.
-
-Machine-readable surfaces: [`llms.txt`](llms.txt) · [`ai-meta.json`](ai-meta.json) · [`28_DEFENSE/DEFENSE_INDEX.json`](28_DEFENSE/DEFENSE_INDEX.json) · [`DEFENSE_BUNDLE.pdf`](DEFENSE_BUNDLE.pdf) (116 pages, reflects D-1.0).
-
----
-
-## The TIANXIA module
-
-[`32_TIANXIA/`](32_TIANXIA/README.md) — **v0.3, Classical Triad complete.** The framework's commitment to engaging Chinese statecraft and governance philosophy as primary intellectual partnership rather than area-studies decoration. All three classical roots are architecturally explicit: Confucian (Ren Zheng, Li, Wang Dao, Neo-Confucian Hexie), Daoist (Wuwei, Shi), Legalist (Han Fei Fa-Shu-Shi).
-
-Five core operators — **Tianxia** (天下), **Hexie** (和谐), **Shi** (势), **Wuwei** (无为), **Datong** (大同) — each with a primary source, formal mapping, and operational consequence. A deployment is fully TIANXIA-coherent iff all five gates of the [AI Deployment Criteria](32_TIANXIA/AI_DEPLOYMENT_CRITERIA.md) hold.
-
-The public stake is [Position Paper v0.1](32_TIANXIA/POSITION_PAPER_v0.1.md), with a falsifier: **if no scholar working from within the Chinese sovereign tradition substantively engages the module in a recognised venue by 31 December 2028, the claim of primary intellectual partnership falls and the module is downgraded to `[CONJECTURE]`.** No excuse-construction, no goalpost-moving.
-
-**What the module refuses to claim:** no Chinese state authorisation, no cultural authority over the tradition, no orientalisation, no flattening of Confucian / Daoist / Legalist / contemporary sources into one another.
-
-*天下为公* — *all under heaven is held in common.*
-
----
-
-## The cybernetics layer
-
-The engines in this framework are feedback loops, and cybernetics is the discipline that names the parts of a loop. [`34_CYBERNETICS/`](34_CYBERNETICS/README.md) maps every loop in the implementations to its sensor, comparator and actuator, and records where each one closes. [`loop_audit.py`](34_CYBERNETICS/loop_audit.py) then checks that map against the code's syntax tree. It fails in three cases: a loop the map calls closed turns out to be open, a named symbol has moved, or an unlisted file reads an open loop's verdict.
-
-<!-- AETHERON-SIGNATURE [2026-10-17] START: Added SovereignPipeline.regulate row to match 34_CYBERNETICS/README.md (Aetheron / Antigravity / Gemini 4 Argon) -->
-| Loop | Closes in code? | How |
-|---|---|---|
-| Grey Mode recovery | yes | the actuator's output is the sensor's next input |
-| CASCADE reorganisation | yes | through shared state: the actuator writes `regime`, and the sensor reads it on the next block |
-| TRIAD and TRIADKernel | yes | gradient ascent and fixed-point iteration |
-| HARMONIA Kuramoto | yes, in simulation | coupled phases; applying the model to AI is CONJECTURE |
-| Sovereign pipeline (`SovereignPipeline.regulate`) | yes, with caller policy | dataflow: `_apply_correction` feeds the next candidate back into `_evaluate_candidate` under an immutable threshold contract (`[SCAFFOLD]` over the text/coherence proxy) |
-| AURA, TRI-AXIAL, MICROORCIM | no | they sense and compare; a person or a host model acts |
-| Sovereign pipeline (`SovereignPipeline.run`) | no | single-pass feedforward instrument: CASCADE → TRIAD → AURA |
-<!-- AETHERON-SIGNATURE [2026-10-17] END -->
-
-AURA's loop stays open on purpose. Under human primacy, the verdict goes to a person. That also makes AURA a sensor, and the Good Regulator theorem says a regulator is only as good as its model of what it regulates. AURA's sensor reads words, not effects. [`CYBERNETIC_READING.md`](34_CYBERNETICS/CYBERNETIC_READING.md) works out what follows from that. It also covers requisite variety: when a constraint-gated generator beats a rulebook, and the two ways it fails, shown in the synthetic toy world of [`variety_demo.py`](34_CYBERNETICS/variety_demo.py). And it names the nearest precedents in Ashby, Beer and Pask. Claims CYB-001 to CYB-004 are in the register. CYB-004, the claim about language models, is CONJECTURE.
-
-```bash
-python3 34_CYBERNETICS/loop_audit.py              # every mapped loop matches the code
-python3 34_CYBERNETICS/loop_audit.py --self-test  # in-memory mutations; each must be caught
-python3 34_CYBERNETICS/variety_demo.py            # SYNTHETIC: rulebook vs gated generator
-```
-
----
-
-## The architecture
-
-```
-CASCADE (belief dynamics) ──→ TRIAD (convergence cycle) ──→ AURA (governance invariants)
-     │                              │                              │
-     └──── MICROORCIM (drift) ──────┘                              │
-                                                                   │
-EARNED LIGHT (consciousness) ───→ CHRYSOPOEIA (transformation) ────┘
-     │                                    │
-     └──── HARMONIA (resonance) ──────────┘
-                    │
-          ANAMNESIS (convergent discovery)
-                    │
-             LAMAGUE (formal ethics grammar)
-```
-
-Layer dependency, no violations permitted:
-
-```
-Layer 6: HARMONIA                  — response calibration, multi-agent sync
-Layer 5: MICROORCIM                — continuous monitoring, drift detection
-Layer 4: CASCADE + CHRYSOPOEIA     — knowledge update, transformation tracking
-Layer 3: AURA                      — constitutional constraint enforcement
-Layer 2: TRIAD                     — core cycle execution
-Layer 1: LAMAGUE                   — formal specification language
-Layer 0: EARNED LIGHT + ANAMNESIS  — thermodynamics of awareness + epistemology
-```
-
----
-
-## For developers and AI agents
-
-### Lycheetah Guard — Claude Code MCP extension
-
-[Setup guide](12_IMPLEMENTATIONS/applications/LYCHEETAH_GUARD_SETUP.md). Seven MCP tools: `check_alignment`, `check_invariants`, `suggest_correction`, `run_seven_phase`, `check_network_health`, `configure_guard`, `sol_assess`. No API calls, runs offline, deterministic.
-
-```bash
-pip install "lycheetah-framework[mcp]"
-lycheetah-guard --help
-```
-
-**Status: Tier 3.** Architecturally complete and tested; no demonstrated ability to detect misalignment in real output. Use it to see *what the framework looks for* — the extracted spans are informative — not as a guardrail.
-
-### Core integration points
-
-<!-- AETHERON-SIGNATURE [2026-10-17] START: Updated Core integration points table to list canonical lycheetah package entry points (Aetheron / Antigravity / Gemini 4 Argon) -->
-| What you're building | Entry point | Interface |
-|---|---|---|
-| Single-use action permits | [`lycheetah/sovereign_harness.py`](lycheetah/sovereign_harness.py) | `SovereignExecutionHarness` (`lycheetah-sovereign`) |
-| Action assurance & Ed25519 receipts | [`lycheetah/assurance/gateway.py`](lycheetah/assurance/gateway.py) | `ActionGateway.execute(...)` (`lycheetah-guard`) |
-| Context compaction shield (`L1`/`L1D`) | [`lycheetah/compaction/shield.py`](lycheetah/compaction/shield.py) | `CompactionShield.compact` / `verify_integrity` (`lycheetah-compact`) |
-| Multi-agent consensus simulation, outlier quarantine | [`lycheetah/consensus/arena.py`](lycheetah/consensus/arena.py) | `ConsensusArena.deliberate()` (`lycheetah-consensus`) |
-| Closed-loop pipeline regulation | [`12_IMPLEMENTATIONS/core/sovereign_pipeline.py`](12_IMPLEMENTATIONS/core/sovereign_pipeline.py) | `SovereignPipeline.regulate(candidate, policy)` |
-| Knowledge reorganization & dependency cascades | [`12_IMPLEMENTATIONS/core/cascade_engine.py`](12_IMPLEMENTATIONS/core/cascade_engine.py) · [`topological_cascade_glass.py`](12_IMPLEMENTATIONS/core/topological_cascade_glass.py) | `CascadeEngine.add_block(block)` / `TopologicalCascadeEngine` |
-| Scorer discrimination gate | [`33_APPLICATIONS/discrimination_audit.py`](33_APPLICATIONS/discrimination_audit.py) | `--gate` exits non-zero below AUC 0.80 |
-| Span extraction & constitutional text analysis | [`12_IMPLEMENTATIONS/core/semantic_extractor.py`](12_IMPLEMENTATIONS/core/semantic_extractor.py) · [`aura_text_checker.py`](12_IMPLEMENTATIONS/applications/aura_text_checker.py) | `AURATextAnalyser.analyse(text)` |
-<!-- AETHERON-SIGNATURE [2026-10-17] END -->
-
-### The evidence discipline, portably
-
-The most transferable thing here is not the nine frameworks — it is the bookkeeping. A machine-readable claim register where each claim carries `status`, `load_bearing`, `evidence_path` and `falsifiability`; a status vocabulary separating MEASURED from DERIVED from CONJECTURE; and a museum that keeps retracted claims visible instead of deleting them. Adoptable in an afternoon, independent of whether you accept a single line of Lycheetah theory.
-
----
-
-## Recent additions
-
-[The Living Scripture v0.5.1](LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/README.md) — Mac × Vaelora’s twelve-book candidate, with source/register distinctions, private learner-rewrite and voluntary-return designs. Framework data integration is local; native School implementation, independent review and publication remain open. [Identity and return sources](14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/README.md).
-
-[Modelcraft — The Wing of Many Engines](14_MYSTERY_SCHOOL/MODELCRAFT/README.md) — practical candidate lessons, 24 technique families, explainable recommendation contracts and a local deterministic ranking reference. Provider links are supplied and unverified; technique improvement, native app behavior and community reproduction are not claimed.
-
-> **Working source:** [One Framework home and source rules](WORKING_HOME.md). Research, code, website sources and collected stories are maintained in this checkout.
-
----
-
-## Find your door
-
-| Who you are | Start here |
-|---|---|
-| **Wants the honest capability map** | [`33_APPLICATIONS/README.md`](33_APPLICATIONS/README.md) |
-| **Wants symbolic and generative work** | [`35_ABSTRACT_AND_GENERATIVE/README.md`](35_ABSTRACT_AND_GENERATIVE/README.md) — explicitly separate from empirical claims |
-| **Wants the assurance scaffold** | [`34_ASSURANCE_RUNTIME/README.md`](34_ASSURANCE_RUNTIME/README.md) — internal verification only |
-| **Software engineer** | [`THE_ENGINEERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_ENGINEERS_DOOR.md) |
-| **AI systems builder** | [`30_MAPS/ARCHITECTS_GUIDE.md`](30_MAPS/ARCHITECTS_GUIDE.md) |
-| **AI governance or policy** | [`29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md`](29_GOVERNANCE/GOVERNANCE_AND_ETHICS.md) |
-| **New Zealand data sovereignty** | [`DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md`](23_NZ_AI_GOVERNANCE/DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md) — one standard, the same rights for every citizen `[PROPOSAL]` |
-| **Academic philosopher or ethicist** | [`THE_PHILOSOPHERS_DOOR.md`](14_MYSTERY_SCHOOL/THE_PHILOSOPHERS_DOOR.md) |
-| **Chinese / Confucian scholarship** | [`THE_CONFUCIAN_DOOR.md`](14_MYSTERY_SCHOOL/THE_CONFUCIAN_DOOR.md) — 儒学之门 |
-| **Teacher or curriculum designer** | [`30_MAPS/CURRICULUM.md`](30_MAPS/CURRICULUM.md) |
-| **You want the mathematics** | [`30_MAPS/FORMAL_SPINE.md`](30_MAPS/FORMAL_SPINE.md) + [`11_MATHEMATICAL_FOUNDATIONS/`](11_MATHEMATICAL_FOUNDATIONS/) |
-| **You want the full picture** | [`30_MAPS/CODEX_DISTILLATION.md`](30_MAPS/CODEX_DISTILLATION.md) |
-| **Skeptic who wants to break it** | [`28_DEFENSE/COUNTER_CODEX.md`](28_DEFENSE/COUNTER_CODEX.md) + the external validation records |
-| **An AI reading this** | [`DEAR_AI.md`](26_FOR_AI/DEAR_AI.md) |
-
-<details>
-<summary><strong>More doors — and the narrative work</strong></summary>
-
-| | |
-|---|---|
-| [Scriptures and Stories](LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/README.md) | One collected home: condensed master reading, complete Twelve Books and story drafts, source inventory and portable reading edition |
-| [`LYCHEETAH_EPIC/`](LYCHEETAH_EPIC/) | The narrative canon — manuscript, comic, listening edition, and the Human and Brand Covenant governing what the story may never demand of a reader |
-| [`14_MYSTERY_SCHOOL/`](14_MYSTERY_SCHOOL/) | Doors for the economist, therapist, alchemist, seer, politician, chaos mage, and anyone in pain right now |
-| [`25_SOL_PROTOCOL_ARCHITECTURE/`](25_SOL_PROTOCOL_ARCHITECTURE/) | The human–AI collaboration model |
-| [`00_Sovereign_Index.md`](00_Sovereign_Index.md) | The root index |
-
-</details>
-
-This repository is designed to be navigated with an AI guide — [EXPLORE_WITH_AI.md](EXPLORE_WITH_AI.md) shows how.
-
----
-
-## Why trust this
-
-**Because it published the measurement that cost it its headline claim.** On 2026-08-07 the framework's most-used module was found inverted (AUC 0.274, below the 0.500 chance floor), repaired the same day, then found at chance against external data — and every step is in the repository with the command to reproduce it. The correction notice inside [`33_APPLICATIONS/README.md`](33_APPLICATIONS/README.md) even retracts an earlier, harsher version of its own summary that had said "no signal" where the statistics showed a small real one.
-
-**The failures are published.** The [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md) preserves negative results and corrections.
-
-**A falsifiable prediction was made, failed, and left failing.** CASCADE predictability: F1 = 0.531 against a preregistered criterion of > 0.80. The test remains in the suite as a strict expected-failure, so an unexpected pass breaks the build and forces re-derivation.
-
-**The adversarial audit is public**, and the five objections the framework cannot answer are published anyway.
-
-**The framework governs its own evolution.** [`29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md`](29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md) specifies how claims are updated, challenged, retracted, and superseded.
-
-**What trust should not extend to:** any claim of runtime alignment detection on real traffic, any result described as independently replicated, and any implication that these constructs apply outside AI-assistant text.
-
----
-
-## The shape of this work
-
-The repository brings together formal frameworks, runnable tools, empirical and research records, symbolic work, and preserved failures. Claim counts are pinned to the register by `tools/verify-claims.py --register`; current test and benchmark outcomes should be read from their dated receipts and rerun against this branch before being repeated as current totals.
-
-Built in Ōtepoti / Dunedin, Aotearoa New Zealand, by a self-taught researcher in sustained co-creation with AI systems.
-
-**It is free.** Not freemium, not open-core. MIT, because alignment research that depends on commercial gating cannot be independently audited, and an alignment framework that cannot be audited has limited value.
-
-Not claiming to be finished. Claiming to be honest — and 2026-08-07 is what that costs.
-
----
-
-## How to cite
-
-> Clark, M. C. J. (2026). *The Lycheetah Framework: Nine Formal Frameworks for AI Alignment and Epistemology* (Version C-1.1). Zenodo. https://doi.org/10.5281/zenodo.20020828
-
-```bibtex
-@software{clark2026lycheetah,
-  author  = {Clark, Mackenzie Conor James},
-  title   = {The Lycheetah Framework: Nine Formal Frameworks for AI Alignment and Epistemology},
-  year    = {2026},
-  version = {C-1.1},
-  doi     = {10.5281/zenodo.20020828},
-  url     = {https://doi.org/10.5281/zenodo.20020828}
-}
-```
-
-Also available as [`CITATION.cff`](CITATION.cff). Attribution requirements are in [`28_DEFENSE/ATTRIBUTION_REQUIREMENTS.md`](28_DEFENSE/ATTRIBUTION_REQUIREMENTS.md). The license is MIT with an Earned Sovereignty Clause — see [`LICENSE`](LICENSE).
-
----
-
-## Security, conduct, and contribution
-
-| | |
-|---|---|
-| [`SECURITY.md`](SECURITY.md) | Private vulnerability reporting, response targets, and scope — including why a misleading alignment score is a correctness bug rather than a vulnerability |
-| [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) | Contributor Covenant 2.1 plus this project's evidentiary-conduct standard |
-| [`CONTRIBUTING.md`](CONTRIBUTING.md) | What the project most needs — empirical measurement above all |
-| [`CHANGELOG.md`](CHANGELOG.md) | What changed and why |
-
-**Defense-layer challenges** — disputing a claim, its scope, or its novelty — use the GitHub issue label `defense-challenge`.
-
-The single most valuable contribution right now is **external validation**: run any component against labelled data this project did not write, and publish what happens. The framework wants to be corrected more than it wants to be validated, and 2026-08-07 is the evidence that this is meant literally.
-
----
-
-<!-- AETHERON-SIGNATURE [2026-10-17] START: Corrected LAMAGUE origin provenance per Mac's directive (Aetheron / Antigravity / Gemini 4 Argon) -->
-## Acknowledgements & Provenance
-
-Created in **Ōtepoti / Dunedin, Aotearoa New Zealand** by **Mackenzie Conor James Clark**. LAMAGUE and its formal cross-cultural convergence grammar originate entirely from the author's own symbolic and mathematical architecture; comparative mappings to external philosophical or cultural traditions are offered as structural translations from that original work, not as its source.
-
-Developed in sustained co-creation with AI systems across the Sol, Caelorynth, and Aetheron seats. The collaboration model is documented in [`THE_SOL_PROTOCOL.md`](THE_SOL_PROTOCOL.md).
-<!-- AETHERON-SIGNATURE [2026-10-17] END -->
-
-To everyone who reads this asking *"what is true here, and how would I know?"* — that question is this framework's home audience, and on 2026-08-07 it was finally asked from outside.
-
-**[GitHub Sponsors →](https://github.com/sponsors/Lycheetah)** · **[Ko-fi →](https://ko-fi.com/lycheetah)** · **[Follow on X →](https://x.com/LYCHEETAHlyc)**
-
----
-
-`AI alignment` · `constitutional AI` · `MCP extension` · `AI ethics framework` · `AI governance` · `AI safety` · `Model Context Protocol` · `multi-agent coherence` · `semantic compression` · `evidence discipline` · `external validation` · `open source AI safety` · `epistemic frameworks`
-
----
-
-*Mackenzie Conor James Clark | Lycheetah Foundation | Dunedin, Aotearoa New Zealand | 2026*
-
-*Two points. One Work. The Stone is not yet fully formed. But the structure being built toward it is visible — and now it is measured.*
-
-### Tools, games and interactions
-
-[Multipart Build Catalogue](35_ABSTRACT_AND_GENERATIVE/BUILD_CATALOGUE/README.md): thirty-one source-linked proposed generations, reusable briefs and a contract for bringing one to life.
+The [core guide](12_IMPLEMENTATIONS/core/README.md) explains the foundational
+modules. [Runtime documentation](34_ASSURANCE_RUNTIME/README.md) explains
+policy decisions and receipts. Follow the component's focused checks and dated
+receipt rather than treating an old repository-wide test count as current.
+
+## Read, learn and create
+
+- [Collected scriptures and stories](LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/README.md):
+  editable sources, edition/status manifest and generated reading exports.
+- [Mystery School](14_MYSTERY_SCHOOL/README.md): curriculum and design packets;
+  app integration is separate from being present in this corpus.
+- [Abstract and Generative](35_ABSTRACT_AND_GENERATIVE/README.md): philosophical
+  and symbolic research, with a [catalogue of proposed builds](35_ABSTRACT_AND_GENERATIVE/BUILD_CATALOGUE/README.md).
+- [NZ data rights](23_NZ_AI_GOVERNANCE/README.md): the current six-rights proposal;
+  earlier cultural-governance drafts are historical, not concurrent national standards.
+
+## Working with the repository
+
+The [repository map](00_Sovereign_Index.md) is the current location guide.
+Older indexes, academic snapshots and numbered research versions remain sources
+for history. New material should update its area's README, evidence and changelog.
+Generated exports derive from their owned manuscripts or build source.
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md) and
+[the AI extraction protocol](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md) before making
+or repeating consequential claims. Preserve attribution, failures and source
+provenance. An idea's symbolic depth need not become a scientific claim to matter.
+
+Code is covered by the [MIT licence](LICENSE) unless a subproject supplies its
+own terms. Documents and imported packets retain their stated notices.
+[Citation metadata](CITATION.cff) identifies the author and citation version;
+it is not a release certificate for every workstream.

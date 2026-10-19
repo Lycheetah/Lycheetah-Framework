@@ -2,6 +2,22 @@
 
 Python engines, applications and research experiments for the Lycheetah Framework.
 
+**Guide refreshed:** 19 October 2026. The installable wrapper is owned by
+[`lycheetah/`](../lycheetah/); this directory owns the foundational engine sources.
+[Current synthesis](../13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md) ·
+[Complete map](../00_Sovereign_Index.md) · [Capability/evidence guide](../33_APPLICATIONS/README.md).
+
+## Choose the right source
+
+| Work | Maintained entry | Boundary |
+|---|---|---|
+| Foundational engine APIs | [core guide](core/README.md) | Models and implementations vary in maturity |
+| Bounded policy decisions and receipts | [Assurance Runtime](../34_ASSURANCE_RUNTIME/README.md) | Not a certificate of agent safety |
+| Permission, action and recovery experiments | [agent-safety packets](../papers/agent-safety/README.md) | Versioned research snapshots, not replacements for every engine |
+| Knowledge revision continuation | [Hybrid Gateway](../papers/ai-futures/hybrid-gateway/README.md) | Separate research version and conventional baseline |
+| Handover/record preservation | [own-task instrument](../examples/meaning_handover/README.md) | Exact fields and codec behaviour; human benefit remains unmeasured |
+
+
 **Start with the [core engine guide](core/README.md):** all 29 modules explained
 in plain language, grouped by the job they do, with their main Python APIs and
 links to the installed runtime tools.
@@ -21,9 +37,9 @@ core/                       — Start here. The foundational engines.
   cascade_engine.py         — CASCADE knowledge reorganization (domain-agnostic)
   lamague_reference.py      — LAMAGUE symbol system and grammar parser
 
-systems/                    — Full integrated systems built on core.
-  aura_sovereign_codex.py   — Complete AURA + CASCADE + LAMAGUE unified system
-  cascade_reality_bridge.py — Self-correcting reality verification layer
+systems/                    — Integration references and experiments.
+  aura_sovereign_codex.py   — AURA + CASCADE + LAMAGUE integration reference
+  cascade_reality_bridge.py — Experimental model/reality bridge
   unified_field.py          — Unified field implementation across all frameworks
   knowledge_genome.py       — Knowledge genome encoding and evolution
 

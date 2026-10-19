@@ -1,4 +1,7 @@
 # THE AOTEAROA SOVEREIGN INTELLIGENCE TOKEN
+
+> [INTERPRETIVE] **Background research — requires reconciliation with the current NZ proposal.** Reviewed 19 October 2026. The current policy entry is [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). This document supplies research context, not an adopted standard, certification service, legal authority or verified deployment.
+
 ## A Governance-Backed Digital Currency for a Post-Dependency Economy
 ### Lycheetah Framework | March 2026
 ### Status: [PROPOSAL / EXPERIMENTAL] — Concept document, not a whitepaper

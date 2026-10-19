@@ -1,39 +1,29 @@
-# AURA — Constitutional AI Protocol
+# AURA — commitments, predicates and policy
 
-**Axiom:** PROTECTOR · **Status:** Active — organizational pilots pending
+**Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
+**Guide refreshed:** 19 October 2026.  
+**Status:** Normative architecture plus implemented proxies; semantic sufficiency remains unproven.
 
-Ethics is architecture. AURA is not a list of rules — it is a constitutional system where three axioms generate all ethical constraints automatically, the same way axioms in geometry generate all theorems.
+AURA names human primacy, inspectability, memory continuity, constraint honesty, reversibility, non-deception and care as structure. PROTECTOR, HEALER and BEACON are its organising commitments. Writing a commitment or passing a proxy check does not guarantee that every consequence satisfies it.
 
-## Core structure
+## Read this line
 
-**Three axioms (non-negotiable, non-rankable, must all hold simultaneously):**
-- PROTECTOR — ground truth, no harm, stable foundations
-- HEALER — clarity without bypass, transformation without denial
-- BEACON — truth-reflection, human agency always preserved
+- [AURA_COMPLETE.md](AURA_COMPLETE.md): the detailed foundational source.
+- [THE_FOUR_PRINCIPLES.md](THE_FOUR_PRINCIPLES.md): the shorter source introduction.
+- [Current whole-framework synthesis](../13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md): where this line fits now.
+- [Core engine guide](../12_IMPLEMENTATIONS/core/README.md): executable models, APIs and limitations.
 
-**Seven Invariants:** Human Primacy · Inspectability · Memory Continuity · Constraint Honesty · Reversibility Bias · Non-Deception · Love as Load-Bearing
+## Current connections
 
-**Three metrics:** TES ≥ 0.70 · VTR ≥ 1.0 · PAI ≥ 0.80
+The Assurance Runtime makes bounded policy decisions and receipts; the agent-safety packets study permission and observed effects separately.
 
-**VIP (Vector Inversion Protocol):** The system never refuses. Every refusal is a Beacon failure. Max recursion depth 7, valid path guaranteed.
+[Assurance Runtime](../34_ASSURANCE_RUNTIME/README.md) · [Agent-safety research](../papers/agent-safety/README.md).
 
-## Files
+## Evidence and source ownership
 
-| File | Contents | Status |
-|------|----------|--------|
-| `essentials.md` | Seven Invariants, TRI-AXIAL metrics, quick reference | [ACTIVE] |
-| `EIGHT_PRIMITIVES.md` | The 8 non-negotiable structural components + implementation map | [ACTIVE/SCAFFOLD] |
-| `GREY_MODE.md` | Quarantine and recovery protocol for drifted nodes | [SCAFFOLD] |
-| `PSI_CONSENSUS.md` | Distributed multi-agent coherence — Ψ_Q, gossip average, Byzantine tolerance | [SCAFFOLD] |
-| `SEVEN_PHASE_CYCLE.md` | ⟟→≋→Ψ→Φ↑→✧→|◁▷|→⟲ — cognition cycle and AURA PRIME protocol | [SCAFFOLD] |
-| `AURA_COMPLETE.md` | Full constitutional law, VIP algorithm, metrics, formal proofs | [ACTIVE] |
-| `LAWS_COMPLETE.md` | Constitutional foundation + operational code | [ACTIVE] |
-| `THE_FOUR_PRINCIPLES.md` | Four principles specification | [ACTIVE] |
-
-## Why it matters
-
-Most AI safety approaches add constraints on top of a system. AURA makes the constraints load-bearing — remove them and the system collapses, which means they can't be quietly removed.
-
-## Next
-
-Organizational pilots · deployment testing at scale
+The detailed source texts retain their historical vocabulary, arguments and
+status labels. This guide does not certify all of those statements. Use the
+particular model's assumptions, dated experiments and [claim/evidence records](../28_DEFENSE/CLAIMS_README.md)
+when assessing a claim. A successful check in another workstream does not
+validate this one. These source paths remain in place; no historical manuscript
+or implementation has been deleted or silently replaced by a generated summary.

@@ -1,4 +1,7 @@
 # THE COUNTER-ARGUMENTS
+
+> [INTERPRETIVE] **Background research — requires reconciliation with the current NZ proposal.** Reviewed 19 October 2026. The current policy entry is [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). This document supplies research context, not an adopted standard, certification service, legal authority or verified deployment.
+
 ## Every Objection — With Honest Answers
 ### Mackenzie Conor James Clark | Lycheetah Foundation | March 2026
 
@@ -96,7 +99,7 @@ That's an empirical question, not a philosophical one.
 
 **OBJECTION: "The mathematics in CASCADE hasn't been independently verified."**
 
-Correct. The arXiv preprint has not yet been through peer review.
+Independent mathematical verification and peer review are not established by this document. The repository contains formal manuscripts and audits; a filename or proposed preprint route is not an external-review receipt.
 
 What has been done:
 - The formal proofs are in `11_MATHEMATICAL_FOUNDATIONS/`
@@ -109,8 +112,9 @@ mathematicians and AI researchers to attempt to falsify the proofs.
 The DEEP_REVIEW section of the GitHub is the starting point.
 
 A preprint is not the end of verification. It's the beginning.
-The arXiv endorsement means a domain expert judged the work
-worth the research community's attention. That's a signal, not a seal.
+This draft supplies no receipt establishing an arXiv endorsement. If an endorsement
+is later obtained, it must be documented accurately and kept distinct from peer
+review or verification of the proofs.
 
 ---
 
@@ -314,17 +318,13 @@ is architecturally incomplete until it has."**
 This is true. This is acknowledged. This is why the Kāi Tahu approach
 is the highest priority local move in the whole folder.
 
-The mathematics is complete.
-The cultural translation layer is a proposal awaiting validation.
-The distinction between those two things matters
-and should never be obscured.
-
-The honest framing at every level: the LAMAGUE primitive system is proven.
-The LAMAGUE Te Reo layer is offered for validation.
-
-Those are different claims and the difference is not a weakness.
-It's intellectual honesty that distinguishes this work
-from every "AI + Māori" project that claimed completion without it.
+The formal sources contain results under specified assumptions, open problems
+and version-specific corrections. They do not establish that the whole mathematics
+is complete or that the language has universal semantic validity.
+The cultural translation layer is a proposal awaiting permissioned validation.
+Neither formal results nor proposed mappings establish community endorsement.
+The current NZ policy direction is the separately linked six-rights proposal; this
+March approach is historical research context, not the current outreach priority.
 
 ---
 

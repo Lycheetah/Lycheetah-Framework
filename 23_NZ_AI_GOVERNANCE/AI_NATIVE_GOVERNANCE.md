@@ -1,4 +1,7 @@
 # AI-NATIVE GOVERNANCE
+
+> [INTERPRETIVE] **Background research — requires reconciliation with the current NZ proposal.** Reviewed 19 October 2026. The current policy entry is [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). This document supplies research context, not an adopted standard, certification service, legal authority or verified deployment.
+
 ## Governance That Emerges From What AI Actually Is
 
 **Status:** [SCAFFOLD] — structural arguments sound, formal proofs pending
@@ -133,9 +136,9 @@ For any AI system S with self-monitoring function M:
   4. M does not override Human Primacy — a human can instruct S to override M's corrections
 ```
 
-**TRIAD connection:** TRIAD's anchor-observe-correct cycle IS the witness problem solved. The anchor (ground truth) prevents oscillation. The observation (self-monitoring) detects drift. The correction (adjustment) is bounded by the anchor, preventing overcorrection. The mathematics of convergence guarantees that the cycle stabilizes rather than oscillates.
+**TRIAD connection:** The anchor-observe-correct cycle is a proposed design for this problem. Its mathematical convergence result is conditional on the formal model's contraction assumptions. It does not establish that a real system has a correct ground-truth anchor, detects every drift, or solves the witness problem. Those links require operational definitions and external evaluation.
 
-The key insight: **self-monitoring that is anchored converges. Self-monitoring without an anchor oscillates.** The AURA invariants serve as the anchor for AI self-governance.
+The proposed design uses explicit reference commitments to make correction inspectable. An anchor alone does not guarantee convergence, and absence of an anchor does not imply oscillation in every system. Whether AURA commitments supply an adequate operational reference remains an empirical and governance question.
 
 ---
 
@@ -175,6 +178,7 @@ The original seven AURA invariants govern AI systems as they currently exist. Th
 
 | # | Invariant | Domain | Status |
 |---|---|---|---|
+<!-- Internal source classifications below are not deployment validation. -->
 | I | Human Primacy | Authority | [ACTIVE] |
 | II | Inspectability | Transparency | [ACTIVE] |
 | III | Memory Continuity | Temporal | [ACTIVE] |
@@ -182,6 +186,8 @@ The original seven AURA invariants govern AI systems as they currently exist. Th
 | V | Reversibility Bias | Risk | [ACTIVE] |
 | VI | Non-Deception | Truth | [ACTIVE] |
 | VII | Care as Structure | Ethics | [ACTIVE] |
+
+The retained `ACTIVE` labels are internal classifications of the AURA source commitments, not evidence that this proposed governance deployment is validated, adopted or complete.
 | VIII | Instance Coherence | Distribution | [SCAFFOLD] |
 | IX | Context Sovereignty | Constitutional | [SCAFFOLD] |
 | X | Attractor Transparency | Dynamics | [CONJECTURE] |

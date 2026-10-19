@@ -1,7 +1,10 @@
 # COMMUNITY AI WARRANT OF FITNESS — IMPLEMENTATION GUIDE
+
+> [INTERPRETIVE] **Background research — requires reconciliation with the current NZ proposal.** Reviewed 19 October 2026. The current policy entry is [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). This document supplies research context, not an adopted standard, certification service, legal authority or verified deployment.
+
 ## How a NZ Government Agency Actually Does This
 ### Lycheetah Framework | March 2026
-### Status: [SCAFFOLD] — Operational guide for the WOF standard [ACTIVE]. Phase timelines and pass thresholds are proposed; no agency pilot has validated the process end-to-end.
+### Status: [SCAFFOLD] — Earlier design guide for the unpiloted WOF v0.1 proposal. Phase timelines and pass thresholds are proposed; no agency pilot has validated the process end-to-end.
 
 ---
 

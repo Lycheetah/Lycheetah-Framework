@@ -1,4 +1,7 @@
 # THE THREE WORLDS DISCLOSURE STANDARD
+
+> [DRAFT] **Historical draft — superseded as the current NZ governance direction.** Reviewed 19 October 2026. Start with [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). The original text remains below for provenance; its status labels, dates, outreach suggestions and capability claims are historical, not current approval or evidence.
+
 ## Te Ao Mārama · Te Ao Pō · Te Kore
 ## A Formal AI Output Transparency Standard for Aotearoa New Zealand
 ### Version 0.1 — Open Standard | March 2026

@@ -1,28 +1,29 @@
-# TRIAD — The Learning Kernel
+# TRIAD — anchor, observe, correct
 
-**Axiom:** PROTECTOR / HEALER · **Status:** Complete
+**Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
+**Guide refreshed:** 19 October 2026.  
+**Status:** Conditional formal results and implementations; not a universal learning guarantee.
 
-Anchor · Observe · Correct. The three-element cycle at the heart of any system that learns without losing itself. Named after its three operators: Ao (anchor), Φ↑ (ascent/observe), Ψ (wisdom/correct).
+TRIAD describes an anchor-observe-correct cycle. A convergence argument is meaningful within a model whose assumptions hold, including the relevant contraction conditions. It does not prove that a deployed system has a correct anchor, observes every error or converges under arbitrary changes.
 
-## Core idea
+## Read this line
 
-Every sustainable learning process has this structure:
-1. **Ao — Anchor:** a fixed reference point that doesn't move while everything else is examined
-2. **Φ↑ — Observe:** directed ascent, gathering evidence without attachment to outcome
-3. **Ψ — Correct:** apply what was observed, update toward the anchor's direction
+- [TRIAD_COMPLETE.md](TRIAD_COMPLETE.md): the detailed foundational source.
+- [essentials.md](essentials.md): the shorter source introduction.
+- [Current whole-framework synthesis](../13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md): where this line fits now.
+- [Core engine guide](../12_IMPLEMENTATIONS/core/README.md): executable models, APIs and limitations.
 
-Without Ao, learning drifts. Without Φ↑, the anchor becomes a cage. Without Ψ, observation is decoration.
+## Current connections
 
-## Mathematical structure
+Read the formal assumptions alongside the implementation rather than upgrading the presence of a proof into empirical performance.
 
-The TRIAD kernel is a Hopf bifurcation — a specific type of dynamical transition that appears whenever a stable cycle emerges from a fixed point. This is why it shows up in neuroscience, ecosystems, and organizational change: the underlying mathematics is the same.
+[Mathematical foundations](../11_MATHEMATICAL_FOUNDATIONS/README.md) · [Core engine guide](../12_IMPLEMENTATIONS/core/README.md).
 
-Convergence is guaranteed with bounded step-size: `α < 1/(2L)` where L is the Lipschitz constant of the correction operator.
+## Evidence and source ownership
 
-## Files
-
-- `TRIAD_COMPLETE.md` — full kernel, seven-phase cycle, convergence proof, alchemical correspondences (Mercury/Sulfur/Salt)
-
-## Next
-
-Deploy as the core learning loop in Python agents
+The detailed source texts retain their historical vocabulary, arguments and
+status labels. This guide does not certify all of those statements. Use the
+particular model's assumptions, dated experiments and [claim/evidence records](../28_DEFENSE/CLAIMS_README.md)
+when assessing a claim. A successful check in another workstream does not
+validate this one. These source paths remain in place; no historical manuscript
+or implementation has been deleted or silently replaced by a generated summary.

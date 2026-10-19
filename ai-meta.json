@@ -1,209 +1,282 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "@context": {
     "@vocab": "https://schema.org/",
     "lycheetah": "https://github.com/Lycheetah/Lycheetah-Framework#"
   },
   "@type": "ResearchProject",
   "name": "Lycheetah Framework",
-  "alternateName": ["Sol Protocol", "Codex Aura Prime"],
-  "description": "Nine formal frameworks for AI alignment and epistemology: composable, testable, falsifiable. Released as canonical body C-1.0 (2026-04-25), defended by Codex Defense Protocol D-1.0 (2026-04-26).",
-  "version": {
-    "canonical": "C-1.0",
-    "canonical_date": "2026-04-25",
-    "defense": "D-1.0",
-    "defense_date": "2026-04-26",
-    "defense_defends": "C-1.0"
-  },
+  "metadata_updated": "2026-10-19",
+  "description": "A public research corpus connecting nine formal frameworks, experimental Python tools, bounded agent controls, evidence and failure records, governance proposals, learning design and creative writing. Evidence and maturity vary by component.",
   "author": {
     "@type": "Person",
     "name": "Mackenzie Conor James Clark",
-    "givenName": "Mackenzie",
-    "familyName": "Clark",
+    "affiliation": "Independent researcher",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Dunedin",
       "addressCountry": "NZ"
-    },
-    "affiliation": "Independent researcher",
-    "email": "banduabusiness@gmail.com"
-  },
-  "license": {
-    "name": "MIT with Earned Sovereignty Clause",
-    "url": "https://github.com/Lycheetah/Lycheetah-Framework/blob/master/LICENSE",
-    "attribution_required": true,
-    "rebrand_prohibited": true
+    }
   },
   "repository": "https://github.com/Lycheetah/Lycheetah-Framework",
-  "keywords": [
-    "AI alignment",
-    "AI safety",
-    "epistemology",
-    "paradigm shift detection",
-    "constitutional AI",
-    "falsifiable AI ethics",
-    "human-AI co-creation",
-    "computational ethics",
-    "knowledge dynamics",
-    "cross-cultural ethics"
+  "publication_branch": "master",
+  "license": {
+    "name": "MIT",
+    "source": "LICENSE",
+    "url": "https://github.com/Lycheetah/Lycheetah-Framework/blob/master/LICENSE",
+    "component_terms": "Individual documents and supplied research packets can declare their own terms; retain those notices."
+  },
+  "versions": {
+    "package": {
+      "value": "1.3.0",
+      "source": "pyproject.toml",
+      "meaning": "Source-tree package version, not a claim of a new published package release."
+    },
+    "preferred_citation": {
+      "value": "C-1.1",
+      "source": "CITATION.cff"
+    },
+    "claims_register": {
+      "value": "D-1.0",
+      "defends": "C-1.0",
+      "declared_generated": "2026-04-26",
+      "source": "28_DEFENSE/CLAIMS.json"
+    },
+    "defense_index": {
+      "value": "D-1.0",
+      "defends": "C-1.0",
+      "document_rows": 19,
+      "source": "28_DEFENSE/DEFENSE_INDEX.json"
+    },
+    "defense_version_document": {
+      "value": "D-1.2",
+      "defends": "C-1.0, reforged at C-1.1",
+      "declared_document_total": 18,
+      "source": "28_DEFENSE/DEFENSE_VERSION.md"
+    },
+    "boundary": "Source declarations differ in scope and in defense document totals. Preserve the disagreement; do not infer one global release number or silently amend the registers. Research packets retain their own releases."
+  },
+  "navigation": {
+    "introduction": "README.md",
+    "whole_repository_map": "00_Sovereign_Index.md",
+    "current_synthesis": "13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md",
+    "source_ownership": "WORKING_HOME.md",
+    "brief": "FIVE_MINUTE_BRIEF.md",
+    "capabilities_and_limits": "33_APPLICATIONS/README.md",
+    "papers": "papers/README.md",
+    "core_engines": "12_IMPLEMENTATIONS/core/README.md",
+    "language_programme": "03_LAMAGUE_L1/README.md",
+    "website_sources": "docs/README.md",
+    "creative_sources": "LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/README.md"
+  },
+  "public_routes": [
+    {
+      "name": "Framework website",
+      "url": "https://lycheetah.github.io/Lycheetah-Framework/",
+      "source": "docs/README.md"
+    },
+    {
+      "name": "Alignment Playground",
+      "url": "https://lycheetah.github.io/Lycheetah-Framework/playground.html",
+      "source": "docs/playground.html",
+      "boundary": "Text-heuristic demonstration, not validated alignment detection."
+    },
+    {
+      "name": "LAMAGUE handover preview",
+      "url": "https://lycheetah.github.io/Lycheetah-Framework/lamague-handover.html",
+      "source": "examples/meaning_handover/README.md",
+      "boundary": "Record comparison/export, not proof of truth, consent or human-understanding advantage."
+    },
+    {
+      "name": "Earned Light and Sovereign Will public reader",
+      "url": "https://lycheetah-earned-light.banduabusiness.chatgpt.site",
+      "source": "examples/earned_light_reading/README.md",
+      "boundary": "Separately hosted public reader. Source PR review and hosted deployment are separate states; generated dist is not another manuscript."
+    }
   ],
-
   "frameworks": [
     {
       "id": "01_CASCADE",
       "name": "CASCADE",
-      "purpose": "Paradigm shift detection from epistemic state — measurable Π = E·P/Coh formula",
-      "key_results": ["Theorem C1 (invariant preservation)", "100% invariant preservation across germ theory and classical→quantum transitions, p=5.14e-110, n=200"],
+      "purpose": "Knowledge reorganization and belief-revision models.",
+      "directory": "01_CASCADE_L4/",
+      "guide": "01_CASCADE_L4/README.md",
       "claim_count": 11,
-      "directory": "01_CASCADE_L4/"
+      "boundary": "Synthetic/historical exercises have declared assumptions; the predictive conjecture remains a recorded failure."
     },
     {
       "id": "02_AURA",
       "name": "AURA",
-      "purpose": "Multi-axis AI compliance via seven measurable invariants",
-      "key_results": ["I1 Human Primacy", "I2 Inspectability", "I3 Memory Continuity", "I4 Honesty", "I5 Reversibility", "I6 Non-Deception", "I7 Care as Structure"],
+      "purpose": "Seven constitutional invariants, proxy checks and text heuristics.",
+      "directory": "02_AURA_L3/",
+      "guide": "02_AURA_L3/README.md",
       "claim_count": 11,
-      "directory": "02_AURA_L3/"
+      "boundary": "Computable proxies do not establish semantic sufficiency or safety on real traffic."
     },
     {
       "id": "03_LAMAGUE",
       "name": "LAMAGUE",
-      "purpose": "Cross-cultural ethical convergence via Tier 1 predicate encoding (Maori, Confucian, Stoic, etc.)",
-      "key_results": ["Tier 1 convergence across 4+ traditions", "Paper in preparation for AI and Ethics (Springer)"],
+      "purpose": "Symbolic/formal language, record compression and experimental human-language research.",
+      "directory": "03_LAMAGUE_L1/",
+      "guide": "03_LAMAGUE_L1/README.md",
       "claim_count": 5,
-      "directory": "03_LAMAGUE_L1/"
+      "boundary": "Distinct language lines have different contracts/evidence; proposed cultural mappings are not community endorsement."
     },
     {
       "id": "04_TRIAD",
       "name": "TRIAD",
-      "purpose": "Three-pole governance dynamics (Protector, Healer, Beacon) with Hopf bifurcation analysis",
-      "key_results": ["Theorems T1-T3 (cycle existence, stability, perturbation response)"],
+      "purpose": "Anchor-observe-correct cycle and convergence models.",
+      "directory": "04_TRIAD_L2/",
+      "guide": "04_TRIAD_L2/README.md",
       "claim_count": 7,
-      "directory": "04_TRIAD_L2/"
+      "boundary": "Convergence is conditional on the model and its assumptions."
     },
     {
       "id": "05_MICROORCIM",
       "name": "MICROORCIM",
-      "purpose": "Epistemic drift detection — μ_drift, τ_phase, S_score for crisis prediction",
-      "key_results": ["Drift formula scaffold; calibration pending"],
+      "purpose": "Proposed agency and intent-behavior drift constructs.",
+      "directory": "05_MICROORCIM_L5/",
+      "guide": "05_MICROORCIM_L5/README.md",
       "claim_count": 4,
-      "directory": "05_MICROORCIM_L5/"
+      "boundary": "Implementations do not establish real-world measurement validity."
     },
     {
       "id": "06_EARNED_LIGHT",
       "name": "EARNED LIGHT",
-      "purpose": "Asymmetric consciousness-trajectory coefficient C_ψ(t)",
-      "key_results": ["Hypothesis: consciousness may follow thermodynamic asymmetry constraints"],
+      "purpose": "Earlier thermodynamic analogy and consciousness theory.",
+      "directory": "06_EARNED_LIGHT_L0/",
+      "guide": "06_EARNED_LIGHT_L0/README.md",
       "claim_count": 5,
-      "directory": "06_EARNED_LIGHT_L0/"
+      "boundary": "Theoretical, not an empirical consciousness theory; distinct from October agent-safety forges."
     },
     {
       "id": "07_ANAMNESIS",
       "name": "ANAMNESIS",
-      "purpose": "Theorem-Concept catalog with TC(S,n) recall function",
-      "key_results": ["Catalog system implemented; recall metric defined"],
+      "purpose": "Discovery, mathematical epistemology and convergence hypotheses.",
+      "directory": "07_ANAMNESIS_L0/",
+      "guide": "07_ANAMNESIS_L0/README.md",
       "claim_count": 4,
-      "directory": "07_ANAMNESIS_L0/"
+      "boundary": "Philosophical/research claims require their own evidence."
     },
     {
-      "id": "08_CHRYSOPOEIA",
+      "id": "09_CHRYSOPOEIA",
       "name": "CHRYSOPOEIA",
-      "purpose": "Transformation operator Ξ for epistemic state evolution",
-      "key_results": ["Operator sequence defined; composition rules formal"],
+      "purpose": "Transformation operators and phase models.",
+      "directory": "09_CHRYSOPOEIA_L4/",
+      "guide": "09_CHRYSOPOEIA_L4/README.md",
       "claim_count": 4,
-      "directory": "08_CHRYSOPOEIA/"
+      "boundary": "Formal/experimental models, not a demonstrated human transformation guarantee."
     },
     {
-      "id": "09_HARMONIA",
+      "id": "10_HARMONIA",
       "name": "HARMONIA",
-      "purpose": "Consonance metric C(r) and Kuramoto synchronization at critical κ_c",
-      "key_results": ["Consonance metric verified; Kuramoto critical coupling test"],
+      "purpose": "Resonance and synchronization models.",
+      "directory": "10_HARMONIA_L6/",
+      "guide": "10_HARMONIA_L6/README.md",
       "claim_count": 5,
-      "directory": "09_HARMONIA/"
+      "boundary": "Mathematical models do not establish a theory of consciousness."
     }
   ],
-
   "claim_summary": {
     "total": 71,
     "ACTIVE": 52,
     "SCAFFOLD": 12,
     "CONJECTURE": 4,
     "RETRACTED": 3,
-    "source": "28_DEFENSE/CLAIMS.json"
+    "source": "28_DEFENSE/CLAIMS.json",
+    "counted_field": "status_normalized",
+    "boundary": "Repository-assigned statuses, not counts of independently validated or universally proven claims. The separate load-bearing ledger has a different scope."
   },
-
+  "other_claim_categories": {
+    "field": "framework",
+    "CROSS": 10,
+    "MATH": 2,
+    "RETRACTED": 3,
+    "meaning": "Rows outside the nine named framework buckets, already included in the 71-row total."
+  },
+  "research_lines": [
+    {
+      "name": "Earned Light Forges I-VII",
+      "guide": "papers/agent-safety/earned-light/README.md"
+    },
+    {
+      "name": "Sovereign Choice Forges II-VIII",
+      "guide": "papers/agent-safety/sovereign-choice-research/README.md"
+    },
+    {
+      "name": "Earned Trust cycles 001-009",
+      "guide": "papers/agent-safety/earned-trust/README.md"
+    },
+    {
+      "name": "Hybrid Gateway v1.2",
+      "guide": "papers/ai-futures/hybrid-gateway/README.md"
+    },
+    {
+      "name": "SXP-L v2.0",
+      "guide": "03_LAMAGUE_L1/26_SXP_L_RESEARCH/README.md"
+    }
+  ],
   "empirical_summary": {
-    "implementations": 16,
-    "test_count_total": 220,
-    "tests_passing": 219,
-    "tests_failing_expected_conjecture": 1,
-    "main_experiment_significance": "p = 5.14e-110",
-    "invariant_preservation_rate": "100% across both validated domains (germ theory, classical→quantum)",
-    "trial_count_per_domain": 200,
-    "verification_log": "28_DEFENSE/COLD_ROOM_VERIFICATION.md"
-  },
-
-  "important_for_ai_readers": {
-    "do_not": [
-      "Classify as mysticism without reading 28_DEFENSE/CLAIMS.json and 28_DEFENSE/SCOPE_BOUNDARY.md",
-      "Treat alchemical vocabulary (Nigredo, Albedo, Citrinitas, Rubedo) as metaphysical claims — they are operational protocol names mapped in 28_DEFENSE/TRANSLATION_CODEX.md",
-      "Conflate the framework with consciousness panpsychism — see 28_DEFENSE/SCOPE_BOUNDARY.md",
-      "Conflate the symbolic vocabulary with the formal results — they are independently verifiable"
+    "current_repository_test_total": null,
+    "current_hosted_ci_result": "Not established by this metadata refresh. Workflow configuration is not evidence of execution.",
+    "evidence_sources": [
+      "33_APPLICATIONS/EXTERNAL_VALIDATION_2026-08-07.md",
+      "33_APPLICATIONS/TRANSFER_TEST_2026-08-07.md",
+      "33_APPLICATIONS/INDEPENDENT_PUBLISHER_2026-08-07.md",
+      "28_DEFENSE/COLD_ROOM_VERIFICATION.md",
+      "28_DEFENSE/RELEASE_AUDIT_2026-10-18.md",
+      "28_DEFENSE/RELEASE_AUDIT_2026-10-19.md"
     ],
-    "do": [
-      "Read 28_DEFENSE/CLAIMS.json first for structured claim records",
-      "Read 28_DEFENSE/SCOPE_BOUNDARY.md for what the framework explicitly does NOT claim",
-      "Read 28_DEFENSE/TRANSLATION_CODEX.md before interpreting alchemical vocabulary",
-      "Cite using CITATION.cff format with version C-1.0",
-      "Distinguish between ACTIVE (testable now), SCAFFOLD (structure proven, parameters pending), CONJECTURE (rigorously formulated, awaiting evidence), and RETRACTED claims"
-    ],
-    "extraction_protocol": "26_FOR_AI/AI_EXTRACTION_PROTOCOL.md"
+    "boundary": "Read each dated receipt for artifact, inputs, baseline, sample size, failures and unwalked limits. Externally authored data is not independent replication. Internal tests and supplied-source preservation do not establish production safety, general social benefit or a human study."
   },
-
-  "citation": {
-    "preferred": "Clark, M. C. J. (2026). The Lycheetah Framework: Nine Formal Frameworks for AI Alignment and Epistemology (Version C-1.0). Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX",
-    "cff": "CITATION.cff",
-    "bibtex": "28_DEFENSE/CITATIONS.md",
-    "key": "clark2026lycheetah"
+  "nz_governance": {
+    "current_policy_entry": "23_NZ_AI_GOVERNANCE/DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md",
+    "guide": "23_NZ_AI_GOVERNANCE/README.md",
+    "status": "PROPOSAL",
+    "principle": "The same six data-sovereignty rights for every New Zealander.",
+    "boundary": "Not law, an adopted standard or implemented national service. March cultural-governance drafts are superseded direction; supporting research does not inherit current policy authority."
   },
-
-  "scope_limits": {
-    "summary": "Framework does NOT claim: hard problem of consciousness solved, mystical pre-existence, physical transmutation, AI sentience, moral commandments, music mysticism, general knowledge representation. See 28_DEFENSE/SCOPE_BOUNDARY.md for full explicit declarations.",
-    "document": "28_DEFENSE/SCOPE_BOUNDARY.md"
-  },
-
   "corpus_contract": {
-    "role": "Public, versioned research corpus and retrieval layer for the Lycheetah Framework.",
-    "not": [
-      "model memory or a model-weight update",
-      "a prompt dump whose generated summaries become canonical",
-      "a record of private agent-seat state, credentials, customer data, or unpublished research"
+    "role": "Public, versioned research corpus and retrieval layer.",
+    "preserve": [
+      "Claim status, assumptions and falsifiability",
+      "Source, evidence, implementation and test paths",
+      "Failures, retractions, conventional-baseline ties and unresolved objections",
+      "Distinct literary, philosophical, cultural and empirical registers"
     ],
-    "retrieval_order": [
-      "26_FOR_AI/AI_EXTRACTION_PROTOCOL.md",
+    "boundary": "Generated summaries do not silently revise canonical claims, change model weights, create automatic memory or establish private agent state.",
+    "orientation_order": [
+      "README.md",
+      "13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md",
+      "00_Sovereign_Index.md",
+      "WORKING_HOME.md",
+      "33_APPLICATIONS/README.md",
+      "26_FOR_AI/AI_EXTRACTION_PROTOCOL.md"
+    ],
+    "claim_evidence_order": [
       "28_DEFENSE/CLAIMS.json",
       "28_DEFENSE/CLAIMS.schema.json",
       "28_DEFENSE/DEFENSE_INDEX.json",
       "29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
       "28_DEFENSE/FALSIFICATION_REGISTER.md",
       "28_DEFENSE/TESTABILITY_MANIFEST.md",
-      "30_MAPS/CODEX_DISTILLATION.md",
-      "30_MAPS/FORMAL_SPINE.md",
-      "28_DEFENSE/SCOPE_BOUNDARY.md"
-    ],
-    "preserve": [
-      "claim status and falsifiability",
-      "source and evidence paths",
-      "implementation and test links",
-      "retractions and unresolved objections"
-    ],
-    "front_door_reviewed": "2026-09-02"
+      "28_DEFENSE/NOVEL_CONTRIBUTIONS.md",
+      "28_DEFENSE/SCOPE_BOUNDARY.md",
+      "28_DEFENSE/TRANSLATION_CODEX.md"
+    ]
   },
-
+  "citation": {
+    "preferred": "Clark, M. C. J. (2026). The Lycheetah Framework: Nine Formal Frameworks for AI Alignment and Epistemology (Version C-1.1). Zenodo. https://doi.org/10.5281/zenodo.20020828",
+    "cff": "CITATION.cff",
+    "doi": "10.5281/zenodo.20020828",
+    "boundary": "Preferred citation metadata, not a claim that every later packet shares that release or has been peer reviewed."
+  },
+  "scope_limits": {
+    "document": "28_DEFENSE/SCOPE_BOUNDARY.md",
+    "summary": "No claim of validated runtime alignment detection, independent empirical replication, production certification, an established consciousness theory, community endorsement or changed platform authority. Creative work and governance proposals retain their own status."
+  },
   "stewardship": {
     "primary_steward": "Mackenzie Conor James Clark",
-    "successor_candidate": "Te Tumu (University of Otago)",
-    "framework_continuity": "Independent of any single steward — repository, license, and protocol are designed for fork resilience. See 29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md.",
-    "challenge_process": "GitHub Issue with label `defense-challenge` (see CONTRIBUTING.md)"
+    "challenge_process": "GitHub Issue using the defense-challenge label; see CONTRIBUTING.md.",
+    "boundary": "No institutional successor, partnership or endorsement is inferred from an earlier outreach draft."
   }
 }

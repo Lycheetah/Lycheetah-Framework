@@ -1,4 +1,7 @@
 # NZ MĀORI AI SOVEREIGNTY — DEEP EXPERIMENTAL
+
+> [DRAFT] **Historical draft — superseded as the current NZ governance direction.** Reviewed 19 October 2026. Start with [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). The original text remains below for provenance; its status labels, dates, outreach suggestions and capability claims are historical, not current approval or evidence.
+
 ## The Ideas That Go All The Way In
 ### Mackenzie Conor James Clark | Lycheetah Foundation | March 2026
 

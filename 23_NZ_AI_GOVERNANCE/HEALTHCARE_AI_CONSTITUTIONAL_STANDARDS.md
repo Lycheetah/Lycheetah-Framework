@@ -1,4 +1,7 @@
 # HEALTHCARE AI CONSTITUTIONAL STANDARDS
+
+> [INTERPRETIVE] **Background research — requires reconciliation with the current NZ proposal.** Reviewed 19 October 2026. The current policy entry is [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). This document supplies research context, not an adopted standard, certification service, legal authority or verified deployment.
+
 ## Applying the Lycheetah Framework to Clinical AI Deployment in Aotearoa New Zealand
 ### Status: [PROPOSAL] — For engagement with Manatū Hauora, Te Whatu Ora, and NAIAEAG
 ### March 2026 | Lycheetah Framework
@@ -7,7 +10,7 @@
 
 ## KEY MESSAGES
 
-- Aotearoa New Zealand's emerging AI healthcare governance landscape has the regulatory components (TPA, Privacy Act, NAIAEAG evaluation process) but lacks a constitutional layer specifying what AI systems must be before they are evaluated against specific standards.
+- Aotearoa New Zealand's emerging AI healthcare governance landscape has privacy law and healthcare oversight mechanisms but lacks a constitutional layer specifying what AI systems must be before they are evaluated against specific standards.
 - This document proposes five fit-for-purpose constitutional standards, derived from the Lycheetah Framework, that are specifically adapted for healthcare AI deployment in Aotearoa.
 - The standards are designed to be layered on top of, not in competition with, existing oversight mechanisms.
 - All standards involving tikanga Māori governance principles are [PROPOSAL] pending Kāi Tahu and iwi partnership validation.
@@ -25,7 +28,7 @@ This document proposes to be one of those early examples.
 
 The specific gap this document addresses is the **constitutional layer** — the framework that specifies what properties an AI system must exhibit before it enters the evaluation process. The existing landscape covers:
 
-- **Product safety** — Therapeutic Products Act 2023 (Software as Medical Device pathway)
+- **Product safety** — the Therapeutic Products Act 2023 was repealed on 18 December 2024; this draft cannot cite it as an operative Software as Medical Device pathway. See [NZ Legislation](https://www.legislation.govt.nz/act/public/2023/0037/latest/link.aspx?id=LMS708428). Current requirements require a separate use-case-specific review.
 - **Data rights** — Privacy Act 2020, Health Information Privacy Code 2020
 - **Māori data** — Te Mana Raraunga principles, Te Ara Tika
 - **Operational review** — NAIAEAG evaluation process for national AI proposals
@@ -127,7 +130,7 @@ Whakapapa disclosure does not solve the data quality problem. It makes the knowl
 
 This aligns with the PMCSA report's call for "transparent protocols for health data access" (R18) but extends it: transparency about data access is not only a condition of future data use — it is a retrospective accountability requirement for data already used in training.
 
-**Claim status: [PROPOSAL] — Māori governance aspects require co-development with Kāi Tahu and Te Mana Raraunga. The technical disclosure framework is [ACTIVE] as a documentation standard.**
+**Claim status: [PROPOSAL] — the technical disclosure framework is a draft documentation proposal, not a validated clinical or regulatory standard. Cultural-governance proposals require permissioned co-development; no partnership or endorsement is established here.**
 
 ---
 
@@ -191,7 +194,7 @@ The five standards proposed here are designed to operate as a **constitutional l
 
 | Existing Framework | Role | Lycheetah Standard Layer |
 |---|---|---|
-| TPA (Therapeutic Products Act) | Product safety pathway for Software as Medical Device | AURA invariants I–VII (Standard 2) provide pre-regulatory requirements that inform what "safe and effective" means |
+| Therapeutic Products Act 2023 (repealed) | Repealed 18 December 2024; not a current approval pathway | No AURA predicate establishes current regulatory compliance or clinical safety; see the legal correction above |
 | NAIAEAG evaluation process | Review of specific AI proposals for national health services | Clinical Honesty Disclosure (Standard 1) provides a structured disclosure template compatible with NAIAEAG review criteria |
 | Privacy Act 2020 / HIPC 2020 | Data rights framework | Training Data Provenance (Standard 3) extends data rights into the training data domain — beyond what the Privacy Act currently covers |
 | Te Mana Raraunga | Māori data sovereignty principles | Whakapapa Disclosure (Standard 3) operationalises Te Mana Raraunga principles at AI system deployment |

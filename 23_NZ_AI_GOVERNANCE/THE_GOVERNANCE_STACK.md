@@ -1,8 +1,11 @@
 # THE GOVERNANCE STACK
+
+> [INTERPRETIVE] **Background research — requires reconciliation with the current NZ proposal.** Reviewed 19 October 2026. The current policy entry is [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). This document supplies research context, not an adopted standard, certification service, legal authority or verified deployment.
+
 ## How Seven Components Form One Architecture
 ### Lycheetah Framework | Aotearoa Application Layer | March 2026
 
-> **Status:** [ACTIVE — connects existing implemented components]
+> **Status:** [BACKGROUND PROPOSAL — no integrated deployment; NZ policy direction superseded]
 > **Audience:** Ministers, funders, policy advisors, researchers
 > **Read time:** 15 minutes
 
@@ -18,8 +21,9 @@ is a disclosure form. A bias audit without a coherence standard is a snapshot
 with no consequences.
 
 What NZ can build — and what this document describes — is a **stack**.
-Seven components. Each doing what the others cannot. Together: the most complete
-AI accountability architecture in the world.
+Seven proposed components. The March draft aimed to connect them into a broader
+accountability design. Completeness, superiority over other approaches and an
+integrated deployment have not been established.
 
 ---
 
@@ -208,10 +212,10 @@ mathematical thresholds derived from a formal framework. This is genuinely new.
 
 | Document | Status | What to do with it |
 |----------|--------|-------------------|
-| `COMMUNITY_AI_WOF.md` | [ACTIVE] | Share with MBIE, AI Forum NZ, sympathetic MPs |
-| `THREE_WORLDS_DISCLOSURE_STANDARD.md` | [ACTIVE] | Share with AI vendors — early adoption builds credibility |
-| `WHAKAPAPA_DISCLOSURE_STANDARD.md` | [ACTIVE] | Share with government procurement — ministerial directive pathway |
-| `MATARIKI_AUDIT_STANDARD.md` | [ACTIVE] | Share with agencies ahead of Matariki 2026 |
+| `COMMUNITY_AI_WOF.md` | [HISTORICAL PROPOSAL] | Historical outreach idea; current proposal requires review |
+| `THREE_WORLDS_DISCLOSURE_STANDARD.md` | [HISTORICAL PROPOSAL] | Historical adoption suggestion; not current approval |
+| `WHAKAPAPA_DISCLOSURE_STANDARD.md` | [HISTORICAL PROPOSAL] | Historical procurement suggestion; not verified legal authority |
+| `MATARIKI_AUDIT_STANDARD.md` | [HISTORICAL PROPOSAL] | Historical March 2026 suggestion; not a current deadline |
 | `ANCESTOR_VOTE_PLATFORM.md` | [SCAFFOLD] | Share with councils considering significant infrastructure decisions |
 | `MOANA_AI_SPECIFICATION.md` | [CONJECTURE] | Share with MFAT Pacific Division, Pacific Island Forum contacts |
 | `MATAURANGA_ADVERSARIAL_PROBE.md` | [SCAFFOLD] | Share with Te Tumu at Otago — this is the research proposal |

@@ -9,6 +9,31 @@ history, which was the only changelog until now.
 
 ## [Unreleased]
 
+### Current corpus entrances and synthesis — 19–20 October 2026
+
+- Rebuilt the main README, five-minute brief and complete 50-area repository map;
+  added a current whole-framework synthesis connecting knowledge revision,
+  meaning/continuity, bounded action, learning and creative work.
+- Refreshed foundational, implementation, paper, AI-reading and website guides.
+  Added archive, package, examples, evidence, tests and empirical-design READMEs.
+  Source ownership, historical plans, generated exports and component versions
+  now have explicit routes and distinct statuses.
+- Reconciled all 37 top-level NZ Markdown documents with the current six-rights
+  proposal: 26 historical notices, nine background candidates, one current proposal
+  and its guide. Corrected unestablished certification/adoption/endorsement claims,
+  conditional convergence language and the repealed Therapeutic Products Act link.
+  Refreshed homepage/NZ website sources; these source changes await normal merge.
+- Replaced contradictory August capability summaries with the actual dated
+  dataset distinctions and boundaries. Preserved original research, failures,
+  stories and all 225 intake-manifest destinations. Three compatibility pages
+  repair original handoff navigation without changing imported bytes or weakening
+  the ordinary link gate.
+- The 71-row claim register and 22 count mirrors agree; its two existing tests
+  pass, including deliberately incorrect-count detection. A parallel AI patch
+  review challenged source routes, metadata, evidence language and preservation.
+  Full scope, browser witness and limits are in
+  `28_DEFENSE/REPO_ENTRY_AUDIT_2026-10-19.md`.
+
 ### Public reading site — 19 October 2026
 
 - Published a public reading page for Earned Light and Sovereign Will, with

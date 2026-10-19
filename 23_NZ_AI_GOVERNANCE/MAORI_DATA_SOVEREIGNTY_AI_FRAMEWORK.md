@@ -1,4 +1,7 @@
 # TE TINO RANGATIRATANGA O NGĀ RARAUNGA
+
+> [DRAFT] **Historical draft — superseded as the current NZ governance direction.** Reviewed 19 October 2026. Start with [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). The original text remains below for provenance; its status labels, dates, outreach suggestions and capability claims are historical, not current approval or evidence.
+
 ## Māori Data Sovereignty in AI Systems — A Governance Framework
 ### Responding to PMCSA Recommendations R14, R15, R16 (2023)
 ### Lycheetah Framework | March 2026

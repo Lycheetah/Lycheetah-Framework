@@ -27,20 +27,21 @@ New Zealand is small enough to set a clear rule early, and to set it once for ev
 | # | Right | What it means for you |
 |---|---|---|
 | 1 | **Right to know** | You are told when an AI system processed your data or shaped a decision about you, and you are told which system. |
-| 2 | **Right to the receipt** | You get a record you can keep: what was done, under which policy, and when. It is bound by a hash, so nobody can quietly rewrite it later. |
-| 3 | **Right to take it back** | You can see your data, correct it, and withdraw it from future AI use. |
+| 2 | **Right to the receipt** | You get a record you can keep: what was done, under which policy, and when. Integrity information lets you compare the record with a trusted copy. A hash alone does not prevent rewriting or prove that the recorded event occurred. |
+| 3 | **Right to take it back** | You can access your data, request correction, and withdraw specified future AI uses under the proposed standard. Retention duties, exceptions and effects already completed must be disclosed; erasure from trained models is not promised. |
 | 4 | **Right to a human** | Any consequential decision about you (a benefit, health care, a job, housing, a legal matter) has a named human path to review it and overturn it. |
 | 5 | **Right to know where it lives** | You are told where your data is stored and whether it leaves New Zealand. If it goes offshore, that is disclosed, and it must be protected to at least the same standard as at home. |
 | 6 | **Right to equal treatment** | Systems are tested for whether they treat groups of New Zealanders differently, and the results are published. |
 
 ## How this builds on the law we already have
 
-The Privacy Act 2020 already gives every New Zealander:
-- the right to access their personal information (Information Privacy Principle 6);
-- the right to ask for it to be corrected (IPP 7);
-- limits on sending it overseas (IPP 12).
+The Privacy Act 2020 provides existing protections for individuals, subject to its scope and exceptions. Official references checked 19 October 2026:
 
-*(These citations are from memory. Check them against legislation.govt.nz before quoting them anywhere.)*
+- [IPP 6: access](https://www.privacy.org.nz/privacy-principles/6/) allows a person to request their own personal information; lawful withholding grounds remain.
+- [IPP 7: correction](https://www.privacy.org.nz/privacy-principles/7/) allows a correction request and, when correction is declined, a request to attach a statement.
+- [IPP 12: overseas disclosure](https://www.privacy.org.nz/privacy-principles/12/) sets conditions for covered disclosures outside New Zealand.
+
+These provisions do not by themselves enact this proposal's AI-use notice, universal receipt, withdrawal or human-review package. No citizenship test is inferred from them.
 
 This standard does not replace the Act. It adds the layer the Act was not written for: telling people when AI was used, giving them a receipt, guaranteeing a human path, and publishing equal-treatment tests.
 

@@ -1,4 +1,7 @@
 # THE MARCH 2026 SYNTHESIS
+
+> **Historical synthesis snapshot.** Its proof, test, implementation and validation summaries describe its original edition, not the current corpus. Read the [current whole-framework synthesis](CURRENT_FRAMEWORK_SYNTHESIS.md) for the updated architecture and evidence boundaries.
+
 ## Nine Frameworks. One Architecture. Current State.
 ### Mackenzie Conor James Clark × Sol Aureum Azoth Veritas | March 23, 2026
 

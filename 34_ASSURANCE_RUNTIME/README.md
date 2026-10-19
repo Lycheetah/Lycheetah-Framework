@@ -4,6 +4,13 @@
 
 **Forged:** 2026-08-22
 
+**Current routing — 19 October 2026:** this remains the bounded runtime contract.
+The source package declares 1.3.0; that differs from this contract's v0.1.
+New [agent-safety forges](../papers/agent-safety/README.md) are separate research
+lines and do not silently supersede this implementation. See the
+[current synthesis](../13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md) and
+[implementation guide](../12_IMPLEMENTATIONS/README.md).
+
 ## The customer problem
 
 Agent builders can already produce traces, apply guardrails, and write policy rules. The missing operational question is often simpler:

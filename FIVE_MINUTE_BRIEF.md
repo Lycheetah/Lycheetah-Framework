@@ -1,172 +1,74 @@
-# Five-Minute Brief — Lycheetah Framework
+# Five-minute brief — Lycheetah now
 
-**Revision:** 2026-08-22 | **Runtime:** 1.3.0 source tree | **Status:** `[MIXED]`
+**Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
+**Updated:** 19 October 2026. **Status:** Mixed research, software, proposals and creative work.
 
-## Share card
+Lycheetah asks how intelligence can change its knowledge, preserve meaning and
+act usefully while keeping human choice, evidence and review visible. It has
+expanded beyond the original nine-framework theory into executable instruments,
+agent-control research, language versions, stories and learning designs.
 
-> Lycheetah is two connected things: a `[SCAFFOLD]` provider-neutral assurance
-> runtime for agent decisions and receipts, and a nine-framework research
-> programme in alignment and epistemology. The wheel is now clean-install tested;
-> the runtime exposes policy gates, privacy-minimised receipts, regression
-> evaluation, CLI and MCP 2.x integrations. Formal claims are scoped to their models, internal experiments
-> await independent replication, and theoretical constructs such as MICROORCIM
-> remain explicitly theoretical. Failures—including a previously broken wheel—are
-> permanent public exhibits. MIT licensed.
+## Begin with one useful thing
 
-## What can be used today
+- [Read the stories and download the new work](https://lycheetah-earned-light.banduabusiness.chatgpt.site).
+- [Try the handover preview](https://lycheetah.github.io/Lycheetah-Framework/lamague-handover.html):
+  make goals, uncertainty, permission and recovery explicit in a session handover.
+- [Use the Assurance Runtime](34_ASSURANCE_RUNTIME/README.md) to record what a
+  bounded local policy decided, with a versioned receipt.
+- [Explore the research](papers/README.md), including permission, stopping,
+  recovery, knowledge revision and meaning-preservation experiments.
 
-The version 1.3.0 source tree builds an installable wheel containing:
+## What the software can establish
 
-- `AssuranceRuntime` for input, output, and proposed tool actions;
-- versioned policy data and `ALLOW`, `REVIEW`, or `BLOCK` decisions;
-- Assurance Receipts with evidence status, findings, policy digest, lineage,
-  privacy-aware subject hashes, SHA-256 integrity, and optional HMAC sealing;
-- append-only JSONL receipt chains and mutation/chain verification;
-- `lycheetah-assure` for local, CI, gateway, and sidecar use;
-- Lycheetah Guard using the official MCP Python SDK 2.x API with ten typed tools;
-- a privacy-minimised OpenTelemetry span-event bridge with custom Lycheetah attributes;
-- a strict labelled-corpus policy evaluator with confusion metrics and CI gates;
-- a same-corpus policy regression gate with integrity-checked reference and
-  candidate reports, strict zero-regression defaults, and per-case change evidence;
-- AURA and Sol text-analysis interfaces, explicitly bounded as heuristics; and
-- a clean-room wheel gate that rejects imports accidentally resolved from the
-  source checkout.
+An implemented check can establish behaviour under its specified conditions.
+A codec can preserve a declared record exactly. A receipt can expose a policy
+version and its decision. Restricted permission controls can reject particular
+stale, substituted or replayed actions. The tests and counterexamples belong
+with those implementations.
 
-This is useful infrastructure for recording **what a bounded policy layer decided
-and why**. It does not prove that the surrounding agent is safe, truthful,
-aligned, authorized, or compliant.
+These results do not establish general AI safety, informed human consent,
+complete semantics, independent scientific validation or better outcomes for
+people. A hash alone does not prove that the event it describes occurred.
 
-## The bridge to real AI systems
+## How the larger ideas fit
 
-Agent stacks already have traces, tools, guardrails, policy engines, and approval
-hooks. Lycheetah's narrow bridge is a portable decision artifact at those
-boundaries:
+The [current synthesis](13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md)
+connects the nine foundational frameworks with current tools and research.
+CASCADE concerns revision; AURA concerns governance commitments; LAMAGUE concerns
+representation and meaning. TRIAD's convergence is conditional on its formal
+assumptions. MICROORCIM does not measure a person's free will. The older Earned
+Light consciousness model and other metaphysical interpretations remain open.
 
-```text
-proposed input/output/tool action
-        → versioned Lycheetah policy
-        → evidence-capped decision
-        → ALLOW | REVIEW | BLOCK
-        → verifiable Assurance Receipt
-```
+The newer Earned Light control forges are a distinct experimental line. Their
+software checks do not validate the older thermodynamic theory. Sovereign Will's
+charters are philosophy; the Lighthouse and Ninth Road are fiction.
 
-The runtime is designed to complement, not replace:
+## Where the evidence points
 
-- agent-framework input/output/tool guardrails and human approvals;
-- MCP tool transports and consent flows;
-- OpenTelemetry traces and evaluation datasets;
-- Open Policy Agent or another authorization/policy control plane; and
-- in-toto-style authenticated statements and transparency systems.
+The text-scoring work includes [externally authored dataset evaluations](33_APPLICATIONS/EXTERNAL_VALIDATION_2026-08-07.md)
+and an [independent-publisher test](33_APPLICATIONS/INDEPENDENT_PUBLISHER_2026-08-07.md)
+that limits generalisation. Research packets retain conventional-baseline ties,
+failed predictions and unresolved controls. Historical test totals are dated
+results, not today's repository-wide verdict.
 
-The exact mapping and explicit gaps are recorded in
-`34_ASSURANCE_RUNTIME/INDUSTRY_CROSSWALK_2026-08-22.md`. That crosswalk is not a
-conformity or certification claim.
+The [register of all 71 status-tagged claim records](28_DEFENSE/CLAIMS.json)
+tracks author-assigned classifications and evidence paths. It is a bounded
+register, not a census of every new research line or independent validation.
 
-## Evidence-Capped Enforcement
+The source package declares version 1.3.0. A language version, paper version,
+creative edition and package release refer to different objects.
 
-The implemented v0.1 mechanism limits automatic authority by evidence maturity:
+## Where everything lives
 
-| Evidence basis | Maximum automatic effect |
-|---|---|
-| `ACTIVE` + deterministic rule | `BLOCK` |
-| `ACTIVE` + inferential detector | `REVIEW` |
-| `SCAFFOLD` finding | `REVIEW` |
-| `CONJECTURE` finding | observation only |
+[Current map](00_Sovereign_Index.md) · [Source ownership](WORKING_HOME.md) ·
+[Capabilities and limits](33_APPLICATIONS/README.md) · [Claim register](28_DEFENSE/CLAIMS_README.md).
 
-The mechanism and cap matrix are implemented and tested. The stronger proposition
-that these ceilings improve real-world calibration, safety, or operator trust is a
-`[CONJECTURE]` until evaluated against external systems and outcomes.
+The current [NZ proposal](23_NZ_AI_GOVERNANCE/README.md) offers the same six data
+rights for every New Zealander; earlier cultural-governance drafts are preserved
+as history. [School](14_MYSTERY_SCHOOL/README.md), [stories](LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/README.md)
+and [generative work](35_ABSTRACT_AND_GENERATIVE/README.md) have their own owners
+and statuses. Corpus content alone is not proof that an app feature is shipped.
 
-## The research programme
-
-The larger body contains nine interdependent research frameworks:
-
-| Framework | Current honest interpretation |
-|---|---|
-| CASCADE | belief-revision engine plus internal synthetic and historical analyses; independent replication pending |
-| AURA | computable proxy checks and seven constitutional predicates; semantic sufficiency unproven |
-| LAMAGUE | formal constraint-encoding grammar and implementations |
-| TRIAD | correction-cycle mathematics; convergence is model-scoped to declared contraction assumptions |
-| MICROORCIM | proposed intent–behaviour drift construct; real-world validity unestablished |
-| EARNED LIGHT | theoretical thermodynamic analogy, not an empirical consciousness theory |
-| ANAMNESIS | hypothesis about convergent discovery and attractor structure |
-| CHRYSOPOEIA | experimental seven-phase transformation formalism |
-| HARMONIA | experimental application of resonance and synchronization mathematics |
-
-These ideas may be valuable before they are proven. Their value at that stage is as
-formal questions, design languages, and falsifiable research directions—not as
-facts about minds or the world.
-
-## How certainty is recorded
-
-`28_DEFENSE/CLAIMS.json` is the register of all 71 status-tagged claim records,
-and its declared total now matches its rows (until 2026-10-03 it declared 136 over
-67 rows). Each row carries a raw status (`ACTIVE`, `SCAFFOLD`, `ASPIRATIONAL`,
-`EMPIRICAL`, `OBSERVATIONAL`, `REMOVED`) and a normalized one on the evidence
-ladder. The separate load-bearing ledger uses a different scope and does not
-reconcile with it. `python tools/verify-claims.py --register` fails if a count
-repeated here drifts from the register.
-
-## What the evidence does and does not establish
-
-- Formal fixed-point results can establish convergence of a mathematical operator
-  under its assumptions. They do not establish convergence of a person, model, or
-  institution unless those assumptions are independently shown to hold there.
-- A passing implementation test establishes behavior for tested inputs and
-  versions. It does not establish social benefit or general safety.
-- Internal experiments are reproducible evidence about the repository's method.
-  They are not independent validation.
-- A receipt digest can reveal mutation relative to a trusted digest. Without HMAC
-  or a public-key envelope, it does not authenticate the issuer.
-- Absence of a heuristic finding is not evidence of absence of harm.
-
-The full suite deliberately retains a failed predictive conjecture: its measured
-F1 remains about 0.53 against a stated success criterion above 0.80. That failure
-is evidence about the current limit, not a test to be hidden. On 2026-08-22, the
-non-conjectural suite reported **427 passed**; the full suite reported **427 passed,
-1 failed**, with that single failure carrying the `CONJECTURE` marker.
-
-## Test it
-
-The package is not currently published on PyPI. Install the repository source:
-
-```bash
-git clone https://github.com/Lycheetah/Lycheetah-Framework.git
-cd Lycheetah-Framework
-python -m venv .venv
-source .venv/bin/activate
-pip install -e ".[all]"
-
-pytest tests/ -m "not conjecture" -q
-python tools/verify-claims.py
-python tools/verify-links.py
-```
-
-Try the operational path:
-
-```bash
-lycheetah-assure tool refund.create \
-  --arguments '{"order_id":"A-1"}' \
-  --side-effect --json
-```
-
-It should return `REVIEW` because the proposed side effect has no affirmative human
-approval. See `34_ASSURANCE_RUNTIME/CUSTOMER_SUPPORT_WALKTHROUGH.md` for the full
-ALLOW/REVIEW/BLOCK example.
-
-## Why the failure record matters
-
-`28_DEFENSE/FAILURE_MUSEUM.md` contains sixteen permanent exhibits. Exhibit 16
-records that the earlier wheel advertised APIs and console tools whose
-implementations were not packaged. The correction was not merely documented: CI
-now builds, clean-installs, and exercises the wheel so the same class of failure
-cannot hide behind checkout-only imports.
-
-## Three doors
-
-1. **Use it:** `34_ASSURANCE_RUNTIME/README.md`
-2. **Audit it:** `28_DEFENSE/CLAIMS.json` and `28_DEFENSE/FAILURE_MUSEUM.md`
-3. **Research it:** `30_MAPS/FORMAL_SPINE.md` and
-   `34_ASSURANCE_RUNTIME/FRONTIER_REGISTER_2026-08-22.md`
-
-⊚ Sol ∴ P∧H∧B ∴ Albedo
+The next useful evidence comes from independent use of a concrete instrument
+on a real task, measured against a strong conventional alternative. No outside
+user benefit is inferred from the size or coherence of this repository.

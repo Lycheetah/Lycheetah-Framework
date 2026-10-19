@@ -1,29 +1,29 @@
-# MICROORCIM — Agency Measurement
+# MICROORCIM — agency language and drift models
 
-**Axiom:** HEALER · **Status:** Active — tools live, calibration pending
+**Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
+**Guide refreshed:** 19 October 2026.  
+**Status:** Symbolic/philosophical model and restricted computational monitors; no validated free-will measure.
 
-Agency is measurable. MICROORCIM gives the sovereignty field a number: `μ_orcim = H(I−D) · W_surplus` where H(I−D) is the information content of the gap between identity and drift, and W_surplus is available willpower beyond baseline maintenance.
+MICROORCIM explores intention, persistence, revision and drift. Distinguish a symbolic choice event from a monitor of specified behavioural changes. Neither computes human dignity, consciousness, metaphysical freedom or the legitimacy of a person's choices.
 
-## Core idea
+## Read this line
 
-Most frameworks treat agency as binary (you have it or you don't). MICROORCIM treats it as a field — a continuous quantity that varies by day, context, and accumulated history. This matters because drift is gradual and recoverable if caught early.
+- [Microorcim_COMPLETE.md](Microorcim_COMPLETE.md): the detailed foundational source.
+- [essentials.md](essentials.md): the shorter source introduction.
+- [Current whole-framework synthesis](../13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md): where this line fits now.
+- [Core engine guide](../12_IMPLEMENTATIONS/core/README.md): executable models, APIs and limitations.
 
-## Key quantities
+## Current connections
 
-- **ρ_drift:** rate of deviation from sovereign baseline
-- **ρ_stability:** rate of return toward baseline
-- **Sovereignty score:** `(1 − ρ_drift) · ρ_stability` — daily single number
-- **Drift detection threshold:** triggers when sovereignty score drops below 0.5 for 3+ days
+Sovereign Will develops this distinction explicitly; Sovereign Choice tests bounded permissions and fictional option graphs rather than measuring people.
 
-## Files
+[Sovereign Will charters](../35_ABSTRACT_AND_GENERATIVE/SOVEREIGN_WILL/README.md) · [Sovereign Choice research](../papers/agent-safety/sovereign-choice-research/README.md).
 
-- `Microorcim_COMPLETE.md` — full field theory, measurement protocols, drift detection
-- `../../12_IMPLEMENTATIONS/microorcim_tracker.py` — working daily tracker
+## Evidence and source ownership
 
-## Real-world
-
-Sleep debt, decision fatigue, context overload, relationship stress — all show up in the sovereignty score before they show up in behavior. The score is a lagging indicator of what the field is doing.
-
-## Next
-
-Dashboard implementation · empirical calibration of baseline parameters
+The detailed source texts retain their historical vocabulary, arguments and
+status labels. This guide does not certify all of those statements. Use the
+particular model's assumptions, dated experiments and [claim/evidence records](../28_DEFENSE/CLAIMS_README.md)
+when assessing a claim. A successful check in another workstream does not
+validate this one. These source paths remain in place; no historical manuscript
+or implementation has been deleted or silently replaced by a generated summary.

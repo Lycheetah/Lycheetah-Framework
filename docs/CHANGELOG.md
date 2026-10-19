@@ -1,5 +1,22 @@
 # Framework website changelog
 
+**Register:** OBSERVATIONAL source-change log; checks retain their stated scope.
+
+## Current entrances and NZ proposal — 19–20 October 2026
+
+- Rebuilt the homepage entrance around tools, research and stories, with direct
+  links to the public reader, handover preview, current synthesis and full map.
+  Repaired all nine framework routes and the manifesto route; removed historical
+  global test totals, universal validation and adoption implications.
+- Replaced the superseded four-standard NZ entrance with the current six-rights
+  proposal, actual tool boundaries, official legal-context sources and a collapsed
+  historical-draft section. The proposal is not law or an adopted national scheme.
+- Refreshed source ownership documentation. Local Chromium desktop/390px checks
+  cover navigation, content, overflow, menus and historical disclosure. Screenshots
+  were inspected; this is local source evidence, not a Pages deployment receipt.
+  Firefox, physical devices, outside users and hosted publication remain untested
+  for this source batch. See `28_DEFENSE/REPO_ENTRY_AUDIT_2026-10-19.md` in the repo.
+
 ## Research preview — 18–19 October 2026
 
 - Added an own-task handover form, author-reviewed readable/JSON exports,

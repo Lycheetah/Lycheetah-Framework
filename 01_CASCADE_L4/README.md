@@ -1,27 +1,29 @@
-# CASCADE — Knowledge Reorganization
+# CASCADE — knowledge and revision
 
-**Axiom:** BEACON · **Status:** Complete
+**Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
+**Guide refreshed:** 19 October 2026.  
+**Status:** Executable models and research; external truth is not guaranteed by internal coherence.
 
-Knowledge follows geodesics. When truth pressure Π exceeds threshold, belief reorganizes along the shortest path to a more accurate foundation — the same way water finds the lowest point.
+CASCADE studies how represented knowledge can be reorganised when evidence changes. Its implementations, synthetic examples and formal arguments describe particular models. A threshold or coherent state does not by itself identify what is true in the world.
 
-## Core idea
+## Read this line
 
-Truth pressure: `Π = (Evidence × Persistence) / Surprise`
+- [CASCADE_COMPLETE.md](CASCADE_COMPLETE.md): the detailed foundational source.
+- [essentials.md](essentials.md): the shorter source introduction.
+- [Current whole-framework synthesis](../13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md): where this line fits now.
+- [Core engine guide](../12_IMPLEMENTATIONS/core/README.md): executable models, APIs and limitations.
 
-When Π > 1.2, a cascade event fires: the knowledge pyramid reorganizes, demoting false foundations and elevating accurate ones. The compression factor λ = 0.85 governs demotion magnitude.
+## Current connections
 
-## Why it matters
+Current continuations include Truth Pressure and the Hybrid Gateway; they retain their own versions and comparisons.
 
-This is the mechanism that makes learning irreversible at the right depth. Memorization can be forgotten. A cascade cannot — the geometry of what you know has changed.
+[Truth Pressure](../TRUTH_PRESSURE/README.md) · [Hybrid Gateway](../papers/ai-futures/hybrid-gateway/README.md).
 
-## Files
+## Evidence and source ownership
 
-- `CASCADE_COMPLETE.md` — full framework: pyramid model, truth pressure, geodesic proofs, Python implementation, CASCADE IN NATURE (8 domains)
-
-## Real-world validation
-
-Phase transitions (physics) · synaptic consolidation (neuroscience) · paradigm shifts (science history) · market corrections (economics) · immune memory (biology). The same reorganization structure appears across all of them.
-
-## Next
-
-ArXiv submission · k₁–k₄ master equation calibration from `cascade_simulation_results.json`
+The detailed source texts retain their historical vocabulary, arguments and
+status labels. This guide does not certify all of those statements. Use the
+particular model's assumptions, dated experiments and [claim/evidence records](../28_DEFENSE/CLAIMS_README.md)
+when assessing a claim. A successful check in another workstream does not
+validate this one. These source paths remain in place; no historical manuscript
+or implementation has been deleted or silently replaced by a generated summary.

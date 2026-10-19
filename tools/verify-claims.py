@@ -196,7 +196,6 @@ EITHER = r"(?:load-bearing claims|claim records)"
 MIRRORS = {
     "README.md": [
         (r"contains (\d+) structured claim records", ("total",)),
-        (r"The register holds (\d+) claim records", ("total",)),
         (r"\| \*\*ACTIVE\*\* \| (\d+) \|", ("ACTIVE",)),
         (r"\| \*\*SCAFFOLD\*\* \| (\d+) \|", ("SCAFFOLD",)),
         (r"\| \*\*CONJECTURE\*\* \| (\d+) \|", ("CONJECTURE",)),
