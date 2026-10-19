@@ -9,6 +9,18 @@ history, which was the only changelog until now.
 
 ## [Unreleased]
 
+### Public reading site — 19 October 2026
+
+- Published a public reading page for Earned Light and Sovereign Will, with
+  complete Lighthouse and Ninth Road stories, the earlier Lighthouse edition,
+  a plain-language research introduction and two downloadable full bundles.
+- Added maintained source and deterministic source-checked packaging under
+  `examples/earned_light_reading/`; the existing story manuscripts stay canonical.
+- Fifteen local Chromium checks passed, including direct story navigation,
+  desktop/390px layout, text sizing and night reading. Screenshots were inspected.
+  The public Sites deployment succeeded with public access; its source is separate
+  from the pending Framework PR. No outside reader result is claimed.
+
 ### Earned Light, Sovereign Will and original narratives — 19 October 2026
 
 - Imported two research/story handoffs with a 225-file provenance manifest,

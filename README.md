@@ -20,6 +20,7 @@ the first time. Those results narrowed its claims; the measurements remain below
 
 | In a minute | Go here |
 |---|---|
+| 📚 **Read Earned Light & Sovereign Will** | [Two complete stories, open research and both downloads](https://lycheetah-earned-light.banduabusiness.chatgpt.site) |
 | ▶ **Try it in your browser** | [Alignment Playground](https://lycheetah.github.io/Lycheetah-Framework/playground.html) |
 | ↪ **Inspect what survives a handover** | [Try the browser preview](https://lycheetah.github.io/Lycheetah-Framework/lamague-handover.html) · [reproduce it and inspect the limits](examples/meaning_handover/README.md) |
 | ⌨ **Run it on your machine** | [Quick start](#quick-start) · [command-line tools](#the-command-line-tools) |
