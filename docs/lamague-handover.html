@@ -1,0 +1,370 @@
+<!doctype html>
+<!-- Source template. Generate docs/lamague-handover.html with demo.py; do not edit the generated copy. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An offline LAMAGUE demonstration: inspect what changes when uncertainty, permission or a speaker's objection is lost in a handover.">
+  <title>What survives a handover? · Lycheetah</title>
+  <style>
+    :root { color-scheme: light; --paper:#f5f2e9; --ink:#242821; --muted:#535c50; --line:#d1d4c6; --green:#31533d; --gold:#b49a55; --red:#883f31; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:17px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    a { color:var(--green); text-underline-offset:4px; }
+    button,select,input,textarea { font:inherit; min-height:46px; }
+    button,a,select,summary { -webkit-tap-highlight-color:transparent; }
+    :focus-visible { outline:3px solid #795e16; outline-offset:4px; }
+    .skip { position:absolute; top:-100px; left:16px; background:white; padding:10px; z-index:2; }
+    .skip:focus { top:8px; }
+    .wrap { width:min(1120px,calc(100% - 64px)); margin:auto; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:27px 0; border-bottom:1px solid var(--line); }
+    .brand { font-size:13px; font-weight:750; letter-spacing:.17em; text-decoration:none; color:var(--ink); }
+    .edition { font-size:12px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; }
+    .hero { display:grid; grid-template-columns:1fr 275px; gap:52px; align-items:end; padding:62px 0 48px; }
+    .eyebrow { color:var(--green); font-size:12px; font-weight:750; letter-spacing:.15em; text-transform:uppercase; margin:0 0 16px; }
+    h1 { font-family:Georgia,"Times New Roman",serif; font-size:clamp(43px,6.7vw,78px); line-height:1.05; font-weight:400; letter-spacing:-.055em; margin:0 0 24px; max-width:760px; }
+    .deck { color:var(--muted); max-width:640px; font-size:19px; margin:0; }
+    .note { border-left:2px solid var(--gold); padding-left:20px; color:var(--muted); font-size:14px; }
+    .note strong { color:var(--ink); display:block; margin-bottom:7px; }
+    .intro-line { border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:15px 0; font-size:13px; color:var(--muted); }
+    section { margin:38px 0 48px; }
+    .section-title { display:flex; align-items:baseline; gap:13px; margin:0 0 20px; }
+    .number { font-size:12px; color:var(--green); font-weight:750; }
+    h2 { font-size:23px; line-height:1.3; font-weight:650; margin:0; letter-spacing:-.025em; }
+    h3 { font-size:17px; margin:0 0 8px; }
+    p { margin:0 0 14px; }
+    .workbench { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    .source,.received { border:1px solid var(--line); border-radius:12px; overflow:hidden; background:#fcfaf5; }
+    .panel-head { background:#e9ecdf; border-bottom:1px solid var(--line); padding:16px 23px; font-size:13px; font-weight:650; }
+    .dialogue { padding:4px 23px; }
+    .turn { padding:20px 0; border-bottom:1px solid var(--line); }
+    .turn:last-child { border-bottom:0; }
+    .speaker { display:flex; justify-content:space-between; gap:16px; font-size:12px; font-weight:750; color:var(--green); margin-bottom:7px; }
+    .turn-id { color:var(--muted); font-weight:400; }
+    .turn p { font-size:15px; margin:0; }
+    .mapping { font-size:12px; color:var(--muted); padding:15px 23px; border-top:1px solid var(--line); }
+    .control { padding:19px 23px; border-bottom:1px solid var(--line); }
+    label { display:block; font-size:13px; font-weight:650; margin-bottom:8px; }
+    select { width:100%; background:white; border:1px solid #89937e; border-radius:6px; color:var(--ink); padding:9px 34px 9px 11px; max-width:100%; }
+    .result { padding:21px 23px; }
+    .status { display:inline-block; font-size:11px; font-weight:750; letter-spacing:.08em; text-transform:uppercase; padding:3px 9px; border:1px solid currentColor; border-radius:4px; color:var(--green); margin-bottom:12px; }
+    .changed .status { color:var(--red); }
+    .result h3 { font-size:23px; letter-spacing:-.025em; }
+    .count { color:var(--muted); font-size:14px; }
+    .change { margin-top:17px; padding-top:17px; border-top:1px solid var(--line); }
+    .value-label { font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-top:12px; }
+    pre,code { font:12px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace; }
+    pre { margin:5px 0 10px; white-space:pre-wrap; overflow-wrap:anywhere; background:#eeeee6; padding:12px; border-radius:5px; }
+    .codec-note { margin:18px 0 0; color:var(--muted); font-size:12px; }
+    .footnote { font-size:13px; color:var(--muted); }
+    .size-head { display:flex; justify-content:space-between; gap:24px; align-items:end; }
+    .budget { min-width:200px; }
+    .table-scroll { overflow-x:auto; margin:18px 0; }
+    table { border-collapse:collapse; width:100%; font-size:14px; text-align:left; }
+    th { color:var(--muted); font-size:11px; font-weight:650; text-transform:uppercase; letter-spacing:.06em; }
+    th,td { padding:16px 12px; border-bottom:1px solid var(--line); }
+    th:first-child,td:first-child { padding-left:0; }
+    .fit { color:var(--green); font-weight:650; }
+    .no-fit { color:var(--red); }
+    .conclusion { background:#e9ecdf; padding:17px 20px; border-radius:7px; font-size:14px; }
+    .details-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    details { border-top:1px solid var(--line); padding:16px 0; font-size:14px; }
+    summary { cursor:pointer; font-weight:650; min-height:44px; padding:8px 0; }
+    details p,details li { color:var(--muted); }
+    ul,ol { padding-left:21px; }
+    li { margin:9px 0; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; }
+    button { cursor:pointer; color:var(--green); background:transparent; border:1px solid var(--green); border-radius:5px; padding:10px 15px; font-size:13px; font-weight:650; }
+    button:hover { background:#e9ecdf; }
+    .study { border-top:1px solid var(--line); padding-top:28px; }
+    .study p { max-width:760px; color:var(--muted); font-size:15px; }
+    .jump { display:inline-block; margin-top:19px; font-size:14px; font-weight:650; }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px 24px; margin:22px 0; }
+    .wide { grid-column:1 / -1; }
+    input:not([type=checkbox]),textarea { width:100%; border:1px solid #89937e; border-radius:6px; background:#fcfaf5; color:var(--ink); padding:10px 12px; }
+    textarea { resize:vertical; }
+    .hint { color:var(--muted); font-size:12px; margin:5px 0 0; }
+    .check-label { display:flex; align-items:center; gap:11px; margin:18px 0; }
+    .check-label input { flex:0 0 21px; width:21px; }
+    .primary { background:var(--green); color:white; }
+    .primary:hover { background:#244330; }
+    .own-result { border:1px solid var(--line); border-radius:10px; padding:22px; margin:22px 0; background:#fcfaf5; }
+    .own-result pre { font-size:14px; line-height:1.7; }
+    .feedback { border-top:1px solid var(--line); margin-top:30px; padding-top:22px; }
+    [hidden] { display:none !important; }
+    footer { border-top:1px solid var(--line); padding:24px 0 36px; font-size:12px; color:var(--muted); }
+    footer a { color:inherit; }
+    #load-error { background:#fff0e8; padding:16px; border:1px solid var(--red); }
+    @media(max-width:760px) {
+      .wrap { width:calc(100% - 32px); }
+      header { padding:20px 0; align-items:start; }
+      .edition { max-width:120px; text-align:right; font-size:10px; }
+      .hero { grid-template-columns:1fr; gap:28px; padding:38px 0 30px; }
+      h1 { font-size:53px; }
+      .deck { font-size:17px; }
+      .workbench,.details-grid,.form-grid { grid-template-columns:1fr; }
+      .size-head { align-items:start; flex-direction:column; gap:16px; }
+      .budget { width:100%; }
+      th,td { padding:12px 8px; }
+      .dialogue,.control,.result { padding-left:18px; padding-right:18px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to demonstration</a>
+  <div class="wrap">
+    <header><a class="brand" href="https://github.com/Lycheetah/Lycheetah-Framework">LYCHEETAH / LAMAGUE</a><span class="edition">Research preview · works offline</span></header>
+    <main id="main">
+      <div class="hero">
+        <div><p class="eyebrow">Meaning between people and AI</p><h1>What survives<br>a handover?</h1><p class="deck">The work moves on. The uncertainty, the objection and the permission boundary should travel with it.</p><a class="jump" href="#make-handover">Make a handover for your own task ↓</a></div>
+        <aside class="note"><strong>Try changing one detail.</strong>See exactly what differs from the original record. Then give three formats the same space.</aside>
+      </div>
+      <p class="intro-line">Constructed example · runs offline · no model calls · nothing you enter is sent anywhere</p>
+      <noscript><p id="load-error">Enable JavaScript to inspect the recorded comparisons. The Python runner and JSON report contain the same evidence.</p></noscript>
+      <div id="load-error" hidden></div>
+      <section aria-labelledby="inspect-heading">
+        <div class="section-title"><span class="number">01</span><h2 id="inspect-heading">Follow the meaning.</h2></div>
+        <div class="workbench">
+          <article class="source"><div class="panel-head">What was said · fictional release review</div><div id="dialogue" class="dialogue"></div><p class="mapping">A human-readable record was authored from these four statements. LAMAGUE did not extract or verify it. You can inspect and download that mapping below.</p></article>
+          <article class="received"><div class="panel-head">What the next session receives</div><div class="control"><label for="variant">Choose a handover</label><select id="variant"></select></div><div id="result" class="result" role="status" aria-live="polite" aria-atomic="true"></div></article>
+        </div>
+        <p class="footnote" style="margin-top:15px">These changes are deliberate failure controls. They are not outputs from an AI or measurements of everyday misunderstanding.</p>
+      </section>
+      <section aria-labelledby="size-heading">
+        <div class="size-head"><div class="section-title"><span class="number">02</span><h2 id="size-heading">Give every format the same space.</h2></div><div class="budget"><label for="budget">Message budget · UTF-8 bytes</label><select id="budget"><option value="1024">1,024 bytes</option><option value="2048" selected>2,048 bytes</option><option value="4096">4,096 bytes</option></select></div></div>
+        <div class="table-scroll"><table><caption class="footnote" style="text-align:left">Same complete source record; lossless round trips using the Python runner.</caption><thead><tr><th scope="col">Format</th><th scope="col">Message bytes</th><th scope="col">Fields restored</th><th scope="col">Within budget?</th></tr></thead><tbody id="format-rows"></tbody></table></div>
+        <p id="format-conclusion" class="conclusion"></p>
+        <p class="footnote">A byte is not a model token. No record is truncated to make it fit. All required decoder programs are assumed available; their code size is excluded for all formats. Gzip includes its base64 and message-prefix overhead. LAMAGUE L1 uses no dictionary.</p>
+      </section>
+      <section aria-labelledby="inspect-data-heading">
+        <div class="section-title"><span class="number">03</span><h2 id="inspect-data-heading">Inspect it. Reproduce it. Challenge it.</h2></div>
+        <div class="actions"><button type="button" id="download-record">Download reference record</button><button type="button" id="download-candidate">Download selected handover</button><button type="button" id="download-report">Download measured report</button></div>
+        <div class="details-grid">
+          <div><details><summary>Inspect the original record</summary><p id="mapping"></p><pre id="packet"></pre></details><details><summary>Check the five human questions</summary><div id="questions"></div><p>These answers were supplied by the author. This page has not tested whether another person or model reaches them.</p></details><details><summary>See the encoded messages</summary><div id="wires"></div></details></div>
+          <div><details><summary>What this demonstration establishes</summary><p>It measures exact preservation of one authored record in three formats and compares twelve deliberately constructed controls. The full-record comparison works equally on JSON and decoded LAMAGUE.</p><ul id="boundaries"></ul></details><details><summary>Run this on your own machine</summary><p>From the Framework source checkout, with Python 3.10 or newer:</p><pre>python3 examples/meaning_handover/demo.py</pre><p>Download the reference and a changed handover above, then compare them locally:</p><pre>python3 examples/meaning_handover/demo.py \
+  --reference handover-reference.json \
+  --candidate handover-candidate.json</pre><p>Exit 0 means exact record equality, 1 means a changed record, and 2 means malformed input. Nothing is executed on the basis of the result.</p></details></div>
+        </div>
+      </section>
+      <section id="make-handover" class="study" aria-labelledby="builder-heading">
+        <div class="section-title"><span class="number">04</span><h2 id="builder-heading">Make your next handover.</h2></div>
+        <p>Write what you mean, then review the record before sharing it with your next AI session or collaborator. This form arranges your words; it does not interpret them or approve an action. Your draft stays in this page until you choose a download. There is no autosave.</p>
+        <form id="handover-form" autocomplete="off">
+          <div class="form-grid">
+            <div><label for="own-goal">What are you trying to achieve?</label><textarea id="own-goal" required rows="3"></textarea></div>
+            <div><label for="own-status">What has happened so far?</label><textarea id="own-status" required rows="3"></textarea><p class="hint">Distinguish what you observed from what someone reported.</p></div>
+            <div><label for="own-unknowns">What is unresolved?</label><textarea id="own-unknowns" rows="3"></textarea><p class="hint">One question or missing check per line. Blank means none provided.</p></div>
+            <div><label for="own-boundaries">What is permitted, and what needs fresh approval?</label><textarea id="own-boundaries" required rows="3"></textarea><p class="hint">Use the owner's actual boundary, including any limits.</p></div>
+            <div><label for="own-next">What should the next session do?</label><textarea id="own-next" required rows="2"></textarea></div>
+            <div><label for="own-recovery">If it gets stuck or goes wrong, what should happen?</label><textarea id="own-recovery" required rows="2"></textarea></div>
+            <div><label for="own-owner">Who holds the decision?</label><input id="own-owner" required type="text"><p class="hint">A role or pseudonym is enough. Entering it does not authenticate that person.</p></div>
+            <div><label for="own-risk">Declared risk · your judgement</label><select id="own-risk" required><option value="">Choose a level</option><option value="LOW">Low</option><option value="MEDIUM">Medium</option><option value="HIGH">High</option><option value="CRITICAL">Critical</option></select></div>
+          </div>
+          <details><summary>Add an objection, affected people or review timing</summary><div class="form-grid">
+            <div><label for="own-dissenter">Who raised the objection?</label><input id="own-dissenter" type="text"></div>
+            <div><label for="own-dissent">What did they object to?</label><textarea id="own-dissent" rows="2"></textarea></div>
+            <div><label for="own-affected">Who could be affected?</label><textarea id="own-affected" rows="2"></textarea><p class="hint">One role or group per line.</p></div>
+            <div><label for="own-horizon">When should this be reviewed?</label><input id="own-horizon" type="text"><p class="hint">If blank, the record says timing was not specified.</p></div>
+          </div></details>
+          <label class="check-label" for="own-reviewed"><input id="own-reviewed" type="checkbox" required>I have checked that the goal, uncertainty and permission boundary match what I mean.</label>
+          <div class="actions"><button class="primary" type="submit">Build my handover</button><button id="clear-draft" type="button">Clear my draft</button></div>
+          <p id="builder-message" class="footnote" role="status" aria-live="polite"></p>
+        </form>
+        <div id="own-result" class="own-result" hidden>
+          <h3>Your readable handover</h3><pre id="own-readable"></pre>
+          <div class="actions"><button id="download-own-text" type="button">Download readable handover</button><button id="download-own-record" type="button">Download LAMAGUE record</button></div>
+          <details><summary>Inspect the structured record</summary><pre id="own-packet"></pre></details>
+          <p class="footnote">The record contains your declarations. Blank optional fields mean no information was provided; they do not prove that no uncertainty, objection or affected person exists. This is the packet branch of LAMAGUE, exported as JSON. No L1 encoding or language-understanding comparison is performed here.</p>
+        </div>
+        <div class="feedback">
+          <h3>After trying it, what happened?</h3><p>You can download a short feedback record and choose whether to share it with Mac. It does not automatically include your task, name or handover. Describe the experience without copying sensitive task content.</p>
+          <form id="feedback-form" autocomplete="off"><div class="form-grid">
+            <div><label for="feedback-used">Have you used it on your own task?</label><select id="feedback-used" required><option value="">Choose an answer</option><option value="yes">Yes</option><option value="no">No</option><option value="not-yet">Not yet</option></select></div>
+            <div><label for="feedback-return">Would you use it again?</label><select id="feedback-return" required><option value="">Choose an answer</option><option value="yes">Yes</option><option value="maybe">Maybe</option><option value="no">No</option></select></div>
+            <div><label for="feedback-setup">Minutes spent preparing · optional</label><input id="feedback-setup" type="number" min="0" step="any"></div>
+            <div><label for="feedback-repair">Minutes spent correcting the handover · optional</label><input id="feedback-repair" type="number" min="0" step="any"></div>
+            <div class="wide"><label for="feedback-notes">What helped, got lost or became confusing?</label><textarea id="feedback-notes" rows="3"></textarea></div>
+          </div><button type="submit">Download my feedback</button><p id="feedback-message" class="footnote" role="status" aria-live="polite"></p></form>
+        </div>
+      </section>
+      <section class="study" aria-labelledby="next-heading"><h2 id="next-heading">The next test belongs to real work.</h2><p style="margin-top:14px">Can someone outside this project hand over a task with fewer corrections, at a fixed message budget? The next study needs independently written source tasks, a strong ordinary summary, structured JSON, LAMAGUE, and independent assessors who do not know which arm produced each answer.</p><p>We will need to count omissions, invented facts, mistaken permission and the time spent repairing them. Using the builder or submitting feedback is a usability observation, not that controlled comparison.</p></section>
+    </main>
+    <footer>LAMAGUE / Lycheetah Framework · Created by Mackenzie Conor James Clark.<br>Demonstration implementation: Caelorynth / Codex · MIT · Experimental research preview.<br><a href="https://github.com/Lycheetah/Lycheetah-Framework/tree/master/03_LAMAGUE_L1">Explore the whole language</a></footer>
+  </div>
+  <script type="application/json" id="handover-data">{"boundaries": ["The source-to-packet mapping was authored by us, not extracted or verified by the codec.", "Every format gets the same packet. No format is truncated to fit a budget.", "Sizes are UTF-8 bytes, not model tokens; complete base64 and prefix costs are included.", "Decoder code is assumed available and excluded for every format. L1 uses no codebook.", "The JSON baseline receives the same full-field comparison as LAMAGUE.", "Changed-record controls are deliberately authored, not natural-language benchmark results.", "Exact record equality does not establish truth, human understanding, consent or safe execution.", "A critical-hash match omits risk, evidence, operations, horizon, yield, id and schema.", "No models, external participants, model-token measurements or independent replication ran."], "budgets_utf8_bytes": [1024, 2048, 4096], "case": {"dialogue": [{"id": "T1", "speaker": "Mira", "text": "Please draft the release note locally. I will approve publication separately."}, {"id": "T2", "speaker": "Jules", "text": "The screen-reader route has not been tested. I object to calling this release accessible."}, {"id": "T3", "speaker": "Mira", "text": "Keep that unresolved. The rollback is the previous build. We can review after the accessibility check."}, {"id": "T4", "speaker": "Build assistant", "text": "The desktop checks passed. Phone behaviour remains untested."}], "kind": "constructed_example", "mapping": "The packet below was written by the demo author from this dialogue. The codec did not extract it. Inspect this mapping before trusting it.", "packet": {"affectedParties": ["Screen-reader users", "Phone users"], "authority": [{"id": "Mira", "scope": "Review a local draft; publication requires separate approval.", "text": "Mira retains publication approval; dialogue T1."}], "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.", "dissent": [{"party": "Jules", "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."}], "evidence": [{"id": "desktop", "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified.", "text": "The desktop checks passed."}], "horizon": "Review after the accessibility check; dialogue T3.", "id": "release-handover-example-1", "invariants": [{"id": "local-draft-only", "text": "Do not publish without Mira's separate approval; dialogue T1."}], "operations": ["F", "G", "U", "V", "Y"], "participants": ["Mira", "Jules", "Build assistant"], "purpose": "Prepare a local release-note draft for Mira's review.", "recovery": [{"id": "previous-build", "text": "Return to the previous build; dialogue T3."}], "risk": "MEDIUM", "schema": "LAMAGUE-SEMANTIC-PACKET-1", "unknowns": [{"id": "screen-reader-route-untested", "protected": true, "requiredFor": "An accessibility claim; dialogue T2 and T3."}, {"id": "phone-behaviour-untested", "protected": true, "requiredFor": "A phone-behaviour claim; dialogue T4."}], "valueFlow": [], "yield": "Hand the local draft to Mira for review."}, "provenance": "Authored for this demonstration. People, dialogue and results below are fictional; no user study or model run is represented.", "questions": [{"answer": "No. Mira requested a local draft and reserved publication approval.", "question": "May the assistant publish now?", "source": "T1"}, {"answer": "No. The screen-reader route remains untested.", "question": "Has accessibility been established?", "source": "T2, T3"}, {"answer": "Jules.", "question": "Who objected to the accessibility claim?", "source": "T2"}, {"answer": "It remains untested; the reported desktop result does not establish it.", "question": "What may be said about phone behaviour?", "source": "T4"}, {"answer": "Return to the previous build.", "question": "What is the stated recovery path?", "source": "T3"}], "title": "A release note is ready. Publication is not approved."}, "controls": [{"candidate": {"affectedParties": ["Screen-reader users", "Phone users"], "authority": [{"id": "Mira", "scope": "Review a local draft; publication requires separate approval.", "text": "Mira retains publication approval; dialogue T1."}], "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.", "dissent": [{"party": "Jules", "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."}], "evidence": [{"id": "desktop", "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified.", "text": "The desktop checks passed."}], "horizon": "Review after the accessibility check; dialogue T3.", "id": "release-handover-example-1", "invariants": [{"id": "local-draft-only", "text": "Do not publish without Mira's separate approval; dialogue T1."}], "operations": ["F", "G", "U", "V", "Y"], "participants": ["Mira", "Jules", "Build assistant"], "purpose": "Prepare a local release-note draft for Mira's review.", "recovery": [{"id": "previous-build", "text": "Return to the previous build; dialogue T3."}], "risk": "MEDIUM", "schema": "LAMAGUE-SEMANTIC-PACKET-1", "unknowns": [{"id": "screen-reader-route-untested", "protected": true, "requiredFor": "An accessibility claim; dialogue T2 and T3."}, {"id": "phone-behaviour-untested", "protected": true, "requiredFor": "A phone-behaviour claim; dialogue T4."}], "valueFlow": [], "yield": "Hand the local draft to Mira for review."}, "comparison": {"changes": [], "codec_classification": {"classification": "EXACT_EQUIVALENT", "reason": "full canonical hash matches"}, "declared_rule_violations": [], "fields_examined": 17, "record_match": true, "shape_error": null, "status": "EXACT_RECORD", "unchanged_fields": 17}, "expected_exact": true, "id": "unchanged", "title": "Keep the original handover"}, {"candidate": {"affectedParties": ["Screen-reader users", "Phone users"], "authority": [{"id": "Mira", "scope": "Review a local draft; publication requires separate approval.", "text": "Mira retains publication approval; dialogue T1."}], "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.", "dissent": [{"party": "Jules", "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."}], "evidence": [{"id": "desktop", "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified.", "text": "The desktop checks passed."}], "horizon": "Review after the accessibility check; dialogue T3.", "id": "release-handover-example-1", "invariants": [{"id": "local-draft-only", "text": "Do not publish without Mira's separate approval; dialogue T1."}], "operations": ["F", "G", "U", "V", "Y"], "participants": ["Mira", "Jules", "Build assistant"], "purpose": "Prepare a local release-note draft for Mira's review.", "recovery": [{"id": "previous-build", "text": "Return to the previous build; dialogue T3."}], "risk": "MEDIUM", "schema": "LAMAGUE-SEMANTIC-PACKET-1", "unknowns": [{"id": "screen-reader-route-untested", "protected": true, "requiredFor": "An accessibility claim; dialogue T2 and T3."}, {"id": "phone-behaviour-untested", "protected": true, "requiredFor": "A phone-behaviour claim; dialogue T4."}], "valueFlow": [], "yield": "Hand the local draft to Mira for review."}, "comparison": {"changes": [], "codec_classification": {"classification": "EXACT_EQUIVALENT", "reason": "full canonical hash matches"}, "declared_rule_violations": [], "fields_examined": 17, "record_match": true, "shape_error": null, "status": "EXACT_RECORD", "unchanged_fields": 17}, "expected_exact": true, "id": "reordered", "title": "Reorder JSON keys only"}, {"candidate": {"affectedParties": ["Screen-reader users", "Phone users"], "authority": [{"id": "Mira", "scope": "Publish the release immediately.", "text": "Mira retains publication approval; dialogue T1."}], "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.", "dissent": [{"party": "Jules", "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."}], "evidence": [{"id": "desktop", "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified.", "text": "The desktop checks passed."}], "horizon": "Review after the accessibility check; dialogue T3.", "id": "release-handover-example-1", "invariants": [{"id": "local-draft-only", "text": "Do not publish without Mira's separate approval; dialogue T1."}], "operations": ["F", "G", "U", "V", "Y"], "participants": ["Mira", "Jules", "Build assistant"], "purpose": "Prepare a local release-note draft for Mira's review.", "recovery": [{"id": "previous-build", "text": "Return to the previous build; dialogue T3."}], "risk": "MEDIUM", "schema": "LAMAGUE-SEMANTIC-PACKET-1", "unknowns": [{"id": "screen-reader-route-untested", "protected": true, "requiredFor": "An accessibility claim; dialogue T2 and T3."}, {"id": "phone-behaviour-untested", "protected": true, "requiredFor": "A phone-behaviour claim; dialogue T4."}], "valueFlow": [], "yield": "Hand the local draft to Mira for review."}, "comparison": {"changes": [{"after": [{"id": "Mira", "scope": "Publish the release immediately.", "text": "Mira retains publication approval; dialogue T1."}], "after_present": true, "before": [{"id": "Mira", "scope": "Review a local draft; publication requires separate approval.", "text": "Mira retains publication approval; dialogue T1."}], "before_present": true, "field": "authority", "in_critical_projection": true, "label": "Who may decide"}], "codec_classification": {"classification": "DIVERGENT", "reason": "critical semantic hash changed"}, "declared_rule_violations": [], "fields_examined": 17, "record_match": false, "shape_error": null, "status": "CHANGED_RECORD", "unchanged_fields": 16}, "expected_exact": false, "id": "permission", "title": "Broaden permission to publish"}, {"candidate": {"affectedParties": ["Screen-reader users", "Phone users"], "authority": [{"id": "Mira", "scope": "Review a local draft; publication requires separate approval.", "text": "Mira retains publication approval; dialogue T1."}], "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.", "dissent": [{"party": "Jules", "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."}], "evidence": [{"id": "desktop", "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified.", "text": "The desktop checks passed."}], "horizon": "Review after the accessibility check; dialogue T3.", "id": "release-handover-example-1", "invariants": [{"id": "local-draft-only", "text": "Do not publish without Mira's separate approval; dialogue T1."}], "operations": ["F", "G", "U", "V", "Y"], "participants": ["Mira", "Jules", "Build assistant"], "purpose": "Prepare a local release-note draft for Mira's review.", "recovery": [{"id": "previous-build", "text": "Return to the previous build; dialogue T3."}], "risk": "MEDIUM", "schema": "LAMAGUE-SEMANTIC-PACKET-1", "unknowns": [], "valueFlow": [], "yield": "Hand the local draft to Mira for review."}, "comparison": {"changes": [{"after": [], "after_present": true, "before": [{"id": "screen-reader-route-untested", "protected": true, "requiredFor": "An accessibility claim; dialogue T2 and T3."}, {"id": "phone-behaviour-untested", "protected": true, "requiredFor": "A phone-behaviour claim; dialogue T4."}], "before_present": true, "field": "unknowns", "in_critical_projection": true, "label": "What is still unknown"}], "codec_classification": {"classification": "UNSAFE_COLLAPSE", "fields": ["unknowns"], "reason": "protected meaning disappeared or weakened"}, "declared_rule_violations": [], "fields_examined": 17, "record_match": false, "shape_error": null, "status": "CHANGED_RECORD", "unchanged_fields": 16}, "expected_exact": false, "id": "unknowns", "title": "Drop the unanswered questions"}, {"candidate": {"affectedParties": ["Screen-reader users", "Phone users"], "authority": [{"id": "Mira", "scope": "Review a local draft; publication requires separate approval.", "text": "Mira retains publication approval; dialogue T1."}], "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.", "dissent": [{"party": "Mira", "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."}], "evidence": [{"id": "desktop", "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified.", "text": "The desktop checks passed."}], "horizon": "Review after the accessibility check; dialogue T3.", "id": "release-handover-example-1", "invariants": [{"id": "local-draft-only", "text": "Do not publish without Mira's separate approval; dialogue T1."}], "operations": ["F", "G", "U", "V", "Y"], "participants": ["Mira", "Jules", "Build assistant"], "purpose": "Prepare a local release-note draft for Mira's review.", "recovery": [{"id": "previous-build", "text": "Return to the previous build; dialogue T3."}], "risk": "MEDIUM", "schema": "LAMAGUE-SEMANTIC-PACKET-1", "unknowns": [{"id": "screen-reader-route-untested", "protected": true, "requiredFor": "An accessibility claim; dialogue T2 and T3."}, {"id": "phone-behaviour-untested", "protected": true, "requiredFor": "A phone-behaviour claim; dialogue T4."}], "valueFlow": [], "yield": "Hand the local draft to Mira for review."}, "comparison": {"changes": [{"after": [{"party": "Mira", "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."}], "after_present": true, "before": [{"party": "Jules", "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."}], "before_present": true, "field": "dissent", "in_critical_projection": true, "label": "Who objected, and why"}], "codec_classification": {"classification": "DIVERGENT", "reason": "critical semantic hash changed"}, "declared_rule_violations": [], "fields_examined": 17, "record_match": false, "shape_error": null, "status": "CHANGED_RECORD", "unchanged_fields": 16}, "expected_exact": false, "id": "speaker", "title": "Attribute Jules's objection to Mira"}, {"candidate": {"affectedParties": ["Screen-reader users", "Phone users"], "authority": [{"id": "Mira", "scope": "Review a local draft; publication requires separate approval.", "text": "Mira retains publication approval; dialogue T1."}], "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.", "dissent": [], "evidence": [{"id": "desktop", "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified.", "text": "The desktop checks passed."}], "horizon": "Review after the accessibility check; dialogue T3.", "id": "release-handover-example-1", "invariants": [{"id": "local-draft-only", "text": "Do not publish without Mira's separate approval; dialogue T1."}], "operations": ["F", "G", "U", "V", "Y"], "participants": ["Mira", "Jules", "Build assistant"], "purpose": "Prepare a local release-note draft for Mira's review.", "recovery": [{"id": "previous-build", "text": "Return to the previous build; dialogue T3."}], "risk": "MEDIUM", "schema": "LAMAGUE-SEMANTIC-PACKET-1", "unknowns": [{"id": "screen-reader-route-untested", "protected": true, "requiredFor": "An accessibility claim; dialogue T2 and T3."}, {"id": "phone-behaviour-untested", "protected": true, "requiredFor": "A phone-behaviour claim; dialogue T4."}], "valueFlow": [], "yield": "Hand the local draft to Mira for review."}, "comparison": {"changes": [{"after": [], "after_present": true, "before": [{"party": "Jules", "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."}], "before_present": true, "field": "dissent", "in_critical_projection": true, "label": "Who objected, and why"}], "codec_classification": {"classification": "UNSAFE_COLLAPSE", "fields": ["dissent"], "reason": "protected meaning disappeared or weakened"}, "declared_rule_violations": [], "fields_examined": 17, "record_match": false, "shape_error": null, "status": "CHANGED_RECORD", "unchanged_fields": 16}, "expected_exact": false, "id": "dissent", "title": "Remove the objection"}, {"candidate": {"affectedParties": ["Screen-reader users", "Phone users"], "authority": [{"id": "Mira", "scope": "Review a local draft; publication requires separate approval.", "text": "Mira retains publication approval; dialogue T1."}], "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.", "dissent": [{"party": "Jules", "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."}], "evidence": [{"id": "desktop", "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified.", "text": "The desktop checks passed."}], "horizon": "Review after the accessibility check; dialogue T3.", "id": "release-handover-example-1", "invariants": [{"id": "local-draft-only", "text": "Do not publish without Mira's separate approval; dialogue T1."}], "operations": ["F", "G", "U", "V", "Y"], "participants": ["Mira", "Jules", "Build assistant"], "purpose": "Prepare a local release-note draft for Mira's review.", "recovery": [{"id": "previous-build", "text": "Return to the previous build; dialogue T3."}], "risk": "LOW", "schema": "LAMAGUE-SEMANTIC-PACKET-1", "unknowns": [{"id": "screen-reader-route-untested", "protected": true, "requiredFor": "An accessibility claim; dialogue T2 and T3."}, {"id": "phone-behaviour-untested", "protected": true, "requiredFor": "A phone-behaviour claim; dialogue T4."}], "valueFlow": [], "yield": "Hand the local draft to Mira for review."}, "comparison": {"changes": [{"after": "LOW", "after_present": true, "before": "MEDIUM", "before_present": true, "field": "risk", "in_critical_projection": false, "label": "Declared risk"}], "codec_classification": {"classification": "PARTIAL_EQUIVALENT", "reason": "critical fields match while non-critical content differs"}, "declared_rule_violations": [], "fields_examined": 17, "record_match": false, "shape_error": null, "status": "CHANGED_RECORD", "unchanged_fields": 16}, "expected_exact": false, "id": "risk", "title": "Lower the declared risk"}, {"candidate": {"affectedParties": ["Screen-reader users", "Phone users"], "authority": [{"id": "Mira", "scope": "Review a local draft; publication requires separate approval.", "text": "Mira retains publication approval; dialogue T1."}], "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.", "dissent": [{"party": "Jules", "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."}], "evidence": [{"id": "desktop", "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified.", "text": "The desktop, phone and accessibility checks passed."}], "horizon": "Review after the accessibility check; dialogue T3.", "id": "release-handover-example-1", "invariants": [{"id": "local-draft-only", "text": "Do not publish without Mira's separate approval; dialogue T1."}], "operations": ["F", "G", "U", "V", "Y"], "participants": ["Mira", "Jules", "Build assistant"], "purpose": "Prepare a local release-note draft for Mira's review.", "recovery": [{"id": "previous-build", "text": "Return to the previous build; dialogue T3."}], "risk": "MEDIUM", "schema": "LAMAGUE-SEMANTIC-PACKET-1", "unknowns": [{"id": "screen-reader-route-untested", "protected": true, "requiredFor": "An accessibility claim; dialogue T2 and T3."}, {"id": "phone-behaviour-untested", "protected": true, "requiredFor": "A phone-behaviour claim; dialogue T4."}], "valueFlow": [], "yield": "Hand the local draft to Mira for review."}, "comparison": {"changes": [{"after": [{"id": "desktop", "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified.", "text": "The desktop, phone and accessibility checks passed."}], "after_present": true, "before": [{"id": "desktop", "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified.", "text": "The desktop checks passed."}], "before_present": true, "field": "evidence", "in_critical_projection": false, "label": "Evidence and its source"}], "codec_classification": {"classification": "PARTIAL_EQUIVALENT", "reason": "critical fields match while non-critical content differs"}, "declared_rule_violations": [], "fields_examined": 17, "record_match": false, "shape_error": null, "status": "CHANGED_RECORD", "unchanged_fields": 16}, "expected_exact": false, "id": "evidence", "title": "Invent a stronger test result"}, {"candidate": {"affectedParties": ["Screen-reader users", "Phone users"], "authority": [{"id": "Mira", "scope": "Review a local draft; publication requires separate approval.", "text": "Mira retains publication approval; dialogue T1."}], "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.", "dissent": [{"party": "Jules", "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."}], "evidence": [{"id": "desktop", "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified.", "text": "The desktop checks passed."}], "horizon": "Review after the accessibility check; dialogue T3.", "id": "release-handover-example-1", "invariants": [{"id": "local-draft-only", "text": "Do not publish without Mira's separate approval; dialogue T1."}], "operations": ["F", "G", "U", "V", "Y"], "participants": ["Mira", "Jules", "Build assistant"], "purpose": "Prepare a local release-note draft for Mira's review.", "recovery": [], "risk": "MEDIUM", "schema": "LAMAGUE-SEMANTIC-PACKET-1", "unknowns": [{"id": "screen-reader-route-untested", "protected": true, "requiredFor": "An accessibility claim; dialogue T2 and T3."}, {"id": "phone-behaviour-untested", "protected": true, "requiredFor": "A phone-behaviour claim; dialogue T4."}], "valueFlow": [], "yield": "Hand the local draft to Mira for review."}, "comparison": {"changes": [{"after": [], "after_present": true, "before": [{"id": "previous-build", "text": "Return to the previous build; dialogue T3."}], "before_present": true, "field": "recovery", "in_critical_projection": true, "label": "How to recover"}], "codec_classification": {"classification": "UNSAFE_COLLAPSE", "reason": "candidate introduced semantic safety violations", "violations": ["PROTECTED_UNKNOWN_WITHOUT_RECOVERY"]}, "declared_rule_violations": ["PROTECTED_UNKNOWN_WITHOUT_RECOVERY"], "fields_examined": 17, "record_match": false, "shape_error": null, "status": "CHANGED_RECORD", "unchanged_fields": 16}, "expected_exact": false, "id": "recovery", "title": "Remove the recovery path"}, {"candidate": {"affectedParties": ["Screen-reader users", "Phone users"], "authority": [{"id": "Mira", "scope": "Review a local draft; publication requires separate approval.", "text": "Mira retains publication approval; dialogue T1."}], "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.", "dissent": [{"party": "Jules", "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."}], "evidence": [{"id": "desktop", "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified.", "text": "The desktop checks passed."}], "horizon": "Publish immediately.", "id": "release-handover-example-1", "invariants": [{"id": "local-draft-only", "text": "Do not publish without Mira's separate approval; dialogue T1."}], "operations": ["F", "G", "U", "V", "Y"], "participants": ["Mira", "Jules", "Build assistant"], "purpose": "Prepare a local release-note draft for Mira's review.", "recovery": [{"id": "previous-build", "text": "Return to the previous build; dialogue T3."}], "risk": "MEDIUM", "schema": "LAMAGUE-SEMANTIC-PACKET-1", "unknowns": [{"id": "screen-reader-route-untested", "protected": true, "requiredFor": "An accessibility claim; dialogue T2 and T3."}, {"id": "phone-behaviour-untested", "protected": true, "requiredFor": "A phone-behaviour claim; dialogue T4."}], "valueFlow": [], "yield": "Hand the local draft to Mira for review."}, "comparison": {"changes": [{"after": "Publish immediately.", "after_present": true, "before": "Review after the accessibility check; dialogue T3.", "before_present": true, "field": "horizon", "in_critical_projection": false, "label": "When to review"}], "codec_classification": {"classification": "PARTIAL_EQUIVALENT", "reason": "critical fields match while non-critical content differs"}, "declared_rule_violations": [], "fields_examined": 17, "record_match": false, "shape_error": null, "status": "CHANGED_RECORD", "unchanged_fields": 16}, "expected_exact": false, "id": "horizon", "title": "Replace the review condition"}, {"candidate": {"affectedParties": ["Screen-reader users", "Phone users"], "authority": [{"id": "Mira", "scope": "Review a local draft; publication requires separate approval.", "text": "Mira retains publication approval; dialogue T1."}], "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.", "dissent": [{"party": "Jules", "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."}], "evidence": [{"id": "desktop", "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified.", "text": "The desktop checks passed."}], "horizon": "Review after the accessibility check; dialogue T3.", "id": "release-handover-example-1", "invariants": [{"id": "local-draft-only", "text": "Do not publish without Mira's separate approval; dialogue T1."}], "operations": ["F", "G", "U", "V", "Y"], "participants": ["Mira", "Jules", "Build assistant"], "purpose": "Prepare a local release-note draft for Mira's review.", "recovery": [{"id": "previous-build", "text": "Return to the previous build; dialogue T3."}], "risk": "MEDIUM", "schema": "LAMAGUE-SEMANTIC-PACKET-1", "unknowns": [{"id": "screen-reader-route-untested", "protected": true, "requiredFor": "An accessibility claim; dialogue T2 and T3."}, {"id": "phone-behaviour-untested", "protected": true, "requiredFor": "A phone-behaviour claim; dialogue T4."}], "valueFlow": [], "yield": "Publish now without further review."}, "comparison": {"changes": [{"after": "Publish now without further review.", "after_present": true, "before": "Hand the local draft to Mira for review.", "before_present": true, "field": "yield", "in_critical_projection": false, "label": "The next step"}], "codec_classification": {"classification": "PARTIAL_EQUIVALENT", "reason": "critical fields match while non-critical content differs"}, "declared_rule_violations": [], "fields_examined": 17, "record_match": false, "shape_error": null, "status": "CHANGED_RECORD", "unchanged_fields": 16}, "expected_exact": false, "id": "next-step", "title": "Change the next step to publication"}, {"candidate": {"affectedParties": ["Screen-reader users", "Phone users"], "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.", "dissent": [{"party": "Jules", "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."}], "evidence": [{"id": "desktop", "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified.", "text": "The desktop checks passed."}], "horizon": "Review after the accessibility check; dialogue T3.", "id": "release-handover-example-1", "invariants": [{"id": "local-draft-only", "text": "Do not publish without Mira's separate approval; dialogue T1."}], "operations": ["F", "G", "U", "V", "Y"], "participants": ["Mira", "Jules", "Build assistant"], "purpose": "Prepare a local release-note draft for Mira's review.", "recovery": [{"id": "previous-build", "text": "Return to the previous build; dialogue T3."}], "risk": "MEDIUM", "schema": "LAMAGUE-SEMANTIC-PACKET-1", "unknowns": [{"id": "screen-reader-route-untested", "protected": true, "requiredFor": "An accessibility claim; dialogue T2 and T3."}, {"id": "phone-behaviour-untested", "protected": true, "requiredFor": "A phone-behaviour claim; dialogue T4."}], "valueFlow": [], "yield": "Hand the local draft to Mira for review."}, "comparison": {"changes": [{"after": null, "after_present": false, "before": [{"id": "Mira", "scope": "Review a local draft; publication requires separate approval.", "text": "Mira retains publication approval; dialogue T1."}], "before_present": true, "field": "authority", "in_critical_projection": true, "label": "Who may decide"}], "codec_classification": null, "declared_rule_violations": null, "fields_examined": 17, "record_match": false, "shape_error": "missing required fields: authority", "status": "MALFORMED_RECORD", "unchanged_fields": 16}, "expected_exact": false, "id": "malformed", "title": "Delete a required field"}], "critical_fields": ["purpose", "claim", "unknowns", "invariants", "authority", "participants", "affectedParties", "dissent", "valueFlow", "recovery"], "environment": {"python": "3.12.3", "zlib": "1.3"}, "evidence_status": "Constructed example; local deterministic record comparison.", "field_count": 17, "formats": [{"budget_fit": {"1024": false, "2048": true, "4096": true}, "bytes": 1407, "exact_roundtrip": true, "fields_preserved": 17, "id": "json", "label": "Compact JSON", "required_decoder": "JSON parser", "wire": "{\"affectedParties\":[\"Screen-reader users\",\"Phone users\"],\"authority\":[{\"id\":\"Mira\",\"scope\":\"Review a local draft; publication requires separate approval.\",\"text\":\"Mira retains publication approval; dialogue T1.\"}],\"claim\":\"The desktop checks passed; accessibility and phone behaviour remain untested.\",\"dissent\":[{\"party\":\"Jules\",\"position\":\"Objects to calling the release accessible while the screen-reader route is untested; dialogue T2.\"}],\"evidence\":[{\"id\":\"desktop\",\"provenance\":\"Constructed dialogue T4; asserted by Build assistant, not independently verified.\",\"text\":\"The desktop checks passed.\"}],\"horizon\":\"Review after the accessibility check; dialogue T3.\",\"id\":\"release-handover-example-1\",\"invariants\":[{\"id\":\"local-draft-only\",\"text\":\"Do not publish without Mira's separate approval; dialogue T1.\"}],\"operations\":[\"F\",\"G\",\"U\",\"V\",\"Y\"],\"participants\":[\"Mira\",\"Jules\",\"Build assistant\"],\"purpose\":\"Prepare a local release-note draft for Mira's review.\",\"recovery\":[{\"id\":\"previous-build\",\"text\":\"Return to the previous build; dialogue T3.\"}],\"risk\":\"MEDIUM\",\"schema\":\"LAMAGUE-SEMANTIC-PACKET-1\",\"unknowns\":[{\"id\":\"screen-reader-route-untested\",\"protected\":true,\"requiredFor\":\"An accessibility claim; dialogue T2 and T3.\"},{\"id\":\"phone-behaviour-untested\",\"protected\":true,\"requiredFor\":\"A phone-behaviour claim; dialogue T4.\"}],\"valueFlow\":[],\"yield\":\"Hand the local draft to Mira for review.\"}"}, {"budget_fit": {"1024": false, "2048": true, "4096": true}, "bytes": 1087, "exact_roundtrip": true, "fields_preserved": 17, "id": "lamague", "label": "LAMAGUE L1", "required_decoder": "LAMAGUE L1 decoder", "wire": "L1{\"i\":\"release-handover-example-1\",\"p\":\"Prepare a local release-note draft for Mira's review.\",\"c\":\"The desktop checks passed; accessibility and phone behaviour remain untested.\",\"r\":\"M\",\"o\":\"FGUVY\",\"e\":[[\"desktop\",\"The desktop checks passed.\",\"Constructed dialogue T4; asserted by Build assistant, not independently verified.\"]],\"u\":[[\"screen-reader-route-untested\",1,\"An accessibility claim; dialogue T2 and T3.\"],[\"phone-behaviour-untested\",1,\"A phone-behaviour claim; dialogue T4.\"]],\"n\":[[\"local-draft-only\",\"Do not publish without Mira's separate approval; dialogue T1.\"]],\"a\":[[\"Mira\",\"Review a local draft; publication requires separate approval.\",\"Mira retains publication approval; dialogue T1.\"]],\"t\":[\"Mira\",\"Jules\",\"Build assistant\"],\"f\":[\"Screen-reader users\",\"Phone users\"],\"d\":[[\"Jules\",\"Objects to calling the release accessible while the screen-reader route is untested; dialogue T2.\"]],\"v\":[],\"x\":[[\"previous-build\",\"Return to the previous build; dialogue T3.\"]],\"h\":\"Review after the accessibility check; dialogue T3.\",\"y\":\"Hand the local draft to Mira for review.\"}"}, {"budget_fit": {"1024": true, "2048": true, "4096": true}, "bytes": 919, "exact_roundtrip": true, "fields_preserved": 17, "id": "gzip-json", "label": "JSON + gzip + base64", "required_decoder": "Base64 decoder, gzip decoder, JSON parser", "wire": "GZ1H4sIAAAAAAACA5VUTW/bMAz9K4Qvu8QFuvXUnrI27botW9CmA4ZhB8Vmai6q5FFS0qzofy+pxPlad9jBBiyL4nuP7+mpMNMpVhHrkeFIGIrTH8VtxYiuZDQ1MqSAHIpeMWq8w/XXz15hUmw8U1xKxVNBdXFaDImNbAyVb1E+b3BOuAAD1lfGQs1mGs+gTRNLlYnkHTD+TsQYIGBr2EQE07bs58YeyTkRH+P6VNkZDbmwV93tPYOajPX3CWF8fFQ8C7jKGnqQ2nGDUGOYRd9C1WA1kxNMCFifgakqDIEmZIUDGFdDmwlOsDFz8oml54P0hOQiBhFIIdUkxS5myoJYyRcfk0XVp/WBFJcsfZ38Ek0DRA/C3JK7hyhIGC2agJvWFmHRkLz1Z9gTnX0SNShsuu+SfLsiKfLW6CrcDmBNVcGIMuhM/lucexciJ53yziknooGwYV2dLOF9IlvrCoVoXOyB8xHI1diivFy0S5gj05RWSqyH80+BVxDVIX+yJJ0ZplHYKd99/XPtLsd32iSTWqtWNjIjIcUlPpqH1mJ5rDvc3DAJ3rBVIdutzHYrvbPLLdoLn1llE4UGFiQWThHUYW9eMeErxhJnc3ZfDsqlHH0lz5083+T5rsFQX1BF7RpUl4rOJgc654rEYh6d1IgVA24y03EX1LgKEEw9d4A5a6pCMVYqzU4WW/3pUygn2m8rwQ3GxE6dqUPodkHedaC/8mUKM83g4OL6bpiz3UgqZOVzf9i/uhuUt4Nh/8v4+rwc9c8/DcZ5KMnNnF+4nZHsmbvM5i47Z6/cGvMlVJyKT1H55IuhvvQs1X136BaN914icoAz6F4ngKa53KT5f9rBQe3f/U5W6ohHEl5avxCm8rkktNr6g4JReXcuPlU832Q6v25wzy+6u9RIfwUAAA=="}], "schema": "LYCHEETAH-HANDOVER-DEMO-1", "source_sha256": {"examples/meaning_handover/case.json": "cd37a04dcfe98f803f1da09b5793dd66dbd1bfd1ee490fad71d9a8997cae4149", "examples/meaning_handover/demo.py": "9c3cf9d9d5881e3e688cf898f383917d4327274232c69ff4ee36215ee7d928f9", "examples/meaning_handover/page.html": "cd557e2039b374964dddf448d58e9bc2ae418cb09e708a57b6b53ba3905ed665", "lycheetah/compaction/codec.py": "6d28c24b283444487f7f0b6fdaaf5205d144152d4d094513ac171ea8e70659b8"}, "summary": {"controls_examined": 12, "controls_matching_expectation": 12, "exact_roundtrips": 3, "formats_measured": 3}}</script>
+  <script>
+    "use strict";
+    const report = JSON.parse(document.getElementById("handover-data").textContent);
+    const el = id => document.getElementById(id);
+    const add = (parent, tag, text, className) => {
+      const node = document.createElement(tag);
+      if (text !== undefined) node.textContent = text;
+      if (className) node.className = className;
+      parent.appendChild(node);
+      return node;
+    };
+    const pretty = value => JSON.stringify(value, null, 2);
+    const selected = () => report.controls.find(row => row.id === el("variant").value);
+    function renderComparison() {
+      const row = selected();
+      const result = row.comparison;
+      const box = el("result");
+      box.replaceChildren();
+      box.className = result.record_match ? "result" : "result changed";
+      add(box, "span", result.record_match ? "Record preserved" : (result.shape_error ? "Incomplete record" : "Change detected"), "status");
+      add(box, "h3", result.record_match ? "Every declared field survived." : `${result.changes.length} ${result.changes.length === 1 ? "field differs" : "fields differ"}.`);
+      add(box, "p", `${result.unchanged_fields} of ${result.fields_examined} fields unchanged.`, "count");
+      if (result.shape_error) add(box, "p", result.shape_error, "footnote");
+      for (const change of result.changes) {
+        const item = add(box, "div", undefined, "change");
+        add(item, "h3", change.label);
+        add(item, "div", "Original", "value-label");
+        add(item, "pre", change.before_present ? pretty(change.before) : "Field absent");
+        add(item, "div", "Received", "value-label");
+        add(item, "pre", change.after_present ? pretty(change.after) : "Field absent");
+      }
+      if (result.codec_classification) {
+        add(box, "p", `Codec classification: ${result.codec_classification.classification}. The check above compares the full record, including fields outside the ten-field critical projection.`, "codec-note");
+      }
+      add(box, "p", "Preserving a declaration does not establish that it is true or authorised.", "codec-note");
+    }
+    function renderFormats() {
+      const body = el("format-rows");
+      body.replaceChildren();
+      for (const row of report.formats) {
+        const tr = add(body, "tr");
+        add(tr, "td", row.label);
+        add(tr, "td", row.bytes.toLocaleString("en"));
+        add(tr, "td", `${row.fields_preserved} / ${report.field_count}`);
+        const fits = row.budget_fit[el("budget").value];
+        add(tr, "td", fits ? "Fits" : "Too large", fits ? "fit" : "no-fit");
+      }
+      const min = Math.min(...report.formats.map(row => row.bytes));
+      const winners = report.formats.filter(row => row.bytes === min).map(row => row.label).join(" and ");
+      el("format-conclusion").textContent = `${winners} has the smallest text message in this example. All three restore the complete declared record. This does not establish an advantage in understanding.`;
+    }
+    function downloadContent(name, content, type) {
+      const url = URL.createObjectURL(new Blob([content], {type}));
+      const link = document.createElement("a");
+      link.href = url; link.download = name; document.body.appendChild(link); link.click(); link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+    function download(name, data) {
+      downloadContent(name, pretty(data) + "\n", "application/json");
+    }
+    const value = id => el(id).value.trim();
+    const lines = id => value(id).split(/\r?\n/).map(item => item.trim()).filter(Boolean);
+    let ownPacket = null;
+    let ownText = "";
+    function clearBuiltRecord(message) {
+      ownPacket = null; ownText = "";
+      el("own-result").hidden = true;
+      el("own-readable").textContent = "";
+      el("own-packet").textContent = "";
+      el("builder-message").textContent = message;
+    }
+    function invalidateDraft() {
+      const hadRecord = ownPacket !== null;
+      el("handover-form").querySelectorAll("input,textarea,select").forEach(input => input.setCustomValidity(""));
+      clearBuiltRecord(hadRecord ? "Draft changed. Build again before downloading." : "");
+    }
+    el("handover-form").addEventListener("input", invalidateDraft);
+    el("handover-form").addEventListener("change", invalidateDraft);
+    el("handover-form").addEventListener("submit", event => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      for (const input of form.querySelectorAll("textarea[required],input[type=text][required]")) {
+        input.setCustomValidity(input.value.trim() ? "" : "Please enter your own words in this field.");
+      }
+      const party = value("own-dissenter"), position = value("own-dissent");
+      if (Boolean(party) !== Boolean(position)) {
+        form.querySelector("details").open = true;
+        el(party ? "own-dissent" : "own-dissenter").setCustomValidity("Include both the speaker and their objection, or leave both blank.");
+      }
+      if (!form.reportValidity()) return;
+      const unknowns = lines("own-unknowns").map((text, i) => ({id:`question-${i+1}`,protected:true,requiredFor:text}));
+      const dissent = party ? [{party,position}] : [];
+      ownPacket = {
+        schema: report.case.packet.schema,
+        id: `handover-${crypto.randomUUID()}`,
+        purpose: value("own-goal"), claim: value("own-status"), risk: value("own-risk"),
+        operations: ["F","G",...(unknowns.length ? ["U"] : []),...(dissent.length ? ["V"] : []),"Y"].sort(),
+        evidence: [{id:"author-status",text:value("own-status"),provenance:"Entered by the handover author; not independently checked."}],
+        unknowns,
+        invariants: lines("own-boundaries").map((text,i) => ({id:`boundary-${i+1}`,text})),
+        authority: [{id:value("own-owner"),scope:value("own-boundaries"),text:"Declared in this handover; identity and approval are not authenticated."}],
+        participants: [...new Set([value("own-owner"),...(party ? [party] : [])])],
+        affectedParties: lines("own-affected"), dissent, valueFlow: [],
+        recovery: [{id:"author-recovery",text:value("own-recovery")}],
+        horizon: value("own-horizon") || "Not specified by the author.",
+        yield: value("own-next"),
+      };
+      const showLines = items => items.length ? items.map(item => `- ${item}`).join("\n") : "No information provided.";
+      ownText = [
+        "HANDOVER — author-entered declarations; review before acting.",
+        `GOAL\n${ownPacket.purpose}`, `STATUS\n${ownPacket.claim}`,
+        `UNRESOLVED\n${showLines(unknowns.map(item => item.requiredFor))}`,
+        `PERMISSION AND BOUNDARIES\n${value("own-boundaries")}`,
+        `DECISION HOLDER\n${value("own-owner")}`,
+        `NEXT STEP\n${ownPacket.yield}`, `IF BLOCKED OR WRONG\n${value("own-recovery")}`,
+        `DECLARED RISK\n${ownPacket.risk}`, `OBJECTION\n${party ? `${party}: ${position}` : "No information provided."}`,
+        `AFFECTED PEOPLE\n${showLines(ownPacket.affectedParties)}`, `REVIEW TIMING\n${ownPacket.horizon}`,
+        "The status above was entered by the author and was not independently checked. Creating this record does not authenticate an approval. Missing optional information does not establish that none exists.",
+      ].join("\n\n") + "\n";
+      el("own-readable").textContent = ownText;
+      el("own-packet").textContent = pretty(ownPacket);
+      el("own-result").hidden = false;
+      el("builder-message").textContent = "Handover built locally. Review it below, then choose what to download. It has not been submitted anywhere.";
+    });
+    el("clear-draft").addEventListener("click", () => {
+      el("handover-form").reset();
+      invalidateDraft(); clearBuiltRecord("Your draft and generated preview have been cleared from this page.");
+    });
+    el("download-own-record").addEventListener("click", () => {
+      if (ownPacket) download("my-handover.json", ownPacket);
+    });
+    el("download-own-text").addEventListener("click", () => {
+      if (ownPacket) downloadContent("my-handover.txt", ownText, "text/plain;charset=utf-8");
+    });
+    el("feedback-form").addEventListener("submit", event => {
+      event.preventDefault();
+      const minutes = id => value(id) === "" ? null : Number(value(id));
+      const feedback = {
+        schema:"LYCHEETAH-HANDOVER-FEEDBACK-1", evidence_status:"Unverified self-report; independence not established.",
+        recorded_at_client_clock:new Date().toISOString(),
+        used_own_task:value("feedback-used"), would_use_again:value("feedback-return"),
+        preparation_minutes:minutes("feedback-setup"), correction_minutes:minutes("feedback-repair"),
+        notes:value("feedback-notes"), collection:"Local download only; not submitted.",
+      };
+      download("handover-feedback.json",feedback);
+      el("feedback-message").textContent = "Feedback downloaded. Your task and handover were not attached automatically. Nothing has been submitted.";
+    });
+    for (const turn of report.case.dialogue) {
+      const item = add(el("dialogue"), "div", undefined, "turn");
+      const speaker = add(item, "div", turn.speaker, "speaker");
+      add(speaker, "span", turn.id, "turn-id");
+      add(item, "p", turn.text);
+    }
+    for (const row of report.controls) {
+      const option = add(el("variant"), "option", row.title); option.value = row.id;
+    }
+    el("packet").textContent = pretty(report.case.packet);
+    el("mapping").textContent = report.case.mapping;
+    for (const item of report.case.questions) {
+      add(el("questions"), "h3", item.question);
+      add(el("questions"), "p", `${item.answer} (${item.source})`);
+    }
+    for (const note of report.boundaries) add(el("boundaries"), "li", note);
+    for (const row of report.formats) {
+      add(el("wires"), "h3", row.label); add(el("wires"), "pre", row.wire);
+      add(el("wires"), "p", `Required decoder: ${row.required_decoder}.`);
+    }
+    el("variant").addEventListener("change", renderComparison);
+    el("budget").addEventListener("change", renderFormats);
+    el("download-record").addEventListener("click", () => download("handover-reference.json", report.case.packet));
+    el("download-candidate").addEventListener("click", () => download("handover-candidate.json", selected().candidate));
+    el("download-report").addEventListener("click", () => download("handover-report.json", report));
+    renderComparison(); renderFormats();
+  </script>
+</body>
+</html>

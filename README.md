@@ -21,6 +21,7 @@ the first time. Those results narrowed its claims; the measurements remain below
 | In a minute | Go here |
 |---|---|
 | ▶ **Try it in your browser** | [Alignment Playground](https://lycheetah.github.io/Lycheetah-Framework/playground.html) |
+| ↪ **Inspect what survives a handover** | [Try the browser preview](https://lycheetah.github.io/Lycheetah-Framework/lamague-handover.html) · [reproduce it and inspect the limits](examples/meaning_handover/README.md) |
 | ⌨ **Run it on your machine** | [Quick start](#quick-start) · [command-line tools](#the-command-line-tools) |
 | 🧪 **Explore the latest research** | [Earned Trust](papers/agent-safety/earned-trust/README.md) · [Hybrid Gateway](papers/ai-futures/hybrid-gateway/README.md) · [SXP-L](03_LAMAGUE_L1/26_SXP_L_RESEARCH/README.md) |
 | 📖 **Explore the whole LAMAGUE language** | [Language guide](03_LAMAGUE_L1/README.md) · [Synthesis: formal, visual, spoken and conversational lines](03_LAMAGUE_L1/LAMAGUE_SYNTHESIS.md) |

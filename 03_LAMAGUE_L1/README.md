@@ -34,6 +34,7 @@ of this programme; its v2.0 study does not summarize the whole language.
 | Read and inspect the native glyphs | [Native-36 machine registry](02_NATIVE36/LAMAGUE_NATIVE36_v0.3_MACHINE_CANON_REGISTRY.json) and [one-cell specification](03_LAMAGUE_1C/LAMAGUE_1C_v1_ONE_CELL_POWER_LANGUAGE_SPEC.md) |
 | Explore pronunciation and spoken-form collisions | [Spoken LAMAGUE findings](23_SPOKEN_LAMAGUE/SPOKEN_LAMAGUE_FINDINGS.md) |
 | Explore affection, dialogue, viewpoint and correction | [SXP-L research home](26_SXP_L_RESEARCH/README.md) and its [development history](26_SXP_L_RESEARCH/handoff_2026-10-18/RESEARCH_HANDOFF/01_SESSION_RECONSTRUCTION.md) |
+| See exactly what changes during a handover | [Browser preview](https://lycheetah.github.io/Lycheetah-Framework/lamague-handover.html) · [three-format comparison and outside-trial protocol](../examples/meaning_handover/README.md); constructed example, not evidence of superior understanding |
 | Keep uncertainty, dissent and authority in a compressed record | [Reversible compression](22_REVERSIBLE_COMPRESSION_v1.0/00_CODEX_ORIENTATION.md) |
 | Inspect an ordinary JSON decision record | [LAMAGUE Check](24_LAMAGUE_CHECK/README.md) |
 | See what happened when models decoded the language | [Controlled pilot and its corrected findings](08_EXPERIMENT_001_CROSS_INTELLIGENCE/EXPERIMENT_001_CONTROLLED_PILOT_2026-07-31.md) |

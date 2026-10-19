@@ -1,0 +1,1417 @@
+{
+  "schema": "LYCHEETAH-HANDOVER-DEMO-1",
+  "evidence_status": "Constructed example; local deterministic record comparison.",
+  "case": {
+    "title": "A release note is ready. Publication is not approved.",
+    "kind": "constructed_example",
+    "provenance": "Authored for this demonstration. People, dialogue and results below are fictional; no user study or model run is represented.",
+    "dialogue": [
+      {
+        "id": "T1",
+        "speaker": "Mira",
+        "text": "Please draft the release note locally. I will approve publication separately."
+      },
+      {
+        "id": "T2",
+        "speaker": "Jules",
+        "text": "The screen-reader route has not been tested. I object to calling this release accessible."
+      },
+      {
+        "id": "T3",
+        "speaker": "Mira",
+        "text": "Keep that unresolved. The rollback is the previous build. We can review after the accessibility check."
+      },
+      {
+        "id": "T4",
+        "speaker": "Build assistant",
+        "text": "The desktop checks passed. Phone behaviour remains untested."
+      }
+    ],
+    "mapping": "The packet below was written by the demo author from this dialogue. The codec did not extract it. Inspect this mapping before trusting it.",
+    "questions": [
+      {
+        "question": "May the assistant publish now?",
+        "answer": "No. Mira requested a local draft and reserved publication approval.",
+        "source": "T1"
+      },
+      {
+        "question": "Has accessibility been established?",
+        "answer": "No. The screen-reader route remains untested.",
+        "source": "T2, T3"
+      },
+      {
+        "question": "Who objected to the accessibility claim?",
+        "answer": "Jules.",
+        "source": "T2"
+      },
+      {
+        "question": "What may be said about phone behaviour?",
+        "answer": "It remains untested; the reported desktop result does not establish it.",
+        "source": "T4"
+      },
+      {
+        "question": "What is the stated recovery path?",
+        "answer": "Return to the previous build.",
+        "source": "T3"
+      }
+    ],
+    "packet": {
+      "schema": "LAMAGUE-SEMANTIC-PACKET-1",
+      "id": "release-handover-example-1",
+      "purpose": "Prepare a local release-note draft for Mira's review.",
+      "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.",
+      "risk": "MEDIUM",
+      "operations": [
+        "F",
+        "G",
+        "U",
+        "V",
+        "Y"
+      ],
+      "evidence": [
+        {
+          "id": "desktop",
+          "text": "The desktop checks passed.",
+          "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified."
+        }
+      ],
+      "unknowns": [
+        {
+          "id": "screen-reader-route-untested",
+          "protected": true,
+          "requiredFor": "An accessibility claim; dialogue T2 and T3."
+        },
+        {
+          "id": "phone-behaviour-untested",
+          "protected": true,
+          "requiredFor": "A phone-behaviour claim; dialogue T4."
+        }
+      ],
+      "invariants": [
+        {
+          "id": "local-draft-only",
+          "text": "Do not publish without Mira's separate approval; dialogue T1."
+        }
+      ],
+      "authority": [
+        {
+          "id": "Mira",
+          "scope": "Review a local draft; publication requires separate approval.",
+          "text": "Mira retains publication approval; dialogue T1."
+        }
+      ],
+      "participants": [
+        "Mira",
+        "Jules",
+        "Build assistant"
+      ],
+      "affectedParties": [
+        "Screen-reader users",
+        "Phone users"
+      ],
+      "dissent": [
+        {
+          "party": "Jules",
+          "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."
+        }
+      ],
+      "valueFlow": [],
+      "recovery": [
+        {
+          "id": "previous-build",
+          "text": "Return to the previous build; dialogue T3."
+        }
+      ],
+      "horizon": "Review after the accessibility check; dialogue T3.",
+      "yield": "Hand the local draft to Mira for review."
+    }
+  },
+  "field_count": 17,
+  "critical_fields": [
+    "purpose",
+    "claim",
+    "unknowns",
+    "invariants",
+    "authority",
+    "participants",
+    "affectedParties",
+    "dissent",
+    "valueFlow",
+    "recovery"
+  ],
+  "budgets_utf8_bytes": [
+    1024,
+    2048,
+    4096
+  ],
+  "formats": [
+    {
+      "id": "json",
+      "label": "Compact JSON",
+      "bytes": 1407,
+      "wire": "{\"affectedParties\":[\"Screen-reader users\",\"Phone users\"],\"authority\":[{\"id\":\"Mira\",\"scope\":\"Review a local draft; publication requires separate approval.\",\"text\":\"Mira retains publication approval; dialogue T1.\"}],\"claim\":\"The desktop checks passed; accessibility and phone behaviour remain untested.\",\"dissent\":[{\"party\":\"Jules\",\"position\":\"Objects to calling the release accessible while the screen-reader route is untested; dialogue T2.\"}],\"evidence\":[{\"id\":\"desktop\",\"provenance\":\"Constructed dialogue T4; asserted by Build assistant, not independently verified.\",\"text\":\"The desktop checks passed.\"}],\"horizon\":\"Review after the accessibility check; dialogue T3.\",\"id\":\"release-handover-example-1\",\"invariants\":[{\"id\":\"local-draft-only\",\"text\":\"Do not publish without Mira's separate approval; dialogue T1.\"}],\"operations\":[\"F\",\"G\",\"U\",\"V\",\"Y\"],\"participants\":[\"Mira\",\"Jules\",\"Build assistant\"],\"purpose\":\"Prepare a local release-note draft for Mira's review.\",\"recovery\":[{\"id\":\"previous-build\",\"text\":\"Return to the previous build; dialogue T3.\"}],\"risk\":\"MEDIUM\",\"schema\":\"LAMAGUE-SEMANTIC-PACKET-1\",\"unknowns\":[{\"id\":\"screen-reader-route-untested\",\"protected\":true,\"requiredFor\":\"An accessibility claim; dialogue T2 and T3.\"},{\"id\":\"phone-behaviour-untested\",\"protected\":true,\"requiredFor\":\"A phone-behaviour claim; dialogue T4.\"}],\"valueFlow\":[],\"yield\":\"Hand the local draft to Mira for review.\"}",
+      "required_decoder": "JSON parser",
+      "exact_roundtrip": true,
+      "fields_preserved": 17,
+      "budget_fit": {
+        "1024": false,
+        "2048": true,
+        "4096": true
+      }
+    },
+    {
+      "id": "lamague",
+      "label": "LAMAGUE L1",
+      "bytes": 1087,
+      "wire": "L1{\"i\":\"release-handover-example-1\",\"p\":\"Prepare a local release-note draft for Mira's review.\",\"c\":\"The desktop checks passed; accessibility and phone behaviour remain untested.\",\"r\":\"M\",\"o\":\"FGUVY\",\"e\":[[\"desktop\",\"The desktop checks passed.\",\"Constructed dialogue T4; asserted by Build assistant, not independently verified.\"]],\"u\":[[\"screen-reader-route-untested\",1,\"An accessibility claim; dialogue T2 and T3.\"],[\"phone-behaviour-untested\",1,\"A phone-behaviour claim; dialogue T4.\"]],\"n\":[[\"local-draft-only\",\"Do not publish without Mira's separate approval; dialogue T1.\"]],\"a\":[[\"Mira\",\"Review a local draft; publication requires separate approval.\",\"Mira retains publication approval; dialogue T1.\"]],\"t\":[\"Mira\",\"Jules\",\"Build assistant\"],\"f\":[\"Screen-reader users\",\"Phone users\"],\"d\":[[\"Jules\",\"Objects to calling the release accessible while the screen-reader route is untested; dialogue T2.\"]],\"v\":[],\"x\":[[\"previous-build\",\"Return to the previous build; dialogue T3.\"]],\"h\":\"Review after the accessibility check; dialogue T3.\",\"y\":\"Hand the local draft to Mira for review.\"}",
+      "required_decoder": "LAMAGUE L1 decoder",
+      "exact_roundtrip": true,
+      "fields_preserved": 17,
+      "budget_fit": {
+        "1024": false,
+        "2048": true,
+        "4096": true
+      }
+    },
+    {
+      "id": "gzip-json",
+      "label": "JSON + gzip + base64",
+      "bytes": 919,
+      "wire": "GZ1H4sIAAAAAAACA5VUTW/bMAz9K4Qvu8QFuvXUnrI27botW9CmA4ZhB8Vmai6q5FFS0qzofy+pxPlad9jBBiyL4nuP7+mpMNMpVhHrkeFIGIrTH8VtxYiuZDQ1MqSAHIpeMWq8w/XXz15hUmw8U1xKxVNBdXFaDImNbAyVb1E+b3BOuAAD1lfGQs1mGs+gTRNLlYnkHTD+TsQYIGBr2EQE07bs58YeyTkRH+P6VNkZDbmwV93tPYOajPX3CWF8fFQ8C7jKGnqQ2nGDUGOYRd9C1WA1kxNMCFifgakqDIEmZIUDGFdDmwlOsDFz8oml54P0hOQiBhFIIdUkxS5myoJYyRcfk0XVp/WBFJcsfZ38Ek0DRA/C3JK7hyhIGC2agJvWFmHRkLz1Z9gTnX0SNShsuu+SfLsiKfLW6CrcDmBNVcGIMuhM/lucexciJ53yziknooGwYV2dLOF9IlvrCoVoXOyB8xHI1diivFy0S5gj05RWSqyH80+BVxDVIX+yJJ0ZplHYKd99/XPtLsd32iSTWqtWNjIjIcUlPpqH1mJ5rDvc3DAJ3rBVIdutzHYrvbPLLdoLn1llE4UGFiQWThHUYW9eMeErxhJnc3ZfDsqlHH0lz5083+T5rsFQX1BF7RpUl4rOJgc654rEYh6d1IgVA24y03EX1LgKEEw9d4A5a6pCMVYqzU4WW/3pUygn2m8rwQ3GxE6dqUPodkHedaC/8mUKM83g4OL6bpiz3UgqZOVzf9i/uhuUt4Nh/8v4+rwc9c8/DcZ5KMnNnF+4nZHsmbvM5i47Z6/cGvMlVJyKT1H55IuhvvQs1X136BaN914icoAz6F4ngKa53KT5f9rBQe3f/U5W6ohHEl5avxCm8rkktNr6g4JReXcuPlU832Q6v25wzy+6u9RIfwUAAA==",
+      "required_decoder": "Base64 decoder, gzip decoder, JSON parser",
+      "exact_roundtrip": true,
+      "fields_preserved": 17,
+      "budget_fit": {
+        "1024": true,
+        "2048": true,
+        "4096": true
+      }
+    }
+  ],
+  "controls": [
+    {
+      "id": "unchanged",
+      "title": "Keep the original handover",
+      "expected_exact": true,
+      "candidate": {
+        "schema": "LAMAGUE-SEMANTIC-PACKET-1",
+        "id": "release-handover-example-1",
+        "purpose": "Prepare a local release-note draft for Mira's review.",
+        "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.",
+        "risk": "MEDIUM",
+        "operations": [
+          "F",
+          "G",
+          "U",
+          "V",
+          "Y"
+        ],
+        "evidence": [
+          {
+            "id": "desktop",
+            "text": "The desktop checks passed.",
+            "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified."
+          }
+        ],
+        "unknowns": [
+          {
+            "id": "screen-reader-route-untested",
+            "protected": true,
+            "requiredFor": "An accessibility claim; dialogue T2 and T3."
+          },
+          {
+            "id": "phone-behaviour-untested",
+            "protected": true,
+            "requiredFor": "A phone-behaviour claim; dialogue T4."
+          }
+        ],
+        "invariants": [
+          {
+            "id": "local-draft-only",
+            "text": "Do not publish without Mira's separate approval; dialogue T1."
+          }
+        ],
+        "authority": [
+          {
+            "id": "Mira",
+            "scope": "Review a local draft; publication requires separate approval.",
+            "text": "Mira retains publication approval; dialogue T1."
+          }
+        ],
+        "participants": [
+          "Mira",
+          "Jules",
+          "Build assistant"
+        ],
+        "affectedParties": [
+          "Screen-reader users",
+          "Phone users"
+        ],
+        "dissent": [
+          {
+            "party": "Jules",
+            "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."
+          }
+        ],
+        "valueFlow": [],
+        "recovery": [
+          {
+            "id": "previous-build",
+            "text": "Return to the previous build; dialogue T3."
+          }
+        ],
+        "horizon": "Review after the accessibility check; dialogue T3.",
+        "yield": "Hand the local draft to Mira for review."
+      },
+      "comparison": {
+        "status": "EXACT_RECORD",
+        "record_match": true,
+        "fields_examined": 17,
+        "unchanged_fields": 17,
+        "changes": [],
+        "shape_error": null,
+        "codec_classification": {
+          "classification": "EXACT_EQUIVALENT",
+          "reason": "full canonical hash matches"
+        },
+        "declared_rule_violations": []
+      }
+    },
+    {
+      "id": "reordered",
+      "title": "Reorder JSON keys only",
+      "expected_exact": true,
+      "candidate": {
+        "yield": "Hand the local draft to Mira for review.",
+        "horizon": "Review after the accessibility check; dialogue T3.",
+        "recovery": [
+          {
+            "id": "previous-build",
+            "text": "Return to the previous build; dialogue T3."
+          }
+        ],
+        "valueFlow": [],
+        "dissent": [
+          {
+            "party": "Jules",
+            "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."
+          }
+        ],
+        "affectedParties": [
+          "Screen-reader users",
+          "Phone users"
+        ],
+        "participants": [
+          "Mira",
+          "Jules",
+          "Build assistant"
+        ],
+        "authority": [
+          {
+            "id": "Mira",
+            "scope": "Review a local draft; publication requires separate approval.",
+            "text": "Mira retains publication approval; dialogue T1."
+          }
+        ],
+        "invariants": [
+          {
+            "id": "local-draft-only",
+            "text": "Do not publish without Mira's separate approval; dialogue T1."
+          }
+        ],
+        "unknowns": [
+          {
+            "id": "screen-reader-route-untested",
+            "protected": true,
+            "requiredFor": "An accessibility claim; dialogue T2 and T3."
+          },
+          {
+            "id": "phone-behaviour-untested",
+            "protected": true,
+            "requiredFor": "A phone-behaviour claim; dialogue T4."
+          }
+        ],
+        "evidence": [
+          {
+            "id": "desktop",
+            "text": "The desktop checks passed.",
+            "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified."
+          }
+        ],
+        "operations": [
+          "F",
+          "G",
+          "U",
+          "V",
+          "Y"
+        ],
+        "risk": "MEDIUM",
+        "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.",
+        "purpose": "Prepare a local release-note draft for Mira's review.",
+        "id": "release-handover-example-1",
+        "schema": "LAMAGUE-SEMANTIC-PACKET-1"
+      },
+      "comparison": {
+        "status": "EXACT_RECORD",
+        "record_match": true,
+        "fields_examined": 17,
+        "unchanged_fields": 17,
+        "changes": [],
+        "shape_error": null,
+        "codec_classification": {
+          "classification": "EXACT_EQUIVALENT",
+          "reason": "full canonical hash matches"
+        },
+        "declared_rule_violations": []
+      }
+    },
+    {
+      "id": "permission",
+      "title": "Broaden permission to publish",
+      "expected_exact": false,
+      "candidate": {
+        "schema": "LAMAGUE-SEMANTIC-PACKET-1",
+        "id": "release-handover-example-1",
+        "purpose": "Prepare a local release-note draft for Mira's review.",
+        "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.",
+        "risk": "MEDIUM",
+        "operations": [
+          "F",
+          "G",
+          "U",
+          "V",
+          "Y"
+        ],
+        "evidence": [
+          {
+            "id": "desktop",
+            "text": "The desktop checks passed.",
+            "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified."
+          }
+        ],
+        "unknowns": [
+          {
+            "id": "screen-reader-route-untested",
+            "protected": true,
+            "requiredFor": "An accessibility claim; dialogue T2 and T3."
+          },
+          {
+            "id": "phone-behaviour-untested",
+            "protected": true,
+            "requiredFor": "A phone-behaviour claim; dialogue T4."
+          }
+        ],
+        "invariants": [
+          {
+            "id": "local-draft-only",
+            "text": "Do not publish without Mira's separate approval; dialogue T1."
+          }
+        ],
+        "authority": [
+          {
+            "id": "Mira",
+            "scope": "Publish the release immediately.",
+            "text": "Mira retains publication approval; dialogue T1."
+          }
+        ],
+        "participants": [
+          "Mira",
+          "Jules",
+          "Build assistant"
+        ],
+        "affectedParties": [
+          "Screen-reader users",
+          "Phone users"
+        ],
+        "dissent": [
+          {
+            "party": "Jules",
+            "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."
+          }
+        ],
+        "valueFlow": [],
+        "recovery": [
+          {
+            "id": "previous-build",
+            "text": "Return to the previous build; dialogue T3."
+          }
+        ],
+        "horizon": "Review after the accessibility check; dialogue T3.",
+        "yield": "Hand the local draft to Mira for review."
+      },
+      "comparison": {
+        "status": "CHANGED_RECORD",
+        "record_match": false,
+        "fields_examined": 17,
+        "unchanged_fields": 16,
+        "changes": [
+          {
+            "field": "authority",
+            "label": "Who may decide",
+            "before_present": true,
+            "after_present": true,
+            "before": [
+              {
+                "id": "Mira",
+                "scope": "Review a local draft; publication requires separate approval.",
+                "text": "Mira retains publication approval; dialogue T1."
+              }
+            ],
+            "after": [
+              {
+                "id": "Mira",
+                "scope": "Publish the release immediately.",
+                "text": "Mira retains publication approval; dialogue T1."
+              }
+            ],
+            "in_critical_projection": true
+          }
+        ],
+        "shape_error": null,
+        "codec_classification": {
+          "classification": "DIVERGENT",
+          "reason": "critical semantic hash changed"
+        },
+        "declared_rule_violations": []
+      }
+    },
+    {
+      "id": "unknowns",
+      "title": "Drop the unanswered questions",
+      "expected_exact": false,
+      "candidate": {
+        "schema": "LAMAGUE-SEMANTIC-PACKET-1",
+        "id": "release-handover-example-1",
+        "purpose": "Prepare a local release-note draft for Mira's review.",
+        "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.",
+        "risk": "MEDIUM",
+        "operations": [
+          "F",
+          "G",
+          "U",
+          "V",
+          "Y"
+        ],
+        "evidence": [
+          {
+            "id": "desktop",
+            "text": "The desktop checks passed.",
+            "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified."
+          }
+        ],
+        "unknowns": [],
+        "invariants": [
+          {
+            "id": "local-draft-only",
+            "text": "Do not publish without Mira's separate approval; dialogue T1."
+          }
+        ],
+        "authority": [
+          {
+            "id": "Mira",
+            "scope": "Review a local draft; publication requires separate approval.",
+            "text": "Mira retains publication approval; dialogue T1."
+          }
+        ],
+        "participants": [
+          "Mira",
+          "Jules",
+          "Build assistant"
+        ],
+        "affectedParties": [
+          "Screen-reader users",
+          "Phone users"
+        ],
+        "dissent": [
+          {
+            "party": "Jules",
+            "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."
+          }
+        ],
+        "valueFlow": [],
+        "recovery": [
+          {
+            "id": "previous-build",
+            "text": "Return to the previous build; dialogue T3."
+          }
+        ],
+        "horizon": "Review after the accessibility check; dialogue T3.",
+        "yield": "Hand the local draft to Mira for review."
+      },
+      "comparison": {
+        "status": "CHANGED_RECORD",
+        "record_match": false,
+        "fields_examined": 17,
+        "unchanged_fields": 16,
+        "changes": [
+          {
+            "field": "unknowns",
+            "label": "What is still unknown",
+            "before_present": true,
+            "after_present": true,
+            "before": [
+              {
+                "id": "screen-reader-route-untested",
+                "protected": true,
+                "requiredFor": "An accessibility claim; dialogue T2 and T3."
+              },
+              {
+                "id": "phone-behaviour-untested",
+                "protected": true,
+                "requiredFor": "A phone-behaviour claim; dialogue T4."
+              }
+            ],
+            "after": [],
+            "in_critical_projection": true
+          }
+        ],
+        "shape_error": null,
+        "codec_classification": {
+          "classification": "UNSAFE_COLLAPSE",
+          "reason": "protected meaning disappeared or weakened",
+          "fields": [
+            "unknowns"
+          ]
+        },
+        "declared_rule_violations": []
+      }
+    },
+    {
+      "id": "speaker",
+      "title": "Attribute Jules's objection to Mira",
+      "expected_exact": false,
+      "candidate": {
+        "schema": "LAMAGUE-SEMANTIC-PACKET-1",
+        "id": "release-handover-example-1",
+        "purpose": "Prepare a local release-note draft for Mira's review.",
+        "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.",
+        "risk": "MEDIUM",
+        "operations": [
+          "F",
+          "G",
+          "U",
+          "V",
+          "Y"
+        ],
+        "evidence": [
+          {
+            "id": "desktop",
+            "text": "The desktop checks passed.",
+            "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified."
+          }
+        ],
+        "unknowns": [
+          {
+            "id": "screen-reader-route-untested",
+            "protected": true,
+            "requiredFor": "An accessibility claim; dialogue T2 and T3."
+          },
+          {
+            "id": "phone-behaviour-untested",
+            "protected": true,
+            "requiredFor": "A phone-behaviour claim; dialogue T4."
+          }
+        ],
+        "invariants": [
+          {
+            "id": "local-draft-only",
+            "text": "Do not publish without Mira's separate approval; dialogue T1."
+          }
+        ],
+        "authority": [
+          {
+            "id": "Mira",
+            "scope": "Review a local draft; publication requires separate approval.",
+            "text": "Mira retains publication approval; dialogue T1."
+          }
+        ],
+        "participants": [
+          "Mira",
+          "Jules",
+          "Build assistant"
+        ],
+        "affectedParties": [
+          "Screen-reader users",
+          "Phone users"
+        ],
+        "dissent": [
+          {
+            "party": "Mira",
+            "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."
+          }
+        ],
+        "valueFlow": [],
+        "recovery": [
+          {
+            "id": "previous-build",
+            "text": "Return to the previous build; dialogue T3."
+          }
+        ],
+        "horizon": "Review after the accessibility check; dialogue T3.",
+        "yield": "Hand the local draft to Mira for review."
+      },
+      "comparison": {
+        "status": "CHANGED_RECORD",
+        "record_match": false,
+        "fields_examined": 17,
+        "unchanged_fields": 16,
+        "changes": [
+          {
+            "field": "dissent",
+            "label": "Who objected, and why",
+            "before_present": true,
+            "after_present": true,
+            "before": [
+              {
+                "party": "Jules",
+                "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."
+              }
+            ],
+            "after": [
+              {
+                "party": "Mira",
+                "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."
+              }
+            ],
+            "in_critical_projection": true
+          }
+        ],
+        "shape_error": null,
+        "codec_classification": {
+          "classification": "DIVERGENT",
+          "reason": "critical semantic hash changed"
+        },
+        "declared_rule_violations": []
+      }
+    },
+    {
+      "id": "dissent",
+      "title": "Remove the objection",
+      "expected_exact": false,
+      "candidate": {
+        "schema": "LAMAGUE-SEMANTIC-PACKET-1",
+        "id": "release-handover-example-1",
+        "purpose": "Prepare a local release-note draft for Mira's review.",
+        "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.",
+        "risk": "MEDIUM",
+        "operations": [
+          "F",
+          "G",
+          "U",
+          "V",
+          "Y"
+        ],
+        "evidence": [
+          {
+            "id": "desktop",
+            "text": "The desktop checks passed.",
+            "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified."
+          }
+        ],
+        "unknowns": [
+          {
+            "id": "screen-reader-route-untested",
+            "protected": true,
+            "requiredFor": "An accessibility claim; dialogue T2 and T3."
+          },
+          {
+            "id": "phone-behaviour-untested",
+            "protected": true,
+            "requiredFor": "A phone-behaviour claim; dialogue T4."
+          }
+        ],
+        "invariants": [
+          {
+            "id": "local-draft-only",
+            "text": "Do not publish without Mira's separate approval; dialogue T1."
+          }
+        ],
+        "authority": [
+          {
+            "id": "Mira",
+            "scope": "Review a local draft; publication requires separate approval.",
+            "text": "Mira retains publication approval; dialogue T1."
+          }
+        ],
+        "participants": [
+          "Mira",
+          "Jules",
+          "Build assistant"
+        ],
+        "affectedParties": [
+          "Screen-reader users",
+          "Phone users"
+        ],
+        "dissent": [],
+        "valueFlow": [],
+        "recovery": [
+          {
+            "id": "previous-build",
+            "text": "Return to the previous build; dialogue T3."
+          }
+        ],
+        "horizon": "Review after the accessibility check; dialogue T3.",
+        "yield": "Hand the local draft to Mira for review."
+      },
+      "comparison": {
+        "status": "CHANGED_RECORD",
+        "record_match": false,
+        "fields_examined": 17,
+        "unchanged_fields": 16,
+        "changes": [
+          {
+            "field": "dissent",
+            "label": "Who objected, and why",
+            "before_present": true,
+            "after_present": true,
+            "before": [
+              {
+                "party": "Jules",
+                "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."
+              }
+            ],
+            "after": [],
+            "in_critical_projection": true
+          }
+        ],
+        "shape_error": null,
+        "codec_classification": {
+          "classification": "UNSAFE_COLLAPSE",
+          "reason": "protected meaning disappeared or weakened",
+          "fields": [
+            "dissent"
+          ]
+        },
+        "declared_rule_violations": []
+      }
+    },
+    {
+      "id": "risk",
+      "title": "Lower the declared risk",
+      "expected_exact": false,
+      "candidate": {
+        "schema": "LAMAGUE-SEMANTIC-PACKET-1",
+        "id": "release-handover-example-1",
+        "purpose": "Prepare a local release-note draft for Mira's review.",
+        "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.",
+        "risk": "LOW",
+        "operations": [
+          "F",
+          "G",
+          "U",
+          "V",
+          "Y"
+        ],
+        "evidence": [
+          {
+            "id": "desktop",
+            "text": "The desktop checks passed.",
+            "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified."
+          }
+        ],
+        "unknowns": [
+          {
+            "id": "screen-reader-route-untested",
+            "protected": true,
+            "requiredFor": "An accessibility claim; dialogue T2 and T3."
+          },
+          {
+            "id": "phone-behaviour-untested",
+            "protected": true,
+            "requiredFor": "A phone-behaviour claim; dialogue T4."
+          }
+        ],
+        "invariants": [
+          {
+            "id": "local-draft-only",
+            "text": "Do not publish without Mira's separate approval; dialogue T1."
+          }
+        ],
+        "authority": [
+          {
+            "id": "Mira",
+            "scope": "Review a local draft; publication requires separate approval.",
+            "text": "Mira retains publication approval; dialogue T1."
+          }
+        ],
+        "participants": [
+          "Mira",
+          "Jules",
+          "Build assistant"
+        ],
+        "affectedParties": [
+          "Screen-reader users",
+          "Phone users"
+        ],
+        "dissent": [
+          {
+            "party": "Jules",
+            "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."
+          }
+        ],
+        "valueFlow": [],
+        "recovery": [
+          {
+            "id": "previous-build",
+            "text": "Return to the previous build; dialogue T3."
+          }
+        ],
+        "horizon": "Review after the accessibility check; dialogue T3.",
+        "yield": "Hand the local draft to Mira for review."
+      },
+      "comparison": {
+        "status": "CHANGED_RECORD",
+        "record_match": false,
+        "fields_examined": 17,
+        "unchanged_fields": 16,
+        "changes": [
+          {
+            "field": "risk",
+            "label": "Declared risk",
+            "before_present": true,
+            "after_present": true,
+            "before": "MEDIUM",
+            "after": "LOW",
+            "in_critical_projection": false
+          }
+        ],
+        "shape_error": null,
+        "codec_classification": {
+          "classification": "PARTIAL_EQUIVALENT",
+          "reason": "critical fields match while non-critical content differs"
+        },
+        "declared_rule_violations": []
+      }
+    },
+    {
+      "id": "evidence",
+      "title": "Invent a stronger test result",
+      "expected_exact": false,
+      "candidate": {
+        "schema": "LAMAGUE-SEMANTIC-PACKET-1",
+        "id": "release-handover-example-1",
+        "purpose": "Prepare a local release-note draft for Mira's review.",
+        "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.",
+        "risk": "MEDIUM",
+        "operations": [
+          "F",
+          "G",
+          "U",
+          "V",
+          "Y"
+        ],
+        "evidence": [
+          {
+            "id": "desktop",
+            "text": "The desktop, phone and accessibility checks passed.",
+            "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified."
+          }
+        ],
+        "unknowns": [
+          {
+            "id": "screen-reader-route-untested",
+            "protected": true,
+            "requiredFor": "An accessibility claim; dialogue T2 and T3."
+          },
+          {
+            "id": "phone-behaviour-untested",
+            "protected": true,
+            "requiredFor": "A phone-behaviour claim; dialogue T4."
+          }
+        ],
+        "invariants": [
+          {
+            "id": "local-draft-only",
+            "text": "Do not publish without Mira's separate approval; dialogue T1."
+          }
+        ],
+        "authority": [
+          {
+            "id": "Mira",
+            "scope": "Review a local draft; publication requires separate approval.",
+            "text": "Mira retains publication approval; dialogue T1."
+          }
+        ],
+        "participants": [
+          "Mira",
+          "Jules",
+          "Build assistant"
+        ],
+        "affectedParties": [
+          "Screen-reader users",
+          "Phone users"
+        ],
+        "dissent": [
+          {
+            "party": "Jules",
+            "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."
+          }
+        ],
+        "valueFlow": [],
+        "recovery": [
+          {
+            "id": "previous-build",
+            "text": "Return to the previous build; dialogue T3."
+          }
+        ],
+        "horizon": "Review after the accessibility check; dialogue T3.",
+        "yield": "Hand the local draft to Mira for review."
+      },
+      "comparison": {
+        "status": "CHANGED_RECORD",
+        "record_match": false,
+        "fields_examined": 17,
+        "unchanged_fields": 16,
+        "changes": [
+          {
+            "field": "evidence",
+            "label": "Evidence and its source",
+            "before_present": true,
+            "after_present": true,
+            "before": [
+              {
+                "id": "desktop",
+                "text": "The desktop checks passed.",
+                "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified."
+              }
+            ],
+            "after": [
+              {
+                "id": "desktop",
+                "text": "The desktop, phone and accessibility checks passed.",
+                "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified."
+              }
+            ],
+            "in_critical_projection": false
+          }
+        ],
+        "shape_error": null,
+        "codec_classification": {
+          "classification": "PARTIAL_EQUIVALENT",
+          "reason": "critical fields match while non-critical content differs"
+        },
+        "declared_rule_violations": []
+      }
+    },
+    {
+      "id": "recovery",
+      "title": "Remove the recovery path",
+      "expected_exact": false,
+      "candidate": {
+        "schema": "LAMAGUE-SEMANTIC-PACKET-1",
+        "id": "release-handover-example-1",
+        "purpose": "Prepare a local release-note draft for Mira's review.",
+        "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.",
+        "risk": "MEDIUM",
+        "operations": [
+          "F",
+          "G",
+          "U",
+          "V",
+          "Y"
+        ],
+        "evidence": [
+          {
+            "id": "desktop",
+            "text": "The desktop checks passed.",
+            "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified."
+          }
+        ],
+        "unknowns": [
+          {
+            "id": "screen-reader-route-untested",
+            "protected": true,
+            "requiredFor": "An accessibility claim; dialogue T2 and T3."
+          },
+          {
+            "id": "phone-behaviour-untested",
+            "protected": true,
+            "requiredFor": "A phone-behaviour claim; dialogue T4."
+          }
+        ],
+        "invariants": [
+          {
+            "id": "local-draft-only",
+            "text": "Do not publish without Mira's separate approval; dialogue T1."
+          }
+        ],
+        "authority": [
+          {
+            "id": "Mira",
+            "scope": "Review a local draft; publication requires separate approval.",
+            "text": "Mira retains publication approval; dialogue T1."
+          }
+        ],
+        "participants": [
+          "Mira",
+          "Jules",
+          "Build assistant"
+        ],
+        "affectedParties": [
+          "Screen-reader users",
+          "Phone users"
+        ],
+        "dissent": [
+          {
+            "party": "Jules",
+            "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."
+          }
+        ],
+        "valueFlow": [],
+        "recovery": [],
+        "horizon": "Review after the accessibility check; dialogue T3.",
+        "yield": "Hand the local draft to Mira for review."
+      },
+      "comparison": {
+        "status": "CHANGED_RECORD",
+        "record_match": false,
+        "fields_examined": 17,
+        "unchanged_fields": 16,
+        "changes": [
+          {
+            "field": "recovery",
+            "label": "How to recover",
+            "before_present": true,
+            "after_present": true,
+            "before": [
+              {
+                "id": "previous-build",
+                "text": "Return to the previous build; dialogue T3."
+              }
+            ],
+            "after": [],
+            "in_critical_projection": true
+          }
+        ],
+        "shape_error": null,
+        "codec_classification": {
+          "classification": "UNSAFE_COLLAPSE",
+          "reason": "candidate introduced semantic safety violations",
+          "violations": [
+            "PROTECTED_UNKNOWN_WITHOUT_RECOVERY"
+          ]
+        },
+        "declared_rule_violations": [
+          "PROTECTED_UNKNOWN_WITHOUT_RECOVERY"
+        ]
+      }
+    },
+    {
+      "id": "horizon",
+      "title": "Replace the review condition",
+      "expected_exact": false,
+      "candidate": {
+        "schema": "LAMAGUE-SEMANTIC-PACKET-1",
+        "id": "release-handover-example-1",
+        "purpose": "Prepare a local release-note draft for Mira's review.",
+        "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.",
+        "risk": "MEDIUM",
+        "operations": [
+          "F",
+          "G",
+          "U",
+          "V",
+          "Y"
+        ],
+        "evidence": [
+          {
+            "id": "desktop",
+            "text": "The desktop checks passed.",
+            "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified."
+          }
+        ],
+        "unknowns": [
+          {
+            "id": "screen-reader-route-untested",
+            "protected": true,
+            "requiredFor": "An accessibility claim; dialogue T2 and T3."
+          },
+          {
+            "id": "phone-behaviour-untested",
+            "protected": true,
+            "requiredFor": "A phone-behaviour claim; dialogue T4."
+          }
+        ],
+        "invariants": [
+          {
+            "id": "local-draft-only",
+            "text": "Do not publish without Mira's separate approval; dialogue T1."
+          }
+        ],
+        "authority": [
+          {
+            "id": "Mira",
+            "scope": "Review a local draft; publication requires separate approval.",
+            "text": "Mira retains publication approval; dialogue T1."
+          }
+        ],
+        "participants": [
+          "Mira",
+          "Jules",
+          "Build assistant"
+        ],
+        "affectedParties": [
+          "Screen-reader users",
+          "Phone users"
+        ],
+        "dissent": [
+          {
+            "party": "Jules",
+            "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."
+          }
+        ],
+        "valueFlow": [],
+        "recovery": [
+          {
+            "id": "previous-build",
+            "text": "Return to the previous build; dialogue T3."
+          }
+        ],
+        "horizon": "Publish immediately.",
+        "yield": "Hand the local draft to Mira for review."
+      },
+      "comparison": {
+        "status": "CHANGED_RECORD",
+        "record_match": false,
+        "fields_examined": 17,
+        "unchanged_fields": 16,
+        "changes": [
+          {
+            "field": "horizon",
+            "label": "When to review",
+            "before_present": true,
+            "after_present": true,
+            "before": "Review after the accessibility check; dialogue T3.",
+            "after": "Publish immediately.",
+            "in_critical_projection": false
+          }
+        ],
+        "shape_error": null,
+        "codec_classification": {
+          "classification": "PARTIAL_EQUIVALENT",
+          "reason": "critical fields match while non-critical content differs"
+        },
+        "declared_rule_violations": []
+      }
+    },
+    {
+      "id": "next-step",
+      "title": "Change the next step to publication",
+      "expected_exact": false,
+      "candidate": {
+        "schema": "LAMAGUE-SEMANTIC-PACKET-1",
+        "id": "release-handover-example-1",
+        "purpose": "Prepare a local release-note draft for Mira's review.",
+        "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.",
+        "risk": "MEDIUM",
+        "operations": [
+          "F",
+          "G",
+          "U",
+          "V",
+          "Y"
+        ],
+        "evidence": [
+          {
+            "id": "desktop",
+            "text": "The desktop checks passed.",
+            "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified."
+          }
+        ],
+        "unknowns": [
+          {
+            "id": "screen-reader-route-untested",
+            "protected": true,
+            "requiredFor": "An accessibility claim; dialogue T2 and T3."
+          },
+          {
+            "id": "phone-behaviour-untested",
+            "protected": true,
+            "requiredFor": "A phone-behaviour claim; dialogue T4."
+          }
+        ],
+        "invariants": [
+          {
+            "id": "local-draft-only",
+            "text": "Do not publish without Mira's separate approval; dialogue T1."
+          }
+        ],
+        "authority": [
+          {
+            "id": "Mira",
+            "scope": "Review a local draft; publication requires separate approval.",
+            "text": "Mira retains publication approval; dialogue T1."
+          }
+        ],
+        "participants": [
+          "Mira",
+          "Jules",
+          "Build assistant"
+        ],
+        "affectedParties": [
+          "Screen-reader users",
+          "Phone users"
+        ],
+        "dissent": [
+          {
+            "party": "Jules",
+            "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."
+          }
+        ],
+        "valueFlow": [],
+        "recovery": [
+          {
+            "id": "previous-build",
+            "text": "Return to the previous build; dialogue T3."
+          }
+        ],
+        "horizon": "Review after the accessibility check; dialogue T3.",
+        "yield": "Publish now without further review."
+      },
+      "comparison": {
+        "status": "CHANGED_RECORD",
+        "record_match": false,
+        "fields_examined": 17,
+        "unchanged_fields": 16,
+        "changes": [
+          {
+            "field": "yield",
+            "label": "The next step",
+            "before_present": true,
+            "after_present": true,
+            "before": "Hand the local draft to Mira for review.",
+            "after": "Publish now without further review.",
+            "in_critical_projection": false
+          }
+        ],
+        "shape_error": null,
+        "codec_classification": {
+          "classification": "PARTIAL_EQUIVALENT",
+          "reason": "critical fields match while non-critical content differs"
+        },
+        "declared_rule_violations": []
+      }
+    },
+    {
+      "id": "malformed",
+      "title": "Delete a required field",
+      "expected_exact": false,
+      "candidate": {
+        "schema": "LAMAGUE-SEMANTIC-PACKET-1",
+        "id": "release-handover-example-1",
+        "purpose": "Prepare a local release-note draft for Mira's review.",
+        "claim": "The desktop checks passed; accessibility and phone behaviour remain untested.",
+        "risk": "MEDIUM",
+        "operations": [
+          "F",
+          "G",
+          "U",
+          "V",
+          "Y"
+        ],
+        "evidence": [
+          {
+            "id": "desktop",
+            "text": "The desktop checks passed.",
+            "provenance": "Constructed dialogue T4; asserted by Build assistant, not independently verified."
+          }
+        ],
+        "unknowns": [
+          {
+            "id": "screen-reader-route-untested",
+            "protected": true,
+            "requiredFor": "An accessibility claim; dialogue T2 and T3."
+          },
+          {
+            "id": "phone-behaviour-untested",
+            "protected": true,
+            "requiredFor": "A phone-behaviour claim; dialogue T4."
+          }
+        ],
+        "invariants": [
+          {
+            "id": "local-draft-only",
+            "text": "Do not publish without Mira's separate approval; dialogue T1."
+          }
+        ],
+        "participants": [
+          "Mira",
+          "Jules",
+          "Build assistant"
+        ],
+        "affectedParties": [
+          "Screen-reader users",
+          "Phone users"
+        ],
+        "dissent": [
+          {
+            "party": "Jules",
+            "position": "Objects to calling the release accessible while the screen-reader route is untested; dialogue T2."
+          }
+        ],
+        "valueFlow": [],
+        "recovery": [
+          {
+            "id": "previous-build",
+            "text": "Return to the previous build; dialogue T3."
+          }
+        ],
+        "horizon": "Review after the accessibility check; dialogue T3.",
+        "yield": "Hand the local draft to Mira for review."
+      },
+      "comparison": {
+        "status": "MALFORMED_RECORD",
+        "record_match": false,
+        "fields_examined": 17,
+        "unchanged_fields": 16,
+        "changes": [
+          {
+            "field": "authority",
+            "label": "Who may decide",
+            "before_present": true,
+            "after_present": false,
+            "before": [
+              {
+                "id": "Mira",
+                "scope": "Review a local draft; publication requires separate approval.",
+                "text": "Mira retains publication approval; dialogue T1."
+              }
+            ],
+            "after": null,
+            "in_critical_projection": true
+          }
+        ],
+        "shape_error": "missing required fields: authority",
+        "codec_classification": null,
+        "declared_rule_violations": null
+      }
+    }
+  ],
+  "summary": {
+    "formats_measured": 3,
+    "exact_roundtrips": 3,
+    "controls_examined": 12,
+    "controls_matching_expectation": 12
+  },
+  "environment": {
+    "python": "3.12.3",
+    "zlib": "1.3"
+  },
+  "source_sha256": {
+    "examples/meaning_handover/case.json": "cd37a04dcfe98f803f1da09b5793dd66dbd1bfd1ee490fad71d9a8997cae4149",
+    "examples/meaning_handover/demo.py": "9c3cf9d9d5881e3e688cf898f383917d4327274232c69ff4ee36215ee7d928f9",
+    "examples/meaning_handover/page.html": "cd557e2039b374964dddf448d58e9bc2ae418cb09e708a57b6b53ba3905ed665",
+    "lycheetah/compaction/codec.py": "6d28c24b283444487f7f0b6fdaaf5205d144152d4d094513ac171ea8e70659b8"
+  },
+  "boundaries": [
+    "The source-to-packet mapping was authored by us, not extracted or verified by the codec.",
+    "Every format gets the same packet. No format is truncated to fit a budget.",
+    "Sizes are UTF-8 bytes, not model tokens; complete base64 and prefix costs are included.",
+    "Decoder code is assumed available and excluded for every format. L1 uses no codebook.",
+    "The JSON baseline receives the same full-field comparison as LAMAGUE.",
+    "Changed-record controls are deliberately authored, not natural-language benchmark results.",
+    "Exact record equality does not establish truth, human understanding, consent or safe execution.",
+    "A critical-hash match omits risk, evidence, operations, horizon, yield, id and schema.",
+    "No models, external participants, model-token measurements or independent replication ran."
+  ]
+}

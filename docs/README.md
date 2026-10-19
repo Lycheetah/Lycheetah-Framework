@@ -15,6 +15,8 @@ Public pages for the Lycheetah method. Static HTML and CSS. GitHub Pages serves 
 | File | What it is |
 |------|------------|
 | `index.html` | The method. Not a product. |
+| `lamague-handover.html` | Offline handover demonstration; generated from `examples/meaning_handover/`. Three lossless formats and twelve constructed controls. |
+| `lamague-handover-report.json` | Reproducible local measurements and source digests for that demonstration. |
 | `for-agents.html` | Notes for carrying the method into a tool. Not an operating system. |
 | `mystery-school.html` | Public study. Not for sale. |
 | `nz-governance.html` | Drafts. Not adopted national standards. |

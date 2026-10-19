@@ -9,6 +9,32 @@ history, which was the only changelog until now.
 
 ## [Unreleased]
 
+### LAMAGUE handover research preview — 18–19 October 2026
+
+- Added an own-task form to the offline page, exporting readable handovers and
+  LAMAGUE packet JSON without inference, autosave or submission. Author review,
+  permission boundaries, risk and recovery are explicit; editing invalidates
+  the preview and clear removes it.
+- Added separate feedback downloads with optional timing: unmeasured values
+  stay null, explicit zero stays zero, and self-reports establish no independence.
+  Added a short tester card; no task content is attached automatically.
+
+- Added an offline browser demonstration of permission, uncertainty, attribution
+  and other declared-record changes, with downloadable records and results.
+- Compared compact JSON, LAMAGUE L1 and gzip/base64 JSON on the same constructed
+  packet and common byte budgets. All restore 17 fields; compressed JSON is
+  smallest in this example. No human-understanding advantage is claimed.
+- Added a full-record comparison CLI, twelve explicit failure/unchanged controls,
+  reproducible source digests and a proposed independent usability trial.
+- Focused verification: 60 runner/comparator and existing compaction tests
+  passed. The expanded offline page passed 64 Chromium checks covering controls,
+  budgets, keyboard selection, builder validation, export/clear behaviour,
+  feedback separation and desktop/narrow layouts; screenshots
+  were inspected. Firefox, physical devices and independent users are untested.
+  A browser-exported record also passed Python validation and an exact codec
+  round trip. Prepared for the existing master/docs Pages site; no release tag,
+  model calls or outside participants.
+
 ### LAMAGUE language guide and synthesis — 18 October 2026
 
 - Replaced the language folder's mixed historical introduction with a current
