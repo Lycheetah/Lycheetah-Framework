@@ -600,7 +600,7 @@ class TestConsensusCompactionAndGatewayFailures:
         assert r_rogue.accepted is False
         assert r_rogue.stop_reason == "ACTOR_QUARANTINED"
 
-        # Cohomology obstruction (obstruction_free=False) refused
+        # Legacy connectivity/consistency obstruction flag is refused.
         obstructed_verdict = replace(verdict, obstruction_free=False)
         permit_obs = harness.issue_permit(
             permit_id="perm-obs",
@@ -610,7 +610,7 @@ class TestConsensusCompactionAndGatewayFailures:
             bound_scope="exec:deploy",
             state_version="state-v1",
             action=action,
-            consensus_verdict=obstructed_verdict,
+            consensus_verdict=verdict,
             reference_packet=pkt,
             issued_at=1_700_000_000,
             ttl_seconds=300,

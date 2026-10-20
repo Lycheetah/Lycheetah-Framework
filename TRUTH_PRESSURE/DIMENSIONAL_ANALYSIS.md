@@ -1,4 +1,6 @@
 # DIMENSIONAL ANALYSIS OF TRUTH PRESSURE
+
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** Dimensional cancellation does not establish construct validity, empirical equivalence across domains or universal normalization bounds. Read the counterexamples and measurement limits in the full review. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
 ## Proving Π = (E·P)/S is Structurally Consistent Across Seven Domains
 
 **Document status:** ACTIVE

@@ -1,5 +1,7 @@
 # Chrysopoeia — Transformation Calculus Essentials
 
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** The actual Solve/Coagula example reduces coherence, and Xi draws fresh noise. A final contracting stage does not establish deterministic contraction, maximal coherence or a general transformation guarantee. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+
 **Status:** ⭐ FORMALIZED [SCAFFOLD] — Seven Operations and four transformation tiers are structurally sound and internally consistent. The Philosopher's Stone as fixed point is a legitimate mathematical claim (Banach fixed-point theorem applies). The path-dependency claim (non-commutative operator composition) is [ACTIVE]. Specific parameter values (λ_compress, tier thresholds) are [SCAFFOLD — design parameters, not derived]. | **Type:** Transformation Calculus | **Key:** Makes transformation measurable and stage-structured
 
 ## What It Does

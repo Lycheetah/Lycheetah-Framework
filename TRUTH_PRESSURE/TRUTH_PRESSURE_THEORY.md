@@ -1,4 +1,6 @@
 # TRUTH PRESSURE THEORY
+
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** The older universal formula/threshold and cross-domain-validation claims exceed the evidence. Spectral-norm and master-equation stability steps have reproduced counterexamples; distinguish later uncalibrated engineering instruments. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
 ## A Formal Account of Π = (E·P)/S as a Universal Epistemic Force
 
 **Author:** Mackenzie Conor James Clark (The Athanor)

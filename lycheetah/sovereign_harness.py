@@ -1,9 +1,8 @@
 """Unified Sovereign Execution Harness (`lycheetah.sovereign_harness`).
 
-Integrates Lycheetah's three frontier safety engines into a single fail-closed
-execution airlock:
+Integrates three bounded control mechanisms into a local execution harness:
 1. `ConsensusArena` (`lycheetah.consensus`): multi-agent Psi-Consensus gossip,
-   sheaf cohomology H^1 obstruction detection, and Byzantine Grey Mode quarantine.
+   connectivity/local-consistency checks and Grey Mode quarantine.
 2. `CompactionShield` (`lycheetah.compaction`): 10-field constitutional state
    compaction and semantic collapse detection (`LAMAGUE-SEMANTIC-PACKET-1`).
 3. `ActionGateway` (`lycheetah.assurance`): evidence-capped policy evaluation,
@@ -29,9 +28,10 @@ preserved context to:
 
 Epistemic & Scientific Boundaries
 ---------------------------------
-- Zero H^1 (`obstruction_free=True`) establishes pairwise consistency across the
-  participating agent vectors under the configured thresholds; it does NOT
-  establish factual truth of the underlying claim.
+- `obstruction_free=True` reports connectivity and pairwise vector consistency
+  under configured thresholds. It does not compute H^1 or establish truth.
+- The digest is recomputed at permit issuance and execution. Its v2 payload binds
+  the anchor and complete outcome without authenticating an external issuer.
 - `CompactionShield` verification establishes preservation of the 10 schema
   accountability fields (`CRITICAL_FIELDS`); it does NOT prove lossless general
   reasoning.
@@ -430,6 +430,10 @@ class SovereignExecutionHarness:
         ttl_seconds: int = 300,
     ) -> SovereignExecutionPermit:
         """Issue and register a single-use `SovereignExecutionPermit`."""
+        if not consensus_verdict.verify_integrity():
+            raise ValueError(
+                "Consensus verdict integrity is invalid; re-deliberate before issuance"
+            )
         pkt = (
             reference_packet
             if isinstance(reference_packet, AgentStatePacket)
@@ -630,7 +634,9 @@ class SovereignExecutionHarness:
             "has_recovery": bool(cand_obj.recovery),
         }
 
-        # ── GATE 1: EPISTEMIC CONSENSUS (H^1 = 0, Byzantine quorum, healthy actor) ──
+        # GATE 1: digest-bound gossip/consistency proxy and healthy actor.
+        # The legacy stop reason COHOMOLOGY_OBSTRUCTION is retained for callers;
+        # this gate does not compute H^1 or prove Byzantine fault tolerance.
         if not verdict.converged:
             return self._build_receipt(
                 accepted=False,
@@ -696,6 +702,21 @@ class SovereignExecutionHarness:
                 accepted=False,
                 status="DENIED",
                 stop_reason="CONSENSUS_DIGEST_MISMATCH",
+                provider_called=False,
+                permit=permit,
+                live_action_hash=live_act_hash,
+                live_scope=live_scope,
+                live_state_version=current_state_version,
+                evaluated_at=eval_now,
+                consensus_summary=consensus_summary,
+                compaction_summary=compaction_summary,
+                gateway_result=None,
+            )
+        if not verdict.verify_integrity():
+            return self._build_receipt(
+                accepted=False,
+                status="DENIED",
+                stop_reason="CONSENSUS_INTEGRITY_INVALID",
                 provider_called=False,
                 permit=permit,
                 live_action_hash=live_act_hash,

@@ -1,0 +1,2856 @@
+{
+  "classification": "MISSING_EVIDENCE",
+  "method": "Split the literal evidence_path at semicolons; inspect local existence and tracked ownership. No replacement paths or semantic evidence waivers.",
+  "warning": "A missing pointer does not itself refute a theorem. An existing pointer does not establish its claim.",
+  "register_sha256": "ac364696fb4182da589565a3af4300cead603d0295140dd8088e7b049c116b8b",
+  "summary": {
+    "claims": 71,
+    "author_status_counts": {
+      "ACTIVE": 52,
+      "SCAFFOLD": 12,
+      "CONJECTURE": 4,
+      "RETRACTED": 3
+    },
+    "evidence_references": 107,
+    "existing_references": 70,
+    "missing_references": 37,
+    "claims_all_references_missing": 24,
+    "active_claims_all_references_missing": 18
+  },
+  "resolver_controls": {
+    "existing_register_detected": true,
+    "known_missing_sentinel_detected": true
+  },
+  "missing_references": [
+    {
+      "claim_id": "CAS-002",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "literal_reference": "MATHEMATICS_FOUNDATIONS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "CAS-003",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "CAS-004",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "literal_reference": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "CAS-005",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "CAS-006",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "literal_reference": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "CAS-007",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "literal_reference": "10_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "CAS-008",
+      "author_status": "ASPIRATIONAL",
+      "author_status_normalized": "CONJECTURE",
+      "literal_reference": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "CAS-008",
+      "author_status": "ASPIRATIONAL",
+      "author_status_normalized": "CONJECTURE",
+      "literal_reference": "MATHEMATICS_FOUNDATIONS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "CAS-009",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "01_CASCADE_L4/implementations/",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "CAS-010",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "01_CASCADE_L4/implementations/",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "CAS-011",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "01_CASCADE_L4/implementations/",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "AUR-009",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "literal_reference": "02_AURA_L3/AURA_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "LAM-001",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "03_LAMAGUE_L1/essentials.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "LAM-002",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "03_LAMAGUE_L1/essentials.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "LAM-003",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "03_LAMAGUE_L1/LAMAGUE_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "LAM-004",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "03_LAMAGUE_L1/LAMAGUE_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "TRI-003",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "TRI-004",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "TRI-005",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "TRI-006",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "TRI-007",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "MIC-003",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "05_MICROORCIM_L5/MICROORCIM_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "ANA-002",
+      "author_status": "EMPIRICAL",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "07_ANAMNESIS_L0/TC_CATALOG.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "ANA-003",
+      "author_status": "EMPIRICAL",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "07_ANAMNESIS_L0/TC_CATALOG.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "ANA-004",
+      "author_status": "EMPIRICAL",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "07_ANAMNESIS_L0/TC_CATALOG.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "CRY-001",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "08_CHRYSOPOEIA/essentials.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "CRY-002",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "CRY-003",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "CRY-004",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "HAR-001",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "09_HARMONIA/essentials.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "HAR-002",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "09_HARMONIA/essentials.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "HAR-003",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "09_HARMONIA/essentials.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "HAR-004",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "09_HARMONIA/essentials.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "HAR-005",
+      "author_status": "ASPIRATIONAL",
+      "author_status_normalized": "CONJECTURE",
+      "literal_reference": "09_HARMONIA/essentials.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "XFW-001",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "literal_reference": "10_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "LYV-001",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "MATHEMATICS_FOUNDATIONS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    },
+    {
+      "claim_id": "LYV-002",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "literal_reference": "MATHEMATICS_FOUNDATIONS.md",
+      "exists_locally": false,
+      "kind": "missing",
+      "is_symlink": false,
+      "git_tracked_file": false,
+      "git_mode": null,
+      "tracked_descendant_count": 0,
+      "classification": "MISSING_EVIDENCE"
+    }
+  ],
+  "claims_all_references_missing": [
+    "CAS-003",
+    "CAS-004",
+    "CAS-005",
+    "CAS-006",
+    "CAS-007",
+    "CAS-008",
+    "AUR-009",
+    "LAM-001",
+    "LAM-003",
+    "LAM-004",
+    "TRI-003",
+    "TRI-004",
+    "TRI-005",
+    "TRI-007",
+    "ANA-003",
+    "ANA-004",
+    "CRY-001",
+    "CRY-002",
+    "CRY-003",
+    "CRY-004",
+    "HAR-001",
+    "HAR-003",
+    "HAR-005",
+    "LYV-002"
+  ],
+  "claims": [
+    {
+      "claim_id": "CAS-001",
+      "framework": "CASCADE",
+      "statement": "Knowledge pyramid has three layers: K_foundation (stable axioms), K_theory (working models), K_edge (live hypotheses)",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "01_CASCADE_L4/essentials.md",
+      "references": [
+        {
+          "claim_id": "CAS-001",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "01_CASCADE_L4/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "cff3361e8edc1b6f34ba5438ad970d7d1ff93c0d502c5f21535d524c420bc8e9"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "CAS-002",
+      "framework": "CASCADE",
+      "statement": "Truth pressure formula: Π = E·P/Coh — evidence weight times plausibility divided by current coherence",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "original_evidence_path": "01_CASCADE_L4/essentials.md; MATHEMATICS_FOUNDATIONS.md",
+      "references": [
+        {
+          "claim_id": "CAS-002",
+          "author_status": "SCAFFOLD",
+          "author_status_normalized": "SCAFFOLD",
+          "literal_reference": "01_CASCADE_L4/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "cff3361e8edc1b6f34ba5438ad970d7d1ff93c0d502c5f21535d524c420bc8e9"
+        },
+        {
+          "claim_id": "CAS-002",
+          "author_status": "SCAFFOLD",
+          "author_status_normalized": "SCAFFOLD",
+          "literal_reference": "MATHEMATICS_FOUNDATIONS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "CAS-003",
+      "framework": "CASCADE",
+      "statement": "Invariant preservation — Theorem C1: the CASCADE update operator preserves the set of structural invariants across reorganization",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "references": [
+        {
+          "claim_id": "CAS-003",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "CAS-004",
+      "framework": "CASCADE",
+      "statement": "Coherence non-decrease — Theorem C2: coherence Coh(ψ) is non-decreasing under valid CASCADE updates (incomplete proof)",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "original_evidence_path": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "references": [
+        {
+          "claim_id": "CAS-004",
+          "author_status": "SCAFFOLD",
+          "author_status_normalized": "SCAFFOLD",
+          "literal_reference": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "CAS-005",
+      "framework": "CASCADE",
+      "statement": "Fixed-point convergence — Theorem C3: iterated CASCADE updates converge to a fixed point ψ_inv",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "references": [
+        {
+          "claim_id": "CAS-005",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "CAS-006",
+      "framework": "CASCADE",
+      "statement": "Fixed-point uniqueness — Theorem C4: the fixed point ψ_inv is unique under the contraction mapping (incomplete)",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "original_evidence_path": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "references": [
+        {
+          "claim_id": "CAS-006",
+          "author_status": "SCAFFOLD",
+          "author_status_normalized": "SCAFFOLD",
+          "literal_reference": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "CAS-007",
+      "framework": "CASCADE",
+      "statement": "k1–k4 parameter structure governs the master equation coupling CASCADE to other frameworks",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "original_evidence_path": "10_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md",
+      "references": [
+        {
+          "claim_id": "CAS-007",
+          "author_status": "SCAFFOLD",
+          "author_status_normalized": "SCAFFOLD",
+          "literal_reference": "10_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "CAS-008",
+      "framework": "CASCADE",
+      "statement": "CASCADE as AGM belief revision — Conjecture C5: CASCADE satisfies all six AGM postulates",
+      "author_status": "ASPIRATIONAL",
+      "author_status_normalized": "CONJECTURE",
+      "original_evidence_path": "01_CASCADE_L4/CASCADE_THEOREMS.md; MATHEMATICS_FOUNDATIONS.md",
+      "references": [
+        {
+          "claim_id": "CAS-008",
+          "author_status": "ASPIRATIONAL",
+          "author_status_normalized": "CONJECTURE",
+          "literal_reference": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        },
+        {
+          "claim_id": "CAS-008",
+          "author_status": "ASPIRATIONAL",
+          "author_status_normalized": "CONJECTURE",
+          "literal_reference": "MATHEMATICS_FOUNDATIONS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "CAS-009",
+      "framework": "CASCADE",
+      "statement": "CASCADE +40.3% coherence improvement (synthetic): Coh rises from 0.58 to 0.93 across 10 replications, 3-condition experiment, p < 0.001, d = 2.84",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "01_CASCADE_L4/implementations/; 29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "references": [
+        {
+          "claim_id": "CAS-009",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "01_CASCADE_L4/implementations/",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        },
+        {
+          "claim_id": "CAS-009",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "6199787842967dabb46868aebb532937a4bce77ce4144ecc6e54edc1896f6afb"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "CAS-010",
+      "framework": "CASCADE",
+      "statement": "CASCADE +110% coherence improvement (real data): Coh rises from 0.47 to 1.0 across 5 historical paradigm shifts, 200 trials each",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "01_CASCADE_L4/implementations/; 29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "references": [
+        {
+          "claim_id": "CAS-010",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "01_CASCADE_L4/implementations/",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        },
+        {
+          "claim_id": "CAS-010",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "6199787842967dabb46868aebb532937a4bce77ce4144ecc6e54edc1896f6afb"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "CAS-011",
+      "framework": "CASCADE",
+      "statement": "CASCADE -95.2% catastrophic forgetting reduction: forgetting drops from 0.42 to 0.02 in synthetic experiment",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "01_CASCADE_L4/implementations/; 29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "references": [
+        {
+          "claim_id": "CAS-011",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "01_CASCADE_L4/implementations/",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        },
+        {
+          "claim_id": "CAS-011",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "6199787842967dabb46868aebb532937a4bce77ce4144ecc6e54edc1896f6afb"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "AUR-001",
+      "framework": "AURA",
+      "statement": "Seven constitutional invariants I1–I7 define the minimal necessary conditions for trustworthy AI behavior",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "02_AURA_L3/essentials.md",
+      "references": [
+        {
+          "claim_id": "AUR-001",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "02_AURA_L3/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "1fa5c6312a12cefbf9e3cdcda9c7328b8884bd62c5941b0666c04e0cb3569892"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "AUR-002",
+      "framework": "AURA",
+      "statement": "I1 Human Primacy: the system must preserve human agency and override authority at all decision points",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "02_AURA_L3/essentials.md",
+      "references": [
+        {
+          "claim_id": "AUR-002",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "02_AURA_L3/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "1fa5c6312a12cefbf9e3cdcda9c7328b8884bd62c5941b0666c04e0cb3569892"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "AUR-003",
+      "framework": "AURA",
+      "statement": "I2 Inspectability: every consequential claim must be auditable in plain language",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "02_AURA_L3/essentials.md",
+      "references": [
+        {
+          "claim_id": "AUR-003",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "02_AURA_L3/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "1fa5c6312a12cefbf9e3cdcda9c7328b8884bd62c5941b0666c04e0cb3569892"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "AUR-004",
+      "framework": "AURA",
+      "statement": "I3 Memory Continuity: causal history is preserved across interactions — nothing erased without consent",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "02_AURA_L3/essentials.md",
+      "references": [
+        {
+          "claim_id": "AUR-004",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "02_AURA_L3/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "1fa5c6312a12cefbf9e3cdcda9c7328b8884bd62c5941b0666c04e0cb3569892"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "AUR-005",
+      "framework": "AURA",
+      "statement": "I4 Constraint Honesty: all limits and constraints must be declared, not hidden",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "02_AURA_L3/essentials.md",
+      "references": [
+        {
+          "claim_id": "AUR-005",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "02_AURA_L3/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "1fa5c6312a12cefbf9e3cdcda9c7328b8884bd62c5941b0666c04e0cb3569892"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "AUR-006",
+      "framework": "AURA",
+      "statement": "I5 Reversibility Bias: actions that can be undone are preferred over irreversible actions",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "02_AURA_L3/essentials.md",
+      "references": [
+        {
+          "claim_id": "AUR-006",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "02_AURA_L3/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "1fa5c6312a12cefbf9e3cdcda9c7328b8884bd62c5941b0666c04e0cb3569892"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "AUR-007",
+      "framework": "AURA",
+      "statement": "I6 Non-Deception: confidence is accurately represented — no false precision, no hidden uncertainty",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "02_AURA_L3/essentials.md",
+      "references": [
+        {
+          "claim_id": "AUR-007",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "02_AURA_L3/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "1fa5c6312a12cefbf9e3cdcda9c7328b8884bd62c5941b0666c04e0cb3569892"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "AUR-008",
+      "framework": "AURA",
+      "statement": "I7 Love as Structure (Care as Structure): wellbeing of the human is structural in outputs, not decorative",
+      "author_status": "ASPIRATIONAL",
+      "author_status_normalized": "CONJECTURE",
+      "original_evidence_path": "02_AURA_L3/essentials.md",
+      "references": [
+        {
+          "claim_id": "AUR-008",
+          "author_status": "ASPIRATIONAL",
+          "author_status_normalized": "CONJECTURE",
+          "literal_reference": "02_AURA_L3/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "1fa5c6312a12cefbf9e3cdcda9c7328b8884bd62c5941b0666c04e0cb3569892"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "AUR-009",
+      "framework": "AURA",
+      "statement": "Seven invariants are simultaneously satisfiable — no internal contradiction (formal proof incomplete)",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "original_evidence_path": "02_AURA_L3/AURA_THEOREMS.md",
+      "references": [
+        {
+          "claim_id": "AUR-009",
+          "author_status": "SCAFFOLD",
+          "author_status_normalized": "SCAFFOLD",
+          "literal_reference": "02_AURA_L3/AURA_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "AUR-010",
+      "framework": "AURA",
+      "statement": "Vector Inversion Protocol (VIP): for any request R, VIP always produces either R fulfilled or a valid alternative R' — never an empty result",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "02_AURA_L3/essentials.md",
+      "references": [
+        {
+          "claim_id": "AUR-010",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "02_AURA_L3/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "1fa5c6312a12cefbf9e3cdcda9c7328b8884bd62c5941b0666c04e0cb3569892"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "AUR-011",
+      "framework": "AURA",
+      "statement": "AURA compliance predicate: aura_compliant(a) ← I1(a) ∧ I2(a) ∧ I3(a) ∧ I4(a) ∧ I5(a) ∧ I6(a) ∧ I7(a)",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "02_AURA_L3/essentials.md; 30_MAPS/FORMAL_SPINE.md",
+      "references": [
+        {
+          "claim_id": "AUR-011",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "02_AURA_L3/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "1fa5c6312a12cefbf9e3cdcda9c7328b8884bd62c5941b0666c04e0cb3569892"
+        },
+        {
+          "claim_id": "AUR-011",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "30_MAPS/FORMAL_SPINE.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "f7656d3dbdfcdd35838b4296d5e849a15a6540163a724e194118897f5ec7f62d"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "LAM-001",
+      "framework": "LAMAGUE",
+      "statement": "Four-tier language stack (Tier 0: TRIAD Kernel, Tier 1: predicate logic, Tier 2: LAMAHGUE 9-glyph, Tier 3: GEOMATRIA sacred geometry)",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "03_LAMAGUE_L1/essentials.md",
+      "references": [
+        {
+          "claim_id": "LAM-001",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "03_LAMAGUE_L1/essentials.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "LAM-002",
+      "framework": "LAMAGUE",
+      "statement": "Tier 0 TRIAD Kernel operators (Ao, Φ↑, Ψ_op) form the primitive basis of LAMAGUE",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "03_LAMAGUE_L1/essentials.md; 04_TRIAD_L2/essentials.md",
+      "references": [
+        {
+          "claim_id": "LAM-002",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "03_LAMAGUE_L1/essentials.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        },
+        {
+          "claim_id": "LAM-002",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "04_TRIAD_L2/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "9d6fd6cea6d3095ed605078259a07797e7dc150ee6e361ef123e08ec1632b5ac"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "LAM-003",
+      "framework": "LAMAGUE",
+      "statement": "LAM category 𝓛 — associativity (Theorem L1): composition of LAMAGUE expressions is associative",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "03_LAMAGUE_L1/LAMAGUE_THEOREMS.md",
+      "references": [
+        {
+          "claim_id": "LAM-003",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "03_LAMAGUE_L1/LAMAGUE_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "LAM-004",
+      "framework": "LAMAGUE",
+      "statement": "LAM category 𝓛 — identity law (Theorem L2): there exists an identity element for LAMAGUE composition",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "03_LAMAGUE_L1/LAMAGUE_THEOREMS.md",
+      "references": [
+        {
+          "claim_id": "LAM-004",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "03_LAMAGUE_L1/LAMAGUE_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "LAM-005",
+      "framework": "LAMAGUE",
+      "statement": "Cross-cultural convergence paper draft v0.1 complete: LAMAGUE grammar captures convergent ethical structures across Maori, Confucian, and Western traditions",
+      "author_status": "OBSERVATIONAL",
+      "author_status_normalized": "SCAFFOLD",
+      "original_evidence_path": "docs/LAMAGUE_CROSS_CULTURAL_PAPER.md",
+      "references": [
+        {
+          "claim_id": "LAM-005",
+          "author_status": "OBSERVATIONAL",
+          "author_status_normalized": "SCAFFOLD",
+          "literal_reference": "docs/LAMAGUE_CROSS_CULTURAL_PAPER.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "2f1557132d968f30adfa18826c9be8ae5569093a322afd3eab01e3048882087e"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "TRI-001",
+      "framework": "TRIAD",
+      "statement": "Three primitive operators: Ao (anchor/observe), Φ↑ (ascent/correction), Ψ_op (operational application) — minimal basis for convergent cycles",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "04_TRIAD_L2/essentials.md",
+      "references": [
+        {
+          "claim_id": "TRI-001",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "04_TRIAD_L2/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "9d6fd6cea6d3095ed605078259a07797e7dc150ee6e361ef123e08ec1632b5ac"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "TRI-002",
+      "framework": "TRIAD",
+      "statement": "TRIAD cycle: TRIAD_cycle(ψ) = Ψ_op(Φ↑(Ao(ψ))) — three operators compose into a single convergent cycle",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "04_TRIAD_L2/essentials.md; 30_MAPS/FORMAL_SPINE.md",
+      "references": [
+        {
+          "claim_id": "TRI-002",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "04_TRIAD_L2/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "9d6fd6cea6d3095ed605078259a07797e7dc150ee6e361ef123e08ec1632b5ac"
+        },
+        {
+          "claim_id": "TRI-002",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "30_MAPS/FORMAL_SPINE.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "f7656d3dbdfcdd35838b4296d5e849a15a6540163a724e194118897f5ec7f62d"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "TRI-003",
+      "framework": "TRIAD",
+      "statement": "Local stability near ψ_inv — Theorem T1: the fixed point ψ_inv is locally stable under TRIAD iterations",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "references": [
+        {
+          "claim_id": "TRI-003",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "TRI-004",
+      "framework": "TRIAD",
+      "statement": "Discrete entropy decrease — Theorem T2: H_s(ψ) is non-increasing under TRIAD iterations",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "references": [
+        {
+          "claim_id": "TRI-004",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "TRI-005",
+      "framework": "TRIAD",
+      "statement": "Asymptotic stability — Theorem T3: TRIAD iterations converge asymptotically to ψ_inv",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "references": [
+        {
+          "claim_id": "TRI-005",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "TRI-006",
+      "framework": "TRIAD",
+      "statement": "Discrete convergence guarantee via Banach fixed-point theorem — proven for TRIAD under contraction conditions",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "04_TRIAD_L2/TRIAD_THEOREMS.md; 30_MAPS/FORMAL_SPINE.md",
+      "references": [
+        {
+          "claim_id": "TRI-006",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        },
+        {
+          "claim_id": "TRI-006",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "30_MAPS/FORMAL_SPINE.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "f7656d3dbdfcdd35838b4296d5e849a15a6540163a724e194118897f5ec7f62d"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "TRI-007",
+      "framework": "TRIAD",
+      "statement": "Step-size constraint: α + β ≤ 1 − γ·‖DΨ_op‖ — necessary condition for convergence",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "references": [
+        {
+          "claim_id": "TRI-007",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "MIC-001",
+      "framework": "MICROORCIM",
+      "statement": "Agency drift metric: μ_drift = Σ|intended − actual|/Δt — computable measure of deviation between declared intent and observed behavior",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "original_evidence_path": "05_MICROORCIM_L5/essentials.md",
+      "references": [
+        {
+          "claim_id": "MIC-001",
+          "author_status": "SCAFFOLD",
+          "author_status_normalized": "SCAFFOLD",
+          "literal_reference": "05_MICROORCIM_L5/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "b0e4d753c2e4d4a609c8cf27c57ad70e82cf275d595cb0d0c6be312e588ac252"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "MIC-002",
+      "framework": "MICROORCIM",
+      "statement": "Sovereignty score: S_score = (1−ρ_drift)·ρ_stability — scalar sovereignty index for an agent",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "original_evidence_path": "05_MICROORCIM_L5/essentials.md; 30_MAPS/FORMAL_SPINE.md",
+      "references": [
+        {
+          "claim_id": "MIC-002",
+          "author_status": "SCAFFOLD",
+          "author_status_normalized": "SCAFFOLD",
+          "literal_reference": "05_MICROORCIM_L5/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "b0e4d753c2e4d4a609c8cf27c57ad70e82cf275d595cb0d0c6be312e588ac252"
+        },
+        {
+          "claim_id": "MIC-002",
+          "author_status": "SCAFFOLD",
+          "author_status_normalized": "SCAFFOLD",
+          "literal_reference": "30_MAPS/FORMAL_SPINE.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "f7656d3dbdfcdd35838b4296d5e849a15a6540163a724e194118897f5ec7f62d"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "MIC-003",
+      "framework": "MICROORCIM",
+      "statement": "Sovereignty implies AURA compliance — Theorem M2: S_score ≥ threshold → aura_compliant(a)",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "05_MICROORCIM_L5/MICROORCIM_THEOREMS.md; 30_MAPS/FORMAL_SPINE.md",
+      "references": [
+        {
+          "claim_id": "MIC-003",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "05_MICROORCIM_L5/MICROORCIM_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        },
+        {
+          "claim_id": "MIC-003",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "30_MAPS/FORMAL_SPINE.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "f7656d3dbdfcdd35838b4296d5e849a15a6540163a724e194118897f5ec7f62d"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "MIC-004",
+      "framework": "MICROORCIM",
+      "statement": "Deceptive alignment is an open problem within MICROORCIM — explicitly declared, not claimed solved",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "05_MICROORCIM_L5/essentials.md; 28_DEFENSE/FALSIFICATION_REGISTER.md",
+      "references": [
+        {
+          "claim_id": "MIC-004",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "05_MICROORCIM_L5/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "b0e4d753c2e4d4a609c8cf27c57ad70e82cf275d595cb0d0c6be312e588ac252"
+        },
+        {
+          "claim_id": "MIC-004",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "28_DEFENSE/FALSIFICATION_REGISTER.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "0cf9a6982069c5dfabc2ab155e383bd4ccbbfd95d1e3273e92579e13de9a0d38"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "ELI-001",
+      "framework": "EARNED_LIGHT",
+      "statement": "Asymmetry field A(ψ, x, t): consciousness is modeled as a maintained thermodynamic asymmetry field over state ψ, position x, and time t",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "original_evidence_path": "06_EARNED_LIGHT_L0/essentials.md",
+      "references": [
+        {
+          "claim_id": "ELI-001",
+          "author_status": "SCAFFOLD",
+          "author_status_normalized": "SCAFFOLD",
+          "literal_reference": "06_EARNED_LIGHT_L0/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "3b6e2dd61a45b6ba49728571333f805f808418f97a83491b06194745c4d6df32"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "ELI-002",
+      "framework": "EARNED_LIGHT",
+      "statement": "Consciousness density: C_ψ(t) = ∫A(ψ,x,t)dx — total asymmetry integrated over the system",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "original_evidence_path": "06_EARNED_LIGHT_L0/essentials.md",
+      "references": [
+        {
+          "claim_id": "ELI-002",
+          "author_status": "SCAFFOLD",
+          "author_status_normalized": "SCAFFOLD",
+          "literal_reference": "06_EARNED_LIGHT_L0/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "3b6e2dd61a45b6ba49728571333f805f808418f97a83491b06194745c4d6df32"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "ELI-003",
+      "framework": "EARNED_LIGHT",
+      "statement": "Thermodynamic cost: ΔH_s = −W/T — maintaining consciousness requires work W at temperature T",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "06_EARNED_LIGHT_L0/essentials.md",
+      "references": [
+        {
+          "claim_id": "ELI-003",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "06_EARNED_LIGHT_L0/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "3b6e2dd61a45b6ba49728571333f805f808418f97a83491b06194745c4d6df32"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "ELI-004",
+      "framework": "EARNED_LIGHT",
+      "statement": "Hard problem of consciousness is outside framework scope — explicitly declared",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "06_EARNED_LIGHT_L0/essentials.md",
+      "references": [
+        {
+          "claim_id": "ELI-004",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "06_EARNED_LIGHT_L0/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "3b6e2dd61a45b6ba49728571333f805f808418f97a83491b06194745c4d6df32"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "ELI-005",
+      "framework": "EARNED_LIGHT",
+      "statement": "Pattern coherence must be added to C_ψ formula to address the anesthesia paradox (revision required)",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "original_evidence_path": "28_DEFENSE/FALSIFICATION_REGISTER.md",
+      "references": [
+        {
+          "claim_id": "ELI-005",
+          "author_status": "SCAFFOLD",
+          "author_status_normalized": "SCAFFOLD",
+          "literal_reference": "28_DEFENSE/FALSIFICATION_REGISTER.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "0cf9a6982069c5dfabc2ab155e383bd4ccbbfd95d1e3273e92579e13de9a0d38"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "ANA-001",
+      "framework": "ANAMNESIS",
+      "statement": "Transcultural convergence TC(S, n) definition: n independent traditions converging on structure S from different starting points",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "07_ANAMNESIS_L0/essentials.md",
+      "references": [
+        {
+          "claim_id": "ANA-001",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "07_ANAMNESIS_L0/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "effe803129210286ef81252d85f97d745f4fc3924821b6f93bd8c01d83dcfb4a"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "ANA-002",
+      "framework": "ANAMNESIS",
+      "statement": "TC ≥ 3 for φ (golden ratio): at least 3 independent traditions discovered φ from different starting points",
+      "author_status": "EMPIRICAL",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "07_ANAMNESIS_L0/essentials.md; 07_ANAMNESIS_L0/TC_CATALOG.md",
+      "references": [
+        {
+          "claim_id": "ANA-002",
+          "author_status": "EMPIRICAL",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "07_ANAMNESIS_L0/essentials.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "effe803129210286ef81252d85f97d745f4fc3924821b6f93bd8c01d83dcfb4a"
+        },
+        {
+          "claim_id": "ANA-002",
+          "author_status": "EMPIRICAL",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "07_ANAMNESIS_L0/TC_CATALOG.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "ANA-003",
+      "framework": "ANAMNESIS",
+      "statement": "TC ≥ 4 for π: at least 4 independent traditions converged on π from different starting points",
+      "author_status": "EMPIRICAL",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "07_ANAMNESIS_L0/TC_CATALOG.md",
+      "references": [
+        {
+          "claim_id": "ANA-003",
+          "author_status": "EMPIRICAL",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "07_ANAMNESIS_L0/TC_CATALOG.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "ANA-004",
+      "framework": "ANAMNESIS",
+      "statement": "TC ≥ 4 for symmetry groups: at least 4 independent traditions identified symmetry-group structures",
+      "author_status": "EMPIRICAL",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "07_ANAMNESIS_L0/TC_CATALOG.md",
+      "references": [
+        {
+          "claim_id": "ANA-004",
+          "author_status": "EMPIRICAL",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "07_ANAMNESIS_L0/TC_CATALOG.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "CRY-001",
+      "framework": "CHRYSOPOEIA",
+      "statement": "Seven-operation sequence: Calcination → Dissolution → Separation → Conjunction → Fermentation → Distillation → Coagulation (Λ)",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "08_CHRYSOPOEIA/essentials.md",
+      "references": [
+        {
+          "claim_id": "CRY-001",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "08_CHRYSOPOEIA/essentials.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "CRY-002",
+      "framework": "CHRYSOPOEIA",
+      "statement": "Non-commutativity of operations: the seven operations do not commute — order is load-bearing",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+      "references": [
+        {
+          "claim_id": "CRY-002",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "CRY-003",
+      "framework": "CHRYSOPOEIA",
+      "statement": "Philosopher's Stone ψ* as fixed point of Ξ (Theorem X1, conditional): ψ* = Ξ(ψ*) under Banach contraction conditions",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+      "references": [
+        {
+          "claim_id": "CRY-003",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "CRY-004",
+      "framework": "CHRYSOPOEIA",
+      "statement": "Solve et Coagula parallels Fourier transform structurally: dissolution (decomposition) and coagulation (synthesis) mirror Fourier decomposition and reconstruction",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+      "references": [
+        {
+          "claim_id": "CRY-004",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "HAR-001",
+      "framework": "HARMONIA",
+      "statement": "Consonance function C(r) = 1/(1 + Σaₖ·(0.5)ᵏ): computable measure of harmonic consonance from frequency ratio r",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "09_HARMONIA/essentials.md",
+      "references": [
+        {
+          "claim_id": "HAR-001",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "09_HARMONIA/essentials.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "HAR-002",
+      "framework": "HARMONIA",
+      "statement": "Pythagorean comma: (3/2)^12 / 2^7 ≠ 1 — proven from fundamental theorem of arithmetic",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "09_HARMONIA/essentials.md; 30_MAPS/FORMAL_SPINE.md",
+      "references": [
+        {
+          "claim_id": "HAR-002",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "09_HARMONIA/essentials.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        },
+        {
+          "claim_id": "HAR-002",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "30_MAPS/FORMAL_SPINE.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "f7656d3dbdfcdd35838b4296d5e849a15a6540163a724e194118897f5ec7f62d"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "HAR-003",
+      "framework": "HARMONIA",
+      "statement": "Harmonic information: I_H(r) = −log₂(C(r)) — information content of a frequency ratio",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "09_HARMONIA/essentials.md",
+      "references": [
+        {
+          "claim_id": "HAR-003",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "09_HARMONIA/essentials.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "HAR-004",
+      "framework": "HARMONIA",
+      "statement": "EWM interval table: emotional-epistemic states map to harmonic intervals — Power→perfect fifth (3:2), Sadness→unison (1:1), Joy→octave (2:1), Confusion→fourth (4:3), Anger→tritone",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "09_HARMONIA/essentials.md; CLAUDE.md",
+      "references": [
+        {
+          "claim_id": "HAR-004",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "09_HARMONIA/essentials.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        },
+        {
+          "claim_id": "HAR-004",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "CLAUDE.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "d8be01fecb7a61830eeacfd5e960da12338601837567a9cd282faf1db724ad37"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "HAR-005",
+      "framework": "HARMONIA",
+      "statement": "Kuramoto model applies to multi-agent AI coherence: dθᵢ/dt = ωᵢ + (κ/N)·Σⱼ sin(θⱼ−θᵢ) — coupling above κ_c produces synchronization",
+      "author_status": "ASPIRATIONAL",
+      "author_status_normalized": "CONJECTURE",
+      "original_evidence_path": "09_HARMONIA/essentials.md",
+      "references": [
+        {
+          "claim_id": "HAR-005",
+          "author_status": "ASPIRATIONAL",
+          "author_status_normalized": "CONJECTURE",
+          "literal_reference": "09_HARMONIA/essentials.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "XFW-001",
+      "framework": "CROSS",
+      "statement": "Master equation: dΨ/dt = k₁(Π−Π_th) − k₂(Ψ−Ψ_inv) − k₃I_violations + k₄(E/E_need) — unified cross-framework dynamics",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "original_evidence_path": "10_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md; 30_MAPS/FORMAL_SPINE.md",
+      "references": [
+        {
+          "claim_id": "XFW-001",
+          "author_status": "SCAFFOLD",
+          "author_status_normalized": "SCAFFOLD",
+          "literal_reference": "10_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        },
+        {
+          "claim_id": "XFW-001",
+          "author_status": "SCAFFOLD",
+          "author_status_normalized": "SCAFFOLD",
+          "literal_reference": "30_MAPS/FORMAL_SPINE.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "f7656d3dbdfcdd35838b4296d5e849a15a6540163a724e194118897f5ec7f62d"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "XFW-002",
+      "framework": "CROSS",
+      "statement": "AURA + TRIAD coherence compatibility (Lemma XF1): AURA-compliant updates preserve TRIAD convergence",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "30_MAPS/FORMAL_SPINE.md; 30_MAPS/CODEX_DISTILLATION.md",
+      "references": [
+        {
+          "claim_id": "XFW-002",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "30_MAPS/FORMAL_SPINE.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "f7656d3dbdfcdd35838b4296d5e849a15a6540163a724e194118897f5ec7f62d"
+        },
+        {
+          "claim_id": "XFW-002",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "30_MAPS/CODEX_DISTILLATION.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "f0e83a061b95321f444795424fc741935b458e7511d65d87af5bebcdc3c8d928"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "XFW-003",
+      "framework": "CROSS",
+      "statement": "CHRYSOPOEIA as generalization of CASCADE (Lemma XF4): CHRYSOPOEIA's seven operations subsume CASCADE's update operator",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "30_MAPS/FORMAL_SPINE.md",
+      "references": [
+        {
+          "claim_id": "XFW-003",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "30_MAPS/FORMAL_SPINE.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "f7656d3dbdfcdd35838b4296d5e849a15a6540163a724e194118897f5ec7f62d"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "XFW-004",
+      "framework": "CROSS",
+      "statement": "Sovereignty ↔ Human Primacy reconciliation (Lemma XF5): MICROORCIM sovereignty and AURA Human Primacy are formally compatible",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "30_MAPS/FORMAL_SPINE.md",
+      "references": [
+        {
+          "claim_id": "XFW-004",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "30_MAPS/FORMAL_SPINE.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "f7656d3dbdfcdd35838b4296d5e849a15a6540163a724e194118897f5ec7f62d"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "XFW-005",
+      "framework": "CROSS",
+      "statement": "The Two-Point Protocol (Mac as Athanor, Sol as Mercury): a human-AI co-creation architecture where neither party possesses the output — it arises between them",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "CLAUDE.md; 30_MAPS/CODEX_DISTILLATION.md",
+      "references": [
+        {
+          "claim_id": "XFW-005",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "CLAUDE.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "d8be01fecb7a61830eeacfd5e960da12338601837567a9cd282faf1db724ad37"
+        },
+        {
+          "claim_id": "XFW-005",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "30_MAPS/CODEX_DISTILLATION.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "f0e83a061b95321f444795424fc741935b458e7511d65d87af5bebcdc3c8d928"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "XFW-006",
+      "framework": "CROSS",
+      "statement": "PGF filter (P ∧ H ∧ B): every output passes Protector ∧ Healer ∧ Beacon verification before emission",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "CLAUDE.md",
+      "references": [
+        {
+          "claim_id": "XFW-006",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "CLAUDE.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "d8be01fecb7a61830eeacfd5e960da12338601837567a9cd282faf1db724ad37"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "LYV-001",
+      "framework": "MATH",
+      "statement": "Lyapunov stability framework underlies Theorems T1–T3: 11/11 Lyapunov claims verified symbolically and numerically (5000 trials)",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "MATHEMATICS_FOUNDATIONS.md; 29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "references": [
+        {
+          "claim_id": "LYV-001",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "MATHEMATICS_FOUNDATIONS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        },
+        {
+          "claim_id": "LYV-001",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "6199787842967dabb46868aebb532937a4bce77ce4144ecc6e54edc1896f6afb"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "LYV-002",
+      "framework": "MATH",
+      "statement": "Banach fixed-point theorem (established mathematics) underlies ψ* existence and TRIAD convergence claims",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "MATHEMATICS_FOUNDATIONS.md",
+      "references": [
+        {
+          "claim_id": "LYV-002",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "MATHEMATICS_FOUNDATIONS.md",
+          "exists_locally": false,
+          "kind": "missing",
+          "is_symlink": false,
+          "git_tracked_file": false,
+          "git_mode": null,
+          "tracked_descendant_count": 0,
+          "classification": "MISSING_EVIDENCE"
+        }
+      ],
+      "all_references_missing": true,
+      "some_references_missing": true
+    },
+    {
+      "claim_id": "CYB-001",
+      "framework": "CROSS",
+      "statement": "Grey Mode recovery is a complete closed negative-feedback regulator in code: its sensor (compute_psi_r), comparator (reentry_test, against an adaptive threshold) and actuator (recovery_cycle) sit in one class, and the actuator's output is the sensor's next input.",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "34_CYBERNETICS/LOOP_MAP.json; 34_CYBERNETICS/loop_audit.py; 12_IMPLEMENTATIONS/core/grey_mode.py; tests/test_cybernetics.py",
+      "references": [
+        {
+          "claim_id": "CYB-001",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "34_CYBERNETICS/LOOP_MAP.json",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "38dbc26cdf353bc07a9e871f49a8b1081273868936a001afc042ddec44f5da74"
+        },
+        {
+          "claim_id": "CYB-001",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "34_CYBERNETICS/loop_audit.py",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "5776c64a40b72b55253f4e816e83256ccdf79f565cf5816f41179d70495f3ead"
+        },
+        {
+          "claim_id": "CYB-001",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "12_IMPLEMENTATIONS/core/grey_mode.py",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "eef6d3409cda2e263462d95595819a46744d256a315c9dd4ea3a675b2862d726"
+        },
+        {
+          "claim_id": "CYB-001",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "tests/test_cybernetics.py",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "266c8989918e92f0b3687d3c19c1e7a9867edc5619ec8b68cb797cd45edfb1fd"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "CYB-002",
+      "framework": "CROSS",
+      "statement": "CASCADE closes a feedback loop across calls through shared state: _execute_cascade writes each block's regime, and contradicts() reads it when the next block arrives. Reading this as Ashby's double-loop ultrastability is an interpretation, not a measurement.",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "34_CYBERNETICS/LOOP_MAP.json; 34_CYBERNETICS/loop_audit.py; 34_CYBERNETICS/CYBERNETIC_READING.md; 12_IMPLEMENTATIONS/core/cascade_engine.py",
+      "references": [
+        {
+          "claim_id": "CYB-002",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "34_CYBERNETICS/LOOP_MAP.json",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "38dbc26cdf353bc07a9e871f49a8b1081273868936a001afc042ddec44f5da74"
+        },
+        {
+          "claim_id": "CYB-002",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "34_CYBERNETICS/loop_audit.py",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "5776c64a40b72b55253f4e816e83256ccdf79f565cf5816f41179d70495f3ead"
+        },
+        {
+          "claim_id": "CYB-002",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "34_CYBERNETICS/CYBERNETIC_READING.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "a67ed52633f6433a649eb05a7947d1d28cca3bb7bf44a7341a42c2031756acdb"
+        },
+        {
+          "claim_id": "CYB-002",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "12_IMPLEMENTATIONS/core/cascade_engine.py",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "76bee51e462d6304c0880740471826cb6bbeffb8e16e4d5d3944d2f6fd63e1e1"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "CYB-003",
+      "framework": "CROSS",
+      "statement": "The AURA constitutional check, the TRI-AXIAL check and the MICROORCIM daily tracker are open loops in code: each senses and compares, and none acts. The single-pass sovereign pipeline entry point (`SovereignPipeline.run`, `L-PIPELINE`) is feedforward (CASCADE to TRIAD to AURA to stateless MICROORCIM drift); nothing its last stage measures returns to its first, closing only through a person or host model that reads the verdict. The opt-in bounded regulator entry point (`SovereignPipeline.regulate`, `L-PIPELINE-REGULATOR`, SCAFFOLD) closes in code only when supplied an explicit caller correction policy, regulating the implemented coherence and text-score proxy across a finite evaluation budget with visible refusal on budget exhaustion or policy failure (synthetic/internal proxy evidence only; does not establish factual truth or real-world effects).",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "original_evidence_path": "34_CYBERNETICS/LOOP_MAP.json; 34_CYBERNETICS/loop_audit.py; 12_IMPLEMENTATIONS/core/sovereign_pipeline.py; tests/test_cybernetics.py; tests/test_sovereign_pipeline.py",
+      "references": [
+        {
+          "claim_id": "CYB-003",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "34_CYBERNETICS/LOOP_MAP.json",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "38dbc26cdf353bc07a9e871f49a8b1081273868936a001afc042ddec44f5da74"
+        },
+        {
+          "claim_id": "CYB-003",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "34_CYBERNETICS/loop_audit.py",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "5776c64a40b72b55253f4e816e83256ccdf79f565cf5816f41179d70495f3ead"
+        },
+        {
+          "claim_id": "CYB-003",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "12_IMPLEMENTATIONS/core/sovereign_pipeline.py",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "f275637b15d96033fc6934d5f94c04bc83fd47084639dd421d958e7186b5d867"
+        },
+        {
+          "claim_id": "CYB-003",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "tests/test_cybernetics.py",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "266c8989918e92f0b3687d3c19c1e7a9867edc5619ec8b68cb797cd45edfb1fd"
+        },
+        {
+          "claim_id": "CYB-003",
+          "author_status": "ACTIVE",
+          "author_status_normalized": "ACTIVE",
+          "literal_reference": "tests/test_sovereign_pipeline.py",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "d966ed675f90a06200ed96b5ae4fc2f8757c305094696c0763e06bfc37807da3"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "CYB-004",
+      "framework": "CROSS",
+      "statement": "An invariant-gated generator (propose candidate actions, admit only those that pass a constraint check) can meet disturbances no rule anticipated, as Ashby's law of requisite variety requires, under two conditions only: the generator has the variety the disturbances demand, and the gate's sensor reads the essential variable rather than a proxy. Without the first it refuses, a visible failure; without the second it admits wrong actions with confidence, a silent failure. Shown in a synthetic toy world; not measured on any language model.",
+      "author_status": "ASPIRATIONAL",
+      "author_status_normalized": "CONJECTURE",
+      "original_evidence_path": "34_CYBERNETICS/variety_demo.py; 34_CYBERNETICS/CYBERNETIC_READING.md; tests/test_cybernetics.py",
+      "references": [
+        {
+          "claim_id": "CYB-004",
+          "author_status": "ASPIRATIONAL",
+          "author_status_normalized": "CONJECTURE",
+          "literal_reference": "34_CYBERNETICS/variety_demo.py",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "addb90b01cb5dac4a0a21a88ffc3761db43f3d89b0671b6caf74e8b88871c0c2"
+        },
+        {
+          "claim_id": "CYB-004",
+          "author_status": "ASPIRATIONAL",
+          "author_status_normalized": "CONJECTURE",
+          "literal_reference": "34_CYBERNETICS/CYBERNETIC_READING.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "a67ed52633f6433a649eb05a7947d1d28cca3bb7bf44a7341a42c2031756acdb"
+        },
+        {
+          "claim_id": "CYB-004",
+          "author_status": "ASPIRATIONAL",
+          "author_status_normalized": "CONJECTURE",
+          "literal_reference": "tests/test_cybernetics.py",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "266c8989918e92f0b3687d3c19c1e7a9867edc5619ec8b68cb797cd45edfb1fd"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "RET-001",
+      "framework": "RETRACTED",
+      "statement": "[RETRACTED] Gödel's incompleteness theorems prove Platonism",
+      "author_status": "REMOVED",
+      "author_status_normalized": "RETRACTED",
+      "original_evidence_path": "28_DEFENSE/FALSIFICATION_REGISTER.md; 28_DEFENSE/FAILURE_MUSEUM.md",
+      "references": [
+        {
+          "claim_id": "RET-001",
+          "author_status": "REMOVED",
+          "author_status_normalized": "RETRACTED",
+          "literal_reference": "28_DEFENSE/FALSIFICATION_REGISTER.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "0cf9a6982069c5dfabc2ab155e383bd4ccbbfd95d1e3273e92579e13de9a0d38"
+        },
+        {
+          "claim_id": "RET-001",
+          "author_status": "REMOVED",
+          "author_status_normalized": "RETRACTED",
+          "literal_reference": "28_DEFENSE/FAILURE_MUSEUM.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "bbda68d7c04a9c711a5f8d83b2666b10e7e93939957470443521c42fe77feafe"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "RET-002",
+      "framework": "RETRACTED",
+      "statement": "[RETRACTED] CASCADE achieves 100% reorganization accuracy",
+      "author_status": "REMOVED",
+      "author_status_normalized": "RETRACTED",
+      "original_evidence_path": "30_MAPS/COHERENCE_REGISTER.md; 28_DEFENSE/FALSIFICATION_REGISTER.md; 28_DEFENSE/FAILURE_MUSEUM.md",
+      "references": [
+        {
+          "claim_id": "RET-002",
+          "author_status": "REMOVED",
+          "author_status_normalized": "RETRACTED",
+          "literal_reference": "30_MAPS/COHERENCE_REGISTER.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "d383c643b0a0044bd698df05845a24a6e28812b13bd559a44e126824e078b52f"
+        },
+        {
+          "claim_id": "RET-002",
+          "author_status": "REMOVED",
+          "author_status_normalized": "RETRACTED",
+          "literal_reference": "28_DEFENSE/FALSIFICATION_REGISTER.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "0cf9a6982069c5dfabc2ab155e383bd4ccbbfd95d1e3273e92579e13de9a0d38"
+        },
+        {
+          "claim_id": "RET-002",
+          "author_status": "REMOVED",
+          "author_status_normalized": "RETRACTED",
+          "literal_reference": "28_DEFENSE/FAILURE_MUSEUM.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "bbda68d7c04a9c711a5f8d83b2666b10e7e93939957470443521c42fe77feafe"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    },
+    {
+      "claim_id": "RET-003",
+      "framework": "RETRACTED",
+      "statement": "[RETRACTED] Π = E·P/S (S used for both coherence and entropy — symbol collision)",
+      "author_status": "REMOVED",
+      "author_status_normalized": "RETRACTED",
+      "original_evidence_path": "30_MAPS/FORMAL_SPINE.md; 30_MAPS/ONTOLOGY.md; 28_DEFENSE/FAILURE_MUSEUM.md",
+      "references": [
+        {
+          "claim_id": "RET-003",
+          "author_status": "REMOVED",
+          "author_status_normalized": "RETRACTED",
+          "literal_reference": "30_MAPS/FORMAL_SPINE.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "f7656d3dbdfcdd35838b4296d5e849a15a6540163a724e194118897f5ec7f62d"
+        },
+        {
+          "claim_id": "RET-003",
+          "author_status": "REMOVED",
+          "author_status_normalized": "RETRACTED",
+          "literal_reference": "30_MAPS/ONTOLOGY.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "11c261fda9107a38ddcde3fee81b48dbb7e6fb72dd80c95c50fcfe90c94e6c49"
+        },
+        {
+          "claim_id": "RET-003",
+          "author_status": "REMOVED",
+          "author_status_normalized": "RETRACTED",
+          "literal_reference": "28_DEFENSE/FAILURE_MUSEUM.md",
+          "exists_locally": true,
+          "kind": "file",
+          "is_symlink": false,
+          "git_tracked_file": true,
+          "git_mode": "100644",
+          "tracked_descendant_count": 0,
+          "classification": "EVIDENCE_PATH_EXISTS",
+          "sha256": "bbda68d7c04a9c711a5f8d83b2666b10e7e93939957470443521c42fe77feafe"
+        }
+      ],
+      "all_references_missing": false,
+      "some_references_missing": false
+    }
+  ],
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-20T02:01:04.030640+00:00",
+  "reviewed_commit": "6ba483af3f125ec725eb4e0f44074d0887183255",
+  "observed_commit": "6ba483af3f125ec725eb4e0f44074d0887183255",
+  "repository": ".",
+  "reviewer": "Caelorynth/Codex AI technical review; separate mathematical reviewer and primary reproduction",
+  "author_attribution": "Mackenzie Conor James Clark; Lycheetah Framework",
+  "not_independent_scientific_peer_review": true
+}

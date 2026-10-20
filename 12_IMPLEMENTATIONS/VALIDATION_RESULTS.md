@@ -1,4 +1,6 @@
 # CASCADE VALIDATION RESULTS — Does the Mathematics Actually Work?
+
+> **Full Framework review · 21 October 2026 [INTERPRETIVE].** This is a historical synthetic-simulation report. The constructed trials do not establish real-world empirical validity, all seven invariants, or a universal master equation. Read the current findings before using its earlier validation language. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
 **Date:** March 21, 2026
 **Data Source:** cascade_simulation_results.json (6 experiments, 1000-1600 trials each)
 **Question:** Does CASCADE predict reality, or just retrofit history?

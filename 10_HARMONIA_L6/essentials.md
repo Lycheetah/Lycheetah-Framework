@@ -1,5 +1,7 @@
 # Harmonia — Resonance Calculus Essentials
 
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** The narrow twelve-fifths/seven-octaves comma result stands. The broader claim about all simple-ratio cycles is false, and the formula, interval table and implementation proxy disagree. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+
 **Status:** ⭐ FORMALIZED [SCAFFOLD] — Consonance function C(r) is computable and defined. Pythagorean comma proof (Theorem 1.1) is ACTIVE via fundamental theorem of arithmetic. Consonance-simplicity correspondence (Theorem 2.1) is ACTIVE. Mapping of framework constants to musical intervals is [STRUCTURAL ANALOGY — not proof]. Kuramoto coupling equations are [SCAFFOLD]. | **Type:** Resonance Calculus | **Key:** Makes harmony measurable; reveals music already playing inside every other framework
 
 ## What It Does

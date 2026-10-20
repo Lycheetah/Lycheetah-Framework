@@ -1,5 +1,7 @@
 # HARMONIA — resonance and coordination
 
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** The narrow twelve-fifths/seven-octaves comma result stands. The broader claim about all simple-ratio cycles is false, and the formula, interval table and implementation proxy disagree. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+
 **Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
 **Guide refreshed:** 19 October 2026.  
 **Status:** Oscillator models and exploratory analogies; no established consciousness/wellbeing measurement.

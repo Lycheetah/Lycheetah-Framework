@@ -1,11 +1,12 @@
 # Claims, evidence and criticism
 
-**Guide updated:** 19 October 2026. This area keeps claims inspectable, including
+**Guide updated:** 20 October 2026. This area keeps claims inspectable, including
 their assumptions, objections, failures and changes. Its records are project
 evidence; their existence is not independent scientific validation.
 
 | Task | Read |
 |---|---|
+| Read the substantive Framework review | [Findings, corrections and remaining work](FULL_FRAMEWORK_REVIEW_2026-10-20.md), [runnable counterexamples](review_2026_10_20/README.md) |
 | Understand the register | [Claims guide](CLAIMS_README.md), [records](CLAIMS.json), [schema](CLAIMS.schema.json) |
 | Find what would falsify a claim | [Falsification register](FALSIFICATION_REGISTER.md), [testability manifest](TESTABILITY_MANIFEST.md) |
 | Read objections and limits | [Counter-Codex](COUNTER_CODEX.md), [scope boundary](SCOPE_BOUNDARY.md), [prior art](PRIOR_ART.md) |
@@ -20,6 +21,12 @@ The register's normalized statuses are `ACTIVE`, `SCAFFOLD`, `CONJECTURE` and
 details. Internal `ACTIVE` classifications do not mean peer review, external
 replication or deployment approval. Recent research packets are not automatically
 new rows in the older register.
+
+The 20 October review also disputes several advertised proofs themselves.
+Fourteen moved-source references were repaired; 23 references still point to
+missing material. Pointer existence, author status and mathematical support are
+separate questions. The [repair receipt](review_2026_10_20/evidence-path-repairs.json)
+preserves every changed path; no claim statement or author status was rewritten.
 
 From the repository root:
 

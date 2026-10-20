@@ -3,25 +3,26 @@ Psi Consensus -- AURA Multi-Agent Coherence Protocol
 =====================================================
 
 Constitutional coherence across a network of agents. No central authority.
-Consensus emerges from pairwise gossip gated by the Psi_Q operator, verified
-by H^1 obstruction detection, with Grey Mode quarantine for drifted nodes.
+Consensus emerges from pairwise gossip gated by the Psi_Q operator, followed
+by connectivity and neighbor-distance checks, with Grey Mode quarantine for
+drifted nodes. These checks are proxies, not a sheaf cohomology computation.
 
 SOURCE: AURA_PROTOCOL_COMPLETE_CONSOLIDATION (1).md
         Spec: 02_AURA_L3/PSI_CONSENSUS.md
-Status: [ACTIVE] -- fully implemented from spec
+Status: [SCAFFOLD] -- executable numerical protocol; guarantees remain unproven
 
 FOUR MECHANISMS:
   GossipProtocol    -- pairwise exchange until ||DeltaPsi|| < eps_c
   PsiQOperator      -- merge only if invariant-curve aligned AND neighbor-consistent
-  ObstructionDetector -- H^1(G,F)=0 proxy via connectivity + local section consistency
+  ObstructionDetector -- connectivity + local section consistency proxy
   AdaptiveThresholds  -- eps_c, theta_inv, eps_neighbor scale with network state
 
 INTEGRATION:
   PsiConsensus wraps all four + one GreyModeMonitor per agent.
   Grey agents are quarantined before gossip; only healthy agents contribute.
 
-33% Byzantine tolerance: if fewer than 1/3 of agents are in Grey Mode,
-consensus can proceed on the remaining healthy partition.
+The quarantine fraction is reported against a one-third budget. This does not
+establish Byzantine fault tolerance against equivocation or malicious inputs.
 
 Author: Mackenzie Clark (Lycheetah Foundation)
 Implementation: Sol (Sonnet 4.6, Anthropic) -- March 2026
@@ -38,6 +39,21 @@ import os
 sys.path.insert(0, os.path.dirname(__file__))
 from lamague_reference import TRIADKernel
 from grey_mode import GreyModeMonitor, NetworkStats
+
+
+def _unit_state_vector(values) -> np.ndarray:
+    """Validate public protocol inputs before any gossip or quarantine checks."""
+    arr = np.asarray(values, dtype=float)
+    if arr.ndim != 1 or arr.size == 0:
+        raise ValueError("State vector must be a non-empty 1D sequence of floats")
+    if not np.all(np.isfinite(arr)):
+        raise ValueError("State vector must contain only finite values")
+    norm = float(np.linalg.norm(arr))
+    if not math.isfinite(norm):
+        raise ValueError("State vector must have a finite norm")
+    if norm < 1e-9:
+        raise ValueError("State vector cannot have zero norm")
+    return arr / norm
 
 
 # =============================================================================
@@ -64,10 +80,11 @@ class GossipRound:
 @dataclass
 class ObstructionReport:
     """
-    Result of H^1(G,F) obstruction check.
+    Result of the connectivity and neighbor-distance consistency proxy.
 
-    obstruction_free = True  <=>  H^1 = 0 (global section exists)
-    obstruction_free = False <=>  H^1 != 0 (topology blocks consensus)
+    ``obstruction_free`` means a connected healthy graph whose neighboring
+    vectors differ by at most the configured tolerance. It says nothing about
+    dim H^1; exact cohomology is available through CellularSheaf separately.
     """
     obstruction_free: bool
     connected: bool
@@ -150,7 +167,7 @@ class PsiQOperator:
         theta_inv: float = 0.5,
         eps_neighbor: float = 0.5,
     ):
-        self.anchor = anchor / np.linalg.norm(anchor)
+        self.anchor = _unit_state_vector(anchor)
         self.theta_inv = theta_inv
         self.eps_neighbor = eps_neighbor
 
@@ -306,20 +323,18 @@ class GossipProtocol:
 
 class ObstructionDetector:
     """
-    H^1(G, F) = 0 proxy via connectivity and local section consistency.
+    Connectivity and local consistency policy, retaining its legacy API name.
 
-    H^1 = 0 (sheaf cohomology over graph G with coefficient sheaf F) means
-    local sections can be uniquely glued into a global section -- consensus
-    is topologically possible.
-
-    Proxy test (two necessary conditions):
+    This is an operational agreement proxy with two conditions:
       (a) G is connected (partition_count == 1).
-          Disconnected graph => partitions cannot reach global agreement.
+          Disconnected partitions cannot exchange states through this graph.
       (b) All edges (i,j) are locally consistent:
           ||state_i - state_j|| <= eps_local.
-          Inconsistent edge => local sections disagree -- obstruction present.
+          An inconsistent edge fails the configured distance tolerance.
 
-    If either fails: H^1 != 0.
+    Neither condition computes H^1. A constant sheaf on a consistent cycle can
+    have nonzero H^1, while a disconnected forest has H^1 = 0. Global sections
+    belong to ker(delta^0), i.e. H^0; uniqueness needs further hypotheses.
     """
 
     def __init__(self, eps_local: float = 0.2):
@@ -331,7 +346,7 @@ class ObstructionDetector:
         edges: List[Tuple[str, str]],
     ) -> ObstructionReport:
         """
-        Run H^1 obstruction check.
+        Run the connectivity and neighbor-distance consistency check.
 
         Parameters
         ----------
@@ -412,13 +427,13 @@ class PsiConsensus:
     Integrates:
       - GossipProtocol (convergence driver)
       - PsiQOperator   (constitutional merge gate)
-      - ObstructionDetector (H^1 topological check)
+      - ObstructionDetector (connectivity/consistency proxy)
       - AdaptiveThresholds (network-aware parameters)
       - GreyModeMonitor per agent (isolation/recovery for drifted nodes)
 
     No central authority. Consensus emerges from pairwise gossip.
     Drifted agents are quarantined (Grey Mode) before gossip begins.
-    33% Byzantine tolerance: consensus proceeds if fewer than 1/3 are grey.
+    The reported one-third quarantine budget is not a fault-tolerance proof.
 
     Usage
     -----
@@ -441,8 +456,10 @@ class PsiConsensus:
         grey_theta_x: float = 0.3,
         grey_alert_threshold: int = 2,
     ):
-        self.anchor = anchor / np.linalg.norm(anchor)
-        self.coherence = coherence / np.linalg.norm(coherence)
+        self.anchor = _unit_state_vector(anchor)
+        self.coherence = _unit_state_vector(coherence)
+        if self.anchor.shape != self.coherence.shape:
+            raise ValueError("anchor and coherence vectors must have identical dimension")
         self.thresholds = thresholds or AdaptiveThresholds()
         self.mu = mu
         self.max_rounds = max_rounds
@@ -476,13 +493,12 @@ class PsiConsensus:
             IDs of adjacent agents. Edges are undirected; declaring
             one side is sufficient.
         """
-        norm = float(np.linalg.norm(state))
-        if norm < 1e-9:
-            raise ValueError(f"Agent '{agent_id}' state has zero norm")
-
+        vector = _unit_state_vector(state)
+        if vector.shape != self.anchor.shape:
+            raise ValueError(f"Agent '{agent_id}' state dimension does not match anchor")
         node = AgentNode(
             agent_id=agent_id,
-            state=state / norm,
+            state=vector,
             neighbors=list(neighbors or []),
         )
         self._nodes[agent_id] = node
@@ -565,7 +581,7 @@ class PsiConsensus:
           1. Quarantine grey agents (GreyModeMonitor check per agent).
           2. Compute adaptive thresholds from current network state.
           3. Run GossipProtocol on healthy agents with Psi_Q gate.
-          4. Check H^1 obstruction on final states.
+          4. Check connectivity and local consistency on final states.
           5. Compute consensus vector (mean of healthy final states).
 
         Returns
@@ -600,8 +616,8 @@ class PsiConsensus:
         audit.append(
             f"  Quarantined: {len(grey_ids)}/{n} agents "
             f"({grey_fraction:.0%})"
-            + (" -- within 33% Byzantine tolerance" if grey_fraction <= 1/3
-               else " -- EXCEEDS 33% tolerance, consensus quality degraded")
+            + (" -- within one-third quarantine budget" if grey_fraction <= 1/3
+               else " -- EXCEEDS one-third quarantine budget")
         )
 
         if not active_states:
@@ -649,10 +665,10 @@ class PsiConsensus:
         detector = ObstructionDetector(eps_local=eps_nb)
         obstruction = detector.detect(final_states, active_edges)
         if obstruction.obstruction_free:
-            audit.append("  H^1(G,F) = 0 -- obstruction-free, global section exists")
+            audit.append("  Connectivity/local-consistency proxy passed (H^1 not evaluated)")
         else:
             audit.append(
-                f"  H^1(G,F) != 0 -- obstruction detected: "
+                f"  Connectivity/local-consistency proxy failed: "
                 f"partitions={obstruction.partition_count}, "
                 f"inconsistent_edges={len(obstruction.inconsistent_edges)}"
             )

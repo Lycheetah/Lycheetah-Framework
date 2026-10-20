@@ -1,5 +1,7 @@
 # CASCADE — knowledge and revision
 
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** The engine can preserve a record while demoting its foundation membership. Record retention does not prove Shannon entropy non-decrease; inspect the proof/implementation mismatch and metric-preservation counterexamples. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+
 **Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
 **Guide refreshed:** 19 October 2026.  
 **Status:** Executable models and research; external truth is not guaranteed by internal coherence.

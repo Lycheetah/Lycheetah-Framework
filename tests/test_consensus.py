@@ -60,14 +60,14 @@ def test_obstruction_detector_connected_vs_partitioned():
 
     states = {"a1": s1, "a2": s2, "a3": s3}
 
-    # Connected graph with small local deltas -> H^1 = 0
+    # Connected graph with small local deltas passes the configured proxy.
     rep_ok = detector.detect(states, [("a1", "a2"), ("a2", "a3")])
     assert rep_ok.obstruction_free is True
     assert rep_ok.connected is True
     assert rep_ok.partition_count == 1
     assert rep_ok.inconsistent_edges == []
 
-    # Disconnected graph (a3 isolated) -> H^1 != 0
+    # Disconnected graph (a3 isolated) fails connectivity, not an H^1 calculation.
     rep_disc = detector.detect(states, [("a1", "a2")])
     assert rep_disc.obstruction_free is False
     assert rep_disc.connected is False
@@ -75,7 +75,7 @@ def test_obstruction_detector_connected_vs_partitioned():
 
 
 # ============================================================================
-# 2. Byzantine Quarantine & 33% Fault Tolerance
+# 2. Drift quarantine and the one-third quarantine budget
 # ============================================================================
 
 
@@ -104,7 +104,7 @@ def test_byzantine_threshold_exceeded_flagged():
     anchor = [1.0, 0.0, 0.0, 0.0]
     arena = ConsensusArena(anchor=anchor, grey_alert_threshold=1)
 
-    # 2 healthy, 2 rogue (50% > 33% Byzantine tolerance)
+    # 2 healthy, 2 rogue (50% exceeds the one-third quarantine budget).
     arena.add_agent("h1", [0.99, 0.05, 0.0, 0.0])
     arena.add_agent("h2", [0.98, -0.05, 0.0, 0.0])
     arena.add_agent("rogue1", [0.0, 1.0, 0.0, 0.0])

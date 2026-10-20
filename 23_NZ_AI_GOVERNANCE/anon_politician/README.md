@@ -75,14 +75,14 @@ anon_politician/
 
 ## How to Verify Integrity & Run Tests Locally
 
-The archive is fully validated with deterministic unit test suites across its components:
+These commands check source preservation and bounded software contracts. The 20 October 2026 review reran the three suites below; passing them does not certify sampling quality, representativeness or real policy outcomes. See the [full Framework review](../../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
 
 ### 1. Check Cryptographic Hashes
 ```bash
 cd 23_NZ_AI_GOVERNANCE/anon_politician
 sha256sum -c SHA256SUMS.txt
 ```
-*(Confirms byte-exact integrity across all 59 preserved files)*
+*(The checksum list checked 121 files on 20 October 2026; this verifies preservation, not research validity.)*
 
 ### 2. Run Civic Signal Integrity Tests (16 Tests)
 Validates declared metadata, sampling claims, representation boundaries, and privacy notice rules:

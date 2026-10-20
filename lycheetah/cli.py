@@ -470,7 +470,7 @@ def compact_cli(argv: list[str] | None = None):
 
 
 def consensus_cli(argv: list[str] | None = None):
-    """lycheetah-consensus — multi-agent epistemic consensus and Byzantine quarantine CLI.
+    """lycheetah-consensus — numerical agreement and drift-quarantine CLI.
 
     Usage:
         lycheetah-consensus run <spec.json> [-o <output.json>]
@@ -487,8 +487,8 @@ def consensus_cli(argv: list[str] | None = None):
     parser = argparse.ArgumentParser(
         prog="lycheetah-consensus",
         description=(
-            "Lycheetah Multi-Agent Consensus Engine: Psi-Consensus gossip, H^1 obstruction "
-            "detection, and Grey Mode Byzantine quarantine."
+            "Lycheetah Multi-Agent Consensus Engine: Psi-Consensus gossip, connectivity "
+            "and local-consistency checks, and Grey Mode drift quarantine."
         ),
     )
     sub = parser.add_subparsers(dest="command", required=True)
@@ -505,7 +505,7 @@ def consensus_cli(argv: list[str] | None = None):
     p_rec.add_argument("-o", "--output", help="Output file path for recovery JSON")
 
     # demo
-    sub.add_parser("demo", help="Run built-in 5-agent Byzantine quarantine & consensus simulation")
+    sub.add_parser("demo", help="Run built-in 5-agent drift-quarantine & agreement simulation")
 
     args = parser.parse_args(raw_args)
 

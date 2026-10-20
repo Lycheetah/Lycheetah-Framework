@@ -1,0 +1,8 @@
+{
+  "manifest": "28_DEFENSE/RESEARCH_INTAKE_2026-10-19_SOURCE_MANIFEST.json",
+  "manifest_sha256": "c22132b922eeaa5658bb0f45e26458ac97de1dbf3876c25405b04bc57da50930",
+  "files_checked": 225,
+  "adapted_at_import": 2,
+  "all_current_hashes_match": true,
+  "note": "Current import identity check only; not research validity. Existing automatic gate still covers the earlier 444-file manifest."
+}

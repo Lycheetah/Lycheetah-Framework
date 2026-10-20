@@ -1,7 +1,7 @@
 # Lycheetah now — synthesis of the current corpus
 
 **Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
-**Synthesis:** Caelorynth, an AI coding assistant, 19 October 2026.  
+**Synthesis:** Caelorynth, an AI coding assistant; reviewed 20 October 2026.  
 **Register:** Editorial synthesis and repository architecture. Evidence retains its source's status.
 
 Lycheetah has grown from a nine-framework theoretical system into a corpus of
@@ -9,6 +9,13 @@ runnable tools, permission-control experiments, language research, policy
 proposals, learning designs and an extensive fictional world. These parts share
 questions and vocabulary. Their maturity differs; one part's success does not
 validate the others.
+
+The [full technical review](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md)
+changes the evidential assessment: several older proof chains have reproduced
+counterexamples, the consensus execution binding required a code correction,
+and 23 evidence references remain missing after 14 path repairs. The useful
+connection between these branches is a research programme; the corpus does not
+currently establish one universally proven mathematical system.
 
 The connecting question is: **what can change while preserving the meaning,
 evidence and human authority that ought to survive the change?** An experiment

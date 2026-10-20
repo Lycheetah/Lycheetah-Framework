@@ -1,8 +1,9 @@
 """Lycheetah Multi-Agent Epistemic Consensus (`lycheetah.consensus`).
 
-Exposes the AURA Psi-Consensus protocol (pairwise Psi_Q-gated gossip, H^1 sheaf
-cohomology obstruction detection, 33% Byzantine fault tolerance, and Grey Mode
-quarantine + TRIAD recovery) along with the high-level `ConsensusArena`.
+Exposes Psi_Q-gated gossip, connectivity/local-consistency proxies, Grey Mode
+quarantine and TRIAD recovery through `ConsensusArena`. CellularSheaf supplies
+separate numerical cohomology certificates under an explicit SVD cutoff. Neither
+vector agreement nor the quarantine fraction proves Byzantine fault tolerance.
 """
 
 from __future__ import annotations

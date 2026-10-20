@@ -1,5 +1,7 @@
 # LAMAGUE — Mathematical Grammar Essentials
 
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** Distinguish the older symbolic architecture from versioned CORE, runtime, codec and SXP-L instruments. Ordinary composition laws do not prove arbitrary semantic preservation, a complete topos or cross-cultural equivalence. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+
 **Status:** [ACTIVE] Notation system operational; Topos structure mathematically sound | **Type:** Symbolic Notation System | **Focus:** Precision (compression potential TBD)
 
 ## What It Does

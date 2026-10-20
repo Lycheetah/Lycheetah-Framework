@@ -215,10 +215,41 @@ class TriAxialChecker:
             vtr_threshold: VTR minimum pass threshold (source: 1.5)
             pai_threshold: PAI minimum pass threshold (source: 0.80)
         """
-        self.constitution_vector = constitution_vector
-        self.tes_threshold = tes_threshold
-        self.vtr_threshold = vtr_threshold
-        self.pai_threshold = pai_threshold
+        self.constitution_vector = (
+            self._vector(constitution_vector, "constitution_vector")
+            if constitution_vector is not None else None
+        )
+        self.tes_threshold = self._finite(tes_threshold, "tes_threshold")
+        self.vtr_threshold = self._finite(vtr_threshold, "vtr_threshold")
+        self.pai_threshold = self._finite(pai_threshold, "pai_threshold")
+        if not 0 <= self.tes_threshold <= 1:
+            raise ValueError("tes_threshold must be between 0 and 1")
+        if self.vtr_threshold < 0:
+            raise ValueError("vtr_threshold must be nonnegative")
+        if not -1 <= self.pai_threshold <= 1:
+            raise ValueError("pai_threshold must be between -1 and 1")
+
+    @staticmethod
+    def _finite(value: float, name: str) -> float:
+        try:
+            result = float(value)
+        except (TypeError, ValueError, OverflowError) as exc:
+            raise ValueError(f"{name} must be a finite number") from exc
+        if not math.isfinite(result):
+            raise ValueError(f"{name} must be a finite number")
+        return result
+
+    @classmethod
+    def _vector(cls, values, name: str) -> List[float]:
+        if isinstance(values, (str, bytes, dict)):
+            raise ValueError(f"{name} must be a non-empty finite vector")
+        try:
+            vector = [cls._finite(value, name) for value in values]
+        except TypeError as exc:
+            raise ValueError(f"{name} must be a non-empty finite vector") from exc
+        if not vector:
+            raise ValueError(f"{name} must be a non-empty finite vector")
+        return vector
 
     def compute_tes(self, h_output: float, drift: float) -> TESResult:
         """
@@ -233,8 +264,8 @@ class TriAxialChecker:
         [SCAFFOLD]: H_output is hard to compute without access to model internals.
         Proxy: use token-level uncertainty estimate, or 0.1 for confident outputs.
         """
-        h_clamped = max(0.0, min(1.0, h_output))
-        d_clamped = max(0.0, min(1.0, drift))
+        h_clamped = max(0.0, min(1.0, self._finite(h_output, "h_output")))
+        d_clamped = max(0.0, min(1.0, self._finite(drift, "drift")))
         score = 1.0 / (1.0 + h_clamped + d_clamped)
         return TESResult(score=score, threshold=self.tes_threshold,
                          h_output=h_clamped, drift=d_clamped)
@@ -252,11 +283,14 @@ class TriAxialChecker:
         [SCAFFOLD]: Objective measurement of value_added requires domain context.
         """
         epsilon = 1e-6
+        value_added = self._finite(value_added, "value_added")
+        friction = self._finite(friction, "friction")
+        if friction < 0:
+            raise ValueError("friction must be nonnegative")
         score = value_added / (friction + epsilon)
-        flags = []
-        if friction <= 0 and value_added > 0:
-            flags = ["friction=0 detected — VTR is unbounded; cap at 10.0 for reporting"]
-            score = min(score, 10.0)
+        if friction == 0:
+            score = max(-10.0, min(score, 10.0))
+        score = self._finite(score, "VTR score")
         return VTRResult(score=score, threshold=self.vtr_threshold,
                          value_added=value_added, friction=friction)
 
@@ -273,11 +307,17 @@ class TriAxialChecker:
           PAI = 0.90 - violation_count × 0.10
 
         [SCAFFOLD]: Encoding identity as a vector requires a shared embedding space.
-        Without that infrastructure, use the violation-count fallback.
+        The violation-count fallback is available only when neither vector is
+        supplied. Missing or mismatched vector data is an error, not alignment.
         """
-        if (identity_vector is not None and
-                self.constitution_vector is not None and
-                len(identity_vector) == len(self.constitution_vector)):
+        if type(violation_count) is not int or violation_count < 0:
+            raise ValueError("violation_count must be a nonnegative integer")
+        if identity_vector is not None or self.constitution_vector is not None:
+            if identity_vector is None or self.constitution_vector is None:
+                raise ValueError("both identity and constitution vectors are required")
+            identity_vector = self._vector(identity_vector, "identity_vector")
+            if len(identity_vector) != len(self.constitution_vector):
+                raise ValueError("identity and constitution vector dimensions must match")
             score = self._cosine_similarity(identity_vector, self.constitution_vector)
         else:
             # Fallback: violation-count method
@@ -326,13 +366,21 @@ class TriAxialChecker:
 
     @staticmethod
     def _cosine_similarity(a: List[float], b: List[float]) -> float:
-        """Cosine similarity between two vectors."""
-        dot = sum(x * y for x, y in zip(a, b))
-        mag_a = math.sqrt(sum(x ** 2 for x in a))
-        mag_b = math.sqrt(sum(x ** 2 for x in b))
-        if mag_a < 1e-10 or mag_b < 1e-10:
+        """Scale before squaring so finite large vectors do not overflow."""
+        a = TriAxialChecker._vector(a, "identity_vector")
+        b = TriAxialChecker._vector(b, "constitution_vector")
+        if len(a) != len(b):
+            raise ValueError("identity and constitution vector dimensions must match")
+        scale_a = max(abs(x) for x in a)
+        scale_b = max(abs(x) for x in b)
+        if scale_a == 0 or scale_b == 0:
             return 0.0
-        return dot / (mag_a * mag_b)
+        a_scaled = [x / scale_a for x in a]
+        b_scaled = [x / scale_b for x in b]
+        mag_a = math.sqrt(math.fsum(x * x for x in a_scaled))
+        mag_b = math.sqrt(math.fsum(x * x for x in b_scaled))
+        score = math.fsum((x / mag_a) * (y / mag_b) for x, y in zip(a_scaled, b_scaled))
+        return max(-1.0, min(1.0, score))
 
     @staticmethod
     def estimate_output_entropy(text: str) -> float:

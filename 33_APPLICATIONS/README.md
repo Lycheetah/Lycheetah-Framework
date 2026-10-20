@@ -2,6 +2,8 @@
 
 **Updated:** 19 October 2026. **Creator:** Mackenzie Conor James Clark / Lycheetah Framework.
 
+**20 October technical review [INTERPRETIVE]:** [Full findings and corrections](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md). Several older mathematical guarantees fail as stated. The consensus digest binding and desktop provider-selection race are corrected locally; release gates and evidence gaps remain open.
+
 Lycheetah now contains usable instruments, executable research, policy proposals
 and creative work. They have different maturity and evidence. This guide answers
 what to try, what its output means, and which claims still need outside testing.
@@ -17,7 +19,7 @@ explains how the work connects; the [map](../00_Sovereign_Index.md) locates it.
 | Explain a bounded policy decision | [Assurance Runtime](../34_ASSURANCE_RUNTIME/README.md), [package](../lycheetah/README.md) | Policy/evidence version, allowed scope, uncertainty, receipts and restricted guard/finality behaviour. | Validity of inputs, correctness of the policy for its setting and external effects. A receipt is not proof of an event. |
 | Exercise permission, revocation, recovery or stopping | [Agent-safety packet](../papers/agent-safety/README.md) | Behaviour on the packet's authored cases, counterexamples and conventional baselines. | Adversarial real integrations, independent reproduction and practical advantage beyond the baseline. |
 | Revise represented knowledge as evidence changes | [Hybrid Gateway](../papers/ai-futures/hybrid-gateway/README.md), [CASCADE](../01_CASCADE_L4/README.md) | Declared revision mechanisms and bounded model results. | External truth, operational input quality and generalisation. Temporal SQL baselines tie in the Gateway research. |
-| Make research claims auditable | [Claims/evidence guide](../28_DEFENSE/README.md), [claim register](../28_DEFENSE/CLAIMS.json) | Traceable status, evidence paths, falsifiers and retained retractions; automated count consistency. | Scientific validity and independent evaluation of each claim. |
+| Make research claims auditable | [Claims/evidence guide](../28_DEFENSE/README.md), [claim register](../28_DEFENSE/CLAIMS.json) | Author statuses, falsifiers, retractions and count consistency; the review audits all 107 pointers. | Twenty-three missing references remain after 14 path repairs; mathematical support and independent evaluation require separate evidence. |
 | Read the work without installing software | [Public reader](https://lycheetah-earned-light.banduabusiness.chatgpt.site), [story collection](../LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/README.md) | Complete stories, research introductions and downloadable source bundles. | Reader experience and public reach; publication itself is not research validation. |
 
 The [examples guide](../examples/README.md) and [implementation guide](../12_IMPLEMENTATIONS/README.md)

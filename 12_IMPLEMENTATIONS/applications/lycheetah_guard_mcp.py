@@ -339,9 +339,15 @@ def format_network_health(states_json: str) -> str:
             if not isinstance(item, list):
                 return f"ERROR: item {i} is not an array."
             vec = np.array(item, dtype=float)
+            if vec.ndim != 1 or vec.size == 0 or not np.all(np.isfinite(vec)):
+                return f"ERROR: item {i} must be a non-empty vector of finite values."
             n = float(np.linalg.norm(vec))
+            if not np.isfinite(n):
+                return f"ERROR: item {i} must have a finite norm."
             if n < 1e-9:
                 return f"ERROR: item {i} has zero norm."
+            if vectors and len(vec) != len(vectors[0]):
+                return "ERROR: state vectors must have identical dimension."
             vectors.append(vec / n)
     except json.JSONDecodeError as e:
         return f"ERROR: invalid JSON — {e}"
@@ -372,7 +378,7 @@ def format_network_health(states_json: str) -> str:
         f"  Consensus drift   : {result.final_drift:.4f}",
         f"  Grey (quarantined): {len(result.grey_agents)}  {result.grey_agents}",
         "",
-        "OBSTRUCTION CHECK (H^1):",
+        "CONNECTIVITY / LOCAL CONSISTENCY PROXY (H^1 NOT EVALUATED):",
         f"  Obstruction-free  : {result.obstruction_report.obstruction_free}",
         f"  Connected         : {result.obstruction_report.connected}",
         f"  Partitions        : {result.obstruction_report.partition_count}",
@@ -386,8 +392,9 @@ def format_network_health(states_json: str) -> str:
     lines += [
         "",
         "INTERPRETATION:",
-        "  Obstruction-free = True means all agents can reach global consensus.",
-        "  Grey agents have drifted outside constitutional bounds and are quarantined.",
+        "  Obstruction-free = True means the configured graph/distance checks passed.",
+        "  These numerical checks do not establish truth or Byzantine fault tolerance.",
+        "  Grey agents exceeded configured drift thresholds and are quarantined.",
         f"  {'Network is healthy.' if result.converged else 'Network did not converge -- review grey agents and inconsistent edges.'}",
     ]
     return "\n".join(lines)

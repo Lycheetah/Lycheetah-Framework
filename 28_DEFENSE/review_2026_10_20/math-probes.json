@@ -1,0 +1,892 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-20T02:01:04.030640+00:00",
+  "reviewed_commit": "6ba483af3f125ec725eb4e0f44074d0887183255",
+  "observed_commit": "6ba483af3f125ec725eb4e0f44074d0887183255",
+  "repository": ".",
+  "reviewer": "Caelorynth/Codex AI technical review; separate mathematical reviewer and primary reproduction",
+  "author_attribution": "Mackenzie Conor James Clark; Lycheetah Framework",
+  "not_independent_scientific_peer_review": true,
+  "meaning_of_success": "All listed reviewer observations reproduced under their stated scope. This is not a pass for the author claims.",
+  "invocation": "python3 -B 28_DEFENSE/review_2026_10_20/math_probes.py --repo <baseline-checkout> --output-dir <evidence-directory>",
+  "script_sha256": "23a3239b729c5ba7af51a551fff74194458a2f3dc9ca0f80f6ec0edb5fa2693a",
+  "numpy_version": "2.4.6",
+  "summary": {
+    "expected_probes": 18,
+    "executed_probes": 18,
+    "reproduced": 18,
+    "failed": 0,
+    "classifications": {
+      "DIRECT_COUNTEREXAMPLE": 17,
+      "PROOF_GAP": 1
+    },
+    "harness_controls": 3,
+    "pinned_sources": 36,
+    "all_sources_match_reviewed_commit": true,
+    "pinned_source_bytes_unchanged_during_run": true
+  },
+  "harness_controls": [
+    {
+      "control": "benign_numeric_and_boolean_assertions",
+      "result": "PASS"
+    },
+    {
+      "control": "deliberately_wrong_numeric_expected_value",
+      "result": "CAUGHT"
+    },
+    {
+      "control": "deliberately_false_boolean_condition",
+      "result": "CAUGHT"
+    }
+  ],
+  "probes": [
+    {
+      "id": "MP01",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "Negative entropy Hessian reverses the claimed Jacobian bound",
+      "evidence": [
+        "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md:607"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "coherence": 0.7,
+        "alpha": 0.1,
+        "entropy_hessian": -4.761904761904762,
+        "claimed_interval": [
+          0,
+          1
+        ],
+        "actual_jacobian": 1.4761904761904763,
+        "scope": "Counterexample to the displayed scalar sign inference, not every possible TRIAD model."
+      }
+    },
+    {
+      "id": "MP02",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "The continuous generator norm condition permits growth",
+      "evidence": [
+        "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md:415"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "anchor": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "ascent": [
+          [
+            0.0,
+            -1.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "fold": [
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.5,
+            0.0
+          ]
+        ],
+        "operator_norms": [
+          1.0,
+          1.0,
+          0.5
+        ],
+        "commutator_norms": [
+          1.0,
+          1.0,
+          0.5
+        ],
+        "condition_lhs": 0.4,
+        "condition_rhs": 0.9,
+        "generator": [
+          [
+            0.2,
+            -0.1
+          ],
+          [
+            0.30000000000000004,
+            0.0
+          ]
+        ],
+        "eigenvalues": [
+          {
+            "real": 0.09999999999999998,
+            "imag": 0.1414213562373095
+          },
+          {
+            "real": 0.09999999999999998,
+            "imag": -0.1414213562373095
+          }
+        ],
+        "scope": "Satisfies the displayed linear-operator norm assumptions; it does not instantiate the undefined low-entropy projection."
+      }
+    },
+    {
+      "id": "MP03",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "Actual TRIAD tracker stops at a minimum and admits distinct fixed points",
+      "evidence": [
+        "12_IMPLEMENTATIONS/core/triad_tracker.py:11",
+        "12_IMPLEMENTATIONS/core/triad_tracker.py:130"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "alpha": 1.0,
+        "lipschitz_constant": 0.1,
+        "records": [
+          {
+            "initial": -1.5707963267948966,
+            "final": -1.5707963267948966,
+            "coherence": 0.7000000000000001,
+            "converged": true
+          },
+          {
+            "initial": 1.5707963267948966,
+            "final": 1.5707963267948966,
+            "coherence": 0.9,
+            "converged": true
+          },
+          {
+            "initial": 7.853981633974483,
+            "final": 7.853981633974483,
+            "coherence": 0.9,
+            "converged": true
+          }
+        ],
+        "coherence_second_derivative_at_minimum": 0.1,
+        "scope": "Refutes the step-size-only guarantee; a conditional theorem with strong concavity is not refuted."
+      }
+    },
+    {
+      "id": "MP04",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "The Shannon low-entropy sublevel is not convex",
+      "evidence": [
+        "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md:318"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "left": [
+          1.0,
+          0.0
+        ],
+        "right": [
+          0.0,
+          1.0
+        ],
+        "midpoint": [
+          0.5,
+          0.5
+        ],
+        "entropy_nats": [
+          -0.0,
+          -0.0,
+          0.6931471805599453
+        ],
+        "epsilon": 0.1
+      }
+    },
+    {
+      "id": "MP05",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "The actual normalized ascent does not preserve inner products",
+      "evidence": [
+        "12_IMPLEMENTATIONS/core/lamague_reference.py:110",
+        "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md:554"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "before_inner_product": 0.0,
+        "after_inner_product": 0.19801960788176856,
+        "image_a": [
+          0.9950372000618279,
+          0.0995036205025623
+        ],
+        "image_b": [
+          0.0995036205025623,
+          0.9950372000618279
+        ],
+        "note": "Unit output norms are a positive control; they do not imply unitarity."
+      }
+    },
+    {
+      "id": "MP06",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "The sparse and uniform forcing spectral norms are miscomputed",
+      "evidence": [
+        "TRUTH_PRESSURE/PI_THRESHOLD_DERIVATION.md:76",
+        "TRUTH_PRESSURE/PI_THRESHOLD_DERIVATION.md:92"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "n": 16,
+        "rank": 4,
+        "sparse_actual_norm": 0.0625,
+        "sparse_claimed_norm": 0.25,
+        "uniform_actual_norm": 1.0000000000000002,
+        "illustrative_stable_baseline": "J=-I; illustration only, not a proposed scientific replacement",
+        "max_eigenvalue_at_pi_4": -0.75,
+        "max_eigenvalue_at_pi_16": 0.0,
+        "note": "No Wigner ensemble experiment or empirical scaling fit was run."
+      }
+    },
+    {
+      "id": "MP07",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "The stated below-threshold reference is not an equilibrium",
+      "evidence": [
+        "TRUTH_PRESSURE/MASTER_EQUATION.md:152",
+        "TRUTH_PRESSURE/MASTER_EQUATION.md:175",
+        "TRUTH_PRESSURE/PI_DERIVATION.md:214"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "k1": 0.5,
+        "k2": 0.3,
+        "k3": 0.2,
+        "k4": 0.1,
+        "pi": 0.7,
+        "threshold": 1.2,
+        "invariant_reference": 0.7,
+        "resource_ratio": 1.0,
+        "derivative_at_reference": -0.15,
+        "actual_equilibrium": 0.19999999999999996,
+        "point": 0.69,
+        "lyapunov_derivative": 0.0014700000000000013,
+        "linearized_eigenvalue": -0.3,
+        "scope": "Exact scalar equation as printed, with constant inputs; no alternate scientific model is chosen."
+      }
+    },
+    {
+      "id": "MP08",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "A perfect adherence score leaves ethical predicates unconstrained",
+      "evidence": [
+        "28_DEFENSE/CLAIMS.json:82",
+        "30_MAPS/FORMAL_SPINE.md:360",
+        "12_IMPLEMENTATIONS/core/microorcim_tracker.py:74"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "intended_numeric_value": 1.0,
+        "actual_numeric_value": 1.0,
+        "drift": 0.0,
+        "score": 1.0,
+        "separate_invariant_preserved": false,
+        "scope": "Logical countermodel to score-only implication, not an empirical ethical assessment. The score function has no invariant input."
+      }
+    },
+    {
+      "id": "MP09",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "Actual CASCADE demotes an old foundation while retaining its record",
+      "evidence": [
+        "30_MAPS/FORMAL_SPINE.md:205",
+        "12_IMPLEMENTATIONS/core/cascade_engine.py:283"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "before": {
+          "layer": "FOUNDATION",
+          "truth_pressure": 1.6,
+          "content": "Old claim"
+        },
+        "after": {
+          "layer": "THEORY",
+          "truth_pressure": 1.36,
+          "regime": "qualified",
+          "content": "Old claim"
+        },
+        "cascade_fired": true,
+        "old_record_retained": true,
+        "scope": "Implementation intentionally demotes; this refutes the advertised membership invariant, not record preservation."
+      }
+    },
+    {
+      "id": "MP10",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "Adding a categorical outcome need not increase Shannon entropy",
+      "evidence": [
+        "11_MATHEMATICAL_FOUNDATIONS/CASCADE_FORMAL_PROOFS.md:205"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "old_probabilities": [
+          0.5,
+          0.5
+        ],
+        "new_probabilities": [
+          0.01,
+          0.01,
+          0.98
+        ],
+        "old_entropy_bits": 1.0,
+        "new_entropy_bits": 0.16144054254182066,
+        "scope": "Categorical extension with renormalization preserves records, not their old probability masses. Joint-variable chain rule is a different construction."
+      }
+    },
+    {
+      "id": "MP11",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "The stated reliability-entropy TES construction can cross below its floor",
+      "evidence": [
+        "11_MATHEMATICAL_FOUNDATIONS/CASCADE_FORMAL_PROOFS.md:370"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "old_reliability": [
+          1.0
+        ],
+        "added_reliability": 0.7,
+        "old_hmax_bits": 1,
+        "new_hmax_bits": 2,
+        "added_entropy_bits": 0.8812908992306927,
+        "old_tes": 1.0,
+        "new_tes": 0.5593545503846536,
+        "scope": "The proof's additive independent-Bernoulli entropy model, not the differently defined heuristic TES checker."
+      }
+    },
+    {
+      "id": "MP12",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "Positive created value does not imply value exceeds consumed resources",
+      "evidence": [
+        "11_MATHEMATICAL_FOUNDATIONS/CASCADE_FORMAL_PROOFS.md:403"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "old_value": 1.0,
+        "old_cost": 1.0,
+        "added_value": 0.1,
+        "added_cost": 1.0,
+        "old_vtr": 1.0,
+        "new_vtr": 0.55,
+        "scope": "Countermodel to the displayed inequality inference, not a measured economic valuation."
+      }
+    },
+    {
+      "id": "MP13",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "Actual Solve then Coagula reduces coherence from one",
+      "evidence": [
+        "12_IMPLEMENTATIONS/core/chrysopoeia_engine.py:362",
+        "12_IMPLEMENTATIONS/core/chrysopoeia_engine.py:383",
+        "30_MAPS/FORMAL_SPINE.md:492"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "initial_coherence": 1.0,
+        "after_solve": 0.9,
+        "after_coagula": 0.915,
+        "noise_seed": 123,
+        "note": "The scalar coherence counterexample is independent of the noise realization."
+      }
+    },
+    {
+      "id": "MP14",
+      "classification": "PROOF_GAP",
+      "title": "Actual Xi draws fresh noise and reports zero entropy away from its coagulation target",
+      "evidence": [
+        "12_IMPLEMENTATIONS/core/chrysopoeia_engine.py:330",
+        "12_IMPLEMENTATIONS/core/chrysopoeia_engine.py:407"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "input_vector": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "seed_2_output": [
+          0.9343552005112707,
+          0.9285032017432406,
+          0.8860591194309356
+        ],
+        "seed_3_output": [
+          0.8999148878693501,
+          0.9424457466028733,
+          0.9550337455942964
+        ],
+        "output_distance": 0.0783455726024865,
+        "seed_2_distance_from_ones": 0.14967817518174456,
+        "reported_entropy": [
+          0.0,
+          0.0
+        ],
+        "scope": "Observed stochasticity and metadata distinction. Does not refute Banach's conditional theorem or all possible stochastic convergence models."
+      }
+    },
+    {
+      "id": "MP15",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "Simple nonunit ratios can close a cycle exactly",
+      "evidence": [
+        "10_HARMONIA_L6/essentials.md:43"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "literal_exact_closure": [
+          "3/2",
+          "2/3"
+        ],
+        "literal_product": "1",
+        "seven_distinct_ratios": [
+          "2",
+          "3/2",
+          "4/3",
+          "5/4",
+          "6/5",
+          "7/6",
+          "8/7"
+        ],
+        "product": "8",
+        "octave_normalized_product": "1",
+        "positive_control_twelve_fifths_comma": "531441/524288",
+        "scope": "Refutes the universal extension; preserves the narrow Pythagorean comma result."
+      }
+    },
+    {
+      "id": "MP16",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "The consonance formula, table, and acknowledged implementation proxy disagree",
+      "evidence": [
+        "10_HARMONIA_L6/essentials.md:17",
+        "10_HARMONIA_L6/essentials.md:29",
+        "12_IMPLEMENTATIONS/core/harmonia_calculator.py:107"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "written_formula_convention": "sum starts at k=0, as usual for [a0;a1,...]",
+        "formula_table_cases": [
+          {
+            "ratio": "1",
+            "continued_fraction": [
+              1
+            ],
+            "written_formula_value": "1/2",
+            "reported_table_value": 1.0
+          },
+          {
+            "ratio": "2",
+            "continued_fraction": [
+              2
+            ],
+            "written_formula_value": "1/3",
+            "reported_table_value": 1.0
+          },
+          {
+            "ratio": "3/2",
+            "continued_fraction": [
+              1,
+              2
+            ],
+            "written_formula_value": "1/3",
+            "reported_table_value": 0.571
+          }
+        ],
+        "tritone_ratio": "45/32",
+        "implementation_consonance": 0.9904425317466468,
+        "implementation_quality": "PERFECT (highly consonant)",
+        "source_table_consonance": 0.024,
+        "scope": "Internal consistency and proxy disagreement. No listener study or external consonance measure was tested."
+      }
+    },
+    {
+      "id": "MP17",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "Work does not universally imply entropy change minus work over temperature",
+      "evidence": [
+        "30_MAPS/FORMAL_SPINE.md:388",
+        "30_MAPS/FORMAL_SPINE.md:396",
+        "06_EARNED_LIGHT_L0/essentials.md:74"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "ideal_model": "reversible adiabatic compression; one mole monatomic ideal gas",
+        "temperature_1_K": 300.0,
+        "temperature_2_K": 476.22031559045985,
+        "volume_ratio": 0.5,
+        "work_on_J": 2197.7658398040676,
+        "actual_delta_entropy_J_per_K": 8.881784197001252e-16,
+        "minus_work_over_initial_temperature": -7.325886132680226,
+        "scope": "Counterexample to the unqualified thermodynamic-law claim. A process-restricted erasure/free-energy relation requires separate assumptions; consciousness is not simulated."
+      }
+    },
+    {
+      "id": "MP18",
+      "classification": "DIRECT_COUNTEREXAMPLE",
+      "title": "Actual low-pressure revision need not give local consistency",
+      "evidence": [
+        "11_MATHEMATICAL_FOUNDATIONS/AGM_POSTULATE_VERIFICATION.md:165"
+      ],
+      "result": "REPRODUCED",
+      "details": {
+        "cascade_fired": false,
+        "active_contradictions": [
+          [
+            "old",
+            "new"
+          ]
+        ],
+        "coherence": 0.0,
+        "scope": "Counters the add_block/revision local-consistency assertion; does not say that a fired cascade leaves this particular conflict unresolved."
+      }
+    }
+  ],
+  "documentary_gaps_not_automated_proofs": [
+    {
+      "id": "DG01",
+      "classification": "PROOF_GAP",
+      "evidence": [
+        "11_MATHEMATICAL_FOUNDATIONS/lyapunov_verification.py:248",
+        "11_MATHEMATICAL_FOUNDATIONS/lyapunov_verification.py:329",
+        "11_MATHEMATICAL_FOUNDATIONS/lyapunov_verification.py:455"
+      ],
+      "finding": "Assigned Hessian eigenvalues and unconditional NUMERICAL records are counted as passing. No new execution of this verification suite was performed."
+    },
+    {
+      "id": "DG02",
+      "classification": "PROOF_GAP",
+      "evidence": [
+        "30_MAPS/FORMAL_SPINE.md:273",
+        "30_MAPS/FORMAL_SPINE.md:154"
+      ],
+      "finding": "Inspectability does not entail a numeric contradiction-count/coherence floor; the cross-framework bridge needs an independent premise or enforcement."
+    },
+    {
+      "id": "DG03",
+      "classification": "PROOF_GAP",
+      "evidence": [
+        "11_MATHEMATICAL_FOUNDATIONS/THE_INCOMPLETENESS_PROOF.md:123"
+      ],
+      "finding": "The displayed all-model semantic consequence without provability is incompatible with ordinary complete first-order semantics. The needed arithmetic/effectivity assumptions are absent. This was read, not tested by a theorem prover."
+    },
+    {
+      "id": "DG04",
+      "classification": "PROOF_GAP",
+      "evidence": [
+        "07_ANAMNESIS_L0/ANAMNESIS_FROM_ARCHIVE.md:265",
+        "07_ANAMNESIS_L0/essentials.md:83"
+      ],
+      "finding": "A common attractor set does not force the same limit element. Equal convergence rates are assigned to competing explanations in the proposed discriminator."
+    },
+    {
+      "id": "DG05",
+      "classification": "PROOF_GAP",
+      "evidence": [
+        "TRUTH_PRESSURE/PI_DERIVATION.md:211",
+        "TRUTH_PRESSURE/DIMENSIONAL_ANALYSIS.md:101",
+        "28_DEFENSE/NOVEL_CONTRIBUTIONS.md:26"
+      ],
+      "finding": "Pi is assumed before symbolic manipulation; dimensional cancellation does not prove construct validity/universality. Some proposed normalizations violate their claimed range. No external novelty literature search was performed."
+    },
+    {
+      "id": "DG06",
+      "classification": "PROOF_GAP",
+      "evidence": [
+        "30_MAPS/FORMAL_SPINE.md:191",
+        "12_IMPLEMENTATIONS/core/cascade_engine.py:61"
+      ],
+      "finding": "The formal spine uses global coherence as Pi denominator; the implementation uses individual block uncertainty. The review does not choose a replacement definition."
+    }
+  ],
+  "source_receipts": [
+    {
+      "path": "28_DEFENSE/CLAIMS.json",
+      "sha256": "ac364696fb4182da589565a3af4300cead603d0295140dd8088e7b049c116b8b",
+      "bytes": 56789,
+      "reviewed_commit_sha256": "ac364696fb4182da589565a3af4300cead603d0295140dd8088e7b049c116b8b",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "28_DEFENSE/CLAIMS.schema.json",
+      "sha256": "44c2d851ca3640702e10a60c00798bef3f5dde86fe7c8b9b1f2ccd0a00ed158b",
+      "bytes": 4343,
+      "reviewed_commit_sha256": "44c2d851ca3640702e10a60c00798bef3f5dde86fe7c8b9b1f2ccd0a00ed158b",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "28_DEFENSE/NOVEL_CONTRIBUTIONS.md",
+      "sha256": "e9c9e3bab3c346955defc148bd01edf397b705d901ba1f7f2ba1961c48b44e88",
+      "bytes": 20246,
+      "reviewed_commit_sha256": "e9c9e3bab3c346955defc148bd01edf397b705d901ba1f7f2ba1961c48b44e88",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "28_DEFENSE/COUNTER_CODEX.md",
+      "sha256": "13a7b2362273e45804967648db0a4b879122a4e016d762bf5ce4a1797717704a",
+      "bytes": 34032,
+      "reviewed_commit_sha256": "13a7b2362273e45804967648db0a4b879122a4e016d762bf5ce4a1797717704a",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "28_DEFENSE/FAILURE_MUSEUM.md",
+      "sha256": "bbda68d7c04a9c711a5f8d83b2666b10e7e93939957470443521c42fe77feafe",
+      "bytes": 45588,
+      "reviewed_commit_sha256": "bbda68d7c04a9c711a5f8d83b2666b10e7e93939957470443521c42fe77feafe",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "28_DEFENSE/FALSIFICATION_REGISTER.md",
+      "sha256": "0cf9a6982069c5dfabc2ab155e383bd4ccbbfd95d1e3273e92579e13de9a0d38",
+      "bytes": 56530,
+      "reviewed_commit_sha256": "0cf9a6982069c5dfabc2ab155e383bd4ccbbfd95d1e3273e92579e13de9a0d38",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "28_DEFENSE/TESTABILITY_MANIFEST.md",
+      "sha256": "20af952744d42e1bd129a6d41d8c6b5855c0ae71399cce65d62d5c41be2cc0cd",
+      "bytes": 21503,
+      "reviewed_commit_sha256": "20af952744d42e1bd129a6d41d8c6b5855c0ae71399cce65d62d5c41be2cc0cd",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "30_MAPS/FORMAL_SPINE.md",
+      "sha256": "f7656d3dbdfcdd35838b4296d5e849a15a6540163a724e194118897f5ec7f62d",
+      "bytes": 31034,
+      "reviewed_commit_sha256": "f7656d3dbdfcdd35838b4296d5e849a15a6540163a724e194118897f5ec7f62d",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md",
+      "sha256": "35ac385d1db66d4e4821a62f11b98aabbe09335167dbe1684a73d153b7791dba",
+      "bytes": 36904,
+      "reviewed_commit_sha256": "35ac385d1db66d4e4821a62f11b98aabbe09335167dbe1684a73d153b7791dba",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "11_MATHEMATICAL_FOUNDATIONS/CASCADE_FORMAL_PROOFS.md",
+      "sha256": "92374baa80399782980cffc31f0ff0373859b5f88a996e288fe54095c8e9966c",
+      "bytes": 20091,
+      "reviewed_commit_sha256": "92374baa80399782980cffc31f0ff0373859b5f88a996e288fe54095c8e9966c",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "11_MATHEMATICAL_FOUNDATIONS/lyapunov_verification.py",
+      "sha256": "cc30185d84c969a3ff9bb083aaa03f0b3db88016d7382c0a5c3045a22e9f61a0",
+      "bytes": 19941,
+      "reviewed_commit_sha256": "cc30185d84c969a3ff9bb083aaa03f0b3db88016d7382c0a5c3045a22e9f61a0",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "11_MATHEMATICAL_FOUNDATIONS/lyapunov_verification_results.json",
+      "sha256": "b99a0b0ab6f146379faf2f553be5bd2972d6c1143f147decf0da7d8da6b62446",
+      "bytes": 3489,
+      "reviewed_commit_sha256": "b99a0b0ab6f146379faf2f553be5bd2972d6c1143f147decf0da7d8da6b62446",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "11_MATHEMATICAL_FOUNDATIONS/AGM_POSTULATE_VERIFICATION.md",
+      "sha256": "8c9b84681fcc92acf1c5e7b40e93abf8f86a20ec2f7fc0f06ca8ad42e4e6c3f6",
+      "bytes": 14813,
+      "reviewed_commit_sha256": "8c9b84681fcc92acf1c5e7b40e93abf8f86a20ec2f7fc0f06ca8ad42e4e6c3f6",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "11_MATHEMATICAL_FOUNDATIONS/THE_INCOMPLETENESS_PROOF.md",
+      "sha256": "29bc9200a451bc24fa5ef026f278ec451d3d6fcfd144003a8885429fb5f40476",
+      "bytes": 6612,
+      "reviewed_commit_sha256": "29bc9200a451bc24fa5ef026f278ec451d3d6fcfd144003a8885429fb5f40476",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "11_MATHEMATICAL_FOUNDATIONS/README.md",
+      "sha256": "f4290a887d001b13d6b190b2eed4486a7982631c6c54472d5c3c2d52ab74b1a2",
+      "bytes": 1735,
+      "reviewed_commit_sha256": "f4290a887d001b13d6b190b2eed4486a7982631c6c54472d5c3c2d52ab74b1a2",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "TRUTH_PRESSURE/PI_DERIVATION.md",
+      "sha256": "04f5f49bc416007c486719803679b2b7bd4c72eeba6133363f9253e67f335257",
+      "bytes": 8864,
+      "reviewed_commit_sha256": "04f5f49bc416007c486719803679b2b7bd4c72eeba6133363f9253e67f335257",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "TRUTH_PRESSURE/PI_THRESHOLD_DERIVATION.md",
+      "sha256": "13d9622d0670b4749c61d059d7a11a902c332c2c95ed7e50f80a2a6c35dc6d51",
+      "bytes": 13889,
+      "reviewed_commit_sha256": "13d9622d0670b4749c61d059d7a11a902c332c2c95ed7e50f80a2a6c35dc6d51",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "TRUTH_PRESSURE/DIMENSIONAL_ANALYSIS.md",
+      "sha256": "0d76ed3497ec6b74b316fc9b7e447cfc2f4a75d47af6b50dd44acc7a55fd21da",
+      "bytes": 14130,
+      "reviewed_commit_sha256": "0d76ed3497ec6b74b316fc9b7e447cfc2f4a75d47af6b50dd44acc7a55fd21da",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "TRUTH_PRESSURE/MASTER_EQUATION.md",
+      "sha256": "6a01a1ccc47611ffcf930bdcf2f81e1f76298f72907901153844b9e097cebfb7",
+      "bytes": 13070,
+      "reviewed_commit_sha256": "6a01a1ccc47611ffcf930bdcf2f81e1f76298f72907901153844b9e097cebfb7",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "01_CASCADE_L4/essentials.md",
+      "sha256": "cff3361e8edc1b6f34ba5438ad970d7d1ff93c0d502c5f21535d524c420bc8e9",
+      "bytes": 2938,
+      "reviewed_commit_sha256": "cff3361e8edc1b6f34ba5438ad970d7d1ff93c0d502c5f21535d524c420bc8e9",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "02_AURA_L3/essentials.md",
+      "sha256": "1fa5c6312a12cefbf9e3cdcda9c7328b8884bd62c5941b0666c04e0cb3569892",
+      "bytes": 4893,
+      "reviewed_commit_sha256": "1fa5c6312a12cefbf9e3cdcda9c7328b8884bd62c5941b0666c04e0cb3569892",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "03_LAMAGUE_L1/10_essentials.md",
+      "sha256": "833d58ad13defc9a8c7d54399c28ff188e6331456227212ba5de548f058d47f8",
+      "bytes": 3168,
+      "reviewed_commit_sha256": "833d58ad13defc9a8c7d54399c28ff188e6331456227212ba5de548f058d47f8",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "04_TRIAD_L2/essentials.md",
+      "sha256": "9d6fd6cea6d3095ed605078259a07797e7dc150ee6e361ef123e08ec1632b5ac",
+      "bytes": 4003,
+      "reviewed_commit_sha256": "9d6fd6cea6d3095ed605078259a07797e7dc150ee6e361ef123e08ec1632b5ac",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "05_MICROORCIM_L5/essentials.md",
+      "sha256": "b0e4d753c2e4d4a609c8cf27c57ad70e82cf275d595cb0d0c6be312e588ac252",
+      "bytes": 5893,
+      "reviewed_commit_sha256": "b0e4d753c2e4d4a609c8cf27c57ad70e82cf275d595cb0d0c6be312e588ac252",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "06_EARNED_LIGHT_L0/essentials.md",
+      "sha256": "3b6e2dd61a45b6ba49728571333f805f808418f97a83491b06194745c4d6df32",
+      "bytes": 8318,
+      "reviewed_commit_sha256": "3b6e2dd61a45b6ba49728571333f805f808418f97a83491b06194745c4d6df32",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "07_ANAMNESIS_L0/essentials.md",
+      "sha256": "effe803129210286ef81252d85f97d745f4fc3924821b6f93bd8c01d83dcfb4a",
+      "bytes": 11123,
+      "reviewed_commit_sha256": "effe803129210286ef81252d85f97d745f4fc3924821b6f93bd8c01d83dcfb4a",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "07_ANAMNESIS_L0/ANAMNESIS_FROM_ARCHIVE.md",
+      "sha256": "5f48e5a56929e444d447f44f187ca0aec3490d046c5b69d4aab4813a67cd6edd",
+      "bytes": 34835,
+      "reviewed_commit_sha256": "5f48e5a56929e444d447f44f187ca0aec3490d046c5b69d4aab4813a67cd6edd",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "09_CHRYSOPOEIA_L4/essentials.md",
+      "sha256": "002b37dabc1085f6e6d1d14b1013900227cb46f61c2f8faf7cb8c863d6e25995",
+      "bytes": 7320,
+      "reviewed_commit_sha256": "002b37dabc1085f6e6d1d14b1013900227cb46f61c2f8faf7cb8c863d6e25995",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "10_HARMONIA_L6/essentials.md",
+      "sha256": "9e5137b30a91e78ee40e47e12abc0b1c6802b8b28e36305026d7f6d67d09eda2",
+      "bytes": 5861,
+      "reviewed_commit_sha256": "9e5137b30a91e78ee40e47e12abc0b1c6802b8b28e36305026d7f6d67d09eda2",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "12_IMPLEMENTATIONS/core/cascade_engine.py",
+      "sha256": "76bee51e462d6304c0880740471826cb6bbeffb8e16e4d5d3944d2f6fd63e1e1",
+      "bytes": 30239,
+      "reviewed_commit_sha256": "76bee51e462d6304c0880740471826cb6bbeffb8e16e4d5d3944d2f6fd63e1e1",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "12_IMPLEMENTATIONS/core/chrysopoeia_engine.py",
+      "sha256": "e4d0732ea81fbe5c6d631eb0aabc1c948819c0cf0925e07e241b16037ec63057",
+      "bytes": 26111,
+      "reviewed_commit_sha256": "e4d0732ea81fbe5c6d631eb0aabc1c948819c0cf0925e07e241b16037ec63057",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "12_IMPLEMENTATIONS/core/earned_light_calculator.py",
+      "sha256": "9a79706be5e8533805af5142c7e0f6a444683cc278c947fce1bd6637f4f66ca5",
+      "bytes": 14131,
+      "reviewed_commit_sha256": "9a79706be5e8533805af5142c7e0f6a444683cc278c947fce1bd6637f4f66ca5",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "12_IMPLEMENTATIONS/core/harmonia_calculator.py",
+      "sha256": "3abb41597c7293480754d4615e5716a89c5da2bee8ca3cbc6d8dd174b0684435",
+      "bytes": 13003,
+      "reviewed_commit_sha256": "3abb41597c7293480754d4615e5716a89c5da2bee8ca3cbc6d8dd174b0684435",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "12_IMPLEMENTATIONS/core/lamague_reference.py",
+      "sha256": "3cecc099a3f427610d263cc968213c40135b50659f329c3c02680ce947684765",
+      "bytes": 20405,
+      "reviewed_commit_sha256": "3cecc099a3f427610d263cc968213c40135b50659f329c3c02680ce947684765",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "12_IMPLEMENTATIONS/core/microorcim_tracker.py",
+      "sha256": "8d36c10fe484f753dad7dd6a5c37423072efa40378592f2cd83aa371431cd43a",
+      "bytes": 16389,
+      "reviewed_commit_sha256": "8d36c10fe484f753dad7dd6a5c37423072efa40378592f2cd83aa371431cd43a",
+      "matches_reviewed_commit": true
+    },
+    {
+      "path": "12_IMPLEMENTATIONS/core/triad_tracker.py",
+      "sha256": "2f76c4d49e11b02a4046e71abd8a006602b3e82f91cdd054c19ec53d8b24fa63",
+      "bytes": 12265,
+      "reviewed_commit_sha256": "2f76c4d49e11b02a4046e71abd8a006602b3e82f91cdd054c19ec53d8b24fa63",
+      "matches_reviewed_commit": true
+    }
+  ],
+  "claim_evidence_audit": {
+    "filename": "claim-evidence-audit.json",
+    "sha256": "e4ce0af4136384769ffc0492e031746c3e4f76a13204a3384cb1cb12fcfbf871",
+    "summary": {
+      "claims": 71,
+      "author_status_counts": {
+        "ACTIVE": 52,
+        "SCAFFOLD": 12,
+        "CONJECTURE": 4,
+        "RETRACTED": 3
+      },
+      "evidence_references": 107,
+      "existing_references": 70,
+      "missing_references": 37,
+      "claims_all_references_missing": 24,
+      "active_claims_all_references_missing": 18
+    }
+  },
+  "repository_status_before_sha256": "9316a17640329bb98d48664ddbad8769e2d3cdda395067a95979d58ffa40916c",
+  "repository_status_after_sha256": "9316a17640329bb98d48664ddbad8769e2d3cdda395067a95979d58ffa40916c",
+  "repository_status_unchanged": true,
+  "writes": [
+    "math-probes.json",
+    "claim-evidence-audit.json"
+  ],
+  "not_run": [
+    "full or focused repository test suites",
+    "lyapunov_verification.py main",
+    "provider/model APIs",
+    "servers",
+    "external literature search"
+  ]
+}

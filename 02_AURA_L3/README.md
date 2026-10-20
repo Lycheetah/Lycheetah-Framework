@@ -1,5 +1,7 @@
 # AURA — commitments, predicates and policy
 
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** The seven commitments are normative specifications. The stated TES/VTR preservation proofs fail, and a proxy score or declared flag does not completely observe ethical compliance. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+
 **Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
 **Guide refreshed:** 19 October 2026.  
 **Status:** Normative architecture plus implemented proxies; semantic sufficiency remains unproven.

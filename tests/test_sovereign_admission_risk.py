@@ -15,7 +15,7 @@ import sqlite3
 import pytest
 
 from lycheetah.compaction import AgentStatePacket, CompactionShield
-from lycheetah.consensus import DeliberationVerdict
+from lycheetah.consensus import ConsensusArena
 from lycheetah.sovereign_harness import (
     SovereignExecutionHarness,
     SovereignExecutionPermit,
@@ -25,20 +25,9 @@ ISSUED = 1_700_000_000
 
 
 def _scenario(root: Path, risk: str = "HIGH", with_authority: bool = False) -> dict:
-    verdict = DeliberationVerdict(
-        converged=True,
-        obstruction_free=True,
-        byzantine_safe=True,
-        rounds_run=1,
-        healthy_agents=["worker"],
-        quarantined_agents=[],
-        final_drift=0.0,
-        consensus_vector=[1.0, 0.0],
-        partition_count=1,
-        inconsistent_edges=[],
-        consensus_digest="a" * 64,
-        audit_trail=["Synthetic fixture isolates the risk-admission boundary."],
-    )
+    arena = ConsensusArena(anchor=[1.0, 0.0])
+    arena.add_agent("worker", [1.0, 0.0])
+    verdict = arena.deliberate()
     packet = AgentStatePacket(
         id="risk-binding-packet",
         purpose="Read a synthetic status with a pinned declared risk",

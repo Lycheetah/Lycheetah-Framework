@@ -1,0 +1,36 @@
+{
+  "ruff_findings": 46,
+  "files": [
+    {
+      "path": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/src/bridge_v0_2.py",
+      "sha256": "1dad19798045543b131b5aed452be24525170c86f1ee844f7e4469d397c329f1",
+      "identical_to_review_baseline": true
+    },
+    {
+      "path": "03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py",
+      "sha256": "8db9e9a09b72cb4cbf13c1f8e0b8365f969dac4d2565ac41b9d391b3a619790c",
+      "identical_to_review_baseline": true
+    },
+    {
+      "path": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.6/run_verification.py",
+      "sha256": "16038355a5388c27457622b523792d29d44b49e912cf785b53871767c45157fc",
+      "identical_to_review_baseline": true
+    },
+    {
+      "path": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.7/run_verification.py",
+      "sha256": "fd75cbc548a975d158ad6ed447550c92d99090ddd2f28dd22aab0658e92a7f7d",
+      "identical_to_review_baseline": true
+    },
+    {
+      "path": "34_ASSURANCE_RUNTIME/action_guard/versions/v0.8/run_verification_v07.py",
+      "sha256": "4a8f0e3b3d14590273e3fab21388a82013435b167b80e15c850990004143f5c3",
+      "identical_to_review_baseline": true
+    },
+    {
+      "path": "papers/agent-safety/earned-light/forges_01_07/Forge_06/right_of_return.py",
+      "sha256": "75540a77089fb28fb343ad48a884d63d93ff50be4d9aa84a2e3f6ec109e208c9",
+      "identical_to_review_baseline": true
+    }
+  ],
+  "all_findings_in_unchanged_sources": true
+}

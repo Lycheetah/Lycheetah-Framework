@@ -1,5 +1,7 @@
 # Ψ-CONSENSUS — Distributed Coherence Protocol
 
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** The implemented connectivity/neighbor-distance proxy is not an H¹ computation; H⁰ contains global sections. The one-third quarantine budget does not prove Byzantine fault tolerance against equivocation. These older guarantees are disputed by the [reproduced review findings](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+
 **Status:** [SCAFFOLD] — protocol fully specified; implementation pending beyond CASCADE sheaf theorem
 **Source:** AURA_PROTOCOL_COMPLETE_CONSOLIDATION (1).md, lines 34, 642–671, 712–722, 929–932
 

@@ -1,6 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/Lycheetah/Lycheetah-Framework/blob/main/CLAIMS.schema.json",
+  "$id": "https://github.com/Lycheetah/Lycheetah-Framework/blob/master/28_DEFENSE/CLAIMS.schema.json",
+  "$comment": "20 October 2026: statuses preserve author classifications, including disputed proofs. Consult FULL_FRAMEWORK_REVIEW_2026-10-20.md and review_2026_10_20/ for the separate technical assessment. Schema validity does not verify a claim.",
   "title": "Lycheetah Framework Claims Register",
   "description": "Schema for the machine-readable canonical claims register (D-1.0). Every load-bearing claim in the Lycheetah Framework canonical body C-1.0.",
   "type": "object",
@@ -70,7 +71,7 @@
         },
         "evidence_path": {
           "type": "string",
-          "description": "Relative path(s) to source file(s) within CODEX_AURA_PRIME"
+          "description": "Semicolon-separated relative source paths in the current Lycheetah Framework repository. Some references remain unresolved; an existing path does not establish mathematical or empirical support."
         },
         "pdf_page_est": {
           "type": "string",

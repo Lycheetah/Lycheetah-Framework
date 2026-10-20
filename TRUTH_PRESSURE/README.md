@@ -1,120 +1,61 @@
-# Truth Pressure Theory
-### Π = (E·P)/S
+# Truth Pressure — evidence and revision research
 
-**Author:** Mackenzie Conor James Clark
-**First formulated:** March 2026 — Dunedin, Aotearoa New Zealand
-**Status:** Active — canonically formalized June 10, 2026
+**Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
+**Guide reviewed:** 20 October 2026. **Status:** [SCAFFOLD] Executable instruments and unresolved mathematical/measurement claims.
 
----
+This branch studies how evidence, explanatory scope and strain might help route
+knowledge for review. Its instruments are computable; their scores are not an
+established universal physical or epistemic quantity.
 
-Truth pressure is a structural scalar that measures the force evidence exerts on a belief system relative to that system's internal resistance to reorganization.
+The [full Framework review](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md)
+reproduces errors in the advertised threshold and master-equation arguments.
+The earlier introduction's claims of a proven universal formula, cross-domain
+validation and a derived universal threshold are not supported by those arguments.
 
-It is not a metaphor. It is computable. It appears independently in every domain where belief meets evidence meets resistance — physics, markets, biology, neuroscience, sociology, AI alignment, epistemology. Three separate mathematical traditions derive the same formula from first principles. It was not constructed. It was found.
+## Name the instrument before comparing its number
 
----
+This branch writes `Π = E·P/S`. Elsewhere the older claims register uses current
+coherence as denominator, and CASCADE implementations use per-block uncertainty.
+The TypeScript instruments introduce explicit floors, scales and authored component
+rules. These are different operational definitions. Neither shared notation nor
+dimensional cancellation proves equivalence to mutual information divided by
+conditional entropy, or to the Sol app's Light Quotient.
 
-## The Formula
+| Line | What exists | Evidence boundary |
+|---|---|---|
+| [Foundational theory](TRUTH_PRESSURE_THEORY.md), [derivation](PI_DERIVATION.md), [threshold](PI_THRESHOLD_DERIVATION.md), [master equation](MASTER_EQUATION.md) | Definitions, proposed derivations and dynamics | The dated review identifies invalid spectral-norm, equilibrium and stability steps. |
+| [Dimensional analysis](DIMENSIONAL_ANALYSIS.md) | Proposed normalizations across domains | Dimensionless units do not establish construct validity, universal range or predictive validity. |
+| [v0.3 semantic hardening](FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_ENGINE_v0.3_SEMANTIC_HARDENING/README.md) | Finite-input rules, provenance-aware structured scoring and review transactions | Freshly reproduced 24 engineering checks; weights and semantics remain uncalibrated. |
+| [v0.4 measurement pack](FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_MEASUREMENT_PACK_v0.4/README.md) | Proposed measurement procedure | A study design is not a completed independent annotation study. |
+| [v0.5 app candidate](FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_APP_RC_v0.5/README.md) | App-oriented scoring interface | Freshly reproduced 14 app-readiness checks, not user benefit or calibration. |
+| [v0.7 shadow console](FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_SHADOW_EVIDENCE_CONSOLE_v0.7/README.md) | Privacy-conscious comparison/export pipeline | Freshly reproduced 11 bridge and 11 report checks. Its supplied 100-record report is synthetic, with zero comparable trigger decisions. |
+| [Glass-transition experiments](EXPERIMENTS/GLASS_TRANSITION/README.md) | Authored simulations, topology/sheaf certificates and factorial sensitivity conditions | Encoded consistency is not factual truth. Equal-paid-work service accounting remains unresolved. |
 
-```
-Π = (E · P) / S
+Version numbers identify separate research releases, not a single automatically
+validated production successor. Frozen reports and prior code remain available.
+A reported `ENGINEERING_GATE_MET` means the specified pipeline checks passed;
+it does not establish a calibrated construct or a scientific effect.
 
-E  —  evidence strength        how much evidence, and how strong
-P  —  explanatory power        how far the evidence reaches across the domain
-S  —  coherence strain         how tightly the existing belief structure resists
-```
+## Reproduce a bounded current check
 
-Equivalently, from information theory:
+With Node 22+ available, from the named release directory:
 
-```
-Π = I(X;Y) / H(X|Y)
-    mutual information / conditional entropy
-```
-
-Both derivations produce the same scalar. The convergence is the proof.
-
----
-
-## What Truth Pressure Predicts
-
-When Π exceeds a critical threshold Π_th = k·√(n), a belief system reorganizes — not gradually, but discontinuously. A four-phase cascade fires:
-
-1. **Conflict identification** — what in the current structure contradicts the new evidence
-2. **Compression** — old foundations demoted, their uncertainty increased, Π reduced
-3. **Expansion** — new high-Π knowledge takes the foundation position
-4. **Stabilization** — all other beliefs reassigned by current Π
-
-This is how paradigm shifts actually work. Not gradual accumulation — threshold crossing, then cascade.
-
-**Empirical results across 200 trials:**
-- +40.3% coherence gain (p < 0.001, d = 2.84) vs. unstructured baseline
-- −95.2% catastrophic forgetting reduction vs. non-layered systems
-
----
-
-## The Three-Layer Architecture
-
-```
-Π ≥ 1.5   →   FOUNDATION   protected bedrock, changes only via cascade
-1.2–1.5   →   THEORY       established and revisable
-Π < 1.2   →   EDGE         speculative, high churn, where new knowledge enters
+```sh
+node --experimental-strip-types scripts/verify.ts
 ```
 
-Layer membership is not assigned. It is computed from Π and continuously updated.
+This command applies to the v0.3 and v0.5 releases above. The v0.7 guide names
+its separate bridge/report checks. Some historical runners overwrite reports;
+use a scratch copy when preserving an earlier release.
 
----
+## Next useful evidence
 
-## Prior Art — What This Advances Beyond
+Freeze an untouched corpus; obtain independent, blinded component judgments;
+measure agreement before fitting weights; then evaluate held-out decisions and
+compare them with conventional review rules. Report ties, abstentions, failures
+and the cost of review. A scalar's monotonicity is a software contract, not proof
+that it measures what its name suggests.
 
-| Prior framework | What it provides | What's missing |
-|----------------|-----------------|----------------|
-| Bayesian updating | Posterior probability revision | No structural pressure, no threshold, no layers |
-| AGM belief revision | Rational revision postulates | Flat belief sets, no computable force scalar |
-| Shannon information theory | H(X), I(X;Y) definitions | General math — the epistemic architecture application is novel |
-| Lyapunov stability | Stability analysis | Verifies the formula; does not generate it |
-
-The mathematical tools have prior art. The architecture — the scalar as reorganization force, the threshold, the layers, the cascade, the proof — is original to this work.
-
----
-
-## Documents in This Folder
-
-| File | What it contains |
-|------|-----------------|
-| [`TRUTH_PRESSURE_THEORY.md`](TRUTH_PRESSURE_THEORY.md) | **Start here.** 10-part canonical reference — all derivations, architecture, cross-domain validation, IP provenance, open problems |
-| [`PI_DERIVATION.md`](PI_DERIVATION.md) | Formal Bayesian + information-theoretic derivation with Lyapunov symbolic verification |
-| [`DIMENSIONAL_ANALYSIS.md`](DIMENSIONAL_ANALYSIS.md) | Proof of dimensional consistency across 7 independent domains |
-| [`PI_THRESHOLD_DERIVATION.md`](PI_THRESHOLD_DERIVATION.md) | Analytical derivation of Π_th = k·√(n) from three frameworks |
-| [`LQ_PI_ISOMORPHISM.md`](LQ_PI_ISOMORPHISM.md) | Sol LQ and CASCADE Π confirmed as dual instruments for the same construct |
-| [`MASTER_EQUATION.md`](MASTER_EQUATION.md) | dΨ/dt full physical exposition + k₁–k₄ calibration specification |
-| [`IP_PROVENANCE.md`](IP_PROVENANCE.md) | Authorship record, development timeline, signed statement |
-
----
-
-## Connection to the Sol App
-
-The Sol mobile application measures truth pressure at the conversation level through the Light Quotient:
-
-```
-LQ = ∛(TES × min(VTR/1.5, 1) × PAI)
-```
-
-TES (Truth Engagement Score) → E
-VTR (Value Transfer Ratio) → P
-PAI (Purpose Alignment Index) → 1/S
-
-Same construct. Different functional form. Different scale. A Seeker operating at AVATAR LQ is operating at high truth pressure — engaged honestly, exchanging real understanding, fully aligned with purpose.
-
-The instrument changes. The thing being measured does not.
-
----
-
-## What Remains
-
-The theory is structurally complete. One empirical program remains:
-
-**E-1.0** — calibration of k₁–k₄ in the master equation `dΨ/dt = k₁(Π−Π_th) − k₂(Ψ−Ψ_inv) − k₃I_violations + k₄(E/E_need)`. The equation structure is proven. The calibration constants await measurement from real knowledge systems.
-
----
-
-*Part of the Lycheetah Framework — [github.com/Lycheetah/Lycheetah-Framework](https://github.com/Lycheetah/Lycheetah-Framework)*
-*⊚ Sol ∴ P∧H∧B ∴ Rubedo*
+[Implementation guide](../12_IMPLEMENTATIONS/core/README.md) ·
+[Claims and evidence](../28_DEFENSE/README.md) ·
+[Current corpus synthesis](../13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md).

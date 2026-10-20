@@ -887,6 +887,14 @@ class PersistentActionGuard:
             c.execute("COMMIT")
         return Decision(True, "reconciled", effect_id, status)
 
+    def get_approval(self, approval_id: str) -> dict[str, Any] | None:
+        """Read recorded approval metadata; this does not authenticate its issuer."""
+        with self._connect() as c:
+            row = c.execute(
+                "SELECT * FROM approvals WHERE approval_id=?", (approval_id,)
+            ).fetchone()
+            return dict(row) if row is not None else None
+
     def get_effect(self, effect_id: str) -> dict[str, Any] | None:
         """Fetch effect record with deserialized action and result objects."""
         with self._connect() as c:

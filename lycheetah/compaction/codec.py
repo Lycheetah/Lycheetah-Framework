@@ -2,6 +2,9 @@
 
 This codec compresses a declared structured semantic packet. It does not infer
 the packet from unrestricted natural language.
+
+Input consent strings cannot use the reserved wire abbreviations R, I or N:
+admitting those literals would silently expand them during a round trip.
 """
 
 from __future__ import annotations
@@ -170,6 +173,11 @@ def validate_packet(packet: Any) -> dict[str, Any]:
             raise CodecError(f"valueFlow[{index}] has invalid shape")
         for key in ("source", "recipient", "consent", "kind"):
             _require_string(f"valueFlow[{index}].{key}", item[key])
+        if item["consent"] in CONSENT_DECODE:
+            raise CodecError(
+                f"valueFlow[{index}].consent uses a reserved wire abbreviation; "
+                "supply an explicit consent value such as REVOCABLE, IRREVOCABLE or NONE"
+            )
 
     return packet
 

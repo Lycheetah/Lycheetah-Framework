@@ -2,11 +2,10 @@
 Tests for triad_tracker.py
 
 Claim coverage:
-  [ACTIVE] Convergence guarantee: when α < 1/(2L), iteration converges
-  [ACTIVE] Divergence when α too large (λ >= 1)
+  [ACTIVE] Numerical convergence on the declared concave quadratic fixtures
   [ACTIVE] Step sequence: state_n+1 = state_n + α * gradient(state_n)
-  [ACTIVE] Convergence detected when |delta| < threshold
-  [SCAFFOLD] α = 0.5/L is a safe default step size
+  [ACTIVE] Stop detection requires a small update and a small gradient
+  [SCAFFOLD] The default step size is a configuration choice, not a general proof
 """
 
 import pytest
@@ -50,7 +49,7 @@ class TestTriadStructure:
         assert hasattr(step, 'converged')
 
 
-# ── Convergence guarantee ─────────────────────────────────────────────────────
+# ── Declared concave quadratic fixtures ───────────────────────────────────────
 
 class TestConvergence:
     @pytest.mark.active
@@ -145,7 +144,7 @@ class TestStepSize:
         max_step = 1.0 / (2.0 * L)
         expected_alpha = max_step * 0.5
         assert abs(tracker.step_size - expected_alpha) < 1e-9
-        # And it satisfies the convergence bound
+        # It satisfies the nominal configured bound, not a general convergence proof.
         assert tracker.step_size < 1.0 / (2.0 * L)
 
     @pytest.mark.active

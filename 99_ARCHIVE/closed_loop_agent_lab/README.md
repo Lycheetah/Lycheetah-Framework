@@ -83,7 +83,14 @@ closed_loop_agent_lab/
 cd 99_ARCHIVE/closed_loop_agent_lab
 sha256sum -c SHA256SUMS.txt
 ```
-*(Confirms byte-exact integrity across all archived files)*
+This command checks the **complete original vault**, including its result logs.
+The 21 October review found that the Git tree omits 374 `.log` paths named by
+this 1,788-entry manifest. They exist in the local preservation vault, so a local
+pass does not establish availability in a clean checkout. The two tracked latest
+ZIPs contain matching bytes for 373 of those log records; one companion retest
+log was not found there. Complete clean-checkout preservation remains an open
+repair, recorded in the [Framework review](../../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+Do not use `--ignore-missing` to turn that gap into a successful full-vault check.
 
 ### 2. Run the Latest v5.1 Test Suite
 Exercises the shared ingress quota, fixed-shard fallback, and overflow state validation:

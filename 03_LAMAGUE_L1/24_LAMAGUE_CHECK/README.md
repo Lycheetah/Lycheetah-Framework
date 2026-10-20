@@ -2,6 +2,9 @@
 
 **One command. No dependencies, no account, no notation to learn.**
 
+**Reviewed:** 21 October 2026. Empty or unrelated symbol keys no longer match
+every protected field. Short fragments of an alias do not count as that alias.
+
 ```bash
 python3 lamague_check.py your-record.json
 python3 lamague_check.py --demo            # see it work on an ordinary incident report
@@ -51,10 +54,10 @@ python3 lamague_check.py record.json --strict   # exit 1 on any gap
 
 ## What it does not do
 
-It does not check whether the fields are *true*, *complete*, or *honest*. It
-checks whether they are **there**. A record with an empty dissent field and a
-record with a real one both pass the presence test; only the second can be
-argued with, and no tool can tell you which you wrote.
+It does not check whether populated fields are *true*, *complete*, or *honest*.
+Missing, empty and placeholder values are reported as gaps and fail `--strict`.
+A populated dissent field can still be false or incomplete; the tool cannot
+establish whether it represents the people affected by a decision.
 
 Presence is the floor. It is also the thing that silently disappears when a
 decision travels upward, which is why it is worth a check.

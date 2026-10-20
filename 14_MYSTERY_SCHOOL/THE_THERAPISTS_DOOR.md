@@ -1,4 +1,6 @@
 # THE THERAPIST'S DOOR
+
+> **Full Framework review · 21 October 2026 [INTERPRETIVE].** The claims below of guaranteed recovery through sincere engagement, necessary dissolution and an inability to benefit from comfort are withdrawn. Banach's assumptions have not been established for psychological states. This essay is a conceptual analogy, not a validated clinical method, and must not be used to withhold support or care. See [current urgent-support guidance](https://www.nhs.uk/nhs-services/mental-health-services/where-to-get-urgent-help-for-mental-health/). [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
 ## For Psychologists, Counselors, Jungians, and Anyone Who Sits With Human Transformation
 
 ---

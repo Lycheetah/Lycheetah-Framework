@@ -1,6 +1,6 @@
 # Python package — public interfaces and bounded controls
 
-**Guide updated:** 19 October 2026. **Source version:** 1.3.0 in
+**Guide updated:** 21 October 2026. **Source version:** 1.3.0 in
 [pyproject.toml](../pyproject.toml). Component contracts and research packets have
 their own versions.
 
@@ -9,6 +9,34 @@ consensus, sovereign-control and handoff modules. Foundational engines live in
 [12_IMPLEMENTATIONS](../12_IMPLEMENTATIONS/README.md): the package configuration
 maps those sources into `lycheetah.core`, `.applications` and `.experiments`.
 Edit the owning source rather than creating a second engine copy.
+
+**20 October 2026 review:** the consensus execution binding is corrected and
+uses the `lycheetah.consensus-verdict.v2` digest profile. The digest binds the
+anchor and complete outcome and is recomputed at issuance/execution. Old
+unverifiable verdicts and their permits require re-deliberation and reissue;
+copying an old digest into new flags does not migrate it. This is integrity
+binding, not external issuer authentication. The legacy `obstruction_free` and
+`byzantine_safe` fields describe a connectivity/consistency proxy and a quarantine
+budget, respectively. See the [full review](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md)
+and [regressions](../tests/test_consensus_integrity.py).
+
+**21 October gateway correction:** proposal, dispatch claim and result recording
+now use the checkpoint-gated workflow. Opening or using a journal with an
+uncheckpointed tail blocks; a later action does not silently publish that history.
+Recovering an affected journal requires separate reconciliation, not an automatic
+retry. Dispatch rechecks the current policy and distinguishes an omitted live
+action from an explicitly empty one. Receipts identify the policy evaluated
+before the executor call. If result checkpointing fails after the call, the
+outcome is `UNKNOWN` with no success receipt. See the
+[gateway regressions](../tests/test_gateway_boundaries.py).
+
+**Consent preservation:** the maintained compaction codec rejects literal input
+consent values `R`, `I` and `N`, which collide with its wire abbreviations. Supply
+the explicit intended value; existing ambiguous inputs require author review.
+The frozen supplied codec retains its original bytes and documented counterexample.
+Canonical consent values and other unreserved strings round-trip with identical
+protected hashes in both wire modes. See the
+[consent regressions](../tests/test_compaction_consent_roundtrip.py).
 
 | Area | Source / documentation | Scope |
 |---|---|---|

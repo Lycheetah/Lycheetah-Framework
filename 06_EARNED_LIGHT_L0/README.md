@@ -1,5 +1,7 @@
 # Earned Light — energy, persistence and meaning
 
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** The unqualified entropy/work relation is not a general thermodynamic law, and consciousness remains conjectural. The newer agent-control forges do not validate the older consciousness model. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+
 **Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
 **Guide refreshed:** 19 October 2026.  
 **Status:** The consciousness-thermodynamics interpretation remains conjectural.

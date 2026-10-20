@@ -1,5 +1,7 @@
 # Anamnesis — Epistemology of Remembering Essentials
 
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** Recurrence and an assumed attractor set do not establish a metaphysical conclusion. The stated independent-discovery counts require primary historical evidence and a test of shared lineage/contact. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+
 **Status:** ⭐ FORMALIZED [CONJECTURE] — Transcultural convergence evidence is real and documented; Platonic necessity is a conjecture consistent with that evidence, not a proven conclusion. "Gödel proves Platonism" has been removed as a false claim (Gödel established limits of formal systems, not the location of truth — see MATHEMATICS_AUDIT.md Removed Claims). | **Type:** Epistemological Foundation | **Method:** Mathematical philosophy
 
 ## What It Does

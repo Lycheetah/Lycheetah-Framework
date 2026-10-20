@@ -1,4 +1,6 @@
 # THE π FORMULA — DERIVATION FROM FIRST PRINCIPLES
+
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** A symbolic substitution that assumes the pressure ratio does not independently derive or validate its construct. The master-equation reference/stability bridge also fails in the reproduced case. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
 ## Why Π = (E·P)/S Emerges from Bayesian Epistemology + Resistance
 **Status:** VERIFIED (symbolic derivation complete)
 **Method:** Bayesian update theory + information resistance

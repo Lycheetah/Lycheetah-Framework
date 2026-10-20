@@ -79,7 +79,7 @@ a cascade fires, otherwise `None`.
 |---|---|---|
 | [`semantic_extractor.py`](semantic_extractor.py) | Extracts rule-based signals and text spans so the scoring tools can inspect which language triggered a score. | `SemanticExtractor`, `Signal`, `Extraction` |
 | [`aura_checker.py`](aura_checker.py) | Produces scores, evidence and concerns for the seven AURA invariants, plus a combined report. | `AURAChecker`, `AURAReport` |
-| [`tri_axial_checker.py`](tri_axial_checker.py) | Computes Trust Entropy Score (TES), Value Transfer Ratio (VTR) and Purpose Alignment Index (PAI) from supplied measurements and returns threshold results. | `TriAxialChecker`, `TriAxialReport` |
+| [`tri_axial_checker.py`](tri_axial_checker.py) | Computes TES, VTR and PAI from finite supplied measurements. Rejects invalid counts, negative friction and incomplete vector pairs; returns configured threshold results. | `TriAxialChecker`, `TriAxialReport` |
 | [`aura_customizer.py`](aura_customizer.py) | Builds domain-specific parameter configurations and checks them against the module's configuration constraints. | `AURACustomizer`, `AURAConfig`, `ConfigValidator` |
 | [`aura_score_hexie.py`](aura_score_hexie.py) | Scores balance between complementary inputs and compares that treatment with a weighted-sum baseline. | `aura_score_hexie()`, `ComplementaryPair`, `HexieReport` |
 | [`unified_field_checker.py`](unified_field_checker.py) | Extends the seven-invariant text checker with five AI-native criteria and a combined report. | `UnifiedFieldChecker`, `UnifiedReport` |
@@ -105,7 +105,7 @@ agents does not establish the truth of their shared belief.
 
 | Module | What it does | Main API |
 |---|---|---|
-| [`triad_tracker.py`](triad_tracker.py) | Iterates a numeric state toward an anchor, records correction steps and reports convergence. | `TriadTracker`, `TriadStep` |
+| [`triad_tracker.py`](triad_tracker.py) | Takes gradient-ascent steps over a caller-defined coherence function. Reports numerical stationarity only when both the update and gradient are small, and records coherence at the resulting state. | `TriadTracker`, `TriadStep` |
 | [`triad_wuwei.py`](triad_wuwei.py) | Models correction cost and accumulated integrity debt according to alignment with a supplied natural direction or restoration field. | `WuweiTriad`, `grain_alignment()`, `WuweiTriadReport` |
 | [`microorcim_tracker.py`](microorcim_tracker.py) | Compares intended and actual activity, computes drift/stability scores and keeps optional daily history. Also exposes stateless scoring helpers. | `MicroorcimTracker`, `compute_drift()`, `compute_sovereignty()` |
 | [`chrysopoeia_engine.py`](chrysopoeia_engine.py) | Applies the seven named transformation operations to numeric states and explores iterative fixed-point/contraction models. | `TransformationState`, `Xi()`, `solve_et_coagula()` |
@@ -118,6 +118,12 @@ modules also write files when called.
 
 The **Sovereign Pipeline** is a processing/regulation model. The separate
 **Sovereign Execution Harness**, listed below, handles action-bound permits.
+
+**21 October boundary update:** TRIAD's stop flag does not distinguish a maximum
+from a minimum or prove Banach contraction. Nonfinite transitions fail before
+state/history commit. TRI-AXIAL's violation-count fallback applies only when
+neither vector is supplied; vector mode requires both vectors with matching
+dimensions. Finite out-of-range TES inputs retain the documented clamping.
 
 ## Mathematical models and reference scaffolds
 

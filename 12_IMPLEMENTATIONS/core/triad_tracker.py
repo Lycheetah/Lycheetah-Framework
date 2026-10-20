@@ -3,13 +3,15 @@ TRIAD Tracker — Gradient Ascent & Convergence Monitoring
 ========================================================
 
 Implements TRIAD cycle: Anchor (Ao) → Observe (Ψ) → Correct (Φ↑) → back to Ao
-With convergence condition: bounded step size α < 1/(2L) prevents divergence
+The nominal step bound α < 1/(2L) is a configuration heuristic, not a
+convergence proof for an arbitrary caller-supplied coherence function.
 
 TRIAD: Transformation, Reintegration, Iteration, Adaptive Development
 Core iteration: Ψ_(n+1) = Ψ_n + α·∇C(Ψ_n) where α = learning rate, C = coherence
 
-Convergence guarantee: Banach fixed-point theorem (λ < 1 required)
-Conditions: α < 1/(2L) where L is Lipschitz constant of coherence gradient
+The stop flag requires both a small update and a small gradient. It detects
+numerical stationarity, including at a minimum; it does not certify a maximum
+or establish the contraction hypotheses of Banach's fixed-point theorem.
 
 Status: ACTIVE equation with scaffold parameter (α empirically TBD per domain)
 Implementation: Gradient ascent stepper with convergence tracking
@@ -18,6 +20,7 @@ Date: March 2026
 """
 
 import numpy as np
+import math
 import sys
 from typing import Callable, Tuple, List, Dict, Optional
 from dataclasses import dataclass
@@ -35,7 +38,7 @@ class TriadStep:
     iteration: int
     state: float  # Ψ value
     coherence: float  # C(Ψ)
-    gradient: float  # ∇C(Ψ)
+    gradient: float  # Gradient at the prior state, used for this update
     step_size: float  # α used
     delta: float  # Change in state
     converged: bool = False
@@ -72,32 +75,57 @@ class TriadTracker:
             coherence_fn: C(Ψ) — coherence function to maximize
             gradient_fn: ∇C(Ψ) — gradient of coherence
             initial_state: Starting Ψ₀
-            step_size: α learning rate. If None, use bounded value: α = 0.5 / L
-            lipschitz_constant: L for Lipschitz condition α < 1/(2L)
-            convergence_threshold: Stop when |Ψ_(n+1) − Ψ_n| < threshold
+            step_size: Positive α. Default is 0.25 / L.
+            lipschitz_constant: Positive caller-supplied L for the nominal step bound.
+            convergence_threshold: Both update and gradient must be smaller.
             max_iterations: Safety limit
         """
+        if not callable(coherence_fn) or not callable(gradient_fn):
+            raise ValueError("coherence_fn and gradient_fn must be callable")
         self.coherence_fn = coherence_fn
         self.gradient_fn = gradient_fn
-        self.state = initial_state
-        self.lipschitz_constant = lipschitz_constant
+        self.state = self._finite(initial_state, "initial_state")
+        self.initial_state = self.state
+        self.lipschitz_constant = self._positive(lipschitz_constant, "lipschitz_constant")
 
-        # Bounded step size: α < 1/(2L)
-        self.max_step_size = 1.0 / (2.0 * lipschitz_constant)
-        self.step_size = step_size if step_size is not None else self.max_step_size * 0.5
+        # Retain the legacy field name without treating this as a theorem.
+        self.max_step_size = self._positive(0.5 / self.lipschitz_constant, "nominal step bound")
+        self.step_size = self._positive(
+            step_size if step_size is not None else self.max_step_size * 0.5,
+            "step_size",
+        )
 
         if self.step_size >= self.max_step_size:
             print(
-                f"⚠️  WARNING: step_size {self.step_size:.4f} >= max safe {self.max_step_size:.4f}\n"
-                f"   Convergence not guaranteed. Consider reducing step_size."
+                f"⚠️  WARNING: step_size {self.step_size:.4f} >= nominal bound {self.max_step_size:.4f}\n"
+                f"   This bound alone does not establish convergence."
             )
 
-        self.convergence_threshold = convergence_threshold
+        self.convergence_threshold = self._positive(convergence_threshold, "convergence_threshold")
+        if type(max_iterations) is not int or max_iterations < 1:
+            raise ValueError("max_iterations must be a positive integer")
         self.max_iterations = max_iterations
 
         self.history: List[TriadStep] = []
-        self.anchor_state = initial_state  # Ao: anchor baseline
+        self.anchor_state = self.state  # Ao: anchor baseline
         self.iteration_count = 0
+
+    @staticmethod
+    def _finite(value: float, name: str) -> float:
+        try:
+            result = float(value)
+        except (TypeError, ValueError, OverflowError) as exc:
+            raise ValueError(f"{name} must be a finite number") from exc
+        if not math.isfinite(result):
+            raise ValueError(f"{name} must be a finite number")
+        return result
+
+    @classmethod
+    def _positive(cls, value: float, name: str) -> float:
+        result = cls._finite(value, name)
+        if result <= 0:
+            raise ValueError(f"{name} must be positive")
+        return result
 
     def reset_anchor(self, new_anchor: Optional[float] = None) -> None:
         """
@@ -106,7 +134,7 @@ class TriadTracker:
         This completes one TRIAD cycle: Ao → Ψ → Φ↑ → Ao (new)
         """
         if new_anchor is not None:
-            self.anchor_state = new_anchor
+            self.anchor_state = self._finite(new_anchor, "new_anchor")
         else:
             self.anchor_state = self.state
         print(f"✓ Anchor reset to {self.anchor_state:.6f}")
@@ -119,16 +147,20 @@ class TriadTracker:
         Returns:
             TriadStep record
         """
-        # Observe current coherence and gradient
-        coherence = self.coherence_fn(self.state)
-        gradient = self.gradient_fn(self.state)
+        # Validate the whole transition before committing state or history.
+        current = self._finite(self.state, "state")
+        gradient = self._finite(self.gradient_fn(current), "gradient")
 
         # Correct: ascend gradient
-        delta = self.step_size * gradient
-        new_state = self.state + delta
+        delta = self._finite(self.step_size * gradient, "step delta")
+        new_state = self._finite(current + delta, "new state")
+        coherence = self._finite(self.coherence_fn(new_state), "coherence")
 
         # Check convergence
-        is_converged = abs(delta) < self.convergence_threshold
+        is_converged = (
+            abs(delta) < self.convergence_threshold
+            and abs(gradient) < self.convergence_threshold
+        )
 
         step = TriadStep(
             iteration=self.iteration_count,
@@ -148,7 +180,9 @@ class TriadTracker:
 
     def run_until_convergence(self) -> Tuple[List[TriadStep], bool]:
         """
-        Run TRIAD iterations until convergence or max iterations.
+        Run until numerical stationarity or the per-call iteration budget.
+
+        A small gradient does not distinguish maxima, minima or flat regions.
 
         Returns:
             (history, converged) tuple
@@ -169,7 +203,8 @@ class TriadTracker:
     def save_history(self, filepath: str) -> None:
         """Save step history to JSON."""
         data = {
-            "initial_state": self.anchor_state,
+            "initial_state": self.initial_state,
+            "anchor_state": self.anchor_state,
             "final_state": self.state,
             "step_size": self.step_size,
             "max_step_size": self.max_step_size,
@@ -186,7 +221,6 @@ class TriadTracker:
         if not self.history:
             return "No iterations yet."
 
-        first = self.history[0]
         last = self.history[-1]
 
         lines = [
@@ -196,14 +230,15 @@ class TriadTracker:
             "╚═══════════════════════════════════════════════════════════╝",
             "",
             f"Anchor (Ao):              {self.anchor_state:.6f}",
-            f"Initial state (Ψ₀):       {first.state:.6f}",
+            f"Initial state (Ψ₀):       {self.initial_state:.6f}",
             f"Final state (Ψ_final):    {last.state:.6f}",
-            f"Change:                   {last.state - first.state:.6f}",
+            f"Change:                   {last.state - self.initial_state:.6f}",
             "",
             f"Step size (α):            {self.step_size:.6f}",
-            f"Max safe step:            {self.max_step_size:.6f}",
+            f"Nominal step bound:       {self.max_step_size:.6f}",
             f"Lipschitz constant (L):   {self.lipschitz_constant:.4f}",
-            f"Convergence criterion:    α < 1/(2L) = {1.0/(2*self.lipschitz_constant):.6f}",
+            "Stop criterion:           small update AND small gradient",
+            "Scope:                    stationarity, not a maximum or contraction proof",
             "",
             "─ Convergence Status ─────────────────────────────────────────",
             f"Total iterations:         {len(self.history)}",

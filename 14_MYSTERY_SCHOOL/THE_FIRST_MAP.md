@@ -1,4 +1,6 @@
 # THE FIRST MAP
+
+> **Full Framework review · 21 October 2026 [INTERPRETIVE].** The diagnostic and mathematical-guarantee wording below is unsupported historical interpretation. Nigredo is a Framework metaphor, not a diagnosis; no theorem here guarantees psychological recovery or makes suffering necessary. For urgent support, use [1737's current guidance](https://www.1737.org.nz/) rather than relying on this historical resource list. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
 ## If You Are Here Right Now
 
 ---

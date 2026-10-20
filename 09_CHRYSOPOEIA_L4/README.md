@@ -1,5 +1,7 @@
 # CHRYSOPOEIA — transformation language and calculus
 
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** The actual Solve/Coagula example reduces coherence, and Xi draws fresh noise. A final contracting stage does not establish deterministic contraction, maximal coherence or a general transformation guarantee. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+
 **Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
 **Guide refreshed:** 19 October 2026.  
 **Status:** Formal and symbolic research; universal transformation claims require evidence.

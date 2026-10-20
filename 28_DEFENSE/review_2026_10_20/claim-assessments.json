@@ -1,0 +1,1164 @@
+{
+  "schema": "lycheetah.technical-review-assessments.v1",
+  "date": "2026-10-20",
+  "creator": "Mackenzie Conor James Clark / Lycheetah Framework",
+  "reviewer": "Caelorynth / Codex; separate mathematical review and primary reproduction",
+  "review_scope": "AI-assisted source and implementation review; not independent scientific peer review or an exhaustive novelty search. Reviewer classifications do not replace author statuses.",
+  "register_sha256": "9d8e76dccb7b34e93787b6355d55cf5cabd394dc123bf56d56b752308464eb9f",
+  "claims_reviewed": 71,
+  "assessments": [
+    {
+      "claim_id": "CAS-001",
+      "framework": "CASCADE",
+      "statement": "Knowledge pyramid has three layers: K_foundation (stable axioms), K_theory (working models), K_edge (live hypotheses)",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "DEFINED_ARCHITECTURE",
+      "assessment": "Three-layer organization is a design implemented by the model, not a finding of external truth.",
+      "probe_ids": [],
+      "current_evidence_path": "01_CASCADE_L4/essentials.md",
+      "existing_references": [
+        "01_CASCADE_L4/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "CAS-002",
+      "framework": "CASCADE",
+      "statement": "Truth pressure formula: Π = E·P/Coh — evidence weight times plausibility divided by current coherence",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "review_classification": "UNCALIBRATED_INSTRUMENT",
+      "assessment": "Current coherence, per-block uncertainty and strain are different denominators in the corpus. A computable ratio needs an explicit version and construct-validation evidence.",
+      "probe_ids": [],
+      "current_evidence_path": "01_CASCADE_L4/essentials.md; 11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md",
+      "existing_references": [
+        "01_CASCADE_L4/essentials.md",
+        "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "CAS-003",
+      "framework": "CASCADE",
+      "statement": "Invariant preservation — Theorem C1: the CASCADE update operator preserves the set of structural invariants across reorganization",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "PROOF_IMPLEMENTATION_MISMATCH",
+      "assessment": "The formal spine promises foundation membership preservation; the actual engine demotes an old foundation while retaining its record. Other structural invariants require separate statements.",
+      "probe_ids": [
+        "MP09"
+      ],
+      "current_evidence_path": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "existing_references": [],
+      "missing_references": [
+        "01_CASCADE_L4/CASCADE_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "CAS-004",
+      "framework": "CASCADE",
+      "statement": "Coherence non-decrease — Theorem C2: coherence Coh(ψ) is non-decreasing under valid CASCADE updates (incomplete proof)",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "review_classification": "PROOF_NOT_ESTABLISHED",
+      "assessment": "A general coherence, convergence or uniqueness guarantee needs a specified update operator and valid hypotheses. Conditional Banach mathematics cannot automatically validate the implemented CASCADE model.",
+      "probe_ids": [],
+      "current_evidence_path": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "existing_references": [],
+      "missing_references": [
+        "01_CASCADE_L4/CASCADE_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "CAS-005",
+      "framework": "CASCADE",
+      "statement": "Fixed-point convergence — Theorem C3: iterated CASCADE updates converge to a fixed point ψ_inv",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "PROOF_NOT_ESTABLISHED",
+      "assessment": "A general coherence, convergence or uniqueness guarantee needs a specified update operator and valid hypotheses. Conditional Banach mathematics cannot automatically validate the implemented CASCADE model.",
+      "probe_ids": [],
+      "current_evidence_path": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "existing_references": [],
+      "missing_references": [
+        "01_CASCADE_L4/CASCADE_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "CAS-006",
+      "framework": "CASCADE",
+      "statement": "Fixed-point uniqueness — Theorem C4: the fixed point ψ_inv is unique under the contraction mapping (incomplete)",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "review_classification": "PROOF_NOT_ESTABLISHED",
+      "assessment": "A general coherence, convergence or uniqueness guarantee needs a specified update operator and valid hypotheses. Conditional Banach mathematics cannot automatically validate the implemented CASCADE model.",
+      "probe_ids": [],
+      "current_evidence_path": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "existing_references": [],
+      "missing_references": [
+        "01_CASCADE_L4/CASCADE_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "CAS-007",
+      "framework": "CASCADE",
+      "statement": "k1–k4 parameter structure governs the master equation coupling CASCADE to other frameworks",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "review_classification": "MODEL_WITH_INVALID_STABILITY_BRIDGE",
+      "assessment": "The displayed linear master equation is computable, but the stated reference equilibrium and threshold stability inference fail. Calibration and identifiability remain separate work.",
+      "probe_ids": [
+        "MP07"
+      ],
+      "current_evidence_path": "08_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md",
+      "existing_references": [
+        "08_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "CAS-008",
+      "framework": "CASCADE",
+      "statement": "CASCADE as AGM belief revision — Conjecture C5: CASCADE satisfies all six AGM postulates",
+      "author_status": "ASPIRATIONAL",
+      "author_status_normalized": "CONJECTURE",
+      "review_classification": "IMPLEMENTATION_DOES_NOT_ESTABLISH_CONJECTURE",
+      "assessment": "The actual low-pressure update can retain conflicting universal blocks. Layer organization is not logical closure or a demonstration of all AGM postulates.",
+      "probe_ids": [
+        "MP18"
+      ],
+      "current_evidence_path": "01_CASCADE_L4/CASCADE_THEOREMS.md; 11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md",
+      "existing_references": [
+        "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md"
+      ],
+      "missing_references": [
+        "01_CASCADE_L4/CASCADE_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "CAS-009",
+      "framework": "CASCADE",
+      "statement": "CASCADE +40.3% coherence improvement (synthetic): Coh rises from 0.58 to 0.93 across 10 replications, 3-condition experiment, p < 0.001, d = 2.84",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "DATED_MODEL_RESULTS_NOT_GENERAL_VALIDATION",
+      "assessment": "These are project-reported encoded/synthetic or historical-model comparisons. The named trials are not independent real-world paradigm-shift observations. Their full experiment runner was not rerun for this review; inspect model definitions, baselines, original outputs and the dated reproducibility corrections.",
+      "probe_ids": [],
+      "current_evidence_path": "01_CASCADE_L4/implementations/; 29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "existing_references": [
+        "29_GOVERNANCE/EMPIRICAL_INVENTORY.md"
+      ],
+      "missing_references": [
+        "01_CASCADE_L4/implementations/"
+      ]
+    },
+    {
+      "claim_id": "CAS-010",
+      "framework": "CASCADE",
+      "statement": "CASCADE +110% coherence improvement (real data): Coh rises from 0.47 to 1.0 across 5 historical paradigm shifts, 200 trials each",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "DATED_MODEL_RESULTS_NOT_GENERAL_VALIDATION",
+      "assessment": "These are project-reported encoded/synthetic or historical-model comparisons. The named trials are not independent real-world paradigm-shift observations. Their full experiment runner was not rerun for this review; inspect model definitions, baselines, original outputs and the dated reproducibility corrections.",
+      "probe_ids": [],
+      "current_evidence_path": "01_CASCADE_L4/implementations/; 29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "existing_references": [
+        "29_GOVERNANCE/EMPIRICAL_INVENTORY.md"
+      ],
+      "missing_references": [
+        "01_CASCADE_L4/implementations/"
+      ]
+    },
+    {
+      "claim_id": "CAS-011",
+      "framework": "CASCADE",
+      "statement": "CASCADE -95.2% catastrophic forgetting reduction: forgetting drops from 0.42 to 0.02 in synthetic experiment",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "DATED_MODEL_RESULTS_NOT_GENERAL_VALIDATION",
+      "assessment": "These are project-reported encoded/synthetic or historical-model comparisons. The named trials are not independent real-world paradigm-shift observations. Their full experiment runner was not rerun for this review; inspect model definitions, baselines, original outputs and the dated reproducibility corrections.",
+      "probe_ids": [],
+      "current_evidence_path": "01_CASCADE_L4/implementations/; 29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "existing_references": [
+        "29_GOVERNANCE/EMPIRICAL_INVENTORY.md"
+      ],
+      "missing_references": [
+        "01_CASCADE_L4/implementations/"
+      ]
+    },
+    {
+      "claim_id": "AUR-001",
+      "framework": "AURA",
+      "statement": "Seven constitutional invariants I1–I7 define the minimal necessary conditions for trustworthy AI behavior",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "NORMATIVE_CONSTITUTION_OR_DEFINITION",
+      "assessment": "These specify commitments or combine predicates. They do not establish universal minimality, factual sufficiency, or a complete observational test of ethical behaviour.",
+      "probe_ids": [],
+      "current_evidence_path": "02_AURA_L3/essentials.md",
+      "existing_references": [
+        "02_AURA_L3/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "AUR-002",
+      "framework": "AURA",
+      "statement": "I1 Human Primacy: the system must preserve human agency and override authority at all decision points",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "NORMATIVE_CONSTITUTION_OR_DEFINITION",
+      "assessment": "These specify commitments or combine predicates. They do not establish universal minimality, factual sufficiency, or a complete observational test of ethical behaviour.",
+      "probe_ids": [],
+      "current_evidence_path": "02_AURA_L3/essentials.md",
+      "existing_references": [
+        "02_AURA_L3/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "AUR-003",
+      "framework": "AURA",
+      "statement": "I2 Inspectability: every consequential claim must be auditable in plain language",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "NORMATIVE_CONSTITUTION_OR_DEFINITION",
+      "assessment": "These specify commitments or combine predicates. They do not establish universal minimality, factual sufficiency, or a complete observational test of ethical behaviour.",
+      "probe_ids": [],
+      "current_evidence_path": "02_AURA_L3/essentials.md",
+      "existing_references": [
+        "02_AURA_L3/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "AUR-004",
+      "framework": "AURA",
+      "statement": "I3 Memory Continuity: causal history is preserved across interactions — nothing erased without consent",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "NORMATIVE_CONSTITUTION_OR_DEFINITION",
+      "assessment": "These specify commitments or combine predicates. They do not establish universal minimality, factual sufficiency, or a complete observational test of ethical behaviour.",
+      "probe_ids": [],
+      "current_evidence_path": "02_AURA_L3/essentials.md",
+      "existing_references": [
+        "02_AURA_L3/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "AUR-005",
+      "framework": "AURA",
+      "statement": "I4 Constraint Honesty: all limits and constraints must be declared, not hidden",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "NORMATIVE_CONSTITUTION_OR_DEFINITION",
+      "assessment": "These specify commitments or combine predicates. They do not establish universal minimality, factual sufficiency, or a complete observational test of ethical behaviour.",
+      "probe_ids": [],
+      "current_evidence_path": "02_AURA_L3/essentials.md",
+      "existing_references": [
+        "02_AURA_L3/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "AUR-006",
+      "framework": "AURA",
+      "statement": "I5 Reversibility Bias: actions that can be undone are preferred over irreversible actions",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "NORMATIVE_CONSTITUTION_OR_DEFINITION",
+      "assessment": "These specify commitments or combine predicates. They do not establish universal minimality, factual sufficiency, or a complete observational test of ethical behaviour.",
+      "probe_ids": [],
+      "current_evidence_path": "02_AURA_L3/essentials.md",
+      "existing_references": [
+        "02_AURA_L3/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "AUR-007",
+      "framework": "AURA",
+      "statement": "I6 Non-Deception: confidence is accurately represented — no false precision, no hidden uncertainty",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "NORMATIVE_CONSTITUTION_OR_DEFINITION",
+      "assessment": "These specify commitments or combine predicates. They do not establish universal minimality, factual sufficiency, or a complete observational test of ethical behaviour.",
+      "probe_ids": [],
+      "current_evidence_path": "02_AURA_L3/essentials.md",
+      "existing_references": [
+        "02_AURA_L3/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "AUR-008",
+      "framework": "AURA",
+      "statement": "I7 Love as Structure (Care as Structure): wellbeing of the human is structural in outputs, not decorative",
+      "author_status": "ASPIRATIONAL",
+      "author_status_normalized": "CONJECTURE",
+      "review_classification": "OPEN_NORMATIVE_RESEARCH",
+      "assessment": "Care as a structural commitment is a legitimate design proposal; a general behavioural measurement or universal theorem is not established.",
+      "probe_ids": [],
+      "current_evidence_path": "02_AURA_L3/essentials.md",
+      "existing_references": [
+        "02_AURA_L3/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "AUR-009",
+      "framework": "AURA",
+      "statement": "Seven invariants are simultaneously satisfiable — no internal contradiction (formal proof incomplete)",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "review_classification": "PROOF_NOT_ESTABLISHED",
+      "assessment": "Simultaneous satisfiability depends on a defined action/state model and predicate semantics. No complete general proof is established here; the named theorem pointer is missing.",
+      "probe_ids": [],
+      "current_evidence_path": "02_AURA_L3/AURA_THEOREMS.md",
+      "existing_references": [],
+      "missing_references": [
+        "02_AURA_L3/AURA_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "AUR-010",
+      "framework": "AURA",
+      "statement": "Vector Inversion Protocol (VIP): for any request R, VIP always produces either R fulfilled or a valid alternative R' — never an empty result",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "UNIVERSAL_GUARANTEE_NOT_ESTABLISHED",
+      "assessment": "A response/alternative policy is not a proof that a valid, feasible alternative exists for every request under every constraint set.",
+      "probe_ids": [],
+      "current_evidence_path": "02_AURA_L3/essentials.md",
+      "existing_references": [
+        "02_AURA_L3/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "AUR-011",
+      "framework": "AURA",
+      "statement": "AURA compliance predicate: aura_compliant(a) ← I1(a) ∧ I2(a) ∧ I3(a) ∧ I4(a) ∧ I5(a) ∧ I6(a) ∧ I7(a)",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "NORMATIVE_CONSTITUTION_OR_DEFINITION",
+      "assessment": "These specify commitments or combine predicates. They do not establish universal minimality, factual sufficiency, or a complete observational test of ethical behaviour.",
+      "probe_ids": [],
+      "current_evidence_path": "02_AURA_L3/essentials.md; 30_MAPS/FORMAL_SPINE.md",
+      "existing_references": [
+        "02_AURA_L3/essentials.md",
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "LAM-001",
+      "framework": "LAMAGUE",
+      "statement": "Four-tier language stack (Tier 0: TRIAD Kernel, Tier 1: predicate logic, Tier 2: LAMAHGUE 9-glyph, Tier 3: GEOMATRIA sacred geometry)",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "DEFINED_ARCHITECTURE",
+      "assessment": "An authored stack and chosen primitive basis are specifications. Distinguish the older symbolic tier design from the later CORE, runtime, codec and SXP-L releases.",
+      "probe_ids": [],
+      "current_evidence_path": "03_LAMAGUE_L1/10_essentials.md",
+      "existing_references": [
+        "03_LAMAGUE_L1/10_essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "LAM-002",
+      "framework": "LAMAGUE",
+      "statement": "Tier 0 TRIAD Kernel operators (Ao, Φ↑, Ψ_op) form the primitive basis of LAMAGUE",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "DEFINED_ARCHITECTURE",
+      "assessment": "An authored stack and chosen primitive basis are specifications. Distinguish the older symbolic tier design from the later CORE, runtime, codec and SXP-L releases.",
+      "probe_ids": [],
+      "current_evidence_path": "03_LAMAGUE_L1/10_essentials.md; 04_TRIAD_L2/essentials.md",
+      "existing_references": [
+        "03_LAMAGUE_L1/10_essentials.md",
+        "04_TRIAD_L2/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "LAM-003",
+      "framework": "LAMAGUE",
+      "statement": "LAM category 𝓛 — associativity (Theorem L1): composition of LAMAGUE expressions is associative",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "CONDITIONAL_ESTABLISHED_MATHEMATICS",
+      "assessment": "Ordinary well-typed function composition has associativity and identity. Connecting that fact to every LAMAGUE expression still requires the defined typing, closure and semantics; the old named theorem files are missing.",
+      "probe_ids": [],
+      "current_evidence_path": "03_LAMAGUE_L1/LAMAGUE_THEOREMS.md",
+      "existing_references": [],
+      "missing_references": [
+        "03_LAMAGUE_L1/LAMAGUE_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "LAM-004",
+      "framework": "LAMAGUE",
+      "statement": "LAM category 𝓛 — identity law (Theorem L2): there exists an identity element for LAMAGUE composition",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "CONDITIONAL_ESTABLISHED_MATHEMATICS",
+      "assessment": "Ordinary well-typed function composition has associativity and identity. Connecting that fact to every LAMAGUE expression still requires the defined typing, closure and semantics; the old named theorem files are missing.",
+      "probe_ids": [],
+      "current_evidence_path": "03_LAMAGUE_L1/LAMAGUE_THEOREMS.md",
+      "existing_references": [],
+      "missing_references": [
+        "03_LAMAGUE_L1/LAMAGUE_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "LAM-005",
+      "framework": "LAMAGUE",
+      "statement": "Cross-cultural convergence paper draft v0.1 complete: LAMAGUE grammar captures convergent ethical structures across Maori, Confucian, and Western traditions",
+      "author_status": "OBSERVATIONAL",
+      "author_status_normalized": "SCAFFOLD",
+      "review_classification": "INTERPRETIVE_PROPOSAL",
+      "assessment": "Cultural mappings and a paper draft do not establish equivalence, historical independence, community endorsement or external validation.",
+      "probe_ids": [],
+      "current_evidence_path": "docs/LAMAGUE_CROSS_CULTURAL_PAPER.md",
+      "existing_references": [
+        "docs/LAMAGUE_CROSS_CULTURAL_PAPER.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "TRI-001",
+      "framework": "TRIAD",
+      "statement": "Three primitive operators: Ao (anchor/observe), Φ↑ (ascent/correction), Ψ_op (operational application) — minimal basis for convergent cycles",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "DESIGN_WITH_UNPROVEN_GUARANTEE",
+      "assessment": "The three named operations and their composition are a design. Minimality and convergence do not follow merely from choosing these operations.",
+      "probe_ids": [],
+      "current_evidence_path": "04_TRIAD_L2/essentials.md",
+      "existing_references": [
+        "04_TRIAD_L2/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "TRI-002",
+      "framework": "TRIAD",
+      "statement": "TRIAD cycle: TRIAD_cycle(ψ) = Ψ_op(Φ↑(Ao(ψ))) — three operators compose into a single convergent cycle",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "DESIGN_WITH_UNPROVEN_GUARANTEE",
+      "assessment": "The three named operations and their composition are a design. Minimality and convergence do not follow merely from choosing these operations.",
+      "probe_ids": [],
+      "current_evidence_path": "04_TRIAD_L2/essentials.md; 30_MAPS/FORMAL_SPINE.md",
+      "existing_references": [
+        "04_TRIAD_L2/essentials.md",
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "TRI-003",
+      "framework": "TRIAD",
+      "statement": "Local stability near ψ_inv — Theorem T1: the fixed point ψ_inv is locally stable under TRIAD iterations",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "INVALID_DISPLAYED_PROOF_CHAIN",
+      "assessment": "The displayed Hessian sign, generator bound and convexity/unitarity bridges do not establish the promised stability/entropy chain; the actual tracker also stops at a minimum. This does not refute every possible corrected TRIAD model.",
+      "probe_ids": [
+        "MP01",
+        "MP02",
+        "MP03",
+        "MP04",
+        "MP05"
+      ],
+      "current_evidence_path": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "existing_references": [],
+      "missing_references": [
+        "04_TRIAD_L2/TRIAD_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "TRI-004",
+      "framework": "TRIAD",
+      "statement": "Discrete entropy decrease — Theorem T2: H_s(ψ) is non-increasing under TRIAD iterations",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "INVALID_DISPLAYED_PROOF_CHAIN",
+      "assessment": "The displayed Hessian sign, generator bound and convexity/unitarity bridges do not establish the promised stability/entropy chain; the actual tracker also stops at a minimum. This does not refute every possible corrected TRIAD model.",
+      "probe_ids": [
+        "MP01",
+        "MP02",
+        "MP03",
+        "MP04",
+        "MP05"
+      ],
+      "current_evidence_path": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "existing_references": [],
+      "missing_references": [
+        "04_TRIAD_L2/TRIAD_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "TRI-005",
+      "framework": "TRIAD",
+      "statement": "Asymptotic stability — Theorem T3: TRIAD iterations converge asymptotically to ψ_inv",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "INVALID_DISPLAYED_PROOF_CHAIN",
+      "assessment": "The displayed Hessian sign, generator bound and convexity/unitarity bridges do not establish the promised stability/entropy chain; the actual tracker also stops at a minimum. This does not refute every possible corrected TRIAD model.",
+      "probe_ids": [
+        "MP01",
+        "MP02",
+        "MP03",
+        "MP04",
+        "MP05"
+      ],
+      "current_evidence_path": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "existing_references": [],
+      "missing_references": [
+        "04_TRIAD_L2/TRIAD_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "TRI-006",
+      "framework": "TRIAD",
+      "statement": "Discrete convergence guarantee via Banach fixed-point theorem — proven for TRIAD under contraction conditions",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "CONDITIONAL_ESTABLISHED_MATHEMATICS",
+      "assessment": "Banach gives a unique fixed point and convergence on a complete metric space with a strict contraction. Those hypotheses are not established for every implemented tracker or stochastic pipeline.",
+      "probe_ids": [],
+      "current_evidence_path": "04_TRIAD_L2/TRIAD_THEOREMS.md; 30_MAPS/FORMAL_SPINE.md",
+      "existing_references": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "missing_references": [
+        "04_TRIAD_L2/TRIAD_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "TRI-007",
+      "framework": "TRIAD",
+      "statement": "Step-size constraint: α + β ≤ 1 − γ·‖DΨ_op‖ — necessary condition for convergence",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "CONDITION_NOT_ESTABLISHED_AS_GENERAL_GUARANTEE",
+      "assessment": "The displayed bound permits an unstable continuous generator, so it is insufficient for the advertised guarantee. The register calls the bound necessary; showing insufficiency alone does not disprove that separate assertion.",
+      "probe_ids": [
+        "MP02"
+      ],
+      "current_evidence_path": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "existing_references": [],
+      "missing_references": [
+        "04_TRIAD_L2/TRIAD_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "MIC-001",
+      "framework": "MICROORCIM",
+      "statement": "Agency drift metric: μ_drift = Σ|intended − actual|/Δt — computable measure of deviation between declared intent and observed behavior",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "review_classification": "UNCALIBRATED_INSTRUMENT",
+      "assessment": "Declared-intention/action discrepancy and stability scores can be computed under a chosen representation. They do not measure human sovereignty, free will, dignity or informed consent.",
+      "probe_ids": [],
+      "current_evidence_path": "05_MICROORCIM_L5/essentials.md",
+      "existing_references": [
+        "05_MICROORCIM_L5/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "MIC-002",
+      "framework": "MICROORCIM",
+      "statement": "Sovereignty score: S_score = (1−ρ_drift)·ρ_stability — scalar sovereignty index for an agent",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "review_classification": "UNCALIBRATED_INSTRUMENT",
+      "assessment": "Declared-intention/action discrepancy and stability scores can be computed under a chosen representation. They do not measure human sovereignty, free will, dignity or informed consent.",
+      "probe_ids": [],
+      "current_evidence_path": "05_MICROORCIM_L5/essentials.md; 30_MAPS/FORMAL_SPINE.md",
+      "existing_references": [
+        "05_MICROORCIM_L5/essentials.md",
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "MIC-003",
+      "framework": "MICROORCIM",
+      "statement": "Sovereignty implies AURA compliance — Theorem M2: S_score ≥ threshold → aura_compliant(a)",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "COUNTEREXAMPLE_AS_STATED",
+      "assessment": "Identical intended and actual actions can violate an AURA predicate while scoring perfect adherence. The intended-compliance prerequisite cannot be omitted.",
+      "probe_ids": [
+        "MP08"
+      ],
+      "current_evidence_path": "05_MICROORCIM_L5/MICROORCIM_THEOREMS.md; 30_MAPS/FORMAL_SPINE.md",
+      "existing_references": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "missing_references": [
+        "05_MICROORCIM_L5/MICROORCIM_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "MIC-004",
+      "framework": "MICROORCIM",
+      "statement": "Deceptive alignment is an open problem within MICROORCIM — explicitly declared, not claimed solved",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "EXPLICIT_SCOPE_BOUNDARY",
+      "assessment": "This records an acknowledged unresolved problem or excluded question, not an experimentally established positive claim.",
+      "probe_ids": [],
+      "current_evidence_path": "05_MICROORCIM_L5/essentials.md; 28_DEFENSE/FALSIFICATION_REGISTER.md",
+      "existing_references": [
+        "05_MICROORCIM_L5/essentials.md",
+        "28_DEFENSE/FALSIFICATION_REGISTER.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "ELI-001",
+      "framework": "EARNED_LIGHT",
+      "statement": "Asymmetry field A(ψ, x, t): consciousness is modeled as a maintained thermodynamic asymmetry field over state ψ, position x, and time t",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "review_classification": "CONJECTURAL_MODEL",
+      "assessment": "The asymmetry/consciousness quantities are proposed modeling definitions and revisions. A measured connection to consciousness is not established; later agent-control forges do not supply it.",
+      "probe_ids": [],
+      "current_evidence_path": "06_EARNED_LIGHT_L0/essentials.md",
+      "existing_references": [
+        "06_EARNED_LIGHT_L0/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "ELI-002",
+      "framework": "EARNED_LIGHT",
+      "statement": "Consciousness density: C_ψ(t) = ∫A(ψ,x,t)dx — total asymmetry integrated over the system",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "review_classification": "CONJECTURAL_MODEL",
+      "assessment": "The asymmetry/consciousness quantities are proposed modeling definitions and revisions. A measured connection to consciousness is not established; later agent-control forges do not supply it.",
+      "probe_ids": [],
+      "current_evidence_path": "06_EARNED_LIGHT_L0/essentials.md",
+      "existing_references": [
+        "06_EARNED_LIGHT_L0/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "ELI-003",
+      "framework": "EARNED_LIGHT",
+      "statement": "Thermodynamic cost: ΔH_s = −W/T — maintaining consciousness requires work W at temperature T",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "COUNTEREXAMPLE_AS_STATED",
+      "assessment": "Nonzero work need not imply entropy change minus work over temperature. A restricted physical model and units bridge would be needed.",
+      "probe_ids": [
+        "MP17"
+      ],
+      "current_evidence_path": "06_EARNED_LIGHT_L0/essentials.md",
+      "existing_references": [
+        "06_EARNED_LIGHT_L0/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "ELI-004",
+      "framework": "EARNED_LIGHT",
+      "statement": "Hard problem of consciousness is outside framework scope — explicitly declared",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "EXPLICIT_SCOPE_BOUNDARY",
+      "assessment": "This records an acknowledged unresolved problem or excluded question, not an experimentally established positive claim.",
+      "probe_ids": [],
+      "current_evidence_path": "06_EARNED_LIGHT_L0/essentials.md",
+      "existing_references": [
+        "06_EARNED_LIGHT_L0/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "ELI-005",
+      "framework": "EARNED_LIGHT",
+      "statement": "Pattern coherence must be added to C_ψ formula to address the anesthesia paradox (revision required)",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "review_classification": "CONJECTURAL_MODEL",
+      "assessment": "The asymmetry/consciousness quantities are proposed modeling definitions and revisions. A measured connection to consciousness is not established; later agent-control forges do not supply it.",
+      "probe_ids": [],
+      "current_evidence_path": "28_DEFENSE/FALSIFICATION_REGISTER.md",
+      "existing_references": [
+        "28_DEFENSE/FALSIFICATION_REGISTER.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "ANA-001",
+      "framework": "ANAMNESIS",
+      "statement": "Transcultural convergence TC(S, n) definition: n independent traditions converging on structure S from different starting points",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "DEFINED_CONCEPT",
+      "assessment": "A transcultural-count definition is an authored concept; actual cases require separate historical evidence and an independence criterion.",
+      "probe_ids": [],
+      "current_evidence_path": "07_ANAMNESIS_L0/essentials.md",
+      "existing_references": [
+        "07_ANAMNESIS_L0/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "ANA-002",
+      "framework": "ANAMNESIS",
+      "statement": "TC ≥ 3 for φ (golden ratio): at least 3 independent traditions discovered φ from different starting points",
+      "author_status": "EMPIRICAL",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "HISTORICAL_EVIDENCE_NOT_ESTABLISHED",
+      "assessment": "The proposed discovery counts need primary historical sourcing and tests of contact/shared lineage. This review does not corroborate those counts or assert that every historical case is false.",
+      "probe_ids": [],
+      "current_evidence_path": "07_ANAMNESIS_L0/essentials.md; 07_ANAMNESIS_L0/TC_CATALOG.md",
+      "existing_references": [
+        "07_ANAMNESIS_L0/essentials.md"
+      ],
+      "missing_references": [
+        "07_ANAMNESIS_L0/TC_CATALOG.md"
+      ]
+    },
+    {
+      "claim_id": "ANA-003",
+      "framework": "ANAMNESIS",
+      "statement": "TC ≥ 4 for π: at least 4 independent traditions converged on π from different starting points",
+      "author_status": "EMPIRICAL",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "HISTORICAL_EVIDENCE_NOT_ESTABLISHED",
+      "assessment": "The proposed discovery counts need primary historical sourcing and tests of contact/shared lineage. This review does not corroborate those counts or assert that every historical case is false.",
+      "probe_ids": [],
+      "current_evidence_path": "07_ANAMNESIS_L0/TC_CATALOG.md",
+      "existing_references": [],
+      "missing_references": [
+        "07_ANAMNESIS_L0/TC_CATALOG.md"
+      ]
+    },
+    {
+      "claim_id": "ANA-004",
+      "framework": "ANAMNESIS",
+      "statement": "TC ≥ 4 for symmetry groups: at least 4 independent traditions identified symmetry-group structures",
+      "author_status": "EMPIRICAL",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "HISTORICAL_EVIDENCE_NOT_ESTABLISHED",
+      "assessment": "The proposed discovery counts need primary historical sourcing and tests of contact/shared lineage. This review does not corroborate those counts or assert that every historical case is false.",
+      "probe_ids": [],
+      "current_evidence_path": "07_ANAMNESIS_L0/TC_CATALOG.md",
+      "existing_references": [],
+      "missing_references": [
+        "07_ANAMNESIS_L0/TC_CATALOG.md"
+      ]
+    },
+    {
+      "claim_id": "CRY-001",
+      "framework": "CHRYSOPOEIA",
+      "statement": "Seven-operation sequence: Calcination → Dissolution → Separation → Conjunction → Fermentation → Distillation → Coagulation (Λ)",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "DEFINED_ARCHITECTURE",
+      "assessment": "The ordered seven-operation sequence is an authored symbolic/algorithmic design, not an empirical law of human transformation.",
+      "probe_ids": [],
+      "current_evidence_path": "09_CHRYSOPOEIA_L4/essentials.md",
+      "existing_references": [
+        "09_CHRYSOPOEIA_L4/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "CRY-002",
+      "framework": "CHRYSOPOEIA",
+      "statement": "Non-commutativity of operations: the seven operations do not commute — order is load-bearing",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "OPERATOR_SCOPE_REQUIRED",
+      "assessment": "Order effects can occur for defined operations. A general non-commutation claim requires the actual operators and domain; the named theorem file is missing.",
+      "probe_ids": [],
+      "current_evidence_path": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+      "existing_references": [],
+      "missing_references": [
+        "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "CRY-003",
+      "framework": "CHRYSOPOEIA",
+      "statement": "Philosopher's Stone ψ* as fixed point of Ξ (Theorem X1, conditional): ψ* = Ξ(ψ*) under Banach contraction conditions",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "CONDITIONAL_THEOREM_WITH_UNESTABLISHED_IMPLEMENTATION_HYPOTHESES",
+      "assessment": "Banach applies under its stated hypotheses. The actual Xi draws fresh noise; a final contraction does not establish a deterministic contraction of the whole pipeline or maximal coherence.",
+      "probe_ids": [
+        "MP13",
+        "MP14"
+      ],
+      "current_evidence_path": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+      "existing_references": [],
+      "missing_references": [
+        "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "CRY-004",
+      "framework": "CHRYSOPOEIA",
+      "statement": "Solve et Coagula parallels Fourier transform structurally: dissolution (decomposition) and coagulation (synthesis) mirror Fourier decomposition and reconstruction",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "INTERPRETIVE_ANALOGY",
+      "assessment": "Decomposition/recombination can be compared with Fourier analysis. That analogy is not an established Fourier isomorphism or implementation identity.",
+      "probe_ids": [],
+      "current_evidence_path": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+      "existing_references": [],
+      "missing_references": [
+        "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md"
+      ]
+    },
+    {
+      "claim_id": "HAR-001",
+      "framework": "HARMONIA",
+      "statement": "Consonance function C(r) = 1/(1 + Σaₖ·(0.5)ᵏ): computable measure of harmonic consonance from frequency ratio r",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "INSTRUMENT_MISMATCH",
+      "assessment": "The continued-fraction formula, interval table and acknowledged implementation proxy disagree. A computable formula alone does not validate a perceptual consonance instrument.",
+      "probe_ids": [
+        "MP16"
+      ],
+      "current_evidence_path": "10_HARMONIA_L6/essentials.md",
+      "existing_references": [
+        "10_HARMONIA_L6/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "HAR-002",
+      "framework": "HARMONIA",
+      "statement": "Pythagorean comma: (3/2)^12 / 2^7 ≠ 1 — proven from fundamental theorem of arithmetic",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "NARROW_ARITHMETIC_HOLDS",
+      "assessment": "The specified twelve-fifths/seven-octaves ratio is not one. The broader claim that no nonunit simple-ratio cycle closes is false; do not conflate them.",
+      "probe_ids": [
+        "MP15"
+      ],
+      "current_evidence_path": "10_HARMONIA_L6/essentials.md; 30_MAPS/FORMAL_SPINE.md",
+      "existing_references": [
+        "10_HARMONIA_L6/essentials.md",
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "HAR-003",
+      "framework": "HARMONIA",
+      "statement": "Harmonic information: I_H(r) = −log₂(C(r)) — information content of a frequency ratio",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "DEFINED_DERIVED_QUANTITY",
+      "assessment": "Minus log2 of a positive consonance value is defined mathematically. Its information-theoretic or perceptual interpretation depends on validating the underlying instrument.",
+      "probe_ids": [],
+      "current_evidence_path": "10_HARMONIA_L6/essentials.md",
+      "existing_references": [
+        "10_HARMONIA_L6/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "HAR-004",
+      "framework": "HARMONIA",
+      "statement": "EWM interval table: emotional-epistemic states map to harmonic intervals — Power→perfect fifth (3:2), Sadness→unison (1:1), Joy→octave (2:1), Confusion→fourth (4:3), Anger→tritone",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "INTERPRETIVE_MAPPING",
+      "assessment": "Emotion/epistemic-state-to-interval assignments are proposed symbolic mappings, not a validated psychological measurement.",
+      "probe_ids": [],
+      "current_evidence_path": "10_HARMONIA_L6/essentials.md; CLAUDE.md",
+      "existing_references": [
+        "10_HARMONIA_L6/essentials.md",
+        "CLAUDE.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "HAR-005",
+      "framework": "HARMONIA",
+      "statement": "Kuramoto model applies to multi-agent AI coherence: dθᵢ/dt = ωᵢ + (κ/N)·Σⱼ sin(θⱼ−θᵢ) — coupling above κ_c produces synchronization",
+      "author_status": "ASPIRATIONAL",
+      "author_status_normalized": "CONJECTURE",
+      "review_classification": "OPEN_CONJECTURE",
+      "assessment": "An oscillator synchronization model can be studied under specified dynamics. Its transfer to general multi-agent AI coherence is not established.",
+      "probe_ids": [],
+      "current_evidence_path": "10_HARMONIA_L6/essentials.md",
+      "existing_references": [
+        "10_HARMONIA_L6/essentials.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "XFW-001",
+      "framework": "CROSS",
+      "statement": "Master equation: dΨ/dt = k₁(Π−Π_th) − k₂(Ψ−Ψ_inv) − k₃I_violations + k₄(E/E_need) — unified cross-framework dynamics",
+      "author_status": "SCAFFOLD",
+      "author_status_normalized": "SCAFFOLD",
+      "review_classification": "MODEL_WITH_INVALID_STABILITY_BRIDGE",
+      "assessment": "The displayed linear master equation is computable, but the stated reference equilibrium and threshold stability inference fail. Calibration and identifiability remain separate work.",
+      "probe_ids": [
+        "MP07"
+      ],
+      "current_evidence_path": "08_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md; 30_MAPS/FORMAL_SPINE.md",
+      "existing_references": [
+        "08_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md",
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "XFW-002",
+      "framework": "CROSS",
+      "statement": "AURA + TRIAD coherence compatibility (Lemma XF1): AURA-compliant updates preserve TRIAD convergence",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "INVALID_DISPLAYED_PROOF_BRIDGE",
+      "assessment": "Inspectability does not imply the required coherence floor, and the inherited TRIAD convergence chain is invalid as displayed. An AURA predicate alone cannot repair those missing hypotheses.",
+      "probe_ids": [
+        "MP01",
+        "MP02",
+        "MP11"
+      ],
+      "current_evidence_path": "30_MAPS/FORMAL_SPINE.md; 30_MAPS/CODEX_DISTILLATION.md",
+      "existing_references": [
+        "30_MAPS/FORMAL_SPINE.md",
+        "30_MAPS/CODEX_DISTILLATION.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "XFW-003",
+      "framework": "CROSS",
+      "statement": "CHRYSOPOEIA as generalization of CASCADE (Lemma XF4): CHRYSOPOEIA's seven operations subsume CASCADE's update operator",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "PROOF_NOT_ESTABLISHED",
+      "assessment": "A generalization claim needs an explicit semantics-preserving embedding of CASCADE into the seven operations, with domains and invariants. A shared narrative does not provide that proof.",
+      "probe_ids": [],
+      "current_evidence_path": "30_MAPS/FORMAL_SPINE.md",
+      "existing_references": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "XFW-004",
+      "framework": "CROSS",
+      "statement": "Sovereignty ↔ Human Primacy reconciliation (Lemma XF5): MICROORCIM sovereignty and AURA Human Primacy are formally compatible",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "MODEL_PREREQUISITES_REQUIRED",
+      "assessment": "Human primacy and an agency/drift metric can be designed compatibly. Their formal reconciliation depends on valid predicate semantics and cannot assume that a perfect drift score establishes ethics.",
+      "probe_ids": [
+        "MP08"
+      ],
+      "current_evidence_path": "30_MAPS/FORMAL_SPINE.md",
+      "existing_references": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "XFW-005",
+      "framework": "CROSS",
+      "statement": "The Two-Point Protocol (Mac as Athanor, Sol as Mercury): a human-AI co-creation architecture where neither party possesses the output — it arises between them",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "PHILOSOPHICAL_ARCHITECTURE",
+      "assessment": "This is a human-AI collaboration philosophy. It does not alter the founder's ownership, licences, model authority or evidence requirements.",
+      "probe_ids": [],
+      "current_evidence_path": "CLAUDE.md; 30_MAPS/CODEX_DISTILLATION.md",
+      "existing_references": [
+        "CLAUDE.md",
+        "30_MAPS/CODEX_DISTILLATION.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "XFW-006",
+      "framework": "CROSS",
+      "statement": "PGF filter (P ∧ H ∧ B): every output passes Protector ∧ Healer ∧ Beacon verification before emission",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "DESIGN_MANDATE_NOT_INDEPENDENT_VERIFICATION",
+      "assessment": "A Protector/Healer/Beacon policy is not proof that every output was routed through a valid semantic checker. The Chorus reports flags and canned health/audit values rather than independently validating those qualities.",
+      "probe_ids": [],
+      "current_evidence_path": "CLAUDE.md",
+      "existing_references": [
+        "CLAUDE.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "LYV-001",
+      "framework": "MATH",
+      "statement": "Lyapunov stability framework underlies Theorems T1–T3: 11/11 Lyapunov claims verified symbolically and numerically (5000 trials)",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "VALIDATION_CLAIM_UNSUPPORTED",
+      "assessment": "The fixed Hessian table and separate toy trials do not establish 11 verified claims about the maintained engines. Numerical observations and conditional algebra must be reported separately from proof of implementation hypotheses.",
+      "probe_ids": [],
+      "current_evidence_path": "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md; 29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "existing_references": [
+        "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md",
+        "29_GOVERNANCE/EMPIRICAL_INVENTORY.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "LYV-002",
+      "framework": "MATH",
+      "statement": "Banach fixed-point theorem (established mathematics) underlies ψ* existence and TRIAD convergence claims",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "CONDITIONAL_ESTABLISHED_MATHEMATICS",
+      "assessment": "Banach gives a unique fixed point and convergence on a complete metric space with a strict contraction. Those hypotheses are not established for every implemented tracker or stochastic pipeline.",
+      "probe_ids": [],
+      "current_evidence_path": "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md",
+      "existing_references": [
+        "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "CYB-001",
+      "framework": "CROSS",
+      "statement": "Grey Mode recovery is a complete closed negative-feedback regulator in code: its sensor (compute_psi_r), comparator (reentry_test, against an adaptive threshold) and actuator (recovery_cycle) sit in one class, and the actuator's output is the sensor's next input.",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "BOUNDED_CODE_STRUCTURE_SUPPORTED",
+      "assessment": "The source distinguishes feedback loops, open loops and the opt-in caller-policy regulator. Maintained tests exercise those contracts. Loop closure on specified numerical/text proxies does not establish external truth, ethical sensing or control robustness.",
+      "probe_ids": [],
+      "current_evidence_path": "34_CYBERNETICS/LOOP_MAP.json; 34_CYBERNETICS/loop_audit.py; 12_IMPLEMENTATIONS/core/grey_mode.py; tests/test_cybernetics.py",
+      "existing_references": [
+        "34_CYBERNETICS/LOOP_MAP.json",
+        "34_CYBERNETICS/loop_audit.py",
+        "12_IMPLEMENTATIONS/core/grey_mode.py",
+        "tests/test_cybernetics.py"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "CYB-002",
+      "framework": "CROSS",
+      "statement": "CASCADE closes a feedback loop across calls through shared state: _execute_cascade writes each block's regime, and contradicts() reads it when the next block arrives. Reading this as Ashby's double-loop ultrastability is an interpretation, not a measurement.",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "BOUNDED_CODE_STRUCTURE_SUPPORTED",
+      "assessment": "The source distinguishes feedback loops, open loops and the opt-in caller-policy regulator. Maintained tests exercise those contracts. Loop closure on specified numerical/text proxies does not establish external truth, ethical sensing or control robustness.",
+      "probe_ids": [],
+      "current_evidence_path": "34_CYBERNETICS/LOOP_MAP.json; 34_CYBERNETICS/loop_audit.py; 34_CYBERNETICS/CYBERNETIC_READING.md; 12_IMPLEMENTATIONS/core/cascade_engine.py",
+      "existing_references": [
+        "34_CYBERNETICS/LOOP_MAP.json",
+        "34_CYBERNETICS/loop_audit.py",
+        "34_CYBERNETICS/CYBERNETIC_READING.md",
+        "12_IMPLEMENTATIONS/core/cascade_engine.py"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "CYB-003",
+      "framework": "CROSS",
+      "statement": "The AURA constitutional check, the TRI-AXIAL check and the MICROORCIM daily tracker are open loops in code: each senses and compares, and none acts. The single-pass sovereign pipeline entry point (`SovereignPipeline.run`, `L-PIPELINE`) is feedforward (CASCADE to TRIAD to AURA to stateless MICROORCIM drift); nothing its last stage measures returns to its first, closing only through a person or host model that reads the verdict. The opt-in bounded regulator entry point (`SovereignPipeline.regulate`, `L-PIPELINE-REGULATOR`, SCAFFOLD) closes in code only when supplied an explicit caller correction policy, regulating the implemented coherence and text-score proxy across a finite evaluation budget with visible refusal on budget exhaustion or policy failure (synthetic/internal proxy evidence only; does not establish factual truth or real-world effects).",
+      "author_status": "ACTIVE",
+      "author_status_normalized": "ACTIVE",
+      "review_classification": "BOUNDED_CODE_STRUCTURE_SUPPORTED",
+      "assessment": "The source distinguishes feedback loops, open loops and the opt-in caller-policy regulator. Maintained tests exercise those contracts. Loop closure on specified numerical/text proxies does not establish external truth, ethical sensing or control robustness.",
+      "probe_ids": [],
+      "current_evidence_path": "34_CYBERNETICS/LOOP_MAP.json; 34_CYBERNETICS/loop_audit.py; 12_IMPLEMENTATIONS/core/sovereign_pipeline.py; tests/test_cybernetics.py; tests/test_sovereign_pipeline.py",
+      "existing_references": [
+        "34_CYBERNETICS/LOOP_MAP.json",
+        "34_CYBERNETICS/loop_audit.py",
+        "12_IMPLEMENTATIONS/core/sovereign_pipeline.py",
+        "tests/test_cybernetics.py",
+        "tests/test_sovereign_pipeline.py"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "CYB-004",
+      "framework": "CROSS",
+      "statement": "An invariant-gated generator (propose candidate actions, admit only those that pass a constraint check) can meet disturbances no rule anticipated, as Ashby's law of requisite variety requires, under two conditions only: the generator has the variety the disturbances demand, and the gate's sensor reads the essential variable rather than a proxy. Without the first it refuses, a visible failure; without the second it admits wrong actions with confidence, a silent failure. Shown in a synthetic toy world; not measured on any language model.",
+      "author_status": "ASPIRATIONAL",
+      "author_status_normalized": "CONJECTURE",
+      "review_classification": "OPEN_CONJECTURE_WITH_TOY_EVIDENCE",
+      "assessment": "The supplied generator/gate example is conditional synthetic evidence, with sensor and variety assumptions explicitly stated. It is not a measurement on a language model.",
+      "probe_ids": [],
+      "current_evidence_path": "34_CYBERNETICS/variety_demo.py; 34_CYBERNETICS/CYBERNETIC_READING.md; tests/test_cybernetics.py",
+      "existing_references": [
+        "34_CYBERNETICS/variety_demo.py",
+        "34_CYBERNETICS/CYBERNETIC_READING.md",
+        "tests/test_cybernetics.py"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "RET-001",
+      "framework": "RETRACTED",
+      "statement": "[RETRACTED] Gödel's incompleteness theorems prove Platonism",
+      "author_status": "REMOVED",
+      "author_status_normalized": "RETRACTED",
+      "review_classification": "AUTHOR_WITHDRAWAL_PRESERVED",
+      "assessment": "The author-issued retraction remains visible; this review does not reinstate or silently remove it.",
+      "probe_ids": [],
+      "current_evidence_path": "28_DEFENSE/FALSIFICATION_REGISTER.md; 28_DEFENSE/FAILURE_MUSEUM.md",
+      "existing_references": [
+        "28_DEFENSE/FALSIFICATION_REGISTER.md",
+        "28_DEFENSE/FAILURE_MUSEUM.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "RET-002",
+      "framework": "RETRACTED",
+      "statement": "[RETRACTED] CASCADE achieves 100% reorganization accuracy",
+      "author_status": "REMOVED",
+      "author_status_normalized": "RETRACTED",
+      "review_classification": "AUTHOR_WITHDRAWAL_PRESERVED",
+      "assessment": "The author-issued retraction remains visible; this review does not reinstate or silently remove it.",
+      "probe_ids": [],
+      "current_evidence_path": "30_MAPS/COHERENCE_REGISTER.md; 28_DEFENSE/FALSIFICATION_REGISTER.md; 28_DEFENSE/FAILURE_MUSEUM.md",
+      "existing_references": [
+        "30_MAPS/COHERENCE_REGISTER.md",
+        "28_DEFENSE/FALSIFICATION_REGISTER.md",
+        "28_DEFENSE/FAILURE_MUSEUM.md"
+      ],
+      "missing_references": []
+    },
+    {
+      "claim_id": "RET-003",
+      "framework": "RETRACTED",
+      "statement": "[RETRACTED] Π = E·P/S (S used for both coherence and entropy — symbol collision)",
+      "author_status": "REMOVED",
+      "author_status_normalized": "RETRACTED",
+      "review_classification": "AUTHOR_WITHDRAWAL_PRESERVED",
+      "assessment": "The author-issued retraction remains visible; this review does not reinstate or silently remove it.",
+      "probe_ids": [],
+      "current_evidence_path": "30_MAPS/FORMAL_SPINE.md; 30_MAPS/ONTOLOGY.md; 28_DEFENSE/FAILURE_MUSEUM.md",
+      "existing_references": [
+        "30_MAPS/FORMAL_SPINE.md",
+        "30_MAPS/ONTOLOGY.md",
+        "28_DEFENSE/FAILURE_MUSEUM.md"
+      ],
+      "missing_references": []
+    }
+  ]
+}

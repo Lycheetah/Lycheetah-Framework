@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-20",
+  "baseline_commit": "6ba483af3f125ec725eb4e0f44074d0887183255",
+  "author_claim_statements_and_statuses_preserved": true,
+  "claim_assessments": 71,
+  "area_coverage_records": 50,
+  "source_notices": 32,
+  "notice_hashes_match": true,
+  "mathematical_observations": 18,
+  "mathematical_script_hash_matches_receipt": true,
+  "maintained_suite": {
+    "collected": 999,
+    "passed": 997,
+    "failures": 0,
+    "skip_or_xfail": [
+      {
+        "class": "tests.test_cascade_predictability.TestPredictabilityPerformance",
+        "name": "test_success_criterion_k5_on_full_run",
+        "type": "pytest.xfail",
+        "message": "[DERIVED 2026-07-27] Unreachable by construction, not a weak predictor. At the 8.8% base rate the oracle ceiling at k=5 is F1=0.548; the measured 0.531 sits within 0.017 of a bound no threshold choice can cross, and F1>0.80 would need AUC around 0.99 against the measured 0.921. The criterion was stated without accounting for base rate. Marked strict so an unexpected pass reopens that derivation rather than passing silently. See 28_DEFENSE/REPRODUCIBILITY_REPORT.md. Choosing a replacement criterion is an author's decision and is deliberately left open."
+      },
+      {
+        "class": "tests.test_threads_fixes",
+        "name": "test_cli_guard_reports_missing_mcp_clearly",
+        "type": "pytest.skip",
+        "message": "mcp is installed in this environment"
+      }
+    ]
+  },
+  "scope": "Consistency of review artifacts and executed contracts; not scientific validation of all claims.",
+  "additional_checks": {
+    "modelcraft_tests": 17,
+    "book_i_tests": 10,
+    "book_i_validator": "PASS",
+    "anon_civic_tests": 16,
+    "anon_policy_tests": 16,
+    "anon_cascade_tests": 11,
+    "anon_checksum_entries": 121,
+    "truth_pressure_engine_v03_checks": 24,
+    "truth_pressure_app_v05_checks": 14,
+    "truth_pressure_bridge_v07_checks": 11,
+    "truth_pressure_report_v07_checks": 11,
+    "desktop_mocked_regressions": 3,
+    "mcp_v2_tests": 5,
+    "final_focused_regressions_and_mirror_tests": 24,
+    "clean_base_wheel_console_scripts": 11,
+    "clean_all_extras_mcp_tools": 10,
+    "public_package_mypy_source_files": 30
+  },
+  "unresolved_gates": {
+    "corpus_lint_findings": 46,
+    "lint_files_unchanged_from_baseline": 6,
+    "unmarked_footing_documents": 79,
+    "footing_budget": 30,
+    "missing_evidence_references": 23,
+    "claim_rows_with_all_pointers_missing": 16,
+    "archive_dead_links": 22
+  },
+  "pinned_source_change_control": {
+    "expected_rejection": true,
+    "reason": "Dated notices and repaired pointer fields differ from the pinned baseline. Use the baseline checkout to reproduce the historical mathematical receipt."
+  },
+  "updated": "2026-10-21",
+  "incremental_checks_2026_10_21": {
+    "focused_implementation_sheaf_and_gateway": 167,
+    "alias_regressions": 7,
+    "compaction_consent_and_integration": 92,
+    "counts_overlap_do_not_sum": true,
+    "distinct_new_boundary_cases": 64,
+    "new_counterexamples_failed_before_repairs": 42,
+    "full_maintained_suite_rerun": false,
+    "implementation_python_sources_syntax_checked": 55,
+    "deeper_parallel_review": "Interrupted by service usage limit; incomplete; folder counts are not source-reading counts.",
+    "mypy_public_source_files": 30,
+    "readme_python_example": "Executed verbatim: SUCCEEDED, lycheetah.default, REVIEW, False",
+    "current_link_check": {
+      "markdown_files": 1828,
+      "links": 2503,
+      "local_links": 2055,
+      "dead_outside_archive": 0,
+      "dead_inside_archive": 22
+    }
+  }
+}

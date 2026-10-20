@@ -1,4 +1,6 @@
 # FORMAL SPINE
+
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** Several proof bridges fail as stated, including foundation membership, ethics from an adherence score, transformation monotonicity and the general entropy/work relation. Author ACTIVE labels are preserved but disputed by the dated review. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
 ## Act II Deliverable — Codex Elevation Plan
 
 **Date:** 2026-04-25

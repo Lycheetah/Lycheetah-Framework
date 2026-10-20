@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-21",
+  "scope": "Primary reproduction of specific interrupted-agent leads. Frozen research bytes unchanged; no live data, state, provider or policy activation.",
+  "frozen_codec_consent": [
+    {
+      "input": "R",
+      "decoded": "REVOCABLE",
+      "full_packet_equal": false,
+      "critical_hash_equal": false
+    },
+    {
+      "input": "I",
+      "decoded": "IRREVOCABLE",
+      "full_packet_equal": false,
+      "critical_hash_equal": false
+    },
+    {
+      "input": "N",
+      "decoded": "NONE",
+      "full_packet_equal": false,
+      "critical_hash_equal": false
+    },
+    {
+      "input": "REVOCABLE",
+      "decoded": "REVOCABLE",
+      "full_packet_equal": true,
+      "critical_hash_equal": true
+    },
+    {
+      "input": "OTHER",
+      "decoded": "OTHER",
+      "full_packet_equal": true,
+      "critical_hash_equal": true
+    }
+  ],
+  "policy_classifier_duplicate_groups": {
+    "first_relation": "EQUIVALENT",
+    "second_relation": "EQUIVALENT",
+    "v2_allows": false,
+    "v3_allows": true,
+    "truth": {
+      "A": true,
+      "B": false
+    },
+    "limit": "Classifier counterexample only; primary did not activate a database policy or dispatch a remote action."
+  },
+  "policy_review_case_and_duplicate_admission": {
+    "mixed_case_reported_as": "one",
+    "mixed_case_review_count": 2,
+    "duplicate_review_count": 2,
+    "duplicate_reviewer_count": 1,
+    "duplicate_ratings": 2
+  },
+  "rejecting_experiment_control": true,
+  "source_hashes": {
+    "03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/src/lamague_codec.py": "73f94c0512abcb2767d23aaa9cec3aaeee3aec220166d19b4d1327be89679f80",
+    "papers/agent-safety/frontier-controls/06_hazard_lineage_policy_evolution_v1_2/policy_evolution_gate.py": "dbb9f6c293de8dfbb93b7a425af4a7811c33354f5c957eac5e0995c7af37e464",
+    "23_NZ_AI_GOVERNANCE/anon_politician/PROJECT_CORE/Anon_Politician_Full_Handoff_v1.3/07_POLICY_LAB_v0.2/Anon_Politician_Policy_Lab_v0_2/evaluation/aggregate_reviews.py": "4213a823ae9bd03d444354430f10f2313db091cb03c6cd517ec97de164fe7922"
+  }
+}

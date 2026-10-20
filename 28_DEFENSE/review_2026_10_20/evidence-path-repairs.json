@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-20",
+  "baseline_commit": "6ba483af3f125ec725eb4e0f44074d0887183255",
+  "claims_updated": 14,
+  "statements_and_author_statuses_unchanged": true,
+  "total_references": 107,
+  "remaining_missing_references": 23,
+  "remaining_claims_all_references_missing": [
+    "CAS-003",
+    "CAS-004",
+    "CAS-005",
+    "CAS-006",
+    "AUR-009",
+    "LAM-003",
+    "LAM-004",
+    "TRI-003",
+    "TRI-004",
+    "TRI-005",
+    "TRI-007",
+    "ANA-003",
+    "ANA-004",
+    "CRY-002",
+    "CRY-003",
+    "CRY-004"
+  ],
+  "repairs": [
+    {
+      "claim_id": "CAS-002",
+      "before": "01_CASCADE_L4/essentials.md; MATHEMATICS_FOUNDATIONS.md",
+      "after": "01_CASCADE_L4/essentials.md; 11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md",
+      "scope": "Source-location repair only; does not establish the claim."
+    },
+    {
+      "claim_id": "CAS-007",
+      "before": "10_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md",
+      "after": "08_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md",
+      "scope": "Source-location repair only; does not establish the claim."
+    },
+    {
+      "claim_id": "CAS-008",
+      "before": "01_CASCADE_L4/CASCADE_THEOREMS.md; MATHEMATICS_FOUNDATIONS.md",
+      "after": "01_CASCADE_L4/CASCADE_THEOREMS.md; 11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md",
+      "scope": "Source-location repair only; does not establish the claim."
+    },
+    {
+      "claim_id": "LAM-001",
+      "before": "03_LAMAGUE_L1/essentials.md",
+      "after": "03_LAMAGUE_L1/10_essentials.md",
+      "scope": "Source-location repair only; does not establish the claim."
+    },
+    {
+      "claim_id": "LAM-002",
+      "before": "03_LAMAGUE_L1/essentials.md; 04_TRIAD_L2/essentials.md",
+      "after": "03_LAMAGUE_L1/10_essentials.md; 04_TRIAD_L2/essentials.md",
+      "scope": "Source-location repair only; does not establish the claim."
+    },
+    {
+      "claim_id": "CRY-001",
+      "before": "08_CHRYSOPOEIA/essentials.md",
+      "after": "09_CHRYSOPOEIA_L4/essentials.md",
+      "scope": "Source-location repair only; does not establish the claim."
+    },
+    {
+      "claim_id": "HAR-001",
+      "before": "09_HARMONIA/essentials.md",
+      "after": "10_HARMONIA_L6/essentials.md",
+      "scope": "Source-location repair only; does not establish the claim."
+    },
+    {
+      "claim_id": "HAR-002",
+      "before": "09_HARMONIA/essentials.md; 30_MAPS/FORMAL_SPINE.md",
+      "after": "10_HARMONIA_L6/essentials.md; 30_MAPS/FORMAL_SPINE.md",
+      "scope": "Source-location repair only; does not establish the claim."
+    },
+    {
+      "claim_id": "HAR-003",
+      "before": "09_HARMONIA/essentials.md",
+      "after": "10_HARMONIA_L6/essentials.md",
+      "scope": "Source-location repair only; does not establish the claim."
+    },
+    {
+      "claim_id": "HAR-004",
+      "before": "09_HARMONIA/essentials.md; CLAUDE.md",
+      "after": "10_HARMONIA_L6/essentials.md; CLAUDE.md",
+      "scope": "Source-location repair only; does not establish the claim."
+    },
+    {
+      "claim_id": "HAR-005",
+      "before": "09_HARMONIA/essentials.md",
+      "after": "10_HARMONIA_L6/essentials.md",
+      "scope": "Source-location repair only; does not establish the claim."
+    },
+    {
+      "claim_id": "XFW-001",
+      "before": "10_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md; 30_MAPS/FORMAL_SPINE.md",
+      "after": "08_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md; 30_MAPS/FORMAL_SPINE.md",
+      "scope": "Source-location repair only; does not establish the claim."
+    },
+    {
+      "claim_id": "LYV-001",
+      "before": "MATHEMATICS_FOUNDATIONS.md; 29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "after": "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md; 29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "scope": "Source-location repair only; does not establish the claim."
+    },
+    {
+      "claim_id": "LYV-002",
+      "before": "MATHEMATICS_FOUNDATIONS.md",
+      "after": "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md",
+      "scope": "Source-location repair only; does not establish the claim."
+    }
+  ]
+}

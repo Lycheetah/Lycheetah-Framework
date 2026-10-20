@@ -174,7 +174,7 @@ def find_field(record: Dict[str, Any], aliases: List[str]) -> Tuple[Optional[str
             return path, value
     for path, value in flat.items():
         leaf = norm(path.split(".")[-1].split("[")[0])
-        if any(leaf.endswith(w) or w.endswith(leaf) for w in wanted if len(w) > 4):
+        if leaf and any(leaf.endswith(w) for w in wanted if len(w) > 4):
             return path, value
     return None, None
 

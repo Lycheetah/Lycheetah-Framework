@@ -1,5 +1,7 @@
 # TRIAD — anchor, observe, correct
 
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** The displayed stability chain has a reversed Hessian-sign inference and a bound permitting growth. The tracker can stop at a minimum. Banach remains valid only when its actual hypotheses are established. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+
 **Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
 **Guide refreshed:** 19 October 2026.  
 **Status:** Conditional formal results and implementations; not a universal learning guarantee.

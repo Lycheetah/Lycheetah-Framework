@@ -1,4 +1,6 @@
 # CASCADE MATHEMATICAL PROOFS
+
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** The 20 October review reproduces failures in the Shannon-entropy, TES-floor and VTR arguments. These displayed proofs must not be cited as verified implementation guarantees. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
 ## Rigorous Formal Verification of Self-Reorganizing Knowledge Architecture
 
 **Mathematical Foundations Document**  

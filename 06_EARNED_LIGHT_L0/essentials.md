@@ -1,5 +1,7 @@
 # Earned Light — Consciousness Thermodynamics Essentials
 
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** The unqualified entropy/work relation is not a general thermodynamic law, and consciousness remains conjectural. The newer agent-control forges do not validate the older consciousness model. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+
 **Status:** ⭐ FORMALIZED [SCAFFOLD] — Thermodynamic framework is structurally sound; Boltzmann brain inversion is a well-formed argument from established physics, not a novel mathematical proof. Consciousness as dissipative structure is consistent with Prigogine's work [ACTIVE analogy; SCAFFOLD as direct proof]. | **Type:** Consciousness Model | **Approach:** Thermodynamic
 
 ## What It Does

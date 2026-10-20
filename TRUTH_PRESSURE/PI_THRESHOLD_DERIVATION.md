@@ -1,4 +1,6 @@
 # ANALYTICAL DERIVATION OF Π_th = k·√(n)
+
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** The displayed sparse/uniform forcing spectral norms are miscomputed. This derivation does not establish a universal square-root threshold law. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
 ## Moving the Critical Threshold from Fitted to Structural
 
 **Document status:** ACTIVE

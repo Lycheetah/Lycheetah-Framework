@@ -2,7 +2,7 @@
 
 Python engines, applications and research experiments for the Lycheetah Framework.
 
-**Guide refreshed:** 19 October 2026. The installable wrapper is owned by
+**Guide refreshed:** 21 October 2026. The installable wrapper is owned by
 [`lycheetah/`](../lycheetah/); this directory owns the foundational engine sources.
 [Current synthesis](../13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md) ·
 [Complete map](../00_Sovereign_Index.md) · [Capability/evidence guide](../33_APPLICATIONS/README.md).
@@ -21,6 +21,24 @@ Python engines, applications and research experiments for the Lycheetah Framewor
 **Start with the [core engine guide](core/README.md):** all 29 modules explained
 in plain language, grouped by the job they do, with their main Python APIs and
 links to the installed runtime tools.
+
+## Improvements checked on 21 October
+
+The deeper [Framework review](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md)
+now includes numerical boundary fixes in the maintained engines:
+
+- TRIAD requires both a small update and a small gradient before reporting its
+  numerical stop condition. Its recorded coherence belongs to the recorded state.
+  Stationarity can still be a minimum; this is not a proof of a unique optimum.
+- TRI-AXIAL rejects nonfinite measurements, invalid violation counts, negative
+  friction and incomplete vector pairs. Large finite vectors use a scaled cosine
+  calculation. These remain caller-supplied metrics with uncalibrated thresholds.
+- The existing sheaf/factorial tests were rerun alongside the changes. Their
+  numerical contracts do not establish the broader scientific interpretation.
+
+The focused implementation, sheaf and execution-boundary run passed **167 tests**.
+This is a targeted run, not a fresh execution of the entire maintained suite.
+See the [boundary regressions](../tests/test_implementation_boundaries.py).
 
 ## Requirements
 

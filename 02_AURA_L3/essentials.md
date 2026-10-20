@@ -1,5 +1,7 @@
 # AURA Protocol — Essentials
 
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** The seven commitments are normative specifications. The stated TES/VTR preservation proofs fail, and a proxy score or declared flag does not completely observe ethical compliance. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+
 **Status:** [FOUNDATIONAL] Seven Invariants are architecturally load-bearing; TES/VTR/PAI metrics are operational | **Type:** Constitutional AI Framework
 
 ## What It Does

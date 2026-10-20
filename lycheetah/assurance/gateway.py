@@ -2,9 +2,15 @@
 
 Binds agent tool execution to:
 1. Evidence-capped policy evaluation (ALLOW / REVIEW / BLOCK).
-2. Durable SQLite state machine (PREPARED -> DISPATCHING -> COMMITTED / FAILED / UNKNOWN).
+2. Durable SQLite state machine (PREPARED -> DISPATCHING -> SUCCEEDED / FAILED / UNKNOWN).
 3. Monotonic Ed25519-signed external checkpoints.
 4. Tamper-evident Assurance Receipts.
+
+Mutations use the checkpoint-gated workflow and reject uncheckpointed history.
+Dispatch re-evaluates the current policy and records that evaluated policy even
+if a later callback changes it. Approval identities remain caller-supplied
+metadata; this gateway does not authenticate a human or bind an arbitrary Python
+executor's implementation to an action description.
 """
 
 from __future__ import annotations
@@ -20,9 +26,11 @@ from typing import Any, Literal
 
 from .action_guard import PersistentActionGuard, action_digest
 from .checkpoint_authority import (
+    CheckpointError,
     CheckpointHTTPClient,
     CheckpointStore,
 )
+from .checkpointed_workflow import CheckpointedWorkflow, WorkflowBlocked
 from .models import (
     AssuranceEvent,
     ClaimStatus,
@@ -112,8 +120,20 @@ class ActionGateway:
         self.guard = guard
         self.checkpoints = checkpoints
         self.journal_id = journal_id
-        self.policy = policy or default_policy()
-        self.runtime = AssuranceRuntime(policy=self.policy)
+        self.runtime = AssuranceRuntime(policy=policy or default_policy())
+        self.workflow = CheckpointedWorkflow(guard, checkpoints, journal_id)
+
+    @property
+    def policy(self) -> AssurancePolicy:
+        """The policy used by the evaluator, rather than a second mutable copy."""
+        return self.runtime.policy
+
+    @policy.setter
+    def policy(self, value: AssurancePolicy) -> None:
+        if not isinstance(value, AssurancePolicy):
+            raise TypeError("policy must be an AssurancePolicy")
+        with self.workflow.effect_session():
+            self.runtime.policy = value
 
     @classmethod
     def open_local(
@@ -138,33 +158,19 @@ class ActionGateway:
             return self.checkpoints.get_latest(self.journal_id)
         return self.checkpoints.latest(self.journal_id)
 
-    def _publish_checkpoint(
-        self, anchor: dict[str, Any], events: list[dict[str, Any]]
-    ) -> dict[str, Any]:
-        if isinstance(self.checkpoints, CheckpointHTTPClient):
-            return self.checkpoints.publish(self.journal_id, anchor, events)
-        return self.checkpoints.store(self.journal_id, anchor, events)
-
     def bootstrap(self) -> dict[str, Any]:
-        """Ensure the journal is anchored at genesis."""
-        latest = self._get_latest_checkpoint()
-        if latest is not None:
-            return latest
-        current = self.guard.audit_anchor()
-        if current["event_count"] != 0:
-            raise RuntimeError("cannot bootstrap preexisting uncheckpointed audit history")
-        return self._publish_checkpoint(current, [])
-
-    def _sync_checkpoint(self) -> dict[str, Any]:
+        """Anchor genesis or verify an existing journal without trusting a dirty tail."""
+        result = self.workflow.bootstrap_empty_journal()
+        if not result.checkpointed or not result.decision.allowed:
+            raise RuntimeError("checkpoint bootstrap failed")
         latest = self._get_latest_checkpoint()
         if latest is None:
-            raise RuntimeError("checkpoint authority missing initial anchor")
-        last_seq = latest.get("last_seq")
-        new_events = self.guard.audit_chain_events_after(last_seq)
-        if not new_events:
-            return latest
-        new_anchor = self.guard.audit_anchor()
-        return self._publish_checkpoint(new_anchor, new_events)
+            raise RuntimeError("checkpoint missing after bootstrap")
+        return latest
+
+    def _sync_checkpoint(self) -> dict[str, Any]:
+        """Verify synchronization; never publish previously uncheckpointed history."""
+        return self.workflow._trusted_checkpoint()
 
     def evaluate_policy(
         self,
@@ -229,6 +235,30 @@ class ActionGateway:
         effect_id: str | None = None,
     ) -> GateDecision:
         """Propose an action: check policy, register single-use approval, prepare effect."""
+        with self.workflow.effect_session():
+            try:
+                self._sync_checkpoint()
+                return self._propose_locked(
+                    action, actor, scope, approver_id, ttl_seconds, approval_id, effect_id
+                )
+            except (WorkflowBlocked, CheckpointError) as exc:
+                return GateDecision(
+                    allowed=False,
+                    disposition=Disposition.BLOCK,
+                    reason=str(exc),
+                    action_hash=action_digest(action),
+                )
+
+    def _propose_locked(
+        self,
+        action: dict[str, Any],
+        actor: str,
+        scope: str,
+        approver_id: str | None,
+        ttl_seconds: int,
+        approval_id: str | None,
+        effect_id: str | None,
+    ) -> GateDecision:
         digest = action_digest(action)
         disposition, findings = self.evaluate_policy(action, scope, actor, approver_id=approver_id)
 
@@ -255,7 +285,7 @@ class ActionGateway:
         eid = effect_id or f"eff-{sha256(f'{aid}:{now}'.encode()).hexdigest()[:16]}"
         approver = approver_id or "policy_auto_allow"
 
-        decision = self.guard.issue_approval(
+        approval = self.workflow.issue_approval(
             approval_id=aid,
             actor=actor,
             approver_id=approver,
@@ -264,6 +294,15 @@ class ActionGateway:
             issued_at=now,
             expires_at=now + ttl_seconds,
         )
+        decision = approval.decision
+        if not approval.checkpointed:
+            return GateDecision(
+                allowed=False,
+                disposition=Disposition.BLOCK,
+                reason="checkpoint_unavailable",
+                action_hash=digest,
+                approval_id=aid,
+            )
         if not decision.allowed:
             return GateDecision(
                 allowed=False,
@@ -272,7 +311,7 @@ class ActionGateway:
                 action_hash=digest,
             )
 
-        prepared = self.guard.prepare_effect(
+        preparation = self.workflow.prepare_effect(
             effect_id=eid,
             approval_id=aid,
             actor=actor,
@@ -280,6 +319,16 @@ class ActionGateway:
             scope=scope,
             now=now,
         )
+        prepared = preparation.decision
+        if not preparation.checkpointed:
+            return GateDecision(
+                allowed=False,
+                disposition=Disposition.BLOCK,
+                reason="checkpoint_unavailable",
+                action_hash=digest,
+                approval_id=aid,
+                effect_id=eid,
+            )
         if not prepared.allowed:
             return GateDecision(
                 allowed=False,
@@ -289,7 +338,6 @@ class ActionGateway:
                 approval_id=aid,
             )
 
-        checkpoint = self._sync_checkpoint()
         return GateDecision(
             allowed=True,
             disposition=disposition,
@@ -298,7 +346,7 @@ class ActionGateway:
             approval_id=aid,
             effect_id=eid,
             findings=findings,
-            checkpoint_generation=checkpoint.get("generation"),
+            checkpoint_generation=preparation.checkpoint_generation,
         )
 
     def dispatch(
@@ -308,6 +356,15 @@ class ActionGateway:
         current_action: dict[str, Any] | None = None,
     ) -> ExecutionResult:
         """Linearize dispatch, execute tool, record outcome, and mint assurance receipt."""
+        with self.workflow.effect_session():
+            return self._dispatch_locked(effect_id, executor, current_action)
+
+    def _dispatch_locked(
+        self,
+        effect_id: str,
+        executor: Callable[[], dict[str, Any]],
+        current_action: dict[str, Any] | None,
+    ) -> ExecutionResult:
         effect = self.guard.get_effect(effect_id)
         if effect is None:
             return ExecutionResult(
@@ -319,41 +376,64 @@ class ActionGateway:
             )
 
         intended_action = effect["action"]
-        live_action = current_action or intended_action
+        live_action = intended_action if current_action is None else current_action
         digest = effect["action_hash"]
         now = int(time.time())
 
-        latest_cp = self._get_latest_checkpoint()
-        if latest_cp is None:
+        try:
+            self._sync_checkpoint()
+        except (WorkflowBlocked, CheckpointError) as exc:
             return ExecutionResult(
                 status="BLOCKED",
-                reason="checkpoint_missing",
+                reason=str(exc),
                 effect_id=effect_id,
                 action_hash=digest,
                 provider_called=False,
             )
 
-        claim_decision = self.guard.claim_dispatch(
-            effect_id=effect_id,
-            now=now,
-            current_action=live_action,
-            expected_audit_anchor={
-                "event_count": latest_cp["event_count"],
-                "last_seq": latest_cp["last_seq"],
-                "root_hash": latest_cp["root_hash"],
-            },
+        approval = self.guard.get_approval(effect["approval_id"])
+        approver_id = (
+            approval["approver_id"]
+            if approval is not None and approval["approver_id"] != "policy_auto_allow"
+            else None
         )
-        if not claim_decision.allowed:
+        evaluated_policy = self.policy
+        disposition, policy_findings = self.evaluate_policy(
+            intended_action, effect["scope"], effect["actor"], approver_id
+        )
+        if disposition == Disposition.BLOCK or (
+            disposition == Disposition.REVIEW and approver_id is None
+        ):
             return ExecutionResult(
                 status="DENIED",
-                reason=claim_decision.reason,
+                reason=(
+                    "policy_blocked"
+                    if disposition == Disposition.BLOCK
+                    else "human_approval_required"
+                ),
                 effect_id=effect_id,
                 action_hash=digest,
                 provider_called=False,
             )
 
-        # Checkpoint the claimed dispatch state
-        self._sync_checkpoint()
+        try:
+            claim = self.workflow.claim_dispatch(effect_id, now, live_action)
+        except (WorkflowBlocked, CheckpointError) as exc:
+            return ExecutionResult(
+                status="BLOCKED",
+                reason=str(exc),
+                effect_id=effect_id,
+                action_hash=digest,
+                provider_called=False,
+            )
+        if not claim.decision.allowed or not claim.checkpointed:
+            return ExecutionResult(
+                status="DENIED",
+                reason=claim.decision.reason if claim.checkpointed else "checkpoint_unavailable",
+                effect_id=effect_id,
+                action_hash=digest,
+                provider_called=False,
+            )
 
         # Execute the tool
         provider_called = True
@@ -378,13 +458,25 @@ class ActionGateway:
                 "exception": str(exc),
             }
 
-        rec_decision = self.guard.record_result(
-            effect_id=effect_id,
-            now=int(time.time()),
-            outcome=outcome,
-            details=result_details,
-        )
-        final_cp = self._sync_checkpoint()
+        try:
+            recording = self.workflow.record_result(
+                effect_id=effect_id,
+                now=int(time.time()),
+                outcome=outcome,
+                details=result_details,
+            )
+            if not recording.checkpointed or not recording.decision.allowed:
+                raise WorkflowBlocked("result_not_checkpointed_requires_reconciliation")
+            final_cp = self._sync_checkpoint()
+        except (WorkflowBlocked, CheckpointError) as exc:
+            return ExecutionResult(
+                status="UNKNOWN",
+                reason=str(exc),
+                effect_id=effect_id,
+                action_hash=digest,
+                provider_called=True,
+                result=result_details,
+            )
 
         disposition = (
             Disposition.ALLOW
@@ -398,9 +490,9 @@ class ActionGateway:
                 "status": ClaimStatus.ACTIVE.value,
             },
             policy={
-                "id": self.policy.policy_id,
-                "version": self.policy.version,
-                "sha256": self.policy.digest,
+                "id": evaluated_policy.policy_id,
+                "version": evaluated_policy.version,
+                "sha256": evaluated_policy.digest,
             },
             event={
                 "phase": Phase.TOOL.value,
@@ -408,9 +500,10 @@ class ActionGateway:
                 "scope": effect["scope"],
                 "side_effect": True,
                 "actor": effect["actor"],
+                "human_approved": approver_id is not None,
             },
             decision=disposition,
-            findings=(),
+            findings=policy_findings,
             metrics={
                 "effect_id": effect_id,
                 "execution_status": status_text,
@@ -423,7 +516,7 @@ class ActionGateway:
 
         return ExecutionResult(
             status=status_text,
-            reason=rec_decision.reason if status_text != "UNKNOWN" else "uncertain_outcome",
+            reason=recording.decision.reason if status_text != "UNKNOWN" else "uncertain_outcome",
             effect_id=effect_id,
             action_hash=digest,
             provider_called=provider_called,

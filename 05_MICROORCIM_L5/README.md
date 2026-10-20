@@ -1,5 +1,7 @@
 # MICROORCIM — agency language and drift models
 
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** A perfectly followed intended action can still violate AURA. The score alone does not imply ethical compliance or measure human sovereignty/free will. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+
 **Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
 **Guide refreshed:** 19 October 2026.  
 **Status:** Symbolic/philosophical model and restricted computational monitors; no validated free-will measure.

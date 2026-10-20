@@ -1,4 +1,6 @@
 # THE MASTER EQUATION OF TRUTH PRESSURE DYNAMICS
+
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** For the displayed linear equation the stated reference need not be an equilibrium, and the below-threshold Lyapunov derivative can be positive. Parameter calibration does not repair an invalid derivation. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
 ## Full Physical Exposition and k₁–k₄ Calibration Specification
 
 **Document status:** ACTIVE — equation structure ACTIVE; k₁–k₄ SCAFFOLD pending E-1.0

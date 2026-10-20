@@ -1,4 +1,6 @@
 # THE INCOMPLETENESS PROOF
+
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** The displayed all-models truth/unprovability statement does not establish the universal theorem under ordinary first-order semantics. Treat the philosophical interpretation separately from a formal proof. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
 ## Why Any Sufficiently Honest Framework Must Contain What It Cannot Prove
 ### A Foundational Result for the Lycheetah Architecture
 

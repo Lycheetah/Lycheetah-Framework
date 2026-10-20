@@ -1,5 +1,7 @@
 # Microorcim Theory — Quantized Agency Essentials
 
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** A perfectly followed intended action can still violate AURA. The score alone does not imply ethical compliance or measure human sovereignty/free will. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+
 **Status:** ⭐ FORMALIZED [SCAFFOLD] — Lyapunov exponent as sovereignty metric is a well-motivated structural connection; the mapping from agency drift to chaos theory is a productive analogy [CONJECTURE]. The drift and stability formulas are [ACTIVE] and computable. | **Type:** Agency Measurement System | **Key:** Makes sovereignty quantifiable
 
 ## What It Does

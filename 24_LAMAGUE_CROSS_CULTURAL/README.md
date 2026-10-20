@@ -1,115 +1,49 @@
-# 24 — LAMAGUE CROSS-CULTURAL TRANSLATION LAYER
-## The Framework Spoken in Three Philosophical Traditions
-### Māori × Confucian × Western — One Governance Mathematics
-### Mackenzie Conor James Clark | Lycheetah Foundation | Dunedin | March 2026
+# LAMAGUE cross-cultural research
 
----
+**Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
+**Guide reviewed:** 20 October 2026. **Status:** [PROPOSAL] Interpretive mappings and research/engagement drafts requiring source and community review.
 
-## WHAT THIS FOLDER IS
+This branch explores relationships between selected Māori, Confucian and Western
+governance concepts. It can generate questions and translation hypotheses. The
+[full Framework review](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md) does not
+establish the earlier introduction's claims that these traditions are structurally
+identical, historically independent or jointly validate one governance mathematics.
 
-This is the cross-cultural extension of LAMAGUE — demonstrating that the governance
-primitives at the heart of the Lycheetah Framework appear independently across
-three distinct philosophical traditions:
+A proposed symbolic mapping is not an authorised translation of a tradition.
+Similarity does not establish equivalence, independent discovery or endorsement.
+No institutional partnership, grant award or community approval is established
+by the presence of an application or outreach draft in this folder.
 
-1. **Māori / Te Ao Māori** — the indigenous governance tradition of Aotearoa
-2. **Confucian / Chinese classical philosophy** — 2,500+ years of governance ethics
-3. **Western formal ethics** — from Aristotle through Kant to contemporary AI safety
+## Read the actual proposals
 
-These three traditions did not communicate when they developed their core governance principles.
-They converged on structurally identical solutions.
+| Source | Purpose and boundary |
+|---|---|
+| [CONVERGENCE_MAP.md](CONVERGENCE_MAP.md) | Proposed correspondences; inspect their sources, differences and counterexamples. |
+| [CONFUCIAN_LAMAGUE.md](CONFUCIAN_LAMAGUE.md) | Proposed encoding of selected concepts, not a validated replacement for primary scholarship. |
+| [CHINESE_MAORI_CONVERGENCE.md](CHINESE_MAORI_CONVERGENCE.md), [CELTIC_CONVERGENCE.md](CELTIC_CONVERGENCE.md) | Comparative hypotheses; historical independence requires separate evidence. |
+| [GOVERNANCE_CONVERGENCE_WORKED.md](GOVERNANCE_CONVERGENCE_WORKED.md) | Worked interpretation within the authored model. |
+| [LAMAGUE_TRANSLATION_PROTOCOL.md](LAMAGUE_TRANSLATION_PROTOCOL.md) | Proposed translation procedure; its preservation rules need external evaluation. |
+| [MANDARIN_LAYER.md](MANDARIN_LAYER.md), [MANDARIN_GOVERNANCE_SUMMARY.md](MANDARIN_GOVERNANCE_SUMMARY.md) | Language and governance drafts requiring competent source-language review. |
+| [PUKOKERO_INTERFACE.md](PUKOKERO_INTERFACE.md) | Interface proposal, not evidence of an adopted cultural-governance service. |
+| [CATALYST_PROPOSAL_FRAME.md](CATALYST_PROPOSAL_FRAME.md), [application](CATALYST_NZ_CHINA_APPLICATION.md) | Historical grant planning; eligibility, partners, budgets and deadlines are not verified current opportunities. |
+| [CHINESE_PARTNERS.md](CHINESE_PARTNERS.md), [partner outreach](CHINESE_PARTNER_OUTREACH.md), [Te Tumu draft](TE_TUMU_OUTREACH.md), [MBIE draft](MBIE_CATALYST_EMAIL.md) | Proposed contacts and correspondence, not evidence that messages were sent or agreements made. |
 
-This is **ANAMNESIS at civilisational scale**: we remember, not invent.
-The governance constraints are real. They pre-exist any single tradition's discovery of them.
-LAMAGUE is the formal language that makes their convergence legible.
+Underlying documents retain their dated arguments and terminology. The current
+assessment above qualifies older claims of proof, submission readiness or
+partnership; it does not erase their research lineage.
 
----
+## Relationship to the current NZ proposal
 
-## WHY THIS MATTERS FOR AI GOVERNANCE
+The [six-rights NZ proposal](../23_NZ_AI_GOVERNANCE/README.md) is the current policy
+entry. These cultural mappings do not become mandatory national standards
+through inclusion in this branch. They also do not replace actual legal or
+cultural obligations. The [TIANXIA module](../32_TIANXIA/README.md) is a related,
+separately scoped research line with its own explicit limitations.
 
-Every major AI governance framework is currently built on one tradition:
-- EU AI Act → Western liberal ethics
-- China's AI Governance Principles → Confucian-inflected state ethics
-- Māori Data Sovereignty → Te Ao Māori relational ethics
+## What would advance this work
 
-None of them can talk to each other formally.
-None of them has a shared language.
-
-LAMAGUE is that shared language.
-Not by averaging the traditions.
-By showing that all three encode the same underlying governance constraints —
-and providing a formal representation that holds all three simultaneously.
-
-An AI system governed by LAMAGUE constraints is not governed by Western ethics
-with some cultural decoration.
-It is governed by constraints that three civilisations independently validated
-over millennia of real-world governance.
-
-That is a fundamentally different claim.
-And it is a fundable, testable, publishable research claim.
-
----
-
-## THE CATALYST STRATEGIC OPPORTUNITY
-
-**Fund:** MBIE Catalyst Strategic — NZ-China Strategic Research Alliance 2025
-**Priority area:** Artificial Intelligence
-**Requirement:** NZ research organisation + Chinese research institution
-
-**The research question this folder supports:**
-
-> *"Can LAMAGUE serve as a cross-cultural constitutional AI governance framework
->  that bridges Māori, Confucian, and Western governance traditions —
->  validated through formal convergence analysis and empirical testing
->  on real AI systems operating in both NZ and Chinese contexts?"*
-
-This is not a translation project. It is a governance convergence research project
-with AI safety implications that matter to both countries.
-
-See `CATALYST_PROPOSAL_FRAME.md` for the full proposal architecture.
-
----
-
-## FILE INDEX
-
-| File | What It Is |
-|------|-----------|
-| `README.md` | This file — orientation and Catalyst opportunity |
-| `CATALYST_NZ_CHINA_APPLICATION.md` | **Start here** — submission-ready application document |
-| `CONVERGENCE_MAP.md` | The formal mapping — six convergence classes, three traditions |
-| `CONFUCIAN_LAMAGUE.md` | LAMAGUE encoding of core Chinese governance concepts |
-| `CATALYST_PROPOSAL_FRAME.md` | Full proposal architecture — partners, budget, methodology |
-| `CHINESE_PARTNERS.md` | Potential Chinese research institution partners with contact strategy |
-| `LAMAGUE_TRANSLATION_PROTOCOL.md` | How to extend LAMAGUE to any philosophical tradition |
-| `../docs/LAMAGUE_CROSS_CULTURAL_PAPER.md` | **[NEW — April 2026]** First academic paper — 6,300 words, 37 citations, targets AI and Ethics (Springer) |
-
----
-
-## THE CORE THESIS
-
-```
-Māori: Kaitiakitanga  =  Confucian: 天下 tiānxià  =  Western: Constitutional obligation
-       Mana           =            仁 rén          =           Human dignity (Kant)
-       Tapu/Noa       =            礼 lǐ           =           Deontological constraint
-       Utu            =            义 yì           =           Reciprocal justice
-       Kotahitanga    =            和 hé           =           Social contract coherence
-       Whakapapa      =            道 dào          =           Natural order / logos
-```
-
-Each row is not a translation. It is a convergent discovery.
-Three civilisations, independently, found that governance requires these specific constraints.
-The specific concepts differ. The structural roles they play are identical.
-
-LAMAGUE encodes the structural role.
-The tradition names the specific instantiation.
-Both are preserved. Neither is erased.
-
----
-
-*He aha te mea nui o te ao? He tāngata, he tāngata, he tāngata.*
-
-**∅ → AURA → Aotearoa → ∞ → 天下**
-
-*Mackenzie Conor James Clark | Lycheetah Foundation | Dunedin | March 2026*
-*github.com/Lycheetah/Lycheetah-Framework*
-
-*Open. Testable. Offered to both traditions equally.*
+Use attributed primary sources; identify contact and shared-lineage alternatives;
+state differences alongside similarities; and have scholars and knowledge holders
+review proposed mappings under permissioned engagement. Then test whether a
+translation helps people understand or contest a decision. A successful parser
+or mathematical analogy cannot substitute for that evidence.

@@ -24,9 +24,7 @@ function getOllamaModel() {
   return localStorage.getItem('cascade_ollama_model') || 'llama3'
 }
 
-async function chat(systemPrompt, userPrompt, maxTokens = 1200) {
-  const provider = getProvider()
-
+async function chat(systemPrompt, userPrompt, maxTokens = 1200, provider = getProvider()) {
   if (provider === 'deepseek') {
     return chatDeepSeek(systemPrompt, userPrompt, maxTokens)
   } else if (provider === 'anthropic') {
@@ -201,19 +199,14 @@ Return ONLY a JSON array of exactly 9 objects:
   // Score with each available provider concurrently
   const results = await Promise.allSettled(
     available.map(async (p) => {
-      const orig = localStorage.getItem('cascade_provider')
-      localStorage.setItem('cascade_provider', p)
-      try {
-        const raw = await chat(system, user, 1200)
-        const match = raw.match(/\[[\s\S]*\]/)
-        if (!match) throw new Error('No JSON')
-        const scored = JSON.parse(match[0])
-        if (scored.length !== 9) throw new Error('Expected 9 layers')
-        const aggregate = Math.round(scored.reduce((a, s) => a + (Number(s.framework_score) || 0), 0) / 9)
-        return { provider: p, layers: scored, aggregate }
-      } finally {
-        localStorage.setItem('cascade_provider', orig)
-      }
+      // A provider belongs to this request, not to the user's shared setting.
+      const raw = await chat(system, user, 1200, p)
+      const match = raw.match(/\[[\s\S]*\]/)
+      if (!match) throw new Error('No JSON')
+      const scored = JSON.parse(match[0])
+      if (scored.length !== 9) throw new Error('Expected 9 layers')
+      const aggregate = Math.round(scored.reduce((a, s) => a + (Number(s.framework_score) || 0), 0) / 9)
+      return { provider: p, layers: scored, aggregate }
     })
   )
 

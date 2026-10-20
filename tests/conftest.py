@@ -2,8 +2,8 @@
 Test configuration and shared fixtures for the Lycheetah Framework test suite.
 
 Claim-status tags on tests:
-  @pytest.mark.active    — tests for [ACTIVE] claims (proven, computable)
-  @pytest.mark.scaffold  — tests for [SCAFFOLD] claims (structure sound, parameters open)
+  @pytest.mark.active    — checks implemented behavior on declared fixtures
+  @pytest.mark.scaffold  — checks incomplete models or uncalibrated parameters
   @pytest.mark.conjecture — tests for [CONJECTURE] claims (exploratory)
 
 All tests use canonical data derived from cascade_simulation_results.json where applicable.
@@ -31,8 +31,8 @@ for _root in reversed(LAMAGUE_SHELF_ROOTS):
 
 
 def pytest_configure(config):
-    config.addinivalue_line("markers", "active: tests for [ACTIVE] formally proven claims")
-    config.addinivalue_line("markers", "scaffold: tests for [SCAFFOLD] structural but unfinished claims")
+    config.addinivalue_line("markers", "active: implemented fixture behavior; not scientific proof")
+    config.addinivalue_line("markers", "scaffold: incomplete models or uncalibrated parameters")
     config.addinivalue_line("markers", "conjecture: tests for [CONJECTURE] exploratory claims")
     config.addinivalue_line("markers", "lamague_shelf: tests collected from 03_LAMAGUE_L1 shelf runtimes")
 

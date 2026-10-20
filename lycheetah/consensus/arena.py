@@ -1,14 +1,17 @@
 """Multi-Agent Epistemic Consensus Arena.
 
-Provides an ergonomic developer and agent interface over the AURA Psi-Consensus
-protocol (pairwise Psi_Q-gated gossip, H^1 sheaf cohomology obstruction detection,
-33% Byzantine tolerance, and TRIAD Grey Mode quarantine & recovery).
+Provides an interface over pairwise Psi_Q-gated gossip, connectivity and local
+consistency checks, and Grey Mode quarantine/recovery. Exact cellular sheaf
+diagnostics are available separately; the gossip gate is not an H^1 computation
+or a proof of Byzantine fault tolerance.
 """
 
 from __future__ import annotations
 
 import hashlib
+import hmac
 import json
+import math
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -24,24 +27,19 @@ from core.psi_consensus import (  # noqa: E402
     ConsensusResult,
     PsiConsensus,
 )
+from core.psi_consensus import (  # noqa: E402
+    _unit_state_vector as _to_unit_vector,
+)
 
 
 def _canonical_json(value: Any) -> str:
-    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return json.dumps(
+        value, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False
+    )
 
 
 def _sha256_hex(value: Any) -> str:
     return hashlib.sha256(_canonical_json(value).encode("utf-8")).hexdigest()
-
-
-def _to_unit_vector(values: list[float] | np.ndarray) -> np.ndarray:
-    arr = np.asarray(values, dtype=float)
-    if arr.ndim != 1 or arr.size == 0:
-        raise ValueError("State vector must be a non-empty 1D sequence of floats")
-    norm = float(np.linalg.norm(arr))
-    if norm < 1e-9:
-        raise ValueError("State vector cannot have zero norm")
-    return arr / norm
 
 
 @dataclass
@@ -57,7 +55,13 @@ class AgentProposal:
 
 @dataclass
 class DeliberationVerdict:
-    """Auditable outcome of a ConsensusArena deliberation round."""
+    """Digest-bound outcome, not an authenticated statement by an external issuer.
+
+    ``obstruction_free`` is the legacy connectivity/local-consistency proxy.
+    ``byzantine_safe`` records a quarantine fraction of at most one third; it
+    does not establish Byzantine fault tolerance. Legacy verdicts without an
+    anchor must be re-deliberated before use at the execution boundary.
+    """
 
     converged: bool
     obstruction_free: bool
@@ -71,27 +75,63 @@ class DeliberationVerdict:
     inconsistent_edges: list[tuple[str, str]]
     consensus_digest: str
     audit_trail: list[str]
+    anchor_vector: tuple[float, ...] = ()
 
-    def to_dict(self) -> dict[str, Any]:
-        """Serialize verdict to a canonical JSON-compatible dictionary."""
+    def _digest_payload(self) -> dict[str, Any]:
         return {
+            "profile": "lycheetah.consensus-verdict.v2",
+            "anchor_vector": list(self.anchor_vector),
             "converged": self.converged,
             "obstruction_free": self.obstruction_free,
             "byzantine_safe": self.byzantine_safe,
             "rounds_run": self.rounds_run,
             "healthy_agents": list(self.healthy_agents),
             "quarantined_agents": list(self.quarantined_agents),
-            "final_drift": round(self.final_drift, 6),
-            "consensus_vector": (
-                [round(float(x), 6) for x in self.consensus_vector]
-                if self.consensus_vector is not None
-                else None
-            ),
+            "final_drift": self.final_drift,
+            "consensus_vector": self.consensus_vector,
             "partition_count": self.partition_count,
             "inconsistent_edges": [list(edge) for edge in self.inconsistent_edges],
-            "consensus_digest": self.consensus_digest,
             "audit_trail": list(self.audit_trail),
         }
+
+    def compute_digest(self) -> str:
+        """Hash every outcome field with strict JSON and no lossy float rounding."""
+        return _sha256_hex(self._digest_payload())
+
+    def verify_integrity(self) -> bool:
+        """Reject missing, nonfinite or altered outcomes before permit execution.
+
+        An unkeyed digest detects changes relative to a bound permit. It does
+        not authenticate agents, validate their claims or constrain Python code
+        that already controls the harness process.
+        """
+        try:
+            if any(
+                type(flag) is not bool
+                for flag in (self.converged, self.obstruction_free, self.byzantine_safe)
+            ):
+                return False
+            if any(
+                type(count) is not int or count < 0
+                for count in (self.rounds_run, self.partition_count)
+            ):
+                return False
+            if not self.anchor_vector or not all(math.isfinite(x) for x in self.anchor_vector):
+                return False
+            if not math.isfinite(self.final_drift):
+                return False
+            if self.consensus_vector is not None and (
+                len(self.consensus_vector) != len(self.anchor_vector)
+                or not all(math.isfinite(x) for x in self.consensus_vector)
+            ):
+                return False
+            return hmac.compare_digest(self.consensus_digest, self.compute_digest())
+        except (TypeError, ValueError, OverflowError):
+            return False
+
+    def to_dict(self) -> dict[str, Any]:
+        """Serialize verdict to a canonical JSON-compatible dictionary."""
+        return {**self._digest_payload(), "consensus_digest": self.consensus_digest}
 
 
 class ConsensusArena:
@@ -186,7 +226,7 @@ class ConsensusArena:
                 node.neighbors = [other for other in all_ids if other != aid]
 
     def deliberate(self) -> DeliberationVerdict:
-        """Execute the Psi-Consensus protocol and return a signed DeliberationVerdict."""
+        """Execute the protocol and return a digest-bound, unsigned verdict."""
         self._ensure_topology()
         raw: ConsensusResult = self.protocol.run()
 
@@ -200,21 +240,7 @@ class ConsensusArena:
             [float(x) for x in raw.consensus_vector] if raw.consensus_vector is not None else None
         )
 
-        digest_payload = {
-            "anchor": [round(float(x), 6) for x in self.anchor_vec],
-            "converged": raw.converged,
-            "obstruction_free": raw.obstruction_report.obstruction_free,
-            "byzantine_safe": byzantine_safe,
-            "healthy_agents": healthy,
-            "quarantined_agents": quarantined,
-            "final_drift": round(float(raw.final_drift), 6),
-            "consensus_vector": (
-                [round(float(x), 6) for x in consensus_list] if consensus_list is not None else None
-            ),
-        }
-        digest = _sha256_hex(digest_payload)
-
-        return DeliberationVerdict(
+        verdict = DeliberationVerdict(
             converged=raw.converged,
             obstruction_free=raw.obstruction_report.obstruction_free,
             byzantine_safe=byzantine_safe,
@@ -225,9 +251,12 @@ class ConsensusArena:
             consensus_vector=consensus_list,
             partition_count=raw.obstruction_report.partition_count,
             inconsistent_edges=list(raw.obstruction_report.inconsistent_edges),
-            consensus_digest=digest,
+            consensus_digest="",
             audit_trail=list(raw.audit_trail),
+            anchor_vector=tuple(float(x) for x in self.anchor_vec),
         )
+        verdict.consensus_digest = verdict.compute_digest()
+        return verdict
 
     def recover_agent(
         self,

@@ -1,5 +1,7 @@
 # ANAMNESIS — discovery and recurrence
 
+> **Full Framework review · 20 October 2026 [INTERPRETIVE].** Recurrence and an assumed attractor set do not establish a metaphysical conclusion. The stated independent-discovery counts require primary historical evidence and a test of shared lineage/contact. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+
 **Creator:** Mackenzie Conor James Clark / Lycheetah Framework.  
 **Guide refreshed:** 19 October 2026.  
 **Status:** Philosophical and research-adjacent inquiry; metaphysical interpretations are unestablished.

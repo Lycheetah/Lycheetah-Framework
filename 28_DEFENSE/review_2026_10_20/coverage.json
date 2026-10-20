@@ -1,0 +1,311 @@
+{
+  "schema": "lycheetah.review-coverage.v1",
+  "date": "2026-10-20",
+  "baseline_commit": "6ba483af3f125ec725eb4e0f44074d0887183255",
+  "baseline_tracked_files": 4822,
+  "baseline_top_level_directories": 50,
+  "baseline_root_files": 35,
+  "meaning": "Coverage states distinguish source review, executed contracts, dated receipts and census-only areas. No line-by-line certification of every file.",
+  "areas": [
+    {
+      "area": ".github",
+      "baseline_files": 11,
+      "inspection": "WORKFLOW_SOURCE_REVIEW",
+      "assessment": "CI commands and collection boundaries examined. No hosted CI execution for this review is claimed."
+    },
+    {
+      "area": "000_1404RawSourceTranslate",
+      "baseline_files": 45,
+      "inspection": "HISTORICAL_SOURCE_CENSUS",
+      "assessment": "Origin/lineage material, classified and preserved. Not independently certified or exhaustively reread as new evidence."
+    },
+    {
+      "area": "00_GENESIS",
+      "baseline_files": 15,
+      "inspection": "HISTORICAL_SOURCE_CENSUS",
+      "assessment": "Origin/lineage material, classified and preserved. Not independently certified or exhaustively reread as new evidence."
+    },
+    {
+      "area": "01_CASCADE_L4",
+      "baseline_files": 4,
+      "inspection": "FOUNDATIONAL_SOURCE_REVIEW",
+      "assessment": "Essentials, register claims and relevant formal/implementation bridges examined. Dated notices name the specific proof or measurement limits."
+    },
+    {
+      "area": "02_AURA_L3",
+      "baseline_files": 9,
+      "inspection": "FOUNDATIONAL_SOURCE_REVIEW",
+      "assessment": "Essentials, register claims and relevant formal/implementation bridges examined. Dated notices name the specific proof or measurement limits."
+    },
+    {
+      "area": "03_LAMAGUE_L1",
+      "baseline_files": 1042,
+      "inspection": "SOURCE_AND_CONTRACT_REVIEW",
+      "assessment": "Distinct CORE/runtime/codec/SXP-L branches examined through source, maintained shelf checks and frozen integration receipts. Not every historical release was rerun; no general human-language guarantee established."
+    },
+    {
+      "area": "04_TRIAD_L2",
+      "baseline_files": 3,
+      "inspection": "FOUNDATIONAL_SOURCE_REVIEW",
+      "assessment": "Essentials, register claims and relevant formal/implementation bridges examined. Dated notices name the specific proof or measurement limits."
+    },
+    {
+      "area": "05_MICROORCIM_L5",
+      "baseline_files": 3,
+      "inspection": "FOUNDATIONAL_SOURCE_REVIEW",
+      "assessment": "Essentials, register claims and relevant formal/implementation bridges examined. Dated notices name the specific proof or measurement limits."
+    },
+    {
+      "area": "06_EARNED_LIGHT_L0",
+      "baseline_files": 3,
+      "inspection": "FOUNDATIONAL_SOURCE_REVIEW",
+      "assessment": "Essentials, register claims and relevant formal/implementation bridges examined. Dated notices name the specific proof or measurement limits."
+    },
+    {
+      "area": "07_ANAMNESIS_L0",
+      "baseline_files": 4,
+      "inspection": "FOUNDATIONAL_SOURCE_REVIEW",
+      "assessment": "Essentials, register claims and relevant formal/implementation bridges examined. Dated notices name the specific proof or measurement limits."
+    },
+    {
+      "area": "08_INTEGRATIONS",
+      "baseline_files": 4,
+      "inspection": "ARCHITECTURE_SOURCE_REVIEW",
+      "assessment": "Relationships reviewed as a research programme. Cross-branch naming and compatibility do not prove one production integration or unified validated theory."
+    },
+    {
+      "area": "09_CHRYSOPOEIA_L4",
+      "baseline_files": 3,
+      "inspection": "FOUNDATIONAL_SOURCE_REVIEW",
+      "assessment": "Essentials, register claims and relevant formal/implementation bridges examined. Dated notices name the specific proof or measurement limits."
+    },
+    {
+      "area": "10_HARMONIA_L6",
+      "baseline_files": 3,
+      "inspection": "FOUNDATIONAL_SOURCE_REVIEW",
+      "assessment": "Essentials, register claims and relevant formal/implementation bridges examined. Dated notices name the specific proof or measurement limits."
+    },
+    {
+      "area": "11_MATHEMATICAL_FOUNDATIONS",
+      "baseline_files": 20,
+      "inspection": "FORMAL_SOURCE_AND_COUNTEREXAMPLES",
+      "assessment": "Principal displayed proof chains examined; mathematical probes pin baseline sources. Invalid derivations and missing hypotheses are explicit, not silently replaced by new models."
+    },
+    {
+      "area": "12_IMPLEMENTATIONS",
+      "baseline_files": 62,
+      "inspection": "SOURCE_AND_RUNTIME_CONTRACTS",
+      "assessment": "Maintained execution, assurance, consensus and experimental bridges examined with the 999-case maintained collection and isolated wheel checks. Not an exhaustive adversarial security audit of every module."
+    },
+    {
+      "area": "13_SYNTHESIS_REPORTS",
+      "baseline_files": 4,
+      "inspection": "ARCHITECTURE_SOURCE_REVIEW",
+      "assessment": "Relationships reviewed as a research programme. Cross-branch naming and compatibility do not prove one production integration or unified validated theory."
+    },
+    {
+      "area": "14_MYSTERY_SCHOOL",
+      "baseline_files": 124,
+      "inspection": "SOURCE_AND_CONTRACT_REVIEW",
+      "assessment": "Learning-design boundaries reviewed; 17 Modelcraft contracts rerun. No learner-benefit study or native application behaviour established."
+    },
+    {
+      "area": "15_PERSONAL_VAULT",
+      "baseline_files": 21,
+      "inspection": "ROLE_AND_LINEAGE_CENSUS",
+      "assessment": "Personal/operating lineage is not empirical validation or a change to model weights or authority. Sibling constitutional surfaces were not edited."
+    },
+    {
+      "area": "16_SOL_VEYRA_ARCHITECTURE",
+      "baseline_files": 6,
+      "inspection": "ROLE_AND_LINEAGE_CENSUS",
+      "assessment": "Personal/operating lineage is not empirical validation or a change to model weights or authority. Sibling constitutional surfaces were not edited."
+    },
+    {
+      "area": "17_LEARNING_EMERGENCE",
+      "baseline_files": 2,
+      "inspection": "SOURCE_ROLE_AND_CENSUS",
+      "assessment": "Proposals, role designs and experiments classified. No blanket execution or empirical certification of all historical material."
+    },
+    {
+      "area": "18_EXPERIMENTAL",
+      "baseline_files": 51,
+      "inspection": "SOURCE_ROLE_AND_CENSUS",
+      "assessment": "Proposals, role designs and experiments classified. No blanket execution or empirical certification of all historical material."
+    },
+    {
+      "area": "19_MULTI_AGENT_CHORUS",
+      "baseline_files": 14,
+      "inspection": "SOURCE_AND_FALSE_GREEN_PROBE",
+      "assessment": "Canned health and empty-corpus audit reproduced using absent agents without constructing or writing live agent state. Current guide withdraws the all-green operational claim."
+    },
+    {
+      "area": "20_DOMAIN_SPECIALISTS",
+      "baseline_files": 3,
+      "inspection": "SOURCE_ROLE_AND_CENSUS",
+      "assessment": "Proposals, role designs and experiments classified. No blanket execution or empirical certification of all historical material."
+    },
+    {
+      "area": "21_MEMORIA",
+      "baseline_files": 2,
+      "inspection": "SOURCE_ROLE_AND_CENSUS",
+      "assessment": "Proposals, role designs and experiments classified. No blanket execution or empirical certification of all historical material."
+    },
+    {
+      "area": "22_INTERFACE_INTELLIGENCE",
+      "baseline_files": 2,
+      "inspection": "SOURCE_ROLE_AND_CENSUS",
+      "assessment": "Proposals, role designs and experiments classified. No blanket execution or empirical certification of all historical material."
+    },
+    {
+      "area": "23_NZ_AI_GOVERNANCE",
+      "baseline_files": 160,
+      "inspection": "POLICY_SOURCE_AND_PROTOTYPE_CONTRACTS",
+      "assessment": "Current six-rights proposal distinguished from historical cultural-policy drafts; Anon Politician metadata/analysis contracts rerun and 121 checksum entries matched. No legal adoption, representative sample or policy-effect result."
+    },
+    {
+      "area": "24_LAMAGUE_CROSS_CULTURAL",
+      "baseline_files": 16,
+      "inspection": "INTERPRETIVE_SOURCE_REVIEW",
+      "assessment": "Proposed mappings distinguished from identity, historical independence, endorsement and partnership. Current guide replaced unsupported certainty; primary expert validation remains open."
+    },
+    {
+      "area": "25_SOL_PROTOCOL_ARCHITECTURE",
+      "baseline_files": 9,
+      "inspection": "ROLE_AND_LINEAGE_CENSUS",
+      "assessment": "Personal/operating lineage is not empirical validation or a change to model weights or authority. Sibling constitutional surfaces were not edited."
+    },
+    {
+      "area": "26_FOR_AI",
+      "baseline_files": 24,
+      "inspection": "EXTRACTION_ROLE_REVIEW",
+      "assessment": "AI-facing extraction and claim-status boundaries reviewed. Repository instructions are not evidence that scientific claims hold."
+    },
+    {
+      "area": "27_SOL_AI_APP",
+      "baseline_files": 1,
+      "inspection": "EXTERNAL_POINTER_CENSUS",
+      "assessment": "An external application pointer, not the source home for this review. No cross-repository build or new website was undertaken."
+    },
+    {
+      "area": "28_DEFENSE",
+      "baseline_files": 49,
+      "inspection": "COMPLETE_REGISTER_POINTER_AUDIT",
+      "assessment": "All 71 rows and 107 literal pointers audited. Separate reviewer assessments, 14 source-location repairs and remaining gaps retained."
+    },
+    {
+      "area": "29_GOVERNANCE",
+      "baseline_files": 9,
+      "inspection": "GOVERNANCE_SOURCE_REVIEW",
+      "assessment": "Evidence/publication status and ownership documents examined. Root MIT text conflicts with claims of an extra clause; licence choice remains with the owner."
+    },
+    {
+      "area": "30_MAPS",
+      "baseline_files": 11,
+      "inspection": "FORMAL_SOURCE_AND_COUNTEREXAMPLES",
+      "assessment": "Principal displayed proof chains examined; mathematical probes pin baseline sources. Invalid derivations and missing hypotheses are explicit, not silently replaced by new models."
+    },
+    {
+      "area": "31_EMPIRICAL",
+      "baseline_files": 8,
+      "inspection": "STUDY_DESIGN_SOURCE_REVIEW",
+      "assessment": "Seven designs/preregistration drafts are not seven executed or externally registered studies. No new participant data collected."
+    },
+    {
+      "area": "32_TIANXIA",
+      "baseline_files": 37,
+      "inspection": "SOURCE_AND_MAINTAINED_CONTRACTS",
+      "assessment": "Operator proposals and cultural scope reviewed; maintained tests exercise authored mathematical contracts. No cultural endorsement, physical validation or executed outside study follows."
+    },
+    {
+      "area": "33_APPLICATIONS",
+      "baseline_files": 17,
+      "inspection": "METHOD_AND_DATED_REPORT_REVIEW",
+      "assessment": "Project-run external-data effects, null results and human-comment transfer failure retained. Dataset download/full scoring was not redundantly rerun in this review."
+    },
+    {
+      "area": "34_ASSURANCE_RUNTIME",
+      "baseline_files": 65,
+      "inspection": "SOURCE_AND_RUNTIME_CONTRACTS",
+      "assessment": "Local identity/receipt/checkpoint/action boundaries examined. Maintained tests and wheel checks passed; frozen versions retain six-file corpus-lint debt shared with other areas."
+    },
+    {
+      "area": "34_CYBERNETICS",
+      "baseline_files": 5,
+      "inspection": "SOURCE_AND_MAINTAINED_CONTRACTS",
+      "assessment": "Feedback/open-loop classifications and opt-in caller-policy regulation traced. Loop closure on a proxy does not establish robustness or ethical sensing."
+    },
+    {
+      "area": "35_ABSTRACT_AND_GENERATIVE",
+      "baseline_files": 34,
+      "inspection": "CREATIVE_ROLE_CENSUS",
+      "assessment": "Philosophy, symbolic inquiry and original fiction remain first-class. No literary edit, canon promotion, consciousness proof or empirical certification was attempted."
+    },
+    {
+      "area": "99_ARCHIVE",
+      "baseline_files": 1497,
+      "inspection": "PRESERVED_ARCHIVE_CENSUS",
+      "assessment": "1,497 baseline files retained; no blanket execution or rewriting of historical sources to obtain a green result."
+    },
+    {
+      "area": "LYCHEETAH_EPIC",
+      "baseline_files": 70,
+      "inspection": "CREATIVE_ROLE_CENSUS",
+      "assessment": "Philosophy, symbolic inquiry and original fiction remain first-class. No literary edit, canon promotion, consciousness proof or empirical certification was attempted."
+    },
+    {
+      "area": "LYCHEETAH_MYTHOS",
+      "baseline_files": 140,
+      "inspection": "SOURCE_FIDELITY_CONTRACTS_AND_ROLE",
+      "assessment": "Ten Book I tests and the validator rerun. Story/source fidelity is not native School behaviour, learning benefit or literary canon approval."
+    },
+    {
+      "area": "TRUTH_PRESSURE",
+      "baseline_files": 290,
+      "inspection": "SOURCE_AND_ENGINEERING_CONTRACTS",
+      "assessment": "Threshold/master-equation derivations examined; 24/14/11/11 current engineering checks rerun. Shadow data are synthetic and measurements uncalibrated."
+    },
+    {
+      "area": "cascade-pc",
+      "baseline_files": 47,
+      "inspection": "SOURCE_AND_MOCKED_REGRESSION",
+      "assessment": "Provider-preference race reproduced and corrected; three offline tests pass. Full Electron build, rendering, live providers and platform matrix were not tested."
+    },
+    {
+      "area": "docs",
+      "baseline_files": 39,
+      "inspection": "SOURCE_AND_ARTIFACT_ROLE_REVIEW",
+      "assessment": "Existing reading/demo/export routes reviewed; no new deployment or usability result. Source examples retain authored-fixture boundaries."
+    },
+    {
+      "area": "examples",
+      "baseline_files": 21,
+      "inspection": "SOURCE_AND_ARTIFACT_ROLE_REVIEW",
+      "assessment": "Existing reading/demo/export routes reviewed; no new deployment or usability result. Source examples retain authored-fixture boundaries."
+    },
+    {
+      "area": "lycheetah",
+      "baseline_files": 38,
+      "inspection": "SOURCE_AND_RUNTIME_CONTRACTS",
+      "assessment": "Maintained execution, assurance, consensus and experimental bridges examined with the 999-case maintained collection and isolated wheel checks. Not an exhaustive adversarial security audit of every module."
+    },
+    {
+      "area": "papers",
+      "baseline_files": 676,
+      "inspection": "SOURCE_AND_PROVENANCE_REVIEW",
+      "assessment": "Major agent-safety, Gateway, language and manuscript continuations reconciled; 444 and 225 intake identities checked. Previous overlapping replay counts are dated results, not fresh independent trials."
+    },
+    {
+      "area": "tests",
+      "baseline_files": 59,
+      "inspection": "MAINTAINED_EXECUTION",
+      "assessment": "999 collected: 997 passed, one dependency-state skip, one strict expected failure. Collection includes shelf bridges and historical overlap; counts are not independent experiments."
+    },
+    {
+      "area": "tools",
+      "baseline_files": 5,
+      "inspection": "GATE_SOURCE_AND_EXECUTION",
+      "assessment": "Count/link/intake gates distinguished from semantic proof. Corpus lint and footing failures remain explicit; the later intake is not yet wired into the automatic preservation gate."
+    }
+  ]
+}

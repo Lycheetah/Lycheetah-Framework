@@ -9,6 +9,51 @@ history, which was the only changelog until now.
 
 ## [Unreleased]
 
+### Implementation boundaries and a clearer main README — 21 October 2026
+
+- Rebuilt the main README around practical uses, an executable local gateway
+  example, the component architecture, the nine foundational frameworks, current
+  research, evidence limits and repository navigation.
+- TRIAD now requires a small gradient as well as a small update, records coherence
+  at the reported state and rejects invalid/nonfinite transitions before commit.
+  Its stop condition is numerical stationarity, not a general convergence proof.
+- TRI-AXIAL rejects nonfinite values, invalid violation counts, negative friction
+  and incomplete vector pairs; scaled cosine avoids large-finite-vector overflow.
+- Action Gateway now uses checkpoint-gated mutations, rejects uncheckpointed
+  history, rechecks current policy, preserves an explicitly empty live action,
+  and attributes the execution receipt to the policy actually evaluated.
+  Result-checkpoint failure after execution reports UNKNOWN without a success receipt.
+- Fixed empty/unrelated JSON keys satisfying every LAMAGUE accountability field.
+  The maintained compaction codec rejects ambiguous literal consent wire codes;
+  frozen supplied research sources remain unchanged.
+- Added 64 boundary cases; 42 counterexamples failed before their corresponding
+  repairs. Focused runs passed 167 implementation/sheaf/gateway cases, seven alias
+  cases and 92 compaction/integration cases, with overlap explicitly recorded.
+  The whole maintained suite was not rerun for this extension.
+- Recorded the incomplete deeper pass across 606 folders, service-interrupted
+  parallel reviewers, additional prototype defects and the archive-log portability
+  gap. Added direct corrections to unsupported clinical/validation claims while
+  preserving original source bodies. Changes remain local and unreleased.
+
+### Full Framework review and demonstrated corrections — 20 October 2026
+
+- Added a substantive review of the mathematics, maintained software, research,
+  governance and evidence, with 18 runnable mathematical observations and a
+  complete 71-claim/107-pointer baseline audit. Preserved original author statuses.
+- Recompute consensus verdict integrity at permit issuance and execution; bind
+  the anchor and complete outcome in the v2 digest. Reject nonfinite vectors.
+  Existing unverifiable verdicts and their permits require re-deliberation/reissue.
+- Corrected runtime descriptions that equated connectivity with H¹ or a
+  quarantine fraction with proven Byzantine fault tolerance.
+- Fixed desktop parallel scoring changing the user's selected provider; added
+  three offline regressions, including a preference edit during scoring.
+- Repaired 14 moved-source evidence references; retained 23 unresolved pointers
+  explicitly. Added dated corrections to source entry points instead of
+  silently replacing historical mathematical arguments.
+- Recorded 997 maintained-test passes, one intentional dependency-state skip
+  and one strict expected failure. Whole-corpus lint and footing gates remain
+  unresolved; the report does not describe the repository as release-clean.
+
 ### Current corpus entrances and synthesis — 19–20 October 2026
 
 - Rebuilt the main README, five-minute brief and complete 50-area repository map;

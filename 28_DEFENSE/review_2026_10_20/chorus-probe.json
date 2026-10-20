@@ -1,0 +1,65 @@
+{
+  "agents_all_none": true,
+  "health": {
+    "timestamp": "2026-10-20T15:24:53.702685",
+    "chorus_status": "OPERATIONAL",
+    "agents_online": 9,
+    "agents": {
+      "unavailable-0": {
+        "status": "\u2705 ONLINE",
+        "level": "FIXTURE",
+        "operational": true
+      },
+      "unavailable-1": {
+        "status": "\u2705 ONLINE",
+        "level": "FIXTURE",
+        "operational": true
+      },
+      "unavailable-2": {
+        "status": "\u2705 ONLINE",
+        "level": "FIXTURE",
+        "operational": true
+      },
+      "unavailable-3": {
+        "status": "\u2705 ONLINE",
+        "level": "FIXTURE",
+        "operational": true
+      },
+      "unavailable-4": {
+        "status": "\u2705 ONLINE",
+        "level": "FIXTURE",
+        "operational": true
+      },
+      "unavailable-5": {
+        "status": "\u2705 ONLINE",
+        "level": "FIXTURE",
+        "operational": true
+      },
+      "unavailable-6": {
+        "status": "\u2705 ONLINE",
+        "level": "FIXTURE",
+        "operational": true
+      },
+      "unavailable-7": {
+        "status": "\u2705 ONLINE",
+        "level": "FIXTURE",
+        "operational": true
+      },
+      "unavailable-8": {
+        "status": "\u2705 ONLINE",
+        "level": "FIXTURE",
+        "operational": true
+      }
+    },
+    "all_constitutional": true
+  },
+  "audit": {
+    "timestamp": "2026-10-20T15:24:53.702775",
+    "contradictions_found": 0,
+    "false_claims_detected": 0,
+    "hidden_assumptions_exposed": 0,
+    "framework_coherence": 1.0
+  },
+  "files_supplied_to_scanner": 0,
+  "source_mutated": false
+}

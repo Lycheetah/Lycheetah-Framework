@@ -4,6 +4,7 @@
   "description": "CASCADE CICADA TOOL (TCCT) — Knowledge Operating System, Personal Pyramid Tool",
   "main": "main.js",
   "scripts": {
+    "test:scoring": "node --test tests/scoring-provider.test.mjs",
     "start": "electron .",
     "vite": "vite",
     "electron": "electron .",
