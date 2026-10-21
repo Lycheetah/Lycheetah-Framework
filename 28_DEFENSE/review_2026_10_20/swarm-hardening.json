@@ -1,0 +1,62 @@
+{
+  "schema": "lycheetah.swarm-hardening.v1",
+  "date": "2026-10-21",
+  "baseline_commit": "cf6ff23c39d52de82b8dc191a5fcaab1a04b517a",
+  "creator": "Mackenzie Conor James Clark / Lycheetah Framework",
+  "scope": "Bounded local implementation and AI review; earlier exhaustive folder review remains incomplete.",
+  "reviewers": {
+    "workflow_architecture": "completed architecture, snapshot repair and adversarial bundle review",
+    "execution_review": "completed receipt/policy review and repair",
+    "first_use_review": "completed example clarity and navigation"
+  },
+  "repairs": [
+    "detached nested context snapshots with unchanged hashes and L1/L1D wires",
+    "detached immutable policy/rule collections and pre-callback policy identity",
+    "policy decision and execution outcome recorded separately in schema-consistent gateway receipts",
+    "retained artifact handoff and read-only bundle verification with optional externally retained digest"
+  ],
+  "verification": {
+    "focused_integration_collected": 329,
+    "focused_integration_passed": 329,
+    "distinct_new_cases": 90,
+    "new_cases_by_module": {
+      "test_context_snapshots": 36,
+      "test_gateway_receipts": 18,
+      "test_guarded_handoff_bundle": 36
+    },
+    "new_core_regressions_before_repair": {
+      "origin": "delegated local pytest run reports",
+      "snapshot_failed": 33,
+      "snapshot_passed": 3,
+      "gateway_failed": 14,
+      "gateway_passed": 4
+    },
+    "first_bundle_verifier_controls_failed_before_repair": 12,
+    "whole_maintained_suite_rerun": false,
+    "public_package_mypy_sources": 30
+  },
+  "reproduce": [
+    "python3 -m pytest tests/test_context_snapshots.py tests/test_gateway_receipts.py tests/test_guarded_handoff_bundle.py -q",
+    "python3 examples/guarded_handoff_risk_demo.py --export ./my-handoff-demo",
+    "python3 examples/guarded_handoff_risk_demo.py --verify ./my-handoff-demo"
+  ],
+  "bundle_files": 8,
+  "bundle_manifest_additional": 1,
+  "working_tree_link_gate": "One broken file-URI in foreign untracked FOR-REVIEW material; that work is preserved and excluded from this batch. Exact candidate checked separately before push.",
+  "limits": [
+    "Synthetic proposals and declared approver labels; no authenticated human issuer",
+    "Trusted fixed local writer; no arbitrary-executor containment or independent filesystem witness",
+    "Unsigned bundle consistency cannot detect a fully rewritten bundle without a separately retained digest",
+    "No private checkpoint keys exported; no provider/network or live-user study",
+    "No universal safety, mathematical proof, complete corpus review or production release claim"
+  ],
+  "source_sha256": {
+    "lycheetah/compaction/shield.py": "e3dd49a5bfb71baa4d5ac8413534000354fd2a328d7aef84fa00d6de6a8e041e",
+    "lycheetah/assurance/gateway.py": "58c5e698ea778410d2a52756e196b49d4406653a11ae30c2b21956ef5781d2ac",
+    "lycheetah/assurance/policy.py": "4d54975505c3a06d62219493d125c7e22e9ea0ad4865719c861ccec03c6899b9",
+    "examples/guarded_handoff_risk_demo.py": "35bbee4fb63edf5c650269b5feb41fa329ea89cc9a33566b775fbfacb995c611",
+    "tests/test_context_snapshots.py": "244ab9df70df5c072ea8e4546e9d8ee592550dbfd8108f87a378ba5504974f54",
+    "tests/test_gateway_receipts.py": "e5d71309719f6b87a1fb1f86a3da23da2b431c36877f7906a033d0efb729b78b",
+    "tests/test_guarded_handoff_bundle.py": "80d79825f1d9b85e0ee5391c7d1341ffacc56e6ddad9992f617054dd1253d9c0"
+  }
+}

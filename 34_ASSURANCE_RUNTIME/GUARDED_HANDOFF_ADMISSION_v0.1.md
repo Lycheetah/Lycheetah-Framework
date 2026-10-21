@@ -130,6 +130,22 @@ not certify a person's intention or the factual correctness of the task.
 
 ## What the next actual demonstration must establish
 
+**Retained local evidence — 21 October 2026:** the existing
+[guarded handoff example](../examples/guarded_handoff_risk_demo.py) now supports
+`--export NEW_DIRECTORY` and `--verify EXISTING_DIRECTORY`. Default execution
+remains disposable. The export retains the task/completion capsules, full packet
+and wire context, exact action, artifact bytes, full Assurance Receipt and run
+report under a manifest. It exports no private checkpoint keys and refuses an
+existing destination. Its verifier checks file hashes and the relationships
+between task, context, action, receipt and observed bytes without running an action.
+Use `--expected-digest` with a separately retained manifest SHA-256 to pin the
+bundle; a self-consistent replacement otherwise remains possible.
+
+This is an inspectable extension of the existing synthetic-consensus fixture.
+It does not satisfy the separate issuer-authentication and restricted-publisher
+conditions below. The [example guide](../examples/README.md#try-one-local-action-and-inspect-its-record)
+contains commands and interpretation.
+
 For one explicitly approved operation in a disposable workspace:
 
 - The signer is authenticated at a boundary the agent cannot impersonate.

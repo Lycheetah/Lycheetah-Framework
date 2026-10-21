@@ -9,6 +9,28 @@ history, which was the only changelog until now.
 
 ## [Unreleased]
 
+### Inspectable handoffs and stable context — 21 October 2026
+
+- Extended the existing guarded-handoff example with an explicit new-directory
+  export and a separate read-only verifier. Retain the task, full context, exact
+  action, observed file, full Assurance Receipt and run report without private
+  checkpoint keys. A separately retained manifest digest pins the bundle's bytes;
+  local consistency remains distinct from issuer authentication.
+- Context exports now detach nested collections from the live accumulator in
+  both directions. Existing packet hashes and L1/L1D wire bytes are preserved.
+- Gateway receipts retain the evaluated policy decision separately from the
+  executor outcome and use schema-consistent event/subject records. Failed,
+  uncertain and review-approved executions now produce verifiable receipts.
+  Policy/rule constructor collections are detached into immutable tuples, and
+  policy metadata is captured before executor callbacks.
+- Added 90 regressions and feature cases; the focused integration run passed
+  329 cases. Independent AI review found contradictory-report, omitted-write
+  and nonregular-manifest gaps in the first export verifier; 12 failing controls
+  were added before repairing them. The whole corpus was not revalidated.
+- Replaced simulated-effect and unconditional safety language in the examples,
+  connected the retained workflow from the main README/runtime guides, and
+  clarified that an ACTIVE test marker records fixture behavior, not proof.
+
 ### Implementation boundaries and a clearer main README — 21 October 2026
 
 - Rebuilt the main README around practical uses, an executable local gateway
@@ -33,7 +55,8 @@ history, which was the only changelog until now.
 - Recorded the incomplete deeper pass across 606 folders, service-interrupted
   parallel reviewers, additional prototype defects and the archive-log portability
   gap. Added direct corrections to unsupported clinical/validation claims while
-  preserving original source bodies. Changes remain local and unreleased.
+  preserving original source bodies. Published for draft review in PR18;
+  no release or master merge is implied.
 
 ### Full Framework review and demonstrated corrections — 20 October 2026
 

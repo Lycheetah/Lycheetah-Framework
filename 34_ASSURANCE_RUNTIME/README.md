@@ -63,6 +63,17 @@ lycheetah-assure compare-eval \
 The command returns `REVIEW` (exit 2) because the side effect lacks affirmative
 human approval. The caller must enforce that pause.
 
+For one local file operation with retained evidence, use the
+[guarded handoff example](../examples/README.md#try-one-local-action-and-inspect-its-record).
+It exports the task, full context, declared action, observed file and complete
+receipt into a new directory. Its separate verification command reads those
+records without dispatching the action. Approval labels and numerical proposals
+remain authored fixtures; no independent human authentication is claimed.
+
+Gateway receipts use `decision` for the evaluated policy result and
+`metrics.execution_status` for `SUCCEEDED`, `FAILED` or `UNKNOWN`. An allowed
+action can fail or time out. Reconcile an uncertain outcome before retrying.
+
 The built-in policy also blocks narrowly named shell/exec/subprocess boundaries,
 database-drop and identity-delete tool patterns, and several high-risk scopes.
 These are conservative string-pattern defaults, not semantic detection or a

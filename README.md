@@ -85,6 +85,24 @@ approvers and connect each action description to the correct executor. A Python
 callback is not automatically confined by the description passed alongside it.
 An uncertain or uncheckpointed result requires reconciliation before retry.
 
+### Keep an inspectable handoff
+
+The [guarded handoff example](examples/README.md#try-one-local-action-and-inspect-its-record)
+connects a task declaration, carried context, one actual local file and its complete
+receipt. Choose a new export directory:
+
+```sh
+python3 examples/guarded_handoff_risk_demo.py --export ./my-handoff-demo
+python3 examples/guarded_handoff_risk_demo.py --verify ./my-handoff-demo
+```
+
+Inspect `task.json`, `packet.json`, `action.json`, `handoff.txt` and
+`assurance-receipt.json` there. Verification reads the retained records without
+running the task again. Changed output, context, receipt or missing files fail
+inspection. Retain the printed manifest digest separately to pin the bundle's
+bytes; otherwise verification establishes internal consistency. The example uses
+synthetic proposals, declared approval labels and a trusted fixed writer.
+
 For an ordinary JSON record, the accountability checker runs without installing
 the package:
 
@@ -187,6 +205,8 @@ counterexamples to older mathematical guarantees and the code corrections made
 in October. On 21 October, **64 new boundary cases** passed across focused runs.
 The earlier full maintained run recorded 997 passes, one skip and one strict
 expected failure. Those are dated engineering checks, not independent experiments.
+A later [focused hardening pass](28_DEFENSE/review_2026_10_20/swarm-hardening.json)
+passed 329 cases, including 90 new snapshot, receipt and retained-handoff cases.
 The deeper review has inventoried 606 folders; reading and execution coverage
 remain incomplete and are [reported explicitly](28_DEFENSE/review_2026_10_20/folder-coverage.json).
 

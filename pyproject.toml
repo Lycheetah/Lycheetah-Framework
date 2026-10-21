@@ -156,7 +156,7 @@ testpaths = ["tests"]
 # Fail on an unregistered marker rather than silently treating the test as unmarked.
 addopts = "--strict-markers"
 markers = [
-    "active: tests for [ACTIVE] formally proven claims",
+    "active: checks implemented behavior on declared fixtures; not scientific proof",
     "scaffold: tests for [SCAFFOLD] structural but unfinished claims",
     "conjecture: tests for [CONJECTURE] exploratory claims",
 ]

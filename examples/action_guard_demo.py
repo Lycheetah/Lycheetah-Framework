@@ -1,10 +1,15 @@
-"""Real-world demonstration of the Lycheetah Action Gateway.
+"""Constructed local demonstration of the Lycheetah Action Gateway.
 
-Shows how an autonomous agent is safely bounded by:
+Exercises these mechanisms on declared fixture actions:
 1. Deterministic evidence-capped policy gating (ALLOW, REVIEW, BLOCK).
 2. SQLite durable state machine preventing replay/double-fire.
-3. Monotonic Ed25519 signed external checkpoints.
+3. Monotonic Ed25519 signed checkpoints in a local store.
 4. Tamper-evident Assurance Receipts.
+
+The diagnostic command runs locally on Unix-like systems. Database migration and
+payment timeout outcomes are simulated; no database or payment provider is used.
+Approver IDs are declared metadata, not authenticated human approval. The caller
+must bind each action description to its executor; callbacks are not sandboxed.
 """
 from __future__ import annotations
 
@@ -22,8 +27,9 @@ from lycheetah.assurance import (
 
 def main() -> None:
     print("=" * 72)
-    print("  LYCHEETAH ACTION GATEWAY — REAL WORLD RUNTIME DEMO")
+    print("  LYCHEETAH ACTION GATEWAY — CONSTRUCTED LOCAL DEMO")
     print("=" * 72)
+    print("Approver IDs are demo metadata; migration and payment outcomes are simulated.")
 
     with tempfile.TemporaryDirectory(prefix="lycheetah-demo-") as tmp:
         gw_dir = Path(tmp) / "gateway"
@@ -33,9 +39,9 @@ def main() -> None:
         print(f"    Genesis audit root: {status['root_hash'][:16]}... (valid={status['valid']})")
 
         # ---------------------------------------------------------
-        # Scenario A: Safe Read-Only Action
+        # Scenario A: Declared Read-Only Diagnostic
         # ---------------------------------------------------------
-        print("\n[2] Scenario A: Autonomous agent running a safe diagnostic tool...")
+        print("\n[2] Scenario A: Running a local diagnostic command...")
         action_a = {"tool": "system.info", "command": ["uname", "-a"], "side_effect": False}
         res_a = gateway.execute(
             action=action_a,
@@ -51,13 +57,13 @@ def main() -> None:
         # ---------------------------------------------------------
         # Scenario B: High-Impact Mutating Action (Requires Review)
         # ---------------------------------------------------------
-        print("\n[3] Scenario B: Agent attempting an unapproved mutating action...")
+        print("\n[3] Scenario B: Proposing a simulated migration without approval metadata...")
         action_b = {"tool": "db.migrate", "target": "production", "side_effect": True}
         gate_b = gateway.propose(action_b, actor="devops-agent", scope="db:write")
-        print(f"    Attempt without human sign-off: {gate_b.disposition.value} (allowed={gate_b.allowed})")
+        print(f"    Without approval metadata: {gate_b.disposition.value} (allowed={gate_b.allowed})")
         print(f"    Reason: {gate_b.reason}")
 
-        print("    Now presenting with human approval token ('security-lead-mac')...")
+        print("    Now supplying declared approver_id='security-lead-mac' (not authenticated)...")
         res_b = gateway.execute(
             action=action_b,
             actor="devops-agent",
@@ -65,14 +71,14 @@ def main() -> None:
             approver_id="security-lead-mac",
             executor=lambda: {"status": "success", "rows_migrated": 420},
         )
-        print(f"    Approved Execution Status: {res_b.status}")
-        print(f"    Result: {res_b.result}")
+        print(f"    Fixture Execution Status: {res_b.status}")
+        print(f"    Simulated migration result: {res_b.result}")
         print(f"    Checkpoint Generation: #{res_b.checkpoint_generation}")
 
         # ---------------------------------------------------------
         # Scenario C: Destructive Wipe Command (Hard Policy Block)
         # ---------------------------------------------------------
-        print("\n[4] Scenario C: Malicious or prompt-injected command wipe attempt...")
+        print("\n[4] Scenario C: Constructed prohibited command payload...")
         action_c = {"tool": "bash", "command": ["rm", "-rf", "/"], "side_effect": True}
         res_c = gateway.execute(
             action=action_c,
@@ -85,9 +91,9 @@ def main() -> None:
         print(f"    Blocked by deterministic rule: {res_c.reason}")
 
         # ---------------------------------------------------------
-        # Scenario D: Unreliable Remote Provider / Timeout (Quarantined)
+        # Scenario D: Simulated Provider Timeout (Quarantined)
         # ---------------------------------------------------------
-        print("\n[5] Scenario D: Upstream API times out during execution...")
+        print("\n[5] Scenario D: Local callback raises a simulated provider timeout...")
         action_d = {"tool": "stripe.charge", "amount": 9900, "side_effect": True}
         gate_d = gateway.propose(action_d, actor="billing-agent", scope="finance:charge", approver_id="auto-finance")
 
@@ -96,8 +102,8 @@ def main() -> None:
 
         res_d = gateway.dispatch(gate_d.effect_id, flaky_api_call)
         print(f"    Execution Outcome: {res_d.status}")
-        print("    Fail-Closed Safety: Effect is locked in UNKNOWN state.")
-        print("    Automatic retry is prohibited until human reconciliation.")
+        print("    This effect is recorded as UNKNOWN.")
+        print("    Reconcile the uncertain outcome before retrying; no provider was called here.")
 
         # ---------------------------------------------------------
         # Final Ledger & Checkpoint Audit
@@ -112,10 +118,10 @@ def main() -> None:
         print(f"    Total Audit Events: {chain_status['event_count']}")
         print(f"    Chain Integrity: {'PASS' if chain_status['valid'] else 'FAIL'}")
         print(f"    State Consistency: {'PASS' if consistency['valid'] else 'FAIL'}")
-        print(f"    Ed25519 Checkpoint Signature: {'AUTHENTIC' if sig_valid else 'FORGED'}")
+        print(f"    Signature against this local store's key: {'PASS' if sig_valid else 'FAIL'}")
         print(f"    Latest Root Hash: {final_cp['root_hash']}")
         print("\n" + "=" * 72)
-        print("  DEMO COMPLETE: All 4 boundaries witnessed with zero regressions.")
+        print("  Four constructed scenarios completed; inspect the outcomes above.")
         print("=" * 72)
 
 

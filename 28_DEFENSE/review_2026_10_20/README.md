@@ -37,6 +37,7 @@ directory. No server, model provider, paid API or broad test suite is started.
 | [folder-coverage.json](folder-coverage.json) | All 606 folders in the deeper-pass snapshot; source reading, metadata and unread content are distinct |
 | [deeper-reproductions.json](deeper-reproductions.json) | Primary reproduction of interrupted-review leads, including frozen consent, duplicate policy groups and mixed review cases |
 | [verification.json](verification.json) | Executed check counts, artifact consistency and unresolved gates |
+| [swarm-hardening.json](swarm-hardening.json) | Later bounded swarm: stable snapshots, policy/receipt repair and retained handoff workflow; 329 focused cases |
 | [chorus-probe.json](chorus-probe.json) | Empty-agent and empty-audit cases that expose misleading health reports |
 | [oct19-preservation.json](oct19-preservation.json) | Current hashes of all 225 imported files; manual coverage beyond the existing automatic gate |
 | [lint-baseline-comparison.json](lint-baseline-comparison.json) | All six files with lint findings match the reviewed baseline |
@@ -50,3 +51,8 @@ runs. The 167-case implementation/sheaf/gateway run and 92-case compaction/harne
 run overlap; do not add them. The earlier 999-case maintained collection was not
 rerun. Three high-reasoning reviewers were interrupted by a service usage limit,
 so the deeper source review remains incomplete even though every folder is listed.
+
+A later bounded swarm completed its three assigned reviews and implemented the
+retained handoff workflow and snapshot/receipt repairs. Its 329-case focused run
+contains 90 new cases; see `swarm-hardening.json`. This newer batch does not turn
+the earlier folder census into completed semantic review.

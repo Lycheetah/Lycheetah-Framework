@@ -209,20 +209,21 @@ class ActionGateway:
             )
             return Disposition.BLOCK, (finding,)
 
-        tool_name = str(action.get("tool", action.get("name", "generic_tool")))
-        scopes_tuple = (scope,) if scope else ()
-        side_effect = bool(action.get("side_effect", False))
-        human_approved = True if approver_id is not None else None
-        event = AssuranceEvent(
-            phase=Phase.TOOL,
-            tool_name=tool_name,
-            tool_arguments=action,
-            scopes=scopes_tuple,
-            side_effect=side_effect,
-            human_approved=human_approved,
-        )
+        event = self._tool_event(action, scope, approver_id)
         receipt = self.runtime.evaluate(event)
         return receipt.decision, receipt.findings
+
+    @staticmethod
+    def _tool_event(action: dict[str, Any], scope: str, approver_id: str | None) -> AssuranceEvent:
+        """Use the same declared tool subject for policy evaluation and receipts."""
+        return AssuranceEvent(
+            phase=Phase.TOOL,
+            tool_name=str(action.get("tool", action.get("name", "generic_tool"))),
+            tool_arguments=action,
+            scopes=(scope,) if scope else (),
+            side_effect=bool(action.get("side_effect", False)),
+            human_approved=True if approver_id is not None else None,
+        )
 
     def propose(
         self,
@@ -398,6 +399,11 @@ class ActionGateway:
             else None
         )
         evaluated_policy = self.policy
+        policy_record = {
+            "id": evaluated_policy.policy_id,
+            "version": evaluated_policy.version,
+            "sha256": evaluated_policy.digest,
+        }
         disposition, policy_findings = self.evaluate_policy(
             intended_action, effect["scope"], effect["actor"], approver_id
         )
@@ -434,6 +440,20 @@ class ActionGateway:
                 action_hash=digest,
                 provider_called=False,
             )
+
+        # Snapshot the evaluated event before the callback can update policy.
+        # This retains the runtime's subject hashing, replay and privacy rules.
+        event_record = self.runtime._event_record(
+            self._tool_event(intended_action, effect["scope"], approver_id)
+        )
+        event_record.update(
+            {
+                "scope": effect["scope"],
+                "actor": effect["actor"],
+                "action_hash": digest,
+                "approver_id": approver_id,
+            }
+        )
 
         # Execute the tool
         provider_called = True
@@ -478,30 +498,16 @@ class ActionGateway:
                 result=result_details,
             )
 
-        disposition = (
-            Disposition.ALLOW
-            if status_text == "SUCCEEDED"
-            else (Disposition.REVIEW if status_text == "UNKNOWN" else Disposition.BLOCK)
-        )
+        # A policy decision and a provider outcome answer different questions.
+        # Keep the evaluated decision; execution_status records what happened.
         receipt = AssuranceReceipt.issue(
             runtime={
                 "name": "lycheetah-action-gateway",
                 "version": ASSURANCE_VERSION,
                 "status": ClaimStatus.ACTIVE.value,
             },
-            policy={
-                "id": evaluated_policy.policy_id,
-                "version": evaluated_policy.version,
-                "sha256": evaluated_policy.digest,
-            },
-            event={
-                "phase": Phase.TOOL.value,
-                "tool_name": str(intended_action.get("tool", "tool")),
-                "scope": effect["scope"],
-                "side_effect": True,
-                "actor": effect["actor"],
-                "human_approved": approver_id is not None,
-            },
+            policy=policy_record,
+            event=event_record,
             decision=disposition,
             findings=policy_findings,
             metrics={

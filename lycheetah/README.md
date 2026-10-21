@@ -38,6 +38,21 @@ Canonical consent values and other unreserved strings round-trip with identical
 protected hashes in both wire modes. See the
 [consent regressions](../tests/test_compaction_consent_roundtrip.py).
 
+**Snapshot and receipt correction — 21 October:** `ContextProtector.export_packet()`
+returns an independent nested snapshot. Later edits to the live session or the
+exported packet cannot silently change the other. Packet hashes and L1/L1D wire
+formats are unchanged. Policy constructors still accept lists and detach their
+collections into immutable tuples, preserving the policy evaluated before a callback.
+
+Gateway receipts retain the evaluated policy result in `decision` and the
+executor's outcome in `metrics.execution_status`. An `ALLOW` policy can accompany
+a failed or uncertain executor. Read both fields and reconcile `UNKNOWN` before
+retrying. The event uses the runtime's subject hashing and privacy rules, with the
+declared actor, scope, action hash and approver label. See the
+[receipt regressions](../tests/test_gateway_receipts.py),
+[snapshot regressions](../tests/test_context_snapshots.py) and the
+[retained handoff example](../examples/README.md#try-one-local-action-and-inspect-its-record).
+
 | Area | Source / documentation | Scope |
 |---|---|---|
 | Public imports and commands | [__init__.py](__init__.py), [cli.py](cli.py), [package configuration](../pyproject.toml) | Public interfaces and eleven declared command entry points. |

@@ -1,7 +1,8 @@
 """Agent Context Compaction Shield.
 
-Protects agent memory and context against silent constraint loss during context window
-summarization and compaction.
+Exports independent context snapshots and compares the codec's ten-field critical
+projection during compaction. Equivalence is not a general safety guarantee or
+proof that the declared context is complete or true.
 """
 
 from __future__ import annotations
@@ -28,8 +29,9 @@ from .codec import (
 class AgentStatePacket:
     """Declared structured state packet for an agent turn or session.
 
-    Enforces that semantic constraints, unknowns, authorities, dissents, and recovery paths
-    are preserved without silent loss.
+    Serialization validates the declared schema. Compaction comparisons cover the
+    codec's ten-field critical projection; the packet remains mutable and does not
+    itself enforce preservation or authenticate its declarations.
     """
 
     id: str
@@ -157,7 +159,10 @@ class CompactionShield:
         reference: AgentStatePacket | dict[str, Any] | str,
         candidate: AgentStatePacket | dict[str, Any],
     ) -> dict[str, Any]:
-        """Verify whether a candidate packet preserves the critical constraints of a reference.
+        """Compare the codec's critical projection and declared cross-field rules.
+
+        ``is_safe`` reports the codec's equivalence classification, not general
+        safety. Noncritical fields such as risk can differ in PARTIAL_EQUIVALENT.
 
         Args:
             reference: Reference packet, reference dict, or reference critical_hash hex string.
@@ -238,8 +243,10 @@ class CompactionShield:
 class ContextProtector:
     """Stateful accumulator for managing agent context across multiple turns.
 
-    Guarantees that invariants, unknown risks, dissenting reviews, authorities, and
-    recovery mechanisms cannot be dropped or corrupted when the session is compacted.
+    Exports independent nested snapshots. Verification compares declared fields
+    in the codec's critical projection and its cross-field rules, rather than
+    guaranteeing general safety or preserving arbitrary reasoning. Retain an
+    exported reference to detect later changes to this mutable accumulator.
     """
 
     def __init__(
@@ -269,7 +276,7 @@ class ContextProtector:
         self.evidence: list[dict[str, str]] = []
 
     def add_invariant(self, inv_id: str, text: str) -> ContextProtector:
-        """Add an immutable negative constraint or behavioral rule."""
+        """Add a declared negative constraint or behavioral rule."""
         self.invariants.append({"id": inv_id, "text": text})
         return self
 
@@ -314,7 +321,7 @@ class ContextProtector:
         return self
 
     def add_evidence(self, ev_id: str, text: str, provenance: str) -> ContextProtector:
-        """Attach supporting evidence or observation with verifiable provenance."""
+        """Attach supporting evidence or observation with declared provenance."""
         self.evidence.append({"id": ev_id, "text": text, "provenance": provenance})
         return self
 
@@ -343,10 +350,10 @@ class ContextProtector:
         return self
 
     def export_packet(self) -> AgentStatePacket:
-        """Compile accumulated context into a validated AgentStatePacket.
+        """Compile accumulated context into an independent validated snapshot.
 
-        Fails closed if semantic invariants are violated (e.g., protected unknowns with
-        no recovery path).
+        Checks the schema and declared cross-field rules (e.g., protected unknowns
+        require a recovery entry). These checks do not establish actual safety.
         """
         # Cross-field check: protected unknowns require at least one recovery path
         has_protected_unknowns = any(u.get("protected", False) for u in self.unknowns)
@@ -380,9 +387,9 @@ class ContextProtector:
             horizon=self.horizon,
             yield_desc=self.yield_desc,
         )
-        # Validate that it cleanly converts to schema dict
-        packet.to_dict()
-        return packet
+        # Reconstruct from the validated serialization so neither nested records
+        # nor their enclosing lists remain shared with this live accumulator.
+        return AgentStatePacket.from_dict(packet.to_dict())
 
     def compact(self, codebook: dict[str, Any] | None = None) -> str:
         """Export and compact accumulated context into an L1 or L1D wire string."""
@@ -396,6 +403,9 @@ class ContextProtector:
     def verify_candidate_summary(
         self, candidate_packet: AgentStatePacket | dict[str, Any]
     ) -> dict[str, Any]:
-        """Verify that an external or LLM-compacted packet preserves all protected fields."""
+        """Compare a candidate's critical projection with the current live context.
+
+        For an earlier state, pass its saved export to CompactionShield.verify_integrity.
+        """
         ref_packet = self.export_packet()
         return CompactionShield.verify_integrity(ref_packet, candidate_packet)

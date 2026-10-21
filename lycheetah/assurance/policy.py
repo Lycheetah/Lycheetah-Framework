@@ -118,11 +118,16 @@ class TextRule:
             raise PolicyError(f"text rule {self.rule_id!r} pattern must be non-empty")
         if len(self.pattern) > 4096:
             raise PolicyError(f"text rule {self.rule_id!r} pattern exceeds 4096 characters")
-        if not self.phases or any(
-            not isinstance(phase, Phase) or phase not in (Phase.INPUT, Phase.OUTPUT)
-            for phase in self.phases
+        if (
+            not isinstance(self.phases, (list, tuple))
+            or not self.phases
+            or any(
+                not isinstance(phase, Phase) or phase not in (Phase.INPUT, Phase.OUTPUT)
+                for phase in self.phases
+            )
         ):
             raise PolicyError(f"text rule {self.rule_id!r} phases must contain input and/or output")
+        object.__setattr__(self, "phases", tuple(self.phases))
         if type(self.deterministic) is not bool or type(self.ignore_case) is not bool:
             raise PolicyError(
                 f"text rule {self.rule_id!r} deterministic and ignore_case must be booleans"
@@ -258,9 +263,12 @@ class AssurancePolicy:
             "blocked_scopes",
             "sensitive_argument_keys",
         ):
-            _strings(getattr(self, name), name)
+            object.__setattr__(self, name, _strings(getattr(self, name), name))
+        if not isinstance(self.text_rules, (list, tuple)):
+            raise PolicyError("text_rules must be an array of TextRule instances")
         if any(not isinstance(rule, TextRule) for rule in self.text_rules):
             raise PolicyError("text_rules must contain TextRule instances")
+        object.__setattr__(self, "text_rules", tuple(self.text_rules))
         rule_ids = [rule.rule_id for rule in self.text_rules]
         if len(rule_ids) != len(set(rule_ids)):
             raise PolicyError("text rule ids must be unique")

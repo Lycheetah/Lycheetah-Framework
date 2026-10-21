@@ -401,6 +401,44 @@ model. No hosted CI pass, new website, deployment, public post, branch merge or
 production safety result follows from this local review. Python 3.10/3.11 and
 other desktop platforms were not rerun.
 
+## Swarm follow-through: inspectable handoffs — 21 October
+
+Three newly authorised AI reviewers completed a bounded architecture, execution
+and first-use pass. This does not complete the earlier 606-folder semantic review.
+The [swarm receipt](review_2026_10_20/swarm-hardening.json) identifies the source
+base, changed components, test counts and limits.
+
+The pass reproduced two linked reference-integrity defects: exported context
+packets shared mutable collections with their live accumulator, and supposedly
+frozen policies retained caller-owned lists. Mutating either could silently
+change the reference used for a later comparison or the policy digest recorded
+after execution. Context exports now produce independent validated snapshots;
+policy/rule collections are detached into tuples and policy metadata is captured
+before callbacks. Packet hashes and L1/L1D wire compatibility remain unchanged.
+
+Gateway receipts also mixed execution outcomes with policy decisions, producing
+receipts that failed their own verifier for ordinary failure, timeout and
+review-approved cases. The receipt now retains the evaluated policy decision
+and records execution status separately. Its event uses the runtime's subject,
+privacy and replay shape plus the declared actor, scope and action digest.
+
+The existing [guarded handoff example](../examples/guarded_handoff_risk_demo.py)
+now optionally exports a new directory containing task/completion capsules, full
+context, exact action, actual output bytes, full receipt and run report. A separate
+read-only verifier checks their relationships and manifests. A retained digest
+pins bundle bytes; without it, a self-consistent replacement is outside detection.
+It remains a synthetic-consensus fixture with declared approval labels and a
+trusted writer. No private checkpoint keys, model calls, authenticated human
+issuer or independent filesystem witness are introduced.
+
+Independent AI review caught contradictory run reports, omitted completion paths
+and a nonregular-manifest read hazard in the first verifier. Twelve controls
+failed before those repairs. The final focused run passed **329 cases**, including
+**90 new cases**: 36 snapshot cases, 18 gateway/policy cases and 36 bundle cases.
+These are local engineering results, not external replication. The earlier
+whole-suite result remains separately dated; no fresh whole-corpus proof or
+release-clean claim is made.
+
 ## Repair sequence
 
 1. Publish the dated corrections beside the claims they qualify. Replace the

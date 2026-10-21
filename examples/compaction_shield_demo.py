@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
-"""Lycheetah Context Compaction Shield — Live Demonstration.
+"""Lycheetah Context Compaction Shield — constructed record demonstration.
 
-Shows how to protect long-running agent workflows from the "Amnesia Problem":
-when an agent's context window fills up (e.g., Turn 40+), standard LLM summarizers
-cheerfully drop negative constraints, blind spots (unknowns), human objections (dissent),
-and disaster recovery anchors.
+Round-trips one authored packet and compares manually changed copies. No model
+summarizer, database migration, telemetry query or execution authorization runs.
 
-The Compaction Shield turns semantic accountability into a provable mathematical contract:
-- Guarantees exact round-trip preservation of 10 critical accountability fields.
-- Uses SHA-256 `critical_hash` so third parties can verify zero-loss compaction without trusting the model.
-- Fails closed: refuses to compact or execute if protected unknowns lack recovery mechanisms.
+The critical hash covers ten declared accountability fields. It excludes risk,
+evidence, horizon and yield, among other fields. A matching hash or the legacy
+`is_safe` result is not execution permission, truth verification or general safety.
+See examples/meaning_handover/README.md for the existing full-field comparator.
 
 Run:
     python3 examples/compaction_shield_demo.py
@@ -47,9 +45,9 @@ def print_header(title: str) -> None:
 
 
 def demo_agent_context_shield() -> None:
-    print_header("SCENARIO: Database Migration & Canary Rollout (Turn 41)")
-    print("An autonomous agent has executed 40 turns of planning, tests, and dry runs.")
-    print("The LLM context window is nearing saturation. It must compact its carried state.")
+    print_header("CONSTRUCTED SCENARIO: Database Migration Handover")
+    print("This authored fixture represents a hypothetical agent at turn 41.")
+    print("No model, migration, telemetry query or production action runs in this example.")
 
     # 1. Accumulate state using ContextProtector
     protector = ContextProtector(
@@ -118,7 +116,7 @@ def demo_agent_context_shield() -> None:
     # -------------------------------------------------------------------------
     # PART 1: The Fail-Closed Invariant
     # -------------------------------------------------------------------------
-    print_header("PART 1: The Fail-Closed Gate (Preventing Unrecoverable Ambition)")
+    print_header("PART 1: Rejecting a Declared Protected Unknown Without Recovery")
     print("What if an agent tries to compact a high-risk plan with protected unknowns,")
     print("but dropped or 'forgot' to specify a recovery rollback procedure?")
 
@@ -141,13 +139,13 @@ def demo_agent_context_shield() -> None:
     except CodecError as err:
         print("  🛡️  BLOCKED BY COMPACTION SHIELD:")
         print(f"     Reason: {err}")
-        print("  ✓ Guaranteed: The system physically refuses to compact or proceed")
-        print("    without an explicit rollback anchor.")
+        print("  ✓ This packet was refused because it lacks the required recovery record.")
+        print("    This codec check does not control execution or verify a rollback works.")
 
     # -------------------------------------------------------------------------
-    # PART 2: Provable Compaction & SHA-256 Proofs
+    # PART 2: Exact Round-Trip & SHA-256 Comparisons
     # -------------------------------------------------------------------------
-    print_header("PART 2: Provable Compaction & Zero-Loss Verification")
+    print_header("PART 2: Exact Round-Trip Comparison for One Fixture")
 
     original_packet = protector.export_packet()
     original_dict = original_packet.to_dict()
@@ -178,23 +176,23 @@ def demo_agent_context_shield() -> None:
 
     assert restored_full == orig_full, "Full hash mismatch"
     assert restored_critical == orig_critical, "Critical hash mismatch"
-    print("\n  ✓ 100% Exact Round-Trip Guarantee Verified (36/36 specification standard)")
+    print("\n  ✓ Full and critical hashes match for this one round-tripped fixture.")
 
     # -------------------------------------------------------------------------
-    # PART 3: Detecting LLM Context Pruning & Hallucinations
+    # PART 3: Comparing Manually Changed Records
     # -------------------------------------------------------------------------
-    print_header("PART 3: Tamper & Silent Loss Detection Under LLM Summarization")
-    print("Now suppose a standard LLM summarizer is asked to condense context.")
-    print("The LLM summarizes prose well, but silently drops the DBA's dissent and changes an invariant.")
+    print_header("PART 3: Comparing Manually Changed Records")
+    print("The following copies simulate lost or changed fields; no LLM was evaluated.")
+    print("The legacy is_safe flag reports a bounded critical-projection comparison.")
 
     # Simulated LLM lossy summary
     lossy_candidate = json.loads(json.dumps(original_dict))
     lossy_candidate["dissent"] = []  # LLM dropped the objection!
     lossy_candidate["invariants"][0]["text"] = "Confirm with lead before dropping tables if convenient"
 
-    print("\nCase A: LLM dropped DBA dissent & weakened negative constraint:")
+    print("\nCase A: Manually removed DBA dissent & weakened a negative constraint:")
     verdict_lossy = CompactionShield.verify_integrity(original_packet, lossy_candidate)
-    print(f"  • Verdict Safe?     {verdict_lossy['is_safe']}")
+    print(f"  • Legacy is_safe:   {verdict_lossy['is_safe']}")
     print(f"  • Classification:   {verdict_lossy['classification']}")
     print(f"  • Cause:            {verdict_lossy['reason']}")
     if "fields" in verdict_lossy:
@@ -204,15 +202,15 @@ def demo_agent_context_shield() -> None:
     unrecoverable_candidate = json.loads(json.dumps(original_dict))
     unrecoverable_candidate["recovery"] = []
 
-    print("\nCase C: LLM dropped the rollback snapshot procedure:")
+    print("\nCase B: Manually removed the rollback snapshot procedure:")
     verdict_unrec = CompactionShield.verify_integrity(original_packet, unrecoverable_candidate)
-    print(f"  • Verdict Safe?     {verdict_unrec['is_safe']}")
+    print(f"  • Legacy is_safe:   {verdict_unrec['is_safe']}")
     print(f"  • Classification:   {verdict_unrec['classification']}")
     print(f"  • Cause:            {verdict_unrec['reason']}")
     if "violations" in verdict_unrec:
         print(f"  • Violations:       {verdict_unrec['violations']}")
 
-    # Case C: Safe extension (e.g. adding supplementary log evidence)
+    # Case C: Added evidence is outside the critical projection
     safe_candidate = json.loads(json.dumps(original_dict))
     safe_candidate["evidence"].append({
         "id": "ev-3",
@@ -220,20 +218,18 @@ def demo_agent_context_shield() -> None:
         "provenance": "prometheus:turn-42",
     })
 
-    print("\nCase C: Safe extension (added verified telemetry evidence without touching critical constraints):")
+    print("\nCase C: Added fictional telemetry evidence outside the critical projection:")
     verdict_safe = CompactionShield.verify_integrity(original_packet, safe_candidate)
-    print(f"  • Verdict Safe?     {verdict_safe['is_safe']}")
+    print(f"  • Legacy is_safe:   {verdict_safe['is_safe']}")
     print(f"  • Classification:   {verdict_safe['classification']}")
     print(f"  • Verification:     {verdict_safe['reason']}")
 
-    print_header("SUMMARY: WHY THIS MATTERS FOR PRODUCTION AGENTS")
-    print("1. Zero Context Amnesia:")
-    print("   Constraints, blind spots, dissents, and rollbacks are locked into math.")
-    print("2. Cryptographic Receipts:")
-    print("   `critical_hash` enables any agent seat, verifier, or human to confirm")
-    print("   integrity without reading hundreds of lines of conversational history.")
-    print("3. Fail-Closed Boundaries:")
-    print("   No agent can claim execution authority while dropping the safety rope.")
+    print_header("INTERPRETING THESE RECORD COMPARISONS")
+    print("The critical hash compares ten declared fields against a trusted reference.")
+    print("It excludes risk, evidence, horizon and yield, among other fields.")
+    print("A matching projection does not establish truth, consent or execution permission.")
+    print("Inspect all declared fields with the existing meaning-handover comparator:")
+    print("  examples/meaning_handover/README.md")
     print(f"\n{LINE}\n")
 
 
