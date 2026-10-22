@@ -22,4 +22,4 @@ black>=23.0.0
 flake8>=6.0.0
 
 # Documentation
-sphinx>=6.0.0
+sphinx>=8.1.3
