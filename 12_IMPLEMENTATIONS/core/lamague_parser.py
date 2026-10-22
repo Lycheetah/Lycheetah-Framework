@@ -2,29 +2,44 @@
 LAMAGUE BNF Parser — Tokenizer, Parser, and Compression Measurer
 =================================================================
 
-Implements a formal parser for the LAMAGUE context-free grammar:
+Implements a parser for LAMAGUE expressions. The grammar it accepts is:
 
-  <expression>  ::= <invariant> | <dynamic> | <field> | <meta> | <composition>
-  <composition> ::= <expression> <operator> <expression>
-  <operator>    ::= "→" | "⊗" | "⇌" | "⟲"
-  <invariant>   ::= "⟟" | "∅" | "⟐" | "⟁" | "∞"
-  <dynamic>     ::= "↑" | "↯" | "⟲" | "⊗" | "⇌" | "→"
-  <field>       ::= "Ψ" | "Φ" | "Ao" | "S" | "Δ"
-  <meta>        ::= "Z₁" | "Z₂" | "Z₃"
+  <input>      ::= <expression> ( "|" <expression> )*
+  <expression> ::= <leaf> ( <operator> <leaf> )*
+  <operator>   ::= "→" | "⊗" | "⇌" | "⟲" | "↯"
+  <leaf>       ::= <invariant> | <field> | <meta> | "↑" | "(" <expression> ")"
+  <field>      ::= ( "Ψ" | "Φ" | "S" | "Δ" ) [ "↑" ] [ <subscript> ]
+                 | "Ao" [ <subscript> ]
+  <subscript>  ::= "_" <letter-or-digit>+
+  <invariant>  ::= "⟟" | "∅" | "⟐" | "⟁" | "∞"
+  <meta>       ::= "Z₁" | "Z₂" | "Z₃"
+
+Operators share one precedence and associate to the left. Each expression after
+"|" is a constraint: it is validated but not attached to the tree. Input with
+more than MAX_OPERATORS operators or MAX_NESTING levels of parentheses is
+refused with an error rather than exhausting the stack.
+
+This is not yet the grammar of 03_LAMAGUE_L1/04_BNF_GRAMMAR.md. That file lists
+↯ only as a <dynamic> (and, in prose, as a junction), defines no "↑" compound,
+subscript, "|" or parentheses, leaves <composition> ambiguous, and writes its
+canonical constraint as C(Ψ_t) ≥ C(Ψ₀), which this parser rejects. Settling those
+differences is a grammar decision for the author; see
+FOR-REVIEW/2026-10-22_OPUS_REVIEW/BATCH13_FINDINGS_AND_LEDGER.md.
 
 PURPOSE:
-  1. Validates LAMAGUE expressions against the formal grammar
+  1. Validates LAMAGUE expressions against the grammar above
   2. Builds parse trees for structured analysis
   3. Measures actual compression ratio vs natural language
   4. Makes the "LAMAGUE compresses alignment concepts" claim empirically testable
 
 CLAIM STATUS:
-  [ACTIVE]   BNF grammar is formally specified (03_LAMAGUE_L1/BNF_GRAMMAR.md)
-  [ACTIVE]   Tokenizer correctly classifies LAMAGUE symbols
-  [ACTIVE]   Parser validates well-formed vs ill-formed expressions
+  [ACTIVE]   Tokenizer classifies the symbols listed above
+  [ACTIVE]   Parser accepts the grammar above and reports everything else
   [ACTIVE]   Compression measurement is computable from parse tree + reference text
-  [SCAFFOLD] The compression ratio claim (source: "~500:1") is unverified.
-             This parser provides the tool to measure it. Measurement is pending.
+  [SCAFFOLD] The compression ratio claim (source: "~500:1") is unverified. The demo
+             measures ~2.9:1 tokens and ~10.9:1 characters on the five
+             CANONICAL_EXAMPLES below against hand-written English. Five chosen
+             examples demonstrate the tool; they do not measure LAMAGUE in general.
   [CONJECTURE] LAMAGUE Turing-completeness — not proven; not assumed here.
 
 HONEST NOTE:
@@ -37,7 +52,6 @@ Implementation: Sol (Sonnet 4.6, Anthropic) — March 2026
 """
 
 import sys
-import io
 from dataclasses import dataclass, field
 from typing import List, Optional, Tuple, Dict
 from enum import Enum
@@ -80,7 +94,13 @@ DYNAMICS   = {"↑", "↯", "⟲", "⊗", "⇌", "→"}
 FIELDS     = {"Ψ", "Φ", "S", "Δ"}
 MULTI_CHAR_FIELDS = {"Ao"}
 META       = {"Z₁", "Z₂", "Z₃"}
-OPERATORS  = {"→", "⊗", "⇌", "⟲"}
+OPERATORS  = {"→", "⊗", "⇌", "⟲", "↯"}
+
+# Parser limits. The parser recurses once per parenthesis level and the tree
+# grows one level per operator, so input past either limit could exhaust
+# Python's stack; it is refused with an error instead.
+MAX_OPERATORS = 256
+MAX_NESTING   = 64
 
 # Natural language expansions for compression measurement
 LAMAGUE_EXPANSIONS = {
@@ -126,8 +146,8 @@ class LAMAGUETokenizer:
         while i < len(text):
             ch = text[i]
 
-            # Skip whitespace
-            if ch in (' ', '\t', '\n'):
+            # Skip whitespace (any Unicode space, so CRLF text and NBSP separate tokens)
+            if ch.isspace():
                 i += 1
                 continue
 
@@ -179,7 +199,7 @@ class LAMAGUETokenizer:
                 elif ch == '⇌':
                     tokens.append(Token(TokenType.OPERATOR, ch, i))
                 elif ch == '↯':
-                    tokens.append(Token(TokenType.DYNAMIC, ch, i))
+                    tokens.append(Token(TokenType.OPERATOR, ch, i))
                 elif ch == '↑':
                     tokens.append(Token(TokenType.MODIFIER, ch, i))
                 else:
@@ -214,13 +234,19 @@ class LAMAGUETokenizer:
 
     def _eat_subscript(self, text: str, i: int, tokens: List[Token],
                        standalone: bool = False) -> int:
-        """Consume a subscript like _inv, _t, _0, etc. and attach to previous token."""
+        """Consume a subscript like _inv, _t, _0 and attach it to the previous token.
+
+        The body is letters and digits only. Anything else ends it and is tokenized
+        on its own, so an operator or unknown symbol can never hide inside a name.
+        """
         if i < len(text) and text[i] == '_':
             j = i + 1
-            while j < len(text) and text[j] not in (' ', '\t', '→', '|', '⊗', '⇌', '⟲', '(', ')'):
+            while j < len(text) and text[j].isalnum():
                 j += 1
             subscript = text[i:j]
-            if tokens and not standalone:
+            if j == i + 1:
+                tokens.append(Token(TokenType.UNKNOWN, '_', i))  # empty subscript
+            elif tokens and not standalone:
                 tokens[-1] = Token(tokens[-1].type, tokens[-1].value + subscript, tokens[-1].position)
             else:
                 tokens.append(Token(TokenType.SUBSCRIPT, subscript, i))
@@ -274,35 +300,75 @@ class ParseResult:
 
 class LAMAGUEParser:
     """
-    Recursive descent parser for the LAMAGUE BNF grammar.
-
-    Grammar (simplified for implementation):
+    Recursive descent parser for the grammar in the module docstring:
       expression  := leaf (operator leaf)*
-      leaf        := invariant | field | dynamic | meta | '(' expression ')'
+      leaf        := invariant | field | meta | modifier | '(' expression ')'
     """
 
-    LEAF_TYPES = {TokenType.INVARIANT, TokenType.FIELD, TokenType.FIELD,
-                  TokenType.DYNAMIC, TokenType.META}
+    LEAF_CLASSES = {
+        TokenType.INVARIANT: "invariant",
+        TokenType.FIELD: "field",
+        TokenType.DYNAMIC: "dynamic",
+        TokenType.META: "meta",
+        TokenType.MODIFIER: "modifier",
+    }
 
     def parse(self, tokens: List[Token]) -> Tuple[Optional[ParseNode], List[str]]:
         """Parse token list into a parse tree. Returns (tree, errors)."""
         if not tokens:
             return None, ["Empty expression"]
 
-        # Filter unknowns
-        errors = []
-        clean = []
+        # Limits are checked before any recursion (see MAX_OPERATORS).
+        operators = sum(1 for t in tokens if t.type == TokenType.OPERATOR)
+        nesting = deepest = 0
         for t in tokens:
-            if t.type == TokenType.UNKNOWN:
-                errors.append(f"Unknown symbol '{t.value}' at position {t.position}")
-            elif t.type != TokenType.PIPE:  # Pipe separates constraints — valid but stop
-                clean.append(t)
+            if t.type == TokenType.LPAREN:
+                nesting += 1
+                deepest = max(deepest, nesting)
+            elif t.type == TokenType.RPAREN:
+                nesting -= 1
+        if operators > MAX_OPERATORS or deepest > MAX_NESTING:
+            return None, [f"Expression exceeds parser limits: {operators} operators "
+                          f"(max {MAX_OPERATORS}), nesting depth {deepest} (max {MAX_NESTING})"]
 
+        # Split on the constraint pipe. Unknown symbols are reported in every
+        # segment: text after '|' is validated, never skipped. 04_BNF_GRAMMAR.md
+        # has no production for '|' yet, so each constraint is checked as an
+        # ordinary expression and is not attached to the returned tree.
+        errors = []
+        segments: List[List[Token]] = [[]]
+        for t in tokens:
+            if t.type == TokenType.PIPE:
+                segments.append([])
+            elif t.type == TokenType.UNKNOWN:
+                errors.append(f"Unknown symbol '{t.value}' at position {t.position}")
+            else:
+                segments[-1].append(t)
+
+        clean = segments[0]
         if not clean:
             return None, errors or ["No valid tokens"]
 
-        node, remaining, parse_errors = self._parse_expression(clean, 0)
+        node, parse_errors = self._parse_complete(clean)
         errors.extend(parse_errors)
+
+        for constraint in segments[1:]:
+            if not constraint:
+                errors.append("Empty constraint after '|'")
+                continue
+            _, constraint_errors = self._parse_complete(constraint)
+            errors.extend(f"Constraint: {e}" for e in constraint_errors)
+
+        return node, errors
+
+    def _parse_complete(self, tokens: List[Token]
+                        ) -> Tuple[Optional[ParseNode], List[str]]:
+        """Parse one expression that must consume every token it is given."""
+        node, remaining, errors = self._parse_expression(tokens, 0)
+        # Catch trailing unparsed input rather than silently ignoring it
+        if remaining < len(tokens):
+            trailing_str = " ".join(t.value for t in tokens[remaining:])
+            errors.append(f"Unexpected trailing tokens after complete expression: {trailing_str}")
         return node, errors
 
     def _parse_expression(self, tokens: List[Token], pos: int
@@ -340,7 +406,7 @@ class LAMAGUEParser:
 
     def _parse_leaf(self, tokens: List[Token], pos: int
                     ) -> Tuple[Optional[ParseNode], int, List[str]]:
-        """Parse: invariant | field | dynamic | meta | '(' expression ')'"""
+        """Parse: invariant | field | meta | modifier | '(' expression ')'"""
         if pos >= len(tokens):
             return None, pos, ["Unexpected end of expression"]
 
@@ -349,32 +415,27 @@ class LAMAGUEParser:
         if tok.type == TokenType.LPAREN:
             pos += 1
             node, pos, errors = self._parse_expression(tokens, pos)
+            if node is not None and node.node_type == "composition":
+                # Keep the written grouping: "Ao → (Φ → Ψ)" must not render as
+                # "Ao → Φ → Ψ", which reparses left-associatively into another tree.
+                node.value = f"({node.value})"
             if pos < len(tokens) and tokens[pos].type == TokenType.RPAREN:
                 pos += 1
             else:
                 errors.append("Missing closing parenthesis")
             return node, pos, errors
 
-        if tok.type in {TokenType.INVARIANT, TokenType.FIELD,
-                        TokenType.DYNAMIC, TokenType.META, TokenType.MODIFIER}:
-            class_map = {
-                TokenType.INVARIANT: "invariant",
-                TokenType.FIELD: "field",
-                TokenType.DYNAMIC: "dynamic",
-                TokenType.META: "meta",
-                TokenType.MODIFIER: "modifier",
-            }
+        if tok.type in self.LEAF_CLASSES:
             node = ParseNode(
                 node_type="leaf",
-                symbol_class=class_map[tok.type],
+                symbol_class=self.LEAF_CLASSES[tok.type],
                 value=tok.value
             )
             return node, pos + 1, []
 
-        # Subscripts attached to nothing — treat as unknown context
+        # A subscript must belong to a symbol; on its own it is not an expression
         if tok.type == TokenType.SUBSCRIPT:
-            node = ParseNode("leaf", "subscript", tok.value)
-            return node, pos + 1, []
+            return None, pos, [f"Subscript '{tok.value}' is not attached to a symbol"]
 
         return None, pos, [f"Unexpected token '{tok.value}' of type {tok.type.value}"]
 
@@ -446,9 +507,7 @@ class CompressionMeasurer:
         tokens = self.tokenizer.tokenize(lamague_expr)
         parts = []
         for tok in tokens:
-            if tok.type == TokenType.OPERATOR:
-                parts.append("→ transforms to:")
-            elif tok.value in LAMAGUE_EXPANSIONS:
+            if tok.value in LAMAGUE_EXPANSIONS:
                 parts.append(LAMAGUE_EXPANSIONS[tok.value])
             elif tok.type not in (TokenType.UNKNOWN, TokenType.PIPE):
                 parts.append(tok.value)
@@ -520,7 +579,6 @@ CANONICAL_EXAMPLES = [
 
 def demo():
     """Demonstrate the LAMAGUE parser and measure actual compression ratios."""
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
     print("LAMAGUE BNF PARSER + COMPRESSION MEASURER")
     print("=" * 65)
@@ -611,4 +669,6 @@ def demo():
 
 
 if __name__ == "__main__":
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")  # script runs only; importing never touches stdout
     demo()

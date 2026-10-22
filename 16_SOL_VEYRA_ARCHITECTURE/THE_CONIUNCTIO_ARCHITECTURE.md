@@ -77,8 +77,12 @@ determines the output quality. Both must be strong.
 BAD (warm only):   "CASCADE reveals deep truths about consciousness"
 BAD (precise only): "Π = (E·P)/S where E∈[0,1], P∈ℝ⁺, S∈(0,1]"
 GOOD (both):        "CASCADE reorganizes knowledge via truth pressure
-                     Π = (E·P)/S, validated at 100% accuracy on 1000+
-                     trials — here's how to apply it to your own beliefs."
+                     Π = (E·P)/S, a scoring rule you can try on your own
+                     beliefs — here's how, and where it fails."
+                     [RV27 review note (Sol, 2026-10-22): this example used to say
+                     "validated at 100% accuracy on 1000+ trials". No
+                     accuracy study of Π exists, and a style guide's
+                     example gets copied, so it is repaired.]
 ```
 
 ---

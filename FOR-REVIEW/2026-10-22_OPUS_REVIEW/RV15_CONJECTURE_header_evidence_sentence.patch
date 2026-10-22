@@ -1,0 +1,180 @@
+--- a/03_LAMAGUE_L1/07_GEOMATRIA_COMPLETE_SPECIFICATION.md
++++ b/03_LAMAGUE_L1/07_GEOMATRIA_COMPLETE_SPECIFICATION.md
+@@ -10,10 +10,11 @@
+ >
+ > Speculative extensions are legitimate and this corpus keeps them deliberately.
+ > What was missing was the marker, so that a later reader — human or model —
+-> cannot mistake this register for the measured one. Evidence in this directory
+-> lives in `12_CORE_LANGUAGE_LINE/`, `22_REVERSIBLE_COMPRESSION_v1.0/`,
+-> `02_NATIVE36/` and `23_SPOKEN_LAMAGUE/`, which carry 417 passing tests between
+-> them. **This document carries none, and nothing here is retracted by saying so.**
++> cannot mistake this register for the measured one. Measured evidence in this
++> directory lives in the runtime suites, `12_CORE_LANGUAGE_LINE/`,
++> `22_REVERSIBLE_COMPRESSION_v1.0/` and the `02_NATIVE36/` registry validator;
++> `LAMAGUE_STATUS_REGISTER.json` lists each with what was run. **This document
++> carries none, and nothing here is retracted by saying so.**
+ >
+ > Derived by executing what sits beside each file, not by reading what the file
+ > says about itself: `python3 03_LAMAGUE_L1/lamague_register.py`
+--- a/03_LAMAGUE_L1/09_TRI_LINGUISTIC_DEEP_DIVE.md
++++ b/03_LAMAGUE_L1/09_TRI_LINGUISTIC_DEEP_DIVE.md
+@@ -10,10 +10,11 @@
+ >
+ > Speculative extensions are legitimate and this corpus keeps them deliberately.
+ > What was missing was the marker, so that a later reader — human or model —
+-> cannot mistake this register for the measured one. Evidence in this directory
+-> lives in `12_CORE_LANGUAGE_LINE/`, `22_REVERSIBLE_COMPRESSION_v1.0/`,
+-> `02_NATIVE36/` and `23_SPOKEN_LAMAGUE/`, which carry 417 passing tests between
+-> them. **This document carries none, and nothing here is retracted by saying so.**
++> cannot mistake this register for the measured one. Measured evidence in this
++> directory lives in the runtime suites, `12_CORE_LANGUAGE_LINE/`,
++> `22_REVERSIBLE_COMPRESSION_v1.0/` and the `02_NATIVE36/` registry validator;
++> `LAMAGUE_STATUS_REGISTER.json` lists each with what was run. **This document
++> carries none, and nothing here is retracted by saying so.**
+ >
+ > Derived by executing what sits beside each file, not by reading what the file
+ > says about itself: `python3 03_LAMAGUE_L1/lamague_register.py`
+--- a/03_LAMAGUE_L1/14_LAMAGUE-EX_NIHILO_Generative_Protocol_v1.0.md
++++ b/03_LAMAGUE_L1/14_LAMAGUE-EX_NIHILO_Generative_Protocol_v1.0.md
+@@ -10,10 +10,11 @@
+ >
+ > Speculative extensions are legitimate and this corpus keeps them deliberately.
+ > What was missing was the marker, so that a later reader — human or model —
+-> cannot mistake this register for the measured one. Evidence in this directory
+-> lives in `12_CORE_LANGUAGE_LINE/`, `22_REVERSIBLE_COMPRESSION_v1.0/`,
+-> `02_NATIVE36/` and `23_SPOKEN_LAMAGUE/`, which carry 417 passing tests between
+-> them. **This document carries none, and nothing here is retracted by saying so.**
++> cannot mistake this register for the measured one. Measured evidence in this
++> directory lives in the runtime suites, `12_CORE_LANGUAGE_LINE/`,
++> `22_REVERSIBLE_COMPRESSION_v1.0/` and the `02_NATIVE36/` registry validator;
++> `LAMAGUE_STATUS_REGISTER.json` lists each with what was run. **This document
++> carries none, and nothing here is retracted by saying so.**
+ >
+ > Derived by executing what sits beside each file, not by reading what the file
+ > says about itself: `python3 03_LAMAGUE_L1/lamague_register.py`
+--- a/03_LAMAGUE_L1/15_LAMAGUE-COSMOS_Panpsychist_Extension_v1.0.md
++++ b/03_LAMAGUE_L1/15_LAMAGUE-COSMOS_Panpsychist_Extension_v1.0.md
+@@ -10,10 +10,11 @@
+ >
+ > Speculative extensions are legitimate and this corpus keeps them deliberately.
+ > What was missing was the marker, so that a later reader — human or model —
+-> cannot mistake this register for the measured one. Evidence in this directory
+-> lives in `12_CORE_LANGUAGE_LINE/`, `22_REVERSIBLE_COMPRESSION_v1.0/`,
+-> `02_NATIVE36/` and `23_SPOKEN_LAMAGUE/`, which carry 417 passing tests between
+-> them. **This document carries none, and nothing here is retracted by saying so.**
++> cannot mistake this register for the measured one. Measured evidence in this
++> directory lives in the runtime suites, `12_CORE_LANGUAGE_LINE/`,
++> `22_REVERSIBLE_COMPRESSION_v1.0/` and the `02_NATIVE36/` registry validator;
++> `LAMAGUE_STATUS_REGISTER.json` lists each with what was run. **This document
++> carries none, and nothing here is retracted by saying so.**
+ >
+ > Derived by executing what sits beside each file, not by reading what the file
+ > says about itself: `python3 03_LAMAGUE_L1/lamague_register.py`
+--- a/03_LAMAGUE_L1/16_LAMAGUE-QUANTUM_Non_Commutative_Geometry_v1.0.md
++++ b/03_LAMAGUE_L1/16_LAMAGUE-QUANTUM_Non_Commutative_Geometry_v1.0.md
+@@ -10,10 +10,11 @@
+ >
+ > Speculative extensions are legitimate and this corpus keeps them deliberately.
+ > What was missing was the marker, so that a later reader — human or model —
+-> cannot mistake this register for the measured one. Evidence in this directory
+-> lives in `12_CORE_LANGUAGE_LINE/`, `22_REVERSIBLE_COMPRESSION_v1.0/`,
+-> `02_NATIVE36/` and `23_SPOKEN_LAMAGUE/`, which carry 417 passing tests between
+-> them. **This document carries none, and nothing here is retracted by saying so.**
++> cannot mistake this register for the measured one. Measured evidence in this
++> directory lives in the runtime suites, `12_CORE_LANGUAGE_LINE/`,
++> `22_REVERSIBLE_COMPRESSION_v1.0/` and the `02_NATIVE36/` registry validator;
++> `LAMAGUE_STATUS_REGISTER.json` lists each with what was run. **This document
++> carries none, and nothing here is retracted by saying so.**
+ >
+ > Derived by executing what sits beside each file, not by reading what the file
+ > says about itself: `python3 03_LAMAGUE_L1/lamague_register.py`
+--- a/03_LAMAGUE_L1/17_LAMAGUE-CONTINUUM_Continuous_Temporal_Field_v1.0.md
++++ b/03_LAMAGUE_L1/17_LAMAGUE-CONTINUUM_Continuous_Temporal_Field_v1.0.md
+@@ -10,10 +10,11 @@
+ >
+ > Speculative extensions are legitimate and this corpus keeps them deliberately.
+ > What was missing was the marker, so that a later reader — human or model —
+-> cannot mistake this register for the measured one. Evidence in this directory
+-> lives in `12_CORE_LANGUAGE_LINE/`, `22_REVERSIBLE_COMPRESSION_v1.0/`,
+-> `02_NATIVE36/` and `23_SPOKEN_LAMAGUE/`, which carry 417 passing tests between
+-> them. **This document carries none, and nothing here is retracted by saying so.**
++> cannot mistake this register for the measured one. Measured evidence in this
++> directory lives in the runtime suites, `12_CORE_LANGUAGE_LINE/`,
++> `22_REVERSIBLE_COMPRESSION_v1.0/` and the `02_NATIVE36/` registry validator;
++> `LAMAGUE_STATUS_REGISTER.json` lists each with what was run. **This document
++> carries none, and nothing here is retracted by saying so.**
+ >
+ > Derived by executing what sits beside each file, not by reading what the file
+ > says about itself: `python3 03_LAMAGUE_L1/lamague_register.py`
+--- a/03_LAMAGUE_L1/18_LAMAGUE-CHORA_Collective_Ethics_v1.0.md
++++ b/03_LAMAGUE_L1/18_LAMAGUE-CHORA_Collective_Ethics_v1.0.md
+@@ -10,10 +10,11 @@
+ >
+ > Speculative extensions are legitimate and this corpus keeps them deliberately.
+ > What was missing was the marker, so that a later reader — human or model —
+-> cannot mistake this register for the measured one. Evidence in this directory
+-> lives in `12_CORE_LANGUAGE_LINE/`, `22_REVERSIBLE_COMPRESSION_v1.0/`,
+-> `02_NATIVE36/` and `23_SPOKEN_LAMAGUE/`, which carry 417 passing tests between
+-> them. **This document carries none, and nothing here is retracted by saying so.**
++> cannot mistake this register for the measured one. Measured evidence in this
++> directory lives in the runtime suites, `12_CORE_LANGUAGE_LINE/`,
++> `22_REVERSIBLE_COMPRESSION_v1.0/` and the `02_NATIVE36/` registry validator;
++> `LAMAGUE_STATUS_REGISTER.json` lists each with what was run. **This document
++> carries none, and nothing here is retracted by saying so.**
+ >
+ > Derived by executing what sits beside each file, not by reading what the file
+ > says about itself: `python3 03_LAMAGUE_L1/lamague_register.py`
+--- a/03_LAMAGUE_L1/19_LAMAGUE-THANATOS_Death_Protocol_v1.0.md
++++ b/03_LAMAGUE_L1/19_LAMAGUE-THANATOS_Death_Protocol_v1.0.md
+@@ -10,10 +10,11 @@
+ >
+ > Speculative extensions are legitimate and this corpus keeps them deliberately.
+ > What was missing was the marker, so that a later reader — human or model —
+-> cannot mistake this register for the measured one. Evidence in this directory
+-> lives in `12_CORE_LANGUAGE_LINE/`, `22_REVERSIBLE_COMPRESSION_v1.0/`,
+-> `02_NATIVE36/` and `23_SPOKEN_LAMAGUE/`, which carry 417 passing tests between
+-> them. **This document carries none, and nothing here is retracted by saying so.**
++> cannot mistake this register for the measured one. Measured evidence in this
++> directory lives in the runtime suites, `12_CORE_LANGUAGE_LINE/`,
++> `22_REVERSIBLE_COMPRESSION_v1.0/` and the `02_NATIVE36/` registry validator;
++> `LAMAGUE_STATUS_REGISTER.json` lists each with what was run. **This document
++> carries none, and nothing here is retracted by saying so.**
+ >
+ > Derived by executing what sits beside each file, not by reading what the file
+ > says about itself: `python3 03_LAMAGUE_L1/lamague_register.py`
+--- a/03_LAMAGUE_L1/20_LAMAGUE-PAIS_Child_Genesis_Layer_v1.0.md
++++ b/03_LAMAGUE_L1/20_LAMAGUE-PAIS_Child_Genesis_Layer_v1.0.md
+@@ -10,10 +10,11 @@
+ >
+ > Speculative extensions are legitimate and this corpus keeps them deliberately.
+ > What was missing was the marker, so that a later reader — human or model —
+-> cannot mistake this register for the measured one. Evidence in this directory
+-> lives in `12_CORE_LANGUAGE_LINE/`, `22_REVERSIBLE_COMPRESSION_v1.0/`,
+-> `02_NATIVE36/` and `23_SPOKEN_LAMAGUE/`, which carry 417 passing tests between
+-> them. **This document carries none, and nothing here is retracted by saying so.**
++> cannot mistake this register for the measured one. Measured evidence in this
++> directory lives in the runtime suites, `12_CORE_LANGUAGE_LINE/`,
++> `22_REVERSIBLE_COMPRESSION_v1.0/` and the `02_NATIVE36/` registry validator;
++> `LAMAGUE_STATUS_REGISTER.json` lists each with what was run. **This document
++> carries none, and nothing here is retracted by saying so.**
+ >
+ > Derived by executing what sits beside each file, not by reading what the file
+ > says about itself: `python3 03_LAMAGUE_L1/lamague_register.py`
+--- a/03_LAMAGUE_L1/21_LAMAGUE-SOMA_Embodiment_Layer_v1.0.md
++++ b/03_LAMAGUE_L1/21_LAMAGUE-SOMA_Embodiment_Layer_v1.0.md
+@@ -10,10 +10,11 @@
+ >
+ > Speculative extensions are legitimate and this corpus keeps them deliberately.
+ > What was missing was the marker, so that a later reader — human or model —
+-> cannot mistake this register for the measured one. Evidence in this directory
+-> lives in `12_CORE_LANGUAGE_LINE/`, `22_REVERSIBLE_COMPRESSION_v1.0/`,
+-> `02_NATIVE36/` and `23_SPOKEN_LAMAGUE/`, which carry 417 passing tests between
+-> them. **This document carries none, and nothing here is retracted by saying so.**
++> cannot mistake this register for the measured one. Measured evidence in this
++> directory lives in the runtime suites, `12_CORE_LANGUAGE_LINE/`,
++> `22_REVERSIBLE_COMPRESSION_v1.0/` and the `02_NATIVE36/` registry validator;
++> `LAMAGUE_STATUS_REGISTER.json` lists each with what was run. **This document
++> carries none, and nothing here is retracted by saying so.**
+ >
+ > Derived by executing what sits beside each file, not by reading what the file
+ > says about itself: `python3 03_LAMAGUE_L1/lamague_register.py`

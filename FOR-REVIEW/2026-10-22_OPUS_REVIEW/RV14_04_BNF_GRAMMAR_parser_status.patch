@@ -1,0 +1,30 @@
+--- a/03_LAMAGUE_L1/04_BNF_GRAMMAR.md	2026-10-22 08:07:00.832395152 +1300
++++ b/03_LAMAGUE_L1/04_BNF_GRAMMAR.md	2026-10-22 08:07:00.890846817 +1300
+@@ -170,6 +170,11 @@
+ Ao → Φ↑ → Ψ → Ψ_inv | C(Ψ_t) ≥ C(Ψ₀)
+ ```
+ 
++**Parser status (review 2026-10-22, MEASURED):** `lamague_parser.py` rejects this line.
++It has no `C(...)` form or `≥` comparison, so the constraint after `|` reads as unknown
++symbols. The main segment `Ao → Φ↑ → Ψ → Ψ_inv` parses, as 7 tokens. What a constraint
++may contain is an open grammar decision.
++
+ **MEASURED compression ratios** (from `lamague_parser.py`, 5 canonical examples):
+ - Token ratio: **~3:1** (LAMAGUE tokens vs English words)
+ - Character ratio: **~11:1** (LAMAGUE characters vs English characters)
+@@ -304,8 +309,13 @@
+ - `EnergyLedger` — immutable audit trail
+ 
+ **Note:** `lamague_reference.py` implements the CASCADE/TRIAD system that LAMAGUE
+-encodes. It does not implement a LAMAGUE parser/compiler. A formal parser for the
+-BNF grammar above is a future implementation task. [CONJECTURE → SCAFFOLD]
++encodes. It does not implement a LAMAGUE parser/compiler. The expression parser is
++`12_IMPLEMENTATIONS/core/lamague_parser.py`, the source of the compression figures
++above. It accepts its own dialect of the grammar above: the operators → ⊗ ⇌ ⟲ ↯ at one
++left-associative precedence, `↑` and `_subscript` compounds, parentheses, and `|`
++constraints written in the same expression language. Its module docstring lists the
++differences; reconciling the two grammars is the author's decision.
++[ACTIVE parser; grammar reconciliation SCAFFOLD]
+ 
+ ---
+ 

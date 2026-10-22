@@ -44,3 +44,19 @@ def test_register_check_fails_on_a_drifted_mirror(tmp_path):
                       encoding="utf-8")
     _truth, errors = verify_claims.check_register(str(tmp_path))
     assert any("README.md" in e and "total" in e for e in errors)
+
+
+@pytest.mark.active
+def test_register_check_fails_on_a_duplicate_claim_id(tmp_path):
+    """Counts survive a duplicated id, so only an explicit check catches it (RV36, 2026-10-22)."""
+    import json
+    for rel in MIRRORED:
+        dest = tmp_path / rel
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(os.path.join(ROOT, rel), dest)
+    register_path = tmp_path / verify_claims.CLAIMS_PATH
+    register = json.loads(register_path.read_text(encoding="utf-8"))
+    register["claims"][1]["claim_id"] = register["claims"][0]["claim_id"]
+    register_path.write_text(json.dumps(register, ensure_ascii=False, indent=2), encoding="utf-8")
+    _truth, errors = verify_claims.check_register(str(tmp_path))
+    assert any("appears 2 times" in e for e in errors), errors

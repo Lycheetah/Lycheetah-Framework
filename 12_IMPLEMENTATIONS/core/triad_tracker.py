@@ -22,14 +22,11 @@ Date: March 2026
 import numpy as np
 import math
 import sys
+import warnings
 from typing import Callable, Tuple, List, Dict, Optional
 from dataclasses import dataclass
 import json
 from pathlib import Path
-
-# Ensure UTF-8 output on Windows
-if sys.stdout.encoding.lower() not in ('utf-8', 'utf8'):
-    sys.stdout.reconfigure(encoding='utf-8')
 
 
 @dataclass
@@ -96,9 +93,11 @@ class TriadTracker:
         )
 
         if self.step_size >= self.max_step_size:
-            print(
-                f"⚠️  WARNING: step_size {self.step_size:.4f} >= nominal bound {self.max_step_size:.4f}\n"
-                f"   This bound alone does not establish convergence."
+            warnings.warn(
+                f"step_size {self.step_size:.4f} >= nominal bound {self.max_step_size:.4f}; "
+                "this bound alone does not establish convergence.",
+                RuntimeWarning,
+                stacklevel=2,
             )
 
         self.convergence_threshold = self._positive(convergence_threshold, "convergence_threshold")
@@ -345,4 +344,6 @@ def example_triad():
 
 
 if __name__ == "__main__":
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")  # script runs only; importing never touches stdout
     example_triad()

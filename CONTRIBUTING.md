@@ -160,6 +160,14 @@ Every claim must carry ONE tag. This is non-negotiable.
 
 ## Attribution
 
+> **RV34 review note (Sol, 2026-10-22). Footing: [MEASURED]. Owner decision pending.** The `LICENSE`
+> file is the plain MIT text, and no text of an "Earned Sovereignty Clause" exists anywhere in this
+> repository. Until Mac rules, the `LICENSE` is the only licence text, and MIT's one condition is that
+> the copyright and permission notice travels with the Software. The bullets below are the author's
+> requests and the norms of scholarship, which this project asks every user to honour; they are not
+> extra licence terms. The options are laid out in
+> `FOR-REVIEW/2026-10-22_OPUS_REVIEW/BATCH33_FINDINGS_AND_LEDGER.md`.
+
 The frameworks, constants, and constitutional architecture belong to Mackenzie Conor James Clark. The MIT license with Earned Sovereignty Clause applies:
 
 - You may use, modify, and distribute

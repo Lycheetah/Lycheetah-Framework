@@ -112,7 +112,8 @@ while writing this guide:
   v0.2 and v0.3 respectively. They concern the implemented formal language.
 - **Compression:** 36/36 exact packet round trips, 324/324 constructed mutation
   classifications and 33.8% warm / 30.7% cold reduction on the authored held-out
-  split. See the [benchmark boundary](22_REVERSIBLE_COMPRESSION_v1.0/docs/CLAIM_BOUNDARY.md).
+  split. Plain per-packet gzip -9 saves 54.6% on the same split, so the codec earns
+  its place by checked reversibility, not size. See the [benchmark boundary](22_REVERSIBLE_COMPRESSION_v1.0/docs/CLAIM_BOUNDARY.md).
 - **Model decoding:** a controlled, operator-run pilot recorded 56 valid
   outputs from 60 attempts. Structured decoding preserved more supported fields
   and also invented more unsupported ones. It is not independent replication

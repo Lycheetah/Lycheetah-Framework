@@ -1,0 +1,10 @@
+test_duplicate_transport_request_id_is_rejected_before_reexecution (test_remote_witness_process.RemoteWitnessProcessTests.test_duplicate_transport_request_id_is_rejected_before_reexecution) ... ok
+test_four_witnesses_are_distinct_os_processes_and_bootstrap_over_mtls (test_remote_witness_process.RemoteWitnessProcessTests.test_four_witnesses_are_distinct_os_processes_and_bootstrap_over_mtls) ... ok
+test_fresh_nonce_head_reports_are_signed_by_remote_witnesses (test_remote_witness_process.RemoteWitnessProcessTests.test_fresh_nonce_head_reports_are_signed_by_remote_witnesses) ... ok
+test_gateway_attempt_rate_budget_includes_active_limit_denials (test_remote_witness_process.RemoteWitnessProcessTests.test_gateway_attempt_rate_budget_includes_active_limit_denials) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 9.357s
+
+OK
+LIFECYCLE_SUMMARY tests=4 shard=3/14 errors=0 failures=0 surviving_non_main_threads=[]

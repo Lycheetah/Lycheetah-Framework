@@ -1,8 +1,9 @@
-const { app, BrowserWindow, ipcMain, dialog } = require('electron')
+const { app, BrowserWindow, ipcMain, dialog, shell } = require('electron')
 const path = require('path')
 const fs = require('fs')
 const http = require('http')
 const { v4: uuidv4 } = require('uuid')
+const { PORT, ENDPOINTS, createApiHandler } = require('./local-api')
 
 const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged
 
@@ -354,72 +355,26 @@ ipcMain.handle('blocks:appendHistory', (_, { id, score, ts }) => {
 })
 
 // ── Local API server (port 7432) — optional plugin/scripting hook ─────────────
-// Exposes read-only endpoints. No auth needed — localhost only, no write ops.
+// Read-only. No auth token; local-api.js refuses foreign Host and Origin headers (DNS rebinding).
 let apiServer = null
 
 function startApiServer() {
   if (apiServer) return
-  apiServer = http.createServer((req, res) => {
-    res.setHeader('Content-Type', 'application/json')
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost')
-
-    const url = new URL(req.url, 'http://localhost:7432')
-    const p = url.pathname
-
-    try {
-      if (p === '/status') {
-        res.end(JSON.stringify({ ok: true, version: '0.3.0', pyramids: db.pyramids.length, blocks: db.blocks.length }))
-      } else if (p === '/pyramids') {
-        res.end(JSON.stringify(db.pyramids))
-      } else if (p === '/files') {
-        const pyramidId = url.searchParams.get('pyramidId')
-        res.end(JSON.stringify(pyramidId ? db.files.filter(f => f.pyramid_id === pyramidId) : db.files))
-      } else if (p === '/blocks') {
-        const fileId = url.searchParams.get('fileId')
-        const pyramidId = url.searchParams.get('pyramidId')
-        let blocks = db.blocks
-        if (fileId) blocks = blocks.filter(b => b.file_id === fileId)
-        else if (pyramidId) {
-          const fileIds = db.files.filter(f => f.pyramid_id === pyramidId).map(f => f.id)
-          blocks = blocks.filter(b => fileIds.includes(b.file_id))
-        }
-        res.end(JSON.stringify(blocks))
-      } else if (p === '/layers') {
-        const blockId = url.searchParams.get('blockId')
-        if (!blockId) { res.statusCode = 400; res.end(JSON.stringify({ error: 'blockId required' })); return }
-        res.end(JSON.stringify(db.onion_layers.filter(l => l.block_id === blockId).sort((a, b) => a.layer_index - b.layer_index)))
-      } else if (p === '/audit') {
-        res.end(JSON.stringify([...(db.audit_log || [])].reverse().slice(0, 100)))
-      } else if (p === '/search') {
-        const q = (url.searchParams.get('q') || '').toLowerCase()
-        if (!q) { res.end(JSON.stringify([])); return }
-        const hits = db.blocks.filter(b =>
-          b.title?.toLowerCase().includes(q) || b.content?.toLowerCase().includes(q)
-        ).slice(0, 50)
-        res.end(JSON.stringify(hits))
-      } else {
-        res.statusCode = 404
-        res.end(JSON.stringify({ error: 'Not found', endpoints: ['/status', '/pyramids', '/files', '/blocks', '/layers', '/audit', '/search'] }))
-      }
-    } catch (e) {
-      res.statusCode = 500
-      res.end(JSON.stringify({ error: e.message }))
-    }
-  })
+  apiServer = http.createServer(createApiHandler(() => db))
 
   apiServer.on('error', (e) => {
     if (e.code !== 'EADDRINUSE') console.error('API server error:', e)
   })
 
-  apiServer.listen(7432, '127.0.0.1', () => {
-    console.log('CASCADE local API running at http://127.0.0.1:7432')
+  apiServer.listen(PORT, '127.0.0.1', () => {
+    console.log(`CASCADE local API running at http://127.0.0.1:${PORT}`)
   })
 }
 
 ipcMain.handle('api:status', () => ({
   running: apiServer?.listening || false,
-  port: 7432,
-  endpoints: ['/status', '/pyramids', '/files', '/blocks', '/layers', '/audit', '/search'],
+  port: PORT,
+  endpoints: ENDPOINTS,
 }))
 
 ipcMain.handle('api:start', () => { startApiServer(); return { ok: true } })
@@ -438,6 +393,15 @@ function createWindow() {
       contextIsolation: true,
       nodeIntegration: false,
     },
+  })
+  // The preload bridge reaches the database and the file dialogs, so no remote page may load in
+  // a window that carries it. Web links open in the system browser; the app window never leaves.
+  win.webContents.setWindowOpenHandler(({ url }) => {
+    if (/^https?:\/\//.test(url)) shell.openExternal(url)
+    return { action: 'deny' }
+  })
+  win.webContents.on('will-navigate', (event, url) => {
+    if (url !== win.webContents.getURL()) event.preventDefault()
   })
   if (isDev) {
     win.loadURL('http://localhost:5173')

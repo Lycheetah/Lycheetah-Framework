@@ -369,6 +369,10 @@ A composition test **fails** under the following conditions:
 
 **New sub-hypothesis H5 (v0.3 extension, pre-registered 2026-05-03):**
 
+> *Review note (2026-10-22, RV23):* "pre-registered" here means added to this draft on that
+> date. §X records the draft as unfiled, and no registry receipt exists, so H5 is not yet
+> registered anywhere.
+
 H5: Adding Ren Zheng and Wang Dao operators to the composition stack increases
 ASSIMILATION-RISK recall by ≥ 0.05 compared to the original five-operator composition,
 at α = 0.05 (one-sided, McNemar's test on case-level agreement for ASSIMILATION-RISK class).

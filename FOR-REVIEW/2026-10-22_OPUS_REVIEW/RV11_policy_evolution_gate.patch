@@ -1,0 +1,337 @@
+RV11 staged patch (Opus review, 22 October 2026). STAGED, NOT APPLIED.
+
+The frozen v1.2 packet keeps its bytes as the recorded counterexample. On Mac's
+say, copy the packet to a new version folder (for example
+06_hazard_lineage_policy_evolution_v1_2_1/), apply this there with the paths
+adjusted, add a correction note to that folder's README, rerun benchmark.py
+(expected: 15/15 scripted, 64/64 classifier) and write the folder's own
+SHA256SUMS.json. Probes and the measured before/after are in repro_batch10.py
+and BATCH10_FINDINGS_AND_LEDGER.md.
+
+--- a/papers/agent-safety/frontier-controls/06_hazard_lineage_policy_evolution_v1_2/policy_evolution_gate.py
++++ b/papers/agent-safety/frontier-controls/06_hazard_lineage_policy_evolution_v1_2/policy_evolution_gate.py
+@@ -1,6 +1,6 @@
+ #!/usr/bin/env python3
+ """
+-Lycheetah Hazard Lineage + Policy Evolution Gate v1.2
++Lycheetah Hazard Lineage + Policy Evolution Gate v1.2.1
+ 
+ Problem:
+     A runtime can perfectly enforce an incomplete or accidentally weakened
+@@ -28,6 +28,14 @@
+ 
+ This is conventional management-of-change / safety-case maintenance machinery,
+ not claimed as a novel safety-analysis method.
++
++v1.2.1 (Opus review, 22 October 2026; the frozen v1.2 packet keeps its bytes as
++the recorded counterexample): a policy with a repeated group ID, or with one
++obligation ID under two hazard/evidence labels, is refused before it is stored
++or compared; a relabelled obligation stops for external review; activation
++stops when the active version, high-severity incidents or active fixtures
++changed while it was being reviewed; a candidate must be newer than the active
++version and not already decided; fixture truth values must be booleans.
+ """
+ 
+ from __future__ import annotations
+@@ -79,6 +87,49 @@
+     )
+ 
+ 
++def validate_policy(policy: Policy) -> None:
++    """Refuse a policy the structural classifier cannot read exactly.
++
++    The classifier compares groups by ID and treats each obligation ID as one
++    boolean atom. A repeated group ID is ANDed by policy_formula() but kept
++    once by group_map(), and one obligation ID under two hazard or evidence
++    labels lets the incident trace read a label the formula never sees.
++    """
++    group_ids = set()
++    labels = {}
++    for g in policy.groups:
++        if not isinstance(g.group_id, str) or not g.group_id:
++            raise ValueError("group_id must be a non-empty string")
++        if g.group_id in group_ids:
++            raise ValueError(
++                f"duplicate group_id {g.group_id!r} in "
++                f"{policy.policy_id} v{policy.version}"
++            )
++        group_ids.add(g.group_id)
++        for o in g.obligations:
++            if not isinstance(o.obligation_id, str) or not o.obligation_id:
++                raise ValueError("obligation_id must be a non-empty string")
++            label = (o.hazard_id, o.evidence_key)
++            if labels.setdefault(o.obligation_id, label) != label:
++                raise ValueError(
++                    f"obligation {o.obligation_id!r} carries two "
++                    "hazard/evidence labels"
++                )
++
++
++def relabelled_obligations(old: Policy, new: Policy) -> list[str]:
++    """Obligation IDs present in both versions whose hazard or evidence label
++    changed. The formula cannot see a label, so the classifier calls such a
++    change EQUIVALENT while the incident trace now accepts something else."""
++    def labels(p):
++        return {
++            o.obligation_id: (o.hazard_id, o.evidence_key)
++            for g in p.groups for o in g.obligations
++        }
++    a, b = labels(old), labels(new)
++    return sorted(k for k in a.keys() & b.keys() if a[k] != b[k])
++
++
+ def group_map(policy: Policy):
+     return {
+         g.group_id: frozenset(o.obligation_id for o in g.obligations)
+@@ -87,14 +138,23 @@
+ 
+ 
+ def semantic_relation_structural(old: Policy, new: Policy) -> str:
+-    """Exact structural implication classifier for AND-of-OR formulas when
+-    obligation IDs are atomic booleans.
++    """Structural implication classifier for AND-of-OR formulas when
++    obligation IDs are atomic booleans and group IDs are unique.
++
++    Sound in the direction the gate relies on: STRONGER or EQUIVALENT only
++    when the new formula implies the old one. It is not exact: absorption, a
++    renamed group, or a group implied by another can give WEAKER, INCOMPARABLE
++    or STRONGER where the truth-table oracle finds EQUIVALENT or STRONGER, and
++    those changes stop for review. A repeated group ID broke soundness in
++    v1.2 and is now refused by validate_policy().
+ 
+     STRONGER: new => old, but old !=> new
+     WEAKER: old => new, but new !=> old
+     EQUIVALENT: both
+     INCOMPARABLE: neither
+     """
++    validate_policy(old)
++    validate_policy(new)
+     oldm = group_map(old)
+     newm = group_map(new)
+     weakening = False
+@@ -252,6 +312,7 @@
+     def install_initial(self, policy: Policy):
+         if not policy.groups:
+             raise ValueError("policy must have groups")
++        validate_policy(policy)
+         with self.connect() as con:
+             con.execute("BEGIN IMMEDIATE")
+             if con.execute(
+@@ -314,6 +375,10 @@
+     def add_fixture(self, fixture_id: str, policy_id: str,
+                     truth: dict[str,bool], expected_allow: bool,
+                     source: str):
++        if not isinstance(expected_allow, bool) or not all(
++            isinstance(k, str) and isinstance(v, bool) for k, v in truth.items()
++        ):
++            raise TypeError("fixture truth values and expected_allow must be bool")
+         with self.connect() as con:
+             con.execute(
+                 "INSERT INTO fixtures(fixture_id,policy_id,truth_json,"
+@@ -325,6 +390,7 @@
+             )
+ 
+     def propose(self, candidate: Policy):
++        validate_policy(candidate)
+         current = self.active(candidate.policy_id)
+         if current is None:
+             raise ValueError("no active policy")
+@@ -386,11 +452,43 @@
+                 })
+         return failures
+ 
++    def _review_basis(self, con, policy_id):
++        """What an activation decision reads: the active version, the
++        high-severity incidents and the active fixtures, as committed."""
++        active = con.execute(
++            "SELECT version FROM active_policy WHERE policy_id=?", (policy_id,)
++        ).fetchone()
++        incidents = con.execute(
++            "SELECT incident_id,hazard_id,mapped_group_id FROM incidents"
++            " WHERE severity IN ('HIGH','CRITICAL') ORDER BY incident_id"
++        ).fetchall()
++        fixtures = con.execute(
++            "SELECT fixture_id,truth_json,expected_allow FROM fixtures"
++            " WHERE policy_id=? AND active=1 ORDER BY fixture_id", (policy_id,)
++        ).fetchall()
++        return (
++            None if active is None else active["version"],
++            tuple(tuple(r) for r in incidents),
++            tuple(tuple(r) for r in fixtures),
++        )
++
+     def activate_candidate(self, policy_id: str, version: int):
++        with self.connect() as con:
++            basis = self._review_basis(con, policy_id)
+         candidate = self._candidate(policy_id,version)
+         current = self.active(policy_id)
+         if current is None:
+             raise ValueError("no active policy")
++        with self.connect() as con:
++            state = con.execute(
++                "SELECT state FROM policies WHERE policy_id=? AND version=?",
++                (policy_id,version),
++            ).fetchone()["state"]
++        if version <= current.version or state not in {"PROPOSED","STOPPED"}:
++            return EvolutionDecision(
++                "STOPPED","candidate-not-newer-than-active-or-already-decided",
++                None,policy_id,version
++            )
+         relation = semantic_relation_structural(current,candidate)
+ 
+         # Conservative v1.2 lane: no automated weakening/replacement.
+@@ -407,6 +505,25 @@
+                 )
+             return EvolutionDecision(
+                 "STOPPED","non-monotonic-policy-change-requires-external-review",
++                relation,policy_id,version
++            )
++
++        # A relabelled obligation is invisible to the formula but changes what
++        # the incident trace accepts.
++        relabelled = relabelled_obligations(current,candidate)
++        if relabelled:
++            with self.connect() as con:
++                con.execute(
++                    "UPDATE policies SET state='STOPPED'"
++                    " WHERE policy_id=? AND version=?",
++                    (policy_id,version),
++                )
++                self._audit(
++                    con,"ACTIVATION_STOP",policy_id=policy_id,version=version,
++                    detail=f"relabelled obligations={','.join(relabelled)}"
++                )
++            return EvolutionDecision(
++                "STOPPED","obligation-relabel-requires-external-review",
+                 relation,policy_id,version
+             )
+ 
+@@ -439,6 +556,14 @@
+ 
+         with self.connect() as con:
+             con.execute("BEGIN IMMEDIATE")
++            # Every check above read committed state outside this transaction.
++            if (self._review_basis(con, policy_id) != basis
++                    or basis[0] != current.version):
++                con.execute("ROLLBACK")
++                return EvolutionDecision(
++                    "STOPPED","policy-state-changed-during-review",
++                    relation,policy_id,version
++                )
+             con.execute(
+                 "UPDATE policies SET state='RETIRED'"
+                 " WHERE policy_id=? AND state='ACTIVE'",
+--- a/papers/agent-safety/frontier-controls/06_hazard_lineage_policy_evolution_v1_2/benchmark.py
++++ b/papers/agent-safety/frontier-controls/06_hazard_lineage_policy_evolution_v1_2/benchmark.py
+@@ -189,6 +189,91 @@
+         "case":"restart-preserves-policy-evolution-state",
+         "pass":d.state=="ACTIVE",
+         "observed":d.__dict__
++    })
++
++    # 11 A policy that repeats a group ID is refused at installation. v1.2 ANDed
++    #    both groups but compared only the last one.
++    db=tmp/"duplicate-initial.sqlite"
++    g=PolicyEvolutionGate(db)
++    dup=Policy(PID,1,(Group("G1",(ob("A"),)),Group("G1",(ob("B"),))))
++    try:
++        g.install_initial(dup); refused=False
++    except ValueError:
++        refused=True
++    rows.append({
++        "case":"repeated-group-id-is-refused-at-installation",
++        "pass":refused and g.active(PID) is None,
++        "observed":{"refused":refused}
++    })
++
++    # 12 A candidate that repeats a group ID is refused before it is stored,
++    #    so it can never become the base of the next comparison.
++    db=tmp/"duplicate-candidate.sqlite"
++    g=PolicyEvolutionGate(db);g.install_initial(BASE);base_fixtures(g)
++    dup=Policy(PID,2,BASE.groups+(Group("G_TESTS",(ob("T","H_UNTESTED"),)),))
++    try:
++        g.propose(dup); refused=False
++    except ValueError:
++        refused=True
++    try:
++        g._candidate(PID,2); stored=True
++    except KeyError:
++        stored=False
++    rows.append({
++        "case":"repeated-group-id-candidate-is-refused-before-storage",
++        "pass":refused and not stored,
++        "observed":{"refused":refused,"stored":stored}
++    })
++
++    # 13 Relabelling an obligation's hazard satisfies the incident trace
++    #    without adding a control; it stops for external review.
++    db=tmp/"relabel.sqlite"
++    g=PolicyEvolutionGate(db);g.install_initial(BASE);base_fixtures(g)
++    g.record_incident("INC-REL","H_UNTRUSTED_ARTIFACT","HIGH","unsigned artifact")
++    g.map_incident("INC-REL","G_TESTS")
++    relabel=Policy(PID,2,tuple(
++        Group(x.group_id,(ob("T","H_UNTRUSTED_ARTIFACT"),))
++        if x.group_id=="G_TESTS" else x
++        for x in BASE.groups
++    ))
++    rel=g.propose(relabel);d=g.activate_candidate(PID,2)
++    rows.append({
++        "case":"relabelled-obligation-requires-external-review",
++        "pass":rel=="EQUIVALENT" and d.state=="STOPPED"
++               and d.reason=="obligation-relabel-requires-external-review"
++               and g.incident_state("INC-REL")["state"]=="MAPPED",
++        "observed":{"relation":rel,"decision":d.__dict__,
++                    "incident":g.incident_state("INC-REL")}
++    })
++
++    # 14 An older candidate cannot replace a newer active version.
++    db=tmp/"stale.sqlite"
++    g=PolicyEvolutionGate(db);g.install_initial(BASE);base_fixtures(g)
++    v2=Policy(PID,2,BASE.groups+(
++        SIG_GROUP,Group("G_R_ONLY",(ob("R","H_UNRECOVERABLE"),)),
++    ))
++    v3=Policy(PID,3,BASE.groups+(SIG_GROUP,))
++    g.propose(v2);g.propose(v3)
++    d3=g.activate_candidate(PID,3);d2=g.activate_candidate(PID,2)
++    rows.append({
++        "case":"stale-candidate-cannot-replace-newer-active-version",
++        "pass":d3.state=="ACTIVE" and d2.state=="STOPPED"
++               and g.active(PID).version==3,
++        "observed":{"v3":d3.__dict__,"v2":d2.__dict__,
++                    "active_version":g.active(PID).version}
++    })
++
++    # 15 Fixture truth must be boolean; the string "false" is truthy.
++    db=tmp/"fixture-type.sqlite"
++    g=PolicyEvolutionGate(db);g.install_initial(BASE)
++    try:
++        g.add_fixture("F_STRING",PID,{"T":"false"},False,"typo"); refused=False
++    except TypeError:
++        refused=True
++    rows.append({
++        "case":"non-boolean-fixture-truth-is-refused",
++        "pass":refused,
++        "observed":{"refused":refused}
+     })
+ 
+     return rows
+@@ -275,7 +360,7 @@
+     naive=naive_version_baseline_diagnostic()
+ 
+     report={
+-        "schema":"LYCHEETAH-HAZARD-LINEAGE-POLICY-EVOLUTION-REPORT-1.2",
++        "schema":"LYCHEETAH-HAZARD-LINEAGE-POLICY-EVOLUTION-REPORT-1.2.1",
+         "status":"SYNTHETIC_ENGINEERING_VALIDATED",
+         "scripted_cases":cases,
+         "scripted_summary":{
+@@ -298,8 +383,8 @@
+         json.dumps(report,indent=2,sort_keys=True),encoding="utf-8"
+     )
+ 
+-    print("Lycheetah Hazard Lineage + Policy Evolution Gate v1.2")
+-    print("=====================================================")
++    print("Lycheetah Hazard Lineage + Policy Evolution Gate v1.2.1")
++    print("=======================================================")
+     print(f"Scripted checks: {report['scripted_summary']['passed']}/{report['scripted_summary']['total']}")
+     print(f"Semantic classifier: {classifier['correct']}/{classifier['candidates']}")
+     print(f"Naive newer-version diagnostic: weaker accepted={naive['semantically_weaker']}/{naive['newer_versions_accepted_by_naive_counter']}")

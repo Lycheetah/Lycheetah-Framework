@@ -56,3 +56,36 @@ A later bounded swarm completed its three assigned reviews and implemented the
 retained handoff workflow and snapshot/receipt repairs. Its 329-case focused run
 contains 90 new cases; see `swarm-hardening.json`. This newer batch does not turn
 the earlier folder census into completed semantic review.
+
+## Second-reviewer note (2026-10-22, RV36)
+
+The receipts above were re-checked by a second AI reviewer (Sol, Claude Opus 5.5). The JSON receipts
+are left byte-for-byte as issued. This is AI review of AI review. It is not independent scientific
+validation.
+
+- **Reproduced exactly.** In a detached baseline worktree, `math_probes.py` gave 18 of 18 probes,
+  with every probe's values, the 36 source receipts and the script hash identical to
+  `math-probes.json`. `claim-evidence-audit.json` was identical except for its timestamp. A mutated
+  pinned source was refused, and so was the current HEAD.
+- **Recomputed and holding.**
+  - All 32 notices: the before-hash equals the baseline blob, the after-hash equals HEAD, and no
+    original line was deleted.
+  - `coverage.json` counts 4822 files, 50 directories and 35 root files.
+  - All 606 folders of the snapshot tree.
+  - 23 missing references and 16 claims whose pointers are all missing, with all 71 statements and
+    statuses unchanged.
+  - The `oct19-preservation.json` hashes at HEAD.
+- **Not reproducible as labelled.** `verification.json` reports a maintained suite of 999 collected,
+  997 passed. Collection at its `baseline_commit` gives 981. At the commit that added the receipt
+  (`cf6ff23`) it gives 1058. The 999 was measured on a working tree that no commit records.
+- **Hardcoded control.** `resolver_controls` in the claims audit is written as literal `true`. The
+  sentinel check asserts that a file is absent; it never passes that file through the resolver.
+- **No generator.** Only `math-probes.json` and `claim-evidence-audit.json` have a committed producer.
+  The booleans in the other receipts (`notice_hashes_match`, `all_current_hashes_match`,
+  `missing_folder_negative_control_detected`) are written values. Most of them were recomputed above
+  and hold.
+- **Describe HEAD, not later working trees.** `oct19-preservation.json` and the `source_sha256` block
+  in `swarm-hardening.json` describe HEAD. The uncommitted 2026-10-22 review has since changed 2
+  intake files and 5 swarm-pinned sources, and each change is disclosed in its own batch ledger.
+
+Full ledger: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/BATCH35_FINDINGS_AND_LEDGER.md`.

@@ -13,4 +13,4 @@ __all__ = ["HealerTransmuter"]
 
 if __name__ == "__main__":
     agent = HealerTransmuter()
-    print(f"HealerTransmuter online: {agent}")
+    print(f"HealerTransmuter constructed (scaffold; no behaviour probed): {agent}")

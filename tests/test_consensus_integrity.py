@@ -91,6 +91,28 @@ def test_verdict_digest_binds_participants_graph_and_audit():
         assert not replace(verdict, **changes).verify_integrity()
 
 
+def test_legacy_verdict_without_anchor_is_refused_even_when_resealed():
+    # The v2 profile binds the anchor; a v1-shaped verdict must be re-deliberated, so
+    # re-sealing it with its own digest, or carrying a v1 digest, never verifies.
+    import hashlib
+
+    from lycheetah.consensus import arena as arena_module
+
+    arena = ConsensusArena(anchor=[1.0, 0.0])
+    arena.add_agent("worker", [1.0, 0.0])
+    verdict = arena.deliberate()
+    for consensus_vector in (verdict.consensus_vector, None):
+        legacy = replace(verdict, anchor_vector=(), consensus_vector=consensus_vector)
+        legacy.consensus_digest = legacy.compute_digest()
+        assert not legacy.verify_integrity()
+
+    v1_payload = verdict._digest_payload()
+    del v1_payload["profile"], v1_payload["anchor_vector"]
+    v1_digest = hashlib.sha256(arena_module._canonical_json(v1_payload).encode()).hexdigest()
+    assert not replace(verdict, consensus_digest=v1_digest).verify_integrity()
+    assert verdict.to_dict()["profile"] == "lycheetah.consensus-verdict.v2"
+
+
 @pytest.mark.parametrize("payload", ["[[NaN,0]]", "[[Infinity,0]]", "[[]]", "[[[1,0]]]", "[[1,0],[1]]"])
 def test_mcp_network_formatter_refuses_invalid_vectors(payload):
     from lycheetah.applications.lycheetah_guard_mcp import format_network_health

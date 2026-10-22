@@ -1,0 +1,66 @@
+diff -ruN a/TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_SHADOW_EVIDENCE_CONSOLE_v0.7/lib/truth-pressure-integration/shadow-analysis.ts b/TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_SHADOW_EVIDENCE_CONSOLE_v0.7/lib/truth-pressure-integration/shadow-analysis.ts
+--- a/TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_SHADOW_EVIDENCE_CONSOLE_v0.7/lib/truth-pressure-integration/shadow-analysis.ts	2026-10-22 13:51:28.212522047 +1300
++++ b/TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_SHADOW_EVIDENCE_CONSOLE_v0.7/lib/truth-pressure-integration/shadow-analysis.ts	2026-10-22 13:51:28.212820792 +1300
+@@ -192,10 +192,14 @@
+     {
+       id: 'GATE-DISAGREEMENT-REVIEW',
+       label: 'Trigger disagreements reviewed',
+-      state: summary.triggerDisagreements === 0 ? 'PASS' : 'OPEN',
+-      detail: summary.triggerDisagreements === 0
+-        ? 'No comparable trigger disagreements are currently recorded.'
+-        : `${summary.triggerDisagreements} trigger disagreement(s) require human review. No automatic pass threshold is assumed.`,
++      // Zero disagreements out of zero comparable records is absence of evidence,
++      // not agreement. The gate passes only once agreement has been observed.
++      state: summary.triggerDisagreements === 0 && summary.triggerAgreements > 0 ? 'PASS' : 'OPEN',
++      detail: summary.triggerDisagreements > 0
++        ? `${summary.triggerDisagreements} trigger disagreement(s) require human review. No automatic pass threshold is assumed.`
++        : summary.triggerAgreements === 0
++          ? 'No record is trigger-comparable, so agreement has not been observed; the gate stays open.'
++          : 'No comparable trigger disagreements are currently recorded.',
+     },
+   ];
+ }
+diff -ruN a/TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_SHADOW_EVIDENCE_CONSOLE_v0.7/scripts/verify-shadow-review.ts b/TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_SHADOW_EVIDENCE_CONSOLE_v0.7/scripts/verify-shadow-review.ts
+--- a/TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_SHADOW_EVIDENCE_CONSOLE_v0.7/scripts/verify-shadow-review.ts	2026-10-22 13:51:28.215593122 +1300
++++ b/TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_SHADOW_EVIDENCE_CONSOLE_v0.7/scripts/verify-shadow-review.ts	2026-10-22 13:51:28.215721713 +1300
+@@ -25,6 +25,7 @@
+     legacy?: number | null;
+     warning?: string;
+     disagreement?: boolean;
++    agreement?: boolean;
+   } = {},
+ ): ShadowComparisonRecord {
+   const candidate = options.candidate ?? (index % 10) / 10;
+@@ -58,7 +59,9 @@
+         ? 'NOT_COMPARABLE'
+         : options.disagreement
+           ? 'DISAGREE'
+-          : 'NOT_COMPARABLE',
++          : options.agreement
++            ? 'AGREE'
++            : 'NOT_COMPARABLE',
+     },
+   };
+ }
+@@ -127,12 +130,20 @@
+ 
+ check('100 clean records can meet the engineering gate', () => {
+   const report = buildShadowEvidenceReport(
+-    dataset(Array.from({ length: 100 }, (_, i) => record(i))),
++    dataset(Array.from({ length: 100 }, (_, i) => record(i, { agreement: true }))),
+     '2026-08-02T00:00:00.000Z',
+   );
+   assert.equal(report.releaseState, 'ENGINEERING_GATE_MET');
+ });
+ 
++check('100 records with no comparable trigger do not meet the engineering gate', () => {
++  const records = Array.from({ length: 100 }, (_, i) => record(i));
++  const gates = buildEngineeringGates(dataset(records));
++  assert.equal(gates.find(gate => gate.id === 'GATE-DISAGREEMENT-REVIEW')?.state, 'OPEN');
++  const report = buildShadowEvidenceReport(dataset(records), '2026-08-02T00:00:00.000Z');
++  assert.notEqual(report.releaseState, 'ENGINEERING_GATE_MET');
++});
++
+ check('engineering report carries explicit scientific boundary', () => {
+   const report = buildShadowEvidenceReport(dataset([]));
+   assert.ok(report.boundaries.some(boundary => boundary.includes('do not establish scientific validity')));

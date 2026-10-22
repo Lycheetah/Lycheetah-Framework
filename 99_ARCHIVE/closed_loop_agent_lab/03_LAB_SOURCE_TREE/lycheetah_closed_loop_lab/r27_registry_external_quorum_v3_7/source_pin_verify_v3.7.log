@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "upstream_commit_observed": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "verified_files": 3,
+  "note": "Only files explicitly labelled upstream-derived are pinned to the observed upstream/local source reference. New quorum wrapper and tests are local artifacts."
+}

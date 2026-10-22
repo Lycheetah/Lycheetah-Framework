@@ -26,6 +26,7 @@ from core.psi_consensus import (  # noqa: E402
     AdaptiveThresholds,
     ConsensusResult,
     PsiConsensus,
+    _anchor_drift,
 )
 from core.psi_consensus import (  # noqa: E402
     _unit_state_vector as _to_unit_vector,
@@ -135,13 +136,15 @@ class DeliberationVerdict:
 
 
 class ConsensusArena:
-    """High-level coordinator for multi-agent epistemic consensus and Byzantine quarantine.
+    """High-level coordinator for multi-agent epistemic consensus and drift quarantine.
 
     Wraps `PsiConsensus` with:
     - Automatic full-mesh topology when explicit neighbor edges are omitted.
     - Configurable single-shot or multi-strike Grey Mode quarantine (`alert_threshold`).
-    - Built-in TRIAD recovery (`recover_agent`) to heal quarantined nodes back onto
-      the constitutional invariant curve.
+      Quarantine sees reported vectors only; it does not detect Byzantine agents.
+    - Built-in TRIAD recovery (`recover_agent`) that replaces a quarantined agent's
+      vector with one pulled toward the invariant curve. The agent does not resubmit
+      it, so every later verdict's audit trail records the replacement.
     - Deterministic SHA-256 `consensus_digest` over deliberation outcomes.
     """
 
@@ -184,6 +187,7 @@ class ConsensusArena:
             grey_alert_threshold=grey_alert_threshold,
         )
         self.proposals: dict[str, AgentProposal] = {}
+        self._recovery_log: list[str] = []
 
     @property
     def dim(self) -> int:
@@ -213,8 +217,9 @@ class ConsensusArena:
             claim=claim,
             neighbors=list(neighbors or []),
         )
-        self.proposals[agent_id] = prop
+        # The protocol refuses a duplicate id before the proposal is replaced.
         self.protocol.add_agent(agent_id, vec, neighbors=list(neighbors or []))
+        self.proposals[agent_id] = prop
         return self
 
     def _ensure_topology(self) -> None:
@@ -252,7 +257,7 @@ class ConsensusArena:
             partition_count=raw.obstruction_report.partition_count,
             inconsistent_edges=list(raw.obstruction_report.inconsistent_edges),
             consensus_digest="",
-            audit_trail=list(raw.audit_trail),
+            audit_trail=list(raw.audit_trail) + self._recovery_log,
             anchor_vector=tuple(float(x) for x in self.anchor_vec),
         )
         verdict.consensus_digest = verdict.compute_digest()
@@ -289,6 +294,11 @@ class ConsensusArena:
             node.state = result.final_state.copy()
             if agent_id in self.proposals:
                 self.proposals[agent_id].vector = [float(x) for x in result.final_state]
+            self._recovery_log.append(
+                f"  RECOVERED: '{agent_id}' vector replaced by TRIAD recovery "
+                f"(cycles={result.cycles_run}, psi_r={result.psi_r:.4f}); "
+                "the agent did not resubmit it"
+            )
         return result
 
     def agent_status(self, agent_id: str) -> dict[str, Any]:
@@ -297,7 +307,7 @@ class ConsensusArena:
             raise KeyError(f"Unknown agent_id: {agent_id!r}")
         node = self.protocol._nodes[agent_id]
         monitor = self.protocol._grey_monitors[agent_id]
-        drift = 1.0 - abs(float(np.dot(node.state, self.anchor_vec)))
+        drift = _anchor_drift(node.state, self.anchor_vec)
         status_str = getattr(monitor.status, "value", str(monitor.status))
         return {
             "agent_id": agent_id,
@@ -310,7 +320,12 @@ class ConsensusArena:
     def sheaf_cohomology_report(self) -> dict[str, Any]:
         """Compute the exact cellular sheaf coboundary certificate (``delta^0``,
         Hodge 0-Laplacian ``L_0 = (delta^0)^T delta^0``, ``dim H^0``, ``dim H^1``,
-        and Dirichlet sheaf energy ``||delta^0 x||_2^2``) over the healthy agent graph."""
+        and Dirichlet sheaf energy ``||delta^0 x||_2^2``) over the healthy agent graph.
+
+        The restriction maps are identities, so ``dim H^0`` and ``dim H^1`` depend only
+        on the healthy-agent graph (``d`` times its component and cycle counts). They
+        read no agent state: three agreeing agents on a triangle report ``dim H^1 = d``.
+        Only ``dirichlet_energy`` and ``coboundary_norm`` measure disagreement."""
         from core.sheaf_cohomology_factorial import CellularSheaf
 
         self._ensure_topology()

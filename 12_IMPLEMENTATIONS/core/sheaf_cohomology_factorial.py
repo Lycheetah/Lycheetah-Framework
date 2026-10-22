@@ -14,8 +14,9 @@ Resolves two structural boundaries documented in ``topological_cascade_glass.py`
      stalks ``R^d`` with orthogonal edge restriction maps ``F_{u <= e}, F_{v <= e} in O(d)``,
      and sheaf Hodge 0-Laplacian ``L_0 = (delta^0)^T delta^0``.
    - Exact cohomology dimensions ``dim H^0(G; F) = nullity(delta^0)`` and
-     ``dim H^1(G; F) = dim coker(delta^0) = d|E| - rank(delta^0)``, satisfying the
-     Euler-Poincare identity ``dim H^0 - dim H^1 = d * (b_0(G) - b_1(G))``.
+     ``dim H^1(G; F) = dim coker(delta^0) = d|E| - rank(delta^0)``. The recorded
+     Euler-Poincare identity ``dim H^0 - dim H^1 = d * (b_0(G) - b_1(G))`` holds by
+     dimension counting for any rank value, so it does not check the computed rank.
    - **Intrinsic Cycle Holonomy Theorem (`b_1 = 0` trees vs `b_1 > 0` cycles)**:
      On any connected tree (`chain`, `star`, `balanced`, `b_1(G) = 0`), every orthogonal
      cellular sheaf is trivializable by parallel transport from the root, so
@@ -115,8 +116,8 @@ def parents_v3(size: int, topology: str) -> tuple[tuple[int, ...], ...]:
     - node 2: ``(0,)``
     - node 3: ``(1, 2)`` (closes the 4-vertex undirected cycle ``0 - 1 - 3 - 2 - 0``,
       so at ``size == 4``, ``|V| = 4, |E| = 4, b_0 = 1, b_1 = 1``).
-    - nodes ``k >= 4``: depend on ``(k - 3, k - 2)`` when ``k >= 3``, adding one
-      undirected cycle per dual-parent synthesis node while keeping ``b_0 = 1``.
+    - nodes ``k >= 4``: depend on ``(k - 2, k - 1)``, adding one undirected cycle per
+      dual-parent synthesis node while keeping ``b_0 = 1``.
     """
     _count(size, "concepts", 2)
     if topology in TOPOLOGIES_V2:
@@ -491,7 +492,12 @@ class CellularSheaf:
 
 
 def paradigm_stalk_vector(paradigm: str, stalk_dim: int = 2) -> np.ndarray:
-    """Embed a paradigm identifier into an orthonormal stalk vector in ``R^d``."""
+    """Embed a paradigm identifier into an orthonormal stalk vector in ``R^d``.
+
+    Only ``a`` and ``b`` are guaranteed distinct. Other labels are hashed onto a basis
+    position (or onto ``-1`` when ``d == 1``), so distinct labels can share a vector
+    and are then certified as consistent.
+    """
     if stalk_dim == 1:
         return np.array([1.0 if paradigm == "a" else -1.0], dtype=float)
     vec = np.zeros(stalk_dim, dtype=float)
@@ -568,7 +574,11 @@ class SheafCascadeEngine(TopologicalCascadeEngine):
 
     def has_discordant_parent(self, block: KnowledgeBlock) -> bool:
         """Return True iff the local sheaf has a non-zero relative ``H^1`` obstruction
-        and ``block`` has positive coboundary energy against its parent sections."""
+        and ``block`` has positive coboundary energy against its parent sections.
+
+        With identity restrictions the second condition follows from the first: no
+        child vector equals two different parent vectors.
+        """
         if not self.propagate_dependencies or block.regime != "universal":
             return False
         p_domains = self.parent_domains(block)
@@ -814,7 +824,14 @@ def simulate_orthogonal(
     propagate_dependencies: bool = True,
 ) -> dict[str, Any]:
     """Discrete-event simulation parameterizing ``timing_mode``, ``queue_scope``, and
-    ``duration_mode`` independently across the full 2x2x2 factorial cube."""
+    ``duration_mode`` independently across the full 2x2x2 factorial cube.
+
+    ``work_coupled`` schedules the work estimated on a copy of the store at service
+    start. Under ``lookahead`` the completion-time adjudication can see later arrivals
+    and perform different work. The ``receipt_*`` fields compare the capacity each
+    service actually received (busy time times processing rate) with the work its
+    completion performed.
+    """
     if model not in MODELS or len(trace) < 2:
         raise ValueError("expected cascade/fifo and at least two arrivals")
     if timing_mode not in TIMING_MODES:
@@ -838,12 +855,14 @@ def simulate_orthogonal(
     current: str | None = None
     current_snapshot: set[str] | None = None
     current_work: int = 0
+    current_started_at = 0.0
     completion = math.inf
     index = 0
     clock = 0.0
     g_area = 0.0
     backlog_area = 0.0
     work_samples: list[int] = []
+    paid_samples: list[float] = []
     service_count = 0
     service_before_horizon = 0
     open_pairs: dict[tuple[str, str], float] = {}
@@ -863,13 +882,14 @@ def simulate_orthogonal(
         current_g = glass_fraction_v2(engine, now)
 
     def start(at: float) -> None:
-        nonlocal current, current_snapshot, current_work, completion
+        nonlocal current, current_snapshot, current_work, current_started_at, completion
         while queue and queue[0] not in pending:
             queue.popleft()
         if not queue:
             current, current_snapshot, current_work, completion = None, None, 0, math.inf
             return
         current = queue.popleft()
+        current_started_at = at
         current_snapshot = (set(pending) | {current}) if use_snapshot else None
         if use_work_coupled:
             probe = SheafCascadeEngine(propagate_dependencies=propagate_dependencies)
@@ -903,6 +923,7 @@ def simulate_orthogonal(
             snapshot_visible=current_snapshot,
         )
         work_samples.append(actual_work)
+        paid_samples.append((at - current_started_at) * calibration.processing_rate)
         service_count += 1
         service_before_horizon += int(at <= horizon)
         pending.discard(current)
@@ -951,6 +972,16 @@ def simulate_orthogonal(
         complete(clock)
 
     mean_work = statistics.mean(work_samples) if work_samples else 0.0
+    shortfalls = [
+        actual - paid
+        for actual, paid in zip(work_samples, paid_samples)
+        if actual - paid > 1e-6 * max(1.0, actual)
+    ]
+    surpluses = [
+        paid - actual
+        for actual, paid in zip(work_samples, paid_samples)
+        if paid - actual > 1e-6 * max(1.0, actual)
+    ]
     frustrated_blocks = sum(
         1
         for b in engine.blocks.values()
@@ -974,6 +1005,15 @@ def simulate_orthogonal(
         "final_backlog": final_backlog,
         "loaded_mean_work": mean_work,
         "loaded_to_calibrated_work": mean_work / calibration.mean_work,
+        "service_rule": "estimated_work_at_start" if use_work_coupled else "fixed_tau",
+        "service_completions_in_window": service_before_horizon,
+        "receipt_jobs": len(work_samples),
+        "receipt_actual_work": float(sum(work_samples)),
+        "receipt_paid_work": float(sum(paid_samples)),
+        "receipt_jobs_underpaid": len(shortfalls),
+        "receipt_unpaid_work": float(sum(shortfalls)),
+        "receipt_jobs_overpaid": len(surpluses),
+        "receipt_overpaid_work": float(sum(surpluses)),
         "drain_duration": max(0.0, clock - horizon),
         "drained_g": current_g,
         "drained_backlog": len(pending),
@@ -1131,6 +1171,7 @@ def run_sheaf_and_factorial_study(
     cell_cascade_work_ratio: dict[tuple[str, str, str], float] = {}
     cell_cascade_minus_fifo_g: dict[tuple[str, str, str], float] = {}
     cell_cascade_drain: dict[tuple[str, str, str], float] = {}
+    cell_cascade_receipts: dict[tuple[str, str, str], tuple[int, int, float]] = {}
 
     for cell in FACTORIAL_CELLS:
         t_mode, q_scope, d_mode = cell
@@ -1159,6 +1200,11 @@ def run_sheaf_and_factorial_study(
             c["mean_g"] - f["mean_g"] for c, f in zip(cas_rows, fifo_rows)
         )
         cell_cascade_drain[cell] = statistics.mean(r["drain_duration"] for r in cas_rows)
+        cell_cascade_receipts[cell] = (
+            sum(r["receipt_jobs_underpaid"] for r in cas_rows),
+            sum(r["receipt_jobs"] for r in cas_rows),
+            sum(r["receipt_unpaid_work"] for r in cas_rows),
+        )
 
     factorial_summary = {
         "high_load_level": high_load_target,
@@ -1167,6 +1213,9 @@ def run_sheaf_and_factorial_study(
                 "cascade_loaded_to_calibrated_work": round(cell_cascade_work_ratio[(t, q, d)], 6),
                 "cascade_minus_fifo_mean_g": round(cell_cascade_minus_fifo_g[(t, q, d)], 6),
                 "cascade_drain_duration": round(cell_cascade_drain[(t, q, d)], 6),
+                "cascade_jobs_underpaid": cell_cascade_receipts[(t, q, d)][0],
+                "cascade_jobs": cell_cascade_receipts[(t, q, d)][1],
+                "cascade_unpaid_work": round(cell_cascade_receipts[(t, q, d)][2], 6),
             }
             for (t, q, d) in FACTORIAL_CELLS
         },

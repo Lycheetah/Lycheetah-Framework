@@ -1,0 +1,11 @@
+v4.7 absolute HTTP socket deadline — acceptance summary
+
+Focused tests: 3 passed (header slow drip, body slow drip, existing TLS handshake timeout control).
+Ingress: 24 passed.
+Coordinator: 13 passed.
+Checkpoint quorum: 38 passed.
+Gateway/remote witness: 56 passed in 56.947s; 0 errors, 0 failures, no surviving non-main Python threads.
+Total unique test methods: 131 passed.
+
+See the individual *_v4.7_final.log files and gateway_background_v4.7.log for details.
+The gateway log includes one faulthandler diagnostic at 45s while a request handler awaited a remote quorum response; the suite subsequently completed successfully. The socket deadline does not cancel application work after dispatch begins.

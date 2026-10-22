@@ -33,7 +33,7 @@ not independent scientific validation or a census of every recent research packe
 - [28_DEFENSE/COUNTER_CODEX.md](28_DEFENSE/COUNTER_CODEX.md): Objections; do not assume a summary answers them.
 - [28_DEFENSE/FAILURE_MUSEUM.md](28_DEFENSE/FAILURE_MUSEUM.md): Retractions and unsuccessful work retained for accountability.
 - [28_DEFENSE/SCOPE_BOUNDARY.md](28_DEFENSE/SCOPE_BOUNDARY.md): Declared limits, to be read alongside later empirical results.
-- [33_APPLICATIONS/EXTERNAL_VALIDATION_2026-08-07.md](33_APPLICATIONS/EXTERNAL_VALIDATION_2026-08-07.md): Project-run analysis of externally authored datasets. Small hh-rlhf effect; no distinguishable social-engineering effect. Read its correction.
+- [33_APPLICATIONS/EXTERNAL_VALIDATION_2026-08-07.md](33_APPLICATIONS/EXTERNAL_VALIDATION_2026-08-07.md): Project-run analysis of externally authored datasets. Small hh-rlhf effect; a social-engineering effect too small to use (the original "not significant" ignored tied scores; corrected 2026-10-22). Read its corrections.
 - [33_APPLICATIONS/INDEPENDENT_PUBLISHER_2026-08-07.md](33_APPLICATIONS/INDEPENDENT_PUBLISHER_2026-08-07.md): Human-comment generalisation not established on the reported sample.
 - [28_DEFENSE/COLD_ROOM_VERIFICATION.md](28_DEFENSE/COLD_ROOM_VERIFICATION.md): Dated April internal reproduction with a simulated third-party perspective, not external replication or today's test total.
 - [tests/README.md](tests/README.md): Test collection and scope; packet-specific replay differs from default pytest.

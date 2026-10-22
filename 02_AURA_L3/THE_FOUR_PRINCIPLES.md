@@ -422,4 +422,4 @@ The Four Principles ecosystem.
 - `VEYRA_CIPHER.md` — The questioning system
 - `AURION_CODEC.md` — The building system
 - `ANIMA_RESONANCE.md` — The healing system
-- `19_MULTI_AGENT_CHORUS/` — Nine-agent implementation
+- `19_MULTI_AGENT_CHORUS/` — Nine-agent scaffold (role classes; the hub checks declared flags)

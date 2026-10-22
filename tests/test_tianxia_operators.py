@@ -351,3 +351,17 @@ def test_benchmark_orders_reference_scenarios():
     low = evaluate(EXTRACTIVE_BASELINE)
     high = evaluate(TIANXIA_ALIGNED_BASELINE)
     assert low is not None and high is not None
+
+
+def test_hexie_marginal_gain_is_equal_across_components():
+    """RV37: H5 is a linear average, so no component has a greater marginal gain."""
+    from hexie_five_fold import HexieState, hexie_five_fold
+
+    base = [0.28, 0.72, 0.81, 0.76, 0.69]
+    h0 = hexie_five_fold(HexieState(*base))[5]
+    gains = []
+    for i in range(5):
+        raised = list(base)
+        raised[i] += 0.05
+        gains.append(hexie_five_fold(HexieState(*raised))[5] - h0)
+    assert max(gains) - min(gains) < 1e-9

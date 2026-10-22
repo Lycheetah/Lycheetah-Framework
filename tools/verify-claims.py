@@ -78,12 +78,16 @@ def frozen_research_footing(root=ROOT):
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     from pathlib import Path
-    return module.verify(Path(root))
+    return module.verify_all(Path(root))
 
 # The count of unmarked claim-bearing documents on the day this gate was written.
 # It exists so the gate blocks REGRESSION today instead of staying red forever.
 # Lower it whenever the real number drops. Never raise it.
-BASELINE = 30   # 2026-07-27: gate taught to credit self-correction marks. Never raise this.
+BASELINE = 3    # 2026-07-27: gate taught to credit self-correction marks. Never raise this.
+# 2026-10-22 (RV30): 30 -> 3. Frozen research bundles now inherit footing from byte-verified
+# reviewed wrappers, and the rest were read and noted. The three left are honest in prose that no
+# vocabulary matches: THE_SOVEREIGN_MANIFESTO ("a stance, not a finding"), RELEASE_AUDIT_2026-10-19
+# ("Self-authored local research fixtures") and THE_CREATION_MYTH (the author's own story).
 
 
 def tracked_markdown():
@@ -231,6 +235,8 @@ def check_register(root=ROOT):
     if register.get("total_claims") != len(claims):
         errors.append(f"{CLAIMS_PATH}: total_claims = {register.get('total_claims')}, "
                       f"but the file holds {len(claims)} records")
+    errors += [f"{CLAIMS_PATH}: claim_id {cid} appears {n} times; mirrors and reviews key on it"
+               for cid, n in Counter(c["claim_id"] for c in claims).items() if n > 1]
 
     pinned = 0
     for rel, pins in MIRRORS.items():

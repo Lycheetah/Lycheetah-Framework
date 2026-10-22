@@ -1,0 +1,2 @@
+PASS: 31 exact local artifact fingerprints verified
+observed_upstream_commit=8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65; upstream_modified=False

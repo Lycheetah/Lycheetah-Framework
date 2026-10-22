@@ -182,9 +182,13 @@ class SovereignExecutionPermit:
         if isinstance(ttl_seconds, bool) or not isinstance(ttl_seconds, int) or ttl_seconds <= 0:
             raise ValueError("ttl_seconds must be a positive integer")
 
+        if isinstance(allowed_scopes, str):
+            raise ValueError("allowed_scopes must be a sequence of scopes, not a string")
         scopes_tuple = tuple(str(s) for s in allowed_scopes if str(s))
         if not scopes_tuple:
             raise ValueError("allowed_scopes must contain at least one scope")
+        if bound_scope not in scopes_tuple:
+            raise ValueError("bound_scope must be one of allowed_scopes")
 
         now_ts = int(time.time()) if issued_at is None else int(issued_at)
         act_hash = action_digest(action)
@@ -396,6 +400,14 @@ class PermitNonceStore:
                 (permit_id,),
             ).fetchone()
             return dict(row) if row is not None else None
+
+
+def _full_hash_or_none(packet: AgentStatePacket) -> str | None:
+    """Full canonical packet hash for the witness, or None if the packet is invalid."""
+    try:
+        return packet.full_hash
+    except ValueError:
+        return None
 
 
 class SovereignExecutionHarness:
@@ -627,6 +639,11 @@ class SovereignExecutionHarness:
             "classification": integrity.get("classification"),
             "reason": integrity.get("reason"),
             "candidate_critical_hash": integrity.get("candidate_critical_hash"),
+            # The permit binds the critical hash only. The full hashes record
+            # which complete packets were compared, so the witness can tell
+            # two runs apart when only non-critical fields differ.
+            "reference_full_hash": _full_hash_or_none(ref_obj),
+            "candidate_full_hash": _full_hash_or_none(cand_obj),
             "packet_id": cand_obj.id,
             "risk": cand_obj.risk,
             "reference_risk": ref_obj.risk,

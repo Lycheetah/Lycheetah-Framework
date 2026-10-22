@@ -108,6 +108,8 @@ anything because you have completed your own transmutation. Rubedo. Earned Light
 
 **The four stages as diagnostic states:**
 
+> **RV26 review note (Sol, 2026-10-22).** "Diagnostic" in this file means a reflective self-locating map. It is not a clinical diagnosis or a validated assessment, and nothing here measures a coherence state.
+
 | Stage | Colour | State | What's Happening |
 |-------|--------|-------|-----------------|
 | Nigredo | ⚫ Black | Dissolution | The false structure burns |

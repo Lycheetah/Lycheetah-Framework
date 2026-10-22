@@ -13,4 +13,4 @@ __all__ = ["SolsticeIlluminator"]
 
 if __name__ == "__main__":
     agent = SolsticeIlluminator()
-    print(f"SolsticeIlluminator online: {agent}")
+    print(f"SolsticeIlluminator constructed (scaffold; no behaviour probed): {agent}")

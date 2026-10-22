@@ -1,0 +1,6 @@
+test_two_remote_witnesses_down_fail_closed_without_mutation (test_remote_witness_process.RemoteWitnessProcessTests.test_two_remote_witnesses_down_fail_closed_without_mutation) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 32.385s
+
+OK

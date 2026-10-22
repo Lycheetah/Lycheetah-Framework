@@ -166,7 +166,7 @@ If the answer to all four is "I don't know" — that's important information abo
 If your child is experiencing a mental health crisis — AI is not the answer, and neither is this framework.
 
 Contact a crisis line:
-- **New Zealand:** Lifeline 0800 543 354 | Youthline 0800 376 633 | Text 'HELP' to 1737
+- **New Zealand:** Lifeline 0800 543 354 (7am – midnight since November 2025) | Youthline 0800 376 633 (24/7) | Call or text 1737 (24/7) | Immediate danger: 111
 - **Australia:** Lifeline 13 11 14 | Kids Helpline 1800 551 800
 - **UK:** Samaritans 116 123
 - **US/Canada:** 988 Suicide & Crisis Lifeline

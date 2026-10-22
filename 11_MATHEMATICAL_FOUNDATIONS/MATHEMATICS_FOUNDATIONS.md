@@ -321,6 +321,8 @@ Ao projects ψ onto H₀ = {ψ : S(ψ) < ε}. By the projection inequality for a
 
 For ψ ∉ H₀, the projection satisfies: ⟨Ao(ψ) − ψ, Ao(ψ)⟩ ≤ 0
 
+> **Status note (review 2026-10-22, RV18).** The parenthetical is right: {S ≥ ε} is a superlevel set of a concave S and is convex (0 of 5000 sampled midpoints left it). H₀ = {S < ε} itself is not convex (3350 of 5000 midpoints left it), so the projection inequality for convex sets does not apply to a projection onto H₀. The step needs a convex target or a different argument. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A3). The original text above is kept.
+
 This gives: ⟨∇S(ψ), Ao(ψ)⟩ ≤ ⟨∇S(ψ), ψ⟩ = S(ψ) − 1
 
 *Partial result:* When S(ψ) < 1 (i.e., the current entropy is below 1 nat), the Anchor term contributes ≤ 0 to dS/dt.
@@ -417,6 +419,10 @@ For this to be ≤ 0 for all small δψ, it suffices that D𝒢(ψ_inv) is negat
 Since Ψ is contractive (||Ψ|| < 1) and Ao is a projection (idempotent, ||Ao|| = 1), the linearized operator D𝒢(ψ_inv) = α·DAo + β·DΦ↑ + γ·DΨ has norm bounded by α + β + γ·||DΨ||. With γ·||DΨ|| < γ < 1 and appropriate α, β, the linearized dynamics can be made negative definite.
 
 *Partial result:* The linearized system near ψ_inv exhibits dS/dt ≤ 0 provided α + β ≤ 1 − γ·||DΨ||. This is a local stability result, not global.
+
+> **Status note (review 2026-10-22, RV18).** A norm bound on D𝒢 controls its size, not its sign, so it cannot make D𝒢 negative (semi)definite. α·Ao alone has eigenvalue +α on its range (measured +0.2 at α = 0.2; control: −I is negative definite). The condition α + β ≤ 1 − γ·||DΨ|| therefore does not imply dS/dt ≤ 0. Read this partial result as UNVERIFIED. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A2). The original text above is kept.
+
+> **Review addendum (2026-10-23, M2).** The bound is still useful once the iteration is read as what TRIAD runs, a discrete map ψ ↦ 𝒢(ψ). By the triangle inequality ‖D𝒢‖ ≤ α + β + γ·‖DΨ‖ when ‖DAo‖ ≤ 1 and ‖DΦ↑‖ ≤ 1 (the normalized ascent does not guarantee the second). The condition then gives ‖D𝒢(ψ_inv)‖ ≤ 1, and its strict form gives a local contraction: if ψ_inv is a fixed point, nearby iterates converge to it. That is a statement about the map, not about dS/dt and not about continuous time. The same matrix with eigenvalues 0.1 ± 0.14i grows under dx/dt = Mx and contracts under the map x ↦ Mx (spectral radius 0.17). Measured: the norm bound held on every sampled admissible case (largest 0.9911). Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_math_m1_m18.py` (M2).
 
 **Summary of what this computation achieves:**
 
@@ -557,6 +563,8 @@ Properties:
 - One-parameter group: Φ↑(t+s) = Φ↑(t) ∘ Φ↑(s)
 - Generator: ∇_φ (coherence gradient)
 
+> **Status note (review 2026-10-22, RV18).** exp(t·X) is unitary only when the generator X is skew-adjoint, and a gradient field is not skew-adjoint in general. The implemented ascent step adds dt·∇ and renormalizes: its output has unit norm, but it does not preserve inner products, so it is not unitary, and normalized steps do not compose as a one-parameter group. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A3). The original text above is kept.
+
 **Fold Operator Ψ:**  
 ```
 Ψ_t ψ = ∫_{-∞}^t K(t,s)·ψ(s) ds
@@ -610,6 +618,10 @@ For the discrete operator G: ψ ↦ ψ − α·∇S(ψ), the eigenvalues of the 
 DG(ψ_inv) = I − α·∇²S(ψ_inv)
 
 Since ∇²S = ∂²S/∂C² · (∇C ⊗ ∇C) is negative-definite (S is concave in C), −α·∇²S(ψ_inv) is positive. Eigenvalues of DG lie in (0,1) for small α — all strictly less than 1. This confirms the ground state structure.
+
+> **Status note (review 2026-10-22, RV18).** The sign is reversed. If ∇²S is negative definite, −α·∇²S is positive definite, so the eigenvalues of I − α·∇²S are greater than 1, not in (0,1). For binary entropy on [0.1, 0.9] the smallest is 1.4. The map ψ ↦ ψ − α·∇S descends S and runs away from the maximum (measured: it reaches p = 1.0; the ascent control converges to 0.5). Near the simplex boundary the curvature is unbounded (h''(1e−6) ≈ −1e6), so no global constant L exists. What holds is local. Ascent ψ ↦ ψ + α·∇S has Jacobian I + α·∇²S. On a region whose curvature is bounded by L (L = 11.11 on [0.1, 0.9]), its eigenvalues lie in (0,1) for 0 < α < 1/L. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A1). The original text above is kept.
+
+> **Review addendum (2026-10-23, M1).** The RV18 note reads ψ as the coherence value itself. In the composite setup used above, S = h(C(ψ)), a fixed point of G needs ∇S = h′(C)·∇C = 0, so ∇C(ψ_inv) = 0 whenever C ≠ ½. There the term h″·(∇C ⊗ ∇C) vanishes and ∇²S(ψ_inv) = h′(C)·∇²C. For C > ½, h′(C) = ln((1−C)/C) < 0, and at a coherence peak ∇²C is negative semidefinite, so ∇²S is positive semidefinite and DG = I − α·∇²S has eigenvalues in (0, 1] for small α: locally non-expanding, and contracting where ∇²C is negative definite. The conclusion survives at a coherence peak above ½, by this argument rather than the printed one, and an invariant state that meets the AURA floor (Coh ≥ 0.70) is in that case. Below ½ it reverses (measured: eigenvalue 0.9561 at a peak of 0.9, 1.0081 at a peak of 0.4). Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_math_m1_m18.py` (M1).
 
 *Remaining gap:* The full spectrum requires 𝒢 to be compact or have compact resolvent. This holds if the state space M is finite-dimensional (CASCADE uses finitely many knowledge blocks — this is the operational case). For the abstract infinite-dimensional Hilbert space formulation, compactness needs separate verification. [SCAFFOLD for abstract H; ACTIVE for finite block-count CASCADE]
 

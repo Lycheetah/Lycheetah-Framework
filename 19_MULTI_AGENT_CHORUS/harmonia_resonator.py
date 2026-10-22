@@ -13,4 +13,4 @@ __all__ = ["HarmoniaResonator"]
 
 if __name__ == "__main__":
     agent = HarmoniaResonator()
-    print(f"HarmoniaResonator online: {agent}")
+    print(f"HarmoniaResonator constructed (scaffold; no behaviour probed): {agent}")

@@ -29,6 +29,13 @@ The standard-library suites use fictional records and local services. They do
 not call a live model. Keep generated demo data outside this preserved tree when
 extending the research.
 
+**Review note (2026-10-22, RV22).** `v1.2/SHA256SUMS.txt` is the only manifest for
+the current tree, and `verify_release.py` checks it (137/137). The eight
+`SHA256SUMS_v0.2` … `SHA256SUMS_v0.9` files beside it are superseded per-version
+manifests carried along with the release; every one of them has 4–7 entries that
+do not match today's files. Read them as history of earlier versions, not as a
+second check of v1.2.
+
 ## What the evidence supports
 
 The integration run reproduced **264 tests with no failures or skips on Python

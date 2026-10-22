@@ -1,0 +1,6 @@
+test_multiprocess_race_allows_only_one_active_slot (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_multiprocess_race_allows_only_one_active_slot) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 2.482s
+
+OK

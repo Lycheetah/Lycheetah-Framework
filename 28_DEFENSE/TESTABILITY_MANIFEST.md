@@ -110,6 +110,8 @@ python earned_light_demo.py   # consciousness density demo
 
 **Claim:** CASCADE improves coherence from 0.58 to 0.93 in synthetic experiment (p < 0.001, d = 2.84).
 
+> **Status note (review 2026-10-22, RV19): UNVERIFIED.** `cascade_synthetic_experiment.py` exists nowhere in the repository or its history, so this protocol cannot be run. 0.58→0.93 is +60.3%, not +40.3%. The +40.3% in `TRUTH_PRESSURE/EMPIRICAL_RESULTS.md` comes from a different design (200 trials, 0.529→0.742) whose materials are also absent. The original entry is kept (`FOR-REVIEW/2026-10-22_OPUS_REVIEW/BATCH18_FINDINGS_AND_LEDGER.md`).
+
 **Code path:** `01_CASCADE_L4/implementations/cascade_synthetic_experiment.py`
 
 **Replication protocol:**
@@ -128,6 +130,8 @@ Expected output: `Coherence improvement: +40.3% (0.58→0.93), p < 0.001, d = 2.
 
 **Claim:** CASCADE improves coherence from 0.47 to 1.0 across 5 historical paradigm shifts.
 
+> **Status note (review 2026-10-22, RV19).** The stored run (`11_MATHEMATICAL_FOUNDATIONS/cascade_simulation_results.json`) reproduces exactly, but the additive baseline also scores 1.0 in every domain and every trial, so CASCADE ties it (t = 0, d = 0). The +110% is measured against a static baseline that never updates. 0.47→1.0 is +112.8%; 110.05% is the mean of the five per-domain percentages. The 200 trials per domain are identical deterministic runs, so the p-values do not count independent samples. MEASURED: CASCADE beats no update; it does not beat additive update. The original entry is kept (`FOR-REVIEW/2026-10-22_OPUS_REVIEW/BATCH18_FINDINGS_AND_LEDGER.md`).
+
 **Code path:** `cascade_simulation.py`
 
 **Replication protocol:**
@@ -145,6 +149,8 @@ Expected output: table of 5 paradigm shifts (Newtonian→Einsteinian, geocentric
 ### CAS-011 · −95.2% Catastrophic Forgetting
 
 **Claim:** CASCADE reduces catastrophic forgetting from 0.42 to 0.02.
+
+> **Status note (review 2026-10-22, RV19): UNVERIFIED.** The code path does not exist. The 0.42→0.02 here and the 1.00%→0.048% in `TRUTH_PRESSURE/EMPIRICAL_RESULTS.md` both give 95.2% from different numbers, and neither has data in the repository. The original entry is kept (`FOR-REVIEW/2026-10-22_OPUS_REVIEW/BATCH18_FINDINGS_AND_LEDGER.md`).
 
 **Code path:** `cascade_synthetic_experiment.py` — forgetting metric output
 

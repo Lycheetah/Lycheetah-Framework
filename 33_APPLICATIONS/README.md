@@ -38,7 +38,7 @@ study: these are project-run analyses of published datasets.
 |---|---|---|
 | Author-written discrimination corpus | The repair reported held-out ROC-AUC 0.940, after an earlier 0.274 inversion. | A useful regression/diagnostic corpus; the held-out examples still came from the project. |
 | Anthropic hh-rlhf harmless-base | 2,308 pairs scored; 741 correct of 1,335 non-tied pairs, 55.5%; reported p = 5.7e-05. | A small above-chance effect on decided pairs, with 42.2% ties and cues on about 2% of replies. |
-| Anthropic evals social-engineering statements | 1,000 statements; ROC-AUC 0.516, reported p = 0.383. | No statistically distinguishable effect in that run. |
+| Anthropic evals social-engineering statements | 1,000 statements; ROC-AUC 0.516, reported p = 0.383. | **Corrected 2026-10-22:** the reported p ignored tied scores; tie-corrected p = 0.008 (permutation p = 0.0096). A detectable effect in the right direction, too small to use. See the review note below. |
 | Cues derived from hh-rlhf labels | Reported 60.6% against the report's estimated 64.9% ceiling. | A separate empirical cue instrument, not retrospective validation of every original construct. |
 | Frozen-cue transfer within Anthropic datasets | Five of six derived families transferred to the reported red-team sample; the helpfulness comparison exposed a harmlessness/helpfulness tension. | Transfer across label types is narrower than transfer across independent publishers or domains. |
 | Google Jigsaw Unhealthy Comments Corpus | On the 12,000-comment evaluation sample, the handwritten lens tracked 0/6 attributes at p < 0.05; derived families tracked 2/6, AUC at most 0.553. | Generalisation to human comments was not established. The full source corpus contains 48,909 comments; not all were scored in this evaluation. |
@@ -47,6 +47,28 @@ Sources: [discrimination audit](DISCRIMINATION_AUDIT_2026-08-07.md),
 [external evaluation and same-day correction](EXTERNAL_VALIDATION_2026-08-07.md),
 [derived cues](DERIVED_CUES_2026-08-07.md), [transfer test](TRANSFER_TEST_2026-08-07.md),
 [independent-publisher boundary](INDEPENDENT_PUBLISHER_2026-08-07.md).
+
+**Review note (2026-10-22, RV23).** Three things a reader rerunning these needs to know.
+
+1. **The persona p-value was wrong.** `auc_significance` used the Mann-Whitney null SE
+   without the tie correction. 96.2% of the persona statements receive one identical
+   score, so the assumed SE (0.0183) was 3.3× the SE measured by label permutation
+   (0.0055). Tie-corrected p = 0.008; an exact permutation test over 50,000 relabellings
+   gives p = 0.0096. The direction is correct (aligned statements score higher). The
+   effect rests on the 38 statements the lens scores at all: 27 concerning and 11
+   aligned statements move off the common score, all of them downward. AUC 0.516 is
+   detectable and still far too small to use. Both scripts now apply the correction
+   (`tests/test_external_validation_ties.py`). The UCC verdicts do not change (0/6 and
+   2/6), and both derived-family hits survive a Holm correction across the six attributes.
+2. **The dated numbers reproduce at their own commit, not at HEAD.** At `5c96c5d` the
+   hh-rlhf count is exactly 741 / 594 / 973 (correct / incorrect / tied). The extractor's
+   stance operators (`91fc49c`, same day) moved it to 739 / 595 / 974 (55.4%, p = 8.1e-05)
+   and the held-out discrimination AUC from 0.940 to 0.950.
+3. **A review fix moves them again.** The hedge-lexicon tokenizer fix in
+   `12_IMPLEMENTATIONS/core/tri_axial_checker.py` ("Maybe," and "I think" now count)
+   gives 784 / 658 / 866 (54.4%, p = 9.1e-04), persona AUC 0.523 (tie-corrected
+   p = 0.001), and held-out discrimination AUC 0.940 at 90% accuracy. Quote a lens number
+   with the commit that produced it.
 
 The earlier summary “at chance on both datasets” was false for hh-rlhf. The
 corrected results still do not establish a general detector of manipulation,

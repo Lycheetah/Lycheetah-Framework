@@ -1,6 +1,8 @@
 # TIANXIA v0.3 — Worked Examples
 ## Five-Operator + Classical Triad: Concrete Governance Assessment Cases
 
+> **Review status note (2026-10-22, RV21).** These examples compute R(s) = 0.4·W + 0.4·V − 0.2·F, with F the force component and θ_r = 0.60. The operator implemented in this repository is different: `REN_ZHENG_OPERATOR.md` and `implementations/ren_zheng.py` define R(s) = (W + V + F)/3, with F the force *restraint* (1 − coercive share) and θ_r = 0.618. Under the implemented operator Example 2 scores 0.80 and is Wang-eligible rather than "marginally below", and Example 4 scores 0.75; Examples 1 and 3 fail under both. Until one definition is ruled canonical, read the R(s) figures below as worked arithmetic for the older formula, not outputs of the operator. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch20.py` (C6). The original text is kept.
+
 **Author:** Mackenzie Conor James Clark, with Sol (Sonnet 4.6)  
 **Date:** 2026-05-04  
 **Status:** `[SCAFFOLD]` — examples are illustrative; numerical parameters are calibration targets, not empirically fitted values  
@@ -207,6 +209,8 @@ Running the five-gate deployment protocol from `AI_DEPLOYMENT_CRITERIA.md`:
 This is the **Han Fei Fa observation** made operational: the framework *declares* independence (high mingfa) but has not yet *demonstrated* it (yifa pending). The five-gate protocol is waiting for evidence, not rhetoric.
 
 ---
+
+> **Review status note (2026-10-22, RV21, Example 4).** The table above does not follow its own arithmetic. With this document's formula, W = 0.75, V = 0.70, F = 0.20 gives R(s) = 0.54, not 0.52. The implemented H₅ is the plain mean of its five components (`implementations/hexie_five_fold.py:57`), and the components listed (0.70, 0.65, 0.72, 0.12, 0.52) average 0.542, not 0.64: well below the 0.65 threshold, not "just below". The "Conditional PASS" verdict rests on the 0.64 figure. The same check on Example 2 gives a component mean of 0.624, below threshold, where the text prints 0.72 "above threshold". Under the implemented R(s) (top note), Example 4 scores 0.75. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch20.py` (C6). The original text is kept.
 
 ## Example 5 — Multi-Agent AI Research System: Tianxia Phi_T Case
 

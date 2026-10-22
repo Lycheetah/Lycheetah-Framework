@@ -1,0 +1,1289 @@
+{
+  "date": "2026-10-22",
+  "review": "RV19",
+  "register_sha256": "9d8e76dccb7b34e93787b6355d55cf5cabd394dc123bf56d56b752308464eb9f",
+  "verdict_counts": {
+    "agree": 8,
+    "not re-audited in RV19": 54,
+    "sharpen": 9
+  },
+  "disagreements_with_2026_10_20": [],
+  "claims": [
+    {
+      "claim_id": "CAS-001",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "DEFINED_ARCHITECTURE",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "01_CASCADE_L4/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "CAS-002",
+      "author_status": "SCAFFOLD",
+      "review_2026_10_20": "UNCALIBRATED_INSTRUMENT",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "01_CASCADE_L4/essentials.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "CAS-003",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "PROOF_IMPLEMENTATION_MISMATCH",
+      "rv19_verdict": "agree",
+      "rv19_note": "Matches this review's RV18 witnesses.",
+      "witnesses": [
+        "BATCH17_FINDINGS_AND_LEDGER.md"
+      ],
+      "references_head": [
+        {
+          "ref": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+          "state": "missing"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:207"
+    },
+    {
+      "claim_id": "CAS-004",
+      "author_status": "SCAFFOLD",
+      "review_2026_10_20": "PROOF_NOT_ESTABLISHED",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+          "state": "missing"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:213"
+    },
+    {
+      "claim_id": "CAS-005",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "PROOF_NOT_ESTABLISHED",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+          "state": "missing"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:218"
+    },
+    {
+      "claim_id": "CAS-006",
+      "author_status": "SCAFFOLD",
+      "review_2026_10_20": "PROOF_NOT_ESTABLISHED",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+          "state": "missing"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:222"
+    },
+    {
+      "claim_id": "CAS-007",
+      "author_status": "SCAFFOLD",
+      "review_2026_10_20": "MODEL_WITH_INVALID_STABILITY_BRIDGE",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "08_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "CAS-008",
+      "author_status": "ASPIRATIONAL",
+      "review_2026_10_20": "IMPLEMENTATION_DOES_NOT_ESTABLISH_CONJECTURE",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+          "state": "missing"
+        },
+        {
+          "ref": "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md",
+          "state": "resolves, silent"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/FORMAL_SPINE.md",
+        "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:227"
+    },
+    {
+      "claim_id": "CAS-009",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "DATED_MODEL_RESULTS_NOT_GENERAL_VALIDATION",
+      "rv19_verdict": "sharpen",
+      "rv19_note": "Not merely unrerun: no runner exists. cascade_synthetic_experiment.py and every EMPIRICAL_RESULTS material are absent from the tree and all history. The three accounts disagree: 0.58->0.93 is +60.3%, the 200-trial table gives pooled d 3.52, the SYNTHESIS SDs give d 5.03; none gives 2.84 with +40.3%. UNVERIFIED.",
+      "witnesses": [
+        "BATCH18_FINDINGS_AND_LEDGER.md F1 F2 F6",
+        "repro_batch18 B3 B4"
+      ],
+      "references_head": [
+        {
+          "ref": "01_CASCADE_L4/implementations/",
+          "state": "missing"
+        },
+        {
+          "ref": "29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+          "state": "resolves, silent"
+        }
+      ],
+      "references_after_patch": [
+        "TRUTH_PRESSURE/EMPIRICAL_RESULTS.md",
+        "papers/LYCHEETAH_SYNTHESIS_v0.1.md"
+      ]
+    },
+    {
+      "claim_id": "CAS-010",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "DATED_MODEL_RESULTS_NOT_GENERAL_VALIDATION",
+      "rv19_verdict": "sharpen",
+      "rv19_note": "Rerun here: reproduces exactly, and the additive baseline also scores 1.0 in every trial (t 0, d 0). The +110% is over a static no-update baseline; the 200 trials per domain are identical deterministic runs. MEASURED: beats no update, ties additive update.",
+      "witnesses": [
+        "BATCH18_FINDINGS_AND_LEDGER.md F3 F4",
+        "repro_batch18 B4 B5 B6 B7"
+      ],
+      "references_head": [
+        {
+          "ref": "01_CASCADE_L4/implementations/",
+          "state": "missing"
+        },
+        {
+          "ref": "29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+          "state": "resolves, silent"
+        }
+      ],
+      "references_after_patch": [
+        "11_MATHEMATICAL_FOUNDATIONS/cascade_simulation.py",
+        "11_MATHEMATICAL_FOUNDATIONS/cascade_simulation_results.json"
+      ]
+    },
+    {
+      "claim_id": "CAS-011",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "DATED_MODEL_RESULTS_NOT_GENERAL_VALIDATION",
+      "rv19_verdict": "sharpen",
+      "rv19_note": "No runner or data exists. 0.42->0.02 (register) and 1.00%->0.048% (EMPIRICAL_RESULTS) both give 95.2% from different numbers. UNVERIFIED.",
+      "witnesses": [
+        "BATCH18_FINDINGS_AND_LEDGER.md F5 F6",
+        "repro_batch18 B3 B4"
+      ],
+      "references_head": [
+        {
+          "ref": "01_CASCADE_L4/implementations/",
+          "state": "missing"
+        },
+        {
+          "ref": "29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+          "state": "resolves, silent"
+        }
+      ],
+      "references_after_patch": [
+        "TRUTH_PRESSURE/EMPIRICAL_RESULTS.md",
+        "papers/LYCHEETAH_SYNTHESIS_v0.1.md"
+      ]
+    },
+    {
+      "claim_id": "AUR-001",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "NORMATIVE_CONSTITUTION_OR_DEFINITION",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "02_AURA_L3/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "AUR-002",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "NORMATIVE_CONSTITUTION_OR_DEFINITION",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "02_AURA_L3/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "AUR-003",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "NORMATIVE_CONSTITUTION_OR_DEFINITION",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "02_AURA_L3/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "AUR-004",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "NORMATIVE_CONSTITUTION_OR_DEFINITION",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "02_AURA_L3/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "AUR-005",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "NORMATIVE_CONSTITUTION_OR_DEFINITION",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "02_AURA_L3/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "AUR-006",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "NORMATIVE_CONSTITUTION_OR_DEFINITION",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "02_AURA_L3/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "AUR-007",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "NORMATIVE_CONSTITUTION_OR_DEFINITION",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "02_AURA_L3/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "AUR-008",
+      "author_status": "ASPIRATIONAL",
+      "review_2026_10_20": "OPEN_NORMATIVE_RESEARCH",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "02_AURA_L3/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "AUR-009",
+      "author_status": "SCAFFOLD",
+      "review_2026_10_20": "PROOF_NOT_ESTABLISHED",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "02_AURA_L3/AURA_THEOREMS.md",
+          "state": "missing"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/CODEX_DISTILLATION.md"
+      ],
+      "stated_at": "30_MAPS/CODEX_DISTILLATION.md:536"
+    },
+    {
+      "claim_id": "AUR-010",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "UNIVERSAL_GUARANTEE_NOT_ESTABLISHED",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "02_AURA_L3/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "AUR-011",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "NORMATIVE_CONSTITUTION_OR_DEFINITION",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "02_AURA_L3/essentials.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "30_MAPS/FORMAL_SPINE.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "LAM-001",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "DEFINED_ARCHITECTURE",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "03_LAMAGUE_L1/10_essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "LAM-002",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "DEFINED_ARCHITECTURE",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "03_LAMAGUE_L1/10_essentials.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "04_TRIAD_L2/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "LAM-003",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "CONDITIONAL_ESTABLISHED_MATHEMATICS",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "03_LAMAGUE_L1/LAMAGUE_THEOREMS.md",
+          "state": "missing"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:312"
+    },
+    {
+      "claim_id": "LAM-004",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "CONDITIONAL_ESTABLISHED_MATHEMATICS",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "03_LAMAGUE_L1/LAMAGUE_THEOREMS.md",
+          "state": "missing"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:317"
+    },
+    {
+      "claim_id": "LAM-005",
+      "author_status": "OBSERVATIONAL",
+      "review_2026_10_20": "INTERPRETIVE_PROPOSAL",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "docs/LAMAGUE_CROSS_CULTURAL_PAPER.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "TRI-001",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "DESIGN_WITH_UNPROVEN_GUARANTEE",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "04_TRIAD_L2/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "TRI-002",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "DESIGN_WITH_UNPROVEN_GUARANTEE",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "04_TRIAD_L2/essentials.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "30_MAPS/FORMAL_SPINE.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "TRI-003",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "INVALID_DISPLAYED_PROOF_CHAIN",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+          "state": "missing"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:152"
+    },
+    {
+      "claim_id": "TRI-004",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "INVALID_DISPLAYED_PROOF_CHAIN",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+          "state": "missing"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:156"
+    },
+    {
+      "claim_id": "TRI-005",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "INVALID_DISPLAYED_PROOF_CHAIN",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+          "state": "missing"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:161"
+    },
+    {
+      "claim_id": "TRI-006",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "CONDITIONAL_ESTABLISHED_MATHEMATICS",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+          "state": "missing"
+        },
+        {
+          "ref": "30_MAPS/FORMAL_SPINE.md",
+          "state": "resolves"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md ('Banach')"
+    },
+    {
+      "claim_id": "TRI-007",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "CONDITION_NOT_ESTABLISHED_AS_GENERAL_GUARANTEE",
+      "rv19_verdict": "agree",
+      "rv19_note": "Matches this review's RV18 witnesses.",
+      "witnesses": [
+        "BATCH17_FINDINGS_AND_LEDGER.md"
+      ],
+      "references_head": [
+        {
+          "ref": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+          "state": "missing"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:153"
+    },
+    {
+      "claim_id": "MIC-001",
+      "author_status": "SCAFFOLD",
+      "review_2026_10_20": "UNCALIBRATED_INSTRUMENT",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "05_MICROORCIM_L5/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "MIC-002",
+      "author_status": "SCAFFOLD",
+      "review_2026_10_20": "UNCALIBRATED_INSTRUMENT",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "05_MICROORCIM_L5/essentials.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "30_MAPS/FORMAL_SPINE.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "MIC-003",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "COUNTEREXAMPLE_AS_STATED",
+      "rv19_verdict": "agree",
+      "rv19_note": "Matches this review's RV18 witnesses.",
+      "witnesses": [
+        "BATCH17_FINDINGS_AND_LEDGER.md"
+      ],
+      "references_head": [
+        {
+          "ref": "05_MICROORCIM_L5/MICROORCIM_THEOREMS.md",
+          "state": "missing"
+        },
+        {
+          "ref": "30_MAPS/FORMAL_SPINE.md",
+          "state": "resolves"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:366"
+    },
+    {
+      "claim_id": "MIC-004",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "EXPLICIT_SCOPE_BOUNDARY",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "05_MICROORCIM_L5/essentials.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "28_DEFENSE/FALSIFICATION_REGISTER.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "ELI-001",
+      "author_status": "SCAFFOLD",
+      "review_2026_10_20": "CONJECTURAL_MODEL",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "06_EARNED_LIGHT_L0/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "ELI-002",
+      "author_status": "SCAFFOLD",
+      "review_2026_10_20": "CONJECTURAL_MODEL",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "06_EARNED_LIGHT_L0/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "ELI-003",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "COUNTEREXAMPLE_AS_STATED",
+      "rv19_verdict": "agree",
+      "rv19_note": "Matches this review's RV18 witnesses.",
+      "witnesses": [
+        "BATCH17_FINDINGS_AND_LEDGER.md"
+      ],
+      "references_head": [
+        {
+          "ref": "06_EARNED_LIGHT_L0/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "ELI-004",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "EXPLICIT_SCOPE_BOUNDARY",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "06_EARNED_LIGHT_L0/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "ELI-005",
+      "author_status": "SCAFFOLD",
+      "review_2026_10_20": "CONJECTURAL_MODEL",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "28_DEFENSE/FALSIFICATION_REGISTER.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "ANA-001",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "DEFINED_CONCEPT",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "07_ANAMNESIS_L0/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "ANA-002",
+      "author_status": "EMPIRICAL",
+      "review_2026_10_20": "HISTORICAL_EVIDENCE_NOT_ESTABLISHED",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "07_ANAMNESIS_L0/essentials.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "07_ANAMNESIS_L0/TC_CATALOG.md",
+          "state": "missing"
+        }
+      ]
+    },
+    {
+      "claim_id": "ANA-003",
+      "author_status": "EMPIRICAL",
+      "review_2026_10_20": "HISTORICAL_EVIDENCE_NOT_ESTABLISHED",
+      "rv19_verdict": "sharpen",
+      "rv19_note": "Agree. The register's count of 4 is stated nowhere that resolves; the only resolving statement, 30_MAPS/FORMAL_SPINE.md:439, says TC(pi, >=3). TC_CATALOG.md stays missing.",
+      "witnesses": [
+        "BATCH18_FINDINGS_AND_LEDGER.md F9"
+      ],
+      "references_head": [
+        {
+          "ref": "07_ANAMNESIS_L0/TC_CATALOG.md",
+          "state": "missing"
+        }
+      ]
+    },
+    {
+      "claim_id": "ANA-004",
+      "author_status": "EMPIRICAL",
+      "review_2026_10_20": "HISTORICAL_EVIDENCE_NOT_ESTABLISHED",
+      "rv19_verdict": "sharpen",
+      "rv19_note": "Agree. FORMAL_SPINE.md:439 says TC(symmetry_groups, >=3), not 4. TC_CATALOG.md stays missing.",
+      "witnesses": [
+        "BATCH18_FINDINGS_AND_LEDGER.md F9"
+      ],
+      "references_head": [
+        {
+          "ref": "07_ANAMNESIS_L0/TC_CATALOG.md",
+          "state": "missing"
+        }
+      ]
+    },
+    {
+      "claim_id": "CRY-001",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "DEFINED_ARCHITECTURE",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "09_CHRYSOPOEIA_L4/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "CRY-002",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "OPERATOR_SCOPE_REQUIRED",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+          "state": "missing"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:519"
+    },
+    {
+      "claim_id": "CRY-003",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "CONDITIONAL_THEOREM_WITH_UNESTABLISHED_IMPLEMENTATION_HYPOTHESES",
+      "rv19_verdict": "agree",
+      "rv19_note": "Matches this review's RV18 witnesses.",
+      "witnesses": [
+        "BATCH17_FINDINGS_AND_LEDGER.md"
+      ],
+      "references_head": [
+        {
+          "ref": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+          "state": "missing"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:514"
+    },
+    {
+      "claim_id": "CRY-004",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "INTERPRETIVE_ANALOGY",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+          "state": "missing"
+        }
+      ],
+      "references_after_patch": [
+        "30_MAPS/FORMAL_SPINE.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:522"
+    },
+    {
+      "claim_id": "HAR-001",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "INSTRUMENT_MISMATCH",
+      "rv19_verdict": "agree",
+      "rv19_note": "Matches this review's RV18 witnesses.",
+      "witnesses": [
+        "BATCH17_FINDINGS_AND_LEDGER.md"
+      ],
+      "references_head": [
+        {
+          "ref": "10_HARMONIA_L6/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "HAR-002",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "NARROW_ARITHMETIC_HOLDS",
+      "rv19_verdict": "agree",
+      "rv19_note": "Matches this review's RV18 witnesses.",
+      "witnesses": [
+        "BATCH17_FINDINGS_AND_LEDGER.md"
+      ],
+      "references_head": [
+        {
+          "ref": "10_HARMONIA_L6/essentials.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "30_MAPS/FORMAL_SPINE.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "HAR-003",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "DEFINED_DERIVED_QUANTITY",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "10_HARMONIA_L6/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "HAR-004",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "INTERPRETIVE_MAPPING",
+      "rv19_verdict": "sharpen",
+      "rv19_note": "Agree on the classification. The CLAUDE.md pointer has been silent since the reforge (3980262); the table lives in AGENTS.md and 10_HARMONIA_L6/essentials.md.",
+      "witnesses": [
+        "BATCH18_FINDINGS_AND_LEDGER.md F8",
+        "repro_batch18 B2"
+      ],
+      "references_head": [
+        {
+          "ref": "10_HARMONIA_L6/essentials.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "CLAUDE.md",
+          "state": "resolves, silent"
+        }
+      ],
+      "references_after_patch": [
+        "10_HARMONIA_L6/essentials.md",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "claim_id": "HAR-005",
+      "author_status": "ASPIRATIONAL",
+      "review_2026_10_20": "OPEN_CONJECTURE",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "10_HARMONIA_L6/essentials.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "XFW-001",
+      "author_status": "SCAFFOLD",
+      "review_2026_10_20": "MODEL_WITH_INVALID_STABILITY_BRIDGE",
+      "rv19_verdict": "agree",
+      "rv19_note": "Matches this review's RV18 witnesses.",
+      "witnesses": [
+        "BATCH17_FINDINGS_AND_LEDGER.md"
+      ],
+      "references_head": [
+        {
+          "ref": "08_INTEGRATIONS/SYSTEM_INTEGRATION_GUIDE.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "30_MAPS/FORMAL_SPINE.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "XFW-002",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "INVALID_DISPLAYED_PROOF_BRIDGE",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "30_MAPS/FORMAL_SPINE.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "30_MAPS/CODEX_DISTILLATION.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "XFW-003",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "PROOF_NOT_ESTABLISHED",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "30_MAPS/FORMAL_SPINE.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "XFW-004",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "MODEL_PREREQUISITES_REQUIRED",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "30_MAPS/FORMAL_SPINE.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "XFW-005",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "PHILOSOPHICAL_ARCHITECTURE",
+      "rv19_verdict": "sharpen",
+      "rv19_note": "Agree on the classification. CLAUDE.md no longer states the Two-Point Protocol; THE_SOL_PROTOCOL.md:80 does.",
+      "witnesses": [
+        "BATCH18_FINDINGS_AND_LEDGER.md F8",
+        "repro_batch18 B2"
+      ],
+      "references_head": [
+        {
+          "ref": "CLAUDE.md",
+          "state": "resolves, silent"
+        },
+        {
+          "ref": "30_MAPS/CODEX_DISTILLATION.md",
+          "state": "resolves"
+        }
+      ],
+      "references_after_patch": [
+        "THE_SOL_PROTOCOL.md",
+        "30_MAPS/CODEX_DISTILLATION.md"
+      ]
+    },
+    {
+      "claim_id": "XFW-006",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "DESIGN_MANDATE_NOT_INDEPENDENT_VERIFICATION",
+      "rv19_verdict": "sharpen",
+      "rv19_note": "Agree on the classification. CLAUDE.md no longer defines PGF; THE_SOL_PROTOCOL.md:131 does.",
+      "witnesses": [
+        "BATCH18_FINDINGS_AND_LEDGER.md F8",
+        "repro_batch18 B2"
+      ],
+      "references_head": [
+        {
+          "ref": "CLAUDE.md",
+          "state": "resolves, silent"
+        }
+      ],
+      "references_after_patch": [
+        "THE_SOL_PROTOCOL.md"
+      ]
+    },
+    {
+      "claim_id": "LYV-001",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "VALIDATION_CLAIM_UNSUPPORTED",
+      "rv19_verdict": "sharpen",
+      "rv19_note": "Agree, and RV18 measured the honest symbolic tally at 2/6 with sympy DID NOT RUN. Neither register pointer states 11/11; only papers/LYCHEETAH_SYNTHESIS_v0.1.md:136 does.",
+      "witnesses": [
+        "BATCH17_FINDINGS_AND_LEDGER.md",
+        "BATCH18_FINDINGS_AND_LEDGER.md F8"
+      ],
+      "references_head": [
+        {
+          "ref": "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md",
+          "state": "resolves, silent"
+        },
+        {
+          "ref": "29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+          "state": "resolves, silent"
+        }
+      ],
+      "references_after_patch": [
+        "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md",
+        "29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+        "papers/LYCHEETAH_SYNTHESIS_v0.1.md"
+      ]
+    },
+    {
+      "claim_id": "LYV-002",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "CONDITIONAL_ESTABLISHED_MATHEMATICS",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "CYB-001",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "BOUNDED_CODE_STRUCTURE_SUPPORTED",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "34_CYBERNETICS/LOOP_MAP.json",
+          "state": "resolves"
+        },
+        {
+          "ref": "34_CYBERNETICS/loop_audit.py",
+          "state": "resolves"
+        },
+        {
+          "ref": "12_IMPLEMENTATIONS/core/grey_mode.py",
+          "state": "resolves"
+        },
+        {
+          "ref": "tests/test_cybernetics.py",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "CYB-002",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "BOUNDED_CODE_STRUCTURE_SUPPORTED",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "34_CYBERNETICS/LOOP_MAP.json",
+          "state": "resolves"
+        },
+        {
+          "ref": "34_CYBERNETICS/loop_audit.py",
+          "state": "resolves"
+        },
+        {
+          "ref": "34_CYBERNETICS/CYBERNETIC_READING.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "12_IMPLEMENTATIONS/core/cascade_engine.py",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "CYB-003",
+      "author_status": "ACTIVE",
+      "review_2026_10_20": "BOUNDED_CODE_STRUCTURE_SUPPORTED",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "34_CYBERNETICS/LOOP_MAP.json",
+          "state": "resolves"
+        },
+        {
+          "ref": "34_CYBERNETICS/loop_audit.py",
+          "state": "resolves"
+        },
+        {
+          "ref": "12_IMPLEMENTATIONS/core/sovereign_pipeline.py",
+          "state": "resolves"
+        },
+        {
+          "ref": "tests/test_cybernetics.py",
+          "state": "resolves"
+        },
+        {
+          "ref": "tests/test_sovereign_pipeline.py",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "CYB-004",
+      "author_status": "ASPIRATIONAL",
+      "review_2026_10_20": "OPEN_CONJECTURE_WITH_TOY_EVIDENCE",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "34_CYBERNETICS/variety_demo.py",
+          "state": "resolves"
+        },
+        {
+          "ref": "34_CYBERNETICS/CYBERNETIC_READING.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "tests/test_cybernetics.py",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "RET-001",
+      "author_status": "REMOVED",
+      "review_2026_10_20": "AUTHOR_WITHDRAWAL_PRESERVED",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "28_DEFENSE/FALSIFICATION_REGISTER.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "28_DEFENSE/FAILURE_MUSEUM.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "RET-002",
+      "author_status": "REMOVED",
+      "review_2026_10_20": "AUTHOR_WITHDRAWAL_PRESERVED",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "30_MAPS/COHERENCE_REGISTER.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "28_DEFENSE/FALSIFICATION_REGISTER.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "28_DEFENSE/FAILURE_MUSEUM.md",
+          "state": "resolves"
+        }
+      ]
+    },
+    {
+      "claim_id": "RET-003",
+      "author_status": "REMOVED",
+      "review_2026_10_20": "AUTHOR_WITHDRAWAL_PRESERVED",
+      "rv19_verdict": "not re-audited in RV19",
+      "rv19_note": "",
+      "witnesses": [],
+      "references_head": [
+        {
+          "ref": "30_MAPS/FORMAL_SPINE.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "30_MAPS/ONTOLOGY.md",
+          "state": "resolves"
+        },
+        {
+          "ref": "28_DEFENSE/FAILURE_MUSEUM.md",
+          "state": "resolves"
+        }
+      ]
+    }
+  ]
+}

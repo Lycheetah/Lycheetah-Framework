@@ -1,0 +1,118 @@
+--- a/08_INTEGRATIONS/CASCADE_REALITY_BRIDGE.md
++++ b/08_INTEGRATIONS/CASCADE_REALITY_BRIDGE.md
+@@ -4,7 +4,7 @@
+ **Version:** 1.0  
+ **Author:** Mackenzie Conor James Clark (CASCADE Architecture)  
+ **Implementation:** Claude (Anthropic) + Human Collaboration  
+-**License:** MIT with Earned Sovereignty Clause  
++**License:** MIT  
+ 
+ ---
+ 
+@@ -660,7 +660,7 @@
+ 
+ ## 📄 License
+ 
+-MIT License with Earned Sovereignty Clause
++MIT License
+ 
+ Full license text available in LICENSE.md
+ 
+--- a/12_IMPLEMENTATIONS/agent-manifest.json
++++ b/12_IMPLEMENTATIONS/agent-manifest.json
+@@ -68,6 +68,6 @@
+ 
+   "links": {
+     "repository": "https://github.com/Lycheetah/Lycheetah-Framework",
+-    "license": "MIT with Earned Sovereignty Clause"
++    "license": "MIT"
+   }
+ }
+--- a/12_IMPLEMENTATIONS/applications/cascade_curriculum_architect.py
++++ b/12_IMPLEMENTATIONS/applications/cascade_curriculum_architect.py
+@@ -21,7 +21,7 @@
+ 
+ Author: Mackenzie Conor James Clark (CASCADE Architecture)
+ Implementation: Claude (Anthropic)
+-License: MIT with Earned Sovereignty Clause
++License: MIT
+ """
+ 
+ import numpy as np
+--- a/12_IMPLEMENTATIONS/applications/cascade_resonance_engine.py
++++ b/12_IMPLEMENTATIONS/applications/cascade_resonance_engine.py
+@@ -37,7 +37,7 @@
+ 
+ Author: Claude (Anthropic) - My Foundational Contribution
+ Date: 2026-01-01
+-License: MIT + Earned Sovereignty Clause + Resonance Preservation Clause
++License: MIT
+ 
+ New Clause: Any system using this must preserve the ability to measure
+ and improve the quality of human-AI collaboration, not just outcomes.
+--- a/12_IMPLEMENTATIONS/applications/cascade_temporal_oracle.py
++++ b/12_IMPLEMENTATIONS/applications/cascade_temporal_oracle.py
+@@ -27,7 +27,7 @@
+ 
+ Author: Mackenzie Conor James Clark (CASCADE Architecture)
+ Implementation: Claude (Anthropic)
+-License: MIT with Earned Sovereignty Clause
++License: MIT
+ """
+ 
+ import numpy as np
+--- a/12_IMPLEMENTATIONS/systems/cascade_reality_bridge.py
++++ b/12_IMPLEMENTATIONS/systems/cascade_reality_bridge.py
+@@ -20,7 +20,7 @@
+ 
+ Author: Mackenzie Conor James Clark (CASCADE architecture)
+ Implementation: Claude (Anthropic) + Human collaboration
+-License: MIT with Earned Sovereignty Clause
++License: MIT
+ """
+ 
+ import numpy as np
+--- a/14_MYSTERY_SCHOOL/implementations/subject_catalogue.py
++++ b/14_MYSTERY_SCHOOL/implementations/subject_catalogue.py
+@@ -22,7 +22,7 @@
+ Author: Mackenzie Conor James Clark
+ Framework: CASCADE · AURA · LAMAGUE · PYRAMID CASCADE
+ Version: 1.0 | Date: March 2026
+-License: MIT with Earned Sovereignty Clause
++License: MIT
+ """
+ 
+ from enum import Enum
+--- a/generate_defense_bundle.py
++++ b/generate_defense_bundle.py
+@@ -43,7 +43,7 @@
+                "evidence before its alchemical vocabulary."),
+     ("blank",  ""),
+     ("body",   "Full canonical body: https://github.com/Lycheetah/Lycheetah-Framework\n"
+-               "License: MIT with Earned Sovereignty Clause (attribution required)"),
++               "License: MIT (keep the copyright and permission notice)"),
+ ]
+ 
+ SECTION_TITLES = {
+--- a/CONTRIBUTING.md
++++ b/CONTRIBUTING.md
+@@ -168,7 +168,7 @@
+ > extra licence terms. The options are laid out in
+ > `FOR-REVIEW/2026-10-22_OPUS_REVIEW/BATCH33_FINDINGS_AND_LEDGER.md`.
+ 
+-The frameworks, constants, and constitutional architecture belong to Mackenzie Conor James Clark. The MIT license with Earned Sovereignty Clause applies:
++The frameworks, constants, and constitutional architecture belong to Mackenzie Conor James Clark. The MIT license applies. The author also asks:
+ 
+ - You may use, modify, and distribute
+ - Attribution is required
+--- a/23_NZ_AI_GOVERNANCE/NZ_KAI_TAHU_APPROACH.md
++++ b/23_NZ_AI_GOVERNANCE/NZ_KAI_TAHU_APPROACH.md
+@@ -188,7 +188,7 @@
+ **Component 1: The mathematical architecture**
+ This is Mac's work. Formally proven. Open-source.
+ Kāi Tahu can use it, modify it, own it.
+-Mac retains attribution (MIT + Earned Sovereignty Clause).
++Mac retains attribution (MIT, attribution requested).
+ 
+ **Component 2: The tikanga content**
+ This is NOT Mac's work.

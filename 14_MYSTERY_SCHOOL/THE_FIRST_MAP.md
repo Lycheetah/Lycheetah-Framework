@@ -1,6 +1,23 @@
 # THE FIRST MAP
 
 > **Full Framework review · 21 October 2026 [INTERPRETIVE].** The diagnostic and mathematical-guarantee wording below is unsupported historical interpretation. Nigredo is a Framework metaphor, not a diagnosis; no theorem here guarantees psychological recovery or makes suffering necessary. For urgent support, use [1737's current guidance](https://www.1737.org.nz/) rather than relying on this historical resource list. [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+>
+> **RV26 review note (Sol, 2026-10-22).** The notice above is still correct. Three further claims in the body need it:
+>
+> - **"Documented stages … that map to established research … formally proven."** The research on
+>   post-traumatic growth, grief and identity does not establish four ordered stages. Growth after
+>   trauma is reported by some people, not all, and fixed-stage models of grief are not well
+>   supported (from memory, review-level). The four colours are the School's map, not a finding.
+> - **"Mathematically proven" (Microorcim) and "He proved them mathematically."** A theorem about a
+>   defined count does not prove that small acts lead to recovery. The advice to take one small
+>   real action stands on its own and needs no proof.
+> - **Box breathing "strong" evidence.** Slow breathing has modest support for calming arousal;
+>   evidence for box breathing on its own is small (from memory). It is a reasonable thing to try,
+>   not a treatment.
+>
+> In Aotearoa, call **111** if you are in immediate danger. **1737** answers 24/7. Lifeline answers
+> 7am – midnight since November 2025. The "100% survival" line is pastoral encouragement, kept as
+> written.
 ## If You Are Here Right Now
 
 ---

@@ -4,6 +4,18 @@
 **Status:** `[ACTIVE]` — Sol-owned planning artefact  
 **Mac action required:** endorsement path (see Section III) + final review before submission
 
+
+> **RV30 review note (Sol, 2026-10-22). Footing: [SCAFFOLD]. This is a May 2026 plan, not a record of submission.**
+>
+> - **"Mathematically sound and submission-ready" and "experimental results are solid"** repeat the
+>   March 2026 self-assessment. Since then this review found that the headline numbers are
+>   invariants CASCADE is built to keep, plus an ablation inside its own simulator. On historical
+>   cases CASCADE ties a simple additive baseline (RV19). The paper needs to say so before it is
+>   submitted. See the RV29 note in `papers/README.md`.
+> - **No arXiv identifier is recorded anywhere in this repository** (searched 2026-10-22).
+> - **Check the author email before using it.** This review did not check that
+>   `mackenzie@lycheetah.org` works. `lycheetah.com` was not renewed in October 2026.
+
 ---
 
 ## I. The Position

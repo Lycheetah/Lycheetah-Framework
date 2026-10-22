@@ -1,0 +1,8 @@
+test_gateway_local_ipv6_aggregate_caps_rotation_across_slash64s (test_remote_witness_process.RemoteWitnessProcessTests.test_gateway_local_ipv6_aggregate_caps_rotation_across_slash64s) ... ok
+test_gateway_rejects_invalid_hierarchical_ipv6_quota_configuration (test_remote_witness_process.RemoteWitnessProcessTests.test_gateway_rejects_invalid_hierarchical_ipv6_quota_configuration) ... ok
+test_gateway_shared_ingress_store_enforces_hierarchical_ipv6_quota (test_remote_witness_process.RemoteWitnessProcessTests.test_gateway_shared_ingress_store_enforces_hierarchical_ipv6_quota) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 10.274s
+
+OK

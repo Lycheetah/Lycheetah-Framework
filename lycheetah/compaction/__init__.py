@@ -1,7 +1,9 @@
 """Lycheetah Compaction Shield & Semantic Codec.
 
-Provable context compaction preserving negative constraints, unknown dependencies,
-authorities, dissents, and rollback anchors across agent sessions.
+Hash-checked context compaction. A reference packet declares negative constraints,
+unknown dependencies, authorities, dissent and rollback anchors; the shield reports
+when a candidate drops, weakens or alters them. It cannot tell whether a declaration
+is true or complete, and risk, evidence, horizon and yield sit outside the hash.
 """
 
 from __future__ import annotations

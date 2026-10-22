@@ -380,3 +380,71 @@ def test_invalid_boundary_vertices_are_rejected(vertex):
     sheaf = CellularSheaf(2, [(0, 1)])
     with pytest.raises(ValueError, match="vertex"):
         sheaf.relative_obstruction({vertex: [1.0, 0.0]})
+
+
+def _star_receipt_rows():
+    cal = calibrate_v3(8, "star", 64.0, propagate_dependencies=True)
+    trace = arrival_trace_v3(8, "star", 0, 3.0 / cal.tau, 48, compatible=False)
+    return {
+        cell: simulate_orthogonal(
+            trace,
+            cal,
+            "cascade",
+            timing_mode=cell[0],
+            queue_scope=cell[1],
+            duration_mode=cell[2],
+        )
+        for cell in FACTORIAL_CELLS
+    }
+
+
+def test_work_coupled_receipts_expose_lookahead_underpayment():
+    """Work estimated at service start is not the work a lookahead completion performs.
+
+    Snapshot cells adjudicate the same visible set at start and completion, so every
+    job is paid exactly its work; they are the control for the receipt itself.
+    """
+    rows = _star_receipt_rows()
+    for cell, row in rows.items():
+        assert row["receipt_jobs"] >= row["service_completions_in_window"] > 0
+        expected_rule = "estimated_work_at_start" if cell[2] == "work_coupled" else "fixed_tau"
+        assert row["service_rule"] == expected_rule
+
+    for scope in ("all_domains", "domain_isolated"):
+        snapshot = rows[("snapshot", scope, "work_coupled")]
+        assert snapshot["receipt_jobs_underpaid"] == 0
+        assert snapshot["receipt_jobs_overpaid"] == 0
+        assert snapshot["receipt_paid_work"] == pytest.approx(snapshot["receipt_actual_work"])
+
+    lookahead = rows[("lookahead", "all_domains", "work_coupled")]
+    assert lookahead["receipt_jobs_underpaid"] > 0
+    assert lookahead["receipt_unpaid_work"] > 0
+    assert lookahead["receipt_actual_work"] > lookahead["receipt_paid_work"]
+
+
+def test_factorial_summary_carries_per_cell_receipts():
+    result = run_sheaf_and_factorial_study(
+        seeds=(0,), concepts=6, proposals=24, loads=(3.0,), topologies=("star",)
+    )
+    cells = result["orthogonal_2x2x2_factorial"]["cells"]
+    assert len(cells) == 8
+    for summary in cells.values():
+        assert summary["cascade_jobs"] > 0
+        assert 0 <= summary["cascade_jobs_underpaid"] <= summary["cascade_jobs"]
+        assert summary["cascade_unpaid_work"] >= 0
+
+
+def test_hashed_paradigm_labels_can_collide_and_hide_disagreement():
+    """Documented encoding limit: at d=2 the label 'c' shares 'a''s basis vector."""
+    from sheaf_cohomology_factorial import paradigm_stalk_vector
+
+    assert np.array_equal(paradigm_stalk_vector("c", 2), paradigm_stalk_vector("a", 2))
+    sheaf = CellularSheaf(3, [(0, 2), (1, 2)], stalk_dim=2)
+    collided = sheaf.relative_obstruction(
+        {0: paradigm_stalk_vector("a", 2), 1: paradigm_stalk_vector("c", 2)}
+    )
+    distinct = sheaf.relative_obstruction(
+        {0: paradigm_stalk_vector("a", 2), 1: paradigm_stalk_vector("b", 2)}
+    )
+    assert collided.obstructed is False
+    assert distinct.obstructed is True

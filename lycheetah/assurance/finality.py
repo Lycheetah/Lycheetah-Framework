@@ -32,6 +32,12 @@ FINALITY_VERSION = "0.1.0"
 
 
 class EvidenceMode(str, Enum):
+    """EXACT: the admitted record must be unchanged at finality.
+
+    SUBJECT_STATUS: the record may be re-issued (new version or digest), but it
+    must still be about the admitted subject and still hold the required status.
+    """
+
     EXACT = "EXACT"
     SUBJECT_STATUS = "SUBJECT_STATUS"
 
@@ -455,6 +461,14 @@ class FinalityGate:
             elif not _predicate_satisfied(bound.requirement, current):
                 return _review(
                     "evidence-predicate-false-at-finality",
+                    event_digest,
+                    witness,
+                    receipt.digest,
+                    bound.requirement.key,
+                )
+            elif current.subject_hash != bound.admitted.subject_hash:
+                return _review(
+                    "evidence-subject-changed-after-admission",
                     event_digest,
                     witness,
                     receipt.digest,

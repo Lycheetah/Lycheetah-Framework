@@ -1,0 +1,10 @@
+test_authenticated_but_malformed_head_nonce_is_rejected_by_witness (test_remote_witness_process.RemoteWitnessProcessTests.test_authenticated_but_malformed_head_nonce_is_rejected_by_witness) ... ok
+test_certificate_with_two_allowlisted_uri_sans_is_rejected_as_ambiguous (test_remote_witness_process.RemoteWitnessProcessTests.test_certificate_with_two_allowlisted_uri_sans_is_rejected_as_ambiguous) ... ok
+test_checkpoint_fetch_survives_process_restart (test_remote_witness_process.RemoteWitnessProcessTests.test_checkpoint_fetch_survives_process_restart) ... ok
+test_cleartext_http_cannot_speak_to_mtls_listener (test_remote_witness_process.RemoteWitnessProcessTests.test_cleartext_http_cannot_speak_to_mtls_listener) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 22.313s
+
+OK
+LIFECYCLE_SUMMARY tests=4 shard=1/14 errors=0 failures=0 surviving_non_main_threads=[]

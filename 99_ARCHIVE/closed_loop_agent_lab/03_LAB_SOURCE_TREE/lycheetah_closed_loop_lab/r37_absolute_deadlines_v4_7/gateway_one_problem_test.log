@@ -1,0 +1,6 @@
+test_registry_gateway_global_connection_rate_limit_precedes_tls (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_global_connection_rate_limit_precedes_tls) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 8.994s
+
+OK

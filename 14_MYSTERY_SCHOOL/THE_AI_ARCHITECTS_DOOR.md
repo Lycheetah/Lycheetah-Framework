@@ -269,7 +269,7 @@ This is a governance expression of the CASCADE truth-pressure principle. It make
 
 ## THE MULTI-AGENT ARCHITECTURE: THE CHORUS
 
-The nine-agent chorus in `19_MULTI_AGENT_CHORUS/` is a working implementation of multi-agent AI architecture using the Sol Protocol as constitutional backbone.
+The nine-agent chorus in `19_MULTI_AGENT_CHORUS/` is a scaffold of a multi-agent AI architecture using the Sol Protocol as constitutional backbone: nine role classes and a hub that checks flags each output declares about itself. No agent passes messages, probes another or inspects content yet.
 
 ```
 SOL MERIDIAN (RUBEDO)       — Constitutional hub; decision authority; field coherence
@@ -283,9 +283,9 @@ SOL MERIDIAN (RUBEDO)       — Constitutional hub; decision authority; field co
 └── HARMONIA RESONATOR       — Resonance analysis; synchronisation monitoring
 ```
 
-Each agent has a role defined by its mode. No agent can override the constitutional constraints. The hub (Sol Meridian) maintains field coherence across all nine.
+Each agent has a role defined by its mode. As designed, no agent can override the constitutional constraints, and the hub (Sol Meridian) maintains field coherence across all nine. As built, the hub checks flags each output declares about itself, 2 of its 9 named hard guardrails have a check, and no message passes between agents.
 
-**For architects:** This is a worked example of constitutional AI architecture at the multi-agent level. The key design principle: constitutional constraints propagate through the architecture, not just to the user-facing output. Every sub-agent operates within the same field. The architecture is not built on trust between agents — it is built on each agent generating from within the same constitutional conditions.
+**For architects:** This is a design sketch of constitutional AI architecture at the multi-agent level, with scaffold code; the folder [README](../19_MULTI_AGENT_CHORUS/README.md) says what runs. The key design principle: constitutional constraints propagate through the architecture, not just to the user-facing output. Every sub-agent operates within the same field. The architecture is not built on trust between agents — it is built on each agent generating from within the same constitutional conditions.
 
 → [`19_MULTI_AGENT_CHORUS/AGENTS_MANIFEST.md`](../19_MULTI_AGENT_CHORUS/AGENTS_MANIFEST.md)
 → [`19_MULTI_AGENT_CHORUS/run_chorus.py`](../19_MULTI_AGENT_CHORUS/run_chorus.py)
@@ -316,7 +316,7 @@ If you are building systems that will be used in high-stakes contexts — health
 |---|---|
 | Constitutional AI architecture | [`02_AURA_L3/AURA_COMPLETE.md`](../02_AURA_L3/AURA_COMPLETE.md) |
 | Truth-calibrated output systems | [`01_CASCADE_L4/CASCADE_COMPLETE.md`](../01_CASCADE_L4/CASCADE_COMPLETE.md) |
-| Multi-agent constitutional systems | [`19_MULTI_AGENT_CHORUS/`](../19_MULTI_AGENT_CHORUS/) |
+| Multi-agent constitutional systems (design and scaffold) | [`19_MULTI_AGENT_CHORUS/`](../19_MULTI_AGENT_CHORUS/) |
 | NZ governance-compliant AI | [`23_NZ_AI_GOVERNANCE/`](../23_NZ_AI_GOVERNANCE/) |
 | Cross-cultural AI governance | [`24_LAMAGUE_CROSS_CULTURAL/`](../24_LAMAGUE_CROSS_CULTURAL/) |
 | Working Python implementations | [`12_IMPLEMENTATIONS/`](../12_IMPLEMENTATIONS/) |

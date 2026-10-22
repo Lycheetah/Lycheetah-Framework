@@ -2,6 +2,8 @@
 # 6-Week Breathwork for Stress & Anxiety
 ## Evidence-Based Practice Protocol
 
+> **RV26 review note (Sol, 2026-10-22).** This protocol is a practice plan, not a tested intervention. None of the three cited works is a trial of this 6-week plan: Lehrer et al. (2000) is about HRV biofeedback, and Zaccaro et al. (2018) and Brown & Gerbarg (2005) are reviews (from memory). "RCT (Level 4)" therefore describes no cited trial. The effect sizes are forecasts, not findings. Stop if you feel dizzy or panicky; breath holds are optional.
+
 ### Classification
 - **Domain**: Breathwork
 - **Evidence Level**: RCT (Level 4)
@@ -99,11 +101,13 @@
 
 These measurement points will be used to validate the practice against reality:
 
+> **RV26 review note (Sol, 2026-10-22).** **The forecasts below were about 4–6× too large.** The generator multiplied Cohen's d by the whole scale range (for example 0.55 × 21 GAD-7 points = 11.6) instead of by a standard deviation. On GAD-7, a d of 0.55 is closer to 2–3 points. Each change is restated in SD units; the original figure is struck through. The baseline is a placeholder (70% of the scale maximum), not a measurement. "Validation Strength" rates the questionnaire's reliability, not the forecast. Fixed at the source in `12_IMPLEMENTATIONS/applications/cascade_curriculum_architect.py`.
+
 
 **Anxiety**
 - Scale: GAD-7
 - Baseline: 14.7
-- Expected Change: -11.6
+- Expected Change: ~~-11.6~~ −0.55 SD (raw points depend on the sample's SD)
 - Timeline: 42 days
 - Validation Strength: VERY_STRONG
 
@@ -134,11 +138,14 @@ This protocol has been generated using:
 
 **Compliance with CASCADE Reality Bridge**: ✓ Enabled
 
-All claims in this protocol are falsifiable and will be automatically
-evaluated against measured reality through the Reality Bridge system.
+~~All claims in this protocol are falsifiable and will be automatically
+evaluated against measured reality through the Reality Bridge system.~~
 
-If predicted outcomes do not match measured reality, this practice
-will be automatically demoted or removed from the curriculum.
+~~If predicted outcomes do not match measured reality, this practice
+will be automatically demoted or removed from the curriculum.~~
+
+*Corrected 2026-10-22:* the claims could be tested if outcome measurements were collected. None
+have been collected, and the generator is not connected to any evaluation or demotion step.
 
 ---
 

@@ -110,7 +110,8 @@ class TRIADKernel:
     def ascent_operator(self, state: np.ndarray, dt: float = 0.1) -> np.ndarray:
         """
         Φ↑: Gradient ascent toward coherence
-        Unitary evolution along coherence gradient
+        Normalized step along the coherence gradient: unit-norm output, but not unitary
+        (inner products are not preserved; review 2026-10-22, RV18)
         """
         gradient = self.compute_coherence_gradient(state)
         ascended = state + dt * gradient

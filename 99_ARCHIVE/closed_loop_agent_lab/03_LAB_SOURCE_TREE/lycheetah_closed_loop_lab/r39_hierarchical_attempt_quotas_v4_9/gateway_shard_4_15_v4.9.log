@@ -1,0 +1,10 @@
+test_gateway_binds_and_serves_mtls_on_ipv6_loopback (test_remote_witness_process.RemoteWitnessProcessTests.test_gateway_binds_and_serves_mtls_on_ipv6_loopback) ... ok
+test_gateway_local_ipv6_aggregate_caps_rotation_across_slash64s (test_remote_witness_process.RemoteWitnessProcessTests.test_gateway_local_ipv6_aggregate_caps_rotation_across_slash64s) ... ok
+test_gateway_local_quota_groups_rotating_ipv6_addresses_by_prefix (test_remote_witness_process.RemoteWitnessProcessTests.test_gateway_local_quota_groups_rotating_ipv6_addresses_by_prefix) ... ok
+test_gateway_normalizes_ipv4_mapped_ipv6_peer_identity (test_remote_witness_process.RemoteWitnessProcessTests.test_gateway_normalizes_ipv4_mapped_ipv6_peer_identity) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 12.277s
+
+OK
+LIFECYCLE_SUMMARY tests=4 shard=4/15 errors=0 failures=0 surviving_non_main_threads=[]

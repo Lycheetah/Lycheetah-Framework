@@ -4,6 +4,23 @@
 
 *How to cite the framework, individual components, and papers in preparation.*
 
+
+> **RV30 review note (Sol, 2026-10-22). Footing: [DERIVED] for the repairs below, [UNVERIFIED] for the papers in preparation.**
+>
+> - **Nine component URLs repaired.** They pointed to `tree/main/` and to folder names that the
+>   D-1.1 rename retired (for example `08_CHRYSOPOEIA`). The repository's default branch is `master`
+>   and the folders now carry layer suffixes (`09_CHRYSOPOEIA_L4`). Every old link was dead.
+> - **Two titles state guarantees wider than the proofs.** TRIAD's Banach argument covers its model's
+>   update rule under its contraction condition. Nothing shows real human–AI correction follows that
+>   update. CHRYSOPOEIA's coherence guarantee holds only for c ≤ 13/30, and Ξ is stochastic (earlier
+>   finding F21, measured). The titles are kept as the author's; whether to retitle is Mac's call.
+> - **"Nine Formal Frameworks"** means nine formally specified models. It does not mean nine
+>   peer-reviewed results.
+> - **Papers in preparation.** The July 2026 and October 2026 targets have passed. This review found no
+>   submission record. Cite them as unpublished drafts only if a draft exists.
+> - **The canonical-body counts** ("105 claims", "219 tests") are April 2026 figures. For current
+>   counts run `python3 tools/verify-claims.py --register` and the test suite.
+
 ---
 
 ## Preferred Citation — Full Framework (BibTeX)
@@ -40,7 +57,7 @@
   note        = {Lycheetah Framework C-1.0, Framework 1.
                  Theorems C1--C4. Empirical results: +40.3\% coherence (synthetic),
                  +110\% coherence (real data), -95.2\% catastrophic forgetting.
-                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/main/01_CASCADE}
+                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/master/01_CASCADE_L4}
 }
 ```
 
@@ -55,7 +72,7 @@
   type        = {Framework Specification},
   note        = {Lycheetah Framework C-1.0, Framework 2.
                  Invariants I1--I7. Runtime compliance predicate aura\_compliant(a).
-                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/main/02_AURA}
+                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/master/02_AURA_L3}
 }
 ```
 
@@ -70,7 +87,7 @@
   type        = {Framework Specification},
   note        = {Lycheetah Framework C-1.0, Framework 3.
                  Four-tier language stack. Theorems L1--L2. Cross-cultural convergence draft v0.1.
-                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/main/03_LAMAGUE}
+                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/master/03_LAMAGUE_L1}
 }
 ```
 
@@ -85,7 +102,7 @@
   type        = {Framework Specification},
   note        = {Lycheetah Framework C-1.0, Framework 4.
                  Theorems T1--T4. Lyapunov verification 11/11 claims, 0 failures.
-                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/main/04_TRIAD}
+                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/master/04_TRIAD_L2}
 }
 ```
 
@@ -100,7 +117,7 @@
   type        = {Framework Specification},
   note        = {Lycheetah Framework C-1.0, Framework 5.
                  mu\_drift metric. Sovereignty score S\_score. Theorem M2.
-                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/main/05_MICROORCIM}
+                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/master/05_MICROORCIM_L5}
 }
 ```
 
@@ -115,7 +132,7 @@
   type        = {Framework Specification},
   note        = {Lycheetah Framework C-1.0, Framework 6.
                  C\_psi(t) = integral of A(psi,x,t)dx. Hard problem explicitly out of scope.
-                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/main/06_EARNED_LIGHT}
+                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/master/06_EARNED_LIGHT_L0}
 }
 ```
 
@@ -130,7 +147,7 @@
   type        = {Framework Specification},
   note        = {Lycheetah Framework C-1.0, Framework 7.
                  TC(S,n) metric. TC(phi,3), TC(pi,4), TC(symmetry,4) measured.
-                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/main/07_ANAMNESIS}
+                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/master/07_ANAMNESIS_L0}
 }
 ```
 
@@ -145,7 +162,7 @@
   type        = {Framework Specification},
   note        = {Lycheetah Framework C-1.0, Framework 8.
                  Non-commutativity proven. Theorem X1. Fourier structural parallel.
-                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/main/08_CHRYSOPOEIA}
+                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/master/09_CHRYSOPOEIA_L4}
 }
 ```
 
@@ -160,7 +177,7 @@
   type        = {Framework Specification},
   note        = {Lycheetah Framework C-1.0, Framework 9.
                  C(r) = 1/(1 + sum of ak*(0.5)^k). EWM interval table. Pythagorean comma engine.
-                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/main/09_HARMONIA}
+                 URL: https://github.com/Lycheetah/Lycheetah-Framework/tree/master/10_HARMONIA_L6}
 }
 ```
 

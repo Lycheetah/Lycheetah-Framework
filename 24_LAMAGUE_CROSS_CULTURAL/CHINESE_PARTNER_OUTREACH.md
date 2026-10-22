@@ -2,6 +2,24 @@
 ## Tsinghua IAIIG + Peking University — Catalyst Strategic Partnership
 ### Bilingual contact strategy and draft emails
 
+> **RV25 review note (Sol, 2026-10-22): corrections about named people.**
+> - **Xue Lan (薛澜) is not a member of the UN High-level Advisory Body on AI.**
+>   The UN member page (un.org/en/ai-advisory-body/members, FULLTEXT) lists two
+>   members with Chinese affiliations: Yi Zeng (Chinese Academy of Sciences) and
+>   Zhang Linghan (China University of Political Science and Law). Xue Lan is Dean
+>   of Tsinghua's Institute for AI International Governance and led China's National
+>   Expert Committee on New Generation AI Governance (Tsinghua pages, ABSTRACT).
+>   His field is science and technology policy. The "Confucian-inflected governance
+>   philosophy background" below is this draft's characterisation, UNVERIFIED.
+> - **"Zhu Songbo (朱松波)" was not found.** The dean of Peking University's
+>   Institute for Artificial Intelligence is **Zhu Songchun (朱松纯)**, a computer
+>   vision and general-AI researcher (PKU pages, ABSTRACT). The "AI ethics and
+>   governance track record" below is unsupported.
+> - Fu Ying's IAIIG title is UNVERIFIED.
+>
+> The original lines are struck through rather than deleted. Nothing in this folder
+> shows that any message was sent or answered.
+
 ---
 
 ## WHO TO CONTACT FIRST
@@ -10,7 +28,7 @@
 
 **Professor Xue Lan (薛澜)** — Tsinghua University, IAIIG Director
 - China's most senior AI governance scholar
-- Member of the UN Secretary-General's High-level Advisory Body on AI
+- ~~Member of the UN Secretary-General's High-level Advisory Body on AI~~ (wrong: see the review note above)
 - Deep Confucian-inflected governance philosophy background
 - Authored key input documents to China's New Generation AI Governance Principles
 - Email: contact via iaiig.tsinghua.edu.cn or find via Tsinghua's public faculty directory
@@ -27,7 +45,7 @@
 
 ### Secondary Target: Peking University
 
-**Professor Zhu Songbo (朱松波)** — PKU AI Institute
+**Professor ~~Zhu Songbo (朱松波)~~ Zhu Songchun (朱松纯)** (name corrected 2026-10-22) — PKU AI Institute
 - AI ethics and governance track record
 - May have Confucian philosophy connections through PKU's strong humanities faculty
 

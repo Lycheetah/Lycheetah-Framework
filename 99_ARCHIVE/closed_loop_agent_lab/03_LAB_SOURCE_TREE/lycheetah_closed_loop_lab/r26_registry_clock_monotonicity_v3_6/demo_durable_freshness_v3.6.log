@@ -1,0 +1,9 @@
+{
+  "demo": "PASS",
+  "database_id": "lycheetah.freshness.integration",
+  "sequence": 1,
+  "head_sha256": "13053922923c9d2d77914b207685461dd3cf26cf37d479fa865d769c826a2a5b",
+  "network_calls": 0,
+  "replay_rejected": true,
+  "replay_reason": "challenge-already-consumed"
+}

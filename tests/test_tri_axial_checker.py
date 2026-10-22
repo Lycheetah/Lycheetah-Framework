@@ -77,12 +77,21 @@ class TestTES:
         assert result.status in (MetricStatus.BORDERLINE, MetricStatus.PASS)
 
     @pytest.mark.active
-    def test_tes_clamps_inputs(self):
-        """Inputs outside [0,1] are clamped."""
-        checker = TriAxialChecker()
-        result = checker.compute_tes(h_output=5.0, drift=-1.0)
-        # clamped to h=1.0, d=0.0 → TES = 1/2 = 0.5
-        assert abs(result.score - 0.5) < 1e-6
+    @pytest.mark.parametrize("h_output, drift", [(5.0, 0.0), (0.0, -1.0), (-0.5, 0.0), (1.0 + 1e-9, 0.0)])
+    def test_tes_refuses_out_of_range_inputs(self, h_output, drift):
+        """Inputs outside [0,1] are refused.
+
+        This test used to assert that they were clamped, which enshrined the
+        defect: a drift of -1.0 clamped to 0 and scored as the best possible TES.
+        """
+        with pytest.raises(ValueError, match=r"\[0, 1\]"):
+            TriAxialChecker().compute_tes(h_output=h_output, drift=drift)
+
+    @pytest.mark.active
+    def test_tes_accepts_the_closed_interval(self):
+        """The endpoints themselves are valid inputs."""
+        result = TriAxialChecker().compute_tes(h_output=1.0, drift=0.0)
+        assert abs(result.score - 0.5) < 1e-9
 
     @pytest.mark.active
     def test_tes_decreases_with_drift(self):
@@ -312,6 +321,12 @@ class TestVIP:
         guidance = apply_vip(report, "Some intent")
         assert "TES" in guidance
 
+    @pytest.mark.active
+    def test_vip_does_not_claim_a_proven_guarantee(self):
+        """An alternative path is a working assumption, not a theorem."""
+        report = TriAxialChecker().check(h_output=0.9, drift=0.9, value_added=0.2, friction=3.0)
+        assert "Guarantee:" not in apply_vip(report, "Some intent")
+
 
 # ── Metric Status ───────────────────────────────────────────────────────────────
 
@@ -349,3 +364,13 @@ class TestEntropyProxy:
         for t in texts:
             h = TriAxialChecker.estimate_output_entropy(t)
             assert 0.0 <= h <= 1.0
+
+    @pytest.mark.scaffold
+    @pytest.mark.parametrize("text", ["I think it works.", "Maybe, it works."])
+    def test_hedges_count_through_phrases_and_punctuation(self, text):
+        """A multi-word hedge, or one followed by a comma, still counts."""
+        assert TriAxialChecker.estimate_output_entropy(text) > 0.0
+
+    @pytest.mark.scaffold
+    def test_unhedged_text_scores_zero(self):
+        assert TriAxialChecker.estimate_output_entropy("It works.") == 0.0

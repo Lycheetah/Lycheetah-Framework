@@ -93,6 +93,8 @@ The TC empirical program (LAMAGUE Paper 1, post-D-1.0) must:
 3. **Pre-register the prediction**: ANAMNESIS predicts TC(abstract) ≈ TC(embodied) within statistical tolerance. Embodied mathematics predicts TC(abstract) < TC(embodied) significantly.
 4. **The result settles the question**. If TC(abstract) is significantly lower than TC(embodied), ANAMNESIS's Platonic conclusion is *not warranted by the data* — convergence is explained by shared embodiment alone.
 
+> **Status note (review 2026-10-22, RV18).** The two statements of the prediction disagree. The paragraph above says equal rates mean embodied mathematics wins, while item 3 has ANAMNESIS predict TC(abstract) ≈ TC(embodied). The equal-rates outcome is claimed by both sides, so as written the test cannot discriminate on it. Fix one mapping before pre-registration. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (reading; no run). The original text above is kept.
+
 ### The narrower claim ANAMNESIS actually needs
 
 After this engagement, ANAMNESIS no longer claims Platonism is *proven* by convergence. It claims the weaker, defensible position:

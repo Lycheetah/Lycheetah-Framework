@@ -536,7 +536,7 @@ There's a higher tier: **Ecosystem of systems**.
 - ✅ Master Equation (all terms, k₁–k₄ ready)
 
 ### Operational Layer
-- ✅ Nine-agent chorus (Sol hub + 8 specialized agents)
+- ⚠️ Nine-agent chorus (Sol hub + 8 specialized agents): SCAFFOLD. Role classes and a hub that checks declared flags; no agent communicates or inspects content (Opus review, 22 October 2026)
 - ✅ Four constitutional principles (Sol, Veyra, Aurion, Anima)
 - ✅ Three domain specialists (Linguistics, Psychology, Ecology)
 - ✅ Calibration method (Bayesian MCMC)

@@ -20,10 +20,6 @@ from typing import Tuple, List, Dict, Optional
 from dataclasses import dataclass
 import math
 
-# Ensure UTF-8 output on Windows
-if sys.stdout.encoding.lower() not in ('utf-8', 'utf8'):
-    sys.stdout.reconfigure(encoding='utf-8')
-
 
 # Pythagorean intervals in cents (1200 cents = 1 octave)
 PYTHAGOREAN_INTERVALS = {
@@ -126,13 +122,16 @@ class HarmoniaCalculator:
     @staticmethod
     def barlow_dissonance(ratio: float) -> float:
         """
-        Barlow dissonance metric d(r) based on prime factorization.
+        Distance-to-simple-ratio proxy d(r), standing in for Barlow dissonance.
 
-        For a frequency ratio r = p₁^a₁ × p₂^a₂ × ... :
-        d(r) = Σ(|aᵢ| × log(pᵢ)) for odd primes, simplified for Pythagorean.
+        Specification (not implemented here): for r = p₁^a₁ × p₂^a₂ × ...,
+        d(r) = Σ(|aᵢ| × log(pᵢ)) over odd primes.
 
-        For simplicity in Pythagorean context:
-        d(r) = complexity of ratio (higher = more complex)
+        What this code computes: the log2 distance from r (folded into [1, 2]) to the
+        nearest fraction p/q with q <= 12. No factorization happens. Those fractions are
+        dense, so d(r) < 0.06 for every ratio and consonance never falls below about
+        0.92: every interval, the 45/32 tritone included, is labelled PERFECT. Treat the
+        output as uncalibrated until the metric is rebuilt (review 2026-10-23, M12).
         """
         # Normalize ratio to [1, 2]
         while ratio > 2:
@@ -374,4 +373,6 @@ def example_harmonia():
 
 
 if __name__ == "__main__":
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")  # script runs only; importing never touches stdout
     example_harmonia()

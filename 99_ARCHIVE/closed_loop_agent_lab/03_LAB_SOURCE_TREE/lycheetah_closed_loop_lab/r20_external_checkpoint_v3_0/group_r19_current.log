@@ -1,0 +1,25 @@
+test_backup_path_cannot_equal_source (test_integrity_key_rotation.IntegrityKeyRotationCase.test_backup_path_cannot_equal_source) ... ok
+test_backup_permissions_are_owner_only (test_integrity_key_rotation.IntegrityKeyRotationCase.test_backup_permissions_are_owner_only) ... ok
+test_backup_remains_valid_under_old_key (test_integrity_key_rotation.IntegrityKeyRotationCase.test_backup_remains_valid_under_old_key) ... ok
+test_cli_rotation_rekeys_then_new_key_verifies (test_integrity_key_rotation.IntegrityKeyRotationCase.test_cli_rotation_rekeys_then_new_key_verifies) ... ok
+test_cli_verify_only_uses_env_key_and_prints_only_counts (test_integrity_key_rotation.IntegrityKeyRotationCase.test_cli_verify_only_uses_env_key_and_prints_only_counts) ... ok
+test_database_changed_after_backup_is_detected_even_if_new_mac_is_valid (test_integrity_key_rotation.IntegrityKeyRotationCase.test_database_changed_after_backup_is_detected_even_if_new_mac_is_valid) ... ok
+test_duplicate_webhook_still_deduplicates_after_rotation (test_integrity_key_rotation.IntegrityKeyRotationCase.test_duplicate_webhook_still_deduplicates_after_rotation) ... ok
+test_existing_backup_is_not_overwritten (test_integrity_key_rotation.IntegrityKeyRotationCase.test_existing_backup_is_not_overwritten) ... ok
+test_existing_queue_claim_token_remains_usable_after_rotation (test_integrity_key_rotation.IntegrityKeyRotationCase.test_existing_queue_claim_token_remains_usable_after_rotation) ... ok
+test_inbox_tampering_aborts_before_backup (test_integrity_key_rotation.IntegrityKeyRotationCase.test_inbox_tampering_aborts_before_backup) ... ok
+test_incomplete_database_schema_rejected (test_integrity_key_rotation.IntegrityKeyRotationCase.test_incomplete_database_schema_rejected) ... ok
+test_key_bytes_can_be_loaded_from_base64_environment_without_echo (test_integrity_key_rotation.IntegrityKeyRotationCase.test_key_bytes_can_be_loaded_from_base64_environment_without_echo) ... ok
+test_operation_ledger_tampering_aborts_before_backup (test_integrity_key_rotation.IntegrityKeyRotationCase.test_operation_ledger_tampering_aborts_before_backup) ... ok
+test_partial_rekey_fault_rolls_back_all_tables (test_integrity_key_rotation.IntegrityKeyRotationCase.test_partial_rekey_fault_rolls_back_all_tables) ... ok
+test_queue_tampering_aborts_before_backup (test_integrity_key_rotation.IntegrityKeyRotationCase.test_queue_tampering_aborts_before_backup) ... ok
+test_rotates_all_three_authenticated_tables (test_integrity_key_rotation.IntegrityKeyRotationCase.test_rotates_all_three_authenticated_tables) ... ok
+test_rotation_report_contains_counts_but_no_key_material (test_integrity_key_rotation.IntegrityKeyRotationCase.test_rotation_report_contains_counts_but_no_key_material) ... ok
+test_same_key_is_rejected (test_integrity_key_rotation.IntegrityKeyRotationCase.test_same_key_is_rejected) ... ok
+test_sequential_rotations_are_supported (test_integrity_key_rotation.IntegrityKeyRotationCase.test_sequential_rotations_are_supported) ... ok
+test_wrong_old_key_fails_before_backup_and_without_mutation (test_integrity_key_rotation.IntegrityKeyRotationCase.test_wrong_old_key_fails_before_backup_and_without_mutation) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 9.580s
+
+OK

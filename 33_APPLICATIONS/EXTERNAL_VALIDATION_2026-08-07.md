@@ -7,6 +7,15 @@ verified against recorded SHA256 hashes.
 python3 33_APPLICATIONS/external_validation.py
 ```
 
+> **Review correction (2026-10-22, RV23).** Result #2 below is wrong as a significance
+> claim. The p = 0.383 came from a Mann-Whitney SE that ignores tied scores, and 96.2% of
+> the persona statements tie at one score. Tie-corrected p = 0.008; an exact permutation
+> test (50,000 relabellings) gives p = 0.0096. AUC 0.516 is a small effect in the correct
+> direction, carried by the 38 statements the lens scores at all, and it is still not
+> usable. The sentence "#2 stands as originally written" was the one that needed
+> correcting. The text is kept as written; see `README.md` in this directory for the
+> corrected table and for which commit reproduces which hh-rlhf count.
+
 ---
 
 ## The census that prompted this

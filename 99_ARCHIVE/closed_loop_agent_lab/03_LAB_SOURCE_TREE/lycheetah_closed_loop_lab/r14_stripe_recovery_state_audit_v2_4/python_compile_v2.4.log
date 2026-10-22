@@ -1,0 +1,1 @@
+PASS: python -m py_compile stripe_test_adapter.py stripe_contract_simulator.py test_stripe_test_adapter.py run_complete_tests_v2_4.py run_local_smoke.py

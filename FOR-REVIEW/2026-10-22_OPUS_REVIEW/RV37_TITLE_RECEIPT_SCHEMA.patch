@@ -1,0 +1,39 @@
+--- a/14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/title_receipt.schema.json
++++ b/14_MYSTERY_SCHOOL/IDENTITY_AND_RETURN/source/title_receipt.schema.json
+@@ -100,5 +100,34 @@
+       ]
+     }
+   },
+-  "additionalProperties": false
++  "additionalProperties": false,
++  "$comment": "RV37 review (2026-10-22): state-dependent requirements. EARNED means a defined School gate was passed, so it names the gate, points at evidence, carries a witness beyond SELF/NONE, and records the bearer's choice. WITNESSED needs evidence and an outside witness. TRANSMUTED must be accepted by the bearer (state-machine invariant: AI may propose but cannot accept).",
++  "allOf": [
++    {
++      "if": {"properties": {"state": {"const": "EARNED"}}},
++      "then": {
++        "required": ["gate_id", "evidence_uri", "witness_type"],
++        "properties": {
++          "bearer_choice": {"const": true},
++          "gate_id": {"type": "string", "minLength": 1},
++          "evidence_uri": {"type": "string", "minLength": 1},
++          "witness_type": {"enum": ["ARTIFACT", "PEER", "SYSTEM", "REVIEWER"]}
++        }
++      }
++    },
++    {
++      "if": {"properties": {"state": {"const": "WITNESSED"}}},
++      "then": {
++        "required": ["evidence_uri", "witness_type"],
++        "properties": {
++          "evidence_uri": {"type": "string", "minLength": 1},
++          "witness_type": {"enum": ["ARTIFACT", "PEER", "SYSTEM", "REVIEWER"]}
++        }
++      }
++    },
++    {
++      "if": {"properties": {"state": {"const": "TRANSMUTED"}}},
++      "then": {"properties": {"bearer_choice": {"const": true}}}
++    }
++  ]
+ }
+\ No newline at end of file

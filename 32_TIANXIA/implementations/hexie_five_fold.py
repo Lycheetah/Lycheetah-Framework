@@ -77,7 +77,13 @@ _COMPONENT_NAMES = {
 def binding_constraint(state: HexieState) -> str:
     """
     Proposition H5-1: The binding constraint is the lowest-scoring component.
-    Returns the name of the component whose improvement yields the greatest marginal H_5 increase.
+    Returns the name of the lowest-scoring component (ties resolve in I, C, E, O, S order).
+
+    Review note (2026-10-22, RV37): under the equal-weight average every component
+    has the same marginal effect, dH_5/dk = 1/5, so the lowest component is the one
+    with the most headroom (1 - k), not the one with the greatest marginal gain.
+    The marginal reading holds only for a concave aggregate such as min or the
+    geometric mean. See FIVE_FOLD_HEXIE_COMPOSITE.md section IV.
     """
     components = [
         state.innovation,
@@ -188,6 +194,18 @@ def test_binding_constraint_identification():
     print(f"    G_C binding: {bc_c}")
 
 
+def test_marginal_effect_is_equal_under_linear_average():
+    """RV37: a unit gain moves H5 by the same 1/5 whichever component receives it."""
+    base = [0.28, 0.72, 0.81, 0.76, 0.69]
+    h0 = hexie_five_fold(HexieState(*base))[5]
+    for i in range(5):
+        raised = list(base)
+        raised[i] += 0.05
+        _assert_close(hexie_five_fold(HexieState(*raised))[5] - h0, 0.01, tol=1e-6,
+                      msg=f"component {i}: equal weights give equal marginal gain")
+    print("  PASS: test_marginal_effect_is_equal_under_linear_average")
+
+
 def test_composite_ordering():
     """States with same base Hexie produce different H5 ordering — composite ordering holds."""
     g_a = HexieState(0.28, 0.72, 0.81, 0.76, 0.69, "G_A")
@@ -235,6 +253,7 @@ def run_all_tests():
     test_composite_arithmetic()
     test_component_independence()
     test_binding_constraint_identification()
+    test_marginal_effect_is_equal_under_linear_average()
     test_composite_ordering()
     test_fragility_flags()
     test_invalid_input()

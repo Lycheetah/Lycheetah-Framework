@@ -5,6 +5,8 @@
 **Depends on:** TRUTH_PRESSURE_THEORY.md, PI_DERIVATION.md
 **Resolves:** Task 30 — standalone verifiable results document
 
+> **Status note (review 2026-10-22, RV19): UNVERIFIED.** No artifact behind this document exists in the repository. `50_belief_corpus.json`, `annotator_labels.csv`, `trial_results_200.csv`, `analysis.py`, `trial_config.json` are absent from the working tree and from every commit in its history, and `12_IMPLEMENTATIONS/core/cascade_engine.py` (744 lines) defines neither `compute_coherence()` nor `compute_forgetting()`. The table's own numbers do not give the stated effect size: means 0.742 and 0.529 with SDs 0.063 and 0.058 give a pooled d of about 3.52, not 2.84. Two other accounts of the same +40.3% disagree with this one: `28_DEFENSE/CLAIMS.json` (CAS-009) and `28_DEFENSE/TESTABILITY_MANIFEST.md` give 0.58→0.93 over 10 replications and 3 conditions, which is +60.3%, and cite a `cascade_synthetic_experiment.py` that has never existed in the repository. Until the materials are produced, the results below cannot be checked. The original text is kept (`FOR-REVIEW/2026-10-22_OPUS_REVIEW/BATCH18_FINDINGS_AND_LEDGER.md`).
+
 ---
 
 ## 0. Purpose
@@ -161,6 +163,8 @@ All materials needed to replicate this study are available in the Lycheetah Fram
 - `annotator_labels.csv` — ground-truth tier labels from both annotators
 - `trial_results_200.csv` — raw output of all 200 trials
 - `analysis.py` — statistical analysis script (reproduces all numbers in §3)
+
+> **Status note (review 2026-10-22, RV19).** None of the materials listed in this section exist in the repository or its history; see the note under the document header.
 
 Random seeds: trials 1–100 (CASCADE) used seeds 1001–1100; trials 101–200 (baseline) used seeds 2001–2100. Fixed in `trial_config.json`.
 

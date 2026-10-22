@@ -8,8 +8,10 @@ The alchemists had the structure right. This is the mathematics they were reachi
 Status:
   Seven operations (structural correspondence): [ACTIVE]
   Four tiers: [ACTIVE]
-  Solve et Coagula duality: [ACTIVE]
-  Philosopher's Stone (Banach fixed-point): [ACTIVE] — theorem applies when λ < 1
+  Solve et Coagula duality: [ACTIVE as structure] — the coherence guarantee holds only
+    for starting coherence c ≤ 13/30 (review 2026-10-22, RV18)
+  Philosopher's Stone (Banach fixed-point): [SCAFFOLD] — the coagulation step alone is a
+    contraction (λ = 0.85); the full Ξ is stochastic, so Banach does not apply to it
   Specific parameter values (λ_compress, tier thresholds): [SCAFFOLD — design choices]
   Empirical calibration of tier transitions: [SCAFFOLD — requires measurement]
 
@@ -281,7 +283,7 @@ def _distillation(state: TransformationState, constraints: ConstraintSet) -> Tra
 def _coagulation(state: TransformationState, constraints: ConstraintSet) -> TransformationState:
     """
     COAGULATION — Solidify into stable new form. Transformation completes.
-    The Work crystallises. This is the contraction step in the Banach sense.
+    The Work crystallises. This step alone is a contraction toward the all-ones target.
     ‖Ξ(ψ) − ψ*‖ ≤ λ · ‖ψ − ψ*‖, λ = 0.85
     """
     # Contract toward the fixed point (maximum coherence, minimum entropy)
@@ -380,7 +382,8 @@ def coagula(state: TransformationState, constraints: ConstraintSet) -> Transform
     """
     COAGULA — Controlled integration (Ψ Fold).
     Entropy decreases. Integration mode.
-    Guarantee: C(Ψ(⚘(ψ))) ≥ C(ψ) — reintegration preserves or improves coherence.
+    Solve lowers coherence by 0.1 (clamped) and this step maps c to 0.85·c + 0.15, so
+    C(Ψ(⚘(ψ))) ≥ C(ψ) holds only for c ≤ 13/30; above that the round trip loses coherence.
     Fourier parallel: reconstruct from harmonics.
     """
     return _coagulation(state, constraints)
@@ -404,10 +407,11 @@ def find_philosophers_stone(initial_state: TransformationState,
       3. C(ψ*) = max                  — maximum coherence
       4. S(ψ*) = min                  — minimum entropy compatible with function
 
-    The Banach fixed-point theorem guarantees existence and uniqueness when
-    Ξ is a contraction mapping (λ_compress = 0.85 < 1). [ACTIVE]
+    Banach's theorem would give existence and uniqueness if Ξ were a deterministic
+    contraction. Only the coagulation step is one (λ_compress = 0.85 < 1); the full Ξ is
+    stochastic, so this search is a heuristic. [SCAFFOLD]
 
-    Convergence rate: geometric with ratio λ^n → 0 as n → ∞.
+    Convergence rate: geometric with ratio λ^n for the coagulation step alone.
 
     Args:
         initial_state: Starting ψ
@@ -480,7 +484,8 @@ def solve_et_coagula(state: TransformationState,
       1. SOLVE  (⚘) — controlled dissolution, entropy ↑
       2. COAGULA (Ψ) — reintegration via full Ξ, coherence ↑
 
-    Guarantee: C(Ψ(⚘(ψ))) ≥ C(ψ) [ACTIVE — when constraints hold]
+    No guarantee: a cycle uses the full stochastic Ξ, and even the deterministic
+    solve-then-coagula pair keeps C(Ψ(⚘(ψ))) ≥ C(ψ) only for c ≤ 13/30. [SCAFFOLD]
 
     Fourier parallel: decompose → reconstruct → coherence preserved or improved.
 
@@ -503,8 +508,6 @@ def solve_et_coagula(state: TransformationState,
 # ============================================================================
 
 def demo():
-    import sys, io
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
     print("=" * 62)
     print("  CHRYSOPOEIA ENGINE")
     print("  Transformation Calculus -- Lycheetah Framework")
@@ -647,8 +650,8 @@ def demo():
     print("  Status:")
     print("    [ACTIVE]   Seven operations — structural correspondence")
     print("    [ACTIVE]   Four tiers — coherence/entropy detection")
-    print("    [ACTIVE]   Solve et Coagula — coherence guarantee holds")
-    print("    [ACTIVE]   Banach fixed-point — ψ* exists, λ=0.85 < 1")
+    print("    [SCAFFOLD] Solve et Coagula — coherence holds only for c ≤ 13/30")
+    print("    [SCAFFOLD] Banach fixed-point — coagulation contracts (λ=0.85); full Ξ is stochastic")
     print("    [SCAFFOLD] Parameter values — design choices, not derived")
     print("    [SCAFFOLD] Tier thresholds — require empirical calibration")
     print()
@@ -657,4 +660,7 @@ def demo():
 
 
 if __name__ == "__main__":
+    import sys
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")  # script runs only; importing never touches stdout
     demo()

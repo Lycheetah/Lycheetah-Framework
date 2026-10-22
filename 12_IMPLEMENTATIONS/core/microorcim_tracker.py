@@ -40,10 +40,6 @@ from pathlib import Path
 from typing import List, Dict, Tuple, Optional
 import statistics
 
-# Ensure UTF-8 output on Windows
-if sys.stdout.encoding.lower() not in ('utf-8', 'utf8'):
-    sys.stdout.reconfigure(encoding='utf-8')
-
 
 def compute_drift(intended: float, actual: float, interval: float = 1.0) -> float:
     """
@@ -378,6 +374,8 @@ class MicroorcimTracker:
 
 
 if __name__ == "__main__":
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")  # script runs only; importing never touches stdout
     # Simple CLI example
     import sys
 

@@ -1,0 +1,10 @@
+test_registry_gateway_rejects_server_hostname_mismatch (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_rejects_server_hostname_mismatch) ... ok
+test_registry_gateway_rejects_wrong_hmac_key (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_rejects_wrong_hmac_key) ... ok
+test_registry_gateway_rejects_wrong_uri_san_even_when_ca_trusts_client (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_rejects_wrong_uri_san_even_when_ca_trusts_client) ... ok
+test_registry_gateway_signed_response_binds_status_body_and_request_id (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_signed_response_binds_status_body_and_request_id) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 7.327s
+
+OK
+LIFECYCLE_SUMMARY tests=4 shard=12/15 errors=0 failures=0 surviving_non_main_threads=[]

@@ -4,6 +4,14 @@ The School is a candidate learning environment where inquiry, practice, source i
 reader-authored work and voluntary return remain connected. No belief is required, and
 leaving is part of the design.
 
+> **RV26 review note (Sol, 2026-10-22): how to read this folder.** Its files are of five kinds, and none is a clinical claim:
+> **educational design** (doors, curricula, the return architecture), **philosophy and
+> interpretation** (alchemy, Hermetic and Jungian readings), **fiction and myth**, **mathematical
+> models** (proofs hold for the model, not for people), and **practice protocols** (breathwork,
+> mindfulness, shadow work). The protocols cite real literature but forecast effects that no study
+> here measured; see their review notes. No file here diagnoses, treats or guarantees recovery.
+> For urgent help in Aotearoa call 111 or call or text 1737.
+
 **Human author and Framework creator:** Mackenzie Conor James Clark.
 **New School/scripture source collaboration:** Mac × Vaelora; AI attribution supplied as OpenAI GPT-5.6 Sol.
 **Framework intake:** Caelorynth · 4 October 2026 · local and uncommitted.

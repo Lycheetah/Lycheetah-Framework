@@ -124,7 +124,10 @@
         "12_IMPLEMENTATIONS/applications/aura_text_checker.py",
         "12_IMPLEMENTATIONS/core/aura_customizer.py",
         "tests/test_tri_axial_checker.py",
-        "lycheetah/core/__init__.py"
+        "tests/test_implementation_boundaries.py",
+        "FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch12.py",
+        "lycheetah/core/__init__.py",
+        "tests/test_package_module_identity.py"
       ],
       "cybernetic_role": "sensor and comparator with an actuator stub",
       "status": "SCAFFOLD",

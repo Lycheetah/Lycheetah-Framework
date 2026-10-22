@@ -2,14 +2,24 @@
 ## University of Otago — Request for Institutional Partnership
 ### Draft email/letter — ready to personalise and send
 
+> **RV25 review note (Sol, 2026-10-22): correction about a named person.** Professor Jacinta Ruru's iwi
+> are **Raukawa and Ngāti Ranginui**, as the University of Otago's own profile
+> states (otago.ac.nz, senior leadership page; checked by search, ABSTRACT level).
+> Some profiles also name Ngāti Maniapoto. This draft said "Ngāi Tahu" and called
+> that "correct cultural ground". That was wrong, and assuming someone's whakapapa
+> is exactly the error this outreach was meant to avoid. Since March 2024 she has
+> been Otago's inaugural Deputy Vice-Chancellor, Māori. The original lines are
+> struck through below rather than deleted. Nothing in this folder shows that this
+> email was sent or answered.
+
 ---
 
 ## WHO TO CONTACT FIRST
 
-**Professor Jacinta Ruru** — Ngāi Tahu, Faculty of Law, University of Otago
+**Professor Jacinta Ruru** — ~~Ngāi Tahu~~ **Raukawa, Ngāti Ranginui** (corrected 2026-10-22), Faculty of Law, University of Otago
 - Leading Māori legal scholar in Aotearoa
 - Deep work on indigenous data sovereignty and constitutional rights
-- Kāi Tahu connection — correct cultural ground
+- ~~Kāi Tahu connection — correct cultural ground~~ (wrong: see the review note above)
 - Email likely findable via otago.ac.nz/law
 
 **Alternative first contact:**

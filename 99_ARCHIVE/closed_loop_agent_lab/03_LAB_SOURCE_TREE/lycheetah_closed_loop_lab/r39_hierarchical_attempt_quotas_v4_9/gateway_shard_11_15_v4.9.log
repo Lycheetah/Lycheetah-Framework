@@ -1,0 +1,10 @@
+test_registry_gateway_rejects_duplicate_content_length (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_rejects_duplicate_content_length) ... ok
+test_registry_gateway_rejects_invalid_admission_limits (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_rejects_invalid_admission_limits) ... ok
+test_registry_gateway_rejects_missing_client_certificate (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_rejects_missing_client_certificate) ... ok
+test_registry_gateway_rejects_non_post_method (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_rejects_non_post_method) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 8.039s
+
+OK
+LIFECYCLE_SUMMARY tests=4 shard=11/15 errors=0 failures=0 surviving_non_main_threads=[]

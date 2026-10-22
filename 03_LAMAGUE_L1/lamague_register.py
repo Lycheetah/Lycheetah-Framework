@@ -26,7 +26,7 @@ Not by reading what a file says about itself — several of the least-supported
 documents in the directory use the vocabulary of evidence most freely. Status is
 derived by **executing whatever sits beside the file**:
 
-    MEASURED     a test suite or benchmark next to it runs and passes here
+    MEASURED     a test suite, benchmark or verifier next to it exits 0 here
     SCAFFOLD     runnable artifact exists but is partial, retired or unproven
     CONJECTURE   no runnable artifact of any kind — prose only
     INDEX        provenance, changelog, manifest; carries no claim to test
@@ -109,6 +109,17 @@ class Entry:
     lines: int
 
 
+def passes(args: List[str], cwd: Path, timeout: int = 120) -> Optional[bool]:
+    """True/False from the exit code; None if it could not run. Never from the
+    words it prints: "INVALID" contains "VALID" and "TOKEN" contains "OK"."""
+    try:
+        r = subprocess.run([sys.executable, *args], cwd=cwd,
+                           capture_output=True, text=True, timeout=timeout)
+    except Exception:
+        return None
+    return r.returncode == 0
+
+
 def run_tests(d: Path) -> Optional[int]:
     """Returns the passing test count, or None if the suite does not pass."""
     if not (d / "tests").is_dir():
@@ -118,11 +129,23 @@ def run_tests(d: Path) -> Optional[int]:
                            cwd=d, capture_output=True, text=True, timeout=300)
     except Exception:
         return None
-    out = r.stderr + r.stdout
-    if "OK" not in out:
+    if r.returncode != 0:
         return None
-    m = re.search(r"Ran (\d+) tests?", out)
+    m = re.search(r"Ran (\d+) tests?", r.stderr + r.stdout)
     return int(m.group(1)) if m else 0
+
+
+def spoken_entry(spoken: Path) -> "Entry":
+    """23_SPOKEN_LAMAGUE is MEASURED only while `spl.py verify` finds its
+    inventory uniquely decodable. Its own findings record that it does not."""
+    ok = passes(["spl.py", "verify"], spoken)
+    n = sum(1 for _ in spoken.rglob("*.py"))
+    if ok:
+        return Entry("23_SPOKEN_LAMAGUE", "MEASURED",
+                     "spl.py verify: inventory uniquely decodable (Sardinas-Patterson)", n)
+    return Entry("23_SPOKEN_LAMAGUE", "SCAFFOLD",
+                 "spl.py verify: merged inventory NOT uniquely decodable"
+                 if ok is False else "spl.py verify did not run", n)
 
 
 def derive() -> List[Entry]:
@@ -133,31 +156,27 @@ def derive() -> List[Entry]:
         if not d.is_dir():
             continue
         n = run_tests(d)
+        retired = rel.startswith("13_RETIRED")
         entries.append(Entry(
             path=rel,
-            register="MEASURED" if n else "SCAFFOLD",
-            evidence=(f"{n} tests pass, executed {__import__('datetime').date.today()}"
+            register="MEASURED" if n and not retired else "SCAFFOLD",
+            evidence=(f"{'retired branch; ' if retired else ''}{n} tests pass, "
+                      f"executed {__import__('datetime').date.today()}"
                       if n else "test suite present but not passing here"),
             lines=sum(1 for _ in d.rglob("*.py")),
         ))
 
     n36 = HERE / "02_NATIVE36"
     if n36.is_dir():
-        try:
-            r = subprocess.run([sys.executable, "validate_lamague_native36_v0.3.py"],
-                               cwd=n36, capture_output=True, text=True, timeout=120)
-            valid = "VALID" in (r.stdout + r.stderr)
-        except Exception:
-            valid = False
+        valid = passes(["validate_lamague_native36_v0.3.py"], n36)
         entries.append(Entry("02_NATIVE36", "MEASURED" if valid else "SCAFFOLD",
-                             "registry validator passes; 36 tokens + seals integrity-checked"
+                             "registry validator passes: 36 base tokens in order, "
+                             "seal expansions and counts"
                              if valid else "validator did not pass", 1))
 
     spoken = HERE / "23_SPOKEN_LAMAGUE"
     if spoken.is_dir():
-        entries.append(Entry("23_SPOKEN_LAMAGUE", "MEASURED",
-                             "Sardinas-Patterson decodability proofs, re-run on demand "
-                             "via spl.py verify", 3))
+        entries.append(spoken_entry(spoken))
 
     for name in CONJECTURE_FILES:
         p = HERE / name
@@ -197,10 +216,11 @@ HEADER = """{mark} register="CONJECTURE" derived="{date}" by="lamague_register.p
 >
 > Speculative extensions are legitimate and this corpus keeps them deliberately.
 > What was missing was the marker, so that a later reader — human or model —
-> cannot mistake this register for the measured one. Evidence in this directory
-> lives in `12_CORE_LANGUAGE_LINE/`, `22_REVERSIBLE_COMPRESSION_v1.0/`,
-> `02_NATIVE36/` and `23_SPOKEN_LAMAGUE/`, which carry 417 passing tests between
-> them. **This document carries none, and nothing here is retracted by saying so.**
+> cannot mistake this register for the measured one. Measured evidence in this
+> directory lives in the runtime suites, `12_CORE_LANGUAGE_LINE/`,
+> `22_REVERSIBLE_COMPRESSION_v1.0/` and the `02_NATIVE36/` registry validator;
+> `LAMAGUE_STATUS_REGISTER.json` lists each with what was run. **This document
+> carries none, and nothing here is retracted by saying so.**
 >
 > Derived by executing what sits beside each file, not by reading what the file
 > says about itself: `python3 03_LAMAGUE_L1/lamague_register.py`

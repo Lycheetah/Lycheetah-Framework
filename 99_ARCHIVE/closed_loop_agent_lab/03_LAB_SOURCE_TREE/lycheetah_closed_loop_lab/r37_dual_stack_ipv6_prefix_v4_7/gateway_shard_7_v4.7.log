@@ -1,0 +1,14 @@
+test_shared_ingress_rate_limit_persists_across_gateway_instances (test_remote_witness_process.RemoteWitnessProcessTests.test_shared_ingress_rate_limit_persists_across_gateway_instances) ... ok
+test_shared_quota_rate_limit_survives_gateway_instance_restart (test_remote_witness_process.RemoteWitnessProcessTests.test_shared_quota_rate_limit_survives_gateway_instance_restart) ... ok
+test_slow_tls_handshake_does_not_block_other_witness_requests (test_remote_witness_process.RemoteWitnessProcessTests.test_slow_tls_handshake_does_not_block_other_witness_requests) ... ok
+test_tls_server_certificate_is_bound_to_each_loopback_host (test_remote_witness_process.RemoteWitnessProcessTests.test_tls_server_certificate_is_bound_to_each_loopback_host) ... ok
+test_transport_request_body_is_bound_to_hmac (test_remote_witness_process.RemoteWitnessProcessTests.test_transport_request_body_is_bound_to_hmac) ... ok
+test_two_remote_witnesses_down_fail_closed_without_mutation (test_remote_witness_process.RemoteWitnessProcessTests.test_two_remote_witnesses_down_fail_closed_without_mutation) ... ok
+test_witness_process_restart_preserves_append_only_head (test_remote_witness_process.RemoteWitnessProcessTests.test_witness_process_restart_preserves_append_only_head) ... ok
+test_wrong_client_secret_cannot_request_head (test_remote_witness_process.RemoteWitnessProcessTests.test_wrong_client_secret_cannot_request_head) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 31.322s
+
+OK
+LIFECYCLE_SUMMARY tests=8 shard=7/7 errors=0 failures=0 surviving_non_main_threads=[]

@@ -1,5 +1,14 @@
 # NZIAT APPLICATION DRAFT
 
+> **RV34 review note (Sol, 2026-10-22). Footing: [MEASURED] for the search, kept body below.**
+> This file says Lycheetah work is on arXiv, "endorsed" or "live". The arXiv API returns **0**
+> results for `all:Lycheetah` and **0** for author Clark M with CASCADE or Lycheetah in the
+> title or abstract, and the repository holds no arXiv identifier for its own work.
+> `papers/CASCADE_ARXIV.tex` is an unsubmitted manuscript, and no endorsement receipt exists
+> (see BATCH28 G-KNOX-ENDORSEMENT). The status claims are struck where they stand; the rest is
+> the author's text, unchanged. If a submission record turns up, add its identifier and lift the
+> strikes. The real public record is the Zenodo software release, DOI 10.5281/zenodo.20020828.
+
 > [DRAFT] **Historical draft — superseded as the current NZ governance direction.** Reviewed 19 October 2026. Start with [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). The original text remains below for provenance; its status labels, dates, outreach suggestions and capability claims are historical, not current approval or evidence.
 
 ## NZ Institute for AI & Technology — Funding Expression of Interest
@@ -70,7 +79,7 @@ The Lycheetah Framework is not speculative:
 - **LAMAGUE cross-cultural convergence worked example** (`GOVERNANCE_CONVERGENCE_WORKED.md`): three traditions (tikanga Māori, Confucian, Westminster) formally encoded with four structural convergences identified
 - **CASCADE governance application** (`CASCADE_GOVERNANCE_APPLICATION.md`): truth pressure formula applied to policy coherence with worked NZ water policy example
 - Thirteen Python implementations across four tiers
-- arXiv preprint: CASCADE framework (endorsed, live)
+- ~~arXiv preprint: CASCADE framework (endorsed, live)~~ *[RV34, 2026-10-22: no arXiv record exists; see the note at the top]*
 - GitHub: github.com/Lycheetah/Lycheetah-Framework
 - 1,402 pages of documented development history
 - Public Failure Museum: eleven exhibits of framework failures, nothing removed
@@ -150,7 +159,7 @@ If asked to summarise the application in five sentences for a programme manager:
 
 **2.** This research will produce Kāi Tahu-validated LAMAGUE encodings of five tikanga concepts, tested empirically against AI outputs, answering whether formally encoded tikanga produces measurably different and more culturally appropriate AI behaviour.
 
-**3.** The technical infrastructure already exists — CASCADE, AURA, LAMAGUE, and 13 Python implementations are live on GitHub, with an arXiv preprint and 1,402 pages of documented development.
+**3.** The technical infrastructure already exists — CASCADE, AURA, LAMAGUE, and 13 Python implementations are live on GitHub, ~~with an arXiv preprint and~~ *[RV34, 2026-10-22: no arXiv record exists; see the note at the top]* 1,402 pages of documented development.
 
 **4.** This directly addresses NZIAT's mandate to develop AI capability that reflects NZ's constitutional commitments, specifically Treaty obligations that currently exist only as aspirational text in policy documents.
 
@@ -177,7 +186,7 @@ The difference is the difference between a policy document that says "AI should 
 |------|-----------|--------|-----------|
 | Kāi Tahu finds LAMAGUE encodings inappropriate | Medium | High | This is anticipated — the research is designed to test and correct the encodings, not assume they're right |
 | Kāi Tahu declines partnership | Low-Medium | High | Without iwi partnership, the Te Reo layer cannot proceed. Research pivots to Western/technical governance track only |
-| Academic reviewers unfamiliar with LAMAGUE | Medium | Medium | arXiv preprint provides external validation; formal proofs in 11_MATHEMATICAL_FOUNDATIONS/ available |
+| Academic reviewers unfamiliar with LAMAGUE | Medium | Medium | ~~arXiv preprint provides external validation~~ *[RV34, 2026-10-22: no arXiv record exists; see the note at the top]*; formal proofs in 11_MATHEMATICAL_FOUNDATIONS/ available |
 | Institutional anchor not found | Medium | High | Without this, application cannot proceed. Must be resolved before submission |
 | Scope creep — trying to encode too many tikanga concepts | Medium | Medium | Scoped to five core concepts only in Year 1 |
 

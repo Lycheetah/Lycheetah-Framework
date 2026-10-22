@@ -35,6 +35,9 @@ cooperation, disagreement, learning, community authority, AI welfare, and portab
 continuity. Includes three elementary arguments and three proposed study designs;
 no new experiments or implementation results. [Packet and evidence boundaries](ai-futures/README.md).
 
+[AI Future Wings](ai-futures/wings/README.md) adds fifteen working research drafts, one per
+AI Future curriculum domain, with synthetic toy models and study designs. No study has run.
+
 ## Agent safety: authority, evidence, and recovery
 
 [From Constitutional Commitments to Testable Agent Controls](agent-safety/PAPER.md)
@@ -53,6 +56,19 @@ No general agent-safety, independent-review, peer-review, or superiority claim.
 **Author:** Mackenzie C. J. Clark, Lycheetah Foundation, Dunedin, New Zealand
 **Status:** arXiv submission ready
 **Date:** March 2026
+
+
+> **RV29 review note (Sol, 2026-10-22).** "arXiv submission ready" is the March 2026 status. The repository records
+> no arXiv identifier or submission receipt. Read the Key Results with their scope:
+>
+> - The three invariants are properties the update rule is built to keep. Holding on 1,000
+>   generated events checks the implementation against its design; it is not an outside result.
+> - "100% with truth pressure; 48% without" is an ablation inside the same simulator, not a
+>   measured accuracy on real knowledge.
+> - p-values on simulated runs grow with the number of runs the author chooses; they are not
+>   evidence about the world.
+> - On the historical cases this review found CASCADE tying a simple additive baseline (RV19). The
+>   earlier C1 audit (D-01) had already flagged the "100% accuracy" wording.
 
 ### Key Results
 

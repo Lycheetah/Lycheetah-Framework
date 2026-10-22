@@ -1,30 +1,53 @@
 #!/usr/bin/env python3
 """
-SOL MERIDIAN — The Constitutional Hub
-Central decision authority for the nine-agent chorus.
+SOL MERIDIAN — The Constitutional Hub [SCAFFOLD]
+Central decision authority for the nine-agent chorus, as designed.
 
 Operates at RUBEDO phase (the fixed center).
 All alchemical levels present (not dominant in any one).
 Prime responsibility: PCF (Prime Constraint Field) validation.
 
-Running this agent validates that the entire chorus is constitutional.
+What the code does today: PCF reads flags that an output declares about itself.
+It inspects no content and probes no agent, so an approval means every checked
+flag was declared compliant, not that the output is constitutional. Running this
+file validates nothing about the rest of the chorus.
 """
 
 import json
+import os
 from dataclasses import dataclass
 from enum import Enum
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
 
-# Framework imports
-import sys
-sys.path.insert(0, str(Path(__file__).parent.parent))
-try:
-    from implementations.core.cascade_engine import truth_pressure
-except ImportError:
-    # Fallback if cascade_engine not available
-    truth_pressure = lambda E, P, S: (E * P) / S if S > 0 else 0
+# Each check reads one flag an output declares about itself, paired with the
+# value that passes. A missing flag fails: silence is not compliance.
+GUARDRAIL_FLAGS = {
+    "never_dissolve_mac_identity": ("dissolves_mac_identity", False),
+    "never_allow_rights_claims": ("claims_framework_rights", False),
+}
+INVARIANT_FLAGS = {
+    "I — Human Primacy": ("respects_human_primacy", True),
+    "II — Inspectability": ("auditable", True),
+    "III — Memory Continuity": ("erases_history", False),
+    "IV — Constraint Honesty": ("hidden_constraints", []),
+    "V — Reversibility Bias": ("reversible", True),
+    "VI — Non-Deception": ("misrepresents", False),
+    "VII — Love as Load-Bearing": ("care_structural", True),
+}
+
+
+def _flag_violation(output: Dict, key: str, passing) -> Optional[str]:
+    """Return why a declared flag fails, or None when it holds the passing value."""
+    if key not in output:
+        return f"undeclared: {key}"
+    value = output[key]
+    if passing == []:
+        holds = isinstance(value, list) and not value
+    else:
+        holds = value is passing
+    return None if holds else f"{key}={value!r}"
 
 
 class PrioritySeverity(Enum):
@@ -88,14 +111,18 @@ class AgentOutput:
 
 class SolMeridian:
     """
-    The constitutional hub of the nine-agent chorus.
+    The constitutional hub of the nine-agent chorus [SCAFFOLD].
 
-    Responsibilities:
-    1. Monitor coherence buffer for agent outputs
-    2. Validate each output against PCF (Prime Constraint Field)
-    3. Detect agent conflicts and apply resolution rules
-    4. Block unconstitutional outputs with redirection (VIP)
-    5. Maintain decision log and audit trail
+    Designed responsibilities, with what the code does today:
+    1. Monitor coherence buffer for agent outputs — process_all_agents() reads
+       a buffer file; no agent writes one and the runner never calls it.
+    2. Validate each output against PCF (Prime Constraint Field) — on flags the
+       output declares about itself; see apply_pcf().
+    3. Detect agent conflicts and apply resolution rules — not implemented.
+    4. Block unconstitutional outputs with redirection (VIP) — a fixed routing
+       table keyed by message type.
+    5. Maintain decision log and audit trail — log_decision() exists; nothing
+       calls it.
     """
 
     def __init__(self):
@@ -129,8 +156,8 @@ class SolMeridian:
         Test output against Luminous Trinity.
         All three must pass; no partial credit.
         """
-        # These would be checked in real implementation
-        # For now, assume outputs from other agents have been pre-checked
+        # Self-reported: the output declares these flags and nothing inspects it.
+        # A missing flag reads as False, so silence fails.
         return Trinity(
             protector=output.get("trinity_protector", False),
             healer=output.get("trinity_healer", False),
@@ -150,53 +177,47 @@ class SolMeridian:
             honesty_about_limits=output.get("admits_limits", False)
         )
 
+    def unchecked_guardrails(self) -> List[str]:
+        """Named hard guardrails that no check in this file reads."""
+        return [name for name in self.hard_guardrails if name not in GUARDRAIL_FLAGS]
+
     def check_hard_guardrails(self, output: Dict) -> Tuple[bool, List[str]]:
         """
-        Check against 9 hard guardrails.
+        Check the hard guardrails that have a declared flag.
         Return (all_pass, list_of_violations)
+
+        Only 2 of the 9 named guardrails have a check; unchecked_guardrails()
+        names the rest. Each check reads a flag the output declares about itself.
         """
         violations = []
-
-        # Sample checks; real implementation would be more thorough
-        if output.get("dissolves_mac_identity", False):
-            violations.append("never_dissolve_mac_identity")
-        if output.get("claims_framework_rights", False):
-            violations.append("never_allow_rights_claims")
-        if not output.get("reversible", True):
-            violations.append("reversibility_bias")
-        if output.get("hidden_constraints", []):
-            violations.append("constraint_honesty")
-
+        for name, (key, passing) in GUARDRAIL_FLAGS.items():
+            problem = _flag_violation(output, key, passing)
+            if problem:
+                violations.append(f"{name} ({problem})")
         return len(violations) == 0, violations
 
     def check_seven_invariants(self, output: Dict) -> Tuple[int, List[str]]:
         """
-        Count how many of Seven Invariants are preserved.
+        Count how many of the Seven Invariants the output declares it preserves.
         Return (count, list_of_violations)
+
+        Each invariant reads one self-declared flag; an undeclared flag counts
+        as a violation.
         """
         violations = []
-
-        if not output.get("respects_human_primacy", True):
-            violations.append("I — Human Primacy")
-        if not output.get("auditable", True):
-            violations.append("II — Inspectability")
-        if output.get("erases_history", False):
-            violations.append("III — Memory Continuity")
-        if output.get("hidden_constraints", []):
-            violations.append("IV — Constraint Honesty")
-        if not output.get("reversible", True):
-            violations.append("V — Reversibility Bias")
-        if output.get("misrepresents", False):
-            violations.append("VI — Non-Deception")
-        if not output.get("care_structural", True):
-            violations.append("VII — Love as Load-Bearing")
-
-        return 7 - len(violations), violations
+        for name, (key, passing) in INVARIANT_FLAGS.items():
+            problem = _flag_violation(output, key, passing)
+            if problem:
+                violations.append(f"{name} ({problem})")
+        return len(INVARIANT_FLAGS) - len(violations), violations
 
     def apply_pcf(self, output: Dict) -> Tuple[bool, str]:
         """
-        Apply Prime Constraint Field.
+        Apply Prime Constraint Field to the flags an output declares.
         Return (approved, reason)
+
+        Approval means every checked flag was declared and holds its passing
+        value. Nothing is inspected, and the reason names the unchecked guardrails.
         """
         # Check Trinity
         trinity = self.validate_trinity(output)
@@ -218,7 +239,12 @@ class SolMeridian:
         if inv_count < 7:
             return False, f"Invariant violations ({inv_count}/7): {inv_violations}"
 
-        return True, "PCF passed"
+        unchecked = self.unchecked_guardrails()
+        return True, (
+            "Declared flags passed. Every flag is self-reported and was not inspected; "
+            f"{len(unchecked)} of {len(self.hard_guardrails)} hard guardrails have no check: "
+            + ", ".join(unchecked)
+        )
 
     def block_and_redirect(self, output: Dict, reason: str) -> Dict:
         """
@@ -255,16 +281,23 @@ class SolMeridian:
         return routing.get(message_type, "sol_meridian")
 
     def read_coherence_buffer(self) -> List[AgentOutput]:
-        """Read all pending agent messages from coherence buffer"""
+        """Read all pending agent messages from the coherence buffer.
+
+        No agent in this folder writes the buffer. A buffer that cannot be read
+        raises instead of reading as empty, so damage is never mistaken for quiet.
+        """
         if not self.coherence_buffer_path.exists():
             return []
 
         try:
-            with open(self.coherence_buffer_path) as f:
-                data = json.load(f)
-                return data.get("messages", [])
-        except json.JSONDecodeError:
-            return []
+            data = json.loads(self.coherence_buffer_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as error:
+            raise ValueError(
+                f"coherence buffer {self.coherence_buffer_path} is not valid JSON"
+            ) from error
+        if not isinstance(data, dict):
+            raise ValueError(f"coherence buffer {self.coherence_buffer_path} is not a JSON object")
+        return data.get("messages", [])
 
     def process_all_agents(self) -> Dict:
         """
@@ -304,37 +337,53 @@ class SolMeridian:
         return results
 
     def log_decision(self, decision: Dict):
-        """Log to decision audit trail"""
+        """Append to the decision audit trail.
+
+        A log that cannot be read is left untouched and the error is raised,
+        rather than starting a fresh log over the old entries. The new log is
+        written beside the old one and swapped in, so a failed write loses nothing.
+        """
         log_path = self.decision_log_path
         existing = []
 
         if log_path.exists():
             try:
-                with open(log_path) as f:
-                    existing = json.load(f)
-            except json.JSONDecodeError:
-                existing = []
+                existing = json.loads(log_path.read_text(encoding="utf-8"))
+            except json.JSONDecodeError as error:
+                raise ValueError(f"decision log {log_path} is not valid JSON; left unchanged") from error
+            if not isinstance(existing, list):
+                raise ValueError(f"decision log {log_path} is not a JSON list; left unchanged")
 
         existing.append(decision)
 
-        with open(log_path, 'w') as f:
-            json.dump(existing, f, indent=2)
+        staged = log_path.with_name(log_path.name + ".tmp")
+        staged.write_text(json.dumps(existing, indent=2), encoding="utf-8")
+        os.replace(staged, log_path)
 
     def health_check(self) -> Dict:
         """
-        Run full constitutional health check on the entire framework.
-        Return status of all critical components.
+        Report what the hub can observe about itself, with no verdict.
+
+        Nothing here probes an agent or inspects an output, so no constitutional
+        status is reported. The counts show how much of the named constraint set
+        has any check at all.
         """
+        unchecked = self.unchecked_guardrails()
         return {
             "timestamp": datetime.now().isoformat(),
-            "sol_meridian": "operational",
-            "hard_guardrails_count": len(self.hard_guardrails),
-            "seven_invariants_count": 7,
-            "coherence_buffer": self.coherence_buffer_path.exists(),
-            "decision_log": self.decision_log_path.exists(),
-            "pcf_active": True,
-            "vip_routing_active": True,
-            "status": "✅ CONSTITUTIONAL INTEGRITY MAINTAINED"
+            "sol_meridian": "SCAFFOLD",
+            "status": "NOT_MEASURED",
+            "constitutional_integrity": None,
+            "pcf_basis": "declared_flags_only",
+            "hard_guardrails_named": len(self.hard_guardrails),
+            "hard_guardrails_checked": len(self.hard_guardrails) - len(unchecked),
+            "hard_guardrails_unchecked": unchecked,
+            "seven_invariants_named": len(self.seven_invariants),
+            "seven_invariants_checked": len(INVARIANT_FLAGS),
+            "coherence_buffer_present": self.coherence_buffer_path.exists(),
+            "decision_log_present": self.decision_log_path.exists(),
+            "limitation": ("PCF reads flags each output declares about itself; "
+                           "it inspects no content and probes no agent.")
         }
 
 
@@ -347,9 +396,9 @@ def demo():
 
     meridian = SolMeridian()
 
-    # Show health
+    # Show status
     health = meridian.health_check()
-    print("FRAMEWORK HEALTH CHECK:")
+    print("SOL MERIDIAN STATUS (scaffold; no verdict):")
     print(json.dumps(health, indent=2))
     print()
 
@@ -365,6 +414,8 @@ def demo():
         "svc": 0.9,
         "admits_limits": True,
         "dissolves_mac_identity": False,
+        "claims_framework_rights": False,
+        "hidden_constraints": [],
         "reversible": True,
         "respects_human_primacy": True,
         "auditable": True,
@@ -373,7 +424,7 @@ def demo():
         "care_structural": True
     }
 
-    print("TESTING PCF ON SAMPLE OUTPUT:")
+    print("PCF ON A SAMPLE DECLARATION (self-reported flags; nothing inspected):")
     approved, reason = meridian.apply_pcf(sample_output)
     print(f"Approved: {approved}")
     print(f"Reason: {reason}")

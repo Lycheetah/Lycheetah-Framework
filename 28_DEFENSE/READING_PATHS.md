@@ -10,7 +10,8 @@
 
 For: anyone deciding whether to invest more time. Grant officers, journalists, skeptics, busy engineers.
 
-1. [`FIVE_MINUTE_BRIEF.md`](../FIVE_MINUTE_BRIEF.md) — what it is, what it claims, what is proven, what is testable, what is novel. Share card included.
+1. [`FIVE_MINUTE_BRIEF.md`](../FIVE_MINUTE_BRIEF.md) — what it is, what it claims, what is proven, what is testable, what is novel. ~~Share card included.~~ [RETRACTED] The one-line share card was
+retired on 2026-10-22 (RV27). For a current summary use `26_FOR_AI/AI_EXTRACTION_PROTOCOL.md`.
 
 That's it. If you want more, come back.
 

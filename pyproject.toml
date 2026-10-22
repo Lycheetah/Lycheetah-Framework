@@ -134,6 +134,13 @@ exclude = ["*"]
 "papers/agent-safety/earned-trust/cycles_001_009/**" = ["B023", "B904"]
 "papers/ai-futures/hybrid-gateway/v1.2/**" = ["B023", "B904"]
 "03_LAMAGUE_L1/26_SXP_L_RESEARCH/v2.0/**" = ["B023", "B904"]
+# 2026-10-22 review (RV33): bundles frozen 17-19 Oct and pinned by their own
+# MANIFEST.sha256 / SHA256SUMS.txt took the floor from zero to 46 while hosted CI
+# could not start. Same treatment as above: the race closures are joined inside
+# their own iteration, and the star import is the bundle's test harness.
+"34_ASSURANCE_RUNTIME/action_guard/versions/**" = ["B023"]
+"03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/**" = ["B904", "F403", "F405"]
+"papers/agent-safety/earned-light/forges_01_07/**" = ["B904"]
 
 [tool.mypy]
 files = ["lycheetah"]

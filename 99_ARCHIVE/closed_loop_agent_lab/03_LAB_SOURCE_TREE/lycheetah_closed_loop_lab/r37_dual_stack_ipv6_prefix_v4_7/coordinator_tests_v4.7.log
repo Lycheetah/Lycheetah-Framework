@@ -1,0 +1,18 @@
+test_active_lease_heartbeat_keeps_live_request_reserved_past_ttl (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_active_lease_heartbeat_keeps_live_request_reserved_past_ttl) ... ok
+test_active_limit_is_shared_between_independent_store_instances (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_active_limit_is_shared_between_independent_store_instances) ... ok
+test_config_mismatch_across_replicas_fails_closed (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_config_mismatch_across_replicas_fails_closed) ... ok
+test_crashed_lease_expires_and_frees_slot (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_crashed_lease_expires_and_frees_slot) ... ok
+test_database_mode_is_owner_only (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_database_mode_is_owner_only) ... ok
+test_database_symlink_is_rejected (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_database_symlink_is_rejected) ... ok
+test_group_or_world_writable_parent_directory_is_rejected (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_group_or_world_writable_parent_directory_is_rejected) ... ok
+test_identities_have_independent_shared_buckets_and_slots (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_identities_have_independent_shared_buckets_and_slots) ... ok
+test_monotonic_clock_backstep_does_not_refill_rate_bucket (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_monotonic_clock_backstep_does_not_refill_rate_bucket) ... ok
+test_multiprocess_race_allows_only_one_active_slot (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_multiprocess_race_allows_only_one_active_slot) ... ok
+test_os_boot_id_change_resets_monotonic_state (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_os_boot_id_change_resets_monotonic_state) ... ok
+test_principal_must_be_nonempty_and_bounded (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_principal_must_be_nonempty_and_bounded) ... ok
+test_rate_bucket_persists_across_store_reconstruction (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_rate_bucket_persists_across_store_reconstruction) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 3.948s
+
+OK

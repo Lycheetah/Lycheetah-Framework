@@ -1,0 +1,10 @@
+test_per_coordinator_request_rate_is_independent_and_signed (test_remote_witness_process.RemoteWitnessProcessTests.test_per_coordinator_request_rate_is_independent_and_signed) ... ok
+test_registry_gateway_accepts_pinned_coordinator_and_anchors_mutation (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_accepts_pinned_coordinator_and_anchors_mutation) ... ok
+test_registry_gateway_active_connection_limit_closes_excess_before_tls (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_active_connection_limit_closes_excess_before_tls) ... ok
+test_registry_gateway_bind_requires_explicit_nonloopback_opt_in (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_bind_requires_explicit_nonloopback_opt_in) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 9.743s
+
+OK
+LIFECYCLE_SUMMARY tests=4 shard=8/15 errors=0 failures=0 surviving_non_main_threads=[]

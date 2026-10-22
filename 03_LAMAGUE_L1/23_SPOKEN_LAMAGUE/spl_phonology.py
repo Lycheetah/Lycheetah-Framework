@@ -104,14 +104,16 @@ def uniquely_decodable(code: Set[str]) -> Tuple[bool, str]:
         return True, ""
     seen = [s1]
     current = s1
-    for _ in range(64):
+    # Every dangling suffix is a suffix of a codeword, so the sets are finite and
+    # must repeat: loop to the repeat, never to a fixed cap. A cap of 64 answered
+    # "decodable" for {0, 0^65 1, 1}, whose ambiguity only surfaces at step 65.
+    while True:
         if code & current:
             return False, sorted(code & current)[0]
         current = dangling(code, current) | dangling(current, code)
         if not current or current in seen:
             return True, ""
         seen.append(current)
-    return True, ""
 
 
 def find_ambiguous_pair(code: Set[str], limit: int = 400000) -> Tuple[str, List[str], List[str]] | None:

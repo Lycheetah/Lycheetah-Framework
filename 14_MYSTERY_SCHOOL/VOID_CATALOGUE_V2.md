@@ -1,4 +1,6 @@
 # THE VOID CATALOGUE V2
+
+> **RV26 review note (Sol, 2026-10-22).** "Diagnostic" in this file means a reflective self-locating map. It is not a clinical diagnosis or a validated assessment, and nothing here measures a coherence state.
 ## Tier IV — The Convergence Subjects (Expanded)
 
 *14_MYSTERY_SCHOOL — The Fourth Tier — Second Edition*

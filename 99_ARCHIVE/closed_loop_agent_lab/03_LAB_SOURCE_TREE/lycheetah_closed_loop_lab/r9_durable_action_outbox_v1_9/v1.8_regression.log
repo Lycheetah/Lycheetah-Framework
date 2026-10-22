@@ -1,0 +1,21 @@
+test_action_substitution_rejected (test_trusted_witness.TrustedWitnessTests.test_action_substitution_rejected) ... ok
+test_changed_exact_evidence_rejected (test_trusted_witness.TrustedWitnessTests.test_changed_exact_evidence_rejected) ... ok
+test_concurrent_finalize_allows_exactly_one_consumer (test_trusted_witness.TrustedWitnessTests.test_concurrent_finalize_allows_exactly_one_consumer) ... ok
+test_documented_external_provider_toctou_remains_open (test_trusted_witness.TrustedWitnessTests.test_documented_external_provider_toctou_remains_open) ... ok
+test_expiry_rejected (test_trusted_witness.TrustedWitnessTests.test_expiry_rejected) ... ok
+test_failed_evidence_rejected (test_trusted_witness.TrustedWitnessTests.test_failed_evidence_rejected) ... ok
+test_forgery_cannot_be_transferred_to_another_gate (test_trusted_witness.TrustedWitnessTests.test_forgery_cannot_be_transferred_to_another_gate) ... ok
+test_honest_witness_can_finalize (test_trusted_witness.TrustedWitnessTests.test_honest_witness_can_finalize) ... ok
+test_malformed_token_rejected (test_trusted_witness.TrustedWitnessTests.test_malformed_token_rejected) ... ok
+test_non_finite_event_fails_closed (test_trusted_witness.TrustedWitnessTests.test_non_finite_event_fails_closed) ... ok
+test_policy_change_after_admission_rejected (test_trusted_witness.TrustedWitnessTests.test_policy_change_after_admission_rejected) ... ok
+test_public_digest_cannot_replace_hmac_after_requirement_substitution (test_trusted_witness.TrustedWitnessTests.test_public_digest_cannot_replace_hmac_after_requirement_substitution) ... ok
+test_requirements_are_not_caller_selectable_at_admission (test_trusted_witness.TrustedWitnessTests.test_requirements_are_not_caller_selectable_at_admission) ... ok
+test_runtime_review_fails_closed_at_admission (test_trusted_witness.TrustedWitnessTests.test_runtime_review_fails_closed_at_admission) ... ok
+test_witness_is_single_use (test_trusted_witness.TrustedWitnessTests.test_witness_is_single_use) ... ok
+test_witness_registry_survives_gate_object_recreation (test_trusted_witness.TrustedWitnessTests.test_witness_registry_survives_gate_object_recreation) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.134s
+
+OK

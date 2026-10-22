@@ -1,0 +1,10 @@
+test_mtls_rejects_client_without_certificate (test_remote_witness_process.RemoteWitnessProcessTests.test_mtls_rejects_client_without_certificate) ... ok
+test_mtls_rejects_wrong_coordinator_uri_even_when_ca_trusts_certificate (test_remote_witness_process.RemoteWitnessProcessTests.test_mtls_rejects_wrong_coordinator_uri_even_when_ca_trusts_certificate) ... ok
+test_mutation_and_checkpoint_pass_through_four_remote_http_processes (test_remote_witness_process.RemoteWitnessProcessTests.test_mutation_and_checkpoint_pass_through_four_remote_http_processes) ... ok
+test_noncanonical_request_target_query_is_rejected (test_remote_witness_process.RemoteWitnessProcessTests.test_noncanonical_request_target_query_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 9.040s
+
+OK
+LIFECYCLE_SUMMARY tests=4 shard=5/14 errors=0 failures=0 surviving_non_main_threads=[]

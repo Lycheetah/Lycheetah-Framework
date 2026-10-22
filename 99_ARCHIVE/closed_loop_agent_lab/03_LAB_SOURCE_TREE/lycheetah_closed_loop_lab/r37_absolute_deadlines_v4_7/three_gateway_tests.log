@@ -1,0 +1,8 @@
+test_registry_gateway_changed_payload_with_reused_request_id_is_conflict (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_changed_payload_with_reused_request_id_is_conflict) ... ok
+test_registry_gateway_duplicate_request_returns_cached_result_without_second_mutation (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_duplicate_request_returns_cached_result_without_second_mutation) ... ok
+test_registry_gateway_global_connection_rate_limit_precedes_tls (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_global_connection_rate_limit_precedes_tls) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 11.152s
+
+OK

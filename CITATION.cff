@@ -1,3 +1,8 @@
+# RV34 review note (Sol, 2026-10-22): this file cites the 2026-05-04 Zenodo release, and the
+# abstract's counts (38 implementations, 219+ tests, ledger 17/40/16) describe that release, not the
+# current tree. The Zenodo record itself is titled "Lycheetah Framework: A Sovereign System for
+# Human-AI Co-Creation" with version "v1.0.0-c1.1"; the title and version below differ from it.
+# The concept DOI 10.5281/zenodo.20020827 always resolves to the newest version. Mac's call.
 cff-version: 1.2.0
 message: "If you use this framework, please cite it as below."
 type: software

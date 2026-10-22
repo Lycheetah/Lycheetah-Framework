@@ -1,0 +1,7 @@
+LYCHEETAH_V3_3_DEMO=PASS
+database_id=lycheetah.demo.operations
+verified_chain_length=2
+current_sequence=2
+current_head_sha256=d126155be49373a9b5e61f26a85fff6c0632285e54c4ccfd673460e0dbb3cd4c
+matching_fresh_witnesses=4 / 4
+external_network_calls=0

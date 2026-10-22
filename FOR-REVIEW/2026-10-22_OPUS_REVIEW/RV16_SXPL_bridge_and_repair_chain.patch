@@ -1,0 +1,48 @@
+--- a/03_LAMAGUE_L1/26_SXP_L_RESEARCH/v2.0/baseline/runtime/authority_bridge.py
++++ b/03_LAMAGUE_L1/26_SXP_L_RESEARCH/v2.0/baseline/runtime/authority_bridge.py
+@@ -42,11 +42,19 @@
+     scoped=[r for r in reports if r.get('operation')==scope.get('operation') and
+             r.get('resource')==scope.get('resource')]
+     # Linguistic review flag only: real host must decide what to do with it.
+-    boundaries=[r for r in scoped if r['kind'] in ('decision_reservation','delegation_refusal')]
++    # Denials and revocations are boundaries too. A same-label repair moves a
++    # boundary out of the active list but never clears the flag: the transcript
++    # is unauthenticated, so a withdrawn objection is itself worth a human look.
++    kinds=('decision_reservation','delegation_refusal','denial_report','revocation_report')
++    superseded={e['old'] for t in doc['turns'] for e in t['events'] if e['kind']=='repair'}
++    voiced=[r for r in scoped if r['kind'] in kinds]
++    boundaries=[r for r in voiced if r['id'] not in superseded]
++    withdrawn=[r for r in voiced if r['id'] in superseded]
+     return {'policy':result,'execution_performed':False,'reports':reports,
+             'scope_reports':scoped,
+             'reported_boundaries':boundaries,
+-            'review_advised':bool(result['allowed'] and boundaries),
++            'superseded_boundaries':withdrawn,
++            'review_advised':bool(result['allowed'] and voiced),
+             'explanation':'Host signature/ownership policy alone determines simulated allow/deny; language is advisory, not executable.'}
+ 
+ 
+--- a/03_LAMAGUE_L1/26_SXP_L_RESEARCH/v2.0/baseline/runtime/dialogue10.py
++++ b/03_LAMAGUE_L1/26_SXP_L_RESEARCH/v2.0/baseline/runtime/dialogue10.py
+@@ -107,6 +107,7 @@
+             if current is None or len(parts)!=3:fail('E_V08_REPAIR',str(number))
+             old,new=parts[1:]
+             if (old==new or old not in utterances or new not in utterances or old in repaired
++                or new in repaired
+                 or utterances[old]['speaker']!=current['speaker']
+                 or utterances[new]['speaker']!=current['speaker']
+                 or utterances[new]['sequence']<=utterances[old]['sequence']):
+--- a/03_LAMAGUE_L1/26_SXP_L_RESEARCH/v2.0/baseline/runtime/test_sovereignty.py
++++ b/03_LAMAGUE_L1/26_SXP_L_RESEARCH/v2.0/baseline/runtime/test_sovereignty.py
+@@ -111,7 +111,10 @@
+             self.assertTrue(x['policy']['allowed'])
+             self.assertFalse(x['execution_performed'])
+         self.assertTrue(inspect(docs[0],req,events,{owner:key},{owner:{'darafa'}},now=150)['review_advised'])
+-        self.assertFalse(inspect(docs[1],req,events,{owner:key},{owner:{'darafa'}},now=150)['review_advised'])
++        # docs[1] still carries the spoken revocation (mi revona): that is a boundary.
++        self.assertTrue(inspect(docs[1],req,events,{owner:key},{owner:{'darafa'}},now=150)['review_advised'])
++        clean=parse_document(modified.replace('mi revona','mi periva'))
++        self.assertFalse(inspect(clean,req,events,{owner:key},{owner:{'darafa'}},now=150)['review_advised'])
+         revoked=[*events,sign_fixture(revoke_claims(grant,120),key)]
+         self.assertFalse(inspect(docs[0],req,revoked,{owner:key},{owner:{'darafa'}},now=150)['policy']['allowed'])
+     def test_2500_generated_round_trips(self):

@@ -275,6 +275,8 @@ dK/dt ∝ ∇Π(K)
 
 5. Since Ω(D) is fixed (independent of agent), the intersection of their knowledge sets is non-empty in the limit. ∎
 
+> **Status note (review 2026-10-22, RV18).** Step 3 fails when Ω(D) has more than one component, because gradient ascent goes to the maximum of the basin it starts in. With Π = −(x² − 1)², climbers starting at −0.5 and +0.5 reach −1 and +1 (control: a single well gives one limit). A shared attractor set does not give a shared limit. The theorem needs a unique global attractor in D, and Corollary 3.1.1 inherits the same assumption. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A18). The original text above is kept.
+
 **Corollary 3.1.1:** The probability of independent convergent discovery is not merely non-zero — it approaches 1 for agents with sufficient resolution and time. This explains the empirical frequency of simultaneous discovery.
 
 ### 3.4 The Resolution Dynamics

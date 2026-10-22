@@ -1,0 +1,20 @@
+--- a/03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py
++++ b/03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/tests/test_cycle23.py
+@@ -2,6 +2,9 @@
+ from pathlib import Path
+ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
+ from cycle23 import *
++# prepare_world() chowns fixture directories to other uids, which needs root.
++# Without it these tests did not run; they have not failed.
++@unittest.skipUnless(os.name=='posix' and os.geteuid()==0,'needs root: prepare_world chowns to other uids')
+ class Cycle23Tests(unittest.TestCase):
+  def test_crash(self):
+   with tempfile.TemporaryDirectory() as d:
+--- a/03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/SHA256SUMS.txt
++++ b/03_LAMAGUE_L1/25_RESEARCH_CYCLE_23_POST_CRASH_OBSERVATION/SHA256SUMS.txt
+@@ -32,4 +32,4 @@
+ 06bb5e3c7bec867714f33db0553c04789220e35d13e56be8072bc63a2604d0fd  ./src/witness17.py
+ dd92662b4acec3f30c95e81a7062002d49c143c1545067ff72fb7bf10f864ff2  ./src/witness18.py
+ 260259b9b4591b9ba3da892170784ebdb5ded4bdeda5b1c88d3456318707dc50  ./src/witness21.py
+-8db9e9a09b72cb4cbf13c1f8e0b8365f969dac4d2565ac41b9d391b3a619790c  ./tests/test_cycle23.py
++a170d264733676c90db6e36eb9dcacf7456c88882b4092aa97754b6f0ce76193  ./tests/test_cycle23.py

@@ -10,6 +10,26 @@
 
 ## License
 
+> **RV34 review note (Sol, 2026-10-22). Footing: [MEASURED] for the records, [DERIVED] for the licence
+> reading, which is not legal advice.**
+>
+> - **What MIT requires.** Only that the copyright and permission notice be kept in copies of the
+>   Software. The "minimum required attribution" for papers and products, and the bar on relabelling
+>   the symbolic architecture, are the author's standards and scholarly norms, not MIT conditions.
+> - **Ideas are not licensed.** MIT is a copyright licence on this code and text. It does not cover
+>   ideas or mathematical results, so "standard academic plagiarism covered by the MIT license" below
+>   is not accurate. Plagiarism is answered by scholarly norms and by the timestamped record.
+> - **The record is further along than this page says.** The Zenodo DOI was minted on 2026-05-04:
+>   10.5281/zenodo.20020828 (`v1.0.0-c1.1`), with a later version 10.5281/zenodo.21122441
+>   (`tianxia-v0.2`, 2026-07-02), both under the concept DOI 10.5281/zenodo.20020827, and both
+>   licensed MIT on Zenodo. No arXiv preprint exists (0 results from the arXiv API).
+> - **Not everything here is MIT.** Four subtrees carry Apache-2.0: the retired LAMAGUE kernel v0.8
+>   (`03_LAMAGUE_L1/13_RETIRED_KERNEL_BRANCH/...v0.8...`) and `papers/agent-safety/earned-light/
+>   forges_01_07/Forge_05`, `Forge_06` and `Forge_07`, whose copyright line reads "Lycheetah research
+>   collaborators". Both licences are permissive and compatible; each subtree keeps its own file.
+> - **Conflict.** `CONTRIBUTING.md` and ten source headers name an "Earned Sovereignty Clause" whose
+>   text exists nowhere. Mac's options are in `FOR-REVIEW/2026-10-22_OPUS_REVIEW/BATCH33_FINDINGS_AND_LEDGER.md`.
+
 The Lycheetah Framework is released under the **MIT License**.
 
 You can: use it, copy it, modify it, distribute it, sublicense it, use it commercially. You must: include the original license and copyright notice.

@@ -12,6 +12,20 @@ Lycheetah Foundation
 
 **Status:** DRAFT v1.0 — April 2026
 
+> **RV25 review note (Sol, 2026-10-22).** This is a draft. It has not been submitted or peer-reviewed. Three things
+> must change before submission:
+> - **The independence argument has a common cause.** The traditions may have
+>   developed independently, but the encodings did not: one author produced all
+>   three LAMAGUE encodings with one operator set. P1's "chains derived
+>   independently" needs encoders from within each tradition working blind. Until
+>   then, the six-class convergence is an author's mapping, not an empirical finding
+>   (the abstract and §1 contribution 2 call it one).
+> - **The dating is internally inconsistent.** The Introduction says the five
+>   constants were "formalised from approximately 500 BCE"; §2 correctly credits the
+>   five-term set to Dong Zhongshu.
+> - **LAMAGUE has two expansions.** This paper's expansion differs from the one in
+>   the Catalyst application. Use one.
+
 ---
 
 ## Abstract

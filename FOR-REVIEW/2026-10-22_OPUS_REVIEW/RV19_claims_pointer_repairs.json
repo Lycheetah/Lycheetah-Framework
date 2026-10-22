@@ -1,0 +1,274 @@
+{
+  "date": "2026-10-22",
+  "review": "RV19",
+  "register": "28_DEFENSE/CLAIMS.json",
+  "register_sha256_before": "9d8e76dccb7b34e93787b6355d55cf5cabd394dc123bf56d56b752308464eb9f",
+  "register_sha256_after": "8b9daf4a1698c0100f1f284294b53120daa842cdbf39ae9a0fa7de0268b08267",
+  "pinned_by": "28_DEFENSE/review_2026_10_20/claim-assessments.json (register_sha256): applying this patch stales that pin",
+  "statements_and_author_statuses_unchanged": true,
+  "claims_updated": 24,
+  "references_before": 107,
+  "missing_before": 23,
+  "references_after": 106,
+  "missing_after": 3,
+  "remaining_missing": [
+    {
+      "claim_id": "ANA-002",
+      "reference": "07_ANAMNESIS_L0/TC_CATALOG.md"
+    },
+    {
+      "claim_id": "ANA-003",
+      "reference": "07_ANAMNESIS_L0/TC_CATALOG.md"
+    },
+    {
+      "claim_id": "ANA-004",
+      "reference": "07_ANAMNESIS_L0/TC_CATALOG.md"
+    }
+  ],
+  "caution": "A pointer to where a claim is stated is not evidence for it. CAS-009 and CAS-011 now point at documents whose materials are absent (BATCH18 F-EMP); CAS-010 points at a run that ties the additive baseline (F-PARADIGM).",
+  "repairs": [
+    {
+      "claim_id": "AUR-009",
+      "reason": "missing reference",
+      "dead": [
+        "02_AURA_L3/AURA_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/CODEX_DISTILLATION.md:536",
+      "before": "02_AURA_L3/AURA_THEOREMS.md",
+      "after": "30_MAPS/CODEX_DISTILLATION.md"
+    },
+    {
+      "claim_id": "CAS-003",
+      "reason": "missing reference",
+      "dead": [
+        "01_CASCADE_L4/CASCADE_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:207",
+      "before": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "after": "30_MAPS/FORMAL_SPINE.md"
+    },
+    {
+      "claim_id": "CAS-004",
+      "reason": "missing reference",
+      "dead": [
+        "01_CASCADE_L4/CASCADE_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:213",
+      "before": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "after": "30_MAPS/FORMAL_SPINE.md"
+    },
+    {
+      "claim_id": "CAS-005",
+      "reason": "missing reference",
+      "dead": [
+        "01_CASCADE_L4/CASCADE_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:218",
+      "before": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "after": "30_MAPS/FORMAL_SPINE.md"
+    },
+    {
+      "claim_id": "CAS-006",
+      "reason": "missing reference",
+      "dead": [
+        "01_CASCADE_L4/CASCADE_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:222",
+      "before": "01_CASCADE_L4/CASCADE_THEOREMS.md",
+      "after": "30_MAPS/FORMAL_SPINE.md"
+    },
+    {
+      "claim_id": "CAS-008",
+      "reason": "missing reference",
+      "dead": [
+        "01_CASCADE_L4/CASCADE_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:227",
+      "before": "01_CASCADE_L4/CASCADE_THEOREMS.md; 11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md",
+      "after": "30_MAPS/FORMAL_SPINE.md; 11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md"
+    },
+    {
+      "claim_id": "CAS-009",
+      "reason": "references dead or silent",
+      "dead": [
+        "01_CASCADE_L4/implementations/"
+      ],
+      "silent": [
+        "29_GOVERNANCE/EMPIRICAL_INVENTORY.md"
+      ],
+      "before": "01_CASCADE_L4/implementations/; 29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "after": "TRUTH_PRESSURE/EMPIRICAL_RESULTS.md; papers/LYCHEETAH_SYNTHESIS_v0.1.md"
+    },
+    {
+      "claim_id": "CAS-010",
+      "reason": "references dead or silent",
+      "dead": [
+        "01_CASCADE_L4/implementations/"
+      ],
+      "silent": [
+        "29_GOVERNANCE/EMPIRICAL_INVENTORY.md"
+      ],
+      "before": "01_CASCADE_L4/implementations/; 29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "after": "11_MATHEMATICAL_FOUNDATIONS/cascade_simulation.py; 11_MATHEMATICAL_FOUNDATIONS/cascade_simulation_results.json"
+    },
+    {
+      "claim_id": "CAS-011",
+      "reason": "references dead or silent",
+      "dead": [
+        "01_CASCADE_L4/implementations/"
+      ],
+      "silent": [
+        "29_GOVERNANCE/EMPIRICAL_INVENTORY.md"
+      ],
+      "before": "01_CASCADE_L4/implementations/; 29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "after": "TRUTH_PRESSURE/EMPIRICAL_RESULTS.md; papers/LYCHEETAH_SYNTHESIS_v0.1.md"
+    },
+    {
+      "claim_id": "CRY-002",
+      "reason": "missing reference",
+      "dead": [
+        "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:519",
+      "before": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+      "after": "30_MAPS/FORMAL_SPINE.md"
+    },
+    {
+      "claim_id": "CRY-003",
+      "reason": "missing reference",
+      "dead": [
+        "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:514",
+      "before": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+      "after": "30_MAPS/FORMAL_SPINE.md"
+    },
+    {
+      "claim_id": "CRY-004",
+      "reason": "missing reference",
+      "dead": [
+        "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:522",
+      "before": "08_CHRYSOPOEIA/CHRYSOPOEIA_THEOREMS.md",
+      "after": "30_MAPS/FORMAL_SPINE.md"
+    },
+    {
+      "claim_id": "HAR-004",
+      "reason": "references dead or silent",
+      "silent": [
+        "CLAUDE.md"
+      ],
+      "before": "10_HARMONIA_L6/essentials.md; CLAUDE.md",
+      "after": "10_HARMONIA_L6/essentials.md; AGENTS.md"
+    },
+    {
+      "claim_id": "LAM-003",
+      "reason": "missing reference",
+      "dead": [
+        "03_LAMAGUE_L1/LAMAGUE_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:312",
+      "before": "03_LAMAGUE_L1/LAMAGUE_THEOREMS.md",
+      "after": "30_MAPS/FORMAL_SPINE.md"
+    },
+    {
+      "claim_id": "LAM-004",
+      "reason": "missing reference",
+      "dead": [
+        "03_LAMAGUE_L1/LAMAGUE_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:317",
+      "before": "03_LAMAGUE_L1/LAMAGUE_THEOREMS.md",
+      "after": "30_MAPS/FORMAL_SPINE.md"
+    },
+    {
+      "claim_id": "LYV-001",
+      "reason": "no existing reference states the figure; the statement is added",
+      "silent": [
+        "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md",
+        "29_GOVERNANCE/EMPIRICAL_INVENTORY.md"
+      ],
+      "before": "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md; 29_GOVERNANCE/EMPIRICAL_INVENTORY.md",
+      "after": "11_MATHEMATICAL_FOUNDATIONS/MATHEMATICS_FOUNDATIONS.md; 29_GOVERNANCE/EMPIRICAL_INVENTORY.md; papers/LYCHEETAH_SYNTHESIS_v0.1.md"
+    },
+    {
+      "claim_id": "MIC-003",
+      "reason": "missing reference",
+      "dead": [
+        "05_MICROORCIM_L5/MICROORCIM_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:366",
+      "before": "05_MICROORCIM_L5/MICROORCIM_THEOREMS.md; 30_MAPS/FORMAL_SPINE.md",
+      "after": "30_MAPS/FORMAL_SPINE.md"
+    },
+    {
+      "claim_id": "TRI-003",
+      "reason": "missing reference",
+      "dead": [
+        "04_TRIAD_L2/TRIAD_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:152",
+      "before": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "after": "30_MAPS/FORMAL_SPINE.md"
+    },
+    {
+      "claim_id": "TRI-004",
+      "reason": "missing reference",
+      "dead": [
+        "04_TRIAD_L2/TRIAD_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:156",
+      "before": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "after": "30_MAPS/FORMAL_SPINE.md"
+    },
+    {
+      "claim_id": "TRI-005",
+      "reason": "missing reference",
+      "dead": [
+        "04_TRIAD_L2/TRIAD_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:161",
+      "before": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "after": "30_MAPS/FORMAL_SPINE.md"
+    },
+    {
+      "claim_id": "TRI-006",
+      "reason": "missing reference",
+      "dead": [
+        "04_TRIAD_L2/TRIAD_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md ('Banach')",
+      "before": "04_TRIAD_L2/TRIAD_THEOREMS.md; 30_MAPS/FORMAL_SPINE.md",
+      "after": "30_MAPS/FORMAL_SPINE.md"
+    },
+    {
+      "claim_id": "TRI-007",
+      "reason": "missing reference",
+      "dead": [
+        "04_TRIAD_L2/TRIAD_THEOREMS.md"
+      ],
+      "stated_at": "30_MAPS/FORMAL_SPINE.md:153",
+      "before": "04_TRIAD_L2/TRIAD_THEOREMS.md",
+      "after": "30_MAPS/FORMAL_SPINE.md"
+    },
+    {
+      "claim_id": "XFW-005",
+      "reason": "references dead or silent",
+      "silent": [
+        "CLAUDE.md"
+      ],
+      "before": "CLAUDE.md; 30_MAPS/CODEX_DISTILLATION.md",
+      "after": "THE_SOL_PROTOCOL.md; 30_MAPS/CODEX_DISTILLATION.md"
+    },
+    {
+      "claim_id": "XFW-006",
+      "reason": "references dead or silent",
+      "silent": [
+        "CLAUDE.md"
+      ],
+      "before": "CLAUDE.md",
+      "after": "THE_SOL_PROTOCOL.md"
+    }
+  ]
+}

@@ -3,6 +3,14 @@
 **Platform:** manifund.org
 **Applicant:** Mackenzie Conor James Clark | github.com/Lycheetah | ko-fi.com/lycheetah
 
+
+> **RV30 review note (Sol, 2026-10-22). Footing: [SCAFFOLD] template.** Fill every claim from `28_DEFENSE/CLAIMS.json` and
+> `python3 tools/verify-claims.py --register`, not from the example lines here. Example wording such
+> as "mathematical proofs" gets copied as written. The accurate phrase is: formally specified models,
+> some with proofs that hold inside the model. CHRYSOPOEIA's guarantee, for example, holds only for
+> c ≤ 13/30. Quote synthetic results as synthetic, and the historical CASCADE result as a tie with a
+> simple additive baseline (RV19).
+
 ---
 
 ## PROJECT TITLE

@@ -9,6 +9,32 @@
 > **Contact:** internationalscience@mbie.govt.nz
 > **GitHub:** github.com/Lycheetah/Lycheetah-Framework
 
+> **RV25 review note (Sol, 2026-10-22).** This is a March 2026 planning draft. No partner, submission or award is
+> recorded anywhere in the repository. Read it with these corrections:
+> - **The hypothesis is stated as a finding.** The abstract says the traditions'
+>   constraints are "structurally identical — independently discovered". The One
+>   Paragraph says "preliminary analysis shows" they "converged independently". Two
+>   independence problems stand in the way. AURA was written in 2025–26 by an author
+>   with access to these traditions, so it is not an independent tradition. All the
+>   LAMAGUE encodings come from one encoder with one operator vocabulary, so shared
+>   operators can reflect the encoder rather than the traditions. Phase 1's
+>   "independently derived" chains need encoders from each tradition working blind.
+>   DERIVED.
+> - **The counts disagree with each other and with today.** The abstract says
+>   "thirteen Python implementations" and "a formal arXiv preprint"; the table says
+>   26 implementations, 80 tests, and a preprint "awaiting cs.AI endorsement", so
+>   not posted. The repository suite now runs 1,504 tests.
+> - **The ethics approval assumes an affiliation that does not exist.** Approval by
+>   the University of Otago Human Ethics Committee requires an Otago affiliation,
+>   which the partner steps below only propose to request.
+> - **Endorsements are targets, not facts.** "Reviewed and endorsed by Chinese
+>   philosophy scholars" and regional-body endorsement are outcomes the project
+>   would seek. None exists.
+> - **Entity status is UNVERIFIED.** No registration record for a "Lycheetah
+>   Foundation" was found in the repository. A grant application should name the
+>   applicant's actual legal form.
+> - Professor Ruru's iwi is corrected in Part 4 (see `TE_TUMU_OUTREACH.md`).
+
 ---
 
 ## ABSTRACT (300 words — for submission cover)
@@ -201,7 +227,7 @@ See `CHINESE_PARTNERS.md` for full partner analysis and contact strategy.
 3. If Otago declines: approach Victoria University of Wellington (Policy/Governance research)
 
 **Recommended first contact:**
-- Professor Jacinta Ruru (Ngāi Tahu, University of Otago, law and indigenous rights)
+- Professor Jacinta Ruru (~~Ngāi Tahu~~ **Raukawa, Ngāti Ranginui**, corrected 2026-10-22; University of Otago, law and indigenous rights)
 - Email subject: "LAMAGUE cross-cultural AI governance research — request for kōrero"
 - One-page overview (see `CATALYST_PROPOSAL_FRAME.md` §The Opportunity)
 

@@ -269,7 +269,7 @@ Where:
 - **τ** = Transition/phase change
 - **σ** = Boundary/constraint
 
-**Compression (measured):** LAMAGUE achieves ~11:1 character compression and ~3:1 token compression over equivalent English for alignment concepts, measured across 5 canonical examples using `lamague_parser.py`. The previously cited "~500:1" figure was a design aspiration; this is the measured result. [ACTIVE for measurement; SCAFFOLD for broader validation]
+**Compression (measured):** LAMAGUE achieves ~11:1 character compression and ~3:1 token compression over equivalent English for alignment concepts, measured across 5 canonical examples using `lamague_parser.py`. The previously cited "~500:1" figure was a design aspiration; this is the measured result. The ~11:1 counts characters with spaces removed; in UTF-8 bytes, where each glyph costs two or three bytes, the same five examples measure ~4.9:1. The English side is the author's own gloss of each expression, so the figure is a ratio against that gloss, not compression of independent text. [ACTIVE for measurement; SCAFFOLD for broader validation]
 
 ---
 

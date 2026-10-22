@@ -11,6 +11,8 @@
 - The handoff's expanded tree contains primary files from every Forge and original ZIPs preserved separately, so extracted code is not quietly flattened into a fictional merged engine.
 - Original ZIPs themselves are unchanged; see SHA-256 manifest.
 
+**Review correction (2026-10-22, RV22).** The 142-test chain covers Forges **IV–VIII**, not II–VII: the 110 historical tests are Forge IV (28) + V (23) + VI (36) + VII (23), and the Forge VIII runner requires exactly that 110. Forges II (28) and III (37) are outside it. `papers/agent-safety/sovereign-choice-research/verify.py` runs all three parts for 207 test executions, and its README says the same. The bullet above is kept as written in the handoff.
+
 ## What the test count does and does not mean
 
 The 142 count comes from deterministic, self-authored local tests. It confirms that the included reference implementations and fixtures behave as specified under those test conditions. It **does not** prove end-to-end production security, machine or human free will, genuine approval from a human, vulnerability absence, independent replication, or a demonstrated advantage over strong conventional design.

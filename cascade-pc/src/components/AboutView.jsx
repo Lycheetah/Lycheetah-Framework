@@ -91,18 +91,18 @@ export default function AboutView() {
             The scoring engine, onion structure, and truth pressure mechanics are derived directly from 1,402 pages of continuous research archived in the CODEX_AURA_PRIME. This is not a standalone product — it is the framework made executable.
           </p>
           <div className="about-links">
-            <button className="about-link" onClick={() => open('https://github.com/Lycheetah/CODEX_AURA_PRIME')}>
+            <button className="about-link" onClick={() => open('https://github.com/Lycheetah/Lycheetah-Framework')}>
               <span className="link-icon">◈</span>
               <div>
-                <div className="link-title">CODEX_AURA_PRIME</div>
-                <div className="link-desc">Full source archive — 10 frameworks, 1,400+ pages, proofs, implementations</div>
+                <div className="link-title">Lycheetah-Framework</div>
+                <div className="link-desc">The public framework repository. CODEX_AURA_PRIME is now a private archive.</div>
               </div>
             </button>
             <button className="about-link" onClick={() => open('https://github.com/Lycheetah')}>
               <span className="link-icon">◎</span>
               <div>
                 <div className="link-title">Lycheetah on GitHub</div>
-                <div className="link-desc">Sol, Sol Lite, CODEX_AURA_PRIME — all public repositories</div>
+                <div className="link-desc">Public Lycheetah repositories</div>
               </div>
             </button>
           </div>

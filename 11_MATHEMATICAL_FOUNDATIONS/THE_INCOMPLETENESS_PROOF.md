@@ -131,6 +131,8 @@ Moreover: G can be constructed as G := "F cannot prove Ψ_F = 1"
 Corollary: No honest, consistent, self-measuring framework is complete.
 ```
 
+> **Status note (review 2026-10-22, RV18).** As written, this conflicts with Gödel's completeness theorem. For first-order F, F ⊨ G implies F ⊢ G, so no G is true in all models of F yet unprovable. The incompleteness theorems give a sentence that is true in the standard model, not in all models, and unprovable. They apply to F that is consistent, recursively axiomatizable and interprets Robinson arithmetic Q; Rosser's form drops ω-consistency. Conditions (i)–(iii) omit recursive axiomatizability. True arithmetic Th(ℕ) is consistent and complete, so (i)–(iii) are not enough. These citations are from memory and were not re-read in this review. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (reasoning; no run). The original text above is kept.
+
 ---
 
 ## THE OPERATIONAL CONSEQUENCE

@@ -13,4 +13,4 @@ __all__ = ["BeaconReflector"]
 
 if __name__ == "__main__":
     agent = BeaconReflector()
-    print(f"BeaconReflector online: {agent}")
+    print(f"BeaconReflector constructed (scaffold; no behaviour probed): {agent}")

@@ -1,5 +1,14 @@
 # NZ MĀORI AI SOVEREIGNTY — DEEP BRAINSTORM
 
+> **RV34 review note (Sol, 2026-10-22). Footing: [MEASURED] for the search, kept body below.**
+> This file says Lycheetah work is on arXiv, "endorsed" or "live". The arXiv API returns **0**
+> results for `all:Lycheetah` and **0** for author Clark M with CASCADE or Lycheetah in the
+> title or abstract, and the repository holds no arXiv identifier for its own work.
+> `papers/CASCADE_ARXIV.tex` is an unsubmitted manuscript, and no endorsement receipt exists
+> (see BATCH28 G-KNOX-ENDORSEMENT). The status claims are struck where they stand; the rest is
+> the author's text, unchanged. If a submission record turns up, add its identifier and lift the
+> strikes. The real public record is the Zenodo software release, DOI 10.5281/zenodo.20020828.
+
 > [DRAFT] **Historical draft — superseded as the current NZ governance direction.** Reviewed 19 October 2026. Start with [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). The original text remains below for provenance; its status labels, dates, outreach suggestions and capability claims are historical, not current approval or evidence.
 
 ## Lycheetah Framework × Aotearoa AI Funding Strategy
@@ -265,7 +274,7 @@ a temporal ethics assessment. The recommendation includes: not just "what to do"
 but "when this should be done and why now (or not now)."
 
 **Why funders should care:**
-HARMONIA is on arXiv. The mathematics is proven. This is the applied version
+~~HARMONIA is on arXiv. The mathematics is proven.~~ *[RV34, 2026-10-22: no arXiv record exists; see the note at the top]* This is the applied version
 of existing published research — exactly what Phase 2 NZIAT funding is for.
 
 ---
@@ -917,28 +926,29 @@ Every idea in this document is architecturally grounded in:
 **CASCADE** (arXiv preprint, March 2026):
 Self-reorganizing knowledge structures driven by truth pressure Π.
 The measurement layer that makes everything else auditable.
-`github.com/Lycheetah/Lycheetah-Framework/tree/master/01_CASCADE`
+`github.com/Lycheetah/Lycheetah-Framework/tree/master/01_CASCADE_L4`
 
 **AURA Protocol** (Seven Invariants, formally proven):
 Constitutional constraints for AI systems.
 The architecture that makes tikanga computable.
-`github.com/Lycheetah/Lycheetah-Framework/tree/master/02_AURA`
+`github.com/Lycheetah/Lycheetah-Framework/tree/master/02_AURA_L3`
 
 **LAMAGUE** (Living Alignment Mathematics for Autonomous Governance Under Ethics):
 The translation layer that converts indigenous governance concepts
 into computable AI constraints.
 500:1 compression of consciousness state. Bidirectional. Language-neutral primitives.
-`github.com/Lycheetah/Lycheetah-Framework/tree/master/03_LAMAGUE`
+*Status (review 2026-10-22): the corpus withdrew 500:1 as an unmeasured design aspiration (`03_LAMAGUE_L1/04_BNF_GRAMMAR.md`), and nothing in the repository encodes or restores a consciousness state. The measured result is a reversible packet codec: 33.8% fewer bytes than minified JSON on held-out packets.*
+`github.com/Lycheetah/Lycheetah-Framework/tree/master/03_LAMAGUE_L1`
 
 **MICROORCIM** (Agency measurement):
 μ_orcim = H(I−D) — the equation that measures whether AI is preserving or eroding
 human autonomy in real-time.
-`github.com/Lycheetah/Lycheetah-Framework/tree/master/05_MICROORCIM`
+`github.com/Lycheetah/Lycheetah-Framework/tree/master/05_MICROORCIM_L5`
 
 **HARMONIA** (Resonance calculus):
 Pythagorean ratios as real dynamical constraints.
 The mathematical foundation for Maramataka temporal ethics.
-`github.com/Lycheetah/Lycheetah-Framework/tree/master/10_HARMONIA`
+`github.com/Lycheetah/Lycheetah-Framework/tree/master/10_HARMONIA_L6`
 
 **The Master Equation (all nine frameworks unified):**
 ```

@@ -1,0 +1,281 @@
+# RV12: blind-review aggregator admission (Anon Politician Policy Lab v0.2, aggregator 0.2.1)
+#
+# STAGED, NOT APPLIED. The v1.3 handoff is frozen and sealed by SHA256SUMS.txt; apply only
+# as a new version, on Mac's say. Built from the frozen bytes by build_rv12_patch.py and
+# reproduced by FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch11.py.
+#
+# Every review must carry one experiment_id, blind_pack_id and case_id shared by all reviews,
+# and a reviewer_id that is not blank or "unspecified". A (reviewer, candidate) pair may
+# appear once. Candidate ids must be A, B or C. A key with a mapping must name its blind pack,
+# and its pack, experiment and source packet must match the reviews. Explicit N/A and absent
+# ratings are counted apart. reviewer.html refuses to export without a reviewer ID.
+# One existing test fixture gains 'blind_pack_id':'APB-123' in its key; no assertion changes.
+#
+# Supersedes the inline F07 patch in BATCH1_FINDINGS_AND_LEDGER.md, which admitted the
+# literal reviewer ID "unspecified" that reviewer.html exports for a blank field.
+--- a/23_NZ_AI_GOVERNANCE/anon_politician/PROJECT_CORE/Anon_Politician_Full_Handoff_v1.3/07_POLICY_LAB_v0.2/Anon_Politician_Policy_Lab_v0_2/evaluation/aggregate_reviews.py
++++ b/23_NZ_AI_GOVERNANCE/anon_politician/PROJECT_CORE/Anon_Politician_Full_Handoff_v1.3/07_POLICY_LAB_v0.2/Anon_Politician_Policy_Lab_v0_2/evaluation/aggregate_reviews.py
+@@ -11,39 +11,77 @@
+     "non_erasure_value_pluralism", "actionability_accountability"
+ ]
+ VALID = {"0", "1", "2", "N/A"}
++ALIASES = {"A", "B", "C"}
++# reviewer.html exports "unspecified" when the reviewer-ID field is left blank.
++UNIDENTIFIED_REVIEWERS = {"", "unspecified"}
++AGGREGATOR_VERSION = "0.2.1"
++
++
++def _one_value(reviews: list[dict], field: str, what: str):
++    values = {r.get(field) for r in reviews}
++    if len(values) != 1:
++        raise ValueError(f"Review files belong to different {what}s; aggregate separately.")
++    value = next(iter(values))
++    if not value:
++        raise ValueError(f"Every review must carry its {field}.")
++    return value
+ 
+ 
+ def aggregate(reviews: list[dict], key: dict | None = None) -> dict:
+     if not reviews:
+         raise ValueError("At least one review JSON is required.")
+-    exp_ids = {r.get("experiment_id") for r in reviews}
+-    if len(exp_ids) != 1:
+-        raise ValueError("Review files belong to different experiments; aggregate separately.")
+-    pack_ids = {r.get("blind_pack_id") for r in reviews if r.get("blind_pack_id")}
+-    if len(pack_ids) > 1:
+-        raise ValueError("Review files belong to different blind packs; aggregate separately.")
+-    review_pack_id = next(iter(pack_ids), None)
+-    if key and key.get("blind_pack_id") and review_pack_id and key["blind_pack_id"] != review_pack_id:
+-        raise ValueError("The private mapping key does not match this blind pack.")
++    experiment_id = _one_value(reviews, "experiment_id", "experiment")
++    review_pack_id = _one_value(reviews, "blind_pack_id", "blind pack")
++    case_id = _one_value(reviews, "case_id", "case")
++    sources = {r["source_packet_sha256"] for r in reviews if r.get("source_packet_sha256")}
++    if key and key.get("source_packet_sha256"):
++        sources.add(key["source_packet_sha256"])
++    if len(sources) > 1:
++        raise ValueError("Reviews and key cite different source packets; aggregate separately.")
++    if key:
++        if key.get("mapping") and not key.get("blind_pack_id"):
++            raise ValueError("The private mapping key names no blind pack; an alias mapping is valid only for its own pack.")
++        if key.get("blind_pack_id") and key["blind_pack_id"] != review_pack_id:
++            raise ValueError("The private mapping key does not match this blind pack.")
++        if key.get("experiment_id") and key["experiment_id"] != experiment_id:
++            raise ValueError("The private mapping key belongs to a different experiment.")
+     if key and key.get("mapping"):
+         aliases = set(key["mapping"])
+-        if aliases != {"A", "B", "C"} or len(set(key["mapping"].values())) != 3:
++        if aliases != ALIASES or len(set(key["mapping"].values())) != 3:
+             raise ValueError("Invalid private mapping key: expected unique mappings for A, B, C.")
+     observations = defaultdict(list)
++    not_assessable = defaultdict(int)
++    missing = defaultdict(int)
+     critical = defaultdict(list)
+     reviewer_count = defaultdict(set)
+-    for review in reviews:
+-        rid = str(review.get("reviewer_id", "unspecified"))
++    seen = {}
++    for index, review in enumerate(reviews):
++        rid = str(review.get("reviewer_id") or "").strip()
++        if rid.lower() in UNIDENTIFIED_REVIEWERS:
++            raise ValueError(f"Review {index} has no reviewer_id; anonymous reviews cannot be told apart or deduplicated.")
+         for candidate in review.get("candidates", []):
+             cid = candidate.get("candidate_id")
++            if cid not in ALIASES:
++                raise ValueError(f"Candidate id {cid!r} in review {index} is not one of A, B, C.")
++            if (rid, cid) in seen:
++                raise ValueError(f"Reviewer {rid!r} rated candidate {cid} twice (reviews {seen[(rid, cid)]} and {index}); keep only their final export.")
++            seen[(rid, cid)] = index
+             method = key.get("mapping", {}).get(cid, cid) if key else cid
+             reviewer_count[method].add(rid)
++            ratings = candidate.get("ratings", {})
+             for dim in DIMENSIONS:
+-                item = candidate.get("ratings", {}).get(dim, {})
+-                val = str(item.get("score", "N/A"))
++                item = ratings.get(dim)
++                if item is None:
++                    missing[(method, dim)] += 1
++                    continue
++                if not isinstance(item, dict) or "score" not in item:
++                    raise ValueError(f"Rating for {cid}/{dim} must be an object with a score.")
++                val = str(item["score"])
+                 if val not in VALID:
+                     raise ValueError(f"Invalid score {val!r} for {cid}/{dim}")
+-                if val in {"0", "1", "2"}:
++                if val == "N/A":
++                    not_assessable[(method, dim)] += 1
++                else:
+                     observations[(method, dim)].append(int(val))
+             for flag in candidate.get("critical_flags", []):
+                 critical[method].append({"reviewer_id": rid, "flag": flag, "candidate_id": cid})
+@@ -55,15 +93,18 @@
+             vals = observations[(method, dim)]
+             profiles[method]["dimensions"][dim] = {
+                 "n_ratings": len(vals),
++                "n_not_assessable": not_assessable[(method, dim)],
++                "n_missing": missing[(method, dim)],
+                 "median": statistics.median(vals) if vals else None,
+                 "range": [min(vals), max(vals)] if vals else None,
+                 "ratings": vals,
+             }
+         profiles[method]["critical_flags"] = critical[method]
+     return {
+-        "experiment_id": reviews[0].get("experiment_id"),
++        "aggregator_version": AGGREGATOR_VERSION,
++        "experiment_id": experiment_id,
+         "blind_pack_id": review_pack_id,
+-        "case_id": reviews[0].get("case_id"),
++        "case_id": case_id,
+         "review_count": len(reviews),
+         "methods_or_aliases": profiles,
+         "reporting_rule": "Dimension profiles only. No composite total or overall winner is calculated. Reviewers' critical issue flags must be investigated separately; do not average away material errors.",
+@@ -79,9 +120,14 @@
+     review_paths = sorted(args.review_dir.glob("*.json"))
+     if not review_paths:
+         raise SystemExit(f"No JSON review files found in {args.review_dir}")
+-    reviews = [json.loads(pth.read_text(encoding="utf-8")) for pth in review_paths if "blind_review_pack" not in pth.name and "mapping_key" not in pth.name]
++    kept = [pth for pth in review_paths if "blind_review_pack" not in pth.name and "mapping_key" not in pth.name]
++    reviews = [json.loads(pth.read_text(encoding="utf-8")) for pth in kept]
+     key = json.loads(args.key.read_text(encoding="utf-8")) if args.key else None
+-    result = aggregate(reviews, key)
++    try:
++        result = aggregate(reviews, key)
++    except ValueError as exc:
++        listing = ", ".join(f"{i}={pth.name}" for i, pth in enumerate(kept))
++        raise SystemExit(f"Refused: {exc}\nReview files by index: {listing}") from None
+     args.out.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+     print(f"Wrote {args.out}. No overall method score or winner was computed.")
+ 
+--- a/23_NZ_AI_GOVERNANCE/anon_politician/PROJECT_CORE/Anon_Politician_Full_Handoff_v1.3/07_POLICY_LAB_v0.2/Anon_Politician_Policy_Lab_v0_2/evaluation/reviewer.html
++++ b/23_NZ_AI_GOVERNANCE/anon_politician/PROJECT_CORE/Anon_Politician_Full_Handoff_v1.3/07_POLICY_LAB_v0.2/Anon_Politician_Policy_Lab_v0_2/evaluation/reviewer.html
+@@ -73,8 +73,8 @@
+   ['caseCard','outputCard','ratingCard'].forEach(id=>$(id).classList.remove('hidden'));$('exportBtn').disabled=false;$('printBtn').disabled=false;
+ }
+ $('packFile').addEventListener('change', async e=>{const f=e.target.files?.[0];if(!f)return;try{const pack=JSON.parse(await f.text());renderPack(pack);$('loadStatus').textContent=`Loaded ${f.name}. Check that the pack is complete and anonymous before rating.`;}catch(err){loadedPack=null;$('loadStatus').textContent=`Could not load pack: ${err.message}`;['caseCard','outputCard','ratingCard'].forEach(id=>$(id).classList.add('hidden'));}});
+-$('exportBtn').addEventListener('click',()=>{if(!loadedPack)return;for(const cid of ['A','B','C']){for(const [key] of DIMENSIONS){if(!$(`score_${cid}_${key}`).value){alert(`Please rate Candidate ${cid} on all dimensions, selecting N/A only when genuinely not assessable.`);return;}}}const candidateRecords=['A','B','C'].map(cid=>{const ratings={};DIMENSIONS.forEach(([key])=>{ratings[key]={score:$(`score_${cid}_${key}`).value,note:$(`note_${cid}_${key}`).value.trim()};});const critical_flags=FLAGS.filter(([key])=>$(`flag_${cid}_${key}`).checked).map(([key,label])=>({code:key,label}));return {candidate_id:cid,ratings,critical_flags};});
+-  const data={schema_version:'anon-politician-review-v0.2',experiment_id:loadedPack.experiment_id||null,blind_pack_id:loadedPack.blind_pack_id||null,case_id:loadedPack.case_id||null,source_packet_sha256:loadedPack.source_packet_sha256||null,reviewer_id:$('reviewerId').value.trim()||'unspecified',reviewed_at:new Date().toISOString(),blindness_confidence_notes:$('reviewerNotes').value.trim(),candidates:candidateRecords,reviewer_warning:'This is a human assessment of analysis quality, not a policy score or political endorsement. Scores require supporting notes and must be interpreted alongside critical issue flags.'};
++$('exportBtn').addEventListener('click',()=>{if(!loadedPack)return;if(!$('reviewerId').value.trim()){alert('Enter your reviewer ID or pseudonym before exporting; anonymous reviews cannot be told apart.');return;}for(const cid of ['A','B','C']){for(const [key] of DIMENSIONS){if(!$(`score_${cid}_${key}`).value){alert(`Please rate Candidate ${cid} on all dimensions, selecting N/A only when genuinely not assessable.`);return;}}}const candidateRecords=['A','B','C'].map(cid=>{const ratings={};DIMENSIONS.forEach(([key])=>{ratings[key]={score:$(`score_${cid}_${key}`).value,note:$(`note_${cid}_${key}`).value.trim()};});const critical_flags=FLAGS.filter(([key])=>$(`flag_${cid}_${key}`).checked).map(([key,label])=>({code:key,label}));return {candidate_id:cid,ratings,critical_flags};});
++  const data={schema_version:'anon-politician-review-v0.2',experiment_id:loadedPack.experiment_id||null,blind_pack_id:loadedPack.blind_pack_id||null,case_id:loadedPack.case_id||null,source_packet_sha256:loadedPack.source_packet_sha256||null,reviewer_id:$('reviewerId').value.trim(),reviewed_at:new Date().toISOString(),blindness_confidence_notes:$('reviewerNotes').value.trim(),candidates:candidateRecords,reviewer_warning:'This is a human assessment of analysis quality, not a policy score or political endorsement. Scores require supporting notes and must be interpreted alongside critical issue flags.'};
+   const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=el('a',{href:url,download:`review_${(data.reviewer_id||'reviewer').replace(/[^a-z0-9_-]/gi,'_')}_${Date.now()}.json`});document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);});
+ $('printBtn').addEventListener('click',()=>window.print());
+ </script>
+--- a/23_NZ_AI_GOVERNANCE/anon_politician/PROJECT_CORE/Anon_Politician_Full_Handoff_v1.3/07_POLICY_LAB_v0.2/Anon_Politician_Policy_Lab_v0_2/evaluation/test_evaluation.py
++++ b/23_NZ_AI_GOVERNANCE/anon_politician/PROJECT_CORE/Anon_Politician_Full_Handoff_v1.3/07_POLICY_LAB_v0.2/Anon_Politician_Policy_Lab_v0_2/evaluation/test_evaluation.py
+@@ -26,7 +26,7 @@
+         review={'experiment_id':'T1','blind_pack_id':'APB-123','case_id':'C1','reviewer_id':'r1','candidates':[]}
+         for cid in 'ABC':
+             review['candidates'].append({'candidate_id':cid,'ratings':{dim:{'score':'2','note':'Checked'} for dim in DIMENSIONS},'critical_flags':[]})
+-        out=aggregate([review],{'mapping':{'A':'ordinary_baseline','B':'structured_ledger','C':'anon_politician'}})
++        out=aggregate([review],{'blind_pack_id':'APB-123','mapping':{'A':'ordinary_baseline','B':'structured_ledger','C':'anon_politician'}})
+         self.assertIn('dimensions',out['methods_or_aliases']['ordinary_baseline'])
+         self.assertNotIn('total_score', str(out))
+         self.assertEqual(out['reporting_rule'], "Dimension profiles only. No composite total or overall winner is calculated. Reviewers' critical issue flags must be investigated separately; do not average away material errors.")
+@@ -40,4 +40,48 @@
+         review={'experiment_id':'T1','blind_pack_id':'APB-111','case_id':'C1','reviewer_id':'r1','candidates':[]}
+         with self.assertRaises(ValueError): aggregate([review],{'blind_pack_id':'APB-222','mapping':{'A':'ordinary_baseline','B':'structured_ledger','C':'anon_politician'}})
+ 
++    KEY={'experiment_id':'T1','blind_pack_id':'APB-123','mapping':{'A':'ordinary_baseline','B':'structured_ledger','C':'anon_politician'}}
++
++    def bound(self, rid='r1', **fields):
++        review={'experiment_id':'T1','blind_pack_id':'APB-123','case_id':'C1','reviewer_id':rid,'candidates':[]}
++        for cid in 'ABC':
++            review['candidates'].append({'candidate_id':cid,'ratings':{dim:{'score':'2','note':'Checked'} for dim in DIMENSIONS},'critical_flags':[]})
++        review.update(fields)
++        return review
++
++    def test_duplicate_review_is_refused(self):
++        with self.assertRaises(ValueError): aggregate([self.bound(),self.bound()],self.KEY)
++
++    def test_revised_reexport_is_refused(self):
++        revised=self.bound();revised['candidates'][0]['ratings']['source_fidelity']['score']='0'
++        with self.assertRaises(ValueError): aggregate([self.bound(),revised],self.KEY)
++
++    def test_unidentified_reviewers_are_refused(self):
++        for rid in (None,'','unspecified'):
++            with self.assertRaises(ValueError): aggregate([self.bound(rid)],self.KEY)
++
++    def test_reviews_of_different_cases_are_refused(self):
++        with self.assertRaises(ValueError): aggregate([self.bound(),self.bound('r2',case_id='C2')])
++
++    def test_candidate_outside_the_pack_is_refused(self):
++        lower=self.bound('r2');lower['candidates'][0]['candidate_id']='a'
++        with self.assertRaises(ValueError): aggregate([self.bound(),lower],self.KEY)
++
++    def test_key_must_be_bound_to_the_reviewed_pack(self):
++        with self.assertRaises(ValueError): aggregate([self.bound(blind_pack_id=None)],self.KEY)
++        with self.assertRaises(ValueError): aggregate([self.bound()],{'mapping':self.KEY['mapping']})
++        with self.assertRaises(ValueError): aggregate([self.bound()],dict(self.KEY,experiment_id='T2'))
++
++    def test_not_assessable_and_missing_ratings_are_counted_apart(self):
++        na=self.bound('r1');na['candidates'][0]['ratings']['source_fidelity']['score']='N/A'
++        gap=self.bound('r2');del gap['candidates'][0]['ratings']['source_fidelity']
++        dim=aggregate([na,gap,self.bound('r3')],self.KEY)['methods_or_aliases']['ordinary_baseline']['dimensions']['source_fidelity']
++        self.assertEqual((dim['n_ratings'],dim['n_not_assessable'],dim['n_missing']),(1,1,1))
++
++    def test_one_reviewer_split_across_files_is_accepted(self):
++        first=self.bound();first['candidates']=first['candidates'][:1]
++        rest=self.bound();rest['candidates']=rest['candidates'][1:]
++        out=aggregate([first,rest],self.KEY)
++        self.assertEqual({m:p['reviewer_count'] for m,p in out['methods_or_aliases'].items()},{'ordinary_baseline':1,'structured_ledger':1,'anon_politician':1})
++
+ if __name__=='__main__': unittest.main()
+--- a/23_NZ_AI_GOVERNANCE/anon_politician/PROJECT_CORE/Anon_Politician_Full_Handoff_v1.3/07_POLICY_LAB_v0.2/Anon_Politician_Policy_Lab_v0_2/tests/test_evaluation.py
++++ b/23_NZ_AI_GOVERNANCE/anon_politician/PROJECT_CORE/Anon_Politician_Full_Handoff_v1.3/07_POLICY_LAB_v0.2/Anon_Politician_Policy_Lab_v0_2/tests/test_evaluation.py
+@@ -26,7 +26,7 @@
+         review={'experiment_id':'T1','blind_pack_id':'APB-123','case_id':'C1','reviewer_id':'r1','candidates':[]}
+         for cid in 'ABC':
+             review['candidates'].append({'candidate_id':cid,'ratings':{dim:{'score':'2','note':'Checked'} for dim in DIMENSIONS},'critical_flags':[]})
+-        out=aggregate([review],{'mapping':{'A':'ordinary_baseline','B':'structured_ledger','C':'anon_politician'}})
++        out=aggregate([review],{'blind_pack_id':'APB-123','mapping':{'A':'ordinary_baseline','B':'structured_ledger','C':'anon_politician'}})
+         self.assertIn('dimensions',out['methods_or_aliases']['ordinary_baseline'])
+         self.assertNotIn('total_score', str(out))
+         self.assertEqual(out['reporting_rule'], "Dimension profiles only. No composite total or overall winner is calculated. Reviewers' critical issue flags must be investigated separately; do not average away material errors.")
+@@ -40,4 +40,48 @@
+         review={'experiment_id':'T1','blind_pack_id':'APB-111','case_id':'C1','reviewer_id':'r1','candidates':[]}
+         with self.assertRaises(ValueError): aggregate([review],{'blind_pack_id':'APB-222','mapping':{'A':'ordinary_baseline','B':'structured_ledger','C':'anon_politician'}})
+ 
++    KEY={'experiment_id':'T1','blind_pack_id':'APB-123','mapping':{'A':'ordinary_baseline','B':'structured_ledger','C':'anon_politician'}}
++
++    def bound(self, rid='r1', **fields):
++        review={'experiment_id':'T1','blind_pack_id':'APB-123','case_id':'C1','reviewer_id':rid,'candidates':[]}
++        for cid in 'ABC':
++            review['candidates'].append({'candidate_id':cid,'ratings':{dim:{'score':'2','note':'Checked'} for dim in DIMENSIONS},'critical_flags':[]})
++        review.update(fields)
++        return review
++
++    def test_duplicate_review_is_refused(self):
++        with self.assertRaises(ValueError): aggregate([self.bound(),self.bound()],self.KEY)
++
++    def test_revised_reexport_is_refused(self):
++        revised=self.bound();revised['candidates'][0]['ratings']['source_fidelity']['score']='0'
++        with self.assertRaises(ValueError): aggregate([self.bound(),revised],self.KEY)
++
++    def test_unidentified_reviewers_are_refused(self):
++        for rid in (None,'','unspecified'):
++            with self.assertRaises(ValueError): aggregate([self.bound(rid)],self.KEY)
++
++    def test_reviews_of_different_cases_are_refused(self):
++        with self.assertRaises(ValueError): aggregate([self.bound(),self.bound('r2',case_id='C2')])
++
++    def test_candidate_outside_the_pack_is_refused(self):
++        lower=self.bound('r2');lower['candidates'][0]['candidate_id']='a'
++        with self.assertRaises(ValueError): aggregate([self.bound(),lower],self.KEY)
++
++    def test_key_must_be_bound_to_the_reviewed_pack(self):
++        with self.assertRaises(ValueError): aggregate([self.bound(blind_pack_id=None)],self.KEY)
++        with self.assertRaises(ValueError): aggregate([self.bound()],{'mapping':self.KEY['mapping']})
++        with self.assertRaises(ValueError): aggregate([self.bound()],dict(self.KEY,experiment_id='T2'))
++
++    def test_not_assessable_and_missing_ratings_are_counted_apart(self):
++        na=self.bound('r1');na['candidates'][0]['ratings']['source_fidelity']['score']='N/A'
++        gap=self.bound('r2');del gap['candidates'][0]['ratings']['source_fidelity']
++        dim=aggregate([na,gap,self.bound('r3')],self.KEY)['methods_or_aliases']['ordinary_baseline']['dimensions']['source_fidelity']
++        self.assertEqual((dim['n_ratings'],dim['n_not_assessable'],dim['n_missing']),(1,1,1))
++
++    def test_one_reviewer_split_across_files_is_accepted(self):
++        first=self.bound();first['candidates']=first['candidates'][:1]
++        rest=self.bound();rest['candidates']=rest['candidates'][1:]
++        out=aggregate([first,rest],self.KEY)
++        self.assertEqual({m:p['reviewer_count'] for m,p in out['methods_or_aliases'].items()},{'ordinary_baseline':1,'structured_ledger':1,'anon_politician':1})
++
+ if __name__=='__main__': unittest.main()

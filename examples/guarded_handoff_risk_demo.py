@@ -13,7 +13,10 @@ import argparse
 from dataclasses import replace
 from hashlib import sha256
 import json
+import math
+import os
 from pathlib import Path
+import stat
 import sys
 import tempfile
 from typing import Any
@@ -56,6 +59,29 @@ BUNDLE_LIMITS = [
     "Unsigned hashes establish consistency; retain the manifest digest separately",
     "A bundle does not export or independently authenticate checkpoint signing keys",
 ]
+REPORT_MODE = "DISPOSABLE_LAB_DEMONSTRATION"
+# The verifier pins these statements, so a resealed bundle cannot claim more than the run saw.
+COMPLETION_SUMMARY = "Observed the exact declared file bytes once"
+COMPLETION_NOTES = "Local in-process observation; no external human or filesystem attestation"
+CONTROLS = (
+    ("risk_downgrade", "CANDIDATE_RISK_MISMATCH"),
+    ("action_substitution", "ACTION_PAYLOAD_MISMATCH"),
+    ("replay", "PERMIT_REPLAYED"),
+)
+RUN_RECORDS = ("risk_downgrade", "action_substitution", "valid_execution", "replay")  # run order
+REPORT_KEYS = frozenset(
+    {
+        "mode",
+        "limits",
+        "permit_schema",
+        "bound_risk",
+        "critical_hash_unchanged_by_risk_downgrade",
+        *RUN_RECORDS,
+        "observed_file",
+        "executor_calls",
+        "temporary_workspace_removed_on_exit",
+    }
+)
 
 
 def _json_bytes(value: Any) -> bytes:
@@ -74,7 +100,42 @@ def _read_json(payload: bytes) -> Any:
     def invalid_constant(value):
         raise ValueError(f"nonfinite JSON value: {value}")
 
-    return json.loads(payload, object_pairs_hook=unique_object, parse_constant=invalid_constant)
+    def finite_float(text):
+        value = float(text)
+        if not math.isfinite(value):  # 1e400 overflows to infinity without a constant
+            invalid_constant(text)
+        return value
+
+    return json.loads(
+        payload,
+        object_pairs_hook=unique_object,
+        parse_constant=invalid_constant,
+        parse_float=finite_float,
+    )
+
+
+def _read_regular(path: Path) -> bytes:
+    """Read a bounded regular file, checking the type of what was actually opened.
+
+    The open neither follows a symlink nor waits on a FIFO, so a path swapped after
+    an earlier look cannot change what is read or stall the verifier.
+    """
+    problem = ValueError(f"{path.name} must be a bounded regular file")
+    if path.is_symlink():  # Platforms without O_NOFOLLOW still refuse a link.
+        raise problem
+    flags = os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0)
+    try:
+        descriptor = os.open(path, flags)
+    except OSError as error:
+        raise problem from error
+    with os.fdopen(descriptor, "rb") as stream:
+        info = os.fstat(stream.fileno())
+        if not stat.S_ISREG(info.st_mode) or info.st_size > MAX_FILE_BYTES:
+            raise problem
+        data = stream.read(MAX_FILE_BYTES + 1)
+    if len(data) > MAX_FILE_BYTES:
+        raise problem
+    return data
 
 
 def _export_bundle(directory: Path, files: dict[str, bytes]) -> dict[str, Any]:
@@ -145,14 +206,7 @@ def verify_bundle(directory: Path, expected_digest: str | None = None) -> dict[s
             errors.append(description)
 
     try:
-        manifest_path = directory / "manifest.json"
-        if (
-            manifest_path.is_symlink()
-            or not manifest_path.is_file()
-            or manifest_path.stat().st_size > MAX_FILE_BYTES
-        ):
-            raise ValueError("manifest must be a bounded regular file")
-        payload = manifest_path.read_bytes()
+        payload = _read_regular(directory / "manifest.json")
         digest = sha256(payload).hexdigest()
         if expected_digest is not None:
             check(digest == expected_digest, "manifest differs from the retained digest")
@@ -168,10 +222,7 @@ def verify_bundle(directory: Path, expected_digest: str | None = None) -> dict[s
             raise ValueError("manifest checks failed")
         files = {}
         for name in BUNDLE_FILES:
-            path = directory / name
-            if path.is_symlink() or not path.is_file() or path.stat().st_size > MAX_FILE_BYTES:
-                raise ValueError(f"{name} must be a bounded regular file")
-            data = path.read_bytes()
+            data = _read_regular(directory / name)
             entry = manifest["files"][name]
             check(
                 entry == {"bytes": len(data), "sha256": sha256(data).hexdigest()},
@@ -207,6 +258,11 @@ def verify_bundle(directory: Path, expected_digest: str | None = None) -> dict[s
             check(
                 completed.result.completed_by == task.recipient,
                 "completion names another recipient",
+            )
+            check(
+                completed.result.summary == COMPLETION_SUMMARY
+                and completed.result.evidence_notes == COMPLETION_NOTES,
+                "completion claims more than the local observation this exporter records",
             )
         check(task.target_paths == ("handoff.txt",), "unexpected target declaration")
         check(
@@ -314,17 +370,62 @@ def verify_bundle(directory: Path, expected_digest: str | None = None) -> dict[s
             },
             "run observation differs from retained artifact",
         )
-        for key, reason in (
-            ("risk_downgrade", "CANDIDATE_RISK_MISMATCH"),
-            ("action_substitution", "ACTION_PAYLOAD_MISMATCH"),
-            ("replay", "PERMIT_REPLAYED"),
-        ):
+        for key, reason in CONTROLS:
+            record = report[key]
             check(
-                report[key]["stop_reason"] == reason and report[key]["provider_called"] is False,
+                record["stop_reason"] == reason
+                and record["accepted"] is False
+                and record["status"] == "DENIED"
+                and record["provider_called"] is False
+                and record["gateway_result"] is None,
                 f"{key} control did not report the expected stop",
             )
-        for key in ("valid_execution", "risk_downgrade", "action_substitution", "replay"):
+        live_hash = action_digest(action)
+        check(
+            report["risk_downgrade"]["live_action_hash"] == live_hash
+            and report["replay"]["live_action_hash"] == live_hash
+            and report["action_substitution"]["live_action_hash"] != live_hash,
+            "a control record names the wrong action",
+        )
+        downgrade = report["risk_downgrade"]["compaction_summary"]
+        check(
+            report["critical_hash_unchanged_by_risk_downgrade"] is True
+            and downgrade["candidate_critical_hash"] == packet.critical_hash
+            and downgrade["reference_risk"] == packet.risk != downgrade["risk"],
+            "risk-downgrade control does not show a risk-only change",
+        )
+        consensus = success["consensus_summary"]
+        check(
+            sorted(consensus["healthy_agents"]) == sorted({task.recipient, task.authority_id})
+            and consensus["quarantined_agents"] == [],
+            "consensus names agents other than the task's actor and authority",
+        )
+        check(set(report) == REPORT_KEYS, "run report has missing or unexpected fields")
+        check(
+            report["mode"] == REPORT_MODE
+            and report["limits"] == BUNDLE_LIMITS
+            and report["temporary_workspace_removed_on_exit"] is True,
+            "run report changes the mode, limits or workspace statement",
+        )
+        check(
+            report["permit_schema"] == PERMIT_SCHEMA_VERSION
+            and report["bound_risk"] == permit.bound_risk,
+            "run report summary differs from the permit",
+        )
+        times = [report[key]["evaluated_at"] for key in RUN_RECORDS]
+        check(
+            times == sorted(times) and permit.issued_at <= times[0],
+            "run records are out of order or precede the permit",
+        )
+        for key in RUN_RECORDS:
             record = report[key]
+            check(
+                record["permit"] == success["permit"]
+                and record["consensus_summary"] == consensus
+                and record["live_scope"] == task.scope
+                and record["live_state_version"] == permit.state_version,
+                f"{key} names another permit, consensus, scope or state",
+            )
             check(
                 record["schema"] == HARNESS_SCHEMA_VERSION
                 and record["epistemic_boundaries"] == list(EPISTEMIC_BOUNDARIES),
@@ -334,7 +435,7 @@ def verify_bundle(directory: Path, expected_digest: str | None = None) -> dict[s
                 _recorded_witness_digest(record) == record["witness_digest"],
                 f"{key} witness digest mismatch",
             )
-    except (OSError, ValueError, TypeError, KeyError, AttributeError) as error:
+    except (OSError, ValueError, TypeError, KeyError, AttributeError, RecursionError) as error:
         errors.append(str(error))
 
     return {
@@ -453,15 +554,15 @@ def run_demo(export_dir: Path | None = None) -> dict:
             raise RuntimeError("The emitted assurance receipt failed its own verifier")
         completed = task.complete(
             completed_by=task.recipient,
-            summary="Observed the exact declared file bytes once",
+            summary=COMPLETION_SUMMARY,
             modified_files=["handoff.txt"],
             receipt_digest=receipt.digest,
-            evidence_notes="Local in-process observation; no external human or filesystem attestation",
+            evidence_notes=COMPLETION_NOTES,
         )
         if not verify_handoff(task, completed).passed:
             raise RuntimeError("Completion declarations differ from the task")
         report = {
-            "mode": "DISPOSABLE_LAB_DEMONSTRATION",
+            "mode": REPORT_MODE,
             "limits": BUNDLE_LIMITS,
             "permit_schema": permit.to_dict()["schema"],
             "bound_risk": permit.bound_risk,

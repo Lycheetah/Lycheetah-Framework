@@ -1,0 +1,10 @@
+test_boolean_confidence_and_typed_evidence_normalize_to_valid_values (test_wire_fixture.TestWireTypeNormalization.test_boolean_confidence_and_typed_evidence_normalize_to_valid_values) ... ok
+test_boolean_control_title_normalizes_to_same_string (test_wire_fixture.TestWireTypeNormalization.test_boolean_control_title_normalizes_to_same_string) ... ok
+test_confidence_string_is_not_numeric_contract (test_wire_fixture.TestWireTypeNormalization.test_confidence_string_is_not_numeric_contract) ... ok
+test_numeric_receipt_schema_version_normalizes_to_same_signed_body (test_wire_fixture.TestWireTypeNormalization.test_numeric_receipt_schema_version_normalizes_to_same_signed_body) ... ok
+test_valid_wire_records_remain_accepted (test_wire_fixture.TestWireTypeNormalization.test_valid_wire_records_remain_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK

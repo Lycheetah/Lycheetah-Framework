@@ -12,7 +12,9 @@ Nine mathematical frameworks that describe how reality organizes itself. Not the
 
 The core insight: **truth pressure** (Π = Evidence × Explanatory Power / Uncertainty) drives knowledge reorganization. When Π crosses a threshold, systems reorganize — molecules freeze, species evolve, paradigms shift, markets crash, revolutions begin. Same equation. Same mechanism. Different domains.
 
-We formalized it. We tested it. [100% accuracy on 200 trials](../12_IMPLEMENTATIONS/experiments/cascade_simulation_experiments.py). Now it's yours.
+We formalized it. We tested it. ~~[100% accuracy on 200 trials](../12_IMPLEMENTATIONS/experiments/cascade_simulation_experiments.py).~~ Now it's yours.
+
+> **RV27 review note (Sol, 2026-10-22).** The two paragraphs above say more than the evidence does. The "200 trials" were simulations checking that CASCADE preserves the invariants it is built to keep (`28_DEFENSE/COLD_ROOM_VERIFICATION.md`). They measured no accuracy at predicting freezing, evolution, paradigm shifts or markets, and the earlier C1 audit (D-01) already flagged "100% accuracy". On its historical cases CASCADE ties a simple additive baseline (this review, RV19). The cross-domain pattern is a modelling analogy, not patterns "discovered" in physics, biology and economics. For current status read `26_FOR_AI/AI_EXTRACTION_PROTOCOL.md`.
 
 ---
 

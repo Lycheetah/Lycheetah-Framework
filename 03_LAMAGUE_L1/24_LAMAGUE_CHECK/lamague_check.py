@@ -12,7 +12,7 @@ made someone hesitate are gone.
 
 Nobody lied. It just got shorter.
 
-`22_REVERSIBLE_COMPRESSION_v1.0` proved those deletions are *detectable* — 324
+`22_REVERSIBLE_COMPRESSION_v1.0` measured those deletions as *detectable* — 324
 of 324 constructed mutations across nine classes. But it proves it on LAMAGUE
 semantic packets, and nobody outside this project has one of those.
 
@@ -129,6 +129,9 @@ FIELDS: Dict[str, Dict[str, Any]] = {
 EMPTY_MARKERS = {"", "n/a", "na", "none", "tbd", "todo", "-", "null",
                  "unknown", "pending", "?"}
 
+#: A key that names a field only to deny it (`no_rollback`) does not carry it.
+NEGATIONS = {"no", "non", "not", "without"}
+
 
 def flatten(obj: Any, prefix: str = "") -> Dict[str, Any]:
     """All leaf paths in a nested structure — records nest, and fields hide."""
@@ -145,12 +148,16 @@ def flatten(obj: Any, prefix: str = "") -> Dict[str, Any]:
 
 
 def is_empty(v: Any) -> bool:
-    if v is None:
+    """No content. A boolean says something exists, not what it is; a list or
+    object counts only if something inside it is populated."""
+    if v is None or isinstance(v, bool):
         return True
     if isinstance(v, str):
         return v.strip().lower() in EMPTY_MARKERS
-    if isinstance(v, (list, dict, tuple, set)):
-        return len(v) == 0
+    if isinstance(v, dict):
+        return all(is_empty(x) for x in v.values())
+    if isinstance(v, (list, tuple, set)):
+        return all(is_empty(x) for x in v)
     return False
 
 
@@ -158,24 +165,43 @@ def norm(s: str) -> str:
     return re.sub(r"[^a-z0-9]", "", s.lower())
 
 
+def words(key: str) -> List[str]:
+    """snake_case, kebab-case and camelCase keys as lower-case words."""
+    return [w.lower() for w in re.findall(r"[A-Z]?[a-z0-9]+|[A-Z]+(?![a-z])", key)]
+
+
 def find_field(record: Dict[str, Any], aliases: List[str]) -> Tuple[Optional[str], Any]:
     """
     Locate a protected field under whatever name this record gave it.
 
-    Exact alias match first, then suffix match on nested paths. Substring
-    matching is deliberately NOT used — `cost` would match `costume` and a tool
-    that reports fields you do not have is worse than one that misses some.
+    Exact alias match first, then a match on the key's trailing whole words
+    (`customer_affected_parties`). Substring matching is deliberately NOT used —
+    `cost` would match `costume` and a tool that reports fields you do not have is
+    worse than one that misses some. For the same reason `disclaim` is not a
+    claim and `no_rollback` is not a recovery plan.
+
+    Among matches the shallowest path wins, so the record's own field beats one
+    nested inside it; at equal depth a populated value beats an empty one.
     """
     flat = flatten(record)
     wanted = {norm(a) for a in aliases}
+    exact, suffix = [], []
 
     for path, value in flat.items():
-        if norm(path.split(".")[-1].split("[")[0]) in wanted:
-            return path, value
-    for path, value in flat.items():
-        leaf = norm(path.split(".")[-1].split("[")[0])
-        if leaf and any(leaf.endswith(w) for w in wanted if len(w) > 4):
-            return path, value
+        leaf = path.split(".")[-1].split("[")[0]
+        if norm(leaf) in wanted:
+            exact.append((path, value))
+            continue
+        ws = words(leaf)
+        for k in range(1, len(ws)):
+            tail = "".join(ws[k:])
+            if len(tail) > 4 and tail in wanted and ws[k - 1] not in NEGATIONS:
+                suffix.append((path, value))
+                break
+    for found in (exact, suffix):
+        if found:
+            return min(found, key=lambda pv: (pv[0].count(".") + pv[0].count("["),
+                                              is_empty(pv[1])))
     return None, None
 
 
@@ -238,7 +264,8 @@ def render(rows: List[Dict[str, Any]], explain: bool, source: str) -> Tuple[str,
               "  324/324 times. A record missing them can be agreed with but not",
               "  argued with — run with --explain for what each one is for."]
     else:
-        L += ["", "  No gaps. This record can be argued with, which is the point."]
+        L += ["", "  No gaps. Every field is present and populated; whether each one",
+              "  is true is not something this tool can check."]
     L.append("=" * 72)
     return "\n".join(L), len(gaps)
 

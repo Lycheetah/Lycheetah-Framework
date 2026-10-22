@@ -1,0 +1,8 @@
+test_absolute_request_deadline_closes_slow_drip_headers (test_remote_witness_process.RemoteWitnessProcessTests.test_absolute_request_deadline_closes_slow_drip_headers) ... ok
+test_absolute_request_deadline_closes_slow_drip_body (test_remote_witness_process.RemoteWitnessProcessTests.test_absolute_request_deadline_closes_slow_drip_body) ... ok
+test_partial_tls_record_is_bounded_by_ssl_handshake_timeout (test_remote_witness_process.RemoteWitnessProcessTests.test_partial_tls_record_is_bounded_by_ssl_handshake_timeout) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 11.741s
+
+OK

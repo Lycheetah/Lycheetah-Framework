@@ -104,6 +104,8 @@ This is dimensionless. The physical analogue of a phase transition (water → st
 | P | Heritability of the trait | P = h² (narrow-sense heritability, already dimensionless ∈ [0,1]) |
 | S | Population effective size stability | S = 1 − (N_t − N_{t−1})² / N_max² (stability index) |
 
+> **Status note (review 2026-10-22, RV18).** This row breaks the ranges stated in the summary below. E = (W_trait − W_mean)/W_max is negative for a below-mean trait, against E ∈ [0, 1]. S = 0 when |N_t − N_{t−1}| = N_max, against S ∈ (0, 1]. The row needs a clamp or |W_trait − W_mean|, and a bound on the population step. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (reading; no run). The original text above is kept.
+
 **Π_bio = (fitness advantage × heritability) / population stability**
 
 **Behavior:** When Π_bio exceeds threshold, the population undergoes rapid directional selection — evolutionary cascade. At low Π_bio (high S, low E), the population is stable and drift dominates.

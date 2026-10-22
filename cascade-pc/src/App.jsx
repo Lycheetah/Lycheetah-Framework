@@ -156,7 +156,7 @@ function Sidebar({ view, setView, backToList }) {
       </nav>
       <div className="sidebar-footer">
         <div className="footer-line">Lycheetah Framework</div>
-        <div className="footer-line dim">TCCT v0.1 · <a href="https://github.com/Lycheetah/CODEX_AURA_PRIME" target="_blank" rel="noreferrer" style={{color:'inherit',textDecoration:'none'}}>GitHub</a></div>
+        <div className="footer-line dim">TCCT v0.1 · <a href="https://github.com/Lycheetah/Lycheetah-Framework" target="_blank" rel="noreferrer" style={{color:'inherit',textDecoration:'none'}}>GitHub</a></div>
       </div>
     </aside>
   )

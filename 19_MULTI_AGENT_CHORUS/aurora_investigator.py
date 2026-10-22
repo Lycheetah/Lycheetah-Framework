@@ -66,12 +66,14 @@ class AuroraInvestigator:
 
     def scan_for_contradictions(self, files: List[Path]) -> List[Contradiction]:
         """
-        Scan documentation for contradictions.
-        Return list of contradictions with severity.
-        """
-        contradictions = []
+        Scan documentation for contradictions. [SCAFFOLD: not implemented]
 
-        # Known contradiction patterns to check
+        No scanner exists, and the patterns below are a design sketch that
+        nothing applies. A call with files raises rather than return a finding it
+        never made. A call with no files returns one example marked ILLUSTRATIVE
+        so a demo can show the shape of a result; it names no real file.
+        """
+        # Design sketch only: no code applies these patterns.
         patterns = {
             "status_contradiction": (
                 r"(100%|fully|completely|entirely)\s+(proven|validated|complete)",
@@ -87,18 +89,19 @@ class AuroraInvestigator:
             )
         }
 
-        # This would scan actual files in real implementation
-        # For demo, return example contradictions
+        if files:
+            raise NotImplementedError(
+                "contradiction scanning is not implemented; no file was read"
+            )
         example = Contradiction(
-            location_1="00_Sovereign_Index.md:line 42",
-            location_2="COMPLETE_SYSTEM_STATUS.md:line 286",
+            location_1="ILLUSTRATIVE/claimed_status.md:line 42",
+            location_2="ILLUSTRATIVE/measured_status.md:line 286",
             claim_1="All proofs formalized, 100% validation achieved",
             claim_2="Actually 33% ACTIVE, 52% SCAFFOLD, 15% FOUNDATIONAL",
-            severity="CRITICAL",
-            contradiction_type="false_precision"
+            severity="ILLUSTRATIVE",
+            contradiction_type="false_precision (illustrative example, not a finding)"
         )
-
-        return [example] if not contradictions else contradictions
+        return [example]
 
     def detect_false_claims(self, text: str, file_path: str) -> List[FalseClaim]:
         """
@@ -268,7 +271,7 @@ def demo():
     aurora = AuroraInvestigator()
 
     # Scan for contradictions
-    print("CONTRADICTION DETECTION:")
+    print("CONTRADICTION DETECTION — ILLUSTRATIVE EXAMPLE (no file is scanned):")
     contradictions = aurora.scan_for_contradictions([])
     for contra in contradictions:
         print(f"  Location 1: {contra.location_1}")
@@ -299,8 +302,7 @@ def demo():
         print(f"    • {q}")
     print()
 
-    # Generate report
-    aurora.contradictions_found = contradictions
+    # Generate report. The illustrative entry is not a finding, so it is not filed.
     report = aurora.generate_audit_report()
     print(report)
 

@@ -1,0 +1,8 @@
+{
+  "demo": "PASS",
+  "primary_ledger_restored": true,
+  "registry_restored": false,
+  "replay_result": "challenge-already-consumed",
+  "statement": "Primary-ledger rollback is rejected while the spent-nonce registry remains current.",
+  "hosted_calls": 0
+}

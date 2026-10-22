@@ -1,0 +1,55 @@
+{
+  "status": "SOURCE_EQUIVALENT_RECEIPT_FIXTURE_NOT_UPSTREAM_PACKAGE_TEST",
+  "original_receipt_digest_verifies": true,
+  "case_count": 5,
+  "baseline_normalized_digest_matches": 5,
+  "strict_rejections": 5,
+  "fixture_assertions_passed": true,
+  "cases": [
+    {
+      "case": "schema_version_number",
+      "description": "top-level schema_version string -> number",
+      "baseline_accepts_and_digest_verifies": true,
+      "baseline_normalizes_to_original_body": true,
+      "strict_candidate_rejects": true,
+      "baseline_error": null,
+      "strict_error": "schema_version must be a string"
+    },
+    {
+      "case": "control_title_boolean",
+      "description": "nested ControlReference title string -> boolean",
+      "baseline_accepts_and_digest_verifies": true,
+      "baseline_normalizes_to_original_body": true,
+      "strict_candidate_rejects": true,
+      "baseline_error": null,
+      "strict_error": "control reference title must be a string"
+    },
+    {
+      "case": "finding_title_boolean",
+      "description": "nested Finding title string -> boolean",
+      "baseline_accepts_and_digest_verifies": true,
+      "baseline_normalizes_to_original_body": true,
+      "strict_candidate_rejects": true,
+      "baseline_error": null,
+      "strict_error": "finding title must be a string"
+    },
+    {
+      "case": "confidence_boolean",
+      "description": "nested Finding confidence 1.0 -> boolean true",
+      "baseline_accepts_and_digest_verifies": true,
+      "baseline_normalizes_to_original_body": true,
+      "strict_candidate_rejects": true,
+      "baseline_error": null,
+      "strict_error": "finding confidence must be a finite number"
+    },
+    {
+      "case": "evidence_integer",
+      "description": "nested evidence string -> integer",
+      "baseline_accepts_and_digest_verifies": true,
+      "baseline_normalizes_to_original_body": true,
+      "strict_candidate_rejects": true,
+      "baseline_error": null,
+      "strict_error": "finding evidence must be an array of strings"
+    }
+  ]
+}

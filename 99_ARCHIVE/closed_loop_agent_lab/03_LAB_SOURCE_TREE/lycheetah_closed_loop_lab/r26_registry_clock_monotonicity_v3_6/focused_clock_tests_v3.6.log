@@ -1,0 +1,16 @@
+test_clock_floor_persists_and_detects_wall_clock_rollback (test_registry_clock_monotonicity.RegistryClockMonotonicityTests.test_clock_floor_persists_and_detects_wall_clock_rollback) ... ok
+test_clock_high_water_tampering_fails_closed (test_registry_clock_monotonicity.RegistryClockMonotonicityTests.test_clock_high_water_tampering_fails_closed) ... ok
+test_clock_state_cannot_be_deleted_through_normal_sql (test_registry_clock_monotonicity.RegistryClockMonotonicityTests.test_clock_state_cannot_be_deleted_through_normal_sql) ... ok
+test_expired_challenge_cannot_be_resurrected_by_clock_rollback (test_registry_clock_monotonicity.RegistryClockMonotonicityTests.test_expired_challenge_cannot_be_resurrected_by_clock_rollback) ... ok
+test_honest_monotonic_advancement_is_accepted (test_registry_clock_monotonicity.RegistryClockMonotonicityTests.test_honest_monotonic_advancement_is_accepted) ... ok
+test_live_request_id_cannot_be_deleted_or_rewritten_from_sql (test_registry_clock_monotonicity.RegistryClockMonotonicityTests.test_live_request_id_cannot_be_deleted_or_rewritten_from_sql) ... ok
+test_registered_future_challenge_is_not_valid_before_issue_time (test_registry_clock_monotonicity.RegistryClockMonotonicityTests.test_registered_future_challenge_is_not_valid_before_issue_time) ... ok
+test_replay_window_configuration_cannot_silently_widen (test_registry_clock_monotonicity.RegistryClockMonotonicityTests.test_replay_window_configuration_cannot_silently_widen) ... ok
+test_request_handler_uses_one_clock_sample_per_transaction (test_registry_clock_monotonicity.RegistryClockMonotonicityTests.test_request_handler_uses_one_clock_sample_per_transaction) ... ok
+test_same_request_id_within_window_is_rejected (test_registry_clock_monotonicity.RegistryClockMonotonicityTests.test_same_request_id_within_window_is_rejected) ... ok
+test_stale_request_ids_are_pruned_and_old_signed_request_rejected_by_time (test_registry_clock_monotonicity.RegistryClockMonotonicityTests.test_stale_request_ids_are_pruned_and_old_signed_request_rejected_by_time) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.131s
+
+OK

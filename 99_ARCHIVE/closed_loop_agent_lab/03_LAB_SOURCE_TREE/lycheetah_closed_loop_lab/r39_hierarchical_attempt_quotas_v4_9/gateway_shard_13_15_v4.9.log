@@ -1,0 +1,10 @@
+test_repeated_signed_reports_cannot_be_counted_as_distinct_witnesses (test_remote_witness_process.RemoteWitnessProcessTests.test_repeated_signed_reports_cannot_be_counted_as_distinct_witnesses) ... ok
+test_server_bind_requires_explicit_nonloopback_opt_in_and_rejects_wildcard (test_remote_witness_process.RemoteWitnessProcessTests.test_server_bind_requires_explicit_nonloopback_opt_in_and_rejects_wildcard) ... ok
+test_shared_active_quota_spans_distinct_gateway_instances (test_remote_witness_process.RemoteWitnessProcessTests.test_shared_active_quota_spans_distinct_gateway_instances) ... ok
+test_shared_ingress_global_active_limit_applies_across_gateway_instances (test_remote_witness_process.RemoteWitnessProcessTests.test_shared_ingress_global_active_limit_applies_across_gateway_instances) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 9.561s
+
+OK
+LIFECYCLE_SUMMARY tests=4 shard=13/15 errors=0 failures=0 surviving_non_main_threads=[]

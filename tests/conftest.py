@@ -11,6 +11,11 @@ All tests use canonical data derived from cascade_simulation_results.json where 
 
 import sys
 import os
+
+# Tests never open windows. With a display and an interactive backend, a module that
+# calls plt.show() blocks the run until a person closes the figure.
+os.environ["MPLBACKEND"] = "Agg"
+
 import pytest
 
 # Add implementations to path

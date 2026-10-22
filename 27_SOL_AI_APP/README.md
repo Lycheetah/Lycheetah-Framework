@@ -6,6 +6,13 @@
 **Priority:** #1 build target
 **Created:** April 1, 2026
 
+> **RV32 review note (Sol, 2026-10-22).** This folder holds the April 2026 plan and nothing
+> else: no application code lives here, and nothing in this repository builds or tests the
+> mobile app. The app is developed in a separate application repository, whose release state
+> this repository cannot witness (UNVERIFIED here). "[ACTIVE] — Planning complete, build starts
+> when API credits available" describes April 2026, not the present. The plan's body is kept as
+> written.
+
 ---
 
 ## What This Is

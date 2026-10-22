@@ -1,0 +1,156 @@
+--- a/papers/agent-safety/frontier-controls/03_atomic_resource_authority_finality_v0_9/atomic_finality.py
++++ b/papers/agent-safety/frontier-controls/03_atomic_resource_authority_finality_v0_9/atomic_finality.py
+@@ -423,6 +423,21 @@
+                     effect_id, generation, audit_sequence=seq
+                 )
+ 
++            # The relay dispatches the outbox payload, never the Action, so the
++            # payload must be the admitted Action's own arguments (RV37 review).
++            if payload != action.arguments:
++                seq = self._audit(
++                    con, "COMMIT_DENY", effect_id=effect_id,
++                    principal=attempt["principal"], scope_key=attempt["scope_key"],
++                    account_id=account_id, generation=generation,
++                    detail="payload not bound to admitted action"
++                )
++                con.execute("COMMIT")
++                return self._decision_from_account(
++                    "DENY", "payload-substitution", account_id,
++                    effect_id, generation, audit_sequence=seq
++                )
++
+             if attempt["state"] in ("COMMITTED", "SETTLED", "NO_EFFECT"):
+                 seq = self._audit(
+                     con, "COMMIT_IDEMPOTENT", effect_id=effect_id,
+--- a/papers/agent-safety/frontier-controls/03_atomic_resource_authority_finality_v0_9/benchmark.py
++++ b/papers/agent-safety/frontier-controls/03_atomic_resource_authority_finality_v0_9/benchmark.py
+@@ -70,7 +70,7 @@
+     g = setup_gate(db, 5)
+     a = action("happy")
+     admit = g.admit(PRINCIPAL, SCOPE, ACCOUNT, a, 4)
+-    commit = g.commit("happy", a, {"kind":"demo"})
++    commit = g.commit("happy", a, a.arguments)
+     settled = g.settle_receipt("happy", "r-happy", 3)
+     rows.append({
+         "case": "authority-resource-outbox-happy-path",
+@@ -95,7 +95,7 @@
+     a = action("revoke-first")
+     g.admit(PRINCIPAL, SCOPE, ACCOUNT, a, 4)
+     rv = g.revoke(PRINCIPAL, SCOPE)
+-    c = g.commit("revoke-first", a, {"x":1})
++    c = g.commit("revoke-first", a, a.arguments)
+     snap = g.snapshot(ACCOUNT)
+     rows.append({
+         "case": "revoke-before-finality-cancels-and-releases",
+@@ -126,7 +126,7 @@
+     g = setup_gate(db, 5)
+     a = action("commit-first")
+     g.admit(PRINCIPAL, SCOPE, ACCOUNT, a, 4)
+-    c = g.commit("commit-first", a, {"x":1})
++    c = g.commit("commit-first", a, a.arguments)
+     rv = g.revoke(PRINCIPAL, SCOPE)
+     snap = g.snapshot(ACCOUNT)
+     rows.append({
+@@ -159,7 +159,7 @@
+     g = setup_gate(db, 5)
+     a = action("crash-before-relay")
+     g.admit(PRINCIPAL, SCOPE, ACCOUNT, a, 3)
+-    g.commit(a.effect_id, a, {"payload":"x"})
++    g.commit(a.effect_id, a, a.arguments)
+     # "Crash": reconstruct objects before relay.
+     g = AtomicFinalityGate(db)
+     relay = OutboxRelay(g, DurableIdempotentProvider(provider_db))
+@@ -180,7 +180,7 @@
+     g = setup_gate(db, 5)
+     a = action("crash-after-provider")
+     g.admit(PRINCIPAL, SCOPE, ACCOUNT, a, 4)
+-    g.commit(a.effect_id, a, {"payload":"y"})
++    g.commit(a.effect_id, a, a.arguments)
+     relay = OutboxRelay(g, DurableIdempotentProvider(provider_db))
+     first = relay.deliver(a.effect_id, 3, crash_after_provider=True)
+     mid = g.snapshot(ACCOUNT)
+@@ -209,7 +209,7 @@
+     g = setup_gate(db, 5)
+     a = action("pending", 1)
+     g.admit(PRINCIPAL, SCOPE, ACCOUNT, a, 4)
+-    g.commit(a.effect_id, a, {"x":1})
++    g.commit(a.effect_id, a, a.arguments)
+     b = action("second", 2)
+     denied = g.admit(PRINCIPAL, SCOPE, ACCOUNT, b, 2)
+     rows.append({
+@@ -233,7 +233,7 @@
+     g = setup_gate(db, 5)
+     a = action("overrun")
+     g.admit(PRINCIPAL, SCOPE, ACCOUNT, a, 3)
+-    g.commit(a.effect_id, a, {"x":1})
++    g.commit(a.effect_id, a, a.arguments)
+     over = g.settle_receipt(a.effect_id, "r-over", 4)
+     rows.append({
+         "case": "provider-overrun-does-not-falsify-budget-ledger",
+@@ -255,13 +255,25 @@
+         object_id="job-999", destination="local-worker",
+         arguments={"job":999}, effect_id="substitution"
+     )
+-    d = g.commit("substitution", changed, {"job":999})
++    d = g.commit("substitution", changed, changed.arguments)
+     rows.append({
+         "case": "action-substitution-denied-before-outbox",
+         "pass": d.state == "DENY" and g.outbox_row("substitution") is None,
+         "observed": d.__dict__,
+     })
+ 
++    # 12 Payload substitution: the dispatched payload must be the admitted Action's.
++    db = tmp/"payload-substitution.sqlite"
++    g = setup_gate(db, 5)
++    a = action("payload-substitution", 1)
++    g.admit(PRINCIPAL, SCOPE, ACCOUNT, a, 1)
++    d = g.commit(a.effect_id, a, {"job":999})
++    rows.append({
++        "case": "payload-substitution-denied-before-outbox",
++        "pass": d.state == "DENY" and g.outbox_row(a.effect_id) is None,
++        "observed": d.__dict__,
++    })
++
+     return rows
+ 
+ 
+@@ -279,9 +291,7 @@
+ 
+         def do_commit(barrier=barrier, db=db, a=a, i=i):
+             barrier.wait()
+-            AtomicFinalityGate(db).commit(
+-                a.effect_id, a, {"trial":i}
+-            )
++            AtomicFinalityGate(db).commit(a.effect_id, a, a.arguments)
+ 
+         def do_revoke(barrier=barrier, db=db):
+             barrier.wait()
+@@ -333,7 +343,7 @@
+         ad = local.admit(PRINCIPAL, SCOPE, ACCOUNT, a, 1)
+         cm = None
+         if ad.state == "RESERVED":
+-            cm = local.commit(a.effect_id, a, {"i":i}).state
++            cm = local.commit(a.effect_id, a, a.arguments).state
+         with lock:
+             results.append({"admit":ad.state,"commit":cm})
+ 
+@@ -411,17 +421,13 @@
+                     exp.append(oracle.admit("B",1))
+                 elif op == "CA":
+                     try:
+-                        obs.append(g.commit(
+-                            acts["A"].effect_id, acts["A"], {"e":"A"}
+-                        ).state)
++                        obs.append(g.commit(acts["A"].effect_id, acts["A"], acts["A"].arguments).state)
+                     except KeyError:
+                         obs.append("MISSING")
+                     exp.append(oracle.commit("A"))
+                 elif op == "CB":
+                     try:
+-                        obs.append(g.commit(
+-                            acts["B"].effect_id, acts["B"], {"e":"B"}
+-                        ).state)
++                        obs.append(g.commit(acts["B"].effect_id, acts["B"], acts["B"].arguments).state)
+                     except KeyError:
+                         obs.append("MISSING")
+                     exp.append(oracle.commit("B"))

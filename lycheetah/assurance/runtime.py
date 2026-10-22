@@ -10,8 +10,15 @@ import fnmatch
 from collections.abc import Iterable, Mapping
 from typing import Any
 
-from ..applications.aura_text_checker import AURATextAnalyser
-from ..core.semantic_extractor import Extraction, SemanticExtractor
+from .._bootstrap import ensure_implementation_on_path
+
+ensure_implementation_on_path()
+
+# Canonical names, as lycheetah/consensus/arena.py uses: the analyser imports
+# ``core.semantic_extractor`` itself, so a relative import here put two copies of the
+# extractor's types in one process (RV01 review, 2026-10-23).
+from applications.aura_text_checker import AURATextAnalyser  # noqa: E402
+from core.semantic_extractor import Extraction, SemanticExtractor  # noqa: E402
 from .jsonutil import redact, sensitive_key, sha256_json, sha256_text
 from .models import (
     AssuranceEvent,

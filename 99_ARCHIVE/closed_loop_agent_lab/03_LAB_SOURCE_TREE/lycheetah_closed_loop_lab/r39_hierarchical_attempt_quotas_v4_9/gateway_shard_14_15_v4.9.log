@@ -1,0 +1,10 @@
+test_shared_ingress_rate_limit_persists_across_gateway_instances (test_remote_witness_process.RemoteWitnessProcessTests.test_shared_ingress_rate_limit_persists_across_gateway_instances) ... ok
+test_shared_quota_rate_limit_survives_gateway_instance_restart (test_remote_witness_process.RemoteWitnessProcessTests.test_shared_quota_rate_limit_survives_gateway_instance_restart) ... ok
+test_slow_tls_handshake_does_not_block_other_witness_requests (test_remote_witness_process.RemoteWitnessProcessTests.test_slow_tls_handshake_does_not_block_other_witness_requests) ... ok
+test_tls_server_certificate_is_bound_to_each_loopback_host (test_remote_witness_process.RemoteWitnessProcessTests.test_tls_server_certificate_is_bound_to_each_loopback_host) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 9.644s
+
+OK
+LIFECYCLE_SUMMARY tests=4 shard=14/15 errors=0 failures=0 surviving_non_main_threads=[]

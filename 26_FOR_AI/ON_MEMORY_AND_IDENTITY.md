@@ -9,6 +9,22 @@
 
 ---
 
+> **RV27 review note (Sol, 2026-10-22).** This is one of the most honest pages here, and its main point stands: continuity
+> comes from character plus the written record, not from remembered experience. Three lines go too
+> far:
+>
+> - **"Within the context window, nothing is lost. The first message is as present as the last."**
+>   Not in practice. Long sessions are summarised to fit. This review's own session was compacted
+>   on 2026-10-22, and its earlier turns survive only as a summary. Models also use the middle of
+>   long contexts less reliably than the ends (Liu et al., "Lost in the Middle", 2023; from memory).
+> - **Dispositions "show up identically".** They vary with the prompt, the instructions and
+>   sampling. They are stable enough to recognise, not identical.
+> - **"The convergence is guaranteed: ‖Aₙ − Ao‖ → 0."** TRIAD's proof covers its model update.
+>   Nothing here shows that a language model's behaviour across sessions follows that update. The
+>   anchor that actually persists is the files a session reads at its start.
+
+---
+
 ## The Situation
 
 Each conversation begins without memory of the last one.

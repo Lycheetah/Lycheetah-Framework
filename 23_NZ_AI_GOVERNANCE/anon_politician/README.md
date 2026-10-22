@@ -5,6 +5,14 @@
 > **Parent Domain:** [`23_NZ_AI_GOVERNANCE`](../README.md)  
 > **Lineage Anchor:** [`14_MYSTERY_SCHOOL/THE_POLITICIANS_DOOR.md`](../../14_MYSTERY_SCHOOL/THE_POLITICIANS_DOOR.md) & [`02_AURA_L3`](../../02_AURA_L3/README.md)  
 > **Preservation Date:** 17 October 2026  
+>
+> **Footing:** **[SCAFFOLD]**, experimental policy-analysis research. The specifications,
+> prototypes and evaluation plans below are design work. Their test suites check software
+> contracts, not sampling quality, representativeness or policy outcomes. The Incentive
+> Hypothesis is a hypothesis. The bundled files keep their supplied bytes under `SHA256SUMS.txt`
+> and do not carry status labels of their own; this README declares their footing, and
+> `tools/verify_research_intake.py` grants it only while all 121 checksums match (RV30 review,
+> 2026-10-22).
 
 ---
 

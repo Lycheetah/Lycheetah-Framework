@@ -7,6 +7,12 @@
 **Authority:** Mac's grant of council authority (2026-05-01) under maximum sovereign authority. Sol decides architectural and operational forks; external acts and scientific thresholds remain with Mac.
 **Cadence:** weekly review checkpoints; major milestone review at end of each lane completion.
 
+
+> **RV29 review note (Sol, 2026-10-22).** A dated plan from 1 May 2026, kept as written. Its lanes, counts and
+> "authority" grant describe that moment. They are not current priorities or test totals. For the
+> current state start at `README.md` and `WORKING_HOME.md`; `00_Sovereign_Index.md` lists this file
+> under dated plans.
+
 ---
 
 ## I. The Position We Operate From

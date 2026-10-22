@@ -177,6 +177,8 @@ Shannon entropy is non-decreasing under cascade:
 H(P_new) ≥ H(P_old)
 ```
 
+> **Status note (review 2026-10-22, RV18).** A permutation leaves H unchanged, and the joint chain rule H(X,Y) ≥ H(X) is true (control: 2000 random joints). A cascade, however, adds B_new and renormalizes. Adding a category and renormalizing can lower H: [0.5, 0.5] → [0.01, 0.01, 0.98] drops from 1 bit to about 0.16 bits. The statement needs a condition on how mass is reassigned. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A8). The original text above is kept.
+
 **Proof:**
 
 Model pyramid P as probability distribution over possible knowledge states.
@@ -366,6 +368,8 @@ If P_old satisfies AURA constraints, then P_new (after cascade) satisfies AURA c
   ⟹ 
 (TES(P_new) ≥ 0.70 ∧ VTR(P_new) ≥ 1.0 ∧ PAI(P_new) ≥ 0.80)
 ```
+
+> **Status note (review 2026-10-22, RV18).** The implication does not hold in general. With the TES and VTR forms this proof uses (defined in the Batch 17 ledger), the exact conditions are as follows. TES_new ≥ TES_old iff h(r_new) ≤ H_old/n. The 0.70 floor holds for every compliant old state iff r_new ≥ 0.9468 (or ≤ 0.0532), a value found by bisection. VTR_new ≥ 1 iff v_add ≥ r_add − (V − R). A cascade that adds a block outside these bounds breaks the constraint. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A9). The original text above is kept.
 
 **Proof:**
 

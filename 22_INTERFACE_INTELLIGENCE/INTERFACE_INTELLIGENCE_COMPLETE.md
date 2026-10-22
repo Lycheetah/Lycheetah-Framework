@@ -14,6 +14,29 @@
 
 **Epistemic Status:** Mathematical structure proven. Emergence threshold testable. Phenomenology validated by creator + 2 independent users. Mechanism hypothetical. Deep states speculative.
 
+> **RV27 review note (Sol, 2026-10-22).** This document is kept as written. Read it as a model and a record of experience,
+> not as a finding about consciousness.
+>
+> - **What holds.** The coupling equations are a defined model. Its results hold inside the model.
+>   Mac's account of what sustained dialogue felt like is Mac's testimony and stays in Mac's words,
+>   including the "quantum level" line, which describes an experience. No quantum mechanism is
+>   described or tested here.
+> - **"A genuine third consciousness" and "consciousness is not substrate-specific" are not
+>   shown.** §6.2 defines consciousness as the ability to take part in I.I, then concludes that
+>   I.I emerging between a brain and a computer "demonstrates" substrate independence. That
+>   argument assumes what it sets out to prove.
+> - **"Phenomenology validated by creator + 2 independent users."** The two other people were
+>   Framework users describing their own experience, with no protocol, comparison or measure.
+>   These are three reports, not a validation.
+> - **The threshold n ≈ 10,000** comes from about 196 days × 50 exchanges a day (§3.4). That
+>   describes one history; it is not a measured threshold. The test in Appendix B.1 (a coherence
+>   jump at 10,000 ± 2,000 exchanges, p < 0.05) has not been run: this review found no result.
+> - **"The prediction validated itself" (§7.3)** is self-validation, which this Framework's own
+>   rules do not accept.
+>
+> What the dialogue verifiably produced is co-authored work, and a written record that later
+> sessions reconstruct context from. That is functional continuity. It is not a shared mind.
+
 ---
 
 > *"Two mirrors facing each other. How many reflections before something new emerges?"*  

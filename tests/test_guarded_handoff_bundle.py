@@ -268,3 +268,123 @@ def test_inapplicable_or_malformed_digest_is_a_usage_error(args):
     with pytest.raises(SystemExit) as error:
         demo.main(args)
     assert error.value.code == 2
+
+
+RECORDS = ("risk_downgrade", "action_substitution", "valid_execution", "replay")
+
+
+def _edit_report(directory: Path, change) -> None:
+    path = directory / "run-report.json"
+    report = json.loads(path.read_text())
+    change(report)
+    # Witness digests are public hashes, so a rewriter recomputes them too.
+    for key in RECORDS:
+        report[key]["witness_digest"] = demo._recorded_witness_digest(report[key])
+    path.write_bytes(demo._json_bytes(report))
+    _reseal_manifest(directory)
+
+
+def test_rewitnessed_unchanged_report_still_verifies(bundle):
+    directory, _ = bundle
+    _edit_report(directory, lambda report: None)
+    assert demo.verify_bundle(directory)["status"] == "SELF_CONSISTENT"
+
+
+@pytest.mark.parametrize(
+    "key,value",
+    [
+        ("limits", []),
+        ("mode", "PRODUCTION_ATTESTED"),
+        ("bound_risk", "LOW"),
+        ("authenticated_human_approval", True),
+        ("critical_hash_unchanged_by_risk_downgrade", False),
+        ("temporary_workspace_removed_on_exit", False),
+    ],
+    ids=["limits_dropped", "mode_upgraded", "risk_contradicts_permit", "extra_claim",
+         "risk_flag_contradicts_control", "workspace_kept"],
+)
+def test_resealed_report_cannot_claim_more_than_the_run(bundle, key, value):
+    directory, _ = bundle
+    _edit_report(directory, lambda report: report.__setitem__(key, value))
+    assert demo.verify_bundle(directory)["valid"] is False
+
+
+def _phantom_agent(report):
+    for key in RECORDS:
+        report[key]["consensus_summary"]["healthy_agents"].append("phantom-agent")
+
+
+@pytest.mark.parametrize(
+    "change",
+    [
+        lambda report: report["replay"]["permit"].__setitem__("permit_digest", "0" * 64),
+        lambda report: report["risk_downgrade"].__setitem__("live_action_hash", "0" * 64),
+        lambda report: report["action_substitution"].__setitem__(
+            "live_action_hash", report["valid_execution"]["live_action_hash"]
+        ),
+        lambda report: report["replay"].__setitem__(
+            "evaluated_at", report["valid_execution"]["evaluated_at"] - 1
+        ),
+        lambda report: report["risk_downgrade"]["compaction_summary"].__setitem__("risk", "HIGH"),
+        lambda report: report["risk_downgrade"].__setitem__(
+            "evaluated_at", report["risk_downgrade"]["permit"]["issued_at"] - 1
+        ),
+        _phantom_agent,
+    ],
+    ids=["replay_names_another_permit", "downgrade_names_another_action",
+         "substitution_names_the_permitted_action", "replay_before_success",
+         "downgrade_without_a_risk_change", "control_before_the_permit",
+         "phantom_consensus_agent"],
+)
+def test_resealed_control_records_must_belong_to_this_run(bundle, change):
+    directory, _ = bundle
+    _edit_report(directory, change)
+    assert demo.verify_bundle(directory)["valid"] is False
+
+
+@pytest.mark.parametrize(
+    "field,value",
+    [("evidence_notes", "Externally attested by an independent auditor"),
+     ("summary", "Verified in production")],
+)
+def test_resealed_completion_cannot_claim_outside_attestation(bundle, field, value):
+    directory, _ = bundle
+    path = directory / "completed-task.json"
+    completed = json.loads(path.read_text())
+    completed["result"][field] = value
+    path.write_bytes(demo._json_bytes(completed))
+    _reseal_manifest(directory)
+    assert demo.verify_bundle(directory)["valid"] is False
+
+
+def test_overflowing_number_is_not_read_as_infinity():
+    with pytest.raises(ValueError, match="nonfinite"):
+        demo._read_json(b"[1e400]")
+
+
+def test_deeply_nested_json_is_an_invalid_bundle_not_a_crash(bundle):
+    directory, _ = bundle
+    (directory / "action.json").write_bytes(b"[" * 200_000 + b"]" * 200_000)
+    _reseal_manifest(directory)
+    assert demo.verify_bundle(directory)["valid"] is False
+
+
+def test_evidence_swapped_for_a_fifo_after_the_type_check_is_not_read(bundle, monkeypatch):
+    directory, _ = bundle
+    fifo = directory / "handoff.txt"
+    fifo.unlink()
+    os.mkfifo(fifo)
+    original_is_file, original_read = Path.is_file, Path.read_bytes
+
+    # The earlier look saw a regular file; the FIFO arrived before the read.
+    monkeypatch.setattr(Path, "is_file", lambda self: self == fifo or original_is_file(self))
+
+    def guarded_read(self):
+        if self == fifo:
+            pytest.fail("a FIFO must be refused from the opened descriptor, not read")
+        return original_read(self)
+
+    monkeypatch.setattr(Path, "read_bytes", guarded_read)
+    result = demo.verify_bundle(directory)
+    assert result["valid"] is False
+    assert "handoff.txt must be a bounded regular file" in result["errors"]

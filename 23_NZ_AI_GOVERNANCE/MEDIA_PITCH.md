@@ -1,5 +1,14 @@
 # MEDIA PITCH
 
+> **RV34 review note (Sol, 2026-10-22). Footing: [MEASURED] for the search, kept body below.**
+> This file says Lycheetah work is on arXiv, "endorsed" or "live". The arXiv API returns **0**
+> results for `all:Lycheetah` and **0** for author Clark M with CASCADE or Lycheetah in the
+> title or abstract, and the repository holds no arXiv identifier for its own work.
+> `papers/CASCADE_ARXIV.tex` is an unsubmitted manuscript, and no endorsement receipt exists
+> (see BATCH28 G-KNOX-ENDORSEMENT). The status claims are struck where they stand; the rest is
+> the author's text, unchanged. If a submission record turns up, add its identifier and lift the
+> strikes. The real public record is the Zenodo software release, DOI 10.5281/zenodo.20020828.
+
 > [DRAFT] **Historical draft — superseded as the current NZ governance direction.** Reviewed 19 October 2026. Start with [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). The original text remains below for provenance; its status labels, dates, outreach suggestions and capability claims are historical, not current approval or evidence.
 
 ## For Journalists — NZ and International
@@ -58,7 +67,7 @@ These are not soft values. They are load-bearing architecture. And one independe
 - **What:** Four implementable NZ AI accountability standards + nine formal mathematical frameworks
 - **Status:** Open-source (CC BY 4.0), available now, no legislation required to adopt
 - **Failure Museum:** Eight public exhibits of things the framework got wrong. Nothing removed.
-- **arXiv:** CASCADE framework preprint, endorsed, live
+- **arXiv:** ~~CASCADE framework preprint, endorsed, live~~ *[RV34, 2026-10-22: no arXiv record exists; see the note at the top]*
 - **Contact:** GitHub issues at github.com/Lycheetah/Lycheetah-Framework
 - **Documents:** All primary documents available at the GitHub repository
 

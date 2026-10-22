@@ -2,6 +2,11 @@
 ## Everything free (or free-tier useful) for building Lycheetah
 ### Mac's working resource list | Updated March 2026
 
+
+> **RV30 review note (Sol, 2026-10-22). Footing: [UNVERIFIED] since March 2026.** Free tiers and limits change often. Nothing here
+> has been rechecked. Check each provider's current terms before relying on it. The "NZIAT May 2026"
+> pointer below is a past date.
+
 ---
 
 > **How to use this:** Work through it by category based on what you need to build.

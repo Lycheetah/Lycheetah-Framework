@@ -13,7 +13,9 @@ Memory is not storage. It is a **dynamic stability property**:
 - Memory is organized in tiers by temporal scale and volatility
 - Forgetting is not failure — it is coherence maintenance
 
-## The Three-Tier Architecture [ACTIVE — structural]
+## The Three-Tier Architecture ~~[ACTIVE — structural]~~ [SCAFFOLD — design, not implemented]
+
+> **RV27 review note (Sol, 2026-10-22).** Relabelled: ACTIVE means implemented and in force, and no code here implements the tiers. See the note in `MEMORIA_COMPLETE.md` on what actually persists.
 
 ```
 Tier 0 — SENSORY / IMMEDIATE  (seconds to minutes)

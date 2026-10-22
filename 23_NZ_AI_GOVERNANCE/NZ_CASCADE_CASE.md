@@ -1,5 +1,14 @@
 # CASCADE APPLIED TO AOTEAROA
 
+> **RV34 review note (Sol, 2026-10-22). Footing: [MEASURED] for the search, kept body below.**
+> This file says Lycheetah work is on arXiv, "endorsed" or "live". The arXiv API returns **0**
+> results for `all:Lycheetah` and **0** for author Clark M with CASCADE or Lycheetah in the
+> title or abstract, and the repository holds no arXiv identifier for its own work.
+> `papers/CASCADE_ARXIV.tex` is an unsubmitted manuscript, and no endorsement receipt exists
+> (see BATCH28 G-KNOX-ENDORSEMENT). The status claims are struck where they stand; the rest is
+> the author's text, unchanged. If a submission record turns up, add its identifier and lift the
+> strikes. The real public record is the Zenodo software release, DOI 10.5281/zenodo.20020828.
+
 > [INTERPRETIVE] **Background research — requires reconciliation with the current NZ proposal.** Reviewed 19 October 2026. The current policy entry is [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). This document supplies research context, not an adopted standard, certification service, legal authority or verified deployment.
 
 ## The Mathematics Working on NZ-Specific Problems
@@ -244,7 +253,7 @@ measuring convergence and divergence between them. This is a research programme,
 
 ### What The Paper Proves
 
-The CASCADE arXiv paper (March 2026, endorsed) formally proves:
+~~The CASCADE arXiv paper (March 2026, endorsed) formally proves:~~ *[RV34, 2026-10-22: no arXiv record exists; see the note at the top]*
 
 1. **Coherence Theorem** — CASCADE preserves knowledge coherence under reorganisation
 2. **Preservation Theorem** — True knowledge is retained through CASCADE events

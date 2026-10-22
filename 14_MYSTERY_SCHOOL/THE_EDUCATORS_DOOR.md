@@ -2,6 +2,14 @@
 ## Lycheetah Framework — Entry for Teachers, Curriculum Designers, and Learning Architects
 ### Author: Mackenzie Conor James Clark | March 2026
 
+> **RV26 review note (Sol, 2026-10-22).** Read this door as **educational design and analogy**, not as evidence of learning gains.
+> TRIAD's convergence proof holds for the model when λ < 1. It does not show that "every effective
+> teaching practice" or "every effective feedback loop" is TRIAD, which is a universal claim no study
+> here tests. It also does not show that a classroom has a measurable λ. This review found no
+> procedure that estimates λ from classroom data, so "diagnose whether your feedback loop has λ < 1"
+> is a reflective question, not a measurement. CASCADE's "moment of real learning" is a description,
+> not an observed result.
+
 ---
 
 > *You've been watching students not learn things — not fail to receive information,*

@@ -1,0 +1,19 @@
+diff -ruN a/23_NZ_AI_GOVERNANCE/anon_politician/PROJECT_CORE/Anon_Politician_Full_Handoff_v1.3/08_CIVIC_SIGNAL_v0.3/Anon_Politician_Civic_Signal_Kit_v0_3/src/civic_signal_validator.py b/23_NZ_AI_GOVERNANCE/anon_politician/PROJECT_CORE/Anon_Politician_Full_Handoff_v1.3/08_CIVIC_SIGNAL_v0.3/Anon_Politician_Civic_Signal_Kit_v0_3/src/civic_signal_validator.py
+--- a/23_NZ_AI_GOVERNANCE/anon_politician/PROJECT_CORE/Anon_Politician_Full_Handoff_v1.3/08_CIVIC_SIGNAL_v0.3/Anon_Politician_Civic_Signal_Kit_v0_3/src/civic_signal_validator.py	2026-10-22 16:19:25.796276084 +1300
++++ b/23_NZ_AI_GOVERNANCE/anon_politician/PROJECT_CORE/Anon_Politician_Full_Handoff_v1.3/08_CIVIC_SIGNAL_v0.3/Anon_Politician_Civic_Signal_Kit_v0_3/src/civic_signal_validator.py	2026-10-22 16:19:25.796769530 +1300
+@@ -38,7 +38,14 @@
+     survey = record.get("survey_design") or {}
+     governance = record.get("governance") or {}
+     context = record.get("decision_context") or {}
+-    claims = set(record.get("claims", []) or [])
++    raw_claims = record.get("claims", []) or []
++    if isinstance(raw_claims, str):
++        raw_claims = [raw_claims]
++    if not isinstance(raw_claims, list) or not all(isinstance(c, str) for c in raw_claims):
++        out.append(finding("error", "INVALID_CLAIMS", "claims must be a list of claim codes (strings)."))
++        raw_claims = [c for c in raw_claims if isinstance(c, str)] if isinstance(raw_claims, list) else []
++    # Normalise, so "Representative" or a bare string cannot slip past the claim gates.
++    claims = {c.strip().lower() for c in raw_claims}
+     method = recruitment.get("method")
+ 
+     if not record.get("study_id"):

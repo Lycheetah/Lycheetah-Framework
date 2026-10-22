@@ -43,6 +43,37 @@ The Privacy Act 2020 provides existing protections for individuals, subject to i
 
 These provisions do not by themselves enact this proposal's AI-use notice, universal receipt, withdrawal or human-review package. No citizenship test is inferred from them.
 
+> **Review note (2026-10-22, RV24).** The list above omitted three things a reader needs.
+>
+> - **IPP 3A is now in force.** Since 1 May 2026, an agency that collects personal
+>   information *indirectly* must take reasonable steps to tell the person, unless an exception
+>   applies, including that it was collected, the purpose, the intended recipients, and their
+>   access and correction rights ([OPC, IPP 3A](https://www.privacy.org.nz/privacy-principles/3a/),
+>   read in full 2026-10-22). It was inserted by the Privacy Amendment Act 2025, which received
+>   Royal assent on 23 September 2025 ([legislation.govt.nz](https://www.legislation.govt.nz/act/public/2025/53/en/latest/);
+>   [Ministry of Justice](https://www.justice.govt.nz/about/news-and-media/news/new-privacy-information-principle-in/);
+>   index metadata only). IPP 3 already covered direct collection. Neither principle requires
+>   telling a person that **AI** was used, so Right 1 still adds something, but it extends
+>   existing notice law rather than starting from nothing.
+> - **The Algorithm Charter for Aotearoa New Zealand (July 2020)** is a voluntary commitment
+>   by signatory government agencies, not law. Its human-oversight commitment already includes a
+>   point of contact, a channel to challenge or appeal algorithm-informed decisions, and an
+>   explanation of the role of people
+>   ([data.govt.nz](https://data.govt.nz/toolkit/data-ethics/government-algorithm-transparency-and-accountability/algorithm-charter),
+>   search abstract only). Its Year 1 review (December 2021) found "very little opportunity
+>   for New Zealanders to get individual recourse" in practice. Rights 4 and 6 should say they
+>   build on this charter and make it enforceable per person.
+> - **Government direction.** *New Zealand's Strategy for Artificial Intelligence* (July 2025)
+>   relies on existing, technology-neutral law and prefers it to a standalone AI Act. The Public
+>   Service AI Framework is guidance, not binding
+>   ([MBIE](https://www.mbie.govt.nz/assets/new-zealands-strategy-for-artificial-intelligence.pdf),
+>   [digital.govt.nz](https://www.digital.govt.nz/standards-and-guidance/technology-and-architecture/artificial-intelligence/public-service-artificial-intelligence-framework),
+>   search abstracts only). This proposal therefore runs against current policy direction,
+>   which favours guidance over new statutory rights. Say so when pitching it.
+>
+> No primary source for a GDPR Article 22-style right covering automated decisions was found
+> in the Privacy Act. That was not checked against the full Act text, so it stays UNVERIFIED.
+
 This standard does not replace the Act. It adds the layer the Act was not written for: telling people when AI was used, giving them a receipt, guaranteeing a human path, and publishing equal-treatment tests.
 
 ---
@@ -84,6 +115,12 @@ This is what a receipt under Right 2 could look like. It is a sketch, not an imp
 ## How it fits with the Community AI Warrant of Fitness
 
 The [Community AI WOF](COMMUNITY_AI_WOF.md) is the **annual** check on a system. This standard is the **per-person** promise. A system that fails these rights should not get its WOF.
+
+> **Review note (2026-10-22, RV24).** The only WOF that exists is v0.1, and it conflicts with this
+> paragraph. Its check #7 and its documentation list require Three Worlds and Whakapapa Disclosure
+> compliance, and both are historical drafts superseded by this proposal. Its numeric cutoffs are
+> unvalidated, and it tests none of the six rights. Until a six-rights WOF v0.2 exists, read this
+> paragraph as the intended relationship, not a working check.
 
 ---
 

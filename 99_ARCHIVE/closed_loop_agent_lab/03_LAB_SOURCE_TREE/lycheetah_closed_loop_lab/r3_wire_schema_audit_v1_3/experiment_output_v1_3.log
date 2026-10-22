@@ -1,0 +1,6 @@
+{
+  "status": "SOURCE_EQUIVALENT_FIXTURE_NOT_UPSTREAM_PACKAGE_TEST",
+  "case_count": 8,
+  "mutations_accepted_and_normalized": 8,
+  "strict_rejections": 8
+}

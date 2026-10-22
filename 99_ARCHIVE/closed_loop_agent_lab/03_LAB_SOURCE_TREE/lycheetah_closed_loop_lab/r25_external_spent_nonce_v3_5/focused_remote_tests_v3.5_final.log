@@ -1,0 +1,21 @@
+test_bad_witness_reports_do_not_spend_remote_nonce (test_remote_monotonic_verifier.RemoteMonotonicVerifierTests.test_bad_witness_reports_do_not_spend_remote_nonce) ... ok
+test_concurrent_remote_consumers_accept_exactly_one (test_remote_monotonic_verifier.RemoteMonotonicVerifierTests.test_concurrent_remote_consumers_accept_exactly_one) ... ok
+test_expired_challenge_is_denied_by_registry (test_remote_monotonic_verifier.RemoteMonotonicVerifierTests.test_expired_challenge_is_denied_by_registry) ... ok
+test_lost_remote_consume_response_burns_nonce_and_fails_closed (test_remote_monotonic_verifier.RemoteMonotonicVerifierTests.test_lost_remote_consume_response_burns_nonce_and_fails_closed) ... ok
+test_primary_and_registry_restore_together_replays_negative_control (test_remote_monotonic_verifier.RemoteMonotonicVerifierTests.test_primary_and_registry_restore_together_replays_negative_control)
+Negative control: both trust domains rolled back defeat this reference protocol. ... ok
+test_primary_ledger_snapshot_rollback_is_rejected_by_remote_spent_nonce (test_remote_monotonic_verifier.RemoteMonotonicVerifierTests.test_primary_ledger_snapshot_rollback_is_rejected_by_remote_spent_nonce) ... ok
+test_registration_response_lost_after_commit_returns_no_challenge (test_remote_monotonic_verifier.RemoteMonotonicVerifierTests.test_registration_response_lost_after_commit_returns_no_challenge) ... ok
+test_registration_response_lost_before_commit_returns_no_challenge (test_remote_monotonic_verifier.RemoteMonotonicVerifierTests.test_registration_response_lost_before_commit_returns_no_challenge) ... ok
+test_registry_key_is_required (test_remote_monotonic_verifier.RemoteMonotonicVerifierTests.test_registry_key_is_required) ... ok
+test_registry_row_tampering_fails_closed (test_remote_monotonic_verifier.RemoteMonotonicVerifierTests.test_registry_row_tampering_fails_closed) ... ok
+test_remote_unavailable_fails_closed_without_consuming_local_state (test_remote_monotonic_verifier.RemoteMonotonicVerifierTests.test_remote_unavailable_fails_closed_without_consuming_local_state) ... ok
+test_tampered_signed_server_response_is_rejected (test_remote_monotonic_verifier.RemoteMonotonicVerifierTests.test_tampered_signed_server_response_is_rejected) ... ok
+test_untrusted_or_non_loopback_http_endpoint_is_rejected (test_remote_monotonic_verifier.RemoteMonotonicVerifierTests.test_untrusted_or_non_loopback_http_endpoint_is_rejected) ... ok
+test_valid_chain_consumes_local_and_remote_nonce (test_remote_monotonic_verifier.RemoteMonotonicVerifierTests.test_valid_chain_consumes_local_and_remote_nonce) ... ok
+test_wrong_envelope_policy_does_not_consume_nonce (test_remote_monotonic_verifier.RemoteMonotonicVerifierTests.test_wrong_envelope_policy_does_not_consume_nonce) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 10.342s
+
+OK

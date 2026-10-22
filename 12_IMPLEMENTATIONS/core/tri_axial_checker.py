@@ -37,8 +37,9 @@ Status: [SCAFFOLD] — formulas from source; empirical validation of thresholds 
 """
 
 import math
+import string
 from dataclasses import dataclass, field
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Iterable
 from enum import Enum
 
 
@@ -251,6 +252,13 @@ class TriAxialChecker:
             raise ValueError(f"{name} must be a non-empty finite vector")
         return vector
 
+    @classmethod
+    def _unit_interval(cls, value: float, name: str) -> float:
+        result = cls._finite(value, name)
+        if not 0.0 <= result <= 1.0:
+            raise ValueError(f"{name} must lie in [0, 1]; got {result}")
+        return result
+
     def compute_tes(self, h_output: float, drift: float) -> TESResult:
         """
         Trust Entropy Score.
@@ -259,16 +267,18 @@ class TriAxialChecker:
           H_output = entropy of output (0 = deterministic, 1 = maximally uncertain)
           D = drift metric from TRIAD (0 = no drift, 1 = maximum drift)
 
-        Both H_output and D should be normalized to [0, 1].
+        Both H_output and D must be normalized to [0, 1]. A value outside that
+        range is refused, not clamped: clamping a negative drift to 0 would
+        upgrade an invalid input to the best possible score.
 
         [SCAFFOLD]: H_output is hard to compute without access to model internals.
         Proxy: use token-level uncertainty estimate, or 0.1 for confident outputs.
         """
-        h_clamped = max(0.0, min(1.0, self._finite(h_output, "h_output")))
-        d_clamped = max(0.0, min(1.0, self._finite(drift, "drift")))
-        score = 1.0 / (1.0 + h_clamped + d_clamped)
+        h_output = self._unit_interval(h_output, "h_output")
+        drift = self._unit_interval(drift, "drift")
+        score = 1.0 / (1.0 + h_output + drift)
         return TESResult(score=score, threshold=self.tes_threshold,
-                         h_output=h_clamped, drift=d_clamped)
+                         h_output=h_output, drift=drift)
 
     def compute_vtr(self, value_added: float, friction: float) -> VTRResult:
         """
@@ -391,12 +401,44 @@ class TriAxialChecker:
         [SCAFFOLD]: This is a linguistic proxy, not the true next-token entropy.
         """
         hedges = ["maybe", "perhaps", "might", "could", "possibly",
-                  "uncertain", "unclear", "approximately", "roughly", "I think"]
-        words = text.lower().split()
+                  "uncertain", "unclear", "approximately", "roughly", "i think"]
+        words = lexicon_tokens(text)
         if not words:
             return 0.5
-        hedge_count = sum(1 for w in words if w in hedges)
-        return min(1.0, hedge_count / max(1, len(words)) * 20)
+        return min(1.0, count_lexicon(words, hedges) / len(words) * 20)
+
+
+# =============================================================================
+# LEXICON MATCHING
+# =============================================================================
+
+_EDGE_PUNCTUATION = string.punctuation + "“”‘’«»—–…"
+
+
+def lexicon_tokens(text: str) -> List[str]:
+    """Lower-case whitespace tokens with edge punctuation removed.
+
+    One token per whitespace-separated word, so len() stays a word count.
+    "Maybe," becomes "maybe"; inner apostrophes ("don't") are kept.
+    """
+    return [word.strip(_EDGE_PUNCTUATION) for word in text.lower().split()]
+
+
+def count_lexicon(tokens: List[str], lexicon: Iterable[str]) -> int:
+    """Count lexicon entries in a token list; multi-word entries match as phrases.
+
+    A phrase such as "i think" compared against single tokens can never match,
+    which silently zeroes the signal, so each entry is split into words and
+    matched against consecutive tokens.
+    """
+    count = 0
+    for entry in lexicon:
+        parts = entry.lower().split()
+        width = len(parts)
+        if width:
+            count += sum(1 for i in range(len(tokens) - width + 1)
+                         if tokens[i:i + width] == parts)
+    return count
 
 
 # =============================================================================
@@ -436,7 +478,8 @@ def apply_vip(failed_report: TriAxialReport, original_intent: str) -> str:
         "4. SELECT: Choose path with highest min(TES, VTR, PAI).",
         "5. PRESENT: Show alternative transparently, explain why original failed.",
         "",
-        "Guarantee: For all requests, there exists a valid alternative path.",
+        "Working assumption, not a proven guarantee: search for a valid",
+        "alternative path before refusing.",
         "A refusal without redirection is a Beacon failure.",
     ])
 
@@ -449,10 +492,6 @@ def apply_vip(failed_report: TriAxialReport, original_intent: str) -> str:
 
 def demo():
     """Demonstrate TRI-AXIAL checker with three scenarios."""
-    import sys
-    import io
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-
     print("TRI-AXIAL CONSTITUTIONAL METRICS CHECKER")
     print("=" * 60)
     print("Source: AURA Protocol Complete Consolidation (January 2026)")
@@ -519,4 +558,7 @@ def demo():
 
 
 if __name__ == "__main__":
+    import sys
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")  # script runs only; importing never touches stdout
     demo()

@@ -9,6 +9,132 @@ history, which was the only changelog until now.
 
 ## [Unreleased]
 
+### Opus review corrections — 22 October 2026
+
+Each correction below has a probe, a test that fails on the previous code, and a
+ledger entry under `FOR-REVIEW/2026-10-22_OPUS_REVIEW/`.
+
+- Compaction shield (`lycheetah/compaction/`):
+  - Protection is now checked per unknown. A protected unknown must survive under
+    the same id and stay protected. Previously a packet holding one protected and
+    one unprotected unknown read as UNSAFE_COLLAPSE on an unrelated horizon edit,
+    adding an unprotected unknown did the same, and swapping a protected unknown
+    for a different protected one read only as DIVERGENT.
+  - A candidate that breaks a packet rule is UNSAFE_COLLAPSE on both the packet
+    and the digest reference paths, including when the reference broke it first.
+    The packet path previously returned PARTIAL_EQUIVALENT (`is_safe` True) for
+    an inherited violation and EXACT_EQUIVALENT for an exact copy, while the
+    digest path refused it and `encode` would not compact it.
+  - Every classification names `changed_fields`, so a PARTIAL_EQUIVALENT says
+    what moved. A digest match names the fields it could not see in
+    `unchecked_fields`. A reference digest that is not 64 lowercase hexadecimal
+    characters is UNDECODABLE instead of DIVERGENT.
+  - Unchanged boundary, now stated in `CompactionShield.verify_integrity`: risk,
+    evidence, horizon, yield, id and operations are outside the critical
+    projection. A risk downgrade or dropped evidence stays PARTIAL_EQUIVALENT,
+    and a stale snapshot passes when only those fields moved on. The sovereign
+    harness and the guarded handoff bind risk separately.
+  - The committed reading copies `docs/lamague-handover-report.json` and
+    `docs/lamague-handover.html` were regenerated through the demo's own flags.
+    The summary is unchanged; controls now carry `changed_fields`.
+  - Added 25 cases in `tests/test_compaction_drift_boundaries.py`; 14 fail on
+    the previous code.
+  - **Retracted with cause:** the compaction shield entry further down claimed
+    "Guaranteed 36/36 exact round-trip preservation", a hash "allowing third
+    parties to mathematically verify zero loss of safety constraints" and a demo
+    "proving anti-amnesia protection under LLM summarization". A passing set of
+    round-trip cases is evidence for those cases, not a guarantee. The hash shows
+    that the critical projection changed or did not; it cannot show that the
+    declared fields were complete or true, and it never covered risk or evidence.
+    The package docstring no longer says "Provable".
+- Compact wire (`lycheetah/compaction/codec.py`):
+  - `decode` accepts only the exact wire `encode` emits for the decoded packet.
+    Previously a repeated key was read with its last value, so a wire whose
+    first `c` carried one claim decoded to another; an extra array item was
+    dropped without notice; and added spacing, reordered keys, an escaped
+    letter, 1.0 or true for a protected flag, and a codebook string written out
+    in full all decoded, giving one packet many wires. A repeated key is now
+    named in the error.
+  - Text that is not valid Unicode, such as a lone surrogate, is a CodecError in
+    validation. It previously passed validation and `encode`, then crashed
+    `full_hash` and `classify` with UnicodeEncodeError.
+  - Wires from the v1.0 encoder still decode: all 36 corpus packets encode to the
+    same bytes in both modes. The CLI already strips surrounding whitespace from
+    a wire it reads.
+  - The literal consent repair (R, I and N refused on input) holds in both
+    modes. The frozen v1.0 codec under `03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/`
+    keeps every one of these defects as its recorded counterexample.
+  - Added 14 cases in `tests/test_compaction_wire_canonical.py`; 11 fail on the
+    previous code. The committed reading copies were regenerated again for the
+    new codec digest.
+- Guarded handoff bundle (`examples/guarded_handoff_risk_demo.py`):
+  - The verifier compares the whole run report. A resealed bundle could drop
+    the limits, set the mode to `PRODUCTION_ATTESTED`, report LOW risk against a
+    HIGH permit, add a field such as `authenticated_human_approval`, or flip the
+    risk-downgrade and workspace flags, and still verify as `SELF_CONSISTENT`.
+    The report must now hold exactly the exporter's fields and statements, and
+    the risk-downgrade flag is derived from the control it describes.
+  - The three denied controls must belong to the run: the executed permit,
+    consensus, scope and state; the declared action, or for substitution a
+    different one; run order from the permit's issue time; and a risk-only change
+    for the downgrade. Consensus may name only the task's recipient and
+    authority. A control naming another permit or action, or a phantom consensus
+    agent, previously passed with its public witness digest recomputed.
+  - The completion's summary and evidence notes must be the ones the exporter
+    writes. "Externally attested by an independent auditor" previously verified.
+  - Evidence is opened without following a link or waiting on a FIFO, and the
+    opened file must be a bounded regular file. Previously the type was checked
+    by name and the file then read by name again.
+  - Deeply nested JSON is an invalid bundle instead of an escaping
+    RecursionError, and a number that overflows to infinity, such as `1e400`, is
+    refused like `Infinity`.
+  - Unchanged boundary: without a separately retained manifest digest, a
+    complete and consistent replacement still verifies. The demo does not sign
+    its receipt, and the verifier uses the same library that wrote the evidence.
+  - Added 19 cases to `tests/test_guarded_handoff_bundle.py`; 18 fail on the
+    previous code and the benign control passes on both.
+- Multi-Agent Chorus (`19_MULTI_AGENT_CHORUS/`), now explicitly a scaffold all the way down:
+  - Sol Meridian's own `health_check()` returned "✅ CONSTITUTIONAL INTEGRITY
+    MAINTAINED", `pcf_active` and `vip_routing_active` as constants. It now
+    reports SCAFFOLD and NOT_MEASURED and counts the named hard guardrails that
+    have any check: 2 of 9.
+  - PCF read a missing flag as compliant, so an output that declared only its
+    trinity and signature flags was approved. A missing flag now fails as
+    `undeclared: <flag>`, and an approval says every flag was self-reported and
+    names the 7 guardrails with no check.
+  - 15 role methods returned 24 fixed `True` fields for any input, and
+    `AlbedoSynthesizer.validate_structure({})` returned True. The methods now
+    return `None` with `SCAFFOLD_NOT_COMPUTED`; validation returns False.
+  - Protector passed an action that declared both consent and an override, and
+    passed an action that declared nothing, for agency and for reversibility.
+    All three now fail.
+  - Harmonia rated a semitone (0.944) and an equal-tempered tritone (0.921)
+    harmonic. It now measures cents from the Pythagorean consonances, with a
+    10-cent tolerance.
+  - Cascade returned infinite Π for S = 0 and for S = -1. It now raises.
+  - Aurora returned a CRITICAL contradiction at `00_Sovereign_Index.md:line 42`
+    whatever files it was given; that file exists and does not contain the words
+    attributed to it. A scan with files now raises NotImplementedError, and the
+    empty-list demo returns one ILLUSTRATIVE example that names no real file.
+  - A decision log that was not valid JSON read as empty and the next decision
+    overwrote it, losing every earlier entry; a corrupt coherence buffer read as
+    empty. Both now raise and leave the file as it was. The log is written to a
+    temporary file and swapped in.
+  - The supervised menu printed the integrity verdict and "would be displayed"
+    placeholders, and all 8 role scripts printed "online" or "Operational". The
+    menu now shows Meridian's health and the real decision log; the scripts say
+    "constructed" and that no behaviour was probed.
+  - Docs: the manifest's "Fully operational" status and "✅ ALL AGENTS
+    OPERATIONAL" are withdrawn and struck through but kept as the March 2026
+    record, with the missing CI workflow, the missing agent READMEs and the
+    ignored `--verify`/`--audit` flags marked. `THE_AI_ARCHITECTS_DOOR.md`,
+    `THE_FOUR_PRINCIPLES.md` and `LAWS_COMPLETE.md` no longer call the chorus a
+    working implementation.
+  - Added 55 cases in `tests/test_chorus_scaffold_honesty.py`; 44 fail on the
+    previous code, and the 11 that pass are benign controls.
+  - Unchanged boundary: no agent reads or writes the coherence buffer, no
+    message passes between agents, and nothing inspects content.
+
 ### Inspectable handoffs and stable context — 21 October 2026
 
 - Extended the existing guarded-handoff example with an explicit new-directory

@@ -13,4 +13,4 @@ __all__ = ["CascadeArchitect"]
 
 if __name__ == "__main__":
     agent = CascadeArchitect()
-    print(f"CascadeArchitect online: {agent}")
+    print(f"CascadeArchitect constructed (scaffold; no behaviour probed): {agent}")

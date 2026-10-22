@@ -1,0 +1,10 @@
+test_numeric_bind_host_supports_explicit_ipv6_loopback_only (test_remote_witness_process.RemoteWitnessProcessTests.test_numeric_bind_host_supports_explicit_ipv6_loopback_only) ... ok
+test_one_coordinator_cannot_monopolize_authenticated_dispatch_slots (test_remote_witness_process.RemoteWitnessProcessTests.test_one_coordinator_cannot_monopolize_authenticated_dispatch_slots) ... ok
+test_one_remote_witness_down_is_tolerated (test_remote_witness_process.RemoteWitnessProcessTests.test_one_remote_witness_down_is_tolerated) ... ok
+test_oversized_transport_body_is_rejected_before_reading_body (test_remote_witness_process.RemoteWitnessProcessTests.test_oversized_transport_body_is_rejected_before_reading_body) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 9.342s
+
+OK
+LIFECYCLE_SUMMARY tests=4 shard=7/15 errors=0 failures=0 surviving_non_main_threads=[]

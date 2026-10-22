@@ -6,6 +6,7 @@ import hashlib
 import hmac
 import json
 import os
+import re
 import uuid
 from collections.abc import Iterable, Mapping
 from dataclasses import dataclass
@@ -172,8 +173,11 @@ class AssuranceReceipt:
             errors.append(f"integrity.canonicalization must be {CANONICALIZATION!r}")
         expected = sha256_json(self.body_dict())
         stored = self.digest
-        if not hmac.compare_digest(expected, stored):
+        if not _is_sha256(stored):
+            errors.append("integrity.digest must be 64 lowercase hexadecimal characters")
+        elif not hmac.compare_digest(expected, stored):
             errors.append("receipt body digest mismatch")
+        errors.extend(self._shape_errors())
 
         for finding in self.findings:
             expected_disposition, expected_cap_reason = capped_disposition(
@@ -207,6 +211,8 @@ class AssuranceReceipt:
                 errors.append("HMAC seal key_id must be a non-empty string")
             elif not isinstance(seal.get("value"), str) or not _is_sha256(seal.get("value", "")):
                 errors.append("HMAC seal value must be 64 lowercase hexadecimal characters")
+            elif not _is_sha256(stored):
+                errors.append("HMAC seal cannot be checked against a malformed digest")
             elif hmac_secret is None:
                 warnings.append("HMAC seal present but no verification key was supplied")
             else:
@@ -227,6 +233,46 @@ class AssuranceReceipt:
             warnings=tuple(warnings),
             hmac_authenticated=authenticated,
         )
+
+    def _shape_errors(self) -> list[str]:
+        """The checks the published schema makes, so `valid` means well-formed.
+
+        An unsealed digest can be recomputed by anyone, so a matching digest
+        alone does not keep a malformed body out.
+        """
+        errors = []
+        if not _is_rfc3339(self.issued_at):
+            errors.append("issued_at must be an RFC 3339 date-time with an offset")
+        policy = self.policy
+        if not (
+            isinstance(policy.get("id"), str)
+            and isinstance(policy.get("version"), str)
+            and _is_sha256(policy.get("sha256"))
+        ):
+            errors.append("policy must carry a string id and version and a sha256 digest")
+        event = self.event
+        subject = event.get("subject")
+        if not (
+            isinstance(event.get("event_id"), str)
+            and event.get("phase") in ("input", "output", "tool")
+            and isinstance(subject, Mapping)
+            and isinstance(subject.get("name"), str)
+            and _is_sha256(subject.get("sha256"))
+            and type(event.get("replayable")) is bool
+        ):
+            errors.append(
+                "event must carry event_id, a known phase, a subject name and sha256, "
+                "and a boolean replayable"
+            )
+        lineage = self.lineage
+        previous = lineage.get("previous_receipt_sha256", "")
+        if not isinstance(lineage.get("trace_id"), str) or not (
+            previous is None or _is_sha256(previous)
+        ):
+            errors.append(
+                "lineage must carry a string trace_id and a sha256 or null previous_receipt_sha256"
+            )
+        return errors
 
     @classmethod
     def from_dict(cls, data: Mapping[str, Any]) -> AssuranceReceipt:
@@ -429,5 +475,24 @@ def _utc_now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="milliseconds").replace("+00:00", "Z")
 
 
-def _is_sha256(value: str) -> bool:
-    return len(value) == 64 and all(character in "0123456789abcdef" for character in value)
+def _is_sha256(value: Any) -> bool:
+    return (
+        isinstance(value, str)
+        and len(value) == 64
+        and all(character in "0123456789abcdef" for character in value)
+    )
+
+
+_RFC3339 = re.compile(
+    r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[+-]\d{2}:\d{2})", re.IGNORECASE
+)
+
+
+def _is_rfc3339(value: str) -> bool:
+    if not _RFC3339.fullmatch(value):
+        return False
+    try:
+        datetime.fromisoformat(value.upper().replace("Z", "+00:00"))
+    except ValueError:
+        return False
+    return True

@@ -82,6 +82,10 @@ where W = work done creating asymmetry, T = temperature
 Consciousness requires local entropy decrease (costs energy globally)
 ```
 
+> **Status note (review 2026-10-22, RV18).** ΔS = −W/T holds for a reversible isothermal process: for an ideal gas, reversible isothermal compression gives ΔS = −W_on/T exactly. It is not general. In a reversible adiabatic compression W > 0 and ΔS = 0 (MP17). The qualitative Second Law reading stands; the equation needs its conditions stated. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A12). The original text above is kept.
+
+> **Review addendum (2026-10-23, M13).** The general form, and the one this theorem needs, is an inequality. At constant temperature T the work done on a system satisfies W ≥ ΔF = ΔU − TΔS (Second Law). With no change in internal energy this reads ΔS ≥ −W/T, that is W ≥ T·|ΔS| for an entropy decrease: lowering a system's entropy costs at least T·|ΔS| of work, with equality only for a reversible process. Measured controls: reversible isothermal compression meets the bound with equality, and a free expansion (W = 0, ΔS = R ln 2 > 0) satisfies it strictly. The adiabatic case (MP17) changes T, so the bound does not apply there. Reading Shannon entropy in bits as J/K still needs a stated bridge (k_B ln 2 per bit). Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_math_m1_m18.py` (M13).
+
 ### Coherence Threshold (unchanged, semantics clarified)
 
 ```

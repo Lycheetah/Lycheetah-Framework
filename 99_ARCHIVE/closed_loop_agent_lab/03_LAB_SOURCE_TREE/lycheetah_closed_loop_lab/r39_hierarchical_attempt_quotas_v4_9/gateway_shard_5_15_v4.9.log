@@ -1,0 +1,10 @@
+test_gateway_rejects_invalid_hierarchical_ipv6_quota_configuration (test_remote_witness_process.RemoteWitnessProcessTests.test_gateway_rejects_invalid_hierarchical_ipv6_quota_configuration) ... ok
+test_gateway_shared_ingress_store_enforces_hierarchical_ipv6_quota (test_remote_witness_process.RemoteWitnessProcessTests.test_gateway_shared_ingress_store_enforces_hierarchical_ipv6_quota) ... ok
+test_gateway_wires_hierarchical_attempt_rate_quotas_to_shared_store (test_remote_witness_process.RemoteWitnessProcessTests.test_gateway_wires_hierarchical_attempt_rate_quotas_to_shared_store) ... ok
+test_https_server_rejects_unknown_route (test_remote_witness_process.RemoteWitnessProcessTests.test_https_server_rejects_unknown_route) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 9.389s
+
+OK
+LIFECYCLE_SUMMARY tests=4 shard=5/15 errors=0 failures=0 surviving_non_main_threads=[]

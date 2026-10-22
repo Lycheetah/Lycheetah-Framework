@@ -7,6 +7,11 @@
 **Defends:** C-1.0/1.1 (canonical body) and the SCAFFOLD claims that depend on empirical evidence
 **Predecessors:** D-1.0/1.1/1.2 (defense layers); C-1.1 Reforge (corpus elevation)
 
+> **Review note (2026-10-22, RV23).** The five study sections below head their hypotheses
+> "**Hypothesis (preregistered).**" Read that as *the hypothesis this study would lock at
+> registration*. The status above is the truth: no study in this directory carries an OSF or
+> other registry receipt, and none has been executed. The headings are kept as written.
+
 ---
 
 > ## 🔴 DATA CORRECTION — 2026-07-27, BEFORE THIS IS FILED

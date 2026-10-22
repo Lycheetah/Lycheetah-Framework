@@ -2,6 +2,13 @@
 
 **Status:** Archived reproducible prototypes and authored fixtures. **Not production infrastructure.**
 
+**Footing:** **[SCAFFOLD]**, experimental. The test counts below are self-authored local tests;
+they show the reference implementations behave as their authors specified, not that the
+charters' claims about will, consent or safety hold. The documents under `forges/` and `intake/`
+keep their imported bytes and do not carry status labels of their own. This README declares
+their footing, and `tools/verify_research_intake.py` grants it only while every pinned byte
+matches the 19 October manifest (RV30 review, 2026-10-22).
+
 This directory is deliberately under `papers/agent-safety/`, rather than a replacement for the active Sovereign Harness or `CommitFence` in the main repository.
 
 Contents of `forges/forge_ii/` through `forges/forge_viii/` are extracted **primary source files** from the original Forge ZIP archives. Historical nested copies are omitted from this tree; the seven unchanged source ZIPs are preserved alongside it under [`source_archives/`](source_archives/).

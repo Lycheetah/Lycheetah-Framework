@@ -46,13 +46,6 @@ import sys
 from dataclasses import dataclass, field
 from typing import Dict, Iterable, List, Optional, Tuple
 
-# Ensure UTF-8 output on Windows (matches triad_tracker.py convention).
-if sys.stdout.encoding and sys.stdout.encoding.lower() not in ("utf-8", "utf8"):
-    try:
-        sys.stdout.reconfigure(encoding="utf-8")
-    except Exception:
-        pass  # encoding reconfigure unsupported on this stream
-
 
 # =============================================================================
 # COMPLEMENTARY PAIRS — registry
@@ -617,6 +610,8 @@ def _example() -> None:
 
 
 if __name__ == "__main__":
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")  # script runs only; importing never touches stdout
     _run_all_tests()
     print()
     _example()

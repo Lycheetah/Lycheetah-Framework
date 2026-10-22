@@ -4,6 +4,10 @@
 explores evidence-governed, time-aware knowledge revision and durable review
 decisions. Its software results remain distinct from this paper's hypotheses.
 
+**New research drafts:** [AI Future Wings](wings/README.md) are fifteen papers, one
+per domain of the School's AI Future curriculum, each with an instrument, study
+designs and stated refutations. Their numbers come from synthetic toy models only.
+
 **Working research draft v0.2 · 3 October 2026 · Not empirically validated.**
 
 **Framework creator and research owner:** Mackenzie Conor James Clark.

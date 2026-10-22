@@ -83,7 +83,22 @@ with TemporaryDirectory() as workspace:
 The gateway evaluates declared actions. The integrating application must authenticate
 approvers and connect each action description to the correct executor. A Python
 callback is not automatically confined by the description passed alongside it.
-An uncertain or uncheckpointed result requires reconciliation before retry.
+An uncertain result blocks the same action until it is reconciled from an
+authoritative provider read (`gateway.reconcile(effect_id, outcome, evidence)`, or the
+guard CLI's `reconcile` command). A local write that could not be checkpointed blocks
+every later action, and there is no automatic recovery from that state. Two processes
+may share one ledger directory: a write that loses the race is refused as
+`audit_checkpoint_stale` and can be retried. An executor answers
+`{"status": "success"}` or `{"status": "failure"}`; any other answer is
+recorded as uncertain and held for `reconcile`, never retried blind. Sensitive
+argument keys are redacted in receipts only: the local ledger keeps the full
+action and the provider's answer so a dispatch can be re-evaluated, and those
+audit details travel to the checkpoint authority with each checkpoint. Treat the
+ledger directory and the authority as holding secrets.
+`open_local` keeps the ledger, its checkpoint history and the signing key in one
+directory. That detects a damaged or rolled-back ledger, but not a writer who can
+change the whole directory; for that boundary, run the checkpoint authority in
+another process or host (`make_server`, `CheckpointHTTPClient`).
 
 ### Keep an inspectable handoff
 

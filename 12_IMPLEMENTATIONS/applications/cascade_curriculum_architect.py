@@ -146,6 +146,7 @@ class ValidatedScale:
     reliability: float  # Cronbach's alpha or test-retest
     validity: float     # Construct validity coefficient
     reference: str      # Citation
+    population_sd: Optional[float] = None  # sourced SD; without it, change stays in SD units
     
     def interpret_score(self, score: float) -> str:
         """Clinical interpretation of score"""
@@ -404,13 +405,16 @@ class PracticeProtocol:
             scale = self._match_scale_to_outcome(outcome_name)
             
             if scale:
-                # Compute baseline and expected delta
+                # Cohen's d is in standard-deviation units, not scale-range units.
+                # Multiplying by the range inflated every forecast 4-6x (RV26).
+                sign = -1.0 if direction == "decrease" else 1.0
+                expected_delta_sd = sign * effect_size
                 if direction == "decrease":
-                    baseline = scale.max_value * 0.7  # Start elevated
-                    expected_delta = -effect_size * (scale.max_value - scale.min_value)
+                    baseline = scale.max_value * 0.7  # placeholder, not a measured baseline
                 else:  # increase
                     baseline = scale.min_value + (scale.max_value - scale.min_value) * 0.3
-                    expected_delta = effect_size * (scale.max_value - scale.min_value)
+                expected_delta = (expected_delta_sd * scale.population_sd
+                                  if scale.population_sd else None)
                 
                 anchors.append({
                     "id": f"{outcome_name.lower().replace(' ', '_')}",
@@ -418,7 +422,9 @@ class PracticeProtocol:
                     "scale": scale.abbreviation,
                     "measurement_type": "SUBJECTIVE_SCALE",
                     "baseline": baseline,
+                    "baseline_is_placeholder": True,
                     "expected_delta": expected_delta,
+                    "expected_delta_sd": expected_delta_sd,
                     "expected_timeline": self.duration_weeks * 7,
                     "validation_strength": self._compute_validation_strength(scale)
                 })
@@ -638,7 +644,8 @@ class CurriculumArchitect:
                 "Enhanced default mode network regulation (mind-wandering)"
             ],
             predicted_outcomes={
-                "Anxiety": (0.63, "decrease"),  # Effect size from meta-analysis
+                # UNVERIFIED source: Goyal et al. (2014) report d 0.38 anxiety, 0.30 depression at 8 weeks
+                "Anxiety": (0.63, "decrease"),
                 "Depression": (0.53, "decrease"),
                 "Psychological Distress": (0.59, "decrease"),
                 "Wellbeing": (0.47, "increase")
@@ -732,11 +739,11 @@ class CurriculumArchitect:
             initial_state=LAMAGUESymbol.Null,
             target_state=LAMAGUESymbol.Ao,
             transformation_path=transformations,
-            evidence_level=EvidenceLevel.COHORT,
+            evidence_level=EvidenceLevel.EXPERT_OPINION,  # no cohort study is cited
             key_studies=[
                 "Jung (1951) - Aion: Researches into the Phenomenology of the Self",
                 "Whitmont (1991) - The Symbolic Quest: Basic Concepts of Analytical Psychology",
-                "Stein (2004) - Jung's Map of the Soul empirical validation"
+                "Stein (1998) - Jung's Map of the Soul: An Introduction (theory, not a validation study)"
             ],
             known_mechanisms=[
                 "Integration of repressed affect (emotion regulation)",
@@ -1012,8 +1019,8 @@ These measurement points will be used to validate the practice against reality:
             report += f"""
 **{anchor['name']}**
 - Scale: {anchor['scale']}
-- Baseline: {anchor['baseline']:.1f}
-- Expected Change: {anchor['expected_delta']:.1f}
+- Baseline (placeholder): {anchor['baseline']:.1f}
+- Expected Change: {anchor['expected_delta_sd']:+.2f} SD{'' if anchor['expected_delta'] is None else f" ({anchor['expected_delta']:+.1f} points)"}
 - Timeline: {anchor['expected_timeline']} days
 - Validation Strength: {anchor['validation_strength']}
 """
@@ -1047,11 +1054,9 @@ This protocol has been generated using:
 
 **Compliance with CASCADE Reality Bridge**: ✓ Enabled
 
-All claims in this protocol are falsifiable and will be automatically
-evaluated against measured reality through the Reality Bridge system.
-
-If predicted outcomes do not match measured reality, this practice
-will be automatically demoted or removed from the curriculum.
+The predicted outcomes are forecasts, not findings. They can be tested
+if outcome measurements are collected; this generator is not connected to
+any evaluation or demotion step.
 
 ---
 

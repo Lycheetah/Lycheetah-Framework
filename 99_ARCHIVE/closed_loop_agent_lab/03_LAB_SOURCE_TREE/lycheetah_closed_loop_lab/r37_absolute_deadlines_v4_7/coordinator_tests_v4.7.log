@@ -1,0 +1,53 @@
+test_active_lease_heartbeat_keeps_live_request_reserved_past_ttl (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_active_lease_heartbeat_keeps_live_request_reserved_past_ttl) ... ok
+test_active_limit_is_shared_between_independent_store_instances (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_active_limit_is_shared_between_independent_store_instances) ... ok
+test_config_mismatch_across_replicas_fails_closed (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_config_mismatch_across_replicas_fails_closed) ... ok
+test_crashed_lease_expires_and_frees_slot (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_crashed_lease_expires_and_frees_slot) ... ok
+test_database_mode_is_owner_only (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_database_mode_is_owner_only) ... ok
+test_database_symlink_is_rejected (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_database_symlink_is_rejected) ... ok
+test_group_or_world_writable_parent_directory_is_rejected (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_group_or_world_writable_parent_directory_is_rejected) ... ok
+test_identities_have_independent_shared_buckets_and_slots (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_identities_have_independent_shared_buckets_and_slots) ... ok
+test_monotonic_clock_backstep_does_not_refill_rate_bucket (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_monotonic_clock_backstep_does_not_refill_rate_bucket) ... ok
+test_multiprocess_race_allows_only_one_active_slot (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_multiprocess_race_allows_only_one_active_slot) ... ERROR
+test_os_boot_id_change_resets_monotonic_state (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_os_boot_id_change_resets_monotonic_state) ... ok
+test_principal_must_be_nonempty_and_bounded (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_principal_must_be_nonempty_and_bounded) ... ok
+test_rate_bucket_persists_across_store_reconstruction (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_rate_bucket_persists_across_store_reconstruction) ... ok
+
+======================================================================
+ERROR: test_multiprocess_race_allows_only_one_active_slot (test_shared_coordinator_quota.SharedCoordinatorQuotaTests.test_multiprocess_race_allows_only_one_active_slot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/lycheetah_closed_loop_lab/r37_absolute_deadlines_v4_7/test_shared_coordinator_quota.py", line 198, in test_multiprocess_race_allows_only_one_active_slot
+    self.assertEqual(ready.get(timeout=5), "ready")
+                     ~~~~~~~~~^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/queues.py", line 112, in get
+    raise Empty
+_queue.Empty
+
+----------------------------------------------------------------------
+Ran 13 tests in 6.208s
+
+FAILED (errors=1)
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=6, pipe_handle=12)
+                                                  ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/usr/lib/python3.13/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+  File "/usr/lib/python3.13/multiprocessing/synchronize.py", line 115, in __setstate__
+    self._semlock = _multiprocessing.SemLock._rebuild(*state)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=6, pipe_handle=10)
+                                                  ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/usr/lib/python3.13/multiprocessing/spawn.py", line 132, in _main
+    self = reduction.pickle.load(from_parent)
+  File "/usr/lib/python3.13/multiprocessing/synchronize.py", line 115, in __setstate__
+    self._semlock = _multiprocessing.SemLock._rebuild(*state)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory

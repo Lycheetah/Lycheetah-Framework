@@ -149,7 +149,7 @@ def guard_cli(argv: list[str] | None = None):
 
     # Default to MCP server if invoked with no arguments or explicit mcp flag
     if not raw_args or raw_args[0] in ("mcp", "--mcp"):
-        from applications.lycheetah_guard_mcp import main
+        from .applications.lycheetah_guard_mcp import main
 
         return main()
 
@@ -190,6 +190,17 @@ def guard_cli(argv: list[str] | None = None):
     )
     status_parser.add_argument("--dir", default=None, help="Gateway state directory")
 
+    # Subcommand: reconcile
+    reconcile_parser = subparsers.add_parser(
+        "reconcile", help="Settle an UNKNOWN or interrupted effect from a provider read"
+    )
+    reconcile_parser.add_argument("effect_id", help="Effect named by the UNKNOWN or BLOCKED result")
+    reconcile_parser.add_argument("--outcome", required=True, choices=["success", "failure"])
+    reconcile_parser.add_argument(
+        "--evidence", required=True, help="JSON object recording the authoritative provider read"
+    )
+    reconcile_parser.add_argument("--dir", default=None, help="Gateway state directory")
+
     # Subcommand: authority
     auth_parser = subparsers.add_parser(
         "authority", help="Run standalone checkpoint authority service"
@@ -217,7 +228,7 @@ def guard_cli(argv: list[str] | None = None):
         parsed = parser.parse_args(raw_args)
 
     if parsed.subcommand == "mcp":
-        from applications.lycheetah_guard_mcp import main
+        from .applications.lycheetah_guard_mcp import main
 
         return main()
 
@@ -265,7 +276,11 @@ def guard_cli(argv: list[str] | None = None):
             )
             sys.exit(result.result.get("returncode", 0) if result.result else 0)
         else:
-            print(f"\n[Lycheetah Guard: {result.status} | reason={result.reason}]", file=sys.stderr)
+            effect = f" | effect={result.effect_id}" if result.effect_id else ""
+            print(
+                f"\n[Lycheetah Guard: {result.status} | reason={result.reason}{effect}]",
+                file=sys.stderr,
+            )
             sys.exit(2 if result.status == "DENIED" else 1)
 
     elif parsed.subcommand == "check":
@@ -303,6 +318,23 @@ def guard_cli(argv: list[str] | None = None):
             "checkpoint_envelope_hash": latest.get("envelope_hash") if latest else None,
         }
         print(json.dumps(out, indent=2))
+
+    elif parsed.subcommand == "reconcile":
+        try:
+            evidence = json.loads(parsed.evidence)
+        except Exception as e:
+            print(f"Error parsing evidence JSON: {e}", file=sys.stderr)
+            sys.exit(1)
+        gateway = ActionGateway.open_local(state_dir)
+        result = gateway.reconcile(parsed.effect_id, parsed.outcome, evidence)
+        out = {
+            "status": result.status,
+            "reason": result.reason,
+            "effect_id": result.effect_id,
+            "checkpoint_generation": result.checkpoint_generation,
+        }
+        print(json.dumps(out, indent=2))
+        sys.exit(0 if result.reason == "reconciled" else 1)
 
     elif parsed.subcommand == "authority":
         import secrets

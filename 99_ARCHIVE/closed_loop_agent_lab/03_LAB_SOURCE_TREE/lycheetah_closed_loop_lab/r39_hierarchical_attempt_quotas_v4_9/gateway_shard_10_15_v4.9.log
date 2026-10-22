@@ -1,0 +1,10 @@
+test_registry_gateway_oversized_body_rejected_before_read (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_oversized_body_rejected_before_read) ... ok
+test_registry_gateway_per_ip_limit_is_enforced_separately (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_per_ip_limit_is_enforced_separately) ... ok
+test_registry_gateway_rejects_body_tampering_before_mutation (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_rejects_body_tampering_before_mutation) ... ok
+test_registry_gateway_rejects_cleartext_http (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_rejects_cleartext_http) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 10.434s
+
+OK
+LIFECYCLE_SUMMARY tests=4 shard=10/15 errors=0 failures=0 surviving_non_main_threads=[]

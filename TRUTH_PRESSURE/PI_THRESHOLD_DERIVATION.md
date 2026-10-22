@@ -105,6 +105,8 @@ For stability to fail, Π · ‖G‖ ≥ 2 (must push eigenvalue outside Wigner 
 
 **∴ Π_th ~ √(n) from random matrix theory.**
 
+> **Status note (review 2026-10-22, RV18).** The norms in §3.3–3.4 are wrong. G = 11ᵀ/n has operator norm 1, and G = VVᵀ/n with orthonormal V has norm 1/n, not 1/√n (both measured). The exponent of n therefore comes from how G is normalized, not from the semicircle law. For a Wigner matrix plus θ·uuᵀ, the top eigenvalue leaves the bulk edge 2 only when θ > 1, and then sits near θ + 1/θ (the BBP transition, cited from memory). Measured at N = 1200: θ = 0.5 gives 1.980; θ = 1.5 gives 2.174 against 2.167; θ = 3 gives 3.353 against 3.333. The Hopf bifurcation in §4 needs a complex-conjugate eigenvalue pair, which a symmetric J cannot have. The √n scaling is a CONJECTURE here, not a derivation. The corpus also uses seven fixed values of Π_th (0.4, 0.5, 0.6, 0.8, 0.85, 1.2, 1.5) beside the 2√n family. The census is in `FOR-REVIEW/2026-10-22_OPUS_REVIEW/BATCH17_FINDINGS_AND_LEDGER.md`. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A4, A17). The original text above is kept.
+
 The constant k = 2 from this derivation; the empirical k ≈ 0.8 reflects actual belief connectivity being denser than the minimally sparse case. The √(n) scaling is structural; k is a calibration constant.
 
 ---

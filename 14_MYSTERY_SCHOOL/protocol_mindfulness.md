@@ -2,6 +2,8 @@
 # 8-Week Mindfulness-Based Stress Reduction (MBSR)
 ## Evidence-Based Practice Protocol
 
+> **RV26 review note (Sol, 2026-10-22).** The forecasts exceed the cited meta-analysis. Goyal et al. (2014, JAMA Internal Medicine, 47 trials) found mindfulness programs reduced anxiety by d ≈ 0.38 and depression by d ≈ 0.30 at 8 weeks, and found no superiority over active treatments (ABSTRACT, PubMed 24395196). This protocol forecasts 0.63 and 0.53. Where those figures came from is UNVERIFIED (the Khoury et al. 2015 results were not retrieved). MBSR itself is well studied; this 8-week plan is not.
+
 ### Classification
 - **Domain**: Meditation
 - **Evidence Level**: META_ANALYSIS (Level 5)
@@ -128,25 +130,27 @@
 
 These measurement points will be used to validate the practice against reality:
 
+> **RV26 review note (Sol, 2026-10-22).** **The forecasts below were about 4–6× too large.** The generator multiplied Cohen's d by the whole scale range (for example 0.55 × 21 GAD-7 points = 11.6) instead of by a standard deviation. On GAD-7, a d of 0.55 is closer to 2–3 points. Each change is restated in SD units; the original figure is struck through. The baseline is a placeholder (70% of the scale maximum), not a measurement. "Validation Strength" rates the questionnaire's reliability, not the forecast. Fixed at the source in `12_IMPLEMENTATIONS/applications/cascade_curriculum_architect.py`.
+
 
 **Anxiety**
 - Scale: GAD-7
 - Baseline: 14.7
-- Expected Change: -13.2
+- Expected Change: ~~-13.2~~ −0.63 SD (raw points depend on the sample's SD)
 - Timeline: 56 days
 - Validation Strength: VERY_STRONG
 
 **Depression**
 - Scale: PHQ-9
 - Baseline: 18.9
-- Expected Change: -14.3
+- Expected Change: ~~-14.3~~ −0.53 SD (raw points depend on the sample's SD)
 - Timeline: 56 days
 - Validation Strength: STRONG
 
 **Wellbeing**
 - Scale: WEMWBS
 - Baseline: 30.8
-- Expected Change: 26.3
+- Expected Change: ~~26.3~~ +0.47 SD (raw points depend on the sample's SD)
 - Timeline: 56 days
 - Validation Strength: STRONG
 
@@ -177,11 +181,14 @@ This protocol has been generated using:
 
 **Compliance with CASCADE Reality Bridge**: ✓ Enabled
 
-All claims in this protocol are falsifiable and will be automatically
-evaluated against measured reality through the Reality Bridge system.
+~~All claims in this protocol are falsifiable and will be automatically
+evaluated against measured reality through the Reality Bridge system.~~
 
-If predicted outcomes do not match measured reality, this practice
-will be automatically demoted or removed from the curriculum.
+~~If predicted outcomes do not match measured reality, this practice
+will be automatically demoted or removed from the curriculum.~~
+
+*Corrected 2026-10-22:* the claims could be tested if outcome measurements were collected. None
+have been collected, and the generator is not connected to any evaluation or demotion step.
 
 ---
 

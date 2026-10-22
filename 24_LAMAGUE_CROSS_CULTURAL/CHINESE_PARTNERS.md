@@ -2,6 +2,18 @@
 ## For the Catalyst Strategic NZ-China Research Alliance
 ### Lycheetah Framework | March 2026
 
+
+> **RV30 review note (Sol, 2026-10-22). Footing: [CONJECTURE] for the convergence claim. Repaired before anyone sends this:**
+>
+> - **"Formally proven AI governance framework"** (three times, and 正式证明的 in the Chinese pitch)
+>   now reads "formally specified" (形式化的). The framework has proofs inside its models. It is not
+>   proven as a governance system.
+> - **"Already being considered for government adoption"** is struck. This review found no record of
+>   any government considering adoption. A planned presentation to a funder is not that.
+> - **"Significant structural convergence"** is the author's preliminary reading. BATCH24 (F3) found
+>   the argument has two common causes. The Chinese sentence still says 显著的结构收敛. Revise it
+>   with a fluent speaker so both languages make the same, smaller claim.
+
 ---
 
 ## WHAT WE NEED FROM A CHINESE PARTNER
@@ -130,7 +142,7 @@ concepts in AI would be directly aligned with their stated research agenda.
 Email: internationalscience@mbie.govt.nz
 
 Say: *"I am a NZ researcher building a proposal for the NZ-China Strategic
-Research Alliance. I have a formally proven AI governance framework
+Research Alliance. I have a ~~formally proven~~ formally specified AI governance framework
 and want to identify a Chinese research partner for a joint project
 on cross-cultural constitutional AI governance. Can you facilitate
 an introduction to any of your established Chinese research connections
@@ -172,7 +184,7 @@ framework, looking for Confucian philosophy validation partner"*
 
 ## THE PITCH TO A CHINESE INSTITUTION
 
-> *"我们在新西兰建立了一个正式证明的宪法人工智能治理框架。*
+> *"我们在新西兰建立了一个~~正式证明的~~形式化的宪法人工智能治理框架。*
 > *该框架包括LAMAGUE——一种将治理概念转化为可计算人工智能约束的数学协议。*
 > *我们对儒家治理哲学进行了初步的LAMAGUE编码，*
 > *并发现与毛利提卡恩卡和西方形式伦理存在显著的结构收敛。*
@@ -180,10 +192,10 @@ framework, looking for Confucian philosophy validation partner"*
 > *并对跨文化人工智能治理一致性进行实证测试。"*
 
 English translation:
-*"We have built a formally proven constitutional AI governance framework in New Zealand.
+*"We have built a ~~formally proven~~ formally specified constitutional AI governance framework in New Zealand.
 It includes LAMAGUE — a mathematical protocol that converts governance concepts
 into computable AI constraints. We have done preliminary LAMAGUE encodings of
-Confucian governance philosophy and found significant structural convergence
+Confucian governance philosophy and ~~found significant structural convergence~~ see what may be structural convergence
 with Māori tikanga and Western formal ethics. We are looking for a Chinese
 research partner to co-develop the formal Confucian encodings and co-run
 empirical tests of cross-cultural AI governance coherence."*
@@ -195,10 +207,10 @@ empirical tests of cross-cultural AI governance coherence."*
 - Joint authorship on all publications
 - Full access to the Lycheetah Framework codebase
 - Python implementations they can run independently
-- A formally proven mathematical foundation for encoding
+- A ~~formally proven~~ formally specified mathematical foundation for encoding
   Chinese governance philosophy as computable AI constraints
-- Access to the NZ policy context — where the framework is already
-  being considered for government adoption
+- Access to the NZ policy context ~~— where the framework is already
+  being considered for government adoption~~ (no record of this was found; RV30)
 - A research programme with genuine international impact
 
 ---

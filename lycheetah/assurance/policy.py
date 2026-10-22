@@ -110,8 +110,19 @@ class TextRule:
     ignore_case: bool = True
 
     def __post_init__(self) -> None:
-        if not isinstance(self.rule_id, str) or not isinstance(self.pattern, str):
-            raise PolicyError("text rule id and pattern must be strings")
+        if not all(
+            isinstance(value, str)
+            for value in (
+                self.rule_id,
+                self.pattern,
+                self.title,
+                self.description,
+                self.status_basis,
+            )
+        ):
+            raise PolicyError(
+                "text rule id, pattern, title, description and status_basis must be strings"
+            )
         if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._:-]{2,127}", self.rule_id):
             raise PolicyError(f"invalid text rule id: {self.rule_id!r}")
         if not self.pattern:
@@ -184,16 +195,16 @@ class TextRule:
             raise PolicyError("text rule requires id and pattern")
         phases = _strings(data.get("phases", ["input", "output"]), "text rule.phases")
         return cls(
-            rule_id=str(data["id"]),
-            pattern=str(data["pattern"]),
-            title=str(data.get("title", data["id"])),
-            description=str(data.get("description", "Policy text rule matched")),
+            rule_id=data["id"],
+            pattern=data["pattern"],
+            title=data.get("title", data["id"]),
+            description=data.get("description", "Policy text rule matched"),
             phases=tuple(Phase(item) for item in phases),
             requested_disposition=Disposition(data.get("requested_disposition", "REVIEW")),
             claim_status=ClaimStatus(data.get("claim_status", "SCAFFOLD")),
             deterministic=_boolean(data.get("deterministic", False), "text rule.deterministic"),
             severity=Severity(data.get("severity", "MEDIUM")),
-            status_basis=str(data.get("status_basis", "")),
+            status_basis=data.get("status_basis", ""),
             ignore_case=_boolean(data.get("ignore_case", True), "text rule.ignore_case"),
         )
 

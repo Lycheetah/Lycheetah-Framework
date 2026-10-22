@@ -149,6 +149,8 @@ This is K ∪ {A} = Cn(K ∪ {A}) (assuming no complex logical entailments in CA
 **Status: [ACTIVE]** — Vacuity is directly verified by the `if conflicts:` conditional.
 Cascade fires if and only if there are conflicts; absent conflicts, result is pure expansion.
 
+> **Status note (review 2026-10-22, RV18).** Conflicts are necessary, not sufficient. The engine also requires the new block's Π to exceed the old block's by more than 0.3. With old Π = 3.0, a revision at 3.5 fires and leaves 0 contradictions. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A13). The original text above is kept.
+
 ---
 
 ### Postulate 5: Consistency [SCAFFOLD]
@@ -166,6 +168,8 @@ contradiction is resolved.
 
 CASCADE therefore achieves **local consistency** around the new block: no universal-regime block
 contradicts A after revision.
+
+> **Status note (review 2026-10-22, RV18).** This fails when the cascade does not fire. A conflicting revision with lower Π (1.6) or inside the tie band (3.2) does not fire and leaves 1 contradiction. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A13). The original text above is kept.
 
 **Gap — global consistency:** If pre-existing contradictions exist in K (pairs (B, C) not
 involving A), CASCADE's revision of K on A does **not** resolve them. `active_contradictions()`

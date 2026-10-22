@@ -204,6 +204,33 @@ PARADIGM_DATASETS = {
 
 
 # ---------------------------------------------------------------------------
+# Verdict
+# ---------------------------------------------------------------------------
+
+def classify_status(mean_pct, claimed, gain_over_additive=None):
+    """Verdict for a measured mean improvement against a claimed one.
+
+    A result confirms a claim only when it lands near it: an overshoot of 2.7x
+    once printed [CONFIRMED]. A method that only ties the additive baseline has
+    shown no gain from its own mechanism, whatever it scores against the static
+    one. The 40.3% figure comes from a separately reported synthetic experiment,
+    so this comparison is a consistency check, not a replication
+    (review 2026-10-22, RV19).
+    """
+    if gain_over_additive is not None and gain_over_additive <= 0:
+        return "[NO GAIN OVER ADDITIVE]"
+    if abs(mean_pct - claimed) <= 0.2 * claimed:
+        return "[CONFIRMED]"
+    if mean_pct > claimed:
+        return "[MISMATCH]"
+    if mean_pct > 0:
+        return "[PARTIAL]"
+    if mean_pct >= -5:
+        return "[NEUTRAL]"
+    return "[REFUTED]"
+
+
+# ---------------------------------------------------------------------------
 # Run experiment using DomainExperiment.run_comparative
 # ---------------------------------------------------------------------------
 
@@ -271,6 +298,7 @@ def run_experiment():
                 "description": dataset["description"],
                 "baseline": round(static_coh, 4),
                 "cascade":  round(cascade_coh, 4),
+                "additive": round(additive_coh, 4) if additive_coh is not None else None,
                 "delta":    round(delta, 4),
                 "pct":      round(pct, 2),
                 "raw": {k: (round(v, 4) if isinstance(v, float) else v) for k, v in result.items()},
@@ -288,22 +316,22 @@ def run_experiment():
     if valid:
         mean_pct = np.mean([r["pct"] for r in valid])
         claimed  = 40.3
+        gains = [r["cascade"] - r["additive"] for r in valid if r.get("additive") is not None]
+        gain_over_additive = float(np.mean(gains)) if gains else None
 
         print(f"\n  Domains tested:           {len(valid)}")
         print(f"  Mean improvement:         {mean_pct:+.2f}%")
         print(f"  Claimed improvement:      {claimed}%")
+        if gain_over_additive is not None:
+            print(f"  Gain over additive:       {gain_over_additive:+.4f}")
 
-        if mean_pct >= claimed * 0.8:
-            status = "[CONFIRMED]"
-        elif mean_pct > 0:
-            status = "[PARTIAL]"
-        elif mean_pct >= -5:
-            status = "[NEUTRAL]"
-        else:
-            status = "[REFUTED]"
+        status = classify_status(mean_pct, claimed, gain_over_additive)
 
         print(f"  Status:                   {status}")
-        if status in ("[PARTIAL]", "[NEUTRAL]", "[REFUTED]"):
+        if status == "[NO GAIN OVER ADDITIVE]":
+            print(f"\n  FAILURE MUSEUM warranted: the {mean_pct:.1f}% is over the static baseline only;")
+            print("  the additive baseline reaches the same coherence.")
+        elif status != "[CONFIRMED]":
             print(f"\n  FAILURE MUSEUM warranted: claimed {claimed}%, measured {mean_pct:.1f}%")
             print(f"  The honest number from real-world paradigm data is {mean_pct:.1f}%")
     else:
@@ -318,6 +346,7 @@ def run_experiment():
         "domains_tested": len(valid),
         "claimed_pct": 40.3,
         "measured_pct": round(mean_pct, 2) if mean_pct is not None else None,
+        "gain_over_additive": round(gain_over_additive, 4) if valid and gain_over_additive is not None else None,
         "status": status,
         "per_domain": all_results,
     }

@@ -1,0 +1,10 @@
+test_client_refuses_http_downgrade_and_unspecified_host (test_remote_witness_process.RemoteWitnessProcessTests.test_client_refuses_http_downgrade_and_unspecified_host) ... ok
+test_client_supports_explicit_https_dns_endpoint_configuration (test_remote_witness_process.RemoteWitnessProcessTests.test_client_supports_explicit_https_dns_endpoint_configuration) ... ok
+test_client_timeout_bounds_a_tls_peer_that_never_sends_response_headers (test_remote_witness_process.RemoteWitnessProcessTests.test_client_timeout_bounds_a_tls_peer_that_never_sends_response_headers) ... ok
+test_dropped_attest_response_after_witness_commit_recovers (test_remote_witness_process.RemoteWitnessProcessTests.test_dropped_attest_response_after_witness_commit_recovers) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 11.476s
+
+OK
+LIFECYCLE_SUMMARY tests=4 shard=2/14 errors=0 failures=0 surviving_non_main_threads=[]

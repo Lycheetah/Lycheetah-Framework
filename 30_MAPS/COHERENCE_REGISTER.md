@@ -324,6 +324,10 @@ If (a), show the derivation. If (b), declare it explicitly. If (c), separate the
 | **TOTAL** | **39** | **23** | **12** | **1** | **6** | **4 types** |
 
 **Claim distribution:** 39 ACTIVE (52%) / 23 SCAFFOLD (31%) / 12 CONJECTURE (16%) / 1 REMOVED  
+
+
+> **RV29 review note (Sol, 2026-10-22).** These are the 25 April 2026 counts. On 2026-10-22 the register had
+> 71 rows; normalized status ACTIVE 52, SCAFFOLD 12, CONJECTURE 4, RETRACTED 3 (`python3 tools/verify-claims.py --register` prints the current counts). Quote `CLAIMS.json`, not this line.
 *Consistent with Sovereign Index's ~30% ACTIVE / ~55% SCAFFOLD / ~15% CONJECTURE (March 2026 audit was of math only; this register covers all claim types)*
 
 ---

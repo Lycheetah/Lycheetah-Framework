@@ -1,4 +1,14 @@
 # THE JOURNALISTS DOOR
+
+> **RV34 review note (Sol, 2026-10-22). Footing: [MEASURED] for the search, kept body below.**
+> This file says Lycheetah work is on arXiv, "endorsed" or "live". The arXiv API returns **0**
+> results for `all:Lycheetah` and **0** for author Clark M with CASCADE or Lycheetah in the
+> title or abstract, and the repository holds no arXiv identifier for its own work.
+> `papers/CASCADE_ARXIV.tex` is an unsubmitted manuscript, and no endorsement receipt exists
+> (see BATCH28 G-KNOX-ENDORSEMENT). The status claims are struck where they stand; the rest is
+> the author's text, unchanged. If a submission record turns up, add its identifier and lift the
+> strikes. The real public record is the Zenodo software release, DOI 10.5281/zenodo.20020828.
+
 ## Entry for Journalists, Writers, and Media Professionals
 ### Mackenzie Conor James Clark | March 2026
 
@@ -141,7 +151,7 @@ explicitly invites specialist critique. The cultural translations are labeled [P
 **Does not claim:**
 - To be finished
 - To have validation from Māori cultural authorities (it seeks it — that's different)
-- To have peer review from mainstream academic journals (it is in arXiv preprint)
+- To have peer review from mainstream academic journals ~~(it is in arXiv preprint)~~ *[RV34, 2026-10-22: no arXiv record exists; see the note at the top]*
 - To be the only valid framework for AI governance
 - That φ is mystically significant (only that it is mathematically distinguished and empirically observed)
 

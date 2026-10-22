@@ -1,0 +1,110 @@
+diff -ruN a/11_MATHEMATICAL_FOUNDATIONS/lyapunov_verification.py b/11_MATHEMATICAL_FOUNDATIONS/lyapunov_verification.py
+--- a/11_MATHEMATICAL_FOUNDATIONS/lyapunov_verification.py	2026-10-22 12:13:44.440503435 +1300
++++ b/11_MATHEMATICAL_FOUNDATIONS/lyapunov_verification.py	2026-10-22 12:13:44.448273772 +1300
+@@ -7,7 +7,8 @@
+   2. CASCADE — Lyapunov stability via coherence non-decrease [SCAFFOLD -> verify]
+   3. CHRYSOPOEIA — Entropy convergence to fixed point [ACTIVE claim]
+ 
+-All results tagged: [VERIFIED], [NUMERICAL], or [PENDING].
++All results tagged: [VERIFIED], [NUMERICAL], [ASSIGNED], [INCONCLUSIVE], [PENDING]
++or [FAILED]. Only [VERIFIED] and [NUMERICAL] count as passing.
+ Designed to be run as a standalone script and cited as proof output.
+ 
+ Usage:
+@@ -43,12 +44,15 @@
+ NUMERICAL = "[NUMERICAL]"
+ PENDING = "[PENDING]"
+ FAIL = "[FAILED]"
++ASSIGNED = "[ASSIGNED]"          # value set by the script, not computed
++INCONCLUSIVE = "[INCONCLUSIVE]"  # the run does not separate the claim from its known-bad case
+ 
+ 
+ def record(name: str, status: str, details: str, value=None):
+     RESULTS.append({"claim": name, "status": status, "details": details, "value": value})
+     icon = {"[VERIFIED]": "PASS", "[NUMERICAL]": "NUM ", "[PENDING]": "PEND",
+-            "[FAILED]": "FAIL"}.get(status, "????")
++            "[FAILED]": "FAIL", "[ASSIGNED]": "ASGN",
++            "[INCONCLUSIVE]": "INCL"}.get(status, "????")
+     val_str = f"  ({value})" if value is not None else ""
+     print(f"  [{icon}] {name}{val_str}")
+     if details:
+@@ -255,20 +259,21 @@
+     lam_after  = hess_eigenvalue_for_layer("foundation")  # cascade promotes to foundation
+ 
+     record("CASCADE: Hessian eigenvalue decrease (Theorem 2.3)",
+-           NUMERICAL,
++           ASSIGNED,
+            f"lambda_max(Hess V) before cascade: {lam_before} (edge layer — unstable)\n"
+            f"lambda_max(Hess V) after cascade:  {lam_after} (foundation — stable)\n"
+-           f"Delta: {lam_after - lam_before:+.2f} < 0 CONFIRMED",
++           f"Delta: {lam_after - lam_before:+.2f} (read from a fixed table, not computed)",
+            f"delta_lambda={lam_after - lam_before:.2f}")
+ 
+     # Lyapunov condition: dV/dt < 0 along trajectories
+     # V decreases iff coherence increases. Verified numerically above.
+     lyapunov_holds = violations == 0
+     record("CASCADE: Lyapunov condition dV/dt < 0 [ACTIVE]",
+-           PASS if lyapunov_holds else FAIL,
++           NUMERICAL if lyapunov_holds else FAIL,
+            f"V(K) = 1 - Coherence(K)\n"
+            f"dV/dt = -d(Coherence)/dt <= 0 along all CASCADE trajectories\n"
+-           f"Verified across {N_TRIALS} random knowledge states\n"
++           f"Checked numerically across {N_TRIALS} random knowledge states,\n"
++           f"on this script's cascade_step, not the engine; no symbolic proof\n"
+            f"Status: {'HOLDS' if lyapunov_holds else 'VIOLATED'}",
+            f"holds={lyapunov_holds}")
+ 
+@@ -326,10 +331,12 @@
+         if all_entropy_final:
+             mean_H = np.mean(all_entropy_final)
+             mean_C = np.mean(all_crystallisation_final) if all_crystallisation_final else None
++            # Convergence to the crystallised fixed point means final entropy near 0.
+             record("CHRYSOPOEIA: entropy convergence (real seven_phase.py)",
+-                   NUMERICAL,
+-                   f"Trials: {n_trials}, Mean final entropy: {mean_H:.4f}\n"
+-                   f"Mean crystallisation (1 - H_f/H_i): {mean_C:.4f}" if mean_C else "N/A",
++                   NUMERICAL if mean_H < 0.01 else FAIL,
++                   f"Trials: {n_trials}, Mean final entropy: {mean_H:.4f} "
++                   f"(converged means < 0.01; maximum ln 8 = {np.log(8):.4f})\n"
++                   + (f"Mean crystallisation (1 - H_f/H_i): {mean_C:.4f}" if mean_C is not None else "N/A"),
+                    f"H={mean_H:.4f}")
+         else:
+             USE_REAL = False  # fall through to manual
+@@ -423,8 +430,10 @@
+     spread_40pct = run_gossip(n, n_byzantine=4)   # above 33% — should diverge
+     spread_20pct = run_gossip(n, n_byzantine=2)   # well below — should converge
+ 
++    # The claim is a threshold: it needs the 44% case to diverge as well as 33% to converge.
++    separates = spread_33pct < 0.15 and spread_40pct > 0.15
+     record("PSI-CONSENSUS: 33% Byzantine — honest agents converge",
+-           NUMERICAL,
++           NUMERICAL if separates else INCONCLUSIVE,
+            f"n=9, f=3 (33%): honest spread = {spread_33pct:.4f} {'CONVERGED' if spread_33pct < 0.15 else 'DIVERGED'}\n"
+            f"n=9, f=2 (22%): honest spread = {spread_20pct:.4f} {'CONVERGED' if spread_20pct < 0.15 else 'DIVERGED'}\n"
+            f"n=9, f=4 (44%): honest spread = {spread_40pct:.4f} {'DIVERGED' if spread_40pct > 0.15 else 'CONVERGED — weaker than expected'}",
+@@ -441,13 +450,15 @@
+     print(f"Run: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+     print("="*70)
+ 
+-    counts = {PASS: 0, NUMERICAL: 0, PENDING: 0, FAIL: 0}
++    counts = {PASS: 0, NUMERICAL: 0, ASSIGNED: 0, INCONCLUSIVE: 0, PENDING: 0, FAIL: 0}
+     for r in RESULTS:
+         counts[r["status"]] = counts.get(r["status"], 0) + 1
+ 
+     print(f"\nSUMMARY:")
+     print(f"  [VERIFIED] Symbolic proof:  {counts[PASS]}")
+     print(f"  [NUMERICAL] Empirical:      {counts[NUMERICAL]}")
++    print(f"  [ASSIGNED] Set, not computed: {counts[ASSIGNED]}")
++    print(f"  [INCONCLUSIVE] No separation: {counts[INCONCLUSIVE]}")
+     print(f"  [PENDING]  Needs more work: {counts[PENDING]}")
+     print(f"  [FAILED]   Counterexample:  {counts[FAIL]}")
+ 
+@@ -471,6 +482,8 @@
+     print("HONEST STATUS LABELS:")
+     print("  [VERIFIED] = symbolic proof confirmed by sympy")
+     print("  [NUMERICAL] = empirically confirmed, not formally proven")
++    print("  [ASSIGNED] = value set by the script, not computed; not passing")
++    print("  [INCONCLUSIVE] = known-bad case passes too; not passing")
+     print("  [PENDING] = requires additional work (dependency missing)")
+     print("  [FAILED] = counterexample found — needs framework update")
+     print("="*70 + "\n")

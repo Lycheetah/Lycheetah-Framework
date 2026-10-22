@@ -363,7 +363,7 @@ record earlier reruns. October SXP-L evidence is in its integration review.
 | CORE v0.1 / v0.2 / v0.3 | 47 / 80 / 117 passing tests, recorded August 2026 | Conformance of the implemented algebra, ontology and contracts |
 | RUNTIME v0.2 / v0.3 | 22 / 48 passing tests, recorded August 2026 | Defined continuity and decoder-comparison behaviour |
 | Packet codec v1.0 | 19 tests; 36/36 exact round trips; 324/324 constructed mutation classifications | Reversibility and loss classification on the authored packet corpus |
-| Codec held-out split | 33.8% warm reduction; 30.7% cold including the codebook | Savings against minified JSON on packets held out from dictionary construction, not from codec design |
+| Codec held-out split | 33.8% warm reduction; 30.7% cold including the codebook | Savings against minified JSON on packets held out from dictionary construction, not from codec design. Plain per-packet gzip -9 saves 54.6% on the same split, so the codec's claim is checked reversibility, not byte density |
 | Controlled model pilot | 60 attempted outputs; 56 valid, across five cases and six model lineages | A small operator-run structural comparison, without independent replication |
 | SXP-L v2.0 and selected inherited suites | 12 + 71 tests passed in the October integration review | Restricted software behaviour; eight inherited defects separately reproduced |
 | SXP-L human comprehension and listening | No genuine participant results supplied | No measured human-language benefit yet |

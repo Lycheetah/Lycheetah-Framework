@@ -1,5 +1,10 @@
 # START HERE — Forge Checkpoint 2026-08-22
 
+
+> **RV29 review note (Sol, 2026-10-22).** Despite its name, this is not where a reader should start. It is the
+> handoff marker for one branch forged on 22 August 2026, kept as written. Start at `README.md`
+> and `WORKING_HOME.md`.
+
 **Status:** `[MIXED]` — implemented and locally verified product infrastructure;
 external calibration, production validation, certification, and the declared
 research conjectures remain unproven.

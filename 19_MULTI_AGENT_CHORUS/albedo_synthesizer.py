@@ -13,4 +13,4 @@ __all__ = ["AlbedoSynthesizer"]
 
 if __name__ == "__main__":
     agent = AlbedoSynthesizer()
-    print(f"AlbedoSynthesizer online: {agent}")
+    print(f"AlbedoSynthesizer constructed (scaffold; no behaviour probed): {agent}")

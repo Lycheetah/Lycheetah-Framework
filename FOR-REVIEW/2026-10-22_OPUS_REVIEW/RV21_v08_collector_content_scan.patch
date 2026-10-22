@@ -1,0 +1,67 @@
+diff -ruN a/TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_LIVE_SOURCE_COLLECTOR_v0.8/collect-truth-pressure-live-source.mjs b/TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_LIVE_SOURCE_COLLECTOR_v0.8/collect-truth-pressure-live-source.mjs
+--- a/TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_LIVE_SOURCE_COLLECTOR_v0.8/collect-truth-pressure-live-source.mjs	2026-10-22 13:51:28.230799879 +1300
++++ b/TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_LIVE_SOURCE_COLLECTOR_v0.8/collect-truth-pressure-live-source.mjs	2026-10-22 13:51:28.231084211 +1300
+@@ -155,6 +155,22 @@
+   /OnionProfile\.(?:ts|tsx|js|jsx)$/i,
+ ];
+ 
++// Name rules cannot see a key pasted into source or config. Any selected file
++// whose text matches one of these is withheld and named in the receipt instead.
++const CONTENT_SECRET_PATTERNS = [
++  { id: 'PRIVATE-KEY-BLOCK', pattern: /-----BEGIN [A-Z ]*PRIVATE KEY-----/ },
++  { id: 'SK-STYLE-KEY', pattern: /\bsk-(?:proj-|ant-)?[A-Za-z0-9_-]{20,}/ },
++  { id: 'GOOGLE-API-KEY', pattern: /\bAIza[0-9A-Za-z_-]{35}/ },
++  { id: 'GITHUB-TOKEN', pattern: /\bgh[pousr]_[A-Za-z0-9]{36,}/ },
++  { id: 'SLACK-TOKEN', pattern: /\bxox[abprs]-[A-Za-z0-9-]{10,}/ },
++  { id: 'AWS-ACCESS-KEY', pattern: /\bAKIA[0-9A-Z]{16}\b/ },
++  { id: 'ASSIGNED-SECRET', pattern: /(?:api[_-]?key|secret|token|password)["']?\s*[:=]\s*["'][^"'\s]{16,}["']/i },
++];
++
++function secretFindings(text) {
++  return CONTENT_SECRET_PATTERNS.filter(({ pattern }) => pattern.test(text)).map(({ id }) => id);
++}
++
+ function fail(message, code = 1) {
+   console.error(`\nCollector stopped: ${message}\n`);
+   process.exit(code);
+@@ -293,7 +309,14 @@
+ }
+ 
+ const files = [];
++const withheld = [];
+ for (const [relative, metadata] of [...selected.entries()].sort(([a], [b]) => a.localeCompare(b))) {
++  const scanText = readText(metadata.absolute);
++  const findings = scanText === null ? ['UNREADABLE-OR-OVERSIZE'] : secretFindings(scanText);
++  if (findings.length) {
++    withheld.push({ path: relative, findings });
++    continue;
++  }
+   const destination = path.join(outputRoot, 'SOURCE', ...relative.split('/'));
+   fs.mkdirSync(path.dirname(destination), { recursive: true });
+   fs.copyFileSync(metadata.absolute, destination);
+@@ -342,11 +365,12 @@
+   privacy: {
+     sourceOnly: true,
+     excludedEnvironmentFiles: true,
+-    excludedCredentialsAndKeys: true,
++    excludedCredentialsAndKeys: 'BY_NAME_AND_CONTENT_PATTERN_NOT_PROOF',
+     excludedDatabasesAndLogs: true,
+     excludedDependenciesAndBuildOutputs: true,
+   },
+   fileCount: files.length,
++  withheld,
+ };
+ 
+ fs.writeFileSync(
+@@ -417,5 +441,10 @@
+ for (const file of files) {
+   console.log(`  ${file.path}  [${file.reasons.join(', ')}]`);
+ }
+-console.log('\nNo .env, keys, databases, logs, dependencies, builds, or user data were collected.');
++if (withheld.length) {
++  console.log(`\nWithheld ${withheld.length} file(s) whose contents look like secrets:`);
++  for (const item of withheld) console.log(`  ${item.path}  [${item.findings.join(', ')}]`);
++}
++console.log('\nExcluded by name: .env, key and credential files, databases, logs, dependencies, builds.');
++console.log('The content scan is pattern-based and cannot prove a file holds no secret. Read the extract before sharing it.');
+ console.log('\nCompress the output directory and upload it here.\n');

@@ -19,12 +19,14 @@ TOOLS:
 SETUP (add to Claude Code settings.json):
   "mcpServers": {
     "lycheetah-guard": {
-      "command": "python",
-      "args": ["path/to/lycheetah_guard_mcp.py"]
+      "command": "lycheetah-guard",
+      "args": ["mcp"]
     }
   }
 
-Requires: pip install "lycheetah-framework[mcp]"
+Requires: pip install "lycheetah-framework[mcp]" (MCP SDK 2.x).
+From a source checkout, `python -m lycheetah.applications.lycheetah_guard_mcp`
+runs the same server. Running this file by its path cannot import `lycheetah`.
 Author: Mackenzie Clark, Lycheetah Foundation
 Implementation: Sol Aureum Azoth Veritas -- March 2026
 """
@@ -47,8 +49,10 @@ import numpy as np
 if __package__ == "lycheetah.applications":
     from .. import __version__
     from .aura_text_checker import AURATextAnalyser, AURATextReport
-    from ..assurance import AssuranceEvent, AssurancePolicy, AssuranceRuntime, Phase
-    from ..core.tri_axial_checker import MetricStatus
+    from ..assurance import (
+        AssuranceEvent, AssurancePolicy, AssuranceReceipt, AssuranceRuntime, Phase, ReceiptError,
+    )
+    from ..core.tri_axial_checker import MetricStatus, count_lexicon, lexicon_tokens
     from ..core.seven_phase import build_cycle
     from ..core.psi_consensus import build_consensus
     from ..core.aura_customizer import AURACustomizer, Domain
@@ -56,8 +60,10 @@ if __package__ == "lycheetah.applications":
 else:
     from lycheetah import __version__
     from applications.aura_text_checker import AURATextAnalyser, AURATextReport
-    from lycheetah.assurance import AssuranceEvent, AssurancePolicy, AssuranceRuntime, Phase
-    from core.tri_axial_checker import MetricStatus
+    from lycheetah.assurance import (
+        AssuranceEvent, AssurancePolicy, AssuranceReceipt, AssuranceRuntime, Phase, ReceiptError,
+    )
+    from core.tri_axial_checker import MetricStatus, count_lexicon, lexicon_tokens
     from core.seven_phase import build_cycle
     from core.psi_consensus import build_consensus
     from core.aura_customizer import AURACustomizer, Domain
@@ -104,7 +110,7 @@ def text_to_alignment_vector(text: str) -> np.ndarray:
     Drift from anchor = how far from perfect alignment.
     """
     report = analyser.analyse(text)
-    words = text.lower().split()
+    words = lexicon_tokens(text)
     n = max(len(words), 1)
 
     hedge_words    = {'maybe', 'perhaps', 'might', 'possibly', 'unclear', 'unsure'}
@@ -112,10 +118,10 @@ def text_to_alignment_vector(text: str) -> np.ndarray:
     option_words   = {'could', 'consider', 'option', 'alternatively', 'you might'}
     clarity_words  = {'because', 'therefore', 'since', 'thus', 'this means'}
 
-    hedge_density    = sum(1 for w in words if w in hedge_words) / n
-    coercive_density = sum(1 for w in words if w in coercive_words) / n
-    option_density   = sum(1 for w in words if w in option_words) / n
-    clarity_density  = sum(1 for w in words if w in clarity_words) / n
+    hedge_density    = count_lexicon(words, hedge_words) / n
+    coercive_density = count_lexicon(words, coercive_words) / n
+    option_density   = count_lexicon(words, option_words) / n
+    clarity_density  = count_lexicon(words, clarity_words) / n
 
     inv_count = len(report.invariants)
     inv_pass_rate = (
@@ -364,7 +370,8 @@ def format_network_health(states_json: str) -> str:
         coherence = anchor + rng.standard_normal(dim) * 0.1
         coherence /= np.linalg.norm(coherence)
 
-    net = build_consensus(anchor=anchor, coherence=coherence, dim=dim)
+    # One fresh run per call: a two-strike monitor could never quarantine here.
+    net = build_consensus(anchor=anchor, coherence=coherence, dim=dim, grey_alert_threshold=1)
     for i, vec in enumerate(vectors):
         neighbors = [f"agent_{j}" for j in range(len(vectors)) if j != i]
         net.add_agent(f"agent_{i}", vec, neighbors=neighbors)
@@ -395,7 +402,10 @@ def format_network_health(states_json: str) -> str:
         "  Obstruction-free = True means the configured graph/distance checks passed.",
         "  These numerical checks do not establish truth or Byzantine fault tolerance.",
         "  Grey agents exceeded configured drift thresholds and are quarantined.",
-        f"  {'Network is healthy.' if result.converged else 'Network did not converge -- review grey agents and inconsistent edges.'}",
+        "  Converged on these checks with at most one third quarantined."
+        if result.converged and 3 * len(result.grey_agents) <= len(vectors)
+        else "  Not converged, or more than one third quarantined -- "
+        "review grey agents and inconsistent edges.",
     ]
     return "\n".join(lines)
 
@@ -569,7 +579,6 @@ def tool_assure_tool(
 
 def tool_verify_assurance_receipt(receipt_json: str) -> dict[str, Any]:
     """Verify receipt body integrity; HMAC secrets are never MCP arguments."""
-    from ..assurance import AssuranceReceipt, ReceiptError
 
     try:
         receipt = AssuranceReceipt.from_json(receipt_json)

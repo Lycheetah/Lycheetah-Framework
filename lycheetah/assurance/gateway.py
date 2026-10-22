@@ -15,12 +15,12 @@ executor's implementation to an action description.
 
 from __future__ import annotations
 
-import json
+import re
+import secrets
 import subprocess
 import time
 from collections.abc import Callable
 from dataclasses import dataclass
-from hashlib import sha256
 from pathlib import Path
 from typing import Any, Literal
 
@@ -44,6 +44,71 @@ from .policy import AssurancePolicy, default_policy
 from .receipt import AssuranceReceipt
 from .runtime import ASSURANCE_VERSION, AssuranceRuntime
 
+# The approver recorded when policy allows an action without review.
+AUTO_ALLOW_APPROVER = "policy_auto_allow"
+
+ResultStatus = Literal["SUCCEEDED", "FAILED", "UNKNOWN", "DENIED", "BLOCKED"]
+_OUTCOME_STATUS: dict[str, Literal["SUCCEEDED", "FAILED", "UNKNOWN"]] = {
+    "success": "SUCCEEDED",
+    "failure": "FAILED",
+    "unknown": "UNKNOWN",
+}
+_SETTLED_STATUS: dict[str, ResultStatus] = {"SUCCEEDED": "SUCCEEDED", "FAILED": "FAILED"}
+
+
+_FORK_BOMB = re.compile(r"([\w:]+)\(\)\{\1\|\1&\};\1")
+_WIPE_TARGET = ("/", "~", "$home", "${home}")
+
+
+def _command_texts(value: Any) -> list[str]:
+    """Every string in an action, plus each list joined as one command line."""
+    if isinstance(value, str):
+        return [value]
+    if isinstance(value, dict):
+        return [text for key, item in value.items() for text in (str(key), *_command_texts(item))]
+    if isinstance(value, (list, tuple)):
+        joined = " ".join(str(item) for item in value)
+        return [text for item in value for text in _command_texts(item)] + [joined]
+    return []
+
+
+def _destructive_command(action: dict[str, Any]) -> bool:
+    """A tripwire for spelled-out wipes, not a sandbox.
+
+    It catches a recursive ``rm`` of an absolute or home path in any flag order,
+    and a fork bomb in any spacing. An encoded, scripted or aliased command
+    passes it; the policy's tool allowlist is the control.
+    """
+    for text in _command_texts(action):
+        lowered = text.lower()
+        if _FORK_BOMB.search("".join(lowered.split())):
+            return True
+        for segment in re.split(r"[;&|\n]+", lowered):
+            tokens = [token.strip("'\"") for token in segment.split()]
+            for index, token in enumerate(tokens):
+                if token != "rm" and not token.endswith("/rm"):
+                    continue
+                recursive = wipe = options_ended = False
+                for argument in tokens[index + 1 :]:
+                    if not options_ended and argument == "--":
+                        options_ended = True
+                    elif not options_ended and argument.startswith("--"):
+                        recursive = recursive or argument == "--recursive"
+                    elif not options_ended and argument.startswith("-") and len(argument) > 1:
+                        recursive = recursive or "r" in argument[1:]
+                    elif argument.startswith(_WIPE_TARGET):
+                        wipe = True
+                if recursive and wipe:
+                    return True
+    return False
+
+
+def _declared_approver(approver_id: Any) -> str | None:
+    """A blank name or the auto-allow marker is no approver, at propose and dispatch alike."""
+    if not isinstance(approver_id, str) or not approver_id.strip():
+        return None
+    return None if approver_id == AUTO_ALLOW_APPROVER else approver_id
+
 
 @dataclass(frozen=True)
 class GateDecision:
@@ -63,7 +128,7 @@ class GateDecision:
 class ExecutionResult:
     """Outcome of a dispatched tool action."""
 
-    status: Literal["SUCCEEDED", "FAILED", "UNKNOWN", "DENIED", "BLOCKED"]
+    status: ResultStatus
     reason: str
     effect_id: str | None
     action_hash: str
@@ -142,7 +207,15 @@ class ActionGateway:
         journal_id: str = "lycheetah-action-gateway",
         policy: AssurancePolicy | None = None,
     ) -> ActionGateway:
-        """Create a local gateway using embedded file stores."""
+        """Create a local gateway using embedded file stores.
+
+        The ledger, the checkpoint history and the signing key all live under
+        ``base_dir``. The signed checkpoint catches a damaged or rolled-back
+        ledger, but a writer who can change the whole directory can roll the
+        ledger and its checkpoints back together and replay a finished effect.
+        Where that writer is in the threat model, run the authority in another
+        process or host (``make_server``) and pass a ``CheckpointHTTPClient``.
+        """
         root = Path(base_dir)
         guard_db = root / "ledger" / "guard.sqlite3"
         auth_db = root / "authority" / "authority.sqlite3"
@@ -183,14 +256,8 @@ class ActionGateway:
         # The policy evaluates action/scope; this argument is API metadata and
         # does not authenticate an identity. Keep the keyword-compatible API.
         _ = actor
-        # Static check for destructive system commands
-        cmd_val = action.get("command", "")
-        if isinstance(cmd_val, list):
-            cmd_flat = " ".join(str(c) for c in cmd_val).lower()
-        else:
-            cmd_flat = str(cmd_val).lower()
-        action_str = json.dumps(action).lower() + " " + cmd_flat
-        if "rm -rf /" in action_str or ":(){ :|:& };:" in action_str:
+        # Static tripwire for spelled-out destructive commands; see _destructive_command.
+        if _destructive_command(action):
             control = ControlReference(
                 framework="SYSTEM_INTEGRITY",
                 control_id="LYCHEETAH-01",
@@ -199,7 +266,8 @@ class ActionGateway:
             finding = Finding.create(
                 finding_id="destructive_command_prohibited",
                 title="Destructive Command Prohibited",
-                description="Detected destructive system wipe command sequence",
+                description="Detected a recursive removal of an absolute or home path, "
+                "or a fork bomb",
                 severity=Severity.CRITICAL,
                 requested_disposition=Disposition.BLOCK,
                 claim_status=ClaimStatus.ACTIVE,
@@ -222,7 +290,7 @@ class ActionGateway:
             tool_arguments=action,
             scopes=(scope,) if scope else (),
             side_effect=bool(action.get("side_effect", False)),
-            human_approved=True if approver_id is not None else None,
+            human_approved=True if _declared_approver(approver_id) is not None else None,
         )
 
     def propose(
@@ -236,6 +304,7 @@ class ActionGateway:
         effect_id: str | None = None,
     ) -> GateDecision:
         """Propose an action: check policy, register single-use approval, prepare effect."""
+        approver_id = _declared_approver(approver_id)
         with self.workflow.effect_session():
             try:
                 self._sync_checkpoint()
@@ -282,9 +351,12 @@ class ActionGateway:
             )
 
         now = int(time.time())
-        aid = approval_id or f"app-{sha256(f'{digest}:{now}:{actor}'.encode()).hexdigest()[:16]}"
-        eid = effect_id or f"eff-{sha256(f'{aid}:{now}'.encode()).hexdigest()[:16]}"
-        approver = approver_id or "policy_auto_allow"
+        # Default ids are unique per proposal. Deriving them from the action,
+        # actor and wall-clock second made two legitimate proposals of one
+        # action in the same second collide, and the second was refused.
+        aid = approval_id or f"app-{secrets.token_hex(8)}"
+        eid = effect_id or f"eff-{secrets.token_hex(8)}"
+        approver = approver_id or AUTO_ALLOW_APPROVER
 
         approval = self.workflow.issue_approval(
             approval_id=aid,
@@ -337,6 +409,10 @@ class ActionGateway:
                 reason=prepared.reason,
                 action_hash=digest,
                 approval_id=aid,
+                # Names the earlier effect an operator must reconcile first.
+                effect_id=(
+                    prepared.effect_id if prepared.reason == "prior_effect_unresolved" else None
+                ),
             )
 
         return GateDecision(
@@ -393,11 +469,7 @@ class ActionGateway:
             )
 
         approval = self.guard.get_approval(effect["approval_id"])
-        approver_id = (
-            approval["approver_id"]
-            if approval is not None and approval["approver_id"] != "policy_auto_allow"
-            else None
-        )
+        approver_id = _declared_approver(approval["approver_id"]) if approval is not None else None
         evaluated_policy = self.policy
         policy_record = {
             "id": evaluated_policy.policy_id,
@@ -459,12 +531,13 @@ class ActionGateway:
         provider_called = True
         try:
             raw_result = executor()
+            # Only an explicit "failure" is a known failure. Any other answer
+            # ("pending", "accepted", a typo) may have taken effect.
+            reported = raw_result.get("status")
             outcome: Literal["success", "failure", "unknown"] = (
-                "success" if raw_result.get("status") == "success" else "failure"
+                reported if reported in ("success", "failure") else "unknown"
             )
-            status_text: Literal["SUCCEEDED", "FAILED", "UNKNOWN"] = (
-                "SUCCEEDED" if outcome == "success" else "FAILED"
-            )
+            status_text = _OUTCOME_STATUS[outcome]
             result_details = raw_result
         except TimeoutError:
             outcome = "unknown"
@@ -516,7 +589,12 @@ class ActionGateway:
                 "checkpoint_generation": final_cp.get("generation"),
                 "checkpoint_envelope_hash": final_cp.get("envelope_hash"),
             },
-            limitations=("local_execution_cell_boundary",),
+            # The runtime's caveats (approval is caller-declared, an unsealed
+            # digest is not authentication) hold for this receipt too.
+            limitations=(
+                *self.runtime._limitations(event_record),
+                "local_execution_cell_boundary",
+            ),
             trace_id=f"gw-{effect_id}",
         )
 
@@ -529,6 +607,50 @@ class ActionGateway:
             result=result_details,
             receipt=receipt,
             checkpoint_generation=final_cp.get("generation"),
+        )
+
+    def reconcile(
+        self,
+        effect_id: str,
+        outcome: Literal["success", "failure"],
+        evidence: dict[str, Any],
+    ) -> ExecutionResult:
+        """Settle an UNKNOWN or interrupted effect from an authoritative provider read.
+
+        Until this runs, the guard refuses to prepare the same action again.
+        """
+        with self.workflow.effect_session():
+            effect = self.guard.get_effect(effect_id)
+            digest = effect["action_hash"] if effect is not None else ""
+            try:
+                settled = self.workflow.reconcile_effect(
+                    effect_id, int(time.time()), outcome, evidence
+                )
+            except (WorkflowBlocked, CheckpointError) as exc:
+                return ExecutionResult(
+                    status="BLOCKED",
+                    reason=str(exc),
+                    effect_id=effect_id,
+                    action_hash=digest,
+                    provider_called=False,
+                )
+        decision = settled.decision
+        status: ResultStatus
+        if not settled.checkpointed:
+            status, reason = "UNKNOWN", "reconciliation_not_checkpointed"
+        elif not decision.allowed:
+            status, reason = "DENIED", decision.reason
+        else:
+            # The guard settles only to SUCCEEDED or FAILED; anything else stays unknown.
+            status, reason = _SETTLED_STATUS.get(decision.status or "", "UNKNOWN"), "reconciled"
+        return ExecutionResult(
+            status=status,
+            reason=reason,
+            effect_id=effect_id,
+            action_hash=digest,
+            provider_called=False,
+            result=evidence if decision.allowed else None,
+            checkpoint_generation=settled.checkpoint_generation,
         )
 
     def execute(

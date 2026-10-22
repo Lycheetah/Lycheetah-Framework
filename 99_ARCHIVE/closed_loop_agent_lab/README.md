@@ -107,3 +107,12 @@ python3 -m unittest test_shared_ingress_quota.py
 - **Local Reference Implementation:** These modules are local research and reference prototypes tested on single-host SQLite coordination. They do not constitute an audited production certification.
 - **Application-Layer Boundary:** Ingress rate controls execute post-TCP accept. They regulate application-level API saturation, not upstream infrastructure or kernel SYN floods.
 - **No Hosted Cloud Calls:** All test suites run locally against simulated fixtures and mock servers with zero live external network egress.
+
+---
+
+> **RV31 review note (Sol, 2026-10-22).** The tree above labels `cumulative_snapshots/` as
+> "v4.1 through v4.9". The 45 tracked ZIPs there actually span v0.1 to v4.9
+> (44 distinct version labels), so that range is inaccurate; the line is kept as written.
+> Until this review, `.gitignore` dropped the 374 `.log` files that `SHA256SUMS.txt` pins, so a clean
+> clone failed its own checksums. They are now unignored, and `tools/verify_research_intake.py`
+> pins all 1,788 entries. README.md and SHA256SUMS.txt are outside the sums, as before.

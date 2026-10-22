@@ -29,6 +29,16 @@ def action_digest(action: dict[str, Any]) -> str:
     return sha256(canonical_action(action).encode("utf-8")).hexdigest()
 
 
+def _is_timestamp(value: Any) -> bool:
+    """Ledger times are integers: SQLite keeps 100.5 as REAL and turns 100.0 into 100."""
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
+def _is_name(value: Any) -> bool:
+    """Ledger identifiers are non-empty strings: a TEXT column turns 5 into "5"."""
+    return isinstance(value, str) and bool(value)
+
+
 @dataclass(frozen=True)
 class Decision:
     allowed: bool
@@ -186,7 +196,11 @@ class PersistentActionGuard:
         details: dict[str, Any] | None = None,
     ) -> None:
         details_json = json.dumps(
-            details or {}, sort_keys=True, separators=(",", ":"), ensure_ascii=False
+            details or {},
+            sort_keys=True,
+            separators=(",", ":"),
+            ensure_ascii=False,
+            allow_nan=False,
         )
         previous = c.execute("SELECT event_hash FROM audit ORDER BY seq DESC LIMIT 1").fetchone()
         prev_hash = previous["event_hash"] if previous and previous["event_hash"] else AUDIT_GENESIS
@@ -289,6 +303,28 @@ class PersistentActionGuard:
             "last_seq": status["last_seq"],
             "root_hash": status["root_hash"],
         }
+
+    @staticmethod
+    def _refuse_stale(c: sqlite3.Connection, expected: dict[str, Any] | None) -> bool:
+        """Roll back when anything was journalled after the caller's trusted anchor.
+
+        A second process on the same ledger can append between a caller's checkpoint
+        check and its write. Pinning each write to that anchor keeps one batch per
+        checkpoint generation instead of two batches racing to the authority.
+        """
+        if expected is None:
+            return False
+        row = c.execute("SELECT COUNT(*), MAX(seq) FROM audit").fetchone()
+        tail = c.execute("SELECT event_hash FROM audit ORDER BY seq DESC LIMIT 1").fetchone()
+        current = {
+            "event_count": row[0],
+            "last_seq": row[1],
+            "root_hash": tail[0] if tail else AUDIT_GENESIS,
+        }
+        if current == expected:
+            return False
+        c.execute("ROLLBACK")
+        return True
 
     @classmethod
     def _verify_state_consistency(cls, c: sqlite3.Connection) -> dict[str, Any]:
@@ -585,16 +621,29 @@ class PersistentActionGuard:
         scope: str,
         issued_at: int,
         expires_at: int,
+        expected_audit_anchor: dict[str, Any] | None = None,
     ) -> Decision:
-        """Record approval by a distinct approver identity for an executor principal."""
-        if not approval_id or not actor or not approver_id or not scope or expires_at <= issued_at:
+        """Record approval by a distinct approver identity for an executor principal.
+
+        Identities are declared strings. The guard refuses an executor approving its
+        own action, but it does not authenticate who the approver is.
+        """
+        if not all(_is_name(value) for value in (approval_id, actor, approver_id, scope)):
             return Decision(False, "invalid_approval")
+        if not (_is_timestamp(issued_at) and _is_timestamp(expires_at)):
+            return Decision(False, "invalid_timestamp")
+        if expires_at <= issued_at:
+            return Decision(False, "invalid_approval")
+        if approver_id == actor:
+            return Decision(False, "approver_must_differ_from_actor")
         try:
             digest = action_digest(action)
         except (TypeError, ValueError):
             return Decision(False, "invalid_action")
         with self._connect() as c:
             c.execute("BEGIN IMMEDIATE")
+            if self._refuse_stale(c, expected_audit_anchor):
+                return Decision(False, "audit_checkpoint_stale")
             epoch = self._authority_epoch(c, actor)
             try:
                 c.execute(
@@ -632,10 +681,16 @@ class PersistentActionGuard:
             c.execute("COMMIT")
         return Decision(True, "approval_issued")
 
-    def revoke_all(self, actor: str, now: int) -> int:
+    def revoke_all(
+        self, actor: str, now: int, expected_audit_anchor: dict[str, Any] | None = None
+    ) -> int:
         """Revoke all pending approvals for an actor by bumping authority epoch."""
+        if not _is_name(actor) or not _is_timestamp(now):
+            raise ValueError("revoke_all requires a non-empty actor and an integer timestamp")
         with self._connect() as c:
             c.execute("BEGIN IMMEDIATE")
+            if self._refuse_stale(c, expected_audit_anchor):
+                raise RuntimeError("audit_checkpoint_stale")
             c.execute("INSERT OR IGNORE INTO authority(actor,epoch) VALUES(?,0)", (actor,))
             c.execute("UPDATE authority SET epoch=epoch+1 WHERE actor=?", (actor,))
             epoch = self._authority_epoch(c, actor)
@@ -660,10 +715,20 @@ class PersistentActionGuard:
         action: dict[str, Any],
         scope: str,
         now: int,
+        expected_audit_anchor: dict[str, Any] | None = None,
     ) -> Decision:
-        """Prepare an authorized effect bound to a single-use approval."""
-        if not effect_id:
+        """Prepare an authorized effect bound to a single-use approval.
+
+        A retry is refused while an earlier effect of the same action is DISPATCHING
+        or UNKNOWN: the provider may already have acted, so that outcome must be
+        reconciled before the action can be prepared again.
+        """
+        if not _is_name(effect_id):
             return Decision(False, "invalid_effect_id")
+        if not all(_is_name(value) for value in (approval_id, actor, scope)):
+            return Decision(False, "invalid_effect")
+        if not _is_timestamp(now):
+            return Decision(False, "invalid_timestamp")
         try:
             action_json = canonical_action(action)
             digest = action_digest(action)
@@ -671,11 +736,31 @@ class PersistentActionGuard:
             return Decision(False, "invalid_action")
         with self._connect() as c:
             c.execute("BEGIN IMMEDIATE")
+            if self._refuse_stale(c, expected_audit_anchor):
+                return Decision(False, "audit_checkpoint_stale")
             valid, reason, _ = self._validate(c, approval_id, actor, action, scope, now)
             if not valid:
                 self._audit(c, now, actor, approval_id, effect_id, "PREPARE_DENIED", reason)
                 c.execute("COMMIT")
                 return Decision(False, reason)
+            unresolved = c.execute(
+                "SELECT effect_id FROM effects "
+                "WHERE action_hash=? AND status IN ('DISPATCHING','UNKNOWN') LIMIT 1",
+                (digest,),
+            ).fetchone()
+            if unresolved is not None:
+                self._audit(
+                    c,
+                    now,
+                    actor,
+                    approval_id,
+                    effect_id,
+                    "PREPARE_DENIED",
+                    "prior_effect_unresolved",
+                    {"unresolved_effect_id": unresolved["effect_id"]},
+                )
+                c.execute("COMMIT")
+                return Decision(False, "prior_effect_unresolved", unresolved["effect_id"])
             try:
                 c.execute(
                     "INSERT INTO effects("
@@ -727,6 +812,14 @@ class PersistentActionGuard:
         """Linearization point: claim dispatch right before executing an effect."""
         if expected_audit_anchor is None:
             return Decision(False, "trusted_audit_anchor_required", effect_id)
+        if not _is_name(effect_id):
+            return Decision(False, "invalid_effect_id", effect_id)
+        if not _is_timestamp(now):
+            return Decision(False, "invalid_timestamp", effect_id)
+        try:
+            live_digest = action_digest(current_action)
+        except (TypeError, ValueError):
+            return Decision(False, "invalid_live_action", effect_id)
         with self._connect() as c:
             c.execute("BEGIN IMMEDIATE")
             integrity = self._verify_audit_chain(c, expected_audit_anchor)
@@ -764,7 +857,7 @@ class PersistentActionGuard:
                 c.execute("COMMIT")
                 return Decision(False, "effect_not_prepared", effect_id, e["status"])
             intended = json.loads(e["action_json"])
-            if action_digest(current_action) != e["action_hash"]:
+            if live_digest != e["action_hash"]:
                 c.execute(
                     "UPDATE effects SET status='CANCELLED',updated_at=?,reason=? WHERE effect_id=?",
                     (now, "live_state_mismatch", effect_id),
@@ -779,7 +872,7 @@ class PersistentActionGuard:
                     "live_state_mismatch",
                     {
                         "approved_hash": e["action_hash"],
-                        "observed_hash": action_digest(current_action),
+                        "observed_hash": live_digest,
                     },
                 )
                 c.execute("COMMIT")
@@ -821,15 +914,29 @@ class PersistentActionGuard:
         now: int,
         outcome: Outcome,
         details: dict[str, Any] | None = None,
+        expected_audit_anchor: dict[str, Any] | None = None,
     ) -> Decision:
         """Record the terminal or intermediate outcome of a dispatched effect."""
         mapping = {"success": "SUCCEEDED", "failure": "FAILED", "unknown": "UNKNOWN"}
         if outcome not in mapping:
             return Decision(False, "invalid_outcome", effect_id)
+        if not _is_name(effect_id):
+            return Decision(False, "invalid_effect_id", effect_id)
+        if not _is_timestamp(now):
+            return Decision(False, "invalid_timestamp", effect_id)
         status = mapping[outcome]
-        payload = json.dumps(details or {}, sort_keys=True, separators=(",", ":"))
+        try:
+            # NaN would be journaled, then refused by the checkpoint authority's
+            # canonical JSON, leaving an audit tail no checkpoint can ever cover.
+            payload = json.dumps(
+                details or {}, sort_keys=True, separators=(",", ":"), allow_nan=False
+            )
+        except (TypeError, ValueError):
+            return Decision(False, "invalid_result_details", effect_id)
         with self._connect() as c:
             c.execute("BEGIN IMMEDIATE")
+            if self._refuse_stale(c, expected_audit_anchor):
+                return Decision(False, "audit_checkpoint_stale", effect_id)
             e = c.execute("SELECT * FROM effects WHERE effect_id=?", (effect_id,)).fetchone()
             if e is None:
                 c.execute("COMMIT")
@@ -853,16 +960,26 @@ class PersistentActionGuard:
         now: int,
         outcome: Literal["success", "failure"],
         evidence: dict[str, Any],
+        expected_audit_anchor: dict[str, Any] | None = None,
     ) -> Decision:
         """Resolve UNKNOWN/DISPATCHING only after an external authoritative read."""
         if outcome not in ("success", "failure"):
             return Decision(False, "reconciliation_requires_definitive_outcome", effect_id)
         if not isinstance(evidence, dict) or not evidence:
             return Decision(False, "reconciliation_evidence_required", effect_id)
+        if not _is_name(effect_id):
+            return Decision(False, "invalid_effect_id", effect_id)
+        if not _is_timestamp(now):
+            return Decision(False, "invalid_timestamp", effect_id)
         status = "SUCCEEDED" if outcome == "success" else "FAILED"
-        payload = json.dumps(evidence, sort_keys=True, separators=(",", ":"))
+        try:
+            payload = json.dumps(evidence, sort_keys=True, separators=(",", ":"), allow_nan=False)
+        except (TypeError, ValueError):
+            return Decision(False, "invalid_reconciliation_evidence", effect_id)
         with self._connect() as c:
             c.execute("BEGIN IMMEDIATE")
+            if self._refuse_stale(c, expected_audit_anchor):
+                return Decision(False, "audit_checkpoint_stale", effect_id)
             e = c.execute("SELECT * FROM effects WHERE effect_id=?", (effect_id,)).fetchone()
             if e is None:
                 c.execute("COMMIT")

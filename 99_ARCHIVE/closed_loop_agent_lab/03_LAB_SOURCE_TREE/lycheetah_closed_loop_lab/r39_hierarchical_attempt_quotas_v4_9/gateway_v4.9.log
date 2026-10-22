@@ -1,0 +1,45 @@
+START 1/15
+Ran 4 tests in 12.094s
+LIFECYCLE_SUMMARY tests=4 shard=1/15 errors=0 failures=0 surviving_non_main_threads=[]
+START 2/15
+Ran 4 tests in 11.342s
+LIFECYCLE_SUMMARY tests=4 shard=2/15 errors=0 failures=0 surviving_non_main_threads=[]
+START 3/15
+Ran 4 tests in 10.669s
+LIFECYCLE_SUMMARY tests=4 shard=3/15 errors=0 failures=0 surviving_non_main_threads=[]
+START 4/15
+Ran 4 tests in 12.277s
+LIFECYCLE_SUMMARY tests=4 shard=4/15 errors=0 failures=0 surviving_non_main_threads=[]
+START 5/15
+Ran 4 tests in 9.389s
+LIFECYCLE_SUMMARY tests=4 shard=5/15 errors=0 failures=0 surviving_non_main_threads=[]
+START 6/15
+Ran 4 tests in 7.333s
+LIFECYCLE_SUMMARY tests=4 shard=6/15 errors=0 failures=0 surviving_non_main_threads=[]
+START 7/15
+Ran 4 tests in 9.342s
+LIFECYCLE_SUMMARY tests=4 shard=7/15 errors=0 failures=0 surviving_non_main_threads=[]
+START 8/15
+Ran 4 tests in 9.743s
+LIFECYCLE_SUMMARY tests=4 shard=8/15 errors=0 failures=0 surviving_non_main_threads=[]
+START 9/15
+Ran 4 tests in 10.690s
+LIFECYCLE_SUMMARY tests=4 shard=9/15 errors=0 failures=0 surviving_non_main_threads=[]
+START 10/15
+Ran 4 tests in 10.434s
+LIFECYCLE_SUMMARY tests=4 shard=10/15 errors=0 failures=0 surviving_non_main_threads=[]
+START 11/15
+Ran 4 tests in 8.039s
+LIFECYCLE_SUMMARY tests=4 shard=11/15 errors=0 failures=0 surviving_non_main_threads=[]
+START 12/15
+Ran 4 tests in 7.327s
+LIFECYCLE_SUMMARY tests=4 shard=12/15 errors=0 failures=0 surviving_non_main_threads=[]
+START 13/15
+Ran 4 tests in 9.561s
+LIFECYCLE_SUMMARY tests=4 shard=13/15 errors=0 failures=0 surviving_non_main_threads=[]
+START 14/15
+Ran 4 tests in 9.644s
+LIFECYCLE_SUMMARY tests=4 shard=14/15 errors=0 failures=0 surviving_non_main_threads=[]
+START 15/15
+Ran 4 tests in 20.374s
+LIFECYCLE_SUMMARY tests=4 shard=15/15 errors=0 failures=0 surviving_non_main_threads=[]

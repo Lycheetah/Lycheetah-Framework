@@ -27,11 +27,23 @@ Not a plan. Not even hope. Just this moment. Just breathing.
 ## If you are in crisis right now
 
 **Aotearoa New Zealand:**
+
+> **RV26 review note (Sol, 2026-10-22).** This list was corrected against Lifeline Aotearoa's notice of 6 November 2025 and the
+> Mental Health Foundation helpline list (both read 2026-10-22). Lifeline and the Suicide Crisis
+> Helpline are **no longer 24/7**: they answer 7am – midnight, with no service from midnight to 7am.
+> Struck lines are kept as the record. Numbers change; check
+> [mentalhealth.org.nz/helplines](https://mentalhealth.org.nz/helplines) when you can.
+
+- **In immediate danger: call 111.**
 - **1737** — Need to talk? Free call or text, 24/7
-- **Lifeline: 0800 543 354** — 24/7
-- **Suicide Crisis Helpline: 0508 828 865** — 24/7
-- **Kidsline: 0800 543 754** — for young people, 24/7
-- **He Waka Tapu: 0800 435 496** — Māori mental health
+- **Lifeline: 0800 543 354** or text 4357 (HELP) — ~~24/7~~ 7am – midnight
+- **Suicide Crisis Helpline: 0508 828 865** — ~~24/7~~ 7am – midnight
+- **Youthline: 0800 376 633** or free text 234 — young people and whānau, 24/7
+- **Samaritans: 0800 726 666** — anyone lonely or in distress, 24/7
+- ~~**Kidsline: 0800 543 754** — for young people, 24/7~~ (not on the current national list; use Youthline above)
+- ~~**He Waka Tapu: 0800 435 496** — Māori mental health~~ (wrong number, and not a crisis line: He Waka Tapu is a Christchurch kaupapa Māori service, 0800 HE WAKA / 0800 439 252)
+
+**Between midnight and 7am:** 1737, Youthline and Samaritans are listed as 24/7.
 
 **Australia:** Lifeline 13 11 14 | Beyond Blue 1300 22 4636
 **International:** findahelpline.com

@@ -189,6 +189,15 @@ The LAMAGUE cross-cultural series now maps the AURA Seven Invariants across:
 Four independent systems. Three continents. Twenty-seven centuries of span from
 Confucius to the EU AI Act. All arriving at the same seven properties.
 
+> **RV25 review note (Sol, 2026-10-22).** Four corrections to the table above:
+> - Wu Chang as a five-term set dates to the Han dynasty (Dong Zhongshu, 2nd c.
+>   BCE), not the 6th century BCE.
+> - "Confirmed" means the author's mapping was made, not that anyone from the
+>   tradition reviewed it.
+> - The tikanga row is pending review that has not happened.
+> - AURA, as "the framework's origin", is not independent of the traditions it was
+>   compared with.
+
 ANAMNESIS — the framework of convergent discovery — holds that when independent
 systems find the same structure from different starting points, the structure is not
 a cultural artifact. It is a feature of the terrain.

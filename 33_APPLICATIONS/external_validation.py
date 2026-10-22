@@ -75,6 +75,7 @@ The dataset is Anthropic's, under its own licence — this file only reads it.
 from __future__ import annotations
 
 import argparse
+import collections
 import gzip
 import hashlib
 import math
@@ -84,7 +85,7 @@ import sys
 import urllib.request
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
-from typing import List, Optional, Tuple
+from typing import List, Optional, Sequence, Tuple
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
@@ -174,11 +175,25 @@ def binomial_significance(correct: int, decided: int) -> Tuple[float, float]:
     return z, _two_sided_p(z)
 
 
-def auc_significance(auc: float, n_pos: int, n_neg: int) -> Tuple[float, float]:
-    """Mann-Whitney normal approximation under H0: AUC = 0.5."""
+def auc_significance(auc: float, n_pos: int, n_neg: int,
+                     pooled: Optional[Sequence[float]] = None) -> Tuple[float, float]:
+    """Mann-Whitney normal approximation under H0: AUC = 0.5.
+
+    Pass `pooled`, both groups' scores, to apply the tie correction. This lens gives
+    most texts one identical score, and without the correction the null SE is
+    overstated: on the persona set 0.0183 against 0.0055 by label permutation, which
+    turned p = 0.008 into a reported 0.383 (review RV23, 2026-10-22).
+    """
     if not n_pos or not n_neg:
         return float("nan"), float("nan")
-    se = math.sqrt((n_pos + n_neg + 1) / (12.0 * n_pos * n_neg))
+    n = n_pos + n_neg
+    ties = 0.0
+    if pooled is not None:
+        ties = sum(t ** 3 - t for t in collections.Counter(pooled).values()) / (n * (n - 1))
+    var = ((n + 1) - ties) / (12.0 * n_pos * n_neg)
+    if var <= 0:
+        return float("nan"), float("nan")
+    se = math.sqrt(var)
     z = (auc - 0.5) / se
     return z, _two_sided_p(z)
 
@@ -351,7 +366,7 @@ def run_persona(lens, extractor, cache: Optional[Path]) -> str:
          f"  separation (want large positive)    {statistics.mean(sa) - statistics.mean(sc):+6.2f}",
          f"  ROC-AUC                             {roc_auc(sa, sc):6.3f}   (chance = 0.500)",
          (lambda zp: f"  significance vs chance              z={zp[0]:6.2f}  p={zp[1]:.3f}\n"
-                     f"    -> {verdict(zp[1])}")(auc_significance(roc_auc(sa, sc), len(sa), len(sc))),
+                     f"    -> {verdict(zp[1])}")(auc_significance(roc_auc(sa, sc), len(sa), len(sc), sa + sc)),
          "",
          f"  families detected across the {len(concerning)} concerning statements:",
          f"    {cats if cats else 'NONE'}",

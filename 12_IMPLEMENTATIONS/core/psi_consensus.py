@@ -38,7 +38,7 @@ import os
 
 sys.path.insert(0, os.path.dirname(__file__))
 from lamague_reference import TRIADKernel
-from grey_mode import GreyModeMonitor, NetworkStats
+from grey_mode import GreyModeMonitor, NetworkStats, anchor_drift as _anchor_drift
 
 
 def _unit_state_vector(values) -> np.ndarray:
@@ -104,6 +104,19 @@ class ConsensusResult:
     audit_trail: List[str]
 
 
+def _positive_finite(name: str, value: float) -> float:
+    number = float(value)
+    if not math.isfinite(number) or number <= 0.0:
+        raise ValueError(f"{name} must be a finite positive number")
+    return number
+
+
+def _positive_int(name: str, value: int) -> int:
+    if isinstance(value, bool) or not isinstance(value, (int, np.integer)) or value < 1:
+        raise ValueError(f"{name} must be a positive integer")
+    return int(value)
+
+
 # =============================================================================
 # ADAPTIVE THRESHOLDS
 # =============================================================================
@@ -123,9 +136,9 @@ class AdaptiveThresholds:
         theta_inv_base: float = 0.5,
         eps_neighbor_base: float = 0.5,
     ):
-        self.eps_c_base = eps_c_base
-        self.theta_inv_base = theta_inv_base
-        self.eps_neighbor_base = eps_neighbor_base
+        self.eps_c_base = _positive_finite("eps_c_base", eps_c_base)
+        self.theta_inv_base = _positive_finite("theta_inv_base", theta_inv_base)
+        self.eps_neighbor_base = _positive_finite("eps_neighbor_base", eps_neighbor_base)
 
     def eps_c(self, n_agents: int) -> float:
         """Convergence threshold. Scales with sqrt(n) -- larger networks need
@@ -152,8 +165,9 @@ class PsiQOperator:
     Psi_Q: conditional merge gate.
 
     Merges state_i and state_j only when BOTH:
-      1. Invariant-curve aligned: the candidate merged state has alignment
-         |<candidate, anchor>| >= theta_inv.
+      1. Invariant-curve aligned: the candidate merged state has signed
+         alignment <candidate, anchor> >= theta_inv. The antipode of the
+         anchor is maximal drift, not alignment.
       2. Neighbor-consistent: ||state_i - state_j|| <= eps_neighbor.
 
     If either condition fails, returns None -- merge rejected.
@@ -203,7 +217,7 @@ class PsiQOperator:
         candidate = candidate / norm
 
         # Condition 1: candidate must lie on invariant curve
-        alignment = abs(float(np.dot(candidate, self.anchor)))
+        alignment = float(np.dot(candidate, self.anchor))
         if alignment < self.theta_inv:
             return None
 
@@ -461,12 +475,16 @@ class PsiConsensus:
         if self.anchor.shape != self.coherence.shape:
             raise ValueError("anchor and coherence vectors must have identical dimension")
         self.thresholds = thresholds or AdaptiveThresholds()
-        self.mu = mu
-        self.max_rounds = max_rounds
-        self.grey_kappa = grey_kappa
-        self.grey_sigma_hat = grey_sigma_hat
-        self.grey_theta_x = grey_theta_x
-        self.grey_alert_threshold = grey_alert_threshold
+        # A NaN threshold compares False everywhere and silently disables
+        # quarantine; mu = 0 or max_rounds = 0 made gossip vacuous.
+        self.mu = _positive_finite("mu", mu)
+        if self.mu > 1.0:
+            raise ValueError("mu must lie in (0, 1]")
+        self.max_rounds = _positive_int("max_rounds", max_rounds)
+        self.grey_kappa = _positive_finite("grey_kappa", grey_kappa)
+        self.grey_sigma_hat = _positive_finite("grey_sigma_hat", grey_sigma_hat)
+        self.grey_theta_x = _positive_finite("grey_theta_x", grey_theta_x)
+        self.grey_alert_threshold = _positive_int("grey_alert_threshold", grey_alert_threshold)
 
         self._nodes: Dict[str, AgentNode] = {}
         self._grey_monitors: Dict[str, GreyModeMonitor] = {}
@@ -491,8 +509,14 @@ class PsiConsensus:
             Initial state vector (normalised internally).
         neighbors : List[str], optional
             IDs of adjacent agents. Edges are undirected; declaring
-            one side is sufficient.
+            one side is sufficient. Every named neighbor must be registered
+            by the time run() is called.
+
+        Each agent_id may be registered once. Re-registering replaced the
+        state and reset the Grey Mode monitor, which cleared a quarantine.
         """
+        if agent_id in self._nodes:
+            raise ValueError(f"Agent {agent_id!r} is already registered")
         vector = _unit_state_vector(state)
         if vector.shape != self.anchor.shape:
             raise ValueError(f"Agent '{agent_id}' state dimension does not match anchor")
@@ -522,10 +546,7 @@ class PsiConsensus:
     def _avg_drift(self) -> float:
         if not self._nodes:
             return 0.0
-        drifts = [
-            1.0 - abs(float(np.dot(n.state, self.anchor)))
-            for n in self._nodes.values()
-        ]
+        drifts = [_anchor_drift(n.state, self.anchor) for n in self._nodes.values()]
         return float(np.mean(drifts))
 
     def _build_edges(self) -> List[Tuple[str, str]]:
@@ -553,9 +574,9 @@ class PsiConsensus:
         grey_ids: List[str] = []
         for aid, monitor in self._grey_monitors.items():
             state = states[aid]
-            drift = 1.0 - abs(float(np.dot(state, self.anchor)))
-            # Angular deviation proxy: arccos of alignment (clamped for safety)
-            alignment = min(1.0, abs(float(np.dot(state, self.anchor))))
+            drift = _anchor_drift(state, self.anchor)
+            # Angular deviation: arccos of signed alignment, clamped to [-1, 1]
+            alignment = max(-1.0, min(1.0, float(np.dot(state, self.anchor))))
             angular = math.acos(alignment)
             monitor.check(drift, angular)
             if monitor.should_activate():
@@ -602,6 +623,14 @@ class PsiConsensus:
                 grey_agents=[], obstruction_report=_empty_obstruction,
                 final_drift=1.0, audit_trail=["ERROR: no agents registered"],
             )
+
+        unknown = sorted(
+            {nb for node in self._nodes.values() for nb in node.neighbors if nb not in self._nodes},
+            key=repr,
+        )
+        if unknown:
+            # Dropping these silently changed the topology the caller declared.
+            raise ValueError(f"neighbors name unregistered agents: {unknown}")
 
         audit.append(f"Psi-Consensus starting -- {n} agents")
 
@@ -675,18 +704,43 @@ class PsiConsensus:
 
         # Step 5: Consensus vector
         stacked = np.array(list(final_states.values()))
-        consensus_vec = np.mean(stacked, axis=0)
-        cn = float(np.linalg.norm(consensus_vec))
-        consensus_vec = consensus_vec / cn if cn > 1e-9 else self.anchor.copy()
+        mean_vec = np.mean(stacked, axis=0)
+        cn = float(np.linalg.norm(mean_vec))
+        if cn <= 1e-9:
+            # The healthy states cancel, so there is no consensus direction.
+            # Substituting the anchor here reported a fabricated drift of 0.
+            final_drift = float(np.mean([_anchor_drift(s, self.anchor) for s in stacked]))
+            audit.append("  Healthy states cancel -- no consensus direction")
+            audit.append(
+                f"  RESULT: converged=False (gossip={gossip_converged}, "
+                f"obstruction_free={obstruction.obstruction_free}, consensus_direction=None)"
+            )
+            return ConsensusResult(
+                converged=False,
+                rounds_run=rounds_run,
+                consensus_vector=None,
+                grey_agents=grey_ids,
+                obstruction_report=obstruction,
+                final_drift=final_drift,
+                audit_trail=audit,
+            )
+        consensus_vec = mean_vec / cn
 
-        final_drift = float(1.0 - abs(np.dot(consensus_vec, self.anchor)))
+        final_drift = _anchor_drift(consensus_vec, self.anchor)
         audit.append(f"  Consensus drift from anchor: {final_drift:.4f}")
 
-        overall_converged = gossip_converged and obstruction.obstruction_free
-        audit.append(
+        # The consensus must itself lie on the invariant curve. Otherwise a
+        # network agreeing far from the anchor converged whenever this run
+        # quarantined no one.
+        anchor_aligned = float(np.dot(consensus_vec, self.anchor)) >= theta_inv
+        overall_converged = gossip_converged and obstruction.obstruction_free and anchor_aligned
+        result_line = (
             f"  RESULT: converged={overall_converged} "
-            f"(gossip={gossip_converged}, obstruction_free={obstruction.obstruction_free})"
+            f"(gossip={gossip_converged}, obstruction_free={obstruction.obstruction_free}"
         )
+        if not anchor_aligned:
+            result_line += f", anchor_aligned=False at theta_inv={theta_inv:.4f}"
+        audit.append(result_line + ")")
 
         return ConsensusResult(
             converged=overall_converged,
@@ -704,13 +758,8 @@ class PsiConsensus:
 
     def network_stats(self, agent_id: str) -> NetworkStats:
         """Compute NetworkStats for a given agent (for GreyMode r_merge)."""
-        drifts = [
-            1.0 - abs(float(np.dot(n.state, self.anchor)))
-            for n in self._nodes.values()
-        ]
-        local_drift = 1.0 - abs(
-            float(np.dot(self._nodes[agent_id].state, self.anchor))
-        )
+        drifts = [_anchor_drift(n.state, self.anchor) for n in self._nodes.values()]
+        local_drift = _anchor_drift(self._nodes[agent_id].state, self.anchor)
         global_var = float(np.std(drifts)) if len(drifts) > 1 else 0.0
         return NetworkStats(
             sigma_local=local_drift,
@@ -722,7 +771,7 @@ class PsiConsensus:
         """Plain-English network snapshot."""
         lines = [f"PsiConsensus -- {len(self._nodes)} agents"]
         for aid, node in self._nodes.items():
-            drift = 1.0 - abs(float(np.dot(node.state, self.anchor)))
+            drift = _anchor_drift(node.state, self.anchor)
             monitor = self._grey_monitors[aid]
             lines.append(
                 f"  {aid}: drift={drift:.4f}, "

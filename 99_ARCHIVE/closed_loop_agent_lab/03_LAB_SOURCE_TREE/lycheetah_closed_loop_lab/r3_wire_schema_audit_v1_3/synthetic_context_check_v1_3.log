@@ -1,0 +1,20 @@
+FAIL: patch did not apply to the synthetic hunk context
+error: patch failed: lycheetah/assurance/models.py:118
+error: lycheetah/assurance/models.py: patch does not apply
+
+Synthetic models.py relevant preimage:
+ 114: '# omitted upstream context in synthetic patch preflight'
+ 115: '# omitted upstream context in synthetic patch preflight'
+ 116: '# omitted upstream context in synthetic patch preflight'
+ 117: '# omitted upstream context in synthetic patch preflight'
+ 118: '    cap_reason: str | None = None'
+ 119: ''
+ 120: '    def __post_init__(self) -> None:'
+ 121: '        if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._:-]{2,127}", self.finding_id):'
+ 122: '            raise ValueError(f"invalid finding_id: {self.finding_id!r}")'
+ 123: '        if not 0.0 <= self.confidence <= 1.0:'
+ 124: '            raise ValueError("finding confidence must be in [0, 1]")'
+ 125: '# omitted upstream context in synthetic patch preflight'
+ 126: '# omitted upstream context in synthetic patch preflight'
+ 127: '# omitted upstream context in synthetic patch preflight'
+scratch removed after diagnostics

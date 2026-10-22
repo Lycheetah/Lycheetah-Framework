@@ -35,6 +35,8 @@ Key values:
 | Major Third | 5:4 | 0.364 | Insight emergence |
 | Tritone | 45:32 | 0.024 | CASCADE event — maximum tension |
 
+> **Status note (review 2026-10-22, RV18).** No one formula produces this column. The fifth, fourth and third rows fit 1/(1 + a₁/2 − 1/4) for the continued fraction [1; a₁, …] (.571, .444, .364), but the unison and octave rows do not. Summing from k = 1 instead gives {1: .667, 2: .5, 3/2: .5, 4/3: .444, 5/4: .4}. For the tritone, 45/32 = [1; 2, 2, 6], and neither reading reproduces 0.024. The implementation rates the tritone 0.99 (PERFECT). Read the table as SCAFFOLD until one formula reproduces every row. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A11). The original text above is kept.
+
 ## The Pythagorean Comma [ACTIVE — Theorem 1.1 proven]
 
 Twelve perfect fifths overshoot seven octaves by a small but non-zero amount:
@@ -45,6 +47,8 @@ $$(3/2)^{12} = 531441/524288 ≈ 1.01364$$
 No product of simple integer ratios can exactly close a cycle unless all ratios equal 1. The Seven-Phase Cycle requires distinct phase ratios. Therefore the residual δ > 0 always. ∎
 
 *This is a real proof via the fundamental theorem of arithmetic.*
+
+> **Status note (review 2026-10-22, RV18).** The general statement is false. (3/2)·(2/3) = 1 closes a cycle with ratios that are not 1, and the distinct superparticular ratios 2/1·3/2·…·8/7 multiply to exactly 8 = 2³. What the fundamental theorem of arithmetic does prove is narrower: (3/2)^a ≠ 2^b for positive integers a, b, because 3^a is odd (checked for a ≤ 100). That is the Pythagorean comma. It does not cover every phase cycle. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A11). The original text above is kept.
 
 **Significance:** No discrete phase model perfectly closes. This is not a flaw — it is the mathematical engine of spiral development. Each cycle returns slightly offset. Growth IS the comma.
 

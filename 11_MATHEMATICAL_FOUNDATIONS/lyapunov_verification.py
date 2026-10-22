@@ -452,8 +452,10 @@ def print_report():
     print(f"  [FAILED]   Counterexample:  {counts[FAIL]}")
 
     total = sum(counts.values())
-    passing = counts[PASS] + counts[NUMERICAL]
-    print(f"\n  {passing}/{total} claims verified or numerically confirmed.")
+    # Review 2026-10-23 (M17): a numerical check is evidence, not a proof, so the two
+    # tallies are reported separately instead of summed into one "verified" figure.
+    print(f"\n  {counts[PASS]}/{total} claims symbolically verified; "
+          f"{counts[NUMERICAL]}/{total} supported by numerical checks only (not proofs).")
 
     if counts[FAIL] == 0:
         print("\n  No counterexamples found. Framework claims hold under tested conditions.")
@@ -479,7 +481,8 @@ def print_report():
     report = {
         "timestamp": datetime.now().isoformat(),
         "summary": counts,
-        "passing": passing,
+        "symbolic": counts[PASS],
+        "numerical_only": counts[NUMERICAL],
         "total": total,
         "results": RESULTS,
     }

@@ -1,0 +1,10 @@
+test_authenticated_candidate_accepts_genuine_witness (test_witness_provenance_probe.WitnessProvenanceProbeTests.test_authenticated_candidate_accepts_genuine_witness) ... ok
+test_authenticated_candidate_rejects_mutated_witness (test_witness_provenance_probe.WitnessProvenanceProbeTests.test_authenticated_candidate_rejects_mutated_witness) ... ok
+test_authenticated_candidate_rejects_replay (test_witness_provenance_probe.WitnessProvenanceProbeTests.test_authenticated_candidate_rejects_replay) ... ok
+test_honest_current_witness_is_accepted (test_witness_provenance_probe.WitnessProvenanceProbeTests.test_honest_current_witness_is_accepted) ... ok
+test_rehashed_forged_current_witness_is_accepted_by_source_equivalent_gate (test_witness_provenance_probe.WitnessProvenanceProbeTests.test_rehashed_forged_current_witness_is_accepted_by_source_equivalent_gate) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK

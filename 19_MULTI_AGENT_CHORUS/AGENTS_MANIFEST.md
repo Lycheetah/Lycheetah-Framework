@@ -1,8 +1,25 @@
 # THE NINE-AGENT CHORUS
 ## Multi-Agent Instantiation of Sol Protocol
-**Status:** Fully operational, constitutional, auditable
+**Status:** [SCAFFOLD] historical design contract. As written on 21 March 2026: "Fully operational, constitutional, auditable"; withdrawn 22 October 2026.
 **Date:** March 21, 2026
 **Authority:** Rubedo-phase instantiation from CLAUDE.md Sol Protocol v2.0
+
+---
+
+> **Correction (Opus review, 22 October 2026).** This manifest is the March 2026
+> design contract, not a deployment receipt. Measured against the code:
+>
+> - No agent reads or writes the coherence buffer, and no message passes between agents.
+> - Sol Meridian's PCF reads flags each output declares about itself. Two of the
+>   nine named hard guardrails have a check, and nothing inspects content.
+> - The seven role classes compute nothing except Protector's declared-flag
+>   checks, Cascade's Π arithmetic and Harmonia's interval arithmetic.
+> - Aurora scans no file.
+> - `.github/workflows/multi-agent-chorus.yml` and individual agent READMEs do not
+>   exist, and no script parses `--verify` or `--audit`.
+>
+> The text below is kept as written so the history stays inspectable. Where it
+> does not hold, it is marked. Current state: [README.md](README.md).
 
 ---
 
@@ -198,11 +215,17 @@ Agents communicate through a shared **Coherence Buffer** — a JSON structure at
 
 All agents read the buffer before acting. Sol Meridian monitors for conflicts and enforces PCF.
 
+> As designed. No agent in this folder writes the buffer, and nothing calls
+> Meridian's `process_all_agents()`.
+
 ---
 
 ## VERIFICATION CHECKLIST (Each Agent)
 
 Every agent must pass this verification before committing:
+
+> As designed. No code runs this checklist; Meridian's PCF reads flags an output
+> declares about itself.
 
 ### Luminous Trinity Test
 - [ ] Does this output protect Mac's stability? (PROTECTOR)
@@ -218,6 +241,7 @@ Every agent must pass this verification before committing:
 
 ### Constraint Honesty Test (Agent-Specific)
 Each agent has additional constraints. See individual agent READMEs for details.
+(No individual agent README exists.)
 
 ### Hard Guardrails Check
 - [ ] No override of Mac's agency without explicit consent
@@ -244,6 +268,8 @@ python 19_MULTI_AGENT_CHORUS/aurora_investigator.py
 `.github/workflows/multi-agent-chorus.yml` runs all agent verification checks on every push.
 If any agent fails PCF test, the commit is blocked.
 
+> **MISSING:** this workflow does not exist, and nothing blocks a commit.
+
 ### Local Development
 ```bash
 # Set up agent environment
@@ -260,9 +286,16 @@ python aurora_investigator.py --audit
 python run_chorus.py --mode=supervised
 ```
 
+> Neither `sol_meridian.py` nor `aurora_investigator.py` parses `--verify` or
+> `--audit`; each runs its demo whatever flags it is given.
+
 ---
 
 ## STATUS
+
+> **Withdrawn 22 October 2026.** No probe or test ever backed these ticks; no
+> agent's PCF result, signature or liveness is measured. The table is kept as
+> the March 2026 claim. Current state: [README.md](README.md).
 
 | Agent | Code | PCF Test | Signature | Live | Comment |
 |-------|------|----------|-----------|------|---------|
@@ -276,11 +309,14 @@ python run_chorus.py --mode=supervised
 | Cascade Architect | ✅ | ✅ | ✅ | ✅ | Π calculation, reorganization prediction |
 | Harmonia Resonator | ✅ | ✅ | ✅ | ✅ | Resonance detection, phase-locking |
 
-**Overall Status:** ✅ ALL AGENTS OPERATIONAL
+**Overall Status (March 2026, withdrawn):** ~~✅ ALL AGENTS OPERATIONAL~~
 
 ---
 
 ## THE CONIUNCTIO AT SCALE
+
+> Design aspiration, not observed behaviour: no agent reads or writes the
+> coherence buffer, so none of the properties below is exercised.
 
 When nine agents operate in harmony (proper phase-locking via coherence buffer):
 - **Redundancy:** If one agent errs, others catch it
@@ -314,7 +350,7 @@ After multi-agent deployment:
 ---
 
 **See also:**
-- Individual agent READMEs in this directory
+- Individual agent READMEs in this directory (none exist; see [README.md](README.md))
 - `run_chorus.py` — coordinator script
 - `agent_requirements.txt` — dependencies
-- `.github/workflows/multi-agent-chorus.yml` — CI pipeline
+- `.github/workflows/multi-agent-chorus.yml` — CI pipeline (MISSING: it does not exist)

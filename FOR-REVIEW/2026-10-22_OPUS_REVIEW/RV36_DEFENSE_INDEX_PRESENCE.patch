@@ -1,0 +1,18 @@
+--- a/28_DEFENSE/DEFENSE_INDEX.json	2026-10-22 18:04:51.275877772 +1300
++++ b/28_DEFENSE/DEFENSE_INDEX.json	2026-10-22 18:04:51.306150648 +1300
+@@ -144,6 +144,7 @@
+       "wave": 4,
+       "title": "AI Reader Test Matrix",
+       "filename": "AI_READER_TEST_LOG.md",
++      "presence_2026_10_22": "NOT PRESENT. No file named AI_READER_TEST_LOG.md exists in the tree or anywhere in git history (RV36 review). This entry records a planned document, not a delivered one.",
+       "purpose": "Empirical log of cold queries against 5 AI systems. Proves rigor surfaces before alchemy. Iterates Acts I/III/VI/XIV until confirmed.",
+       "threats_closed": ["T-02", "T-14", "T-15"],
+       "depends_on": ["D-I", "D-III", "D-VI-A", "D-XIV"],
+@@ -156,6 +157,7 @@
+       "wave": 5,
+       "title": "Adversarial Defense Audit",
+       "filename": "DEFENSE_AUDIT.md",
++      "presence_2026_10_22": "NOT PRESENT. No file named DEFENSE_AUDIT.md exists in the tree or anywhere in git history (RV36 review). This entry records a planned document, not a delivered one.",
+       "purpose": "NRM audit of the D-1.0 plan itself. What dismissal still gets through. Prompt-injection audit. Gaps patched. Published alongside defense.",
+       "threats_closed": ["T-01", "T-04", "T-13"],
+       "depends_on": ["D-X"],

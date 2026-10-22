@@ -41,9 +41,10 @@ The callback is trusted code, not a sandbox for arbitrary actions.
 
 The export prints `manifest_sha256`. Retain that digest separately and pass it
 with `--expected-digest` when verifying to pin the bundle's bytes. Without a
-separately retained digest, `SELF_CONSISTENT` means its included records agree;
-it cannot detect replacement of the whole bundle. The export contains no private
-checkpoint keys. Exit codes are 0 for a consistent bundle, 1 for failed
+separately retained digest, `SELF_CONSISTENT` means every relationship the
+verifier checks holds, including the run report and its three denied controls;
+a complete, consistent replacement of the whole bundle still passes. The export
+contains no private checkpoint keys. Exit codes are 0 for a consistent bundle, 1 for failed
 verification and 2 for invalid usage or an export error.
 
 ## Compare a handover record

@@ -1,0 +1,10 @@
+test_candidate_encodes_pattern_limit_and_active_basis (test_policy_contract_parity.TestPolicyContractParity.test_candidate_encodes_pattern_limit_and_active_basis) ... ok
+test_candidate_results_are_machine_readable_and_complete (test_policy_contract_parity.TestPolicyContractParity.test_candidate_results_are_machine_readable_and_complete) ... ok
+test_good_baseline_validates_and_parses (test_policy_contract_parity.TestPolicyContractParity.test_good_baseline_validates_and_parses) ... ok
+test_semantic_checks_remain_parser_responsibility (test_policy_contract_parity.TestPolicyContractParity.test_semantic_checks_remain_parser_responsibility) ... ok
+test_wire_type_coercions_are_blocked_by_candidate (test_policy_contract_parity.TestPolicyContractParity.test_wire_type_coercions_are_blocked_by_candidate) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.025s
+
+OK

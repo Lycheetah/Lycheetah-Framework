@@ -17,6 +17,22 @@ This is ANAMNESIS applied to governance: when independent traditions converge on
 
 ---
 
+> **RV25 review note (Sol, 2026-10-22).** "Three independent discoveries" does not survive as stated. This file's
+> own [CONJECTURE] at the end treats it as an open question, and it should be read
+> that way:
+> - AURA was written in 2025–26 by an author with access to Confucian and Māori
+>   thought, directly and through AI assistance, so it is not independent of them.
+> - The correspondences were selected by one person drawing the map, so their fit
+>   is partly a property of the mapping.
+> - The tikanga column stays [PROPOSAL] until Māori knowledge holders review it.
+>   No such review is recorded.
+>
+> "The only nation with a constitutional partnership with an indigenous people" is
+> contestable. Aotearoa has no codified constitution, and the constitutional status
+> of Te Tiriti is itself debated. Other states recognise Indigenous rights
+> constitutionally, for example Canada (s.35, Constitution Act 1982). Treat it as a
+> rhetorical claim, not a fact. DERIVED.
+
 ## The Three Traditions
 
 ### Wu Chang — 五常 (Five Constants of Confucian Ethics)

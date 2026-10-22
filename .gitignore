@@ -27,6 +27,9 @@ desktop.ini
 *.tmp
 *.log
 !papers/agent-safety/earned-trust/cycles_001_009/earned_trust_cycle_009/full_tests.log
+# RV31 (2026-10-22): the closed-loop lab's SHA256SUMS.txt pins 374 logs. Ignoring them made a
+# clean clone fail its own checksums, and one retest log existed nowhere else.
+!99_ARCHIVE/closed_loop_agent_lab/**/*.log
 .agent_state/
 
 # Proprietary — never enters this repo, and so can never reach the PUBLIC remote

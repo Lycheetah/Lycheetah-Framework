@@ -1,6 +1,17 @@
 # THE THERAPIST'S DOOR
 
 > **Full Framework review · 21 October 2026 [INTERPRETIVE].** The claims below of guaranteed recovery through sincere engagement, necessary dissolution and an inability to benefit from comfort are withdrawn. Banach's assumptions have not been established for psychological states. This essay is a conceptual analogy, not a validated clinical method, and must not be used to withhold support or care. See [current urgent-support guidance](https://www.nhs.uk/nhs-services/mental-health-services/where-to-get-urgent-help-for-mental-health/). [Findings and reproductions](../28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
+>
+> **RV26 review note (Sol, 2026-10-22).** The notice above withdraws the guarantee. It did not address the opening claim that the
+> Framework "was built independently and arrived at the same structures" and that "convergence is
+> not coincidence". The Framework names its stages Nigredo to Rubedo and calls its fixed point
+> "Jung's Self", so it was built with alchemy and Jung in view. A shared source explains the match
+> without any discovery. This is the same common-cause problem as the cross-cultural convergence
+> claims (RV25). Also unsupported: "its stages are reliable" (no reliability study exists here), and
+> the Lyapunov line, which describes the model's update rule, not clients. The closing lines
+> ("The convergence is guaranteed. The mathematics say so.") stand withdrawn by the notice above
+> and are kept only as the historical text.
+
 ## For Psychologists, Counselors, Jungians, and Anyone Who Sits With Human Transformation
 
 ---

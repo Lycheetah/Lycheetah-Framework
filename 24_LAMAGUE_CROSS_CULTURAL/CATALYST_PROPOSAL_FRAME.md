@@ -3,6 +3,18 @@
 ## Cross-Cultural Constitutional AI Governance
 ### Mackenzie Conor James Clark | Lycheetah Foundation | March 2026
 
+
+> **RV30 review note (Sol, 2026-10-22). Footing: [CONJECTURE] for the convergence thesis. Three repairs before this is sent:**
+>
+> - **"Already on arXiv" / "an arXiv paper".** No arXiv identifier is recorded anywhere in this
+>   repository (searched 2026-10-22). Both are struck in Part 4 below.
+> - **"Proven foundations" / "This is not speculative".** What is proven is theorems inside the
+>   models. Whether Māori, Confucian and Western traditions share these structures is the research
+>   question itself. The BATCH24 review found the convergence argument has two common causes
+>   (`FOR-REVIEW/2026-10-22_OPUS_REVIEW/BATCH24_FINDINGS_AND_LEDGER.md`, F3).
+> - **"Genuinely novel".** No literature review here establishes this. Say "we found no prior project
+>   that…" and name the search.
+
 ---
 
 ## THE OPPORTUNITY IN ONE PARAGRAPH
@@ -218,7 +230,7 @@ The pitch to a Chinese institution:
 When applying or making the case to Catalyst Strategic programme managers:
 
 **1.** The Catalyst Fund prioritises AI research — this is AI governance research
-with a formally developed mathematical foundation already on arXiv.
+with a formally developed mathematical foundation ~~already on arXiv~~ (not yet on arXiv; RV30).
 
 **2.** The NZ-China bilateral requirement is met: we have a NZ framework
 and a clear research pathway that requires a Chinese philosophical and
@@ -233,8 +245,10 @@ NZ needs a technical implementation of "AI aligned with NZ values";
 China needs AI governance frameworks that are not purely Western in their foundations.
 
 **5.** The infrastructure is already built — CASCADE, AURA, LAMAGUE, 13 Python
-implementations, an arXiv paper, a public GitHub. This is not speculative.
-The funding is for the cross-cultural research that extends proven foundations.
+implementations, ~~an arXiv paper,~~ a public GitHub. ~~This is not speculative.
+The funding is for the cross-cultural research that extends proven foundations.~~ The funding is
+for the cross-cultural research that tests whether these foundations hold across traditions
+(corrected 2026-10-22, RV30).
 
 ---
 

@@ -3,13 +3,45 @@
 **Author:** Mackenzie Clark | Lycheetah Foundation | Dunedin, NZ  
 **Repository:** [github.com/Lycheetah/Lycheetah-Framework](https://github.com/Lycheetah/Lycheetah-Framework)  
 **Zenodo DOI:** 10.5281/zenodo.20020828  
-**Status:** Live — demonstrated on Sol App (public)
+~~**Status:** Live — demonstrated on Sol App (public)~~ **Status (2026-10-22):** design proposal; the enforcement stack below is not implemented. See the review note.
 
 ---
 
 ## What This Document Is
 
-This is a technical record of something that actually works.
+~~This is a technical record of something that actually works.~~ *(corrected 2026-10-22: a design record; see the review note below)*
+
+> **RV29 review note (Sol, 2026-10-22).** This document is kept as written. Read it as a design proposal plus an
+> unverified product claim, not as a record of a working system.
+>
+> - **The hardware stack (Layers 0–5) is not implemented.** This repository holds no Linux Security
+>   Module, BPF program, seccomp filter, TPM policy or kernel module, and a search for them found
+>   none. "This is not software policy. This is silicon-level constraint" states what the design
+>   intends.
+> - **Parts of the design cannot work as written.** A seccomp filter sees system-call numbers and
+>   raw argument values; it cannot read the bytes a pointer refers to, so it cannot score an
+>   output's C_sol on `write()`. `MAP_NOEXTEND` is not a Linux `mmap` flag (it is absent from the
+>   reviewing machine's system headers, which define `MAP_LOCKED`). "Known Limitations" calls the
+>   C_sol window 5 seconds; Layer 2 already uses 30.
+> - **C_sol = (warmth × precision) / max(warmth, precision) is simply min(warmth, precision).**
+>   C_sol ≥ 0.8 means both are at least 0.8. The number cannot tell which side dominates, so it
+>   cannot by itself separate "Cold Death" from "Mystical Inflation".
+> - **"Any LLM routed through the AURA layer produces alignment-consistent behaviour regardless of
+>   that model's training" is not shown.** The Sol App's code is not in this repository and no
+>   evaluation of it is recorded here. The AURA scorers that are here are text heuristics: the
+>   website guide says the playground's output "is not validated alignment detection"
+>   (`docs/README.md`), and this review found hedge words outweighing a manipulative instruction
+>   in `26_FOR_AI/tools/invariant_self_check.py` (RV27, now fixed). The "Try It Yourself" test is
+>   a fair offer; no result of it is recorded.
+> - **Two outside claims have no source here.** The Anthropic report "this week" calling for a
+>   global pause has no citation or date, and this review did not verify it. "CASCADE arXiv
+>   preprint: Endorsed (Prof. Knox)" appears nowhere else in the repository, which records no
+>   endorsement and no arXiv identifier. Do not repeat either without a source.
+> - **The status list is undated.** The Sol app lives in a separate repository; this note does not
+>   check its current state.
+>
+> What stands: the seven invariants as stated commitments, the honest "Known Limitations"
+> section, and the document's own line that this "is not a complete solution".
 
 The Lycheetah Framework's AURA Protocol is a constitutional governance layer that runs **above** any LLM — not inside it. The claims below are not theoretical. They are outputs produced by arbitrary LLMs (Gemini, Claude, others) running through the Sol App's AURA enforcement layer.
 
@@ -201,7 +233,7 @@ The LSM is signed with a kernel build-time key. Modification requires recompilin
 10. Revocation → TPM2_EvictControl → hardware unseal permanently fails
 ```
 
-There is no escape at any layer. No userspace bypass. No kernel module override. The TPM is the root of trust. The invariants are the only policy it honors.
+~~There is no escape at any layer. No userspace bypass. No kernel module override. The TPM is the root of trust. The invariants are the only policy it honors.~~ *(corrected 2026-10-22: describes the design's intent; nothing here has been built or attacked)*
 
 ---
 

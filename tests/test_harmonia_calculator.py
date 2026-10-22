@@ -214,3 +214,16 @@ class TestDescendingIntervalNaming:
         assert desc["interval_name"] == "perfect_fifth"
         assert desc["interval_cents"] < 0  # direction preserved
         assert asc["consonance"] == pytest.approx(desc["consonance"], abs=1e-9)
+
+class TestConsonanceDiscrimination:
+    """Review 2026-10-23 (M12): the proxy cannot tell a tritone from a fifth.
+
+    Strict xfail: this goes red, on purpose, the day the metric is rebuilt, so the
+    rebuild has to retire this marker instead of passing silently.
+    """
+
+    @pytest.mark.xfail(strict=True, reason="distance-to-dense-grid proxy labels every interval PERFECT")
+    def test_tritone_is_not_perfect(self):
+        hc = HarmoniaCalculator()
+        out = hc.calculate_consonance(440.0, 440.0 * 45 / 32, label="tritone")
+        assert not out["consonance_quality"].startswith("PERFECT")

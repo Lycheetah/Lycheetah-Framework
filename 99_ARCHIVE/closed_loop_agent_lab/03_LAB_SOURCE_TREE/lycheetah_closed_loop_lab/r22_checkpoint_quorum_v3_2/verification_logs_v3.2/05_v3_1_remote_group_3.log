@@ -1,0 +1,18 @@
+test_outbox_request_id_cannot_be_reused_with_new_content (test_remote_anchor_http.RemoteAnchorHTTPTests.test_outbox_request_id_cannot_be_reused_with_new_content) ... ok
+test_outbox_row_tampering_is_detected (test_remote_anchor_http.RemoteAnchorHTTPTests.test_outbox_row_tampering_is_detected) ... ok
+test_outbox_survives_reopen_and_can_resume (test_remote_anchor_http.RemoteAnchorHTTPTests.test_outbox_survives_reopen_and_can_resume) ... ok
+test_remote_service_restart_recovers_committed_append_from_durable_request_index (test_remote_anchor_http.RemoteAnchorHTTPTests.test_remote_service_restart_recovers_committed_append_from_durable_request_index) ... ok
+test_response_body_tampering_is_detected_then_resolved_by_lookup (test_remote_anchor_http.RemoteAnchorHTTPTests.test_response_body_tampering_is_detected_then_resolved_by_lookup) ... ok
+test_same_request_and_same_body_replays_exact_original_record (test_remote_anchor_http.RemoteAnchorHTTPTests.test_same_request_and_same_body_replays_exact_original_record) ... ok
+test_same_request_id_with_changed_body_is_conflict (test_remote_anchor_http.RemoteAnchorHTTPTests.test_same_request_id_with_changed_body_is_conflict) ... ok
+test_service_history_and_request_results_are_signed (test_remote_anchor_http.RemoteAnchorHTTPTests.test_service_history_and_request_results_are_signed) ... ok
+test_service_rejects_invalid_public_key_registry (test_remote_anchor_http.RemoteAnchorHTTPTests.test_service_rejects_invalid_public_key_registry) ... ok
+test_stale_parent_is_conflict_and_not_silently_rebased (test_remote_anchor_http.RemoteAnchorHTTPTests.test_stale_parent_is_conflict_and_not_silently_rebased) ... ok
+test_unknown_resumption_queries_status_before_any_new_post (test_remote_anchor_http.RemoteAnchorHTTPTests.test_unknown_resumption_queries_status_before_any_new_post) ... ok
+test_untrusted_operator_key_id_is_refused (test_remote_anchor_http.RemoteAnchorHTTPTests.test_untrusted_operator_key_id_is_refused) ... ok
+test_untrusted_server_public_key_is_refused_at_client_creation (test_remote_anchor_http.RemoteAnchorHTTPTests.test_untrusted_server_public_key_is_refused_at_client_creation) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 8.588s
+
+OK

@@ -4,6 +4,13 @@
 **Builder:** Sonnet session. This spec contains everything needed.
 **Result:** A shareable URL where anyone pastes text and gets a live AURA alignment report.
 
+
+> **RV30 review note (Sol, 2026-10-22). Footing: [SCAFFOLD].** The page this spec built (`docs/playground.html`) matches words and
+> patterns in pasted text. Its percentage and PASS badges are a text heuristic, not an alignment
+> check: careful wording can pass it and an honest answer can fail it. `docs/README.md` already says
+> its output "is not validated alignment". Any new copy of this spec should call it a
+> **phrase checker** and keep that sentence on screen.
+
 ---
 
 ## What It Does

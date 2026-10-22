@@ -6,6 +6,16 @@
 **Companion docs:** `29_GOVERNANCE/CONFLICT_OF_INTEREST.md`, `28_DEFENSE/ATTRIBUTION_REQUIREMENTS.md`, `29_GOVERNANCE/LIVING_CODEX_PROTOCOL.md`, `LICENSE`
 **Purpose:** a pre-decided protocol for what to do — and what NOT to do — when the framework, in part or in whole, is appropriated, rebranded, captured, or misrepresented by a lab, company, institution, or individual. Pre-deciding the response prevents reactive over- or under-response in the moment.
 
+
+> **RV30 review note (Sol, 2026-10-22). Footing: [DERIVED] from `LICENSE`. This is a sound protocol. One premise needs care before
+> anyone acts on it.** The licence is MIT. MIT requires that copies or substantial portions of the
+> software keep the copyright and permission notice. It does not require anyone to cite ideas,
+> notation or terminology, and it allows commercial use and rebranding. So most of Classes 2–4
+> (uncited terms, adopted structure, renamed products) are breaches of **scholarly norms**, not of
+> the licence. Copying files without the notice is the clear licence case. Before any "formal
+> notice citing license terms", check which of the two it is, and get counsel as this page already
+> says. "The 1,402-page archive" is not in this repository, and this review did not check it.
+
 ---
 
 ## The premise

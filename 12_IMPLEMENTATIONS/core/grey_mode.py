@@ -110,6 +110,19 @@ class NetworkStats:
     node_count: int = 1  # Total nodes (used for r_c density scaling)
 
 
+def anchor_drift(state: np.ndarray, anchor: np.ndarray) -> float:
+    """
+    Signed drift 1 - <state, anchor> of a unit state from a unit anchor.
+
+    For unit vectors this equals S = 1/2 ||state - anchor||^2, the framework's
+    Lyapunov distance to Psi_inv: 0 on the anchor, 1 when orthogonal and 2 at
+    the antipode. TRIADKernel.detect_drift uses 1 - |<state, anchor>|, which
+    scores the anchor's antipode as perfectly aligned. Psi consensus shares
+    this definition.
+    """
+    return 1.0 - float(np.dot(state, anchor))
+
+
 # =============================================================================
 # GREY MODE MONITOR
 # =============================================================================
@@ -319,19 +332,18 @@ class GreyModeMonitor:
         self.status = GreyModeStatus.RECOVERING
 
         # Use psi_inv as coherence target if provided
+        original_coherence = self.triad.coherence.copy()
         if psi_inv is not None:
-            original_coherence = self.triad.coherence.copy()
             norm = np.linalg.norm(psi_inv)
             if norm > 1e-9:
                 self.triad.coherence = psi_inv / norm
-
-        recovered, _, _ = self.triad.correct_until_converged(
-            state,
-            threshold=1e-4,
-            max_iter=max_iter,
-        )
-
-        if psi_inv is not None:
+        try:
+            recovered, _, _ = self.triad.correct_until_converged(
+                state,
+                threshold=1e-4,
+                max_iter=max_iter,
+            )
+        finally:
             self.triad.coherence = original_coherence
 
         return recovered
@@ -340,9 +352,12 @@ class GreyModeMonitor:
         """
         Compute residual drift Ψ_r of the recovered state from the anchor.
 
-        This is the metric tested against r_c_new in the re-entry test.
+        This is the metric tested against r_c_new in the re-entry test. It is
+        signed: TRIAD's anchor operator projects onto the anchor's line, so it
+        carries a back-hemisphere state onto the antipode, which the unsigned
+        TRIADKernel.detect_drift scored as zero drift and readmitted.
         """
-        return self.triad.detect_drift(recovered_state)
+        return anchor_drift(recovered_state, self.triad.anchor)
 
     # ──────────────────────────────────────────────────────────────
     # ADAPTIVE THRESHOLD
@@ -458,6 +473,8 @@ class GreyModeMonitor:
         -------
         RecoveryResult
         """
+        if isinstance(max_cycles, bool) or not isinstance(max_cycles, int) or max_cycles < 1:
+            raise ValueError(f"max_cycles must be a positive integer, got {max_cycles!r}")
         audit: List[str] = []
         entry_time = time.time()
 

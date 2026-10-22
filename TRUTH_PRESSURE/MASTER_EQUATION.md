@@ -184,11 +184,15 @@ dV/dt ≤ −(k₂ − k₁(Π_th − Π)) · ‖Ψ − Ψ_inv‖² < 0
 
 This proves the master equation structure is correct: the system is stable below threshold and unstable above it, exactly as truth pressure theory predicts.
 
+> **Status note (review 2026-10-22, RV18).** The proof does not hold. The pressure term k₁(Π − Π_th) does not depend on Ψ, so the linear system has one equilibrium, Ψ* = Ψ_inv + [k₁(Π − Π_th) − k₃I_v + k₄E/E_need]/k₂. Its eigenvalue is −k₂ for every Π. With k₂ > 0 the system is stable both below and above Π_th. Crossing Π_th moves the equilibrium but does not change its stability, and Ψ_inv is the equilibrium only when the forcing sums to zero (for example Π = Π_th with I_v = 0 and E = 0). The Cauchy–Schwarz step also bounds a term linear in ‖Ψ − Ψ_inv‖ by a quadratic one, which fails near Ψ_inv. Measured: for 29 values of Π on both sides of Π_th the system converges to Ψ_inv + k₁(Π − Π_th)/k₂, with slope −k₂. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A5). The original text above is kept.
+
 ---
 
 ## 5. The k₁–k₄ Calibration Specification (E-1.0)
 
 The equation structure is proven. The calibration constants k₁–k₄ require empirical measurement. This section specifies the calibration program.
+
+> **Status note (review 2026-10-22, RV21, §5).** Three statements in this section are not supported. (1) "The equation structure is proven": the §4 proof does not hold (see the RV18 note in §4). (2) The k₁ expectation in §5.2 leans on the +40.3% Monte Carlo result, whose accounts were found inconsistent in review (`FOR-REVIEW/2026-10-22_OPUS_REVIEW/BATCH18_FINDINGS_AND_LEDGER.md`, F2), and nothing in this document derives the claim that that run "implicitly encodes k₁ ≈ 1.0". (3) The values in §5.4 are structural guesses written in the form of estimates; none has been measured. Fitting k₁–k₄ to the simulation in `cascade_engine.py`, as §6 proposes, would calibrate the equation against a model of itself rather than against observed belief systems. The original text is kept.
 
 ### 5.1 What each k represents physically
 
@@ -259,6 +263,8 @@ These ranges are structural predictions based on the theory. E-1.0 confirms or r
 ---
 
 ## 6. Status Summary
+
+> **Status note (review 2026-10-22, RV21, §6).** Two rows below do not stand: "Equation structure — proven in §4" and "Stability proof — Lyapunov verified in §4". The §4 proof fails (RV18 note in §4), so read both as UNVERIFIED, and the closing line "the master equation structure is proven" falls with them. The full-activation route through `cascade_engine.py` is self-calibration (see the §5 note). The table is kept as written.
 
 | Component | Status | What's needed |
 |-----------|--------|--------------|

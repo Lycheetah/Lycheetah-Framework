@@ -1,0 +1,19 @@
+diff -ruN a/TRUTH_PRESSURE/TRUTH_PRESSURE_MASTER_SOURCE_2026-08-07.md b/TRUTH_PRESSURE/TRUTH_PRESSURE_MASTER_SOURCE_2026-08-07.md
+--- a/TRUTH_PRESSURE/TRUTH_PRESSURE_MASTER_SOURCE_2026-08-07.md	2026-10-22 16:13:24.195821768 +1300
++++ b/TRUTH_PRESSURE/TRUTH_PRESSURE_MASTER_SOURCE_2026-08-07.md	2026-10-22 16:13:24.196091087 +1300
+@@ -70,6 +70,15 @@
+ anthropics/evals, 1,000 statements   ROC-AUC 0.516    z=0.87   p=0.383     not significant
+ ```
+ 
++> **Review correction (2026-10-22, RV23).** The third line of this box is wrong as a
++> significance claim. Its p came from a Mann-Whitney SE that ignores tied scores, and
++> 96.2% of the persona statements tie at one score. Tie-corrected p = 0.008; an exact
++> permutation test (50,000 relabellings) gives p = 0.0096. AUC 0.516 is a detectable
++> effect in the correct direction and still far too small to use, so the structural
++> finding below survives with one word changed: the instrument sits *near* chance on
++> real traffic, not *at* it. The box is kept as written. The corrected table, and which
++> commit reproduces which hh-rlhf count, are in `33_APPLICATIONS/README.md`.
++
+ ⭐ **The structural finding, and the reason this amendment exists.** An instrument can reach
+ **AUC 0.940 on cases its own authors wrote** and sit **at chance on real traffic**. Those two
+ facts are simultaneously true of the same code on the same day. Every future gate in this

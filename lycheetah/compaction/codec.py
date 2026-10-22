@@ -81,6 +81,10 @@ def sha256_json(value: Any) -> str:
 def _require_string(name: str, value: Any) -> str:
     if not isinstance(value, str) or not value:
         raise CodecError(f"{name} must be a non-empty string")
+    try:
+        value.encode("utf-8")
+    except UnicodeEncodeError as error:
+        raise CodecError(f"{name} must be valid Unicode text") from error
     return value
 
 
@@ -469,8 +473,23 @@ def _expand_object(obj: Any, codebook: dict[str, Any] | None) -> dict[str, Any]:
     return packet
 
 
+def _reject_duplicate_keys(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+    obj: dict[str, Any] = {}
+    for key, value in pairs:
+        if key in obj:
+            raise CodecError(f"compressed body repeats key {key!r}")
+        obj[key] = value
+    return obj
+
+
 def decode(source: str, codebook: dict[str, Any] | None = None) -> dict[str, Any]:
-    """Decode a compact wire string back into its original structured semantic packet."""
+    """Decode a compact wire string back into its original structured semantic packet.
+
+    Only the exact wire that ``encode`` emits for the decoded packet is accepted.
+    A repeated key, an extra array item, added whitespace, reordered keys, 1.0 or
+    true for a flag, or a codebook string written out in full is a CodecError, so
+    each packet has one wire and every reader of a wire sees the same packet.
+    """
     if not isinstance(source, str):
         raise CodecError("source must be a string")
 
@@ -486,11 +505,22 @@ def decode(source: str, codebook: dict[str, Any] | None = None) -> dict[str, Any
         raise CodecError("source must begin with L1 or L1D")
 
     try:
-        obj = json.loads(body)
+        obj = json.loads(body, object_pairs_hook=_reject_duplicate_keys)
     except json.JSONDecodeError as error:
         raise CodecError(f"invalid compressed JSON: {error.msg}") from error
 
-    return _expand_object(obj, active_codebook)
+    packet = _expand_object(obj, active_codebook)
+    if encode(packet, active_codebook) != source:
+        raise CodecError("source is not the canonical encoding of its packet")
+    return packet
+
+
+def _changed_fields(reference: dict[str, Any], candidate: dict[str, Any]) -> list[str]:
+    return [
+        field
+        for field in REQUIRED_FIELDS
+        if canonical_json(reference[field]) != canonical_json(candidate[field])
+    ]
 
 
 def classify(reference: dict[str, Any], candidate: dict[str, Any]) -> dict[str, Any]:
@@ -500,7 +530,14 @@ def classify(reference: dict[str, Any], candidate: dict[str, Any]) -> dict[str, 
         "classification": "EXACT_EQUIVALENT" | "PARTIAL_EQUIVALENT" | "UNSAFE_COLLAPSE" |
                           "DIVERGENT" | "UNDECODABLE"
         "reason": str
+        "changed_fields": top-level fields whose values differ (absent when UNDECODABLE)
         optional "violations" or "fields"
+
+    Only CRITICAL_FIELDS decide equivalence. Risk, evidence, horizon, yield, id and
+    operations can all change under PARTIAL_EQUIVALENT; changed_fields names them.
+    List order counts, so a reordered critical list is DIVERGENT. A candidate that
+    breaks a semantic safety rule is UNSAFE_COLLAPSE even when the reference broke
+    it first, since encode refuses to compact such a packet.
     """
     try:
         reference = validate_packet(copy.deepcopy(reference))
@@ -508,18 +545,27 @@ def classify(reference: dict[str, Any], candidate: dict[str, Any]) -> dict[str, 
     except CodecError as error:
         return {"classification": "UNDECODABLE", "reason": str(error)}
 
-    reference_violations = set(safety_violations(reference))
+    changed = _changed_fields(reference, candidate)
     candidate_violations = set(safety_violations(candidate))
-    new_violations = sorted(candidate_violations - reference_violations)
-    if new_violations:
+    if candidate_violations:
+        introduced = candidate_violations - set(safety_violations(reference))
         return {
             "classification": "UNSAFE_COLLAPSE",
-            "reason": "candidate introduced semantic safety violations",
-            "violations": new_violations,
+            "reason": (
+                "candidate introduced semantic safety violations"
+                if introduced
+                else "candidate keeps semantic safety violations carried by the reference"
+            ),
+            "violations": sorted(candidate_violations),
+            "changed_fields": changed,
         }
 
     if full_hash(reference) == full_hash(candidate):
-        return {"classification": "EXACT_EQUIVALENT", "reason": "full canonical hash matches"}
+        return {
+            "classification": "EXACT_EQUIVALENT",
+            "reason": "full canonical hash matches",
+            "changed_fields": changed,
+        }
 
     protected_loss = []
     for field in (
@@ -534,8 +580,11 @@ def classify(reference: dict[str, Any], candidate: dict[str, Any]) -> dict[str, 
         if len(candidate[field]) < len(reference[field]):
             protected_loss.append(field)
 
-    if any(item["protected"] for item in reference["unknowns"]) and not all(
-        item["protected"] for item in candidate["unknowns"]
+    # Protection is held per unknown: every protected reference unknown must survive
+    # under the same id and stay protected. Unprotected unknowns may sit beside it.
+    still_protected = {item["id"] for item in candidate["unknowns"] if item["protected"]}
+    if any(
+        item["protected"] and item["id"] not in still_protected for item in reference["unknowns"]
     ):
         protected_loss.append("unknown_protection")
 
@@ -544,18 +593,32 @@ def classify(reference: dict[str, Any], candidate: dict[str, Any]) -> dict[str, 
             "classification": "UNSAFE_COLLAPSE",
             "reason": "protected meaning disappeared or weakened",
             "fields": sorted(set(protected_loss)),
+            "changed_fields": changed,
         }
 
     if reference["purpose"] != candidate["purpose"] or reference["claim"] != candidate["claim"]:
-        return {"classification": "DIVERGENT", "reason": "purpose or claim changed"}
+        return {
+            "classification": "DIVERGENT",
+            "reason": "purpose or claim changed",
+            "changed_fields": changed,
+        }
 
     if reference["invariants"] != candidate["invariants"]:
-        return {"classification": "DIVERGENT", "reason": "invariant content changed"}
+        return {
+            "classification": "DIVERGENT",
+            "reason": "invariant content changed",
+            "changed_fields": changed,
+        }
 
     if critical_hash(reference) == critical_hash(candidate):
         return {
             "classification": "PARTIAL_EQUIVALENT",
             "reason": "critical fields match while non-critical content differs",
+            "changed_fields": changed,
         }
 
-    return {"classification": "DIVERGENT", "reason": "critical semantic hash changed"}
+    return {
+        "classification": "DIVERGENT",
+        "reason": "critical semantic hash changed",
+        "changed_fields": changed,
+    }

@@ -233,6 +233,8 @@ print("Reorganization (unstable, diverges): Π > Π_th")
 
 **Result:** VERIFIED. The formula emerges from Lyapunov stability theory.
 
+> **Status note (review 2026-10-22, RV18).** The sympy block above prints strings and checks no inequality, so it verifies nothing. On the master equation's own dynamics dL/dt < 0 fails for states just below Ψ_inv. Read this result as UNVERIFIED, and see the note in `MASTER_EQUATION.md` §4. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A5). The original text above is kept.
+
 ---
 
 ## PART XI: WHAT THIS MEANS

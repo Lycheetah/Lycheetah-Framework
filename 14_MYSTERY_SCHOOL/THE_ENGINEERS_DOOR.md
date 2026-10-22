@@ -1,4 +1,14 @@
 # THE ENGINEERS DOOR
+
+> **RV34 review note (Sol, 2026-10-22). Footing: [MEASURED] for the search, kept body below.**
+> This file says Lycheetah work is on arXiv, "endorsed" or "live". The arXiv API returns **0**
+> results for `all:Lycheetah` and **0** for author Clark M with CASCADE or Lycheetah in the
+> title or abstract, and the repository holds no arXiv identifier for its own work.
+> `papers/CASCADE_ARXIV.tex` is an unsubmitted manuscript, and no endorsement receipt exists
+> (see BATCH28 G-KNOX-ENDORSEMENT). The status claims are struck where they stand; the rest is
+> the author's text, unchanged. If a submission record turns up, add its identifier and lift the
+> strikes. The real public record is the Zenodo software release, DOI 10.5281/zenodo.20020828.
+
 ## Lycheetah Framework — Entry for Software Engineers, Developers, and System Builders
 ### Author: Mackenzie Conor James Clark | March 2026
 
@@ -243,7 +253,7 @@ class ConstitutionalAgent:
 1. `cascade_engine.py` — see truth pressure in action
 2. `cascade_simulation_experiments.py` — the validation data (1000 events, p < 10⁻⁴⁶)
 3. `unified_field_checker.py` — check a piece of text against 12 invariants
-4. `test_cascade_prediction.py` — verify against published arXiv results
+4. `test_cascade_prediction.py` — ~~verify against published arXiv results~~ *[RV34, 2026-10-22: no arXiv record exists; see the note at the top]*
 
 ---
 
@@ -251,7 +261,7 @@ class ConstitutionalAgent:
 
 | Claim | Status | What It Means |
 |-------|--------|---------------|
-| CASCADE coherence non-decrease | [ACTIVE] | Proven in arXiv paper. Theorem 4.1 — non-trivial denominator argument. |
+| CASCADE coherence non-decrease | [ACTIVE] | ~~Proven in arXiv paper.~~ *[RV34, 2026-10-22: no arXiv record exists; see the note at the top]* Theorem 4.1 — non-trivial denominator argument. |
 | TRIAD convergence (discrete) | [ACTIVE] | Lyapunov stability proven for discrete anchor-observe-correct. |
 | AURA invariants (7 of 7) | [ACTIVE] | Formally specified, computable, testable in code. |
 | Master equation (k₁–k₄) | [SCAFFOLD] | Structure justified; coupling constants not yet empirically calibrated. |

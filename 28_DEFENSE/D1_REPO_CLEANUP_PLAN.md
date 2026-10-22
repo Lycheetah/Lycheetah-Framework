@@ -4,6 +4,15 @@
 **Date drafted:** 2026-04-26
 **Scope:** One commit. Folder rename + root cleanup + global link rewrite + audit. No content edits.
 
+
+> **RV30 review note (Sol, 2026-10-22). Footing: [MEASURED]. This plan was carried out.** The layer-suffixed folders and
+> `28_DEFENSE/`, `29_GOVERNANCE/` and `30_MAPS/` all exist. Keep this page as the record of that
+> change. One side effect: the global link rewrite also rewrote this plan. The Phase 1 table's
+> "Current" column now shows the *new* names, so it no longer records what the folders were called.
+> The old names were `01_CASCADE` … `07_ANAMNESIS`, `08_CHRYSOPOEIA` and `09_HARMONIA`. Those old
+> names still appear in `28_DEFENSE/CITATIONS.md` and `28_DEFENSE/TRANSLATION_CODEX.md` (both
+> repaired 2026-10-22).
+
 ---
 
 ## Why this exists

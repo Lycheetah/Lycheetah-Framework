@@ -5,6 +5,22 @@
 affiliation. The ask is low — the endorser clicks one link. The email below is ready
 to send. Mac fills in [RESEARCHER NAME] and [THEIR EMAIL] and fires.
 
+
+> **RV30 review note (Sol, 2026-10-22). Footing: [SCAFFOLD]. Do not send the results sentence as it was written.** The email's
+> results line said more than the evidence does:
+>
+> - **"100% coherence preservation" / "100% invariant rate".** CASCADE is built to keep these
+>   invariants, so the 1,000 simulated events check that the code does what it was written to do.
+>   They are not an accuracy result.
+> - **"Demotion accuracy 100% with Π, 48% without".** An ablation inside the author's own simulator.
+> - **Historical cases.** On the historical paradigm shifts the repository tests, CASCADE ties a
+>   simple additive baseline (this review, RV19). They do not yet show that CASCADE does better than
+>   a simpler rule.
+>
+> A sentence that holds: *"In simulation, CASCADE keeps its built-in invariants across 1,000 cascade
+> events, and removing truth pressure drops the simulator's demotion accuracy from 100% to 48%. On the
+> historical cases tested so far it ties a simple additive baseline, which the paper reports."*
+
 ---
 
 ## Who to approach
@@ -40,9 +56,10 @@ CASCADE, a formal system for knowledge reorganization under paradigm shift — i
 formalizes the scientific recontextualization process (old foundations demoted to
 approximations, not deleted) with a computable truth pressure metric and a
 four-phase reorganization protocol. The main result is a coherence non-decrease
-theorem (via a denominator argument on the contradiction count). Experimental
+theorem (via a denominator argument on the contradiction count). ~~Experimental
 results: 1,000 cascade events at 100% invariant rate; ablation showing truth
-pressure removal drops demotion accuracy from 100% to 48%.
+pressure removal drops demotion accuracy from 100% to 48%.~~ [Use the corrected
+sentence from the RV30 note above.]
 
 The paper is part of the Lycheetah Framework (DOI: 10.5281/zenodo.20020828),
 an open-source system for AI alignment and epistemology. All code and data

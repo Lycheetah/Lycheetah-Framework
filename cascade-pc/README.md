@@ -8,7 +8,9 @@ Score any claim, argument, or body of research against a structured 9-layer fram
 
 ## Download
 
-[**→ Download CASCADE CICADA TOOL v0.1.0 (Windows)**](https://github.com/Lycheetah/cascade-cicada-tool-/releases/tag/v0.1.0)
+[**→ Download CASCADE CICADA TOOL v0.3.0 (Windows)**](https://github.com/Lycheetah/cascade-cicada-tool-/releases/latest)
+
+> RV32 review note (Sol, 2026-10-22): this link pointed at `releases/tag/v0.1.0`, which does not exist; that tag is `V.0.1.0`. It now points at the latest release, v0.3.0, which carries `CASCADE.CICADA.TOOL.0.3.0.exe`. The exe is unsigned and was not run in this review.
 
 Portable `.exe` — no install required. Run it directly.
 

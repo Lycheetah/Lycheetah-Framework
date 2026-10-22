@@ -6,13 +6,30 @@
 See Vaswani et al. (2017) "Attention Is All You Need" — they explicitly
 acknowledged untested tasks. Papers with honest limits are trusted more.
 
+
+> **RV30 review note (Sol, 2026-10-22). Footing: [CONJECTURE] for the core empirical claim.** This page is honest about its limits,
+> and its own Limitation 5 says all the quantitative validation is synthetic. Its opening paragraph
+> goes further than that and is struck below:
+>
+> - **"100% coherence preservation" / "100% invariant rate".** CASCADE is built to keep these
+>   invariants, so the 1,000 simulated events check that the code does what it was written to do.
+>   They are not an accuracy result.
+> - **"Demotion accuracy 100% with Π, 48% without".** An ablation inside the author's own simulator.
+> - **Historical cases.** On the historical paradigm shifts the repository tests, CASCADE ties a
+>   simple additive baseline (this review, RV19). They do not yet show that CASCADE does better than
+>   a simpler rule.
+>
+> What holds: the mathematics is internally consistent inside its model. That CASCADE reorganises
+> knowledge better than simpler rules is the open question this page's frontier list describes.
+
 ---
 
 ## Honest Assessment First
 
 The CASCADE mathematics work. 1,000 computational trials, 100% coherence
 preservation, validated on historical paradigm shifts (miasma→germ theory,
-classical→quantum mechanics). The core claim is supported.
+classical→quantum mechanics). ~~The core claim is supported.~~ *(Struck 2026-10-22, RV30; see
+the note above.)*
 
 What is not yet proven: real-world scalability, automatic contradiction detection,
 generalization of φ-zone across domains, and cross-cultural validation.

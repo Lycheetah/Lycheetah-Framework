@@ -4,6 +4,13 @@
 **Status:** Experimental research archive, Forges I–VII; imported 19 October 2026.  
 **Integration and reproduction:** Caelorynth, an AI coding assistant.
 
+**Footing:** **[SCAFFOLD]**, experimental. The forges are self-authored prototypes tested against
+their own authored fixtures; `verify.py` replays those local suites and reports itself as
+"not production or independent validation". The documents under `forges_01_07/` and `intake/`
+keep their imported bytes and do not carry status labels of their own. This README declares
+their footing, and `tools/verify_research_intake.py` grants it only while every pinned byte
+matches the 19 October manifest (RV30 review, 2026-10-22).
+
 How can an agent respect a person's permission to act, change direction, leave,
 and recover after something goes wrong? These small implementations retain
 their deliberately constructed failures and conventional comparators.

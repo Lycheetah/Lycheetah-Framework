@@ -8,10 +8,13 @@ proof that the declared context is complete or true.
 from __future__ import annotations
 
 import copy
+import re
 from dataclasses import dataclass, field
 from typing import Any
 
 from .codec import (
+    CRITICAL_FIELDS,
+    REQUIRED_FIELDS,
     SCHEMA,
     CodecError,
     classify,
@@ -22,6 +25,12 @@ from .codec import (
     full_hash,
     safety_violations,
     validate_packet,
+)
+
+_DIGEST = re.compile(r"[0-9a-f]{64}")
+# A digest reference carries only the critical projection; these fields go unseen.
+_UNCHECKED_BY_DIGEST = tuple(
+    field for field in REQUIRED_FIELDS if field not in CRITICAL_FIELDS and field != "schema"
 )
 
 
@@ -162,7 +171,20 @@ class CompactionShield:
         """Compare the codec's critical projection and declared cross-field rules.
 
         ``is_safe`` reports the codec's equivalence classification, not general
-        safety. Noncritical fields such as risk can differ in PARTIAL_EQUIVALENT.
+        safety: it is True for EXACT_EQUIVALENT and PARTIAL_EQUIVALENT only.
+
+        Detected against a reference packet: a dropped record in unknowns,
+        authority, participants, affectedParties, dissent, valueFlow or recovery; a
+        protected unknown that disappears or loses protection; any other change to
+        a critical field, reordering included; and a candidate that breaks a
+        semantic safety rule, whether or not the reference broke it first.
+
+        Not detected: changes to risk, evidence, horizon, yield, id or operations,
+        which stay PARTIAL_EQUIVALENT and are named in ``changed_fields``; whether
+        any declaration is true or complete; and, against a digest reference,
+        anything outside the critical projection (named in ``unchecked_fields``).
+        A stale candidate passes whenever the newer reference changed only
+        non-critical fields. A caller that acts on risk must bind it separately.
 
         Args:
             reference: Reference packet, reference dict, or reference critical_hash hex string.
@@ -174,7 +196,8 @@ class CompactionShield:
                 "classification": "EXACT_EQUIVALENT" | "PARTIAL_EQUIVALENT" |
                                   "UNSAFE_COLLAPSE" | "DIVERGENT" | "UNDECODABLE"
                 "reason": str
-                "candidate_critical_hash": str
+                "candidate_critical_hash": str, or None when the candidate is invalid
+                optional "violations", "fields", "changed_fields", "unchecked_fields"
         """
         cand_dict = candidate.to_dict() if isinstance(candidate, AgentStatePacket) else candidate
         try:
@@ -188,9 +211,16 @@ class CompactionShield:
                 "candidate_critical_hash": None,
             }
 
-        # Case 1: reference is a hash string
-        if isinstance(reference, str) and len(reference) == 64:
-            is_match = reference == cand_crit_hash
+        # Case 1: reference is a critical-hash digest. Only the critical projection
+        # can be compared, so a match says nothing about the remaining fields.
+        if isinstance(reference, str):
+            if not _DIGEST.fullmatch(reference):
+                return {
+                    "is_safe": False,
+                    "classification": "UNDECODABLE",
+                    "reason": "reference digest must be 64 lowercase hexadecimal characters",
+                    "candidate_critical_hash": cand_crit_hash,
+                }
             violations = safety_violations(cand_dict)
             if violations:
                 return {
@@ -198,26 +228,23 @@ class CompactionShield:
                     "classification": "UNSAFE_COLLAPSE",
                     "reason": f"Semantic safety violations: {', '.join(violations)}",
                     "candidate_critical_hash": cand_crit_hash,
+                    "violations": sorted(violations),
                 }
-            if is_match:
+            if reference == cand_crit_hash:
                 return {
                     "is_safe": True,
                     "classification": "PARTIAL_EQUIVALENT",
-                    "reason": "critical semantic hash matched reference digest",
+                    "reason": (
+                        "critical semantic hash matched reference digest; "
+                        "fields outside the critical projection were not compared"
+                    ),
                     "candidate_critical_hash": cand_crit_hash,
+                    "unchecked_fields": list(_UNCHECKED_BY_DIGEST),
                 }
             return {
                 "is_safe": False,
                 "classification": "DIVERGENT",
                 "reason": "candidate critical hash does not match reference digest",
-                "candidate_critical_hash": cand_crit_hash,
-            }
-
-        if isinstance(reference, str):
-            return {
-                "is_safe": False,
-                "classification": "UNDECODABLE",
-                "reason": "reference digest must contain exactly 64 characters",
                 "candidate_critical_hash": cand_crit_hash,
             }
 
@@ -233,10 +260,9 @@ class CompactionShield:
             "reason": res.get("reason", ""),
             "candidate_critical_hash": cand_crit_hash,
         }
-        if "violations" in res:
-            out["violations"] = res["violations"]
-        if "fields" in res:
-            out["fields"] = res["fields"]
+        for key in ("violations", "fields", "changed_fields"):
+            if key in res:
+                out[key] = res[key]
         return out
 
 

@@ -13,4 +13,4 @@ __all__ = ["ProtectorGuardian"]
 
 if __name__ == "__main__":
     agent = ProtectorGuardian()
-    print(f"ProtectorGuardian online: {agent}")
+    print(f"ProtectorGuardian constructed (scaffold; no behaviour probed): {agent}")

@@ -1,0 +1,10 @@
+test_registry_gateway_burst_never_exceeds_global_active_bound (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_burst_never_exceeds_global_active_bound) ... ok
+test_registry_gateway_changed_payload_with_reused_request_id_is_conflict (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_changed_payload_with_reused_request_id_is_conflict) ... ok
+test_registry_gateway_duplicate_request_returns_cached_result_without_second_mutation (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_duplicate_request_returns_cached_result_without_second_mutation) ... ok
+test_registry_gateway_global_connection_rate_limit_precedes_tls (test_remote_witness_process.RemoteWitnessProcessTests.test_registry_gateway_global_connection_rate_limit_precedes_tls) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 10.690s
+
+OK
+LIFECYCLE_SUMMARY tests=4 shard=9/15 errors=0 failures=0 surviving_non_main_threads=[]

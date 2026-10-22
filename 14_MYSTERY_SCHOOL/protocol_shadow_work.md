@@ -2,9 +2,11 @@
 # 12-Week Jungian Shadow Integration Protocol
 ## Evidence-Based Practice Protocol
 
+> **RV26 review note (Sol, 2026-10-22).** The cited works are theory: Jung, Whitmont and Stein. None measures this protocol, so its four effect sizes (0.72, 0.58, 0.65, 0.80) have no source. "Psychological Integration" has no measurement instrument. Shadow work can surface distressing material: keep the supervision this protocol requires.
+
 ### Classification
 - **Domain**: Shadow Work
-- **Evidence Level**: COHORT (Level 3)
+- **Evidence Level**: ~~COHORT (Level 3)~~ EXPERT_OPINION (Level 0): no cohort study is cited (corrected 2026-10-22)
 - **Duration**: 12 weeks
 - **Supervision Required**: Yes
 
@@ -69,7 +71,7 @@
 **Key Studies**:
 - Jung (1951) - Aion: Researches into the Phenomenology of the Self
 - Whitmont (1991) - The Symbolic Quest: Basic Concepts of Analytical Psychology
-- Stein (2004) - Jung's Map of the Soul empirical validation
+- ~~Stein (2004) - Jung's Map of the Soul empirical validation~~ Stein (1998) - *Jung's Map of the Soul: An Introduction* (Open Court), an introductory book, not an empirical validation (corrected 2026-10-22)
 
 
 **Known Mechanisms**:
@@ -131,18 +133,20 @@
 
 These measurement points will be used to validate the practice against reality:
 
+> **RV26 review note (Sol, 2026-10-22).** **The forecasts below were about 4–6× too large.** The generator multiplied Cohen's d by the whole scale range (for example 0.55 × 21 GAD-7 points = 11.6) instead of by a standard deviation. On GAD-7, a d of 0.55 is closer to 2–3 points. Each change is restated in SD units; the original figure is struck through. The baseline is a placeholder (70% of the scale maximum), not a measurement. "Validation Strength" rates the questionnaire's reliability, not the forecast. Fixed at the source in `12_IMPLEMENTATIONS/applications/cascade_curriculum_architect.py`.
+
 
 **Anxiety**
 - Scale: GAD-7
 - Baseline: 14.7
-- Expected Change: -12.2
+- Expected Change: ~~-12.2~~ −0.58 SD (raw points depend on the sample's SD)
 - Timeline: 84 days
 - Validation Strength: VERY_STRONG
 
 **Relationship Quality**
 - Scale: RAS
 - Baseline: 15.4
-- Expected Change: 18.2
+- Expected Change: ~~18.2~~ +0.65 SD (raw points depend on the sample's SD)
 - Timeline: 84 days
 - Validation Strength: MODERATE
 
@@ -174,11 +178,14 @@ This protocol has been generated using:
 
 **Compliance with CASCADE Reality Bridge**: ✓ Enabled
 
-All claims in this protocol are falsifiable and will be automatically
-evaluated against measured reality through the Reality Bridge system.
+~~All claims in this protocol are falsifiable and will be automatically
+evaluated against measured reality through the Reality Bridge system.~~
 
-If predicted outcomes do not match measured reality, this practice
-will be automatically demoted or removed from the curriculum.
+~~If predicted outcomes do not match measured reality, this practice
+will be automatically demoted or removed from the curriculum.~~
+
+*Corrected 2026-10-22:* the claims could be tested if outcome measurements were collected. None
+have been collected, and the generator is not connected to any evaluation or demotion step.
 
 ---
 

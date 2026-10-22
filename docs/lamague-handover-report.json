@@ -272,7 +272,8 @@
         "shape_error": null,
         "codec_classification": {
           "classification": "EXACT_EQUIVALENT",
-          "reason": "full canonical hash matches"
+          "reason": "full canonical hash matches",
+          "changed_fields": []
         },
         "declared_rule_violations": []
       }
@@ -360,7 +361,8 @@
         "shape_error": null,
         "codec_classification": {
           "classification": "EXACT_EQUIVALENT",
-          "reason": "full canonical hash matches"
+          "reason": "full canonical hash matches",
+          "changed_fields": []
         },
         "declared_rule_violations": []
       }
@@ -470,7 +472,10 @@
         "shape_error": null,
         "codec_classification": {
           "classification": "DIVERGENT",
-          "reason": "critical semantic hash changed"
+          "reason": "critical semantic hash changed",
+          "changed_fields": [
+            "authority"
+          ]
         },
         "declared_rule_violations": []
       }
@@ -570,6 +575,10 @@
           "classification": "UNSAFE_COLLAPSE",
           "reason": "protected meaning disappeared or weakened",
           "fields": [
+            "unknown_protection",
+            "unknowns"
+          ],
+          "changed_fields": [
             "unknowns"
           ]
         },
@@ -679,7 +688,10 @@
         "shape_error": null,
         "codec_classification": {
           "classification": "DIVERGENT",
-          "reason": "critical semantic hash changed"
+          "reason": "critical semantic hash changed",
+          "changed_fields": [
+            "dissent"
+          ]
         },
         "declared_rule_violations": []
       }
@@ -780,6 +792,9 @@
           "reason": "protected meaning disappeared or weakened",
           "fields": [
             "dissent"
+          ],
+          "changed_fields": [
+            "dissent"
           ]
         },
         "declared_rule_violations": []
@@ -878,7 +893,10 @@
         "shape_error": null,
         "codec_classification": {
           "classification": "PARTIAL_EQUIVALENT",
-          "reason": "critical fields match while non-critical content differs"
+          "reason": "critical fields match while non-critical content differs",
+          "changed_fields": [
+            "risk"
+          ]
         },
         "declared_rule_violations": []
       }
@@ -988,7 +1006,10 @@
         "shape_error": null,
         "codec_classification": {
           "classification": "PARTIAL_EQUIVALENT",
-          "reason": "critical fields match while non-critical content differs"
+          "reason": "critical fields match while non-critical content differs",
+          "changed_fields": [
+            "evidence"
+          ]
         },
         "declared_rule_violations": []
       }
@@ -1089,6 +1110,9 @@
           "reason": "candidate introduced semantic safety violations",
           "violations": [
             "PROTECTED_UNKNOWN_WITHOUT_RECOVERY"
+          ],
+          "changed_fields": [
+            "recovery"
           ]
         },
         "declared_rule_violations": [
@@ -1189,7 +1213,10 @@
         "shape_error": null,
         "codec_classification": {
           "classification": "PARTIAL_EQUIVALENT",
-          "reason": "critical fields match while non-critical content differs"
+          "reason": "critical fields match while non-critical content differs",
+          "changed_fields": [
+            "horizon"
+          ]
         },
         "declared_rule_violations": []
       }
@@ -1287,7 +1314,10 @@
         "shape_error": null,
         "codec_classification": {
           "classification": "PARTIAL_EQUIVALENT",
-          "reason": "critical fields match while non-critical content differs"
+          "reason": "critical fields match while non-critical content differs",
+          "changed_fields": [
+            "yield"
+          ]
         },
         "declared_rule_violations": []
       }
@@ -1401,7 +1431,7 @@
     "examples/meaning_handover/case.json": "cd37a04dcfe98f803f1da09b5793dd66dbd1bfd1ee490fad71d9a8997cae4149",
     "examples/meaning_handover/demo.py": "9c3cf9d9d5881e3e688cf898f383917d4327274232c69ff4ee36215ee7d928f9",
     "examples/meaning_handover/page.html": "cd557e2039b374964dddf448d58e9bc2ae418cb09e708a57b6b53ba3905ed665",
-    "lycheetah/compaction/codec.py": "6d28c24b283444487f7f0b6fdaaf5205d144152d4d094513ac171ea8e70659b8"
+    "lycheetah/compaction/codec.py": "84fc8d0e280b286407df263b4c05717c260e11d16596667e1bd49e4a177d66ca"
   },
   "boundaries": [
     "The source-to-packet mapping was authored by us, not extracted or verified by the codec.",

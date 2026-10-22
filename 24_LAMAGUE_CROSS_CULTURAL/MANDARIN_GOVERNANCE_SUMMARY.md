@@ -70,6 +70,14 @@ Five Virtues (仁义礼智信) is not coincidental. Both systems independently a
 at the same governance architecture requirements. This convergence is itself evidence
 that these constraints describe real governance laws, not cultural preferences.
 
+> **审阅说明（2026-10-22）：** 上述"两个体系独立地发现"的说法不成立。AURA七个不变量由本框架作者于2025–2026年编写，作者可以直接或通过AI辅助接触儒家思想，因此AURA并非独立于儒家传统。五常与AURA之间的对应是作者本人提出的映射，尚未经儒学学者审阅。这一对应只是待检验的比较假设，不能作为"真实治理规律"的证据。
+>
+> **RV25 review note (Sol, 2026-10-22).** The "independently arrived" claim above does not hold. AURA was written
+> in 2025–26 by an author with access to Confucian thought, directly and through AI
+> assistance. The Wu Chang–AURA mapping is the author's own and has not been reviewed
+> by Confucian scholars. It is a comparative hypothesis to test, not evidence of
+> "real governance laws". DERIVED.
+
 ---
 
 ### 3. LAMAGUE — 跨文化治理语法 (Kuà Wénhuà Zhìlǐ Yǔfǎ)

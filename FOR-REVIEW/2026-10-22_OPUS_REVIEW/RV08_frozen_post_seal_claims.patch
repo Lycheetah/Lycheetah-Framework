@@ -1,0 +1,147 @@
+--- a/03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/README.md
++++ b/03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/README.md
+@@ -1,26 +1,41 @@
+ # lamague-codec
+ 
+-### Lossy compaction with a provable floor
++### Lossy compaction with a checkable floor
+ 
+ Compression optimises bytes and is indifferent to which bytes. This codec is
+ indifferent to bytes and opinionated about which fields.
+ 
+-It compacts a structured record while making it **structurally impossible** to
+-drop the parts that make a decision accountable — what remains unknown, who holds
+-authority, who is affected, who dissented, how to recover the prior state — and
+-gives you a hash that proves to a third party they survived.
++It compacts a structured record and hashes the parts that make a decision
++accountable — what remains unknown, who holds authority, who is affected, who
++dissented, how to recover the prior state — so that anyone holding the reference
++hash can see whether they came through unchanged. It refuses to encode a record
++that breaks its declared rules.
+ 
+ ```python
+ from lamague_codec import encode, decode, critical_hash, safety_violations
+ 
+ encode(packet)            # refuses if a protected unknown has no recovery path
+-critical_hash(packet)     # proof the ten accountability fields survived
+-decode(encode(packet))    # == packet, exactly
++critical_hash(packet)     # digest of the ten accountability fields
++decode(encode(packet))    # == packet, except the defects below
+ ```
+ 
+ A protected unknown with no recovery path is a **validation error**, not a
+ warning. The packet will not encode at all.
+ 
++### Known defects in this frozen v1.0
++
++Found on 22 October 2026 and kept here as the recorded counterexample. The
++maintained codec, `lycheetah.compaction.codec` in the Lycheetah Framework
++package, refuses all three.
++
++- A literal consent of `R`, `I` or `N` decodes as `REVOCABLE`, `IRREVOCABLE` or
++  `NONE`, and both hashes change.
++- The decoder accepts wires `encode` never emits. A repeated key is read with
++  its last value, so the claim a reader sees in the raw wire can differ from the
++  claim the decoder returns. Extra array items are dropped without notice.
++- Text containing a lone surrogate passes validation and `encode`, then
++  `full_hash` raises `UnicodeEncodeError`.
++
+ ---
+ 
+ ## Why this is not a compressor
+@@ -41,9 +56,11 @@
+ participants · affectedParties · dissent · valueFlow · recovery
+ ```
+ 
+-`critical_hash()` hashes canonical JSON of that projection alone, so a consumer
+-who never sees the original record can still verify the projection came through
+-compaction unchanged, without trusting whatever did the compacting.
++`critical_hash()` hashes canonical JSON of that projection alone. A consumer who
++never sees the original record, but holds its digest from a source other than
++the compactor, can check that the projection came through compaction unchanged.
++The digest cannot show that the declared fields were complete or true, and it
++does not cover risk, evidence, horizon or yield.
+ 
+ ### Who has this problem
+ 
+@@ -65,11 +82,13 @@
+ pip install ./03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0
+ ```
+ 
+-**No runtime dependencies.** Stdlib only, by design — a guarantee that ships
+-with a dependency tree is a guarantee with someone else's failure modes in it.
++This installs the frozen v1.0 code, defects included.
++
++**No runtime dependencies.** Stdlib only, by design — a check that ships with a
++dependency tree carries someone else's failure modes in it.
+ 
+ ```bash
+-python3 examples/agent_state_compaction.py    # the invariant, the proof, the boundary
++python3 examples/agent_state_compaction.py    # the invariant, the digest, the boundary
+ ```
+ 
+ ---
+@@ -115,7 +134,7 @@
+ ## Status
+ 
+ ```text
+-Reversible structured codec        WORKING
++Reversible structured codec        WORKING, three known defects
+ Training-only dictionary            WORKING
+ Held-out benchmark                  COMPLETE
+ Exact full and critical receipts    COMPLETE
+--- a/03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/pyproject.toml
++++ b/03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/pyproject.toml
+@@ -5,7 +5,7 @@
+ [project]
+ name = "lamague-codec"
+ version = "1.0.0"
+-description = "Lossy compaction with a provable floor — protected fields cannot be dropped, and a hash proves they survived"
++description = "Lossy compaction with a checkable floor — a hash of the protected fields shows whether they changed"
+ readme = "README.md"
+ requires-python = ">=3.10"
+ license = { text = "MIT" }
+@@ -32,9 +32,8 @@
+     "Topic :: Software Development :: Libraries :: Python Modules",
+ ]
+ 
+-# No runtime dependencies. The codec is stdlib-only by design: a guarantee that
+-# ships with a dependency tree is a guarantee with someone else's failure modes
+-# in it.
++# No runtime dependencies. The codec is stdlib-only by design: a check that ships
++# with a dependency tree carries someone else's failure modes in it.
+ dependencies = []
+ 
+ [project.urls]
+--- a/03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/examples/agent_state_compaction.py
++++ b/03_LAMAGUE_L1/22_REVERSIBLE_COMPRESSION_v1.0/examples/agent_state_compaction.py
+@@ -15,9 +15,9 @@
+ ----------------------
+ 1. A protected unknown with no recovery path is a validation ERROR, not a warning
+    — the packet will not encode at all.
+-2. `critical_hash` gives a third party proof that the ten accountability fields
++2. `critical_hash` lets a third party who holds the reference digest check that the ten accountability fields
+    survived a compaction round trip, without their having to trust the compactor.
+-3. Round-tripping is exact.
++3. Round-tripping is exact on the corpus; the README lists three known defects.
+ 
+ Run:
+     python3 examples/agent_state_compaction.py
+@@ -140,7 +140,7 @@
+ 
+ def demonstrate_the_proof() -> None:
+     """
+-    critical_hash proves the ten accountability fields survived compaction.
++    critical_hash shows whether the ten accountability fields changed in compaction.
+ 
+     A consumer who never sees the original can still verify the projection,
+     because the hash is over canonical JSON of the critical fields alone.
+@@ -182,7 +182,7 @@
+ 
+ def main() -> int:
+     print(BAR)
+-    print("Agent state compaction — a provable floor under a lossy summary")
++    print("Agent state compaction — a checkable floor under a lossy summary")
+     print(BAR)
+     demonstrate_the_invariant()
+     demonstrate_the_proof()

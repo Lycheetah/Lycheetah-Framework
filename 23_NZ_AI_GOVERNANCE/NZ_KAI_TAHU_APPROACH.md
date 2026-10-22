@@ -1,5 +1,14 @@
 # THE KĀI TAHU APPROACH
 
+> **RV34 review note (Sol, 2026-10-22). Footing: [MEASURED] for the search, kept body below.**
+> This file says Lycheetah work is on arXiv, "endorsed" or "live". The arXiv API returns **0**
+> results for `all:Lycheetah` and **0** for author Clark M with CASCADE or Lycheetah in the
+> title or abstract, and the repository holds no arXiv identifier for its own work.
+> `papers/CASCADE_ARXIV.tex` is an unsubmitted manuscript, and no endorsement receipt exists
+> (see BATCH28 G-KNOX-ENDORSEMENT). The status claims are struck where they stand; the rest is
+> the author's text, unchanged. If a submission record turns up, add its identifier and lift the
+> strikes. The real public record is the Zenodo software release, DOI 10.5281/zenodo.20020828.
+
 > [DRAFT] **Historical draft — superseded as the current NZ governance direction.** Reviewed 19 October 2026. Start with [Data Sovereignty for New Zealanders](DATA_SOVEREIGNTY_FOR_NEW_ZEALANDERS.md). The original text remains below for provenance; its status labels, dates, outreach suggestions and capability claims are historical, not current approval or evidence.
 
 ## Specific. Local. The Most Important Move In The Folder.
@@ -107,7 +116,7 @@ If email, subject line should be simple and honest:
 Paragraph 1 — Who you are:
 Self-taught researcher based in Ōtākou.
 Built a formal mathematical framework for AI governance.
-The relevant paper is on arXiv (link).
+~~The relevant paper is on arXiv (link).~~ *[RV34, 2026-10-22: no arXiv record exists; see the note at the top]*
 
 Paragraph 2 — What you've built:
 A translation protocol called LAMAGUE that converts tikanga concepts

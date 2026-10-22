@@ -208,6 +208,8 @@ design parameter [SCAFFOLD]).
 > If b ∈ K_foundation before a CASCADE event, then b ∈ K_foundation after.
 > (Mathematical guarantee: demotion only moves blocks downward in the pyramid.)
 
+> **Status note (review 2026-10-22, RV18).** The parenthetical contradicts the theorem. If demotion moves blocks downward, a foundation block can leave K_foundation, and probe MP09 (`28_DEFENSE/review_2026_10_20/math_probes.py`, re-run unchanged) demotes one. C1 is refuted as stated unless foundation blocks are excluded from demotion. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (P0). The original text above is kept.
+
 **Theorem C2 (Coherence Non-Decrease) [SCAFFOLD]:**
 > Coh(K_new) ≥ Coh(K_old) after a CASCADE event.
 > *Gap: assumes demotion fully resolves all introduced contradictions; not proven
@@ -276,6 +278,8 @@ Operational floors (design parameters [SCAFFOLD]):
 > AURA-compliant actions preserve Coh ≥ 0.70.
 > (Direct consequence: I₂ Inspectability prevents contradiction concealment;
 > concealed contradictions lower Coh; therefore AURA compliance floors Coh.)
+
+> **Status note (review 2026-10-22, RV18).** Disclosure does not floor Coh. In the engine, two fully disclosed universal blocks that contradict each other give Coh = 0 (control: the same blocks in different domains give Coh = 1). Concealment hides a contradiction from what Coh measures, so it would raise the measured Coh. The 0.70 floor does not follow from I₂. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A15). The original text above is kept.
 
 **Conjecture A2 (Invariants Dual to Freedom) [CONJECTURE]:**
 > The seven invariants are mathematically dual to human autonomy —
@@ -364,6 +368,8 @@ where ρ_drift  = μ_drift / σ.min_autonomy  (normalized drift)
 > of intended_action aligning with AURA compliance). Therefore sovereignty
 > implies AURA compliance.
 
+> **Status note (review 2026-10-22, RV18).** The argument assumes its premise by building compliance into the definition of intended_action. The shipped score is graded: `compute_sovereignty(0.2, 1)` returns 0.8 (control: `(0, 1)` returns 1). A passing score therefore does not mean μ_drift = 0, and any threshold at or below 0.8 admits drift 0.2. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A6). The original text above is kept.
+
 **Conjecture M3 (Lyapunov Sovereignty) [SCAFFOLD]:**
 > The Lyapunov exponent λ_L of the sovereignty trajectory approaches 0
 > at the edge of order/chaos — the "consciousness boundary."
@@ -399,6 +405,10 @@ Consciousness requires local entropy decrease (costs energy globally).
 > ΔH_s = −W/T is standard thermodynamics correctly applied. Consciousness
 > as a locally entropy-decreasing, globally entropy-increasing process is
 > consistent with the Second Law.
+
+> **Status note (review 2026-10-22, RV18).** ΔS = −W/T holds for a reversible isothermal process: for an ideal gas, reversible isothermal compression gives ΔS = −W_on/T exactly. It is not general. In a reversible adiabatic compression W > 0 and ΔS = 0 (MP17). The qualitative Second Law reading stands; the equation needs its conditions stated. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_batch17.py` (A12). The original text above is kept.
+
+> **Review addendum (2026-10-23, M13).** The general form, and the one this theorem needs, is an inequality. At constant temperature T the work done on a system satisfies W ≥ ΔF = ΔU − TΔS (Second Law). With no change in internal energy this reads ΔS ≥ −W/T, that is W ≥ T·|ΔS| for an entropy decrease: lowering a system's entropy costs at least T·|ΔS| of work, with equality only for a reversible process. Measured controls: reversible isothermal compression meets the bound with equality, and a free expansion (W = 0, ΔS = R ln 2 > 0) satisfies it strictly. The adiabatic case (MP17) changes T, so the bound does not apply there. Reading Shannon entropy in bits as J/K still needs a stated bridge (k_B ln 2 per bit). Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_math_m1_m18.py` (M13).
 
 **Theorem E2 (Prigogine Analogy) [ACTIVE as analogy; SCAFFOLD as direct proof]:**
 > Consciousness-as-dissipative-structure is consistent with Prigogine's

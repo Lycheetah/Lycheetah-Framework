@@ -5,7 +5,7 @@ The civilisational-engagement layer (L7) of the Lycheetah Framework, forged 2026
 
 The module operates Mandarin-primary discipline (per T-10 [`MANDARIN_PRIMARY_REGISTRY.md`](MANDARIN_PRIMARY_REGISTRY.md)): hanzi appear before Latinised names; classical sources are cited in Chinese before English; engagement with contemporary Chinese AI governance reads original Mandarin documents as primary text where the framework can. Where the framework cannot read the source directly, that limitation is named.
 
-The module is the framework's commitment to engaging Chinese statecraft, governance philosophy, and contemporary AI governance discourse not as area-studies decoration but as primary intellectual partnership.
+The module is the framework's commitment to engaging Chinese statecraft, governance philosophy, and contemporary AI governance discourse not as area-studies decoration but as primary intellectual partnership. That partnership is an **aim, not yet a relationship**: as of 2026-10-22 no scholar working from within the tradition has reviewed the module, and the registry logs no direct Mandarin reading of a primary document. Prediction 5 in [`POSITION_PAPER_v0.1.md`](POSITION_PAPER_v0.1.md) tests the aim: engagement in a Chinese-tradition venue by end-2028, or the module is downgraded to `[CONJECTURE]`.
 
 ---
 

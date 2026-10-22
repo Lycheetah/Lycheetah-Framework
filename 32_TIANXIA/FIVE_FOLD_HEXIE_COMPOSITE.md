@@ -122,15 +122,17 @@ Partial independence conditions:
 
 ## IV. Proposition H5-1 — Five-Component Binding Constraint Diagnosis [SCAFFOLD]
 
+> **Review note (2026-10-22, RV37).** The formal statement below is false for the composite defined in §3.2. H_5 is an equal-weight average, so ∂H_5/∂k = 1/5 for every component k. Raising the lowest component by 0.05 moves H_5 by exactly as much (+0.01) as raising any other component by 0.05. The lowest component is the one with the most *headroom* (1 − k), and argmin remains a useful diagnostic. But it is not the component with the greatest marginal effect, and improving a different component does not yield a smaller H_5 gain per unit. The minimum is also not always unique: on ties, the implementation returns the first component in I, C, E, O, S order. The inequality does hold for a concave aggregate. For the geometric mean G = (I·C·E·O·S)^(1/5), ∂G/∂k = G/(5k), which is largest at a strict minimum. Under min(·), only the minimum moves H at all. Choosing one of these is a design decision about the composite, not an arithmetic correction. The "minimal impact" paragraph on AI governance inherits the same inference. Witness: `FOR-REVIEW/2026-10-22_OPUS_REVIEW/repro_rv37.py`. The original text is kept, and the two sentences that rest on the false inequality are struck.
+
 *Statement:* For any governance system with H_5(s) < θ_hexie_5, there exists a unique binding constraint component whose improvement yields the greatest marginal increase in H_5(s).
 
 *Formal:* Let binding_constraint(s) = argmin_{k ∈ {I,C,E,O,S}} k(s). Then:
 
-∂H_5/∂binding_constraint(s) > ∂H_5/∂k(s) for all k ≠ binding_constraint(s)
+~~∂H_5/∂binding_constraint(s) > ∂H_5/∂k(s) for all k ≠ binding_constraint(s)~~ *(struck 2026-10-22, RV37: under equal weights every partial is 1/5)*
 
 Given equal weighting, this simplifies to: the lowest-scoring component is the binding constraint.
 
-*Governance implication:* Policy designed to improve overall Hexie should target the binding constraint component. Improving non-binding components while the binding constraint remains low produces minimal H_5 improvement. This is the classical Chinese medical principle of identifying and treating the root (治本 zhì běn) rather than the symptom (治标 zhì biāo).
+*Governance implication:* Policy designed to improve overall Hexie should target the binding constraint component. ~~Improving non-binding components while the binding constraint remains low produces minimal H_5 improvement.~~ *(struck 2026-10-22, RV37: under the linear average a unit gain anywhere yields the same H_5 gain)* This is the classical Chinese medical principle of identifying and treating the root (治本 zhì běn) rather than the symptom (治标 zhì biāo).
 
 *Why this matters for AI governance:* AI governance initiatives that address one Hexie dimension (typically coordination-coherence through regulatory harmonisation) while leaving binding constraints in other dimensions (typically ecological-coherence or sharing-coherence) will find their interventions have minimal impact on overall harmony.
 

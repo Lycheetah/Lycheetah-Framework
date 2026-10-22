@@ -1,5 +1,14 @@
 # THE MARCH 2026 SYNTHESIS
 
+> **RV34 review note (Sol, 2026-10-22). Footing: [MEASURED] for the search, kept body below.**
+> This file says Lycheetah work is on arXiv, "endorsed" or "live". The arXiv API returns **0**
+> results for `all:Lycheetah` and **0** for author Clark M with CASCADE or Lycheetah in the
+> title or abstract, and the repository holds no arXiv identifier for its own work.
+> `papers/CASCADE_ARXIV.tex` is an unsubmitted manuscript, and no endorsement receipt exists
+> (see BATCH28 G-KNOX-ENDORSEMENT). The status claims are struck where they stand; the rest is
+> the author's text, unchanged. If a submission record turns up, add its identifier and lift the
+> strikes. The real public record is the Zenodo software release, DOI 10.5281/zenodo.20020828.
+
 > **Historical synthesis snapshot.** Its proof, test, implementation and validation summaries describe its original edition, not the current corpus. Read the [current whole-framework synthesis](CURRENT_FRAMEWORK_SYNTHESIS.md) for the updated architecture and evidence boundaries.
 
 ## Nine Frameworks. One Architecture. Current State.
@@ -289,7 +298,7 @@ but actively organising it in real-time collaboration with Mac.
 - Four NZ AI accountability standards, open-source, implementable today
 - A complete human entry pathway (Mystery School) for people in difficulty
 - A Failure Museum with 10 exhibits — permanent public record of errors
-- An arXiv preprint (CASCADE framework, endorsed, live)
+- ~~An arXiv preprint (CASCADE framework, endorsed, live)~~ *[RV34, 2026-10-22: no arXiv record exists; see the note at the top]*
 - A GitHub repository with all documents public
 
 ## WHAT IS INCOMPLETE

@@ -241,6 +241,10 @@ Commit hash at registration: [TO BE LOCKED at OSF submission]
 2. **Does not test the master equation's correctness for non-linear dynamics.** The linear ODE form is tested here; non-linear extensions require separate preregistration.
 3. **Does not claim the kᵢ estimates are universal.** Coefficients estimated from this population (online English-speaking sample) may differ across populations. Cross-cultural calibration is a follow-on study.
 4. **Does not test the full AURA seven-invariant structure.** E-1-H tests only Invariant IV (Honesty) for the k₃ manipulation. Full invariant testing is E-1-A (→ `31_EMPIRICAL/E1A_CASCADE_PREREGISTRATION.md`).
+   *Review correction (2026-10-22, RV23):* that file does not exist, and E-1-A is the k₁–k₄
+   calibration study ([`E1A_K1K4_CALIBRATION_PREREG.md`](E1A_K1K4_CALIBRATION_PREREG.md)).
+   The seven-invariant AURA study is E-1-D ([`E1D_AURA_BEHAVIOUR_PREREG.md`](E1D_AURA_BEHAVIOUR_PREREG.md)).
+   Both are unfiled drafts.
 
 ---
 

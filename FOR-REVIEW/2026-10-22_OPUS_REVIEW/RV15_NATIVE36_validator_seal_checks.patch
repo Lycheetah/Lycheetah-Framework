@@ -1,0 +1,23 @@
+--- a/03_LAMAGUE_L1/02_NATIVE36/validate_lamague_native36_v0.3.py
++++ b/03_LAMAGUE_L1/02_NATIVE36/validate_lamague_native36_v0.3.py
+@@ -41,9 +41,19 @@
+             errors.append(f"{g.get('token','?')}: radical provenance empty")
+         if not g.get("failure_modes"):
+             errors.append(f"{g.get('token','?')}: failure modes empty")
++        for key in ("name", "class", "spoken_form", "type_signature", "returns"):
++            if key in g and not str(g[key]).strip():
++                errors.append(f"{g.get('token','?')}: {key} empty")
++
++    seals = data.get("compound_seals", [])
++    if not seals:
++        errors.append("No compound seals: the seal layer is missing.")
++    seal_ids = [s.get("seal_id") for s in seals]
++    if len(seal_ids) != len(set(seal_ids)):
++        errors.append("Duplicate seal_id detected.")
+ 
+     valid_tokens = set(expected)
+-    for seal in data.get("compound_seals", []):
++    for seal in seals:
+         unknown = [t for t in seal.get("expansion", []) if t not in valid_tokens]
+         if unknown:
+             errors.append(f"{seal.get('seal_id','?')}: unknown expansion tokens {unknown}")

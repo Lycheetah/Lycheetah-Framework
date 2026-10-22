@@ -21,6 +21,24 @@ The formal requirements for any system of governance that sustains human flouris
 
 ---
 
+> **RV25 review note (Sol, 2026-10-22).** Three corrections to the claim and timeline below:
+> - **Dating.** Confucius did not formalise 仁义礼智信. The Analects centre on 仁
+>   and 礼. Mencius (4th c. BCE) named the four sprouts 四端, which are 仁义礼智.
+>   The five constants 五常 as a set, with 信 added, are usually credited to Dong
+>   Zhongshu 董仲舒 in the Han dynasty (2nd c. BCE). That is how this folder's own
+>   `CHINESE_MAORI_CONVERGENCE.md` and `docs/LAMAGUE_CROSS_CULTURAL_PAPER.md` §2 date
+>   them (standard history; from memory, not re-read this session). Mencius's
+>   "Four Social Bonds" below should read "four sprouts". The social relationships
+>   are the separate 五伦.
+> - **Independence of the traditions is not independence of the encodings.** One
+>   author encoded all three with one LAMAGUE vocabulary, so "structurally identical"
+>   operator chains may reflect the encoder.
+> - **AURA is not one of the independent traditions.**
+>
+> "Structurally identical" stays a hypothesis until scholars and knowledge holders
+> from each tradition produce encodings blind (see the application's Phase 1).
+> DERIVED.
+
 ## THE TIMELINE OF INDEPENDENT DEVELOPMENT
 
 ```

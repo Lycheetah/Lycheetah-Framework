@@ -1,0 +1,19 @@
+test_ambiguous_post_and_unavailable_lookup_remains_unknown_then_recovers (test_remote_anchor_http.RemoteAnchorHTTPTests.test_ambiguous_post_and_unavailable_lookup_remains_unknown_then_recovers) ... ok
+test_append_refuses_to_extend_tampered_existing_history (test_remote_anchor_http.RemoteAnchorHTTPTests.test_append_refuses_to_extend_tampered_existing_history) ... ok
+test_auth_request_nonce_replay_is_rejected (test_remote_anchor_http.RemoteAnchorHTTPTests.test_auth_request_nonce_replay_is_rejected) ... ok
+test_bad_database_id_is_refused_by_outbox (test_remote_anchor_http.RemoteAnchorHTTPTests.test_bad_database_id_is_refused_by_outbox) ... ok
+test_bad_service_request_auth_is_denied (test_remote_anchor_http.RemoteAnchorHTTPTests.test_bad_service_request_auth_is_denied) ... ok
+test_changed_snapshot_cannot_be_submitted_under_existing_approval (test_remote_anchor_http.RemoteAnchorHTTPTests.test_changed_snapshot_cannot_be_submitted_under_existing_approval) ... ok
+test_client_does_not_follow_redirect_with_authenticated_request (test_remote_anchor_http.RemoteAnchorHTTPTests.test_client_does_not_follow_redirect_with_authenticated_request) ... ok
+test_client_rejects_nonpositive_timeout (test_remote_anchor_http.RemoteAnchorHTTPTests.test_client_rejects_nonpositive_timeout) ... ok
+test_committed_outbox_response_cannot_be_rewritten_in_terminal_state (test_remote_anchor_http.RemoteAnchorHTTPTests.test_committed_outbox_response_cannot_be_rewritten_in_terminal_state) ... ok
+test_committed_outbox_state_is_terminal (test_remote_anchor_http.RemoteAnchorHTTPTests.test_committed_outbox_state_is_terminal) ... ok
+test_concurrent_competing_cas_appends_have_one_winner (test_remote_anchor_http.RemoteAnchorHTTPTests.test_concurrent_competing_cas_appends_have_one_winner) ... ok
+test_conflict_outbox_state_is_terminal (test_remote_anchor_http.RemoteAnchorHTTPTests.test_conflict_outbox_state_is_terminal) ... ok
+test_database_identity_is_bound_by_approval (test_remote_anchor_http.RemoteAnchorHTTPTests.test_database_identity_is_bound_by_approval) ... ok
+test_expired_operator_approval_is_refused (test_remote_anchor_http.RemoteAnchorHTTPTests.test_expired_operator_approval_is_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 8.923s
+
+OK

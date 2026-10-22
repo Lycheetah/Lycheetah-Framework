@@ -5,6 +5,27 @@
 **Purpose:** Credibility with funders and collaborators requires specific experiments,
 not "we'll figure it out." This document is the backbone of every grant conversation.
 
+
+> **RV30 review note (Sol, 2026-10-22). Footing: [SCAFFOLD]. This is a plan. The ✅ list below needs reading with care:**
+>
+> - **"100% coherence preservation" / "100% invariant rate".** CASCADE is built to keep these
+>   invariants, so the 1,000 simulated events check that the code does what it was written to do.
+>   They are not an accuracy result.
+> - **"Demotion accuracy 100% with Π, 48% without".** An ablation inside the author's own simulator.
+> - **Historical cases.** On the historical paradigm shifts the repository tests, CASCADE ties a
+>   simple additive baseline (this review, RV19). They do not yet show that CASCADE does better than
+>   a simpler rule.
+> - **"p < 10⁻⁴⁶" and "t = 70.29"** come from synthetic benchmarks run with the author's own code. A
+>   very small p-value on generated data says the runs differ. It does not say the effect exists in
+>   the world.
+> - **"188 automated tests"** was the March 2026 count. The full suite has grown since. It checks
+>   that the software keeps its contracts, not that CASCADE is true.
+> - **"The synthetic validation proves the mathematics"** is struck below. A simulation cannot prove
+>   a theorem. It checks the implementation on generated cases.
+>
+> This review found no results from Experiments 1 onward in the repository. Whether any of them has
+> started is [UNVERIFIED].
+
 ---
 
 ## What Has Already Been Done (2025)
@@ -27,7 +48,8 @@ not "we'll figure it out." This document is the backbone of every grant conversa
 ## Experiment 1 — Real Paradigm Shift Corpus Validation
 
 **What:** Test CASCADE on documented historical paradigm shifts that were not
-used in the design of the system. The synthetic validation proves the mathematics.
+used in the design of the system. ~~The synthetic validation proves the mathematics.~~ The
+synthetic runs check the implementation on generated cases (corrected 2026-10-22, RV30).
 This experiment proves predictive validity.
 
 **Domains:**

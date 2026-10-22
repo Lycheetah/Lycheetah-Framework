@@ -1,0 +1,7 @@
+test_witness_process_restart_preserves_append_only_head (test_remote_witness_process.RemoteWitnessProcessTests.test_witness_process_restart_preserves_append_only_head) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 9.805s
+
+OK
+RESULT 1 [] []

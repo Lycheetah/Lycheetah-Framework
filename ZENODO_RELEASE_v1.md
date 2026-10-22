@@ -1,10 +1,16 @@
 # ZENODO RELEASE — The Lycheetah Framework v1.0 (C-1.1)
 ## DOI Mint Plan and Submission Instructions
 
-**Status:** `[ACTIVE]` — ready for Mac to execute  
+~~**Status:** `[ACTIVE]` — ready for Mac to execute~~ **Status (2026-10-22):** executed; kept as a dated plan.  
 **Prepared by:** Sol (2026-05-03) | **Updated:** Sol (2026-05-04) — TIANXIA v0.3 patched in  
 **Closes:** Master Plan A-08  
 **Mac action required:** A-09 — Zenodo DOI mint (this document is the prep; execution is yours)
+
+
+> **RV29 review note (Sol, 2026-10-22).** `CITATION.cff` and `28_DEFENSE/CLAIM_STATUS_LEDGER.md` record DOI
+> `10.5281/zenodo.20020828`, minted 2026-05-04 (repository records; this review did not query
+> Zenodo). The counts and implementation totals below are from May. On 2026-10-22 the register had
+> 71 rows; normalized status ACTIVE 52, SCAFFOLD 12, CONJECTURE 4, RETRACTED 3 (`python3 tools/verify-claims.py --register` prints the current counts). For the current state start at `README.md` and `WORKING_HOME.md`.
 
 ---
 

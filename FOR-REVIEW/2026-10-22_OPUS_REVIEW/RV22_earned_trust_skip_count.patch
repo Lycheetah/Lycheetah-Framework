@@ -1,0 +1,30 @@
+diff -ruN a/papers/agent-safety/earned-trust/cycles_001_009/verify_release.py b/papers/agent-safety/earned-trust/cycles_001_009/verify_release.py
+--- a/papers/agent-safety/earned-trust/cycles_001_009/verify_release.py	2026-10-22 14:15:21.715751012 +1300
++++ b/papers/agent-safety/earned-trust/cycles_001_009/verify_release.py	2026-10-22 14:15:21.716109976 +1300
+@@ -43,18 +43,22 @@
+  print(f'PASS: {count} Python files parsed')
+ 
+ def tests():
+- grand=0
++ grand=0;skips=0
+  for i,mods in MODULES.items():
+   d=BASE/f'earned_trust_cycle_{i:03d}'
+   result=subprocess.run([sys.executable,'-m','unittest','-q',*mods],cwd=d,capture_output=True,text=True)
+   output=result.stdout+result.stderr
+   found=re.search(r'Ran (\d+) tests? in',output)
+   count=int(found.group(1)) if found else 0
+-  print(f'C{i:03d}: {count} tests '+('PASS' if result.returncode==0 else 'FAIL'),flush=True)
++  # unittest counts a skipped method as run. On an ordinary-user host Cycle 009's
++  # privilege-drop tests skip, so a run total is not a pass total.
++  skipped=re.search(r'skipped=(\d+)',output)
++  skip=int(skipped.group(1)) if skipped else 0
++  print(f'C{i:03d}: {count} tests ({skip} skipped) '+('PASS' if result.returncode==0 else 'FAIL'),flush=True)
+   if result.returncode!=0 or count!=EXPECTED[i]:
+    print(output[-4000:]);raise SystemExit(1)
+-  grand+=count
+- print(f'Selected locally-authored suites: {grand} passing tests')
++  grand+=count;skips+=skip
++ print(f'Selected locally-authored suites: {grand-skips} passed, {skips} skipped ({grand} run); a skip is not a pass')
+  print('Native Lycheetah class integration: NOT EXECUTED by this command')
+ 
+ if __name__=='__main__':

@@ -167,3 +167,78 @@ class TestWuweiBoundaries:
         # gamma=+1 → bounded h=0
         assert _approx(s.h, 0.0)
         assert _approx(s.wuwei_debt_delta, 0.0)
+
+
+class TestAdmission:
+    """Invalid inputs are refused before they reach the debt ledger.
+
+    Unchecked, a NaN restoration clipped to gamma = +1 and recorded a forcing
+    correction as fully grain-aligned and coherent.
+    """
+
+    @pytest.mark.active
+    @pytest.mark.parametrize("field", ["intervention", "restoration"])
+    @pytest.mark.parametrize("bad", [math.nan, math.inf])
+    def test_non_finite_vectors_are_refused(self, field, bad):
+        vectors = {"intervention": np.array([0.3]), "restoration": np.array([-1.0])}
+        vectors[field] = np.array([bad])
+        with pytest.raises(ValueError):
+            grain_alignment(vectors["intervention"], vectors["restoration"])
+
+    @pytest.mark.active
+    @pytest.mark.parametrize("intervention, restoration", [([0.3], [math.nan]), ([math.inf], [-1.0])])
+    def test_refused_step_leaves_the_ledger_untouched(self, intervention, restoration):
+        triad = WuweiTriad(mu=1.0)
+        triad.step(np.array([1.0]), np.array([-0.3]), restoration=np.array([-1.0]))
+        before = (triad.standard_debt, triad.wuwei_debt, len(triad.history))
+        with pytest.raises(ValueError):
+            triad.step(np.array([1.0]), np.array(intervention), restoration=np.array(restoration))
+        assert (triad.standard_debt, triad.wuwei_debt, len(triad.history)) == before
+
+    @pytest.mark.active
+    def test_intervention_must_match_state_dimension(self):
+        with pytest.raises(ValueError, match="dimension"):
+            WuweiTriad().step(np.zeros(3), np.array([0.1]), restoration=np.array([1.0]))
+
+    @pytest.mark.active
+    @pytest.mark.parametrize("kwargs", [{"mu": math.nan}, {"mu": math.inf}, {"k_cost": math.nan},
+                                        {"theta_wuwei": math.nan}, {"theta_wuwei": 5.0}])
+    def test_constructor_refuses_invalid_parameters(self, kwargs):
+        with pytest.raises(ValueError):
+            WuweiTriad(**kwargs)
+
+    @pytest.mark.active
+    @pytest.mark.parametrize("gamma, p", [(-2.0, 2.5), (0.0, math.nan), (math.nan, 2.0)])
+    def test_bounded_modulator_refuses_outside_its_domain(self, gamma, p):
+        with pytest.raises(ValueError):
+            grain_cost_modulator_bounded(gamma, p=p)
+
+    @pytest.mark.active
+    @pytest.mark.parametrize("gamma, mu", [(0.0, math.nan), (math.nan, 1.0), (-1.0, 1000.0)])
+    def test_exp_modulator_refuses_invalid_or_overflowing_inputs(self, gamma, mu):
+        with pytest.raises(ValueError):
+            grain_cost_modulator_exp(gamma, mu=mu)
+
+    @pytest.mark.active
+    @pytest.mark.parametrize("h", [-1.0, math.nan])
+    def test_modulator_output_must_be_a_non_negative_cost(self, h):
+        triad = WuweiTriad(modulator=lambda g: h)
+        with pytest.raises(ValueError):
+            triad.step(np.array([1.0]), np.array([-0.3]), restoration=np.array([-1.0]))
+        assert triad.wuwei_debt == 0.0 and triad.history == []
+
+    @pytest.mark.active
+    def test_step_coherence_uses_the_triads_threshold(self):
+        triad = WuweiTriad(theta_wuwei=0.9)
+        # gamma = cos 45° ≈ 0.707: coherent at the old default 0.3, not at this triad's 0.9
+        s = triad.step(np.array([1.0, 1.0]), np.array([-1.0, 0.0]), restoration=np.array([-1.0, -1.0]))
+        assert s.is_wuwei_coherent() is False
+        assert s.is_wuwei_coherent(0.3) is True
+
+    @pytest.mark.active
+    @pytest.mark.parametrize("rate", [math.nan, -1.0])
+    def test_trajectory_rate_must_be_a_finite_non_negative_bound(self, rate):
+        triad = WuweiTriad(restoration_fn=restoration_from_potential(lambda x: x))
+        triad.step(np.array([1.0]), np.array([-0.1]))
+        with pytest.raises(ValueError):
+            triad.report().is_trajectory_coherent(max_debt_growth_rate=rate)

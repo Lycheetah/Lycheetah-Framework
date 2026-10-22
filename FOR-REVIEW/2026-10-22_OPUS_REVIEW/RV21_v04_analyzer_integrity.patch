@@ -1,0 +1,51 @@
+diff -ruN a/TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_MEASUREMENT_PACK_v0.4/scripts/analyze_annotations.py b/TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_MEASUREMENT_PACK_v0.4/scripts/analyze_annotations.py
+--- a/TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_MEASUREMENT_PACK_v0.4/scripts/analyze_annotations.py	2026-10-22 13:51:28.223281171 +1300
++++ b/TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_MEASUREMENT_PACK_v0.4/scripts/analyze_annotations.py	2026-10-22 13:51:28.223507678 +1300
+@@ -35,17 +35,34 @@
+     expected=[(a-b)**2 for a,b in combinations(flat,2)]
+     do=statistics.mean(observed) if observed else 0
+     de=statistics.mean(expected) if expected else 0
+-    return 1.0 if de==0 and do==0 else (None if de==0 else 1-do/de)
++    # With no variation anywhere alpha is 0/0, undefined. Reporting 1.0 would turn
++    # uniformly uninformative ratings into "strong agreement".
++    return None if de==0 else 1-do/de
+ 
+ def load_key(path):
+     data=json.loads(Path(path).read_text())
+     return {m['item_code']:m['case_id'] for items in data['raters'].values() for m in items}
+ 
+-def load_ratings(paths,key):
+-    by_case={}
++def load_key_owners(path):
++    data=json.loads(Path(path).read_text())
++    return {m['item_code']:rater for rater,items in data['raters'].items() for m in items}
++
++def load_ratings(paths,key,owners=None):
++    by_case={};seen={}
+     for rater_index,p in enumerate(paths):
+         with Path(p).open(encoding='utf-8-sig',newline='') as f:
+-            for row in csv.DictReader(f):
++            rows=list(csv.DictReader(f))
++            codes=[row['item_code'].strip() for row in rows]
++            if len(set(codes))!=len(codes):raise ValueError(f'Duplicate item_code in {p}')
++            if owners is not None:
++                # Every agreement statistic assumes independent raters. One packet
++                # supplied twice agrees with itself perfectly.
++                packet={owners.get(code) for code in codes}
++                if len(packet)!=1 or None in packet:raise ValueError(f'{p} does not hold exactly one rater packet')
++                (rater,)=packet
++                if rater in seen:raise ValueError(f'Rater packet {rater} supplied twice: {seen[rater]} and {p}')
++                seen[rater]=p
++            for row in rows:
+                 code=row['item_code'].strip()
+                 if code not in key:raise ValueError(f'Unknown item_code {code} in {p}')
+                 case=key[code]
+@@ -110,7 +127,7 @@
+     ap.add_argument('--engine-results')
+     ap.add_argument('--output',required=True)
+     args=ap.parse_args()
+-    key=load_key(args.key);ratings=load_ratings(args.ratings,key);engine=load_engine(args.engine_results)
++    key=load_key(args.key);ratings=load_ratings(args.ratings,key,load_key_owners(args.key));engine=load_engine(args.engine_results)
+     report={
+       'protocol':'TP-MEASURE-0.4',
+       'cases':len(ratings),'raters':len(args.ratings),

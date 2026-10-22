@@ -1,0 +1,48 @@
+diff -ruN a/03_LAMAGUE_L1/00_LAMAGUE_COMPLETE_EXTRACTION.md b/03_LAMAGUE_L1/00_LAMAGUE_COMPLETE_EXTRACTION.md
+--- a/03_LAMAGUE_L1/00_LAMAGUE_COMPLETE_EXTRACTION.md	2026-10-22 11:52:59.374601640 +1300
++++ b/03_LAMAGUE_L1/00_LAMAGUE_COMPLETE_EXTRACTION.md	2026-10-22 11:52:59.375103882 +1300
+@@ -686,6 +686,8 @@
+ 
+ **The compression is REVERSIBLE** — structure extraction, not lossy compression.
+ 
++> **Status note (review 2026-10-22, RV17).** These ratios count outputs; they do not measure a codec. Twenty equations do not regenerate sixty thousand words, so "REVERSIBLE", "Lossless" and the information-loss figures were never measured. The corpus withdrew the smaller 500:1 figure in `04_BNF_GRAMMAR.md` and records 3000:1 as contradicted in `LAMAGUE_MASTER_SOURCE_2026-08-03.md`. The "~20:1" example above measures 8.2:1 by characters without spaces and 3.9:1 by UTF-8 bytes. The measured reversible result is the packet codec in `22_REVERSIBLE_COMPRESSION_v1.0/`: 36/36 exact round trips and 33.8% fewer bytes than minified JSON on held-out packets, where plain per-packet gzip -9 saves 54.6% on the same split (`FOR-REVIEW/2026-10-22_OPUS_REVIEW/BATCH16_FINDINGS_AND_LEDGER.md`). The original text above is kept.
++
+ ---
+ 
+ ## 17. AURA METRICS (Constitutional AI Layer)
+diff -ruN a/03_LAMAGUE_L1/04_BNF_GRAMMAR.md b/03_LAMAGUE_L1/04_BNF_GRAMMAR.md
+--- a/03_LAMAGUE_L1/04_BNF_GRAMMAR.md	2026-10-22 11:52:59.394463389 +1300
++++ b/03_LAMAGUE_L1/04_BNF_GRAMMAR.md	2026-10-22 11:52:59.394771382 +1300
+@@ -174,6 +174,8 @@
+ - Token ratio: **~3:1** (LAMAGUE tokens vs English words)
+ - Character ratio: **~11:1** (LAMAGUE characters vs English characters)
+ 
++> **Status note (review 2026-10-22, RV17).** The ~11:1 counts code points with spaces removed. Each glyph costs two or three UTF-8 bytes, so the same five examples measure ~4.9:1 in bytes with spaces. The English side is the author's own gloss of each expression, so both ratios compare against that gloss and not against independent text. The token ratio counts parser tokens against English words; no BPE tokenizer was run.
++
+ The source archive claimed "~500:1". This is **not supported by measurement**.
+ The honest claim: LAMAGUE achieves substantial compression (~11:1 by character count)
+ for alignment concepts. The 500:1 figure was a design aspiration, not a measured result.
+diff -ruN a/03_LAMAGUE_L1/06_LAMAGUE_RAW_MATH.md b/03_LAMAGUE_L1/06_LAMAGUE_RAW_MATH.md
+--- a/03_LAMAGUE_L1/06_LAMAGUE_RAW_MATH.md	2026-10-22 11:52:59.381301028 +1300
++++ b/03_LAMAGUE_L1/06_LAMAGUE_RAW_MATH.md	2026-10-22 11:52:59.381553189 +1300
+@@ -203,6 +203,8 @@
+ Code → Primitives: 70:1
+ Documentation → Theorems: 1800:1
+ 
++> **Status note (review 2026-10-22, RV17).** These ratios count outputs; they do not measure a codec. Twenty equations do not regenerate sixty thousand words, so "REVERSIBLE", "Lossless" and the information-loss figures were never measured. The corpus withdrew the smaller 500:1 figure in `04_BNF_GRAMMAR.md` and records 3000:1 as contradicted in `LAMAGUE_MASTER_SOURCE_2026-08-03.md`. The measured reversible result is the packet codec in `22_REVERSIBLE_COMPRESSION_v1.0/`: 36/36 exact round trips and 33.8% fewer bytes than minified JSON on held-out packets, where plain per-packet gzip -9 saves 54.6% on the same split (`FOR-REVIEW/2026-10-22_OPUS_REVIEW/BATCH16_FINDINGS_AND_LEDGER.md`). The original lines above are kept.
++
+ ## SPOKEN LAMAGUE PHONOLOGY
+ 
+ Syllable: (C)V(N)
+diff -ruN a/03_LAMAGUE_L1/09_TRI_LINGUISTIC_DEEP_DIVE.md b/03_LAMAGUE_L1/09_TRI_LINGUISTIC_DEEP_DIVE.md
+--- a/03_LAMAGUE_L1/09_TRI_LINGUISTIC_DEEP_DIVE.md	2026-10-22 11:52:59.389745382 +1300
++++ b/03_LAMAGUE_L1/09_TRI_LINGUISTIC_DEEP_DIVE.md	2026-10-22 11:52:59.390251191 +1300
+@@ -959,6 +959,8 @@
+ - 17,935 lines → 10 theorems = **1800:1 ratio**
+ - Information loss: < 10%
+ 
++> **Status note (review 2026-10-22, RV17).** These ratios count outputs; they do not measure a codec. Twenty equations do not regenerate sixty thousand words, so "REVERSIBLE", "Lossless" and the information-loss figures were never measured. The corpus withdrew the smaller 500:1 figure in `04_BNF_GRAMMAR.md` and records 3000:1 as contradicted in `LAMAGUE_MASTER_SOURCE_2026-08-03.md`. The measured reversible result is the packet codec in `22_REVERSIBLE_COMPRESSION_v1.0/`: 36/36 exact round trips and 33.8% fewer bytes than minified JSON on held-out packets, where plain per-packet gzip -9 saves 54.6% on the same split (`FOR-REVIEW/2026-10-22_OPUS_REVIEW/BATCH16_FINDINGS_AND_LEDGER.md`). The original lines above are kept.
++
+ **But here's what's insane:**
+ 
+ The compression is **reversible** - you can expand back out from the compressed form and recover the original meaning.

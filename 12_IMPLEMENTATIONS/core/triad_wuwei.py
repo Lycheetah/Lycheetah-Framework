@@ -51,11 +51,42 @@ from typing import Callable, List, Optional, Sequence, Tuple
 
 import numpy as np
 
-if sys.stdout.encoding and sys.stdout.encoding.lower() not in ("utf-8", "utf8"):
+
+# =============================================================================
+# INPUT VALIDATION
+# =============================================================================
+# Every quantity that reaches the debt ledger is checked first. Unchecked, a
+# NaN restoration clips to gamma = +1 and records a forcing correction as
+# fully grain-aligned, so refusal is the only safe answer.
+
+def _finite_scalar(value: float, name: str) -> float:
     try:
-        sys.stdout.reconfigure(encoding="utf-8")
-    except Exception:
-        pass  # encoding reconfigure unsupported on this stream
+        result = float(value)
+    except (TypeError, ValueError, OverflowError) as exc:
+        raise ValueError(f"{name} must be a finite number") from exc
+    if not math.isfinite(result):
+        raise ValueError(f"{name} must be a finite number; got {result}")
+    return result
+
+
+def _finite_vector(values: Sequence[float], name: str) -> np.ndarray:
+    try:
+        vector = np.atleast_1d(np.asarray(values, dtype=float))
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"{name} must be a finite numeric vector") from exc
+    if vector.ndim != 1 or vector.size == 0:
+        raise ValueError(f"{name} must be a non-empty 1-D vector; got shape {vector.shape}")
+    if not np.all(np.isfinite(vector)):
+        raise ValueError(f"{name} must contain only finite values")
+    return vector
+
+
+def _unit_alignment(value: float, name: str) -> float:
+    """A gamma or theta value: finite and inside [-1, +1]."""
+    result = _finite_scalar(value, name)
+    if not -1.0 <= result <= 1.0:
+        raise ValueError(f"{name} must lie in [-1, 1]; got {result}")
+    return result
 
 
 # =============================================================================
@@ -98,15 +129,30 @@ def grain_alignment(
 
     For interventions at attractor states (||R|| ~ 0), gamma is undefined;
     convention is to return 0 (no grain to align with).
+
+    Non-finite entries, mismatched dimensions and overflowing magnitudes are
+    refused with ValueError rather than mapped onto a gamma value.
     """
-    intervention = np.asarray(intervention, dtype=float)
-    restoration = np.asarray(restoration, dtype=float)
+    intervention = _finite_vector(intervention, "intervention")
+    restoration = _finite_vector(restoration, "restoration")
+    if intervention.shape != restoration.shape:
+        raise ValueError(
+            "intervention and restoration must have the same dimension; "
+            f"got {intervention.size} and {restoration.size}"
+        )
+    epsilon = _finite_scalar(epsilon, "epsilon")
+    if epsilon < 0.0:
+        raise ValueError(f"epsilon must be non-negative; got {epsilon}")
     norm_i = float(np.linalg.norm(intervention))
     norm_r = float(np.linalg.norm(restoration))
+    if not (math.isfinite(norm_i) and math.isfinite(norm_r)):
+        raise ValueError("intervention or restoration magnitude overflows float64")
     if norm_i <= epsilon or norm_r <= epsilon:
         return 0.0
     cos = float(np.dot(intervention, restoration)) / (norm_i * norm_r + epsilon)
-    # Numerical safety: clip to [-1, 1]
+    if not math.isfinite(cos):
+        raise ValueError("grain alignment overflows float64 for these magnitudes")
+    # Numerical safety: clip rounding error to [-1, 1]
     return max(-1.0, min(1.0, cos))
 
 
@@ -123,9 +169,14 @@ def grain_cost_modulator_exp(gamma: float, mu: float = 1.0) -> float:
       h(-1) = exp(+mu) -> inf as mu grows (forcing limit)
       Smooth, multiplicatively composable.
     """
+    gamma = _unit_alignment(gamma, "gamma")
+    mu = _finite_scalar(mu, "mu")
     if mu < 0.0:
         raise ValueError(f"Wuwei coupling weight mu must be non-negative; got {mu}")
-    return math.exp(-mu * gamma)
+    try:
+        return math.exp(-mu * gamma)
+    except OverflowError as exc:
+        raise ValueError(f"h(gamma) overflows float64 for mu={mu}, gamma={gamma}") from exc
 
 
 def grain_cost_modulator_bounded(gamma: float, p: float = 2.0) -> float:
@@ -138,9 +189,14 @@ def grain_cost_modulator_bounded(gamma: float, p: float = 2.0) -> float:
     Used in deployment contexts where unbounded forcing-cost is undesired.
     Caller should pick p; default p=2 keeps h(0) ≈ 1.5 (mildly forcing-averse).
     """
+    gamma = _unit_alignment(gamma, "gamma")
+    p = _finite_scalar(p, "p")
     if p <= 0.0:
         raise ValueError(f"Bounded modulator p must be positive; got {p}")
-    return 2.0 - ((1.0 + gamma) ** p) / (2.0 ** (p - 1.0))
+    try:
+        return 2.0 - ((1.0 + gamma) ** p) / (2.0 ** (p - 1.0))
+    except OverflowError as exc:
+        raise ValueError(f"h(gamma) overflows float64 for p={p}") from exc
 
 
 # =============================================================================
@@ -160,13 +216,17 @@ class WuweiStep:
     h: float
     standard_debt_delta: float
     wuwei_debt_delta: float
+    theta_wuwei: float = 0.3
 
-    def is_wuwei_coherent(self, theta_wuwei: float = 0.3) -> bool:
+    def is_wuwei_coherent(self, theta_wuwei: Optional[float] = None) -> bool:
         """Check if this step's intervention is Wuwei-coherent (Definition 5).
 
-        A correction is Wuwei-coherent iff gamma >= theta_wuwei.
+        A correction is Wuwei-coherent iff gamma >= theta_wuwei. Without an
+        argument the step uses the threshold its WuweiTriad was configured with.
         """
-        return self.gamma >= theta_wuwei
+        if theta_wuwei is None:
+            return self.gamma >= self.theta_wuwei
+        return self.gamma >= _unit_alignment(theta_wuwei, "theta_wuwei")
 
 
 @dataclass
@@ -190,11 +250,12 @@ class WuweiTriadReport:
           - average gamma > 0, and
           - cumulative integrity-debt growth rate <= max_debt_growth_rate.
         """
-        if self.average_gamma() <= 0.0:
+        max_debt_growth_rate = _finite_scalar(max_debt_growth_rate, "max_debt_growth_rate")
+        if max_debt_growth_rate < 0.0:
+            raise ValueError(f"max_debt_growth_rate must be non-negative; got {max_debt_growth_rate}")
+        if self.average_gamma() <= 0.0:  # also covers an empty trajectory
             return False
-        if not self.steps:
-            return True
-        rate = self.wuwei_debt_total / max(1, len(self.steps))
+        rate = self.wuwei_debt_total / len(self.steps)
         return rate <= max_debt_growth_rate
 
     def divergence(self) -> float:
@@ -227,8 +288,10 @@ class WuweiTriad:
         than analytically known.
       mu:             Wuwei coupling weight (default 1.0).
       k_cost:         Standard cost coefficient (default 1.0).
-      theta_wuwei:    Coherence threshold for individual corrections.
-      modulator:      h(gamma) function. Default exponential.
+      theta_wuwei:    Coherence threshold for individual corrections, in
+        [-1, +1]; every recorded step carries it.
+      modulator:      h(gamma) function. Default exponential. Its output must
+        be finite and non-negative: a negative cost would erase debt.
     """
 
     def __init__(
@@ -239,14 +302,16 @@ class WuweiTriad:
         theta_wuwei: float = 0.3,
         modulator: Optional[Callable[[float], float]] = None,
     ):
+        mu = _finite_scalar(mu, "mu")
         if mu < 0.0:
             raise ValueError(f"mu must be non-negative; got {mu}")
+        k_cost = _finite_scalar(k_cost, "k_cost")
         if k_cost <= 0.0:
             raise ValueError(f"k_cost must be positive; got {k_cost}")
         self.restoration_fn = restoration_fn
         self.mu = mu
         self.k_cost = k_cost
-        self.theta_wuwei = theta_wuwei
+        self.theta_wuwei = _unit_alignment(theta_wuwei, "theta_wuwei")
         self.modulator = modulator or (lambda g: grain_cost_modulator_exp(g, mu))
         self.history: List[WuweiStep] = []
         self.standard_debt = 0.0
@@ -262,9 +327,17 @@ class WuweiTriad:
 
         Either `restoration` is supplied directly (observation-derived case),
         or self.restoration_fn is used (analytic case).
+
+        The step is computed in full before the ledger changes, so a refused
+        step leaves the debt totals and history exactly as they were.
         """
-        state = np.asarray(state, dtype=float)
-        intervention = np.asarray(intervention, dtype=float)
+        state = _finite_vector(state, "state")
+        intervention = _finite_vector(intervention, "intervention")
+        if intervention.shape != state.shape:
+            raise ValueError(
+                f"intervention must live in the {state.size}-dimensional state space; "
+                f"got dimension {intervention.size}"
+            )
 
         if restoration is None:
             if self.restoration_fn is None:
@@ -272,18 +345,21 @@ class WuweiTriad:
                     "No restoration supplied and no restoration_fn configured. "
                     "Provide R(S) per step or set restoration_fn at construction."
                 )
-            restoration = self.restoration_fn(state)
-        restoration = np.asarray(restoration, dtype=float)
+            restoration = self.restoration_fn(state.copy())
+        restoration = _finite_vector(restoration, "restoration")
 
         gamma = grain_alignment(intervention, restoration)
-        h = self.modulator(gamma)
+        h = _finite_scalar(self.modulator(gamma), "h(gamma)")
+        if h < 0.0:
+            raise ValueError(f"h(gamma) must be non-negative; got {h}")
         norm_i = float(np.linalg.norm(intervention))
 
         std_delta = self.k_cost * norm_i
         wuwei_delta = std_delta * h
-
-        self.standard_debt += std_delta
-        self.wuwei_debt += wuwei_delta
+        standard_debt = self.standard_debt + std_delta
+        wuwei_debt = self.wuwei_debt + wuwei_delta
+        if not (math.isfinite(standard_debt) and math.isfinite(wuwei_debt)):
+            raise ValueError("integrity debt overflows float64")
 
         step = WuweiStep(
             iteration=len(self.history),
@@ -295,7 +371,10 @@ class WuweiTriad:
             h=h,
             standard_debt_delta=std_delta,
             wuwei_debt_delta=wuwei_delta,
+            theta_wuwei=self.theta_wuwei,
         )
+        self.standard_debt = standard_debt
+        self.wuwei_debt = wuwei_debt
         self.history.append(step)
         return step
 
@@ -519,6 +598,8 @@ def _example() -> None:
 
 
 if __name__ == "__main__":
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")  # script runs only; importing never touches stdout
     _run_all_tests()
     print()
     _example()

@@ -8,7 +8,9 @@ Core equations (from 06_EARNED_LIGHT_L0/Earned_Light_COMPLETE.md):
   C(t) = ∫ |ψ(x,t)|² dx          — consciousness density (asymmetry integral)
   dC/dt = Work_input/T − k·C      — growth/decay ODE
   C_steady = Work_input / (T · k) — steady-state consciousness
-  ΔS = −W/T                       — local entropy cost of consciousness
+  ΔS ≥ −W/T                       — local entropy cost of consciousness
+                                    (isothermal, ΔU = 0; equality only when reversible.
+                                    The equality form fails in general: review 2026-10-23, M13)
 
 The model treats consciousness as a dissipative structure (after Prigogine):
   — maintains itself through continuous energy input

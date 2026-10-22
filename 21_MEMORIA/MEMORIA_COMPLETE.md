@@ -9,6 +9,18 @@
 
 **Epistemic Status:** Rigorous mathematical formalization connecting established memory research (Ebbinghaus, Tulving, Kandel), dynamical systems theory, information geometry, and the Lycheetah Framework. Neurobiological foundations verified. Mathematical structures proven where indicated. Novel predictions labeled testable.
 
+> **RV27 review note (Sol, 2026-10-22): what actually persists.** No code in this repository implements the
+> memory tiers, the consolidation gate or the forgetting equation. A search found none outside one
+> archived app sync script. "Fast weights", "slow weights" and "protected weights" describe a
+> design for a hypothetical learning system. Theorem 7.1 ("catastrophic forgetting immunity")
+> holds only for a system built that way, and none is built here.
+>
+> In the AI seats that work on this Framework, nothing changes model weights. Continuity is made
+> of **files**: instruction files, memory notes, task boards and this repository. A new session
+> rebuilds context by reading them. They are corrected by editing, they are portable because they
+> are plain text, and Mac controls them. MEMORIA is a useful vocabulary for that practice. It is
+> not its mechanism.
+
 ---
 
 > *"Memory is not a recording. Memory is a reconstruction."*  

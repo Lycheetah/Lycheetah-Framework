@@ -144,6 +144,9 @@ class CheckpointedWorkflow:
             decision = mutation()
         except Exception as exc:
             return OperationReceipt(Decision(False, "mutation_exception"), False, error=str(exc))
+        if decision.reason == "audit_checkpoint_stale":
+            # Another writer appended first and owns publishing its own events.
+            return OperationReceipt(decision, True, expected_prior_checkpoint.get("generation"))
         try:
             new_anchor = self.guard.audit_anchor()
             prior_last_seq = expected_prior_checkpoint.get("last_seq")
@@ -171,7 +174,14 @@ class CheckpointedWorkflow:
             trusted = self._trusted_checkpoint()
             return self._run_checkpointed_mutation(
                 lambda: self.guard.issue_approval(
-                    approval_id, actor, approver_id, action, scope, issued_at, expires_at
+                    approval_id,
+                    actor,
+                    approver_id,
+                    action,
+                    scope,
+                    issued_at,
+                    expires_at,
+                    expected_audit_anchor=self._anchor(trusted),
                 ),
                 trusted,
             )
@@ -189,7 +199,13 @@ class CheckpointedWorkflow:
             trusted = self._trusted_checkpoint()
             return self._run_checkpointed_mutation(
                 lambda: self.guard.prepare_effect(
-                    effect_id, approval_id, actor, action, scope, now
+                    effect_id,
+                    approval_id,
+                    actor,
+                    action,
+                    scope,
+                    now,
+                    expected_audit_anchor=self._anchor(trusted),
                 ),
                 trusted,
             )
@@ -221,14 +237,48 @@ class CheckpointedWorkflow:
         with self._lock:
             trusted = self._trusted_checkpoint()
             return self._run_checkpointed_mutation(
-                lambda: self.guard.record_result(effect_id, now, outcome, details),
+                lambda: self.guard.record_result(
+                    effect_id,
+                    now,
+                    outcome,
+                    details,
+                    expected_audit_anchor=self._anchor(trusted),
+                ),
+                trusted,
+            )
+
+    def reconcile_effect(
+        self,
+        effect_id: str,
+        now: int,
+        outcome: Any,
+        evidence: dict[str, Any],
+    ) -> OperationReceipt:
+        with self._lock:
+            trusted = self._trusted_checkpoint()
+            return self._run_checkpointed_mutation(
+                lambda: self.guard.reconcile_effect(
+                    effect_id,
+                    now,
+                    outcome,
+                    evidence,
+                    expected_audit_anchor=self._anchor(trusted),
+                ),
                 trusted,
             )
 
     def revoke_all(self, actor: str, now: int) -> OperationReceipt:
         with self._lock:
             trusted = self._trusted_checkpoint()
-            return self._run_checkpointed_mutation(
-                lambda: Decision(True, "revoked", effect_id=str(self.guard.revoke_all(actor, now))),
-                trusted,
-            )
+            anchor = self._anchor(trusted)
+
+            def revoke() -> Decision:
+                try:
+                    epoch = self.guard.revoke_all(actor, now, expected_audit_anchor=anchor)
+                except RuntimeError as exc:
+                    if str(exc) == "audit_checkpoint_stale":
+                        return Decision(False, "audit_checkpoint_stale")
+                    raise
+                return Decision(True, "revoked", effect_id=str(epoch))
+
+            return self._run_checkpointed_mutation(revoke, trusted)

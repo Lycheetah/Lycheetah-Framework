@@ -157,8 +157,21 @@ def auc(higher: Sequence[float], lower: Sequence[float]) -> float:
     return total / (len(higher) * len(lower))
 
 
-def auc_sig(a: float, n_pos: int, n_neg: int) -> Tuple[float, float]:
-    se = math.sqrt((n_pos + n_neg + 1) / (12.0 * n_pos * n_neg))
+def auc_sig(a: float, n_pos: int, n_neg: int,
+            pooled: Sequence[float] | None = None) -> Tuple[float, float]:
+    """Mann-Whitney normal approximation; pass `pooled` scores for the tie correction.
+
+    Without it a lens that scores most comments identically gets an overstated null
+    SE and conservative p-values (review RV23, 2026-10-22).
+    """
+    n = n_pos + n_neg
+    ties = 0.0
+    if pooled is not None:
+        ties = sum(t ** 3 - t for t in collections.Counter(pooled).values()) / (n * (n - 1))
+    var = ((n + 1) - ties) / (12.0 * n_pos * n_neg)
+    if var <= 0:
+        return float("nan"), float("nan")
+    se = math.sqrt(var)
     z = (a - 0.5) / se
     return z, math.erfc(abs(z) / math.sqrt(2.0))
 
@@ -176,7 +189,7 @@ def report(title: str, score, fires, items: List[Dict]) -> int:
         if len(pos) < 30:
             continue
         a = auc(neg, pos)          # healthy should outrank unhealthy
-        z, p = auc_sig(a, len(pos), len(neg))
+        z, p = auc_sig(a, len(pos), len(neg), scores)
         if p >= 0.05:
             verdict = "not distinguishable from chance"
         elif a > 0.5:

@@ -5,6 +5,11 @@ RESEARCH DATA PIPELINE
 Ingest real research, calculate Truth Pressure (Π), validate practices.
 
 This is what was missing: actual data handling, not just mock tests.
+
+Review note (2026-10-22, RV37): the example data below is illustrative
+("real-ish"), not extracted from the cited papers, and some years disagree with
+the citations. Π is a heuristic, not a validated evidence grade. FOUNDATION now
+also requires replication (two or more studies) and at least one controlled design.
 """
 
 import json
@@ -107,6 +112,8 @@ class PracticeEvidence:
             consistency = max(0.0, min(1.0, consistency))
         else:
             consistency = 1.0  # Single study, no disagreement yet
+        # Note (RV37): range-based consistency reads a stronger agreeing replication
+        # as disagreement, so adding one can lower Π.
         
         # Quality (average study quality)
         avg_quality = statistics.mean([s.quality.value for s in self.studies])
@@ -127,17 +134,29 @@ class PracticeEvidence:
         
         return max(0.0, pi)  # Can't be negative
     
+    # A single study scores consistency 1.0 and study_type never enters Π, so Π
+    # alone let one HIGH-rated study of any design reach FOUNDATION (RV37).
+    FOUNDATION_DESIGNS = (StudyType.RCT, StudyType.META_ANALYSIS, StudyType.SYSTEMATIC_REVIEW)
+
     def get_layer_recommendation(self) -> str:
-        """Recommend which layer this practice belongs in"""
+        """Recommend which layer this practice belongs in.
+
+        FOUNDATION needs Π >= 1.5, at least two studies, and at least one
+        controlled design; otherwise the practice is capped at MIDDLE.
+        """
         pi = self.calculate_truth_pressure()
-        
+
         if pi < 1.2:
             return "EDGE"
         elif pi < 1.5:
             return "MIDDLE"
+        elif len(self.studies) < 2 or not any(
+            s.study_type in self.FOUNDATION_DESIGNS for s in self.studies
+        ):
+            return "MIDDLE"
         else:
             return "FOUNDATION"
-    
+
     def summary(self) -> Dict:
         """Summary of evidence"""
         pi = self.calculate_truth_pressure()

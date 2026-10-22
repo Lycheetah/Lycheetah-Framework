@@ -122,6 +122,37 @@ class TestParser:
         tree, errors = parser.parse(tok.tokenize("→ Φ"))
         assert tree is None or errors  # must surface as invalid
 
+    @pytest.mark.active
+    def test_rejects_trailing_tokens(self):
+        """Input left over after a complete expression is an error, not dropped."""
+        v = LAMAGUEValidator()
+        for expr in ("Ao Ψ", "Ao )", "Ψ Ao → Φ"):
+            result = v.validate(expr)
+            assert result.valid is False, expr
+            assert any("Unexpected trailing tokens" in e for e in result.errors), expr
+
+    @pytest.mark.active
+    def test_collapse_example_parses_completely(self):
+        """04_BNF_GRAMMAR.md's own example uses ↯ infix; every symbol must survive."""
+        result = LAMAGUEValidator().validate("Ψ ↯ Ao → Φ↑ → Ψ_inv")
+        assert result.valid, result.errors
+        assert result.tree.symbols() == ["Ψ", "↯", "Ao", "→", "Φ↑", "→", "Ψ_inv"]
+
+    @pytest.mark.active
+    def test_text_after_pipe_is_validated(self):
+        """A constraint after '|' is checked, never skipped."""
+        v = LAMAGUEValidator()
+        assert v.validate("Ψ → Φ | Ao").valid is True
+        unknown = v.validate("Ψ → Φ | @")
+        assert unknown.valid is False
+        assert any("Unknown symbol '@'" in e for e in unknown.errors)
+        trailing = v.validate("Ψ → Φ | Ao Ψ")
+        assert trailing.valid is False
+        assert any(e.startswith("Constraint:") for e in trailing.errors)
+        empty = v.validate("Ψ → Φ |")
+        assert empty.valid is False
+        assert any("Empty constraint" in e for e in empty.errors)
+
 
 # ── Validator ─────────────────────────────────────────────────────────────────
 

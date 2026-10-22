@@ -1,0 +1,14 @@
+{
+  "status": "SOURCE_EQUIVALENT_DIFFERENTIAL_ONLY",
+  "repository_commit": "8ae1b367dcf09997e82ce66f9ad5d30ff36e5d65",
+  "source_schema_blob_sha": "eeb1306040a17ce530f42f74966b185fece9a41e",
+  "schema_fixture_valid": true,
+  "baseline_unsigned_valid": true,
+  "baseline_signed_digest_and_hmac_valid": true,
+  "case_count": 20,
+  "source_equivalent_parser_accepts": 18,
+  "current_schema_rejects": 10,
+  "strict_parser_rejects": 20,
+  "strict_candidate_schema_rejects": 20,
+  "original_hmac_still_verifies_after_normalizable_mutation": 8
+}
