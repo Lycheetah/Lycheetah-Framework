@@ -19,7 +19,7 @@ pytest>=7.0.0
 
 # Code quality
 black>=23.0.0
-flake8>=6.0.0
+flake8>=7.4.1
 
 # Documentation
 sphinx>=6.0.0
