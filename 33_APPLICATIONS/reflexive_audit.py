@@ -24,7 +24,7 @@ from pathlib import Path
 # private; set GAME_REPO to include its rows, otherwise they report MISSING,
 # which is the honest outcome and already handled below.
 REPO = Path(__file__).resolve().parents[1]
-GAME_REPO = Path(os.environ.get("GAME_REPO", REPO.parent / "0sol-by-lycheetah"))
+GAME_REPO = Path(os.environ.get("GAME_REPO", REPO.parent / "private-app-repository"))
 
 sys.path.insert(0, str(REPO / "12_IMPLEMENTATIONS" / "core"))
 from semantic_extractor import SemanticExtractor  # noqa: E402

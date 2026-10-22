@@ -634,11 +634,12 @@
       "role": "context",
       "status": "Supporting source; status remains as stated in the file",
       "origin": "LYCHEETAH_EPIC/COMIC/LIVING_COMIC_MOTION_WEAVE_V0_1.md",
-      "import_sha256": "a6d2f26686b1d6639142728ba0c683ee7e335e15fafc7cda0469356106fe28a2",
-      "current_sha256": "a6d2f26686b1d6639142728ba0c683ee7e335e15fafc7cda0469356106fe28a2",
-      "bytes": 6681,
-      "words": 981,
-      "changed_since_import": false
+      "import_sha256": "9b624f86202b08f8234c0a4dbb65c75d0650434a41272ec5593b541f0ab5a73e",
+      "current_sha256": "9b624f86202b08f8234c0a4dbb65c75d0650434a41272ec5593b541f0ab5a73e",
+      "bytes": 6659,
+      "words": 980,
+      "changed_since_import": false,
+      "origin_revision": "2026-10-23: the private application repository's name removed at origin and in the collection, by Mac's standing rule that it is never named in public files"
     },
     {
       "id": "context-22",

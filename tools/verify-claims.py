@@ -48,6 +48,10 @@ VOCABULARIES = {
         r"\b(MEASURED|DERIVED|CONJECTURE|ASSUMED|INTERPRETIVE|UNVERIFIED|SCAFFOLD|RETRACTED)\b",
     "promotion states (FOUNDATION/EDGE)":
         r"\b(FOUNDATION|EDGE)\b",
+    # Added 2026-10-23 for the AI Future wing papers, which mark every claim by future
+    # register rather than by evidence status.
+    "future registers (TRAJECTORY/POSSIBLE_FUTURE/…)":
+        r"\b(TRAJECTORY|POSSIBLE_FUTURE|ALIEN_FUTURE|NORMATIVE)\b",
     "inline proposal marks":
         r"\[(PROPOSAL|PROPOSED|DRAFT|UNVERIFIED|CONJECTURE)\]",
     # ⚠ Added 2026-07-27 after the gate flagged MASTER_EQUATION_CALIBRATION.md — the

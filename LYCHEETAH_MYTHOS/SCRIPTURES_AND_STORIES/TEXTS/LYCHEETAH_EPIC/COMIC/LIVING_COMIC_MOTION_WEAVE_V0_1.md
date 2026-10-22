@@ -7,7 +7,7 @@
 
 ## 1. Honest capability finding
 
-### Measured in the `0sol-by-lycheetah` application repository (private)
+### Measured in the private application repository
 
 - `components/parallax/ParallaxLayer.tsx` moves registered image layers at distinct depth
   using shared camera values.

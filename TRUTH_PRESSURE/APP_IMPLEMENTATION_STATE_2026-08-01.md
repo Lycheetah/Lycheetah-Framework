@@ -1,7 +1,7 @@
 # Π — WHAT THE APP ACTUALLY IMPLEMENTS
 
 **Status:** MEASURED, 2026-08-01. Every number below was read from running code in
-`~/0sol-by-lycheetah`, not from prose about it.
+the private app repository, not from prose about it.
 **Written because:** Mac, 2026-08-01 — *"our truth pressure engine has evolved
 inside the app more than it has in our codex."* That is correct, and this
 document is the reconciliation.
@@ -250,7 +250,7 @@ to fail in.
 ## V. FILE MAP — where to read the running code
 
 ```
-~/0sol-by-lycheetah/
+<private app repository>/
   lib/cascade-score.ts               258  5-layer text lens · Π ∈ [0,1] · densities
   lib/intelligence/cascade-onion.ts  351  9-layer block engine · Π ∈ [0,2000]
   lib/intelligence/cascade-judge.ts  253  auto-scores the 9 layers

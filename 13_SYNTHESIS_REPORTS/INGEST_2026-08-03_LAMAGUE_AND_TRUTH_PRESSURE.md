@@ -268,7 +268,7 @@ All six files are byte-identical to the copy that arrived inside Source 3.
 `TRUTH_PRESSURE/FORGE_2026-08-02/06_TOOLS/` (zip) and
 `TRUTH_PRESSURE/FORGE_2026-08-02_EXPANDED/TRUTH_PRESSURE_LIVE_SOURCE_COLLECTOR_v0.8/`.
 
-**It was not run.** The collector is designed to scan `~/0sol-by-lycheetah`, which
+**It was not run.** The collector is designed to scan the private app repository, which
 was out of bounds for this session — a live seat is editing it. See *Needs Mac's
 decision* below.
 
@@ -355,7 +355,7 @@ it is not independence.
 
 ## NEEDS MAC'S DECISION — reported, not decided
 
-1. **Run the v0.8 collector against `~/0sol-by-lycheetah`?** It is the forge's
+1. **Run the v0.8 collector against the private app repository?** It is the forge's
    single named next step and the thing blocking final live wiring. **Not run here**
    — that repo was out of bounds and another seat was live in it. Yours to schedule.
 

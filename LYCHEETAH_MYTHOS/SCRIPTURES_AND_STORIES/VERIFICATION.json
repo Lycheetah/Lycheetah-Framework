@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-19T04:42:56.567399+00:00",
+  "checked_at": "2026-10-22T20:37:35.485367+00:00",
   "reading_texts": 34,
   "source_files": 63,
   "condensed_words": 1849,
@@ -27,6 +27,6 @@
   "archive_round_trip": "PASS",
   "commit": "NOT_RUN",
   "publication": "NOT_RUN",
-  "browser_visual_witness": "LOCAL_CHROMIUM: 11 checks passed; desktop and 390px screenshots inspected; no physical device or outside reader",
+  "browser_visual_witness": "NOT_RUN",
   "ancient_source_research": "NOT_RUN"
 }

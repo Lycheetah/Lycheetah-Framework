@@ -1,43 +1,49 @@
 # Lycheetah Framework
 
-**Keep the reasons, uncertainty and human choices intact as intelligence changes.**
+**Keep the reasons, the uncertainty and the human choices intact as intelligence changes.**
 
-Lycheetah is an open research and software project by **Mackenzie Conor James Clark**
-in Ōtepoti / Dunedin, New Zealand. It develops tools for human–AI collaboration:
-carrying context between sessions, revising knowledge when evidence changes,
-controlling which actions may run, and keeping a record of what happened.
+Lycheetah is an open research and software project by **Mackenzie Conor James Clark**,
+built in Ōtepoti / Dunedin, New Zealand. It makes tools for human–AI collaboration
+that do four things:
 
-The practical problem is familiar. A conversation gets compressed. A decision moves
-between people or agents. The conclusion survives, but its caveats, dissent,
-permission limits or recovery plan disappear. Lycheetah makes those parts explicit
-so they can be inspected, compared and preserved.
+- **carry context** between sessions and between people and agents;
+- **revise knowledge** when the evidence changes;
+- **control which actions may run**, and under whose authority;
+- **keep a record** of what actually happened, so it can be checked later.
 
-The repository also holds the theories, cultural inquiry, learning designs,
-philosophy and stories behind that work. Each branch has its own purpose and
-evidence; a working software check does not validate every associated theory.
+The problem it answers is ordinary. A conversation gets compressed, or a decision passes
+from one person or agent to the next. The conclusion survives, but the caveats, the
+dissent, the permission limits and the recovery plan get lost. Lycheetah makes those
+parts explicit so they can be inspected, compared and preserved.
 
-**Status · 21 October 2026:** research software with implemented local controls,
-versioned experiments and open questions. The Python package source declares
-**1.3.0**; language, paper and creative editions have their own versions.
+The repository also holds the theory, the philosophy, the learning designs and the
+stories behind the work. Each area has its own purpose and its own evidence. A passing
+software check validates that software, not every theory that sits beside it.
 
-[Start using a tool](#start-using-a-tool) · [Run the software](#run-the-software) ·
-[How the parts fit](#how-the-parts-fit) · [Evidence and current limits](#evidence-and-current-limits) ·
-[Repository map](00_Sovereign_Index.md) · [Current synthesis](13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md)
+**Status · 23 October 2026.** Research software with implemented local controls,
+versioned experiments and open questions. The Python package declares **1.3.0**.
+Language, paper and creative editions carry their own versions. The full maintained
+test suite currently runs **1,571 passed, 1 skipped, 2 expected failures**: these are
+engineering checks, not independent experiments.
 
-## Start using a tool
+[Use a tool](#use-a-tool) · [Run it](#run-it) · [How it fits together](#how-it-fits-together) ·
+[What's new](#whats-new) · [Evidence and limits](#evidence-and-limits) ·
+[Find your way](#find-your-way) · [Contribute and cite](#contribute-and-cite)
 
-| What you want to do | Start here | What it establishes |
+## Use a tool
+
+| You want to | Start here | What it actually shows |
 |---|---|---|
-| Carry goals, uncertainty, permission and recovery into another session | [Handover tool and worked comparisons](examples/meaning_handover/README.md) · [browser preview](https://lycheetah.github.io/Lycheetah-Framework/lamague-handover.html) | Inspectable structured records and format comparisons; human benefit remains to be measured. |
-| Check an existing JSON decision record for missing accountability fields | [LAMAGUE check](03_LAMAGUE_L1/24_LAMAGUE_CHECK/README.md) | Presence and empty-value checks using known field aliases; it cannot establish whether the contents are true. |
-| Gate a local tool action and keep a policy receipt | [Quick start below](#run-the-software) · [Assurance Runtime](34_ASSURANCE_RUNTIME/README.md) | Bounded policy, replay, checkpoint and result-recording behavior. |
-| Explore knowledge revision and numerical models | [Core engine guide](12_IMPLEMENTATIONS/core/README.md) | Executable models with declared inputs and assumptions. |
-| Study the research and challenge its claims | [Paper index](papers/README.md) · [technical review](28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md) | Sources, experiments, counterexamples and unresolved questions. |
-| Read the creative work | [Stories and scriptures](LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/README.md) · [Mystery School](14_MYSTERY_SCHOOL/README.md) | Fiction, philosophy and learning materials with their own source and status records. |
+| Carry goals, uncertainty, permissions and recovery into another session | [Handover tool](examples/meaning_handover/README.md) · [browser preview](https://lycheetah.github.io/Lycheetah-Framework/lamague-handover.html) | Inspectable structured records and format comparisons. Whether they help people is still to be measured. |
+| Check a JSON decision record for missing accountability fields | [LAMAGUE check](03_LAMAGUE_L1/24_LAMAGUE_CHECK/README.md) | Missing or empty fields, using known aliases. It cannot tell you whether the contents are true. |
+| Gate a local tool action and keep a receipt | [Run it](#run-it) · [Assurance Runtime](34_ASSURANCE_RUNTIME/README.md) | Bounded policy, replay refusal, checkpoints and recorded outcomes. |
+| Explore knowledge revision and the numerical models | [Core engines](12_IMPLEMENTATIONS/core/README.md) | Executable models with declared inputs and assumptions. |
+| Read and challenge the research | [Paper index](papers/README.md) · [technical review](28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md) | Sources, experiments, counterexamples and open questions. |
+| Read the creative work | [Stories and scriptures](LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/README.md) · [Mystery School](14_MYSTERY_SCHOOL/README.md) | Fiction, philosophy and learning material, each with its own source and status record. |
 
-## Run the software
+## Run it
 
-Use **Python 3.10 or newer**. From a local checkout:
+You need **Python 3.10 or newer**.
 
 ```sh
 git clone https://github.com/Lycheetah/Lycheetah-Framework.git
@@ -47,13 +53,13 @@ python3 -m venv .venv
 python3 -m pip install -e .
 ```
 
-On Windows, activate the environment with `.\.venv\Scripts\Activate.ps1` in PowerShell.
-The basic examples use local code and require no model-provider account or API key.
+On Windows, activate with `.\.venv\Scripts\Activate.ps1` in PowerShell. The examples
+run on local code only. No model-provider account or API key is needed.
 
-### A small action-and-receipt example
+### One action, one receipt
 
-This runs a declared local fixture and shows that a separate proposed write needs
-review. Its ledger and checkpoint key live in a temporary directory.
+This runs a declared local action, then shows that a proposed write is held for review.
+The ledger and its checkpoint key live in a temporary directory.
 
 ```python
 from tempfile import TemporaryDirectory
@@ -80,62 +86,57 @@ with TemporaryDirectory() as workspace:
     print(proposal.allowed)                    # False
 ```
 
-The gateway evaluates declared actions. The integrating application must authenticate
-approvers and connect each action description to the correct executor. A Python
-callback is not automatically confined by the description passed alongside it.
-An uncertain result blocks the same action until it is reconciled from an
-authoritative provider read (`gateway.reconcile(effect_id, outcome, evidence)`, or the
-guard CLI's `reconcile` command). A local write that could not be checkpointed blocks
-every later action, and there is no automatic recovery from that state. Two processes
-may share one ledger directory: a write that loses the race is refused as
-`audit_checkpoint_stale` and can be retried. An executor answers
-`{"status": "success"}` or `{"status": "failure"}`; any other answer is
-recorded as uncertain and held for `reconcile`, never retried blind. Sensitive
-argument keys are redacted in receipts only: the local ledger keeps the full
-action and the provider's answer so a dispatch can be re-evaluated, and those
-audit details travel to the checkpoint authority with each checkpoint. Treat the
-ledger directory and the authority as holding secrets.
-`open_local` keeps the ledger, its checkpoint history and the signing key in one
-directory. That detects a damaged or rolled-back ledger, but not a writer who can
-change the whole directory; for that boundary, run the checkpoint authority in
-another process or host (`make_server`, `CheckpointHTTPClient`).
+**What the gateway does and does not do:**
+
+- It evaluates the actions it is told about. Your application must authenticate
+  approvers and connect each action description to the right executor. A Python
+  callback is not confined by the description passed next to it.
+- An executor answers `{"status": "success"}` or `{"status": "failure"}`. Any other
+  answer is recorded as **uncertain** and blocks that action until it is reconciled
+  from an authoritative read (`gateway.reconcile(effect_id, outcome, evidence)`, or the
+  guard CLI's `reconcile` command). It is never retried blind.
+- A local write that cannot be checkpointed blocks every later action. There is no
+  automatic recovery from that state.
+- Two processes may share a ledger directory. A write that loses the race is refused as
+  `audit_checkpoint_stale` and can be retried.
+- Sensitive argument keys are redacted **in receipts only**. The local ledger keeps the
+  full action and the provider's answer, and those details travel to the checkpoint
+  authority. Treat the ledger directory and the authority as holding secrets.
+- `open_local` keeps the ledger, its checkpoint history and the signing key in one
+  directory. That catches a damaged or rolled-back ledger, but not someone who can
+  rewrite the whole directory. For that boundary, run the checkpoint authority in
+  another process or host (`make_server`, `CheckpointHTTPClient`).
 
 ### Keep an inspectable handoff
 
 The [guarded handoff example](examples/README.md#try-one-local-action-and-inspect-its-record)
-connects a task declaration, carried context, one actual local file and its complete
-receipt. Choose a new export directory:
+ties together a task declaration, carried context, one real local file and its receipt:
 
 ```sh
 python3 examples/guarded_handoff_risk_demo.py --export ./my-handoff-demo
 python3 examples/guarded_handoff_risk_demo.py --verify ./my-handoff-demo
 ```
 
-Inspect `task.json`, `packet.json`, `action.json`, `handoff.txt` and
-`assurance-receipt.json` there. Verification reads the retained records without
-running the task again. Changed output, context, receipt or missing files fail
-inspection. Retain the printed manifest digest separately to pin the bundle's
-bytes; otherwise verification establishes internal consistency. The example uses
-synthetic proposals, declared approval labels and a trusted fixed writer.
+Verification reads the retained records without re-running the task. Changed output,
+context, receipt or missing files fail. Keep the printed manifest digest somewhere
+else to pin the bundle's bytes; without it, verification shows internal consistency only.
 
-For an ordinary JSON record, the accountability checker runs without installing
-the package:
+To check an ordinary JSON record without installing anything:
 
 ```sh
 python3 03_LAMAGUE_L1/24_LAMAGUE_CHECK/lamague_check.py --demo
 python3 03_LAMAGUE_L1/24_LAMAGUE_CHECK/lamague_check.py your-record.json --strict
 ```
 
-Installed commands include `lycheetah-assure`, `lycheetah-compact`,
-`lycheetah-consensus` and `lycheetah-handoff`; use `--help` for their specific inputs.
-Optional web and MCP dependencies are declared in [pyproject.toml](pyproject.toml).
-See the [package guide](lycheetah/README.md) and [examples](examples/README.md).
+Installed commands: `lycheetah-assure`, `lycheetah-compact`, `lycheetah-consensus` and
+`lycheetah-handoff` (each takes `--help`). Optional web and MCP dependencies are listed
+in [pyproject.toml](pyproject.toml). See the [package guide](lycheetah/README.md) and
+[examples](examples/README.md).
 
-## How the parts fit
+## How it fits together
 
-The architecture connects three responsibilities: **revise what is known,
-preserve what matters, and control what may happen next**. Human review and
-visible evidence connect them.
+Three jobs, joined by human review and visible evidence: **revise what is known,
+preserve what matters, control what happens next.**
 
 ```mermaid
 flowchart LR
@@ -148,131 +149,137 @@ flowchart LR
     H --> P
 ```
 
-This is a design map across separate instruments. The action gateway implements
-the policy/checkpoint/execution path; the entire diagram is not one deployed service.
+This is a map across separate instruments, not one deployed service. The action
+gateway implements the policy → checkpoint → execution path.
 
-| Responsibility | Main components | Source home |
+| Job | Main components | Where it lives |
 |---|---|---|
-| Knowledge and revision | CASCADE, Truth Pressure, Hybrid Gateway | [Core engines](12_IMPLEMENTATIONS/core/README.md), [Truth Pressure](TRUTH_PRESSURE/README.md), [Gateway research](papers/ai-futures/hybrid-gateway/README.md) |
-| Meaning and continuity | LAMAGUE, structured packets, Compaction Shield | [Language branches](03_LAMAGUE_L1/README.md), [maintained package](lycheetah/README.md) |
-| Normative commitments | AURA, human primacy, inspectability and reversibility | [AURA](02_AURA_L3/README.md) |
-| Permission and execution | Action Gateway, checkpointed workflow, Sovereign Execution Harness | [Assurance Runtime](34_ASSURANCE_RUNTIME/README.md), [public Python interfaces](lycheetah/README.md) |
+| Knowledge and revision | CASCADE, Truth Pressure, Hybrid Gateway | [Core engines](12_IMPLEMENTATIONS/core/README.md) · [Truth Pressure](TRUTH_PRESSURE/README.md) · [Gateway research](papers/ai-futures/hybrid-gateway/README.md) |
+| Meaning and continuity | LAMAGUE, structured packets, Compaction Shield | [Language](03_LAMAGUE_L1/README.md) · [package](lycheetah/README.md) |
+| Commitments | AURA: human primacy, inspectability, reversibility | [AURA](02_AURA_L3/README.md) |
+| Permission and execution | Action Gateway, checkpointed workflow, Sovereign Execution Harness | [Assurance Runtime](34_ASSURANCE_RUNTIME/README.md) · [package](lycheetah/README.md) |
 | Evidence and correction | Claim register, falsification records, reproducible checks | [Defense and evidence](28_DEFENSE/README.md) |
-| Learning and creative exploration | Mystery School, Mythos, Epic, generative work | [Learning](14_MYSTERY_SCHOOL/README.md), [stories](LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/README.md), [generative branch](35_ABSTRACT_AND_GENERATIVE/README.md) |
+| Learning and creative work | Mystery School, Mythos, Epic, generative work | [Learning](14_MYSTERY_SCHOOL/README.md) · [stories](LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/README.md) · [generative](35_ABSTRACT_AND_GENERATIVE/README.md) |
 
-A handover record carries context; it does not grant authority. A policy decision
-records a check; it does not prove an external effect. A receipt identifies a
-record; it does not independently establish the truth of every statement in it.
-These distinctions are part of the design.
+Three distinctions are part of the design. A handover record carries context; it does
+not grant authority. A policy decision records a check; it does not prove an external
+effect happened. A receipt identifies a record; it does not prove every statement in it.
 
-## The nine foundational frameworks
+### The nine foundational frameworks
 
-The original frameworks supply the project's vocabulary, models and questions.
-Their assumptions and evidence are examined in the
-[mathematical guide](11_MATHEMATICAL_FOUNDATIONS/README.md) and
+These supply the project's vocabulary, models and questions. Their assumptions are
+examined in the [mathematical guide](11_MATHEMATICAL_FOUNDATIONS/README.md) and the
 [full review](28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md).
 
-| Framework | Central question |
+| Framework | Its question |
 |---|---|
-| [CASCADE](01_CASCADE_L4/README.md) | How should represented knowledge reorganize when evidence conflicts? |
-| [AURA](02_AURA_L3/README.md) | Which governance commitments should remain inspectable? |
+| [CASCADE](01_CASCADE_L4/README.md) | How should knowledge reorganise when evidence conflicts? |
+| [AURA](02_AURA_L3/README.md) | Which governance commitments must stay inspectable? |
 | [LAMAGUE](03_LAMAGUE_L1/README.md) | What meaning and constraints survive a change of representation? |
 | [TRIAD](04_TRIAD_L2/README.md) | How can an observe-and-correct process be specified and measured? |
-| [MICROORCIM](05_MICROORCIM_L5/README.md) | How can declared intention and observed behavior be compared? |
-| [Earned Light](06_EARNED_LIGHT_L0/README.md) | How might energy and sustained organization be modeled? |
+| [MICROORCIM](05_MICROORCIM_L5/README.md) | How can declared intention be compared with observed behaviour? |
+| [Earned Light](06_EARNED_LIGHT_L0/README.md) | How might energy and sustained organisation be modelled? |
 | [ANAMNESIS](07_ANAMNESIS_L0/README.md) | How should discovery, recurrence and recognition be understood? |
-| [CHRYSOPOEIA](09_CHRYSOPOEIA_L4/README.md) | How can transformation be described through explicit operators? |
-| [HARMONIA](10_HARMONIA_L6/README.md) | How can resonance and coordination be modeled? |
+| [CHRYSOPOEIA](09_CHRYSOPOEIA_L4/README.md) | How can transformation be described with explicit operators? |
+| [HARMONIA](10_HARMONIA_L6/README.md) | How can resonance and coordination be modelled? |
 
 The newer [Earned Light agent-control forges](papers/agent-safety/earned-light/README.md)
-are a separate experimental line from the older consciousness/energy model.
-Their software results do not validate the latter's interpretation.
+are a separate experimental line from the older energy model. Their software results
+do not validate that model's interpretation.
+
+## What's new
+
+- **[AI Future Wings](papers/ai-futures/wings/README.md):** fifteen working research
+  drafts, one for each domain of the AI Future curriculum, from Science and Politics to
+  Embodiment and Development. Each one turns a domain into an instrument a study could use: the monoculture
+  ceiling for correlated AI majorities, the withdrawal test for real capability, the
+  returned-time test, the control horizon for remote bodies, matched-mind divergence.
+  Every number in them is synthetic, comes from one standard-library
+  [`models.py`](papers/ai-futures/wings/models.py), and is pinned by
+  `tests/test_ai_future_models.py`. None of the studies has been run.
+- **[Full-framework review](FOR-REVIEW/README.md):** a folder-by-folder review in
+  37 batches plus an 18-item mathematics checklist, with findings ledgers, reproduction
+  scripts and the fixes it made. Its ledgers keep retracted claims beside their causes
+  rather than deleting them.
 
 ## Research, governance and the wider work
 
-- [Agent safety](papers/agent-safety/README.md) studies evidence, authority,
-  revocation, action, observation and recovery. Earned Trust, Earned Light,
-  Sovereign Choice and frontier-control versions retain distinct experiments.
-- [LAMAGUE and SXP-L](03_LAMAGUE_L1/README.md) explore formal language,
-  representations and constrained meaning preservation across several versions.
-- [The Independent No](papers/independent-no/README.md) asks whether refusal can
-  remain binding and includes a proposed study.
-- [NZ governance](23_NZ_AI_GOVERNANCE/README.md) starts with a proposal for six
-  data rights for every New Zealander. Earlier cultural-policy drafts remain
-  historical; this is not an adopted national standard.
+- [Agent safety](papers/agent-safety/README.md): evidence, authority, revocation,
+  action, observation and recovery. Earned Trust, Earned Light, Sovereign Choice and
+  the frontier-control versions keep their own experiments.
+- [LAMAGUE and SXP-L](03_LAMAGUE_L1/README.md): formal language, representation and
+  constrained meaning preservation, across several versions.
+- [The Independent No](papers/independent-no/README.md): can a refusal stay binding?
+  Includes a proposed study.
+- [NZ governance](23_NZ_AI_GOVERNANCE/README.md): starts from a proposal for six data
+  rights for every New Zealander. This is a proposal, not an adopted national standard.
 - [Cross-cultural inquiry](24_LAMAGUE_CROSS_CULTURAL/README.md) and
-  [TIANXIA](32_TIANXIA/README.md) hold attributed comparisons and proposed models.
-  A mapping does not establish community endorsement.
+  [TIANXIA](32_TIANXIA/README.md): attributed comparisons and proposed models.
+  A mapping is not community endorsement.
 - [Stories](LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/README.md),
   [learning designs](14_MYSTERY_SCHOOL/README.md) and
-  [philosophical work](35_ABSTRACT_AND_GENERATIVE/README.md) explore the human
-  meaning of choice, continuity and change.
+  [philosophy](35_ABSTRACT_AND_GENERATIVE/README.md): the human meaning of choice,
+  continuity and change.
 
-## Evidence and current limits
+## Evidence and limits
 
-The strongest supported claims name a component, version, input and observed
-result. Exact record preservation, a rejected replay and a policy receipt are
-inspectable software results. Human benefit, general AI safety, psychological
-recovery and consciousness require different evidence.
+The strongest claims here name a component, a version, an input and an observed result.
+Exact record preservation, a refused replay and a policy receipt are software results
+you can inspect yourself. Human benefit, general AI safety, psychological recovery and
+consciousness would need different evidence, and none of it is claimed.
 
 The [technical review](28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md) records
-counterexamples to older mathematical guarantees and the code corrections made
-in October. On 21 October, **64 new boundary cases** passed across focused runs.
-The earlier full maintained run recorded 997 passes, one skip and one strict
-expected failure. Those are dated engineering checks, not independent experiments.
-A later [focused hardening pass](28_DEFENSE/review_2026_10_20/swarm-hardening.json)
-passed 329 cases, including 90 new snapshot, receipt and retained-handoff cases.
-The deeper review has inventoried 606 folders; reading and execution coverage
-remain incomplete and are [reported explicitly](28_DEFENSE/review_2026_10_20/folder-coverage.json).
-
-Release work remains: missing evidence references, corpus lint and claim-status
-footing failures, archive portability, and prototype admission defects. See the
-[review and repair sequence](28_DEFENSE/FULL_FRAMEWORK_REVIEW_2026-10-20.md),
-[capability guide](33_APPLICATIONS/README.md) and [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md).
+counterexamples to older mathematical guarantees and the code corrections that
+followed. Coverage is reported honestly in
+[folder-coverage.json](28_DEFENSE/review_2026_10_20/folder-coverage.json), and the
+work still open before a release is listed in the review's repair sequence, the
+[capability guide](33_APPLICATIONS/README.md) and the [Failure Museum](28_DEFENSE/FAILURE_MUSEUM.md).
 
 The [claim register](28_DEFENSE/CLAIMS.json) contains 71 structured claim records.
-These are the author's classifications, including claims disputed by the review:
+These are the author's own classifications, including claims the review disputes:
 
 | Classification | Records | Meaning |
 |---|---|---|
-| **ACTIVE** | 52 | An asserted result; inspect its stated assumptions and evidence. |
-| **SCAFFOLD** | 12 | An incomplete model or operational link. |
-| **CONJECTURE** | 4 | An open claim requiring further evidence. |
-| **RETRACTED** | 3 | A withdrawn claim preserved for accountability. |
+| **ACTIVE** | 52 | An asserted result. Inspect its assumptions and evidence. |
+| **SCAFFOLD** | 12 | An incomplete model or link. |
+| **CONJECTURE** | 4 | An open claim that needs more evidence. |
+| **RETRACTED** | 3 | Withdrawn, and kept on record for accountability. |
 
-These counts cover that register, not every later research contribution.
-`ACTIVE` does not mean independently replicated, peer-reviewed or production-ready.
+These counts cover the register, not every later contribution. `ACTIVE` does not mean
+independently replicated, peer-reviewed or production-ready. Nothing in this repository
+has yet been independently replicated; that is the next gap to close.
 
-## Find your way around
+## Find your way
 
-| Location | What belongs there |
+| Location | What lives there |
 |---|---|
+| [lycheetah](lycheetah/README.md) | The maintained package: assurance, compaction and execution controls. |
 | [12_IMPLEMENTATIONS](12_IMPLEMENTATIONS/README.md) | Foundational Python engines, applications, integrations and experiments. |
-| [lycheetah](lycheetah/README.md) | Public package interfaces and maintained assurance, compaction and execution controls. |
 | [papers](papers/README.md) | Manuscripts, protocols and versioned research packets. |
-| [TRUTH_PRESSURE](TRUTH_PRESSURE/README.md) | Evidence/revision instruments and experimental continuations. |
+| [TRUTH_PRESSURE](TRUTH_PRESSURE/README.md) | Evidence and revision instruments, with experimental continuations. |
 | [28_DEFENSE](28_DEFENSE/README.md) | Claims, evidence, failures, reviews and reproducibility records. |
-| [LYCHEETAH_MYTHOS](LYCHEETAH_MYTHOS/README.md) and [LYCHEETAH_EPIC](LYCHEETAH_EPIC/00_EPIC_COVENANT.md) | Creative source worlds and their edition/canon boundaries. |
-| [docs](docs/README.md) | Existing website sources and generated reading views. |
+| [FOR-REVIEW](FOR-REVIEW/README.md) | Review ledgers and proposals waiting on the author's decisions. |
+| [LYCHEETAH_MYTHOS](LYCHEETAH_MYTHOS/README.md) · [LYCHEETAH_EPIC](LYCHEETAH_EPIC/00_EPIC_COVENANT.md) | The creative source worlds and their canon boundaries. |
+| [docs](docs/README.md) | Website sources and generated reading views. |
 | [99_ARCHIVE](99_ARCHIVE/README.md) | Historical work and preserved research releases. |
 
-The [complete repository map](00_Sovereign_Index.md) locates all top-level areas.
-[WORKING_HOME.md](WORKING_HOME.md) identifies source ownership; the
-[current synthesis](13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md) explains
-relationships across the corpus.
+The [complete repository map](00_Sovereign_Index.md) covers every top-level area.
+[WORKING_HOME.md](WORKING_HOME.md) names who owns which source, and the
+[current synthesis](13_SYNTHESIS_REPORTS/CURRENT_FRAMEWORK_SYNTHESIS.md) explains how
+the parts relate.
 
-## Develop, contribute and cite
+## Contribute and cite
 
-Install development dependencies with `python3 -m pip install -e '.[dev]'`.
-The [test guide](tests/README.md) describes maintained collection and focused
-checks. Keep a change's source, regression evidence and changelog together.
-Preserve original research versions and attribute distinctive work to its creator.
+Install the development tools with `python3 -m pip install -e '.[dev]'`. The
+[test guide](tests/README.md) explains the maintained suite and the focused checks.
+Keep each change's source, its regression evidence and its changelog entry together.
+Preserve original research versions, and credit distinctive work to its creator.
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
-For AI-assisted reading, start with [EXPLORE_WITH_AI.md](EXPLORE_WITH_AI.md) and
-[the extraction protocol](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md).
+Read [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md). For
+AI-assisted reading, start with [EXPLORE_WITH_AI.md](EXPLORE_WITH_AI.md) and the
+[extraction protocol](26_FOR_AI/AI_EXTRACTION_PROTOCOL.md).
 
-The root [LICENSE](LICENSE) contains MIT terms. Supplied subprojects retain their
-own notices; ownership-document inconsistencies are recorded in the review.
-[Citation metadata](CITATION.cff) identifies the creator and a dated citation
-edition rather than a release certificate for every component.
+The root [LICENSE](LICENSE) is MIT. Supplied subprojects keep their own notices;
+inconsistencies between ownership documents are recorded in the review.
+[CITATION.cff](CITATION.cff) identifies the creator and a dated citation edition. It is
+not a release certificate for every component.

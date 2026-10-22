@@ -116,7 +116,7 @@ No future adapter may:
 
 ## Where else this reaches
 
-**`~/0sol-by-lycheetah/lib/lamague/canon/`** vendors the two v0.3 schema files so
+**The private app repository's `lib/lamague/canon/`** vendors the two v0.3 schema files so
 the app can be checked against them. `npm run verify:lamague-canon` reconciles the
 app's 118-card teaching registry against this canon — 19 checks.
 
