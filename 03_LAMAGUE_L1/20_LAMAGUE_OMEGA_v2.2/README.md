@@ -8,6 +8,7 @@ for Mackenzie Conor James Clark and the Lycheetah Framework. 2026-10-25.
 | `file_airlock/` | Snapshot a directory, check an agent's writes against allow/forbid globs and its handover note, roll back byte-exact | Tool. Refuses to write through symlinks or outside the root; restores modes and empty dirs |
 | `guarded_handoff/` | Ed25519 single-use action permits (human holds the private key, seats hold the public key), flock-locked consumed-permit ledger that fails closed, Python AST diff audit, git working-tree audit | Tool. Non-`.py` files are reported `NOT_AUDITED`, never passed |
 | `lamague_omega/` | LAMAGUE Ω v2.2 compiler and 20 evidential discourse roots (100 free roots + 35 bound modifiers) | Draft language work, see limits |
+| `continuity_prover/`, `question_governance/` | Continuity compaction, handover tamper and question-ordering simulations | **Illustrative only.** The naive baseline is scripted to lose fields; the 2^3 factorial is a toy model with each factor wired to its own metric; external-file checks print `DID_NOT_RUN` when their paths are absent |
 
 ## Honest limits
 
@@ -25,7 +26,7 @@ for Mackenzie Conor James Clark and the Lycheetah Framework. 2026-10-25.
 ## Run
 
 ```bash
-python3 -m pytest 03_LAMAGUE_L1/20_LAMAGUE_OMEGA_v2.2 -q   # 52 tests; needs `cryptography` (a project dependency)
+python3 -m pytest 03_LAMAGUE_L1/20_LAMAGUE_OMEGA_v2.2 -q   # 73 tests; needs `cryptography` (a project dependency)
 ```
 
 These live outside `testpaths`, so the main suite does not collect them; run them explicitly.
