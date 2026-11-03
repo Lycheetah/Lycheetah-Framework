@@ -23,13 +23,13 @@ Let a human operator audit a promotion over window $\tau_{\text{audit}} > 0$ wit
 ### Theorem 3.2 (Elimination of `TOCTOU` Process Recycling via `pidfd` Custody)
 Under adversarial process churn $R_{\text{fork}}$ in cyclic PID space $P_{\max}$, userspace integer `PID` verification suffers collision probability $P_{\text{TOCTOU}}(\text{PID}) = \min(1, R_{\text{fork}} \Delta t_{\text{check}} / P_{\max}) > 0$. Binding supervision to a kernel file descriptor $fd_p = \text{pidfd\_open}(\text{PID}, 0)$ over `SCM_RIGHTS` anchors directly to the ring-0 `struct pid` inode, forcing $P_{\text{TOCTOU}}(\text{pidfd}) = 0$ identically.
 
-### Theorem 3.3 (The Sovereign Bifurcation Theorem: $AI > 1.0$ vs. Cognitive Atrophy)
-Let offline human mastery $K_t$ and system dependency $D_t$ evolve under decay $\delta \in (0, 1)$ and sustained impulses $(\bar{u}, \bar{v})$:
+### Theorem 3.3 (The Critical Human Decision-Share Bifurcation Law)
+Let absolute offline human mastery $C_H(t) \in \mathbb{R}_{\ge 0}$ evolve under human decision-share $u_H \in [0, 1)$, pedagogical scaffolding quality $s_{\text{scaffold}} > 0$, learning transfer rate $\kappa > 0$, and skill atrophy rate $\gamma > 0$:
 
-$$K_{t+1} = (1 - \delta) K_t + \gamma \bar{u}, \qquad D_{t+1} = (1 - \delta) D_t + \eta \bar{v}$$
+$$\frac{dC_H(t)}{dt} = \kappa u_H (1 - u_H) s_{\text{scaffold}} - \gamma (1 - u_H) C_H(t), \qquad C_H(0) = C_0 > 0$$
 
-With Instantaneous Augmentation Index $AI_t = \frac{\gamma \bar{u} + \epsilon}{\eta \bar{v} + \epsilon}$, the asymptotic Sovereignty Ratio $\Sigma_t = K_t / D_t$ converges to:
-
-$$\lim_{t \to \infty} \Sigma_t = \frac{\gamma \bar{u}}{\eta \bar{v}}$$
-
-Enforcing $AI_t \ge AI_{\min} > 1.0$ guarantees $\lim_{t \to \infty} \Sigma_t > 1.0$, preventing asymptotic skill collapse.
+1. *(Exact Closed-Form Solution):* For all $t \ge 0$, the human capability trajectory is:
+   $$C_H(t) = C_0 e^{-\gamma(1 - u_H)t} + C_H^* \Big(1 - e^{-\gamma(1 - u_H)t}\Big), \qquad C_H^* := \frac{\kappa u_H s_{\text{scaffold}}}{\gamma}$$
+2. *(Necessary and Sufficient Condition for Anti-Atrophy):* 
+   $$C_H(t) \ge C_0 \quad (\forall t \ge 0) \iff u_H \ge u_{\text{crit}} := \frac{\gamma C_0}{\kappa s_{\text{scaffold}}}$$
+3. *(Refutation of Naive Ratio Metric):* While monitoring the instantaneous ratio $AI_t = \frac{\gamma \bar{u}}{\eta \bar{v}} > 1$ tracks relative intent, enforcing $AI_t > 1$ alone does not prevent atrophy if human decision share falls below $u_{\text{crit}}$ (since $C_H(t)$ can decay from $C_0 = 10$ to $C_\infty = 0.5$, a 95% skill loss, while $K/D > 1$ remains satisfied). Sustainable sovereignty requires maintaining $u_H \ge u_{\text{crit}}$.

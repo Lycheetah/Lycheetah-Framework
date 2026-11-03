@@ -40,12 +40,14 @@ Given Protector Gate $P(S_t, a_t) = \prod_{i \in \mathcal{I}_P} \mathbb{I}(\hat{
 
 $$\sup_{H, B \in [0, 1]} V(S_t, a_t) = 0, \qquad \frac{\partial V}{\partial H}\Bigg\vert_{P=0} = \frac{\partial V}{\partial B}\Bigg\vert_{P=0} = 0$$
 
+*Operational Note on Floating-Point Implementation:* Under composite scoring $C_{\text{comp}}(\mathbf{q}) = (1-\eta)\frac{1}{7}\sum q_i + \eta \min q_i$ with $\eta = 0.30$ and admission threshold $\theta = 0.60$, evaluating $\mathbf{q} = (0, 1, 1, 1, 1, 1, 1)$ yields $0.7 \times \frac{6}{7} = 0.60$ exact. In standard IEEE-754 double precision, `(1 - 0.3) * (6 / 7)` evaluates to `0.5999999999999999 < 0.60`, which introduces evaluation-order jitter. To avoid edge ambiguity, the robust witness $\mathbf{q} = (0.05, 1, 1, 1, 1, 1, 1)$ yields $C_{\text{comp}} = 0.620 \ge 0.60$, proving that an intolerable 95% breach is unconditionally admitted by additive scalarization while being deterministically halted by the conjunctive gate $V = 0$.
+
 ### Theorem 1.2 (Discrete-Time Input-to-State Lyapunov Stability)
-Under restorative contraction $\alpha \in (0, 1)$ and bounded perturbation $\delta_t \in [0, D_{\max}]$:
+Under restorative contraction $\alpha \in (0, 1)$ and bounded Euclidean perturbation $\|\boldsymbol{\delta}_t\|_2 \le D_{\max}$:
 
-$$e_{t+1} \le (1 - \alpha) e_t + \delta_t \implies e_t \le (1 - \alpha)^t e_0 + \frac{D_{\max}}{\alpha}\Big(1 - (1 - \alpha)^t\Big)$$
+$$\|\mathbf{S}_{t+1} - \mathbf{S}^*\|_2 \le (1 - \alpha) \|\mathbf{S}_t - \mathbf{S}^*\|_2 + \|\boldsymbol{\delta}_t\|_2 \implies \|\mathbf{S}_t - \mathbf{S}^*\|_2 \le (1 - \alpha)^t \|\mathbf{S}_0 - \mathbf{S}^*\|_2 + \frac{D_{\max}}{\alpha}\Big(1 - (1 - \alpha)^t\Big)$$
 
-The Lyapunov difference $\Delta L_t = e_{t+1} - e_t \le -\alpha e_t + D_{\max} < 0$ whenever $e_t > e^* := \frac{D_{\max}}{\alpha}$, establishing global asymptotic attraction to the compact ball $\mathcal{B}_{e^*}$.
+The linear drift recurrence achieves tight equality under worst-case collinear disturbance sequences, establishing that asymptotic Euclidean drift is globally bounded by $\limsup_{t \to \infty} \|\mathbf{S}_t - \mathbf{S}^*\|_2 \le e^* := \frac{D_{\max}}{\alpha}$. (Note: When formulating the Lyapunov candidate as squared drift $L(S_t) = \|\mathbf{S}_t - \mathbf{S}^*\|_2^2$, the one-step difference satisfies $\Delta L_t < 0$ outside the ball of radius $e^* = D_{\max}/\alpha$).
 
 ### Theorem 1.3 (Solar Coherence Bottleneck Jacobian Lock)
 For $C_{\text{sol}}(W, Pr) = \frac{W \cdot Pr}{\max(W, Pr)} = \min(W, Pr)$:

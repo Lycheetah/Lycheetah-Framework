@@ -28,7 +28,8 @@ $$\mathcal{F}_{\text{cas}}(u) = \sum_{v \in \mathcal{C}(u)} w_{vu} \Pi(v) - \Big
 
 An incumbent root axiom $u \in \mathcal{V}_0$ is demoted in favor of synthesis node $v^*$ at the exact threshold $\mathcal{F}_{\text{cas}}(u) > 0$ and $\Pi(v^*) > \Pi(u) + \Lambda_{\text{inertia}}$, strictly reducing total graph free energy by $\Delta \mathcal{F}_{\text{cas}} < -\Lambda_{\text{inertia}} < 0$.
 
-### Theorem 4.3 (The Anti-Fragile Convexity Dividend via Jensen's Inequality)
-Let $U_{\text{AF}}(\sigma)$ satisfy $\frac{\partial^2 U_{\text{AF}}}{\partial \sigma^2}(\sigma) \ge \kappa > 0$ across environmental shock distribution $\sigma$ with mean $\mu_\sigma = \mathbb{E}[\sigma]$ and variance $\text{Var}(\sigma) > 0$. By Taylor expansion and linearity of expectation:
-
-$$\mathbb{E}\big[U_{\text{AF}}(\sigma)\big] - U_{\text{AF}}\big(\mathbb{E}[\sigma]\big) \ge \frac{1}{2}\kappa \, \text{Var}(\sigma) > 0$$
+### Theorem 4.3 (The Anti-Fragile Convexity Dividend & Utility-Reserve Decoupling)
+1. *(Jensen Convexity on Payoffs):* Let $U_{\text{AF}}(\sigma)$ be a twice-differentiable payoff function with positive second derivative $\frac{\partial^2 U_{\text{AF}}}{\partial \sigma^2} \ge \kappa > 0$ across environmental volatility parameter $\sigma$. For any random volatility distribution with mean $\mu_\sigma$ and variance $\text{Var}(\sigma) > 0$:
+   $$\mathbb{E}\big[U_{\text{AF}}(\sigma)\big] - U_{\text{AF}}\big(\mathbb{E}[\sigma]\big) \ge \frac{1}{2}\kappa \, \text{Var}(\sigma) > 0$$
+2. *(Strict Positivity under Gaussian Shocks):* For downside-truncated, upside-quadratic payoffs $U(x) = \max(-\delta_{\text{crit}}, -\gamma|x|) + \kappa_{\text{up}}\max(0, |x| - \pi_{\text{th}})^2$, the expected utility $\mathbb{E}[U(\sigma Z)]$ ($Z \sim \mathcal{N}(0, 1)$) has strictly positive second derivative $\frac{\partial^2 \mathbb{E}[U]}{\partial \sigma^2} > 0$ for all $\kappa_{\text{up}} \ge 0$ (including the pure truncated downside baseline $\kappa_{\text{up}} = 0$).
+3. *(Separation of Utility Curvature from Capital Drift):* A positive Jensen utility gap $\Delta \mathbb{E}[U] > 0$ measures preference convexity, not additive capital inflow. Generating positive cash reserve drift ($\mathbb{E}[\xi_t] = \mu > 0$) requires an explicit operational rebalancing mechanism or transaction fee capture, and cannot be inferred from utility curvature alone.

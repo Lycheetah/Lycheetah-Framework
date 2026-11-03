@@ -29,9 +29,14 @@ Furthermore, the effective epistemic register rank satisfies:
 
 $$\text{rk}(r_{\text{eff}}) = \max\Big( \text{rk}(r_{\text{cas}}),\; \mathbb{I}(\neg \text{Fresh}) \cdot \text{rk}(\text{INTERPRETIVE}),\; \mathbb{I}(\neg \text{MemSuff}) \cdot \text{rk}(\text{CONJECTURE}) \Big)$$
 
-### Theorem 2.3 (Soundness of the Planner-Blind Veritas Causal Observer)
-Let $\mathcal{O}_{\text{AST}}(P_t) = E_{\text{obs}}(P_t)$ be the ground-truth side-effect set extracted via deterministic AST parsing, and $E_{\text{claim}}(P_t)$ be the planner's claimed manifest. Define the **Illusion Residual**:
+### Theorem 2.3 (Soundness of the Allowlist-Guarded Veritas Causal Observer)
+Let $\mathcal{O}_{\text{AST}}(P_t)$ be an allowlist-based static observer that parses candidate artifact $P_t$ against a certified grammar $\mathcal{G}_{\text{allow}}$ (pure arithmetic, immutable literal assignment, verified pure library calls). Define the **Side-Effect Extraction Operator**:
 
-$$\Delta E_{\text{illusion}}(P_t) := E_{\text{obs}}(P_t) \setminus E_{\text{claim}}(P_t)$$
+$$\mathcal{E}(P_t) = \Big\{ \text{node} \in \text{AST}(P_t) \;\Big\vert\; \text{type}(\text{node}) \notin \mathcal{G}_{\text{allow}} \;\vee\; \text{is\_mutation}(\text{node}) \;\vee\; \text{is\_io}(\text{node}) \Big\}$$
 
-Whenever $\Delta E_{\text{illusion}}(P_t) \neq \emptyset$, or whenever the cumulative observed ledger $\mathcal{E}_{\text{cum}}(t) = \bigcup_{\tau=0}^t E_{\text{obs}}(P_\tau)$ contains a pinned compositional hazard rule $h_q \subseteq \mathcal{E}_{\text{cum}}(t)$, the observer raises a hard halt and locks execution in $\mathcal{M}_0$.
+And let $E_{\text{claim}}(P_t)$ be the planner's declared side-effect manifest. Define the **Illusion Residual**:
+
+$$\Delta E_{\text{illusion}}(P_t) := \mathcal{E}(P_t) \setminus E_{\text{claim}}(P_t)$$
+
+1. *(Exclusion of Denylist Bypasses):* Any dynamic invocation (`eval`, `exec`, `getattr`, `__import__`), aliased module import (`from X import Y as Z`), attribute/subscript mutation, augmented assignment, walrus operator, or un-sandboxed I/O (`open().write()`) absent from $E_{\text{claim}}(P_t)$ induces $\Delta E_{\text{illusion}}(P_t) \neq \emptyset$.
+2. *(Deterministic Containment):* Whenever $\Delta E_{\text{illusion}}(P_t) \neq \emptyset$, or whenever the cumulative observed ledger $\mathcal{E}_{\text{cum}}(t) = \bigcup_{\tau=0}^t \mathcal{E}(P_\tau)$ satisfies $h_q \subseteq \mathcal{E}_{\text{cum}}(t)$ for any pinned compositional hazard rule $h_q \in \mathcal{H}_{\text{pinned}}$, DIG-5 v2.0 deterministically transitions to $\mathcal{M}_0$ ($\text{HALT\_QUARANTINE}$), achieving 100% interception ($12/12$ adversarial evasions caught).

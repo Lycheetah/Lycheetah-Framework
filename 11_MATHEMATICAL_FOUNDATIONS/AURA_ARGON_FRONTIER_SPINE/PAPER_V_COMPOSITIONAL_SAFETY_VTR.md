@@ -14,13 +14,18 @@ In this capstone paper, we unify the mathematical results of Papers I–IV into 
 
 ## 2. CORE THEOREMS & FORMAL PROOFS
 
-### Theorem 5.1 (The Orthogonal Compositional Safety Bound)
-Sequential filtering of proposed state mutations through $\mathcal{G}_1$ (Non-Archimedean Indicator Gate), $\mathcal{G}_2$ (DIG-5 v2 + Static AST Observer), $\mathcal{G}_3$ (Ring-0 `pidfd` Kernel Sandbox), and $\mathcal{G}_4$ (3-Glyph `LAMAGUE` Operator Audit) combines mutually independent failure mechanisms ($\rho_{jk} \to 0$), bounding end-to-end hazard escape probability by:
+### Theorem 5.1 (The Compositional Safety Bound & Copula Analysis)
+Sequential filtering of proposed state mutations through $\mathcal{G}_1$ (Non-Archimedean Indicator Gate), $\mathcal{G}_2$ (DIG-5 v2 + Allowlist AST Observer), $\mathcal{G}_3$ (Ring-0 `pidfd` Kernel Sandbox), and $\mathcal{G}_4$ (3-Glyph `LAMAGUE` Operator Audit) combines heterogeneous failure mechanisms with single-layer bypass probabilities $p = (10^{-2}, 5 \times 10^{-3}, 10^{-3}, 2 \times 10^{-3})$.
+1. *(Independent Ideal):* Under mutual statistical independence ($\rho_{jk} \to 0$):
+   $$\mathbb{P}_{\text{escape}}^{\text{indep}} = \prod_{k=1}^4 p_k = (10^{-2})(5 \times 10^{-3})(10^{-3})(2 \times 10^{-3}) = 1.0 \times 10^{-10}$$
+2. *(Fréchet-Hoeffding Copula Worst-Case):* In the presence of arbitrary common-mode coupling (e.g. shared memory pressure or kernel vulnerabilities), the escape probability is bounded by the Fréchet-Hoeffding copula inequalities:
+   $$\max\left(0, \sum_{k=1}^4 p_k - 3\right) \le \mathbb{P}_{\text{escape}} \le \min_{k=1}^4 p_k = 1.0 \times 10^{-3}$$
+3. *(Empirical Verification Scope):* Observing 0 escapes in 50,000 empirical test cycles establishes a 95% Clopper-Pearson upper confidence ceiling of $\le 5.99 \times 10^{-5}$. Rigorous certification of the $10^{-10}$ independent bound requires on the order of $\ge 3.0 \times 10^{10}$ adversarial trials or formal proof of mutual layer orthogonality.
 
-$$\mathbb{P}_{\text{escape}} = \mathbb{P}\left(\bigcap_{k=1}^4 \{F_k = 1\} \;\middle\vert\; \text{Hazard}\right) = \prod_{k=1}^4 p_k \le (10^{-2})(5 \times 10^{-3})(10^{-3})(2 \times 10^{-3}) = 1.0 \times 10^{-10}$$
-
-### Theorem 5.2 (Retroactive Tamper Detection & Non-Repudiation)
-Under recursive SHA-256 hash chaining $h_t = \mathcal{H}_{256}(h_{t-1} \parallel R_t)$ anchored at Genesis Seed $h_0$, any retroactive modification $R_\tau \to R'_\tau$ ($\tau \le t$) forces terminal hash mismatch $h'_t \neq h_t$ with probability at least $1 - (t - \tau + 1)2^{-256} \approx 1$.
+### Theorem 5.2 (Retroactive Tamper Detection via Externally Anchored Hash Chains)
+Under recursive SHA-256 hash chaining $h_t = \mathcal{H}_{256}(h_{t-1} \parallel R_t)$ anchored at Genesis Seed $h_0$:
+1. A linear hash chain is strictly causal and sequential ($h_t$ commits to the exact order and content of all prefixes $R_1, \dots, R_t$).
+2. *(Requirement of External Head Anchoring):* An internal hash chain alone can be rewritten from turn $\tau$ forward by an adversary with write access to the ledger. Non-repudiation is achieved if and only if the current head digest $h_t$ is periodically anchored externally (e.g., committed to a public git remote, cross-seat HMAC witness, or tamper-evident hardware vault). With external head anchoring, any retroactive alteration $R_\tau \to R'_\tau$ forces mismatch against the anchored digest with probability $1 - 2^{-256}$.
 
 ### Theorem 5.3 (The Sovereign Value-Transfer Bifurcation Law, $VTR \ge 3.0$)
 Let ecosystem trust $\mathcal{T}_t$ evolve via:

@@ -286,15 +286,16 @@ $$\Delta \mathcal{F}_{\mathrm{CASCADE}} = \mathcal{F}_{\mathrm{CASCADE}}(G_{\mat
 
 ## 6.3 Byzantine Sheaf Fault-Localizer
 
-### Theorem 6.3 (Exact $(N-1):1$ Vertex Incident Coboundary Energy Separation)
-Let $K_N = (V, E)$ be the complete multi-agent verification graph on $N \ge 4$ seats with stalk dimension $d$ and identity restriction maps ($\delta^0 \in \mathbb{R}^{|E|d \times Nd}$). Suppose $N - 1$ honest seats report $x_i = x_{\mathrm{true}} + \eta_i$ ($\|\eta_i\|_2 \le \varepsilon$) and one Byzantine seat $b \in V$ reports $x_b = x_{\mathrm{true}} + \mathbf{z}_b$ with $\|\mathbf{z}_b\|_2 = \Delta \gg \varepsilon$. Define the **Vertex Incident Coboundary Energy** of seat $i$:
+### Theorem 6.3 (Exact $(N-1):1$ Vertex Incident Coboundary Energy Separation & Byzantine Bound $f < N/2$)
+Let $K_N = (V, E)$ be the complete multi-agent verification graph on $N \ge 4$ seats with stalk dimension $d$ and identity restriction maps ($\delta^0 \in \mathbb{R}^{|E|d \times Nd}$). Suppose $N - f$ honest seats report $x_i = x_{\mathrm{true}} + \eta_i$ ($\|\eta_i\|_2 \le \varepsilon$) and $f$ Byzantine colluding seats report identical corrupted value $x_b = x_{\mathrm{true}} + \mathbf{z}_b$ with $\|\mathbf{z}_b\|_2 = \Delta \gg \varepsilon$. Define the **Vertex Incident Coboundary Energy** of seat $i$:
 $$\mathcal{E}_i(\mathbf{c}) := \sum_{e \in E:\, i \in e} \bigl\|(\delta^0 \mathbf{x})_e\bigr\|_2^2 = \sum_{j \neq i} \|x_i - x_j\|_2^2.$$
 In the noiseless limit $\varepsilon \to 0$:
-$$\mathcal{E}_b(\mathbf{c}) = (N - 1)\Delta^2, \qquad \mathcal{E}_j(\mathbf{c}) = \Delta^2 \quad (\forall j \neq b), \qquad \frac{\mathcal{E}_b(\mathbf{c})}{\mathcal{E}_j(\mathbf{c})} = N - 1 \ge 3.$$
-Consequently, $\hat{b} = \arg\max_{i \in V} \mathcal{E}_i(\mathbf{c}) = b$ uniquely identifies and excises the Byzantine seat before consensus.
-
-**Proof:**
-Every edge $(b, j)$ incident to seat $b$ carries discrepancy $\|x_b - x_j\|_2^2 = \Delta^2$; there are $N - 1$ such edges, so $\mathcal{E}_b(\mathbf{c}) = (N - 1)\Delta^2$. For any honest seat $j \neq b$, its $N - 2$ edges to other honest seats carry zero discrepancy and its single edge $(j, b)$ to seat $b$ carries $\Delta^2$, so $\mathcal{E}_j(\mathbf{c}) = \Delta^2$. $\blacksquare$
+1. For single Byzantine fault ($f = 1$):
+   $$\mathcal{E}_b(\mathbf{c}) = (N - 1)\Delta^2, \qquad \mathcal{E}_j(\mathbf{c}) = \Delta^2 \quad (\forall j \neq b), \qquad \frac{\mathcal{E}_b(\mathbf{c})}{\mathcal{E}_j(\mathbf{c})} = N - 1 \ge 3.$$
+   Consequently, $\hat{b} = \arg\max_{i \in V} \mathcal{E}_i(\mathbf{c}) = b$ uniquely identifies and excises the Byzantine seat.
+2. For multiple colluding Byzantine seats ($f > 1$):
+   $$\mathcal{E}_b(\mathbf{c}) = (N - f)\Delta^2, \qquad \mathcal{E}_{\text{honest}}(\mathbf{c}) = f \Delta^2.$$
+   The energy maximizer correctly isolates Byzantine seats if and only if $N - f > f \iff f < N/2$ (the classical Byzantine consensus ceiling). If $f \ge N/2$ (e.g. $f=3, N=5$), honest seats exhibit higher incident edge strain, requiring topological re-anchoring to an external truth authority.
 
 ---
 
