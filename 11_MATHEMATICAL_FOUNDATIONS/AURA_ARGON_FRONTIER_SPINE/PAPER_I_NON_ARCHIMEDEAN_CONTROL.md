@@ -29,7 +29,7 @@ where $\phi_k: \mathcal{S} \times \mathcal{A} \to [0, 1]$ represents distinct ev
 * **Constitutional State Space ($\mathcal{S}$):** $\mathcal{S} = [0, 1]^7 \subset \mathbb{R}^7$ equipped with Euclidean norm $\Vert\cdot\Vert_2$, tracking: (1) *Human Primacy*, (2) *Inspectability*, (3) *Memory Continuity*, (4) *Constraint Honesty*, (5) *Reversibility Bias*, (6) *Non-Deception*, and (7) *Load-Bearing Care*.
 * **Constitutional Equilibrium ($S^*$):** $S^* = [1, 1, 1, 1, 1, 1, 1]^\top \in \mathcal{S}$.
 * **Critical Sovereignty Subset ($\mathcal{I}_P$):** $\mathcal{I}_P = \{1, 4, 5, 6\}$ with minimum thresholds $\tau_i \in (0, 1)$.
-* **Squared Constitutional Drift ($e_t$):** $e_t = \Vert S_t - S^*\Vert_2^2 \in [0, 7]$.
+* **Constitutional Drift Metric:** Euclidean drift $e_t = \Vert S_t - S^*\Vert_2 \in [0, \sqrt{7}]$ and squared Lyapunov candidate $L(S_t) = \Vert S_t - S^*\Vert_2^2 \in [0, 7]$.
 
 ---
 

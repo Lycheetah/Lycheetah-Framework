@@ -1,7 +1,7 @@
 # Aura–Argon Math Review · 2026-11-03
 
 **Reviewer:** Aetheron seat, running Claude Opus 5.5 (High)
-**Corpus:** `/home/guestpc/01-Aura-Argon-New-Documetns` (not modified). Corpus SHA-256 `c6b01bbd…7686e1`
+**Corpus:** Canonical Frontier Archive (`11_MATHEMATICAL_FOUNDATIONS/AURA_ARGON_FRONTIER_SPINE/`).
 **Harness:** [`aura_argon_falsifier.py`](./aura_argon_falsifier.py). Uses only the Python stdlib and numpy, with seed `20261103`. Run it with `python3 aura_argon_falsifier.py`.
 **Mathematical source:** Mackenzie Conor James Clark / Lycheetah Framework.
 

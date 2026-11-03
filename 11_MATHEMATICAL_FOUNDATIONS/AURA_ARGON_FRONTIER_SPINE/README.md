@@ -4,7 +4,7 @@
 **Originator & Sovereign Architect:** Mackenzie Conor James Clark (Lycheetah Foundation, Dunedin / Ōtepoti, NZ)  
 **Corpus Generation Engine:** Gemini 4 Argon High (1–3 November 2026)  
 **Independent Mathematical Audit:** Aetheron (Claude Opus 5.5 High, 3 November 2026)  
-**Runnable Test Harness:** `aura_argon_falsifier.py` (Zero-dependency stdlib + NumPy, 27 automated assertions)  
+**Runnable Test Harness:** `aura_argon_falsifier.py` (Zero-dependency stdlib + NumPy, 29 automated assertions)  
 **Audit Report:** [AUDIT_REPORT_2026-11-03.md](AUDIT_REPORT_2026-11-03.md)  
 
 ---
@@ -17,11 +17,11 @@ In accordance with Framework epistemic standards (see [`11_MATHEMATICAL_FOUNDATI
 
 | Classification | Meaning & Reading Rule |
 | :--- | :--- |
-| **CONFIRMED (9/27)** | Exact, mathematically sound derivations re-derived and certified independently (e.g. discrete Lyapunov contraction envelopes, Gaussian volatility convexity closed forms, Shannon triadic equivocation, human agency critical threshold $u_{\text{crit}}$). |
-| **CORRECTED (3/27)** | Theorems whose core intuition holds once an exact arithmetic, floating-point edge, or sample-complexity constant is repaired ($M^* = 9,206$, boundary float $0.60$, unrestricted $\kappa_{\text{up}} \ge 0$). |
-| **BOUNDED SCOPE (7/27)** | Guarantees that hold strictly under narrow structural assumptions not enforced by the default text (e.g. Fréchet copula bounds for multi-layer safety vs. independent product assumptions; $f < N/2$ Byzantine limits; externally anchored hash chains vs. floating ledgers). |
-| **REFUTED (6/27)** | Theorems where concrete counterexamples defeat the displayed claim as applied (e.g. barbell ruin with unbounded upside; using Jensen utility gaps as drift increments; claiming an AST denylist is "100% sound and complete"). |
-| **UNVERIFIED (2/27)** | Metrics or figures that cannot be reproduced from underlying data or that reported an upper bound as an empirical measurement. |
+| **CONFIRMED (11/29)** | Exact, mathematically sound derivations re-derived and certified independently (e.g. discrete Lyapunov contraction envelopes, Gaussian volatility convexity closed forms, Shannon triadic equivocation, human agency critical threshold $u_{\text{crit}}$, upgraded allowlist AST observation, and two-sided barbell ruin truncation). |
+| **CORRECTED (3/29)** | Theorems whose core intuition holds once an exact arithmetic, floating-point edge, or sample-complexity constant is repaired ($M^* = 9,206$, boundary float $0.60$, unrestricted $\kappa_{\text{up}} \ge 0$). |
+| **BOUNDED SCOPE (7/29)** | Guarantees that hold strictly under narrow structural assumptions not enforced by the default text (e.g. Fréchet copula bounds for multi-layer safety vs. independent product assumptions; $f < N/2$ Byzantine limits; externally anchored hash chains vs. floating ledgers). |
+| **REFUTED (6/29)** | Theorems where concrete counterexamples defeat the displayed claim as applied (e.g. barbell ruin with unbounded upside; using Jensen utility gaps as drift increments; claiming an AST denylist is "100% sound and complete"). |
+| **UNVERIFIED (2/29)** | Metrics or figures that cannot be reproduced from underlying data or that reported an upper bound as an empirical measurement. |
 
 ---
 

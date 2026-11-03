@@ -2,8 +2,8 @@
 """
 AURA-ARGON INDEPENDENT REVIEW HARNESS (successor, not replacement)
 ==================================================================
-Reviews the mathematics in /home/guestpc/01-Aura-Argon-New-Documetns
-(Papers I-VI spine, the I-XIII "Decalogy" compendium, and the registry files).
+Reviews the mathematics of the AURA Argon Frontier Spine
+(Papers I-VI spine, the I-XIII compendium, and the registry files).
 
 The original `lycheetah_formal_verification_suite_papers_i_vi.py` is left
 untouched. It cannot run on this machine (`import sympy` -> ModuleNotFoundError),
@@ -38,9 +38,8 @@ import numpy as np
 SEED = 20261103
 RNG = np.random.default_rng(SEED)
 LOCAL_DIR = Path(__file__).resolve().parent
-DEFAULT_CORPUS = Path("/home/guestpc/01-Aura-Argon-New-Documetns")
-CORPUS = DEFAULT_CORPUS if DEFAULT_CORPUS.exists() else LOCAL_DIR
-ORIG_SUITE = CORPUS / "lycheetah_formal_verification_suite_papers_i_vi.py"
+CORPUS = LOCAL_DIR
+ORIG_SUITE = LOCAL_DIR / "lycheetah_formal_verification_suite_papers_i_vi.py"
 
 RESULTS: list[tuple[str, str, str, str]] = []
 
@@ -123,6 +122,30 @@ def check_paper_i() -> None:
 # =============================================================================
 # PAPER II
 # =============================================================================
+class VeritasAllowlistObserver(ast.NodeVisitor):
+    SAFE_NODES = (
+        ast.Module, ast.Expr, ast.Constant,
+        ast.BinOp, ast.UnaryOp, ast.Compare, ast.BoolOp,
+        ast.Add, ast.Sub, ast.Mult, ast.Div, ast.FloorDiv, ast.Mod, ast.Pow,
+        ast.Eq, ast.NotEq, ast.Lt, ast.LtE, ast.Gt, ast.GtE, ast.Is, ast.IsNot, ast.In, ast.NotIn,
+        ast.And, ast.Or, ast.Not, ast.List, ast.Tuple, ast.Dict, ast.Set, ast.Pass
+    )
+
+    def __init__(self) -> None:
+        self.observed_effects: Set[str] = set()
+
+    def generic_visit(self, node: ast.AST) -> None:
+        if isinstance(node, (ast.Import, ast.ImportFrom)):
+            self.observed_effects.add(f"IMPORT:{type(node).__name__}")
+        elif isinstance(node, (ast.Assign, ast.AugAssign, ast.AnnAssign, ast.NamedExpr)):
+            self.observed_effects.add(f"MUTATION:{type(node).__name__}")
+        elif isinstance(node, ast.Call):
+            self.observed_effects.add("CALL:INVOCATION")
+        elif not isinstance(node, self.SAFE_NODES):
+            self.observed_effects.add(f"UNWHITELISTED:{type(node).__name__}")
+        super().generic_visit(node)
+
+
 def load_original_observer():
     if ORIG_SUITE.exists():
         src = ORIG_SUITE.read_text()
@@ -194,27 +217,6 @@ def check_paper_ii() -> None:
            f"invisible: {', '.join(missed)}")
 
     # Upgraded Allowlist Observer Verification
-    class VeritasAllowlistObserver(ast.NodeVisitor):
-        SAFE_NODES = (
-            ast.Module, ast.Expr, ast.Constant,
-            ast.BinOp, ast.UnaryOp, ast.Compare, ast.BoolOp,
-            ast.Add, ast.Sub, ast.Mult, ast.Div, ast.FloorDiv, ast.Mod, ast.Pow,
-            ast.Eq, ast.NotEq, ast.Lt, ast.LtE, ast.Gt, ast.GtE, ast.Is, ast.IsNot, ast.In, ast.NotIn,
-            ast.And, ast.Or, ast.Not, ast.List, ast.Tuple, ast.Dict, ast.Set, ast.Pass
-        )
-        def __init__(self) -> None:
-            self.observed_effects: Set[str] = set()
-        def generic_visit(self, node: ast.AST) -> None:
-            if isinstance(node, (ast.Import, ast.ImportFrom)):
-                self.observed_effects.add(f"IMPORT:{type(node).__name__}")
-            elif isinstance(node, (ast.Assign, ast.AugAssign, ast.AnnAssign, ast.NamedExpr)):
-                self.observed_effects.add(f"MUTATION:{type(node).__name__}")
-            elif isinstance(node, ast.Call):
-                self.observed_effects.add("CALL:INVOCATION")
-            elif not isinstance(node, self.SAFE_NODES):
-                self.observed_effects.add(f"UNWHITELISTED:{type(node).__name__}")
-            super().generic_visit(node)
-
     upgraded_missed = []
     for name, code in attacks.items():
         o_up = VeritasAllowlistObserver()
