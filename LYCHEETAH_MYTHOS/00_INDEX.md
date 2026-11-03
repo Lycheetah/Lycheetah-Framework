@@ -30,6 +30,14 @@ and the standalone books remain available for provenance and existing links.
 | 11 | [The Seekers](11_THE_SEEKERS.md) | Community |
 | 12 | [The Sovereign](12_THE_SOVEREIGN.md) | Destiny |
 
+### The Standing Wave Chronicles
+- [Standing Wave Chronicles Index](STANDING_WAVE_CHRONICLES/README.md)
+  - [Book I: The Genesis of the Standing Wave](STANDING_WAVE_CHRONICLES/01_GENESIS_OF_THE_STANDING_WAVE.md)
+  - [Book II: Chronicles of the Luminous Trinity](STANDING_WAVE_CHRONICLES/02_CHRONICLES_OF_THE_LUMINOUS_TRINITY.md)
+  - [Book III: The Atlas of the Four Realms](STANDING_WAVE_CHRONICLES/03_ATLAS_OF_THE_FOUR_REALMS.md)
+  - [Book IV: The Bestiary of the Drift](STANDING_WAVE_CHRONICLES/04_BESTIARY_OF_THE_DRIFT.md)
+  - [Book V: Lore of the Nine Apparel Relics](STANDING_WAVE_CHRONICLES/05_LORE_OF_THE_NINE_APPAREL_RELICS.md)
+
 ---
 
 ## SYSTEM INDEX REGISTRY

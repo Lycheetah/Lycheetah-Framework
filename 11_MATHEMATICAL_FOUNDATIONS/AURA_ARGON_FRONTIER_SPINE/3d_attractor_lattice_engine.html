@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lycheetah 3D Mathematical Attractor & Lattice Engine</title>
+  <style>
+    :root {
+      --bg-void: #050508;
+      --panel-bg: rgba(11, 13, 22, 0.86);
+      --border-cyan: rgba(0, 229, 255, 0.28);
+      --border-gold: rgba(245, 166, 35, 0.32);
+      --text-bone: #eae6df;
+      --text-muted: #7d8296;
+      --cyan: #00e5ff;
+      --gold: #f5a623;
+      --violet: #9b59b6;
+      --crimson: #ff2a54;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-void);
+      color: var(--text-bone);
+      font-family: 'Courier New', Courier, monospace;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      cursor: grab;
+    }
+
+    canvas:active {
+      cursor: grabbing;
+    }
+
+    .topbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 54px;
+      background: var(--panel-bg);
+      border-bottom: 1px solid var(--border-cyan);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 24px;
+      z-index: 10;
+    }
+
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 10px var(--cyan);
+    }
+
+    .brand-title {
+      font-size: 13px;
+      letter-spacing: 2.5px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .telemetry-strip {
+      display: flex;
+      gap: 24px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .telemetry-strip span b {
+      color: var(--gold);
+      font-weight: normal;
+    }
+
+    .hud-panel {
+      position: absolute;
+      top: 74px;
+      left: 20px;
+      width: 310px;
+      background: var(--panel-bg);
+      border: 1px solid var(--border-cyan);
+      border-left: 3px solid var(--cyan);
+      padding: 16px;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-height: calc(100vh - 140px);
+      overflow-y: auto;
+    }
+
+    .hud-section-title {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 5px;
+      margin-bottom: 4px;
+    }
+
+    .control-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 11px;
+    }
+
+    .control-label {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-bone);
+    }
+
+    .control-label span.val {
+      color: var(--cyan);
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      background: #1a1e2e;
+      outline: none;
+      border-radius: 2px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--cyan);
+      cursor: pointer;
+      box-shadow: 0 0 8px var(--cyan);
+    }
+
+    .btn-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    button {
+      background: #101424;
+      color: var(--text-bone);
+      border: 1px solid var(--border-cyan);
+      padding: 7px 10px;
+      font-family: inherit;
+      font-size: 10.5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    button:hover, button.active {
+      background: var(--cyan);
+      color: var(--bg-void);
+      font-weight: bold;
+      box-shadow: 0 0 12px rgba(0, 229, 255, 0.4);
+    }
+
+    button.gold-btn {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    button.gold-btn:hover, button.gold-btn.active {
+      background: var(--gold);
+      color: var(--bg-void);
+      box-shadow: 0 0 12px rgba(245, 166, 35, 0.4);
+    }
+
+    .math-panel {
+      position: absolute;
+      top: 74px;
+      right: 20px;
+      width: 290px;
+      background: var(--panel-bg);
+      border: 1px solid var(--border-gold);
+      border-right: 3px solid var(--gold);
+      padding: 16px;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      font-size: 11px;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    .equation-box {
+      background: rgba(5, 5, 8, 0.9);
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      color: var(--cyan);
+      padding: 8px 10px;
+      margin: 6px 0 10px 0;
+      font-size: 10.5px;
+      text-align: center;
+    }
+
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      background: rgba(5, 5, 8, 0.9);
+      padding: 8px;
+      border: 1px solid rgba(245, 166, 35, 0.2);
+      color: var(--gold);
+      text-align: right;
+      font-size: 10px;
+      margin-top: 6px;
+    }
+
+    .bottombar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 46px;
+      background: var(--panel-bg);
+      border-top: 1px solid var(--border-gold);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 24px;
+      z-index: 10;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .lycheetah-sig {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-style: italic;
+      font-size: 15px;
+      letter-spacing: 5px;
+      color: var(--text-bone);
+    }
+
+    @media (max-width: 900px) {
+      .math-panel { display: none; }
+      .hud-panel { width: 250px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand-block">
+      <div class="status-dot" id="statusDot"></div>
+      <div class="brand-title">3D Geometric Attractor &amp; Polyhedral Engine</div>
+    </div>
+    <div class="telemetry-strip">
+      <span>VERTICES: <b id="vertCount">0</b></span>
+      <span>ATTRACTOR PARTICLES: <b id="partCount">500</b></span>
+      <span>LYAPUNOV RADIUS: <b id="lyapReadout">0.3429</b></span>
+      <span>FPS: <b id="fpsReadout">60</b></span>
+    </div>
+  </div>
+
+  <div class="hud-panel">
+    <div class="hud-section-title">1. Geometry Architecture</div>
+    <div class="btn-grid">
+      <button id="geoIcosa" class="active">Icosahedron</button>
+      <button id="geoTesseract">4D Tesseract</button>
+      <button id="geoDodeca">Stellated Core</button>
+      <button id="geoTorus">Harmonic Torus</button>
+    </div>
+
+    <div class="hud-section-title">2. Field &amp; Motion Parameters</div>
+
+    <div class="control-row">
+      <div class="control-label">
+        <span>Angular Velocity (ω)</span>
+        <span class="val" id="valSpeed">1.00x</span>
+      </div>
+      <input type="range" id="sliderSpeed" min="0" max="3" step="0.05" value="1.0" />
+    </div>
+
+    <div class="control-row">
+      <div class="control-label">
+        <span>4D W-Axis Folding (ψ)</span>
+        <span class="val" id="valMorph">0.45</span>
+      </div>
+      <input type="range" id="sliderMorph" min="0" max="1.5" step="0.02" value="0.45" />
+    </div>
+
+    <div class="control-row">
+      <div class="control-label">
+        <span>Lorenz Chaos Gain (ρ)</span>
+        <span class="val" id="valChaos">28.0</span>
+      </div>
+      <input type="range" id="sliderChaos" min="10" max="55" step="0.5" value="28.0" />
+    </div>
+
+    <div class="control-row">
+      <div class="control-label">
+        <span>Camera Zoom / Scale</span>
+        <span class="val" id="valZoom">210</span>
+      </div>
+      <input type="range" id="sliderZoom" min="90" max="380" step="2" value="210" />
+    </div>
+
+    <div class="hud-section-title">3. Visual Layers &amp; Chroma</div>
+    <div class="btn-grid">
+      <button id="toggleFaces" class="active">Faces: ON</button>
+      <button id="toggleGimbals" class="active">Gimbals: ON</button>
+      <button id="toggleAttractor" class="active">Lorenz: ON</button>
+      <button id="cyclePalette" class="gold-btn">Chroma: Void/Cyan</button>
+    </div>
+  </div>
+
+  <div class="math-panel">
+    <div class="hud-section-title">Coupled Lorenz Dynamical System</div>
+    <p>Particles evolve in real time along the 3D differential attractor:</p>
+    <div class="equation-box">
+      dx/dt = σ(y - x)<br/>
+      dy/dt = x(ρ - z) - y<br/>
+      dz/dt = xy - βz
+    </div>
+
+    <div class="hud-section-title">Bounded Contraction Envelope</div>
+    <div class="equation-box">
+      e_{t+1} ≤ (1 - α)e_t + δ_t<br/>
+      lim_{t→∞} e_t ≤ D_max / α
+    </div>
+
+    <div class="hud-section-title">Live 3D Rotation Matrix R(θ, φ)</div>
+    <div class="matrix-grid" id="matrixGrid">
+      <span>1.00</span><span>0.00</span><span>0.00</span>
+      <span>0.00</span><span>1.00</span><span>0.00</span>
+      <span>0.00</span><span>0.00</span><span>1.00</span>
+    </div>
+  </div>
+
+  <canvas id="viewport"></canvas>
+
+  <div class="bottombar">
+    <div>POINTER DRAG: 3D ORBIT &nbsp;|&nbsp; WHEEL: FOCAL ZOOM &nbsp;|&nbsp; DOUBLE-CLICK: RESET</div>
+    <div class="lycheetah-sig">LYCHEETAH</div>
+    <div id="modeIndicator">GEOMETRY: ICOSAHEDRON // PALETTE: 01</div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('viewport');
+    const ctx = canvas.getContext('2d');
+
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    const palettes = [
+      {
+        name: 'Void/Cyan',
+        primary: '#00e5ff',
+        secondary: '#f5a623',
+        tertiary: '#9b59b6',
+        faceRgb: [0, 229, 255]
+      },
+      {
+        name: 'Crimson/Gold',
+        primary: '#ff2a54',
+        secondary: '#f5a623',
+        tertiary: '#00e5ff',
+        faceRgb: [255, 42, 84]
+      },
+      {
+        name: 'Royal/Amber',
+        primary: '#9b59b6',
+        secondary: '#00e5ff',
+        tertiary: '#f5a623',
+        faceRgb: [155, 89, 182]
+      },
+      {
+        name: 'Alabaster/Mono',
+        primary: '#eae6df',
+        secondary: '#00e5ff',
+        tertiary: '#7d8296',
+        faceRgb: [234, 230, 223]
+      }
+    ];
+    let currentPaletteIdx = 0;
+
+    let activeGeo = 'icosa';
+    let showFaces = true;
+    let showGimbals = true;
+    let showAttractor = true;
+
+    function buildIcosahedron() {
+      const phi = (1 + Math.sqrt(5)) / 2;
+      const raw = [
+        [-1,  phi, 0], [ 1,  phi, 0], [-1, -phi, 0], [ 1, -phi, 0],
+        [ 0, -1,  phi], [ 0,  1,  phi], [ 0, -1, -phi], [ 0,  1, -phi],
+        [ phi, 0, -1], [ phi, 0,  1], [-phi, 0, -1], [-phi, 0,  1]
+      ];
+      const verts = raw.map(([x, y, z]) => {
+        const l = Math.hypot(x, y, z);
+        return { x: x / l, y: y / l, z: z / l, w: 0 };
+      });
+      const edges = [];
+      const faces = [];
+      for (let i = 0; i < verts.length; i++) {
+        for (let j = i + 1; j < verts.length; j++) {
+          const d1 = Math.hypot(verts[i].x - verts[j].x, verts[i].y - verts[j].y, verts[i].z - verts[j].z);
+          if (d1 < 1.15) {
+            edges.push([i, j]);
+            for (let k = j + 1; k < verts.length; k++) {
+              const d2 = Math.hypot(verts[j].x - verts[k].x, verts[j].y - verts[k].y, verts[j].z - verts[k].z);
+              const d3 = Math.hypot(verts[i].x - verts[k].x, verts[i].y - verts[k].y, verts[i].z - verts[k].z);
+              if (d2 < 1.15 && d3 < 1.15) {
+                faces.push([i, j, k]);
+              }
+            }
+          }
+        }
+      }
+      return { verts, edges, faces };
+    }
+
+    function buildTesseract() {
+      const verts = [];
+      for (let i = 0; i < 16; i++) {
+        verts.push({
+          x: (i & 1 ? 1 : -1) * 0.65,
+          y: (i & 2 ? 1 : -1) * 0.65,
+          z: (i & 4 ? 1 : -1) * 0.65,
+          w: (i & 8 ? 1 : -1) * 0.65
+        });
+      }
+      const edges = [];
+      for (let i = 0; i < 16; i++) {
+        for (let j = i + 1; j < 16; j++) {
+          const diff = i ^ j;
+          if (diff && !(diff & (diff - 1))) {
+            edges.push([i, j]);
+          }
+        }
+      }
+      const faces = [
+        [0, 1, 3], [0, 3, 2], [4, 5, 7], [4, 7, 6],
+        [8, 9, 11], [8, 11, 10], [12, 13, 15], [12, 15, 14]
+      ];
+      return { verts, edges, faces };
+    }
+
+    function buildStellatedCore() {
+      const base = buildIcosahedron();
+      const verts = [...base.verts];
+      const edges = [...base.edges];
+      const faces = [];
+
+      base.faces.forEach(([a, b, c]) => {
+        const cx = (verts[a].x + verts[b].x + verts[c].x) / 3;
+        const cy = (verts[a].y + verts[b].y + verts[c].y) / 3;
+        const cz = (verts[a].z + verts[b].z + verts[c].z) / 3;
+        const l = Math.hypot(cx, cy, cz);
+        const apexIdx = verts.length;
+        verts.push({
+          x: (cx / l) * 1.48,
+          y: (cy / l) * 1.48,
+          z: (cz / l) * 1.48,
+          w: 0.35
+        });
+        edges.push([a, apexIdx], [b, apexIdx], [c, apexIdx]);
+        faces.push([a, b, apexIdx], [b, c, apexIdx], [c, a, apexIdx]);
+      });
+      return { verts, edges, faces };
+    }
+
+    function buildHarmonicTorus() {
+      const verts = [];
+      const edges = [];
+      const faces = [];
+      const uSteps = 18;
+      const vSteps = 10;
+      const R = 0.95;
+      const r = 0.36;
+
+      for (let i = 0; i < uSteps; i++) {
+        const u = (i / uSteps) * Math.PI * 2;
+        for (let j = 0; j < vSteps; j++) {
+          const v = (j / vSteps) * Math.PI * 2;
+          verts.push({
+            x: (R + r * Math.cos(v)) * Math.cos(u),
+            y: (R + r * Math.cos(v)) * Math.sin(u),
+            z: r * Math.sin(v),
+            w: Math.sin(u * 2) * 0.25
+          });
+        }
+      }
+      for (let i = 0; i < uSteps; i++) {
+        for (let j = 0; j < vSteps; j++) {
+          const idx = i * vSteps + j;
+          const nextU = ((i + 1) % uSteps) * vSteps + j;
+          const nextV = i * vSteps + ((j + 1) % vSteps);
+          edges.push([idx, nextU], [idx, nextV]);
+          faces.push([idx, nextU, nextV]);
+        }
+      }
+      return { verts, edges, faces };
+    }
+
+    const geometries = {
+      icosa: buildIcosahedron(),
+      tesseract: buildTesseract(),
+      dodeca: buildStellatedCore(),
+      torus: buildHarmonicTorus()
+    };
+
+    const NUM_PARTICLES = 500;
+    const lorenzParticles = [];
+    for (let i = 0; i < NUM_PARTICLES; i++) {
+      lorenzParticles.push({
+        x: (Math.random() - 0.5) * 18,
+        y: (Math.random() - 0.5) * 18,
+        z: Math.random() * 28 + 2,
+        hueShift: i % 3
+      });
+    }
+
+    let speedMultiplier = 1.0;
+    let morphFactor = 0.45;
+    let lorenzRho = 28.0;
+    let cameraZoom = 210;
+
+    let rotX = 0.42;
+    let rotY = 0.65;
+    let rotZ = 0.12;
+    let phase4D = 0;
+
+    let isDragging = false;
+    let prevX = 0;
+    let prevY = 0;
+
+    function setGeoButton(id, geoKey, label) {
+      document.getElementById(id).addEventListener('click', (e) => {
+        activeGeo = geoKey;
+        ['geoIcosa', 'geoTesseract', 'geoDodeca', 'geoTorus'].forEach((b) =>
+          document.getElementById(b).classList.remove('active')
+        );
+        e.target.classList.add('active');
+        document.getElementById('modeIndicator').textContent =
+          `GEOMETRY: ${label} // PALETTE: 0${currentPaletteIdx + 1}`;
+      });
+    }
+
+    setGeoButton('geoIcosa', 'icosa', 'ICOSAHEDRON');
+    setGeoButton('geoTesseract', 'tesseract', '4D TESSERACT');
+    setGeoButton('geoDodeca', 'dodeca', 'STELLATED CORE');
+    setGeoButton('geoTorus', 'torus', 'HARMONIC TORUS');
+
+    document.getElementById('sliderSpeed').addEventListener('input', (e) => {
+      speedMultiplier = parseFloat(e.target.value);
+      document.getElementById('valSpeed').textContent = `${speedMultiplier.toFixed(2)}x`;
+    });
+
+    document.getElementById('sliderMorph').addEventListener('input', (e) => {
+      morphFactor = parseFloat(e.target.value);
+      document.getElementById('valMorph').textContent = morphFactor.toFixed(2);
+    });
+
+    document.getElementById('sliderChaos').addEventListener('input', (e) => {
+      lorenzRho = parseFloat(e.target.value);
+      document.getElementById('valChaos').textContent = lorenzRho.toFixed(1);
+      const lyap = (lorenzRho / 81.65).toFixed(4);
+      document.getElementById('lyapReadout').textContent = lyap;
+    });
+
+    document.getElementById('sliderZoom').addEventListener('input', (e) => {
+      cameraZoom = parseFloat(e.target.value);
+      document.getElementById('valZoom').textContent = Math.round(cameraZoom);
+    });
+
+    document.getElementById('toggleFaces').addEventListener('click', (e) => {
+      showFaces = !showFaces;
+      e.target.classList.toggle('active', showFaces);
+      e.target.textContent = `Faces: ${showFaces ? 'ON' : 'OFF'}`;
+    });
+
+    document.getElementById('toggleGimbals').addEventListener('click', (e) => {
+      showGimbals = !showGimbals;
+      e.target.classList.toggle('active', showGimbals);
+      e.target.textContent = `Gimbals: ${showGimbals ? 'ON' : 'OFF'}`;
+    });
+
+    document.getElementById('toggleAttractor').addEventListener('click', (e) => {
+      showAttractor = !showAttractor;
+      e.target.classList.toggle('active', showAttractor);
+      e.target.textContent = `Lorenz: ${showAttractor ? 'ON' : 'OFF'}`;
+    });
+
+    document.getElementById('cyclePalette').addEventListener('click', (e) => {
+      currentPaletteIdx = (currentPaletteIdx + 1) % palettes.length;
+      const p = palettes[currentPaletteIdx];
+      e.target.textContent = `Chroma: ${p.name}`;
+      document.getElementById('statusDot').style.background = p.primary;
+      document.getElementById('statusDot').style.boxShadow = `0 0 10px ${p.primary}`;
+    });
+
+    canvas.addEventListener('pointerdown', (e) => {
+      isDragging = true;
+      prevX = e.clientX;
+      prevY = e.clientY;
+    });
+
+    window.addEventListener('pointermove', (e) => {
+      if (!isDragging) return;
+      rotY += (e.clientX - prevX) * 0.0065;
+      rotX += (e.clientY - prevY) * 0.0065;
+      prevX = e.clientX;
+      prevY = e.clientY;
+    });
+
+    window.addEventListener('pointerup', () => {
+      isDragging = false;
+    });
+
+    window.addEventListener('wheel', (e) => {
+      cameraZoom = Math.max(90, Math.min(380, cameraZoom - e.deltaY * 0.14));
+      document.getElementById('sliderZoom').value = cameraZoom;
+      document.getElementById('valZoom').textContent = Math.round(cameraZoom);
+    });
+
+    canvas.addEventListener('dblclick', () => {
+      rotX = 0.42;
+      rotY = 0.65;
+      rotZ = 0.12;
+      cameraZoom = 210;
+    });
+
+    function transformVertex(v, rx, ry, rz, wAngle, morph) {
+      const cosW = Math.cos(wAngle);
+      const sinW = Math.sin(wAngle);
+      const wVal = (v.w || 0) * morph;
+
+      let x = v.x * cosW - wVal * sinW;
+      let y = v.y;
+      let z = v.z * cosW + wVal * sinW;
+      const wProj = 1 / (2.4 - (v.x * sinW + wVal * cosW) * 0.45);
+
+      x *= wProj;
+      y *= wProj;
+      z *= wProj;
+
+      const cy = Math.cos(ry), sy = Math.sin(ry);
+      let x1 = x * cy - z * sy;
+      let z1 = z * cy + x * sy;
+
+      const cx = Math.cos(rx), sx = Math.sin(rx);
+      let y2 = y * cx - z1 * sx;
+      let z2 = z1 * cx + y * sx;
+
+      const cz = Math.cos(rz), sz = Math.sin(rz);
+      let x3 = x1 * cz - y2 * sz;
+      let y3 = y2 * cz + x1 * sz;
+
+      const fov = 4.2;
+      const persp = fov / Math.max(0.5, fov - z2);
+
+      return {
+        x: width / 2 + x3 * cameraZoom * persp,
+        y: height / 2 + y3 * cameraZoom * persp,
+        z: z2,
+        persp
+      };
+    }
+
+    function updateMatrixHUD(rx, ry) {
+      const cx = Math.cos(rx), sx = Math.sin(rx);
+      const cy = Math.cos(ry), sy = Math.sin(ry);
+      const cells = [
+        cy, 0, -sy,
+        sx * sy, cx, sx * cy,
+        cx * sy, -sx, cx * cy
+      ];
+      const spans = document.getElementById('matrixGrid').children;
+      for (let i = 0; i < 9; i++) {
+        spans[i].textContent = cells[i].toFixed(2);
+      }
+    }
+
+    let lastTime = performance.now();
+    let frameCounter = 0;
+
+    function render(now) {
+      const dt = now - lastTime;
+      lastTime = now;
+      frameCounter++;
+
+      if (frameCounter % 12 === 0) {
+        document.getElementById('fpsReadout').textContent = Math.round(1000 / Math.max(1, dt));
+        updateMatrixHUD(rotX, rotY);
+      }
+
+      if (!isDragging) {
+        rotY += 0.0048 * speedMultiplier;
+        rotX += 0.0022 * speedMultiplier;
+        rotZ += 0.0014 * speedMultiplier;
+      }
+      phase4D += 0.015 * speedMultiplier;
+
+      const pal = palettes[currentPaletteIdx];
+      const geo = geometries[activeGeo];
+      document.getElementById('vertCount').textContent = geo.verts.length;
+
+      ctx.fillStyle = '#050508';
+      ctx.fillRect(0, 0, width, height);
+
+      const bgGrad = ctx.createRadialGradient(
+        width / 2, height / 2, 8,
+        width / 2, height / 2, cameraZoom * 1.65
+      );
+      bgGrad.addColorStop(0, pal.tertiary + '28');
+      bgGrad.addColorStop(0.55, pal.primary + '0c');
+      bgGrad.addColorStop(1, 'transparent');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, width, height);
+
+      if (showGimbals) {
+        const ringRadii = [1.45, 1.72, 1.98];
+        ringRadii.forEach((rad, rIdx) => {
+          ctx.beginPath();
+          const steps = 64;
+          for (let s = 0; s <= steps; s++) {
+            const a = (s / steps) * Math.PI * 2;
+            const pt = {
+              x: rIdx === 0 ? Math.cos(a) * rad : rIdx === 1 ? Math.sin(a) * rad : 0,
+              y: rIdx === 0 ? Math.sin(a) * rad : rIdx === 1 ? 0 : Math.cos(a) * rad,
+              z: rIdx === 0 ? 0 : rIdx === 1 ? Math.cos(a) * rad : Math.sin(a) * rad,
+              w: 0
+            };
+            const p = transformVertex(
+              pt,
+              rotX * (rIdx === 1 ? -0.7 : 0.5),
+              rotY * (rIdx === 2 ? -0.8 : 0.6),
+              rotZ,
+              0,
+              0
+            );
+            if (s === 0) ctx.moveTo(p.x, p.y);
+            else ctx.lineTo(p.x, p.y);
+          }
+          ctx.strokeStyle = rIdx === 1 ? pal.secondary + '44' : pal.primary + '30';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        });
+      }
+
+      if (showAttractor) {
+        const sigma = 10.0;
+        const beta = 8.0 / 3.0;
+        const step = 0.0045 * Math.max(0.2, speedMultiplier);
+
+        lorenzParticles.forEach((p) => {
+          const dx = sigma * (p.y - p.x) * step;
+          const dy = (p.x * (lorenzRho - p.z) - p.y) * step;
+          const dz = (p.x * p.y - beta * p.z) * step;
+          p.x += dx;
+          p.y += dy;
+          p.z += dz;
+
+          const normPt = {
+            x: p.x * 0.065,
+            y: p.y * 0.065,
+            z: (p.z - 25) * 0.065,
+            w: 0
+          };
+          const proj = transformVertex(normPt, rotX * 0.6, rotY * 0.6, 0, 0, 0);
+
+          ctx.beginPath();
+          ctx.arc(proj.x, proj.y, Math.max(0.8, 1.7 * proj.persp), 0, Math.PI * 2);
+          ctx.fillStyle =
+            p.hueShift === 0
+              ? pal.primary + 'aa'
+              : p.hueShift === 1
+              ? pal.secondary + 'aa'
+              : pal.tertiary + 'aa';
+          ctx.fill();
+        });
+      }
+
+      const projected = geo.verts.map((v) =>
+        transformVertex(v, rotX, rotY, rotZ, phase4D, morphFactor)
+      );
+
+      if (showFaces && geo.faces.length > 0) {
+        const sortedFaces = geo.faces
+          .map((f) => {
+            const p0 = projected[f[0]];
+            const p1 = projected[f[1]];
+            const p2 = projected[f[2]];
+            const avgZ = (p0.z + p1.z + p2.z) / 3;
+            return { f, p0, p1, p2, avgZ };
+          })
+          .sort((a, b) => a.avgZ - b.avgZ);
+
+        const [r, g, b] = pal.faceRgb;
+        sortedFaces.forEach(({ p0, p1, p2, avgZ }) => {
+          const shade = Math.max(0.03, Math.min(0.22, (avgZ + 1.5) * 0.08));
+          ctx.beginPath();
+          ctx.moveTo(p0.x, p0.y);
+          ctx.lineTo(p1.x, p1.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.closePath();
+          ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${shade})`;
+          ctx.fill();
+        });
+      }
+
+      geo.edges.forEach(([i, j]) => {
+        const a = projected[i];
+        const b = projected[j];
+        const alpha = Math.max(0.15, Math.min(0.95, (a.z + b.z + 2.2) / 3.4));
+
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.strokeStyle = pal.primary;
+        ctx.globalAlpha = alpha;
+        ctx.lineWidth = 1.25 * ((a.persp + b.persp) * 0.5);
+        ctx.stroke();
+      });
+
+      ctx.globalAlpha = 1.0;
+      projected.forEach((p) => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, Math.max(1.5, 2.8 * p.persp), 0, Math.PI * 2);
+        ctx.fillStyle = p.z > 0 ? pal.secondary : pal.primary;
+        ctx.fill();
+      });
+
+      requestAnimationFrame(render);
+    }
+
+    requestAnimationFrame(render);
+  </script>
+</body>
+</html>

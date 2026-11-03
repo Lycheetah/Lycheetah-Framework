@@ -18,6 +18,7 @@ useful definitions and conditional results alongside invalid proof steps.
 | [AGM_POSTULATE_VERIFICATION.md](AGM_POSTULATE_VERIFICATION.md) | The actual low-pressure update can retain conflicting universal claims. Logical closure and AGM revision require a separate implementation contract. |
 | [THE_INCOMPLETENESS_PROOF.md](THE_INCOMPLETENESS_PROOF.md) | The displayed all-models/unprovability statement does not establish its universal theorem under ordinary first-order semantics. |
 | [lyapunov_verification.py](lyapunov_verification.py) | Historical illustrative routines, including assigned Hessian constants and a separate averaging toy. The “11/11 verified” promotion is unsupported. Running it can overwrite its old results file; use a scratch copy. |
+| [AURA_ARGON_FRONTIER_SPINE/](AURA_ARGON_FRONTIER_SPINE/README.md) | Six-paper mathematical spine generated on Gemini 4 Argon High (Nov 2026), with standalone papers, Decalogy, interactive 3D engine, and independent 27-check audit harness (`aura_argon_falsifier.py` / `AUDIT_REPORT_2026-11-03.md`). 9 confirmed, 3 corrected, 7 bounded scope, 6 refuted, 2 unverified. |
 
 The review leaves the original mathematical bodies inspectable. Source positions
 and hashes in its probes refer to the baseline commit, before dated notices.

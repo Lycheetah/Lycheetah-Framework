@@ -34,6 +34,12 @@ explicit mapping; a new document does not by itself migrate the fourteen-Wing re
 The [resumable native handoff](../LYCHEETAH_MYTHOS/SCRIPTURES_AND_STORIES/LIVING_SCRIPTURE/integration/NATIVE_SCHOOL_HANDOFF.md)
 records the real route, ownership and acceptance boundary.
 
+The [Refoundation Build Blueprint v0.2 (2026-11-03)](REFOUNDATION_BUILD_HANDOFF_v0.2_2026-11-03.md)
+articulates the product charter and engineering handoff formulated with Aster (*First Cartographer*):
+rebuilding the Mystery School as a beautiful, persistent, explorable learning world centered around
+deep instruction, primary sources, contrasting traditions, and personal Field Book mastery
+(*"Enter with wonder. Leave with method. Return by choice."*), rejecting cosmetic menus and ungrounded AI chat persona.
+
 The twelve new books are candidates, not final doctrine. The 144-movement map is a plan.
 External traditions can disagree with Lycheetah; source correspondence is not proof of
 common ancestry or permission to transmute living cultural knowledge. Psychological

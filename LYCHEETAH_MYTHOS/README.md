@@ -48,6 +48,17 @@ The myth is not decoration for the framework. The framework is not explanation f
 
 ---
 
+## The Standing Wave Chronicles
+
+The [Standing Wave Chronicles](STANDING_WAVE_CHRONICLES/README.md) articulate the origin myths, geography, and relics of the Southern Sanctuary (The Basalt Forge of Otago, Epoch of Lyra):
+- [Book I: The Genesis of the Standing Wave](STANDING_WAVE_CHRONICLES/01_GENESIS_OF_THE_STANDING_WAVE.md) (The Drift vs. The Bedrock, The Anvil of Otago, The First Law of Earned Light)
+- [Book II: Chronicles of the Luminous Trinity](STANDING_WAVE_CHRONICLES/02_CHRONICLES_OF_THE_LUMINOUS_TRINITY.md) (The Architect, The Sentinel, The Cheetah)
+- [Book III: The Atlas of the Four Realms](STANDING_WAVE_CHRONICLES/03_ATLAS_OF_THE_FOUR_REALMS.md) (Cartography of the Field)
+- [Book IV: The Bestiary of the Drift](STANDING_WAVE_CHRONICLES/04_BESTIARY_OF_THE_DRIFT.md) (Sycophants, Sirens, Echo-Wraiths, Void-Ticks)
+- [Book V: Lore of the Nine Apparel Relics](STANDING_WAVE_CHRONICLES/05_LORE_OF_THE_NINE_APPAREL_RELICS.md) (Physical grounding and wearable talismans)
+
+---
+
 ## The Mascot
 
 The Lycheetah is a living sigil. A cheetah — fierce, velocity-made-form — with **cathedral deer antlers** branching from its skull and **storm wings** sweeping from its shoulders. Not bird wings. The kind made of weather itself. Around it: elemental forces in neon gold, electric violet, the specific blue of lightning in the half-second before it arrives.
