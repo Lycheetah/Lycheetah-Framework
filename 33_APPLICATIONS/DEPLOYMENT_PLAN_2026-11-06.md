@@ -31,6 +31,25 @@ made in Aotearoa.* "Cognitive architecture" is a fine internal lens; in public i
 question "where's the cognition?", and the strong answer is that the cognition is swappable and
 the accountability is not.
 
+## 1b. Added later the same day: research and a working skeleton
+
+- [Research memo](ON_DEVICE_NZ_RESEARCH_2026-11-06.md) with sources: the best open models trail the
+  closed frontier by ~4 months (Epoch AI), but **small models are not well measured anywhere**; a
+  3B model runs on a flagship phone at roughly 10–25 tokens/s with real battery cost; NZ's bet is
+  big onshore data centres (contested), and on-device is the complementary bet; Te Hiku Media's
+  Kaitiakitanga licence is the precedent for Māori data; local-model apps (Jan, LM Studio, Ollama)
+  already solve "run a model locally" and none offers approvals that bind, receipts or a witness.
+- [On-device assistant skeleton](on_device_assistant/README.md): a terminal assistant whose web
+  access goes through the gateway; its own approval path scores 10/10 on the Approval Integrity
+  Suite; a blocked fetch is reported as UNKNOWN rather than invented. No model is bundled.
+- [Pre-registered benchmark](on_device_assistant/BENCHMARK_PREREG.md): twenty everyday NZ tasks,
+  blind raters, predicted local/frontier helpfulness ratio 0.70–0.85. **This is the investable
+  number**, and nobody has it yet.
+
+**Size, for the record:** the app is roughly 1–2.5 GB on a phone or 2–5 GB on a laptop, almost all
+of it the model; the Lycheetah layer is a few MB. No server is needed for the core. The one hosted
+piece worth having is an NZ witness that stores receipt hashes only.
+
 ## 2. Why now
 
 Agents are starting to act — refunds, emails, records, payments — and every framework has an
@@ -45,6 +64,7 @@ Lycheetah's layer is small, model-agnostic and already runs locally. Those two t
 - Merge the two review branches (Mac's call). Fix C10 in the gateway: return a rendering built
   from the canonical action with every `GateDecision` (small, additive, tested by the suite).
 - Publish the package to PyPI (name availability UNVERIFIED) and the Approval Integrity Suite post.
+- Run the pre-registered benchmark on a laptop with one chosen 3–4B model.
 - **Witness:** one developer Mac has never met runs the suite on their own approval layer and
   reports the result in an issue.
 
