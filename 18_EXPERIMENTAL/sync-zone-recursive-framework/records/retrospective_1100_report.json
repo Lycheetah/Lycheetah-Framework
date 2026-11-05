@@ -1,0 +1,53 @@
+{
+  "H1_dossier_handoff": {
+    "blockers": [
+      "NO_INDEPENDENT_REVIEW",
+      "OPEN_CRITICAL_DISSENT"
+    ],
+    "findings": [
+      "CAVEAT_DROPPED_FROM_HANDOFF"
+    ],
+    "ratifiable": false,
+    "review_independence": {
+      "R-verdict": "same_run"
+    },
+    "valid": false
+  },
+  "V1_as_written": {
+    "blockers": [
+      "NO_INDEPENDENT_REVIEW"
+    ],
+    "findings": [
+      "FALSE_RATIFICATION",
+      "PROMOTED_WITH_BLOCKER"
+    ],
+    "ratifiable": false,
+    "review_independence": {
+      "R-verdict": "same_run"
+    },
+    "valid": false
+  },
+  "V2_charitable": {
+    "blockers": [
+      "NO_INDEPENDENT_REVIEW"
+    ],
+    "findings": [
+      "PROMOTED_WITH_BLOCKER"
+    ],
+    "ratifiable": false,
+    "review_independence": {
+      "R-verdict": "same_run"
+    },
+    "valid": false
+  },
+  "V3_dressed_up": {
+    "blockers": [],
+    "findings": [],
+    "ratifiable": true,
+    "review_independence": {
+      "R-verdict": "same_run",
+      "R-x": "different_model"
+    },
+    "valid": true
+  }
+}

@@ -9,6 +9,26 @@ history, which was the only changelog until now.
 
 ## [Unreleased]
 
+### Sync Zone cycle contract (experimental) — 6 November 2026
+
+From Cassian's forge packet. Additive; nothing existing was edited except this entry and
+the `18_EXPERIMENTAL/README.md` inventory row.
+
+- `18_EXPERIMENTAL/sync-zone-recursive-framework/`: protocol `sz-rules-v0.1`, integration
+  map, threat model scored enforced/partial/not covered, claims and limits, findings register.
+- `sync_zone/` (standard library only): a validator for one cycle record (digest-bound
+  evidence and reviews, computed reviewer independence, authority/budget/failure/dissent/
+  ruleset lineage, human-principal ratification, meta-governance firewall, caveat survival
+  in handoffs), a hash-chained append-only ledger, and read-only git binding.
+- `tests/test_sync_zone_cycle.py`: 66 cases (`scaffold` marker) covering the packet's 22
+  adversarial cases plus two pinned limits. Mutation probes M1–M8 each turn the suite red.
+  Full suite: 1567 → 1633 passed, 3 skipped, 2 xfailed; no regression.
+- Retrospective on the AI-seat workshop at `a41c2a7`: dispute 1100 is circular by
+  construction and self-settled; the 2026-11-06 dossier drops dispute 400's standing
+  finding. Recorded in the folder's findings; the workshop itself was not edited.
+- Limit kept on record: a circular simulation with green tests and one silent
+  different-model review passes the contract. Status PROPOSED, awaiting Mac.
+
 ### Opus review corrections — 22 October 2026
 
 Each correction below has a probe, a test that fails on the previous code, and a

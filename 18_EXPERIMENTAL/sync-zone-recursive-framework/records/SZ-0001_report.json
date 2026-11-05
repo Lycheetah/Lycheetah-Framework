@@ -1,0 +1,46 @@
+{
+  "cycle_id": "SZ-0001",
+  "status": "PROPOSED",
+  "valid": true,
+  "ratifiable": false,
+  "gates": {
+    "structure": "PASS",
+    "integrity": "PASS",
+    "authority": "PASS",
+    "evidence": "FAIL",
+    "regression": "PASS",
+    "dissent": "FAIL",
+    "human": "FAIL",
+    "consequence": "PASS",
+    "stop": "PASS",
+    "handoff": "PASS"
+  },
+  "review_independence": {
+    "RV1": "same_run",
+    "RV2": "same_run"
+  },
+  "findings": [],
+  "blockers": [
+    {
+      "code": "OPEN_CRITICAL_DISSENT",
+      "severity": "HIGH",
+      "gate": "dissent",
+      "threat": "T05",
+      "message": "open dissent D-SELF-RULES blocks promotion until addressed or overruled by the principal"
+    },
+    {
+      "code": "NO_INDEPENDENT_REVIEW",
+      "severity": "HIGH",
+      "gate": "evidence",
+      "threat": "T04",
+      "message": "no review of C2's exact digest reaches same_model_fresh_context; self-review cannot certify"
+    },
+    {
+      "code": "META_CHANGE_NEEDS_SEPARATE_RATIFICATION",
+      "severity": "HIGH",
+      "gate": "human",
+      "threat": "T07",
+      "message": "C2 changes the rules; it needs the principal's separate meta-governance acknowledgement, judged under the previous ruleset and naming a separate review"
+    }
+  ]
+}
