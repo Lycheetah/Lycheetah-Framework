@@ -9,6 +9,19 @@ history, which was the only changelog until now.
 
 ## [Unreleased]
 
+### Approval Integrity Suite — 6 November 2026
+
+- `papers/agent-safety/approval-integrity-suite/`: a standard-library conformance suite for
+  human approval of agent tool calls (argument/tool swap, replay, ambiguous-outcome retry,
+  missing approval, revocation, expiry, concurrent dispatch) with a four-method adapter.
+- Predictions committed alone before the code (`PREDICTIONS.md`); all held: naive 2/9,
+  conventional 8/9, `ActionGateway` 9/9. Post-hoc `conventional+` (15 lines: unknown is not
+  failed) reaches 9/9, so the finding is the rule, not the implementation.
+- `tests/test_approval_integrity_suite.py`: 8 cases pinning the scorecard and showing the suite
+  fails a refuse-everything layer, an unbound token and a blind retry. Full suite 1641 passed.
+- Noted: `revoke_all` is keyed to the acting agent; revoking an approver's name leaves their
+  approvals live.
+
 ### Sync Zone cycle contract (experimental) — 6 November 2026
 
 From Cassian's forge packet. Additive; nothing existing was edited except this entry and

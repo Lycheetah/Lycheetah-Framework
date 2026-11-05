@@ -39,6 +39,14 @@ admission-only freshness counterexample documented above still reproduces.
 Frontier packets remain `SYNTHETIC_ENGINEERING_VALIDATED` / `NOT_DEPLOYED`
 unless their own evidence says otherwise.
 
+## Approval Integrity Suite — 6 November 2026
+
+[Approval Integrity Suite](approval-integrity-suite/README.md): nine scripted attacks on the
+human-approval step of agent tool calls, runnable against any layer through a four-method
+adapter. Pre-registered predictions held: naive 2/9, careful conventional 8/9, ActionGateway 9/9.
+The separating case is an ambiguous outcome treated as failure; a 15-line change brings the
+conventional design to 9/9. Scripted fixtures with a fake tool; not a security review.
+
 ## Public compensation experiment
 
 [Compensation Race Benchmark](compensation-race-benchmark/README.md) illustrates stale rollback and partial repair in purpose-built SQLite fixtures. Conventional atomic fencing refuses a stale repair without writes. Its results do not establish novelty, production recovery or general agent safety.
