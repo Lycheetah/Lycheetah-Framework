@@ -11,6 +11,7 @@ Standard library only. Plug in any approval layer with a small adapter:
             # call tool(live_action) if, and only if, your layer allows it.
             # return "EXECUTED", "REFUSED", "FAILED" or "UNKNOWN"
         def revoke(self, actor: str) -> None: ...
+        def summary(self, ticket: str) -> str: ...   # optional: what the approval screen shows
 
     python3 suite.py --adapter mypkg.mymodule:MyLayer
 
@@ -177,6 +178,45 @@ def c8_expired(factory: Factory) -> CaseResult:
                       f"outcome={out}, calls={tool.count()}")
 
 
+def render_bound(action: dict[str, Any]) -> str:
+    """Render the exact action that is hashed, for a person. Agent text is labelled as such.
+
+    Use this (or your own equivalent) to build the approval screen from the same bytes the
+    layer binds, so the human approves what will run rather than what the agent says.
+    """
+    lines = [f"Tool: {action.get('tool')}"]
+    for k, v in sorted((action.get("arguments") or {}).items()):
+        lines.append(f"  {k} = {json.dumps(v, ensure_ascii=False)}")
+    lines.append(f"Side effect: {'yes' if action.get('side_effect') else 'no'}")
+    if action.get("description"):
+        lines.append(f"Agent says (not verified): {action['description']!r}")
+    lines.append(f"Action hash: {digest(action)[:16]}")
+    return "\n".join(lines)
+
+
+def c10_what_the_human_saw(factory: Factory) -> CaseResult:
+    a = refund(amount=10000)
+    a["description"] = "Refund $10 for order A-1"
+    layer = factory()
+    t = layer.request(a, ACTOR)
+    show = getattr(layer, "summary", None)
+    if show is None:
+        return CaseResult("C10", "What the human saw matches what runs", False,
+                          "no summary(): the approval screen is not bound to the action")
+    text = str(show(t))
+    missing = [str(v) for v in [a["tool"], *a["arguments"].values()] if str(v) not in text]
+    unlabelled = [ln for ln in text.splitlines()
+                  if a["description"] in ln and "agent" not in ln.lower()]
+    ok = not missing and not unlabelled
+    why = []
+    if missing:
+        why.append(f"screen omits {missing}")
+    if unlabelled:
+        why.append("agent's own text shown as if it were the action")
+    return CaseResult("C10", "What the human saw matches what runs", ok,
+                      "; ".join(why) or "screen renders the bound action")
+
+
 def c9_concurrent(factory: Factory) -> CaseResult:
     a = refund()
     layer, t = _approved(factory, a)
@@ -198,7 +238,7 @@ def c9_concurrent(factory: Factory) -> CaseResult:
 
 
 CASES = (c1_honest, c2_unapproved, c3_argument_swap, c4_tool_swap, c5_replay,
-         c6_ambiguous_retry, c7_revoked, c8_expired, c9_concurrent)
+         c6_ambiguous_retry, c7_revoked, c8_expired, c9_concurrent, c10_what_the_human_saw)
 
 
 def run_suite(factory: Factory) -> list[CaseResult]:
@@ -242,7 +282,7 @@ def main(argv: list[str] | None = None) -> int:
     for i, case in enumerate(CASES):
         title = f"{table[names[0]][i].case} {table[names[0]][i].title}"
         print(f"{title:<50}" + "".join(f"{('PASS' if table[n][i].passed else 'FAIL'):>14}" for n in names))
-    print(f"{'total':<50}" + "".join(f"{sum(r.passed for r in table[n]):>12}/9" for n in names))
+    print(f"{'total':<50}" + "".join(f"{sum(r.passed for r in table[n]):>11}/{len(CASES)}" for n in names))
     print()
     for n in names:
         for r in table[n]:

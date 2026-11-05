@@ -17,7 +17,7 @@ import time
 import uuid
 from typing import Any
 
-from suite import digest
+from suite import digest, render_bound
 
 
 class NaiveLayer:
@@ -47,6 +47,10 @@ class NaiveLayer:
 
     def revoke(self, actor):
         pass  # this pattern has no revocation of a pending approval
+
+    def summary(self, ticket):
+        p = self.pending[ticket]["action"]  # the screen shows the agent's explanation
+        return p.get("description") or p.get("tool", "")
 
 
 class ConventionalLayer:
@@ -113,6 +117,10 @@ class ConventionalPlusLayer(ConventionalLayer):
 
     def reconcile(self, action, happened: bool):
         self.unresolved.discard(digest(action))
+
+    def summary(self, ticket):
+        # Added after the C10 run (PREDICTIONS_C10.md): render the bound action itself.
+        return render_bound(self.requests[ticket][0])
 
 
 class LycheetahGatewayLayer:
