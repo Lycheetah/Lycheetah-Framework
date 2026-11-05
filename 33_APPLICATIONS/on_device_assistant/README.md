@@ -52,6 +52,9 @@ Allow this? [y/N]
 
 ## Next
 
+The business plan for three jobs — writing, summaries and local logistics — is in
+[VERTICALS_PLAN.md](VERTICALS_PLAN.md), with its own [pre-registered benchmark](BENCHMARK_PREREG_VERTICALS_2026-11-06.md).
+
 1. Run the [pre-registered benchmark](BENCHMARK_PREREG.md): blind-rated quality on everyday NZ
    tasks against a frontier model.
 2. Wire the checkpoint authority to an NZ-hosted witness that stores receipt hashes only.
